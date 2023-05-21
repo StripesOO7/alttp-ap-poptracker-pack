@@ -1,0 +1,40 @@
+{
+    "event_grid": {
+        "type": "array",
+        "orientation": "vertical",
+        "margin": "0,0",
+        "content": [
+            {
+                "type": "array",
+                "orientation": "horizontal",
+                "margin": "0,0",
+                "content": [
+                    {
+                        "type": "itemgrid",
+                        "item_margin": "2, 2",
+                        "h_alignment": "left",
+                        "rows": [
+                            [
+                                "recovergoods",
+                                "stevenletter",
+                                "sterngoods",
+                                "weatherins"
+                            ],
+                            [
+                                "stealmeteor",
+                                "clearmagma",
+                                "stealsub",
+                                "clearaqua"
+                            ],
+                            [
+                                "releasekyogre",
+                                "releaserayquaza",
+                                "gyms"
+                            ]
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

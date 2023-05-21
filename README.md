@@ -1,3 +1,5 @@
-# alttp-ap-poptracker-pack
-A simple tracker for Zelda - A Link to the Past compatible with the Archipelago Multiworld Randomizer
-template taken from https://github.com/AliceMousie/emerald-ap-tracker
+# Emerald AP Tracker
+
+ArchipelagoA Link to the Past tracker pack for [PopTracker](https://github.com/black-sliver/PopTracker/) with Autotracking.
+
+PopTracker v0.23.0 or higher is recommended.

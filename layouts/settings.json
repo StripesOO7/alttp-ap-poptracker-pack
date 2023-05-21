@@ -1,0 +1,46 @@
+{
+    "setting_grid": {
+        "type": "array",
+        "orientation": "vertical",
+        "margin": "0,0",
+        "content": [
+            {
+                "type": "array",
+                "orientation": "horizontal",
+                "margin": "0,0",
+                "content": [
+                    {
+                        "type": "itemgrid",
+                        "item_margin": "2, 2",
+                        "h_alignment": "left",
+                        "rows": [                        
+                            [
+                                "op_ovw",
+                                "op_hid",
+                                "op_ki",
+                                "op_hms"
+                            ],
+                            [
+                                "op_bdg",
+                                "op_npc",
+                                "op_bik",
+                                "op_rod"
+                            ],
+                            [
+                                "op_norm",
+                                "normanreq",
+                                "op_e4",
+                                "e4req"
+                            ],
+                            [
+                                "op_fer",
+                                "op_if",
+                                "op_hm5"
+                            ]
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
