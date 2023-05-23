@@ -13,6 +13,8 @@ else
 end  
 -- Locations
 Tracker:AddLocations("locations/locations.json")
+Tracker:AddLocations("locations/lightworld.json")
+Tracker:AddLocations("locations/darkworld.json")
 if PopVersion and PopVersion >= "0.23.0" then
     Tracker:AddLocations("locations/dungeons.json")
 end
