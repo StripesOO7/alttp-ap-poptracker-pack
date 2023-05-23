@@ -1,0 +1,40 @@
+[
+    {
+        "name": "Lightworld",
+        "chest_unopened_img": "/images/items/chest_unopened_img.png",
+        "chest_opened_img": "/images/items/chest_opened_img.png",
+        "children": [
+            {
+                "name": "testLW",
+                "sections": [
+                    {
+                        "ref": "Hoenn/Granite Cave/1F - HM05 from Hiker"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 57,
+                        "y": 154,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "",
+                "sections": [
+                    {
+                        "ref": "Hoenn/Granite Cave/1F - Item Before Ladder"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "lightworld",
+                        "x": 280,
+                        "y": 129
+                    }
+                ]
+            }
+        ]
+    }
+]
