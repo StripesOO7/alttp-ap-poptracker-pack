@@ -1,6 +1,6 @@
 [
     {
-        "name": "Lightworld",
+        "name": "Misery Mire",
         "chest_unopened_img": "/images/items/chest_unopened_img.png",
         "chest_opened_img": "/images/items/chest_opened_img.png",
         "children": [
@@ -13,10 +13,10 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "EP",
-                        "x": 57,
-                        "y": 250,
-                        "size": 24
+                        "map": "MM",
+                        "x": 720,
+                        "y": 292,
+                        "size": 6
                     }
                 ]
             },
@@ -29,10 +29,10 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "EP",
-                        "x": 57,
-                        "y": 250,
-                        "size": 24
+                        "map": "MM",
+                        "x": 300,
+                        "y": 155,
+                        "size": 6
                     }
                 ]
             },
@@ -45,10 +45,10 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "EP",
-                        "x": 57,
-                        "y": 250,
-                        "size": 24
+                        "map": "MM",
+                        "x": 130,
+                        "y": 165,
+                        "size": 6
                     }
                 ]
             },
@@ -61,10 +61,10 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "EP",
-                        "x": 57,
-                        "y": 250,
-                        "size": 24
+                        "map": "MM",
+                        "x": 195,
+                        "y": 360,
+                        "size": 6
                     }
                 ]
             },
@@ -77,10 +77,61 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "EP",
-                        "x": 57,
-                        "y": 250,
-                        "size": 24
+                        "map": "MM",
+                        "x": 395,
+                        "y": 105,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Canon Chest",
+                "sections": [
+                    {
+                        "name": "Well - Left Chest"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM",
+                        "x": 370,
+                        "y": 170,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Big Chest",
+                "sections": [
+                    {
+                        "name": "Well - Left Chest"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM",
+                        "x": 450,
+                        "y": 155,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Boss",
+                "sections": [
+                    {
+                        "name": "Well - Left Chest"
+                    },
+                    {
+                        "name": "Well - Left Chest"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM",
+                        "x": 465,
+                        "y": 40,
+                        "size": 6
                     }
                 ]
             }

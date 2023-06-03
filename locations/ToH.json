@@ -1,6 +1,6 @@
 [
     {
-        "name": "Lightworld",
+        "name": "Tower of Hera",
         "chest_unopened_img": "/images/items/chest_unopened_img.png",
         "chest_opened_img": "/images/items/chest_opened_img.png",
         "children": [
@@ -13,10 +13,10 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "EP",
-                        "x": 57,
-                        "y": 250,
-                        "size": 24
+                        "map": "ToH",
+                        "x": 35,
+                        "y": 375,
+                        "size": 6
                     }
                 ]
             },
@@ -29,10 +29,10 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "EP",
-                        "x": 57,
-                        "y": 250,
-                        "size": 24
+                        "map": "ToH",
+                        "x": 95,
+                        "y": 380,
+                        "size": 6
                     }
                 ]
             },
@@ -45,10 +45,10 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "EP",
-                        "x": 57,
-                        "y": 250,
-                        "size": 24
+                        "map": "ToH",
+                        "x": 190,
+                        "y": 305,
+                        "size": 6
                     }
                 ]
             },
@@ -61,15 +61,15 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "EP",
-                        "x": 57,
-                        "y": 250,
-                        "size": 24
+                        "map": "ToH",
+                        "x": 190,
+                        "y": 210,
+                        "size": 6
                     }
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Big Chest",
                 "sections": [
                     {
                         "name": "Well - Left Chest"
@@ -77,10 +77,29 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "EP",
-                        "x": 57,
-                        "y": 250,
-                        "size": 24
+                        "map": "ToH",
+                        "x": 190,
+                        "y": 155,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Boss",
+                "sections": [
+                    {
+                        "name": "Well - Left Chest"
+                    },
+                    {
+                        "name": "dungeon reward"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "ToH",
+                        "x": 195,
+                        "y": 70,
+                        "size": 6
                     }
                 ]
             }

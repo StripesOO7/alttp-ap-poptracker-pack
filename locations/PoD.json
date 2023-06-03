@@ -1,6 +1,6 @@
 [
     {
-        "name": "Lightworld",
+        "name": "Palace of Darkness",
         "chest_unopened_img": "/images/items/chest_unopened_img.png",
         "chest_opened_img": "/images/items/chest_opened_img.png",
         "children": [
@@ -13,10 +13,10 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "EP",
-                        "x": 57,
-                        "y": 250,
-                        "size": 24
+                        "map": "PoD",
+                        "x": 115,
+                        "y": 300,
+                        "size": 6
                     }
                 ]
             },
@@ -29,10 +29,10 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "EP",
-                        "x": 57,
-                        "y": 250,
-                        "size": 24
+                        "map": "PoD",
+                        "x": 60,
+                        "y": 175,
+                        "size": 6
                     }
                 ]
             },
@@ -45,27 +45,10 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "EP",
-                        "x": 57,
-                        "y": 250,
-                        "size": 24
-                    }
-                ]
-            },
-
-            {
-                "name": "Canon Chest",
-                "sections": [
-                    {
-                        "name": "Well - Left Chest"
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "EP",
-                        "x": 57,
-                        "y": 250,
-                        "size": 24
+                        "map": "PoD",
+                        "x": 190,
+                        "y": 165,
+                        "size": 6
                     }
                 ]
             },
@@ -78,10 +61,10 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "EP",
-                        "x": 57,
-                        "y": 250,
-                        "size": 24
+                        "map": "PoD",
+                        "x": 460,
+                        "y": 148,
+                        "size": 6
                     }
                 ]
             },
@@ -94,15 +77,15 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "EP",
-                        "x": 57,
-                        "y": 250,
-                        "size": 24
+                        "map": "PoD",
+                        "x": 505,
+                        "y": 235,
+                        "size": 6
                     }
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Dark Maze",
                 "sections": [
                     {
                         "name": "Well - Left Chest"
@@ -110,15 +93,15 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "EP",
-                        "x": 57,
-                        "y": 250,
-                        "size": 24
+                        "map": "PoD",
+                        "x": 618,
+                        "y": 162,
+                        "size": 6
                     }
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Dark Maze",
                 "sections": [
                     {
                         "name": "Well - Left Chest"
@@ -126,10 +109,125 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "EP",
-                        "x": 57,
-                        "y": 250,
-                        "size": 24
+                        "map": "PoD",
+                        "x": 600,
+                        "y": 225,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Dark Maze",
+                "sections": [
+                    {
+                        "name": "Well - Left Chest"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "PoD",
+                        "x": 615,
+                        "y": 345,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Dark Maze",
+                "sections": [
+                    {
+                        "name": "Well - Left Chest"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "PoD",
+                        "x": 635,
+                        "y": 350,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Dark Maze",
+                "sections": [
+                    {
+                        "name": "Well - Left Chest"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "PoD",
+                        "x": 745,
+                        "y": 355,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Dark Maze",
+                "sections": [
+                    {
+                        "name": "Well - Left Chest"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "PoD",
+                        "x": 665,
+                        "y": 220,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Dark Maze",
+                "sections": [
+                    {
+                        "name": "Well - Left Chest"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "PoD",
+                        "x": 700,
+                        "y": 220,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Big Chest",
+                "sections": [
+                    {
+                        "name": "Well - Left Chest"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "PoD",
+                        "x": 540,
+                        "y": 190,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Boss",
+                "sections": [
+                    {
+                        "name": "Well - Left Chest"
+                    },
+                    {
+                        "name": "Dungeon Reward"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "PoD",
+                        "x": 680,
+                        "y": 100,
+                        "size": 6
                     }
                 ]
             }

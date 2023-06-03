@@ -1,6 +1,6 @@
 [
     {
-        "name": "Lightworld",
+        "name": "Swamp Palace",
         "chest_unopened_img": "/images/items/chest_unopened_img.png",
         "chest_opened_img": "/images/items/chest_opened_img.png",
         "children": [
@@ -13,10 +13,10 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "EP",
-                        "x": 57,
-                        "y": 250,
-                        "size": 24
+                        "map": "SP",
+                        "x": 622,
+                        "y": 350,
+                        "size": 6
                     }
                 ]
             },
@@ -29,10 +29,10 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "EP",
-                        "x": 57,
-                        "y": 250,
-                        "size": 24
+                        "map": "SP",
+                        "x": 465,
+                        "y": 360,
+                        "size": 6
                     }
                 ]
             },
@@ -45,10 +45,10 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "EP",
-                        "x": 57,
-                        "y": 250,
-                        "size": 24
+                        "map": "SP",
+                        "x": 175,
+                        "y": 360,
+                        "size": 6
                     }
                 ]
             },
@@ -61,10 +61,10 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "EP",
-                        "x": 57,
-                        "y": 250,
-                        "size": 24
+                        "map": "SP",
+                        "x": 47,
+                        "y": 360,
+                        "size": 6
                     }
                 ]
             },
@@ -77,10 +77,10 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "EP",
-                        "x": 57,
-                        "y": 250,
-                        "size": 24
+                        "map": "SP",
+                        "x": 287,
+                        "y": 475,
+                        "size": 6
                     }
                 ]
             },
@@ -93,10 +93,10 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "EP",
-                        "x": 57,
-                        "y": 250,
-                        "size": 24
+                        "map": "SP",
+                        "x": 475,
+                        "y": 285,
+                        "size": 6
                     }
                 ]
             },
@@ -109,10 +109,10 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "EP",
-                        "x": 57,
-                        "y": 250,
-                        "size": 24
+                        "map": "SP",
+                        "x": 485,
+                        "y": 285,
+                        "size": 6
                     }
                 ]
             },
@@ -125,15 +125,15 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "EP",
-                        "x": 57,
-                        "y": 250,
-                        "size": 24
+                        "map": "SP",
+                        "x": 460,
+                        "y": 160,
+                        "size": 6
                     }
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Big Chest",
                 "sections": [
                     {
                         "name": "Well - Left Chest"
@@ -141,10 +141,26 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "EP",
-                        "x": 57,
-                        "y": 250,
-                        "size": 24
+                        "map": "SP",
+                        "x": 320,
+                        "y": 380,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Boss",
+                "sections": [
+                    {
+                        "name": "Well - Left Chest"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "SP",
+                        "x": 550,
+                        "y": 35,
+                        "size": 6
                     }
                 ]
             }
