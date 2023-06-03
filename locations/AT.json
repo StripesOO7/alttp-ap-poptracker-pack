@@ -1,37 +1,38 @@
 [
     {
-        "name": "Lightworld",
+        "name": "AT",
         "chest_unopened_img": "/images/items/chest_unopened_img.png",
         "chest_opened_img": "/images/items/chest_opened_img.png",
         "children": [
             {
-                "name": "testLW",
+                "name": "1st Chest",
                 "sections": [
                     {
-                        "ref": "Hoenn/Granite Cave/1F - HM05 from Hiker"
+                        "name": "Well - Left Chest"
                     }
                 ],
                 "map_locations": [
                     {
-                        "map": "Lightworld",
+                        "map": "AT",
                         "x": 57,
-                        "y": 154,
+                        "y": 250,
                         "size": 24
                     }
                 ]
             },
             {
-                "name": "",
+                "name": "2nd Chest",
                 "sections": [
                     {
-                        "ref": "Hoenn/Granite Cave/1F - Item Before Ladder"
+                        "name": "Chest"
                     }
                 ],
                 "map_locations": [
                     {
-                        "map": "lightworld",
-                        "x": 280,
-                        "y": 129
+                        "map": "AT",
+                        "x": 57,
+                        "y": 150,
+                        "size": 24
                     }
                 ]
             }

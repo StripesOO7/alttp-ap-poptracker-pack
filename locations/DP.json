@@ -1,36 +1,112 @@
 [
     {
-        "name": "Lightworld",
+        "name": "Dessert Palace",
         "chest_unopened_img": "/images/items/chest_unopened_img.png",
         "chest_opened_img": "/images/items/chest_opened_img.png",
         "children": [
             {
-                "name": "",
+                "name": "Torch",
                 "sections": [
                     {
-                        "ref": "Hoenn/Granite Cave/1F - HM05 from Hiker"
+                        "name": "Well - Left Chest"
                     }
                 ],
                 "map_locations": [
                     {
-                        "map": "lightworld",
-                        "x": 575,
-                        "y": 154
+                        "map": "DP",
+                        "x": 57,
+                        "y": 250,
+                        "size": 24
                     }
                 ]
             },
             {
-                "name": "",
+                "name": "Big Chest",
                 "sections": [
                     {
-                        "ref": "Hoenn/Granite Cave/1F - Item Before Ladder"
+                        "name": "Well - Left Chest"
                     }
                 ],
                 "map_locations": [
                     {
-                        "map": "lightworld",
-                        "x": 280,
-                        "y": 129
+                        "map": "DP",
+                        "x": 57,
+                        "y": 250,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Eyegore Chest",
+                "sections": [
+                    {
+                        "name": "Well - Left Chest"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "DP",
+                        "x": 57,
+                        "y": 250,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Canon Chest",
+                "sections": [
+                    {
+                        "name": "Well - Left Chest"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "DP",
+                        "x": 57,
+                        "y": 250,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Pre Canon Cest",
+                "sections": [
+                    {
+                        "name": "Well - Left Chest"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "DP",
+                        "x": 57,
+                        "y": 250,
+                        "size": 24
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Dessert Palace Back",
+        "chest_unopened_img": "/images/items/chest_unopened_img.png",
+        "chest_opened_img": "/images/items/chest_opened_img.png",
+        "children": [
+            {
+                "name": "1st Chest",
+                "sections": [
+                    {
+                        "name": "Boss Item"
+                    },
+                    {
+                        "name": "Dungeon Reward"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "DP",
+                        "x": 57,
+                        "y": 150,
+                        "size": 24
                     }
                 ]
             }

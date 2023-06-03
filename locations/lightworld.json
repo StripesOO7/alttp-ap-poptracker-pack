@@ -1,39 +1,846 @@
 [
     {
-        "name": "Lightworld",
+        "name": "Darkworld",
         "chest_unopened_img": "/images/items/chest_unopened_img.png",
         "chest_opened_img": "/images/items/chest_opened_img.png",
         "children": [
             {
-                "name": "",
+                "name": "Kakariko Well",
                 "sections": [
                     {
-                        "ref": "Hoenn/Granite Cave/1F - HM05 from Hiker"
+                        "name": "Left Chest"
+                    },
+                    {
+                        "name": "Middle Chest"
+                    },
+                    {
+                        "name": "Right Chest"
+                    },
+                    {
+                        "name":"Back Chest"
                     }
                 ],
                 "map_locations": [
                     {
-                        "map": "lightworld",
-                        "x": 575,
-                        "y": 154
+                        "map": "Lightworld",
+                        "x": 57,
+                        "y": 150,
+                        "size": 24
                     }
                 ]
             },
             {
-                "name": "",
+                "name": "Blind's Hideout",
                 "sections": [
                     {
-                        "ref": "Hoenn/Granite Cave/1F - Item Before Ladder"
+                        "name": "Far left Chest"
+                    },
+                    {
+                        "name": "Middle left Chest"
+                    },
+                    {
+                        "name": "Middel right Chest"
+                    },
+                    {
+                        "name":"Far right Chest"
+                    },
+                    {
+                        "name":"Back Chest"
                     }
                 ],
                 "map_locations": [
                     {
-                        "map": "lightworld",
-                        "x": 280,
-                        "y": 129
+                        "map": "Lightworld",
+                        "x": 67,
+                        "y": 160,
+                        "size": 24
                     }
                 ]
-            }
+            },
+            {
+                "name": "Bottle Merchant",
+                "sections": [
+                    {
+                        "name": "Get Scammed (100 Rupees)"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 160,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Chicken Hut",
+                "sections": [
+                    {
+                        "name": "Chicken Hut"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 67,
+                        "y": 150,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Kakariko Light-Shop",
+                "sections": [
+                    {
+                        "name": "Left Item",
+                        "visibility_rules": ["op_npc_on"]
+                    },
+                    {
+                        "name": "Middle Item",
+                        "visibility_rules": ["op_npc_on"]
+                    },
+                    {
+                        "name": "Right Item",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 67,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Sick Kid",
+                "sections": [
+                    {
+                        "name": "Sick Kid",
+                        "access_rules": ["bottle"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 67,
+                        "y": 190,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Backside Pub",
+                "sections": [
+                    {
+                        "name": "Backside Pub"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 67,
+                        "y": 200,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Breadsmiths",
+                "sections": [
+                    {
+                        "name": "Rescue Dwarf",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Satan",
+                "sections": [
+                    {
+                        "name": "Visit Satan",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Lost Woods",
+                "sections": [
+                    {
+                        "name": "Mushroom"
+                    },
+                    {
+                        "name": "Hideout"
+                    },
+                    {
+                        "name": "Pedestal"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 77,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Lumberjacks",
+                "sections": [
+                    {
+                        "name": "Lumberjacks Tree",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Bonk Pile",
+                "sections": [
+                    {
+                        "name": "Bonk Pile Chest",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Library",
+                "sections": [
+                    {
+                        "name": "Library"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Race",
+                "sections": [
+                    {
+                        "name": "Race",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Cave 45",
+                "sections": [
+                    {
+                        "name": "Cave 45",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Flute Spot",
+                "sections": [
+                    {
+                        "name": "Flute Spot",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Purple Chest Return",
+                "sections": [
+                    {
+                        "name": "Purple Chest Return",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Desert Ledge",
+                "sections": [
+                    {
+                        "name": "Ledge Item",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Agihna's Cave",
+                "sections": [
+                    {
+                        "name": "Aghina's Cave",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Checkerboard Cave",
+                "sections": [
+                    {
+                        "name": "Checkerboard Cave Item",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Damm",
+                "sections": [
+                    {
+                        "name": "Flooded Item",
+                        "visibility_rules": ["op_npc_on"]
+                    },
+                    {
+                        "name": "Damm Chest",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Mini-Moldorm Cave",
+                "sections": [
+                    {
+                        "name": "Far Left Chest",
+                        "visibility_rules": ["op_npc_on"]
+                    },
+                    {
+                        "name": "Left Chest",
+                        "visibility_rules": ["op_npc_on"]
+                    },
+                    {
+                        "name": "Middle Dude",
+                        "visibility_rules": ["op_npc_on"]
+                    },
+                    {
+                        "name": "Far Right Chest",
+                        "visibility_rules": ["op_npc_on"]
+                    },
+                    {
+                        "name": "Rigt Chest",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Ice Rod Cave",
+                "sections": [
+                    {
+                        "name": "Ice Rod Chest",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Hobo",
+                "sections": [
+                    {
+                        "name": "Hobo",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Lake Hylia",
+                "sections": [
+                    {
+                        "name": "Light-Shop Right Item",
+                        "visibility_rules": ["op_npc_on"]
+                    },
+                    {
+                        "name": "Light-Shop Left Item",
+                        "visibility_rules": ["op_npc_on"]
+                    },
+                    {
+                        "name": "Light-Shop Middle Item"
+                    },
+                    {
+                        "name": "Lake Island"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Link's House",
+                "sections": [
+                    {
+                        "name": "Chest",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Sahasrala's Hut",
+                "sections": [
+                    {
+                        "name": "Sahasralah's Item",
+                        "visibility_rules": ["op_npc_on"]
+                    },
+                    {
+                        "name": "Left Chest",
+                        "visibility_rules": ["op_npc_on"]
+                    },
+                    {
+                        "name": "Middle Chest",
+                        "visibility_rules": ["op_npc_on"]
+                    },
+                    {
+                        "name": "Right Chest",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Potion Shop/Witch Hut",
+                "sections": [
+                    {
+                        "name": "Deliver Mushroom/Brew Drugs",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Waterfall Fairy Grotto",
+                "sections": [
+                    {
+                        "name": "Right Chest",
+                        "visibility_rules": ["op_npc_on"]
+                    },
+                    {
+                        "name": "Left Chest",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Zora's Damoain",
+                "sections": [
+                    {
+                        "name": "King Zora Scam",
+                        "visibility_rules": ["op_npc_on"]
+                    },
+                    {
+                        "name": "Zora Ledge",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Secret Passage ",
+                "sections": [
+                    {
+                        "name": "Link's Uncle",
+                        "visibility_rules": ["op_npc_on"]
+                    },
+                    {
+                        "name": "Secret Passage Chest",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Graveyard",
+                "sections": [
+                    {
+                        "name": "Graveyard Ledge",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "King's Tomb",
+                "sections": [
+                    {
+                        "name": "King's Tomb",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Rescue Old Man",
+                "sections": [
+                    {
+                        "name": "Rescue Old Man",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Spectacle Rock",
+                "sections": [
+                    {
+                        "name": "Top Item",
+                        "visibility_rules": ["op_npc_on"]
+                    },
+                    {
+                        "name": "Item inside",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Ether Tablet",
+                "sections": [
+                    {
+                        "name": "Ether Tablet",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Bombos Tablet",
+                "sections": [
+                    {
+                        "name": "Bombos Tablet",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Floating Island",
+                "sections": [
+                    {
+                        "name": "Item on Floating Island",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Light Death Mountain Shop",
+                "sections": [
+                    {
+                        "name": "Right Item",
+                        "visibility_rules": ["op_npc_on"]
+                    },
+                    {
+                        "name": "Middle Item"
+                    },
+                    {
+                        "name": "Left Item",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Paradox Cave",
+                "sections": [
+                    {
+                        "name": "Bombable Wall Chest",
+                        "visibility_rules": ["op_npc_on"]
+                    },
+                    {
+                        "name": "Far Left Chest",
+                        "visibility_rules": ["op_npc_on"]
+                    },
+                    {
+                        "name": "Left Chest",
+                        "visibility_rules": ["op_npc_on"]
+                    },
+                    {
+                        "name": "Middle Chest",
+                        "visibility_rules": ["op_npc_on"]
+                    },
+                    {
+                        "name": "Right Chest",
+                        "visibility_rules": ["op_npc_on"]
+                    },
+                    
+                    {
+                        "name": "Far Right Chest",
+                        "visibility_rules": ["op_npc_on"]
+                    },
+                    {
+                        "name": "Top Chest",
+                        "visibility_rules": ["op_npc_on"]
+                    },
+                    {
+                        "name": "Bottom Chest",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Mimic Cave",
+                "sections": [
+                    {
+                        "name": "Mimic Cave Chest",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Spiral Cave",
+                "sections": [
+                    {
+                        "name": "Spiral Cave Item ",
+                        "visibility_rules": ["op_npc_on"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 87,
+                        "y": 180,
+                        "size": 24
+                    }
+                ]
+            },
+            {}
         ]
     }
 ]
