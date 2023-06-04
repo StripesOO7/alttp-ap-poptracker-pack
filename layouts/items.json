@@ -15,56 +15,109 @@
                         "h_alignment": "left",
                         "rows": [
                             [
-                                "hm01",
-                                "hm02",
-                                "hm03",
-                                "hm04",
-                                "hm05",
-                                "hm06",
-                                "hm07",
-                                "hm08"
+                                "bow",
+                                "boomerangs",
+                                "hookshot",
+                                "bombs",
+                                "powder",
+                                "mushroom",
+                                "gt_access"
                             ],
                             [
-                                "stonebadge",
-                                "knucklebadge",
-                                "dynamobadge",
-                                "heatbadge",
-                                "balancebadge",
-                                "featherbadge",
-                                "mindbadge",
-                                "rainbadge"
+                                "firerod",
+                                "icerod",
+                                "bombos",
+                                "ether",
+                                "quake",
+                                "shovel",
+                                "ganon_access"
                             ],
                             [
-                                "letter",
-                                "devongoods",
-                                "oldrod",
-                                "goodrod",
-                                "superrod",
-                                "acrobike",
-                                "machbike",
-                                "pokeblock"
+                                "lamp",
+                                "hammer",
+                                "flute",
+                                "bug_net",
+                                "book",
+                                "pearl",
+                                ""
                             ],
                             [
-                                "itemfinder",
-                                "gogoggles",
-                                "meteorite",
-                                "magmaemblem",
-                                "scanner",
-                                "wailmerpail",
-                                "devonscope",
-                                "harbormail"
+                                "bottle",
+                                "somaria",
+                                "byrna",
+                                "cape",
+                                "mirror",
+                                "go_mode",
+                                "aga"
                             ],
                             [
-                                "roomkey1",
-                                "roomkey2",
-                                "roomkey4",
-                                "roomkey6",
-                                "basementkey",
-                                "storagekey",
-                                "ssticket"
+                                "glove",
+                                "boots",
+                                "flippers",
+                                "half_magic",
+                                "sword",
+                                "shield",
+                                "armor"
                             ]
                         ]
-                    }
+                    },
+                    {
+                        "type": "array",
+                        "orientation": "vertical",
+                        "content": [
+                          {
+                            "type": "array",
+                            "orientation": "horizontal",
+                            "content": [
+                              {
+                                "type": "itemgrid",
+                                "margin": "0,2",
+                                "h_alignment":  "center",
+                                "item_margin": "1,0",
+                                "item_height": 16,
+                                "item_width": 20,
+                                "rows": [
+                                  [ "hc_label" ],
+                                  [ "at_label" ],
+                                  [ "ep_label" ],
+                                  [ "dp_label" ],
+                                  [ "toh_label" ],
+                                  [ "pod_label" ],
+                                  [ "sp_label" ],
+                                  [ "sw_label" ],
+                                  [ "tt_label" ],
+                                  [ "ip_label" ],
+                                  [ "mm_label" ],
+                                  [ "tr_label" ],
+                                  [ "gt_label" ]
+                                ]
+                              },
+                              {
+                                "type": "itemgrid",
+                                "h_alignment": "center",
+                                "item_margin": "1,0",
+                                "item_size": 16,
+                                "badge_font_size": 10,
+                                "rows": [
+                                  [ "" , "" , "", "hc_smallkey" , "" ],
+                                  [ "" , "" , "", "at_smallkey", "" ],
+                                  [ "easternpalace", "ep_boss" , "" ,"ep_smallkey", "ep_bigkey" ],
+                                  [ "desertpalace", "dp_boss" , "", "dp_smallkey", "dp_bigkey" ],
+                                  [ "towerofhera", "toh_boss" , "", "toh_smallkey", "toh_bigkey" ],
+                                  [ "palaceofdarkness", "pod_boss" , "", "pod_smallkey", "pod_bigkey" ],
+                                  [ "swamppalace", "sp_boss" , "" , "sp_smallkey", "sp_bigkey" ],
+                                  [ "skullwoods", "sw_boss" , "" , "sw_smallkey", "sw_bigkey" ],
+                                  [ "thievestown", "tt_boss" , "" , "tt_smallkey", "tt_bigkey" ],
+                                  [ "icepalace", "ip_boss" , "" , "ip_smallkey", "ip_bigkey" ],
+                                  [ "miserymire", "mm_boss" , "" , "mm_smallkey", "mm_bigkey" ],
+                                  [ "turtlerock", "tr_boss" , "" , "tr_smallkey", "tr_bigkey" ],
+                                  [ "gt_ice", "gt_lanmo" , "gt_boss" , "gt_smallkey", "gt_bigkey" ]
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
                 ]
             }
         ]
