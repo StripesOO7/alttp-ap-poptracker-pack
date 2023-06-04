@@ -2,630 +2,437 @@
     {
         "name": "Bow",
         "type": "progressive_toggle",
+        "initial_quantity": 30,
+        "max_quantity": 70,
+        "increment": 5,
         "stages": [
             {
-                "img": "/images/items/Bow.png",
-                "codes": "bow"
+                "img": "/images/items/Bow+Arrows.png",
+                "codes": "bow, bow+arrow"
             },
             {
-                "img": "/images/items/Icerod.png",
-                "codes": "bow, bow2"
-            },
-            {
-                "img": "/images/items/Lamp.png",
-                "codes": "bow, bow3"
+                "img": "/images/items/bowandsilverarrow.png",
+                "codes": "bow+silvers",
+                "disabled_img": "/images/items/bowandsilverarrowdisabled.png",
+                "disabled_img_mods": "none"
             }
         ]
     },
     {
-        "name": "Bow",
-        "type": "progressive_toggle",
-        "stages": [
-            {
-                "img": "/images/items/Bow.png",
-                "codes": "boomerangs"
-            },
-            {
-                "img": "/images/items/Icerod.png",
-                "codes": "boomerangs, bow2"
-            },
-            {
-                "img": "/images/items/Lamp.png",
-                "codes": "boomerangs, bow3"
-            }
-        ]
+        "name": "Blue Boomerang",
+        "type": "toggle",
+        "img": "/images/items/boomerang_blue.png",
+        "codes": "blueboomerang"
     },
     {
-        "name": "Bow",
-        "type": "progressive_toggle",
-        "stages": [
-            {
-                "img": "/images/items/Bow.png",
-                "codes": "hookshot"
-            },
-            {
-                "img": "/images/items/Icerod.png",
-                "codes": "hookshot, bow2"
-            },
-            {
-                "img": "/images/items/Lamp.png",
-                "codes": "hookshot, bow3"
-            }
-        ]
+        "name": "Red Boomerang",
+        "type": "toggle",
+        "img": "/images/items/boomerang_red.png",
+        "codes": "redboomerang"
     },
     {
-        "name": "Bow",
-        "type": "progressive_toggle",
-        "stages": [
-            {
-                "img": "/images/items/Bow.png",
-                "codes": "bombs"
-            },
-            {
-                "img": "/images/items/Icerod.png",
-                "codes": "bombs, bow2"
-            },
-            {
-                "img": "/images/items/Lamp.png",
-                "codes": "bombs, bow3"
-            }
-        ]
+        "name": "Hookshot",
+        "type": "toggle",
+        "img": "/images/items/Hookshot.png",
+        "codes": "hookshot"
     },
     {
-        "name": "Bow",
-        "type": "progressive_toggle",
+        "name": "Bombs",
+        "type": "consumable",
+        "min_quantity": 10,
+        "max_quantity": 50,
+        "increment": 5,
+        "img": "/images/items/Bomb.png",
+        "codes": "bombs"
+    },
+    {
+        "name": "Bombs and Big Bomb used",
+        "type": "toggle_badged",
+        "base_item": "bombs",
+        "img": "/images/events/Big_Bomb_used.png",
+        "codes": "big_bomb"
+    },
+    {
+        "name": "Magic Powder",
+        "type": "progressive",
         "stages": [
             {
-                "img": "/images/items/Bow.png",
+                "img": "/images/items/Magic_Powder.png",
                 "codes": "powder"
             },
             {
-                "img": "/images/items/Icerod.png",
-                "codes": "powder, bow2"
-            },
-            {
-                "img": "/images/items/Lamp.png",
-                "codes": "powder, bow3"
+                "img": "/images/events/Satan_visited.png",
+                "codes": "satan_visited"
             }
         ]
     },
     {
-        "name": "Bow",
-        "type": "progressive_toggle",
+        "name": "Mushroom",
+        "type": "progressive",
         "stages": [
             {
-                "img": "/images/items/Bow.png",
+                "img": "/images/items/Mushroom.png",
                 "codes": "mushroom"
             },
             {
-                "img": "/images/items/Icerod.png",
-                "codes": "mushroom, bow2"
-            },
-            {
-                "img": "/images/items/Lamp.png",
-                "codes": "mushroom, bow3"
-            }
+                "img": "/images/items/Mushroom.png",
+                "codes": "mushroom_delivered",
+                "img_mods": "overlay|/images/overlay_witch.png"
+            } 
         ]
     },
     {
-        "name": "Bow",
-        "type": "progressive_toggle",
-        "stages": [
-            {
-                "img": "/images/items/Bow.png",
-                "codes": "gt_access"
-            },
-            {
-                "img": "/images/items/Icerod.png",
-                "codes": "gt_access, bow2"
-            },
-            {
-                "img": "/images/items/Lamp.png",
-                "codes": "gt_access, bow3"
-            }
-        ]
+        "name": "Firerod",
+        "type": "toggle",
+        "img": "/images/items/Firerod.png",
+        "codes": "firerod"
     },
     {
-        "name": "Bow",
-        "type": "progressive_toggle",
-        "stages": [
-            {
-                "img": "/images/items/Bow.png",
-                "codes": "firerod"
-            },
-            {
-                "img": "/images/items/Icerod.png",
-                "codes": "firerod, bow2"
-            },
-            {
-                "img": "/images/items/Lamp.png",
-                "codes": "firerod, bow3"
-            }
-        ]
+        "name": "Icerod",
+        "type": "toggle",
+        "img": "/images/items/Icerod.png",
+        "codes": "icerod"
     },
     {
-        "name": "Bow",
+        "name": "Bombos",
         "type": "progressive_toggle",
         "stages": [
             {
-                "img": "/images/items/Bow.png",
-                "codes": "icerod"
-            },
-            {
-                "img": "/images/items/Icerod.png",
-                "codes": "icerod, bow2"
-            },
-            {
-                "img": "/images/items/Lamp.png",
-                "codes": "icerod, bow3"
-            }
-        ]
-    },
-    {
-        "name": "Bow",
-        "type": "progressive_toggle",
-        "stages": [
-            {
-                "img": "/images/items/Bow.png",
+                "img": "/images/items/Bombos.png",
                 "codes": "bombos"
             },
             {
-                "img": "/images/items/Icerod.png",
-                "codes": "bombos, bow2"
+                "img": "/images/items/Bombos_for_TR.png",
+                "codes": "bombos_tr"
             },
             {
-                "img": "/images/items/Lamp.png",
-                "codes": "bombos, bow3"
+                "img": "/images/items/Bombos_for_MM.png",
+                "codes": "bombos_mm"
+            },
+            {
+                "img": "/images/items/Bombos_for_both.png",
+                "codes": "bombos_both"
             }
         ]
     },
     {
-        "name": "Bow",
+        "name": "Ether",
         "type": "progressive_toggle",
         "stages": [
             {
-                "img": "/images/items/Bow.png",
+                "img": "/images/items/Ether.png",
                 "codes": "ether"
             },
             {
-                "img": "/images/items/Icerod.png",
-                "codes": "ether, bow2"
+                "img": "/images/items/Ether_for_TR.png",
+                "codes": "ether_tr"
             },
             {
-                "img": "/images/items/Lamp.png",
-                "codes": "ether, bow3"
+                "img": "/images/items/Ether_for_MM.png",
+                "codes": "ether_mm"
+            },
+            {
+                "img": "/images/items/Ether_for_both.png",
+                "codes": "ether_both"
             }
         ]
     },
     {
-        "name": "Bow",
+        "name": "Quake",
         "type": "progressive_toggle",
         "stages": [
             {
-                "img": "/images/items/Bow.png",
+                "img": "/images/items/Quake.png",
                 "codes": "quake"
             },
             {
-                "img": "/images/items/Icerod.png",
-                "codes": "quake, bow2"
+                "img": "/images/items/Quake_for_TR.png",
+                "codes": "quake_tr"
             },
             {
-                "img": "/images/items/Lamp.png",
-                "codes": "quake, bow3"
+                "img": "/images/items/Quake_for_MM.png",
+                "codes": "quake_mm"
+            },
+            {
+                "img": "/images/items/Quake_for_both.png",
+                "codes": "quake_both"
             }
         ]
     },
     {
-        "name": "Bow",
-        "type": "progressive_toggle",
+        "name": "Shovel",
+        "type": "progressive",
         "stages": [
             {
-                "img": "/images/items/Bow.png",
+                "img": "/images/items/Shovel.png",
                 "codes": "shovel"
             },
             {
-                "img": "/images/items/Icerod.png",
-                "codes": "shovel, bow2"
-            },
-            {
-                "img": "/images/items/Lamp.png",
-                "codes": "shovel, bow3"
+                "img": "/images/events/Shovel_used.png",
+                "codes": "shovel_used"
             }
         ]
     },
     {
-        "name": "Bow",
-        "type": "progressive_toggle",
-        "stages": [
-            {
-                "img": "/images/items/Bow.png",
-                "codes": "ganon_access"
-            },
-            {
-                "img": "/images/items/Icerod.png",
-                "codes": "ganon_access, bow2"
-            },
-            {
-                "img": "/images/items/Lamp.png",
-                "codes": "ganon_access, bow3"
-            }
-        ]
+        "name": "Lamp",
+        "type": "toggle",
+        "img": "/images/items/Lamp.png",
+        "codes": "lamp"
     },
     {
-        "name": "Bow",
-        "type": "progressive_toggle",
-        "stages": [
-            {
-                "img": "/images/items/Bow.png",
-                "codes": "lamp"
-            },
-            {
-                "img": "/images/items/Icerod.png",
-                "codes": "lamp, bow2"
-            },
-            {
-                "img": "/images/items/Lamp.png",
-                "codes": "lamp, bow3"
-            }
-        ]
+        "name": "Hammer",
+        "type": "toggle",
+        "img": "/images/items/Hammer.png",
+        "codes": "hammer"
     },
     {
-        "name": "Bow",
-        "type": "progressive_toggle",
+        "name": "Flute",
+        "type": "progressive",
         "stages": [
             {
-                "img": "/images/items/Bow.png",
-                "codes": "bohammerw"
-            },
-            {
-                "img": "/images/items/Icerod.png",
-                "codes": "hammer, bow2"
-            },
-            {
-                "img": "/images/items/Lamp.png",
-                "codes": "hammer, bow3"
-            }
-        ]
-    },
-    {
-        "name": "Bow",
-        "type": "progressive_toggle",
-        "stages": [
-            {
-                "img": "/images/items/Bow.png",
-                "codes": "hammer"
-            },
-            {
-                "img": "/images/items/Icerod.png",
-                "codes": "hammer, bow2"
-            },
-            {
-                "img": "/images/items/Lamp.png",
-                "codes": "hammer, bow3"
-            }
-        ]
-    },
-    {
-        "name": "Bow",
-        "type": "progressive_toggle",
-        "stages": [
-            {
-                "img": "/images/items/Bow.png",
-                "codes": "bug_net"
-            },
-            {
-                "img": "/images/items/Icerod.png",
-                "codes": "bug_net, bow2"
-            },
-            {
-                "img": "/images/items/Lamp.png",
-                "codes": "bug_net, bow3"
-            }
-        ]
-    },
-    {
-        "name": "Bow",
-        "type": "progressive_toggle",
-        "stages": [
-            {
-                "img": "/images/items/Bow.png",
-                "codes": "book"
-            },
-            {
-                "img": "/images/items/Icerod.png",
-                "codes": "book, bow2"
-            },
-            {
-                "img": "/images/items/Lamp.png",
-                "codes": "book, bow3"
-            }
-        ]
-    },
-    {
-        "name": "Bow",
-        "type": "progressive_toggle",
-        "stages": [
-            {
-                "img": "/images/items/Bow.png",
-                "codes": "pearl"
-            },
-            {
-                "img": "/images/items/Icerod.png",
-                "codes": "pearl, bow2"
-            },
-            {
-                "img": "/images/items/Lamp.png",
-                "codes": "pearl, bow3"
-            }
-        ]
-    },
-    {
-        "name": "Bow",
-        "type": "progressive_toggle",
-        "stages": [
-            {
-                "img": "/images/items/Bow.png",
-                "codes": "bottle"
-            },
-            {
-                "img": "/images/items/Icerod.png",
-                "codes": "bottle, bow2"
-            },
-            {
-                "img": "/images/items/Lamp.png",
-                "codes": "bottle, bow3"
-            }
-        ]
-    },
-    {
-        "name": "Bow",
-        "type": "progressive_toggle",
-        "stages": [
-            {
-                "img": "/images/items/Bow.png",
-                "codes": "somaria"
-            },
-            {
-                "img": "/images/items/Icerod.png",
-                "codes": "somaria, bow2"
-            },
-            {
-                "img": "/images/items/Lamp.png",
-                "codes": "somaria, bow3"
-            }
-        ]
-    },
-    {
-        "name": "Bow",
-        "type": "progressive_toggle",
-        "stages": [
-            {
-                "img": "/images/items/Bow.png",
-                "codes": "byrna"
-            },
-            {
-                "img": "/images/items/Icerod.png",
-                "codes": "byrna, bow2"
-            },
-            {
-                "img": "/images/items/Lamp.png",
-                "codes": "byrna, bow3"
-            }
-        ]
-    },
-    {
-        "name": "Bow",
-        "type": "progressive_toggle",
-        "stages": [
-            {
-                "img": "/images/items/Bow.png",
-                "codes": "cape"
-            },
-            {
-                "img": "/images/items/Icerod.png",
-                "codes": "cape, bow2"
-            },
-            {
-                "img": "/images/items/Lamp.png",
-                "codes": "cape, bow3"
-            }
-        ]
-    },
-    {
-        "name": "Bow",
-        "type": "progressive_toggle",
-        "stages": [
-            {
-                "img": "/images/items/Bow.png",
-                "codes": "mirror"
-            },
-            {
-                "img": "/images/items/Icerod.png",
-                "codes": "mirror, bow2"
-            },
-            {
-                "img": "/images/items/Lamp.png",
-                "codes": "mirror, bow3"
-            }
-        ]
-    },
-    {
-        "name": "Bow",
-        "type": "progressive_toggle",
-        "stages": [
-            {
-                "img": "/images/items/Bow.png",
+                "img": "/images/items/Flute.png",
                 "codes": "flute"
             },
             {
-                "img": "/images/items/Icerod.png",
-                "codes": "flute, bow2"
+                "img": "/images/events/Flute_active.png",
+                "codes": "flute_active"
+            }
+            
+        ]
+        
+    },
+    {
+        "name": "Bugcatchingnet",
+        "type": "toggle",
+        "img": "/images/items/Bugcatchingnet.png",
+        "codes": "bug_net"
+    },
+    {
+        "name": "Book of Mudora",
+        "type": "toggle",
+        "img": "/images/items/Book_of_Mudora.png",
+        "codes": "book"
+    },
+    {
+        "name": "Moon Pearl",
+        "type": "toggle",
+        "img": "/images/items/Moon_Pearl.png",
+        "codes": "pearl"
+    },
+    {
+        "name": "Bottles",
+        "type": "progressive",
+        "stages": [
+            {
+                "img": "/images/items/1_Bottle.png",
+                "codes": "bottle, bottle1",
+                "disabled_img": "/images/items/Bottle.png"
             },
             {
-                "img": "/images/items/Lamp.png",
-                "codes": "flute, bow3"
+                "img": "/images/items/2_Bottles.png",
+                "codes": "bottle2"
+            },
+            {
+                "img": "/images/items/3_Bottles.png",
+                "codes": "bottle3"
+            },
+            {
+                "img": "/images/items/4_Bottles.png",
+                "codes": "bottle4"
             }
         ]
     },
     {
-        "name": "Bow",
-        "type": "progressive_toggle",
+        "name": "Cane of Somaria",
+        "type": "toggle",
+        "img": "/images/items/Cane_of_Somaria.png",
+        "codes": "somaria"
+    },
+    {
+        "name": "Cane of Byrna",
+        "type": "toggle",
+        "img": "/images/items/Cane_of_Byrna.png",
+        "codes": "byrna"
+    },
+    {
+        "name": "Magic Cape",
+        "type": "toggle",
+        "img": "/images/items/Cape.png",
+        "codes": "cape"
+    },
+    {
+        "name": "Magic Mirror",
+        "type": "toggle",
+        "img": "/images/items/Magic_Mirror.png",
+        "codes": "mirror"
+    },
+    {
+        "name": "GO! Mode",
+        "type": "toggle",
+        "img": "/images/items/GO-mode.png",
+        "codes": "go_mode"
+    },
+    {
+        "name": "Glove",
+        "type": "progressive",
         "stages": [
             {
-                "img": "/images/items/Bow.png",
-                "codes": "go_mode"
+                "img": "/images/items/Power_Glove.png",
+                "codes": "glove, powergloves"
             },
             {
-                "img": "/images/items/Icerod.png",
-                "codes": "go_mode, bow2"
-            },
-            {
-                "img": "/images/items/Lamp.png",
-                "codes": "go_mode, bow3"
+                "img": "/images/items/Titan_Mits.png",
+                "codes": "titans"
             }
         ]
     },
     {
-        "name": "Bow",
-        "type": "progressive_toggle",
+        "name": "Pegasus Boots",
+        "type": "toggle",
+        "img": "/images/items/Pegasus_Boots.png",
+        "codes": "boots"
+    },
+    {
+        "name": "Flippers",
+        "type": "toggle",
+        "img": "/images/items/Flippers.png",
+        "codes": "flippers"
+    },
+    {
+        "name": "Half Magic",
+        "type": "toggle",
+        "img": "/images/items/Half_Magic.png",
+        "codes": "half_magic"
+    },
+    {
+        "name": "Sword",
+        "type": "progressive",
         "stages": [
             {
-                "img": "/images/items/Bow.png",
-                "codes": "aga"
+                "img": "/images/items/Fighter_Sword.png",
+                "codes": "sword, fightersword"
             },
             {
-                "img": "/images/items/Icerod.png",
-                "codes": "aga, bow2"
+                "img": "/images/items/Master_Sword.png",
+                "codes": "mastersword"
             },
             {
-                "img": "/images/items/Lamp.png",
-                "codes": "aga, bow3"
+                "img": "/images/items/Tempered_Sword.png",
+                "codes": "temperedsword"
+            },
+            {
+                "img": "/images/items/Golden_Sword.png",
+                "codes": "goldensword"
             }
         ]
     },
     {
-        "name": "Bow",
-        "type": "progressive_toggle",
+        "name": "Shield",
+        "type": "progressive",
         "stages": [
             {
-                "img": "/images/items/Bow.png",
-                "codes": "glove"
-            },
-            {
-                "img": "/images/items/Icerod.png",
-                "codes": "glove, bow2"
-            },
-            {
-                "img": "/images/items/Lamp.png",
-                "codes": "glove, bow3"
-            }
-        ]
-    },
-    {
-        "name": "Bow",
-        "type": "progressive_toggle",
-        "stages": [
-            {
-                "img": "/images/items/Bow.png",
-                "codes": "boots"
-            },
-            {
-                "img": "/images/items/Icerod.png",
-                "codes": "boots, bow2"
-            },
-            {
-                "img": "/images/items/Lamp.png",
-                "codes": "boots, bow3"
-            }
-        ]
-    },
-    {
-        "name": "Bow",
-        "type": "progressive_toggle",
-        "stages": [
-            {
-                "img": "/images/items/Bow.png",
-                "codes": "flippers"
-            },
-            {
-                "img": "/images/items/Icerod.png",
-                "codes": "flippers, bow2"
-            },
-            {
-                "img": "/images/items/Lamp.png",
-                "codes": "flippers, bow3"
-            }
-        ]
-    },
-    {
-        "name": "Bow",
-        "type": "progressive_toggle",
-        "stages": [
-            {
-                "img": "/images/items/Bow.png",
-                "codes": "half_magic"
-            },
-            {
-                "img": "/images/items/Icerod.png",
-                "codes": "half_magic, bow2"
-            },
-            {
-                "img": "/images/items/Lamp.png",
-                "codes": "half_magic, bow3"
-            }
-        ]
-    },
-    {
-        "name": "Bow",
-        "type": "progressive_toggle",
-        "stages": [
-            {
-                "img": "/images/items/Bow.png",
-                "codes": "sword"
-            },
-            {
-                "img": "/images/items/Icerod.png",
-                "codes": "sword, bow2"
-            },
-            {
-                "img": "/images/items/Lamp.png",
-                "codes": "sword, bow3"
-            }
-        ]
-    },
-    {
-        "name": "Bow",
-        "type": "progressive_toggle",
-        "stages": [
-            {
-                "img": "/images/items/Bow.png",
+                "img": "/images/items/Shield_lvl1.png",
                 "codes": "shield"
             },
             {
-                "img": "/images/items/Icerod.png",
-                "codes": "shield, bow2"
+                "img": "/images/items/Shield_lvl2.png",
+                "codes": "redshield"
             },
             {
-                "img": "/images/items/Lamp.png",
-                "codes": "shield, bow3"
+                "img": "/images/items/Mirror_Shield.png",
+                "codes": "mirrorshield"
             }
         ]
     },
     {
-        "name": "Bow",
-        "type": "progressive_toggle",
+        "name": "Armor",
+        "type": "progressive",
+        "initial_stage_idx": 0,
+        "allow_disabled": false,
         "stages": [
             {
-                "img": "/images/items/Bow.png",
-                "codes": "armor"
+                "img": "/images/items/Green_Mail.png",
+                "codes": "armor, green_mail"
             },
             {
-                "img": "/images/items/Icerod.png",
-                "codes": "armor, bow2"
+                "img": "/images/items/Blue_Mail.png",
+                "codes": "blue_mail"
             },
             {
-                "img": "/images/items/Lamp.png",
-                "codes": "armor, bow3"
+                "img": "/images/items/Red_Mail.png",
+                "codes": "red_mail"
+            }
+        ]
+    },
+    {
+        "name": "Aga1",
+        "type": "toggle",
+        "img": "/images/events/Aganim.png",
+        "codes": "aga1"
+    },
+    {
+        "name": "Aga2",
+        "type": "toggle",
+        "img": "/images/events/Aganim.png",
+        "codes": "aga2"
+    },
+    {
+        "name": "Aganim",
+        "type": "composite_toggle",
+        "item_left": "aga1",
+        "item_right": "aga2",
+        "images": [
+            {
+                "left": false, "right": false,
+                "img": "/images/events/Aganim.png",
+                "img_mods": "@disabled"
+                // img, mods like stage
+            },
+            {
+                "left": true, "right": false,
+                "img": "/images/events/Aganim.png"
+            },
+            {
+                "left": false, "right": true,
+                "img": "/images/events/Aganim.png"
+            },
+            {
+                "left": true, "right": true,
+                "img": "/images/events/Aganim.png"
+            }
+        ],
+        "codes": "aganim"
+    },
+    {
+        "name": "Boss Heartcontainer",
+        "type": "consumable",
+        "allow_disabled": false,
+        "min_quantity": 0,
+        "max_quantity": 10,
+        "img": "/images/items/Heartcontainer.png",
+        "codes": "heartcontainer"
+    },
+    {
+        "name": "Heartpieces",
+        "type": "progressive",
+        "loop": true,
+        "allow_disabled": false,
+        "stages": [
+            {
+                "img": "/images/events/0-4_Heartpieces.png",
+                "codes": "heartpieces, 0_heartpieces"
+            },
+            {
+                "img": "/images/events/1-4_Heartpieces.png",
+                "codes": "1_heartpieces"
+            },
+            {
+                "img": "/images/events/2-4_Heartpieces.png",
+                "codes": "2_heartpieces"
+            },
+            {
+                "img": "/images/events/3-4_Heartpieces.png",
+                "codes": "3_heartpieces"
             }
         ]
     },
