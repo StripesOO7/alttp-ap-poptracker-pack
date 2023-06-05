@@ -1,4 +1,4 @@
-# Emerald AP Tracker
+# A Link to the Past AP Tracker
 
 Archipelago A Link to the Past tracker pack for [PopTracker](https://github.com/black-sliver/PopTracker/) with Autotracking.
 

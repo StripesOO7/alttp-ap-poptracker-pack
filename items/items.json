@@ -300,9 +300,17 @@
     },
     {
         "name": "Half Magic",
-        "type": "toggle",
-        "img": "/images/items/Half_Magic.png",
-        "codes": "half_magic"
+        "type": "progressive","stages": [
+            {
+                "img": "/images/items/Half_Magic.png",
+                "codes": "half_magic"
+            },
+            {
+                "img": "/images/items/Quarter_Magic.png",
+                "codes": "quarter_magic"
+            }
+        ]
+        
     },
     {
         "name": "Sword",
@@ -435,6 +443,115 @@
                 "codes": "3_heartpieces"
             }
         ]
+    },
+// settings part
+    {
+        "name": "GT access",
+        "type": "consumable",
+        "allow_disabled": false,
+        "min_quantity": 0,
+        "max_quantity": 10,
+        "img": "/images/gt_crystals.png",
+        "codes": "gt_access"
+    },
+    {
+        "name": "Ganon vulnerable",
+        "type": "consumable",
+        "allow_disabled": false,
+        "min_quantity": 0,
+        "max_quantity": 10,
+        "img": "/images/bosses/ganon_crystals.png",
+        "codes": "ganon_killable"
+    },
+    {
+        "name": "Goal",
+        "type": "progressive_toggle",
+        "allow_disabled": false,
+        "min_quantity": 0,
+        "max_quantity": 10,
+        "img": "/images/items/Heartcontainer.png",
+        "codes": "goal"
+    },
+    {
+        "name": "Start Option",
+        "type": "progressive_toggle",
+        "allow_disabled": false,
+        "min_quantity": 0,
+        "max_quantity": 10,
+        "img": "/images/items/Heartcontainer.png",
+        "codes": "start_option"
+    },
+    {
+        "name": "Enemizer",
+        "type": "toggle",
+        "allow_disabled": false,
+        "min_quantity": 0,
+        "max_quantity": 10,
+        "img": "/images/items/Heartcontainer.png",
+        "codes": "enemizer"
+    },
+    {
+        "name": "Key Shuffle Option",
+        "type": "progressive_toggle",
+        "allow_disabled": false,
+        "min_quantity": 0,
+        "max_quantity": 10,
+        "img": "/images/items/Heartcontainer.png",
+        "codes": "key_shuffle"
+    },
+    {
+        "name": "Shop Shuffle",
+        "type": "toggle",
+        "allow_disabled": false,
+        "min_quantity": 0,
+        "max_quantity": 10,
+        "img": "/images/items/Heartcontainer.png",
+        "codes": "shop_sanity"
+    },
+    {
+        "name": "Boss Shuffle",
+        "type": "progressive_toggle",
+        "allow_disabled": false,
+        "min_quantity": 0,
+        "max_quantity": 10,
+        "img": "/images/items/Heartcontainer.png",
+        "codes": "boss_shuffle"
+    },
+    {
+        "name": "Glitches Option",
+        "type": "progressive_toggle",
+        "allow_disabled": false,
+        "min_quantity": 0,
+        "max_quantity": 10,
+        "img": "/images/items/Pegasus_Boots.png",
+        "codes": "glitches"
+    },
+    {
+        "name": "Swordless",
+        "type": "toggle",
+        "allow_disabled": false,
+        "min_quantity": 0,
+        "max_quantity": 10,
+        "img": "/images/items/swordless.png",
+        "codes": "swordless"
+    },
+    {
+        "name": "Progressive Items",
+        "type": "progressive_toggle",
+        "allow_disabled": false,
+        "min_quantity": 0,
+        "max_quantity": 10,
+        "img": "/images/settings/swordless.png",
+        "codes": "progressive_items"
+    },
+    {
+        "name": "Item Modes",
+        "type": "progressive_toggle",
+        "allow_disabled": false,
+        "min_quantity": 0,
+        "max_quantity": 10,
+        "img": "/images/items/swordless.png",
+        "codes": "item_mode"
     },
     {
         "name": "Recover Goods",

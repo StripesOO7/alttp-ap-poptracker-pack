@@ -15,27 +15,22 @@
                         "h_alignment": "left",
                         "rows": [                        
                             [
-                                "op_ovw",
-                                "op_hid",
-                                "op_ki",
-                                "op_hms"
+                                "gt_access", //gt crystal  count
+                                "ganon_killable", //ganon crystal count
+                                "goal", //slow ganon, fast ganon, pedestal, triforce hunt, triforce hunt + ganon, icerod hunt
+                                "start_option" //standord, open, inverted
                             ],
                             [
-                                "op_bdg",
-                                "op_npc",
-                                "op_bik",
-                                "op_rod"
+                                "enemizer",
+                                "key_shuffle",
+                                "shop_sanity",
+                                "boss_shuffle"
                             ],
                             [
-                                "op_norm",
-                                "normanreq",
-                                "op_e4",
-                                "e4req"
-                            ],
-                            [
-                                "op_fer",
-                                "op_if",
-                                "op_hm5"
+                                "glitches",
+                                "swordless",
+                                "progressive_items",
+                                "item_mode"
                             ]
                         ]
                     }

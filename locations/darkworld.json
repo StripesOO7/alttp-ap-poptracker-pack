@@ -29,6 +29,28 @@
                 ]
             },
             {
+                "name": "Thief's Town",
+                "sections": [
+                    {
+                        "name": "Thief's Town Front2",
+                        "visibility_rules": ["op_npc_on"],
+                        "item_count": 4
+                    },
+                    {
+                        "name": "Thief's Town Back2",
+                        "item_count": 4
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 500,
+                        "y": 50,
+                        "size": 24
+                    }
+                ]
+            },
+            {
                 "name": "Hookshot Cave",
                 "sections": [
                     {

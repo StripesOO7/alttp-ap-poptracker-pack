@@ -1,11 +1,13 @@
 [
     {
-        "name": "Darkworld",
+        "name": "Lightworld",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
+        "overlay_background": "#000000",
         "children": [
             {
                 "name": "Kakariko Well",
+                "item_count": 4,
                 "sections": [
                     {
                         "name": "Left Chest"
