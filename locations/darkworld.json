@@ -3,20 +3,24 @@
         "name": "Darkworld",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
+        "access_rules": [
+            "aga1, pearl",
+            "pearl, titans",
+            "pearl, hammer, powergloves"
+        ],
         "children": [
             {
                 "name": "Dark Death Mountain Shop",
+                "visibility_rules": ["shop_sanity"],
                 "sections": [
                     {
-                        "name": "Right Item",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Right Item"
                     },
                     {
                         "name": "Middle Item"
                     },
                     {
-                        "name": "Left Item",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Left Item"
                     }
                 ],
                 "map_locations": [
@@ -33,7 +37,6 @@
                 "sections": [
                     {
                         "name": "Thief's Town Front2",
-                        "visibility_rules": ["op_npc_on"],
                         "item_count": 4
                     },
                     {
@@ -54,19 +57,16 @@
                 "name": "Hookshot Cave",
                 "sections": [
                     {
-                        "name": "Bottom Right Chest",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Bottom Right Chest"
                     },
                     {
                         "name": "Top Right Chest"
                     },
                     {
-                        "name": "Top Left Chest",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Top Left Chest"
                     },
                     {
-                        "name": "Bottom Left Chest",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Bottom Left Chest"
                     }
                 ],
                 "map_locations": [
@@ -82,8 +82,7 @@
                 "name": "Spike Cave",
                 "sections": [
                     {
-                        "name": "Spike Cave Chest" ,
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Spike Cave Chest"
                     }
                 ],
                 "map_locations": [
@@ -97,17 +96,16 @@
             },
             {
                 "name": "Dark Lumberjack Shop",
+                "visibility_rules": ["shop_sanity"],
                 "sections": [
                     {
-                        "name": "Right Item",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Right Item"
                     },
                     {
                         "name": "Middle Item"
                     },
                     {
-                        "name": "Left Item",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Left Item"
                     }
                 ],
                 "map_locations": [
@@ -123,8 +121,7 @@
                 "name": "Bumper Cave",
                 "sections": [
                     {
-                        "name": "Bumper Cave Item",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Bumper Cave Item"
                     }
                 ],
                 "map_locations": [
@@ -138,17 +135,16 @@
             },
             {
                 "name": "Shield Shop",
+                "visibility_rules": ["shop_sanity"],
                 "sections": [
                     {
-                        "name": "Right Item",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Right Item"
                     },
                     {
                         "name": "Middle Item"
                     },
                     {
-                        "name": "Left Item",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Left Item"
                     }
                 ],
                 "map_locations": [
@@ -164,8 +160,7 @@
                 "name": "Chest Game/Money Making Game",
                 "sections": [
                     {
-                        "name": "Chest Game/Money Making Game",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Chest Game/Money Making Game"
                     }
                 ],
                 "map_locations": [
@@ -178,18 +173,64 @@
                 ]
             },
             {
-                "name": "Dark Kakariko Shop",
+                "name": "Purple Chest Return",
                 "sections": [
                     {
-                        "name": "Right Item",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Purple Chest Return"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 690,
+                        "y": 1800,
+                        "size": 24
+                    },
+                    {
+                        "map": "Darkworld",
+                        "x": 610,
+                        "y": 1050,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Breadsmiths",
+                "sections": [
+                    {
+                        "name": "Rescue Dwarf",
+                        "access_rules": [
+                            "@Darkworld, titans"
+                        ]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 600,
+                        "y": 1050,
+                        "size": 24
+                    },
+                    {
+                        "map": "Darkworld",
+                        "x": 300,
+                        "y": 1330,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Dark Kakariko Shop",
+                "visibility_rules": ["shop_sanity"],
+                "sections": [
+                    {
+                        "name": "Right Item"
                     },
                     {
                         "name": "Middle Item"
                     },
                     {
-                        "name": "Left Item",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Left Item"
                     }
                 ],
                 "map_locations": [
@@ -205,8 +246,7 @@
                 "name": "C-Shaped House",
                 "sections": [
                     {
-                        "name": "C-Shaped House",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "C-Shaped House"
                     }
                 ],
                 "map_locations": [
@@ -222,8 +262,7 @@
                 "name": "Brewery/Glory Hole",
                 "sections": [
                     {
-                        "name": "Brewery",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Brewery"
                     }
                 ],
                 "map_locations": [
@@ -239,8 +278,7 @@
                 "name": "Peg-Cave",
                 "sections": [
                     {
-                        "name": "Peg-Cave",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Peg-Cave"
                     }
                 ],
                 "map_locations": [
@@ -256,8 +294,7 @@
                 "name": "Digging Game",
                 "sections": [
                     {
-                        "name": "Digging Game",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Digging Game"
                     }
                 ],
                 "map_locations": [
@@ -273,8 +310,7 @@
                 "name": "Stompy",
                 "sections": [
                     {
-                        "name": "Stompy",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Stompy"
                     }
                 ],
                 "map_locations": [
@@ -290,8 +326,7 @@
                 "name": "Hype Cave",
                 "sections": [
                     {
-                        "name": "Far Right Item",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Far Right Item"
                     },
                     {
                         "name": "Right Item"
@@ -300,8 +335,7 @@
                         "name": "Middle Item"
                     },
                     {
-                        "name": "Left Item",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Left Item"
                     },
                     {
                         "name": "Far Left Item"
@@ -320,12 +354,10 @@
                 "name": "Mire Shed",
                 "sections": [
                     {
-                        "name": "Right Item",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Right Item"
                     },
                     {
-                        "name": "Left Item",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Left Item"
                     }
                 ],
                 "map_locations": [
@@ -341,8 +373,7 @@
                 "name": "Pyramid Ledge",
                 "sections": [
                     {
-                        "name": "Pyramid Ledge Item",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Pyramid Ledge Item"
                     }
                 ],
                 "map_locations": [
@@ -358,12 +389,10 @@
                 "name": "Big Bomb Fairy Grotto",
                 "sections": [
                     {
-                        "name": "Right Item",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Right Item"
                     },
                     {
-                        "name": "Left Item",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Left Item"
                     }
                 ],
                 "map_locations": [
@@ -377,17 +406,16 @@
             },
             {
                 "name": "Dark Potion Shop",
+                "visibility_rules": ["shop_sanity"],
                 "sections": [
                     {
-                        "name": "Right Item",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Right Item"
                     },
                     {
                         "name": "Middle Item"
                     },
                     {
-                        "name": "Left Item",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Left Item"
                     }
                 ],
                 "map_locations": [
@@ -403,8 +431,7 @@
                 "name": "Catfish",
                 "sections": [
                     {
-                        "name": "Catfish Item" ,
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Catfish Item"
                     }
                 ],
                 "map_locations": [
@@ -418,17 +445,16 @@
             },
             {
                 "name": "Dark Lake Hylia Shop",
+                "visibility_rules": ["shop_sanity"],
                 "sections": [
                     {
-                        "name": "Right Item",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Right Item"
                     },
                     {
                         "name": "Middle Item"
                     },
                     {
-                        "name": "Left Item",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Left Item"
                     }
                 ],
                 "map_locations": [

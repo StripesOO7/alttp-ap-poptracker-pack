@@ -8,7 +8,7 @@
         "stages": [
             {
                 "img": "/images/items/Bow+Arrows.png",
-                "codes": "bow, bow+arrow"
+                "codes": "bow, weapon, bow+arrow"
             },
             {
                 "img": "/images/items/bowandsilverarrow.png",
@@ -34,7 +34,7 @@
         "name": "Hookshot",
         "type": "toggle",
         "img": "/images/items/Hookshot.png",
-        "codes": "hookshot"
+        "codes": "hookshot, weapon"
     },
     {
         "name": "Bombs",
@@ -85,7 +85,7 @@
         "name": "Firerod",
         "type": "toggle",
         "img": "/images/items/Firerod.png",
-        "codes": "firerod"
+        "codes": "firerod, weapon"
     },
     {
         "name": "Icerod",
@@ -183,7 +183,7 @@
         "name": "Hammer",
         "type": "toggle",
         "img": "/images/items/Hammer.png",
-        "codes": "hammer"
+        "codes": "hammer, weapon"
     },
     {
         "name": "Flute",
@@ -246,13 +246,13 @@
         "name": "Cane of Somaria",
         "type": "toggle",
         "img": "/images/items/Cane_of_Somaria.png",
-        "codes": "somaria"
+        "codes": "somaria, weapon"
     },
     {
         "name": "Cane of Byrna",
         "type": "toggle",
         "img": "/images/items/Cane_of_Byrna.png",
-        "codes": "byrna"
+        "codes": "byrna, weapon"
     },
     {
         "name": "Magic Cape",
@@ -485,27 +485,18 @@
     {
         "name": "Enemizer",
         "type": "toggle",
-        "allow_disabled": false,
-        "min_quantity": 0,
-        "max_quantity": 10,
         "img": "/images/items/Heartcontainer.png",
         "codes": "enemizer"
     },
     {
         "name": "Key Shuffle Option",
         "type": "progressive_toggle",
-        "allow_disabled": false,
-        "min_quantity": 0,
-        "max_quantity": 10,
         "img": "/images/items/Heartcontainer.png",
         "codes": "key_shuffle"
     },
     {
         "name": "Shop Shuffle",
         "type": "toggle",
-        "allow_disabled": false,
-        "min_quantity": 0,
-        "max_quantity": 10,
         "img": "/images/items/Heartcontainer.png",
         "codes": "shop_sanity"
     },
@@ -530,27 +521,18 @@
     {
         "name": "Swordless",
         "type": "toggle",
-        "allow_disabled": false,
-        "min_quantity": 0,
-        "max_quantity": 10,
         "img": "/images/items/swordless.png",
         "codes": "swordless"
     },
     {
         "name": "Progressive Items",
         "type": "progressive_toggle",
-        "allow_disabled": false,
-        "min_quantity": 0,
-        "max_quantity": 10,
         "img": "/images/settings/swordless.png",
         "codes": "progressive_items"
     },
     {
         "name": "Item Modes",
         "type": "progressive_toggle",
-        "allow_disabled": false,
-        "min_quantity": 0,
-        "max_quantity": 10,
         "img": "/images/items/swordless.png",
         "codes": "item_mode"
     },

@@ -19,7 +19,10 @@
                         "name": "Right Chest"
                     },
                     {
-                        "name":"Back Chest"
+                        "name":"Back Chest",
+                        "access_rules": [
+                            "bombs"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -47,7 +50,10 @@
                         "name":"Far right Chest"
                     },
                     {
-                        "name":"Back Chest"
+                        "name":"Back Chest",
+                        "access_rules": [
+                            "bombs"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -77,6 +83,9 @@
             },
             {
                 "name": "Chicken Hut",
+                "access_rules":[
+                    "bombs"
+                ],
                 "sections": [
                     {
                         "name": "Chicken Hut"
@@ -93,18 +102,16 @@
             },
             {
                 "name": "Kakariko Light-Shop",
+                "visibility_rules": ["shop_sanity"],
                 "sections": [
                     {
-                        "name": "Left Item",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Left Item"
                     },
                     {
-                        "name": "Middle Item",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Middle Item"
                     },
                     {
-                        "name": "Right Item",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Right Item"
                     }
                 ],
                 "map_locations": [
@@ -150,34 +157,15 @@
                 ]
             },
             {
-                "name": "Breadsmiths",
-                "sections": [
-                    {
-                        "name": "Rescue Dwarf",
-                        "visibility_rules": ["op_npc_on"]
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "Lightworld",
-                        "x": 600,
-                        "y": 1050,
-                        "size": 24
-                    },
-                    {
-                        "map": "Darkworld",
-                        "x": 300,
-                        "y": 1330,
-                        "size": 24
-                    }
-                ]
-            },
-            {
                 "name": "Satan",
                 "sections": [
                     {
                         "name": "Visit Satan",
-                        "visibility_rules": ["op_npc_on"]
+                        "access_rules": [
+                            "hammer, powder",
+                            "hammer, @Darkworld"
+                        ],
+                        "hosted_item": "satan_visited"
                     }
                 ],
                 "map_locations": [
@@ -210,6 +198,9 @@
             },
             {
                 "name": "MasterSword Pedestal",
+                "access_rules":[
+                    "green_pendant, blue_pendant, red_pendant"
+                ],
                 "sections": [
                     {
                         "name": "Pedestal"
@@ -226,10 +217,12 @@
             },
             {
                 "name": "Lumberjacks",
+                "access_rules":[
+                    "aga1, boots"
+                ],
                 "sections": [
                     {
-                        "name": "Lumberjacks Tree",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Lumberjacks Tree"
                     }
                 ],
                 "map_locations": [
@@ -243,10 +236,12 @@
             },
             {
                 "name": "Bonk Pile",
+                "access_rules":[
+                    "boots"
+                ],
                 "sections": [
                     {
-                        "name": "Bonk Pile Chest",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Bonk Pile Chest"
                     }
                 ],
                 "map_locations": [
@@ -260,6 +255,9 @@
             },
             {
                 "name": "Library",
+                "access_rules":[
+                    "boots"
+                ],
                 "sections": [
                     {
                         "name": "Library"
@@ -276,10 +274,12 @@
             },
             {
                 "name": "Race",
+                "access_rules":[
+                    "bombs"
+                ],
                 "sections": [
                     {
-                        "name": "Race",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Race"
                     }
                 ],
                 "map_locations": [
@@ -296,7 +296,9 @@
                 "sections": [
                     {
                         "name": "Cave 45",
-                        "visibility_rules": ["op_npc_on"]
+                        "access_rules": [
+                            "@Darkworld, mirror"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -313,7 +315,9 @@
                 "sections": [
                     {
                         "name": "Flute Spot",
-                        "visibility_rules": ["op_npc_on"]
+                        "access_rules": [
+                            "shovel"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -326,34 +330,14 @@
                 ]
             },
             {
-                "name": "Purple Chest Return",
-                "sections": [
-                    {
-                        "name": "Purple Chest Return",
-                        "visibility_rules": ["op_npc_on"]
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "Lightworld",
-                        "x": 690,
-                        "y": 1800,
-                        "size": 24
-                    },
-                    {
-                        "map": "Darkworld",
-                        "x": 610,
-                        "y": 1050,
-                        "size": 24
-                    }
-                ]
-            },
-            {
                 "name": "Desert Ledge",
+                "access_rules":[
+                    "book",
+                    "mirror, titans, flute_active"
+                ],
                 "sections": [
                     {
-                        "name": "Ledge Item",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Ledge Item"
                     }
                 ],
                 "map_locations": [
@@ -370,7 +354,9 @@
                 "sections": [
                     {
                         "name": "Aghina's Cave",
-                        "visibility_rules": ["op_npc_on"]
+                        "access_rules": [
+                            "bombs"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -387,7 +373,9 @@
                 "sections": [
                     {
                         "name": "Checkerboard Cave Item",
-                        "visibility_rules": ["op_npc_on"]
+                        "access_rules": [
+                            "@Darkworld, mirror"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -400,15 +388,13 @@
                 ]
             },
             {
-                "name": "Damm",
+                "name": "Dam",
                 "sections": [
                     {
-                        "name": "Flooded Item",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Flooded Item"
                     },
                     {
-                        "name": "Damm Chest",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Dam Chest"
                     }
                 ],
                 "map_locations": [
@@ -422,26 +408,24 @@
             },
             {
                 "name": "Mini-Moldorm Cave",
+                "access_rules": [
+                    "bombs, weapon"
+                ],
                 "sections": [
                     {
-                        "name": "Far Left Chest",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Far Left Chest"
                     },
                     {
-                        "name": "Left Chest",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Left Chest"
                     },
                     {
-                        "name": "Middle Dude",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Middle Dude"
                     },
                     {
-                        "name": "Far Right Chest",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Far Right Chest"
                     },
                     {
-                        "name": "Rigt Chest",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Rigt Chest"
                     }
                 ],
                 "map_locations": [
@@ -458,7 +442,9 @@
                 "sections": [
                     {
                         "name": "Ice Rod Chest",
-                        "visibility_rules": ["op_npc_on"]
+                        "access_rules": [
+                            "bombs"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -475,7 +461,9 @@
                 "sections": [
                     {
                         "name": "Hobo",
-                        "visibility_rules": ["op_npc_on"]
+                        "access_rules": [
+                            "flippers"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -489,14 +477,13 @@
             },
             {
                 "name": "Lake Hylia Light-Shop",
+                "visibility_rules": ["shop_sanity"],
                 "sections": [
                     {
-                        "name": "Right Item",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Right Item"
                     },
                     {
-                        "name": "Left Item",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Left Item"
                     },
                     {
                         "name": "Middle Item"
@@ -515,7 +502,10 @@
                 "name": "Lake Hylia",
                 "sections": [
                     {
-                        "name": "Lake Island"
+                        "name": "Lake Island",
+                        "access_rules": [
+                            "flippers, @Darkworld, mirror"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -531,8 +521,7 @@
                 "name": "Link's House",
                 "sections": [
                     {
-                        "name": "Chest",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Chest"
                     }
                 ],
                 "map_locations": [
@@ -548,20 +537,28 @@
                 "name": "Sahasrala's Hut",
                 "sections": [
                     {
-                        "name": "Sahasralah's Item",
-                        "visibility_rules": ["op_npc_on"]
-                    },
-                    {
                         "name": "Left Chest",
-                        "visibility_rules": ["op_npc_on"]
+                        "access_rules":[
+                            "bombs"
+                        ]
                     },
                     {
                         "name": "Middle Chest",
-                        "visibility_rules": ["op_npc_on"]
+                        "access_rules":[
+                            "bombs"
+                        ]
                     },
                     {
                         "name": "Right Chest",
-                        "visibility_rules": ["op_npc_on"]
+                        "access_rules":[
+                            "bombs"
+                        ]
+                    },
+                    {
+                        "name": "Sahasralah's Item",
+                        "access_rules":[
+                            "green_pendant"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -576,9 +573,25 @@
             {
                 "name": "Potion Shop/Witch Hut",
                 "sections": [
+                    
+                    {
+                        "name": "shop",
+                        "visibility_rules": ["shop_sanity"]
+                    },
+                    {
+                        "name": "shop",
+                        "visibility_rules": ["shop_sanity"]
+                    },
+                    {
+                        "name": "shop",
+                        "visibility_rules": ["shop_sanity"]
+                    },
                     {
                         "name": "Deliver Mushroom/Brew Drugs",
-                        "visibility_rules": ["op_npc_on"]
+                        "access_rules": [
+                            "mushroom"
+                        ],
+                        "hosted_item": "mushroom_delivered"
                     }
                 ],
                 "map_locations": [
@@ -592,14 +605,15 @@
             },
             {
                 "name": "Waterfall Fairy Grotto",
+                "access_rules":[
+                    "flippers"
+                ],
                 "sections": [
                     {
-                        "name": "Right Chest",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Right Chest"
                     },
                     {
-                        "name": "Left Chest",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Left Chest"
                     }
                 ],
                 "map_locations": [
@@ -615,12 +629,13 @@
                 "name": "Zora's Damoain",
                 "sections": [
                     {
-                        "name": "King Zora Scam",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "King Zora Scam"
                     },
                     {
                         "name": "Zora Ledge",
-                        "visibility_rules": ["op_npc_on"]
+                        "access_rules":[
+                            "flippers"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -636,12 +651,10 @@
                 "name": "Secret Passage ",
                 "sections": [
                     {
-                        "name": "Link's Uncle",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Link's Uncle"
                     },
                     {
-                        "name": "Secret Passage Chest",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Secret Passage Chest"
                     }
                 ],
                 "map_locations": [
@@ -661,10 +674,12 @@
             },
             {
                 "name": "Graveyard Ledge",
+                "access_rules":[
+                    "@Darkworld, mirror"
+                ],
                 "sections": [
                     {
-                        "name": "Graveyard Ledge",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Graveyard Ledge"
                     }
                 ],
                 "map_locations": [
@@ -678,10 +693,13 @@
             },
             {
                 "name": "King's Tomb",
+                "access_rules":[
+                    "@Darkworld, mirror, boots",
+                    "titans, boots"
+                ],
                 "sections": [
                     {
-                        "name": "King's Tomb",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "King's Tomb"
                     }
                 ],
                 "map_locations": [
@@ -694,11 +712,45 @@
                 ]
             },
             {
-                "name": "Rescue Old Man",
+                "name": "Bombos Tablet",
+                "access_rules":[
+                    "@Darkworld, mirror, book, sword"
+                ],
                 "sections": [
                     {
-                        "name": "Rescue Old Man",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Bombos Tablet" 
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 435,
+                        "y": 1840,
+                        "size": 24
+                    }
+                ]
+            },
+            {}
+        ]
+    },
+    {
+        "name": "Light Death Mountain Left",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "overlay_background": "#000000",
+        "access_rules":[
+            "flute_active",
+            "lamp, glove"
+        ],
+        "children": [
+            {
+                "name": "Rescue Old Man",
+                "access_rules":[
+                    "lamp"
+                ],
+                "sections": [
+                    {
+                        "name": "Rescue Old Man"
                     }
                 ],
                 "map_locations": [
@@ -721,11 +773,12 @@
                 "sections": [
                     {
                         "name": "Top Item",
-                        "visibility_rules": ["op_npc_on"]
+                        "access_rules":[
+                            "mirror"
+                        ]
                     },
                     {
-                        "name": "Item inside",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Item inside"
                     }
                 ],
                 "map_locations": [
@@ -745,10 +798,12 @@
             },
             {
                 "name": "Ether Tablet",
+                "access_rules":[
+                    "mirror, book, sword"
+                ],
                 "sections": [
                     {
-                        "name": "Ether Tablet",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Ether Tablet"
                     }
                 ],
                 "map_locations": [
@@ -759,30 +814,27 @@
                         "size": 24
                     }
                 ]
-            },
-            {
-                "name": "Bombos Tablet",
-                "sections": [
-                    {
-                        "name": "Bombos Tablet",
-                        "visibility_rules": ["op_npc_on"]
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "Lightworld",
-                        "x": 435,
-                        "y": 1840,
-                        "size": 24
-                    }
-                ]
-            },
+            }
+        ]
+    },
+    {
+        "name": "Light Death Mountain Right",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "overlay_background": "#000000",
+        "access_rules":[
+            "@lightdeathmountainleft, hookshot",
+            "@lightdeathmountainleft, mirror,  hammer"
+        ],
+        "children": [
             {
                 "name": "Floating Island",
+                "access_rules":[
+                    "@Darkworld, mirror, boots"
+                ],
                 "sections": [
                     {
-                        "name": "Item on Floating Island",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Item on Floating Island"
                     }
                 ],
                 "map_locations": [
@@ -796,17 +848,16 @@
             },
             {
                 "name": "Light Death Mountain Shop",
+                "visibility_rules": ["shop_sanity"],
                 "sections": [
                     {
-                        "name": "Right Item",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Right Item"
                     },
                     {
                         "name": "Middle Item"
                     },
                     {
-                        "name": "Left Item",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Left Item"
                     }
                 ],
                 "map_locations": [
@@ -822,37 +873,29 @@
                 "name": "Paradox Cave",
                 "sections": [
                     {
-                        "name": "Bombable Wall Chest",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Bombable Wall Chest"
                     },
                     {
-                        "name": "Far Left Chest",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Far Left Chest"
                     },
                     {
-                        "name": "Left Chest",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Left Chest"
                     },
                     {
-                        "name": "Middle Chest",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Middle Chest" 
                     },
                     {
-                        "name": "Right Chest",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Right Chest" 
                     },
                     
                     {
-                        "name": "Far Right Chest",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Far Right Chest" 
                     },
                     {
-                        "name": "Top Chest",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Top Chest"
                     },
                     {
-                        "name": "Bottom Chest",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Bottom Chest" 
                     }
                 ],
                 "map_locations": [
@@ -874,8 +917,7 @@
                 "name": "Mimic Cave",
                 "sections": [
                     {
-                        "name": "Mimic Cave Chest",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Mimic Cave Chest"
                     }
                 ],
                 "map_locations": [
@@ -891,8 +933,7 @@
                 "name": "Spiral Cave",
                 "sections": [
                     {
-                        "name": "Spiral Cave Item ",
-                        "visibility_rules": ["op_npc_on"]
+                        "name": "Spiral Cave Item "
                     }
                 ],
                 "map_locations": [
@@ -903,8 +944,110 @@
                         "size": 24
                     }
                 ]
-            },
-            {}
+            }
         ]
-    }
+    },
+    {
+        "name": "Desert Palace",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "overlay_background": "#000000",
+        "item_count": 7,
+        "access_rules":[
+            "book",
+            "@Darkworld, mirror, titans, flute_active"
+        ],
+        "children": [
+            {
+
+            }
+        ]
+    },
+    {
+        "name": "Eastern Palace",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "overlay_background": "#000000",
+        "children": [
+            {
+                "name": "Eastern Palace",
+                "item_count": 7,
+                "sections": [
+                    {
+                        "name": "Bombable Wall Chest"
+                    },
+                    {
+                        "name": "Far Left Chest"
+                    },
+                    {
+                        "name": "Left Chest"
+                    },
+                    {
+                        "name": "Middle Chest" 
+                    },
+                    {
+                        "name": "Right Chest" 
+                    },
+                    
+                    {
+                        "name": "Far Right Chest" 
+                    },
+                    {
+                        "name": "Top Chest"
+                    },
+                    {
+                        "name": "Bottom Chest" 
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 95,
+                        "y": 75,
+                        "size": 44
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Hyrule Castle",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "overlay_background": "#000000",
+        "item_count": 3,
+        "children": [
+            {
+
+            }
+        ]
+    },
+    {
+        "name": "Castle Escape",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "overlay_background": "#000000",
+        "item_count": 5,
+        "children": [
+            {
+
+            }
+        ]
+    },
+    {
+        "name": "Tower  of Hera",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "overlay_background": "#000000",
+        "item_count": 7,
+        "access_rules":[
+            "@lightdeathmountainleft, mirror",
+            "@lightdeathmountainleft, hookshot, hammer"
+        ],
+        "children": [
+            {
+
+            }
+        ]
+    }   
 ]
