@@ -317,19 +317,20 @@
         "type": "progressive",
         "stages": [
             {
-                "img": "/images/items/Fighter_Sword.png",
-                "codes": "sword, fightersword"
+                "img": "/images/items/sword1.png",
+                "codes": "sword, fightersword",
+                "disabled_img": "/images/items/sworddisabled.png"
             },
             {
-                "img": "/images/items/Master_Sword.png",
+                "img": "/images/items/sword2.png",
                 "codes": "mastersword"
             },
             {
-                "img": "/images/items/Tempered_Sword.png",
+                "img": "/images/items/sword3.png",
                 "codes": "temperedsword"
             },
             {
-                "img": "/images/items/Golden_Sword.png",
+                "img": "/images/items/sword4.png",
                 "codes": "goldensword"
             }
         ]
