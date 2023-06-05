@@ -4,43 +4,23 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "aga1, pearl",
+            "pearl, aga1",
             "pearl, titans",
-            "pearl, hammer, powergloves"
+            "pearl, hammer, glove"
         ],
         "children": [
-            {
-                "name": "Dark Death Mountain Shop",
-                "visibility_rules": ["shop_sanity"],
-                "sections": [
-                    {
-                        "name": "Right Item"
-                    },
-                    {
-                        "name": "Middle Item"
-                    },
-                    {
-                        "name": "Left Item"
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "Darkworld",
-                        "x": 1705,
-                        "y": 280,
-                        "size": 24
-                    }
-                ]
-            },
             {
                 "name": "Thief's Town",
                 "sections": [
                     {
-                        "name": "Thief's Town Front2",
+                        "name": "Thief's Town Front",
                         "item_count": 4
                     },
                     {
-                        "name": "Thief's Town Back2",
+                        "name": "Thief's Town Back",
+                        "access_rules":[
+                            "tt_bigkey"
+                        ],
                         "item_count": 4
                     }
                 ],
@@ -49,47 +29,6 @@
                         "map": "Darkworld",
                         "x": 500,
                         "y": 50,
-                        "size": 24
-                    }
-                ]
-            },
-            {
-                "name": "Hookshot Cave",
-                "sections": [
-                    {
-                        "name": "Bottom Right Chest"
-                    },
-                    {
-                        "name": "Top Right Chest"
-                    },
-                    {
-                        "name": "Top Left Chest"
-                    },
-                    {
-                        "name": "Bottom Left Chest"
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "Darkworld",
-                        "x": 1660,
-                        "y": 125,
-                        "size": 24
-                    }
-                ]
-            },
-            {
-                "name": "Spike Cave",
-                "sections": [
-                    {
-                        "name": "Spike Cave Chest"
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "Darkworld",
-                        "x": 1145,
-                        "y": 280,
                         "size": 24
                     }
                 ]
@@ -119,6 +58,9 @@
             },
             {
                 "name": "Bumper Cave",
+                "access_rules": [
+                    "cape, hookshot"
+                ],
                 "sections": [
                     {
                         "name": "Bumper Cave Item"
@@ -176,7 +118,10 @@
                 "name": "Purple Chest Return",
                 "sections": [
                     {
-                        "name": "Purple Chest Return"
+                        "name": "Purple Chest Return",
+                        "access_rules":[
+                            "$Breadsmiths"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -222,6 +167,7 @@
             {
                 "name": "Dark Kakariko Shop",
                 "visibility_rules": ["shop_sanity"],
+                "access_rules":["hammer"],
                 "sections": [
                     {
                         "name": "Right Item"
@@ -260,6 +206,9 @@
             },
             {
                 "name": "Brewery/Glory Hole",
+                "access_rules":[
+                    "bombs"
+                ],
                 "sections": [
                     {
                         "name": "Brewery"
@@ -276,6 +225,9 @@
             },
             {
                 "name": "Peg-Cave",
+                "access_rules":[
+                    "hammer, titans"
+                ],
                 "sections": [
                     {
                         "name": "Peg-Cave"
@@ -468,6 +420,99 @@
             },
             {
             }
+        ]
+    },
+    {
+        "name": "Dark Death Mountain Left",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "access_rules": [
+            "@Light Death Mountain Left, pearl, mirror"
+        ],
+        "children": [
+            {
+                "name": "Spike Cave",
+                "access_rules": [
+                    "hammer",
+                    "$health|14, hammer"
+                ],
+                "sections": [
+                    {
+                        "name": "Spike Cave Chest"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 1145,
+                        "y": 280,
+                        "size": 24
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Dark Death Mountain Right",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "access_rules": [
+            "@Light Death Mountain Right, titans"
+        ],
+        "children": [
+            {
+                "name": "Dark Death Mountain Shop",
+                "visibility_rules": ["shop_sanity"],
+                "sections": [
+                    {
+                        "name": "Right Item"
+                    },
+                    {
+                        "name": "Middle Item"
+                    },
+                    {
+                        "name": "Left Item"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 1705,
+                        "y": 280,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Hookshot Cave",
+                "access_rules": ["glove"],
+                "sections": [
+                    {
+                        "name": "Bottom Right Chest",
+                        "access_rules": ["boots", "hookshot"]
+                    },
+                    {
+                        "name": "Top Right Chest",
+                        "access_rules":["hookshot"]
+                    },
+                    {
+                        "name": "Top Left Chest",
+                        "access_rules":["hookshot"]
+                    },
+                    {
+                        "name": "Bottom Left Chest",
+                        "access_rules":["hookshot"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 1660,
+                        "y": 125,
+                        "size": 24
+                    }
+                ]
+            },
         ]
     }
 ]

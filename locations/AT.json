@@ -5,10 +5,10 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "children": [
             {
-                "name": "1st Chest",
+                "name": "",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "ref": "AT/Aganim's Tower/Room 03"
                     }
                 ],
                 "map_locations": [
@@ -21,16 +21,32 @@
                 ]
             },
             {
-                "name": "2nd Chest",
+                "name": "",
                 "sections": [
                     {
-                        "name": "Chest"
+                        "ref": "AT/Aganim's Tower/Maze Chest"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "AT",
                         "x": 12,
+                        "y": 115,
+                        "size": 8
+                    }
+                ]
+            },
+            {
+                "name": "",
+                "sections": [
+                    {
+                        "ref": "AT/Aganim's Tower/Aganim 1"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "AT",
+                        "x": 112,
                         "y": 115,
                         "size": 8
                     }

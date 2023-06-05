@@ -182,7 +182,20 @@
                 "sections": [
                     {
                         "name": "Mushroom"
-                    },
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 250,
+                        "y": 240,
+                        "size": 24
+                    }
+                ]
+            },
+            {
+                "name": "Lost Woods - Hideout",
+                "sections": [
                     {
                         "name": "Hideout"
                     }
@@ -190,7 +203,7 @@
                 "map_locations": [
                     {
                         "map": "Lightworld",
-                        "x": 330,
+                        "x": 380,
                         "y": 260,
                         "size": 24
                     }
@@ -275,7 +288,8 @@
             {
                 "name": "Race",
                 "access_rules":[
-                    "bombs"
+                    "bombs",
+                    "boots"
                 ],
                 "sections": [
                     {
@@ -374,7 +388,7 @@
                     {
                         "name": "Checkerboard Cave Item",
                         "access_rules": [
-                            "@Darkworld, mirror"
+                            "mirror, titans, flute_active"
                         ]
                     }
                 ],
@@ -462,7 +476,7 @@
                     {
                         "name": "Hobo",
                         "access_rules": [
-                            "flippers"
+                            "$can_swim"
                         ]
                     }
                 ],
@@ -504,7 +518,7 @@
                     {
                         "name": "Lake Island",
                         "access_rules": [
-                            "flippers, @Darkworld, mirror"
+                            "$can_swim, @Darkworld, mirror"
                         ]
                     }
                 ],
@@ -606,7 +620,8 @@
             {
                 "name": "Waterfall Fairy Grotto",
                 "access_rules":[
-                    "flippers"
+                    "$can_swim, glove",
+                    "$can_swim"
                 ],
                 "sections": [
                     {
@@ -627,6 +642,10 @@
             },
             {
                 "name": "Zora's Damoain",
+                "access_rules":[
+                    "flippers",
+                    "glove"
+                ],
                 "sections": [
                     {
                         "name": "King Zora Scam"
@@ -634,7 +653,7 @@
                     {
                         "name": "Zora Ledge",
                         "access_rules":[
-                            "flippers"
+                            "$can_swim"
                         ]
                     }
                 ],
@@ -740,13 +759,13 @@
         "overlay_background": "#000000",
         "access_rules":[
             "flute_active",
-            "lamp, glove"
+            "$lightsource, glove"
         ],
         "children": [
             {
                 "name": "Rescue Old Man",
                 "access_rules":[
-                    "lamp"
+                    "$lightsource"
                 ],
                 "sections": [
                     {
@@ -823,14 +842,14 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "@lightdeathmountainleft, hookshot",
-            "@lightdeathmountainleft, mirror,  hammer"
+            "@Light Death Mountain Left, hookshot",
+            "@Light Death Mountain Left, mirror, hammer"
         ],
         "children": [
             {
                 "name": "Floating Island",
                 "access_rules":[
-                    "@Darkworld, mirror, boots"
+                    "@Dark Death Mountain Right, mirror, boots"
                 ],
                 "sections": [
                     {
@@ -948,29 +967,279 @@
         ]
     },
     {
-        "name": "Desert Palace",
+        "name": "DP",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
-        "item_count": 7,
         "access_rules":[
             "book",
             "@Darkworld, mirror, titans, flute_active"
         ],
         "children": [
             {
-
+                "name": "Desert Palace",
+                "item_count": 5,
+                "sections": [
+                    {
+                        "name": "Torch",
+                        "access_rules":[
+                            "boots"
+                        ]
+                    },
+                    {
+                        "name": "Big Chest",
+                        "access_rules": [
+                            "dp_bigkey"
+                        ]
+                    },
+                    {
+                        "name": "Eyegore Chest"
+                    },
+                    {
+                        "name": "Pre Canon Cest",
+                        "access_rules":[
+                            "dp_smallkey",
+                            "hammer"
+                        ]
+                    },
+                    {
+                        "name": "Canon Chest",
+                        "access_rules":[
+                            "dp_smallkey"
+                        ]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 95,
+                        "y": 75,
+                        "size": 44
+                    }
+                ]
             }
         ]
     },
     {
-        "name": "Eastern Palace",
+        "name": "DP Back",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "overlay_background": "#000000",
+        "access_rules":[
+            "book, glove",
+            "@Darkworld, mirror, titans, flute_active"
+        ],
+        "children": [
+            {
+                "name": "Desert Palace Back",
+                "item_count": 2,
+                "sections": [
+                    {
+                        "name": "Boss Item"
+                    },
+                    {
+                        "name": "Dungeon Reward"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 755,
+                        "y": 30,
+                        "size": 44
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "EP",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "children": [
             {
                 "name": "Eastern Palace",
+                "item_count": 7,
+                "sections": [
+                    {
+                        "name": "Cannonball Chest"
+                    },
+                    {
+                        "name": "Big Key Chest"
+                    },
+                    {
+                        "name": "Compass Chest" 
+                    },
+                    {
+                        "name": "Map Chest" 
+                    },
+                    {
+                        "name": "Big Chest" 
+                    },
+                    {
+                        "name": "Boss Item"
+                    },
+                    {
+                        "name": "Dungeon Reward" 
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 655,
+                        "y": 30,
+                        "size": 44
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "AT",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "overlay_background": "#000000",
+        "children": [
+            {
+                "name": "Aganim's Tower",
+                "item_count": 3,
+                "access_rules":[
+                    "cape",
+                    "mastersword"
+                ],
+                "sections": [
+                    {
+                        "name": "Room 03"
+                    },
+                    {
+                        "name": "Maze Chest",
+                        "access_rules":[
+                            "$lightsource"
+                        ]
+                    },
+                    {
+                        "name": "Aganim 1",
+                        "access_rules":[
+                            "$lightsource, sword",
+                            "$lightsource, bugcatchingnet"
+                        ],
+                        "hosted_item": "aga1"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 555,
+                        "y": 30,
+                        "size": 44
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "HC",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "overlay_background": "#000000",
+        "children": [
+            {
+                "name": "Hyrule Castle",
+                "item_count": 3,
+                "sections": [
+                    {
+                        "name": "Map Chest"
+                    },
+                    {
+                        "name": "Boomerang Chest"
+                    },
+                    {
+                        "name": "Zeldas Chest"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 405,
+                        "y": 30,
+                        "size": 44
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "CE",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "overlay_background": "#000000",
+        "children": [
+            {
+                "name": "Castle Escape",
+                "item_count": 1,
+                "access_rules":[
+                    "$lightsource", 
+                    "glove"
+                ],
+                "sections": [
+                    {
+                        "name": "Dark Cross",
+                        "access_rules":[
+                            "$lightsource",
+                            "glove, hc_smallkey"
+                        ]
+                    },
+                    {
+                        "name": "Secret Room - Left"
+                    },
+                    {
+                        "name": "Secret Room - Middle" 
+                    },
+                    {
+                        "name": "Secret Room - Right" 
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 355,
+                        "y": 30,
+                        "size": 44
+                    }
+                ]
+            },
+            {
+                "name": "Sanctuary",
+                "item_count": 1,
+                "sections": [
+                    {
+                        "name": "Sanctuary Chest"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 255,
+                        "y": 30,
+                        "size": 44
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "ToH",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "overlay_background": "#000000",
+        "access_rules":[
+            "@Light Death Mountain Left, mirror",
+            "@Light Death Mountain Left, hookshot, hammer"
+        ],
+        "children": [
+            {
+                "name": "Tower of Hera",
                 "item_count": 7,
                 "sections": [
                     {
@@ -986,67 +1255,23 @@
                         "name": "Middle Chest" 
                     },
                     {
-                        "name": "Right Chest" 
-                    },
-                    
-                    {
-                        "name": "Far Right Chest" 
+                        "name": "Big Chest" 
                     },
                     {
-                        "name": "Top Chest"
+                        "name": "Boss Item" 
                     },
                     {
-                        "name": "Bottom Chest" 
+                        "name": "Dungeon Reward"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "Lightworld",
-                        "x": 95,
-                        "y": 75,
+                        "x": 155,
+                        "y": 30,
                         "size": 44
                     }
                 ]
-            }
-        ]
-    },
-    {
-        "name": "Hyrule Castle",
-        "chest_unopened_img": "/images/items/closed_Chest.png",
-        "chest_opened_img": "/images/items/open_Chest.png",
-        "overlay_background": "#000000",
-        "item_count": 3,
-        "children": [
-            {
-
-            }
-        ]
-    },
-    {
-        "name": "Castle Escape",
-        "chest_unopened_img": "/images/items/closed_Chest.png",
-        "chest_opened_img": "/images/items/open_Chest.png",
-        "overlay_background": "#000000",
-        "item_count": 5,
-        "children": [
-            {
-
-            }
-        ]
-    },
-    {
-        "name": "Tower  of Hera",
-        "chest_unopened_img": "/images/items/closed_Chest.png",
-        "chest_opened_img": "/images/items/open_Chest.png",
-        "overlay_background": "#000000",
-        "item_count": 7,
-        "access_rules":[
-            "@lightdeathmountainleft, mirror",
-            "@lightdeathmountainleft, hookshot, hammer"
-        ],
-        "children": [
-            {
-
             }
         ]
     }   

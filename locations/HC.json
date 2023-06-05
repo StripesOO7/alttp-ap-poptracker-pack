@@ -5,10 +5,10 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "children": [
             {
-                "name": "1st Chest",
+                "name": "",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "ref": "HC/Hyrule Castle/Map Chest"
                     }
                 ],
                 "map_locations": [
@@ -21,10 +21,10 @@
                 ]
             },
             {
-                "name": "2nd Chest",
+                "name": "",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "ref": "HC/Hyrule Castle/Boomerang Chest"
                     }
                 ],
                 "map_locations": [
@@ -37,10 +37,10 @@
                 ]
             },
             {
-                "name": "Big Chest",
+                "name": "",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "ref": "HC/Hyrule Castle/Zeldas Chest"
                     }
                 ],
                 "map_locations": [
@@ -60,10 +60,10 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "children": [
             {
-                "name": "Dark Cross",
+                "name": "",
                 "sections": [
                     {
-                        "name": "Dark Cross"
+                        "ref": "CE/Castle Escape/Dark Cross"
                     }
                 ],
                 "map_locations": [
@@ -76,16 +76,16 @@
                 ]
             },
             {
-                "name": "1st Chest",
+                "name": "Secret Room",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "ref": "CE/Castle Escape/Secret Room - Left"
                     },
                     {
-                        "name": "Well - Left Chest"
+                        "ref": "CE/Castle Escape/Secret Room - Middle"
                     },
                     {
-                        "name": "Well - Left Chest"
+                        "ref": "CE/Castle Escape/Secret Room - Right"
                     }
                 ],
                 "map_locations": [
@@ -108,7 +108,7 @@
                 "name": "Sanctuary Chest",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "ref": "CE/Sanctuary/Sanctuary Chest"
                     }
                 ],
                 "map_locations": [

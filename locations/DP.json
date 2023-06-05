@@ -1,14 +1,14 @@
 [
     {
-        "name": "Dessert Palace",
+        "name": "Dessert Palace ",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "children": [
             {
-                "name": "Torch",
+                "name": "",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "ref": "DP/Desert Palace/Torch"
                     }
                 ],
                 "map_locations": [
@@ -21,10 +21,10 @@
                 ]
             },
             {
-                "name": "Big Chest",
+                "name": "",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "ref": "DP/Desert Palace/Big Chest"
                     }
                 ],
                 "map_locations": [
@@ -37,10 +37,10 @@
                 ]
             },
             {
-                "name": "Eyegore Chest",
+                "name": "",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "ref": "DP/Desert Palace/Eyegore Chest"
                     }
                 ],
                 "map_locations": [
@@ -53,10 +53,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "ref": "DP/Desert Palace/Canon Chest"
                     }
                 ],
                 "map_locations": [
@@ -69,10 +69,10 @@
                 ]
             },
             {
-                "name": "Pre Canon Cest",
+                "name": "",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "ref": "DP/Desert Palace/Pre Canon Cest"
                     }
                 ],
                 "map_locations": [
@@ -87,18 +87,20 @@
         ]
     },
     {
-        "name": "Dessert Palace Back",
+        "name": "Desert Palace Back",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/chest_opened_img.png",
         "children": [
             {
-                "name": "1st Chest",
+                "name": "",
                 "sections": [
                     {
-                        "name": "Boss Item"
+                        "ref": "DP Back/Desert Palace Back/Boss Item",
+                        "hosted_item": ""
                     },
                     {
-                        "name": "Dungeon Reward"
+                        "ref": "DP Back/Desert Palace Back/Dungeon Reward",
+                        "hosted_item": ""
                     }
                 ],
                 "map_locations": [
