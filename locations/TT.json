@@ -1,22 +1,17 @@
 [
     {
-        "name": "Thief's Town Front",
+        "name": "Thieves Town Front",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
-        "map_locations": [
-            {
-                "map": "Darkworld",
-                "x": 50,
-                "y": 50,
-                "size": 24
-            }
-        ],
+        "parent": "TT",
         "children": [
             {
                 "name": "Canon Chest",
+                "item_count":1,
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Middle Chest"
+                        
                     }
                 ],
                 "map_locations": [
@@ -32,7 +27,7 @@
                 "name": "Canon Chest",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "ref": "TT/Thieves Town/Middle Chest"
                     }
                 ],
                 "map_locations": [
@@ -48,7 +43,7 @@
                 "name": "Canon Chest",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "ref": "TT/Thieves Town/Middle Chest"
                     }
                 ],
                 "map_locations": [
@@ -64,7 +59,7 @@
                 "name": "Canon Chest",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "ref": "TT/Thieves Town/Middle Chest"
                     }
                 ],
                 "map_locations": [
@@ -79,15 +74,19 @@
         ]
     },
     {
-        "name": "Thief's Town Back",
+        "name": "Thieves Town Back",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
+        "access_rules": [
+            "tt_bigkey"
+        ],
+        "parent": "TT",
         "children": [
             {
                 "name": "Canon Chest",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Middle Chest2"
                     }
                 ],
                 "map_locations": [
@@ -103,7 +102,7 @@
                 "name": "Canon Chest",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "ref": "TT/Thieves Town/Middle Chest"
                     }
                 ],
                 "map_locations": [
@@ -119,7 +118,7 @@
                 "name": "Big Chest",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "ref": "TT/Thieves Town/Middle Chest"
                     }
                 ],
                 "map_locations": [
@@ -135,7 +134,7 @@
                 "name": "Boss",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "ref": "TT/Thieves Town/Middle Chest"
                     }
                 ],
                 "map_locations": [

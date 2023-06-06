@@ -753,7 +753,7 @@
         ]
     },
     {
-        "name": "Light Death Mountain Left",
+        "name": "Light Death Mountain Left Bottom",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
@@ -837,13 +837,43 @@
         ]
     },
     {
+        "name": "Light Death Mountain Left Top",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "overlay_background": "#000000",
+        "access_rules":[
+            "@Light Death Mountain Left Bottom, mirror"
+        ],
+        "children": [
+            {
+                "name": "Ether Tablet",
+                "access_rules":[
+                    "mirror, book, sword"
+                ],
+                "sections": [
+                    {
+                        "name": "Ether Tablet"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 835,
+                        "y": 30,
+                        "size": 24
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "name": "Light Death Mountain Right",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "@Light Death Mountain Left, hookshot",
-            "@Light Death Mountain Left, mirror, hammer"
+            "@Light Death Mountain Left Bottom, hookshot",
+            "@Light Death Mountain Left Top, hammer"
         ],
         "children": [
             {
@@ -973,7 +1003,7 @@
         "overlay_background": "#000000",
         "access_rules":[
             "book",
-            "@Darkworld, mirror, titans, flute_active"
+            "@Darkworld Swamp, mirror"
         ],
         "children": [
             {
@@ -1027,7 +1057,7 @@
         "overlay_background": "#000000",
         "access_rules":[
             "book, glove",
-            "@Darkworld, mirror, titans, flute_active"
+            "@Darkworld Swamp, mirror"
         ],
         "children": [
             {
@@ -1234,8 +1264,8 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "@Light Death Mountain Left, mirror",
-            "@Light Death Mountain Left, hookshot, hammer"
+            "@Light Death Mountain Left Top",
+            "@Light Death Mountain Right, hammer"
         ],
         "children": [
             {

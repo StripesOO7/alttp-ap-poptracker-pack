@@ -1,38 +1,14 @@
 [
     {
-        "name": "Darkworld",
+        "name": "Darkworld Left",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "pearl, aga1",
             "pearl, titans",
-            "pearl, hammer, glove"
+            "pearl, hammer, glove",
+            "@Darkworld Right, hookshot"
         ],
         "children": [
-            {
-                "name": "Thief's Town",
-                "sections": [
-                    {
-                        "name": "Thief's Town Front",
-                        "item_count": 4
-                    },
-                    {
-                        "name": "Thief's Town Back",
-                        "access_rules":[
-                            "tt_bigkey"
-                        ],
-                        "item_count": 4
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "Darkworld",
-                        "x": 500,
-                        "y": 50,
-                        "size": 24
-                    }
-                ]
-            },
             {
                 "name": "Dark Lumberjack Shop",
                 "visibility_rules": ["shop_sanity"],
@@ -126,7 +102,7 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "Lightworld",
+                        "map": "Darkworld",
                         "x": 690,
                         "y": 1800,
                         "size": 24
@@ -303,10 +279,14 @@
                 ]
             },
             {
-                "name": "Mire Shed",
+                "name": "Dark Lake Hylia Shop",
+                "visibility_rules": ["shop_sanity"],
                 "sections": [
                     {
                         "name": "Right Item"
+                    },
+                    {
+                        "name": "Middle Item"
                     },
                     {
                         "name": "Left Item"
@@ -315,12 +295,26 @@
                 "map_locations": [
                     {
                         "map": "Darkworld",
-                        "x": 75,
+                        "x": 1295,
                         "y": 1600,
                         "size": 24
                     }
                 ]
             },
+            {
+            }
+        ]
+    },
+    {
+        "name": "Darkworld Right",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "access_rules": [
+            "pearl, aga1",
+            "pearl, hammer, glove",
+            "@Darkworld Left, flippers"
+        ],
+        "children": [
             {
                 "name": "Pyramid Ledge",
                 "sections": [
@@ -394,16 +388,22 @@
                         "size": 24
                     }
                 ]
-            },
+            }
+        ]
+    },
+    {
+        "name": "Darkworld Swamp",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "access_rules": [
+            "pearl, titans, flute_active"
+        ],
+        "children": [
             {
-                "name": "Dark Lake Hylia Shop",
-                "visibility_rules": ["shop_sanity"],
+                "name": "Mire Shed",
                 "sections": [
                     {
                         "name": "Right Item"
-                    },
-                    {
-                        "name": "Middle Item"
                     },
                     {
                         "name": "Left Item"
@@ -412,13 +412,11 @@
                 "map_locations": [
                     {
                         "map": "Darkworld",
-                        "x": 1295,
+                        "x": 75,
                         "y": 1600,
                         "size": 24
                     }
                 ]
-            },
-            {
             }
         ]
     },
@@ -427,7 +425,7 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "@Light Death Mountain Left, pearl, mirror"
+            "@Light Death Mountain Left, pearl"
         ],
         "children": [
             {
@@ -457,7 +455,7 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "@Light Death Mountain Right, titans"
+            "@Light Death Mountain Right, titans, pearl"
         ],
         "children": [
             {
@@ -512,7 +510,426 @@
                         "size": 24
                     }
                 ]
+            }
+        ]
+    },
+    {
+        "name": "PoD",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "overlay_background": "#000000",
+        "access_rules":[
+            "@Darkworld, hammer",
+            "@Darkworld, flippers"
+        ],
+        "children": [
+            {
+                "name": "Palace of Darkness",
+                "item_count": 15,
+                "sections": [
+                    {
+                        "name": "Bombable Wall Chest"
+                    },
+                    {
+                        "name": "Far Left Chest"
+                    },
+                    {
+                        "name": "Left Chest"
+                    },
+                    {
+                        "name": "Middle Chest" 
+                    },
+                    {
+                        "name": "Big Chest" 
+                    },
+                    {
+                        "name": "Boss Item" 
+                    },
+                    {
+                        "name": "Dungeon Reward"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 155,
+                        "y": 30,
+                        "size": 44
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "SW",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "overlay_background": "#000000",
+        "access_rules":[
+            "@Darkworld"
+        ],
+        "children": [
+            {
+                "name": "Skull Woods Front",
+                "item_count": 6,
+                "sections": [
+                    {
+                        "name": "Bombable Wall Chest"
+                    },
+                    {
+                        "name": "Far Left Chest"
+                    },
+                    {
+                        "name": "Left Chest"
+                    },
+                    {
+                        "name": "Middle Chest" 
+                    },
+                    {
+                        "name": "Big Chest" 
+                    },
+                    {
+                        "name": "Boss Item" 
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 155,
+                        "y": 30,
+                        "size": 44
+                    }
+                ]
             },
+            {
+                "name": "Skull Woods Back",
+                "item_count": 3,
+                "sections": [
+                    {
+                        "name": "Big Chest" 
+                    },
+                    {
+                        "name": "Boss Item" 
+                    },
+                    {
+                        "name": "Dungeon Reward"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 155,
+                        "y": 30,
+                        "size": 44
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "MM",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "overlay_background": "#000000",
+        "access_rules":[
+            "@Darkworld, $mm_medalion"
+        ],
+        "children": [
+            {
+                "name": "Misery' Mire",
+                "item_count": 9,
+                "sections": [
+                    {
+                        "name": "Bombable Wall Chest"
+                    },
+                    {
+                        "name": "Far Left Chest"
+                    },
+                    {
+                        "name": "Left Chest"
+                    },
+                    {
+                        "name": "Middle Chest" 
+                    },
+                    {
+                        "name": "Big Chest" 
+                    },
+                    {
+                        "name": "Boss Item" 
+                    },
+                    {
+                        "name": "Dungeon Reward"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 155,
+                        "y": 30,
+                        "size": 44
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "SP",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "overlay_background": "#000000",
+        "access_rules":[
+            "@Light Death Mountain Left, mirror",
+            "@Light Death Mountain Left, hookshot, hammer"
+        ],
+        "children": [
+            {
+                "name": "Swamp Palace",
+                "item_count": 11,
+                "sections": [
+                    {
+                        "name": "Bombable Wall Chest"
+                    },
+                    {
+                        "name": "Far Left Chest"
+                    },
+                    {
+                        "name": "Left Chest"
+                    },
+                    {
+                        "name": "Middle Chest" 
+                    },
+                    {
+                        "name": "Big Chest" 
+                    },
+                    {
+                        "name": "Boss Item" 
+                    },
+                    {
+                        "name": "Dungeon Reward"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 155,
+                        "y": 30,
+                        "size": 44
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "IP",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "overlay_background": "#000000",
+        "access_rules":[
+            "@Darkworld Left, flippers, mirror, titans",
+            "@Darkworld Right, flippers, mirror, titans"
+        ],
+        "children": [
+            {
+                "name": "Ice Palace",
+                "item_count": 7,
+                "sections": [
+                    {
+                        "name": "Bombable Wall Chest"
+                    },
+                    {
+                        "name": "Far Left Chest"
+                    },
+                    {
+                        "name": "Left Chest"
+                    },
+                    {
+                        "name": "Middle Chest" 
+                    },
+                    {
+                        "name": "Big Chest" 
+                    },
+                    {
+                        "name": "Boss Item" 
+                    },
+                    {
+                        "name": "Dungeon Reward"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 155,
+                        "y": 30,
+                        "size": 44
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "TT",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "overlay_background": "#000000",
+        "access_rules":[
+            "@Darkworld Left"
+        ],
+        "children": [
+            {
+                "name": "Thieves Town",
+                "item_count": 8,
+                "sections": [
+                    { 
+                        "name": "Middle Chest"
+                    },
+                    {
+                        "name": "Big Chest" 
+                    },
+                    {
+                        "name": "Boss Item" 
+                    },
+                    {
+                        "name": "Dungeon Reward"
+                    },
+                    {
+                        "name": "Middle Chest2" 
+                    },
+                    {
+                        "name": "Big Chest2" 
+                    },
+                    {
+                        "name": "Boss Item2" 
+                    },
+                    {
+                        "name": "Dungeon Reward2"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 500,
+                        "y": 50,
+                        "size": 24
+                    }
+                ]
+            },
+        ]
+    },
+    {
+        "name": "GT",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "overlay_background": "#000000",
+        "access_rules":[
+            "@Dark Death Mountain Right, $gt_access",
+            "@Light Death Mountain Left, hookshot, hammer"
+        ],
+        "children": [
+            {
+                "name": "Ganon's Tower Left",
+                "item_count": 7,
+                "sections": [
+                    {
+                        "name": "Bombable Wall Chest"
+                    },
+                    {
+                        "name": "Far Left Chest"
+                    },
+                    {
+                        "name": "Left Chest"
+                    },
+                    {
+                        "name": "Middle Chest" 
+                    },
+                    {
+                        "name": "Big Chest" 
+                    },
+                    {
+                        "name": "Boss Item" 
+                    },
+                    {
+                        "name": "Dungeon Reward"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 155,
+                        "y": 30,
+                        "size": 44
+                    }
+                ]
+            },
+            {
+                "name": "Ganon's Tower Right",
+                "item_count": 7,
+                "sections": [
+                    {
+                        "name": "Bombable Wall Chest"
+                    },
+                    {
+                        "name": "Far Left Chest"
+                    },
+                    {
+                        "name": "Left Chest"
+                    },
+                    {
+                        "name": "Middle Chest" 
+                    },
+                    {
+                        "name": "Big Chest" 
+                    },
+                    {
+                        "name": "Boss Item" 
+                    },
+                    {
+                        "name": "Dungeon Reward"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 155,
+                        "y": 30,
+                        "size": 44
+                    }
+                ]
+            },
+            {
+                "name": "Ganon's Tower Top",
+                "item_count": 4,
+                "sections": [
+                    {
+                        "name": "Bombable Wall Chest"
+                    },
+                    {
+                        "name": "Far Left Chest"
+                    },
+                    {
+                        "name": "Left Chest"
+                    },
+                    {
+                        "name": "Middle Chest" 
+                    },
+                    {
+                        "name": "Big Chest" 
+                    },
+                    {
+                        "name": "Boss Item" 
+                    },
+                    {
+                        "name": "Dungeon Reward"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 155,
+                        "y": 30,
+                        "size": 44
+                    }
+                ]
+            }
         ]
     }
 ]
