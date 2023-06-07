@@ -48,7 +48,7 @@
                 ]
             },
             {
-                "name": "Shield Shop",
+                "name": "Red Shield Shop",
                 "visibility_rules": ["shop_sanity"],
                 "sections": [
                     {
@@ -67,10 +67,10 @@
                 ]
             },
             {
-                "name": "Chest Game/Money Making Game",
+                "name": "Chest Game (Money Making Game)",
                 "sections": [
                     {
-                        "name": "Chest Game/Money Making Game"
+                        "name": "Chest Game"
                     }
                 ],
                 "map_locations": [
@@ -169,7 +169,7 @@
                 ]
             },
             {
-                "name": "Brewery/Glory Hole",
+                "name": "Brewery (Glory Hole)",
                 "access_rules":[
                     "bombs"
                 ],
@@ -188,13 +188,13 @@
                 ]
             },
             {
-                "name": "Peg-Cave",
+                "name": "Peg Cave",
                 "access_rules":[
                     "hammer, titans"
                 ],
                 "sections": [
                     {
-                        "name": "Peg-Cave"
+                        "name": "Peg Cave"
                     }
                 ],
                 "map_locations": [
@@ -223,10 +223,10 @@
                 ]
             },
             {
-                "name": "Stompy",
+                "name": "Stumpy",
                 "sections": [
                     {
-                        "name": "Stompy"
+                        "name": "Stumpy"
                     }
                 ],
                 "map_locations": [
@@ -306,10 +306,10 @@
                 ]
             },
             {
-                "name": "Big Bomb Fairy Grotto",
+                "name": "Big Bomb Fairy",
                 "sections": [
                     {
-                        "name": "",
+                        "name": "Boom",
                         "clear_as_group": false,
                         "item_count": 2
                     }
@@ -468,6 +468,25 @@
                         "size": 24
                     }
                 ]
+            },
+            {
+                "name": "Superbunny Cave ",
+                "access_rules": ["glove"],
+                "sections": [
+                    {
+                        "name": "Superbunny Chest",
+                        "clear_as_group": false,
+                        "item_count": 2
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 1660,
+                        "y": 125,
+                        "size": 24
+                    }
+                ]
             }
         ]
     },
@@ -486,9 +505,70 @@
                 "item_count": 15,
                 "sections": [
                     {
-                        "name": "Big Chest" ,
+                        "name": "Dungeon Chest" ,
                         "clear_as_group": false,
                         "item_count": 13
+                    },
+                    {
+                        "name": "Boss Item" ,
+                        "clear_as_group": false,
+                        "item_count": 1,
+                        "hosted_item": "pod_boss"
+                    },
+                    {
+                        "name": "Dungeon Reward",
+                        "clear_as_group": false,
+                        "hosted_item": "palaceof darkness"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 1925,
+                        "y": 800,
+                        "size": 44
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "TR",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "overlay_background": "#000000",
+        "access_rules":[
+            "@Darkworld, hammer",
+            "@Darkworld, flippers"
+        ],
+        "children": [
+            {
+                "name": "Trutle Rock Front",
+                "item_count": 5,
+                "sections": [
+                    {
+                        "name": "Dungeon Chest" ,
+                        "clear_as_group": false,
+                        "item_count": 5
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 1925,
+                        "y": 800,
+                        "size": 44
+                    }
+                ]
+            }
+            {
+                "name": "Trutle Rock Back",
+                "item_count": 8,
+                "sections": [
+                    {
+                        "name": "Dungeon Chest" ,
+                        "clear_as_group": false,
+                        "item_count": 6
                     },
                     {
                         "name": "Boss Item" ,
@@ -527,7 +607,7 @@
                 "item_count": 6,
                 "sections": [
                     {
-                        "name": "Big Chest" ,
+                        "name": "Dungeon Chest" ,
                         "clear_as_group": false,
                         "item_count": 6
                     }
@@ -546,7 +626,7 @@
                 "item_count": 3,
                 "sections": [
                     {
-                        "name": "Big Chest" ,
+                        "name": "Dungeon Chest" ,
                         "clear_as_group": false,
                         "item_count": 1
                     },
@@ -587,7 +667,7 @@
                 "item_count": 9,
                 "sections": [
                     {
-                        "name": "Big Chest" ,
+                        "name": "Dungeon Chest" ,
                         "clear_as_group": false,
                         "item_count": 7
                     },
@@ -629,7 +709,7 @@
                 "item_count": 11,
                 "sections": [
                     {
-                        "name": "Big Chest" ,
+                        "name": "Dungeon Chest" ,
                         "clear_as_group": false,
                         "item_count": 9
                     },
@@ -671,7 +751,7 @@
                 "item_count": 7,
                 "sections": [
                     {
-                        "name": "Big Chest" ,
+                        "name": "Dungeon Chest" ,
                         "clear_as_group": false,
                         "item_count": 5
                     },
