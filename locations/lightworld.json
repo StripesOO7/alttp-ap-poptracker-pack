@@ -7,16 +7,11 @@
         "children": [
             {
                 "name": "Kakariko Well",
-                "item_count": 4,
                 "sections": [
                     {
-                        "name": "Left Chest"
-                    },
-                    {
-                        "name": "Middle Chest"
-                    },
-                    {
-                        "name": "Right Chest"
+                        "name": "Well-Item",
+                        "clear_as_group": false,
+                        "item_count":4
                     },
                     {
                         "name":"Back Chest",
@@ -38,16 +33,9 @@
                 "name": "Blind's Hideout",
                 "sections": [
                     {
-                        "name": "Far left Chest"
-                    },
-                    {
-                        "name": "Middle left Chest"
-                    },
-                    {
-                        "name": "Middel right Chest"
-                    },
-                    {
-                        "name":"Far right Chest"
+                        "name": "Hideout",
+                        "clear_as_group": false,
+                        "item_count":4
                     },
                     {
                         "name":"Back Chest",
@@ -105,13 +93,9 @@
                 "visibility_rules": ["shop_sanity"],
                 "sections": [
                     {
-                        "name": "Left Item"
-                    },
-                    {
-                        "name": "Middle Item"
-                    },
-                    {
-                        "name": "Right Item"
+                        "name": "Shop Item",
+                        "clear_as_group": false,
+                        "item_count":3
                     }
                 ],
                 "map_locations": [
@@ -188,7 +172,7 @@
                     {
                         "map": "Lightworld",
                         "x": 250,
-                        "y": 175,
+                        "y": 235,
                         "size": 32
                     }
                 ]
@@ -210,7 +194,7 @@
                 ]
             },
             {
-                "name": "MasterSword Pedestal",
+                "name": "Master Sword Pedestal",
                 "access_rules":[
                     "green_pendant, blue_pendant, red_pendant"
                 ],
@@ -235,7 +219,7 @@
                 ],
                 "sections": [
                     {
-                        "name": "Lumberjacks Tree"
+                        "name": "Tree"
                     }
                 ],
                 "map_locations": [
@@ -364,10 +348,10 @@
                 ]
             },
             {
-                "name": "Agihna's Cave",
+                "name": "Aginah's Cave",
                 "sections": [
                     {
-                        "name": "Aghina's Cave",
+                        "name": "Aginah's Cave",
                         "access_rules": [
                             "bombs"
                         ]
@@ -405,7 +389,7 @@
                 "name": "Dam",
                 "sections": [
                     {
-                        "name": "Flooded Item"
+                        "name": "Sunken Treasure"
                     },
                     {
                         "name": "Dam Chest"
@@ -427,19 +411,9 @@
                 ],
                 "sections": [
                     {
-                        "name": "Far Left Chest"
-                    },
-                    {
-                        "name": "Left Chest"
-                    },
-                    {
-                        "name": "Middle Dude"
-                    },
-                    {
-                        "name": "Far Right Chest"
-                    },
-                    {
-                        "name": "Rigt Chest"
+                        "name": "Mini Moldorm Chest",
+                        "clear_as_group": false,
+                        "item_count":5
                     }
                 ],
                 "map_locations": [
@@ -494,13 +468,9 @@
                 "visibility_rules": ["shop_sanity"],
                 "sections": [
                     {
-                        "name": "Right Item"
-                    },
-                    {
-                        "name": "Left Item"
-                    },
-                    {
-                        "name": "Middle Item"
+                        "name": "Shop Item",
+                        "clear_as_group": false,
+                        "item_count":3
                     }
                 ],
                 "map_locations": [
@@ -548,28 +518,16 @@
                 ]
             },
             {
-                "name": "Sahasrala's Hut",
+                "name": "Sahasrahla's Hut",
                 "sections": [
                     {
-                        "name": "Left Chest",
-                        "access_rules":[
-                            "bombs"
-                        ]
+                        "name": "Back Items",
+                        "access_rules":["bombs"],
+                        "clear_as_group": false,
+                        "item_count":3
                     },
                     {
-                        "name": "Middle Chest",
-                        "access_rules":[
-                            "bombs"
-                        ]
-                    },
-                    {
-                        "name": "Right Chest",
-                        "access_rules":[
-                            "bombs"
-                        ]
-                    },
-                    {
-                        "name": "Sahasralah's Item",
+                        "name": "Sahasrahla's Item",
                         "access_rules":[
                             "green_pendant"
                         ]
@@ -585,23 +543,16 @@
                 ]
             },
             {
-                "name": "Potion Shop/Witch Hut",
+                "name": "Potion Shop (Witch Hut)",
                 "sections": [
-                    
                     {
                         "name": "shop",
-                        "visibility_rules": ["shop_sanity"]
+                        "visibility_rules": ["shop_sanity"],
+                        "clear_as_group": false,
+                        "item_count": 3
                     },
                     {
-                        "name": "shop",
-                        "visibility_rules": ["shop_sanity"]
-                    },
-                    {
-                        "name": "shop",
-                        "visibility_rules": ["shop_sanity"]
-                    },
-                    {
-                        "name": "Deliver Mushroom/Brew Drugs",
+                        "name": "Deliver Mushroom (Brew Drugs)",
                         "access_rules": [
                             "mushroom"
                         ],
@@ -618,17 +569,16 @@
                 ]
             },
             {
-                "name": "Waterfall Fairy Grotto",
+                "name": "Waterfall Fairy",
                 "access_rules":[
                     "$can_swim, glove",
                     "$can_swim"
                 ],
                 "sections": [
                     {
-                        "name": "Right Chest"
-                    },
-                    {
-                        "name": "Left Chest"
+                        "name": "Chest",
+                        "item_count": 2,
+                        "clear_as_group": false
                     }
                 ],
                 "map_locations": [
@@ -648,7 +598,7 @@
                 ],
                 "sections": [
                     {
-                        "name": "King Zora Scam"
+                        "name": "King Zora (Scam)"
                     },
                     {
                         "name": "Zora Ledge",
@@ -814,25 +764,6 @@
                         "size": 32
                     }
                 ]
-            },
-            {
-                "name": "Ether Tablet",
-                "access_rules":[
-                    "mirror, book, sword"
-                ],
-                "sections": [
-                    {
-                        "name": "Ether Tablet"
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "Lightworld",
-                        "x": 835,
-                        "y": 32,
-                        "size": 32
-                    }
-                ]
             }
         ]
     },
@@ -898,15 +829,12 @@
             {
                 "name": "Light Death Mountain Shop",
                 "visibility_rules": ["shop_sanity"],
+                "item_count": 3,
                 "sections": [
                     {
-                        "name": "Right Item"
-                    },
-                    {
-                        "name": "Middle Item"
-                    },
-                    {
-                        "name": "Left Item"
+                        "name": "Shop Item",
+                        "clear_as_group": false,
+                        "item_count":3
                     }
                 ],
                 "map_locations": [
@@ -922,29 +850,14 @@
                 "name": "Paradox Cave",
                 "sections": [
                     {
-                        "name": "Bombable Wall Chest"
+                        "name": "Lower",
+                        "clear_as_group": false,
+                        "item_count": 5
                     },
                     {
-                        "name": "Far Left Chest"
-                    },
-                    {
-                        "name": "Left Chest"
-                    },
-                    {
-                        "name": "Middle Chest" 
-                    },
-                    {
-                        "name": "Right Chest" 
-                    },
-                    
-                    {
-                        "name": "Far Right Chest" 
-                    },
-                    {
-                        "name": "Top Chest"
-                    },
-                    {
-                        "name": "Bottom Chest" 
+                        "name": "Upper",
+                        "clear_as_group": false,
+                        "item_count": 5
                     }
                 ],
                 "map_locations": [
@@ -982,7 +895,7 @@
                 "name": "Spiral Cave",
                 "sections": [
                     {
-                        "name": "Spiral Cave Item "
+                        "name": "Spiral Cave Item"
                     }
                 ],
                 "map_locations": [
@@ -1011,7 +924,7 @@
                 "item_count": 5,
                 "sections": [
                     {
-                        "name": "Big Chest" ,
+                        "name": "Dungeon Chest" ,
                         "clear_as_group": false,
                         "item_count": 5
                     }
@@ -1075,7 +988,7 @@
                 "item_count": 7,
                 "sections": [
                     {
-                        "name": "Big Chest" ,
+                        "name": "Dungeon Chest" ,
                         "clear_as_group": false,
                         "item_count": 5
                     },
