@@ -376,13 +376,13 @@
     {
         "name": "Aga1",
         "type": "toggle",
-        "img": "/images/events/Aganim.png",
+        "img": "/images/events/Aganim1.png",
         "codes": "aga1"
     },
     {
         "name": "Aga2",
         "type": "toggle",
-        "img": "/images/events/Aganim.png",
+        "img": "/images/events/Aganim2.png",
         "codes": "aga2"
     },
     {
@@ -399,11 +399,11 @@
             },
             {
                 "left": true, "right": false,
-                "img": "/images/events/Aganim.png"
+                "img": "images/events/Aganim1.png"
             },
             {
                 "left": false, "right": true,
-                "img": "/images/events/Aganim.png"
+                "img": "images/events/Aganim2.png"
             },
             {
                 "left": true, "right": true,
@@ -451,7 +451,7 @@
         "type": "consumable",
         "allow_disabled": false,
         "min_quantity": 0,
-        "max_quantity": 10,
+        "max_quantity": 7,
         "img": "/images/gt_crystals.png",
         "codes": "gt_access"
     },
@@ -460,61 +460,112 @@
         "type": "consumable",
         "allow_disabled": false,
         "min_quantity": 0,
-        "max_quantity": 10,
+        "max_quantity": 7,
         "img": "/images/bosses/ganon_crystals.png",
         "codes": "ganon_killable"
     },
     {
         "name": "Goal",
-        "type": "progressive_toggle",
+        "type": "progressive",
         "allow_disabled": false,
-        "min_quantity": 0,
-        "max_quantity": 10,
-        "img": "/images/items/Heartcontainer.png",
+        "stages": [
+            {
+                "img": "/images/goal_fast.png",
+                "codes": "fast"
+            },
+            {
+                "img": "/images/goal_slow.png",
+                "codes": "slow"
+            },
+            {
+                "img": "/images/goal_triforce.png",
+                "codes": "triforce"
+            },
+            {
+                "img": "/images/goal_triforce+ganon.png",
+                "codes": "triforce+ganon"
+            },
+            {
+                "img": "/images/goal_icerod.png",
+                "codes": "icerod_hunt"
+            }
+        ],
         "codes": "goal"
     },
     {
         "name": "Start Option",
-        "type": "progressive_toggle",
+        "type": "progressive",
         "allow_disabled": false,
-        "min_quantity": 0,
-        "max_quantity": 10,
-        "img": "/images/items/Heartcontainer.png",
-        "codes": "start_option"
+        "stages": [
+            {
+                "img": "/images/gm_open.png",
+                "codes": "start_option, open"
+            },
+            {
+                "img": "/images/gm_inverted.png",
+                "codes": "start_option, inverted"
+            },
+            {
+                "img": "/images/gm_standard.png",
+                "codes": "start_option, standard"
+            }
+        ]
     },
     {
         "name": "Enemizer",
         "type": "toggle",
-        "img": "/images/items/Heartcontainer.png",
+        "img": "/images/enemizer.png",
         "codes": "enemizer"
-    },
-    {
-        "name": "Key Sanity Option",
-        "type": "progressive_toggle",
-        "img": "/images/items/Heartcontainer.png",
-        "codes": "key_shuffle"
     },
     {
         "name": "Shop Sanity",
         "type": "toggle",
-        "img": "/images/items/Heartcontainer.png",
+        "img": "/images/shop_sanity.png",
         "codes": "shop_sanity"
     },
     {
         "name": "Boss Shuffle",
-        "type": "progressive_toggle",
+        "type": "progressive",
+        "loop": true,
         "allow_disabled": false,
-        "min_quantity": 0,
-        "max_quantity": 10,
-        "img": "/images/items/Heartcontainer.png",
+        "stages": [
+            {
+                "img": "/images/boss_vanilla.png",
+                "codes": "vanilla"
+            },
+            {
+                "img": "/images/boss_random.png",
+                "codes": "random"
+            },
+            {
+                "img": "/images/boss_singularity.png",
+                "codes": "singularity"
+            }
+        ],
         "codes": "boss_shuffle"
     },
     {
         "name": "Glitches Option",
-        "type": "progressive_toggle",
+        "type": "progressive",
         "allow_disabled": false,
-        "min_quantity": 0,
-        "max_quantity": 10,
+        "stages": [
+            {
+                "img": "/images/glitches_no.png",
+                "codes": "glitches"
+            },
+            {
+                "img": "/images/glitches_boots.png",
+                "codes": "glitches"
+            },
+            {
+                "img": "/images/glitches_minor.png",
+                "codes": "glitches, minor"
+            },
+            {
+                "img": "/images/glitches_ow.png",
+                "codes": "glitches, ow"
+            }
+        ],
         "img": "/images/items/Pegasus_Boots.png",
         "codes": "glitches"
     },
@@ -537,330 +588,76 @@
         "codes": "item_mode"
     },
     {
-        "name": "Recover Goods",
-        "type": "toggle",
-        "img": "/images/events/recovergoods.png",
-        "codes": "recovergoods"
+        "name": "Small Key",
+        "type": "progressive_toggle",
+        "img": "/images/items/lttp_small_key.png",
+        "codes": "small_keys"
     },
     {
-        "name": "Deliver Letter",
-        "type": "toggle",
-        "img": "/images/events/stevenletter.png",
-        "codes": "stevenletter"
+        "name": "Big Key",
+        "type": "progressive_toggle",
+        "img": "/images/items/lttp_big_key.png",
+        "codes": "big_keys"
     },
     {
-        "name": "Deliver Goods",
-        "type": "toggle",
-        "img": "/images/events/sterngoods.png",
-        "codes": "sterngoods"
-    },
-    {
-        "name": "Magma - Steal Meteorite",
-        "type": "toggle",
-        "img": "/images/events/stealmeteor.png",
-        "codes": "stealmeteor"
-    },
-    {
-        "name": "Magma - Clear Base",
-        "type": "toggle",
-        "img": "/images/events/clearmagma.png",
-        "codes": "clearmagma"
-    },
-    {
-        "name": "Clear Weather Institute",
-        "type": "toggle",
-        "img": "/images/events/weatherins.png",
-        "codes": "weatherins"
-    },
-    {
-        "name": "Aqua - Steal Submarine",
-        "type": "toggle",
-        "img": "/images/events/stealsub.png",
-        "codes": "stealsub"
-    },
-    {
-        "name": "Aqua - Clear Base",
-        "type": "toggle",
-        "img": "/images/events/clearaqua.png",
-        "codes": "clearaqua"
-    },
-    {
-        "name": "Become Champion",
-        "type": "toggle",
-        "img": "/images/events/becomechampion.png",
-        "codes": "becomechampion"
-    },
-    {
-        "name": "Release Kyogre",
-        "type": "toggle",
-        "img": "/images/events/releasekyogre.png",
-        "codes": "releasekyogre"
-    },
-    {
-        "name": "Release Rayquaza",
-        "type": "toggle",
-        "img": "/images/events/releaserayquaza.png",
-        "codes": "releaserayquaza"
-    },
-    {
-        "name": "Norman Goal",
-        "type": "progressive",
-        "loop": true,
-        "allow_disabled": false,
-        "stages": [
+        "name": "Keysanity",
+        "type": "composite_toggle",
+        "item_left": "small_keys",
+        "item_right": "big_keys",
+        "images": [
             {
-                "img": "images/settings/norman_gym.png",
-                "codes": "op_norm,op_norm_gym"
+                "left": false, "right": false,
+                "img": "/images/full_keysanity.png",
+                "img_mods": "@disabled",
+                "codes": "vanilla_keys"
+                // img, mods like stage
             },
             {
-                "img": "images/settings/norman_bdg.png",
-                "codes": "op_norm,op_norm_bdg",
-                "inherit_codes": false
+                "left": true, "right": false,
+                "img": "/images/small_keysanity.png",
+                "codes": "small_keysanity"
+            },
+            {
+                "left": false, "right": true,
+                "img": "/images/big_keysanity.png",
+                "codes": "big_keysanity"
+            },
+            {
+                "left": true, "right": true,
+                "img": "/images/full_keysanity.png",
+                "codes": "full_keysanity"
             }
-          
-        ]
+        ],
+        "codes": "key_shuffle"
     },
     {
-        "name": "Norman Requirement",
-        "type": "consumable",
-        "img": "/images/settings/norman.png",
-        "min_quantity": 1,
-        "max_quantity": 8,
-        "initial_quantity": 4,
-        "codes": "normanreq"
+        "name": "Dungeon Map",
+        "type": "progressive_toggle",
+        "img": "/images/items/swordless.png",
+        "codes": "map"
     },
     {
-        "name": "Elite 4 Goal",
-        "type": "progressive",
-        "loop": true,
-        "allow_disabled": false,
-        "stages": [
-            {
-                "img": "images/settings/e4_gym.png",
-                "codes": "op_e4,op_e4_gym"
-            },
-            {
-                "img": "images/settings/e4_bdg.png",
-                "codes": "op_e4,op_e4_bdg",
-                "inherit_codes": false
-            }
-          
-        ]
+        "name": "Compass",
+        "type": "progressive_toggle",
+        "img": "/images/items/swordless.png",
+        "codes": "compass"
     },
     {
-        "name": "Elite 4 Requirement",
-        "type": "consumable",
-        "min_quantity": 1,
-        "max_quantity": 8,
-        "initial_quantity": 8,
-        "img": "/images/events/becomechampion.png",
-        "codes": "e4req"
+        "name": "unknown",
+        "type": "progressive_toggle",
+        "img": "/images/unknown.png",
+        "codes": "unknown"
     },
     {
-        "name": "Gyms Beaten",
-        "type": "consumable",
-        "img": "/images/items/gyms.png",
-        "codes": "gyms"
+        "name": "Compass",
+        "type": "progressive_toggle",
+        "img": "/images/items/swordless.png",
+        "codes": "compass"
     },
     {
-        "name": "Randomize HMs",
-        "type": "progressive",
-        "loop": true,
-        "allow_disabled": false,
-        "stages": [
-            {
-                "img": "images/settings/hms_on.png",
-                "codes": "op_hms,op_hms_on"
-            },
-            {
-                "img": "images/settings/hms_sh.png",
-                "codes": "op_hms,op_hms_sh"
-            },
-            {
-                "img": "images/settings/hms_off.png",
-                "codes": "op_hms,op_hms_off",
-                "inherit_codes": false
-            }
-            
-        ]
-    },
-    {
-        "name": "Randomize Badges",
-        "type": "progressive",
-        "loop": true,
-        "allow_disabled": false,
-        "stages": [
-            {
-                "img": "images/settings/badges_on.png",
-                "codes": "op_bdg,op_bdg_on"
-            },
-            {
-                "img": "images/settings/badges_sh.png",
-                "codes": "op_bdg,op_bdg_sh"
-            },
-            {
-                "img": "images/settings/badges_off.png",
-                "codes": "op_bdg,op_bdg_off",
-                "inherit_codes": false
-            }
-        ]
-    },
-    {
-        "name": "Randomize Overworld Items",
-        "type": "progressive",
-        "loop": true,
-        "allow_disabled": false,
-        "stages": [
-            {
-                "img": "images/settings/overworld_on.png",
-                "codes": "op_ovw,op_ovw_on"
-            },
-            {
-                "img": "images/settings/overworld_off.png",
-                "codes": "op_ovw,op_ovw_off",
-                "inherit_codes": false
-            }
-          
-        ]
-    },
-    {
-        "name": "Randomize NPC Gifts",
-        "type": "progressive",
-        "loop": true,
-        "allow_disabled": false,
-        "stages": [
-            {
-                "img": "images/settings/npc_on.png",
-                "codes": "op_npc,op_npc_on"
-            },
-            {
-                "img": "images/settings/npc_off.png",
-                "codes": "op_npc,op_npc_off",
-                "inherit_codes": false
-            }
-        ]
-    },
-    {
-        "name": "Randomize Hidden Items",
-        "type": "progressive",
-        "loop": true,
-        "allow_disabled": false,
-        "stages": [
-            {
-                "img": "images/settings/hidden_on.png",
-                "codes": "op_hid,op_hid_on"
-            },
-            {
-                "img": "images/settings/hidden_off.png",
-                "codes": "op_hid,op_hid_off",
-                "inherit_codes": false
-            }
-        
-        ]
-    },
-    {
-        "name": "Randomize Key Items",
-        "type": "progressive",
-        "loop": true,
-        "allow_disabled": false,
-        "stages": [
-            {
-                "img": "images/settings/keyitems_on.png",
-                "codes": "op_ki,op_ki_on"
-            },
-            {
-                "img": "images/settings/keyitems_off.png",
-                "codes": "op_ki,op_ki_off",
-                "inherit_codes": false
-            }
-            
-        ]
-    },
-    {
-        "name": "Randomize Rods",
-        "type": "progressive",
-        "loop": true,
-        "allow_disabled": false,
-        "stages": [
-            {
-                "img": "images/settings/rods_on.png",
-                "codes": "op_rod,op_rod_on"
-            },
-            {
-                "img": "images/settings/rods_off.png",
-                "codes": "op_rod,op_rod_off",
-                "inherit_codes": false
-            }
-            
-        ]
-    },
-    {
-        "name": "Randomize Bikes",
-        "type": "progressive",
-        "loop": true,
-        "allow_disabled": false,
-        "stages": [
-            {
-                "img": "images/settings/bikes_on.png",
-                "codes": "op_bik,op_bik_on"
-            },
-            {
-                "img": "images/settings/bikes_off.png",
-                "codes": "op_bik,op_bik_off",
-                "inherit_codes": false
-            }
-           
-        ]
-    },
-    {
-        "name": "Require Itemfinder",
-        "type": "progressive",
-        "loop": true,
-        "allow_disabled": false,
-        "stages": [
-            {
-                "img": "images/settings/if_off.png",
-                "codes": "op_if,op_if_off"
-            },
-            {
-                "img": "images/settings/if_on.png",
-                "codes": "op_if,op_if_on",
-                "inherit_codes": false
-            }
-        ]
-    },
-    {
-        "name": "Require Flash",
-        "type": "progressive",
-        "loop": true,
-        "allow_disabled": false,
-        "stages": [
-            {
-                "img": "images/settings/flash_on.png",
-                "codes": "op_hm5,op_hm5_on"
-            },
-            {
-                "img": "images/settings/flash_off.png",
-                "codes": "op_hm5,op_hm5_off",
-                "inherit_codes": false
-            }
-        ]
-    },
-    {
-        "name": "Enable Ferry",
-        "type": "progressive",
-        "loop": true,
-        "allow_disabled": false,
-        "stages": [
-            {
-                "img": "images/settings/ferry_on.png",
-                "codes": "op_fer,op_fer_on"
-            },
-            {
-                "img": "images/settings/ferry_off.png",
-                "codes": "op_fer,op_fer_off",
-                "inherit_codes": false
-            }
-        ]
+        "name": "Compass",
+        "type": "progressive_toggle",
+        "img": "/images/items/swordless.png",
+        "codes": "compass"
     }
 ]

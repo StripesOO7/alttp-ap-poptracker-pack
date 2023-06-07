@@ -12,25 +12,68 @@
                     {
                         "type": "itemgrid",
                         "item_margin": "2, 2",
+                        "item_size": "40, 40",
                         "h_alignment": "left",
+                        "item_h_alignment": "center",
+                        "item_v_alignment": "center",
                         "rows": [                        
                             [
                                 "gt_access", //gt crystal  count
                                 "ganon_killable", //ganon crystal count
-                                "goal", //slow ganon, fast ganon, pedestal, triforce hunt, triforce hunt + ganon, icerod hunt
-                                "start_option" //standord, open, inverted
+                                "swordless"
+                                
                             ],
                             [
-                                "enemizer",
                                 "key_shuffle",
-                                "shop_sanity",
-                                "boss_shuffle"
-                            ],
-                            [
-                                "glitches",
-                                "swordless",
                                 "progressive_items",
                                 "item_mode"
+                            ]
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "array",
+                "orientation": "horizontal",
+                "margin": "0,0",
+                "content": [
+                    {
+                        "type": "itemgrid",
+                        "item_margin": "2, 2",
+                        "item_size": "64,16",
+                        "h_alignment": "left",
+                        "item_h_alignment": "center",
+                        "item_v_alignment": "center",
+                        "rows": [
+                            [
+                                "enemizer",
+                                "start_option" //standord, open, inverted
+                                
+                            ]
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "array",
+                "orientation": "horizontal",
+                "margin": "0,0",
+                "content": [
+                    {
+                        "type": "itemgrid",
+                        "item_margin": "2, 2",
+                        "item_size": "64,24",
+                        "h_alignment": "left",
+                        "item_h_alignment": "center",
+                        "item_v_alignment": "center",
+                        "rows": [
+                            [
+                                "glitches",
+                                "goal" //slow ganon, fast ganon, pedestal, triforce hunt, triforce hunt + ganon, icerod hunt
+                            ],
+                            [
+                                "boss_shuffle",
+                                "shop_sanity"
                             ]
                         ]
                     }

@@ -13,6 +13,8 @@
                         "type": "itemgrid",
                         "item_margin": "2, 2",
                         "h_alignment": "left",
+                        "item_h_alignment": "center",
+                        "item_v_alignment": "center",
                         "rows": [
                             [
                                 "bow",
@@ -73,6 +75,8 @@
                                 "type": "itemgrid",
                                 "margin": "0,2",
                                 "h_alignment":  "center",
+                                "item_h_alignment": "center",
+                                "item_v_alignment": "center",
                                 "item_margin": "1,0",
                                 "item_height": 16,
                                 "item_width": 20,
@@ -95,12 +99,14 @@
                               {
                                 "type": "itemgrid",
                                 "h_alignment": "center",
+                                "item_h_alignment": "center",
+                                "item_v_alignment": "center",
                                 "item_margin": "1,0",
                                 "item_size": 16,
                                 "badge_font_size": 10,
                                 "rows": [
                                   [ "" , "" , "", "hc_smallkey" , "" ],
-                                  [ "hc_label" , "hc_smallkey" , "at_label", "at_smallkey", "" ],
+                                  [ "" , "" , "", "at_smallkey", "" ],
                                   [ "easternpalace", "ep_boss" , "" ,"ep_smallkey", "ep_bigkey" ],
                                   [ "desertpalace", "dp_boss" , "", "dp_smallkey", "dp_bigkey" ],
                                   [ "towerofhera", "toh_boss" , "", "toh_smallkey", "toh_bigkey" ],
