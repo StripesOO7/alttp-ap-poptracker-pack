@@ -8,7 +8,7 @@
                 "name": "",
                 "sections": [
                     {
-                        "ref": "HC/Hyrule Castle/Map Chest"
+                        "name": "HC/Hyrule Castle/Map Chest"
                     }
                 ],
                 "map_locations": [
@@ -24,7 +24,7 @@
                 "name": "",
                 "sections": [
                     {
-                        "ref": "HC/Hyrule Castle/Boomerang Chest"
+                        "name": "HC/Hyrule Castle/Boomerang Chest"
                     }
                 ],
                 "map_locations": [
@@ -40,7 +40,7 @@
                 "name": "",
                 "sections": [
                     {
-                        "ref": "HC/Hyrule Castle/Zeldas Chest"
+                        "name": "HC/Hyrule Castle/Zeldas Chest"
                     }
                 ],
                 "map_locations": [
@@ -63,7 +63,7 @@
                 "name": "",
                 "sections": [
                     {
-                        "ref": "CE/Castle Escape/Dark Cross"
+                        "name": "CE/Castle Escape/Dark Cross"
                     }
                 ],
                 "map_locations": [
@@ -76,22 +76,48 @@
                 ]
             },
             {
-                "name": "Secret Room",
+                "name": "Secret Passage - Left",
                 "sections": [
                     {
-                        "ref": "CE/Castle Escape/Secret Room - Left"
-                    },
-                    {
-                        "ref": "CE/Castle Escape/Secret Room - Middle"
-                    },
-                    {
-                        "ref": "CE/Castle Escape/Secret Room - Right"
+                        "name": "Secret Passage - Left"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "CE",
-                        "x": 130,
+                        "x": 125,
+                        "y": 70,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Secret Passage - Middle",
+                "sections": [
+                    {
+                        "name": "Secret Passage - Middle"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "CE",
+                        "x": 133,
+                        "y": 70,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Secret Passage - Right",
+                "sections": [
+                    {
+                        "name": "Secret Passage - Right"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "CE",
+                        "x": 141,
                         "y": 70,
                         "size": 6
                     }
@@ -108,7 +134,7 @@
                 "name": "Sanctuary Chest",
                 "sections": [
                     {
-                        "ref": "CE/Sanctuary/Sanctuary Chest"
+                        "name": "CE/Sanctuary/Sanctuary Chest"
                     }
                 ],
                 "map_locations": [
