@@ -5,10 +5,10 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "children": [
             {
-                "name": "Canon Chest",
+                "name": "Bridge Chest",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Bridge Chest"
                     }
                 ],
                 "map_locations": [
@@ -21,10 +21,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Main Lobby",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Main Lobby"
                     }
                 ],
                 "map_locations": [
@@ -37,10 +37,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Compass Chest",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Compass Chest"
                     }
                 ],
                 "map_locations": [
@@ -53,10 +53,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Big Key Chest",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Big Key Chest"
                     }
                 ],
                 "map_locations": [
@@ -69,10 +69,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Spike Chest",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Spike Chest"
                     }
                 ],
                 "map_locations": [
@@ -85,10 +85,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Map Chest",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Map Chest"
                     }
                 ],
                 "map_locations": [
@@ -104,7 +104,7 @@
                 "name": "Big Chest",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Big Chest"
                     }
                 ],
                 "map_locations": [
@@ -120,10 +120,12 @@
                 "name": "Boss",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Boss Item",
+                        "hosted_item": "mm_boss"
                     },
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Dungeon Reward",
+                        "hosted_item": "miserymire"
                     }
                 ],
                 "map_locations": [

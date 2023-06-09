@@ -5,7 +5,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "children": [
             {
-                "name": "Canon Chest",
+                "name": "Entrance",
                 "sections": [
                     {
                         "name": "Well - Left Chest"
@@ -21,7 +21,7 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Map Chest",
                 "sections": [
                     {
                         "name": "Well - Left Chest"
@@ -37,10 +37,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Big Key Chest",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Big Key Chest"
                     }
                 ],
                 "map_locations": [
@@ -53,10 +53,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "West Chest",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "West Chest"
                     }
                 ],
                 "map_locations": [
@@ -69,10 +69,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Compass Chest",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Compass Chest"
                     }
                 ],
                 "map_locations": [
@@ -85,10 +85,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Flooded Room Left",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Flooded Room Left"
                     }
                 ],
                 "map_locations": [
@@ -101,10 +101,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Flooded Room Right",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Flooded Room Right"
                     }
                 ],
                 "map_locations": [
@@ -117,10 +117,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Waterfall Room",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Waterfall Room"
                     }
                 ],
                 "map_locations": [
@@ -136,7 +136,7 @@
                 "name": "Big Chest",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Big Chest"
                     }
                 ],
                 "map_locations": [
@@ -152,7 +152,12 @@
                 "name": "Boss",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Boss Item",
+                        "hosted_item": "sp_boss"
+                    },
+                    {
+                        "name": "Dungeon Reward",
+                        "hosted_item": "swamppalace"
                     }
                 ],
                 "map_locations": [

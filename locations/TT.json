@@ -6,11 +6,11 @@
         "parent": "TT",
         "children": [
             {
-                "name": "Canon Chest",
+                "name": "Map Chest",
                 "item_count":1,
                 "sections": [
                     {
-                        "name": "Middle Chest"
+                        "name": "Map Chest"
                         
                     }
                 ],
@@ -24,10 +24,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Ambush Chest",
                 "sections": [
                     {
-                        "ref": "TT/Thieves Town/Middle Chest"
+                        "name": "Ambush Chest"
                     }
                 ],
                 "map_locations": [
@@ -40,10 +40,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Compass Chest",
                 "sections": [
                     {
-                        "ref": "TT/Thieves Town/Middle Chest"
+                        "name": "Compass Chest"
                     }
                 ],
                 "map_locations": [
@@ -56,10 +56,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Big Key Chest",
                 "sections": [
                     {
-                        "ref": "TT/Thieves Town/Middle Chest"
+                        "name": "Big Key Chest"
                     }
                 ],
                 "map_locations": [
@@ -83,10 +83,10 @@
         "parent": "TT",
         "children": [
             {
-                "name": "Canon Chest",
+                "name": "Blind's Cell",
                 "sections": [
                     {
-                        "name": "Middle Chest2"
+                        "name": "Blind's Cell"
                     }
                 ],
                 "map_locations": [
@@ -99,10 +99,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Attic",
                 "sections": [
                     {
-                        "ref": "TT/Thieves Town/Middle Chest"
+                        "name": "Attic"
                     }
                 ],
                 "map_locations": [
@@ -118,7 +118,7 @@
                 "name": "Big Chest",
                 "sections": [
                     {
-                        "ref": "TT/Thieves Town/Middle Chest"
+                        "name": "Big Chest"
                     }
                 ],
                 "map_locations": [
@@ -134,7 +134,12 @@
                 "name": "Boss",
                 "sections": [
                     {
-                        "ref": "TT/Thieves Town/Middle Chest"
+                        "name": "Boss Item",
+                        "hosted_item": "tt_boss"
+                    },
+                    {
+                        "name": "Dungeon Reward",
+                        "hosted_item": "thievestown"
                     }
                 ],
                 "map_locations": [

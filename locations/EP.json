@@ -5,10 +5,10 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "children": [
             {
-                "name": "test1",
+                "name": "Cannonball Chest",
                 "sections": [
                     {
-                        "name": "Chest1"
+                        "name": "Cannonball Chest"
                     }
                 ],
                 "map_locations": [
@@ -21,10 +21,10 @@
                 ]
             },
             {
-                "name": "test2",
+                "name": "Map Chest",
                 "sections": [
                     {
-                        "name": "Chest2"
+                        "name": "Map Chest"
                     }
                 ],
                 "map_locations": [
@@ -37,10 +37,10 @@
                 ]
             },
             {
-                "name": "test3",
+                "name": "Compass Chest",
                 "sections": [
                     {
-                        "name": "Chest3"
+                        "name": "Compass Chest"
                     }
                 ],
                 "map_locations": [
@@ -53,10 +53,10 @@
                 ]
             },
             {
-                "name": "test4",
+                "name": "Big Key Chest",
                 "sections": [
                     {
-                        "name": "Chest4"
+                        "name": "Big Key Chest"
                     }
                 ],
                 "map_locations": [
@@ -69,10 +69,10 @@
                 ]
             },
             {
-                "name": "test5",
+                "name": "Big Chest",
                 "sections": [
                     {
-                        "name": "Chest5"
+                        "name": "Big Chest"
                     }
                 ],
                 "map_locations": [
@@ -88,10 +88,12 @@
                 "name": "Boss",
                 "sections": [
                     {
-                        "name": "Boss Item"
+                        "name": "Boss Item",
+                        "hosted_item": "ep_boss"
                     },
                     {
-                        "name": "EP/Eastern Palace/Dungeon Reward"
+                        "name": "Dungeon Reward",
+                        "hosted_item": "easternpalace"
                     }
                 ],
                 "map_locations": [

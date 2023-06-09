@@ -5,7 +5,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "children": [
             {
-                "name": "Canon Chest",
+                "name": "Shooter Room",
                 "sections": [
                     {
                         "name": "Well - Left Chest"
@@ -21,10 +21,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Stalfos Basement",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Stalfos Basement"
                     }
                 ],
                 "map_locations": [
@@ -37,10 +37,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Big Key Chest",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Big Key Chest"
                     }
                 ],
                 "map_locations": [
@@ -53,10 +53,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Dark Maze Top",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Dark Maze Top"
                     }
                 ],
                 "map_locations": [
@@ -69,10 +69,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Dark Maze Bottom",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Dark Maze Bottom"
                     }
                 ],
                 "map_locations": [
@@ -85,10 +85,10 @@
                 ]
             },
             {
-                "name": "Dark Maze",
+                "name": "Compass Chest",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Compass Chest"
                     }
                 ],
                 "map_locations": [
@@ -101,10 +101,10 @@
                 ]
             },
             {
-                "name": "Dark Maze",
+                "name": "Harmless Hellway",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Harmless Hellway"
                     }
                 ],
                 "map_locations": [
@@ -117,10 +117,10 @@
                 ]
             },
             {
-                "name": "Dark Maze",
+                "name": "The Arena Bridge",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Bridge"
                     }
                 ],
                 "map_locations": [
@@ -133,10 +133,10 @@
                 ]
             },
             {
-                "name": "Dark Maze",
+                "name": "The Arena Ledge",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Ledge"
                     }
                 ],
                 "map_locations": [
@@ -149,10 +149,10 @@
                 ]
             },
             {
-                "name": "Dark Maze",
+                "name": "Map Chest",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Map Chest"
                     }
                 ],
                 "map_locations": [
@@ -165,10 +165,10 @@
                 ]
             },
             {
-                "name": "Dark Maze",
+                "name": "Dark Basement Left",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Dark Basement Left"
                     }
                 ],
                 "map_locations": [
@@ -181,10 +181,10 @@
                 ]
             },
             {
-                "name": "Dark Maze",
+                "name": "Dark Basement Right",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Dark Basement Right"
                     }
                 ],
                 "map_locations": [
@@ -200,7 +200,7 @@
                 "name": "Big Chest",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Big Chest"
                     }
                 ],
                 "map_locations": [
@@ -216,10 +216,12 @@
                 "name": "Boss",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Boss Item",
+                        "hosted_item": "pod_boss"
                     },
                     {
-                        "name": "Dungeon Reward"
+                        "name": "Dungeon Reward",
+                        "hosted_item": "palaceofdarkness"
                     }
                 ],
                 "map_locations": [

@@ -5,10 +5,10 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "children": [
             {
-                "name": "Canon Chest",
+                "name": "Compass Chest",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Compass Chest"
                     }
                 ],
                 "map_locations": [
@@ -21,10 +21,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Chain Chomps",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Chain Chomps"
                     }
                 ],
                 "map_locations": [
@@ -37,10 +37,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Roller Room Left",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Roller Room Left"
                     }
                 ],
                 "map_locations": [
@@ -53,10 +53,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Roller Room Right",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Roller Room Right"
                     }
                 ],
                 "map_locations": [
@@ -69,10 +69,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Big Key Chest",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Big Key Chest"
                     }
                 ],
                 "map_locations": [
@@ -92,10 +92,10 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "children": [
             {
-                "name": "Canon Chest",
+                "name": "Crystaroller Room",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Crystaroller Room"
                     }
                 ],
                 "map_locations": [
@@ -108,10 +108,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Eye Bridge - Top Left",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Eye Bridge - Top Left"
                     }
                 ],
                 "map_locations": [
@@ -124,10 +124,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Eye Bridge - Bottom Left",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Eye Bridge - Bottom Left"
                     }
                 ],
                 "map_locations": [
@@ -140,10 +140,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Eye Bridge - Top Right",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Eye Bridge - Top Right"
                     }
                 ],
                 "map_locations": [
@@ -156,10 +156,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Eye Bridge - Bottom Right",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Eye Bridge - Bottom Right"
                     }
                 ],
                 "map_locations": [
@@ -175,7 +175,7 @@
                 "name": "Big Chest",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Big Chest"
                     }
                 ],
                 "map_locations": [
@@ -191,10 +191,12 @@
                 "name": "Boss",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Boss Item",
+                        "hosted_item": "tr_boss"
                     },
                     {
-                        "name": "dungeon reward"
+                        "name": "Dungeon Reward",
+                        "hosted_item": "turtlerock"
                     }
                 ],
                 "map_locations": [

@@ -5,10 +5,10 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "children": [
             {
-                "name": "Canon Chest",
+                "name": "Pot Prison",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Pot Prison"
                     }
                 ],
                 "map_locations": [
@@ -21,10 +21,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Compass Chest",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Compass Chest"
                     }
                 ],
                 "map_locations": [
@@ -37,10 +37,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Pinball Room",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Pinball Room"
                     }
                 ],
                 "map_locations": [
@@ -53,10 +53,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Map Chest",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Map Chest"
                     }
                 ],
                 "map_locations": [
@@ -69,10 +69,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Big Key Chest",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Big Key Chest"
                     }
                 ],
                 "map_locations": [
@@ -88,7 +88,7 @@
                 "name": "Big Chest",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Big Chest"
                     }
                 ],
                 "map_locations": [
@@ -108,10 +108,10 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "children": [
             {
-                "name": "Canon Chest",
+                "name": "Bridge Room",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Bridge Room"
                     }
                 ],
                 "map_locations": [
@@ -127,10 +127,12 @@
                 "name": "Boss",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Boss Item",
+                        "hosted_item": "sw_boss"
                     },
                     {
-                        "name": "dungeon reward"
+                        "name": "Dungeon Reward",
+                        "hosted_item": "skullwoods"
                     }
                 ],
                 "map_locations": [

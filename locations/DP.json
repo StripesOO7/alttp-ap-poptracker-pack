@@ -8,7 +8,7 @@
                 "name": "Torch",
                 "sections": [
                     {
-                        "name": "Torch Item",
+                        "name": "Torch",
                         "access_rules": [
                             "boots",
                             "{@DP}"
@@ -105,15 +105,15 @@
         "chest_opened_img": "/images/items/chest_opened_img.png",
         "children": [
             {
-                "name": "",
+                "name": "Boss",
                 "sections": [
                     {
-                        "name": "DP Back/Desert Palace Back/Boss Item",
-                        "hosted_item": ""
+                        "name": "Boss Item",
+                        "hosted_item": "dp_boss"
                     },
                     {
-                        "name": "DP Back/Desert Palace Back/Dungeon Reward",
-                        "hosted_item": ""
+                        "name": "Dungeon Reward",
+                        "hosted_item": "desertpalace"
                     }
                 ],
                 "map_locations": [

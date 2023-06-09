@@ -5,10 +5,10 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "children": [
             {
-                "name": "",
+                "name": "Room 03",
                 "sections": [
                     {
-                        "name": "AT/Aganim's Tower/Room 03"
+                        "name": "Room 03"
                     }
                 ],
                 "map_locations": [
@@ -21,10 +21,10 @@
                 ]
             },
             {
-                "name": "",
+                "name": "Maze Chest",
                 "sections": [
                     {
-                        "name": "AT/Aganim's Tower/Maze Chest"
+                        "name": "Maze Chest"
                     }
                 ],
                 "map_locations": [
@@ -37,10 +37,11 @@
                 ]
             },
             {
-                "name": "",
+                "name": "Aganim 1",
                 "sections": [
                     {
-                        "name": "AT/Aganim's Tower/Aganim 1"
+                        "name": "Aganim 1",
+                        "hosted_item": "aga1"
                     }
                 ],
                 "map_locations": [

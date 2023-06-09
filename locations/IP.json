@@ -5,10 +5,10 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "children": [
             {
-                "name": "Canon Chest",
+                "name": "Compass Chest",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Compass Chest"
                     }
                 ],
                 "map_locations": [
@@ -21,10 +21,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Freezor Chest",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Freezor Chest"
                     }
                 ],
                 "map_locations": [
@@ -37,10 +37,10 @@
                 ]
             },
             {
-                "name": "Canon Chest",
+                "name": "Spike Room",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Spike Room"
                     }
                 ],
                 "map_locations": [
@@ -52,12 +52,28 @@
                     }
                 ]
             },
-
             {
-                "name": "Canon Chest",
+                "name": "Map Chest",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Map Chest"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "IP",
+                        "x": 20,
+                        "y": 10,
+                        "size": 6
+                    }
+                ]
+            },
+
+            {
+                "name": "Iced T Room",
+                "sections": [
+                    {
+                        "name": "Iced T Room"
                     }
                 ],
                 "map_locations": [
@@ -74,7 +90,7 @@
                 "name": "Big Chest",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Big Chest"
                     }
                 ],
                 "map_locations": [
@@ -90,10 +106,12 @@
                 "name": "Boss",
                 "sections": [
                     {
-                        "name": "Well - Left Chest"
+                        "name": "Boss Item",
+                        "hosted_item": "ip_boss"
                     },
                     {
-                        "name": "dungeon reward"
+                        "name": "Dungeon Reward",
+                        "hosted_item": "icepalace"
                     }
                 ],
                 "map_locations": [
