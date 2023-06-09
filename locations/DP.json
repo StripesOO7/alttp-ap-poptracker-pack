@@ -1,14 +1,18 @@
 [
     {
-        "name": "Dessert Palace ",
+        "name": "Desert Palace",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "children": [
             {
-                "name": "",
+                "name": "Torch",
                 "sections": [
                     {
-                        "name": "DP/Desert Palace/Torch"
+                        "name": "Torch Item",
+                        "access_rules": [
+                            "boots",
+                            "{@DP}"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -21,10 +25,13 @@
                 ]
             },
             {
-                "name": "",
+                "name": "Big Chest",
                 "sections": [
                     {
-                        "name": "DP/Desert Palace/Big Chest"
+                        "name": "Big Chest",
+                        "access_rules": [
+                            "dp_bigkey"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -37,10 +44,10 @@
                 ]
             },
             {
-                "name": "",
+                "name": "Eyegore Chest",
                 "sections": [
                     {
-                        "name": "DP/Desert Palace/Eyegore Chest"
+                        "name": "Eyegore Chest"
                     }
                 ],
                 "map_locations": [
@@ -53,10 +60,13 @@
                 ]
             },
             {
-                "name": "",
+                "name": "Canon Chest",
                 "sections": [
                     {
-                        "name": "DP/Desert Palace/Canon Chest"
+                        "name": "Canon Chest",
+                        "access_rules": [
+                            "@Desert Palace/Pre Canon Chest/Pre Canon Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -69,10 +79,13 @@
                 ]
             },
             {
-                "name": "",
+                "name": "Pre Canon Chest",
                 "sections": [
                     {
-                        "name": "DP/Desert Palace/Pre Canon Cest"
+                        "name": "Pre Canon Chest",
+                        "access_rules": [
+                            "dp_smallkey:1"
+                        ]
                     }
                 ],
                 "map_locations": [

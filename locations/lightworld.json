@@ -196,7 +196,8 @@
             {
                 "name": "Master Sword Pedestal",
                 "access_rules":[
-                    "green_pendant, blue_pendant, red_pendant"
+                    "green_pendant, blue_pendant, red_pendant",
+                    "{book}"
                 ],
                 "sections": [
                     {
@@ -215,7 +216,8 @@
             {
                 "name": "Lumberjacks",
                 "access_rules":[
-                    "aga1, boots"
+                    "aga1, boots",
+                    "{}"
                 ],
                 "sections": [
                     {
@@ -253,7 +255,8 @@
             {
                 "name": "Library",
                 "access_rules":[
-                    "boots"
+                    "boots",
+                    "{}"
                 ],
                 "sections": [
                     {
@@ -273,7 +276,8 @@
                 "name": "Race",
                 "access_rules":[
                     "bombs",
-                    "boots"
+                    "boots",
+                    "{}"
                 ],
                 "sections": [
                     {
@@ -331,7 +335,8 @@
                 "name": "Desert Ledge",
                 "access_rules":[
                     "book",
-                    "mirror, titans, flute_active"
+                    "mirror, titans, flute_active",
+                    "{}"
                 ],
                 "sections": [
                     {
@@ -488,7 +493,8 @@
                     {
                         "name": "Lake Island",
                         "access_rules": [
-                            "$can_swim, @Darkworld, mirror"
+                            "$can_swim, @Darkworld, mirror",
+                            "{$can_swim}"
                         ]
                     }
                 ],
@@ -603,7 +609,9 @@
                     {
                         "name": "Zora Ledge",
                         "access_rules":[
-                            "$can_swim"
+                            "$can_swim",
+                            "{glove}",
+                            "{$fake_flippers}"
                         ]
                     }
                 ],
@@ -683,7 +691,7 @@
             {
                 "name": "Bombos Tablet",
                 "access_rules":[
-                    "@Darkworld, mirror, book, sword"
+                    "{@Darkworld, mirror, book}, sword"
                 ],
                 "sections": [
                     {
@@ -743,7 +751,8 @@
                     {
                         "name": "Top Item",
                         "access_rules":[
-                            "mirror"
+                            "mirror",
+                            "{Light Death Mountain Left Bottom}"
                         ]
                     },
                     {
@@ -779,7 +788,7 @@
             {
                 "name": "Ether Tablet",
                 "access_rules":[
-                    "mirror, book, sword"
+                    "{mirror, book}, sword"
                 ],
                 "sections": [
                     {
@@ -810,7 +819,7 @@
             {
                 "name": "Floating Island",
                 "access_rules":[
-                    "@Dark Death Mountain Right, mirror, boots"
+                    "{@Dark Death Mountain Right}, mirror, boots"
                 ],
                 "sections": [
                     {
