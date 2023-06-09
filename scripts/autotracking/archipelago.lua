@@ -1,28 +1,70 @@
--- this is an example/ default implementation for AP autotracking
--- it will use the mappings defined in item_mapping.lua and location_mapping.lua to track items and locations via thier ids
--- it will also load the AP slot data in the global SLOT_DATA, keep track of the current index of on_item messages in CUR_INDEX
--- addition it will keep track of what items are local items and which one are remote using the globals LOCAL_ITEMS and GLOBAL_ITEMS
--- this is useful since remote items will not reset but local items might
 ScriptHost:LoadScript("scripts/autotracking/item_mapping.lua")
 ScriptHost:LoadScript("scripts/autotracking/location_mapping.lua")
 
 CUR_INDEX = -1
-SLOT_DATA = nil
-LOCAL_ITEMS = {}
-GLOBAL_ITEMS = {}
+--SLOT_DATA = nil
+
+FLAG_CODES = {
+    "","","","",
+    "glitches_required",
+    "","","",
+    -- "dark_room_logic",
+    "bigkey_shuffle",
+    "smallkey_shuffle",
+    "map_shuffle",
+    "compass_shuffle",
+    "progressive",
+    "goals",
+    "crystals_needed_for_gt",
+    "crystals_needed_for_ganon",
+    "mode",
+    "retro_bow",
+    "retro_caves",
+    "swordless",
+    "item_pool",
+    "misery_mire_medallion",
+    "turtle_rock_medallion",
+    "boss_shuffle",
+    "enemy_shuffle",
+    "pot_shuffle",
+    "shop_shuffle",
+    "glitch_boots",
+}
+
+function has_value (t, val)
+    for i, v in ipairs(t) do
+        if v == val then return 1 end
+    end
+    return 0
+end
+
+function dump_table(o, depth)
+    if depth == nil then
+        depth = 0
+    end
+    if type(o) == 'table' then
+        local tabs = ('\t'):rep(depth)
+        local tabs2 = ('\t'):rep(depth + 1)
+        local s = '{\n'
+        for k, v in pairs(o) do
+            if type(k) ~= 'number' then
+                k = '"' .. k .. '"'
+            end
+            s = s .. tabs2 .. '[' .. k .. '] = ' .. dump_table(v, depth + 1) .. ',\n'
+        end
+        return s .. tabs .. '}'
+    else
+        return tostring(o)
+    end
+end
+
 
 function onClear(slot_data)
-    if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-        --print(string.format("called onClear, slot_data:\n%s", dump_table(slot_data)))
-    end
-    SLOT_DATA = slot_data
+    --SLOT_DATA = slot_data
     CUR_INDEX = -1
     -- reset locations
     for _, v in pairs(LOCATION_MAPPING) do
         if v[1] then
-            if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-                print(string.format("onClear: clearing location %s", v[1]))
-            end
             local obj = Tracker:FindObjectForCode(v[1])
             if obj then
                 if v[1]:sub(1, 1) == "@" then
@@ -30,17 +72,12 @@ function onClear(slot_data)
                 else
                     obj.Active = false
                 end
-            elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-                print(string.format("onClear: could not find object for code %s", v[1]))
             end
         end
     end
     -- reset items
     for _, v in pairs(ITEM_MAPPING) do
         if v[1] and v[2] then
-            if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-                print(string.format("onClear: clearing item %s of type %s", v[1], v[2]))
-            end
             local obj = Tracker:FindObjectForCode(v[1])
             if obj then
                 if v[2] == "toggle" then
@@ -50,149 +87,92 @@ function onClear(slot_data)
                     obj.Active = false
                 elseif v[2] == "consumable" then
                     obj.AcquiredCount = 0
-                elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-                    print(string.format("onClear: unknown item type %s for code %s", v[2], v[1]))
                 end
-            elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-                print(string.format("onClear: could not find object for code %s", v[1]))
             end
         end
     end
-    LOCAL_ITEMS = {}
-    GLOBAL_ITEMS = {}
 
-    if SLOT_DATA == nil  then
+    Archipelago:SetNotify({"events"})
+    Archipelago:Get({"events"})
+
+    if slot_data == nil  then
         print("its fucked")
         return
     end
+    print(dump_table(slot_data))
 
-    if slot_data['hidden_items'] then
-        local obj = Tracker:FindObjectForCode("op_hid")
-        if obj then
-            obj.CurrentStage = 1 - slot_data['hidden_items']
-        end --default is 0 is on, so invert
-    end
+    mapToggle={[0]=0,[1]=1}
+    mapToggleReverse={[0]=1,[1]=0,[2]=0,[3]=0,[4]=0}
+    mapTripleReverse={[0]=2,[1]=1,[2]=0}
+    mapDungeonItem={[0]=false,[1]=true,[2]=true,[3]=true,[4]=true,[6]=true}
 
-    if slot_data['npc_gifts'] then
-        local obj = Tracker:FindObjectForCode("op_npc")
-        if obj then
-            obj.CurrentStage = 1 - slot_data['npc_gifts']
-        end
-    end
+    -- mapGlitches={[0]=0,[1]=2,[2]=3,[3]=0,[4]=0}
+    -- progressive={[]=,}
+    mapMode={["open"]=0,["inverted"]=1,["standard"]=2}
+    mapGoals={["crystals"]=0,["ganon"]=1,["bosses"]=3,["pedestal"]=4,["ganon_pedestal"]=5,["triforce_hunt"]=6,["ganon_triforce_hunt"]=7,["ice_rod_hunt"]=8,["local_triforce_hunt"]=6,["local_ganon_triforce_hunt"]=7}
+    mapDark={["none"]=0,["lamp"]=1,["scornes"]=2}
+    -- mapMedalion{["Bombos"]=,["Ether"]=}
+    -- retro_caves={[]=}
+    mapBosses={[0]=0,[1]=1,[2]=1,[3]=1,[4]=2}
+    mapEnemizer={[0]=false,[1]=true,[2]=true}
+    -- shop_shuffle={[]=,}
 
-    if slot_data['overworld_items'] then
-        local obj = Tracker:FindObjectForCode("op_ovw")
-        if obj then
-            obj.CurrentStage = 1 - slot_data['overworld_items']
-        end
-    end
 
-    if slot_data['rods'] then
-        local obj = Tracker:FindObjectForCode("op_rod")
-        if obj then
-            obj.CurrentStage = 1 - slot_data['rods']
-        end
-    end
+    slotCodes = {
+        -- glitches_required={code="glitches", mapping=mapToggleReverse},
+        -- dark_room_logic={code="dark_mode", mapping=mapDark},
+        bigkey_shuffle={code="big_keys", mapping=mapDungeonItem},
+        smallkey_shuffle={code="small_keys", mapping=mapDungeonItem},
+        map_shuffle={code="map", mapping=mapDungeonItem},
+        compass_shuffle={code="compass", mapping=mapDungeonItem},
+        -- progressive={code="progressive_items", mapping=mapToggle},
+        goals={code="goal", mapping=mapGoals},
+        crystals_needed_for_gt={code="gt_access", mapping=nil},
+        crystals_needed_for_ganon={code="ganon_killable", mapping=nil},
+        mode={code="start_option", mapping=mapMode},
+        -- retro_bow={code="", mapping=mapToggleReverse},
+        -- retro_caves={code="", mapping=mapToggleReverse},
+        swordless={code="swordless", mapping=mapDungeonItem},
+        -- item_pool={code="", mapping=mapToggle},
+        -- misery_mire_medallion={code="", mapping=mapToggle},
+        -- turtle_rock_medallion={code="", mapping=mapToggle},
+        boss_shuffle={code="boss_shuffle", mapping=mapBosses},
+        enemy_shuffle={code="enemizer", mapping=mapEnemizer},
+        -- pot_shuffle={code="", mapping=nil},
+        shop_shuffle={code="shop_sanity", mapping=nil}
+        -- glitch_boots={code="glitches", mapping=nil}
+    }
+    --print(dump_table(slot_data))
 
-    if slot_data['bikes'] then
-        local obj = Tracker:FindObjectForCode("op_bik")
-        if obj then
-            obj.CurrentStage = 1 - slot_data['bikes']
-        end
-    end
-
-    if slot_data['key_items'] then
-        local obj = Tracker:FindObjectForCode("op_ki")
-        if obj then
-            obj.CurrentStage = 1 - slot_data['key_items']
-        end
-    end
-
-    if slot_data['enable_ferry'] then
-        local obj = Tracker:FindObjectForCode("op_fer")
-        if obj then
-            obj.CurrentStage = 1 - slot_data['enable_ferry']
-        end
-    end
-
-    if slot_data['require_flash'] then
-        local obj = Tracker:FindObjectForCode("op_hm5")
-        if obj then
-            obj.CurrentStage = 1 - slot_data['require_flash']
-        end
-    end
-
-    if slot_data['require_itemfinder'] then
-        local obj = Tracker:FindObjectForCode("op_if")
-        if obj then
-            obj.CurrentStage = slot_data['require_itemfinder']
-        end
-    end
-
-    if slot_data['hms'] then
-        local obj = Tracker:FindObjectForCode("op_hms")
-        if obj then
-            obj.CurrentStage = 2 - slot_data['hms']
-        end
-    end
-
-    if slot_data['badges'] then
-        local obj = Tracker:FindObjectForCode("op_bdg")
-        if obj then
-            obj.CurrentStage = 2 - slot_data['badges']
-        end
-    end
-
-    if slot_data['norman_requirement'] then
-        local obj = Tracker:FindObjectForCode("op_norm")
-        if obj then
-            obj.CurrentStage = 1 - slot_data['norman_requirement']
-        end
-    end
-
-    if slot_data['norman_count'] then
-        local obj = Tracker:FindObjectForCode("normanreq")
-        if obj then
-            obj.AcquiredCount = slot_data['norman_count']
-        end
-    end
-
-    if slot_data['elite_four_requirement'] then
-        local obj = Tracker:FindObjectForCode("op_e4")
-        if obj then
-            obj.CurrentStage = 1 - slot_data['elite_four_requirement']
-        end
-    end
-
-    if slot_data['elite_four_count'] then
-        local obj = Tracker:FindObjectForCode("e4req")
-        if obj then
-            obj.AcquiredCount = slot_data['elite_four_count']
+    for k,v in pairs(slot_data) do
+        print(k, v)
+        if k == "crystals_needed_for_gt" or k == "crystals_needed_for_ganon" then
+            Tracker:FindObjectForCode(slotCodes[k].code).AcquiredCount = v
+        elseif k == "shop_shuffle" then
+            if v ~= "none" then
+                Tracker:FindObjectForCode(slotCodes[k].code).Active = true
+            elseif v == "none" then
+                Tracker:FindObjectForCode(slotCodes[k].code).Active = false
+            end
+        elseif slotCodes[k] then
+            if Tracker:FindObjectForCode(slotCodes[k].code).Type == "toggle" then
+                Tracker:FindObjectForCode(slotCodes[k].code).Active = slotCodes[k].mapping[v]
+            else 
+                Tracker:FindObjectForCode(slotCodes[k].code).CurrentStage = slotCodes[k].mapping[v]
+            end
         end
     end
 end
 
--- called when an item gets collected
 function onItem(index, item_id, item_name, player_number)
-    if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-        print(string.format("called onItem: %s, %s, %s, %s, %s", index, item_id, item_name, player_number, CUR_INDEX))
-    end
     if index <= CUR_INDEX then
         return
     end
     local is_local = player_number == Archipelago.PlayerNumber
     CUR_INDEX = index;
     local v = ITEM_MAPPING[item_id]
-    if not v then
-        if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-            print(string.format("onItem: could not find item mapping for id %s", item_id))
-        end
-        return
-    end
-    if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-        print(string.format("onItem: code: %s, type %s", v[1], v[2]))
-    end
-    if not v[1] then
+    if not v or not v[1] then
+        --print(string.format("onItem: could not find item mapping for id %s", item_id))
         return
     end
     local obj = Tracker:FindObjectForCode(v[1])
@@ -207,45 +187,17 @@ function onItem(index, item_id, item_name, player_number)
             end
         elseif v[2] == "consumable" then
             obj.AcquiredCount = obj.AcquiredCount + obj.Increment
-        elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-            print(string.format("onItem: unknown item type %s for code %s", v[2], v[1]))
-        end
-    elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-        print(string.format("onItem: could not find object for code %s", v[1]))
-    end
-    -- track local items via snes interface
-    if is_local then
-        if LOCAL_ITEMS[v[1]] then
-            LOCAL_ITEMS[v[1]] = LOCAL_ITEMS[v[1]] + 1
-        else
-            LOCAL_ITEMS[v[1]] = 1
         end
     else
-        if GLOBAL_ITEMS[v[1]] then
-            GLOBAL_ITEMS[v[1]] = GLOBAL_ITEMS[v[1]] + 1
-        else
-            GLOBAL_ITEMS[v[1]] = 1
-        end
-    end
-    if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-        print(string.format("local items: %s", dump_table(LOCAL_ITEMS)))
-        print(string.format("global items: %s", dump_table(GLOBAL_ITEMS)))
-    end
-    if PopVersion < "0.20.1" or AutoTracker:GetConnectionState("SNES") == 3 then
-        -- add snes interface functions here for local item tracking
+        print(string.format("onItem: could not find object for code %s", v[1]))
     end
 end
 
 --called when a location gets cleared
 function onLocation(location_id, location_name)
-    if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-        print(string.format("called onLocation: %s, %s", location_id, location_name))
-    end
     local v = LOCATION_MAPPING[location_id]
-    if not v and AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
+    if not v or not v[1] then
         print(string.format("onLocation: could not find location mapping for id %s", location_id))
-    end
-    if not v[1] then
         return
     end
     local obj = Tracker:FindObjectForCode(v[1])
@@ -255,32 +207,38 @@ function onLocation(location_id, location_name)
         else
             obj.Active = true
         end
-    elseif AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
+    else
         print(string.format("onLocation: could not find object for code %s", v[1]))
     end
 end
 
--- called when a locations is scouted
-function onScout(location_id, location_name, item_id, item_name, item_player)
-    if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-        print(string.format("called onScout: %s, %s, %s, %s, %s", location_id, location_name, item_id, item_name,
-            item_player))
-    end
-    -- not implemented yet :(
+function onEvent(key, value, old_value)
+    updateEvents(value)
 end
 
--- called when a bounce message is received 
-function onBounce(json)
-    if AUTOTRACKER_ENABLE_DEBUG_LOGGING_AP then
-        print(string.format("called onBounce: %s", dump_table(json)))
-    end
-    -- your code goes here
+function onEventsLaunch(key, value)
+    updateEvents(value)
 end
 
--- add AP callbacks
--- un-/comment as needed
+function updateEvents(value)
+    if value ~= nil then
+        local gyms = 0
+        for i, code in ipairs(FLAG_CODES) do
+            local bit = value >> (i - 1) & 1
+            if i < 9 then
+                gyms = gyms + bit
+            end
+            if #code>0 then
+                Tracker:FindObjectForCode(code).Active = bit
+            end
+        end
+        local gymObj = Tracker:FindObjectForCode("gyms")
+        gymObj.AcquiredCount = gyms
+    end
+end
+
 Archipelago:AddClearHandler("clear handler", onClear)
 Archipelago:AddItemHandler("item handler", onItem)
 Archipelago:AddLocationHandler("location handler", onLocation)
--- Archipelago:AddScoutHandler("scout handler", onScout)
--- Archipelago:AddBouncedHandler("bounce handler", onBounce)
+Archipelago:AddSetReplyHandler("event handler", onEvent)
+Archipelago:AddRetrievedHandler("event launch handler", onEventsLaunch)

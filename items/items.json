@@ -39,9 +39,11 @@
     {
         "name": "Bombs",
         "type": "consumable",
-        "min_quantity": 10,
+        "min_quantity": 0,
         "max_quantity": 50,
         "increment": 5,
+        "initial_quantity": 10,
+        "allow_disabled":false,
         "img": "/images/items/Bomb.png",
         "codes": "bombs"
     },
@@ -197,7 +199,6 @@
                 "img": "/images/events/Flute_active.png",
                 "codes": "flute_active"
             }
-            
         ]
         
     },
@@ -450,6 +451,7 @@
         "name": "GT access",
         "type": "consumable",
         "allow_disabled": false,
+        "overlay_background": "#000000",
         "min_quantity": 0,
         "max_quantity": 7,
         "img": "/images/gt_crystals.png",
@@ -458,6 +460,7 @@
     {
         "name": "Ganon vulnerable",
         "type": "consumable",
+        "overlay_background": "#000000",
         "allow_disabled": false,
         "min_quantity": 0,
         "max_quantity": 7,
@@ -589,13 +592,13 @@
     },
     {
         "name": "Small Key",
-        "type": "progressive_toggle",
+        "type": "toggle",
         "img": "/images/items/lttp_small_key.png",
         "codes": "small_keys"
     },
     {
         "name": "Big Key",
-        "type": "progressive_toggle",
+        "type": "toggle",
         "img": "/images/items/lttp_big_key.png",
         "codes": "big_keys"
     },
@@ -632,13 +635,13 @@
     },
     {
         "name": "Dungeon Map",
-        "type": "progressive_toggle",
+        "type": "toggle",
         "img": "/images/items/swordless.png",
         "codes": "map"
     },
     {
         "name": "Compass",
-        "type": "progressive_toggle",
+        "type": "toggle",
         "img": "/images/items/swordless.png",
         "codes": "compass"
     },
