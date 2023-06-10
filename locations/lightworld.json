@@ -4,6 +4,11 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
+        "access_rules":[
+            "open",
+            "standard",
+            "inverted, pearl"
+        ],
         "children": [
             {
                 "name": "Kakariko Well",
@@ -293,12 +298,13 @@
             },
             {
                 "name": "Cave 45",
+                "access_rules": [
+                    "@Darkworld Left, mirror"
+                ],
                 "sections": [
                     {
-                        "name": "Cave 45",
-                        "access_rules": [
-                            "@Darkworld Left, mirror"
-                        ]
+                        "name": "Cave 45"
+                        
                     }
                 ],
                 "map_locations": [
@@ -375,7 +381,8 @@
                     {
                         "name": "Checkerboard Cave Item",
                         "access_rules": [
-                            "mirror, titans, flute_active"
+                            "mirror, titans, flute_active",
+                            "inverted, glove, pearl"
                         ]
                     }
                 ],
@@ -508,6 +515,14 @@
             },
             {
                 "name": "Link's House",
+                "access_rules":[
+                    "open",
+                    "standard"
+                ],
+                "visibility_rules":[
+                    "open",
+                    "standard"
+                ],
                 "sections": [
                     {
                         "name": "Chest"
@@ -624,6 +639,11 @@
             },
             {
                 "name": "Secret Passage",
+                "access_rules":[
+                    "standard, @CE/Castle Escape/Dark Cross",
+                    "open"
+                ],
+                "inherit_codes":false,
                 "sections": [
                     {
                         "name": "Link's Uncle"
@@ -650,7 +670,8 @@
             {
                 "name": "Graveyard Ledge",
                 "access_rules":[
-                    "@Darkworld Left, mirror"
+                    "@Darkworld Left, mirror",
+                    "inverted"
                 ],
                 "sections": [
                     {
@@ -689,8 +710,10 @@
             {
                 "name": "Bombos Tablet",
                 "access_rules":[
-                    "@Darkworld Left, mirror, book, mastersword",
-                    "{@Darkworld Left, mirror, book}"
+                    "@Darkworld Left, mirror, book, canActivateTablets",
+                    "{@Darkworld Left, mirror, book}",
+                    "inverted, canActivateTablets, book",
+                    "{inverted, book}"
                 ],
                 "sections": [
                     {
@@ -706,6 +729,28 @@
                     }
                 ]
             },
+            {
+                "name": "Bumper Cave",
+                "access_rules": [
+                    "cape, hookshot"
+                ],
+                "visibility_rules":[
+                    "inverted"
+                ],
+                "sections": [
+                    {
+                        "name": "Bumper Cave Item"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 713,
+                        "y": 352,
+                        "size": 32
+                    }
+                ]
+            },
             {}
         ]
     },
@@ -715,14 +760,22 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "flute_active",
-            "lamp, glove"
+            "open, flute_active",
+            "standard, flute_active",
+            "inverted, pearl, flute_active",
+            "open, lamp, glove",
+            "standard, lamp, glove",
+            "inverted, pearl, lamp, glove"
         ],
         "children": [
             {
                 "name": "Rescue Old Man",
                 "access_rules":[
-                    "$lightsource"
+                    "lamp"
+                ],
+                "visibility_rules":[
+                    "open",
+                    "standard"
                 ],
                 "sections": [
                     {
@@ -781,14 +834,16 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "@Light Death Mountain Left Bottom, mirror"
+            "open, @Light Death Mountain Left Bottom, mirror",
+            "standard, @Light Death Mountain Left Bottom, mirror",
+            "inverted, pearl, @Light Death Mountain Left Bottom"
         ],
         "children": [
             {
                 "name": "Ether Tablet",
                 "access_rules":[
-                    "mirror, book, mastersword",
-                    "{book}"
+                    "mirror, book, canActivateTablets",
+                    "{mirror, book}"
                 ],
                 "sections": [
                     {
@@ -812,8 +867,12 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "@Light Death Mountain Left Bottom, hookshot",
-            "@Light Death Mountain Left Top, hammer"
+            "open, @Light Death Mountain Left Bottom, hookshot",
+            "standard, @Light Death Mountain Left Bottom, hookshot",
+            "inverted, pearl, @Light Death Mountain Left Bottom, hookshot",
+            "open, @Light Death Mountain Left Top, hammer",
+            "standard, @Light Death Mountain Left Top, hammer",
+            "inverted, pearl, @Light Death Mountain Left Top, hammer"
         ],
         "children": [
             {
@@ -928,12 +987,17 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "book",
-            "@Darkworld Swamp, mirror"
+            "open",
+            "standard",
+            "inverted, pearl"
         ],
         "children": [
             {
                 "name": "Desert Palace",
+                "access_rules":[
+                    "book",
+                    "@Darkworld Swamp, mirror"
+                ],
                 "item_count": 5,
                 "sections": [
                     {
@@ -959,12 +1023,17 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "@DP, glove",
-            "@Darkworld Swamp, mirror"
+            "open",
+            "standard",
+            "inverted, pearl"
         ],
         "children": [
             {
                 "name": "Desert Palace Back",
+                "access_rules":[
+                    "@DP, glove, [$getBossRef|dp_boss], dp_bigkey",
+                    "@Darkworld Swamp, mirror, [$getBossRef|dp_boss], dp_bigkey"
+                ],
                 "item_count": 2,
                 "sections": [
                     {
@@ -995,6 +1064,11 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
+        "access_rules":[
+            "open",
+            "standard",
+            "inverted, pearl"
+        ],
         "children": [
             {
                 "name": "Eastern Palace",
@@ -1003,7 +1077,7 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": [
-                            "[ep_bigkey],[lamp]"
+                            "[ep_bigkey],[firesource]"
                         ],
                         "clear_as_group": false,
                         "item_count": 5
@@ -1012,7 +1086,7 @@
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules": [
-                            "ep_bigkey, lamp"
+                            "ep_bigkey, firesource, [$getBossRef|ep_boss]"
                         ],
                         "item_count": 1,
                         "hosted_item": "ep_boss"
@@ -1040,13 +1114,21 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
+        "access_rules":[
+            "open",
+            "standard",
+            "inverted, pearl"
+        ],
+        "visibility_rules":[
+            "open",
+            "standard"
+        ],
         "children": [
             {
                 "name": "Aganim's Tower",
                 "item_count": 3,
                 "access_rules":[
-                    "cape",
-                    "mastersword"
+                    "$canClearAgaTowerBarrier"
                 ],
                 "sections": [
                     {
@@ -1055,14 +1137,14 @@
                     {
                         "name": "Maze Chest",
                         "access_rules":[
-                            "lamp, at_smallkey:1"
+                            "firesource, at_smallkey:1"
                         ]
                     },
                     {
                         "name": "Aganim 1",
                         "access_rules":[
-                            "lamp, sword, at_smallkey:2",
-                            "lamp, bugcatchingnet, at_smallkey:2"
+                            "$canRemoveCurtains, sword, at_smallkey:2",
+                            "$canRemoveCurtains, bug_net, at_smallkey:2"
                         ],
                         "hosted_item": "aga1"
                     }
@@ -1083,6 +1165,11 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
+        "access_rules":[
+            "open",
+            "standard",
+            "inverted, pearl"
+        ],
         "children": [
             {
                 "name": "Hyrule Castle",
@@ -1114,20 +1201,27 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
+        "access_rules":[
+            "open",
+            "standard",
+            "inverted, pearl"
+        ],
         "children": [
             {
                 "name": "Castle Escape",
                 "item_count": 1,
                 "access_rules":[
-                    "lamp", 
-                    "glove"
+                    "firesource", 
+                    "glove",
+                    "standard"
                 ],
                 "sections": [
                     {
                         "name": "Dark Cross",
                         "access_rules":[
-                            "lamp",
-                            "glove, hc_smallkey:1"
+                            "firesource",
+                            "glove, hc_smallkey:1",
+                            "standard"
                         ]
                     },
                     {
@@ -1135,7 +1229,8 @@
                         "item_count": 3,
                         "access_rules":[
                             "bombs, glove",
-                            "bombs, lamp"
+                            "bombs, firesource",
+                            "standard"
                         ]
                     }
                 ],
@@ -1151,6 +1246,10 @@
             {
                 "name": "Sanctuary",
                 "item_count": 1,
+                "access_rules":[
+                    "standard, @CE/Castle Escape/Dark Cross",
+                    "open"
+                ],
                 "sections": [
                     {
                         "name": "Sanctuary Chest"
@@ -1173,19 +1272,23 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "@Light Death Mountain Left Top",
-            "@Light Death Mountain Right, hammer"
+            "open",
+            "standard",
+            "inverted, pearl"
         ],
         "children": [
             {
                 "name": "Tower of Hera",
+                "access_rules":[
+                    "@Light Death Mountain Left Top",
+                    "@Light Death Mountain Right, hammer"
+                ],
                 "item_count": 7,
                 "sections": [
                     {
                         "name": "Lower" ,
                         "access_rules":[
-                            "[lamp], [toh_smallkey:1]",
-                            "[firerod], [toh_smallkey:1]"
+                            "[firesource], [toh_smallkey:1]"
                         ],
                         "clear_as_group": false,
                         "item_count": 3
@@ -1202,7 +1305,7 @@
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules":[
-                            "@ToH/Tower of Hera/Upper"
+                            "@ToH/Tower of Hera/Upper, [$getBossRef|toh_boss]"
                         ],
                         "item_count": 1,
                         "hosted_item": "toh_boss"
@@ -1226,5 +1329,84 @@
                 ]
             }
         ]
-    }   
+    },
+    {
+        "name": "GT",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "overlay_background": "#000000",
+        "access_rules":[
+            "inverted, @Lightworld Left, $gtCrystalCount"
+        ],
+        "visibility_rules":[
+            "inverted"
+        ],
+        "children": [
+            {
+                "name": "Ganon's Tower",
+                "sections": [
+                    {
+                        "name": "Leftside",
+                        "clear_as_group": false,
+                        "access_rules":[
+                            "[boots],[hammer],[hookshot],[gt_smallkey:1]"
+                        ],
+                        "item_count": 11
+                    },
+                    {
+                        "name": "Rightside",
+                        "access_rules":[
+                            "[somaria], [firerod]"
+                        ],
+                        "clear_as_group": false,
+                        "item_count": 7
+                    },
+                    {
+                        "name": "Big Chest + Ice refight",
+                        "clear_as_group": false,
+                        "access_rules":[
+                            "@GT/Ganon's Tower/Leftside, [gt_bigkey], [$getBossRef|gt_ice]",
+                            "@GT/Ganon's Tower/Rightside, [gt_bigkey], [$getBossRef|gt_ice]"
+                        ],
+                        "item_count": 5,
+                        "hosted_item": "gt_ice"
+                    },
+                    {
+                        "name": "GT Top + Lanmo refight",
+                        "access_rules":[
+                            "gt_bigkey, [gt_smallkey:1], [$getBossRef|gt_lanmo]"
+                        ],
+                        "clear_as_group": false,
+                        "item_count": 3,
+                        "hosted_item": "gt_lanmo"
+                    },
+                    {
+                        "name": "GT Top Moldorm refight",
+                        "access_rules":[
+                            "gt_bigkey, [gt_smallkey:2], [$getBossRef|gt_boss]"
+                        ],
+                        "clear_as_group": false,
+                        "item_count": 1,
+                        "hosted_item": "gt_boss"
+                    },
+                    {
+                        "name": "GT Top Aganim 2",
+                        "access_rules":[
+                            "@GT/Ganon's Tower/GT Top Moldorm refight"
+                        ],
+                        "clear_as_group": false,
+                        "hosted_item": "aga2"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 1000,
+                        "y": 800,
+                        "size": 44
+                    }
+                ]
+            }
+        ]
+    }
 ]

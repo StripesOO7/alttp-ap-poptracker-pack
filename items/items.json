@@ -8,7 +8,7 @@
         "stages": [
             {
                 "img": "/images/items/Bow+Arrows.png",
-                "codes": "bow, weapon, bow+arrow"
+                "codes": "bow, weapon, bow+arrow, bowandarrows"
             },
             {
                 "img": "/images/items/bowandsilverarrow.png",
@@ -87,7 +87,7 @@
         "name": "Firerod",
         "type": "toggle",
         "img": "/images/items/Firerod.png",
-        "codes": "firerod, weapon"
+        "codes": "firerod, firesource"
     },
     {
         "name": "Icerod",
@@ -105,15 +105,18 @@
             },
             {
                 "img": "/images/items/Bombos_for_TR.png",
-                "codes": "bombos_tr"
+                "inherit_codes":false,
+                "codes": "bombos, tr_medallion"
             },
             {
                 "img": "/images/items/Bombos_for_MM.png",
-                "codes": "bombos_mm"
+                "inherit_codes":false,
+                "codes": "bombos, mm_medallion"
             },
             {
                 "img": "/images/items/Bombos_for_both.png",
-                "codes": "bombos_both"
+                "inherit_codes":false,
+                "codes": "bombos, bombos_both, mm_medallion, tr_medallion"
             }
         ]
     },
@@ -127,15 +130,18 @@
             },
             {
                 "img": "/images/items/Ether_for_TR.png",
-                "codes": "ether_tr"
+                "inherit_codes":false,
+                "codes": "ether, tr_medallion"
             },
             {
                 "img": "/images/items/Ether_for_MM.png",
-                "codes": "ether_mm"
+                "inherit_codes":false,
+                "codes": "ether, mm_medallion"
             },
             {
                 "img": "/images/items/Ether_for_both.png",
-                "codes": "ether_both"
+                "inherit_codes":false,
+                "codes": "ether, ether_both, mm_medallion, tr_medallion"
             }
         ]
     },
@@ -149,15 +155,18 @@
             },
             {
                 "img": "/images/items/Quake_for_TR.png",
-                "codes": "quake_tr"
+                "inherit_codes":false,
+                "codes": "quake, tr_medallion"
             },
             {
                 "img": "/images/items/Quake_for_MM.png",
-                "codes": "quake_mm"
+                "inherit_codes":false,
+                "codes": "quake, mm_medallion"
             },
             {
                 "img": "/images/items/Quake_for_both.png",
-                "codes": "quake_both"
+                "inherit_codes":false,
+                "codes": "quake, quake_both, mm_medallion, tr_medallion"
             }
         ]
     },
@@ -179,7 +188,7 @@
         "name": "Lamp",
         "type": "toggle",
         "img": "/images/items/Lamp.png",
-        "codes": "lamp"
+        "codes": "lamp, firesource"
     },
     {
         "name": "Hammer",
@@ -502,14 +511,17 @@
         "stages": [
             {
                 "img": "/images/gm_open.png",
+                "inherit_codes":false,
                 "codes": "start_option, open"
             },
             {
                 "img": "/images/gm_inverted.png",
+                "inherit_codes":false,
                 "codes": "start_option, inverted"
             },
             {
                 "img": "/images/gm_standard.png",
+                "inherit_codes":false,
                 "codes": "start_option, standard"
             }
         ]

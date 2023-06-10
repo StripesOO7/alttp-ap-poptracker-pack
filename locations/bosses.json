@@ -1,0 +1,124 @@
+[
+  {
+    "name": "Bosses",
+    "sections": [
+      {
+        "name": "Unknown",
+        "item_count": 1,
+        "access_rules": [
+          ""
+        ]
+      },
+      {
+        "name": "Armos Knights",
+        "item_count": 1,
+        "access_rules": [
+          "sword",
+          "hammer",
+          "bowandarrows",
+          "blueboomerang",
+          "redboomerang",
+          "firerod",
+          "icerod",
+          "somaria",
+          "byrna",
+          "bombs"
+        ]
+      },
+      {
+        "name": "Lanmolas",
+        "item_count": 1,
+        "access_rules": [
+          "sword",
+          "hammer",
+          "firerod",
+          "icerod",
+          "bowandarrows",
+          "somaria",
+          "byrna",
+          "bombs"
+        ]
+      },
+      {
+        "name": "Moldorm",
+        "item_count": 1,
+        "access_rules": [
+          "sword",
+          "hammer"
+        ]
+      },
+      {
+        "name": "Helmasaur King",
+        "access_rules": [
+          "bombs,sword",
+          "bombs,bowandarrows",
+          "hammer",
+          "hammer,sword",
+          "hammer,bowandarrows"
+        ],
+        "item_count": 1
+      },
+      {
+        "name": "Arrghus",
+        "access_rules": [
+          "hookshot,sword",
+          "hookshot,hammer",
+          "hookshot,firerod",
+          "hookshot,icerod"
+        ],
+        "item_count": 1
+      },
+      {
+        "name": "Mothula",
+        "access_rules": [
+          "sword",
+          "hammer",
+          "firerod,",
+          "somaria,",
+          "byrna,"
+        ],
+        "item_count": 1
+      },
+      {
+        "name": "Blind",
+        "access_rules": [
+          "sword",
+          "hammer",
+          "somaria",
+          "byrna"
+        ],
+        "item_count": 1
+      },
+      {
+        "name": "Kholdstare",
+        "access_rules": [
+          "firerod,sword",
+          "firerod,hammer",
+          "firerod",
+          "bombos,$canUseMedallions,hammer",
+          "bombos,$canUseMedallions,sword"
+          // "swordless,firerod,bombos"
+        ],
+        "item_count": 1
+      },
+      {
+        "name": "Vitreous",
+        "access_rules": [
+          "bowandarrows",
+          "sword",
+          "hammer",
+          "bombs"
+        ],
+        "item_count": 1
+      },
+      {
+        "name": "Trinexx",
+        "access_rules": [
+          "firerod,icerod,hammer",
+          "firerod,icerod,sword"
+        ],
+        "item_count": 1
+      }
+    ]
+  }
+]
