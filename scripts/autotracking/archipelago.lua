@@ -63,14 +63,16 @@ function onClear(slot_data)
     --SLOT_DATA = slot_data
     CUR_INDEX = -1
     -- reset locations
-    for _, v in pairs(LOCATION_MAPPING) do
-        if v[1] then
-            local obj = Tracker:FindObjectForCode(v[1])
-            if obj then
-                if v[1]:sub(1, 1) == "@" then
-                    obj.AvailableChestCount = obj.ChestCount
-                else
-                    obj.Active = false
+    for _, location_array in pairs(LOCATION_MAPPING) do
+        for _, location in pairs(location_array) do
+            if location then
+                local obj = Tracker:FindObjectForCode(location)
+                if obj then
+                    if location:sub(1, 1) == "@" then
+                        obj.AvailableChestCount = obj.ChestCount
+                    else
+                        obj.Active = false
+                    end
                 end
             end
         end
@@ -195,20 +197,24 @@ end
 
 --called when a location gets cleared
 function onLocation(location_id, location_name)
-    local v = LOCATION_MAPPING[location_id]
-    if not v or not v[1] then
+    local location_array = LOCATION_MAPPING[location_id]
+    if not location_array or not location_array[1] then
         print(string.format("onLocation: could not find location mapping for id %s", location_id))
         return
     end
-    local obj = Tracker:FindObjectForCode(v[1])
-    if obj then
-        if v[1]:sub(1, 1) == "@" then
-            obj.AvailableChestCount = obj.AvailableChestCount - 1
+    
+    for _, location in pairs(location_array) do
+        local obj = Tracker:FindObjectForCode(location)
+        if obj then
+
+            if location:sub(1, 1) == "@" then
+                obj.AvailableChestCount = obj.AvailableChestCount - 1
+            else
+                obj.Active = true
+            end
         else
-            obj.Active = true
+            print(string.format("onLocation: could not find object for code %s", location))
         end
-    else
-        print(string.format("onLocation: could not find object for code %s", v[1]))
     end
 end
 
