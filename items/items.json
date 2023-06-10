@@ -662,5 +662,37 @@
         "type": "progressive_toggle",
         "img": "/images/items/swordless.png",
         "codes": "compass"
+    },
+// crystsals, pendants
+    {
+        "name": "Red Pendant ",
+        "type": "toggle",
+        "img": "/images/Pendant.png",
+        "codes": "pendant, blue_pendant, bluependant"
+    },
+    {
+        "name": "Blue Pendant",
+        "type": "toggle",
+        "img": "/images/Pendant.png",
+        "codes": "pendant, red_pendant, redpendant"
+    },
+    {
+        "name": "Green Pendant",
+        "type": "toggle",
+        "img": "/images/GreenPendant.png",
+        "codes": "pendant, green_pendant, greenpendant"
+    },
+    {
+        "name": "Blue Crystal",
+        "type": "progressive_toggle",
+        "img": "/images/Crystal.png",
+        "codes": "crystal, blue_crystal"
+    },
+    {
+        "name": "Red Crystal",
+        "type": "progressive_toggle",
+        "img": "/images/FFCrystal.png",
+        "codes": "crystal, red_crystal"
     }
+
 ]

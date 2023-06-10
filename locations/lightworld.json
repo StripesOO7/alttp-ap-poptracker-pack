@@ -9,15 +9,13 @@
                 "name": "Kakariko Well",
                 "sections": [
                     {
-                        "name": "Well-Item",
+                        "name": "Well-Items",
                         "clear_as_group": false,
                         "item_count":4
                     },
                     {
                         "name":"Back Chest",
-                        "access_rules": [
-                            "bombs"
-                        ]
+                        "access_rules": ["bombs"]
                     }
                 ],
                 "map_locations": [
@@ -147,7 +145,7 @@
                         "name": "Visit Satan",
                         "access_rules": [
                             "hammer, powder",
-                            "hammer, @Darkworld"
+                            "titans, mirror, @Darkworld Left, powder"
                         ],
                         "hosted_item": "satan_visited"
                     }
@@ -196,7 +194,7 @@
             {
                 "name": "Master Sword Pedestal",
                 "access_rules":[
-                    "green_pendant, blue_pendant, red_pendant",
+                    "pendant:3",
                     "{book}"
                 ],
                 "sections": [
@@ -299,7 +297,7 @@
                     {
                         "name": "Cave 45",
                         "access_rules": [
-                            "@Darkworld, mirror"
+                            "@Darkworld Left, mirror"
                         ]
                     }
                 ],
@@ -412,7 +410,7 @@
             {
                 "name": "Mini Moldorm Cave",
                 "access_rules": [
-                    "bombs, weapon"
+                    "bombs"
                 ],
                 "sections": [
                     {
@@ -455,7 +453,7 @@
                     {
                         "name": "Hobo",
                         "access_rules": [
-                            "$can_swim"
+                            "flippers"
                         ]
                     }
                 ],
@@ -493,7 +491,8 @@
                     {
                         "name": "Lake Island",
                         "access_rules": [
-                            "$can_swim, @Darkworld, mirror",
+                            "flippers, @Darkworld Left, mirror",
+                            "flippers, @Darkworld Right, mirror",
                             "{$can_swim}"
                         ]
                     }
@@ -534,9 +533,7 @@
                     },
                     {
                         "name": "Sahasrahla's Item",
-                        "access_rules":[
-                            "green_pendant"
-                        ]
+                        "access_rules":["greenpendant"]
                     }
                 ],
                 "map_locations": [
@@ -578,7 +575,7 @@
                 "name": "Waterfall Fairy",
                 "access_rules":[
                     "$can_swim, glove",
-                    "$can_swim"
+                    "flippers"
                 ],
                 "sections": [
                     {
@@ -610,6 +607,7 @@
                         "name": "Zora Ledge",
                         "access_rules":[
                             "$can_swim",
+                            "flippers",
                             "{glove}",
                             "{$fake_flippers}"
                         ]
@@ -652,7 +650,7 @@
             {
                 "name": "Graveyard Ledge",
                 "access_rules":[
-                    "@Darkworld, mirror"
+                    "@Darkworld Left, mirror"
                 ],
                 "sections": [
                     {
@@ -671,7 +669,7 @@
             {
                 "name": "King's Tomb",
                 "access_rules":[
-                    "@Darkworld, mirror, boots",
+                    "@Darkworld Left, mirror, boots",
                     "titans, boots"
                 ],
                 "sections": [
@@ -691,7 +689,8 @@
             {
                 "name": "Bombos Tablet",
                 "access_rules":[
-                    "{@Darkworld, mirror, book}, sword"
+                    "@Darkworld Left, mirror, book, mastersword",
+                    "{@Darkworld Left, mirror, book}"
                 ],
                 "sections": [
                     {
@@ -717,7 +716,7 @@
         "overlay_background": "#000000",
         "access_rules":[
             "flute_active",
-            "$lightsource, glove"
+            "lamp, glove"
         ],
         "children": [
             {
@@ -752,7 +751,7 @@
                         "name": "Top Item",
                         "access_rules":[
                             "mirror",
-                            "{Light Death Mountain Left Bottom}"
+                            "{@Light Death Mountain Left Bottom}"
                         ]
                     },
                     {
@@ -788,7 +787,8 @@
             {
                 "name": "Ether Tablet",
                 "access_rules":[
-                    "{mirror, book}, sword"
+                    "mirror, book, mastersword",
+                    "{book}"
                 ],
                 "sections": [
                     {
@@ -819,7 +819,8 @@
             {
                 "name": "Floating Island",
                 "access_rules":[
-                    "{@Dark Death Mountain Right}, mirror, boots"
+                    "@Dark Death Mountain Right, mirror",
+                    "{}"
                 ],
                 "sections": [
                     {
@@ -886,6 +887,9 @@
             },
             {
                 "name": "Mimic Cave",
+                "access_rules": [
+                    "@Dark Death Mountain Right, mirror, hammer"
+                ],
                 "sections": [
                     {
                         "name": "Mimic Cave Chest"
@@ -943,7 +947,7 @@
                         "map": "Lightworld",
                         "x": 147,
                         "y": 1600,
-                        "size": 32
+                        "size": 44
                     }
                 ]
             }
@@ -955,7 +959,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "book, glove",
+            "@DP, glove",
             "@Darkworld Swamp, mirror"
         ],
         "children": [
@@ -980,7 +984,7 @@
                         "map": "Lightworld",
                         "x": 147,
                         "y": 1540,
-                        "size": 32
+                        "size": 44
                     }
                 ]
             }
@@ -998,18 +1002,25 @@
                 "sections": [
                     {
                         "name": "Dungeon Chest" ,
+                        "access_rules": [
+                            "[ep_bigkey],[lamp]"
+                        ],
                         "clear_as_group": false,
                         "item_count": 5
                     },
                     {
                         "name": "Boss Item" ,
                         "clear_as_group": false,
+                        "access_rules": [
+                            "ep_bigkey, lamp"
+                        ],
                         "item_count": 1,
                         "hosted_item": "ep_boss"
                     },
                     {
                         "name": "Dungeon Reward",
                         "clear_as_group": false,
+                        "access_rules": ["@EP/Eastern Palace/Boss Item"],
                         "hosted_item": "easternpalace"
                     }
                 ],
@@ -1018,7 +1029,7 @@
                         "map": "Lightworld",
                         "x": 1925,
                         "y": 775,
-                        "size": 32
+                        "size": 44
                     }
                 ]
             }
@@ -1044,14 +1055,14 @@
                     {
                         "name": "Maze Chest",
                         "access_rules":[
-                            "$lightsource"
+                            "lamp, at_smallkey:1"
                         ]
                     },
                     {
                         "name": "Aganim 1",
                         "access_rules":[
-                            "$lightsource, sword",
-                            "$lightsource, bugcatchingnet"
+                            "lamp, sword, at_smallkey:2",
+                            "lamp, bugcatchingnet, at_smallkey:2"
                         ],
                         "hosted_item": "aga1"
                     }
@@ -1061,7 +1072,7 @@
                         "map": "Lightworld",
                         "x": 1000,
                         "y": 800,
-                        "size": 32
+                        "size": 44
                     }
                 ]
             }
@@ -1092,7 +1103,7 @@
                         "map": "Lightworld",
                         "x": 1000,
                         "y": 885,
-                        "size": 32
+                        "size": 44
                     }
                 ]
             }
@@ -1108,15 +1119,15 @@
                 "name": "Castle Escape",
                 "item_count": 1,
                 "access_rules":[
-                    "$lightsource", 
+                    "lamp", 
                     "glove"
                 ],
                 "sections": [
                     {
                         "name": "Dark Cross",
                         "access_rules":[
-                            "$lightsource",
-                            "glove, hc_smallkey"
+                            "lamp",
+                            "glove, hc_smallkey:1"
                         ]
                     },
                     {
@@ -1133,7 +1144,7 @@
                         "map": "Lightworld",
                         "x": 1040,
                         "y": 590,
-                        "size": 32
+                        "size": 44
                     }
                 ]
             },
@@ -1150,7 +1161,7 @@
                         "map": "Lightworld",
                         "x": 925,
                         "y": 530,
-                        "size": 32
+                        "size": 44
                     }
                 ]
             }
@@ -1172,23 +1183,36 @@
                 "sections": [
                     {
                         "name": "Lower" ,
+                        "access_rules":[
+                            "[lamp], [toh_smallkey:1]",
+                            "[firerod], [toh_smallkey:1]"
+                        ],
                         "clear_as_group": false,
                         "item_count": 3
                     },
                     {
                         "name": "Upper" ,
                         "clear_as_group": false,
+                        "access_rules":[
+                            "toh_bigkey"
+                        ],
                         "item_count": 2
                     },
                     {
                         "name": "Boss Item" ,
                         "clear_as_group": false,
+                        "access_rules":[
+                            "@ToH/Tower of Hera/Upper"
+                        ],
                         "item_count": 1,
                         "hosted_item": "toh_boss"
                     },
                     {
                         "name": "Dungeon Reward",
                         "clear_as_group": false,
+                        "access_rules":[
+                            "@ToH/Tower of Hera/Upper"
+                        ],
                         "hosted_item": "towerofhera"
                     }
                 ],
@@ -1197,7 +1221,7 @@
                         "map": "Lightworld",
                         "x": 1123,
                         "y": 65,
-                        "size": 32
+                        "size": 44
                     }
                 ]
             }

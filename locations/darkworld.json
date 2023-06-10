@@ -88,7 +88,7 @@
                     {
                         "name": "Purple Chest Return",
                         "access_rules":[
-                            "$Breadsmiths"
+                            "@Darkworld Left/Breadsmiths"
                         ]
                     }
                 ],
@@ -113,7 +113,7 @@
                     {
                         "name": "Rescue Dwarf",
                         "access_rules": [
-                            "@Darkworld Left, titans"
+                            "titans"
                         ]
                     }
                 ],
@@ -240,6 +240,9 @@
             },
             {
                 "name": "Hype Cave",
+                "access_rules":[
+                    "bombs"
+                ],
                 "sections": [
                     {
                         "name": "Hype",
@@ -284,7 +287,7 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "pearl, aga1",
+            "[pearl], aga1",
             "pearl, hammer, glove",
             "@Darkworld Left, flippers"
         ],
@@ -307,6 +310,9 @@
             },
             {
                 "name": "Big Bomb Fairy",
+                "access_rules": [
+                    "pearl, crystal56:2"
+                ],
                 "sections": [
                     {
                         "name": "Boom",
@@ -325,6 +331,9 @@
             },
             {
                 "name": "Dark Potion Shop",
+                "access_rules": [
+                    "pearl, crystal56:2"
+                ],
                 "visibility_rules": ["shop_sanity"],
                 "sections": [
                     {
@@ -344,6 +353,9 @@
             },
             {
                 "name": "Catfish",
+                "access_rules": [
+                    "pearl, glove"
+                ],
                 "sections": [
                     {
                         "name": "Catfish Item"
@@ -365,11 +377,14 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "pearl, titans, flute_active"
+            "titans, flute_active"
         ],
         "children": [
             {
                 "name": "Mire Shed",
+                "access_rules": [ 
+                    "pearl"
+                ],
                 "sections": [
                     {
                         "name": "Shed",
@@ -451,7 +466,7 @@
                 "sections": [
                     {
                         "name": "Bottom Right Chest",
-                        "access_rules": ["boots", "hookshot"]
+                        "access_rules": ["[boots]", "hookshot"]
                     },
                     {
                         "name": "remaining Chests",
@@ -482,7 +497,7 @@
                 "map_locations": [
                     {
                         "map": "Darkworld",
-                        "x": 1660,
+                        "x": 1560,
                         "y": 125,
                         "size": 24
                     }
