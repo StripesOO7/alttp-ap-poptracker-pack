@@ -24,7 +24,7 @@
                         "map": "Darkworld",
                         "x": 670,
                         "y": 105,
-                        "size": 24
+                        "size": 32
                     }
                 ]
             },
@@ -43,7 +43,7 @@
                         "map": "Darkworld",
                         "x": 705,
                         "y": 345,
-                        "size": 24
+                        "size": 32
                     }
                 ]
             },
@@ -62,7 +62,7 @@
                         "map": "Darkworld",
                         "x": 660,
                         "y": 915,
-                        "size": 24
+                        "size": 32
                     }
                 ]
             },
@@ -78,7 +78,7 @@
                         "map": "Darkworld",
                         "x": 95,
                         "y": 925,
-                        "size": 24
+                        "size": 32
                     }
                 ]
             },
@@ -97,13 +97,13 @@
                         "map": "Darkworld",
                         "x": 690,
                         "y": 1800,
-                        "size": 24
+                        "size": 32
                     },
                     {
                         "map": "Darkworld",
                         "x": 610,
                         "y": 1050,
-                        "size": 24
+                        "size": 32
                     }
                 ]
             },
@@ -122,13 +122,13 @@
                         "map": "Lightworld",
                         "x": 600,
                         "y": 1050,
-                        "size": 24
+                        "size": 32
                     },
                     {
                         "map": "Darkworld",
                         "x": 300,
                         "y": 1330,
-                        "size": 24
+                        "size": 32
                     }
                 ]
             },
@@ -148,7 +148,7 @@
                         "map": "Darkworld",
                         "x": 400,
                         "y": 1060,
-                        "size": 24
+                        "size": 32
                     }
                 ]
             },
@@ -164,7 +164,7 @@
                         "map": "Darkworld",
                         "x": 410,
                         "y": 960,
-                        "size": 24
+                        "size": 32
                     }
                 ]
             },
@@ -183,7 +183,7 @@
                         "map": "Darkworld",
                         "x": 215,
                         "y": 1165,
-                        "size": 24
+                        "size": 32
                     }
                 ]
             },
@@ -202,7 +202,7 @@
                         "map": "Darkworld",
                         "x": 625,
                         "y": 1205,
-                        "size": 24
+                        "size": 32
                     }
                 ]
             },
@@ -218,7 +218,7 @@
                         "map": "Darkworld",
                         "x": 110,
                         "y": 1385,
-                        "size": 24
+                        "size": 32
                     }
                 ]
             },
@@ -234,7 +234,7 @@
                         "map": "Darkworld",
                         "x": 615,
                         "y": 1365,
-                        "size": 24
+                        "size": 32
                     }
                 ]
             },
@@ -255,7 +255,7 @@
                         "map": "Darkworld",
                         "x": 1195,
                         "y": 1555,
-                        "size": 24
+                        "size": 32
                     }
                 ]
             },
@@ -274,7 +274,7 @@
                         "map": "Darkworld",
                         "x": 1295,
                         "y": 1600,
-                        "size": 24
+                        "size": 32
                     }
                 ]
             },
@@ -304,7 +304,7 @@
                         "map": "Darkworld",
                         "x": 1160,
                         "y": 910,
-                        "size": 24
+                        "size": 32
                     }
                 ]
             },
@@ -325,7 +325,7 @@
                         "map": "Darkworld",
                         "x": 935,
                         "y": 965,
-                        "size": 24
+                        "size": 32
                     }
                 ]
             },
@@ -347,7 +347,7 @@
                         "map": "Darkworld",
                         "x": 1605,
                         "y": 670,
-                        "size": 24
+                        "size": 32
                     }
                 ]
             },
@@ -366,7 +366,7 @@
                         "map": "Darkworld",
                         "x": 1795,
                         "y": 340,
-                        "size": 24
+                        "size": 32
                     }
                 ]
             }
@@ -397,7 +397,7 @@
                         "map": "Darkworld",
                         "x": 75,
                         "y": 1600,
-                        "size": 24
+                        "size": 32
                     }
                 ]
             }
@@ -427,7 +427,7 @@
                         "map": "Darkworld",
                         "x": 1145,
                         "y": 280,
-                        "size": 24
+                        "size": 32
                     }
                 ]
             }
@@ -456,7 +456,7 @@
                         "map": "Darkworld",
                         "x": 1705,
                         "y": 280,
-                        "size": 24
+                        "size": 32
                     }
                 ]
             },
@@ -480,7 +480,7 @@
                         "map": "Darkworld",
                         "x": 1660,
                         "y": 125,
-                        "size": 24
+                        "size": 32
                     }
                 ]
             },
@@ -499,7 +499,7 @@
                         "map": "Darkworld",
                         "x": 1560,
                         "y": 125,
-                        "size": 24
+                        "size": 32
                     }
                 ]
             }
@@ -511,8 +511,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "@Darkworld Right, hammer",
-            "@Darkworld Right, flippers"
+            "@Darkworld Right, pearl"
         ],
         "children": [
             {
@@ -521,19 +520,22 @@
                 "sections": [
                     {
                         "name": "Dungeon Chest" ,
+                        "access_rules": ["[lamp], [pod_smallkey:5], [pod_bigkey]"],
                         "clear_as_group": false,
                         "item_count": 13
                     },
                     {
                         "name": "Boss Item" ,
                         "clear_as_group": false,
+                        "access_rules": ["pod_bigkey, lamp"],
                         "item_count": 1,
                         "hosted_item": "pod_boss"
                     },
                     {
                         "name": "Dungeon Reward",
+                        "access_rules": ["@Pod/Palace of Darkness/Boss Item"],
                         "clear_as_group": false,
-                        "hosted_item": "palaceof darkness"
+                        "hosted_item": "palace of darkness"
                     }
                 ],
                 "map_locations": [
@@ -553,11 +555,12 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "@Dark Death Mountain Right, hammer, $tr_medalion"
+            "@Dark Death Mountain Right, hammer, somaria"
         ],
         "children": [
             {
                 "name": "Turtle Rock Front",
+                "access_rules": ["[tr_smallkey:2]"],
                 "item_count": 5,
                 "sections": [
                     {
@@ -569,38 +572,48 @@
                 "map_locations": [
                     {
                         "map": "Darkworld",
-                        "x": 1925,
-                        "y": 800,
+                        "x": 1887,
+                        "y": 163,
+                        "size": 44
+                    },
+                    {
+                        "map": "Darkworld",
+                        "x": 1597,
+                        "y": 178,
                         "size": 44
                     }
                 ]
             },
             {
                 "name": "Turtle Rock Back",
+                "access_rules": ["@TR/Turtle Rock Front, tr_bigkey"],
                 "item_count": 8,
                 "sections": [
                     {
                         "name": "Dungeon Chest" ,
+                        "access_rules": ["[tr_smallkey:3]"],
                         "clear_as_group": false,
                         "item_count": 6
                     },
                     {
                         "name": "Boss Item" ,
                         "clear_as_group": false,
+                        "access_rules": ["[tr_smallkey:4]"],
                         "item_count": 1,
-                        "hosted_item": "pod_boss"
+                        "hosted_item": "tr_boss"
                     },
                     {
                         "name": "Dungeon Reward",
+                        "access_rules": ["@TR/Turtle Rock Back/Boss Item"],
                         "clear_as_group": false,
-                        "hosted_item": "palaceof darkness"
+                        "hosted_item": "trutle rock"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "Darkworld",
-                        "x": 1925,
-                        "y": 800,
+                        "x": 1692,
+                        "y": 181,
                         "size": 44
                     }
                 ]
@@ -622,6 +635,9 @@
                 "sections": [
                     {
                         "name": "Dungeon Chest" ,
+                        "access_rules":[
+                            "[sw_smallkey:1],[sw_bigkey]"
+                        ],
                         "clear_as_group": false,
                         "item_count": 6
                     }
@@ -637,6 +653,7 @@
             },
             {
                 "name": "Skull Woods Back",
+                "access_rules":["firerod"],
                 "item_count": 3,
                 "sections": [
                     {
@@ -647,11 +664,13 @@
                     {
                         "name": "Boss Item" ,
                         "clear_as_group": false,
+                        "access_rules":["sword"],
                         "item_count": 1,
                         "hosted_item": "sw_boss"
                     },
                     {
                         "name": "Dungeon Reward",
+                        "access_rules":["@SW/Skull Woods Back/Boss Item"],
                         "clear_as_group": false,
                         "hosted_item": "skullwoods"
                     }
@@ -673,7 +692,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "@Darkworld Swamp, $mm_medalion"
+            "@Darkworld Swamp, pearl"
         ],
         "children": [
             {
@@ -682,17 +701,23 @@
                 "sections": [
                     {
                         "name": "Dungeon Chest" ,
+                        "access_rules":[
+                            "[firerod],[mm_bigkey]",
+                            "[lamp],[mm_bigkey]"
+                        ],
                         "clear_as_group": false,
                         "item_count": 7
                     },
                     {
                         "name": "Boss Item" ,
                         "clear_as_group": false,
+                        "access_rules":["mm_bigkey"],
                         "item_count": 1,
                         "hosted_item": "mm_boss"
                     },
                     {
                         "name": "Dungeon Reward",
+                        "access_rules":["@MM/Misery Mire/Boss Item"],
                         "clear_as_group": false,
                         "hosted_item": "miserymire"
                     }
@@ -714,8 +739,8 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "@Darkworld Left, mirror",
-            "@Darkworld Left, hookshot, hammer"
+            "@Darkworld Left, mirror, flippers, sp_smallkey:1",
+            "@Darkworld Left, hookshot, hammer, flippers, sp_smallkey:1"
         ],
         "children": [
             {
@@ -723,18 +748,25 @@
                 "item_count": 11,
                 "sections": [
                     {
-                        "name": "Dungeon Chest" ,
+                        "name": "Dungeon Chest",
+                        "access_rules":[
+                            "[sp_bigkey], [hookshot]"
+                        ],
                         "clear_as_group": false,
                         "item_count": 9
                     },
                     {
                         "name": "Boss Item" ,
                         "clear_as_group": false,
+                        "access_rules":[
+                            "hookshot"
+                        ],
                         "item_count": 1,
                         "hosted_item": "sp_boss"
                     },
                     {
                         "name": "Dungeon Reward",
+                        "access_rules":["@sp/Swamp Palace/Boss Item"],
                         "clear_as_group": false,
                         "hosted_item": "swamppalace"
                     }
@@ -815,17 +847,19 @@
                         "clear_as_group": false,
                         "item_count": 3,
                         "access_rules":[
-                            "tt_bigkey"
+                            "tt_bigkey, [tt_smallkey:1], [hammer]"
                         ]
                     },
                     {
                         "name": "Boss Item",
                         "clear_as_group": false,
+                        "access_rules":["tt_bigkey"],
                         "item_count": 1,
                         "hosted_item": "tt_boss"
                     },
                     {
                         "name": "Dungeon Reward",
+                        "access_rules":["@TT/Thieves Town/Boss Item"],
                         "clear_as_group": false,
                         "hosted_item": "thievestown"
                     }
@@ -835,7 +869,7 @@
                         "map": "Darkworld",
                         "x": 250,
                         "y": 975,
-                        "size": 24
+                        "size": 32
                     }
                 ]
             }
@@ -848,7 +882,7 @@
         "overlay_background": "#000000",
         "access_rules":[
             "@Dark Death Mountain Right, $gt_access",
-            "@Light Death Mountain Left Bottom, hookshot, hammer"
+            "@Light Death Mountain Left Bottom, hookshot, hammer, $gt_access"
         ],
         "children": [
             {
@@ -857,33 +891,52 @@
                     {
                         "name": "Leftside",
                         "clear_as_group": false,
+                        "access_rules":[
+                            "[boots],[hammer],[hookshot],[gt_smallkey:1]"
+                        ],
                         "item_count": 11
                     },
                     {
                         "name": "Rightside",
+                        "access_rules":[
+                            "[somaria], [firerod]"
+                        ],
                         "clear_as_group": false,
                         "item_count": 7
                     },
                     {
                         "name": "Big Chest + Ice refight",
                         "clear_as_group": false,
+                        "access_rules":[
+                            "@GT/Ganon's Tower/Leftside, [gt_bigkey]",
+                            "@GT/Ganon's Tower/Rightside, [gt_bigkey]"
+                        ],
                         "item_count": 5,
                         "hosted_item": "gt_ice"
                     },
                     {
                         "name": "GT Top + Lanmo refight",
+                        "access_rules":[
+                            "gt_bigkey, [gt_smallkey:1]"
+                        ],
                         "clear_as_group": false,
                         "item_count": 3,
                         "hosted_item": "gt_lanmo"
                     },
                     {
                         "name": "GT Top Moldorm refight",
+                        "access_rules":[
+                            "gt_bigkey, [gt_smallkey:2]"
+                        ],
                         "clear_as_group": false,
                         "item_count": 1,
                         "hosted_item": "gt_boss"
                     },
                     {
                         "name": "GT Top Aganim 2",
+                        "access_rules":[
+                            "@GT/Ganon's Tower/GT Top Moldorm refight"
+                        ],
                         "clear_as_group": false,
                         "hosted_item": "aga2"
                     }
