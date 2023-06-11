@@ -3,6 +3,9 @@
         "name": "Misery Mire",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
+        "access_rules":[
+            "@MM"
+        ],
         "children": [
             {
                 "name": "Bridge Chest",
@@ -54,6 +57,9 @@
             },
             {
                 "name": "Big Key Chest",
+                "access_rules":[
+                    "firesource"
+                ],
                 "sections": [
                     {
                         "name": "Big Key Chest"
@@ -102,6 +108,9 @@
             },
             {
                 "name": "Big Chest",
+                "access_rules":[
+                    "mm_bigkey"
+                ],
                 "sections": [
                     {
                         "name": "Big Chest"
@@ -118,6 +127,9 @@
             },
             {
                 "name": "Boss",
+                "access_rules":[
+                    "mm_bigkey, $getBossRef|mm_boss, [firesource]"
+                ],
                 "sections": [
                     {
                         "name": "Boss Item",

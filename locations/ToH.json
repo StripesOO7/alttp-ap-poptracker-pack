@@ -3,6 +3,9 @@
         "name": "Tower of Hera",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
+        "access_rules":[
+            "@ToH/Tower of Hera"
+        ],
         "children": [
             {
                 "name": "Basement Cage",
@@ -22,6 +25,9 @@
             },
             {
                 "name": "Map Chest",
+                "access_rules":[
+                    "toh_smallkey:1, firesource"
+                ],
                 "sections": [
                     {
                         "name": "Map Chest"
@@ -54,6 +60,9 @@
             },
             {
                 "name": "Comapss Chest",
+                "access_rules":[
+                    "toh_bigkey"
+                ],
                 "sections": [
                     {
                         "name": "Comapss Chest"
@@ -70,6 +79,9 @@
             },
             {
                 "name": "Big Chest",
+                "access_rules":[
+                    "toh_bigkey"
+                ],
                 "sections": [
                     {
                         "name": "Big Chest"
@@ -86,6 +98,9 @@
             },
             {
                 "name": "Boss",
+                "access_rules":[
+                    "toh_bigkey, $getBossRef|toh_boss"
+                ],
                 "sections": [
                     {
                         "name": "Boss Item",

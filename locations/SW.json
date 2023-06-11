@@ -3,6 +3,9 @@
         "name": "Skull Woods Front",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
+        "access_rules":[
+            "@SW/Skull Woods Front"
+        ],
         "children": [
             {
                 "name": "Pot Prison",
@@ -86,6 +89,9 @@
             },
             {
                 "name": "Big Chest",
+                "access_rules":[
+                    "sw_bigkey"
+                ],
                 "sections": [
                     {
                         "name": "Big Chest"
@@ -106,6 +112,9 @@
         "name": "Skull Woods Back",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
+        "access_rules":[
+            "@SW/Skull Woods Back"
+        ],
         "children": [
             {
                 "name": "Bridge Room",
@@ -125,13 +134,20 @@
             },
             {
                 "name": "Boss",
+                
                 "sections": [
                     {
                         "name": "Boss Item",
+                        "access_rules":[
+                            "$getBossRef|sw_boss, firesource, $canRemoveCurtains"
+                        ],
                         "hosted_item": "sw_boss"
                     },
                     {
                         "name": "Dungeon Reward",
+                        "access_rules":[
+                            "@Skull Woods Back/Boss/Boss Item"
+                        ],
                         "hosted_item": "skullwoods"
                     }
                 ],

@@ -3,6 +3,9 @@
         "name": "Swamp Palace",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
+        "access_rules":[
+            "@SP"
+        ],
         "children": [
             {
                 "name": "Entrance",
@@ -22,6 +25,9 @@
             },
             {
                 "name": "Map Chest",
+                "access_rules":[
+                    "sp_smallkey:1"
+                ],
                 "sections": [
                     {
                         "name": "Well - Left Chest"
@@ -38,6 +44,9 @@
             },
             {
                 "name": "Big Key Chest",
+                "access_rules":[
+                    "sp_smallkey:1, hammer"
+                ],
                 "sections": [
                     {
                         "name": "Big Key Chest"
@@ -54,6 +63,9 @@
             },
             {
                 "name": "West Chest",
+                "access_rules":[
+                    "sp_smallkey:1, hammer"
+                ],
                 "sections": [
                     {
                         "name": "West Chest"
@@ -70,6 +82,9 @@
             },
             {
                 "name": "Compass Chest",
+                "access_rules":[
+                    "sp_smallkey:1, hammer"
+                ],
                 "sections": [
                     {
                         "name": "Compass Chest"
@@ -86,6 +101,9 @@
             },
             {
                 "name": "Flooded Room Left",
+                "access_rules":[
+                    "sp_smallkey:1, hammer, hookshot"
+                ],
                 "sections": [
                     {
                         "name": "Flooded Room Left"
@@ -102,6 +120,9 @@
             },
             {
                 "name": "Flooded Room Right",
+                "access_rules":[
+                    "sp_smallkey:1, hammer, hookshot"
+                ],
                 "sections": [
                     {
                         "name": "Flooded Room Right"
@@ -118,6 +139,9 @@
             },
             {
                 "name": "Waterfall Room",
+                "access_rules":[
+                    "sp_smallkey:1, hammer, hookshot"
+                ],
                 "sections": [
                     {
                         "name": "Waterfall Room"
@@ -134,6 +158,9 @@
             },
             {
                 "name": "Big Chest",
+                "access_rules":[
+                    "sp_smallkey:1, hammer, sp_bigkey, hookshot"
+                ],
                 "sections": [
                     {
                         "name": "Big Chest"
@@ -150,6 +177,9 @@
             },
             {
                 "name": "Boss",
+                "access_rules":[
+                    "sp_smallkey:1, hammer, hookshot, $getBossRef|sp_boss"
+                ],
                 "sections": [
                     {
                         "name": "Boss Item",

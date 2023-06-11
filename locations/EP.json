@@ -3,6 +3,9 @@
         "name": "Eastern Palace",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
+        "access_rules":[
+            "@EP"
+        ],
         "children": [
             {
                 "name": "Cannonball Chest",
@@ -54,6 +57,9 @@
             },
             {
                 "name": "Big Key Chest",
+                "access_rules":[
+                    "[lamp]"
+                ],
                 "sections": [
                     {
                         "name": "Big Key Chest"
@@ -70,6 +76,9 @@
             },
             {
                 "name": "Big Chest",
+                "access_rules":[
+                    "ep_bigkey"
+                ],
                 "sections": [
                     {
                         "name": "Big Chest"
@@ -86,6 +95,9 @@
             },
             {
                 "name": "Boss",
+                "access_rules":[
+                    "ep_bigkey, $getBossRef|ep_boss, [firesource]"
+                ],
                 "sections": [
                     {
                         "name": "Boss Item",
