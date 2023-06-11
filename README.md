@@ -20,7 +20,7 @@ not working:
     - goal tracking not implemented yet
     - big-/smallkey, map and compass shuffle option not implemented (current assumption is full-shuffle for everyone of those)
 
-If you want to use Auto-Tracking ofor your Setttings add this to your alttp/__ini__.py File within the "ALTTPWORLD"-class
+If you want to use Auto-Tracking ofor your Setttings add this to your alttp/\_\_init\_\_.py File within the "ALTTPWORLD"-class
 
 ```
 def fill_slot_data(self):
