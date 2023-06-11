@@ -22,7 +22,8 @@ not working:
 
 If you want to use Auto-Tracking ofor your Setttings add this to your alttp/__ini__.py File within the "ALTTPWORLD"-class
 
-```def fill_slot_data(self):
+```
+def fill_slot_data(self):
     slot_data = {}
     for option_name in alttp_options:
         option = getattr(self.multiworld, option_name)[self.player]
