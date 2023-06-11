@@ -436,17 +436,18 @@
         "images": [
             {
                 "left": false, "right": false,
-                "img": "/images/events/Agahnim.png",
-                "img_mods": "@disabled"
+                "img": "/images/events/Agahnim_disabled.png"
                 // img, mods like stage
             },
             {
                 "left": true, "right": false,
-                "img": "images/events/Agahnim1.png"
+                "img": "/images/events/Agahnim_disabled.png",
+                "img_mods": "overlay|images/events/Agahnim1.png"
             },
             {
                 "left": false, "right": true,
-                "img": "images/events/Agahnim2.png"
+                "img": "/images/events/Agahnim_disabled.png",
+                "img_mods": "overlay|images/events/Agahnim2.png"
             },
             {
                 "left": true, "right": true,
