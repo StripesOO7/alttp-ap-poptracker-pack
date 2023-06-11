@@ -419,41 +419,41 @@
     {
         "name": "Aga1",
         "type": "toggle",
-        "img": "/images/events/Aganim1.png",
+        "img": "/images/events/Agahnim1.png",
         "codes": "aga1"
     },
     {
         "name": "Aga2",
         "type": "toggle",
-        "img": "/images/events/Aganim2.png",
+        "img": "/images/events/Agahnim2.png",
         "codes": "aga2"
     },
     {
-        "name": "Aganim",
+        "name": "Agahnim",
         "type": "composite_toggle",
         "item_left": "aga1",
         "item_right": "aga2",
         "images": [
             {
                 "left": false, "right": false,
-                "img": "/images/events/Aganim.png",
+                "img": "/images/events/Agahnim.png",
                 "img_mods": "@disabled"
                 // img, mods like stage
             },
             {
                 "left": true, "right": false,
-                "img": "images/events/Aganim1.png"
+                "img": "images/events/Agahnim1.png"
             },
             {
                 "left": false, "right": true,
-                "img": "images/events/Aganim2.png"
+                "img": "images/events/Agahnim2.png"
             },
             {
                 "left": true, "right": true,
-                "img": "/images/events/Aganim.png"
+                "img": "/images/events/Agahnim.png"
             }
         ],
-        "codes": "aganim"
+        "codes": "agahnim"
     },
     {
         "name": "Boss Heartcontainer",
