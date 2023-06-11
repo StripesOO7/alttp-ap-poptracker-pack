@@ -3,6 +3,7 @@
         "name": "Ice Palace",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
+        "access_rules":["@IP/Ice Palace"],
         "children": [
             {
                 "name": "Compass Chest",
@@ -54,6 +55,7 @@
             },
             {
                 "name": "Map Chest",
+                "access_rules":["glove, hammer"],
                 "sections": [
                     {
                         "name": "Map Chest"
@@ -88,6 +90,7 @@
 
             {
                 "name": "Big Chest",
+                "access_rules":["ip_bigkey"],
                 "sections": [
                     {
                         "name": "Big Chest"
@@ -104,14 +107,13 @@
             },
             {
                 "name": "Boss",
+                "access_rules":[
+                    "hammer, glove, $getBossRef|ip_boss, [ip_bigkey]"
+                ],
                 "sections": [
                     {
                         "name": "Boss Item",
-                        "hosted_item": "ip_boss"
-                    },
-                    {
-                        "name": "Dungeon Reward",
-                        "hosted_item": "icepalace"
+                        "hosted_item": "ip_boss, icepalace"
                     }
                 ],
                 "map_locations": [

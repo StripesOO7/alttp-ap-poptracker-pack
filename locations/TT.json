@@ -132,14 +132,13 @@
             },
             {
                 "name": "Boss",
+                "access_rules":[
+                    "$getBossRef|tt_boss"
+                ],
                 "sections": [
                     {
                         "name": "Boss Item",
-                        "hosted_item": "tt_boss"
-                    },
-                    {
-                        "name": "Dungeon Reward",
-                        "hosted_item": "thievestown"
+                        "hosted_item": "tt_boss, thievestown"
                     }
                 ],
                 "map_locations": [

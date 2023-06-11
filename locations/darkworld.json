@@ -626,11 +626,11 @@
         "children": [
             {
                 "name": "Turtle Rock Front",
-                "access_rules": ["[tr_smallkey:2]"],
                 "item_count": 5,
                 "sections": [
                     {
                         "name": "Dungeon Chest" ,
+                        "access_rules": ["[tr_smallkey:2]"],
                         "clear_as_group": false,
                         "item_count": 5
                     }
@@ -652,7 +652,10 @@
             },
             {
                 "name": "Turtle Rock Back",
-                "access_rules": ["@TR/Turtle Rock Front, tr_bigkey"],
+                "access_rules":[
+                    "@TR/Turtle Rock Front, tr_bigkey",
+                    "tr_bigkey, ow"
+                ],
                 "item_count": 8,
                 "sections": [
                     {
@@ -834,7 +837,7 @@
                     },
                     {
                         "name": "Dungeon Reward",
-                        "access_rules":["@sp/Swamp Palace/Boss Item"],
+                        "access_rules":["@SP/Swamp Palace/Boss Item"],
                         "clear_as_group": false,
                         "hosted_item": "swamppalace"
                     }
@@ -856,26 +859,31 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "@Darkworld Left, flippers, mirror, titans",
-            "@Darkworld Right, flippers, mirror, titans",
+            "@Lightworld, flippers, pearl, titans",
             "inverted, flippers"
         ],
         "children": [
             {
                 "name": "Ice Palace",
+                "access_rules":["firerod","bombos"],
                 "item_count": 8,
                 "sections": [
                     {
                         "name": "Dungeon Chest" ,
+                        "access_rules":[
+                            "[ip_bigkey], [ip_smallkey:2], [glove]"
+                        ],
                         "clear_as_group": false,
                         "item_count": 6
                     },
                     {
                         "name": "Boss Item" ,
                         "clear_as_group": false,
-                        "access_rules":["firesource, [ip_bigkey], $getBossRef|ip_boss"],
+                        "access_rules":[
+                            "[ip_bigkey], $getBossRef|ip_boss, hammer, glove"
+                            ] ,
                         "item_count": 1,
-                        "hosted_item": "ip_boss"
+                        "hosted_item": "ip_boss, icepalace"
                     },
                     {
                         "name": "Dungeon Reward",
@@ -975,7 +983,7 @@
                     {
                         "name": "Rightside",
                         "access_rules":[
-                            "[somaria], [firerod]"
+                            "[somaria], [firerod], [gt_smallkey:1]"
                         ],
                         "clear_as_group": false,
                         "item_count": 7

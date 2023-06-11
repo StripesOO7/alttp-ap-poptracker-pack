@@ -141,14 +141,7 @@
                         "access_rules":[
                             "$getBossRef|sw_boss, firesource, $canRemoveCurtains"
                         ],
-                        "hosted_item": "sw_boss"
-                    },
-                    {
-                        "name": "Dungeon Reward",
-                        "access_rules":[
-                            "@Skull Woods Back/Boss/Boss Item"
-                        ],
-                        "hosted_item": "skullwoods"
+                        "hosted_item": "sw_boss, skullwoods"
                     }
                 ],
                 "map_locations": [

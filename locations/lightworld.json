@@ -1032,7 +1032,7 @@
                 "name": "Desert Palace Back",
                 "access_rules":[
                     "@DP, glove, [$getBossRef|dp_boss], dp_bigkey",
-                    "@Darkworld Swamp, mirror, [$getBossRef|dp_boss], dp_bigkey"
+                    "@Darkworld Swamp, mirror, $getBossRef|dp_boss, dp_bigkey"
                 ],
                 "item_count": 2,
                 "sections": [
@@ -1086,7 +1086,7 @@
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules": [
-                            "ep_bigkey, firesource, [$getBossRef|ep_boss]"
+                            "ep_bigkey, firesource, $getBossRef|ep_boss"
                         ],
                         "item_count": 1,
                         "hosted_item": "ep_boss"
@@ -1305,7 +1305,7 @@
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules":[
-                            "@ToH/Tower of Hera/Upper, [$getBossRef|toh_boss]"
+                            "@ToH/Tower of Hera/Upper, $getBossRef|toh_boss"
                         ],
                         "item_count": 1,
                         "hosted_item": "toh_boss"

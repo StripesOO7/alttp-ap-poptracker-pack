@@ -3,9 +3,15 @@
         "name": "Turtle Rock Front",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
+        "access_rules":[
+            "@TR/Turtle Rock Front"
+        ],
         "children": [
             {
                 "name": "Compass Chest",
+                "access_rules":[
+                    "somaria"
+                ],
                 "sections": [
                     {
                         "name": "Compass Chest"
@@ -22,6 +28,9 @@
             },
             {
                 "name": "Chain Chomps",
+                "access_rules":[
+                    "somaria, [tr_smallkey:1]"
+                ],
                 "sections": [
                     {
                         "name": "Chain Chomps"
@@ -38,6 +47,9 @@
             },
             {
                 "name": "Roller Room Left",
+                "access_rules":[
+                    "somaria, firerod"
+                ],
                 "sections": [
                     {
                         "name": "Roller Room Left"
@@ -54,6 +66,9 @@
             },
             {
                 "name": "Roller Room Right",
+                "access_rules":[
+                    "somaria, firerod"
+                ],
                 "sections": [
                     {
                         "name": "Roller Room Right"
@@ -70,6 +85,9 @@
             },
             {
                 "name": "Big Key Chest",
+                "access_rules":[
+                    "[somaria], [tr_smallkey:2]"
+                ],
                 "sections": [
                     {
                         "name": "Big Key Chest"
@@ -90,9 +108,18 @@
         "name": "Turtle Rock Back",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
+        "access_rules":[
+            "@TR/Turtle Rock Back, [somaria]"
+        ],
         "children": [
             {
                 "name": "Crystaroller Room",
+                "access_rules":[
+                    "tr_bigkey, somaria",
+                    "tr_bigkey, hookshot",
+                    "@Turtle Rock Front, tr_bigkey"
+
+                ],
                 "sections": [
                     {
                         "name": "Crystaroller Room"
@@ -109,6 +136,9 @@
             },
             {
                 "name": "Eye Bridge - Top Left",
+                "access_rules":[
+                    "@Turtle Rock Front, somaria, [lamp], [tr_smallkey:3], [mirrorshield]"
+                ],
                 "sections": [
                     {
                         "name": "Eye Bridge - Top Left"
@@ -125,6 +155,9 @@
             },
             {
                 "name": "Eye Bridge - Bottom Left",
+                "access_rules":[
+                    "@Turtle Rock Front, somaria, [lamp], [tr_smallkey:3], [mirrorshield]"
+                ],
                 "sections": [
                     {
                         "name": "Eye Bridge - Bottom Left"
@@ -141,6 +174,9 @@
             },
             {
                 "name": "Eye Bridge - Top Right",
+                "access_rules":[
+                    "@Turtle Rock Front, somaria, [lamp], [tr_smallkey:3], [mirrorshield]"
+                ],
                 "sections": [
                     {
                         "name": "Eye Bridge - Top Right"
@@ -157,6 +193,9 @@
             },
             {
                 "name": "Eye Bridge - Bottom Right",
+                "access_rules":[
+                    "@Turtle Rock Front, somaria, [lamp], [tr_smallkey:3], [mirrorshield]"
+                ],
                 "sections": [
                     {
                         "name": "Eye Bridge - Bottom Right"
@@ -173,6 +212,10 @@
             },
             {
                 "name": "Big Chest",
+                "access_rules":[
+                    "@TR/Turtle Rock Back, [somaria], tr_bigkey",
+                    "@TR/Turtle Rock Back, [hookshot], tr_bigkey"
+                ],
                 "sections": [
                     {
                         "name": "Big Chest"
@@ -189,14 +232,13 @@
             },
             {
                 "name": "Boss",
+                "access_rules":[
+                    "@Turtle Rock Back/Eye Bridge - Top Left/Eye Bridge - Top Left, tr_smallkey:4, $getBossRef|tr_boss"
+                ],
                 "sections": [
                     {
                         "name": "Boss Item",
-                        "hosted_item": "tr_boss"
-                    },
-                    {
-                        "name": "Dungeon Reward",
-                        "hosted_item": "turtlerock"
+                        "hosted_item": "tr_boss, turtlerock"
                     }
                 ],
                 "map_locations": [

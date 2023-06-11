@@ -28,7 +28,8 @@ FLAG_CODES = {
     "enemy_shuffle",
     "pot_shuffle",
     "shop_shuffle",
-    "glitch_boots",
+    "glitch_boots"
+    -- "triforce_pieces_required"
 }
 
 function has_value (t, val)
@@ -142,6 +143,7 @@ function onClear(slot_data)
         enemy_shuffle={code="enemizer", mapping=mapEnemizer},
         -- pot_shuffle={code="", mapping=nil},
         shop_shuffle={code="shop_sanity", mapping=nil}
+        -- triforce_pieces_required={code="triforce_pieces", mapping=nil}
         -- glitch_boots={code="glitches", mapping=nil}
     }
     --print(dump_table(slot_data))

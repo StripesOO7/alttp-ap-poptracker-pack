@@ -31,6 +31,7 @@ Tracker:AddLocations("locations/MM.json")
 Tracker:AddLocations("locations/IP.json")
 Tracker:AddLocations("locations/TR.json")
 Tracker:AddLocations("locations/GT.json")
+Tracker:AddLocations("locations/bosses.json")
 
 if PopVersion and PopVersion >= "0.23.0" then
     Tracker:AddLocations("locations/dungeons.json")
