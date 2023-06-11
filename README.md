@@ -37,6 +37,7 @@ def fill_slot_data(self):
     slot_data['tr_medalion'] = self.multiworld.required_medallions[self.player][1]
     slot_data['shop_shuffle'] = self.multiworld.shop_shuffle[self.player]
 
-    return slot_data```
+    return slot_data
+```
 
 Some of these settings are curretnly purely cosmetic or just for keeping track of minor settings
