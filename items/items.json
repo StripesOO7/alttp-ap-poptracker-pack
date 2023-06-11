@@ -21,14 +21,47 @@
     {
         "name": "Blue Boomerang",
         "type": "toggle",
-        "img": "/images/items/boomerang_blue.png",
+        "img": "/images/items/boomerangsblue.png",
         "codes": "blueboomerang"
     },
     {
         "name": "Red Boomerang",
         "type": "toggle",
-        "img": "/images/items/boomerang_red.png",
+        "img": "/images/items/boomerangsred.png",
         "codes": "redboomerang"
+    },
+    {
+        "name": "Boomerangs",
+        "type": "composite_toggle",
+        "item_left": "blueboomerang",
+        "item_right": "redboomerang",
+        "images": [
+            {
+                "left": false, "right": false,
+                "img": "/images/items/boomerangs_disabled.png",
+                "img_mods": "@disabled",
+                "codes": "boomersangs"
+                // img, mods like stage
+            },
+            {
+                "left": true, "right": false,
+                "img": "/images/items/boomerangs_disabled.png",
+                "img_mods": "overlay|/images/items/boomerangsblue.png",
+                "codes": "blueboomerang"
+            },
+            {
+                "left": false, "right": true,
+                "img": "/images/items/boomerangs_disabled.png",
+                "img_mods": "overlay|/images/items/boomerangsred.png",
+                "codes": "redboomerang"
+            },
+            {
+                "left": true, "right": true,
+                "img": "/images/items/boomerangs.png",
+                "codes": "boomerangs both"
+            }
+        ],
+        "codes": "boomerangs"
     },
     {
         "name": "Hookshot",
@@ -482,23 +515,43 @@
         "allow_disabled": false,
         "stages": [
             {
-                "img": "/images/goal_fast.png",
-                "codes": "fast"
-            },
-            {
                 "img": "/images/goal_slow.png",
+                "inherit_codes":false,
                 "codes": "slow"
             },
             {
+                "img": "/images/goal_fast.png",
+                "inherit_codes":false,
+                "codes": "fast"
+            },
+            {
+                "img": "/images/goal_fast.png",
+                "inherit_codes":false,
+                "codes": "all_dungeons"
+            },
+            {
+                "img": "/images/pedestal.png",
+                "inherit_codes":false,
+                "codes": "ped"
+            },
+            {
+                "img": "/images/pedestal+ganon.png",
+                "inherit_codes":false,
+                "codes": "ped+ganon"
+            },
+            {
                 "img": "/images/goal_triforce.png",
+                "inherit_codes":false,
                 "codes": "triforce"
             },
             {
                 "img": "/images/goal_triforce+ganon.png",
+                "inherit_codes":false,
                 "codes": "triforce+ganon"
             },
             {
                 "img": "/images/goal_icerod.png",
+                "inherit_codes":false,
                 "codes": "icerod_hunt"
             }
         ],
@@ -566,19 +619,23 @@
         "stages": [
             {
                 "img": "/images/glitches_no.png",
-                "codes": "glitches"
+                "inherit_codes":false,
+                "codes": "no_glitches"
             },
             {
                 "img": "/images/glitches_boots.png",
-                "codes": "glitches"
+                "inherit_codes":false,
+                "codes": "glitched_boots"
             },
             {
                 "img": "/images/glitches_minor.png",
-                "codes": "glitches, minor"
+                "inherit_codes":false,
+                "codes": "minor"
             },
             {
                 "img": "/images/glitches_ow.png",
-                "codes": "glitches, ow"
+                "inherit_codes":false,
+                "codes": "ow"
             }
         ],
         "img": "/images/items/Pegasus_Boots.png",
@@ -622,19 +679,21 @@
         "images": [
             {
                 "left": false, "right": false,
-                "img": "/images/full_keysanity.png",
+                "img": "/images/full_keysanity_disabled.png",
                 "img_mods": "@disabled",
                 "codes": "vanilla_keys"
                 // img, mods like stage
             },
             {
                 "left": true, "right": false,
-                "img": "/images/small_keysanity.png",
+                "img": "/images/full_keysanity_disabled.png",
+                "img_mods": "overlay|/images/small_keysanity.png",
                 "codes": "small_keysanity"
             },
             {
                 "left": false, "right": true,
-                "img": "/images/big_keysanity.png",
+                "img": "/images/full_keysanity_disabled.png",
+                "img_mods": "overlay|/images/big_keysanity.png",
                 "codes": "big_keysanity"
             },
             {
@@ -658,10 +717,53 @@
         "codes": "compass"
     },
     {
-        "name": "unknown",
-        "type": "progressive_toggle",
-        "img": "/images/unknown.png",
-        "codes": "unknown"
+        "name": "Map&Compass Shuffle",
+        "type": "composite_toggle",
+        "item_left": "map",
+        "item_right": "compass",
+        "images": [
+            {
+                "left": false, "right": false,
+                "img": "/images/map_compass_shuffle_disabled.png",
+                "img_mods": "@disabled",
+                "codes": "vanilla_map_compass"
+                // img, mods like stage
+            },
+            {
+                "left": false, "right": true,
+                "img": "/images/map_compass_shuffle_disabled.png",
+                "img_mods": "overlay|/images/map_shuffle.png",
+                "codes": "map_shuffle"
+            },
+            {
+                "left": true, "right": false,
+                "img": "/images/map_compass_shuffle_disabled.png",
+                "img_mods": "overlay|/images/compass_shuffle.png",
+                "codes": "compass_shuffle"
+            },
+            {
+                "left": true, "right": true,
+                "img": "/images/map_compass_shuffle.png",
+                "codes": "full_map_compass_shuffle"
+            }
+        ],
+        "codes": "map_compass_shuffle"
+    },
+    {
+        "name": "Triforce Piece needed",
+        "type": "consumable",
+        "max_quantity":90,
+        "min_quantity":0,
+        "img": "/images/triforce_piece2.png",
+        "codes": "triforce_pieces"
+    },
+    {
+        "name": "Triforce Piece",
+        "type": "consumable",
+        "max_quantity":90,
+        "min_quantity":0,
+        "img": "/images/triforce_piece2.png",
+        "codes": "triforcepieces"
     },
     {
         "name": "Compass",
