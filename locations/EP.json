@@ -4,7 +4,7 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules":[
-            "@EP"
+            "@EP/Eastern Palace"
         ],
         "children": [
             {
@@ -96,8 +96,8 @@
             {
                 "name": "Boss",
                 "access_rules":[
-                    "ep_bigkey, $getBossRef|ep_boss, [firesource], bow",
-                    "ep_bigkey, $getBossRef|ep_boss, [firesource], enemizer"
+                    "ep_bigkey, [firesource], $getBossRef|ep_boss, bow",
+                    "ep_bigkey, [firesource], enemizer"
                 ],
                 "sections": [
                     {

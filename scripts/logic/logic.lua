@@ -14,32 +14,36 @@ function getBossRef(nameRef)
     stage = boss.CurrentStage
     -- print(name, stage) --Eastern palace boss 0.0
     stage_int = math.floor(stage)
+    access_lvl = 0
     -- print("if")
     if stage_int == 0 then
-        return 1, 0
+       access_lvl = 0
     elseif stage_int == 1 then
-        return 1, Tracker:FindObjectForCode("@Bosses/Armos Knights").AccessibilityLevel
+       access_lvl = Tracker:FindObjectForCode("@Bosses/Armos Knights").AccessibilityLevel
     elseif stage_int == 2 then
-        return 1, Tracker:FindObjectForCode("@Bosses/Lanmolas").AccessibilityLevel
+       access_lvl = Tracker:FindObjectForCode("@Bosses/Lanmolas").AccessibilityLevel
     elseif stage_int == 3 then
-        return 1, Tracker:FindObjectForCode("@Bosses/Moldorm").AccessibilityLevel
+       access_lvl = Tracker:FindObjectForCode("@Bosses/Moldorm").AccessibilityLevel
     elseif stage_int == 4 then
-        return 1, Tracker:FindObjectForCode("@Bosses/Helmasaur King").AccessibilityLevel
+       access_lvl = Tracker:FindObjectForCode("@Bosses/Helmasaur King").AccessibilityLevel
     elseif stage_int == 5 then
-        return 1, Tracker:FindObjectForCode("@Bosses/Arrghus").AccessibilityLevel
+       access_lvl = Tracker:FindObjectForCode("@Bosses/Arrghus").AccessibilityLevel
     elseif stage_int == 6 then
-        return 1, Tracker:FindObjectForCode("@Bosses/Mothula").AccessibilityLevel
+       access_lvl = Tracker:FindObjectForCode("@Bosses/Mothula").AccessibilityLevel
     elseif stage_int == 7 then
-        return 1, Tracker:FindObjectForCode("@Bosses/Blind").AccessibilityLevel
+       access_lvl = Tracker:FindObjectForCode("@Bosses/Blind").AccessibilityLevel
     elseif stage_int == 8 then
-        return 1, Tracker:FindObjectForCode("@Bosses/Kholdstare").AccessibilityLevel
+       access_lvl = Tracker:FindObjectForCode("@Bosses/Kholdstare").AccessibilityLevel
     elseif stage_int == 9 then
-        return 1, Tracker:FindObjectForCode("@Bosses/Vitreous").AccessibilityLevel
+       access_lvl = Tracker:FindObjectForCode("@Bosses/Vitreous").AccessibilityLevel
     elseif stage_int == 10 then
-        return 1, Tracker:FindObjectForCode("@Bosses/Trinexx").AccessibilityLevel
+        print(stage_int, Tracker:FindObjectForCode("@Bosses/Trinexx").AccessibilityLevel)
+       access_lvl = Tracker:FindObjectForCode("@Bosses/Trinexx").AccessibilityLevel
     end
-    
-    print("Failed Boss_check with ".. name .. "and" .. stage)
+    if access_lvl > 0 then
+        return true
+    end
+    -- print("Failed Boss_check with ".. name .. "and" .. stage)
     return 0
 end
 
