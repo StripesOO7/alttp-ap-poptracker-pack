@@ -17,7 +17,7 @@ function getBossRef(nameRef)
     access_lvl = 0
     -- print("if")
     if stage_int == 0 then
-       access_lvl = 0
+       access_lvl = 1
     elseif stage_int == 1 then
        access_lvl = Tracker:FindObjectForCode("@Bosses/Armos Knights").AccessibilityLevel
     elseif stage_int == 2 then
@@ -37,7 +37,6 @@ function getBossRef(nameRef)
     elseif stage_int == 9 then
        access_lvl = Tracker:FindObjectForCode("@Bosses/Vitreous").AccessibilityLevel
     elseif stage_int == 10 then
-        print(stage_int, Tracker:FindObjectForCode("@Bosses/Trinexx").AccessibilityLevel)
        access_lvl = Tracker:FindObjectForCode("@Bosses/Trinexx").AccessibilityLevel
     end
     if access_lvl > 0 then
