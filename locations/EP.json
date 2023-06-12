@@ -96,7 +96,8 @@
             {
                 "name": "Boss",
                 "access_rules":[
-                    "ep_bigkey, $getBossRef|ep_boss, [firesource]"
+                    "ep_bigkey, $getBossRef|ep_boss, [firesource, bow",
+                    "ep_bigkey, $getBossRef|ep_boss, [firesource], enemizer"
                 ],
                 "sections": [
                     {

@@ -500,7 +500,7 @@
                         "access_rules": [
                             "flippers, @Darkworld Left, mirror",
                             "flippers, @Darkworld Right, mirror",
-                            "{$can_swim}"
+                            "{}"
                         ]
                     }
                 ],
@@ -710,9 +710,9 @@
             {
                 "name": "Bombos Tablet",
                 "access_rules":[
-                    "@Darkworld Left, mirror, book, canActivateTablets",
+                    "@Darkworld Left, mirror, book, $canActivateTablets",
                     "{@Darkworld Left, mirror, book}",
-                    "inverted, canActivateTablets, book",
+                    "inverted, $canActivateTablets, book",
                     "{inverted, book}"
                 ],
                 "sections": [
@@ -842,7 +842,7 @@
             {
                 "name": "Ether Tablet",
                 "access_rules":[
-                    "mirror, book, canActivateTablets",
+                    "mirror, book, $canActivateTablets",
                     "{mirror, book}"
                 ],
                 "sections": [
@@ -1002,6 +1002,9 @@
                 "sections": [
                     {
                         "name": "Dungeon Chest" ,
+                        "access_rules":[
+                            "[boots], [dp_bigkey], [dp_smallkey:1]"
+                        ],
                         "clear_as_group": false,
                         "item_count": 5
                     }
@@ -1086,7 +1089,8 @@
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules": [
-                            "ep_bigkey, firesource, $getBossRef|ep_boss"
+                            "ep_bigkey, [firesource], $getBossRef|ep_boss, bow",
+                            "ep_bigkey, [firesource], $getBossRef|ep_boss, enimzer"
                         ],
                         "item_count": 1,
                         "hosted_item": "ep_boss"
@@ -1137,7 +1141,7 @@
                     {
                         "name": "Maze Chest",
                         "access_rules":[
-                            "firesource, at_smallkey:1"
+                            "[firesource], at_smallkey:1"
                         ]
                     },
                     {
