@@ -926,7 +926,7 @@
                     {
                         "name": "Upper",
                         "clear_as_group": false,
-                        "item_count": 5
+                        "item_count": 2
                     }
                 ],
                 "map_locations": [
@@ -1035,7 +1035,7 @@
                 "name": "Desert Palace Back",
                 "access_rules":[
                     "@DP, glove, [$getBossRef|dp_boss], dp_bigkey",
-                    "@Darkworld Swamp, mirror, $getBossRef|dp_boss, dp_bigkey"
+                    "@Darkworld Swamp, mirror, [$getBossRef|dp_boss], dp_bigkey"
                 ],
                 "item_count": 2,
                 "sections": [
@@ -1232,9 +1232,8 @@
                         "name": "Secret Room",
                         "item_count": 3,
                         "access_rules":[
-                            "bombs, glove",
-                            "bombs, firesource",
-                            "standard"
+                            "bombs",
+                            "boots"
                         ]
                     }
                 ],
