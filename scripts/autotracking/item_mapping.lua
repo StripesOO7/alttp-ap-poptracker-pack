@@ -11,7 +11,7 @@ ITEM_MAPPING = {
 [9]   =    {"hammer", "toggle"},
 [10]   =   {"hookshot", "toggle"},
 [26]   =   {"mirror", "toggle"},
-[20]   =   {"flute", "toggle"},
+[20]   =   {"flute", "progressive"},
 [75]   =   {"boots", "toggle"},
 [27]   =   {"powergloves", "toggle"},
 [25]   =   {"cape", "toggle"},
@@ -145,5 +145,5 @@ ITEM_MAPPING = {
 -- [48]   =   {"Blue Potion", ""},
 -- [14]   =   {"Bee", ""},
 -- [66]   =   {"Small Heart", ""},
-[74]   =   {"Activated Flute", "toggle"},
+[74]   =   {"flute_active", "progressive"},
 }

@@ -73,6 +73,24 @@
                 ]
             },
             {
+                "name": "Activate Flute",
+                "visibility_rules":["flute"],
+                "sections": [
+                    {
+                        "name": "Hyrule Hymn o7",
+                        "hosted_item": "flute_active"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 254,
+                        "y": 957,
+                        "size": 32
+                    }
+                ]
+            },
+            {
                 "name": "Chicken Hut",
                 "access_rules":[
                     "bombs"
@@ -168,7 +186,8 @@
                 "name": "Lost Woods",
                 "sections": [
                     {
-                        "name": "Mushroom"
+                        "name": "Mushroom",
+                        "capture_item": true
                     }
                 ],
                 "map_locations": [
@@ -204,7 +223,8 @@
                 ],
                 "sections": [
                     {
-                        "name": "Pedestal"
+                        "name": "Pedestal",
+                        "capture_item": true
                     }
                 ],
                 "map_locations": [
@@ -224,7 +244,8 @@
                 ],
                 "sections": [
                     {
-                        "name": "Tree"
+                        "name": "Tree",
+                        "capture_item": true
                     }
                 ],
                 "map_locations": [
@@ -263,7 +284,8 @@
                 ],
                 "sections": [
                     {
-                        "name": "Library"
+                        "name": "Library",
+                        "capture_item": true
                     }
                 ],
                 "map_locations": [
@@ -284,7 +306,8 @@
                 ],
                 "sections": [
                     {
-                        "name": "Race"
+                        "name": "Race",
+                        "capture_item": true
                     }
                 ],
                 "map_locations": [
@@ -502,7 +525,8 @@
                             "flippers, @Darkworld Left, mirror",
                             "flippers, @Darkworld Right, mirror",
                             "{}"
-                        ]
+                        ],
+                        "capture_item": true
                     }
                 ],
                 "map_locations": [
@@ -549,7 +573,8 @@
                     },
                     {
                         "name": "Sahasrahla's Item",
-                        "access_rules":["greenpendant"]
+                        "access_rules":["greenpendant"],
+                        "capture_item": true
                     }
                 ],
                 "map_locations": [
@@ -626,7 +651,8 @@
                             "flippers",
                             "{glove}",
                             "{$fake_flippers}"
-                        ]
+                        ],
+                        "capture_item": true
                     }
                 ],
                 "map_locations": [
@@ -718,7 +744,8 @@
                 ],
                 "sections": [
                     {
-                        "name": "Bombos Tablet" 
+                        "name": "Bombos Tablet" ,
+                        "capture_item": true
                     }
                 ],
                 "map_locations": [
@@ -740,7 +767,8 @@
                 ],
                 "sections": [
                     {
-                        "name": "Bumper Cave Item"
+                        "name": "Bumper Cave Item",
+                        "capture_item": true
                     }
                 ],
                 "map_locations": [
@@ -806,7 +834,8 @@
                         "access_rules":[
                             "mirror",
                             "{@Light Death Mountain Left Bottom}"
-                        ]
+                        ],
+                        "capture_item": true
                     },
                     {
                         "name": "Item inside"
@@ -848,7 +877,8 @@
                 ],
                 "sections": [
                     {
-                        "name": "Ether Tablet"
+                        "name": "Ether Tablet",
+                        "capture_item": true
                     }
                 ],
                 "map_locations": [
@@ -884,7 +914,8 @@
                 ],
                 "sections": [
                     {
-                        "name": "Item on Floating Island"
+                        "name": "Item on Floating Island",
+                        "capture_item": true
                     }
                 ],
                 "map_locations": [
