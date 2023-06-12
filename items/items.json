@@ -93,10 +93,12 @@
         "stages": [
             {
                 "img": "/images/items/Magic_Powder.png",
+                "inherit_codes": false,
                 "codes": "powder"
             },
             {
                 "img": "/images/events/Satan_visited.png",
+                "inherit_codes": false,
                 "codes": "satan_visited"
             }
         ]
@@ -209,10 +211,12 @@
         "stages": [
             {
                 "img": "/images/items/Shovel.png",
+                "inherit_codes": false,
                 "codes": "shovel"
             },
             {
                 "img": "/images/events/Shovel_used.png",
+                "inherit_codes": false,
                 "codes": "shovel_used"
             }
         ]
@@ -235,10 +239,12 @@
         "stages": [
             {
                 "img": "/images/items/Flute.png",
+                "inherit_codes": false,
                 "codes": "flute"
             },
             {
                 "img": "/images/events/Flute_active.png",
+                "inherit_codes": false,
                 "codes": "flute_active"
             }
         ]
@@ -768,16 +774,16 @@
         "codes": "triforcepieces"
     },
     {
-        "name": "Compass",
-        "type": "progressive_toggle",
-        "img": "/images/items/swordless.png",
-        "codes": "compass"
+        "name": "AP item",
+        "type": "toggle",
+        "img": "/images/AP-item.png",
+        "codes": "AP_item"
     },
     {
-        "name": "Compass",
-        "type": "progressive_toggle",
-        "img": "/images/items/swordless.png",
-        "codes": "compass"
+        "name": "AP icon",
+        "type": "toggle",
+        "img": "/images/AP-img.png",
+        "codes": "AP_img"
     },
 // crystsals, pendants
     {
