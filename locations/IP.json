@@ -70,7 +70,6 @@
                     }
                 ]
             },
-
             {
                 "name": "Iced T Room",
                 "sections": [
@@ -87,7 +86,22 @@
                     }
                 ]
             },
-
+            {
+                "name": "Big Key Chest",
+                "sections": [
+                    {
+                        "name": "Big Key Chest"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "IP",
+                        "x": 220,
+                        "y": 180,
+                        "size": 6
+                    }
+                ]
+            },
             {
                 "name": "Big Chest",
                 "access_rules":["ip_bigkey"],

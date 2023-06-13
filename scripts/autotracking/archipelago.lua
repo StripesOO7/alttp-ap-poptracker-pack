@@ -207,6 +207,7 @@ function onLocation(location_id, location_name)
     
     for _, location in pairs(location_array) do
         local obj = Tracker:FindObjectForCode(location)
+        -- print(location, obj)
         if obj then
 
             if location:sub(1, 1) == "@" then

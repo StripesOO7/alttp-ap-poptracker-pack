@@ -145,5 +145,5 @@ ITEM_MAPPING = {
 -- [48]   =   {"Blue Potion", ""},
 -- [14]   =   {"Bee", ""},
 -- [66]   =   {"Small Heart", ""},
-[74]   =   {"flute_active", "progressive"},
+[74]   =   {"flute", "progressive"},
 }
