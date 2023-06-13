@@ -119,7 +119,7 @@ function canFinish()
     end
 
     if beatable >= table_length then
-        Tracker:FindObjectForCode("go_mode").Active - true
+        Tracker:FindObjectForCode("go_mode").Active = true
         return true
     else
         return false
