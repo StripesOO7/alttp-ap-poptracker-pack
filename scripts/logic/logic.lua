@@ -100,16 +100,26 @@ function checkRequirements(reference, check_count)
     end
 end
 
-function canFinish()
+function canFinish() 
+    local reqs = {
+        [1] = {checkRequirements("ganon_killable", "crystal")},
+        [2] = {Tracker:ProviderCountForCode("aga1")},
+        [3] = {Tracker:ProviderCountForCode("aga2")},
+        [4] = {Tracker:ProviderCountForCode("green_pendant")},
+        [5] = {Tracker:ProviderCountForCode("blue_pendant")},
+        [6] = {Tracker:ProviderCountForCode("red_pendant")},
+        [7] = {checkRequirements("triforce_pieces_needed", "triforcepieces")},
+        [8] = {Tracker:ProviderCountForCode("icerod")}
+    }
     local goals = {
-        [0] = {Tracker:ProviderCountForCode("aga2"), checkRequirements("ganon_killable", "crystal")}, --aga2 + ganon killable
-        [1] = {checkRequirements("ganon_killable", "crystal")}, --ganon killable
-        [2] = {Tracker:ProviderCountForCode("green_pendant"), Tracker:ProviderCountForCode("blue_pendant"), Tracker:ProviderCountForCode("red_pendant"), Tracker:ProviderCountForCode("aga1"), Tracker:ProviderCountForCode("aga2"), checkRequirements("ganon_killable", "crystal")}, --7crystal, aga1+aga2, 3pendants
-        [3] = {Tracker:ProviderCountForCode("green_pendant"), Tracker:ProviderCountForCode("blue_pendant"), Tracker:ProviderCountForCode("red_pendant")}, --3 pendants
-        [4] = {Tracker:ProviderCountForCode("green_pendant"), Tracker:ProviderCountForCode("blue_pendant"), Tracker:ProviderCountForCode("red_pendant"), checkRequirements("ganon_killable", "crystal")}, --pendants+ ganon killable
-        [5] = {checkRequirements("triforce_pieces_needed", "triforcepieces")}, --trifoce pieces
-        [6] = {checkRequirements("triforce_pieces_needed", "triforcepieces"),checkRequirements("ganon_killable", "crystal")}, --triforce pieces + ganon killabel
-        [7] = {Tracker:ProviderCountForCode("icerod")} --icerod
+        [0] = {reqs[1][1], reqs[3][1]}, --aga2 + ganon killable
+        [1] = {reqs[1][1]}, --ganon killable
+        [2] = {reqs[1][1], reqs[2][1], reqs[3][1], reqs[4][1], reqs[5][1], reqs[6][1]}, --7crystal, aga1+aga2, 3pendants
+        [3] = {reqs[4][1], reqs[5][1], reqs[6][1]}, --3 pendants
+        [4] = {reqs[1][1], reqs[4][1], reqs[5][1], reqs[6][1]}, --pendants+ ganon killable
+        [5] = {reqs[7][1]}, --trifoce pieces
+        [6] = {reqs[1][1], reqs[7][1]}, --triforce pieces + ganon killabel
+        [7] = {reqs[8][1]} --icerod
     }
     beatable = 0
 

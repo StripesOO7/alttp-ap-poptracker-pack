@@ -3,7 +3,7 @@
 LOCATION_MAPPING = {
     [1572883]   =   {"@Lightworld/Lost Woods/Mushroom"},
     [191256]    =   {"@Lightworld/Bottle Merchant/Get Scammed (100 Rupees)"},
-    [1573194]   =   {"@Lightworld/Flute Spot/Flute Spot"},
+    [1573194]   =   {"@Lightworld/Flute Spot/Flute Spot", "shovel"},
     [1573189]   =   {"@Lightworld/Dam/Sunken Treasure"},
     [212328]    =   {"@Darkworld Left/Purple Chest Return/Purple Chest Return"},
     [60175]     =   {"@Lightworld/Blind's Hideout/Back Chest"},

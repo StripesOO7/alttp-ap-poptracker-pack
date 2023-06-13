@@ -76,7 +76,6 @@
         "max_quantity": 50,
         "increment": 5,
         "initial_quantity": 10,
-        "allow_disabled":false,
         "img": "/images/items/Bomb.png",
         "codes": "bombs"
     },
@@ -503,6 +502,7 @@
         "overlay_background": "#000000",
         "min_quantity": 0,
         "max_quantity": 7,
+        "initial_quantity": 7,
         "img": "/images/gt_crystals.png",
         "codes": "gt_access"
     },
@@ -513,6 +513,7 @@
         "allow_disabled": false,
         "min_quantity": 0,
         "max_quantity": 7,
+        "initial_quantity": 7,
         "img": "/images/bosses/ganon_crystals.png",
         "codes": "ganon_killable"
     },
