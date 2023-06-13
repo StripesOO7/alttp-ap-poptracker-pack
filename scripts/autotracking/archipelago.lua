@@ -149,7 +149,7 @@ function onClear(slot_data)
     --print(dump_table(slot_data))
 
     for k,v in pairs(slot_data) do
-        print(k, v)
+        -- print(k, v)
         if k == "crystals_needed_for_gt" or k == "crystals_needed_for_ganon" then
             Tracker:FindObjectForCode(slotCodes[k].code).AcquiredCount = v
         elseif k == "shop_shuffle" then

@@ -43,7 +43,8 @@
                     {
                         "name":"Back Chest",
                         "access_rules": [
-                            "bombs"
+                            "bombs",
+                            "$canFinish"
                         ]
                     }
                 ],
@@ -484,7 +485,7 @@
                     {
                         "name": "Hobo",
                         "access_rules": [
-                            "flippers"
+                            "$canSwim"
                         ]
                     }
                 ],
@@ -615,7 +616,8 @@
             {
                 "name": "Waterfall Fairy",
                 "access_rules":[
-                    "$can_swim, glove",
+                    "$canSwim, glove",
+                    "$canSwim, pearl",
                     "flippers"
                 ],
                 "sections": [
@@ -637,7 +639,7 @@
             {
                 "name": "Zora's Damoain",
                 "access_rules":[
-                    "flippers",
+                    "$canSwim",
                     "glove"
                 ],
                 "sections": [
@@ -647,10 +649,8 @@
                     {
                         "name": "Zora Ledge",
                         "access_rules":[
-                            "$can_swim",
-                            "flippers",
-                            "{glove}",
-                            "{$fake_flippers}"
+                            "{}",
+                            "flippers"
                         ],
                         "capture_item": true
                     }
