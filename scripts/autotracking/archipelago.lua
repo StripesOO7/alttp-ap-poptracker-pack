@@ -102,7 +102,7 @@ function onClear(slot_data)
         print("its fucked")
         return
     end
-    print(dump_table(slot_data))
+    -- print(dump_table(slot_data))
 
     mapToggle={[0]=0,[1]=1}
     mapToggleReverse={[0]=1,[1]=0,[2]=0,[3]=0,[4]=0}
@@ -207,7 +207,7 @@ function onLocation(location_id, location_name)
     
     for _, location in pairs(location_array) do
         local obj = Tracker:FindObjectForCode(location)
-        print(location, obj)
+        -- print(location, obj)
         if obj then
 
             if location:sub(1, 1) == "@" then
