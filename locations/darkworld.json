@@ -962,7 +962,7 @@
                     {
                         "name": "GT Top + Lanmo refight",
                         "access_rules":[
-                            "gt_bigkey, [gt_smallkey:1], [$getBossRef|gt_lanmo]"
+                            "gt_bigkey, [gt_smallkey:1], $getBossRef|gt_lanmo"
                         ],
                         "clear_as_group": false,
                         "item_count": 3,
@@ -971,7 +971,7 @@
                     {
                         "name": "GT Top Moldorm refight",
                         "access_rules":[
-                            "gt_bigkey, [gt_smallkey:2], [$getBossRef|gt_boss]"
+                            "gt_bigkey, [gt_smallkey:2], $getBossRef|gt_boss"
                         ],
                         "clear_as_group": false,
                         "item_count": 1,

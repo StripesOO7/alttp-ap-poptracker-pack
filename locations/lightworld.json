@@ -1066,8 +1066,8 @@
             {
                 "name": "Desert Palace Back",
                 "access_rules":[
-                    "@DP, glove, [$getBossRef|dp_boss], dp_bigkey",
-                    "@Darkworld Swamp, mirror, [$getBossRef|dp_boss], dp_bigkey"
+                    "@DP, glove, $getBossRef|dp_boss, dp_bigkey",
+                    "@Darkworld Swamp, mirror, $getBossRef|dp_boss, dp_bigkey"
                 ],
                 "item_count": 2,
                 "sections": [
@@ -1390,7 +1390,7 @@
                     {
                         "name": "GT Top + Lanmo refight",
                         "access_rules":[
-                            "gt_bigkey, [gt_smallkey:1], [$getBossRef|gt_lanmo]"
+                            "gt_bigkey, [gt_smallkey:1], $getBossRef|gt_lanmo"
                         ],
                         "clear_as_group": false,
                         "item_count": 3,
@@ -1399,7 +1399,7 @@
                     {
                         "name": "GT Top Moldorm refight",
                         "access_rules":[
-                            "gt_bigkey, [gt_smallkey:2], [$getBossRef|gt_boss]"
+                            "gt_bigkey, [gt_smallkey:2], $getBossRef|gt_boss"
                         ],
                         "clear_as_group": false,
                         "item_count": 1,
