@@ -596,13 +596,7 @@
                         "clear_as_group": false,
                         "access_rules": ["pod_bigkey, lamp, $getBossRef|pod_boss"],
                         "item_count": 1,
-                        "hosted_item": "pod_boss"
-                    },
-                    {
-                        "name": "Dungeon Reward",
-                        "access_rules": ["@Pod/Palace of Darkness/Boss Item"],
-                        "clear_as_group": false,
-                        "hosted_item": "palace of darkness"
+                        "hosted_item": "pod_boss, palaceofdarkness"
                     }
                 ],
                 "map_locations": [
@@ -671,13 +665,7 @@
                         "clear_as_group": false,
                         "access_rules": ["[tr_smallkey:4], $getBossRef|tr_boss"],
                         "item_count": 1,
-                        "hosted_item": "tr_boss"
-                    },
-                    {
-                        "name": "Dungeon Reward",
-                        "access_rules": ["@TR/Turtle Rock Back/Boss Item"],
-                        "clear_as_group": false,
-                        "hosted_item": "trutle rock"
+                        "hosted_item": "tr_boss, turtlerock"
                     }
                 ],
                 "map_locations": [
@@ -737,13 +725,7 @@
                         "clear_as_group": false,
                         "access_rules":["$canRemoveCurtains, $getBossRef|sw_boss"],
                         "item_count": 1,
-                        "hosted_item": "sw_boss"
-                    },
-                    {
-                        "name": "Dungeon Reward",
-                        "access_rules":["@SW/Skull Woods Back/Boss Item"],
-                        "clear_as_group": false,
-                        "hosted_item": "skullwoods"
+                        "hosted_item": "sw_boss, skullwoods"
                     }
                 ],
                 "map_locations": [
@@ -785,13 +767,7 @@
                         "clear_as_group": false,
                         "access_rules":["mm_bigkey, $getBossRef|mm_boss"],
                         "item_count": 1,
-                        "hosted_item": "mm_boss"
-                    },
-                    {
-                        "name": "Dungeon Reward",
-                        "access_rules":["@MM/Misery Mire/Boss Item"],
-                        "clear_as_group": false,
-                        "hosted_item": "miserymire"
+                        "hosted_item": "mm_boss, miserymire"
                     }
                 ],
                 "map_locations": [
@@ -835,13 +811,7 @@
                             "hookshot, $getBossRef|sp_boss"
                         ],
                         "item_count": 1,
-                        "hosted_item": "sp_boss"
-                    },
-                    {
-                        "name": "Dungeon Reward",
-                        "access_rules":["@SP/Swamp Palace/Boss Item"],
-                        "clear_as_group": false,
-                        "hosted_item": "swamppalace"
+                        "hosted_item": "sp_boss, swamppalace"
                     }
                 ],
                 "map_locations": [
@@ -886,11 +856,6 @@
                             ] ,
                         "item_count": 1,
                         "hosted_item": "ip_boss, icepalace"
-                    },
-                    {
-                        "name": "Dungeon Reward",
-                        "clear_as_group": false,
-                        "hosted_item": "icepalace"
                     }
                 ],
                 "map_locations": [
@@ -935,13 +900,7 @@
                         "clear_as_group": false,
                         "access_rules":["tt_bigkey, $getBossRef|tt_boss"],
                         "item_count": 1,
-                        "hosted_item": "tt_boss"
-                    },
-                    {
-                        "name": "Dungeon Reward",
-                        "access_rules":["@TT/Thieves Town/Boss Item"],
-                        "clear_as_group": false,
-                        "hosted_item": "thievestown"
+                        "hosted_item": "tt_boss, thievestown"
                     }
                 ],
                 "map_locations": [

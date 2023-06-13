@@ -1073,14 +1073,9 @@
                 "sections": [
                     {
                         "name": "Boss Item" ,
-                        "clear_as_group": false,
+                        "clear_as_group": true,
                         "item_count": 1,
-                        "hosted_item": "dp_boss"
-                    },
-                    {
-                        "name": "Dungeon Reward",
-                        "clear_as_group": false,
-                        "hosted_item": "desertpalace"
+                        "hosted_item": "dp_boss, desertpalace"
                     }
                 ],
                 "map_locations": [
@@ -1125,13 +1120,7 @@
                             "ep_bigkey, [firesource], $getBossRef|ep_boss, enimzer"
                         ],
                         "item_count": 1,
-                        "hosted_item": "ep_boss"
-                    },
-                    {
-                        "name": "Dungeon Reward",
-                        "clear_as_group": false,
-                        "access_rules": ["@EP/Eastern Palace/Boss Item"],
-                        "hosted_item": "easternpalace"
+                        "hosted_item": "ep_boss, easternpalace"
                     }
                 ],
                 "map_locations": [
@@ -1343,15 +1332,7 @@
                             "@ToH/Tower of Hera/Upper, $getBossRef|toh_boss"
                         ],
                         "item_count": 1,
-                        "hosted_item": "toh_boss"
-                    },
-                    {
-                        "name": "Dungeon Reward",
-                        "clear_as_group": false,
-                        "access_rules":[
-                            "@ToH/Tower of Hera/Upper"
-                        ],
-                        "hosted_item": "towerofhera"
+                        "hosted_item": "toh_boss, towerofhera"
                     }
                 ],
                 "map_locations": [
