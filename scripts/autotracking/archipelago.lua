@@ -195,6 +195,7 @@ function onItem(index, item_id, item_name, player_number)
     else
         print(string.format("onItem: could not find object for code %s", v[1]))
     end
+    canFinish()
 end
 
 --called when a location gets cleared
@@ -219,6 +220,7 @@ function onLocation(location_id, location_name)
             print(string.format("onLocation: could not find object for code %s", location))
         end
     end
+    canFinish()
 end
 
 function onEvent(key, value, old_value)
