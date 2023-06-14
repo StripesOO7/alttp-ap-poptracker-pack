@@ -99,6 +99,10 @@ function checkRequirements(reference, check_count)
         return 0
     end
 end
+function calcHeartpieces()
+    local pieces = Tracker:FindObjectForCode("heartpieces") 
+    pieces.CurrentStage = Tracker:ProviderCountForCode("heartpieces") % 4
+end
 
 function canFinish() 
     local reqs = {
