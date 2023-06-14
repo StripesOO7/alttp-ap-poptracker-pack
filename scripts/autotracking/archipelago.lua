@@ -28,8 +28,8 @@ FLAG_CODES = {
     "enemy_shuffle",
     "pot_shuffle",
     "shop_shuffle",
-    "glitch_boots"
-    -- "triforce_pieces_required"
+    "glitch_boots",
+    "triforce_pieces_required"
 }
 
 function has_value (t, val)
@@ -113,7 +113,7 @@ function onClear(slot_data)
     -- progressive={[]=,}
     mapMode={["open"]=0,["inverted"]=1,["standard"]=2}
     mapGoals={["crystals"]=0,["ganon"]=1,["bosses"]=3,["pedestal"]=4,["ganon_pedestal"]=5,["triforce_hunt"]=6,["ganon_triforce_hunt"]=7,["ice_rod_hunt"]=8,["local_triforce_hunt"]=6,["local_ganon_triforce_hunt"]=7}
-    mapDark={["none"]=0,["lamp"]=1,["scornes"]=2}
+    mapDark={["none"]=0,["lamp"]=1,["scornes"]=2} -- none=dark room, lamp=vanilla, scornes = firerod
     -- mapMedalion{["Bombos"]=,["Ether"]=}
     -- retro_caves={[]=}
     mapBosses={[0]=0,[1]=1,[2]=1,[3]=1,[4]=2}
@@ -123,7 +123,7 @@ function onClear(slot_data)
 
     slotCodes = {
         -- glitches_required={code="glitches", mapping=mapToggleReverse},
-        -- dark_room_logic={code="dark_mode", mapping=mapDark},
+        dark_room_logic={code="dark_mode", mapping=mapDark},
         bigkey_shuffle={code="big_keys", mapping=mapDungeonItem},
         smallkey_shuffle={code="small_keys", mapping=mapDungeonItem},
         map_shuffle={code="map", mapping=mapDungeonItem},
@@ -143,14 +143,14 @@ function onClear(slot_data)
         enemy_shuffle={code="enemizer", mapping=mapEnemizer},
         -- pot_shuffle={code="", mapping=nil},
         shop_shuffle={code="shop_sanity", mapping=nil}
-        -- triforce_pieces_required={code="triforce_pieces", mapping=nil}
+        triforce_pieces_required={code="triforce_pieces_needed", mapping=nil}
         -- glitch_boots={code="glitches", mapping=nil}
     }
     --print(dump_table(slot_data))
 
     for k,v in pairs(slot_data) do
         -- print(k, v)
-        if k == "crystals_needed_for_gt" or k == "crystals_needed_for_ganon" then
+        if k == "crystals_needed_for_gt" or k == "crystals_needed_for_ganon" or k == "triforce_pieces_required" then
             Tracker:FindObjectForCode(slotCodes[k].code).AcquiredCount = v
         elseif k == "shop_shuffle" then
             if v ~= "none" then
