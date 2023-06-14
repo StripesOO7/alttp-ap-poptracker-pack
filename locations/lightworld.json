@@ -791,15 +791,15 @@
             "open, flute_active",
             "standard, flute_active",
             "inverted, pearl, flute_active",
-            "open, lamp, glove",
-            "standard, lamp, glove",
-            "inverted, pearl, lamp, glove"
+            "open, $darkRooms, glove",
+            "standard, $darkRooms, glove",
+            "inverted, pearl, $darkRooms, glove"
         ],
         "children": [
             {
                 "name": "Rescue Old Man",
                 "access_rules":[
-                    "lamp"
+                    "$darkRooms"
                 ],
                 "visibility_rules":[
                     "open",
@@ -1235,7 +1235,7 @@
                 "name": "Castle Escape",
                 "item_count": 1,
                 "access_rules":[
-                    "firesource", 
+                    "$darkRooms", 
                     "glove",
                     "standard"
                 ],
@@ -1243,7 +1243,7 @@
                     {
                         "name": "Dark Cross",
                         "access_rules":[
-                            "firesource",
+                            "$darkRooms",
                             "glove, hc_smallkey:1",
                             "standard"
                         ]

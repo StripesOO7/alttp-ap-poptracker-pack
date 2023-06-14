@@ -58,9 +58,17 @@
         "name": "Castle Escape",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
+        "access_rules":[
+            "@CE/Castle Escape"
+        ],
         "children": [
             {
                 "name": "Dark Cross",
+                "access_rules":[
+                    "$darkRooms",
+                    "glove, hc_smallkey:1",
+                    "standard"
+                ],
                 "sections": [
                     {
                         "name": "Dark Cross"
@@ -77,6 +85,10 @@
             },
             {
                 "name": "Secret Passage Left",
+                "access_rules": [
+                    "bombs",
+                    "boots"
+                ],
                 "sections": [
                     {
                         "name": "Secret Passage Left"
@@ -93,6 +105,10 @@
             },
             {
                 "name": "Secret Passage Middle",
+                "access_rules": [
+                    "bombs",
+                    "boots"
+                ],
                 "sections": [
                     {
                         "name": "Secret Passage Middle"
@@ -109,6 +125,10 @@
             },
             {
                 "name": "Secret Passage Right",
+                "access_rules": [
+                    "bombs",
+                    "boots"
+                ],
                 "sections": [
                     {
                         "name": "Secret Passage Right"
@@ -129,6 +149,9 @@
         "name": "Sanctuary",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
+        "access_rules":[
+            "@CE/Sanctuary"
+        ],
         "children": [
             {
                 "name": "Sanctuary Chest",

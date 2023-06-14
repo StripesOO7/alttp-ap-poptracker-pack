@@ -445,14 +445,14 @@
         "access_rules": [
             "@Light Death Mountain Left Bottom, pearl",
             "inverted, flute_active",
-            "inverted, lamp"
+            "inverted, $darkRooms"
         ],
         "children": [
             {
                 "name": "Spike Cave",
                 "access_rules": [
                     "hammer",
-                    "$health|14, hammer"
+                    "$health:14, hammer"
                 ],
                 "sections": [
                     {
@@ -471,7 +471,7 @@
             {
                 "name": "Rescue Old Man",
                 "access_rules":[
-                    "lamp"
+                    "$darkRooms"
                 ],
                 "visibility_rules":[
                     "inverted"
@@ -593,14 +593,14 @@
                 "sections": [
                     {
                         "name": "Dungeon Chest" ,
-                        "access_rules": ["[lamp], [pod_smallkey:5], [pod_bigkey]"],
+                        "access_rules": ["[$darkRooms], [pod_smallkey:5], [pod_bigkey]"],
                         "clear_as_group": false,
                         "item_count": 13
                     },
                     {
                         "name": "Boss Item" ,
                         "clear_as_group": false,
-                        "access_rules": ["pod_bigkey, lamp, $getBossRef|pod_boss"],
+                        "access_rules": ["pod_bigkey, $darkRooms, $getBossRef|pod_boss"],
                         "item_count": 1,
                         "hosted_item": "pod_boss, palaceofdarkness"
                     }
@@ -669,7 +669,7 @@
                     {
                         "name": "Boss Item" ,
                         "clear_as_group": false,
-                        "access_rules": ["[tr_smallkey:4], $getBossRef|tr_boss"],
+                        "access_rules": ["[tr_smallkey:4], $darkRooms, $getBossRef|tr_boss"],
                         "item_count": 1,
                         "hosted_item": "tr_boss, turtlerock"
                     }
@@ -762,8 +762,7 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules":[
-                            "[firerod],[mm_bigkey]",
-                            "[lamp],[mm_bigkey]"
+                            "[firesource],[mm_bigkey]"
                         ],
                         "clear_as_group": false,
                         "item_count": 7
@@ -771,7 +770,10 @@
                     {
                         "name": "Boss Item" ,
                         "clear_as_group": false,
-                        "access_rules":["mm_bigkey, $getBossRef|mm_boss"],
+                        "access_rules":[
+                            "mm_bigkey, $getBossRef|mm_boss, lamp, somaria",
+                            "mm_bigkey, $getBossRef|mm_boss, dark_rooms, somaria"
+                        ],
                         "item_count": 1,
                         "hosted_item": "mm_boss, miserymire"
                     }

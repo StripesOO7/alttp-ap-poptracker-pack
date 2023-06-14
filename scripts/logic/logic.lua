@@ -100,17 +100,31 @@ function checkRequirements(reference, check_count)
     end
 end
 
+function darkRooms()
+    local dark_mode = Tracker:FindObjectForCode("dark_mode").CurrentStage
+    print(dark_mode)
+    print(Tracker:ProviderCountForCode("firerod"))
+    print(Tracker:ProviderCountForCode("lamp"))
+    if dark_mode == 0 then --none
+        return true
+    elseif  dark_mode == 1 and Tracker:ProviderCountForCode("lamp") > 0 then -- lamp
+        return true
+    elseif  dark_mode == 2 and (Tracker:ProviderCountForCode("firerod") > 0 or Tracker:ProviderCountForCode("lamp") > 0) then -- scornes/firerod
+        return true
+    else
+        return false
+    end
+end
+
 function calcHeartpieces()
     local pieces = Tracker:FindObjectForCode("heartpieces") 
     pieces.CurrentStage = Tracker:ProviderCountForCode("heartpieces") % 4
     
 end
 
-function health(req)
-    if Tracker:ProviderCountForCode("heartcontainer") > tonumber(req) then
-        return true
-    end
-    return false
+function health()
+    local amount = 3 + Tracker:ProviderCountForCode("heartcontainer") + (Tracker:FindObjectForCode("heartpieces").AcquiredCount // 4)
+    return amount
 end
 
 

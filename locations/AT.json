@@ -29,7 +29,7 @@
             },
             {
                 "name": "Maze Chest",
-                "access_rules": ["firesource, at_smallkey:1"],
+                "access_rules": ["$darkRooms, at_smallkey:1"],
                 "sections": [
                     {
                         "name": "Maze Chest"
@@ -46,7 +46,7 @@
             },
             {
                 "name": "Agahnim 1",
-                "access_rules": ["firesource, at_smallkey:2, $canRemoveCurtains"],
+                "access_rules": ["$darkRooms, at_smallkey:2, $canRemoveCurtains"],
                 "sections": [
                     {
                         "name": "Agahnim 1",

@@ -621,6 +621,28 @@
         "codes": "boss_shuffle"
     },
     {
+        "name": "Dark Room Logic",
+        "type": "progressive",
+        "loop": true,
+        "allow_disabled": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "/images/darkroom_logic.png",
+                "codes": "dark_rooms"
+            },
+            {
+                "img": "/images/darkroom_lamp.png",
+                "codes": "lamp_req"
+            },
+            {
+                "img": "/images/darkroom_firerod.png",
+                "codes": "firerod_req"
+            }
+        ],
+        "codes": "dark_mode"
+    },
+    {
         "name": "Glitches Option",
         "type": "progressive",
         "allow_disabled": false,

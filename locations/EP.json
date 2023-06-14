@@ -58,7 +58,7 @@
             {
                 "name": "Big Key Chest",
                 "access_rules":[
-                    "[lamp]"
+                    "[$darkRooms]"
                 ],
                 "sections": [
                     {
@@ -96,8 +96,8 @@
             {
                 "name": "Boss",
                 "access_rules":[
-                    "ep_bigkey, [firesource], $getBossRef|ep_boss, bow",
-                    "ep_bigkey, [firesource], enemizer"
+                    "ep_bigkey, [$darkRooms], $getBossRef|ep_boss, bow",
+                    "ep_bigkey, [$darkRooms], enemizer"
                 ],
                 "sections": [
                     {
