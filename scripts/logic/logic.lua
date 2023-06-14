@@ -102,9 +102,6 @@ end
 
 function darkRooms()
     local dark_mode = Tracker:FindObjectForCode("dark_mode").CurrentStage
-    print(dark_mode)
-    print(Tracker:ProviderCountForCode("firerod"))
-    print(Tracker:ProviderCountForCode("lamp"))
     if dark_mode == 0 then --none
         return true
     elseif  dark_mode == 1 and Tracker:ProviderCountForCode("lamp") > 0 then -- lamp
