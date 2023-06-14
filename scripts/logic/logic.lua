@@ -21,8 +21,8 @@ function getBossRef(nameRef)
         [9.0] = {"@Bosses/Vitreous"},
         [10.0] = {"@Bosses/Trinexx"}
     }
-    stage = Tracker:FindObjectForCode(nameRef).CurrentStage
-    access_lvl = 0
+    local stage = Tracker:FindObjectForCode(nameRef).CurrentStage
+    local access_lvl = 0
     -- print("if")
     if stage == 0.0 then
        access_lvl = 1
@@ -99,10 +99,20 @@ function checkRequirements(reference, check_count)
         return 0
     end
 end
+
 function calcHeartpieces()
     local pieces = Tracker:FindObjectForCode("heartpieces") 
     pieces.CurrentStage = Tracker:ProviderCountForCode("heartpieces") % 4
+    
 end
+
+function health(req)
+    if Tracker:ProviderCountForCode("heartcontainer") > tonumber(req) then
+        return true
+    end
+    return false
+end
+
 
 function canFinish() 
     local reqs = {
@@ -125,13 +135,13 @@ function canFinish()
         [6] = {reqs[1][1], reqs[7][1]}, --triforce pieces + ganon killabel
         [7] = {reqs[8][1]} --icerod
     }
-    beatable = 0
+    local beatable = 0
 
     for k,h in pairs(goals[Tracker:FindObjectForCode("goal").CurrentStage]) do
         beatable = beatable + h
         table_length = k
     end
-    obj = Tracker:FindObjectForCode("go_mode")
+    local obj = Tracker:FindObjectForCode("go_mode")
     if beatable >= table_length then
         obj.Active = true
         return true
