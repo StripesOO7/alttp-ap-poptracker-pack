@@ -12,7 +12,7 @@
                     {
                         "type": "itemgrid",
                         "item_margin": "2, 2",
-                        "item_size": "40, 40",
+                        "item_size": "45, 45",
                         "h_alignment": "left",
                         "item_h_alignment": "center",
                         "item_v_alignment": "center",
@@ -20,7 +20,8 @@
                             [
                                 "gt_access", //gt crystal  count
                                 "ganon_killable", //ganon crystal count
-                                "triforce_pieces_needed"
+                                "triforce_pieces_needed",
+                                "swordless"
                                 
                             ]
                         ]
@@ -42,7 +43,7 @@
                             {
                                 "type": "itemgrid",
                                 "item_margin": "2, 2",
-                                "item_size": "40, 40",
+                                "item_size": "50, 50",
                                 
                                 "v_alignment": "center",
                                 "item_h_alignment": "center",
@@ -50,32 +51,25 @@
                                 "rows": [                        
                                     [
                                         "key_shuffle",
-                                        "map_compass_shuffle",
-                                        "swordless"
+                                        "map_compass_shuffle"
                                     ]
                                 ]
                             }
                         ]
-                    }
-                ]
-            },
-            {
-                "type": "array",
-                "orientation": "horizontal",
-                "margin": "0,0",
-                "content": [
+                    },
                     {
                         "type": "itemgrid",
-                        "item_margin": "2, 2",
+                        "item_margin": "2, 3",
                         "item_size": "64,16",
                         "h_alignment": "left",
                         "item_h_alignment": "center",
                         "item_v_alignment": "center",
                         "rows": [
                             [
-                                "enemizer",
+                                "enemizer"
+                            ],
+                            [
                                 "start_option" //standord, open, inverted
-                                
                             ]
                         ]
                     }
@@ -88,7 +82,7 @@
                 "content": [
                     {
                         "type": "itemgrid",
-                        "item_margin": "2, 2",
+                        "item_margin": "2, 6",
                         "item_size": "64,24",
                         "h_alignment": "left",
                         "item_h_alignment": "center",
