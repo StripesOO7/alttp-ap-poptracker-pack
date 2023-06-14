@@ -115,7 +115,7 @@ end
 
 function calcHeartpieces()
     local pieces = Tracker:FindObjectForCode("heartpieces") 
-    pieces.CurrentStage = Tracker:ProviderCountForCode("heartpieces") % 4
+    pieces.CurrentStage = (Tracker:ProviderCountForCode("heartpieces") % 4)+1
     
 end
 

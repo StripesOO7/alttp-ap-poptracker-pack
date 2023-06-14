@@ -142,7 +142,7 @@ function onClear(slot_data)
         boss_shuffle={code="boss_shuffle", mapping=mapBosses},
         enemy_shuffle={code="enemizer", mapping=mapEnemizer},
         -- pot_shuffle={code="", mapping=nil},
-        shop_shuffle={code="shop_sanity", mapping=nil}
+        shop_shuffle={code="shop_sanity", mapping=nil},
         triforce_pieces_required={code="triforce_pieces_needed", mapping=nil}
         -- glitch_boots={code="glitches", mapping=nil}
     }
