@@ -44,14 +44,14 @@
                 ]
             },
             {
-                "name": "Map Chest",
+                "name": "vanilla Map Chest",
                 "visibility_rules":["$getShuffle|map|vanilla"],
                 "access_rules":[
                     "sp_smallkey:1"
                 ],
                 "sections": [
                     {
-                        "name": "vanilla Map Chest",
+                        "name": "Map Chest",
                         "hosted_item": "sp_map"
                     }
                 ],
@@ -85,14 +85,14 @@
                 ]
             },
             {
-                "name": "Big Key Chest",
+                "name": "vanilla Big Key Chest",
                 "visibility_rules":["$getShuffle|big_keys|vanilla"],
                 "access_rules":[
                     "sp_smallkey:1, hammer"
                 ],
                 "sections": [
                     {
-                        "name": "vanilla Big Key Chest",
+                        "name": "Big Key Chest",
                         "hosted_item": "sp_bigkey"
                     }
                 ],
@@ -145,14 +145,14 @@
                 ]
             },
             {
-                "name": "Compass Chest",
+                "name": "vanilla Compass Chest",
                 "visibility_rules":["$getShuffle|compass|vanilla"],
                 "access_rules":[
                     "sp_smallkey:1, hammer"
                 ],
                 "sections": [
                     {
-                        "name": "vanilla Compass Chest",
+                        "name": "Compass Chest",
                         "hosted_item": "sp_compass"
                     }
                 ],

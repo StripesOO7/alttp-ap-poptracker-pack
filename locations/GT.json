@@ -123,7 +123,7 @@
                 ]
             },
             {
-                "name": "Map Chest",
+                "name": "vanilla Map Chest",
                 "visibility_rules":["$getShuffle|map|vanilla"],
                 "access_rules":[
                     "gt_smallkey:1, @Ganon's Tower Bottom Left/DMs Room Top Right",
@@ -131,7 +131,7 @@
                 ],
                 "sections": [
                     {
-                        "name": "vanilla Map Chest",
+                        "name": "Map Chest",
                         "hosted_item": "gt_map"
                     }
                 ],
@@ -321,14 +321,14 @@
                 ]
             },
             {
-                "name": "Compass Chest",
+                "name": "vanilla Compass Chest",
                 "visibility_rules":["$getShuffle|compass|vanilla"],
                 "access_rules":[
                     "@Ganon's Tower Bottom Right/Tile Room, gt_smallkey:1"
                 ],
                 "sections": [
                     {
-                        "name": "vanilla Compass Chest",
+                        "name": "Compass Chest",
                         "hosted_item": "gt_compass"
                     }
                 ],
@@ -504,14 +504,14 @@
                 ]
             },
             {
-                "name": "Big Key Chest",
+                "name": "vanilla Big Key Chest",
                 "visibility_rules":["$getShuffle|big_keys|vanilla"],
                 "access_rules":[
                     "$getBossRef|gt_ice"
                 ],
                 "sections": [
                     {
-                        "name": "vanilla Big Key Chest",
+                        "name": "Big Key Chest",
                         "hosted_item": "gt_bigkey"
                     }
                 ],

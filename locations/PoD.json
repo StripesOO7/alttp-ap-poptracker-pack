@@ -64,14 +64,14 @@
                 ]
             },
             {
-                "name": "Big Key Chest",
+                "name": "vanilla Big Key Chest",
                 "visibility_rules":["$getShuffle|big_keys|vanilla"],
                 "access_rules":[
                     "pod_smallkey:1, bombs"
                 ],
                 "sections": [
                     {
-                        "name": "vanilla Big Key Chest",
+                        "name": "Big Key Chest",
                         "hosted_item": "pod_bigkey"
                     }
                 ],
@@ -144,7 +144,7 @@
                 ]
             },
             {
-                "name": "Compass Chest",
+                "name": "vanilla Compass Chest",
                 "visibility_rules":["$getShuffle|compass|vanilla"],
                 "access_rules":[
                     "pod_smallkey:2, [bombs], [bow]",
@@ -152,7 +152,7 @@
                 ],
                 "sections": [
                     {
-                        "name": "vanilla Compass Chest",
+                        "name": "Compass Chest",
                         "hosted_item": "pod_compass"
                     }
                 ],
@@ -245,7 +245,7 @@
                 ]
             },
             {
-                "name": "Map Chest",
+                "name": "vanilla Map Chest",
                 "visibility_rules":["$getShuffle|map|vanilla"],
                 "access_rules":[
                     "enemizer",
@@ -253,7 +253,7 @@
                 ],
                 "sections": [
                     {
-                        "name": "vanilla Map Chest",
+                        "name": "Map Chest",
                         "hosted_item": "pod_map"
                     }
                 ],

@@ -23,11 +23,11 @@
                 ]
             },
             {
-                "name": "Compass Chest",
+                "name": "vanilla Compass Chest",
                 "visibility_rules":["$getShuffle|compass|vanilla"],
                 "sections": [
                     {
-                        "name": "vanilla Compass Chest",
+                        "name": "Compass Chest",
                         "hosted_item": "ip_compass"
                     }
                 ],
@@ -91,12 +91,12 @@
                 ]
             },
             {
-                "name": "Map Chest",
+                "name": "vanilla Map Chest",
                 "visibility_rules":["$getShuffle|map|vanilla"],
                 "access_rules":["glove, hammer"],
                 "sections": [
                     {
-                        "name": "vanilla Map Chest",
+                        "name": "Map Chest",
                         "hosted_item": "ip_map"
                     }
                 ],
@@ -143,11 +143,11 @@
                 ]
             },
             {
-                "name": "Big Key Chest",
+                "name": "vanilla Big Key Chest",
                 "visibility_rules":["$getShuffle|big_keys|vanilla"],
                 "sections": [
                     {
-                        "name": "vanilla Big Key Chest",
+                        "name": "Big Key Chest",
                         "hosted_item": "ip_bigkey"
                     }
                 ],
