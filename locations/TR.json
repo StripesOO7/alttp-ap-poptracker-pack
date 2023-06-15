@@ -9,12 +9,34 @@
         "children": [
             {
                 "name": "Compass Chest",
+                "visibility_rules":["$getShuffle|compass|shuffle"],
                 "access_rules":[
                     "somaria"
                 ],
                 "sections": [
                     {
                         "name": "Compass Chest"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR",
+                        "x": 555,
+                        "y": 385,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Compass Chest",
+                "visibility_rules":["$getShuffle|compass|vanilla"],
+                "access_rules":[
+                    "somaria"
+                ],
+                "sections": [
+                    {
+                        "name": "vanilla Compass Chest",
+                        "hosted_item": "tr_compass"
                     }
                 ],
                 "map_locations": [
@@ -46,13 +68,35 @@
                 ]
             },
             {
-                "name": "Roller Room Left",
+                "name": "Map Chest",
+                "visibility_rules":["$getShuffle|map|shuffle"],
                 "access_rules":[
                     "somaria, firerod"
                 ],
                 "sections": [
                     {
-                        "name": "Roller Room Left"
+                        "name": "Map Chest"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR",
+                        "x": 675,
+                        "y": 75,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Map Chest",
+                "visibility_rules":["$getShuffle|map|vanilla"],
+                "access_rules":[
+                    "somaria, firerod"
+                ],
+                "sections": [
+                    {
+                        "name": "vanilla Map Chest",
+                        "hosted_item": "tr_map"
                     }
                 ],
                 "map_locations": [
@@ -85,12 +129,34 @@
             },
             {
                 "name": "Big Key Chest",
+                "visibility_rules":["$getShuffle|big_keys|shuffle"],
                 "access_rules":[
                     "[somaria], [tr_smallkey:2]"
                 ],
                 "sections": [
                     {
                         "name": "Big Key Chest"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR",
+                        "x": 312,
+                        "y": 232,
+                        "size": 6
+                    }
+                ]
+            }
+            {
+                "name": "Big Key Chest",
+                "visibility_rules":["$getShuffle|big_keys|vanilla"],
+                "access_rules":[
+                    "[somaria], [tr_smallkey:2]"
+                ],
+                "sections": [
+                    {
+                        "name": "vanilla Big Key Chest",
+                        "hosted_item": "tr_bigkey"
                     }
                 ],
                 "map_locations": [

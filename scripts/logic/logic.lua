@@ -44,6 +44,17 @@ function canActivateTablets()
     end
 end
 
+function getShuffle(item, type)
+    -- print(item, type)
+    if Tracker:ProviderCountForCode(item) > 0 and type == "shuffle" then
+        return true
+    elseif Tracker:ProviderCountForCode(item) == 0 and type == "vanilla" then
+        return true
+    else 
+        return false
+    end
+end
+
 function checkSwordless()
     if Tracker:ProviderCountForCode("swordless") > 0 then
         return 1

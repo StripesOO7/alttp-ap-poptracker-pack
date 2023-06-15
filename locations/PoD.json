@@ -45,12 +45,34 @@
             },
             {
                 "name": "Big Key Chest",
+                "visibility_rules":["$getShuffle|big_keys|shuffle"],
                 "access_rules":[
                     "pod_smallkey:1, bombs"
                 ],
                 "sections": [
                     {
                         "name": "Big Key Chest"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "PoD",
+                        "x": 190,
+                        "y": 165,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Big Key Chest",
+                "visibility_rules":["$getShuffle|big_keys|vanilla"],
+                "access_rules":[
+                    "pod_smallkey:1, bombs"
+                ],
+                "sections": [
+                    {
+                        "name": "vanilla Big Key Chest",
+                        "hosted_item": "pod_bigkey"
                     }
                 ],
                 "map_locations": [
@@ -102,6 +124,7 @@
             },
             {
                 "name": "Compass Chest",
+                "visibility_rules":["$getShuffle|compass|shuffle"],
                 "access_rules":[
                     "pod_smallkey:2, [bombs], [bow]",
                     "@Palace of Darkness/Map Chest, Hammer, pod_smallkey:1"
@@ -109,6 +132,28 @@
                 "sections": [
                     {
                         "name": "Compass Chest"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "PoD",
+                        "x": 618,
+                        "y": 162,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Compass Chest",
+                "visibility_rules":["$getShuffle|compass|vanilla"],
+                "access_rules":[
+                    "pod_smallkey:2, [bombs], [bow]",
+                    "@Palace of Darkness/Map Chest, Hammer, pod_smallkey:1"
+                ],
+                "sections": [
+                    {
+                        "name": "vanilla Compass Chest",
+                        "hosted_item": "pod_compass"
                     }
                 ],
                 "map_locations": [
@@ -180,6 +225,7 @@
             },
             {
                 "name": "Map Chest",
+                "visibility_rules":["$getShuffle|map|shuffle"],
                 "access_rules":[
                     "enemizer",
                     "bow"
@@ -187,6 +233,28 @@
                 "sections": [
                     {
                         "name": "Map Chest"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "PoD",
+                        "x": 745,
+                        "y": 355,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Map Chest",
+                "visibility_rules":["$getShuffle|map|vanilla"],
+                "access_rules":[
+                    "enemizer",
+                    "bow"
+                ],
+                "sections": [
+                    {
+                        "name": "vanilla Map Chest",
+                        "hosted_item": "pod_map"
                     }
                 ],
                 "map_locations": [

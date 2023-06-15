@@ -8,12 +8,12 @@
             {
                 "img": "images/unknown.png",
                 "inherit_codes": false,
-                "codes": "ep,easternpalace"
+        "codes": "ep,easternpalace"
             },
             {
                 "img": "images/Crystal.png",
                 "inherit_codes": false,
-                "codes": "ep,easternpalace,crystal",
+        "codes": "ep,easternpalace,crystal",
                 "secondary_codes": "crystal"
             },
             {
@@ -21,13 +21,13 @@
                 "disabled_img": "images/FFCrystalOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
-                "codes": "ep,easternpalace,crystal56,crystal",
+        "codes": "ep,easternpalace,crystal56,crystal",
                 "secondary_codes": "crystal five six, red_crystal, fairy crystal"
             },
             {
                 "img": "images/Pendant.png",
                 "inherit_codes": false,
-                "codes": "ep,easternpalace,pendant",
+        "codes": "ep,easternpalace,pendant",
                 "secondary_codes": "pendant, red_pendant, blue_pendant"
             },
             {
@@ -35,10 +35,34 @@
                 "disabled_img": "images/GreenPendantOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
-                "codes": "ep,easternpalace,greenpendant",
+        "codes": "ep,easternpalace,greenpendant",
                 "secondary_codes": "green_pendant"
             }
         ]
+    },
+    {
+        "name": "Eastern Palace Map",
+        "type": "toggle",
+        "img": "images/map.png",
+        "codes": "ep_map"
+    },
+    {
+        "name": "Eastern Palace Compass",
+        "type": "toggle",
+        "img": "images/compass.png",
+        "codes": "ep_compass"
+    },
+    {
+        "name": "Eastern Palace Small Key",
+        "type": "toggle",
+        "img": "images/lttp_small_key.png",
+        "codes": "ep_smallkey"
+    },
+    {
+        "name": "Eastern Palace Big Key",
+        "type": "toggle",
+        "img": "images/lttp_big_key.png",
+        "codes": "ep_bigkey"
     },
     // Desert Palace
     {
@@ -49,12 +73,12 @@
             {
                 "img": "images/unknown.png",
                 "inherit_codes": false,
-                "codes": "dp,desertpalace"
+        "codes": "dp,desertpalace"
             },
             {
                 "img": "images/Crystal.png",
                 "inherit_codes": false,
-                "codes": "dp,desertpalace,crystal",
+        "codes": "dp,desertpalace,crystal",
                 "secondary_codes": "crystal"
             },
             {
@@ -62,13 +86,13 @@
                 "disabled_img": "images/FFCrystalOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
-                "codes": "dp,desertpalace,crystal56,crystal",
+        "codes": "dp,desertpalace,crystal56,crystal",
                 "secondary_codes": "crystal five six, red_crystal, fairy crystal"
             },
             {
                 "img": "images/Pendant.png",
                 "inherit_codes": false,
-                "codes": "dp,desertpalace,pendant",
+        "codes": "dp,desertpalace,pendant",
                 "secondary_codes": "pendant, red_pendant, blue_pendant"
             },
             {
@@ -76,10 +100,34 @@
                 "disabled_img": "images/GreenPendantOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
-                "codes": "dp,desertpalace,greenpendant",
+        "codes": "dp,desertpalace,greenpendant",
                 "secondary_codes": "green_pendant"
             }
         ]
+    },
+    {
+        "name": "Desert Palace Map",
+        "type": "toggle",
+        "img": "images/map.png",
+        "codes": "dp_map"
+    },
+    {
+        "name": "Desert Palace Compass",
+        "type": "toggle",
+        "img": "images/compass.png",
+        "codes": "dp_compass"
+    },
+    {
+        "name": "Desert Palace Small Key",
+        "type": "toggle",
+        "img": "images/lttp_small_key.png",
+        "codes": "dp_smallkey"
+    },
+    {
+        "name": "Desert Palace Big Key",
+        "type": "toggle",
+        "img": "images/lttp_big_key.png",
+        "codes": "dp_bigkey"
     },
     // Tower of Hera
     {
@@ -90,12 +138,12 @@
             {
                 "img": "images/unknown.png",
                 "inherit_codes": false,
-                "codes": "toh,towerofhera"
+        "codes": "toh,towerofhera"
             },
             {
                 "img": "images/Crystal.png",
                 "inherit_codes": false,
-                "codes": "toh,towerofhera,crystal",
+        "codes": "toh,towerofhera,crystal",
                 "secondary_codes": "crystal"
             },
             {
@@ -103,13 +151,13 @@
                 "disabled_img": "images/FFCrystalOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
-                "codes": "toh,towerofhera,crystal56,crystal",
+        "codes": "toh,towerofhera,crystal56,crystal",
                 "secondary_codes": "crystal five six, red crystal, fairy crystal"
             },
             {
                 "img": "images/Pendant.png",
                 "inherit_codes": false,
-                "codes": "toh,towerofhera,pendant",
+        "codes": "toh,towerofhera,pendant",
                 "secondary_codes": "pendant, red_pendant, blue_pendant"
             },
             {
@@ -117,10 +165,34 @@
                 "disabled_img": "images/GreenPendantOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
-                "codes": "toh,towerofhera,greenpendant",
+        "codes": "toh,towerofhera,greenpendant",
                 "secondary_codes": "green_pendant"
             }
         ]
+    },
+    {
+        "name": "Tower of Hera Map",
+        "type": "toggle",
+        "img": "images/map.png",
+        "codes": "toh_map"
+    },
+    {
+        "name": "Tower of Hera Compass",
+        "type": "toggle",
+        "img": "images/compass.png",
+        "codes": "toh_compass"
+    },
+    {
+        "name": "Tower of Hera Small Key",
+        "type": "toggle",
+        "img": "images/lttp_small_key.png",
+        "codes": "toh_smallkey"
+    },
+    {
+        "name": "Tower of Hera Big Key",
+        "type": "toggle",
+        "img": "images/lttp_big_key.png",
+        "codes": "toh_bigkey"
     },
     // Palace of Darkness
     {
@@ -131,12 +203,12 @@
             {
                 "img": "images/unknown.png",
                 "inherit_codes": false,
-                "codes": "pod,palaceofdarkness"
+        "codes": "pod,palaceofdarkness"
             },
             {
                 "img": "images/Crystal.png",
                 "inherit_codes": false,
-                "codes": "pod,palaceofdarkness,crystal",
+        "codes": "pod,palaceofdarkness,crystal",
                 "secondary_codes": "crystal"
             },
             {
@@ -144,13 +216,13 @@
                 "disabled_img": "images/FFCrystalOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
-                "codes": "pod,palaceofdarkness,crystal56,crystal",
+        "codes": "pod,palaceofdarkness,crystal56,crystal",
                 "secondary_codes": "crystal five six, red crystal, fairy crystal"
             },
             {
                 "img": "images/Pendant.png",
                 "inherit_codes": false,
-                "codes": "pod,palaceofdarkness,pendant",
+        "codes": "pod,palaceofdarkness,pendant",
                 "secondary_codes": "pendant, red_pendant, blue_pendant"
             },
             {
@@ -158,10 +230,34 @@
                 "disabled_img": "images/GreenPendantOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
-                "codes": "pod,palaceofdarkness,greenpendant",
+        "codes": "pod,palaceofdarkness,greenpendant",
                 "secondary_codes": "green_pendant"
             }
         ]
+    },
+    {
+        "name": "Palace of Darkness Map",
+        "type": "toggle",
+        "img": "images/map.png",
+        "codes": "pod_map"
+    },
+    {
+        "name": "Palace of Darkness Compass",
+        "type": "toggle",
+        "img": "images/compass.png",
+        "codes": "pod_compass"
+    },
+    {
+        "name": "Palace of Darkness Small Key",
+        "type": "toggle",
+        "img": "images/lttp_small_key.png",
+        "codes": "pod_smallkey"
+    },
+    {
+        "name": "Palace of Darkness Big Key",
+        "type": "toggle",
+        "img": "images/lttp_big_key.png",
+        "codes": "pod_bigkey"
     },
     // Swamp Palace
     {
@@ -172,12 +268,12 @@
             {
                 "img": "images/unknown.png",
                 "inherit_codes": false,
-                "codes": "sp,swamppalace"
+        "codes": "sp,swamppalace"
             },
             {
                 "img": "images/Crystal.png",
                 "inherit_codes": false,
-                "codes": "sp,swamppalace,crystal",
+        "codes": "sp,swamppalace,crystal",
                 "secondary_codes": "crystal"
             },
             {
@@ -185,13 +281,13 @@
                 "disabled_img": "images/FFCrystalOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
-                "codes": "sp,swamppalace,crystal56,crystal",
+        "codes": "sp,swamppalace,crystal56,crystal",
                 "secondary_codes": "crystal five six, red crystal, fairy crystal"
             },
             {
                 "img": "images/Pendant.png",
                 "inherit_codes": false,
-                "codes": "sp,swamppalace,pendant",
+        "codes": "sp,swamppalace,pendant",
                 "secondary_codes": "pendant, red_pendant, blue_pendant"
             },
             {
@@ -199,10 +295,34 @@
                 "disabled_img": "images/GreenPendantOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
-                "codes": "sp,swamppalace,greenpendant",
+        "codes": "sp,swamppalace,greenpendant",
                 "secondary_codes": "green_pendant"
             }
         ]
+    },
+    {
+        "name": "Swamp Palace Map",
+        "type": "toggle",
+        "img": "images/map.png",
+        "codes": "sp_map"
+    },
+    {
+        "name": "Swamp Palace Compass",
+        "type": "toggle",
+        "img": "images/compass.png",
+        "codes": "sp_compass"
+    },
+    {
+        "name": "Swamp Palace Small Key",
+        "type": "toggle",
+        "img": "images/lttp_small_key.png",
+        "codes": "sp_smallkey"
+    },
+    {
+        "name": "Swamp Palace Big Key",
+        "type": "toggle",
+        "img": "images/lttp_big_key.png",
+        "codes": "sp_bigkey"
     },
     // Skull Woods
     {
@@ -213,12 +333,12 @@
             {
                 "img": "images/unknown.png",
                 "inherit_codes": false,
-                "codes": "sw,skullwoods"
+        "codes": "sw,skullwoods"
             },
             {
                 "img": "images/Crystal.png",
                 "inherit_codes": false,
-                "codes": "sw,skullwoods,crystal",
+        "codes": "sw,skullwoods,crystal",
                 "secondary_codes": "crystal"
             },
             {
@@ -226,13 +346,13 @@
                 "disabled_img": "images/FFCrystalOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
-                "codes": "sw,skullwoods,crystal56,crystal",
+        "codes": "sw,skullwoods,crystal56,crystal",
                 "secondary_codes": "crystal five six, red crystal, fairy crystal"
             },
             {
                 "img": "images/Pendant.png",
                 "inherit_codes": false,
-                "codes": "sw,skullwoods,pendant",
+        "codes": "sw,skullwoods,pendant",
                 "secondary_codes": "pendant, red_pendant, blue_pendant"
             },
             {
@@ -240,10 +360,34 @@
                 "disabled_img": "images/GreenPendantOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
-                "codes": "sw,skullwoods,greenpendant",
+        "codes": "sw,skullwoods,greenpendant",
                 "secondary_codes": "green_pendant"
             }
         ]
+    },
+    {
+        "name": "Skull Woods Map",
+        "type": "toggle",
+        "img": "images/map.png",
+        "codes": "sw_map"
+    },
+    {
+        "name": "Skull Woods Compass",
+        "type": "toggle",
+        "img": "images/compass.png",
+        "codes": "sw_compass"
+    },
+    {
+        "name": "Skull Woods Small Key",
+        "type": "toggle",
+        "img": "images/lttp_small_key.png",
+        "codes": "sw_smallkey"
+    },
+    {
+        "name": "Skull Woods Big Key",
+        "type": "toggle",
+        "img": "images/lttp_big_key.png",
+        "codes": "sw_bigkey"
     },
     // Thieve's Town
     {
@@ -254,12 +398,12 @@
             {
                 "img": "images/unknown.png",
                 "inherit_codes": false,
-                "codes": "tt,thievestown"
+        "codes": "tt,thievestown"
             },
             {
                 "img": "images/Crystal.png",
                 "inherit_codes": false,
-                "codes": "tt,thievestown,crystal",
+        "codes": "tt,thievestown,crystal",
                 "secondary_codes": "crystal"
             },
             {
@@ -267,13 +411,13 @@
                 "disabled_img": "images/FFCrystalOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
-                "codes": "tt,thievestown,crystal56,crystal",
+        "codes": "tt,thievestown,crystal56,crystal",
                 "secondary_codes": "crystal five six, red crystal, fairy crystal"
             },
             {
                 "img": "images/Pendant.png",
                 "inherit_codes": false,
-                "codes": "tt,thievestown,pendant",
+        "codes": "tt,thievestown,pendant",
                 "secondary_codes": "pendant, red_pendant, blue_pendant"
             },
             {
@@ -281,10 +425,34 @@
                 "disabled_img": "images/GreenPendantOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
-                "codes": "tt,thievestown,greenpendant",
+        "codes": "tt,thievestown,greenpendant",
                 "secondary_codes": "green_pendant"
             }
         ]
+    },
+    {
+        "name": "Thieves Town Map",
+        "type": "toggle",
+        "img": "images/map.png",
+        "codes": "tt_map"
+    },
+    {
+        "name": "Thieves Town Compass",
+        "type": "toggle",
+        "img": "images/compass.png",
+        "codes": "tt_compass"
+    },
+    {
+        "name": "Thieves Town Small Key",
+        "type": "toggle",
+        "img": "images/lttp_small_key.png",
+        "codes": "tt_smallkey"
+    },
+    {
+        "name": "Thieves Town Big Key",
+        "type": "toggle",
+        "img": "images/lttp_big_key.png",
+        "codes": "tt_bigkey"
     },
     // Ice Palace
     {
@@ -295,12 +463,12 @@
             {
                 "img": "images/unknown.png",
                 "inherit_codes": false,
-                "codes": "ip,icepalace"
+        "codes": "ip,icepalace"
             },
             {
                 "img": "images/Crystal.png",
                 "inherit_codes": false,
-                "codes": "ip,icepalace,crystal",
+        "codes": "ip,icepalace,crystal",
                 "secondary_codes": "crystal"
             },
             {
@@ -308,13 +476,13 @@
                 "disabled_img": "images/FFCrystalOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
-                "codes": "ip,icepalace,crystal56,crystal",
+        "codes": "ip,icepalace,crystal56,crystal",
                 "secondary_codes": "crystal five six, red crystal, fairy crystal"
             },
             {
                 "img": "images/Pendant.png",
                 "inherit_codes": false,
-                "codes": "ip,icepalace,pendant",
+        "codes": "ip,icepalace,pendant",
                 "secondary_codes": "pendant, red_pendant, blue_pendant"
             },
             {
@@ -322,10 +490,34 @@
                 "disabled_img": "images/GreenPendantOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
-                "codes": "ip,icepalace,greenpendant",
+        "codes": "ip,icepalace,greenpendant",
                 "secondary_codes": "green_pendant"
             }
         ]
+    },
+    {
+        "name": "Ice Palace Map",
+        "type": "toggle",
+        "img": "images/map.png",
+        "codes": "ip_map"
+    },
+    {
+        "name": "Ice Palace Compass",
+        "type": "toggle",
+        "img": "images/compass.png",
+        "codes": "ip_compass"
+    },
+    {
+        "name": "Ice Palace Small Key",
+        "type": "toggle",
+        "img": "images/lttp_small_key.png",
+        "codes": "ip_smallkey"
+    },
+    {
+        "name": "Ice Palace Big Key",
+        "type": "toggle",
+        "img": "images/lttp_big_key.png",
+        "codes": "ip_bigkey"
     },
     // Misery Mire
     {
@@ -336,12 +528,12 @@
             {
                 "img": "images/unknown.png",
                 "inherit_codes": false,
-                "codes": "mm,miserymire"
+        "codes": "mm,miserymire"
             },
             {
                 "img": "images/Crystal.png",
                 "inherit_codes": false,
-                "codes": "mm,miserymire,crystal",
+        "codes": "mm,miserymire,crystal",
                 "secondary_codes": "crystal"
             },
             {
@@ -349,13 +541,13 @@
                 "disabled_img": "images/FFCrystalOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
-                "codes": "mm,miserymire,crystal56,crystal",
+        "codes": "mm,miserymire,crystal56,crystal",
                 "secondary_codes": "crystal five six, red crystal, fairy crystal"
             },
             {
                 "img": "images/Pendant.png",
                 "inherit_codes": false,
-                "codes": "mm,miserymire,pendant",
+        "codes": "mm,miserymire,pendant",
                 "secondary_codes": "pendant, red_pendant, blue_pendant"
             },
             {
@@ -363,10 +555,34 @@
                 "disabled_img": "images/GreenPendantOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
-                "codes": "mm,miserymire,greenpendant",
+        "codes": "mm,miserymire,greenpendant",
                 "secondary_codes": "green_pendant"
             }
         ]
+    },
+    {
+        "name": "Misery Mire Map",
+        "type": "toggle",
+        "img": "images/map.png",
+        "codes": "mm_map"
+    },
+    {
+        "name": "Misery Mire Compass",
+        "type": "toggle",
+        "img": "images/compass.png",
+        "codes": "mm_compass"
+    },
+    {
+        "name": "Misery Mire Small Key",
+        "type": "toggle",
+        "img": "images/lttp_small_key.png",
+        "codes": "mm_smallkey"
+    },
+    {
+        "name": "Misery Mire Big Key",
+        "type": "toggle",
+        "img": "images/lttp_big_key.png",
+        "codes": "mm_bigkey"
     },
     // Turtle Rock
     {
@@ -377,12 +593,12 @@
             {
                 "img": "images/unknown.png",
                 "inherit_codes": false,
-                "codes": "tr,turtlerock"
+        "codes": "tr,turtlerock"
             },
             {
                 "img": "images/Crystal.png",
                 "inherit_codes": false,
-                "codes": "tr,turtlerock,crystal",
+        "codes": "tr,turtlerock,crystal",
                 "secondary_codes": "crystal"
             },
             {
@@ -390,13 +606,13 @@
                 "disabled_img": "images/FFCrystalOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
-                "codes": "tr,turtlerock,crystal56,crystal",
+        "codes": "tr,turtlerock,crystal56,crystal",
                 "secondary_codes": "crystal five six, red crystal, fairy crystal"
             },
             {
                 "img": "images/Pendant.png",
                 "inherit_codes": false,
-                "codes": "tr,turtlerock,pendant",
+        "codes": "tr,turtlerock,pendant",
                 "secondary_codes": "pendant, red_pendant, blue_pendant"
             },
             {
@@ -404,9 +620,108 @@
                 "disabled_img": "images/GreenPendantOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
-                "codes": "tr,turtlerock,greenpendant",
+        "codes": "tr,turtlerock,greenpendant",
                 "secondary_codes": "green_pendant"
             }
         ]
+    },
+    {
+        "name": "Turtle Rock Map",
+        "type": "toggle",
+        "img": "images/map.png",
+        "codes": "tr_map"
+    },
+    {
+        "name": "Turtle Rock Compass",
+        "type": "toggle",
+        "img": "images/compass.png",
+        "codes": "tr_compass"
+    },
+    {
+        "name": "Turtle Rock Small Key",
+        "type": "toggle",
+        "img": "images/lttp_small_key.png",
+        "codes": "tr_smallkey"
+    },
+    {
+        "name": "Turtle Rock Big Key",
+        "type": "toggle",
+        "img": "images/lttp_big_key.png",
+        "codes": "tr_bigkey"
+    },
+    //HC
+    {
+        "name": "HC Map",
+        "type": "toggle",
+        "img": "images/map.png",
+        "codes": "hc_map"
+    },
+    {
+        "name": "HC Compass",
+        "type": "toggle",
+        "img": "images/compass.png",
+        "codes": "hc_compass"
+    },
+    {
+        "name": "HC Small Key",
+        "type": "toggle",
+        "img": "images/lttp_small_key.png",
+        "codes": "hc_smallkey"
+    },
+    {
+        "name": "HC Big Key",
+        "type": "toggle",
+        "img": "images/lttp_big_key.png",
+        "codes": "hc_bigkey"
+    },
+    // AT
+    {
+        "name": "AT Map",
+        "type": "toggle",
+        "img": "images/map.png",
+        "codes": "at_map"
+    },
+    {
+        "name": "AT Compass",
+        "type": "toggle",
+        "img": "images/compass.png",
+        "codes": "at_compass"
+    },
+    {
+        "name": "AT Small Key",
+        "type": "toggle",
+        "img": "images/lttp_small_key.png",
+        "codes": "at_smallkey"
+    },
+    {
+        "name": "AT Big Key",
+        "type": "toggle",
+        "img": "images/lttp_big_key.png",
+        "codes": "at_bigkey"
+    },
+    // GT
+    {
+        "name": "GT Map",
+        "type": "toggle",
+        "img": "images/map.png",
+        "codes": "gt_map"
+    },
+    {
+        "name": "GT Compass",
+        "type": "toggle",
+        "img": "images/compass.png",
+        "codes": "gt_compass"
+    },
+    {
+        "name": "GT Small Key",
+        "type": "toggle",
+        "img": "images/lttp_small_key.png",
+        "codes": "gt_smallkey"
+    },
+    {
+        "name": "GT Big Key",
+        "type": "toggle",
+        "img": "images/lttp_big_key.png",
+        "codes": "gt_bigkey"
     }
 ]

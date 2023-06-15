@@ -3,6 +3,7 @@
         "name": "Eastern Palace",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
+        "overlay_background": "#000000",
         "access_rules":[
             "@EP/Eastern Palace"
         ],
@@ -25,6 +26,7 @@
             },
             {
                 "name": "Map Chest",
+                "visibility_rules":["$getShuffle|map|shuffle"],
                 "sections": [
                     {
                         "name": "Map Chest"
@@ -40,7 +42,26 @@
                 ]
             },
             {
+                "name": "Map Chest",
+                "visibility_rules":["$getShuffle|map|vanilla"],
+                "sections": [
+                    {
+                        "name": "vanilla Map Chest",
+                        "hosted_item": "ep_map"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "EP",
+                        "x": 570,
+                        "y": 220,
+                        "size": 6
+                    }
+                ]
+            },
+            {
                 "name": "Compass Chest",
+                "visibility_rules":["$getShuffle|compass|shuffle"],
                 "sections": [
                     {
                         "name": "Compass Chest"
@@ -56,7 +77,26 @@
                 ]
             },
             {
+                "name": "Compass Chest",
+                "visibility_rules":["$getShuffle|compass|vanilla"],
+                "sections": [
+                    {
+                        "name": "vanilla Compass Chest",
+                        "hosted_item": "ep_compass"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "EP",
+                        "x": 230,
+                        "y": 150,
+                        "size": 6
+                    }
+                ]
+            },
+            {
                 "name": "Big Key Chest",
+                "visibility_rules": ["$getShuffle|big_keys|shuffle"],
                 "access_rules":[
                     "[$darkRooms]"
                 ],
@@ -68,7 +108,28 @@
                 "map_locations": [
                     {
                         "map": "EP",
-                        "x": 300,
+                        "x": 200,
+                        "y": 290,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Big Key Chest",
+                "visibility_rules": ["$getShuffle|big_keys|vanilla"],
+                "access_rules":[
+                    "[$darkRooms]"
+                ],
+                "sections": [
+                    {
+                        "name": "vanilla Big Key Chest",
+                        "hosted_item": "ep_bigkey"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "EP",
+                        "x": 200,
                         "y": 290,
                         "size": 6
                     }

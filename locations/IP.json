@@ -7,9 +7,28 @@
         "children": [
             {
                 "name": "Compass Chest",
+                "visibility_rules":["$getShuffle|compass|shuffle"],
                 "sections": [
                     {
                         "name": "Compass Chest"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "IP",
+                        "x": 95,
+                        "y": 235,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Compass Chest",
+                "visibility_rules":["$getShuffle|compass|vanilla"],
+                "sections": [
+                    {
+                        "name": "vanilla Compass Chest",
+                        "hosted_item": "ip_compass"
                     }
                 ],
                 "map_locations": [
@@ -55,10 +74,30 @@
             },
             {
                 "name": "Map Chest",
+                "visibility_rules":["$getShuffle|map|shuffle"],
                 "access_rules":["glove, hammer"],
                 "sections": [
                     {
                         "name": "Map Chest"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "IP",
+                        "x": 173,
+                        "y": 438,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Map Chest",
+                "visibility_rules":["$getShuffle|map|vanilla"],
+                "access_rules":["glove, hammer"],
+                "sections": [
+                    {
+                        "name": "vanilla Map Chest",
+                        "hosted_item": "ip_map"
                     }
                 ],
                 "map_locations": [
@@ -88,9 +127,28 @@
             },
             {
                 "name": "Big Key Chest",
+                "visibility_rules":["$getShuffle|big_keys|shuffle"],
                 "sections": [
                     {
                         "name": "Big Key Chest"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "IP",
+                        "x": 220,
+                        "y": 180,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Big Key Chest",
+                "visibility_rules":["$getShuffle|big_keys|vanilla"],
+                "sections": [
+                    {
+                        "name": "vanilla Big Key Chest",
+                        "hosted_item": "ip_bigkey"
                     }
                 ],
                 "map_locations": [
