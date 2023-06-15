@@ -1036,6 +1036,7 @@
                         "access_rules":[
                             "[boots], [dp_bigkey], [dp_smallkey:1]"
                         ],
+                        "hosted_item": "dp_map, dp_compass, dp_bigkey",
                         "clear_as_group": false,
                         "item_count": 5
                     }
@@ -1108,6 +1109,7 @@
                         "access_rules": [
                             "[ep_bigkey],[firesource]"
                         ],
+                        "hosted_item": "ep_map, ep_compass, ep_bigkey",
                         "clear_as_group": false,
                         "item_count": 5
                     },
@@ -1200,7 +1202,9 @@
                 "item_count": 3,
                 "sections": [
                     {
-                        "name": "Map Chest"
+                        "name": "Map Chest",
+                        "hosted_item": "hc_map",
+                        "item_count":1
                     },
                     {
                         "name": "Boomerang Chest"
@@ -1313,6 +1317,7 @@
                         "access_rules":[
                             "[firesource], [toh_smallkey:1]"
                         ],
+                        "hosted_item": "toh_map, toh_bigkey",
                         "clear_as_group": false,
                         "item_count": 3
                     },
@@ -1322,6 +1327,7 @@
                         "access_rules":[
                             "toh_bigkey"
                         ],
+                        "hosted_item": "toh_compass",
                         "item_count": 2
                     },
                     {
@@ -1366,6 +1372,7 @@
                         "access_rules":[
                             "[boots],[hammer],[hookshot],[gt_smallkey:1]"
                         ],
+                        "hosted_item": "gt_map",
                         "item_count": 11
                     },
                     {
@@ -1373,6 +1380,7 @@
                         "access_rules":[
                             "[somaria], [firerod]"
                         ],
+                        "hosted_item": "gt_compass",
                         "clear_as_group": false,
                         "item_count": 7
                     },
@@ -1384,7 +1392,7 @@
                             "@GT/Ganon's Tower/Rightside, [gt_bigkey], [$getBossRef|gt_ice]"
                         ],
                         "item_count": 5,
-                        "hosted_item": "gt_ice"
+                        "hosted_item": "gt_ice, gt_bigkey"
                     },
                     {
                         "name": "GT Top + Lanmo refight",

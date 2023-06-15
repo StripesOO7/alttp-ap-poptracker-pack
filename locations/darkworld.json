@@ -594,6 +594,7 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": ["[$darkRooms], [pod_smallkey:5], [pod_bigkey]"],
+                        "hosted_item": "pod_map, pod_compass, pod_bigkey",
                         "clear_as_group": false,
                         "item_count": 13
                     },
@@ -633,6 +634,7 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": ["[tr_smallkey:2]"],
+                        "hosted_item": "tr_map, tr_compass, tr_bigkey",
                         "clear_as_group": false,
                         "item_count": 5
                     }
@@ -703,6 +705,7 @@
                         "access_rules":[
                             "[sw_smallkey:1],[sw_bigkey]"
                         ],
+                        "hosted_item": "sw_map, sw_compass, sw_bigkey",
                         "clear_as_group": false,
                         "item_count": 6
                     }
@@ -764,6 +767,7 @@
                         "access_rules":[
                             "[firesource],[mm_bigkey]"
                         ],
+                        "hosted_item": "mm_map, mm_compass, mm_bigkey",
                         "clear_as_group": false,
                         "item_count": 7
                     },
@@ -809,6 +813,7 @@
                         "access_rules":[
                             "[sp_bigkey], [hookshot], [sp_smallkey:1]"
                         ],
+                        "hosted_item": "sp_map, sp_compass, sp_bigkey",
                         "clear_as_group": false,
                         "item_count": 9
                     },
@@ -853,6 +858,7 @@
                         "access_rules":[
                             "[ip_bigkey], [ip_smallkey:2], [glove]"
                         ],
+                        "hosted_item": "ip_map, ip_compass, ip_bigkey",
                         "clear_as_group": false,
                         "item_count": 7
                     },
@@ -893,6 +899,7 @@
                     { 
                         "name": "Front",
                         "clear_as_group": false,
+                        "hosted_item": "tt_map, tt_compass, tt_bigkey",
                         "item_count": 4
                     },
                     {
@@ -947,6 +954,7 @@
                         "access_rules":[
                             "[boots],[hammer],[hookshot],[gt_smallkey:1]"
                         ],
+                        "hosted_item": "gt_map",
                         "item_count": 11
                     },
                     {
@@ -954,6 +962,7 @@
                         "access_rules":[
                             "[somaria], [firerod], [gt_smallkey:1]"
                         ],
+                        "hosted_item": "gt_compass",
                         "clear_as_group": false,
                         "item_count": 7
                     },
@@ -965,7 +974,7 @@
                             "@GT/Ganon's Tower/Rightside, [gt_bigkey], [$getBossRef|gt_ice]"
                         ],
                         "item_count": 5,
-                        "hosted_item": "gt_ice"
+                        "hosted_item": "gt_ice, gt_bigkey"
                     },
                     {
                         "name": "GT Top + Lanmo refight",
