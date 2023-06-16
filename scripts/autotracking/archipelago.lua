@@ -8,7 +8,7 @@ FLAG_CODES = {
     "","","","",
     "glitches_required",
     "","","",
-    -- "dark_room_logic",
+    "dark_room_logic",
     "bigkey_shuffle",
     "smallkey_shuffle",
     "map_shuffle",
