@@ -105,8 +105,8 @@
                 "name": "Map Chest",
                 "visibility_rules":["$getShuffle|map|shuffle"],
                 "access_rules":[
-                    "gt_smallkey:1, @Ganon's Tower Bottom Left/DMs Room Top Right",
-                    "gt_smallkey:1, hammer, boots"
+                    "$smallKeys|gt_smallkey|1, @Ganon's Tower Bottom Left/DMs Room Top Right",
+                    "$smallKeys|gt_smallkey|1, hammer, boots"
                 ],
                 "sections": [
                     {
@@ -126,8 +126,8 @@
                 "name": "vanilla Map Chest",
                 "visibility_rules":["$getShuffle|map|vanilla"],
                 "access_rules":[
-                    "gt_smallkey:1, @Ganon's Tower Bottom Left/DMs Room Top Right",
-                    "gt_smallkey:1, hammer, boots"
+                    "$smallKeys|gt_smallkey|1, @Ganon's Tower Bottom Left/DMs Room Top Right",
+                    "$smallKeys|gt_smallkey|1, hammer, boots"
                 ],
                 "sections": [
                     {
@@ -304,7 +304,7 @@
                 "name": "Compass Chest",
                 "visibility_rules":["$getShuffle|compass|shuffle"],
                 "access_rules":[
-                    "@Ganon's Tower Bottom Right/Tile Room, gt_smallkey:1"
+                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1"
                 ],
                 "sections": [
                     {
@@ -324,7 +324,7 @@
                 "name": "vanilla Compass Chest",
                 "visibility_rules":["$getShuffle|compass|vanilla"],
                 "access_rules":[
-                    "@Ganon's Tower Bottom Right/Tile Room, gt_smallkey:1"
+                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1"
                 ],
                 "sections": [
                     {
@@ -344,7 +344,7 @@
             {
                 "name": "Compass Room Top Right",
                 "access_rules":[
-                    "@Ganon's Tower Bottom Right/Tile Room, gt_smallkey:1"
+                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1"
                 ],
                 "sections": [
                     {
@@ -363,7 +363,7 @@
             {
                 "name": "Compass Room Bottom Left",
                 "access_rules":[
-                    "@Ganon's Tower Bottom Right/Tile Room, gt_smallkey:1"
+                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1"
                 ],
                 "sections": [
                     {
@@ -382,7 +382,7 @@
             {
                 "name": "Compass Room Bottom Right",
                 "access_rules":[
-                    "@Ganon's Tower Bottom Right/Tile Room, gt_smallkey:1"
+                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1"
                 ],
                 "sections": [
                     {
@@ -591,7 +591,7 @@
             {
                 "name": "Validation Chest",
                 "access_rules":[
-                    "@Ganon's Tower Top/Pre-Moldorm Chest, $getBossRef|gt_boss, gt_smallkey:1"
+                    "@Ganon's Tower Top/Pre-Moldorm Chest, $getBossRef|gt_boss, $smallKeys|gt_smallkey|1"
                 ],
                 "sections": [
                     {

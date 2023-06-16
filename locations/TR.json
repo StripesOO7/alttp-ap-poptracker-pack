@@ -131,7 +131,7 @@
                 "name": "Big Key Chest",
                 "visibility_rules":["$getShuffle|big_keys|shuffle"],
                 "access_rules":[
-                    "[somaria], [tr_smallkey:2]"
+                    "[somaria], [$smallKeys|tr_smallkey|2]"
                 ],
                 "sections": [
                     {
@@ -151,7 +151,7 @@
                 "name": "vanilla Big Key Chest",
                 "visibility_rules":["$getShuffle|big_keys|vanilla"],
                 "access_rules":[
-                    "[somaria], [tr_smallkey:2]"
+                    "[somaria], [$smallKeys|tr_smallkey|2]"
                 ],
                 "sections": [
                     {
@@ -203,7 +203,7 @@
             {
                 "name": "Eye Bridge Top Left",
                 "access_rules":[
-                    "@Turtle Rock Front, somaria, $darkRooms, [tr_smallkey:3], [mirrorshield]"
+                    "@Turtle Rock Front, somaria, $darkRooms, [$smallKeys|tr_smallkey|3], [mirrorshield]"
                 ],
                 "sections": [
                     {
@@ -222,7 +222,7 @@
             {
                 "name": "Eye Bridge Bottom Left",
                 "access_rules":[
-                    "@Turtle Rock Front, somaria, $darkRooms, [tr_smallkey:3], [mirrorshield]"
+                    "@Turtle Rock Front, somaria, $darkRooms, [$smallKeys|tr_smallkey|3], [mirrorshield]"
                 ],
                 "sections": [
                     {
@@ -241,7 +241,7 @@
             {
                 "name": "Eye Bridge Top Right",
                 "access_rules":[
-                    "@Turtle Rock Front, somaria, $darkRooms, [tr_smallkey:3], [mirrorshield]"
+                    "@Turtle Rock Front, somaria, $darkRooms, [$smallKeys|tr_smallkey|3], [mirrorshield]"
                 ],
                 "sections": [
                     {
@@ -260,7 +260,7 @@
             {
                 "name": "Eye Bridge Bottom Right",
                 "access_rules":[
-                    "@Turtle Rock Front, somaria, $darkRooms, [tr_smallkey:3], [mirrorshield]"
+                    "@Turtle Rock Front, somaria, $darkRooms, [$smallKeys|tr_smallkey|3], [mirrorshield]"
                 ],
                 "sections": [
                     {
@@ -299,7 +299,7 @@
             {
                 "name": "Boss",
                 "access_rules":[
-                    "@Turtle Rock Back/Eye Bridge - Top Left/Eye Bridge - Top Left, tr_smallkey:4, $getBossRef|tr_boss"
+                    "@Turtle Rock Back/Eye Bridge - Top Left/Eye Bridge - Top Left, $smallKeys|tr_smallkey|4, $getBossRef|tr_boss"
                 ],
                 "sections": [
                     {

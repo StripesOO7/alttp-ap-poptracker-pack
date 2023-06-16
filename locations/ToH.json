@@ -27,7 +27,7 @@
                 "name": "Map Chest",
                 "visibility_rules":["$getShuffle|map|shuffle"],
                 "access_rules":[
-                    "toh_smallkey:1, firesource"
+                    "$smallKeys|toh_smallkey|1, firesource"
                 ],
                 "sections": [
                     {
@@ -47,7 +47,7 @@
                 "name": "vanilla Map Chest",
                 "visibility_rules":["$getShuffle|map|vanilla"],
                 "access_rules":[
-                    "toh_smallkey:1, firesource"
+                    "$smallKeys|toh_smallkey|1, firesource"
                 ],
                 "sections": [
                     {

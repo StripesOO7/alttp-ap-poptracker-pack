@@ -1034,7 +1034,7 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules":[
-                            "[boots], [dp_bigkey], [dp_smallkey:1]"
+                            "[boots], [dp_bigkey], [$smallKeys|dp_smallkey|1]"
                         ],
                         "hosted_item": "dp_map, dp_compass, dp_bigkey",
                         "clear_as_group": false,
@@ -1163,14 +1163,14 @@
                     {
                         "name": "Maze Chest",
                         "access_rules":[
-                            "$darkRooms, at_smallkey:1"
+                            "$darkRooms, $smallKeys|at_smallkey|1"
                         ]
                     },
                     {
                         "name": "Agahnim 1",
                         "access_rules":[
-                            "$canRemoveCurtains, sword, at_smallkey:2",
-                            "$canRemoveCurtains, bug_net, at_smallkey:2"
+                            "$canRemoveCurtains, sword, $smallKeys|at_smallkey|2",
+                            "$canRemoveCurtains, bug_net, $smallKeys|at_smallkey|2"
                         ],
                         "hosted_item": "aga1"
                     }
@@ -1248,7 +1248,7 @@
                         "name": "Dark Cross",
                         "access_rules":[
                             "$darkRooms",
-                            "glove, hc_smallkey:1",
+                            "glove, $smallKeys|hc_smallkey|1",
                             "standard"
                         ]
                     },
@@ -1315,7 +1315,7 @@
                     {
                         "name": "Lower" ,
                         "access_rules":[
-                            "[firesource], [toh_smallkey:1]"
+                            "[firesource], [$smallKeys|toh_smallkey|1]"
                         ],
                         "hosted_item": "toh_map, toh_bigkey",
                         "clear_as_group": false,
@@ -1370,7 +1370,7 @@
                         "name": "Leftside",
                         "clear_as_group": false,
                         "access_rules":[
-                            "[boots],[hammer],[hookshot],[gt_smallkey:1]"
+                            "[boots],[hammer],[hookshot],[$smallKeys|gt_smallkey|1]"
                         ],
                         "hosted_item": "gt_map",
                         "item_count": 11
@@ -1397,7 +1397,7 @@
                     {
                         "name": "GT Top + Lanmo refight",
                         "access_rules":[
-                            "gt_bigkey, [gt_smallkey:1], $getBossRef|gt_lanmo"
+                            "gt_bigkey, [$smallKeys|gt_smallkey|1], $getBossRef|gt_lanmo"
                         ],
                         "clear_as_group": false,
                         "item_count": 3,
@@ -1406,7 +1406,7 @@
                     {
                         "name": "GT Top Moldorm refight",
                         "access_rules":[
-                            "gt_bigkey, [gt_smallkey:2], $getBossRef|gt_boss"
+                            "gt_bigkey, [$smallKeys|gt_smallkey|2], $getBossRef|gt_boss"
                         ],
                         "clear_as_group": false,
                         "item_count": 1,

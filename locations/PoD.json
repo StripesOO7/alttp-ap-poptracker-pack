@@ -26,7 +26,7 @@
             {
                 "name": "Stalfos Basement",
                 "access_rules":[
-                    "pod_smallkey:1",
+                    "$smallKeys|pod_smallkey|1",
                     "@Palace of Darkness/Map Chest, Hammer"
                 ],
                 "sections": [
@@ -47,7 +47,7 @@
                 "name": "Big Key Chest",
                 "visibility_rules":["$getShuffle|big_keys|shuffle"],
                 "access_rules":[
-                    "pod_smallkey:1, bombs"
+                    "$smallKeys|pod_smallkey|1, bombs"
                 ],
                 "sections": [
                     {
@@ -67,7 +67,7 @@
                 "name": "vanilla Big Key Chest",
                 "visibility_rules":["$getShuffle|big_keys|vanilla"],
                 "access_rules":[
-                    "pod_smallkey:1, bombs"
+                    "$smallKeys|pod_smallkey|1, bombs"
                 ],
                 "sections": [
                     {
@@ -126,8 +126,8 @@
                 "name": "Compass Chest",
                 "visibility_rules":["$getShuffle|compass|shuffle"],
                 "access_rules":[
-                    "pod_smallkey:2, [bombs], [bow]",
-                    "@Palace of Darkness/Map Chest, Hammer, pod_smallkey:1"
+                    "$smallKeys|pod_smallkey|2, [bombs], [bow]",
+                    "@Palace of Darkness/Map Chest, Hammer, $smallKeys|pod_smallkey|1"
                 ],
                 "sections": [
                     {
@@ -147,8 +147,8 @@
                 "name": "vanilla Compass Chest",
                 "visibility_rules":["$getShuffle|compass|vanilla"],
                 "access_rules":[
-                    "pod_smallkey:2, [bombs], [bow]",
-                    "@Palace of Darkness/Map Chest, Hammer, pod_smallkey:1"
+                    "$smallKeys|pod_smallkey|2, [bombs], [bow]",
+                    "@Palace of Darkness/Map Chest, Hammer, $smallKeys|pod_smallkey|1"
                 ],
                 "sections": [
                     {
@@ -168,7 +168,7 @@
             {
                 "name": "Harmless Hellway",
                 "access_rules":[
-                    "@Palace of Darkness/Compass Chest, pod_smallkey:2"
+                    "@Palace of Darkness/Compass Chest, $smallKeys|pod_smallkey|2"
                 ],
                 "sections": [
                     {
@@ -187,7 +187,7 @@
             {
                 "name": "The Arena Bridge",
                 "access_rules":[
-                    "pod_smallkey:1",
+                    "$smallKeys|pod_smallkey|1",
                     "@Palace of Darkness/Map Chest, Hammer"
                 ],
                 "sections": [
@@ -326,7 +326,7 @@
             {
                 "name": "Boss",
                 "access_rules":[
-                    "@Palace of Darkness/Map Chest, hammer, pod_bigkey, $darkRooms, [gt_smallkey:1], $getBossRef|pod_boss"
+                    "@Palace of Darkness/Map Chest, hammer, pod_bigkey, $darkRooms, [$smallKeys|gt_smallkey|1], $getBossRef|pod_boss"
                 ],
                 "sections": [
                     {

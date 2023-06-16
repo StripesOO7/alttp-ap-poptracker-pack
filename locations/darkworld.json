@@ -593,7 +593,7 @@
                 "sections": [
                     {
                         "name": "Dungeon Chest" ,
-                        "access_rules": ["[$darkRooms], [pod_smallkey:5], [pod_bigkey]"],
+                        "access_rules": ["[$darkRooms], [$smallKeys|pod_smallkey|5], [pod_bigkey]"],
                         "hosted_item": "pod_map, pod_compass, pod_bigkey",
                         "clear_as_group": false,
                         "item_count": 13
@@ -633,7 +633,7 @@
                 "sections": [
                     {
                         "name": "Dungeon Chest" ,
-                        "access_rules": ["[tr_smallkey:2]"],
+                        "access_rules": ["[$smallKeys|tr_smallkey|2]"],
                         "hosted_item": "tr_map, tr_compass, tr_bigkey",
                         "clear_as_group": false,
                         "item_count": 5
@@ -664,14 +664,14 @@
                 "sections": [
                     {
                         "name": "Dungeon Chest" ,
-                        "access_rules": ["[tr_smallkey:3]"],
+                        "access_rules": ["[$smallKeys|tr_smallkey|3]"],
                         "clear_as_group": false,
                         "item_count": 6
                     },
                     {
                         "name": "Boss Item" ,
                         "clear_as_group": false,
-                        "access_rules": ["[tr_smallkey:4], $darkRooms, $getBossRef|tr_boss"],
+                        "access_rules": ["[$smallKeys|tr_smallkey|4], $darkRooms, $getBossRef|tr_boss"],
                         "item_count": 1,
                         "hosted_item": "tr_boss, turtlerock"
                     }
@@ -703,7 +703,7 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules":[
-                            "[sw_smallkey:1],[sw_bigkey]"
+                            "[$smallKeys|sw_smallkey|1],[sw_bigkey]"
                         ],
                         "hosted_item": "sw_map, sw_compass, sw_bigkey",
                         "clear_as_group": false,
@@ -811,7 +811,7 @@
                     {
                         "name": "Dungeon Chest",
                         "access_rules":[
-                            "[sp_bigkey], [hookshot], [sp_smallkey:1]"
+                            "[sp_bigkey], [hookshot], [$smallKeys|sp_smallkey|1]"
                         ],
                         "hosted_item": "sp_map, sp_compass, sp_bigkey",
                         "clear_as_group": false,
@@ -856,7 +856,7 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules":[
-                            "[ip_bigkey], [ip_smallkey:2], [glove]"
+                            "[ip_bigkey], [$smallKeys|ip_smallkey|2], [glove]"
                         ],
                         "hosted_item": "ip_map, ip_compass, ip_bigkey",
                         "clear_as_group": false,
@@ -907,7 +907,7 @@
                         "clear_as_group": false,
                         "item_count": 3,
                         "access_rules":[
-                            "tt_bigkey, [tt_smallkey:1], [hammer]"
+                            "tt_bigkey, [$smallKeys|tt_smallkey|1], [hammer]"
                         ]
                     },
                     {
@@ -952,7 +952,7 @@
                         "name": "Leftside",
                         "clear_as_group": false,
                         "access_rules":[
-                            "[boots],[hammer],[hookshot],[gt_smallkey:1]"
+                            "[boots],[hammer],[hookshot],[$smallKeys|gt_smallkey|1]"
                         ],
                         "hosted_item": "gt_map",
                         "item_count": 11
@@ -960,7 +960,7 @@
                     {
                         "name": "Rightside",
                         "access_rules":[
-                            "[somaria], [firerod], [gt_smallkey:1]"
+                            "[somaria], [firerod], [$smallKeys|gt_smallkey|1]"
                         ],
                         "hosted_item": "gt_compass",
                         "clear_as_group": false,
@@ -979,7 +979,7 @@
                     {
                         "name": "GT Top + Lanmo refight",
                         "access_rules":[
-                            "gt_bigkey, [gt_smallkey:1], $getBossRef|gt_lanmo"
+                            "gt_bigkey, [$smallKeys|gt_smallkey|1], $getBossRef|gt_lanmo"
                         ],
                         "clear_as_group": false,
                         "item_count": 3,
@@ -988,7 +988,7 @@
                     {
                         "name": "GT Top Moldorm refight",
                         "access_rules":[
-                            "gt_bigkey, [gt_smallkey:2], $getBossRef|gt_boss"
+                            "gt_bigkey, [$smallKeys|gt_smallkey|2], $getBossRef|gt_boss"
                         ],
                         "clear_as_group": false,
                         "item_count": 1,
@@ -1039,14 +1039,14 @@
                     {
                         "name": "Maze Chest",
                         "access_rules":[
-                            "firesource, at_smallkey:1"
+                            "$darkRooms, $smallKeys|at_smallkey|1"
                         ]
                     },
                     {
                         "name": "Agahnim 1",
                         "access_rules":[
-                            "$canRemoveCurtains, sword, at_smallkey:2",
-                            "$canRemoveCurtains, bug_net, at_smallkey:2"
+                            "$canRemoveCurtains, sword, $smallKeys|at_smallkey|2",
+                            "$canRemoveCurtains, bug_net, $smallKeys|at_smallkey|2"
                         ],
                         "hosted_item": "aga1"
                     }

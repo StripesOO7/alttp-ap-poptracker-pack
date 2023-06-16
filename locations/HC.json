@@ -85,7 +85,7 @@
                 "name": "Dark Cross",
                 "access_rules":[
                     "$darkRooms",
-                    "glove, hc_smallkey:1",
+                    "glove, $smallKeys|hc_smallkey|1",
                     "standard"
                 ],
                 "sections": [

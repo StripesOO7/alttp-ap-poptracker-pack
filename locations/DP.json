@@ -130,7 +130,7 @@
                     {
                         "name": "Compass Chest",
                         "access_rules": [
-                            "dp_smallkey:1"
+                            "$smallKeys|dp_smallkey|1"
                         ]
                     }
                 ],
@@ -151,7 +151,7 @@
                         "name": "Compass Chest",
                         "hosted_item": "dp_compass",
                         "access_rules": [
-                            "dp_smallkey:1"
+                            "$smallKeys|dp_smallkey|1"
                         ]
                     }
                 ],
