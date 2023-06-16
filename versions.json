@@ -1,27 +1,58 @@
 {
 	"versions": [
 		{
+			"package_version": "0.0.3",
+			"download_url": "https://codeload.github.com/StripesOO7/alttp-ap-poptracker-pack/zip/refs/tags/v0.0.3",
+			"sha256": "31cce7e234cc5c1e0e781cc87c4b44c0c1c60e6c3821eb41233bf516440bff58",
+			"changelog": [
+				"updates:",
+				  "- dark room logic",
+				  "- visual changes on in_dungeon maps if small-/bigkeys and maps/compasses are vanilla or shuffled",
+				  "- map/compass/bigkey gets displayed in overwold for every dungeon",
+				  "- go mode should activate correctly....updates state only when location gets checked or item gets revceived",
+				  
+				"current working settings:",
+				  "- changing starting options between 'open', 'inverted' and 'standard'",
+				  "- tracking of Dungon-bosses and if they are beatable",
+				  "- almost every check should get tracked",
+				  "- basic, glitchless logic for 'open' and 'inverted'",
+				  "- shop-sanity",
+				  "- auto-tracking",
+				  "- added missing locations",
+				  "- in dungeon tracking improved",
+				  "- added goal tracking",
+
+
+				"not working:",
+				  "- autotracking for flute activation, Agahnim 1 and 2 defeated and the GT refights not working",
+				  "- any glitch settings",
+
+				"known issues:",
+				  "- purple chest showing falsely accessible when check on smiths gets collected"
+			]
+		},
+		{
 			"package_version": "0.0.2",
 			"download_url": "https://codeload.github.com/StripesOO7/alttp-ap-poptracker-pack/zip/refs/tags/v0.0.2",
 			"sha256": "1a647d4c84285acec5c03ff6892de74392ac202ea948f65d7aa5880fa2563516",
 			"changelog": [
-				"updates:"
-				  "- auto-tracking"
-				  "- added missing locations"
-				  "- in dungeon tracking improved "
-				  "- added goal tracking"
+				"updates:",
+				  "- auto-tracking",
+				  "- added missing locations",
+				  "- in dungeon tracking improved ",
+				  "- added goal tracking",
 
-				  "current working settings:"
-				  "- changing starting options between 'open', 'inverted' and 'standard'"
-				  "- tracking of Dungon-bosses and if they are beatable"
-				  "- almost every check should get tracked"
-				  "- basic, glitchless logic for 'open' and 'inverted'"
-				  "- shop-sanity"
+				  "current working settings:",
+				  "- changing starting options between 'open', 'inverted' and 'standard'",
+				  "- tracking of Dungon-bosses and if they are beatable",
+				  "- almost every check should get tracked",
+				  "- basic, glitchless logic for 'open' and 'inverted'",
+				  "- shop-sanity",
 
-				  "not working:"
-				  "- autotracking for flute activation, Agahnim 1 and 2 defeated and the GT refights not working"
-				  "- any glitch settings"
-				  "- big-/smallkey, map and compass shuffle option not implemented (current assumption is full-shuffle for everyone of those"
+				  "not working:",
+				  "- autotracking for flute activation, Agahnim 1 and 2 defeated and the GT refights not working",
+				  "- any glitch settings",
+				  "- big-/smallkey, map and compass shuffle option not implemented (current assumption is full-shuffle for everyone of those",
 			]
 		}
 	]
