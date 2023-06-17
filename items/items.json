@@ -72,7 +72,8 @@
     {
         "name": "Bombs",
         "type": "consumable",
-        "min_quantity": 0,
+        "allow_disabled":false,
+        "min_quantity": 10,
         "max_quantity": 50,
         "increment": 5,
         "initial_quantity": 10,
@@ -466,7 +467,7 @@
         "type": "consumable",
         "allow_disabled": false,
         "min_quantity": 0,
-        "max_quantity": 10,
+        "max_quantity": 11,
         "overlay_background": "#000000",
         "img": "/images/items/Heartcontainer.png",
         "codes": "heartcontainer"
@@ -524,14 +525,14 @@
         "allow_disabled": false,
         "stages": [
             {
-                "img": "/images/goal_slow.png",
-                "inherit_codes":false,
-                "codes": "slow"
-            },
-            {
                 "img": "/images/goal_fast.png",
                 "inherit_codes":false,
                 "codes": "fast"
+            },
+            {
+                "img": "/images/goal_slow.png",
+                "inherit_codes":false,
+                "codes": "slow"
             },
             {
                 "img": "/images/goal_fast.png",

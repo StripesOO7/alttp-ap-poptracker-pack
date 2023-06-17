@@ -137,9 +137,8 @@ function darkRooms()
 end
 
 function calcHeartpieces()
-    local pieces = Tracker:FindObjectForCode("heartpieces") 
-    pieces.CurrentStage = (Tracker:ProviderCountForCode("heartpieces") % 4)+1
-    
+    local pieces = Tracker:FindObjectForCode("heartpieces")
+    pieces.CurrentStage = (Tracker:FindObjectForCode("heartpieces").AcquiredCount % 4)
 end
 
 function health()

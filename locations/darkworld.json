@@ -116,7 +116,7 @@
                     {
                         "name": "Purple Chest Return",
                         "access_rules":[
-                            "@Darkworld Left/Breadsmiths"
+                            "@Darkworld Left/Breadsmiths, titans"
                         ]
                     }
                 ],
@@ -451,8 +451,8 @@
             {
                 "name": "Spike Cave",
                 "access_rules": [
-                    "hammer",
-                    "$health:14, hammer"
+                    "hammer, glove",
+                    "$health:14, hammer, glove"
                 ],
                 "sections": [
                     {
@@ -800,7 +800,7 @@
         "overlay_background": "#000000",
         "access_rules":[
             "@Darkworld Left, mirror, flippers",
-            "@Darkworld Left, hookshot, hammer, flippers",
+            "@Darkworld Left, hookshot, hammer, flippers, mirror",
             "inverted, mirror, hammer, flippers"
         ],
         "children": [

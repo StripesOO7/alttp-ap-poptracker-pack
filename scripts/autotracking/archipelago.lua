@@ -114,7 +114,7 @@ function onClear(slot_data)
     mapMode={["open"]=0,["inverted"]=1,["standard"]=2}
     mapGoals={["crystals"]=0,["ganon"]=1,["bosses"]=3,["pedestal"]=4,["ganon_pedestal"]=5,["triforce_hunt"]=6,["ganon_triforce_hunt"]=7,["ice_rod_hunt"]=8,["local_triforce_hunt"]=6,["local_ganon_triforce_hunt"]=7}
     mapDark={["none"]=0,["lamp"]=1,["scornes"]=2} -- none=dark room, lamp=vanilla, scornes = firerod
-    -- mapMedalion{["Bombos"]=,["Ether"]=}
+    mapMedalion={["Bombos"]="bombos",["Ether"]="ether",["Quake"]="quake"}
     -- retro_caves={[]=}
     mapBosses={[0]=0,[1]=1,[2]=1,[3]=1,[4]=2}
     mapEnemizer={[0]=false,[1]=true,[2]=true}
@@ -129,7 +129,7 @@ function onClear(slot_data)
         map_shuffle={code="map", mapping=mapDungeonItem},
         compass_shuffle={code="compass", mapping=mapDungeonItem},
         -- progressive={code="progressive_items", mapping=mapToggle},
-        goals={code="goal", mapping=mapGoals},
+        goal={code="goal", mapping=mapGoals},
         crystals_needed_for_gt={code="gt_access", mapping=nil},
         crystals_needed_for_ganon={code="ganon_killable", mapping=nil},
         mode={code="start_option", mapping=mapMode},
@@ -137,8 +137,8 @@ function onClear(slot_data)
         -- retro_caves={code="", mapping=mapToggleReverse},
         swordless={code="swordless", mapping=mapDungeonItem},
         -- item_pool={code="", mapping=mapToggle},
-        -- misery_mire_medallion={code="", mapping=mapToggle},
-        -- turtle_rock_medallion={code="", mapping=mapToggle},
+        me_medallion={code="", mapping=mapMedalion},
+        tr_medallion={code="", mapping=mapMedalion},
         boss_shuffle={code="boss_shuffle", mapping=mapBosses},
         enemy_shuffle={code="enemizer", mapping=mapEnemizer},
         -- pot_shuffle={code="", mapping=nil},
@@ -158,10 +158,17 @@ function onClear(slot_data)
             elseif v == "none" then
                 Tracker:FindObjectForCode(slotCodes[k].code).Active = false
             end
+        elseif k == "mm_medalion" then
+            mm_medal = Tracker:FindObjectForCode(mapMedalion[v]).CurrentStage
+            Tracker:FindObjectForCode(mapMedalion[v]).CurrentStage = mm_medal + 2
+        elseif k == "tr_medalion" then
+            tr_medal = Tracker:FindObjectForCode(mapMedalion[v]).CurrentStage
+            Tracker:FindObjectForCode(mapMedalion[v]).CurrentStage = tr_medal + 1
         elseif slotCodes[k] then
             if Tracker:FindObjectForCode(slotCodes[k].code).Type == "toggle" then
                 Tracker:FindObjectForCode(slotCodes[k].code).Active = slotCodes[k].mapping[v]
             else 
+                print(k,v,Tracker:FindObjectForCode(slotCodes[k].code).CurrentStage, slotCodes[k].mapping[v])
                 Tracker:FindObjectForCode(slotCodes[k].code).CurrentStage = slotCodes[k].mapping[v]
             end
         end
