@@ -75,7 +75,7 @@
             },
             {
                 "name": "Activate Flute",
-                "visibility_rules":["flute"],
+                "visibility_rules":["flute, open", "flute, standad"],
                 "sections": [
                     {
                         "name": "Hyrule Hymn o7",
@@ -85,6 +85,24 @@
                 "map_locations": [
                     {
                         "map": "Lightworld",
+                        "x": 254,
+                        "y": 957,
+                        "size": 32
+                    }
+                ]
+            },
+            {
+                "name": "Activate Flute",
+                "visibility_rules":["flute, inverted"],
+                "sections": [
+                    {
+                        "name": "Hyrule Hymn o7",
+                        "hosted_item": "flute_active"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
                         "x": 254,
                         "y": 957,
                         "size": 32
