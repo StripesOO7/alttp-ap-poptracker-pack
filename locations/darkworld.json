@@ -54,7 +54,7 @@
             {
                 "name": "Bumper Cave",
                 "access_rules": [
-                    "cape, hookshot, glove"
+                    "cape, glove"
                 ],
                 "visibility_rules":[
                     "open",
@@ -342,8 +342,11 @@
             {
                 "name": "Big Bomb Fairy",
                 "access_rules": [
-                    "pearl, crystal56:2",
-                    "inverted, crystal56:2"
+                    "open, pearl, crystal56:2",
+                    "standard, pearl, crystal56:2",
+                    "inverted, @Lightworld, pearl, mirror, crystal56:2",
+                    "inverted, @Lightworld, pearl, hammer, crystal56:2",
+                    "inverted, @Lightworld, pearl, flute_active, crystal56:2"
                 ],
                 "sections": [
                     {
@@ -388,7 +391,8 @@
                 "name": "Catfish",
                 "access_rules": [
                     "pearl, glove",
-                    "inverted, glove"
+                    "inverted, glove",
+                    "inverted, @Lightworld, flippers, mirror"
                 ],
                 "sections": [
                     {
@@ -412,13 +416,16 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
             "titans, flute_active",
-            "inverted, flute_active"
+            "inverted, flute_active",
+            "inverted, mirror, @Lightworld",
+            "inverted, mirror, aga1"
         ],
         "children": [
             {
                 "name": "Mire Shed",
                 "access_rules": [ 
-                    "pearl"
+                    "pearl",
+                    "inverted"
                 ],
                 "sections": [
                     {
@@ -445,7 +452,7 @@
         "access_rules": [
             "@Light Death Mountain Left Bottom, pearl",
             "inverted, flute_active",
-            "inverted, $darkRooms"
+            "inverted, $darkRooms, glove"
         ],
         "children": [
             {
@@ -552,7 +559,6 @@
             },
             {
                 "name": "Superbunny Cave",
-                "access_rules": ["glove"],
                 "sections": [
                     {
                         "name": "Superbunny Chest",
@@ -594,14 +600,14 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": ["[$darkRooms], [$smallKeys|pod_smallkey|5], [pod_bigkey]"],
-                        "hosted_item": "pod_map, pod_compass, pod_bigkey",
+                        // "hosted_item": "pod_map, pod_compass, pod_bigkey",
                         "clear_as_group": false,
                         "item_count": 13
                     },
                     {
                         "name": "Boss Item" ,
                         "clear_as_group": false,
-                        "access_rules": ["pod_bigkey, $darkRooms, $getBossRef|pod_boss"],
+                        "access_rules": ["pod_bigkey, $darkRooms, $getBossRef|pod_boss, hammer"],
                         "item_count": 1,
                         "hosted_item": "pod_boss, palaceofdarkness"
                     }
@@ -629,6 +635,10 @@
         "children": [
             {
                 "name": "Turtle Rock Front",
+                "access_rules":[
+                    "open, @TR",
+                    "standard, @TR",
+                    "inverted, @TR/Turtle Rock Back"],
                 "item_count": 5,
                 "sections": [
                     {
@@ -658,22 +668,27 @@
                 "name": "Turtle Rock Back",
                 "access_rules":[
                     "@TR/Turtle Rock Front, tr_bigkey",
-                    "tr_bigkey, ow"
+                    "tr_bigkey, ow",
+                    "@Light Death Mountain Right, Mirror"
                 ],
                 "item_count": 8,
                 "sections": [
                     {
                         "name": "Dungeon Chest" ,
-                        "access_rules": ["[$smallKeys|tr_smallkey|3]"],
+                        "access_rules": [
+                            "[$smallKeys|tr_smallkey|3]"
+                        ],
                         "clear_as_group": false,
                         "item_count": 6
                     },
                     {
                         "name": "Boss Item" ,
                         "clear_as_group": false,
-                        "access_rules": ["[$smallKeys|tr_smallkey|4], $darkRooms, $getBossRef|tr_boss"],
-                        "item_count": 1,
-                        "hosted_item": "tr_boss, turtlerock"
+                        "access_rules": [
+                            "[$smallKeys|tr_smallkey|4], $darkRooms, $getBossRef|tr_boss"
+                        ],
+                        "item_count": 1
+                        // "hosted_item": "tr_boss, turtlerock"
                     }
                 ],
                 "map_locations": [
@@ -705,7 +720,7 @@
                         "access_rules":[
                             "[$smallKeys|sw_smallkey|1],[sw_bigkey]"
                         ],
-                        "hosted_item": "sw_map, sw_compass, sw_bigkey",
+                        // "hosted_item": "sw_map, sw_compass, sw_bigkey",
                         "clear_as_group": false,
                         "item_count": 6
                     }
@@ -755,7 +770,7 @@
         "overlay_background": "#000000",
         "access_rules":[
             "@Darkworld Swamp, pearl, $canUseMedallions, mm_medallion",
-            "inverted, flute_activ, $canUseMedallions, mm_medallione"
+            "inverted, @Darkworld Swamp, $canUseMedallions, mm_medallione"
         ],
         "children": [
             {
@@ -767,7 +782,7 @@
                         "access_rules":[
                             "[firesource],[mm_bigkey]"
                         ],
-                        "hosted_item": "mm_map, mm_compass, mm_bigkey",
+                        // "hosted_item": "mm_map, mm_compass, mm_bigkey",
                         "clear_as_group": false,
                         "item_count": 7
                     },
@@ -799,13 +814,14 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "@Darkworld Left, mirror, flippers",
-            "@Darkworld Left, hookshot, hammer, flippers, mirror",
-            "inverted, mirror, hammer, flippers"
+            "@Darkworld Left",
+            "@Darkworld Left, hookshot, hammer",
+            "inverted, @Lightworld"
         ],
         "children": [
             {
                 "name": "Swamp Palace",
+                "access_rules":["flippers, mirror"],
                 "item_count": 11,
                 "sections": [
                     {
@@ -813,7 +829,7 @@
                         "access_rules":[
                             "[sp_bigkey], [hookshot], [$smallKeys|sp_smallkey|1]"
                         ],
-                        "hosted_item": "sp_map, sp_compass, sp_bigkey",
+                        // "hosted_item": "sp_map, sp_compass, sp_bigkey",
                         "clear_as_group": false,
                         "item_count": 9
                     },
@@ -858,7 +874,7 @@
                         "access_rules":[
                             "[ip_bigkey], [$smallKeys|ip_smallkey|2], [glove]"
                         ],
-                        "hosted_item": "ip_map, ip_compass, ip_bigkey",
+                        // "hosted_item": "ip_map, ip_compass, ip_bigkey",
                         "clear_as_group": false,
                         "item_count": 7
                     },
@@ -899,7 +915,7 @@
                     { 
                         "name": "Front",
                         "clear_as_group": false,
-                        "hosted_item": "tt_map, tt_compass, tt_bigkey",
+                        // "hosted_item": "tt_map, tt_compass, tt_bigkey",
                         "item_count": 4
                     },
                     {
@@ -954,7 +970,7 @@
                         "access_rules":[
                             "[boots],[hammer],[hookshot],[$smallKeys|gt_smallkey|1]"
                         ],
-                        "hosted_item": "gt_map",
+                        // "hosted_item": "gt_map",
                         "item_count": 11
                     },
                     {
@@ -962,7 +978,7 @@
                         "access_rules":[
                             "[somaria], [firerod], [$smallKeys|gt_smallkey|1]"
                         ],
-                        "hosted_item": "gt_compass",
+                        // "hosted_item": "gt_compass",
                         "clear_as_group": false,
                         "item_count": 7
                     },
@@ -974,7 +990,7 @@
                             "@GT/Ganon's Tower/Rightside, [gt_bigkey], [$getBossRef|gt_ice]"
                         ],
                         "item_count": 5,
-                        "hosted_item": "gt_ice, gt_bigkey"
+                        "hosted_item": "gt_ice"//, gt_bigkey"
                     },
                     {
                         "name": "GT Top + Lanmo refight",
@@ -1020,7 +1036,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "inverted, @Dark Death Mountain Left"
+            "inverted, @Dark Death Mountain Left Top"
         ],
         "visibility_rules":[
             "inverted"
@@ -1029,9 +1045,6 @@
             {
                 "name": "Agahnim's Tower",
                 "item_count": 3,
-                "access_rules":[
-                    "$canClearAgaTowerBarrier"
-                ],
                 "sections": [
                     {
                         "name": "Room 03"
@@ -1046,7 +1059,8 @@
                         "name": "Agahnim 1",
                         "access_rules":[
                             "$canRemoveCurtains, sword, $smallKeys|at_smallkey|2",
-                            "$canRemoveCurtains, bug_net, $smallKeys|at_smallkey|2"
+                            "$canRemoveCurtains, bug_net, $smallKeys|at_smallkey|2",
+                            "$canRemoveCurtains, hammer, $smallKeys|at_smallkey|2"
                         ],
                         "hosted_item": "aga1"
                     }

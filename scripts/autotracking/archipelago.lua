@@ -89,7 +89,11 @@ function onClear(slot_data)
                     obj.CurrentStage = 0
                     obj.Active = false
                 elseif v[2] == "consumable" then
-                    obj.AcquiredCount = 0
+                    if obj.MinCount then
+                        obj.AcquiredCount = obj.MinCount
+                    else
+                        obj.AcquiredCount = 0
+                    end
                 end
             end
         end
@@ -197,7 +201,11 @@ function onItem(index, item_id, item_name, player_number)
                 obj.Active = true
             end
         elseif v[2] == "consumable" then
-            obj.AcquiredCount = obj.AcquiredCount + obj.Increment
+            if item_id == 82 or item_id == 84 then
+                obj.AcquiredCount = obj.AcquiredCount + (2*obj.Increment)
+            else
+                obj.AcquiredCount = obj.AcquiredCount + obj.Increment
+            end
         end
     else
         print(string.format("onItem: could not find object for code %s", v[1]))

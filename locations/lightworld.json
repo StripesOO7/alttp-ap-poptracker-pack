@@ -7,8 +7,8 @@
         "access_rules":[
             "open",
             "standard",
-            "inverted, pearl, titans",
-            "inverted, pearl, hammer, glove"
+            "inverted, pearl, hammer, gloves",
+            "inverted, pearl, titans"
         ],
         "children": [
             {
@@ -75,7 +75,7 @@
             },
             {
                 "name": "Activate Flute",
-                "visibility_rules":["flute, open", "flute, standad"],
+                "visibility_rules":["flute"],
                 "sections": [
                     {
                         "name": "Hyrule Hymn o7",
@@ -85,24 +85,6 @@
                 "map_locations": [
                     {
                         "map": "Lightworld",
-                        "x": 254,
-                        "y": 957,
-                        "size": 32
-                    }
-                ]
-            },
-            {
-                "name": "Activate Flute",
-                "visibility_rules":["flute, inverted"],
-                "sections": [
-                    {
-                        "name": "Hyrule Hymn o7",
-                        "hosted_item": "flute_active"
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "Darkworld",
                         "x": 254,
                         "y": 957,
                         "size": 32
@@ -187,7 +169,8 @@
                         "name": "Visit Satan",
                         "access_rules": [
                             "hammer, powder",
-                            "titans, mirror, @Darkworld Left, powder"
+                            "open, titans, mirror, @Darkworld Left, powder",
+                            "standard, titans, mirror, @Darkworld Left, powder"
                         ],
                         "hosted_item": "satan_visited"
                     }
@@ -424,8 +407,9 @@
                     {
                         "name": "Checkerboard Cave Item",
                         "access_rules": [
-                            "mirror, titans, flute_active",
-                            "inverted, glove, pearl"
+                            "open, mirror, titans, flute_active",
+                            "standard, mirror, titans, flute_active",
+                            "inverted, glove"
                         ]
                     }
                 ],
@@ -685,7 +669,7 @@
             {
                 "name": "Secret Passage",
                 "access_rules":[
-                    "standard, @CE/Castle Escape/Dark Cross",
+                    "standard",
                     "open"
                 ],
                 "inherit_codes":false,
@@ -778,7 +762,7 @@
             {
                 "name": "Bumper Cave",
                 "access_rules": [
-                    "cape, hookshot"
+                    "cape, mirror"
                 ],
                 "visibility_rules":[
                     "inverted"
@@ -850,7 +834,9 @@
                     {
                         "name": "Top Item",
                         "access_rules":[
-                            "mirror",
+                            "open, mirror",
+                            "standard, mirror",
+                            "inverted, @Light Death Mountain Left Top",
                             "{@Light Death Mountain Left Bottom}"
                         ],
                         "capture_item": true
@@ -884,7 +870,7 @@
         "access_rules":[
             "open, @Light Death Mountain Left Bottom, mirror",
             "standard, @Light Death Mountain Left Bottom, mirror",
-            "inverted, pearl, @Light Death Mountain Left Bottom"
+            "inverted, pearl, @Light Death Mountain Right, hammer"
         ],
         "children": [
             {
@@ -917,17 +903,19 @@
         "overlay_background": "#000000",
         "access_rules":[
             "open, @Light Death Mountain Left Bottom, hookshot",
-            "standard, @Light Death Mountain Left Bottom, hookshot",
-            "inverted, pearl, @Light Death Mountain Left Bottom, hookshot",
             "open, @Light Death Mountain Left Top, hammer",
+            "standard, @Light Death Mountain Left Bottom, hookshot",
             "standard, @Light Death Mountain Left Top, hammer",
-            "inverted, pearl, @Light Death Mountain Left Top, hammer"
+            "inverted, pearl, @Light Death Mountain Left Bottom, hookshot",
+            "inverted, pearl, @Dark Death Mountain Right, titans"
         ],
         "children": [
             {
                 "name": "Floating Island",
                 "access_rules":[
-                    "@Dark Death Mountain Right, mirror",
+                    "open, @Dark Death Mountain Right, mirror",
+                    "open, @Dark Death Mountain Right, mirror",
+                    "inverted, @Light Death Mountain Right",
                     "{}"
                 ],
                 "sections": [
@@ -997,7 +985,9 @@
             {
                 "name": "Mimic Cave",
                 "access_rules": [
-                    "@Dark Death Mountain Right, mirror, hammer"
+                    "open, @Dark Death Mountain Right, mirror, hammer @TR, $smallKeys|tr_smallkeys|2",
+                    "open, @Dark Death Mountain Right, mirror, hammer @TR, $smallKeys|tr_smallkeys|2",
+                    "inverted, @Light Death Mountain Right"
                 ],
                 "sections": [
                     {
@@ -1046,7 +1036,8 @@
                 "name": "Desert Palace",
                 "access_rules":[
                     "book",
-                    "@Darkworld Swamp, mirror"
+                    "open, @Darkworld Swamp, mirror",
+                    "standard, @Darkworld Swamp, mirror"
                 ],
                 "item_count": 5,
                 "sections": [
@@ -1055,7 +1046,7 @@
                         "access_rules":[
                             "[boots], [dp_bigkey], [$smallKeys|dp_smallkey|1]"
                         ],
-                        "hosted_item": "dp_map, dp_compass, dp_bigkey",
+                        // "hosted_item": "dp_map, dp_compass, dp_bigkey",
                         "clear_as_group": false,
                         "item_count": 5
                     }
@@ -1128,7 +1119,7 @@
                         "access_rules": [
                             "[ep_bigkey],[firesource]"
                         ],
-                        "hosted_item": "ep_map, ep_compass, ep_bigkey",
+                        // "hosted_item": "ep_map, ep_compass, ep_bigkey",
                         "clear_as_group": false,
                         "item_count": 5
                     },
@@ -1222,7 +1213,7 @@
                 "sections": [
                     {
                         "name": "Map Chest",
-                        "hosted_item": "hc_map",
+                        // "hosted_item": "hc_map",
                         "item_count":1
                     },
                     {
@@ -1294,7 +1285,8 @@
                 "item_count": 1,
                 "access_rules":[
                     "standard, @CE/Castle Escape/Dark Cross",
-                    "open"
+                    "open",
+                    "inverted, @Lightworld"
                 ],
                 "sections": [
                     {
@@ -1320,7 +1312,7 @@
         "access_rules":[
             "open",
             "standard",
-            "inverted, pearl hammer, titans"
+            "inverted, @Lightworld"
         ],
         "children": [
             {
@@ -1336,7 +1328,7 @@
                         "access_rules":[
                             "[firesource], [$smallKeys|toh_smallkey|1]"
                         ],
-                        "hosted_item": "toh_map, toh_bigkey",
+                        // "hosted_item": "toh_map, toh_bigkey",
                         "clear_as_group": false,
                         "item_count": 3
                     },
@@ -1346,7 +1338,7 @@
                         "access_rules":[
                             "toh_bigkey"
                         ],
-                        "hosted_item": "toh_compass",
+                        // "hosted_item": "toh_compass",
                         "item_count": 2
                     },
                     {
@@ -1391,7 +1383,7 @@
                         "access_rules":[
                             "[boots],[hammer],[hookshot],[$smallKeys|gt_smallkey|1]"
                         ],
-                        "hosted_item": "gt_map",
+                        // "hosted_item": "gt_map",
                         "item_count": 11
                     },
                     {
@@ -1399,7 +1391,7 @@
                         "access_rules":[
                             "[somaria], [firerod]"
                         ],
-                        "hosted_item": "gt_compass",
+                        // "hosted_item": "gt_compass",
                         "clear_as_group": false,
                         "item_count": 7
                     },
@@ -1411,7 +1403,7 @@
                             "@GT/Ganon's Tower/Rightside, [gt_bigkey], [$getBossRef|gt_ice]"
                         ],
                         "item_count": 5,
-                        "hosted_item": "gt_ice, gt_bigkey"
+                        "hosted_item": "gt_ice"//, gt_bigkey"
                     },
                     {
                         "name": "GT Top + Lanmo refight",
