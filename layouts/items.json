@@ -1,5 +1,5 @@
 {
-    "shared_item_grid": {
+    "shared_item_grid_horizontal": {
         "type": "array",
         "orientation": "vertical",
         "margin": "0,0",
@@ -15,6 +15,8 @@
                         "h_alignment": "left",
                         "item_h_alignment": "center",
                         "item_v_alignment": "center",
+                        "item_height": 36,
+                        "item_width": 36,
                         "rows": [
                             [
                                 "bow",
@@ -118,6 +120,193 @@
                                   [ "miserymire", "mm_boss" , "" , "mm_smallkey", "mm_bigkey" ],
                                   [ "turtlerock", "tr_boss" , "" , "tr_smallkey", "tr_bigkey" ],
                                   [ "gt_ice", "gt_lanmo" , "gt_boss" , "gt_smallkey", "gt_bigkey" ]
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                ]
+            }
+        ]
+    },
+    "shared_item_grid_vertical": {
+        "type": "array",
+        "orientation": "vertical",
+        "margin": "0,0",
+        "content": [
+            {
+                "type": "array",
+                "orientation": "vertical",
+                "margin": "0,0",
+                "content": [
+                    {
+                        "type": "itemgrid",
+                        "item_margin": "2, 2",
+                        "h_alignment": "left",
+                        "item_h_alignment": "center",
+                        "item_v_alignment": "center",
+                        "item_height": 36,
+                        "item_width": 36,
+                        "rows": [
+                            [
+                                "bow",
+                                "boomerangs",
+                                "hookshot",
+                                "bombs",
+                                "powder",
+                                "mushroom",
+                                "triforcepieces"
+                            ],
+                            [
+                                "firerod",
+                                "icerod",
+                                "bombos",
+                                "ether",
+                                "quake",
+                                "shovel",
+                                "heartcontainer"
+                            ],
+                            [
+                                "lamp",
+                                "hammer",
+                                "flute",
+                                "bug_net",
+                                "mirror",
+                                "pearl",
+                                "heartpieces"
+                            ],
+                            [
+                                "bottle",
+                                "somaria",
+                                "byrna",
+                                "cape",
+                                "book",
+                                "half_magic",
+                                "agahnim"
+                            ],
+                            [
+                                "boots",
+                                "flippers",
+                                "glove",
+                                "sword",
+                                "shield",
+                                "armor",
+                                "go_mode"
+                            ]
+                        ]
+                    },
+                    {
+                        "type": "array",
+                        "orientation": "vertical",
+                        "content": [
+                          {
+                            "type": "array",
+                            "orientation": "vertical",
+                            "content": [
+                              {
+                                "type": "itemgrid",
+                                "margin": "0,1",
+                                "h_alignment":  "center",
+                                "item_h_alignment": "center",
+                                "item_v_alignment": "center",
+                                "item_margin": "1,0",
+                                "item_height": 16,
+                                "item_width": 20,
+                                "rows": [
+                                  [ "hc_label",
+                                  "at_label",
+                                  "ep_label",
+                                  "dp_label",
+                                  "toh_label",
+                                  "pod_label",
+                                  "sp_label",
+                                  "sw_label",
+                                  "tt_label",
+                                  "ip_label",
+                                  "mm_label",
+                                  "tr_label",
+                                  "gt_label" ]
+                                ]
+                              },
+                              {
+                                "type": "itemgrid",
+                                "margin": "0,1",
+                                "h_alignment": "center",
+                                "item_h_alignment": "center",
+                                "item_v_alignment": "center",
+                                "item_margin": "1,0",
+                                "item_size": 16,
+                                "item_width": 20,
+                                "badge_font_size": 10,
+                                "rows": [
+                                  ["","",
+                                  "easternpalace",
+                                  "desertpalace",
+                                  "towerofhera",
+                                  "palaceofdarkness",
+                                  "swamppalace",
+                                  "skullwoods",
+                                  "thievestown",
+                                  "icepalace",
+                                  "miserymire",
+                                  "turtlerock",
+                                  "gt_ice"
+                                  ],
+                                  ["","",
+                                  "ep_boss" ,
+                                  "dp_boss" ,
+                                  "toh_boss" ,
+                                  "pod_boss" ,
+                                  "sp_boss" ,
+                                  "sw_boss" ,
+                                  "tt_boss" ,
+                                  "ip_boss" ,
+                                  "mm_boss" ,
+                                  "tr_boss" ,
+                                  "gt_lanmo"
+                                  ],
+                                  ["",
+                                  "",
+                                  "",
+                                  "",
+                                  "",
+                                  "",
+                                  "",
+                                  "",
+                                  "",
+                                  "",
+                                  "",
+                                  "",
+                                  "gt_boss"
+                                  ],
+                                  ["hc_smallkey" ,
+                                  "at_smallkey",
+                                  "ep_smallkey",
+                                  "dp_smallkey",
+                                  "toh_smallkey",
+                                  "pod_smallkey",
+                                  "sp_smallkey",
+                                  "sw_smallkey",
+                                  "tt_smallkey",
+                                  "ip_smallkey",
+                                  "mm_smallkey",
+                                  "tr_smallkey",
+                                  "gt_smallkey"
+                                  ],
+                                  ["","",
+                                  "ep_bigkey",
+                                  "dp_bigkey",
+                                  "toh_bigkey",
+                                  "pod_bigkey",
+                                  "sp_bigkey",
+                                  "sw_bigkey",
+                                  "tt_bigkey",
+                                  "ip_bigkey",
+                                  "mm_bigkey",
+                                  "tr_bigkey",
+                                  "gt_bigkey"
+                                  ]
                                 ]
                               }
                             ]

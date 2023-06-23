@@ -1,4 +1,21 @@
-﻿{
+﻿    {"settings_popup": {
+        "type": "array",
+        "margin": "5",
+        "content": [
+            {
+                "type": "group",
+                "header": "Item Placement Mode",
+                "header_background": "#3e4b57",
+                "content":[
+                    {
+                        "type": "item",
+                        "margin": "-5,-1,-5,-5",
+                        "item": "item_placement_mode"
+                    }
+                ]
+            }            
+        ]
+    },
     "tracker_default": {
         "type": "container",
         "background": "#00000000",
@@ -17,7 +34,7 @@
                             "dock": "top",
                             "content": {
                                 "type": "layout",
-                                "key": "shared_item_grid"
+                                "key": "shared_item_grid_vertical"
                             }
                         },
                         // {
@@ -44,7 +61,7 @@
                             "content": {
                                 "style": "wrap",
                                 "type": "recentpins",
-                                "orientation": "horizontal",
+                                "orientation": "vertical",
                                 "compact": true
                             }
                         }
@@ -54,7 +71,7 @@
                     "type": "dock",
                     "content": {
                         "type": "layout",
-                        "key": "tabbed_maps"
+                        "key": "tabbed_maps_vertical"
                     }
                 }
             ]
@@ -80,7 +97,7 @@
                                 "type": "layout",
                                 "h_alignment": "center",
                                 "v_alignment": "center",
-                                "key": "shared_item_grid"
+                                "key": "shared_item_grid_horizontal"
                             }
                         },
                         // {
@@ -123,7 +140,7 @@
                     "type": "dock",
                     "content": {
                         "type": "layout",
-                        "key": "tabbed_maps"
+                        "key": "tabbed_maps_horizontal"
                     }
                 }
             ]
