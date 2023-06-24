@@ -76,7 +76,10 @@
             },
             {
                 "name": "Activate Flute",
-                "visibility_rules":["flute"],
+                "visibility_rules":[
+                    "flute, open",
+                    "flute, standard"
+                ],
                 "sections": [
                     {
                         "name": "Hyrule Hymn o7",
@@ -988,7 +991,7 @@
                 "access_rules": [
                     "open, @Dark Death Mountain Right, mirror, hammer @TR, $smallKeys|tr_smallkeys|2",
                     "open, @Dark Death Mountain Right, mirror, hammer @TR, $smallKeys|tr_smallkeys|2",
-                    "inverted, @Light Death Mountain Right"
+                    "inverted, @Light Death Mountain Right, hammer"
                 ],
                 "sections": [
                     {
@@ -1045,7 +1048,8 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules":[
-                            "[boots], [dp_bigkey], [$smallKeys|dp_smallkey|1]"
+                            "[boots], [dp_bigkey], [$smallKeys|dp_smallkey|1]",
+                            "boots, dp_bigkey, $smallKeys|dp_smallkey|1"
                         ],
                         // "hosted_item": "dp_map, dp_compass, dp_bigkey",
                         "clear_as_group": false,
@@ -1118,7 +1122,8 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": [
-                            "[ep_bigkey],[firesource]"
+                            "[ep_bigkey],[firesource]",
+                            "ep_bigkey,firesource"
                         ],
                         // "hosted_item": "ep_map, ep_compass, ep_bigkey",
                         "clear_as_group": false,
@@ -1129,7 +1134,9 @@
                         "clear_as_group": false,
                         "access_rules": [
                             "ep_bigkey, [firesource], $getBossRef|ep_boss, bow",
-                            "ep_bigkey, [firesource], $getBossRef|ep_boss, enimzer"
+                            "ep_bigkey, [firesource], $getBossRef|ep_boss, enimzer",
+                            "ep_bigkey, firesource, $getBossRef|ep_boss, bow",
+                            "ep_bigkey, firesource, $getBossRef|ep_boss, enimzer"
                         ],
                         "item_count": 1,
                         "hosted_item": "ep_boss, easternpalace"
@@ -1327,7 +1334,8 @@
                     {
                         "name": "Lower" ,
                         "access_rules":[
-                            "[firesource], [$smallKeys|toh_smallkey|1]"
+                            "[firesource], [$smallKeys|toh_smallkey|1]",
+                            "firesource, $smallKeys|toh_smallkey|1"
                         ],
                         // "hosted_item": "toh_map, toh_bigkey",
                         "clear_as_group": false,
@@ -1382,7 +1390,9 @@
                         "name": "Leftside",
                         "clear_as_group": false,
                         "access_rules":[
-                            "[boots],[hammer],[hookshot],[$smallKeys|gt_smallkey|1]"
+                            "[boots],[hammer],[hookshot],[$smallKeys|gt_smallkey|1]",
+                            "[boots],hammer,hookshot,$smallKeys|gt_smallkey|1",
+                            "boots,hammer,[hookshot],$smallKeys|gt_smallkey|1"
                         ],
                         // "hosted_item": "gt_map",
                         "item_count": 11
@@ -1390,7 +1400,8 @@
                     {
                         "name": "Rightside",
                         "access_rules":[
-                            "[somaria], [firerod]"
+                            "[somaria], [firerod]",
+                            "somaria, firerod"
                         ],
                         // "hosted_item": "gt_compass",
                         "clear_as_group": false,
@@ -1400,8 +1411,10 @@
                         "name": "Big Chest + Ice refight",
                         "clear_as_group": false,
                         "access_rules":[
-                            "@GT/Ganon's Tower/Leftside, [gt_bigkey], [$getBossRef|gt_ice]",
-                            "@GT/Ganon's Tower/Rightside, [gt_bigkey], [$getBossRef|gt_ice]"
+                            "@GT-inverted/Ganon's Tower/Leftside, [gt_bigkey], [$getBossRef|gt_ice]",
+                            "@GT-inverted/Ganon's Tower/Rightside, [gt_bigkey], [$getBossRef|gt_ice]",
+                            "@GT-inverted/Ganon's Tower/Leftside, gt_bigkey, $getBossRef|gt_ice",
+                            "@GT-inverted/Ganon's Tower/Rightside, gt_bigkey, $getBossRef|gt_ice"
                         ],
                         "item_count": 5,
                         "hosted_item": "gt_ice"//, gt_bigkey"
@@ -1409,7 +1422,8 @@
                     {
                         "name": "GT Top + Lanmo refight",
                         "access_rules":[
-                            "gt_bigkey, [$smallKeys|gt_smallkey|1], $getBossRef|gt_lanmo"
+                            "gt_bigkey, [$smallKeys|gt_smallkey|1], $getBossRef|gt_lanmo",
+                            "gt_bigkey, $smallKeys|gt_smallkey|1, $getBossRef|gt_lanmo"
                         ],
                         "clear_as_group": false,
                         "item_count": 3,
@@ -1418,7 +1432,8 @@
                     {
                         "name": "GT Top Moldorm refight",
                         "access_rules":[
-                            "gt_bigkey, [$smallKeys|gt_smallkey|2], $getBossRef|gt_boss"
+                            "gt_bigkey, [$smallKeys|gt_smallkey|2], $getBossRef|gt_boss",
+                            "gt_bigkey, $smallKeys|gt_smallkey|2, $getBossRef|gt_boss"
                         ],
                         "clear_as_group": false,
                         "item_count": 1,
@@ -1427,7 +1442,7 @@
                     {
                         "name": "GT Top Agahnim 2",
                         "access_rules":[
-                            "@GT/Ganon's Tower/GT Top Moldorm refight"
+                            "@GT-inveted/Ganon's Tower/GT Top Moldorm refight"
                         ],
                         "clear_as_group": false,
                         "hosted_item": "aga2"
