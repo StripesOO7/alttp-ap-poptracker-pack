@@ -151,29 +151,31 @@ function onClear(slot_data)
         -- glitch_boots={code="glitches", mapping=nil}
     }
     --print(dump_table(slot_data))
-
-    for k,v in pairs(slot_data) do
-        -- print(k, v)
-        if k == "crystals_needed_for_gt" or k == "crystals_needed_for_ganon" or k == "triforce_pieces_required" then
-            Tracker:FindObjectForCode(slotCodes[k].code).AcquiredCount = v
-        elseif k == "shop_shuffle" then
-            if v ~= "none" then
-                Tracker:FindObjectForCode(slotCodes[k].code).Active = true
-            elseif v == "none" then
-                Tracker:FindObjectForCode(slotCodes[k].code).Active = false
-            end
-        elseif k == "mm_medalion" then
-            mm_medal = Tracker:FindObjectForCode(mapMedalion[v]).CurrentStage
-            Tracker:FindObjectForCode(mapMedalion[v]).CurrentStage = mm_medal + 2
-        elseif k == "tr_medalion" then
-            tr_medal = Tracker:FindObjectForCode(mapMedalion[v]).CurrentStage
-            Tracker:FindObjectForCode(mapMedalion[v]).CurrentStage = tr_medal + 1
-        elseif slotCodes[k] then
-            if Tracker:FindObjectForCode(slotCodes[k].code).Type == "toggle" then
-                Tracker:FindObjectForCode(slotCodes[k].code).Active = slotCodes[k].mapping[v]
-            else 
-                print(k,v,Tracker:FindObjectForCode(slotCodes[k].code).CurrentStage, slotCodes[k].mapping[v])
-                Tracker:FindObjectForCode(slotCodes[k].code).CurrentStage = slotCodes[k].mapping[v]
+    print(Tracker:FindObjectForCode("autofill_settings").Active)
+    if Tracker:FindObjectForCode("autofill_settings").Active == true then
+        for k,v in pairs(slot_data) do
+            -- print(k, v)
+            if k == "crystals_needed_for_gt" or k == "crystals_needed_for_ganon" or k == "triforce_pieces_required" then
+                Tracker:FindObjectForCode(slotCodes[k].code).AcquiredCount = v
+            elseif k == "shop_shuffle" then
+                if v ~= "none" then
+                    Tracker:FindObjectForCode(slotCodes[k].code).Active = true
+                elseif v == "none" then
+                    Tracker:FindObjectForCode(slotCodes[k].code).Active = false
+                end
+            elseif k == "mm_medalion" then
+                mm_medal = Tracker:FindObjectForCode(mapMedalion[v]).CurrentStage
+                Tracker:FindObjectForCode(mapMedalion[v]).CurrentStage = mm_medal + 2
+            elseif k == "tr_medalion" then
+                tr_medal = Tracker:FindObjectForCode(mapMedalion[v]).CurrentStage
+                Tracker:FindObjectForCode(mapMedalion[v]).CurrentStage = tr_medal + 1
+            elseif slotCodes[k] then
+                if Tracker:FindObjectForCode(slotCodes[k].code).Type == "toggle" then
+                    Tracker:FindObjectForCode(slotCodes[k].code).Active = slotCodes[k].mapping[v]
+                else 
+                    print(k,v,Tracker:FindObjectForCode(slotCodes[k].code).CurrentStage, slotCodes[k].mapping[v])
+                    Tracker:FindObjectForCode(slotCodes[k].code).CurrentStage = slotCodes[k].mapping[v]
+                end
             end
         end
     end

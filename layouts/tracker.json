@@ -4,13 +4,14 @@
         "content": [
             {
                 "type": "group",
-                "header": "Item Placement Mode",
+                "header": "Autofill Settings",
+                // "description": "Enable/Disable the automatic fill of the settings pannel from for connected Slot_Data",
                 "header_background": "#3e4b57",
                 "content":[
                     {
                         "type": "item",
                         "margin": "-5,-1,-5,-5",
-                        "item": "item_placement_mode"
+                        "item": "autofill_settings"
                     }
                 ]
             }            
