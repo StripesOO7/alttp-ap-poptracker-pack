@@ -526,9 +526,9 @@
         "allow_disabled": false,
         "stages": [
             {
-                "img": "/images/all_dungeons.png",
+                "img": "/images/goal_fast.png",
                 "inherit_codes":false,
-                "codes": "fast"
+                "codes": "fasst"
             },
             {
                 "img": "/images/goal_slow.png",
@@ -536,7 +536,7 @@
                 "codes": "slow"
             },
             {
-                "img": "/images/goal_fast.png",
+                "img": "/images/all_dungeons.png",
                 "inherit_codes":false,
                 "codes": "all_dungeons"
             },
@@ -844,6 +844,7 @@
         "img": "/images/FFCrystal.png",
         "codes": "crystal, red_crystal"
     },
+// external settings toggles
     {
         "name": "Autofill Settings",
         "type": "toggle",
