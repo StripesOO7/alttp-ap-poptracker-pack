@@ -16,8 +16,8 @@ end
 print("---------------------------------------------------------------------")
 print("")
 
-ScriptHost:LoadScript("scripts/settings.lua")
+ScriptHost:LoadScript("scripts/autotracking/settings.lua")
 -- loads the AP autotracking code
 ScriptHost:LoadScript("scripts/autotracking/archipelago.lua")
 -- loads the SNES autotrecking codes
-ScriptHost:LoadScript("scripts/SNESautotracking.lua")
+ScriptHost:LoadScript("scripts/autotracking/SNESautotracking.lua")

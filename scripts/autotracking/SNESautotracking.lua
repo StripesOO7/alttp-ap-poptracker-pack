@@ -310,12 +310,12 @@ function updateSectionChestCountFromRoomSlotList(segment, locationRef, roomSlots
 end
 
 function updateBombIndicatorStatus(status)
-    local item = Tracker:FindObjectForCode("bombs")
+    local item = Tracker:FindObjectForCode("big_bomb")
     if item then
         if status then
-            item.CurrentStage = 1
+            item.Active = true
         else
-            item.CurrentStage = 0
+            item.Active = false
         end
     end
 end
@@ -365,24 +365,25 @@ function updateNPCItemFlagsFromMemorySegment(segment)
 
     InvalidateReadCaches()
     
-    updateSectionChestCountFromByteAndFlag(segment, "@Old Man/Bring Him Home", 0x7ef410, 0x01) --?
-    updateSectionChestCountFromByteAndFlag(segment, "@Zora Area/King Zora", 0x7ef410, 0x02)
-    updateSectionChestCountFromByteAndFlag(segment, "@Sick Kid/By The Bed", 0x7ef410, 0x04)
-    updateSectionChestCountFromByteAndFlag(segment, "@Haunted Grove/Stumpy", 0x7ef410, 0x08)
-    updateSectionChestCountFromByteAndFlag(segment, "@Sahasrala's Hut/Shabbadoo", 0x7ef410, 0x10)
-    updateSectionChestCountFromByteAndFlag(segment, "@Catfish/Ring of Stones", 0x7ef410, 0x20)
+    updateSectionChestCountFromByteAndFlag(segment, "@Light Death Mountain Left Bottom/Rescue Old Man/Rescue Old Man", 0x7ef410, 0x01) --?
+    updateSectionChestCountFromByteAndFlag(segment, "@Dark Death Mountain Left/Rescue Old Man/Rescue Old Man", 0x7ef410, 0x01)
+    updateSectionChestCountFromByteAndFlag(segment, "@Lightworld/Zora's Damoain/King Zora (Scam)", 0x7ef410, 0x02)
+    updateSectionChestCountFromByteAndFlag(segment, "@Lightworld/Sick Kid/Sick Kid", 0x7ef410, 0x04)
+    updateSectionChestCountFromByteAndFlag(segment, "@Darkworld Left/Stumpy/Stumpy", 0x7ef410, 0x08)
+    updateSectionChestCountFromByteAndFlag(segment, "@Lightworld/Sahasrahla's Hut/Sahasrahla's Item", 0x7ef410, 0x10)
+    updateSectionChestCountFromByteAndFlag(segment, "@Darkworld Right/Catfish/Catfish Item", 0x7ef410, 0x20)
     -- 0x40 is unused
-    updateSectionChestCountFromByteAndFlag(segment, "@Library/On The Shelf", 0x7ef410, 0x80)
+    updateSectionChestCountFromByteAndFlag(segment, "@Lightworld/Library/Library", 0x7ef410, 0x80)
 
-    updateSectionChestCountFromByteAndFlag(segment, "@Ether Tablet/Tablet", 0x7ef411, 0x01)
-    updateSectionChestCountFromByteAndFlag(segment, "@Bombos Tablet/Tablet", 0x7ef411, 0x02)
+    updateSectionChestCountFromByteAndFlag(segment, "@Light Death Mountain Left Top/Ether Tablet/Ether Tablet", 0x7ef411, 0x01)
+    updateSectionChestCountFromByteAndFlag(segment, "@Lightworld/Bombos Tablet/Bombos Tablet", 0x7ef411, 0x02)
     -- @todo Find the Location where the Dwarven Smiths check is stored
-    updateSectionChestCountFromByteAndFlag(segment, "@Dwarven Smiths/Bring Him Home", 0x7ef411, 0x04)
+    updateSectionChestCountFromByteAndFlag(segment, "@Darkworld Left/Breadsmiths/Rescue Dwarf", 0x7ef411, 0x04)
     -- 0x08 is no longer relevant
-    updateSectionChestCountFromByteAndFlag(segment, "@Lost Woods/Mushroom Spot", 0x7ef411, 0x10)
-    updateSectionChestCountFromByteAndFlag(segment, "@Witch's Hut/Assistant", 0x7ef411, 0x20, updateMushroomStatus)
+    updateSectionChestCountFromByteAndFlag(segment, "@Lightworld/Lost Woods/Mushroom", 0x7ef411, 0x10)
+    updateSectionChestCountFromByteAndFlag(segment, "@Lightworld/Potion Shop (Witch Hut)/Deliver Mushroom (Brew Drugs)", 0x7ef411, 0x20, updateMushroomStatus)
     -- 0x40 is unused
-    updateSectionChestCountFromByteAndFlag(segment, "@Magic Bat/Magic Bowl", 0x7ef411, 0x80, updateBatIndicatorStatus)    
+    updateSectionChestCountFromByteAndFlag(segment, "@Lightworld/Satan/Visit Satan", 0x7ef411, 0x80, updateBatIndicatorStatus)    
 
 end
 
@@ -398,18 +399,19 @@ function updateOverworldEventsFromMemorySegment(segment)
 
     InvalidateReadCaches()
 
-    updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Spectacle Rock/Up On Top",              3)    
-    updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Floating Island/Island",                5)    
-    updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Race Game/Take This Trash",             40)    
-    updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Grove Digging Spot/Hidden Treasure",    42, updateShovelIndicatorStatus)    
-    updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Desert Ledge/Ledge",                    48)    
-    updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Lake Hylia Island/Island",              53)    
-    updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Dam/Outside",                           59)    
-    updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Bumper Cave/Ledge",                     74)    
-    updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Pyramid Ledge/Ledge",                   91)    
-    updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Digging Game/Dig For Treasure",         104)    
-    updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Master Sword Pedestal/Pedestal",        128)    
-    updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Zora Area/Ledge",                       129)    
+    updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Light Death Mountain Left Bottom/Spectacle Rock/Top Item",3)    
+    updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Light Death Mountain Right/Floating Island/Item on Floating Island",5)    
+    updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Lightworld/Race/Race",40)    
+    updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Lightworld/Flute Spot/Flute Spot",42, updateShovelIndicatorStatus)    
+    updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Lightworld/Desert Ledge/Ledge Item",48)    
+    updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Lightworld/Lake Hylia/Lake Island",53)    
+    updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Lightworld/Dam/Sunken Treasure",59)    
+    updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Darkworld Left/Bumper Cave/Bumper Cave Item",74)
+    updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Lightworld/Bumper Cave/Bumper Cave Item",74)  
+    updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Darkworld Right/Pyramid Ledge/Pyramid Ledge Item",91)    
+    updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Darkworld Left/Digging Game/Digging Game",104)    
+    updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Lightworld/Master Sword Pedestal/Pedestal",128)    
+    updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Lightworld/Zora's Damoain/Zora Ledge",129)    
 end
 
 function updateRoomsFromMemorySegment(segment)
@@ -441,107 +443,126 @@ function updateRoomsFromMemorySegment(segment)
         return true
     end    
 
-    updateSectionChestCountFromRoomSlotList(segment, "@Link's House/By The Door", { { 0, 10 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@The Well/Cave", { { 47, 5 }, { 47, 6 }, { 47, 7 }, { 47, 8 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@The Well/Bombable Wall", { { 47, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Hookshot Cave/Bonkable Chest", { { 60, 7 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Hookshot Cave/Back", { { 60, 4 }, { 60, 5 }, { 60, 6 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Castle Secret Entrance/Hallway", { { 85, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Lost Woods/Forest Hideout", { { 225, 9 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Lumberjack Cave/Cave", { { 226, 9 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Spectacle Rock/Cave", { { 234, 10 } })        
-    updateSectionChestCountFromRoomSlotList(segment, "@Paradox Cave/Top", { { 239, 4 }, { 239, 5 }, { 239, 6 }, { 239, 7 }, { 239, 8 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Super-Bunny Cave/Cave", { { 248, 4 }, { 248, 5 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Spiral Cave/Cave", { { 254, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Paradox Cave/Bottom", { { 255, 4 }, { 255, 5 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Tavern/Back Room", { { 259, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Link's House/By The Door", { { 260, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Sahasrala's Hut/Back Room", { { 261, 4 }, { 261, 5 }, { 261, 6 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Bombable Shack/Downstairs", { { 262, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Treasure Game/Prize", { { 262, 10 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Chicken House/Bombable Wall", { { 264, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Aginah's Cave/Cave", { { 266, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Dam/Inside", { { 267, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Mimic Cave/Cave", { { 268, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Mire Shack/Shack", { { 269, 4 }, { 269, 5 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@King's Tomb/The Crypt", { { 275, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Waterfall Fairy/Waterfall Cave", { { 276, 4 }, { 276, 5 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Fat Fairy/Big Bomb Spot", { { 278, 4 }, { 278, 5 } }, updateBombIndicatorStatus)
-    updateSectionChestCountFromRoomSlotList(segment, "@Spike Cave/Cave", { { 279, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Graveyard Ledge/Cave", { { 283, 9 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@South of Grove/Circle of Bushes", { { 283, 10 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@C-Shaped House/House", { { 284, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Blind's House/Basement", { { 285, 5 }, { 285, 6 }, { 285, 7 }, { 285, 8 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Blind's House/Bombable Wall", { { 285, 4 } })   
-    updateSectionChestCountFromRoomSlotList(segment, "@Hype Cave/Cave", { { 286, 4 }, { 286, 5 }, { 286, 6 }, { 286, 7 }, { 286, 10 } }) 
-    updateSectionChestCountFromRoomSlotList(segment, "@Ice Rod Cave/Cave", { { 288, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Mini Moldorm Cave/Cave", { { 291, 4 }, { 291, 5 }, { 291, 6 }, { 291, 7 }, { 291, 10 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Bonk Rocks/Cave", { { 292, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Checkerboard Cave/Cave", { { 294, 9 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Hammer Pegs/Cave", { { 295, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Lightworld/Link's House/Chest", { { 0, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Lightworld/Kakariko Well/Well Items", { { 47, 5 }, { 47, 6 }, { 47, 7 }, { 47, 8 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Lightworld/Kakariko Well/Back Chest", { { 47, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Dark Death Mountain Right/Hookshot Cave/Bottom Right Chest", { { 60, 7 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Dark Death Mountain Right/Hookshot Cave/remaining Chests", { { 60, 4 }, { 60, 5 }, { 60, 6 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Lightworld/Secret Passage/Secret Passage Chest", { { 85, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Lightworld/Lost Woods - Hideout/Hideout", { { 225, 9 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Lightworld/Lumberjacks/Tree", { { 226, 9 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Light Death Mountain Left Bottom/Spectacle Rock/Item inside", { { 234, 10 } })        
+    updateSectionChestCountFromRoomSlotList(segment, "@Light Death Mountain Right/Paradox Cave/Lower", { { 239, 4 }, { 239, 5 }, { 239, 6 }, { 239, 7 }, { 239, 8 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Dark Death Mountain Right/Superbunny Cave/Superbunny Chest", { { 248, 4 }, { 248, 5 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Light Death Mountain Right/Spiral Cave/Spiral Cave Item", { { 254, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Light Death Mountain Right/Paradox Cave/Upper", { { 255, 4 }, { 255, 5 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Lightworld/Backside Pub/Backside Pub", { { 259, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Darkworld Left/Link's House/Chest", { { 260, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Lightworld/Sahasrahla's Hut/Back Items", { { 261, 4 }, { 261, 5 }, { 261, 6 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Darkworld Left/Brewery (Glory Hole)/Brewery", { { 262, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Darkworld Left/Chest Game (Money Making Game)/Chest Game", { { 262, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Lightworld/Chicken Hut/Chicken Hut", { { 264, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, "Lightworld/Aginah's Cave/Aginah's Cave", { { 266, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Lightworld/Dam/Dam Chest", { { 267, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Light Death Mountain Right/Mimic Cave/Mimic Cave Chest", { { 268, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Darkworld Swamp/Mire Shed/Shed", { { 269, 4 }, { 269, 5 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Lightworld/King's Tomb/King's Tomb", { { 275, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Lightworld/Waterfall Fairy/Chest", { { 276, 4 }, { 276, 5 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Darkworld Right/Big Bomb Fairy/Boom", { { 278, 4 }, { 278, 5 } }, updateBombIndicatorStatus)
+    updateSectionChestCountFromRoomSlotList(segment, "@Dark Death Mountain Left/Spike Cave/Spike Cave Chest", { { 279, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Lightworld/Graveyard Ledge/Graveyard Ledge", { { 283, 9 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Lightworld/Cave 45/Cave 45", { { 283, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Darkworld Left/C-Shaped House/C-Shaped House", { { 284, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Lightworld/Blind's Hideout/Hideout", { { 285, 5 }, { 285, 6 }, { 285, 7 }, { 285, 8 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Lightworld/Blind's Hideout/Back Chest", { { 285, 4 } })   
+    updateSectionChestCountFromRoomSlotList(segment, "@Darkworld Left/Hype Cave/Hype", { { 286, 4 }, { 286, 5 }, { 286, 6 }, { 286, 7 }, { 286, 10 } }) 
+    updateSectionChestCountFromRoomSlotList(segment, "@Lightworld/Ice Rod Cave/Ice Rod Chest", { { 288, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Lightworld/Mini Moldorm Cave/Mini Moldorm Chest", { { 291, 4 }, { 291, 5 }, { 291, 6 }, { 291, 7 }, { 291, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Lightworld/Bonk Pile/Bonk Pile Chest", { { 292, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Lightworld/Checkerboard Cave/Checkerboard Cave Item", { { 294, 9 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Darkworld Left/Peg Cave/Peg Cave", { { 295, 10 } })
 
 
 
-    updateSectionChestCountFromRoomSlotList(segment, "@Hyrule Castle & Sanctuary/Escape", { { 113, 4 },{ 114, 4 },{ 128, 4 },{ 50, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Hyrule Castle & Sanctuary/Back", {  { 17, 4 },{ 17, 5 },{ 17, 6 }, })
-    updateSectionChestCountFromRoomSlotList(segment, "@Hyrule Castle & Sanctuary/Sanctuary", { { 18, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Agahnim's Tower/Front", { { 224, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Agahnim's Tower/Back", { { 208, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Eastern Palace/Dungeon", { { 185, 4 }, { 168, 4 }, { 169, 4 }, { 170, 4 }, { 184, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Eastern Palace/Boss", { { 200, 11 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Desert Palace/Dungeon", { { 133, 4 },{ 115, 4 },{ 115, 5 },{ 116, 4 },{ 117, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Desert Palace/Boss", { { 51, 11 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Tower of Hera/Lower", { { 119, 4 },{ 135, 4 },{ 135, 10 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Tower of Hera/Upper", { { 39, 4 },{ 39, 5 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Tower of Hera/Boss", { { 7, 11 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Palace of Darkness/Dungeon", { 
+    updateSectionChestCountFromRoomSlotList(segment, "@HC/Hyrule Castle/Boomerang Chest", { { 113, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@HC/Hyrule Castle/Map Chest", { { 114, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@HC/Hyrule Castle/Zelda's Chest", { { 128, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@CE/Castle Escape/Dark Cross", { { 50, 4 } })
+    -- updateSectionChestCountFromRoomSlotList(segment, "@Hyrule Castle & Sanctuary/Escape", { { 113, 4 },{ 114, 4 },{ 128, 4 },{ 50, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@CE/Castle Escape/Secret Room", {  { 17, 4 },{ 17, 5 },{ 17, 6 }, })
+    updateSectionChestCountFromRoomSlotList(segment, "@CE/Sanctuary/Sanctuary Chest", { { 18, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@AT/Agahnim's Tower/Room 03", { { 224, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@AT-inverted/Agahnim's Tower/Room 03", { { 224, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@AT/Agahnim's Tower/Maze Chest", { { 208, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@AT-inverted/Agahnim's Tower/Maze Chest", { { 208, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@EP/Eastern Palace/Dungeon Chest", { { 185, 4 }, { 168, 4 }, { 169, 4 }, { 170, 4 }, { 184, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@EP/Eastern Palace/Boss Item", { { 200, 11 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@DP/Desert Palace/Dungeon Chest", { { 133, 4 },{ 115, 4 },{ 115, 5 },{ 116, 4 },{ 117, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@DP Back/Desert Palace Back/Boss Item", { { 51, 11 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@ToH/Tower of Hera/Lowe", { { 119, 4 },{ 135, 4 },{ 135, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@ToH/Tower of Hera/Upper", { { 39, 4 },{ 39, 5 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@ToH/Tower of Hera/Boss Item", { { 7, 11 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@PoD/Palace of Darkness/Dungeon Chest", { 
         { 58, 4 },{ 42, 4 },{ 42, 5 },{ 43, 4 },{ 25, 4 },{ 25, 5 },{ 26, 4 },
         { 26, 5 },{ 26, 6 },{ 9, 4 },{ 10, 4 },{ 106, 4 },{ 106, 5 } 
     })
-    updateSectionChestCountFromRoomSlotList(segment, "@Palace of Darkness/Boss", { { 90, 11 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Swamp Palace/Entrance", { { 40, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Swamp Palace/Bomb Wall", { { 55, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Swamp Palace/Dungeon", { 
+    updateSectionChestCountFromRoomSlotList(segment, "@PoD/Palace of Darkness/Boss Item", { { 90, 11 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@SP/Swamp Palace/Dungeon Chest", { { 40, 4 } }) -- entrance
+    updateSectionChestCountFromRoomSlotList(segment, "@SP/Swamp Palace/Dungeon Chest", { { 55, 4 } }) --bombable wall
+    updateSectionChestCountFromRoomSlotList(segment, "@SP/Swamp Palace/Dungeon Chest", { 
         { 54, 4 },{ 53, 4 },{ 52, 4 },{ 70, 4 },{ 118, 4 },{ 118, 5 },{ 102, 4 } 
     })
-    updateSectionChestCountFromRoomSlotList(segment, "@Swamp Palace/Boss", { { 6, 11 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Skull Woods/Front", { 
+    updateSectionChestCountFromRoomSlotList(segment, "@SP/Swamp Palace/Boss Item", { { 6, 11 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@SW/Skull Woods Front/Dungeon Chest", { 
         { 103, 4 },{ 104, 4 },{ 87, 4 },{ 87, 5 },{ 88, 4 },{ 88, 5 }
      })
-    updateSectionChestCountFromRoomSlotList(segment, "@Skull Woods/Back", { { 89, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Skull Woods/Boss", { { 41, 11 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Thieves Town/Front", { { 203, 4 }, { 219, 4 }, { 219, 5 }, { 220, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Thieves Town/Back", { { 101, 4 }, { 69, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Thieves Town/Big Chest", { { 68, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Thieves Town/Boss", { { 172, 11 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Ice Palace/Dungeon", { 
+    updateSectionChestCountFromRoomSlotList(segment, "@SW/Skull Woods Back/Dungeon Chest", { { 89, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@SW/Skull Woods Back/Boss Item", { { 41, 11 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@TT/Thieves Town/Front", { { 203, 4 }, { 219, 4 }, { 219, 5 }, { 220, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@TT/Thieves Town/Back", { { 101, 4 }, { 69, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@TT/Thieves Town/Back", { { 68, 4 } }) --big chest
+    updateSectionChestCountFromRoomSlotList(segment, "@TT/Thieves Town/Boss Item", { { 172, 11 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@IP/Ice Palace/Dungeon Chest", { 
         { 174, 4 },{ 158, 4 },{ 126, 4 },{ 95, 4 },{ 63, 4 },{ 46, 4 },{ 31, 4 }
      })
-    updateSectionChestCountFromRoomSlotList(segment, "@Ice Palace/Boss", { { 222, 11 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@Misery Mire/Dungeon", { 
+    updateSectionChestCountFromRoomSlotList(segment, "@IP/Ice Palace/Boss Item", { { 222, 11 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@MM/Misery Mire/Dungeon Chest", { 
         { 162, 4 },{ 179, 4 },{ 193, 4 },{ 194, 4 },{ 194, 5 },{ 196, 4 },{ 209, 4 }
      })
-    updateSectionChestCountFromRoomSlotList(segment, "@Misery Mire/Boss", { { 144, 11 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@MM/Misery Mire/Boss Item", { { 144, 11 } })
     -- @todo: split TR into  completable w/o bosskey
-    updateSectionChestCountFromRoomSlotList(segment, "@Turtle Rock/Dungeon", { 
-        { 214, 4 },{ 213, 4 },{ 213, 5 },{ 213, 6 },{ 213, 7 },{ 36, 4 },{ 182, 4 },
-        { 183, 4 },{ 183, 5 },{ 20, 4 },{ 21, 4 }
+    updateSectionChestCountFromRoomSlotList(segment, "@TR/Turtle Rock Front/Dungeon Chest", { 
+        { 214, 4 },{ 182, 4 },{ 183, 4 },{ 183, 5 },{ 20, 4 }
      })
-    updateSectionChestCountFromRoomSlotList(segment, "@Turtle Rock/Boss", { { 164, 11 } })
+     pdateSectionChestCountFromRoomSlotList(segment, "@TR/Turtle Rock Back/Dungeon Chest", { 
+       { 213, 4 },{ 213, 5 },{ 213, 6 },{ 213, 7 },{ 36, 4 },{ 4,4 }
+     })
+    updateSectionChestCountFromRoomSlotList(segment, "@TR/Turtle Rock Back/Boss Item", { { 164, 11 } })
     -- @todo: split GT into right/left side
-    updateSectionChestCountFromRoomSlotList(segment, "@Ganon's Tower/Left", {
-        { 140, 4 }, { 140, 5 }, { 140, 6 }, { 140, 7 }, { 140, 8 }, { 125, 4 }, { 124, 4 },
-        { 124, 5 }, { 124, 6 }, { 124, 7 }, { 123, 4 }, { 123, 5 }, { 123, 6 }, { 123, 7 },
-        { 141, 4 }, { 157, 4 }, { 157, 5 }, { 157, 6 }, { 157, 7 }, { 28, 4 }, { 28, 5 },
-        { 28, 6 }, { 139, 4 }
+    updateSectionChestCountFromRoomSlotList(segment, "@GT/Ganon's Tower/Leftside", {
+        { 140, 4 }, { 125, 4 }, { 124, 4 }, { 124, 5 }, { 124, 6 }, { 124, 7 }, 
+        { 123, 4 }, { 123, 5 }, { 123, 6 }, { 123, 7 }, { 139, 4 }
      })
-    --  updateSectionChestCountFromRoomSlotList(segment, "@Ganon's Tower/Right", {
-    --     { 164, 11 }, { 164, 11 }, { 164, 11 }, { 164, 11 }, { 164, 11 }, { 164, 11 }, { 164, 11 },
-    --     { 164, 11 }, { 164, 11 }, { 164, 11 }, { 164, 11 }, { 164, 11 }, { 164, 11 }, { 164, 11 },
-    --     { 164, 11 }, { 164, 11 }, { 164, 11 }, { 164, 11 }, { 164, 11 }, { 164, 11 }, { 164, 11 },
-    --     { 164, 11 }, { 164, 11 }
-    --  })
-     updateSectionChestCountFromRoomSlotList(segment, "@Ganon's Tower/Tower", { { 61, 4 }, { 61, 5 }, { 61, 6 }, { 77, 4 }  })
+    updateSectionChestCountFromRoomSlotList(segment, "@GT-inverted/Ganon's Tower/Leftside", {
+        { 140, 4 }, { 125, 4 }, { 124, 4 }, { 124, 5 }, { 124, 6 }, { 124, 7 }, 
+        { 123, 4 }, { 123, 5 }, { 123, 6 }, { 123, 7 }, { 139, 4 }
+     })
+     updateSectionChestCountFromRoomSlotList(segment, "@GT/Ganon's Tower/Rightside", {
+        { 140, 5 }, { 140, 6 }, { 141, 4 }, { 157, 4 }, { 157, 5 }, { 157, 6 }, { 157, 7 }
+     })
+     updateSectionChestCountFromRoomSlotList(segment, "@GT-inverted/Ganon's Tower/Rightside", {
+        { 140, 5 }, { 140, 6 }, { 141, 4 }, { 157, 4 }, { 157, 5 }, { 157, 6 }, { 157, 7 }
+     })
+     updateSectionChestCountFromRoomSlotList(segment, "@GT/Ganon's Tower/Big Chest + Ice refight", {
+        { 140, 7 }, { 140, 8 }, { 28, 4 }, { 28, 5 }, { 28, 6 }
+     })
+     updateSectionChestCountFromRoomSlotList(segment, "@GT-inverted/Ganon's Tower/Big Chest + Ice refight", {
+        { 140, 7 }, { 140, 8 }, { 28, 4 }, { 28, 5 }, { 28, 6 }
+     })
+     updateSectionChestCountFromRoomSlotList(segment, "@GT/Ganon's Tower/GT Top + Lanmo refight", { { 61, 4 }, { 61, 5 }, { 61, 6 } })
+     updateSectionChestCountFromRoomSlotList(segment, "@GT-inverted/Ganon's Tower/GT Top + Lanmo refight", { { 61, 4 }, { 61, 5 }, { 61, 6 } })
+     updateSectionChestCountFromRoomSlotList(segment, "@GT/Ganon's Tower/GT Top Moldorm refight", { { 77, 4 }  })
+     updateSectionChestCountFromRoomSlotList(segment, "@GT-inverted/Ganon's Tower/GT Top Moldorm refight", { { 77, 4 }  })
 
     -- updateSectionChestCountFromRoomSlotList(segment, "@Ganon's Tower/Ice Boss", { { 295, 10 } })
     -- updateSectionChestCountFromRoomSlotList(segment, "@Ganon's Tower/Lanmo Refight", { { 295, 10 } })
@@ -574,7 +595,7 @@ function updateItemsFromMemorySegment(segment)
         updateToggleItemFromByte(segment, "quake",     0x7ef349)
         updateToggleItemFromByte(segment, "lamp",      0x7ef34a)
         updateToggleItemFromByte(segment, "hammer",    0x7ef34b)
-        updateToggleItemFromByte(segment, "net",       0x7ef34d)
+        updateToggleItemFromByte(segment, "bug_net",       0x7ef34d)
         updateToggleItemFromByte(segment, "book",      0x7ef34e)
         updateToggleItemFromByte(segment, "somaria",   0x7ef350)
         updateToggleItemFromByte(segment, "byrna",     0x7ef351)
@@ -582,10 +603,10 @@ function updateItemsFromMemorySegment(segment)
         updateToggleItemFromByte(segment, "boots",     0x7ef355)
         updateToggleItemFromByte(segment, "flippers",  0x7ef356)
         updateToggleItemFromByte(segment, "pearl",     0x7ef357)
-        updateToggleItemFromByte(segment, "halfmagic", 0x7ef37b)
+        updateToggleItemFromByte(segment, "half_magic", 0x7ef37b)
 
-        updateToggleItemFromByteAndFlag(segment, "blue_boomerang", 0x7ef38c, 0x80)
-        updateToggleItemFromByteAndFlag(segment, "red_boomerang",  0x7ef38c, 0x40)
+        updateToggleItemFromByteAndFlag(segment, "blueboomerang", 0x7ef38c, 0x80) -- blue banana
+        updateToggleItemFromByteAndFlag(segment, "redboomerang",  0x7ef38c, 0x40) --  red banana
         updateToggleItemFromByteAndFlag(segment, "shovel", 0x7ef38c, 0x04)
         updateToggleItemFromByteAndFlag(segment, "powder", 0x7ef38c, 0x10)
         updateToggleItemFromByteAndFlag(segment, "mushroom", 0x7ef38c, 0x20)
@@ -616,10 +637,10 @@ function updateItemsFromMemorySegment(segment)
 
     --  It may seem unintuitive, but these locations are controlled by flags stored adjacent to the item data,
     --  which makes it more efficient to update them here.
-    updateSectionChestCountFromByteAndFlag(segment, "@Castle Secret Entrance/Uncle", 0x7ef3c6, 0x01)    
-    updateSectionChestCountFromByteAndFlag(segment, "@Hobo/Under The Bridge", 0x7ef3c9, 0x01)
-    updateSectionChestCountFromByteAndFlag(segment, "@Bottle Vendor/This Jerk", 0x7ef3c9, 0x02)
-    updateSectionChestCountFromByteAndFlag(segment, "@Purple Chest/Show To Gary", 0x7ef3c9, 0x10)
+    updateSectionChestCountFromByteAndFlag(segment, "@Lightworld/Secret Passage/Link's Uncle", 0x7ef3c6, 0x01)    
+    updateSectionChestCountFromByteAndFlag(segment, "@Lightworld/Hobo/Hobo", 0x7ef3c9, 0x01)
+    updateSectionChestCountFromByteAndFlag(segment, "@Lightworld/Bottle Merchant/Get Scammed (100 Rupees)", 0x7ef3c9, 0x02)
+    updateSectionChestCountFromByteAndFlag(segment, "@Darkworld Left/Purple Chest Return/Purple Chest Return", 0x7ef3c9, 0x10)
 
 end
 
@@ -661,7 +682,7 @@ function updateHeartPiecesFromMemorySegment(segment)
     InvalidateReadCaches()
 
     if AUTOTRACKER_ENABLE_ITEM_TRACKING then
-        updateConsumableItemFromByte(segment, "heartpiece", 0x7ef448)
+        updateConsumableItemFromByte(segment, "heartpieces", 0x7ef448)
     end
 end
 
@@ -675,7 +696,7 @@ function updateHeartContainersFromMemorySegment(segment)
 
     if AUTOTRACKER_ENABLE_ITEM_TRACKING then
 
-        local pieces = Tracker:FindObjectForCode("heartpiece")
+        local pieces = Tracker:FindObjectForCode("heartpieces")
         local containers = Tracker:FindObjectForCode("heartcontainer")
 
         if pieces and containers then

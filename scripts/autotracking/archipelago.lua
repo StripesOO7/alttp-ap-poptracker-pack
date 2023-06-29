@@ -85,7 +85,7 @@ function onClear(slot_data)
             if obj then
                 if v[2] == "toggle" then
                     obj.Active = false
-                elseif v[2] == "progressive" then
+                elseif v[2] == "progressive" or v[2] == "progressive_toggle" then
                     obj.CurrentStage = 0
                     obj.Active = false
                 elseif v[2] == "consumable" then
