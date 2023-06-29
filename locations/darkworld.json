@@ -680,8 +680,8 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": [
-                            "[$smallKeys|tr_smallkey|2], [somaria]",
-                            "$smallKeys|tr_smallkey|2, somaria"
+                            "[$smallKeys|tr_smallkey|2], [somaria], [firerod]",
+                            "$smallKeys|tr_smallkey|2, somaria, firerod"
                         ],
                         // "hosted_item": "tr_map, tr_compass, tr_bigkey",
                         "clear_as_group": false,
