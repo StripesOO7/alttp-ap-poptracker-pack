@@ -84,8 +84,11 @@ function onClear(slot_data)
             local obj = Tracker:FindObjectForCode(v[1])
             if obj then
                 if v[2] == "toggle" then
+                    if v[1] == "bombos" or v[1] == "ether" or v[1] == "quake" then
+                        obj.CurrentStage = 0
+                    end
                     obj.Active = false
-                elseif v[2] == "progressive" or v[2] == "progressive_toggle" then
+                elseif v[2] == "progressive" then
                     obj.CurrentStage = 0
                     obj.Active = false
                 elseif v[2] == "consumable" then
@@ -150,8 +153,8 @@ function onClear(slot_data)
         triforce_pieces_required={code="triforce_pieces_needed", mapping=nil}
         -- glitch_boots={code="glitches", mapping=nil}
     }
-    --print(dump_table(slot_data))
-    print(Tracker:FindObjectForCode("autofill_settings").Active)
+    -- print(dump_table(slot_data))
+    -- print(Tracker:FindObjectForCode("autofill_settings").Active)
     if Tracker:FindObjectForCode("autofill_settings").Active == true then
         for k,v in pairs(slot_data) do
             -- print(k, v)
@@ -173,7 +176,7 @@ function onClear(slot_data)
                 if Tracker:FindObjectForCode(slotCodes[k].code).Type == "toggle" then
                     Tracker:FindObjectForCode(slotCodes[k].code).Active = slotCodes[k].mapping[v]
                 else 
-                    print(k,v,Tracker:FindObjectForCode(slotCodes[k].code).CurrentStage, slotCodes[k].mapping[v])
+                    -- print(k,v,Tracker:FindObjectForCode(slotCodes[k].code).CurrentStage, slotCodes[k].mapping[v])
                     Tracker:FindObjectForCode(slotCodes[k].code).CurrentStage = slotCodes[k].mapping[v]
                 end
             end
