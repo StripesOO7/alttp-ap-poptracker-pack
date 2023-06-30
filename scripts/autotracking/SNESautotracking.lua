@@ -26,6 +26,138 @@ U8_READ_CACHE_ADDRESS = 0
 U16_READ_CACHE = 0
 U16_READ_CACHE_ADDRESS = 0
 
+-- function autofillSettings(segment)
+
+--     FLAG_CODES = {
+--         -- "","","","",
+--         -- "glitches_required",
+--         -- "","","",
+--         -- "dark_room_logic",
+--         {"bigkey_shuffle","0x18016A"}, --  0x02
+--         {"smallkey_shuffle","0x18016A"}, --  0x00 oder 0x01
+--         {"map_shuffle","0x18016A"}, --  0x04
+--         {"compass_shuffle","0x18016A"}, --  0x08
+--         -- "progressive",
+--         {"goals","0x18003E"}, --  0x01, 0x02, 0x03, 0x04, 0x05, 0x06
+--         {"crystals_needed_for_gt","0x18005E"}, -- 
+--         {"crystals_needed_for_ganon","0x18005F"}, -- 
+--         {"mode","0x180032", "0x18004A"}, -- ,  0x01 for inverted
+--         -- "retro_bow",
+--         -- "retro_caves",
+--         {"swordless","0x180043"}, -- , 0xFF
+--         -- "item_pool",
+--         {"misery_mire_medallion","0x180022"}, -- 0x00, 0x01, 0x02
+--         {"turtle_rock_medallion","0x180023"}, -- , ??0x180165??
+--         -- "boss_shuffle",
+--         {"enemy_shuffle","0x180211"}, --  0x01
+--         -- "pot_shuffle",
+--         {"shop_shuffle","0x186560"}, --watch RAM on shop entry ??0x186560??
+--         -- "glitch_boots",
+--         {"triforce_pieces_required","0x180163"} -- 
+--     } 
+
+--     for i, j in pairs(FLAG_CODES) do
+--         print(i, j)
+--         print(j[1], j[2])
+--         print(segment:ReadUInt8(j[2]))
+--         print(
+--         (segment:ReadUInt8(j[2])>> 0)& 0x01, 
+--         (segment:ReadUInt8(j[2])>> 1)& 0x01, 
+--         (segment:ReadUInt8(j[2])>> 2)& 0x01, 
+--         (segment:ReadUInt8(j[2])>> 3)& 0x01,
+--         (segment:ReadUInt8(j[2])>> 4)& 0x01, 
+--         (segment:ReadUInt8(j[2])>> 5)& 0x01, 
+--         (segment:ReadUInt8(j[2])>> 6)& 0x01, 
+--         (segment:ReadUInt8(j[2])>> 7)& 0x01
+--     )
+--     end
+--     -- entrance shuffle on/off 0x18004C
+--     -- gametype 0x180211
+--     -- if world.goal[player] in ['pedestal', 'triforcehunt', 'localtriforcehunt', 'icerodhunt']:
+--     -- rom.write_byte(0x18003E, 0x01)  # make ganon invincible
+--     -- elif world.goal[player] in ['ganontriforcehunt', 'localganontriforcehunt']:
+--     --     rom.write_byte(0x18003E, 0x05)  # make ganon invincible until enough triforce pieces are collected
+--     -- elif world.goal[player] in ['ganonpedestal']:
+--     --     rom.write_byte(0x18003E, 0x06)
+--     -- elif world.goal[player] in ['bosses']:
+--     --     rom.write_byte(0x18003E, 0x02)  # make ganon invincible until all bosses are beat
+--     -- elif world.goal[player] in ['crystals']:
+--     --     rom.write_byte(0x18003E, 0x04)  # make ganon invincible until all crystals
+--     -- else:
+--     --     rom.write_byte(0x18003E, 0x03)  # make ganon invincible until all crystals and aga 2 are collected
+--     mapToggle={[0]=0,[1]=1}
+--     mapToggleReverse={[0]=1,[1]=0,[2]=0,[3]=0,[4]=0}
+--     mapTripleReverse={[0]=2,[1]=1,[2]=0}
+--     mapDungeonItem={[0]=false,[1]=true,[2]=true,[3]=true,[4]=true,[6]=true}
+
+--     -- mapGlitches={[0]=0,[1]=2,[2]=3,[3]=0,[4]=0}
+--     -- progressive={[]=,}
+--     mapMode={["open"]=0,["inverted"]=1,["standard"]=2}
+--     mapGoals={["crystals"]=0,["ganon"]=1,["bosses"]=3,["pedestal"]=4,["ganon_pedestal"]=5,["triforce_hunt"]=6,["ganon_triforce_hunt"]=7,["ice_rod_hunt"]=8,["local_triforce_hunt"]=6,["local_ganon_triforce_hunt"]=7}
+--     mapDark={["none"]=0,["lamp"]=1,["scornes"]=2} -- none=dark room, lamp=vanilla, scornes = firerod
+--     mapMedalion={["Bombos"]="bombos",["Ether"]="ether",["Quake"]="quake"}
+--     -- retro_caves={[]=}
+--     mapBosses={[0]=0,[1]=1,[2]=1,[3]=1,[4]=2}
+--     mapEnemizer={[0]=false,[1]=true,[2]=true}
+--     -- shop_shuffle={[]=,}
+
+--     slotCodes = {
+--         -- glitches_required={code="glitches", mapping=mapToggleReverse},
+--         dark_room_logic={code="dark_mode", mapping=mapDark},
+--         bigkey_shuffle={code="big_keys", mapping=mapDungeonItem},
+--         smallkey_shuffle={code="small_keys", mapping=mapDungeonItem},
+--         map_shuffle={code="map", mapping=mapDungeonItem},
+--         compass_shuffle={code="compass", mapping=mapDungeonItem},
+--         -- progressive={code="progressive_items", mapping=mapToggle},
+--         goal={code="goal", mapping=mapGoals},
+--         crystals_needed_for_gt={code="gt_access", mapping=nil},
+--         crystals_needed_for_ganon={code="ganon_killable", mapping=nil},
+--         mode={code="start_option", mapping=mapMode},
+--         -- retro_bow={code="", mapping=mapToggleReverse},
+--         -- retro_caves={code="", mapping=mapToggleReverse},
+--         swordless={code="swordless", mapping=mapDungeonItem},
+--         -- item_pool={code="", mapping=mapToggle},
+--         me_medallion={code="", mapping=mapMedalion},
+--         tr_medallion={code="", mapping=mapMedalion},
+--         boss_shuffle={code="boss_shuffle", mapping=mapBosses},
+--         enemy_shuffle={code="enemizer", mapping=mapEnemizer},
+--         -- pot_shuffle={code="", mapping=nil},
+--         shop_shuffle={code="shop_sanity", mapping=nil},
+--         triforce_pieces_required={code="triforce_pieces_needed", mapping=nil}
+--         -- glitch_boots={code="glitches", mapping=nil}
+--     }
+
+--     if Tracker:FindObjectForCode("autofill_settings") > 0 then
+--         for k,v in pairs(slot_data) do
+--             -- print(k, v)
+--             if k == "crystals_needed_for_gt" or k == "crystals_needed_for_ganon" or k == "triforce_pieces_required" then
+--                 Tracker:FindObjectForCode(slotCodes[k].code).AcquiredCount = v
+--             elseif k == "shop_shuffle" then
+--                 if v ~= "none" then
+--                     Tracker:FindObjectForCode(slotCodes[k].code).Active = true
+--                 elseif v == "none" then
+--                     Tracker:FindObjectForCode(slotCodes[k].code).Active = false
+--                 end
+--             elseif k == "mm_medalion" then
+--                 mm_medal = Tracker:FindObjectForCode(mapMedalion[v]).CurrentStage
+--                 Tracker:FindObjectForCode(mapMedalion[v]).CurrentStage = mm_medal + 2
+--             elseif k == "tr_medalion" then
+--                 tr_medal = Tracker:FindObjectForCode(mapMedalion[v]).CurrentStage
+--                 Tracker:FindObjectForCode(mapMedalion[v]).CurrentStage = tr_medal + 1
+--             elseif slotCodes[k] then
+--                 if Tracker:FindObjectForCode(slotCodes[k].code).Type == "toggle" then
+--                     Tracker:FindObjectForCode(slotCodes[k].code).Active = slotCodes[k].mapping[v]
+--                 else 
+--                     -- print(k,v,Tracker:FindObjectForCode(slotCodes[k].code).CurrentStage, slotCodes[k].mapping[v])
+--                     Tracker:FindObjectForCode(slotCodes[k].code).CurrentStage = slotCodes[k].mapping[v]
+--                 end
+--             end
+--         end
+--     else
+--         return
+--     end
+-- end
+
 function InvalidateReadCaches()
     U8_READ_CACHE_ADDRESS = 0
     U16_READ_CACHE_ADDRESS = 0
@@ -131,6 +263,13 @@ function updateBottles(segment)
     item.CurrentStage = count
 end
 
+function updateBowAndBombUpgrade(segment)
+    local value = segment:ReadU8(0x7ef370)
+    Tracker:FindObjectForCode("bombs").AcquiredCount = 10 + value
+    local value = segment:ReadU8(0x7ef371)
+    Tracker:FindObjectForCode("bow").AcquiredCount = 30 + value
+end
+
 function updateToggleItemFromByte(segment, code, address)
     local item = Tracker:FindObjectForCode(code)
     if item then
@@ -190,10 +329,10 @@ function updateFlute(segment)
 
     if realFlute ~= 0 then
         item.Active = true
-        item.CurrentStage = 1
+        item.CurrentStage = 2
     elseif fakeFlute ~= 0 then
         item.Active = true
-        item.CurrentStage = 0
+        item.CurrentStage = 1
     else
         item.Active = false
     end
@@ -324,9 +463,9 @@ function updateBatIndicatorStatus(status)
     local item = Tracker:FindObjectForCode("powder")
     if item then
         if status then
-            item.CurrentStage = 1
+            item.CurrentStage = 2
         else
-            item.CurrentStage = 0
+            item.CurrentStage = item.CurrentStage
         end
     end
 end
@@ -335,9 +474,9 @@ function updateShovelIndicatorStatus(status)
     local item = Tracker:FindObjectForCode("shovel")
     if item then
         if status then
-            item.CurrentStage = 1
+            item.CurrentStage = 2
         else
-            item.CurrentStage = 0
+            item.CurrentStage = item.CurrentStage
         end
     end
 end
@@ -346,9 +485,9 @@ function updateMushroomStatus(status)
     local item = Tracker:FindObjectForCode("mushroom")
     if item then
         if status then
-            item.CurrentStage = 1
+            item.CurrentStage = 2
         else
-            item.CurrentStage = 0
+            item.CurrentStage = item.CurrentStage
         end
     end
 end
@@ -444,6 +583,7 @@ function updateRoomsFromMemorySegment(segment)
     end    
 
     updateSectionChestCountFromRoomSlotList(segment, "@Lightworld/Link's House/Chest", { { 0, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Lightworld/Link's House/Chest", { { 260, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, "@Lightworld/Kakariko Well/Well Items", { { 47, 5 }, { 47, 6 }, { 47, 7 }, { 47, 8 } })
     updateSectionChestCountFromRoomSlotList(segment, "@Lightworld/Kakariko Well/Back Chest", { { 47, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, "@Dark Death Mountain Right/Hookshot Cave/Bottom Right Chest", { { 60, 7 } })
@@ -462,7 +602,7 @@ function updateRoomsFromMemorySegment(segment)
     updateSectionChestCountFromRoomSlotList(segment, "@Darkworld Left/Brewery (Glory Hole)/Brewery", { { 262, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, "@Darkworld Left/Chest Game (Money Making Game)/Chest Game", { { 262, 10 } })
     updateSectionChestCountFromRoomSlotList(segment, "@Lightworld/Chicken Hut/Chicken Hut", { { 264, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, "Lightworld/Aginah's Cave/Aginah's Cave", { { 266, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@Lightworld/Aginah's Cave/Aginah's Cave", { { 266, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, "@Lightworld/Dam/Dam Chest", { { 267, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, "@Light Death Mountain Right/Mimic Cave/Mimic Cave Chest", { { 268, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, "@Darkworld Swamp/Mire Shed/Shed", { { 269, 4 }, { 269, 5 } })
@@ -499,7 +639,7 @@ function updateRoomsFromMemorySegment(segment)
     updateSectionChestCountFromRoomSlotList(segment, "@EP/Eastern Palace/Boss Item", { { 200, 11 } })
     updateSectionChestCountFromRoomSlotList(segment, "@DP/Desert Palace/Dungeon Chest", { { 133, 4 },{ 115, 4 },{ 115, 5 },{ 116, 4 },{ 117, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, "@DP Back/Desert Palace Back/Boss Item", { { 51, 11 } })
-    updateSectionChestCountFromRoomSlotList(segment, "@ToH/Tower of Hera/Lowe", { { 119, 4 },{ 135, 4 },{ 135, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, "@ToH/Tower of Hera/Lower", { { 119, 4 },{ 135, 4 },{ 135, 10 } })
     updateSectionChestCountFromRoomSlotList(segment, "@ToH/Tower of Hera/Upper", { { 39, 4 },{ 39, 5 } })
     updateSectionChestCountFromRoomSlotList(segment, "@ToH/Tower of Hera/Boss Item", { { 7, 11 } })
     updateSectionChestCountFromRoomSlotList(segment, "@PoD/Palace of Darkness/Dungeon Chest", { 
@@ -534,7 +674,7 @@ function updateRoomsFromMemorySegment(segment)
     updateSectionChestCountFromRoomSlotList(segment, "@TR/Turtle Rock Front/Dungeon Chest", { 
         { 214, 4 },{ 182, 4 },{ 183, 4 },{ 183, 5 },{ 20, 4 }
      })
-     pdateSectionChestCountFromRoomSlotList(segment, "@TR/Turtle Rock Back/Dungeon Chest", { 
+    updateSectionChestCountFromRoomSlotList(segment, "@TR/Turtle Rock Back/Dungeon Chest", { 
        { 213, 4 },{ 213, 5 },{ 213, 6 },{ 213, 7 },{ 36, 4 },{ 4,4 }
      })
     updateSectionChestCountFromRoomSlotList(segment, "@TR/Turtle Rock Back/Boss Item", { { 164, 11 } })
@@ -581,28 +721,28 @@ function updateItemsFromMemorySegment(segment)
 
     if AUTOTRACKER_ENABLE_ITEM_TRACKING then
 
-        updateProgressiveItemFromByte(segment, "sword",  0x7ef359, 1)
+        updateProgressiveItemFromByte(segment, "sword",  0x7ef359, 0)
         updateProgressiveItemFromByte(segment, "shield", 0x7ef35a, 0)
         updateProgressiveItemFromByte(segment, "armor",  0x7ef35b, 0)
-        updateProgressiveItemFromByte(segment, "gloves", 0x7ef354, 0)
+        updateProgressiveItemFromByte(segment, "glove",  0x7ef354, 0)
 
-        updateToggleItemFromByte(segment, "hookshot",  0x7ef342)
-        updateToggleItemFromByte(segment, "bombs",     0x7ef343)
-        updateToggleItemFromByte(segment, "firerod",   0x7ef345)
-        updateToggleItemFromByte(segment, "icerod",    0x7ef346)
-        updateToggleItemFromByte(segment, "bombos",    0x7ef347)
-        updateToggleItemFromByte(segment, "ether",     0x7ef348)
-        updateToggleItemFromByte(segment, "quake",     0x7ef349)
-        updateToggleItemFromByte(segment, "lamp",      0x7ef34a)
-        updateToggleItemFromByte(segment, "hammer",    0x7ef34b)
-        updateToggleItemFromByte(segment, "bug_net",       0x7ef34d)
-        updateToggleItemFromByte(segment, "book",      0x7ef34e)
-        updateToggleItemFromByte(segment, "somaria",   0x7ef350)
-        updateToggleItemFromByte(segment, "byrna",     0x7ef351)
-        updateToggleItemFromByte(segment, "cape",      0x7ef352)
-        updateToggleItemFromByte(segment, "boots",     0x7ef355)
-        updateToggleItemFromByte(segment, "flippers",  0x7ef356)
-        updateToggleItemFromByte(segment, "pearl",     0x7ef357)
+        updateToggleItemFromByte(segment, "hookshot",   0x7ef342)
+        updateToggleItemFromByte(segment, "bombs",      0x7ef343)
+        updateToggleItemFromByte(segment, "firerod",    0x7ef345)
+        updateToggleItemFromByte(segment, "icerod",     0x7ef346)
+        updateToggleItemFromByte(segment, "bombos",     0x7ef347)
+        updateToggleItemFromByte(segment, "ether",      0x7ef348)
+        updateToggleItemFromByte(segment, "quake",      0x7ef349)
+        updateToggleItemFromByte(segment, "lamp",       0x7ef34a)
+        updateToggleItemFromByte(segment, "hammer",     0x7ef34b)
+        updateToggleItemFromByte(segment, "bug_net",    0x7ef34d)
+        updateToggleItemFromByte(segment, "book",       0x7ef34e)
+        updateToggleItemFromByte(segment, "somaria",    0x7ef350)
+        updateToggleItemFromByte(segment, "byrna",      0x7ef351)
+        updateToggleItemFromByte(segment, "cape",       0x7ef352)
+        updateToggleItemFromByte(segment, "boots",      0x7ef355)
+        updateToggleItemFromByte(segment, "flippers",   0x7ef356)
+        updateToggleItemFromByte(segment, "pearl",      0x7ef357)
         updateToggleItemFromByte(segment, "half_magic", 0x7ef37b)
 
         updateToggleItemFromByteAndFlag(segment, "blueboomerang", 0x7ef38c, 0x80) -- blue banana
@@ -709,6 +849,7 @@ function updateHeartContainersFromMemorySegment(segment)
             end
 
             containers.AcquiredCount = maxHealth - (pieces.AcquiredCount // 4)
+            pieces.CurrentStage = pieces.AcquiredCount % 4
         end
     end
 end
@@ -772,4 +913,6 @@ ScriptHost:AddMemoryWatch("LTTP Overworld Event Data", 0x7ef280, 0x82, updateOve
 ScriptHost:AddMemoryWatch("LTTP NPC Item Data", 0x7ef410, 2, updateNPCItemFlagsFromMemorySegment)
 ScriptHost:AddMemoryWatch("LTTP Heart Piece Data", 0x7ef448, 1, updateHeartPiecesFromMemorySegment)
 ScriptHost:AddMemoryWatch("LTTP Heart Container Data", 0x7ef36c, 1, updateHeartContainersFromMemorySegment)
+ScriptHost:AddMemoryWatch("LTTP Upgrade updater", 0x7ef370, 2, updateBowAndBombUpgrade)
 ScriptHost:AddMemoryWatch("LTTP Chest Key Data", 0x7ef4e0, 32, updateChestKeysFromMemorySegment)
+-- ScriptHost:AddMemoryWatch("LTTP Settings", 0x180000, 250, autofillSettings)
