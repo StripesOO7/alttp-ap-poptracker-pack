@@ -420,7 +420,7 @@ function updateSectionChestCountFromOverworldIndexAndFlag(segment, locationRef, 
 end
 
 function updateSectionChestCountFromRoomSlotList(segment, locationRefList, roomSlots, callback)
-    for _ locationRef in pairs locationRedList do
+    for h,locationRef in pairs(locationRefList) do
         local location = Tracker:FindObjectForCode(locationRef)
         if location then
             -- Do not auto-track this the user has manually modified it
@@ -433,7 +433,7 @@ function updateSectionChestCountFromRoomSlotList(segment, locationRefList, roomS
                 local roomData = ReadU16(segment, 0x7ef000 + (slot[1] * 2))
 
                 if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
-                    print(locationRef, roomData, 1 << slot[2])
+                    print(locationRef, roomData, 1 << slot[2], roomData & (1 << slot[2]), location.AvailableChestCount)
                 end
                     
                 if (roomData & (1 << slot[2])) ~= 0 then
@@ -630,7 +630,7 @@ function updateRoomsFromMemorySegment(segment)
     -- updateSectionChestCountFromRoomSlotList(segment, {"@HC/Hyrule Castle/Map Chest"}, { { 114, 4 } })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@HC/Hyrule Castle/Zelda's Chest"}, { { 128, 4 } })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@CE/Castle Escape/Dark Cross"}, { { 50, 4 } })
-    -- updateSectionChestCountFromRoomSlotList(segment, {"@CE/Castle Escape/Secret Room"}, {  { 17, 4 },{ 17, 5 },{ 17, 6 }, })
+    updateSectionChestCountFromRoomSlotList(segment, {"@CE/Castle Escape/Secret Room"}, {  { 17, 4 },{ 17, 5 },{ 17, 6 }, })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@CE/Sanctuary/Sanctuary Chest"}, { { 18, 4 } })
 
     updateSectionChestCountFromRoomSlotList(segment, {"@HC/Hyrule Castle/Boomerang Chest","@Hyrule Castle/Boomerang Chest/Boomerang Chest"}, { { 113, 4 } })
@@ -638,9 +638,9 @@ function updateRoomsFromMemorySegment(segment)
     updateSectionChestCountFromRoomSlotList(segment, {"@HC/Hyrule Castle/Zelda's Chest","@Hyrule Castle/Zelda's Chest/Zelda's Chest"}, { { 128, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@CE/Castle Escape/Dark Cross","@Castle Escape/Dark Cross/Dark Cross"}, { { 50, 4 } })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@Hyrule Castle & Sanctuary/Escape"}, { { 113, 4 },{ 114, 4 },{ 128, 4 },{ 50, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@CE/Castle Escape/Secret Room","@Castle Escape/Secret Passage Left/Secret Passage Left"}, {  { 17, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@CE/Castle Escape/Secret Room","@Castle Escape/Secret Passage Middle/Secret Passage Middle"}, { { 17, 5 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@CE/Castle Escape/Secret Room","@Castle Escape/Secret Passage Right/Secret Passage Right"}, {  { 17, 6 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Castle Escape/Secret Passage Left/Secret Passage Left"}, {  { 17, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Castle Escape/Secret Passage Middle/Secret Passage Middle"}, { { 17, 5 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Castle Escape/Secret Passage Right/Secret Passage Right"}, {  { 17, 6 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@CE/Sanctuary/Sanctuary Chest","@Sanctuary/Sanctuary Chest/Sanctuary Chest"}, { { 18, 4 } })
 
     -- Agahni's Tower
@@ -654,224 +654,224 @@ function updateRoomsFromMemorySegment(segment)
     
 
     -- Eastern palace
-    -- updateSectionChestCountFromRoomSlotList(segment, {"@EP/Eastern Palace/Dungeon Chest"}, { { 185, 4 }, { 168, 4 }, { 169, 4 }, { 170, 4 }, { 184, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@EP/Eastern Palace/Dungeon Chest"}, { { 185, 4 }, { 168, 4 }, { 169, 4 }, { 170, 4 }, { 184, 4 } })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@EP/Eastern Palace/Boss Item"}, { { 200, 11 } })
 
-    updateSectionChestCountFromRoomSlotList(segment, {"@EP/Eastern Palace/Dungeon Chest","@Eastern Palace/Compass Chest/Compass Chest","@Eastern Palace/vanilla Compass Chest/Compass Chest"}, { { 168, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@EP/Eastern Palace/Dungeon Chest","@Eastern Palace/Big Chest/Big Chest"}, { { 169, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@EP/Eastern Palace/Dungeon Chest","@Eastern Palace/Map Chest/Map Chest","@Eastern Palace/vanilla Map Chest/Map Chest"}, { { 170, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment,  {"@EP/Eastern Palace/Dungeon Chest","@Eastern Palace/Cannonball Chest/Cannonball Chest"}, { { 185, 4 }})
-    updateSectionChestCountFromRoomSlotList(segment, {"@EP/Eastern Palace/Dungeon Chest","@Eastern Palace/Big Key Chest/Big Key Chest","@Eastern Palace/vanilla Big Key Chest/Big Key Chest"}, { { 184, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@EP/Eastern Palace/Boss Item", "@Eastern Palace/Boss/Boss Item", "ep_boss", "easternpalace"}, { { 200, 11 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Eastern Palace/Compass Chest/Compass Chest","@Eastern Palace/vanilla Compass Chest/Compass Chest"}, { { 168, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Eastern Palace/Big Chest/Big Chest"}, { { 169, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Eastern Palace/Map Chest/Map Chest","@Eastern Palace/vanilla Map Chest/Map Chest"}, { { 170, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment,  {"@Eastern Palace/Cannonball Chest/Cannonball Chest"}, { { 185, 4 }})
+    updateSectionChestCountFromRoomSlotList(segment, {"@Eastern Palace/Big Key Chest/Big Key Chest","@Eastern Palace/vanilla Big Key Chest/Big Key Chest"}, { { 184, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@EP/Eastern Palace/Boss Item", "@Eastern Palace/Boss/Boss Item"}, { { 200, 11 } })
 
     --Desert Palace
     updateSectionChestCountFromRoomSlotList(segment, {"@DP/Desert Palace/Dungeon Chest"}, { { 133, 4 },{ 115, 4 },{ 115, 5 },{ 116, 4 },{ 117, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@DP Back/Desert Palace Back/Boss Item"}, { { 51, 11 } })
+    -- updateSectionChestCountFromRoomSlotList(segment, {"@DP Back/Desert Palace Back/Boss Item"}, { { 51, 11 } })
 
-    updateSectionChestCountFromRoomSlotList(segment, {"@DP/Desert Palace/Dungeon Chest","@Desert Palace/Compass Chest/Compass Chest","@Desert Palace/vanilla Compass Chest/Compass Chest"}, { { 133, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@DP/Desert Palace/Dungeon Chest","@Desert Palace/Big Chest/Big Chest","@Desert Palace/Big Chest/Big Chest"}, { { 115, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@DP/Desert Palace/Dungeon Chest","@Desert Palace/Torch/Torch"}, { { 115, 5 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@DP/Desert Palace/Dungeon Chest","@Desert Palace/Map Chest/Map Chest","@Desert Palace/vanilla Map Chest/Map Chest"}, { { 116, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@DP/Desert Palace/Dungeon Chest","@Desert Palace/Big Key Chest/Big Key Chest","@Desert Palace/vanilla Big Key Chest/Big Key Chest"}, { { 117, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@DP Back/Desert Palace Back/Boss Item","@Desert Palace Back/Boss/Boss Item", "dp_boss", "desertpalace"}, { { 51, 11 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Desert Palace/Compass Chest/Compass Chest","@Desert Palace/vanilla Compass Chest/Compass Chest"}, { { 133, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Desert Palace/Big Chest/Big Chest"}, { { 115, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Desert Palace/Torch/Torch"}, { { 115, 5 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Desert Palace/Map Chest/Map Chest","@Desert Palace/vanilla Map Chest/Map Chest"}, { { 116, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Desert Palace/Big Key Chest/Big Key Chest","@Desert Palace/vanilla Big Key Chest/Big Key Chest"}, { { 117, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@DP Back/Desert Palace Back/Boss Item","@Desert Palace Back/Boss/Boss Item"}, { { 51, 11 } })
 
     -- Tower of Hera
-    -- updateSectionChestCountFromRoomSlotList(segment, {"@ToH/Tower of Hera/Lower"}, { { 119, 4 },{ 135, 4 },{ 135, 10 } })
-    -- updateSectionChestCountFromRoomSlotList(segment, {"@ToH/Tower of Hera/Upper"}, { { 39, 4 },{ 39, 5 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@ToH/Tower of Hera/Lower"}, { { 119, 4 },{ 135, 4 },{ 135, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@ToH/Tower of Hera/Upper"}, { { 39, 4 },{ 39, 5 } })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@ToH/Tower of Hera/Boss Item"}, { { 7, 11 } })
 
-    updateSectionChestCountFromRoomSlotList(segment, {"@ToH/Tower of Hera/Lower","@Tower of Hera/Big Key Chest/Big Key Chest","@Tower of Hera/vanilla Big Key Chest/Big Key Chest"}, { { 119, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@ToH/Tower of Hera/Lower","@Tower of Hera/Map Chest/Map Chest","@Tower of Hera/vanilla Map Chest/Map Chest"}, { { 135, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@ToH/Tower of Hera/Lower","@Tower of Hera/Basement Cage/Basement Cage"}, { { 135, 10 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@ToH/Tower of Hera/Upper","@Tower of Hera/Compass Chest/Compass Chest","@Tower of Hera/vanilla Compass Chest/Compass Chest"}, { { 39, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@ToH/Tower of Hera/Upper","@Tower of Hera/Big Chest/Big Chest"}, { { 39, 5 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@ToH/Tower of Hera/Boss Item","@Tower of Hera/Boss/Boss Item", "toh_boss", "towerofhera"}, { { 7, 11 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Tower of Hera/Big Key Chest/Big Key Chest","@Tower of Hera/vanilla Big Key Chest/Big Key Chest"}, { { 119, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Tower of Hera/Map Chest/Map Chest","@Tower of Hera/vanilla Map Chest/Map Chest"}, { { 135, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Tower of Hera/Basement Cage/Basement Cage"}, { { 135, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Tower of Hera/Compass Chest/Compass Chest","@Tower of Hera/vanilla Compass Chest/Compass Chest"}, { { 39, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Tower of Hera/Big Chest/Big Chest"}, { { 39, 5 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@ToH/Tower of Hera/Boss Item","@Tower of Hera/Boss/Boss Item"}, { { 7, 11 } })
 
     -- Palace of Darkness
-    -- updateSectionChestCountFromRoomSlotList(segment, {"@PoD/Palace of Darkness/Dungeon Chest"}, { 
-    --     { 58, 4 },{ 42, 4 },{ 42, 5 },{ 43, 4 },{ 25, 4 },{ 25, 5 },{ 26, 4 },
-    --     { 26, 5 },{ 26, 6 },{ 9, 4 },{ 10, 4 },{ 106, 4 },{ 106, 5 } 
-    -- })
+    updateSectionChestCountFromRoomSlotList(segment, {"@PoD/Palace of Darkness/Dungeon Chest"}, { 
+        { 58, 4 },{ 42, 4 },{ 42, 5 },{ 43, 4 },{ 25, 4 },{ 25, 5 },{ 26, 4 },
+        { 26, 5 },{ 26, 6 },{ 9, 4 },{ 10, 4 },{ 106, 4 },{ 106, 5 } 
+    })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@PoD/Palace of Darkness/Boss Item"}, { { 90, 11 } })
 
-    updateSectionChestCountFromRoomSlotList(segment, {"@PoD/Palace of Darkness/Dungeon Chest","@Palace of Darkness/Big Key Chest/Big Key Chest","@Palace of Darkness/vanilla Big Key Chest/Big Key Chest"}, { { 58, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@PoD/Palace of Darkness/Dungeon Chest","@Palace of Darkness/The Arena Bridge/Bridge"}, { { 42, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@PoD/Palace of Darkness/Dungeon Chest","@Palace of Darkness/The Arena Ledge/Ledge"}, { { 42, 5 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@PoD/Palace of Darkness/Dungeon Chest","@Palace of Darkness/Map Chest/Map Chest","@Palace of Darkness/vanilla Map Chest/Map Chest"}, { { 43, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@PoD/Palace of Darkness/Dungeon Chest","@Palace of Darkness/Dark Maze Top/Dark Maze Top"}, { { 25, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@PoD/Palace of Darkness/Dungeon Chest","@Palace of Darkness/Dark Maze Bottom/Dark Maze Bottom"}, { { 25, 5 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@PoD/Palace of Darkness/Dungeon Chest","@Palace of Darkness/Big Chest/Big Chest"}, { { 26, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@PoD/Palace of Darkness/Dungeon Chest","@Palace of Darkness/Compass Chest/Compass Chest","@Palace of Darkness/vanilla Compass Chest/Compass Chest"}, { { 26, 5 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@PoD/Palace of Darkness/Dungeon Chest","@Palace of Darkness/Harmless Hellway/Harmless Hellway"}, { { 26, 6 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@PoD/Palace of Darkness/Dungeon Chest","@Palace of Darkness/Shooter Room/Shooter Room"}, {  { 9, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@PoD/Palace of Darkness/Dungeon Chest","@Palace of Darkness/Stalfos Basement/Stalfos Basement"}, { { 10, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@PoD/Palace of Darkness/Dungeon Chest","@Palace of Darkness/Dark Basement Left/Dark Basement Left"}, {{ 106, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@PoD/Palace of Darkness/Dungeon Chest","@Palace of Darkness/Dark Basement Right/Dark Basement Right"}, {{ 106, 5 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@PoD/Palace of Darkness/Boss Item","@Palace of Darkness/Boss/Boss Item", "pod_boss", "palaceofdarkness"}, { { 90, 11 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Palace of Darkness/Big Key Chest/Big Key Chest","@Palace of Darkness/vanilla Big Key Chest/Big Key Chest"}, { { 58, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Palace of Darkness/The Arena Bridge/Bridge"}, { { 42, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Palace of Darkness/The Arena Ledge/Ledge"}, { { 42, 5 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Palace of Darkness/Map Chest/Map Chest","@Palace of Darkness/vanilla Map Chest/Map Chest"}, { { 43, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Palace of Darkness/Dark Maze Top/Dark Maze Top"}, { { 25, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Palace of Darkness/Dark Maze Bottom/Dark Maze Bottom"}, { { 25, 5 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Palace of Darkness/Big Chest/Big Chest"}, { { 26, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Palace of Darkness/Compass Chest/Compass Chest","@Palace of Darkness/vanilla Compass Chest/Compass Chest"}, { { 26, 5 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Palace of Darkness/Harmless Hellway/Harmless Hellway"}, { { 26, 6 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Palace of Darkness/Shooter Room/Shooter Room"}, {  { 9, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Palace of Darkness/Stalfos Basement/Stalfos Basement"}, { { 10, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Palace of Darkness/Dark Basement Left/Dark Basement Left"}, {{ 106, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Palace of Darkness/Dark Basement Right/Dark Basement Right"}, {{ 106, 5 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@PoD/Palace of Darkness/Boss Item","@Palace of Darkness/Boss/Boss Item"}, { { 90, 11 } })
 
     -- Swamp Palace
     -- updateSectionChestCountFromRoomSlotList(segment, {"@SP/Swamp Palace/Dungeon Chest"}, { { 40, 4 } }) -- entrance
     -- updateSectionChestCountFromRoomSlotList(segment, {"@SP/Swamp Palace/Dungeon Chest"}, { { 55, 4 } }) --bombable wall
-    -- updateSectionChestCountFromRoomSlotList(segment, {"@SP/Swamp Palace/Dungeon Chest"}, { 
-    --     { 54, 4 },{ 53, 4 },{ 52, 4 },{ 70, 4 },{ 118, 4 },{ 118, 5 },{ 102, 4 } 
-    -- })
+    updateSectionChestCountFromRoomSlotList(segment, {"@SP/Swamp Palace/Dungeon Chest"}, { 
+        { 40, 4 },{ 55, 4 },{ 54, 4 },{ 53, 4 },{ 52, 4 },{ 70, 4 },{ 118, 4 },{ 118, 5 },{ 102, 4 } 
+    })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@SP/Swamp Palace/Boss Item"}, { { 6, 11 } })
 
-    updateSectionChestCountFromRoomSlotList(segment, {"@SP/Swamp Palace/Dungeon Chest","@Swamp Palace/Entrance/Entrance"}, { { 40, 4 } }) -- entrance
-    updateSectionChestCountFromRoomSlotList(segment, {"@SP/Swamp Palace/Dungeon Chest","@Swamp Palace/Map Chest/Map Chest","@Swamp Palace/vanilla Map Chest/Map Chest"}, { { 55, 4 } }) --bombable wall
-    updateSectionChestCountFromRoomSlotList(segment, {"@SP/Swamp Palace/Dungeon Chest","@Swamp Palace/Big Chest/Big Chest"}, { { 54, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@SP/Swamp Palace/Dungeon Chest","@Swamp Palace/Big Key Chest/Big Key Chest","@Swamp Palace/vanilla Big Key Chest/Big Key Chest"}, { { 53, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@SP/Swamp Palace/Dungeon Chest","@Swamp Palace/West Chest/West Chest"}, { { 52, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@SP/Swamp Palace/Dungeon Chest","@Swamp Palace/Compass Chest/Compass Chest","@Swamp Palace/vanilla Compass Chest/Compass Chest"}, { { 70, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@SP/Swamp Palace/Dungeon Chest","@Swamp Palace/Flooded Room Left/Flooded Room Left"}, { { 118, 4 }})
-    updateSectionChestCountFromRoomSlotList(segment, {"@SP/Swamp Palace/Dungeon Chest","@Swamp Palace/Flooded Room Right/Flooded Room Right"}, { { 118, 5 }})
-    updateSectionChestCountFromRoomSlotList(segment, {"@SP/Swamp Palace/Dungeon Chest","@Swamp Palace/Waterfall Room/Waterfall Room"}, { { 102, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Swamp Palace/Entrance/Entrance"}, { { 40, 4 } }) -- entrance
+    updateSectionChestCountFromRoomSlotList(segment, {"@Swamp Palace/Map Chest/Map Chest","@Swamp Palace/vanilla Map Chest/Map Chest"}, { { 55, 4 } }) --bombable wall
+    updateSectionChestCountFromRoomSlotList(segment, {"@Swamp Palace/Big Chest/Big Chest"}, { { 54, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Swamp Palace/Big Key Chest/Big Key Chest","@Swamp Palace/vanilla Big Key Chest/Big Key Chest"}, { { 53, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Swamp Palace/West Chest/West Chest"}, { { 52, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Swamp Palace/Compass Chest/Compass Chest","@Swamp Palace/vanilla Compass Chest/Compass Chest"}, { { 70, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Swamp Palace/Flooded Room Left/Flooded Room Left"}, { { 118, 4 }})
+    updateSectionChestCountFromRoomSlotList(segment, {"@Swamp Palace/Flooded Room Right/Flooded Room Right"}, { { 118, 5 }})
+    updateSectionChestCountFromRoomSlotList(segment, {"@Swamp Palace/Waterfall Room/Waterfall Room"}, { { 102, 4 } })
     
-    updateSectionChestCountFromRoomSlotList(segment, {"@SP/Swamp Palace/Boss Item","@Swamp Palace/Boss/Boss Item", "sp_boss", "swamppalace"}, { { 6, 11 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@SP/Swamp Palace/Boss Item","@Swamp Palace/Boss/Boss Item"}, { { 6, 11 } })
 
     -- Skull Woods
-    -- updateSectionChestCountFromRoomSlotList(segment, {"@SW/Skull Woods Front/Dungeon Chest"}, { 
-    --     { 103, 4 },{ 104, 4 },{ 87, 4 },{ 87, 5 },{ 88, 4 },{ 88, 5 }
-    -- })
+    updateSectionChestCountFromRoomSlotList(segment, {"@SW/Skull Woods Front/Dungeon Chest"}, { 
+        { 103, 4 },{ 104, 4 },{ 87, 4 },{ 87, 5 },{ 88, 4 },{ 88, 5 }
+    })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@SW/Skull Woods Back/Dungeon Chest"}, { { 89, 4 } })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@SW/Skull Woods Back/Boss Item"}, { { 41, 11 } })
 
-    updateSectionChestCountFromRoomSlotList(segment, {"@SW/Skull Woods Front/Dungeon Chest","@Skull Woods Front/Compass Chest/Compass Chest","@Skull Woods Front/vanilla Compass Chest/Compass Chest"}, { { 103, 4 }})
-    updateSectionChestCountFromRoomSlotList(segment, {"@SW/Skull Woods Front/Dungeon Chest","@Skull Woods Front/Pinball Room/Pinball Room"}, { { 104, 4 }})
-    updateSectionChestCountFromRoomSlotList(segment, {"@SW/Skull Woods Front/Dungeon Chest","@Skull Woods Front/Big Key Chest/Big Key Chest","@Skull Woods Front/vanilla Big Key Chest/Big Key Chest"}, { { 87, 4 }})
-    updateSectionChestCountFromRoomSlotList(segment, {"@SW/Skull Woods Front/Dungeon Chest","@Skull Woods Front/Pot Prison/Pot Prison"}, { { 87, 5 }})
-    updateSectionChestCountFromRoomSlotList(segment, {"@SW/Skull Woods Front/Dungeon Chest","@Skull Woods Front/Big Chest/Big Chest"}, { { 88, 4 }})
-    updateSectionChestCountFromRoomSlotList(segment, {"@SW/Skull Woods Front/Dungeon Chest","@Skull Woods Front/Map Chest/Map Chest","@Skull Woods Front/vanilla Map Chest/Map Chest"}, { { 88, 5 }})
-    updateSectionChestCountFromRoomSlotList(segment, {"@SW/Skull Woods Back/Dungeon Chest","@Skull Woods Back/Bridge Room/Bridge Room"},, { { 89, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@SW/Skull Woods Back/Boss Item","@Skull Woods Back/Boss/Boss Item", "sw_boss", "skullwoods"}, { { 41, 11 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Skull Woods Front/Compass Chest/Compass Chest","@Skull Woods Front/vanilla Compass Chest/Compass Chest"}, { { 103, 4 }})
+    updateSectionChestCountFromRoomSlotList(segment, {"@Skull Woods Front/Pinball Room/Pinball Room"}, { { 104, 4 }})
+    updateSectionChestCountFromRoomSlotList(segment, {"@Skull Woods Front/Big Key Chest/Big Key Chest","@Skull Woods Front/vanilla Big Key Chest/Big Key Chest"}, { { 87, 4 }})
+    updateSectionChestCountFromRoomSlotList(segment, {"@Skull Woods Front/Pot Prison/Pot Prison"}, { { 87, 5 }})
+    updateSectionChestCountFromRoomSlotList(segment, {"@Skull Woods Front/Big Chest/Big Chest"}, { { 88, 4 }})
+    updateSectionChestCountFromRoomSlotList(segment, {"@Skull Woods Front/Map Chest/Map Chest","@Skull Woods Front/vanilla Map Chest/Map Chest"}, { { 88, 5 }})
+    updateSectionChestCountFromRoomSlotList(segment, {"@SW/Skull Woods Back/Dungeon Chest","@Skull Woods Back/Bridge Room/Bridge Room"}, { { 89, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@SW/Skull Woods Back/Boss Item","@Skull Woods Back/Boss/Boss Item"}, { { 41, 11 } })
 
     -- Thieves Town
-    -- updateSectionChestCountFromRoomSlotList(segment, {"@TT/Thieves Town/Front"}, { { 203, 4 }, { 219, 4 }, { 219, 5 }, { 220, 4 } })
-    -- updateSectionChestCountFromRoomSlotList(segment, {"@TT/Thieves Town/Back"}, { { 101, 4 }, { 69, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@TT/Thieves Town/Front"}, { { 203, 4 }, { 219, 4 }, { 219, 5 }, { 220, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@TT/Thieves Town/Back"}, { { 101, 4 }, { 69, 4 }, { 68, 4 } })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@TT/Thieves Town/Back"}, { { 68, 4 } }) --big chest
     -- updateSectionChestCountFromRoomSlotList(segment, {"@TT/Thieves Town/Boss Item"}, { { 172, 11 } })
 
-    updateSectionChestCountFromRoomSlotList(segment, {"@TT/Thieves Town/Front","@Thieves Town Front/Ambush Chest/Ambush Chest"}, { { 203, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@TT/Thieves Town/Front","@Thieves Town Front/Map Chest/Map Chest","@Thieves Town Front/vanilla Map Chest/Map Chest"}, { { 219, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@TT/Thieves Town/Front","@Thieves Town Front/Big Key Chest/Big Key Chest","@Thieves Town Front/vanilla Big Key Chest/Big Key Chest"}, { { 219, 5 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@TT/Thieves Town/Front","@Thieves Town Front/Compass Chest/Compass Chest","@Thieves Town Front/vanilla Compass Chest/Compass Chest"}, { { 220, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@TT/Thieves Town/Back","@Thieves Town Back/Attic/Attic"}, { { 101, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@TT/Thieves Town/Back","@Thieves Town Back/Blind's Cell/Blind's Cell"}, { { 69, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@TT/Thieves Town/Back","@Thieves Town Back/Big Chest/Big Chest"}, { { 68, 4 } }) --big chest
-    updateSectionChestCountFromRoomSlotList(segment, {"@TT/Thieves Town/Boss Item","@Thieves Town Back/Boss/Boss Item", "tt_boss", "thievestown"}, { { 172, 11 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Thieves Town Front/Ambush Chest/Ambush Chest"}, { { 203, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Thieves Town Front/Map Chest/Map Chest","@Thieves Town Front/vanilla Map Chest/Map Chest"}, { { 219, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Thieves Town Front/Big Key Chest/Big Key Chest","@Thieves Town Front/vanilla Big Key Chest/Big Key Chest"}, { { 219, 5 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Thieves Town Front/Compass Chest/Compass Chest","@Thieves Town Front/vanilla Compass Chest/Compass Chest"}, { { 220, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Thieves Town Back/Attic/Attic"}, { { 101, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Thieves Town Back/Blind's Cell/Blind's Cell"}, { { 69, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Thieves Town Back/Big Chest/Big Chest"}, { { 68, 4 } }) --big chest
+    updateSectionChestCountFromRoomSlotList(segment, {"@TT/Thieves Town/Boss Item","@Thieves Town Back/Boss/Boss Item"}, { { 172, 11 } })
 
     -- Ice Palace
-    -- updateSectionChestCountFromRoomSlotList(segment, {"@IP/Ice Palace/Dungeon Chest"}, { 
-    --     { 174, 4 },{ 158, 4 },{ 126, 4 },{ 95, 4 },{ 63, 4 },{ 46, 4 },{ 31, 4 }
-    -- })
+    updateSectionChestCountFromRoomSlotList(segment, {"@IP/Ice Palace/Dungeon Chest"}, { 
+        { 174, 4 },{ 158, 4 },{ 126, 4 },{ 95, 4 },{ 63, 4 },{ 46, 4 },{ 31, 4 }
+    })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@IP/Ice Palace/Boss Item"}, { { 222, 11 } })
 
-    updateSectionChestCountFromRoomSlotList(segment, {"@IP/Ice Palace/Dungeon Chest","@Ice Palace/Iced T Room/Iced T Room"}, { { 174, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@IP/Ice Palace/Dungeon Chest","@Ice Palace/Big Chest/Big Chest"}, { { 158, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@IP/Ice Palace/Dungeon Chest","@Ice Palace/Freezor Chest/Freezor Chest"}, { { 126, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@IP/Ice Palace/Dungeon Chest","@Ice Palace/Spike Room/Spike Room"}, { { 95, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@IP/Ice Palace/Dungeon Chest","@Ice Palace/Map Chest/Map Chest","@Ice Palace/vanilla Map Chest/Map Chest"}, { { 63, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@IP/Ice Palace/Dungeon Chest","@Ice Palace/Compass Chest/Compass Chest","@Ice Palace/vanilla Compass Chest/Compass Chest"}, { { 46, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@IP/Ice Palace/Dungeon Chest","@Ice Palace/Big Key Chest/Big Key Chest","@Ice Palace/vanilla Big Key Chest/Big Key Chest"}, { { 31, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@IP/Ice Palace/Boss Item","@Ice Palace/Boss/Boss Item", "ip_boss", "icepalace"}, { { 222, 11 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ice Palace/Iced T Room/Iced T Room"}, { { 174, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ice Palace/Big Chest/Big Chest"}, { { 158, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ice Palace/Freezor Chest/Freezor Chest"}, { { 126, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ice Palace/Spike Room/Spike Room"}, { { 95, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ice Palace/Map Chest/Map Chest","@Ice Palace/vanilla Map Chest/Map Chest"}, { { 63, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ice Palace/Compass Chest/Compass Chest","@Ice Palace/vanilla Compass Chest/Compass Chest"}, { { 46, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ice Palace/Big Key Chest/Big Key Chest","@Ice Palace/vanilla Big Key Chest/Big Key Chest"}, { { 31, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@IP/Ice Palace/Boss Item","@Ice Palace/Boss/Boss Item"}, { { 222, 11 } })
 
     -- Misery Mire
-    -- updateSectionChestCountFromRoomSlotList(segment, {"@MM/Misery Mire/Dungeon Chest"}, { 
-    --     { 162, 4 },{ 179, 4 },{ 193, 4 },{ 194, 4 },{ 195, 4 },{ 195, 5 },{ 209, 4 }
-    -- })
+    updateSectionChestCountFromRoomSlotList(segment, {"@MM/Misery Mire/Dungeon Chest"}, { 
+        { 162, 4 },{ 179, 4 },{ 193, 4 },{ 194, 4 },{ 195, 4 },{ 195, 5 },{ 209, 4 }
+    })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@MM/Misery Mire/Boss Item"}, { { 144, 11 } })
 
-    updateSectionChestCountFromRoomSlotList(segment, {"@MM/Misery Mire/Dungeon Chest","@Misery Mire/Bridge Chest/Bridge Chest"}, { { 162, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@MM/Misery Mire/Dungeon Chest","@Misery Mire/Spike Chest/Spike Chest"}, { { 179, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@MM/Misery Mire/Dungeon Chest","@Misery Mire/Compass Chest/Compass Chest","@Misery Mire/vanilla Compass Chest/Compass Chest"}, { { 193, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@MM/Misery Mire/Dungeon Chest","@Misery Mire/Main Lobby/Main Lobby"}, { { 194, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@MM/Misery Mire/Dungeon Chest","@Misery Mire/","@Misery Mire/vanilla Map Chest/Map Chest"}, { { 195, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@MM/Misery Mire/Dungeon Chest","@Misery Mire/Big Chest/Big Chest"}, { { 195, 5 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@MM/Misery Mire/Dungeon Chest","@Misery Mire/Big Key Chest/Big Key Chest","@Misery Mire/vanilla Big Key Chest/Big Key Chest"}, { { 209, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@MM/Misery Mire/Boss Item","@Misery Mire/Boss/Boss Item", "mm_boss", "miserymire"}, { { 144, 11 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Misery Mire/Bridge Chest/Bridge Chest"}, { { 162, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Misery Mire/Spike Chest/Spike Chest"}, { { 179, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Misery Mire/Compass Chest/Compass Chest","@Misery Mire/vanilla Compass Chest/Compass Chest"}, { { 193, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Misery Mire/Main Lobby/Main Lobby"}, { { 194, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Misery Mire/Map Chest/Map Chest","@Misery Mire/vanilla Map Chest/Map Chest"}, { { 195, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Misery Mire/Big Chest/Big Chest"}, { { 195, 5 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Misery Mire/Big Key Chest/Big Key Chest","@Misery Mire/vanilla Big Key Chest/Big Key Chest"}, { { 209, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@MM/Misery Mire/Boss Item","@Misery Mire/Boss/Boss Item"}, { { 144, 11 } })
 
     -- @todo: split TR into  completable w/o bosskey
     -- Turtle Rock
-    -- updateSectionChestCountFromRoomSlotList(segment, {"@TR/Turtle Rock Front/Dungeon Chest"}, { 
-    --     { 214, 4 },{ 182, 4 },{ 183, 4 },{ 183, 5 },{ 20, 4 }
-    -- })
-    -- updateSectionChestCountFromRoomSlotList(segment, {"@TR/Turtle Rock Back/Dungeon Chest"}, { 
-    --    { 213, 4 },{ 213, 5 },{ 213, 6 },{ 213, 7 },{ 36, 4 },{ 4,4 }
-    -- })
+    updateSectionChestCountFromRoomSlotList(segment, {"@TR/Turtle Rock Front/Dungeon Chest"}, { 
+        { 214, 4 },{ 182, 4 },{ 183, 4 },{ 183, 5 },{ 20, 4 }
+    })
+    updateSectionChestCountFromRoomSlotList(segment, {"@TR/Turtle Rock Back/Dungeon Chest"}, { 
+       { 213, 4 },{ 213, 5 },{ 213, 6 },{ 213, 7 },{ 36, 4 },{ 4,4 }
+    })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@TR/Turtle Rock Back/Boss Item"}, { { 164, 11 } })
 
-    updateSectionChestCountFromRoomSlotList(segment,  {"@TR/Turtle Rock Front/Dungeon Chest","@Turtle Rock Front/Compass Chest/Compass Chest","@Turtle Rock Front/vanilla Compass Chest/Compass Chest"}, { { 214, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@TR/Turtle Rock Front/Dungeon Chest","@Turtle Rock Front/Chain Chomps/Chain Chomps"}, { { 182, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@TR/Turtle Rock Front/Dungeon Chest","@Turtle Rock Front/Map Chest/Map Chest","@Turtle Rock Front/vanilla Map Chest/Map Chest"}, { { 183, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@TR/Turtle Rock Front/Dungeon Chest","@Turtle Rock Front/Roller Room Right/Roller Room Right"}, { { 183, 5 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@TR/Turtle Rock Front/Dungeon Chest","@Turtle Rock Front/Big Key Chest/Big Key Chest","@Turtle Rock Front/vanilla Big Key Chest/Big Key Chest"}, { { 20, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@TR/Turtle Rock Back/Dungeon Chest","@Turtle Rock Back/Eye Bridge Top Left/Eye Bridge Top Left"}, { { 213, 4 }, })
-    updateSectionChestCountFromRoomSlotList(segment, {"@TR/Turtle Rock Back/Dungeon Chest","@Turtle Rock Back/Eye Bridge Top Right/Eye Bridge Top Right"}, { { 213, 5 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@TR/Turtle Rock Back/Dungeon Chest","@Turtle Rock Back/Eye Bridge Bottom Left/Eye Bridge Bottom Left"}, { { 213, 6 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@TR/Turtle Rock Back/Dungeon Chest","@Turtle Rock Back/Eye Bridge Bottom Right/Eye Bridge Bottom Right"}, { { 213, 7 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@TR/Turtle Rock Back/Dungeon Chest","@Turtle Rock Back/Big Chest/Big Chest"}, { { 36, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@TR/Turtle Rock Back/Dungeon Chest","@Turtle Rock Back/Crystalroller Room/Crystalroller Room"}, { { 4,4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@TR/Turtle Rock Back/Boss Item","@Turtle Rock Back/Boss/Boss Item", "tr_boss", "turtlerock"}, { { 164, 11 } })
+    updateSectionChestCountFromRoomSlotList(segment,  {"@Turtle Rock Front/Compass Chest/Compass Chest","@Turtle Rock Front/vanilla Compass Chest/Compass Chest"}, { { 214, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Turtle Rock Front/Chain Chomps/Chain Chomps"}, { { 182, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Turtle Rock Front/Map Chest/Map Chest","@Turtle Rock Front/vanilla Map Chest/Map Chest"}, { { 183, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Turtle Rock Front/Roller Room Right/Roller Room Right"}, { { 183, 5 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Turtle Rock Front/Big Key Chest/Big Key Chest","@Turtle Rock Front/vanilla Big Key Chest/Big Key Chest"}, { { 20, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Turtle Rock Back/Eye Bridge Top Left/Eye Bridge Top Left"}, { { 213, 4 }, })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Turtle Rock Back/Eye Bridge Top Right/Eye Bridge Top Right"}, { { 213, 5 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Turtle Rock Back/Eye Bridge Bottom Left/Eye Bridge Bottom Left"}, { { 213, 6 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Turtle Rock Back/Eye Bridge Bottom Right/Eye Bridge Bottom Right"}, { { 213, 7 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Turtle Rock Back/Big Chest/Big Chest"}, { { 36, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Turtle Rock Back/Crystalroller Room/Crystalroller Room"}, { { 4,4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@TR/Turtle Rock Back/Boss Item","@Turtle Rock Back/Boss/Boss Item"}, { { 164, 11 } })
     
     -- @todo: split GT into right/left side
     -- Ganon's Tower
-    -- updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Leftside"}, {
-    --     { 140, 4 }, { 125, 4 }, { 124, 4 }, { 124, 5 }, { 124, 6 }, { 124, 7 }, 
-    --     { 123, 4 }, { 123, 5 }, { 123, 6 }, { 123, 7 }, { 139, 4 }
-    -- })
-    -- updateSectionChestCountFromRoomSlotList(segment, {"@GT-inverted/Ganon's Tower/Leftside"}, {
-    --     { 140, 4 }, { 125, 4 }, { 124, 4 }, { 124, 5 }, { 124, 6 }, { 124, 7 }, 
-    --     { 123, 4 }, { 123, 5 }, { 123, 6 }, { 123, 7 }, { 139, 4 }
-    -- })
-    -- updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Rightside"}, {
-    --    { 140, 5 }, { 140, 6 }, { 141, 4 }, { 157, 4 }, { 157, 5 }, { 157, 6 }, { 157, 7 }
-    -- })
-    -- updateSectionChestCountFromRoomSlotList(segment, {"@GT-inverted/Ganon's Tower/Rightside"}, {
-    --    { 140, 5 }, { 140, 6 }, { 141, 4 }, { 157, 4 }, { 157, 5 }, { 157, 6 }, { 157, 7 }
-    -- })
-    -- updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Big Chest + Ice refight"}, {
-    --    { 140, 7 }, { 140, 8 }, { 28, 4 }, { 28, 5 }, { 28, 6 }
-    -- })
-    -- updateSectionChestCountFromRoomSlotList(segment, {"@GT-inverted/Ganon's Tower/Big Chest + Ice refight"}, {
-    --    { 140, 7 }, { 140, 8 }, { 28, 4 }, { 28, 5 }, { 28, 6 }
-    -- })
-    -- updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/GT Top + Lanmo refight"}, { { 61, 4 }, { 61, 5 }, { 61, 6 } })
-    -- updateSectionChestCountFromRoomSlotList(segment, {"@GT-inverted/Ganon's Tower/GT Top + Lanmo refight"}, { { 61, 4 }, { 61, 5 }, { 61, 6 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Leftside"}, {
+        { 140, 4 }, { 125, 4 }, { 124, 4 }, { 124, 5 }, { 124, 6 }, { 124, 7 }, 
+        { 123, 4 }, { 123, 5 }, { 123, 6 }, { 123, 7 }, { 139, 4 }
+    })
+    updateSectionChestCountFromRoomSlotList(segment, {"@GT-inverted/Ganon's Tower/Leftside"}, {
+        { 140, 4 }, { 125, 4 }, { 124, 4 }, { 124, 5 }, { 124, 6 }, { 124, 7 }, 
+        { 123, 4 }, { 123, 5 }, { 123, 6 }, { 123, 7 }, { 139, 4 }
+    })
+    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Rightside"}, {
+       { 140, 5 }, { 140, 6 }, { 141, 4 }, { 157, 4 }, { 157, 5 }, { 157, 6 }, { 157, 7 }
+    })
+    updateSectionChestCountFromRoomSlotList(segment, {"@GT-inverted/Ganon's Tower/Rightside"}, {
+       { 140, 5 }, { 140, 6 }, { 141, 4 }, { 157, 4 }, { 157, 5 }, { 157, 6 }, { 157, 7 }
+    })
+    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Big Chest + Ice refight"}, {
+       { 140, 7 }, { 140, 8 }, { 28, 4 }, { 28, 5 }, { 28, 6 }
+    })
+    updateSectionChestCountFromRoomSlotList(segment, {"@GT-inverted/Ganon's Tower/Big Chest + Ice refight"}, {
+       { 140, 7 }, { 140, 8 }, { 28, 4 }, { 28, 5 }, { 28, 6 }
+    })
+    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/GT Top + Lanmo refight"}, { { 61, 4 }, { 61, 5 }, { 61, 6 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@GT-inverted/Ganon's Tower/GT Top + Lanmo refight"}, { { 61, 4 }, { 61, 5 }, { 61, 6 } })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/GT Top Moldorm refight"}, { { 77, 4 }  })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@GT-inverted/Ganon's Tower/GT Top Moldorm refight"}, { { 77, 4 }  })
 
 
-    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Leftside","@Ganon's Tower Bottom Left/Bob's Torch/Bob's Torch", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 140, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Leftside","@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 125, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Leftside","@Ganon's Tower Bottom Left/Randomizer Room Top Left/Randomizer Room Top Left", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 124, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Leftside","@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 124, 5 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Leftside","@Ganon's Tower Bottom Left/Randomizer Room Bottom Left/Randomizer Room Bottom Left", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 124, 6 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Leftside","@Ganon's Tower Bottom Left/Randomizer Room Bottom Right/Randomizer Room Bottom Right", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 124, 7 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Leftside","@Ganon's Tower Bottom Left/DMs Room Top Left/DMs Room Top Left", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 123, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Leftside","@Ganon's Tower Bottom Left/DMs Room Top Right/DMs Room Top Right", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 123, 5 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Leftside","@Ganon's Tower Bottom Left/DMs Room Bottom Left/DMs Room Bottom Left", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 123, 6 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Leftside","@Ganon's Tower Bottom Left/DMs Room Bottom Right/DMs Room Bottom Right", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 123, 7 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Leftside","@Ganon's Tower Bottom Left/Map Chest/Map Chest","@Ganon's Tower Bottom Left/vanilla Map Chest/Map Chest", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 139, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Bob's Torch/Bob's Torch", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 140, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 125, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Randomizer Room Top Left/Randomizer Room Top Left", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 124, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 124, 5 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Randomizer Room Bottom Left/Randomizer Room Bottom Left", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 124, 6 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Randomizer Room Bottom Right/Randomizer Room Bottom Right", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 124, 7 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/DMs Room Top Left/DMs Room Top Left", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 123, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/DMs Room Top Right/DMs Room Top Right", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 123, 5 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/DMs Room Bottom Left/DMs Room Bottom Left", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 123, 6 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/DMs Room Bottom Right/DMs Room Bottom Right", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 123, 7 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Map Chest/Map Chest","@Ganon's Tower Bottom Left/vanilla Map Chest/Map Chest", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 139, 4 } })
     
-    updateSectionChestCountFromRoomSlotList(segment,  {"@GT/Ganon's Tower/Rightside","@Ganon's Tower Bottom Right/Hope Room Left/Hope Room Left", "@GT-inverted/Ganon's Tower/Rightside"}, {{ 140, 5 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Rightside","@Ganon's Tower Bottom Right/Hope Room Right/Hope Room Right", "@GT-inverted/Ganon's Tower/Rightside"}, {{ 140, 6 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Rightside","@Ganon's Tower Bottom Right/Tile Room/Tile Room", "@GT-inverted/Ganon's Tower/Rightside"}, {{ 141, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Rightside","@Ganon's Tower Bottom Right/Compass Chest/Compass Chest","@Ganon's Tower Bottom Right/vanilla Compass Chest/Compass Chest", "@GT-inverted/Ganon's Tower/Rightside"}, {{ 157, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Rightside","@Ganon's Tower Bottom Right/Compass Room Top Right/Compass Room Top Right", "@GT-inverted/Ganon's Tower/Rightside"}, {{ 157, 5 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Rightside","@Ganon's Tower Bottom Right/Compass Room Bottom Left/Compass Room Bottom Left", "@GT-inverted/Ganon's Tower/Rightside"}, {{ 157, 6 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Rightside","@Ganon's Tower Bottom Right/Compass Room Bottom Right/Compass Room Bottom Right", "@GT-inverted/Ganon's Tower/Rightside"}, { { 157, 7 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Right/Hope Room Left/Hope Room Left", "@GT-inverted/Ganon's Tower/Rightside"}, {{ 140, 5 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Right/Hope Room Right/Hope Room Right", "@GT-inverted/Ganon's Tower/Rightside"}, {{ 140, 6 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Right/Tile Room/Tile Room", "@GT-inverted/Ganon's Tower/Rightside"}, {{ 141, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Right/Compass Chest/Compass Chest","@Ganon's Tower Bottom Right/vanilla Compass Chest/Compass Chest", "@GT-inverted/Ganon's Tower/Rightside"}, {{ 157, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Right/Compass Room Top Right/Compass Room Top Right", "@GT-inverted/Ganon's Tower/Rightside"}, {{ 157, 5 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Right/Compass Room Bottom Left/Compass Room Bottom Left", "@GT-inverted/Ganon's Tower/Rightside"}, {{ 157, 6 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Right/Compass Room Bottom Right/Compass Room Bottom Right", "@GT-inverted/Ganon's Tower/Rightside"}, { { 157, 7 } })
     
-    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Big Chest + Ice refight","@Ganon's Tower Bottom Refight/Bob's Chest/Bob's Chest", "@GT-inverted/Ganon's Tower/Big Chest + Ice refight"}, {{ 140, 7 }})
-    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Big Chest + Ice refight","@Ganon's Tower Bottom Refight/Big Chest/Big Chest", "@GT-inverted/Ganon's Tower/Big Chest + Ice refight"}, {{ 140, 8 }})
-    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Big Chest + Ice refight","@Ganon's Tower Bottom Refight/Big Key Chest/Big Key Chest","@Ganon's Tower Bottom Refight/vanilla Big Key Chest/Big Key Chest", "@GT-inverted/Ganon's Tower/Big Chest + Ice refight"}, {{ 28, 4 }})
-    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Big Chest + Ice refight","@Ganon's Tower Bottom Refight/Big Key Room Left/Big Key Room Left", "@GT-inverted/Ganon's Tower/Big Chest + Ice refight"}, {{ 28, 5 }})
-    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Big Chest + Ice refight","@Ganon's Tower Bottom Refight/Big Key Room Right/Big Key Room Right", "@GT-inverted/Ganon's Tower/Big Chest + Ice refight"}, {{ 28, 6 }})
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Refight/Bob's Chest/Bob's Chest", "@GT-inverted/Ganon's Tower/Big Chest + Ice refight"}, {{ 140, 7 }})
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Refight/Big Chest/Big Chest", "@GT-inverted/Ganon's Tower/Big Chest + Ice refight"}, {{ 140, 8 }})
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Refight/Big Key Chest/Big Key Chest","@Ganon's Tower Bottom Refight/vanilla Big Key Chest/Big Key Chest", "@GT-inverted/Ganon's Tower/Big Chest + Ice refight"}, {{ 28, 4 }})
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Refight/Big Key Room Left/Big Key Room Left", "@GT-inverted/Ganon's Tower/Big Chest + Ice refight"}, {{ 28, 5 }})
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Refight/Big Key Room Right/Big Key Room Right", "@GT-inverted/Ganon's Tower/Big Chest + Ice refight"}, {{ 28, 6 }})
     
-    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/GT Top + Lanmo refight","@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@GT-inverted/Ganon's Tower/GT Top + Lanmo refight"}, { { 61, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/GT Top + Lanmo refight","@Ganon's Tower Top/Mini Helmasaur Room Left/Mini Helmasaur Room Left", "@GT-inverted/Ganon's Tower/GT Top + Lanmo refight"}, { { 61, 5 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/GT Top + Lanmo refight","@Ganon's Tower Top/Mini Helmasaur Room Right/Mini Helmasaur Room Right", "@GT-inverted/Ganon's Tower/GT Top + Lanmo refight"}, { { 61, 6 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@GT-inverted/Ganon's Tower/GT Top + Lanmo refight"}, { { 61, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Top/Mini Helmasaur Room Left/Mini Helmasaur Room Left", "@GT-inverted/Ganon's Tower/GT Top + Lanmo refight"}, { { 61, 5 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Top/Mini Helmasaur Room Right/Mini Helmasaur Room Right", "@GT-inverted/Ganon's Tower/GT Top + Lanmo refight"}, { { 61, 6 } })
     
-    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/GT Top Moldorm refight","@Ganon's Tower Top/Validation Chest/Validation Chest", "@GT-inverted/Ganon's Tower/GT Top Moldorm refight"}, { { 77, 4 }  })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Top/Validation Chest/Validation Chest", "@GT-inverted/Ganon's Tower/GT Top Moldorm refight"}, { { 77, 4 }  })
     
     -- updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower/Ice Boss"}, { { 295, 10 } })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower/Lanmo Refight"}, { { 295, 10 } })
