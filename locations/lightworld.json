@@ -367,8 +367,7 @@
             {
                 "name": "Desert Ledge",
                 "access_rules":[
-                    "book",
-                    "mirror, titans, flute_active",
+                    "@DP Back/Desert Palace Back",
                     "{}"
                 ],
                 "sections": [
@@ -1081,13 +1080,15 @@
             {
                 "name": "Desert Palace Back",
                 "access_rules":[
-                    "@DP/Desert Palace, glove, $getBossRef|dp_boss, dp_bigkey",
-                    "@Darkworld Swamp, mirror, $getBossRef|dp_boss, dp_bigkey"
+                    "@DP/Desert Palace, glove",
+                    "open, @Darkworld Swamp, mirror",
+                    "standard, @Darkworld Swamp, mirror"
                 ],
                 "item_count": 2,
                 "sections": [
                     {
                         "name": "Boss Item" ,
+                        "access_rules":[ "$getBossRef|dp_boss, dp_bigkey"],
                         "clear_as_group": true,
                         "item_count": 1,
                         "hosted_item": "dp_boss, desertpalace"
