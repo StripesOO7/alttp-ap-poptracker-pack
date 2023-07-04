@@ -183,3 +183,17 @@ function canFinish()
         return false
     end
 end
+
+function openOrStandard()
+    if Tracker:FindObjectForCode("start_option").CurrentStage ~= 1 then
+        return true
+    end
+    return false
+end
+
+function checkGlitches(stage)
+    if Tracker:FindObjectForCode("glitches").CurrentStage >= tonumber(stage) then
+        return true
+    end
+    return false
+end

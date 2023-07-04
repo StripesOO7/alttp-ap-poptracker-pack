@@ -5,8 +5,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "open",
-            "standard",
+            "$openOrStandard",
             "inverted, pearl, hammer, gloves",
             "inverted, pearl, titans",
             "inverted, pearl, aga1"
@@ -77,8 +76,7 @@
             {
                 "name": "Activate Flute",
                 "visibility_rules":[
-                    "flute, open",
-                    "flute, standard"
+                    "flute, $openOrStandard"
                 ],
                 "sections": [
                     {
@@ -173,8 +171,7 @@
                         "name": "Visit Satan",
                         "access_rules": [
                             "hammer, powder",
-                            "open, titans, mirror, @Darkworld Left, powder",
-                            "standard, titans, mirror, @Darkworld Left, powder"
+                            "$openOrStandard, titans, mirror, @Darkworld Left, powder"
                         ],
                         "hosted_item": "satan_visited"
                     }
@@ -410,9 +407,9 @@
                     {
                         "name": "Checkerboard Cave Item",
                         "access_rules": [
-                            "open, mirror, titans, flute_active",
-                            "standard, mirror, titans, flute_active",
-                            "inverted, glove"
+                            "$openOrStandard, mirror, titans, flute_active",
+                            "inverted, glove",
+                            ""
                         ]
                     }
                 ],
@@ -547,12 +544,10 @@
             {
                 "name": "Link's House",
                 "access_rules":[
-                    "open",
-                    "standard"
+                    "$openOrStandard"
                 ],
                 "visibility_rules":[
-                    "open",
-                    "standard"
+                    "$openOrStandard"
                 ],
                 "sections": [
                     {
@@ -672,8 +667,7 @@
             {
                 "name": "Secret Passage",
                 "access_rules":[
-                    "standard",
-                    "open"
+                    "$openOrStandard"
                 ],
                 "inherit_codes":false,
                 "sections": [
@@ -794,11 +788,9 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "open, flute_active",
-            "standard, flute_active",
+            "$openOrStandard, flute_active",
             "inverted, pearl, flute_active",
-            "open, $darkRooms, glove",
-            "standard, $darkRooms, glove",
+            "$openOrStandard, $darkRooms, glove",
             "inverted, pearl, $darkRooms, glove"
         ],
         "children": [
@@ -808,8 +800,7 @@
                     "$darkRooms"
                 ],
                 "visibility_rules":[
-                    "open",
-                    "standard"
+                    "$openOrStandard"
                 ],
                 "sections": [
                     {
@@ -837,8 +828,7 @@
                     {
                         "name": "Top Item",
                         "access_rules":[
-                            "open, mirror",
-                            "standard, mirror",
+                            "$openOrStandard, mirror",
                             "inverted, @Light Death Mountain Left Top",
                             "{@Light Death Mountain Left Bottom}"
                         ],
@@ -871,8 +861,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "open, @Light Death Mountain Left Bottom, mirror",
-            "standard, @Light Death Mountain Left Bottom, mirror",
+            "$openOrStandard, @Light Death Mountain Left Bottom, mirror",
             "inverted, pearl, @Light Death Mountain Right, hammer"
         ],
         "children": [
@@ -905,10 +894,8 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "open, @Light Death Mountain Left Bottom, hookshot",
-            "open, @Light Death Mountain Left Top, hammer",
-            "standard, @Light Death Mountain Left Bottom, hookshot",
-            "standard, @Light Death Mountain Left Top, hammer",
+            "$openOrStandard, @Light Death Mountain Left Bottom, hookshot",
+            "$openOrStandard, @Light Death Mountain Left Top, hammer",
             "inverted, pearl, @Light Death Mountain Left Bottom, hookshot",
             "inverted, pearl, @Dark Death Mountain Right, titans"
         ],
@@ -1030,8 +1017,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "open",
-            "standard",
+            "$openOrStandard",
             "inverted, @Lightworld"
         ],
         "children": [
@@ -1039,8 +1025,7 @@
                 "name": "Desert Palace",
                 "access_rules":[
                     "book",
-                    "open, @Darkworld Swamp, mirror",
-                    "standard, @Darkworld Swamp, mirror"
+                    "$openOrStandard, @Darkworld Swamp, mirror"
                 ],
                 "item_count": 5,
                 "sections": [
@@ -1072,8 +1057,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "open",
-            "standard",
+            "$openOrStandard",
             "inverted, @Lightworld"
         ],
         "children": [
@@ -1081,8 +1065,7 @@
                 "name": "Desert Palace Back",
                 "access_rules":[
                     "@DP/Desert Palace, glove",
-                    "open, @Darkworld Swamp, mirror",
-                    "standard, @Darkworld Swamp, mirror"
+                    "$openOrStandard, @Darkworld Swamp, mirror"
                 ],
                 "item_count": 2,
                 "sections": [
@@ -1111,8 +1094,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "open",
-            "standard",
+            "$openOrStandard",
             "inverted, @Lightworld"
         ],
         "children": [
@@ -1160,13 +1142,11 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "open",
-            "standard",
+            "$openOrStandard",
             "inverted, @Lightworld"
         ],
         "visibility_rules":[
-            "open",
-            "standard"
+            "$openOrStandard"
         ],
         "children": [
             {
@@ -1211,8 +1191,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "open",
-            "standard",
+            "$openOrStandard",
             "inverted, @Lightworld"
         ],
         "children": [
@@ -1249,8 +1228,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "open",
-            "standard",
+            "$openOrStandard",
             "inverted, @Lightworld"
         ],
         "children": [
@@ -1319,8 +1297,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "open",
-            "standard",
+            "$openOrStandard",
             "inverted, @Lightworld"
         ],
         "children": [
