@@ -903,8 +903,7 @@
             {
                 "name": "Floating Island",
                 "access_rules":[
-                    "open, @Dark Death Mountain Right, mirror",
-                    "open, @Dark Death Mountain Right, mirror",
+                    "$openOrStandard, @Dark Death Mountain Right, mirror",
                     "inverted, @Light Death Mountain Right",
                     "{}"
                 ],
@@ -975,8 +974,7 @@
             {
                 "name": "Mimic Cave",
                 "access_rules": [
-                    "open, @Dark Death Mountain Right, mirror, hammer @TR, $smallKeys|tr_smallkeys|2",
-                    "open, @Dark Death Mountain Right, mirror, hammer @TR, $smallKeys|tr_smallkeys|2",
+                    "$openOrStandard, @Dark Death Mountain Right, mirror, hammer @TR, $smallKeys|tr_smallkeys|2",
                     "inverted, @Light Death Mountain Right, hammer"
                 ],
                 "sections": [
