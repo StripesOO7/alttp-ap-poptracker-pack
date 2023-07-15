@@ -25,7 +25,6 @@
             },
             {
                 "name": "Map Chest",
-                "visibility_rules":["$getShuffle|map|shuffle"],
                 "access_rules":[
                     "$smallKeys|toh_smallkey|1, firesource"
                 ],
@@ -44,29 +43,7 @@
                 ]
             },
             {
-                "name": "vanilla Map Chest",
-                "visibility_rules":["$getShuffle|map|vanilla"],
-                "access_rules":[
-                    "$smallKeys|toh_smallkey|1, firesource"
-                ],
-                "sections": [
-                    {
-                        "name": "Map Chest",
-                        "hosted_item": "toh_map"
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "ToH",
-                        "x": 95,
-                        "y": 380,
-                        "size": 6
-                    }
-                ]
-            },
-            {
                 "name": "Big Key Chest",
-                "visibility_rules":["$getShuffle|big_keys|shuffle"],
                 "sections": [
                     {
                         "name": "Big Key Chest"
@@ -82,53 +59,13 @@
                 ]
             },
             {
-                "name": "vanilla Big Key Chest",
-                "visibility_rules":["$getShuffle|big_keys|vanilla"],
-                "sections": [
-                    {
-                        "name": "Big Key Chest",
-                        "hosted_item": "toh_bigkey"
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "ToH",
-                        "x": 190,
-                        "y": 305,
-                        "size": 6
-                    }
-                ]
-            },
-            {
                 "name": "Compass Chest",
-                "visibility_rules":["$getShuffle|compass|shuffle"],
                 "access_rules":[
                     "toh_bigkey"
                 ],
                 "sections": [
                     {
                         "name": "Compass Chest"
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "ToH",
-                        "x": 190,
-                        "y": 210,
-                        "size": 6
-                    }
-                ]
-            },
-            {
-                "name": "vanilla Compass Chest",
-                "visibility_rules":["$getShuffle|compass|vanilla"],
-                "access_rules":[
-                    "toh_bigkey"
-                ],
-                "sections": [
-                    {
-                        "name": "Compass Chest",
-                        "hosted_item": "toh_compass"
                     }
                 ],
                 "map_locations": [
