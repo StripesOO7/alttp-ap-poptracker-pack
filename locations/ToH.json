@@ -103,7 +103,8 @@
                 "name": "Compass Chest",
                 "visibility_rules":["$getShuffle|compass|shuffle"],
                 "access_rules":[
-                    "toh_bigkey"
+                    "toh_bigkey",
+                    "$checkGlitches|1, hookshot"
                 ],
                 "sections": [
                     {
@@ -162,7 +163,8 @@
             {
                 "name": "Boss",
                 "access_rules":[
-                    "toh_bigkey, $getBossRef|toh_boss"
+                    "toh_bigkey, $getBossRef|toh_boss",
+                    "$checkGlitches|1, hookshot, $getBossRef|toh_boss"
                 ],
                 "sections": [
                     {

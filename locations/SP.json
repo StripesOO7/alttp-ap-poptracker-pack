@@ -68,7 +68,8 @@
                 "name": "Big Key Chest",
                 "visibility_rules":["$getShuffle|big_keys|shuffle"],
                 "access_rules":[
-                    "$smallKeys|sp_smallkey|1, hammer"
+                    "$smallKeys|sp_smallkey|1, hammer",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1"
                 ],
                 "sections": [
                     {
@@ -108,7 +109,8 @@
             {
                 "name": "West Chest",
                 "access_rules":[
-                    "$smallKeys|sp_smallkey|1, hammer"
+                    "$smallKeys|sp_smallkey|1, hammer",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1"
                 ],
                 "sections": [
                     {
@@ -128,7 +130,8 @@
                 "name": "Compass Chest",
                 "visibility_rules":["$getShuffle|compass|shuffle"],
                 "access_rules":[
-                    "$smallKeys|sp_smallkey|1, hammer"
+                    "$smallKeys|sp_smallkey|1, hammer",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1"
                 ],
                 "sections": [
                     {
@@ -148,7 +151,8 @@
                 "name": "vanilla Compass Chest",
                 "visibility_rules":["$getShuffle|compass|vanilla"],
                 "access_rules":[
-                    "$smallKeys|sp_smallkey|1, hammer"
+                    "$smallKeys|sp_smallkey|1, hammer",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1"
                 ],
                 "sections": [
                     {
@@ -168,7 +172,8 @@
             {
                 "name": "Flooded Room Left",
                 "access_rules":[
-                    "$smallKeys|sp_smallkey|1, hammer, hookshot"
+                    "$smallKeys|sp_smallkey|1, hammer, hookshot",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1, hookshot"
                 ],
                 "sections": [
                     {
@@ -187,7 +192,8 @@
             {
                 "name": "Flooded Room Right",
                 "access_rules":[
-                    "$smallKeys|sp_smallkey|1, hammer, hookshot"
+                    "$smallKeys|sp_smallkey|1, hammer, hookshot",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1, hookshot"
                 ],
                 "sections": [
                     {
@@ -206,7 +212,8 @@
             {
                 "name": "Waterfall Room",
                 "access_rules":[
-                    "$smallKeys|sp_smallkey|1, hammer, hookshot"
+                    "$smallKeys|sp_smallkey|1, hammer, hookshot",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1, hookshot"
                 ],
                 "sections": [
                     {
@@ -225,7 +232,8 @@
             {
                 "name": "Big Chest",
                 "access_rules":[
-                    "$smallKeys|sp_smallkey|1, hammer, sp_bigkey, hookshot"
+                    "$smallKeys|sp_smallkey|1, hammer, sp_bigkey, hookshot",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1, sp_bigkey, hookshot"
                 ],
                 "sections": [
                     {
@@ -244,7 +252,8 @@
             {
                 "name": "Boss",
                 "access_rules":[
-                    "$smallKeys|sp_smallkey|1, hammer, hookshot, $getBossRef|sp_boss"
+                    "$smallKeys|sp_smallkey|1, hammer, hookshot, $getBossRef|sp_boss",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1, $getBossRef|sp_boss, hookshot"
                 ],
                 "sections": [
                     {

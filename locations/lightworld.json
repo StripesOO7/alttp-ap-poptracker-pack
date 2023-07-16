@@ -171,7 +171,8 @@
                         "name": "Visit Satan",
                         "access_rules": [
                             "hammer, powder",
-                            "$openOrStandard, titans, mirror, @Darkworld Left, powder"
+                            "$openOrStandard, titans, mirror, @Darkworld Left, powder",
+                            "$checkGlitches|2, boots, powder"
                         ],
                         "hosted_item": "satan_visited"
                     }
@@ -305,7 +306,8 @@
                 "access_rules":[
                     "bombs",
                     "boots",
-                    "{}"
+                    "{}",
+                    "$checkGlitches|2, boots"
                 ],
                 "sections": [
                     {
@@ -325,7 +327,8 @@
             {
                 "name": "Cave 45",
                 "access_rules": [
-                    "@Darkworld Left, mirror"
+                    "@Darkworld Left, mirror",
+                    "$checkGlitches|2, boots"
                 ],
                 "sections": [
                     {
@@ -365,6 +368,7 @@
                 "name": "Desert Ledge",
                 "access_rules":[
                     "@DP Back/Desert Palace Back",
+                    "$checkGlitches|2, boots",
                     "{}"
                 ],
                 "sections": [
@@ -408,7 +412,8 @@
                         "name": "Checkerboard Cave Item",
                         "access_rules": [
                             "$openOrStandard, mirror, titans, flute_active",
-                            "inverted, glove"
+                            "inverted, glove",
+                            "$checkGlitches|2, boots, glove"
                         ]
                     }
                 ],
@@ -524,8 +529,9 @@
                     {
                         "name": "Lake Island",
                         "access_rules": [
-                            "flippers, @Darkworld Left, mirror",
-                            "flippers, @Darkworld Right, mirror",
+                            "$canSwim, @Darkworld Left, mirror",
+                            "$canSwim, @Darkworld Right, mirror",
+                            "$checkGlitches|2, boots",
                             "{}"
                         ],
                         "capture_item": true
@@ -616,7 +622,8 @@
                 "name": "Waterfall Fairy",
                 "access_rules":[
                     "$canSwim, glove",
-                    "$canSwim, pearl",
+                    "$canSwim, paerl",
+                    "$canSwim, boots",
                     "flippers"
                 ],
                 "sections": [
@@ -649,7 +656,8 @@
                         "name": "Zora Ledge",
                         "access_rules":[
                             "{}",
-                            "flippers"
+                            "flippers",
+                            "$checkGlitches|2, boots"
                         ],
                         "capture_item": true
                     }
@@ -696,7 +704,8 @@
                 "name": "Graveyard Ledge",
                 "access_rules":[
                     "@Darkworld Left, mirror",
-                    "inverted"
+                    "inverted",
+                    "@Light Death Mountain Left Bottom, $checkGlitches|2, boots"
                 ],
                 "sections": [
                     {
@@ -716,7 +725,8 @@
                 "name": "King's Tomb",
                 "access_rules":[
                     "@Darkworld Left, mirror, boots",
-                    "titans, boots"
+                    "titans, boots",
+                    "@Light Death Mountain Left Bottom, $checkGlitches|2, boots"
                 ],
                 "sections": [
                     {
@@ -738,7 +748,9 @@
                     "@Darkworld Left, mirror, book, $canActivateTablets",
                     "{@Darkworld Left, mirror, book}",
                     "inverted, $canActivateTablets, book",
-                    "{inverted, book}"
+                    "{inverted, book}",
+                    "$checkGlitches|2, boots, book, $canActivateTablets",
+                    "{$checkGlitches|2, boots, book}"
                 ],
                 "sections": [
                     {
@@ -758,7 +770,8 @@
             {
                 "name": "Bumper Cave",
                 "access_rules": [
-                    "cape, mirror"
+                    "cape, mirror",
+                    "$checkGlitches|2, boots"
                 ],
                 "visibility_rules":[
                     "inverted"
@@ -790,7 +803,8 @@
             "$openOrStandard, flute_active",
             "inverted, pearl, flute_active",
             "$openOrStandard, $darkRooms, glove",
-            "inverted, pearl, $darkRooms, glove"
+            "inverted, pearl, $darkRooms, glove",
+            "$openOrStandard, $checkGlitches|2, boots"
         ],
         "children": [
             {
@@ -829,7 +843,8 @@
                         "access_rules":[
                             "$openOrStandard, mirror",
                             "inverted, @Light Death Mountain Left Top",
-                            "{@Light Death Mountain Left Bottom}"
+                            "{@Light Death Mountain Left Bottom}",
+                            "@Light Death Mountain Left Top, $checkGlitches|2, boots"
                         ],
                         "capture_item": true
                     },
@@ -861,14 +876,17 @@
         "overlay_background": "#000000",
         "access_rules":[
             "$openOrStandard, @Light Death Mountain Left Bottom, mirror",
-            "inverted, pearl, @Light Death Mountain Right, hammer"
+            "inverted, pearl, @Light Death Mountain Right, hammer",
+            "@Light Death Mountain Left Bottom, $checkGlitches|2, boots"
         ],
         "children": [
             {
                 "name": "Ether Tablet",
                 "access_rules":[
                     "mirror, book, $canActivateTablets",
-                    "{mirror, book}"
+                    "{mirror, book}",
+                    "$checkGlitches|2, book, $canActivateTablets",
+                    "{$checkGlitches|2, book}"
                 ],
                 "sections": [
                     {
@@ -896,7 +914,8 @@
             "$openOrStandard, @Light Death Mountain Left Bottom, hookshot",
             "$openOrStandard, @Light Death Mountain Left Top, hammer",
             "inverted, pearl, @Light Death Mountain Left Bottom, hookshot",
-            "inverted, pearl, @Dark Death Mountain Right, titans"
+            "inverted, pearl, @Dark Death Mountain Right, titans",
+            "@Light Death Mountain Left Bottom, $checkGlitches|2, boots"
         ],
         "children": [
             {
@@ -904,7 +923,8 @@
                 "access_rules":[
                     "$openOrStandard, @Dark Death Mountain Right, mirror",
                     "inverted, @Light Death Mountain Right",
-                    "{}"
+                    "{}",
+                    "$checkGlitches|2, boots"
                 ],
                 "sections": [
                     {
@@ -974,7 +994,8 @@
                 "name": "Mimic Cave",
                 "access_rules": [
                     "$openOrStandard, @Dark Death Mountain Right, mirror, hammer @TR, $smallKeys|tr_smallkeys|2",
-                    "inverted, @Light Death Mountain Right, hammer"
+                    "inverted, @Light Death Mountain Right, hammer",
+                    "@Dark Death Mountain Right, $checkGlitches|2, boots, hammer"
                 ],
                 "sections": [
                     {
@@ -1022,7 +1043,8 @@
                 "name": "Desert Palace",
                 "access_rules":[
                     "book",
-                    "$openOrStandard, @Darkworld Swamp, mirror"
+                    "$openOrStandard, @Darkworld Swamp, mirror",
+                    "@Lightworld, $checkGlitches|2, boots"
                 ],
                 "item_count": 5,
                 "sections": [
@@ -1062,7 +1084,8 @@
                 "name": "Desert Palace Back",
                 "access_rules":[
                     "@DP/Desert Palace, glove",
-                    "$openOrStandard, @Darkworld Swamp, mirror"
+                    "$openOrStandard, @Darkworld Swamp, mirror",
+                    "@Lightworld, $checkGlitches|2, boots"
                 ],
                 "item_count": 2,
                 "sections": [
@@ -1150,7 +1173,8 @@
                 "name": "Agahnim's Tower",
                 "item_count": 3,
                 "access_rules":[
-                    "$canClearAgaTowerBarrier"
+                    "$canClearAgaTowerBarrier",
+                    "$checkGlitches|2, boots"
                 ],
                 "sections": [
                     {
@@ -1302,7 +1326,8 @@
                 "name": "Tower of Hera",
                 "access_rules":[
                     "@Light Death Mountain Left Top",
-                    "@Light Death Mountain Right, hammer"
+                    "@Light Death Mountain Right, hammer",
+                    "@Light Death Mountain Left Bottom, $checkGlitches|2, boots"
                 ],
                 "item_count": 7,
                 "sections": [
@@ -1320,7 +1345,8 @@
                         "name": "Upper" ,
                         "clear_as_group": false,
                         "access_rules":[
-                            "toh_bigkey"
+                            "toh_bigkey",
+                            "$checkGlitches|1, hookshot, [toh_bigkey]"
                         ],
                         // "hosted_item": "toh_compass",
                         "item_count": 2
@@ -1329,7 +1355,8 @@
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules":[
-                            "@ToH/Tower of Hera/Upper, $getBossRef|toh_boss"
+                            "@ToH/Tower of Hera/Upper, $getBossRef|toh_boss",
+                            "$getBossRef|toh_boss, $checkGlitches|1, hookshot"
                         ],
                         "item_count": 1,
                         "hosted_item": "toh_boss, towerofhera"
@@ -1352,7 +1379,8 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "inverted, @Lightworld, $gtCrystalCount"
+            "inverted, @Lightworld, $gtCrystalCount",
+            "inverted, @Lightworld, $checkGlitches|2, boots"
         ],
         "visibility_rules":[
             "inverted"

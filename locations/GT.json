@@ -29,7 +29,8 @@
             {
                 "name": "DMs Room Top Right",
                 "access_rules":[
-                    "hookshot, hammer"
+                    "hookshot, hammer",
+                    "boots, hammer"
                 ],
                 "sections": [
                     {
@@ -48,7 +49,8 @@
             {
                 "name": "DMs Room Bottom Right",
                 "access_rules":[
-                    "hookshot, hammer"
+                    "hookshot, hammer",
+                    "boots, hammer"
                 ],
                 "sections": [
                     {
@@ -67,7 +69,8 @@
             {
                 "name": "DMs Room Top Left",
                 "access_rules":[
-                    "hookshot, hammer"
+                    "hookshot, hammer",
+                    "boots, hammer"
                 ],
                 "sections": [
                     {
@@ -86,7 +89,8 @@
             {
                 "name": "DMs Room Bottom Left",
                 "access_rules":[
-                    "hookshot, hammer"
+                    "hookshot, hammer",
+                    "boots, hammer"
                 ],
                 "sections": [
                     {
@@ -167,7 +171,7 @@
             {
                 "name": "Randomizer Room Bottom Left",
                 "access_rules":[
-                    "@Ganon's Tower Bottom Left/Firesnake Room"
+                    "@Ganon's Tower Bottom Left/Firesnake Room, hookshot"
                 ],
                 "sections": [
                     {
@@ -186,7 +190,7 @@
             {
                 "name": "Randomizer Room Bottom Right",
                 "access_rules":[
-                    "@Ganon's Tower Bottom Left/Firesnake Room"
+                    "@Ganon's Tower Bottom Left/Firesnake Room, hookshot"
                 ],
                 "sections": [
                     {
@@ -205,7 +209,7 @@
             {
                 "name": "Randomizer Room Top Left",
                 "access_rules":[
-                    "@Ganon's Tower Bottom Left/Firesnake Room"
+                    "@Ganon's Tower Bottom Left/Firesnake Room, hookshot"
                 ],
                 "sections": [
                     {
@@ -224,7 +228,7 @@
             {
                 "name": "Randomizer Room Top Right",
                 "access_rules":[
-                    "@Ganon's Tower Bottom Left/Firesnake Room"
+                    "@Ganon's Tower Bottom Left/Firesnake Room, hookshot"
                 ],
                 "sections": [
                     {
@@ -305,7 +309,7 @@
                 "name": "Compass Chest",
                 "visibility_rules":["$getShuffle|compass|shuffle"],
                 "access_rules":[
-                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1"
+                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1, firerod"
                 ],
                 "sections": [
                     {
@@ -325,7 +329,7 @@
                 "name": "vanilla Compass Chest",
                 "visibility_rules":["$getShuffle|compass|vanilla"],
                 "access_rules":[
-                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1"
+                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1, firerod"
                 ],
                 "sections": [
                     {
@@ -345,7 +349,7 @@
             {
                 "name": "Compass Room Top Right",
                 "access_rules":[
-                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1"
+                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1, firerod"
                 ],
                 "sections": [
                     {
@@ -364,7 +368,7 @@
             {
                 "name": "Compass Room Bottom Left",
                 "access_rules":[
-                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1"
+                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1, firerod"
                 ],
                 "sections": [
                     {
@@ -383,7 +387,7 @@
             {
                 "name": "Compass Room Bottom Right",
                 "access_rules":[
-                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1"
+                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1, firrod"
                 ],
                 "sections": [
                     {
