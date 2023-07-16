@@ -6,6 +6,74 @@
         "access_rules":["@IP/Ice Palace"],
         "children": [
             {
+                "name": "Jelly Key Drop",
+                "visibility_rules":["key_drop_shuffle"],
+                "sections": [
+                    {
+                        "name": "Jelly Key Drop"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "IP",
+                        "x": 21,
+                        "y": 34,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Conveyor Key Drop",
+                "visibility_rules":["key_drop_shuffle"],
+                "sections": [
+                    {
+                        "name": "Conveyor Key Drop"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "IP",
+                        "x": 84,
+                        "y": 363,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Hammer Block Key Drop",
+                "visibility_rules":["key_drop_shuffle"],
+                "sections": [
+                    {
+                        "name": "Hammer Block Key Drop"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "IP",
+                        "x": 159,
+                        "y": 424,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Many Pots Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "sections": [
+                    {
+                        "name": "Many Pots Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "IP",
+                        "x": 514,
+                        "y": 88,
+                        "size": 6
+                    }
+                ]
+            },
+            {
                 "name": "Compass Chest",
                 "visibility_rules":["$getShuffle|compass|shuffle"],
                 "sections": [

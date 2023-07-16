@@ -8,6 +8,57 @@
         ],
         "children": [
             {
+                "name": "Spikes Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "sections": [
+                    {
+                        "name": "Spikes Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM",
+                        "x": 367,
+                        "y": 89,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Fishbone Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "sections": [
+                    {
+                        "name": "Fishbone Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM",
+                        "x": 521,
+                        "y": 282,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Conveyor Crystal Key Drop",
+                "visibility_rules":["key_drop_shuffle"],
+                "sections": [
+                    {
+                        "name": "Conveyor Crystal Key Drop"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM",
+                        "x": 185,
+                        "y": 240,
+                        "size": 6
+                    }
+                ]
+            },
+            {
                 "name": "Bridge Chest",
                 "sections": [
                     {

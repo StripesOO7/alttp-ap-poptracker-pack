@@ -51,7 +51,7 @@
             {
                 "name": "Chain Chomps",
                 "access_rules":[
-                    "somaria, [tr_smallkey:1]"
+                    "somaria, [tr_smallkey|1]"
                 ],
                 "sections": [
                     {
@@ -63,6 +63,26 @@
                         "map": "TR",
                         "x": 555,
                         "y": 75,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Pokey 1 Key Drop",
+                "visibility_rules":["key_drop_shuffle"],
+                "access_rules":[
+                    "somaria, [tr_smallkey|1]"
+                ],
+                "sections": [
+                    {
+                        "name": "Pokey 1 Key Drop"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR",
+                        "x": 554,
+                        "y": 145,
                         "size": 6
                     }
                 ]
@@ -123,6 +143,26 @@
                         "map": "TR",
                         "x": 688,
                         "y": 75,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Pokey 2 Key Drop",
+                "visibility_rules":["key_drop_shuffle"],
+                "access_rules":[
+                    "somaria, [tr_smallkey|1]"
+                ],
+                "sections": [
+                    {
+                        "name": "Pokey 2 Key Drop"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR",
+                        "x": 217,
+                        "y": 283,
                         "size": 6
                     }
                 ]

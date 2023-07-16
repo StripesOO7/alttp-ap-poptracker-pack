@@ -140,6 +140,40 @@
         "parent": "TT",
         "children": [
             {
+                "name": "Hallway Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "sections": [
+                    {
+                        "name": "Hallway Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 483,
+                        "y": 145,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Spike Switch Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "sections": [
+                    {
+                        "name": "Spike Switch Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 291,
+                        "y": 98,
+                        "size": 6
+                    }
+                ]
+            },
+            {
                 "name": "Blind's Cell",
                 "sections": [
                     {

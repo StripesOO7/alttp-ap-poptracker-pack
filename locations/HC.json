@@ -71,6 +71,63 @@
                         "size": 6
                     }
                 ]
+            },
+            {
+                "name": "Map Guard Key Drop",
+                "visibility_rules":[
+                    "key_drop_shuffle"
+                ],
+                "sections": [
+                    {
+                        "name": "Map Guard Key Drop"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "HC",
+                        "x": 200,
+                        "y": 30,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Boomerang Guard Key Drop",
+                "visibility_rules":[
+                    "key_drop_shuffle"
+                ],
+                "sections": [
+                    {
+                        "name": "Boomerang Guard Key Drop"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "HC",
+                        "x": 105,
+                        "y": 105,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Big Key Drop",
+                "visibility_rules":[
+                    "key_drop_shuffle"
+                ],
+                "sections": [
+                    {
+                        "name": "Big Key Drop"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "HC",
+                        "x": 155,
+                        "y": 43,
+                        "size": 6
+                    }
+                ]
             }
         ]
     },
@@ -159,6 +216,30 @@
                         "map": "CE",
                         "x": 141,
                         "y": 70,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Key Rat Key Drop",
+                "visibility_rules":[
+                    "key_drop_shuffle"
+                ],
+                "access_rules": [
+                    "$darkRooms",
+                    "glove, $smallKeys|hc_smallkey|1",
+                    "standard"
+                ],
+                "sections": [
+                    {
+                        "name": "Key Rat Key Drop"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "CE",
+                        "x": 133,
+                        "y": 175,
                         "size": 6
                     }
                 ]

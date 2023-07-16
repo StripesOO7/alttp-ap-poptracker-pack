@@ -150,6 +150,44 @@
                 ]
             },
             {
+                "name": "Double Switch Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "access_rules":[
+                    "$smallKeys|gt_smallkey|1, @Ganon's Tower Bottom Left/DMs Room Top Right",
+                    "$smallKeys|gt_smallkey|1, hammer, boots"
+                ],
+                "sections": [
+                    {
+                        "name": "Double Switch Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "GT_Bottom",
+                        "x": 114,
+                        "y": 240,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Conveyor Cross Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "sections": [
+                    {
+                        "name": "Conveyor Cross Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "GT_Bottom",
+                        "x": 178,
+                        "y": 113,
+                        "size": 6
+                    }
+                ]
+            },
+            {
                 "name": "Firesnake Room",
                 "access_rules":[
                     "@Ganon's Tower Bottom Left/Map Chest"
@@ -402,6 +440,26 @@
                         "size": 6
                     }
                 ]
+            },
+            {
+                "name": "Conveyor Star Pits Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "access_rules":[
+                    "@Ganon's Tower Bottom Right/Compass Chest"
+                ],
+                "sections": [
+                    {
+                        "name": "Conveyor Star Pits Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "GT_Bottom",
+                        "x": 585,
+                        "y": 335,
+                        "size": 6
+                    }
+                ]
             }
             
         ]
@@ -540,6 +598,24 @@
             "@GT/Ganon's Tower, gt_bigkey"
         ],
         "children": [
+            {
+                "name": "Mini Helmasaur Key Drop",
+                "visibility_rules":["key_drop_shuffle"],
+                "access_rules":["firesource, $getBossRef|gt_lanmo"],
+                "sections": [
+                    {
+                        "name": "Mini Helmasaur Key Drop"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "GT_Top",
+                        "x": 288,
+                        "y": 34,
+                        "size": 6
+                    }
+                ]
+            },
             {
                 "name": "Mini Helmasaur Room Left",
                 "access_rules":["firesource, $getBossRef|gt_lanmo"],

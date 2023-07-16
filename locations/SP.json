@@ -44,6 +44,46 @@
                 ]
             },
             {
+                "name": "Pot Row Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "access_rules":[
+                    "$smallKeys|sp_smallkey|1"
+                ],
+                "sections": [
+                    {
+                        "name": "Pot Row Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "SP",
+                        "x": 550,
+                        "y": 405,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Trench 1 Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "access_rules":[
+                    "$smallKeys|sp_smallkey|1"
+                ],
+                "sections": [
+                    {
+                        "name": "Trench 1 Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "SP",
+                        "x": 447,
+                        "y": 352,
+                        "size": 6
+                    }
+                ]
+            },
+            {
                 "name": "vanilla Map Chest",
                 "visibility_rules":["$getShuffle|map|vanilla"],
                 "access_rules":[
@@ -86,6 +126,27 @@
                 ]
             },
             {
+                "name": "Hookshot Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "access_rules":[
+                    "$smallKeys|sp_smallkey|1, hammer, hookshot",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1, hookshot"
+                ],
+                "sections": [
+                    {
+                        "name": "Hookshot Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "SP",
+                        "x": 373,
+                        "y": 392,
+                        "size": 6
+                    }
+                ]
+            },
+            {
                 "name": "vanilla Big Key Chest",
                 "visibility_rules":["$getShuffle|big_keys|vanilla"],
                 "access_rules":[
@@ -102,6 +163,27 @@
                         "map": "SP",
                         "x": 175,
                         "y": 360,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Trench 2 Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "access_rules":[
+                    "$smallKeys|sp_smallkey|1, hammer",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1"
+                ],
+                "sections": [
+                    {
+                        "name": "Trench 2 Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "SP",
+                        "x": 190,
+                        "y": 351,
                         "size": 6
                     }
                 ]
@@ -225,6 +307,27 @@
                         "map": "SP",
                         "x": 460,
                         "y": 160,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Waterway Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "access_rules":[
+                    "$smallKeys|sp_smallkey|1, hammer, hookshot",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1, hookshot"
+                ],
+                "sections": [
+                    {
+                        "name": "Waterway Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "SP",
+                        "x": 631,
+                        "y": 144,
                         "size": 6
                     }
                 ]
