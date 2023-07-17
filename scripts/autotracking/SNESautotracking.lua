@@ -646,7 +646,7 @@ function updateRoomsFromMemorySegment(segment)
     -- Agahni's Tower
     -- updateSectionChestCountFromRoomSlotList(segment, {"@AT/Agahnim's Tower/Room 03"}, { { 224, 4 } })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@AT/Agahnim's Tower/Maze Chest"}, { { 208, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@AT/Agahnim's Tower/Room 03","@Agahnim's Tower/Room 03/Room 03", "@AT-inverted/Agahnim's Tower/Room 03"}, { { 224, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@AT/Agahnim's Tower/Front","@Agahnim's Tower/Front/Front", "@AT-inverted/Agahnim's Tower/Front"}, { { 224, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@AT/Agahnim's Tower/Maze Chest","@Agahnim's Tower/Maze Chest/Maze Chest", "@AT-inverted/Agahnim's Tower/Maze Chest"}, { { 208, 4 } })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@AT-inverted/Agahnim's Tower/Room 03"}, { { 224, 4 } })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@AT-inverted/Agahnim's Tower/Maze Chest"}, { { 208, 4 } })
