@@ -28,6 +28,27 @@
                 ]
             },
             {
+                "name": "Dark Archer Key Drop",
+                "access_rules":[
+                    "lamp",
+                    "$darkRooms"
+                ],
+                "visibility_rules":["key_drop_shuffle"],
+                "sections": [
+                    {
+                        "name": "Dark Archer Key Drop"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "AT",
+                        "x": 85,
+                        "y": 110,
+                        "size": 8
+                    }
+                ]
+            },
+            {
                 "name": "Maze Chest",
                 "access_rules": ["$darkRooms, $smallKeys|at_smallkey|1"],
                 "sections": [
@@ -40,6 +61,26 @@
                         "map": "AT",
                         "x": 12,
                         "y": 115,
+                        "size": 8
+                    }
+                ]
+            },
+            {
+                "name": "Circle of Pots Key Drop",
+                "access_rules":[
+                    "$darkRooms, $smallKeys|at_smallkey|2"
+                ],
+                "visibility_rules":["key_drop_shuffle"],
+                "sections": [
+                    {
+                        "name": "Circle of Pots Key Drop"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "AT",
+                        "x": 160,
+                        "y": 290,
                         "size": 8
                     }
                 ]

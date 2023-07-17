@@ -29,7 +29,8 @@
             {
                 "name": "DMs Room Top Right",
                 "access_rules":[
-                    "hookshot, hammer"
+                    "hookshot, hammer",
+                    "boots, hammer"
                 ],
                 "sections": [
                     {
@@ -48,7 +49,8 @@
             {
                 "name": "DMs Room Bottom Right",
                 "access_rules":[
-                    "hookshot, hammer"
+                    "hookshot, hammer",
+                    "boots, hammer"
                 ],
                 "sections": [
                     {
@@ -67,7 +69,8 @@
             {
                 "name": "DMs Room Top Left",
                 "access_rules":[
-                    "hookshot, hammer"
+                    "hookshot, hammer",
+                    "boots, hammer"
                 ],
                 "sections": [
                     {
@@ -86,7 +89,8 @@
             {
                 "name": "DMs Room Bottom Left",
                 "access_rules":[
-                    "hookshot, hammer"
+                    "hookshot, hammer",
+                    "boots, hammer"
                 ],
                 "sections": [
                     {
@@ -123,6 +127,44 @@
                 ]
             },
             {
+                "name": "Double Switch Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "access_rules":[
+                    "$smallKeys|gt_smallkey|1, @Ganon's Tower Bottom Left/DMs Room Top Right",
+                    "$smallKeys|gt_smallkey|1, hammer, boots"
+                ],
+                "sections": [
+                    {
+                        "name": "Double Switch Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "GT_Bottom",
+                        "x": 114,
+                        "y": 240,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Conveyor Cross Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "sections": [
+                    {
+                        "name": "Conveyor Cross Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "GT_Bottom",
+                        "x": 178,
+                        "y": 113,
+                        "size": 6
+                    }
+                ]
+            },
+            {
                 "name": "Firesnake Room",
                 "access_rules":[
                     "@Ganon's Tower Bottom Left/Map Chest"
@@ -144,7 +186,7 @@
             {
                 "name": "Randomizer Room Bottom Left",
                 "access_rules":[
-                    "@Ganon's Tower Bottom Left/Firesnake Room"
+                    "@Ganon's Tower Bottom Left/Firesnake Room, hookshot"
                 ],
                 "sections": [
                     {
@@ -163,7 +205,7 @@
             {
                 "name": "Randomizer Room Bottom Right",
                 "access_rules":[
-                    "@Ganon's Tower Bottom Left/Firesnake Room"
+                    "@Ganon's Tower Bottom Left/Firesnake Room, hookshot"
                 ],
                 "sections": [
                     {
@@ -182,7 +224,7 @@
             {
                 "name": "Randomizer Room Top Left",
                 "access_rules":[
-                    "@Ganon's Tower Bottom Left/Firesnake Room"
+                    "@Ganon's Tower Bottom Left/Firesnake Room, hookshot"
                 ],
                 "sections": [
                     {
@@ -201,7 +243,7 @@
             {
                 "name": "Randomizer Room Top Right",
                 "access_rules":[
-                    "@Ganon's Tower Bottom Left/Firesnake Room"
+                    "@Ganon's Tower Bottom Left/Firesnake Room, hookshot"
                 ],
                 "sections": [
                     {
@@ -281,7 +323,7 @@
             {
                 "name": "Compass Chest",
                 "access_rules":[
-                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1"
+                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1, firerod"
                 ],
                 "sections": [
                     {
@@ -300,7 +342,7 @@
             {
                 "name": "Compass Room Top Right",
                 "access_rules":[
-                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1"
+                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1, firerod"
                 ],
                 "sections": [
                     {
@@ -319,7 +361,7 @@
             {
                 "name": "Compass Room Bottom Left",
                 "access_rules":[
-                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1"
+                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1, firerod"
                 ],
                 "sections": [
                     {
@@ -338,7 +380,7 @@
             {
                 "name": "Compass Room Bottom Right",
                 "access_rules":[
-                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1"
+                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1, firrod"
                 ],
                 "sections": [
                     {
@@ -350,6 +392,26 @@
                         "map": "GT_Bottom",
                         "x": 562,
                         "y": 295,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Conveyor Star Pits Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "access_rules":[
+                    "@Ganon's Tower Bottom Right/Compass Chest"
+                ],
+                "sections": [
+                    {
+                        "name": "Conveyor Star Pits Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "GT_Bottom",
+                        "x": 585,
+                        "y": 335,
                         "size": 6
                     }
                 ]
@@ -469,6 +531,24 @@
             "@GT/Ganon's Tower, gt_bigkey"
         ],
         "children": [
+            {
+                "name": "Mini Helmasaur Key Drop",
+                "visibility_rules":["key_drop_shuffle"],
+                "access_rules":["firesource, $getBossRef|gt_lanmo"],
+                "sections": [
+                    {
+                        "name": "Mini Helmasaur Key Drop"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "GT_Top",
+                        "x": 288,
+                        "y": 34,
+                        "size": 6
+                    }
+                ]
+            },
             {
                 "name": "Mini Helmasaur Room Left",
                 "access_rules":["firesource, $getBossRef|gt_lanmo"],

@@ -95,6 +95,47 @@
                 ]
             },
             {
+                "name": "Dark Square Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "access_rules":[
+                    "$darkRooms",
+                    "lamp"
+                ],
+                "sections": [
+                    {
+                        "name": "Dark Square Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "EP",
+                        "x": 574,
+                        "y": 282,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Dark Eyegore Key Drop",
+                "visibility_rules":["key_drop_shuffle"],
+                "access_rules":[
+                    "ep_bigkey"
+                ],
+                "sections": [
+                    {
+                        "name": "Dark Eyegore Key Drop"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "EP",
+                        "x": 404,
+                        "y": 96,
+                        "size": 6
+                    }
+                ]
+            },
+            {
                 "name": "Boss",
                 "access_rules":[
                     "ep_bigkey, [$darkRooms], $getBossRef|ep_boss, bow",

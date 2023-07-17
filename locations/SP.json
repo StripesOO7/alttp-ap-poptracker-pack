@@ -43,9 +43,71 @@
                 ]
             },
             {
+                "name": "Pot Row Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "access_rules":[
+                    "$smallKeys|sp_smallkey|1"
+                ],
+                "sections": [
+                    {
+                        "name": "Pot Row Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "SP",
+                        "x": 550,
+                        "y": 405,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Trench 1 Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "access_rules":[
+                    "$smallKeys|sp_smallkey|1"
+                ],
+                "sections": [
+                    {
+                        "name": "Trench 1 Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "SP",
+                        "x": 447,
+                        "y": 352,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "vanilla Map Chest",
+                "visibility_rules":["$getShuffle|map|vanilla"],
+                "access_rules":[
+                    "$smallKeys|sp_smallkey|1"
+                ],
+                "sections": [
+                    {
+                        "name": "Map Chest",
+                        "hosted_item": "sp_map"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "SP",
+                        "x": 465,
+                        "y": 360,
+                        "size": 6
+                    }
+                ]
+            },
+            {
                 "name": "Big Key Chest",
                 "access_rules":[
-                    "$smallKeys|sp_smallkey|1, hammer"
+                    "$smallKeys|sp_smallkey|1, hammer",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1"
                 ],
                 "sections": [
                     {
@@ -62,9 +124,73 @@
                 ]
             },
             {
-                "name": "West Chest",
+                "name": "Hookshot Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "access_rules":[
+                    "$smallKeys|sp_smallkey|1, hammer, hookshot",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1, hookshot"
+                ],
+                "sections": [
+                    {
+                        "name": "Hookshot Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "SP",
+                        "x": 373,
+                        "y": 392,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "vanilla Big Key Chest",
+                "visibility_rules":["$getShuffle|big_keys|vanilla"],
                 "access_rules":[
                     "$smallKeys|sp_smallkey|1, hammer"
+                ],
+                "sections": [
+                    {
+                        "name": "Big Key Chest",
+                        "hosted_item": "sp_bigkey"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "SP",
+                        "x": 175,
+                        "y": 360,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Trench 2 Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "access_rules":[
+                    "$smallKeys|sp_smallkey|1, hammer",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1"
+                ],
+                "sections": [
+                    {
+                        "name": "Trench 2 Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "SP",
+                        "x": 190,
+                        "y": 351,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "West Chest",
+                "access_rules":[
+                    "$smallKeys|sp_smallkey|1, hammer",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1"
                 ],
                 "sections": [
                     {
@@ -83,7 +209,8 @@
             {
                 "name": "Compass Chest",
                 "access_rules":[
-                    "$smallKeys|sp_smallkey|1, hammer"
+                    "$smallKeys|sp_smallkey|1, hammer",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1"
                 ],
                 "sections": [
                     {
@@ -102,7 +229,8 @@
             {
                 "name": "Flooded Room Left",
                 "access_rules":[
-                    "$smallKeys|sp_smallkey|1, hammer, hookshot"
+                    "$smallKeys|sp_smallkey|1, hammer, hookshot",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1, hookshot"
                 ],
                 "sections": [
                     {
@@ -121,7 +249,8 @@
             {
                 "name": "Flooded Room Right",
                 "access_rules":[
-                    "$smallKeys|sp_smallkey|1, hammer, hookshot"
+                    "$smallKeys|sp_smallkey|1, hammer, hookshot",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1, hookshot"
                 ],
                 "sections": [
                     {
@@ -140,7 +269,8 @@
             {
                 "name": "Waterfall Room",
                 "access_rules":[
-                    "$smallKeys|sp_smallkey|1, hammer, hookshot"
+                    "$smallKeys|sp_smallkey|1, hammer, hookshot",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1, hookshot"
                 ],
                 "sections": [
                     {
@@ -157,9 +287,31 @@
                 ]
             },
             {
+                "name": "Waterway Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "access_rules":[
+                    "$smallKeys|sp_smallkey|1, hammer, hookshot",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1, hookshot"
+                ],
+                "sections": [
+                    {
+                        "name": "Waterway Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "SP",
+                        "x": 631,
+                        "y": 144,
+                        "size": 6
+                    }
+                ]
+            },
+            {
                 "name": "Big Chest",
                 "access_rules":[
-                    "$smallKeys|sp_smallkey|1, hammer, sp_bigkey, hookshot"
+                    "$smallKeys|sp_smallkey|1, hammer, sp_bigkey, hookshot",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1, sp_bigkey, hookshot"
                 ],
                 "sections": [
                     {
@@ -178,7 +330,8 @@
             {
                 "name": "Boss",
                 "access_rules":[
-                    "$smallKeys|sp_smallkey|1, hammer, hookshot, $getBossRef|sp_boss"
+                    "$smallKeys|sp_smallkey|1, hammer, hookshot, $getBossRef|sp_boss",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1, $getBossRef|sp_boss, hookshot"
                 ],
                 "sections": [
                     {

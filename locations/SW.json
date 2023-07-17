@@ -88,6 +88,22 @@
                 ]
             },
             {
+                "name": "West Lobby Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "sections": [
+                    {
+                        "name": "West Lobby Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "SW",
+                        "x": 148,
+                        "y": 149,
+                        "size": 6
+                    }
+                ]
+            },
                 "name": "Big Chest",
                 "access_rules":[
                     "sw_bigkey"
@@ -128,6 +144,26 @@
                         "map": "SW",
                         "x": 42,
                         "y": 288,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Spike Corner Key Drop",
+                "access_rules":[
+                    "firesource, $canRemoveCurtains"
+                ],
+                "visibility_rules":["key_drop_shuffle"],
+                "sections": [
+                    {
+                        "name": "Spike Corner Key Drop"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "SW",
+                        "x": 32,
+                        "y": 32,
                         "size": 6
                     }
                 ]
