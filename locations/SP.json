@@ -25,7 +25,6 @@
             },
             {
                 "name": "Map Chest",
-                "visibility_rules":["$getShuffle|map|shuffle"],
                 "access_rules":[
                     "$smallKeys|sp_smallkey|1"
                 ],
@@ -106,7 +105,6 @@
             },
             {
                 "name": "Big Key Chest",
-                "visibility_rules":["$getShuffle|big_keys|shuffle"],
                 "access_rules":[
                     "$smallKeys|sp_smallkey|1, hammer",
                     "$checkGlitches|1, $smallKeys|sp_smallkey|1"
@@ -210,7 +208,6 @@
             },
             {
                 "name": "Compass Chest",
-                "visibility_rules":["$getShuffle|compass|shuffle"],
                 "access_rules":[
                     "$smallKeys|sp_smallkey|1, hammer",
                     "$checkGlitches|1, $smallKeys|sp_smallkey|1"
@@ -218,28 +215,6 @@
                 "sections": [
                     {
                         "name": "Compass Chest"
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "SP",
-                        "x": 287,
-                        "y": 475,
-                        "size": 6
-                    }
-                ]
-            },
-            {
-                "name": "vanilla Compass Chest",
-                "visibility_rules":["$getShuffle|compass|vanilla"],
-                "access_rules":[
-                    "$smallKeys|sp_smallkey|1, hammer",
-                    "$checkGlitches|1, $smallKeys|sp_smallkey|1"
-                ],
-                "sections": [
-                    {
-                        "name": "Compass Chest",
-                        "hosted_item": "sp_compass"
                     }
                 ],
                 "map_locations": [
