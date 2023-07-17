@@ -1112,6 +1112,12 @@
                 "item_count": 2,
                 "sections": [
                     {
+                        "name": "Key Drops",
+                        "item_count": 3,
+                        "clear_as_group": false,
+                        "visability_rules": ["key_drop_shuffle"]
+                    },
+                    {
                         "name": "Boss Item" ,
                         "access_rules":[ "$getBossRef|dp_boss, dp_bigkey"],
                         "clear_as_group": true,
@@ -1153,6 +1159,16 @@
                         // "hosted_item": "ep_map, ep_compass, ep_bigkey",
                         "clear_as_group": false,
                         "item_count": 5
+                    },
+                    {
+                        "name": "Key Drops",
+                        "item_count": 2,
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "[ep_bigkey],[firesource]",
+                            "ep_bigkey,firesource"
+                        ],
+                        "visability_rules": ["key_drop_shuffle"]
                     },
                     {
                         "name": "Boss Item" ,
@@ -1209,6 +1225,15 @@
                         ]
                     },
                     {
+                        "name": "Key Drops",
+                        "item_count": 2,
+                        "clear_as_group": false,
+                        "access_rules":[
+                            "$darkRooms, $smallKeys|at_smallkey|1"
+                        ],
+                        "visability_rules": ["key_drop_shuffle"]
+                    },
+                    {
                         "name": "Agahnim 1",
                         "access_rules":[
                             "$canRemoveCurtains, sword, $smallKeys|at_smallkey|2",
@@ -1252,6 +1277,12 @@
                     },
                     {
                         "name": "Zelda's Chest"
+                    },
+                    {
+                        "name": "Key Drops",
+                        "item_count": 3,
+                        "clear_as_group": false,
+                        "visability_rules": ["key_drop_shuffle"]
                     }
                 ],
                 "map_locations": [
@@ -1299,6 +1330,17 @@
                             "bombs",
                             "boots"
                         ]
+                    },
+                    {
+                        "name": "Key Drops",
+                        "item_count": 1,
+                        "clear_as_group": false,
+                        "access_rules":[
+                            "$darkRooms",
+                            "glove, $smallKeys|hc_smallkey|1",
+                            "standard"
+                        ],
+                        "visability_rules": ["key_drop_shuffle"]
                     }
                 ],
                 "map_locations": [
@@ -1463,6 +1505,15 @@
                         "clear_as_group": false,
                         "item_count": 1,
                         "hosted_item": "gt_boss"
+                    },
+                    {
+                        "name": "Key Drops",
+                        "item_count": 4,
+                        "clear_as_group": false,
+                        "access_rules":[
+                            "@GT/Ganon's Tower/GT Top Moldorm refight"
+                        ],
+                        "visability_rules": ["key_drop_shuffle"]
                     },
                     {
                         "name": "GT Top Agahnim 2",

@@ -691,6 +691,16 @@
                         // "hosted_item": "tr_map, tr_compass, tr_bigkey",
                         "clear_as_group": false,
                         "item_count": 5
+                    },
+                    {
+                        "name": "Key Drops",
+                        "item_count": 2,
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "[$smallKeys|tr_smallkey|1], [somaria], [firerod]",
+                            "$smallKeys|tr_smallkey|1, somaria, firerod"
+                        ],
+                        "visability_rules": ["key_drop_shuffle"]
                     }
                 ],
                 "map_locations": [
@@ -785,6 +795,12 @@
                         // "hosted_item": "sw_map, sw_compass, sw_bigkey",
                         "clear_as_group": false,
                         "item_count": 6
+                    },
+                    {
+                        "name": "Key Drops",
+                        "item_count": 1,
+                        "clear_as_group": false,
+                        "visability_rules": ["key_drop_shuffle"]
                     }
                 ],
                 "map_locations": [
@@ -805,6 +821,13 @@
                         "name": "Dungeon Chest" ,
                         "clear_as_group": false,
                         "item_count": 1
+                    },
+                    {
+                        "name": "Key Drops",
+                        "item_count": 1,
+                        "clear_as_group": false,
+                        "access_rules":["$canRemoveCurtains"],
+                        "visability_rules": ["key_drop_shuffle"]
                     },
                     {
                         "name": "Boss Item" ,
@@ -843,12 +866,23 @@
                         "name": "Dungeon Chest" ,
                         "access_rules":[
                             "[boots],[hookshot],[firesource],[mm_bigkey]",
-                            "[boots],hookshotfiresource,mm_bigkey",
-                            "boots,[hookshot]firesource,mm_bigkey"
+                            "[boots],hookshot, firesource,mm_bigkey",
+                            "boots,[hookshot], firesource,mm_bigkey"
                         ],
                         // "hosted_item": "mm_map, mm_compass, mm_bigkey",
                         "clear_as_group": false,
                         "item_count": 7
+                    },
+                    {
+                        "name": "Key Drops",
+                        "item_count": 3,
+                        "clear_as_group": false,
+                        "access_rules":[
+                            "[boots],[hookshot],[firesource]",
+                            "[boots],hookshot, firesource",
+                            "boots,[hookshot], firesource"
+                        ],
+                        "visability_rules": ["key_drop_shuffle"]
                     },
                     {
                         "name": "Boss Item" ,
@@ -897,6 +931,16 @@
                         // "hosted_item": "sp_map, sp_compass, sp_bigkey",
                         "clear_as_group": false,
                         "item_count": 9
+                    },
+                    {
+                        "name": "Key Drops",
+                        "item_count": 5,
+                        "clear_as_group": false,
+                        "access_rules":[
+                            "[hookshot], [$smallKeys|sp_smallkey|1]",
+                            "hookshot, $smallKeys|sp_smallkey|1"
+                        ],
+                        "visability_rules": ["key_drop_shuffle"]
                     },
                     {
                         "name": "Boss Item" ,
@@ -950,12 +994,22 @@
                         "item_count": 7
                     },
                     {
+                        "name": "Key Drops",
+                        "item_count": 4,
+                        "clear_as_group": false,
+                        "access_rules":[
+                            "[ip_bigkey], hammer, glove",
+                            "ip_bigkey, hammer, glove"
+                        ],
+                        "visability_rules": ["key_drop_shuffle"]
+                    },
+                    {
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules":[
                             "[ip_bigkey], $getBossRef|ip_boss, hammer, glove",
                             "ip_bigkey, $getBossRef|ip_boss, hammer, glove"
-                            ] ,
+                        ],
                         "item_count": 1,
                         "hosted_item": "ip_boss, icepalace"
                     }
@@ -998,6 +1052,16 @@
                             "tt_bigkey, [$smallKeys|tt_smallkey|1], [hammer]",
                             "tt_bigkey, $smallKeys|tt_smallkey|1, hammer"
                         ]
+                    },
+                    {
+                        "name": "Key Drops",
+                        "item_count": 2,
+                        "clear_as_group": false,
+                        "access_rules":[
+                            "tt_bigkey, [$smallKeys|tt_smallkey|1]",
+                            "tt_bigkey, $smallKeys|tt_smallkey|1"
+                        ],
+                        "visability_rules": ["key_drop_shuffle"]
                     },
                     {
                         "name": "Boss Item",
@@ -1096,6 +1160,15 @@
                         "clear_as_group": false,
                         "item_count": 1,
                         "hosted_item": "gt_boss"
+                    },
+                    {
+                        "name": "Key Drops",
+                        "item_count": 4,
+                        "clear_as_group": false,
+                        "access_rules":[
+                            "@GT/Ganon's Tower/GT Top Moldorm refight"
+                        ],
+                        "visability_rules": ["key_drop_shuffle"]
                     },
                     {
                         "name": "GT Top Agahnim 2",
