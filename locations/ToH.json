@@ -24,14 +24,14 @@
                 ]
             },
             {
-                "name": "Map Chest",
+                "name": "Big Key Chest",
                 "visibility_rules":["$getShuffle|map|shuffle"],
                 "access_rules":[
                     "$smallKeys|toh_smallkey|1, firesource"
                 ],
                 "sections": [
                     {
-                        "name": "Map Chest"
+                        "name": "Big Key Chest"
                     }
                 ],
                 "map_locations": [
@@ -44,15 +44,15 @@
                 ]
             },
             {
-                "name": "vanilla Map Chest",
+                "name": "vanilla Big Key Chest",
                 "visibility_rules":["$getShuffle|map|vanilla"],
                 "access_rules":[
                     "$smallKeys|toh_smallkey|1, firesource"
                 ],
                 "sections": [
                     {
-                        "name": "Map Chest",
-                        "hosted_item": "toh_map"
+                        "name": "Big Key Chest",
+                        "hosted_item": "toh_bigkey"
                     }
                 ],
                 "map_locations": [
@@ -65,11 +65,11 @@
                 ]
             },
             {
-                "name": "Big Key Chest",
+                "name": "Map Chest",
                 "visibility_rules":["$getShuffle|big_keys|shuffle"],
                 "sections": [
                     {
-                        "name": "Big Key Chest"
+                        "name": "Map Chest"
                     }
                 ],
                 "map_locations": [
@@ -82,12 +82,12 @@
                 ]
             },
             {
-                "name": "vanilla Big Key Chest",
+                "name": "vanilla Map Chest",
                 "visibility_rules":["$getShuffle|big_keys|vanilla"],
                 "sections": [
                     {
-                        "name": "Big Key Chest",
-                        "hosted_item": "toh_bigkey"
+                        "name": "Map Chest",
+                        "hosted_item": "toh_map"
                     }
                 ],
                 "map_locations": [

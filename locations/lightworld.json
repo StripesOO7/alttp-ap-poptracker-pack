@@ -547,6 +547,28 @@
                 ]
             },
             {
+                "name": "Capacity Fairy",
+                "visibility_rules": ["shop_sanity"],
+                "sections": [
+                    {
+                        "name": "Shop Item",
+                        "access_rules": [
+                            "flippers"
+                        ],
+                        "clear_as_group": false,
+                        "item_count":2
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 1592,
+                        "y": 1715,
+                        "size": 32
+                    }
+                ]
+            },
+            {
                 "name": "Link's House",
                 "access_rules":[
                     "$openOrStandard"
@@ -1178,7 +1200,7 @@
                 ],
                 "sections": [
                     {
-                        "name": "Room 03"
+                        "name": "Front"
                     },
                     {
                         "name": "Maze Chest",
