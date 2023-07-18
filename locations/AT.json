@@ -30,8 +30,8 @@
             {
                 "name": "Dark Archer Key Drop",
                 "access_rules":[
-                    "lamp",
-                    "$darkRooms"
+                    "lamp, $smallKeys|at_smallkey|1",
+                    "$darkRooms, $smallKeys|at_smallkey|1"
                 ],
                 "visibility_rules":["key_drop_shuffle"],
                 "sections": [
