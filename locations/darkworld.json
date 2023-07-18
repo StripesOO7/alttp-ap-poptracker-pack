@@ -12,28 +12,6 @@
         ],
         "children": [
             {
-                "name": "Link's House",
-                "access_rules":[
-                    "@Darkworld Left, inverted"
-                ],
-                "visibility_rules":[
-                    "inverted"
-                ],
-                "sections": [
-                    {
-                        "name": "Chest"
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "Darkworld",
-                        "x": 1095,
-                        "y": 1385,
-                        "size": 32
-                    }
-                ]
-            },
-            {
                 "name": "Dark Lumberjack Shop",
                 "visibility_rules": ["shop_sanity"],
                 "sections": [
@@ -108,32 +86,6 @@
                         "map": "Darkworld",
                         "x": 95,
                         "y": 925,
-                        "size": 32
-                    }
-                ]
-            },
-            {
-                "name": "Purple Chest Return",
-                "sections": [
-                    {
-                        "name": "Purple Chest Return",
-                        "access_rules":[
-                            "@Darkworld Left/Breadsmiths, titans",
-                            "inverted, @Lightworld, mirror"
-                        ]
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "Darkworld",
-                        "x": 690,
-                        "y": 1800,
-                        "size": 32
-                    },
-                    {
-                        "map": "Darkworld",
-                        "x": 610,
-                        "y": 1050,
                         "size": 32
                     }
                 ]
@@ -258,6 +210,66 @@
                         "size": 32
                     }
                 ]
+            }
+        ]
+    },
+    {
+        "name": "Darkworld Bottom",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "access_rules": [
+            "@Darkworld Left",
+            "@Darkworld Right, hammer, pearl",
+            "inverted"
+        ],
+        "children": [
+            {
+                "name": "Link's House",
+                "access_rules":[
+                    "@Darkworld Bottom, inverted"
+                ],
+                "visibility_rules":[
+                    "inverted"
+                ],
+                "sections": [
+                    {
+                        "name": "Chest"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 1095,
+                        "y": 1385,
+                        "size": 32
+                    }
+                ]
+            },
+            {
+                "name": "Purple Chest Return",
+                "sections": [
+                    {
+                        "name": "Purple Chest Return",
+                        "access_rules":[
+                            "@Darkworld Left/Breadsmiths, titans",
+                            "inverted, @Lightworld, mirror"
+                        ]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 690,
+                        "y": 1800,
+                        "size": 32
+                    },
+                    {
+                        "map": "Darkworld",
+                        "x": 610,
+                        "y": 1050,
+                        "size": 32
+                    }
+                ]
             },
             {
                 "name": "Digging Game",
@@ -330,8 +342,6 @@
                         "size": 32
                     }
                 ]
-            },
-            {
             }
         ]
     },
@@ -447,7 +457,8 @@
             "inverted, flute_active",
             "inverted, mirror, @Lightworld",
             "inverted, mirror, aga1",
-            "@Darkworld Left, $checkGlitches|2, boots"
+            "@Darkworld Left, $checkGlitches|2, boots",
+            "@Darkworld Bottom, $checkGlitches|2, boots"
         ],
         "children": [
             {
@@ -912,7 +923,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "@Darkworld Left",
+            "@Darkworld Bottom",
             "@Darkworld Left, hookshot, hammer",
             "inverted, @Lightworld"
         ],
@@ -971,8 +982,8 @@
         "access_rules":[
             "@Lightworld, $canSwim, pearl, titans",
             "inverted, flippers",
-            "@Darkworld Left, flippers, pearl, $checkGlitches|2, boots",
-            "@Darkworld Left, pearl, $checkGlitches|2, boots, mirror"
+            "@Darkworld Bottom, flippers, pearl, $checkGlitches|2, boots",
+            "@Darkworld Bottom, pearl, $checkGlitches|2, boots, mirror"
         ],
         "children": [
             {

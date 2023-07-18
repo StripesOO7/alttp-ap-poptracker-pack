@@ -327,7 +327,7 @@
             {
                 "name": "Cave 45",
                 "access_rules": [
-                    "@Darkworld Left, mirror",
+                    "@Darkworld Bottom, mirror",
                     "$checkGlitches|2, boots"
                 ],
                 "sections": [
@@ -529,7 +529,7 @@
                     {
                         "name": "Lake Island",
                         "access_rules": [
-                            "$canSwim, @Darkworld Left, mirror",
+                            "$canSwim, @Darkworld Bottom, mirror",
                             "$canSwim, @Darkworld Right, mirror",
                             "$checkGlitches|2, boots",
                             "{}"
@@ -767,8 +767,8 @@
             {
                 "name": "Bombos Tablet",
                 "access_rules":[
-                    "@Darkworld Left, mirror, book, $canActivateTablets",
-                    "{@Darkworld Left, mirror, book}",
+                    "@Darkworld Bottom, mirror, book, $canActivateTablets",
+                    "{@Darkworld Bottom, mirror, book}",
                     "inverted, $canActivateTablets, book",
                     "{inverted, book}",
                     "$checkGlitches|2, boots, book, $canActivateTablets",
