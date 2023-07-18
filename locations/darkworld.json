@@ -1217,6 +1217,15 @@
                         ]
                     },
                     {
+                        "name": "Key Drops",
+                        "item_count": 2,
+                        "clear_as_group": false,
+                        "access_rules":[
+                            "$darkRooms, $smallKeys|at_smallkey|1"
+                        ],
+                        "visability_rules": ["key_drop_shuffle"]
+                    },
+                    {
                         "name": "Agahnim 1",
                         "access_rules":[
                             "$canRemoveCurtains, sword, $smallKeys|at_smallkey|2",
