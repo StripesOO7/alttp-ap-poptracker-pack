@@ -679,10 +679,12 @@ function updateRoomsFromMemorySegment(segment)
     updateSectionChestCountFromRoomSlotList(segment, {"@CE/Sanctuary/Sanctuary Chest","@Sanctuary/Sanctuary Chest/Sanctuary Chest"}, { { 18, 4 } })
 
     -- Agahni's Tower
-    -- updateSectionChestCountFromRoomSlotList(segment, {"@AT/Agahnim's Tower/Room 03"}, { { 224, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@AT/Agahnim's Tower/Key Drops", "@AT-inverted/Agahnim's Tower/Key Drops"}, { { 176, 10 }, { 208, 10 } })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@AT/Agahnim's Tower/Maze Chest"}, { { 208, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@AT/Agahnim's Tower/Front","@Agahnim's Tower/Front/Front", "@AT-inverted/Agahnim's Tower/Front"}, { { 224, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@AT/Agahnim's Tower/Maze Chest","@Agahnim's Tower/Maze Chest/Maze Chest", "@AT-inverted/Agahnim's Tower/Maze Chest"}, { { 208, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Agahnim's Tower/Circle of Pots Key Drop/Circle of Pots Key Drop"}, { { 176, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Agahnim's Tower/Dark Archer Key Drop/Dark Archer Key Drop"}, { { 208, 10 } })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@AT-inverted/Agahnim's Tower/Room 03"}, { { 224, 4 } })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@AT-inverted/Agahnim's Tower/Maze Chest"}, { { 208, 4 } })
     
@@ -690,7 +692,9 @@ function updateRoomsFromMemorySegment(segment)
 
     -- Eastern palace
     updateSectionChestCountFromRoomSlotList(segment, {"@EP/Eastern Palace/Dungeon Chest"}, { { 185, 4 }, { 168, 4 }, { 169, 4 }, { 170, 4 }, { 184, 4 } })
-    -- updateSectionChestCountFromRoomSlotList(segment, {"@EP/Eastern Palace/Boss Item"}, { { 200, 11 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@EP/Eastern Palace/Key Drops"}, { { 186, 10 }, { 153, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Eastern Palace/Dark Square Pot Key/Dark Square Pot Key"}, { { 186, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Eastern Palace/Dark Eyegore Key Drop/Dark Eyegore Key Drop"}, { { 153, 10 } })
 
     updateSectionChestCountFromRoomSlotList(segment, {"@Eastern Palace/Compass Chest/Compass Chest"}, { { 168, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Eastern Palace/Big Chest/Big Chest"}, { { 169, 4 } })
@@ -701,7 +705,10 @@ function updateRoomsFromMemorySegment(segment)
 
     --Desert Palace
     updateSectionChestCountFromRoomSlotList(segment, {"@DP/Desert Palace/Dungeon Chest"}, { { 133, 4 },{ 115, 4 },{ 115, 5 },{ 116, 4 },{ 117, 4 } })
-    -- updateSectionChestCountFromRoomSlotList(segment, {"@DP Back/Desert Palace Back/Boss Item"}, { { 51, 11 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@DP Back/Desert Palace Back/Key Drops"}, { { 67, 10 }, { 83, 10 }, { 99, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Desert PalaceBack /Desert Tiles 2 Pot Key/Desert Tiles 2 Pot Key"}, { { 67, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Desert PalaceBack /Beamos Hall Pot Key/Beamos Hall Pot Key"}, { { 83, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Desert PalaceBack /Desert Tiles 1 Pot Key/Desert Tiles 1 Pot Key"}, { { 99, 10 } })
 
     updateSectionChestCountFromRoomSlotList(segment, {"@Desert Palace/Compass Chest/Compass Chest"}, { { 133, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Desert Palace/Big Chest/Big Chest"}, { { 115, 4 } })
@@ -745,7 +752,12 @@ function updateRoomsFromMemorySegment(segment)
     updateSectionChestCountFromRoomSlotList(segment, {"@PoD/Palace of Darkness/Boss Item","@Palace of Darkness/Boss/Boss Item"}, { { 90, 11 } })
 
     -- Swamp Palace
-    -- updateSectionChestCountFromRoomSlotList(segment, {"@SP/Swamp Palace/Dungeon Chest"}, { { 40, 4 } }) -- entrance
+    updateSectionChestCountFromRoomSlotList(segment, {"@SP/Swamp Palace/Key Drops"}, { { 53, 10 }, { 54, 10 }, { 55, 10 }, { 56, 10 }, { 22, 10 } }) -- entrance
+    updateSectionChestCountFromRoomSlotList(segment, {"@Swamp Palace/Waterway Pot Key/Waterway Pot Key"}, { { 22, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Swamp Palace/Trench 2 Pot Key/Trench 2 Pot Key"}, { { 53, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Swamp Palace/Hookshot Pot Key/Hookshot Pot Key"}, { { 54, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Swamp Palace/Trench 1 Pot Key/Trench 1 Pot Key"}, { { 55, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Swamp Palace/Pot Row Pot Key/Pot Row Pot Key"}, { { 56, 10 } })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@SP/Swamp Palace/Dungeon Chest"}, { { 55, 4 } }) --bombable wall
     updateSectionChestCountFromRoomSlotList(segment, {"@SP/Swamp Palace/Dungeon Chest"}, { 
         { 40, 4 },{ 55, 4 },{ 54, 4 },{ 53, 4 },{ 52, 4 },{ 70, 4 },{ 118, 4 },{ 118, 5 },{ 102, 4 } 
@@ -768,6 +780,8 @@ function updateRoomsFromMemorySegment(segment)
     updateSectionChestCountFromRoomSlotList(segment, {"@SW/Skull Woods Front/Dungeon Chest"}, { 
         { 103, 4 },{ 104, 4 },{ 87, 4 },{ 87, 5 },{ 88, 4 },{ 88, 5 }
     })
+    updateSectionChestCountFromRoomSlotList(segment, {"@SW/Skull Woods Front/Key Drops", "@Skull Woods Front/West Lobby Pot Key/West Lobby Pot Key"}, { { 86, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@SW/Skull Woods Back/Key Drops", "@Skull Woods Back/Spike Corner Key Drop/Spike Corner Key Drop"}, { { 57, 10 } })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@SW/Skull Woods Back/Dungeon Chest"}, { { 89, 4 } })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@SW/Skull Woods Back/Boss Item"}, { { 41, 11 } })
 
@@ -783,6 +797,10 @@ function updateRoomsFromMemorySegment(segment)
     -- Thieves Town
     updateSectionChestCountFromRoomSlotList(segment, {"@TT/Thieves Town/Front"}, { { 203, 4 }, { 219, 4 }, { 219, 5 }, { 220, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@TT/Thieves Town/Back"}, { { 101, 4 }, { 69, 4 }, { 68, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@TT/Thieves Town/Key Drops"}, { { 171, 10}, { 188, 10 } })
+    
+    updateSectionChestCountFromRoomSlotList(segment, {"@Thieves Town Back/Spike Switch Pot Key/Spike Switch Pot Key"}, { { 171, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Thieves Town Back/Hallway Pot Key/Hallway Pot Key"}, { { 188, 10 } })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@TT/Thieves Town/Back"}, { { 68, 4 } }) --big chest
     -- updateSectionChestCountFromRoomSlotList(segment, {"@TT/Thieves Town/Boss Item"}, { { 172, 11 } })
 
@@ -800,6 +818,11 @@ function updateRoomsFromMemorySegment(segment)
         { 174, 4 },{ 158, 4 },{ 126, 4 },{ 95, 4 },{ 63, 4 },{ 46, 4 },{ 31, 4 }
     })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@IP/Ice Palace/Boss Item"}, { { 222, 11 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@IP/Ice Palace/Key Drops"}, { { 14, 10 }, { 62, 10 }, { 63, 10 }, { 159, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ice Palace/Jelly Key Drop/Jelly Key Drop"}, { { 14, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ice Palace/Conveyor Key Drop/Conveyor Key Drop"}, { { 62, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ice Palace/Hammer Block Key Drop/Hammer Block Key Drop"}, { { 63, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ice Palace/Many Pots Pot Key/Many Pots Pot Key"}, { { 159, 10 } })
 
     updateSectionChestCountFromRoomSlotList(segment, {"@Ice Palace/Iced T Room/Iced T Room"}, { { 174, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Ice Palace/Big Chest/Big Chest"}, { { 158, 4 } })
@@ -815,6 +838,10 @@ function updateRoomsFromMemorySegment(segment)
         { 162, 4 },{ 179, 4 },{ 193, 4 },{ 194, 4 },{ 195, 4 },{ 195, 5 },{ 209, 4 }
     })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@MM/Misery Mire/Boss Item"}, { { 144, 11 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@MM/Misery Mire/Key Drops"}, { { 161, 10 }, { 179, 10 }, { 193, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Misery Mire/Fishbone Pot Key/Fishbone Pot Key"}, { { 161, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Misery Mire/Spikes Pot Key/Spikes Pot Key"}, { { 179, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop"}, { { 193, 10 } })
 
     updateSectionChestCountFromRoomSlotList(segment, {"@Misery Mire/Bridge Chest/Bridge Chest"}, { { 162, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Misery Mire/Spike Chest/Spike Chest"}, { { 179, 4 } })
@@ -834,8 +861,11 @@ function updateRoomsFromMemorySegment(segment)
        { 213, 4 },{ 213, 5 },{ 213, 6 },{ 213, 7 },{ 36, 4 },{ 4,4 }
     })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@TR/Turtle Rock Back/Boss Item"}, { { 164, 11 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@TR/Turtle Rock Front/Key Drops"}, { { 19, 10 }, { 182, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Turtle Rock Front/Pokey 1 Key Drop/Pokey 1 Key Drop"}, { { 182, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Turtle Rock Front/Pokey 2 Key Drop/Pokey 2 Key Drop"}, { { 19, 10 } })
 
-    updateSectionChestCountFromRoomSlotList(segment,  {"@Turtle Rock Front/Compass Chest/Compass Chest"}, { { 214, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Turtle Rock Front/Compass Chest/Compass Chest"}, { { 214, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Turtle Rock Front/Chain Chomps/Chain Chomps"}, { { 182, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Turtle Rock Front/Map Chest/Map Chest"}, { { 183, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Turtle Rock Front/Roller Room Right/Roller Room Right"}, { { 183, 5 } })
@@ -850,6 +880,9 @@ function updateRoomsFromMemorySegment(segment)
     
     -- @todo: split GT into right/left side
     -- Ganon's Tower
+    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Key Drops", "@GT-inverted/Ganon's Tower/Key Drops"}, {
+        { 138, 10 }, { 155, 10 }, { 61, 10 }, { 123, 10 }
+    })
     updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Leftside"}, {
         { 140, 4 }, { 125, 4 }, { 124, 4 }, { 124, 5 }, { 124, 6 }, { 124, 7 }, 
         { 123, 4 }, { 123, 5 }, { 123, 6 }, { 123, 7 }, { 139, 4 }
@@ -874,7 +907,11 @@ function updateRoomsFromMemorySegment(segment)
     updateSectionChestCountFromRoomSlotList(segment, {"@GT-inverted/Ganon's Tower/GT Top + Lanmo refight"}, { { 61, 4 }, { 61, 5 }, { 61, 6 } })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/GT Top Moldorm refight"}, { { 77, 4 }  })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@GT-inverted/Ganon's Tower/GT Top Moldorm refight"}, { { 77, 4 }  })
-
+    
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Conveyor Cross Pot Key/Conveyor Cross Pot Key"}, {{ 138, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Double Switch Pot Key/Double Switch Pot Key"}, {{ 155, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Top/Mini Helmasaur Key Drop/Mini Helmasaur Key Drop"}, {{ 61, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key"}, {{ 123, 10 } })
 
     updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Bob's Torch/Bob's Torch", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 140, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 125, 4 } })
