@@ -706,9 +706,9 @@ function updateRoomsFromMemorySegment(segment)
     --Desert Palace
     updateSectionChestCountFromRoomSlotList(segment, {"@DP/Desert Palace/Dungeon Chest"}, { { 133, 4 },{ 115, 4 },{ 115, 5 },{ 116, 4 },{ 117, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@DP Back/Desert Palace Back/Key Drops"}, { { 67, 10 }, { 83, 10 }, { 99, 10 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@Desert PalaceBack /Desert Tiles 2 Pot Key/Desert Tiles 2 Pot Key"}, { { 67, 10 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@Desert PalaceBack /Beamos Hall Pot Key/Beamos Hall Pot Key"}, { { 83, 10 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@Desert PalaceBack /Desert Tiles 1 Pot Key/Desert Tiles 1 Pot Key"}, { { 99, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Desert Palace Back/Desert Tiles 2 Pot Key/Desert Tiles 2 Pot Key"}, { { 67, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Desert Palace Back/Beamos Hall Pot Key/Beamos Hall Pot Key"}, { { 83, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Desert Palace Back/Desert Tiles 1 Pot Key/Desert Tiles 1 Pot Key"}, { { 99, 10 } })
 
     updateSectionChestCountFromRoomSlotList(segment, {"@Desert Palace/Compass Chest/Compass Chest"}, { { 133, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Desert Palace/Big Chest/Big Chest"}, { { 115, 4 } })
@@ -907,7 +907,7 @@ function updateRoomsFromMemorySegment(segment)
     updateSectionChestCountFromRoomSlotList(segment, {"@GT-inverted/Ganon's Tower/GT Top + Lanmo refight"}, { { 61, 4 }, { 61, 5 }, { 61, 6 } })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/GT Top Moldorm refight"}, { { 77, 4 }  })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@GT-inverted/Ganon's Tower/GT Top Moldorm refight"}, { { 77, 4 }  })
-    
+
     updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Conveyor Cross Pot Key/Conveyor Cross Pot Key"}, {{ 138, 10 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Double Switch Pot Key/Double Switch Pot Key"}, {{ 155, 10 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Top/Mini Helmasaur Key Drop/Mini Helmasaur Key Drop"}, {{ 61, 10 } })
