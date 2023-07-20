@@ -609,7 +609,12 @@ function updateRoomsFromMemorySegment(segment)
     if not AUTOTRACKER_ENABLE_LOCATION_TRACKING then
         return true
     end    
-
+-- 255 light DM shop
+-- 265 witch shop
+-- 274 lake hylia shop, dark dm shop, 
+-- 271 dark witch shop, dark lumberjack, dark kak, dark lake hylia
+-- 272 dark red shield shop
+-- 287 light kak shop
     updateSectionChestCountFromRoomSlotList(segment, {"@Lightworld/Link's House/Chest"}, { { 0, 10 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Lightworld/Link's House/Chest", "@Darkworld Bottom/Link's House/Chest"}, { { 260, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Lightworld/Kakariko Well/Well Items"}, { { 47, 5 }, { 47, 6 }, { 47, 7 }, { 47, 8 } })
@@ -652,17 +657,21 @@ function updateRoomsFromMemorySegment(segment)
 
 
     -- Hyrule Castle & Escape
-    -- updateSectionChestCountFromRoomSlotList(segment, {"@HC/Hyrule Castle/Boomerang Chest"}, { { 113, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@HC/Hyrule Castle/Key Drops"}, { { 113, 10 }, { 114, 10 }, { 128, 10 } })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@HC/Hyrule Castle/Map Chest"}, { { 114, 4 } })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@HC/Hyrule Castle/Zelda's Chest"}, { { 128, 4 } })
-    -- updateSectionChestCountFromRoomSlotList(segment, {"@CE/Castle Escape/Dark Cross"}, { { 50, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@CE/Castle Escape/Secret Room"}, {  { 17, 4 },{ 17, 5 },{ 17, 6 }, })
+    updateSectionChestCountFromRoomSlotList(segment, {"@CE/Castle Escape/Key Drops"}, { { 33, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@CE/Castle Escape/Secret Room"}, {  { 17, 4 }, { 17, 5 }, { 17, 6 } })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@CE/Sanctuary/Sanctuary Chest"}, { { 18, 4 } })
 
     updateSectionChestCountFromRoomSlotList(segment, {"@HC/Hyrule Castle/Boomerang Chest","@Hyrule Castle/Boomerang Chest/Boomerang Chest"}, { { 113, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Hyrule Castle/Boomerang Guard Key Drop/Boomerang Guard Key Drop"}, { { 113, 10 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@HC/Hyrule Castle/Map Chest","@Hyrule Castle/Map Chest/Map Chest"}, { { 114, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Hyrule Castle/Map Guard Key Drop/Map Guard Key Drop"}, { { 114, 10 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@HC/Hyrule Castle/Zelda's Chest","@Hyrule Castle/Zelda's Chest/Zelda's Chest"}, { { 128, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Hyrule Castle/Big Key Drop/Big Key Drop"}, { { 128, 10 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@CE/Castle Escape/Dark Cross","@Castle Escape/Dark Cross/Dark Cross"}, { { 50, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Castle Escape/Key Rat Key Drop/Key Rat Key Drop"}, { { 33, 10 } })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@Hyrule Castle & Sanctuary/Escape"}, { { 113, 4 },{ 114, 4 },{ 128, 4 },{ 50, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Castle Escape/Secret Passage Left/Secret Passage Left"}, {  { 17, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Castle Escape/Secret Passage Middle/Secret Passage Middle"}, { { 17, 5 } })
@@ -963,6 +972,34 @@ function updateItemsFromMemorySegment(segment)
         updateToggleItemFromByteAndFlag(segment, "sp_bigkey",  0x7ef367, 0x04)
         updateToggleItemFromByteAndFlag(segment, "dp_bigkey",  0x7ef367, 0x10)
         updateToggleItemFromByteAndFlag(segment, "ep_bigkey",  0x7ef367, 0x20)
+        updateToggleItemFromByteAndFlag(segment, "hc_bigkey",  0x7ef367, 0x40)
+
+        updateToggleItemFromByteAndFlag(segment, "gt_map",  0x7ef368, 0x04)
+        updateToggleItemFromByteAndFlag(segment, "tr_map",  0x7ef368, 0x08)
+        updateToggleItemFromByteAndFlag(segment, "tt_map",  0x7ef368, 0x10)
+        updateToggleItemFromByteAndFlag(segment, "toh_map", 0x7ef368, 0x20)
+        updateToggleItemFromByteAndFlag(segment, "ip_map",  0x7ef368, 0x40)    
+        updateToggleItemFromByteAndFlag(segment, "sw_map",  0x7ef368, 0x80)
+        updateToggleItemFromByteAndFlag(segment, "mm_map",  0x7ef369, 0x01)
+        updateToggleItemFromByteAndFlag(segment, "pod_map", 0x7ef369, 0x02)
+        updateToggleItemFromByteAndFlag(segment, "sp_map",  0x7ef369, 0x04)
+        updateToggleItemFromByteAndFlag(segment, "dp_map",  0x7ef369, 0x10)
+        updateToggleItemFromByteAndFlag(segment, "ep_map",  0x7ef369, 0x20)
+        updateToggleItemFromByteAndFlag(segment, "hc_map",  0x7ef369, 0x40)
+
+        updateToggleItemFromByteAndFlag(segment, "gt_compass",  0x7ef364, 0x04)
+        updateToggleItemFromByteAndFlag(segment, "tr_compass",  0x7ef364, 0x08)
+        updateToggleItemFromByteAndFlag(segment, "tt_compass",  0x7ef364, 0x10)
+        updateToggleItemFromByteAndFlag(segment, "toh_compass", 0x7ef364, 0x20)
+        updateToggleItemFromByteAndFlag(segment, "ip_compass",  0x7ef364, 0x40)    
+        updateToggleItemFromByteAndFlag(segment, "sw_compass",  0x7ef364, 0x80)
+        updateToggleItemFromByteAndFlag(segment, "mm_compass",  0x7ef365, 0x01)
+        updateToggleItemFromByteAndFlag(segment, "pod_compass", 0x7ef365, 0x02)
+        updateToggleItemFromByteAndFlag(segment, "sp_compass",  0x7ef365, 0x04)
+        updateToggleItemFromByteAndFlag(segment, "dp_compass",  0x7ef365, 0x10)
+        updateToggleItemFromByteAndFlag(segment, "ep_compass",  0x7ef365, 0x20)
+        updateToggleItemFromByteAndFlag(segment, "hc_compass",  0x7ef365, 0x40)
+        -- updateToggleItemFromByteAndFlag(segment, "hc_compass",  0x7ef365, 0x40)
       
     end
 
