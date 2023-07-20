@@ -1062,23 +1062,38 @@ function updateChestKeysFromMemorySegment(segment)
     InvalidateReadCaches()
 
     if AUTOTRACKER_ENABLE_ITEM_TRACKING then
-
-        -- Pending small key from chests tracking update
-        -- Sewers is unused by the game - this is here for reference sake
-        -- updateConsumableItemFromByte(segment, "sewers_smallkey",  0x7ef4e0)
-        updateConsumableItemFromTwoByteSum(segment, "hc_smallkey", 0x7ef4e0, 0x7ef4e1)
-        updateConsumableItemFromByte(segment, "dp_smallkey",  0x7ef4e3)
-        updateConsumableItemFromByte(segment, "at_smallkey",  0x7ef4e4)
-        updateConsumableItemFromByte(segment, "sp_smallkey",  0x7ef4e5)
-        updateConsumableItemFromByte(segment, "pod_smallkey", 0x7ef4e6)
-        updateConsumableItemFromByte(segment, "mm_smallkey",  0x7ef4e7)
-        updateConsumableItemFromByte(segment, "sw_smallkey",  0x7ef4e8)
-        updateConsumableItemFromByte(segment, "ip_smallkey",  0x7ef4e9)
-        updateConsumableItemFromByte(segment, "toh_smallkey", 0x7ef4ea)
-        updateConsumableItemFromByte(segment, "tt_smallkey",  0x7ef4eb)
-        updateConsumableItemFromByte(segment, "tr_smallkey",  0x7ef4ec)
-        updateConsumableItemFromByte(segment, "gt_smallkey",  0x7ef4ed)
-       
+        -- if Tracker:FindObjectForCode("key_drop_shuffle").Active == true then
+        --     updateConsumableItemFromTwoByteSum(segment, "hc_smallkey", 0x7ef37c, 0x7ef37d)
+        --     updateConsumableItemFromByte(segment, "ep_smallkey", 0x7ef37e)
+        --     updateConsumableItemFromByte(segment, "dp_smallkey", 0x7ef37f)
+        --     updateConsumableItemFromByte(segment, "at_smallkey", 0x7ef380)
+        --     updateConsumableItemFromByte(segment, "sp_smallkey", 0x7ef381)
+        --     updateConsumableItemFromByte(segment, "pod_smallkey",0x7ef382)
+        --     updateConsumableItemFromByte(segment, "mm_smallkey", 0x7ef383)
+        --     updateConsumableItemFromByte(segment, "sw_smallkey", 0x7ef384)
+        --     updateConsumableItemFromByte(segment, "ip_smallkey", 0x7ef385)
+        --     updateConsumableItemFromByte(segment, "toh_smallkey",0x7ef386)
+        --     updateConsumableItemFromByte(segment, "tt_smallkey", 0x7ef387)
+        --     updateConsumableItemFromByte(segment, "tr_smallkey", 0x7ef388)
+        --     updateConsumableItemFromByte(segment, "gt_smallkey", 0x7ef389)
+        -- else
+            -- Pending small key from chests tracking update
+            -- Sewers is unused by the game - this is here for reference sake
+            -- updateConsumableItemFromByte(segment, "sewers_smallkey",  0x7ef4e0)
+            updateConsumableItemFromTwoByteSum(segment, "hc_smallkey", 0x7ef4e0, 0x7ef4e1)
+            updateConsumableItemFromByte(segment, "dp_smallkey",  0x7ef4e2)
+            updateConsumableItemFromByte(segment, "dp_smallkey",  0x7ef4e3)
+            updateConsumableItemFromByte(segment, "at_smallkey",  0x7ef4e4)
+            updateConsumableItemFromByte(segment, "sp_smallkey",  0x7ef4e5)
+            updateConsumableItemFromByte(segment, "pod_smallkey", 0x7ef4e6)
+            updateConsumableItemFromByte(segment, "mm_smallkey",  0x7ef4e7)
+            updateConsumableItemFromByte(segment, "sw_smallkey",  0x7ef4e8)
+            updateConsumableItemFromByte(segment, "ip_smallkey",  0x7ef4e9)
+            updateConsumableItemFromByte(segment, "toh_smallkey", 0x7ef4ea)
+            updateConsumableItemFromByte(segment, "tt_smallkey",  0x7ef4eb)
+            updateConsumableItemFromByte(segment, "tr_smallkey",  0x7ef4ec)
+            updateConsumableItemFromByte(segment, "gt_smallkey",  0x7ef4ed)
+        -- end
     end
 end
 
