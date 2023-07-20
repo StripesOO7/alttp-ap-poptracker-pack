@@ -5,7 +5,14 @@ Tracker:AddItems("items/items.json")
 -- Tracker:AddItems("items/keys.json")
 Tracker:AddItems("items/labels.json")
 Tracker:AddItems("items/dungeon_bosses.json")
-Tracker:AddItems("items/dungeon_items.json")
+if  Tracker.ActiveVariantUID == "Map Tracker /w Pot-shuffle - SNES" or
+    Tracker.ActiveVariantUID == "Entrance Randomizer Tracker /w Pot-shuffle - SNES" or
+    Tracker.ActiveVariantUID == "Map Tracker /w Pot-shuffle - AP" or
+    Tracker.ActiveVariantUID == "Entrance Randomizer Tracker /w Pot-shuffle - AP" then
+    Tracker:AddItems("items/dungeon_items_pots.json")
+else 
+    Tracker:AddItems("items/dungeon_items.json")
+end
 -- Logic
 ScriptHost:LoadScript("scripts/logic/logic.lua")
 
