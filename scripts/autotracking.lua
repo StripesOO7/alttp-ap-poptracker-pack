@@ -18,6 +18,17 @@ print("")
 
 ScriptHost:LoadScript("scripts/autotracking/settings.lua")
 -- loads the AP autotracking code
-ScriptHost:LoadScript("scripts/autotracking/archipelago.lua")
+if  Tracker.ActiveVariantUID == "Map Tracker - AP" or 
+    Tracker.ActiveVariantUID == "Map Tracker /w Pot-shuffle - AP" or 
+    Tracker.ActiveVariantUID == "Entrance Randomizer Tracker - AP" or 
+    Tracker.ActiveVariantUID == "Entrance Randomizer Tracker /w Pot-shuffle - AP" then
+    ScriptHost:LoadScript("scripts/autotracking/archipelago.lua")
+end
 -- loads the SNES autotrecking codes
-ScriptHost:LoadScript("scripts/autotracking/SNESautotracking.lua")
+if  Tracker.ActiveVariantUID == "Map Tracker - SNES" or 
+Tracker.ActiveVariantUID == "Map Tracker /w Pot-shuffle - SNES" or 
+Tracker.ActiveVariantUID == "Entrance Randomizer Tracker - SNES" or 
+Tracker.ActiveVariantUID == "Entrance Randomizer Tracker /w Pot-shuffle - SNES" then
+    ScriptHost:LoadScript("scripts/autotracking/SNESautotracking.lua")
+end
+
