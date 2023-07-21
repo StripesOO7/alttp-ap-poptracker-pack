@@ -186,7 +186,6 @@ function isInGame()
 end
 
 function updateInGameStatusFromMemorySegment(segment)
-    sleep(0.015)
 
     local mainModuleIdx = segment:ReadUInt8(0x7e0010)
 
@@ -348,24 +347,61 @@ function updateFlute(segment)
     end
 end
 
-function updateConsumableItemFromByte(segment, code, address)
+function updateConsumableItemFromByte(segment, code, address, roomSlots)
     sleep(0.015)
     local item = Tracker:FindObjectForCode(code)
     if item then
         local value = ReadU8(segment, address)
-        item.AcquiredCount = value
+        local keyDropCount = 0
+
+        if  Tracker.ActiveVariantUID == "Map Tracker /w Pot-shuffle - AP" or 
+            Tracker.ActiveVariantUID == "Map Tracker /w Pot-shuffle - SNES" or 
+            Tracker.ActiveVariantUID == "Entrance Randomizer Tracker /w Pot-shuffle - AP" or 
+            Tracker.ActiveVariantUID == "Entrance Randomizer Tracker /w Pot-shuffle - SNES" then
+            for i,slot in ipairs(roomSlots) do
+                local roomData = ReadU16(segment, 0x7ef000 + (slot[1] * 2))
+
+                if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+                    print(roomData, 1 << slot[2], roomData & (1 << slot[2]), item.AcquiredCount)
+                end
+                    
+                if (roomData & (1 << slot[2])) ~= 0 then
+                    keyDropCount = keyDropCount + 1
+                end
+            end
+        end
+
+        item.AcquiredCount = value + keyDropCount
     else
         print("Couldn't find item: ", code)
     end
 end
 
-function updateConsumableItemFromTwoByteSum(segment, code, address, address2)
+function updateConsumableItemFromTwoByteSum(segment, code, address, address2, roomSlots)
     sleep(0.015)
     local item = Tracker:FindObjectForCode(code)
     if item then
         local value = ReadU8(segment, address)
         local value2 = ReadU8(segment, address2)
-        item.AcquiredCount = value + value2
+        local keyDropCount = 0
+
+        if  Tracker.ActiveVariantUID == "Map Tracker /w Pot-shuffle - AP" or 
+            Tracker.ActiveVariantUID == "Map Tracker /w Pot-shuffle - SNES" or 
+            Tracker.ActiveVariantUID == "Entrance Randomizer Tracker /w Pot-shuffle - AP" or 
+            Tracker.ActiveVariantUID == "Entrance Randomizer Tracker /w Pot-shuffle - SNES" then
+            for i,slot in ipairs(roomSlots) do
+                local roomData = ReadU16(segment, 0x7ef000 + (slot[1] * 2))
+
+                if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
+                    print(roomData, 1 << slot[2], roomData & (1 << slot[2]), item.AcquiredCount)
+                end
+                    
+                if (roomData & (1 << slot[2])) ~= 0 then
+                    keyDropCount = keyDropCount + 1
+                end
+            end
+        end
+        item.AcquiredCount = value + value2 + keyDropCount
     else
         print("Couldn't find item: ", code)
     end
@@ -1062,37 +1098,38 @@ function updateChestKeysFromMemorySegment(segment)
     InvalidateReadCaches()
 
     if AUTOTRACKER_ENABLE_ITEM_TRACKING then
+        --0x7ef37c-0x7ef389 shows only current keys in invetory
         -- if Tracker:FindObjectForCode("key_drop_shuffle").Active == true then
-        --     updateConsumableItemFromTwoByteSum(segment, "hc_smallkey", 0x7ef37c, 0x7ef37d)
-        --     updateConsumableItemFromByte(segment, "ep_smallkey", 0x7ef37e)
-        --     updateConsumableItemFromByte(segment, "dp_smallkey", 0x7ef37f)
-        --     updateConsumableItemFromByte(segment, "at_smallkey", 0x7ef380)
-        --     updateConsumableItemFromByte(segment, "sp_smallkey", 0x7ef381)
-        --     updateConsumableItemFromByte(segment, "pod_smallkey",0x7ef382)
-        --     updateConsumableItemFromByte(segment, "mm_smallkey", 0x7ef383)
-        --     updateConsumableItemFromByte(segment, "sw_smallkey", 0x7ef384)
-        --     updateConsumableItemFromByte(segment, "ip_smallkey", 0x7ef385)
-        --     updateConsumableItemFromByte(segment, "toh_smallkey",0x7ef386)
-        --     updateConsumableItemFromByte(segment, "tt_smallkey", 0x7ef387)
-        --     updateConsumableItemFromByte(segment, "tr_smallkey", 0x7ef388)
-        --     updateConsumableItemFromByte(segment, "gt_smallkey", 0x7ef389)
+        --     updateConsumableItemFromByte(segment, "live_hc_smallkey", 0x7ef37c)
+        --     updateConsumableItemFromByte(segment, "live_ep_smallkey", 0x7ef37e)
+        --     updateConsumableItemFromByte(segment, "live_dp_smallkey", 0x7ef37f)
+        --     updateConsumableItemFromByte(segment, "live_at_smallkey", 0x7ef380)
+        --     updateConsumableItemFromByte(segment, "live_sp_smallkey", 0x7ef381)
+        --     updateConsumableItemFromByte(segment, "live_pod_smallkey",0x7ef382)
+        --     updateConsumableItemFromByte(segment, "live_mm_smallkey", 0x7ef383)
+        --     updateConsumableItemFromByte(segment, "live_sw_smallkey", 0x7ef384)
+        --     updateConsumableItemFromByte(segment, "live_ip_smallkey", 0x7ef385)
+        --     updateConsumableItemFromByte(segment, "live_toh_smallkey",0x7ef386)
+        --     updateConsumableItemFromByte(segment, "live_tt_smallkey", 0x7ef387)
+        --     updateConsumableItemFromByte(segment, "live_tr_smallkey", 0x7ef388)
+        --     updateConsumableItemFromByte(segment, "live_gt_smallkey", 0x7ef389)
         -- else
             -- Pending small key from chests tracking update
             -- Sewers is unused by the game - this is here for reference sake
             -- updateConsumableItemFromByte(segment, "sewers_smallkey",  0x7ef4e0)
-            updateConsumableItemFromTwoByteSum(segment, "hc_smallkey", 0x7ef4e0, 0x7ef4e1)
-            updateConsumableItemFromByte(segment, "dp_smallkey",  0x7ef4e2)
-            updateConsumableItemFromByte(segment, "dp_smallkey",  0x7ef4e3)
-            updateConsumableItemFromByte(segment, "at_smallkey",  0x7ef4e4)
-            updateConsumableItemFromByte(segment, "sp_smallkey",  0x7ef4e5)
-            updateConsumableItemFromByte(segment, "pod_smallkey", 0x7ef4e6)
-            updateConsumableItemFromByte(segment, "mm_smallkey",  0x7ef4e7)
-            updateConsumableItemFromByte(segment, "sw_smallkey",  0x7ef4e8)
-            updateConsumableItemFromByte(segment, "ip_smallkey",  0x7ef4e9)
-            updateConsumableItemFromByte(segment, "toh_smallkey", 0x7ef4ea)
-            updateConsumableItemFromByte(segment, "tt_smallkey",  0x7ef4eb)
-            updateConsumableItemFromByte(segment, "tr_smallkey",  0x7ef4ec)
-            updateConsumableItemFromByte(segment, "gt_smallkey",  0x7ef4ed)
+            updateConsumableItemFromTwoByteSum(segment, "hc_smallkey", 0x7ef4e0, 0x7ef4e1, { { 113, 10 }, { 114, 10 }, { 33, 10 } })
+            updateConsumableItemFromByte(segment, "ep_smallkey",  0x7ef4e2, { { 186, 10 }, { 153, 10 } })
+            updateConsumableItemFromByte(segment, "dp_smallkey",  0x7ef4e3, { { 67, 10 }, { 83, 10 }, { 99, 10 } })
+            updateConsumableItemFromByte(segment, "at_smallkey",  0x7ef4e4, { { 176, 10 }, { 208, 10 } })
+            updateConsumableItemFromByte(segment, "sp_smallkey",  0x7ef4e5, { { 53, 10 }, { 54, 10 }, { 55, 10 }, { 56, 10 }, { 22, 10 } })
+            updateConsumableItemFromByte(segment, "pod_smallkey", 0x7ef4e6, {  })
+            updateConsumableItemFromByte(segment, "mm_smallkey",  0x7ef4e7, { { 161, 10 }, { 179, 10 }, { 193, 10 } })
+            updateConsumableItemFromByte(segment, "sw_smallkey",  0x7ef4e8, { { 86, 10 }, { 57, 10 } })
+            updateConsumableItemFromByte(segment, "ip_smallkey",  0x7ef4e9, { { 14, 10 }, { 62, 10 }, { 63, 10 }, { 159, 10 } })
+            updateConsumableItemFromByte(segment, "toh_smallkey", 0x7ef4ea, {  })
+            updateConsumableItemFromByte(segment, "tt_smallkey",  0x7ef4eb, { { 171, 10}, { 188, 10 } })
+            updateConsumableItemFromByte(segment, "tr_smallkey",  0x7ef4ec, { { 19, 10 }, { 182, 10 } })
+            updateConsumableItemFromByte(segment, "gt_smallkey",  0x7ef4ed, { { 138, 10 }, { 155, 10 }, { 61, 10 }, { 123, 10 } })
         -- end
     end
 end
@@ -1102,11 +1139,16 @@ function updateHeartPiecesFromMemorySegment(segment)
     if not isInGame() then
         return false
     end
+    
+    -- containers.AcquiredCount = maxHealth - (pieces.AcquiredCount // 4)
+    
 
     InvalidateReadCaches()
 
     if AUTOTRACKER_ENABLE_ITEM_TRACKING then
-        updateConsumableItemFromByte(segment, "heartpieces", 0x7ef448)
+        updateConsumableItemFromByte(segment, "heartpieces", 0x7ef448, {})
+        local pieces = Tracker:FindObjectForCode("heartpieces")
+        pieces.CurrentStage = pieces.AcquiredCount % 4
     end
 end
 
@@ -1191,12 +1233,14 @@ end
 
 -- Run the in-game status check more frequently (every 250ms) to catch save/quit scenarios more effectively
 ScriptHost:AddMemoryWatch("LTTP In-Game status", 0x7e0010, 0x90, updateInGameStatusFromMemorySegment, 250)
-ScriptHost:AddMemoryWatch("LTTP Item Data", 0x7ef340, 0x90, updateItemsFromMemorySegment, 250)
-ScriptHost:AddMemoryWatch("LTTP Room Data", 0x7ef000, 0x250, updateRoomsFromMemorySegment, 250)
-ScriptHost:AddMemoryWatch("LTTP Overworld Event Data", 0x7ef280, 0x82, updateOverworldEventsFromMemorySegment, 250)
-ScriptHost:AddMemoryWatch("LTTP NPC Item Data", 0x7ef410, 2, updateNPCItemFlagsFromMemorySegment, 250)
-ScriptHost:AddMemoryWatch("LTTP Heart Piece Data", 0x7ef448, 1, updateHeartPiecesFromMemorySegment, 250)
-ScriptHost:AddMemoryWatch("LTTP Heart Container Data", 0x7ef36c, 1, updateHeartContainersFromMemorySegment, 250)
-ScriptHost:AddMemoryWatch("LTTP Upgrade updater", 0x7ef370, 2, updateBowAndBombUpgrade, 250)
-ScriptHost:AddMemoryWatch("LTTP Chest Key Data", 0x7ef4e0, 32, updateChestKeysFromMemorySegment, 250)
+ScriptHost:AddMemoryWatch("LTTP Item Data", 0x7ef340, 0x90, updateItemsFromMemorySegment)
+ScriptHost:AddMemoryWatch("LTTP Room Data", 0x7ef000, 0x250, updateRoomsFromMemorySegment)
+ScriptHost:AddMemoryWatch("LTTP Overworld Event Data", 0x7ef280, 0x82, updateOverworldEventsFromMemorySegment)
+ScriptHost:AddMemoryWatch("LTTP NPC Item Data", 0x7ef410, 2, updateNPCItemFlagsFromMemorySegment)
+ScriptHost:AddMemoryWatch("LTTP Heart Piece Data", 0x7ef448, 1, updateHeartPiecesFromMemorySegment)
+ScriptHost:AddMemoryWatch("LTTP Heart Container Data", 0x7ef36c, 1, updateHeartContainersFromMemorySegment)
+ScriptHost:AddMemoryWatch("LTTP Upgrade updater", 0x7ef370, 2, updateBowAndBombUpgrade)
+ScriptHost:AddMemoryWatch("LTTP Chest Key Data", 0x7ef4e0, 32, updateChestKeysFromMemorySegment)
+ScriptHost:AddMemoryWatch("LTTP Keydrop Data", 0x7ef37c, 32, updateChestKeysFromMemorySegment)
+ScriptHost:AddMemoryWatch("LTTP Room Keydrop Data", 0x7ef000, 0x250, updateChestKeysFromMemorySegment, 500)
 -- ScriptHost:AddMemoryWatch("LTTP Settings", 0x180000, 250, autofillSettings)
