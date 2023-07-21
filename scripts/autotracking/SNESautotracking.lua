@@ -186,6 +186,7 @@ function isInGame()
 end
 
 function updateInGameStatusFromMemorySegment(segment)
+    sleep(0.015)
 
     local mainModuleIdx = segment:ReadUInt8(0x7e0010)
 
