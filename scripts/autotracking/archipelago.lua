@@ -237,6 +237,9 @@ function onLocation(location_id, location_name)
             else
                 obj.Active = true
             end
+            if location:sub(-9, -1) == "Key Drops" then
+                Tracker:FindObjectForCode(location:sub(2, 3).."_smallkey").AcquiredCount = Tracker:FindObjectForCode(location:sub(2, 3).."_smallkey").AcquiredCount + 1 
+            end
         else
             print(string.format("onLocation: could not find object for code %s", location))
         end
