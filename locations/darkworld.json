@@ -711,7 +711,7 @@
                             "[$smallKeys|tr_smallkey|1], [somaria], [firerod]",
                             "$smallKeys|tr_smallkey|1, somaria, firerod"
                         ],
-                        "visability_rules": ["key_drop_shuffle"]
+                        "visibility_rules": ["key_drop_shuffle"]
                     }
                 ],
                 "map_locations": [
@@ -771,7 +771,7 @@
                 "access_rules":[
                     "@Light Death Mountain Right, Mirror"
                 ],
-                "visability_rules": ["inverted"],
+                "visibility_rules": ["inverted"],
                 "item_count": 0,
                 "map_locations": [
                     {
@@ -811,7 +811,7 @@
                         "name": "Key Drops",
                         "item_count": 1,
                         "clear_as_group": false,
-                        "visability_rules": ["key_drop_shuffle"]
+                        "visibility_rules": ["key_drop_shuffle"]
                     }
                 ],
                 "map_locations": [
@@ -838,7 +838,7 @@
                         "item_count": 1,
                         "clear_as_group": false,
                         "access_rules":["$canRemoveCurtains"],
-                        "visability_rules": ["key_drop_shuffle"]
+                        "visibility_rules": ["key_drop_shuffle"]
                     },
                     {
                         "name": "Boss Item" ,
@@ -893,7 +893,7 @@
                             "[boots],hookshot, firesource",
                             "boots,[hookshot], firesource"
                         ],
-                        "visability_rules": ["key_drop_shuffle"]
+                        "visibility_rules": ["key_drop_shuffle"]
                     },
                     {
                         "name": "Boss Item" ,
@@ -951,7 +951,7 @@
                             "[hookshot], [$smallKeys|sp_smallkey|1]",
                             "hookshot, $smallKeys|sp_smallkey|1"
                         ],
-                        "visability_rules": ["key_drop_shuffle"]
+                        "visibility_rules": ["key_drop_shuffle"]
                     },
                     {
                         "name": "Boss Item" ,
@@ -1012,7 +1012,7 @@
                             "[ip_bigkey], hammer, glove",
                             "ip_bigkey, hammer, glove"
                         ],
-                        "visability_rules": ["key_drop_shuffle"]
+                        "visibility_rules": ["key_drop_shuffle"]
                     },
                     {
                         "name": "Boss Item" ,
@@ -1072,7 +1072,7 @@
                             "tt_bigkey, [$smallKeys|tt_smallkey|1]",
                             "tt_bigkey, $smallKeys|tt_smallkey|1"
                         ],
-                        "visability_rules": ["key_drop_shuffle"]
+                        "visibility_rules": ["key_drop_shuffle"]
                     },
                     {
                         "name": "Boss Item",
@@ -1179,7 +1179,7 @@
                         "access_rules":[
                             "@GT/Ganon's Tower/GT Top Moldorm refight"
                         ],
-                        "visability_rules": ["key_drop_shuffle"]
+                        "visibility_rules": ["key_drop_shuffle"]
                     },
                     {
                         "name": "GT Top Agahnim 2",
@@ -1234,7 +1234,7 @@
                         "access_rules":[
                             "$darkRooms, $smallKeys|at_smallkey|1"
                         ],
-                        "visability_rules": ["key_drop_shuffle"]
+                        "visibility_rules": ["key_drop_shuffle"]
                     },
                     {
                         "name": "Agahnim 1",

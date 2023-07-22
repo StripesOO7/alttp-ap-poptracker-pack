@@ -746,7 +746,7 @@
             {
                 "name": "King's Tomb",
                 "access_rules":[
-                    "@Darkworld Left, mirror, boots",
+                    "$openOrStandard, @Darkworld Left, mirror, boots",
                     "titans, boots",
                     "@Light Death Mountain Left Bottom, $checkGlitches|2, boots"
                 ],
@@ -905,6 +905,8 @@
             {
                 "name": "Ether Tablet",
                 "access_rules":[
+                    "inverted, book, $canActivateTablets",
+                    "{inverted, book}",
                     "mirror, book, $canActivateTablets",
                     "{mirror, book}",
                     "$checkGlitches|2, book, $canActivateTablets",
@@ -1115,7 +1117,7 @@
                         "name": "Key Drops",
                         "item_count": 3,
                         "clear_as_group": false,
-                        "visability_rules": ["key_drop_shuffle"]
+                        "visibility_rules": ["key_drop_shuffle"]
                     },
                     {
                         "name": "Boss Item" ,
@@ -1168,7 +1170,7 @@
                             "[ep_bigkey],[firesource]",
                             "ep_bigkey,firesource"
                         ],
-                        "visability_rules": ["key_drop_shuffle"]
+                        "visibility_rules": ["key_drop_shuffle"]
                     },
                     {
                         "name": "Boss Item" ,
@@ -1231,7 +1233,7 @@
                         "access_rules":[
                             "$darkRooms, $smallKeys|at_smallkey|1"
                         ],
-                        "visability_rules": ["key_drop_shuffle"]
+                        "visibility_rules": ["key_drop_shuffle"]
                     },
                     {
                         "name": "Agahnim 1",
@@ -1282,7 +1284,7 @@
                         "name": "Key Drops",
                         "item_count": 3,
                         "clear_as_group": false,
-                        "visability_rules": ["key_drop_shuffle"]
+                        "visibility_rules": ["key_drop_shuffle"]
                     }
                 ],
                 "map_locations": [
@@ -1340,7 +1342,7 @@
                             "glove, $smallKeys|hc_smallkey|1",
                             "standard"
                         ],
-                        "visability_rules": ["key_drop_shuffle"]
+                        "visibility_rules": ["key_drop_shuffle"]
                     }
                 ],
                 "map_locations": [
@@ -1383,7 +1385,7 @@
         "overlay_background": "#000000",
         "access_rules":[
             "$openOrStandard",
-            "inverted, @Lightworld"
+            "inverted, @Light Death Mountain Left Top"
         ],
         "children": [
             {
@@ -1508,12 +1510,12 @@
                     },
                     {
                         "name": "Key Drops",
-                        "item_count": 4,
+                        "item_count": 3,
                         "clear_as_group": false,
                         "access_rules":[
                             "@GT/Ganon's Tower/GT Top Moldorm refight"
                         ],
-                        "visability_rules": ["key_drop_shuffle"]
+                        "visibility_rules": ["key_drop_shuffle"]
                     },
                     {
                         "name": "GT Top Agahnim 2",
