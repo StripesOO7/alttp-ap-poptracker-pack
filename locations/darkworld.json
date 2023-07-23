@@ -380,7 +380,7 @@
             {
                 "name": "Big Bomb Fairy",
                 "access_rules": [
-                    "$openOrStandard, pearl, crystal56:2",
+                    "$openOrStandard, pearl, crystal56:2, @Darkworld Bottom",
                     "inverted, @Lightworld, pearl, mirror, crystal56:2",
                     "inverted, @Lightworld, pearl, hammer, crystal56:2",
                     "inverted, @Lightworld, pearl, flute_active, crystal56:2"
@@ -499,8 +499,8 @@
             {
                 "name": "Spike Cave",
                 "access_rules": [
-                    "hammer, glove",
-                    "$health:14, hammer, glove"
+                    // "hammer, glove",
+                    "$health|14, hammer, glove"
                 ],
                 "sections": [
                     {
@@ -584,7 +584,10 @@
                 "sections": [
                     {
                         "name": "Bottom Right Chest",
-                        "access_rules": ["[boots]", "hookshot"]
+                        "access_rules": [
+                            "boots", 
+                            "hookshot"
+                        ]
                     },
                     {
                         "name": "remaining Chests",

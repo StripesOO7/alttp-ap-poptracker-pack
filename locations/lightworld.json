@@ -222,7 +222,7 @@
             {
                 "name": "Master Sword Pedestal",
                 "access_rules":[
-                    "pendant:3",
+                    "pendant:2, greenpendant",
                     "{book}"
                 ],
                 "sections": [
@@ -367,6 +367,7 @@
             {
                 "name": "Desert Ledge",
                 "access_rules":[
+                    "@DP/Desert Palace",
                     "@DP Back/Desert Palace Back",
                     "$checkGlitches|2, boots",
                     "{}"
@@ -644,7 +645,7 @@
                 "name": "Waterfall Fairy",
                 "access_rules":[
                     "$canSwim, glove",
-                    "$canSwim, paerl",
+                    "$canSwim, pearl",
                     "$canSwim, boots",
                     "flippers"
                 ],
@@ -899,16 +900,15 @@
         "access_rules":[
             "$openOrStandard, @Light Death Mountain Left Bottom, mirror",
             "inverted, pearl, @Light Death Mountain Right, hammer",
+            "$openOrStandard, @Light Death Mountain Right, hammer",
             "@Light Death Mountain Left Bottom, $checkGlitches|2, boots"
         ],
         "children": [
             {
                 "name": "Ether Tablet",
                 "access_rules":[
-                    "inverted, book, $canActivateTablets",
-                    "{inverted, book}",
-                    "mirror, book, $canActivateTablets",
-                    "{mirror, book}",
+                    "book, $canActivateTablets",
+                    "{book}",
                     "$checkGlitches|2, book, $canActivateTablets",
                     "{$checkGlitches|2, book}"
                 ],
@@ -1017,7 +1017,7 @@
             {
                 "name": "Mimic Cave",
                 "access_rules": [
-                    "$openOrStandard, @Dark Death Mountain Right, mirror, hammer @TR, $smallKeys|tr_smallkeys|2",
+                    "$openOrStandard, mirror, hammer, @TR, $smallKeys|tr_smallkey|2, somaria",
                     "inverted, @Light Death Mountain Right, hammer",
                     "@Dark Death Mountain Right, $checkGlitches|2, boots, hammer"
                 ],
@@ -1155,8 +1155,8 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": [
-                            "[ep_bigkey],[firesource]",
-                            "ep_bigkey,firesource"
+                            "[ep_bigkey],[$darkRooms]",
+                            "ep_bigkey,$darkRooms"
                         ],
                         // "hosted_item": "ep_map, ep_compass, ep_bigkey",
                         "clear_as_group": false,
@@ -1167,8 +1167,8 @@
                         "item_count": 2,
                         "clear_as_group": false,
                         "access_rules": [
-                            "[ep_bigkey],[firesource]",
-                            "ep_bigkey,firesource"
+                            "[ep_bigkey],[$darkRooms]",
+                            "ep_bigkey,$darkRooms"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     },
@@ -1176,10 +1176,8 @@
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules": [
-                            "ep_bigkey, [firesource], $getBossRef|ep_boss, bow",
-                            "ep_bigkey, [firesource], $getBossRef|ep_boss, enimzer",
-                            "ep_bigkey, firesource, $getBossRef|ep_boss, bow",
-                            "ep_bigkey, firesource, $getBossRef|ep_boss, enimzer"
+                            "ep_bigkey, [$darkRooms], $getBossRef|ep_boss, $enemizerCheck|bow",
+                            "ep_bigkey, $darkRooms, $getBossRef|ep_boss, $enemizerCheck|bow"
                         ],
                         "item_count": 1,
                         "hosted_item": "ep_boss, easternpalace"
