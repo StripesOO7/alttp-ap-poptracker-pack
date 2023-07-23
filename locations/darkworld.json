@@ -772,10 +772,15 @@
             {
                 "name": "Turtle Rock Eye Bridge Entrance",
                 "access_rules":[
-                    "@Light Death Mountain Right, Mirror"
+                    "@Light Death Mountain Right, Mirror",
+                    "@TR/Turtle Rock Back",
+                    "inverted, @Dark Death Mountain Right"
                 ],
                 "visibility_rules": ["inverted"],
-                "item_count": 0,
+                "item_count": 1,
+                "sections":[
+                    {}
+                ],
                 "map_locations": [
                     {
                         "map": "Darkworld",
