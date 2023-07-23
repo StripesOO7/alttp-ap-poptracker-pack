@@ -1,6 +1,27 @@
 {
 	"versions": [
 		{
+			"package_version": "0.0.6.0",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.0.6.0/alttp-ap-tracker-v0.0.6.0.zip",
+			"sha256": "badfce8227265c980914467dcdbe3ce1da9937c84d302634ab2bbe322c736019",
+			"changelog": [
+				"- Split into multiple variants to avoid interferane of AP and SNES scripts while tracking. When AP variants are choosen the SNES will be visible but the script does not get loaded!!!",
+				"- STIL NO autrotracking of settings in SNES variants",
+				"- multiple logic fixes for all modi",
+				"- improvements to SNES 'offline' Tracking",
+				"- added the possiblity to track key under pots or dropped from enemies. But ONLY via SNES interface!!",
+				"- keydrop locations can be made visible in the AP variants but are NOT marked of automatically!!!",
+				"- added a small sleep timer for SNES script to prevent location/item overrides on save&quit. DOWNSIDE is that the script may load and 'hang' for 2-3 at first -/reconnects",
+				"- added MINOR and OVERWORLD glitched logic. some things/tricks may be missing. please report them",
+				"- current glichtes are: waterwalk, fakeflipper, hera-pot, hammerless swamp, ice place mirror warp, hera/gt screen wrap, corner/slope clips",
+				"- NEITHER ice breaker nor IP bombjump are implemented into IP logic",
+				"- Bunny rivivals are NOT concidered 'in Logic'",
+				"- Spike Cave checks for hearthcount or availability of bottles and 'cane of byrna' or 'magic cape' including potions or fairies....14+ hearts is the threshold",
+				"- TR access and internal logic is stil WIP and may missreport availability or lack there off",
+				"- Flute is now considered ACTIVE uppon receiving"
+			]
+		},
+		{
 			"package_version": "0.0.5.1",
 			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.0.5.1/alttp-ap-tracker-v0.0.5.1.zip",
 			"sha256": "48a72a3eea64d184c4471a19405c386daa0e1403e842912a743708cd23d5953d",
