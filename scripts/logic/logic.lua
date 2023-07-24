@@ -152,18 +152,14 @@ function health(targetHealth)
     local magic = Tracker:FindObjectForCode("half_magic").Active
     local bottles = Tracker:FindObjectForCode("bottle").CurrentStage
     local amount = base + container + pieces
-    print(container, pieces, amount, target, bottles)
+    -- print(container, pieces, amount, target, bottles)
     if amount >= target then
-        print("1")
         return true
     elseif amount > ((target//2)) and (magic and (byrna or cape)) then
-        print("2")
         return true
     elseif amount * (bottles+1) >= target then
-        print("3")
         return true
     elseif bottles > 0 and amount > ((target//bottles+1)+1) and (byrna or cape) then
-        print("4")
         return true
     else
         return false
