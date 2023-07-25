@@ -1309,17 +1309,11 @@
             {
                 "name": "Castle Escape",
                 "item_count": 1,
-                "access_rules":[
-                    "$darkRooms", 
-                    "glove",
-                    "standard"
-                ],
                 "sections": [
                     {
                         "name": "Dark Cross",
                         "access_rules":[
-                            "$darkRooms",
-                            "glove, $smallKeys|hc_smallkey|1",
+                            "[$darkRooms]",
                             "standard"
                         ]
                     },
@@ -1327,8 +1321,12 @@
                         "name": "Secret Room",
                         "item_count": 3,
                         "access_rules":[
-                            "bombs",
-                            "boots"
+                            "[$darkRooms], $smallKeys|hc_smallkey|1, bombs",
+                            "[$darkRooms], $smallKeys|hc_smallkey|1, boots",
+                            "standard, $smallKeys|hc_smallkey|1, bombs",
+                            "standard, $smallKeys|hc_smallkey|1, boots",
+                            "glove, bombs",
+                            "glove, boots"
                         ]
                     },
                     {
