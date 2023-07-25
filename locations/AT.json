@@ -9,13 +9,13 @@
         ],
         "children": [
             {
-                "name": "Room 03",
+                "name": "Front",
                 "access_rules":[
                     "@Agahnim's Tower"
                 ],
                 "sections": [
                     {
-                        "name": "Room 03"
+                        "name": "Front"
                     }
                 ],
                 "map_locations": [
@@ -23,6 +23,27 @@
                         "map": "AT",
                         "x": 110,
                         "y": 235,
+                        "size": 8
+                    }
+                ]
+            },
+            {
+                "name": "Dark Archer Key Drop",
+                "access_rules":[
+                    "lamp, $smallKeys|at_smallkey|1",
+                    "$darkRooms, $smallKeys|at_smallkey|1"
+                ],
+                "visibility_rules":["key_drop_shuffle"],
+                "sections": [
+                    {
+                        "name": "Dark Archer Key Drop"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "AT",
+                        "x": 85,
+                        "y": 110,
                         "size": 8
                     }
                 ]
@@ -40,6 +61,26 @@
                         "map": "AT",
                         "x": 12,
                         "y": 115,
+                        "size": 8
+                    }
+                ]
+            },
+            {
+                "name": "Circle of Pots Key Drop",
+                "access_rules":[
+                    "$darkRooms, $smallKeys|at_smallkey|2"
+                ],
+                "visibility_rules":["key_drop_shuffle"],
+                "sections": [
+                    {
+                        "name": "Circle of Pots Key Drop"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "AT",
+                        "x": 160,
+                        "y": 290,
                         "size": 8
                     }
                 ]

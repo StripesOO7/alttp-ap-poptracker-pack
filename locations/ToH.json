@@ -24,49 +24,10 @@
                 ]
             },
             {
-                "name": "Map Chest",
-                "visibility_rules":["$getShuffle|map|shuffle"],
-                "access_rules":[
-                    "$smallKeys|toh_smallkey|1, firesource"
-                ],
-                "sections": [
-                    {
-                        "name": "Map Chest"
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "ToH",
-                        "x": 95,
-                        "y": 380,
-                        "size": 6
-                    }
-                ]
-            },
-            {
-                "name": "vanilla Map Chest",
-                "visibility_rules":["$getShuffle|map|vanilla"],
-                "access_rules":[
-                    "$smallKeys|toh_smallkey|1, firesource"
-                ],
-                "sections": [
-                    {
-                        "name": "Map Chest",
-                        "hosted_item": "toh_map"
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "ToH",
-                        "x": 95,
-                        "y": 380,
-                        "size": 6
-                    }
-                ]
-            },
-            {
                 "name": "Big Key Chest",
-                "visibility_rules":["$getShuffle|big_keys|shuffle"],
+                "access_rules":[
+                    "$smallKeys|toh_smallkey|1, firesource"
+                ],
                 "sections": [
                     {
                         "name": "Big Key Chest"
@@ -75,19 +36,17 @@
                 "map_locations": [
                     {
                         "map": "ToH",
-                        "x": 190,
-                        "y": 305,
+                        "x": 95,
+                        "y": 380,
                         "size": 6
                     }
                 ]
             },
             {
-                "name": "vanilla Big Key Chest",
-                "visibility_rules":["$getShuffle|big_keys|vanilla"],
+                "name": "Map Chest",
                 "sections": [
                     {
-                        "name": "Big Key Chest",
-                        "hosted_item": "toh_bigkey"
+                        "name": "Map Chest"
                     }
                 ],
                 "map_locations": [
@@ -101,34 +60,13 @@
             },
             {
                 "name": "Compass Chest",
-                "visibility_rules":["$getShuffle|compass|shuffle"],
                 "access_rules":[
-                    "toh_bigkey"
+                    "toh_bigkey",
+                    "$checkGlitches|1, hookshot"
                 ],
                 "sections": [
                     {
                         "name": "Compass Chest"
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "ToH",
-                        "x": 190,
-                        "y": 210,
-                        "size": 6
-                    }
-                ]
-            },
-            {
-                "name": "vanilla Compass Chest",
-                "visibility_rules":["$getShuffle|compass|vanilla"],
-                "access_rules":[
-                    "toh_bigkey"
-                ],
-                "sections": [
-                    {
-                        "name": "Compass Chest",
-                        "hosted_item": "toh_compass"
                     }
                 ],
                 "map_locations": [
@@ -162,7 +100,8 @@
             {
                 "name": "Boss",
                 "access_rules":[
-                    "toh_bigkey, $getBossRef|toh_boss"
+                    "toh_bigkey, $getBossRef|toh_boss",
+                    "$checkGlitches|1, hookshot, $getBossRef|toh_boss"
                 ],
                 "sections": [
                     {

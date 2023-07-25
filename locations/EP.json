@@ -26,7 +26,6 @@
             },
             {
                 "name": "Map Chest",
-                "visibility_rules":["$getShuffle|map|shuffle"],
                 "sections": [
                     {
                         "name": "Map Chest"
@@ -42,26 +41,7 @@
                 ]
             },
             {
-                "name": "vanilla Map Chest",
-                "visibility_rules":["$getShuffle|map|vanilla"],
-                "sections": [
-                    {
-                        "name": "Map Chest",
-                        "hosted_item": "ep_map"
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "EP",
-                        "x": 570,
-                        "y": 220,
-                        "size": 6
-                    }
-                ]
-            },
-            {
                 "name": "Compass Chest",
-                "visibility_rules":["$getShuffle|compass|shuffle"],
                 "sections": [
                     {
                         "name": "Compass Chest"
@@ -77,53 +57,13 @@
                 ]
             },
             {
-                "name": "vanilla Compass Chest",
-                "visibility_rules":["$getShuffle|compass|vanilla"],
-                "sections": [
-                    {
-                        "name": "Compass Chest",
-                        "hosted_item": "ep_compass"
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "EP",
-                        "x": 230,
-                        "y": 150,
-                        "size": 6
-                    }
-                ]
-            },
-            {
                 "name": "Big Key Chest",
-                "visibility_rules": ["$getShuffle|big_keys|shuffle"],
                 "access_rules":[
                     "[$darkRooms]"
                 ],
                 "sections": [
                     {
                         "name": "Big Key Chest"
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "EP",
-                        "x": 300,
-                        "y": 290,
-                        "size": 6
-                    }
-                ]
-            },
-            {
-                "name": "vanilla Big Key Chest",
-                "visibility_rules": ["$getShuffle|big_keys|vanilla"],
-                "access_rules":[
-                    "[$darkRooms]"
-                ],
-                "sections": [
-                    {
-                        "name": "Big Key Chest",
-                        "hosted_item": "ep_bigkey"
                     }
                 ],
                 "map_locations": [
@@ -150,6 +90,47 @@
                         "map": "EP",
                         "x": 397,
                         "y": 183,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Dark Square Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "access_rules":[
+                    "$darkRooms",
+                    "lamp"
+                ],
+                "sections": [
+                    {
+                        "name": "Dark Square Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "EP",
+                        "x": 574,
+                        "y": 282,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Dark Eyegore Key Drop",
+                "visibility_rules":["key_drop_shuffle"],
+                "access_rules":[
+                    "ep_bigkey"
+                ],
+                "sections": [
+                    {
+                        "name": "Dark Eyegore Key Drop"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "EP",
+                        "x": 404,
+                        "y": 96,
                         "size": 6
                     }
                 ]

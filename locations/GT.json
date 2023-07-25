@@ -29,7 +29,8 @@
             {
                 "name": "DMs Room Top Right",
                 "access_rules":[
-                    "hookshot, hammer"
+                    "hookshot, hammer",
+                    "boots, hammer"
                 ],
                 "sections": [
                     {
@@ -48,7 +49,8 @@
             {
                 "name": "DMs Room Bottom Right",
                 "access_rules":[
-                    "hookshot, hammer"
+                    "hookshot, hammer",
+                    "boots, hammer"
                 ],
                 "sections": [
                     {
@@ -67,7 +69,8 @@
             {
                 "name": "DMs Room Top Left",
                 "access_rules":[
-                    "hookshot, hammer"
+                    "hookshot, hammer",
+                    "boots, hammer"
                 ],
                 "sections": [
                     {
@@ -86,7 +89,8 @@
             {
                 "name": "DMs Room Bottom Left",
                 "access_rules":[
-                    "hookshot, hammer"
+                    "hookshot, hammer",
+                    "boots, hammer"
                 ],
                 "sections": [
                     {
@@ -104,7 +108,6 @@
             },
             {
                 "name": "Map Chest",
-                "visibility_rules":["$getShuffle|map|shuffle"],
                 "access_rules":[
                     "$smallKeys|gt_smallkey|1, @Ganon's Tower Bottom Left/DMs Room Top Right",
                     "$smallKeys|gt_smallkey|1, hammer, boots"
@@ -124,23 +127,39 @@
                 ]
             },
             {
-                "name": "vanilla Map Chest",
-                "visibility_rules":["$getShuffle|map|vanilla"],
+                "name": "Double Switch Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
                 "access_rules":[
                     "$smallKeys|gt_smallkey|1, @Ganon's Tower Bottom Left/DMs Room Top Right",
                     "$smallKeys|gt_smallkey|1, hammer, boots"
                 ],
                 "sections": [
                     {
-                        "name": "Map Chest",
-                        "hosted_item": "gt_map"
+                        "name": "Double Switch Pot Key"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Bottom",
-                        "x": 162,
-                        "y": 160,
+                        "x": 114,
+                        "y": 240,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Conveyor Cross Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "sections": [
+                    {
+                        "name": "Conveyor Cross Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "GT_Bottom",
+                        "x": 178,
+                        "y": 113,
                         "size": 6
                     }
                 ]
@@ -303,9 +322,8 @@
             },
             {
                 "name": "Compass Chest",
-                "visibility_rules":["$getShuffle|compass|shuffle"],
                 "access_rules":[
-                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1"
+                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1, firerod"
                 ],
                 "sections": [
                     {
@@ -322,30 +340,9 @@
                 ]
             },
             {
-                "name": "vanilla Compass Chest",
-                "visibility_rules":["$getShuffle|compass|vanilla"],
-                "access_rules":[
-                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1"
-                ],
-                "sections": [
-                    {
-                        "name": "Compass Chest",
-                        "hosted_item": "gt_compass"
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "GT_Bottom",
-                        "x": 550,
-                        "y": 280,
-                        "size": 6
-                    }
-                ]
-            },
-            {
                 "name": "Compass Room Top Right",
                 "access_rules":[
-                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1"
+                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1, firerod"
                 ],
                 "sections": [
                     {
@@ -364,7 +361,7 @@
             {
                 "name": "Compass Room Bottom Left",
                 "access_rules":[
-                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1"
+                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1, firerod"
                 ],
                 "sections": [
                     {
@@ -383,7 +380,7 @@
             {
                 "name": "Compass Room Bottom Right",
                 "access_rules":[
-                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1"
+                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1, firerod"
                 ],
                 "sections": [
                     {
@@ -395,6 +392,26 @@
                         "map": "GT_Bottom",
                         "x": 562,
                         "y": 295,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Conveyor Star Pits Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "access_rules":[
+                    "@Ganon's Tower Bottom Right/Compass Chest"
+                ],
+                "sections": [
+                    {
+                        "name": "Conveyor Star Pits Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "GT_Bottom",
+                        "x": 585,
+                        "y": 335,
                         "size": 6
                     }
                 ]
@@ -486,34 +503,12 @@
             },
             {
                 "name": "Big Key Chest",
-                "visibility_rules":["$getShuffle|big_keys|shuffle"],
                 "access_rules":[
                     "$getBossRef|gt_ice"
                 ],
                 "sections": [
                     {
                         "name": "Big Key Chest"
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "GT_Bottom",
-                        "x": 293,
-                        "y": 280,
-                        "size": 6
-                    }
-                ]
-            },
-            {
-                "name": "vanilla Big Key Chest",
-                "visibility_rules":["$getShuffle|big_keys|vanilla"],
-                "access_rules":[
-                    "$getBossRef|gt_ice"
-                ],
-                "sections": [
-                    {
-                        "name": "Big Key Chest",
-                        "hosted_item": "gt_bigkey"
                     }
                 ],
                 "map_locations": [
@@ -536,6 +531,24 @@
             "@GT/Ganon's Tower, gt_bigkey"
         ],
         "children": [
+            {
+                "name": "Mini Helmasaur Key Drop",
+                "visibility_rules":["key_drop_shuffle"],
+                "access_rules":["firesource, $getBossRef|gt_lanmo"],
+                "sections": [
+                    {
+                        "name": "Mini Helmasaur Key Drop"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "GT_Top",
+                        "x": 288,
+                        "y": 34,
+                        "size": 6
+                    }
+                ]
+            },
             {
                 "name": "Mini Helmasaur Room Left",
                 "access_rules":["firesource, $getBossRef|gt_lanmo"],

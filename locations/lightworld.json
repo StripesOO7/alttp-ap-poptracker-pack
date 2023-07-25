@@ -171,7 +171,8 @@
                         "name": "Visit Satan",
                         "access_rules": [
                             "hammer, powder",
-                            "$openOrStandard, titans, mirror, @Darkworld Left, powder"
+                            "$openOrStandard, titans, mirror, @Darkworld Left, powder",
+                            "$checkGlitches|2, boots, powder"
                         ],
                         "hosted_item": "satan_visited"
                     }
@@ -221,7 +222,7 @@
             {
                 "name": "Master Sword Pedestal",
                 "access_rules":[
-                    "pendant:3",
+                    "pendant:2, greenpendant",
                     "{book}"
                 ],
                 "sections": [
@@ -305,7 +306,8 @@
                 "access_rules":[
                     "bombs",
                     "boots",
-                    "{}"
+                    "{}",
+                    "$checkGlitches|2, boots"
                 ],
                 "sections": [
                     {
@@ -325,7 +327,8 @@
             {
                 "name": "Cave 45",
                 "access_rules": [
-                    "@Darkworld Left, mirror"
+                    "@Darkworld Bottom, mirror",
+                    "$checkGlitches|2, boots"
                 ],
                 "sections": [
                     {
@@ -364,7 +367,9 @@
             {
                 "name": "Desert Ledge",
                 "access_rules":[
+                    "@DP/Desert Palace",
                     "@DP Back/Desert Palace Back",
+                    "$checkGlitches|2, boots",
                     "{}"
                 ],
                 "sections": [
@@ -408,7 +413,8 @@
                         "name": "Checkerboard Cave Item",
                         "access_rules": [
                             "$openOrStandard, mirror, titans, flute_active",
-                            "inverted, glove"
+                            "inverted, glove",
+                            "$checkGlitches|2, boots, glove"
                         ]
                     }
                 ],
@@ -524,8 +530,9 @@
                     {
                         "name": "Lake Island",
                         "access_rules": [
-                            "flippers, @Darkworld Left, mirror",
-                            "flippers, @Darkworld Right, mirror",
+                            "$canSwim, @Darkworld Bottom, mirror",
+                            "$canSwim, @Darkworld Right, mirror",
+                            "$checkGlitches|2, boots",
                             "{}"
                         ],
                         "capture_item": true
@@ -536,6 +543,28 @@
                         "map": "Lightworld",
                         "x": 1455,
                         "y": 1660,
+                        "size": 32
+                    }
+                ]
+            },
+            {
+                "name": "Capacity Fairy",
+                "visibility_rules": ["shop_sanity"],
+                "sections": [
+                    {
+                        "name": "Shop Item",
+                        "access_rules": [
+                            "flippers"
+                        ],
+                        "clear_as_group": false,
+                        "item_count":2
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 1592,
+                        "y": 1715,
                         "size": 32
                     }
                 ]
@@ -617,6 +646,7 @@
                 "access_rules":[
                     "$canSwim, glove",
                     "$canSwim, pearl",
+                    "$canSwim, boots",
                     "flippers"
                 ],
                 "sections": [
@@ -649,7 +679,8 @@
                         "name": "Zora Ledge",
                         "access_rules":[
                             "{}",
-                            "flippers"
+                            "flippers",
+                            "$checkGlitches|2, boots"
                         ],
                         "capture_item": true
                     }
@@ -696,7 +727,8 @@
                 "name": "Graveyard Ledge",
                 "access_rules":[
                     "@Darkworld Left, mirror",
-                    "inverted"
+                    "inverted",
+                    "@Light Death Mountain Left Bottom, $checkGlitches|2, boots"
                 ],
                 "sections": [
                     {
@@ -715,8 +747,9 @@
             {
                 "name": "King's Tomb",
                 "access_rules":[
-                    "@Darkworld Left, mirror, boots",
-                    "titans, boots"
+                    "$openOrStandard, @Darkworld Left, mirror, boots",
+                    "titans, boots",
+                    "@Light Death Mountain Left Bottom, $checkGlitches|2, boots"
                 ],
                 "sections": [
                     {
@@ -735,10 +768,12 @@
             {
                 "name": "Bombos Tablet",
                 "access_rules":[
-                    "@Darkworld Left, mirror, book, $canActivateTablets",
-                    "{@Darkworld Left, mirror, book}",
+                    "@Darkworld Bottom, mirror, book, $canActivateTablets",
+                    "{@Darkworld Bottom, mirror, book}",
                     "inverted, $canActivateTablets, book",
-                    "{inverted, book}"
+                    "{inverted, book}",
+                    "$checkGlitches|2, boots, book, $canActivateTablets",
+                    "{$checkGlitches|2, boots, book}"
                 ],
                 "sections": [
                     {
@@ -758,7 +793,8 @@
             {
                 "name": "Bumper Cave",
                 "access_rules": [
-                    "cape, mirror"
+                    "cape, mirror",
+                    "$checkGlitches|2, boots"
                 ],
                 "visibility_rules":[
                     "inverted"
@@ -790,7 +826,8 @@
             "$openOrStandard, flute_active",
             "inverted, pearl, flute_active",
             "$openOrStandard, $darkRooms, glove",
-            "inverted, pearl, $darkRooms, glove"
+            "inverted, pearl, $darkRooms, glove",
+            "$openOrStandard, $checkGlitches|2, boots"
         ],
         "children": [
             {
@@ -829,7 +866,8 @@
                         "access_rules":[
                             "$openOrStandard, mirror",
                             "inverted, @Light Death Mountain Left Top",
-                            "{@Light Death Mountain Left Bottom}"
+                            "{@Light Death Mountain Left Bottom}",
+                            "@Light Death Mountain Left Top, $checkGlitches|2, boots"
                         ],
                         "capture_item": true
                     },
@@ -861,14 +899,18 @@
         "overlay_background": "#000000",
         "access_rules":[
             "$openOrStandard, @Light Death Mountain Left Bottom, mirror",
-            "inverted, pearl, @Light Death Mountain Right, hammer"
+            "inverted, pearl, @Light Death Mountain Right, hammer",
+            "$openOrStandard, @Light Death Mountain Right, hammer",
+            "@Light Death Mountain Left Bottom, $checkGlitches|2, boots"
         ],
         "children": [
             {
                 "name": "Ether Tablet",
                 "access_rules":[
-                    "mirror, book, $canActivateTablets",
-                    "{mirror, book}"
+                    "book, $canActivateTablets",
+                    "{book}",
+                    "$checkGlitches|2, book, $canActivateTablets",
+                    "{$checkGlitches|2, book}"
                 ],
                 "sections": [
                     {
@@ -896,7 +938,8 @@
             "$openOrStandard, @Light Death Mountain Left Bottom, hookshot",
             "$openOrStandard, @Light Death Mountain Left Top, hammer",
             "inverted, pearl, @Light Death Mountain Left Bottom, hookshot",
-            "inverted, pearl, @Dark Death Mountain Right, titans"
+            "inverted, pearl, @Dark Death Mountain Right, titans",
+            "@Light Death Mountain Left Bottom, $checkGlitches|2, boots"
         ],
         "children": [
             {
@@ -904,7 +947,8 @@
                 "access_rules":[
                     "$openOrStandard, @Dark Death Mountain Right, mirror",
                     "inverted, @Light Death Mountain Right",
-                    "{}"
+                    "{}",
+                    "$checkGlitches|2, boots"
                 ],
                 "sections": [
                     {
@@ -973,8 +1017,9 @@
             {
                 "name": "Mimic Cave",
                 "access_rules": [
-                    "$openOrStandard, @Dark Death Mountain Right, mirror, hammer @TR, $smallKeys|tr_smallkeys|2",
-                    "inverted, @Light Death Mountain Right, hammer"
+                    "$openOrStandard, mirror, hammer, @TR, $smallKeys|tr_smallkey|2, somaria",
+                    "inverted, @Light Death Mountain Right, hammer",
+                    "@Dark Death Mountain Right, $checkGlitches|2, boots, hammer"
                 ],
                 "sections": [
                     {
@@ -1022,7 +1067,8 @@
                 "name": "Desert Palace",
                 "access_rules":[
                     "book",
-                    "$openOrStandard, @Darkworld Swamp, mirror"
+                    "$openOrStandard, @Darkworld Swamp, mirror",
+                    "@Lightworld, $checkGlitches|2, boots"
                 ],
                 "item_count": 5,
                 "sections": [
@@ -1062,10 +1108,17 @@
                 "name": "Desert Palace Back",
                 "access_rules":[
                     "@DP/Desert Palace, glove",
-                    "$openOrStandard, @Darkworld Swamp, mirror"
+                    "$openOrStandard, @Darkworld Swamp, mirror",
+                    "@Lightworld, $checkGlitches|2, boots"
                 ],
                 "item_count": 2,
                 "sections": [
+                    {
+                        "name": "Key Drops",
+                        "item_count": 3,
+                        "clear_as_group": false,
+                        "visibility_rules": ["key_drop_shuffle"]
+                    },
                     {
                         "name": "Boss Item" ,
                         "access_rules":[ "$getBossRef|dp_boss, dp_bigkey"],
@@ -1102,21 +1155,29 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": [
-                            "[ep_bigkey],[firesource]",
-                            "ep_bigkey,firesource"
+                            "[ep_bigkey],[$darkRooms]",
+                            "ep_bigkey,$darkRooms"
                         ],
                         // "hosted_item": "ep_map, ep_compass, ep_bigkey",
                         "clear_as_group": false,
                         "item_count": 5
                     },
                     {
+                        "name": "Key Drops",
+                        "item_count": 2,
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "[ep_bigkey],[$darkRooms]",
+                            "ep_bigkey,$darkRooms"
+                        ],
+                        "visibility_rules": ["key_drop_shuffle"]
+                    },
+                    {
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules": [
-                            "ep_bigkey, [firesource], $getBossRef|ep_boss, bow",
-                            "ep_bigkey, [firesource], $getBossRef|ep_boss, enimzer",
-                            "ep_bigkey, firesource, $getBossRef|ep_boss, bow",
-                            "ep_bigkey, firesource, $getBossRef|ep_boss, enimzer"
+                            "ep_bigkey, [$darkRooms], $getBossRef|ep_boss, $enemizerCheck|bow",
+                            "ep_bigkey, $darkRooms, $getBossRef|ep_boss, $enemizerCheck|bow"
                         ],
                         "item_count": 1,
                         "hosted_item": "ep_boss, easternpalace"
@@ -1150,17 +1211,27 @@
                 "name": "Agahnim's Tower",
                 "item_count": 3,
                 "access_rules":[
-                    "$canClearAgaTowerBarrier"
+                    "$canClearAgaTowerBarrier",
+                    "$checkGlitches|2, boots"
                 ],
                 "sections": [
                     {
-                        "name": "Room 03"
+                        "name": "Front"
                     },
                     {
                         "name": "Maze Chest",
                         "access_rules":[
                             "$darkRooms, $smallKeys|at_smallkey|1"
                         ]
+                    },
+                    {
+                        "name": "Key Drops",
+                        "item_count": 2,
+                        "clear_as_group": false,
+                        "access_rules":[
+                            "$darkRooms, $smallKeys|at_smallkey|1"
+                        ],
+                        "visibility_rules": ["key_drop_shuffle"]
                     },
                     {
                         "name": "Agahnim 1",
@@ -1206,6 +1277,12 @@
                     },
                     {
                         "name": "Zelda's Chest"
+                    },
+                    {
+                        "name": "Key Drops",
+                        "item_count": 3,
+                        "clear_as_group": false,
+                        "visibility_rules": ["key_drop_shuffle"]
                     }
                 ],
                 "map_locations": [
@@ -1253,6 +1330,17 @@
                             "bombs",
                             "boots"
                         ]
+                    },
+                    {
+                        "name": "Key Drops",
+                        "item_count": 1,
+                        "clear_as_group": false,
+                        "access_rules":[
+                            "$darkRooms",
+                            "glove, $smallKeys|hc_smallkey|1",
+                            "standard"
+                        ],
+                        "visibility_rules": ["key_drop_shuffle"]
                     }
                 ],
                 "map_locations": [
@@ -1295,14 +1383,15 @@
         "overlay_background": "#000000",
         "access_rules":[
             "$openOrStandard",
-            "inverted, @Lightworld"
+            "inverted, @Light Death Mountain Left Top"
         ],
         "children": [
             {
                 "name": "Tower of Hera",
                 "access_rules":[
                     "@Light Death Mountain Left Top",
-                    "@Light Death Mountain Right, hammer"
+                    "@Light Death Mountain Right, hammer",
+                    "@Light Death Mountain Left Bottom, $checkGlitches|2, boots"
                 ],
                 "item_count": 7,
                 "sections": [
@@ -1320,7 +1409,8 @@
                         "name": "Upper" ,
                         "clear_as_group": false,
                         "access_rules":[
-                            "toh_bigkey"
+                            "toh_bigkey",
+                            "$checkGlitches|1, hookshot, [toh_bigkey]"
                         ],
                         // "hosted_item": "toh_compass",
                         "item_count": 2
@@ -1329,7 +1419,8 @@
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules":[
-                            "@ToH/Tower of Hera/Upper, $getBossRef|toh_boss"
+                            "@ToH/Tower of Hera/Upper, $getBossRef|toh_boss",
+                            "$getBossRef|toh_boss, $checkGlitches|1, hookshot"
                         ],
                         "item_count": 1,
                         "hosted_item": "toh_boss, towerofhera"
@@ -1352,7 +1443,8 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "inverted, @Lightworld, $gtCrystalCount"
+            "inverted, @Lightworld, $gtCrystalCount",
+            "inverted, @Lightworld, $checkGlitches|2, boots"
         ],
         "visibility_rules":[
             "inverted"
@@ -1413,6 +1505,15 @@
                         "clear_as_group": false,
                         "item_count": 1,
                         "hosted_item": "gt_boss"
+                    },
+                    {
+                        "name": "Key Drops",
+                        "item_count": 3,
+                        "clear_as_group": false,
+                        "access_rules":[
+                            "@GT/Ganon's Tower/GT Top Moldorm refight"
+                        ],
+                        "visibility_rules": ["key_drop_shuffle"]
                     },
                     {
                         "name": "GT Top Agahnim 2",

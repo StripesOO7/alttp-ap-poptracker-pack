@@ -49,7 +49,6 @@
             },
             {
                 "name": "Map Chest",
-                "visibility_rules":["$getShuffle|map|shuffle"],
                 "sections": [
                     {
                         "name": "Map Chest"
@@ -65,50 +64,10 @@
                 ]
             },
             {
-                "name": "vanilla Map Chest",
-                "visibility_rules":["$getShuffle|map|vanilla"],
-                "sections": [
-                    {
-                        "name": "Map Chest",
-                        "hosted_item": "dp_map"
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "DP",
-                        "x": 190,
-                        "y": 30,
-                        "size": 6
-                    }
-                ]
-            },
-            {
                 "name": "Big Key Chest",
-                "visibility_rules":["$getShuffle|big_keys|shuffle"],
                 "sections": [
                     {
                         "name": "Big Key Chest",
-                        "access_rules": [
-                            "@Desert Palace/Compass Chest/Compass Chest"
-                        ]
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "DP",
-                        "x": 350,
-                        "y": 20,
-                        "size": 6
-                    }
-                ]
-            },
-            {
-                "name": "vanilla Big Key Chest",
-                "visibility_rules":["$getShuffle|big_keys|vanilla"],
-                "sections": [
-                    {
-                        "name": "Big Key Chest",
-                        "hosted_item": "dp_bigkey",
                         "access_rules": [
                             "@Desert Palace/Compass Chest/Compass Chest"
                         ]
@@ -125,31 +84,9 @@
             },
             {
                 "name": "Compass Chest",
-                "visibility_rules":["$getShuffle|compass|shuffle"],
                 "sections": [
                     {
                         "name": "Compass Chest",
-                        "access_rules": [
-                            "$smallKeys|dp_smallkey|1"
-                        ]
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "DP",
-                        "x": 350,
-                        "y": 150,
-                        "size": 6
-                    }
-                ]
-            },
-            {
-                "name": "vanilla Compass Chest",
-                "visibility_rules":["$getShuffle|compass|vanilla"],
-                "sections": [
-                    {
-                        "name": "Compass Chest",
-                        "hosted_item": "dp_compass",
                         "access_rules": [
                             "$smallKeys|dp_smallkey|1"
                         ]
@@ -171,7 +108,7 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/chest_opened_img.png",
         "access_rules":[
-            "@DP Back"
+            "@DP Back/Desert Palace Back"
         ],
         "children": [
             {
@@ -191,6 +128,57 @@
                         "map": "DP",
                         "x": 455,
                         "y": 30,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Desert Tiles 1 Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "sections": [
+                    {
+                        "name": "Desert Tiles 1 Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "DP",
+                        "x": 412,
+                        "y": 175,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Beamos Hall Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "sections": [
+                    {
+                        "name": "Beamos Hall Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "DP",
+                        "x": 564,
+                        "y": 172,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Desert Tiles 2 Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "sections": [
+                    {
+                        "name": "Desert Tiles 2 Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "DP",
+                        "x": 575,
+                        "y": 81,
                         "size": 6
                     }
                 ]

@@ -7,29 +7,9 @@
         "children": [
             {
                 "name": "Map Chest",
-                "visibility_rules":["$getShuffle|map|shuffle"],
                 "sections": [
                     {
                         "name": "Map Chest"
-                        
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "TT",
-                        "x": 35,
-                        "y": 170,
-                        "size": 6
-                    }
-                ]
-            },
-            {
-                "name": "vanilla Map Chest",
-                "visibility_rules":["$getShuffle|map|vanilla"],
-                "sections": [
-                    {
-                        "name": "Map Chest",
-                        "hosted_item": "tt_map"
                         
                     }
                 ],
@@ -60,7 +40,6 @@
             },
             {
                 "name": "Compass Chest",
-                "visibility_rules":["$getShuffle|compass|shuffle"],
                 "sections": [
                     {
                         "name": "Compass Chest"
@@ -76,47 +55,10 @@
                 ]
             },
             {
-                "name": "vanilla Compass Chest",
-                "visibility_rules":["$getShuffle|compass|vanilla"],
-                "sections": [
-                    {
-                        "name": "Compass Chest",
-                        "hosted_item": "tt_compass"
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "TT",
-                        "x": 175,
-                        "y": 204,
-                        "size": 6
-                    }
-                ]
-            },
-            {
                 "name": "Big Key Chest",
-                "visibility_rules":["$getShuffle|big_keys|shuffle"],
                 "sections": [
                     {
                         "name": "Big Key Chest"
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "TT",
-                        "x": 100,
-                        "y": 215,
-                        "size": 6
-                    }
-                ]
-            },
-            {
-                "name": "vanilla Big Key Chest",
-                "visibility_rules":["$getShuffle|big_keys|vanilla"],
-                "sections": [
-                    {
-                        "name": "Big Key Chest",
-                        "hosted_item": "tt_bigkey"
                     }
                 ],
                 "map_locations": [
@@ -139,6 +81,40 @@
         ],
         "parent": "TT",
         "children": [
+            {
+                "name": "Hallway Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "sections": [
+                    {
+                        "name": "Hallway Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 483,
+                        "y": 145,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Spike Switch Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "sections": [
+                    {
+                        "name": "Spike Switch Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 291,
+                        "y": 98,
+                        "size": 6
+                    }
+                ]
+            },
             {
                 "name": "Blind's Cell",
                 "sections": [

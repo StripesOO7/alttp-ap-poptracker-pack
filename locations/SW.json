@@ -25,28 +25,9 @@
             },
             {
                 "name": "Compass Chest",
-                "visibility_rules":["$getShuffle|compass|shuffle"],
                 "sections": [
                     {
                         "name": "Compass Chest"
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "SW",
-                        "x": 430,
-                        "y": 250,
-                        "size": 6
-                    }
-                ]
-            },
-            {
-                "name": "vanilla Compass Chest",
-                "visibility_rules":["$getShuffle|compass|vanilla"],
-                "sections": [
-                    {
-                        "name": "Compass Chest",
-                        "hosted_item": "sw_compass"
                     }
                 ],
                 "map_locations": [
@@ -76,7 +57,6 @@
             },
             {
                 "name": "Map Chest",
-                "visibility_rules":["$getShuffle|map|shuffle"],
                 "sections": [
                     {
                         "name": "Map Chest"
@@ -92,26 +72,7 @@
                 ]
             },
             {
-                "name": "vanilla Map Chest",
-                "visibility_rules":["$getShuffle|map|vanilla"],
-                "sections": [
-                    {
-                        "name": "Map Chest",
-                        "hosted_item": "sw_map"
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "SW",
-                        "x": 575,
-                        "y": 150,
-                        "size": 6
-                    }
-                ]
-            },
-            {
                 "name": "Big Key Chest",
-                "visibility_rules":["$getShuffle|big_keys|shuffle"],
                 "sections": [
                     {
                         "name": "Big Key Chest"
@@ -127,19 +88,18 @@
                 ]
             },
             {
-                "name": "vanilla Big Key Chest",
-                "visibility_rules":["$getShuffle|big_keys|vanilla"],
+                "name": "West Lobby Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
                 "sections": [
                     {
-                        "name": "Big Key Chest",
-                        "hosted_item": "sw_bigkey"
+                        "name": "West Lobby Pot Key"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "SW",
-                        "x": 295,
-                        "y": 97,
+                        "x": 148,
+                        "y": 149,
                         "size": 6
                     }
                 ]
@@ -185,6 +145,26 @@
                         "map": "SW",
                         "x": 42,
                         "y": 288,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Spike Corner Key Drop",
+                "access_rules":[
+                    "firesource, $canRemoveCurtains"
+                ],
+                "visibility_rules":["key_drop_shuffle"],
+                "sections": [
+                    {
+                        "name": "Spike Corner Key Drop"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "SW",
+                        "x": 32,
+                        "y": 32,
                         "size": 6
                     }
                 ]

@@ -8,6 +8,57 @@
         ],
         "children": [
             {
+                "name": "Spikes Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "sections": [
+                    {
+                        "name": "Spikes Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM",
+                        "x": 367,
+                        "y": 89,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Fishbone Pot Key",
+                "visibility_rules":["key_drop_shuffle"],
+                "sections": [
+                    {
+                        "name": "Fishbone Pot Key"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM",
+                        "x": 521,
+                        "y": 282,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Conveyor Crystal Key Drop",
+                "visibility_rules":["key_drop_shuffle"],
+                "sections": [
+                    {
+                        "name": "Conveyor Crystal Key Drop"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM",
+                        "x": 185,
+                        "y": 240,
+                        "size": 6
+                    }
+                ]
+            },
+            {
                 "name": "Bridge Chest",
                 "sections": [
                     {
@@ -41,7 +92,6 @@
             },
             {
                 "name": "Compass Chest",
-                "visibility_rules":["$getShuffle|compass|shuffle"],
                 "sections": [
                     {
                         "name": "Compass Chest"
@@ -57,53 +107,13 @@
                 ]
             },
             {
-                "name": "vanilla Compass Chest",
-                "visibility_rules":["$getShuffle|compass|vanilla"],
-                "sections": [
-                    {
-                        "name": "Compass Chest",
-                        "hosted_item": "mm_compass"
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "MM",
-                        "x": 130,
-                        "y": 165,
-                        "size": 6
-                    }
-                ]
-            },
-            {
                 "name": "Big Key Chest",
-                "visibility_rules":["$getShuffle|big_keys|shuffle"],
                 "access_rules":[
                     "firesource"
                 ],
                 "sections": [
                     {
                         "name": "Big Key Chest"
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "MM",
-                        "x": 195,
-                        "y": 360,
-                        "size": 6
-                    }
-                ]
-            },
-            {
-                "name": "vanilla Big Key Chest",
-                "visibility_rules":["$getShuffle|big_keys|vanilla"],
-                "access_rules":[
-                    "firesource"
-                ],
-                "sections": [
-                    {
-                        "name": "Big Key Chest",
-                        "hosted_item": "mm_bigkey"
                     }
                 ],
                 "map_locations": [
@@ -133,28 +143,9 @@
             },
             {
                 "name": "Map Chest",
-                "visibility_rules":["$getShuffle|map|shuffle"],
                 "sections": [
                     {
                         "name": "Map Chest"
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "MM",
-                        "x": 370,
-                        "y": 170,
-                        "size": 6
-                    }
-                ]
-            },
-            {
-                "name": "vanilla Map Chest",
-                "visibility_rules":["$getShuffle|map|vanilla"],
-                "sections": [
-                    {
-                        "name": "Map Chest",
-                        "hosted_item": "mm_map"
                     }
                 ],
                 "map_locations": [

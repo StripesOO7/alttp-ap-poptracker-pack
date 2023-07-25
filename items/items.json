@@ -245,7 +245,7 @@
             {
                 "img": "/images/items/Flute.png",
                 "inherit_codes": false,
-                "codes": "flute"
+                "codes": "flute, flute_active"
             },
             {
                 "img": "/images/events/Flute_active.png",
@@ -756,6 +756,12 @@
         "type": "toggle",
         "img": "/images/items/swordless.png",
         "codes": "compass"
+    },
+    {
+        "name": "Key Drop Shuffle",
+        "type": "toggle",
+        "img": "/images/key_drop_shuffle.png",
+        "codes": "key_drop_shuffle"
     },
     {
         "name": "Map&Compass Shuffle",

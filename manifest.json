@@ -1,15 +1,39 @@
 ﻿{
     "name": "A Link to the Past Archipleago",
     "game_name": "A Link to the Past",
-    "package_version": "0.0.5.1",
+    "package_version": "0.0.6.0",
     "platform": "snes",
     "package_uid": "ap_alltp",
     "author": "StripesOO7",
     "variants": {
-        "Map Tracker": {
-            "display_name": "Map Tracker",
+        "Map Tracker - AP": {
+            "display_name": "Map Tracker via AP",
             "flags": ["ap"]
-        }
+        },
+        "Map Tracker - SNES": {
+            "display_name": "Map Tracker via SNES"
+        },
+        "Map Tracker /w Pot-shuffle - AP": {
+            "display_name": "Map Tracker /w Pot-shuffle via AP",
+            "flags": ["ap"]
+        },
+        "Map Tracker /w Pot-shuffle - SNES": {
+            "display_name": "Map Tracker /w Pot-shuffle via snes"
+        }//,
+        // "Entrance Randomizer Tracker - AP": {
+        //     "display_name": "Entrance Randomizer Tracker via AP",
+        //     "flags": ["ap"]
+        // },
+        // "Entrance Randomizer Tracker - SNES": {
+        //     "display_name": "Entrance Randomizer Tracker via SNES"
+        // },
+        // "Entrance Randomizer Tracker /w Pot-shuffle - AP": {
+        //     "display_name": "Entrance Randomizer Tracker via AP",
+        //     "flags": ["ap"]
+        // },
+        // "Entrance Randomizer Tracker /w Pot-shuffle - SNES": {
+        //     "display_name": "Entrance Randomizer Tracker via SNES"
+        // }
     },
     "versions_url": "https://raw.githubusercontent.com/StripesOO7/alttp-ap-poptracker-pack/versions/versions.json"
 }
