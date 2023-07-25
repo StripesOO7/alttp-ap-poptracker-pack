@@ -985,7 +985,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "@Lightworld, $canSwim, pearl, titans",
+            "@Lightworld, [$canSwim], pearl, titans",
             "inverted, flippers",
             "@Darkworld Bottom, flippers, pearl, $checkGlitches|2, boots",
             "@Darkworld Bottom, pearl, $checkGlitches|2, boots, mirror"
