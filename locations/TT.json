@@ -149,7 +149,9 @@
             },
             {
                 "name": "Big Chest",
-                "access_rules":["hammer"],
+                "access_rules":[
+                    "hammer, $smallKeys|tt_smallkey|1"
+                ],
                 "sections": [
                     {
                         "name": "Big Chest"
