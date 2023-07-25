@@ -145,27 +145,6 @@
                 ]
             },
             {
-                "name": "vanilla Big Key Chest",
-                "visibility_rules":["$getShuffle|big_keys|vanilla"],
-                "access_rules":[
-                    "$smallKeys|sp_smallkey|1, hammer"
-                ],
-                "sections": [
-                    {
-                        "name": "Big Key Chest",
-                        "hosted_item": "sp_bigkey"
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "SP",
-                        "x": 175,
-                        "y": 360,
-                        "size": 6
-                    }
-                ]
-            },
-            {
                 "name": "Trench 2 Pot Key",
                 "visibility_rules":["key_drop_shuffle"],
                 "access_rules":[
@@ -310,8 +289,8 @@
             {
                 "name": "Big Chest",
                 "access_rules":[
-                    "$smallKeys|sp_smallkey|1, hammer, sp_bigkey, hookshot",
-                    "$checkGlitches|1, $smallKeys|sp_smallkey|1, sp_bigkey, hookshot"
+                    "$smallKeys|sp_smallkey|1, hammer, sp_bigkey",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1, sp_bigkey"
                 ],
                 "sections": [
                     {
