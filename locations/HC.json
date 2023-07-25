@@ -204,7 +204,7 @@
                 ],
                 "access_rules": [
                     "[$darkRooms]",
-                    "glove, $smallKeys|hc_smallkey|1",
+                    "[$darkRooms], glove, $smallKeys|hc_smallkey|1",
                     "standard"
                 ],
                 "sections": [

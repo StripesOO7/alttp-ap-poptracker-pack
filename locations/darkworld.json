@@ -493,7 +493,7 @@
             "@Light Death Mountain Left Bottom, pearl",
             // "@Light Death Mountain Left Bottom, $checkGlitches|2", //leave dm without pearl
             "inverted, flute_active",
-            "inverted, $darkRooms, glove"
+            "inverted, [$darkRooms], glove"
         ],
         "children": [
             {
@@ -519,7 +519,7 @@
             {
                 "name": "Rescue Old Man",
                 "access_rules":[
-                    "$darkRooms"
+                    "[$darkRooms]"
                 ],
                 "visibility_rules":[
                     "inverted"
@@ -648,8 +648,7 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": [
-                            "[$darkRooms], [$smallKeys|pod_smallkey|5], [pod_bigkey]",
-                            "$darkRooms, $smallKeys|pod_smallkey|5, pod_bigkey"
+                            "[$darkRooms], [$smallKeys|pod_smallkey|5], [pod_bigkey]"
                         ],
                         // "hosted_item": "pod_map, pod_compass, pod_bigkey",
                         "clear_as_group": false,
@@ -659,7 +658,7 @@
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules": [
-                            "pod_bigkey, $darkRooms, $getBossRef|pod_boss, hammer, bow"
+                            "pod_bigkey, [$darkRooms], $getBossRef|pod_boss, hammer, bow"
                         ],
                         "item_count": 1,
                         "hosted_item": "pod_boss, palaceofdarkness"
@@ -741,20 +740,18 @@
                 "item_count": 8,
                 "sections": [
                     {
-                        "name": "Dungeon Chest" ,
+                        "name": "Dungeon Chest",
                         "access_rules": [
-                            "[$smallKeys|tr_smallkey|3], [somaria], tr_bigkey",
-                            "$smallKeys|tr_smallkey|3, somaria, tr_bigkey"
+                            "[$smallKeys|tr_smallkey|3], [somaria], tr_bigkey"
                         ],
                         "clear_as_group": false,
                         "item_count": 6
                     },
                     {
-                        "name": "Boss Item" ,
+                        "name": "Boss Item",
                         "clear_as_group": false,
                         "access_rules": [
-                            "[$smallKeys|tr_smallkey|4], $darkRooms, $getBossRef|tr_boss, tr_bigkey, somaria",
-                            "$smallKeys|tr_smallkey|4, $darkRooms, $getBossRef|tr_boss, tr_bigkey, somaria"
+                            "[$smallKeys|tr_smallkey|4], $darkRooms, $getBossRef|tr_boss, tr_bigkey, somaria"
                         ],
                         "item_count": 1
                         // "hosted_item": "tr_boss, turtlerock"
@@ -1232,7 +1229,7 @@
                     {
                         "name": "Maze Chest",
                         "access_rules":[
-                            "$darkRooms, $smallKeys|at_smallkey|1"
+                            "[$darkRooms], $smallKeys|at_smallkey|1"
                         ]
                     },
                     {
@@ -1240,16 +1237,16 @@
                         "item_count": 2,
                         "clear_as_group": false,
                         "access_rules":[
-                            "$darkRooms, $smallKeys|at_smallkey|1"
+                            "[$darkRooms], $smallKeys|at_smallkey|1"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     },
                     {
                         "name": "Agahnim 1",
                         "access_rules":[
-                            "$canRemoveCurtains, sword, $smallKeys|at_smallkey|2",
-                            "$canRemoveCurtains, bug_net, $smallKeys|at_smallkey|2",
-                            "$canRemoveCurtains, hammer, $smallKeys|at_smallkey|2"
+                            "[$darkRooms], $canRemoveCurtains, sword, $smallKeys|at_smallkey|2",
+                            "[$darkRooms], $canRemoveCurtains, bug_net, $smallKeys|at_smallkey|2",
+                            "[$darkRooms], $canRemoveCurtains, hammer, $smallKeys|at_smallkey|2"
                         ],
                         "hosted_item": "aga1"
                     }

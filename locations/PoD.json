@@ -65,7 +65,7 @@
             {
                 "name": "Dark Maze Top",
                 "access_rules":[
-                    "@Palace of Darkness/Compass Chest, $darkRooms"
+                    "@Palace of Darkness/Compass Chest, [$darkRooms]"
                 ],
                 "sections": [
                     {
@@ -201,7 +201,7 @@
             {
                 "name": "Dark Basement Left",
                 "access_rules":[
-                    "@Palace of Darkness/Compass Chest, $darkRooms"
+                    "@Palace of Darkness/Compass Chest, [$darkRooms]"
                 ],
                 "sections": [
                     {
@@ -258,7 +258,7 @@
             {
                 "name": "Boss",
                 "access_rules":[
-                    "@Palace of Darkness/Map Chest, hammer, pod_bigkey, $darkRooms, $smallKeys|pod_smallkey|1, $getBossRef|pod_boss, bow"
+                    "@Palace of Darkness/Map Chest, hammer, pod_bigkey, [$darkRooms], [$smallKeys|pod_smallkey|6], $getBossRef|pod_boss, bow"
                 ],
                 "sections": [
                     {
