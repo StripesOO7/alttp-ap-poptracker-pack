@@ -123,7 +123,7 @@
             {
                 "name": "Dark Cross",
                 "access_rules":[
-                    "$darkRooms",
+                    "[$darkRooms]",
                     "standard"
                 ],
                 "sections": [
@@ -206,7 +206,7 @@
                     "key_drop_shuffle"
                 ],
                 "access_rules": [
-                    "$darkRooms",
+                    "[$darkRooms]",
                     "glove, $smallKeys|hc_smallkey|1",
                     "standard"
                 ],
