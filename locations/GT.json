@@ -27,10 +27,15 @@
                 ]
             },
             {
+                "name": "DMs Room",
+                "access_rules":[
+                    "hookshot, hammer"
+                ]
+            },
+            {
                 "name": "DMs Room Top Right",
                 "access_rules":[
-                    "hookshot, hammer",
-                    "boots, hammer"
+                    "@Ganon's Tower Bottom Left/DMs Room"
                 ],
                 "sections": [
                     {
@@ -49,8 +54,7 @@
             {
                 "name": "DMs Room Bottom Right",
                 "access_rules":[
-                    "hookshot, hammer",
-                    "boots, hammer"
+                    "@Ganon's Tower Bottom Left/DMs Room"
                 ],
                 "sections": [
                     {
@@ -69,8 +73,7 @@
             {
                 "name": "DMs Room Top Left",
                 "access_rules":[
-                    "hookshot, hammer",
-                    "boots, hammer"
+                    "@Ganon's Tower Bottom Left/DMs Room"
                 ],
                 "sections": [
                     {
@@ -89,8 +92,7 @@
             {
                 "name": "DMs Room Bottom Left",
                 "access_rules":[
-                    "hookshot, hammer",
-                    "boots, hammer"
+                    "@Ganon's Tower Bottom Left/DMs Room"
                 ],
                 "sections": [
                     {
