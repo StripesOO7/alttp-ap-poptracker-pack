@@ -83,27 +83,6 @@
                 ]
             },
             {
-                "name": "vanilla Map Chest",
-                "visibility_rules":["$getShuffle|map|vanilla"],
-                "access_rules":[
-                    "$smallKeys|sp_smallkey|1"
-                ],
-                "sections": [
-                    {
-                        "name": "Map Chest",
-                        "hosted_item": "sp_map"
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "SP",
-                        "x": 465,
-                        "y": 360,
-                        "size": 6
-                    }
-                ]
-            },
-            {
                 "name": "Big Key Chest",
                 "access_rules":[
                     "$smallKeys|sp_smallkey|1, hammer",
