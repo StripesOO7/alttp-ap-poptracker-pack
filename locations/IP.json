@@ -127,7 +127,7 @@
             {
                 "name": "Map Chest",
                 "access_rules":[
-                    "hammer, [hookshot], [$smallKeys|ip_smallkey|1]"
+                    "hammer, gloves, [hookshot], [$smallKeys|ip_smallkey|1]"
                 ],
                 "sections": [
                     {
@@ -162,8 +162,8 @@
             {
                 "name": "Big Key Chest",
                 "access_rules":[
-                    "@Ice Palace/Map Chest",
-                    "[@Ice Palace/Map Chest], somaria"
+                    "hammer, [hookshot], [$smallKeys|ip_smallkey|1]",
+                    "$checkGlitches|1, [hammer], [hookshot], [$smallKeys|ip_smallkey|1], somaria"
                 ],
                 "sections": [
                     {
