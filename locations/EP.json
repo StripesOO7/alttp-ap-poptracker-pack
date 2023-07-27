@@ -137,8 +137,7 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "ep_bigkey, [$darkRooms], $getBossRef|ep_boss, bow",
-                    "ep_bigkey, [$darkRooms], enemizer"
+                    "ep_bigkey, [$darkRooms], $getBossRef|ep_boss, $enemizerCheck|bow"
                 ],
                 "sections": [
                     {

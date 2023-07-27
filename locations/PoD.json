@@ -182,8 +182,7 @@
             {
                 "name": "Map Chest",
                 "access_rules": [
-                    "enemizer",
-                    "bow"
+                    "$enemizerCheck|bow"
                 ],
                 "sections": [
                     {
@@ -259,8 +258,7 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "@Palace of Darkness/Map Chest, hammer, pod_bigkey, [$darkRooms], [$smallKeys|pod_smallkey|6], $getBossRef|pod_boss, bow",
-                    "@Palace of Darkness/Map Chest, hammer, pod_bigkey, [$darkRooms], [$smallKeys|pod_smallkey|6], $getBossRef|pod_boss, enemizer"
+                    "@Palace of Darkness/Map Chest, hammer, pod_bigkey, [$darkRooms], [$smallKeys|pod_smallkey|6], $getBossRef|pod_boss, $enemizerCheck|bow"
                 ],
                 "sections": [
                     {
