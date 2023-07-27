@@ -3,18 +3,18 @@
         "name": "Palace of Darkness",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
-        "access_rules":[
+        "access_rules": [
             "@PoD/Palace of Darkness"
         ],
-        "children":[
+        "children": [
             {
                 "name": "Shooter Room",
-                "sections":[
+                "sections": [
                     {
                         "name": "Shooter Room"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "PoD",
                         "x": 115,
@@ -25,16 +25,16 @@
             },
             {
                 "name": "Stalfos Basement",
-                "access_rules":[
+                "access_rules": [
                     "$smallKeys|pod_smallkey|1",
                     "@Palace of Darkness/Map Chest, Hammer"
                 ],
-                "sections":[
+                "sections": [
                     {
                         "name": "Stalfos Basement"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "PoD",
                         "x": 60,
@@ -45,16 +45,16 @@
             },
             {
                 "name": "Big Key Chest",
-                "access_rules":[
+                "access_rules": [
                     "$smallKeys|pod_smallkey|2, [$smallKeys|pod_smallkey|6], bombs",
                     "@Palace of Darkness/Map Chest, Hammer, $smallKeys|pod_smallkey|1, [$smallKeys|pod_smallkey|6], bombs"
                 ],
-                "sections":[
+                "sections": [
                     {
                         "name": "Big Key Chest"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "PoD",
                         "x": 190,
@@ -65,15 +65,15 @@
             },
             {
                 "name": "Dark Maze Top",
-                "access_rules":[
+                "access_rules": [
                     "@Palace of Darkness/Compass Chest, [$smallKeys|pod_smallkey|6], [$darkRooms]"
                 ],
-                "sections":[
+                "sections": [
                     {
                         "name": "Dark Maze Top"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "PoD",
                         "x": 460,
@@ -84,15 +84,15 @@
             },
             {
                 "name": "Dark Maze Bottom",
-                "access_rules":[
+                "access_rules": [
                     "@Palace of Darkness/Dark Maze Top"
                 ],
-                "sections":[
+                "sections": [
                     {
                         "name": "Dark Maze Bottom"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "PoD",
                         "x": 505,
@@ -103,16 +103,16 @@
             },
             {
                 "name": "Compass Chest",
-                "access_rules":[
+                "access_rules": [
                     "$smallKeys|pod_smallkey|2, [$smallKeys|pod_smallkey|4]",
                     "@Palace of Darkness/Map Chest, Hammer, $smallKeys|pod_smallkey|1, [$smallKeys|pod_smallkey|4]"
                 ],
-                "sections":[
+                "sections": [
                     {
                         "name": "Compass Chest"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "PoD",
                         "x": 618,
@@ -123,15 +123,15 @@
             },
             {
                 "name": "Harmless Hellway",
-                "access_rules":[
+                "access_rules": [
                     "@Palace of Darkness/Compass Chest, $smallKeys|pod_smallkey|2, [$smallKeys|pod_smallkey|6]"
                 ],
-                "sections":[
+                "sections": [
                     {
                         "name": "Harmless Hellway"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "PoD",
                         "x": 600,
@@ -142,16 +142,16 @@
             },
             {
                 "name": "The Arena Bridge",
-                "access_rules":[
+                "access_rules": [
                     "$smallKeys|pod_smallkey|1",
                     "@Palace of Darkness/Map Chest, hammer"
                 ],
-                "sections":[
+                "sections": [
                     {
                         "name": "Bridge"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "PoD",
                         "x": 615,
@@ -162,15 +162,15 @@
             },
             {
                 "name": "The Arena Ledge",
-                "access_rules":[
+                "access_rules": [
                     "@Palace of Darkness/Map Chest, bombs"
                 ],
-                "sections":[
+                "sections": [
                     {
                         "name": "Ledge"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "PoD",
                         "x": 635,
@@ -181,16 +181,16 @@
             },
             {
                 "name": "Map Chest",
-                "access_rules":[
+                "access_rules": [
                     "enemizer",
                     "bow"
                 ],
-                "sections":[
+                "sections": [
                     {
                         "name": "Map Chest"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "PoD",
                         "x": 745,
@@ -201,15 +201,15 @@
             },
             {
                 "name": "Dark Basement Left",
-                "access_rules":[
+                "access_rules": [
                     "@Palace of Darkness/Compass Chest, [$darkRooms]"
                 ],
-                "sections":[
+                "sections": [
                     {
                         "name": "Dark Basement Left"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "PoD",
                         "x": 665,
@@ -220,15 +220,15 @@
             },
             {
                 "name": "Dark Basement Right",
-                "access_rules":[
+                "access_rules": [
                     "@Palace of Darkness/Dark Basement Left"
                 ],
-                "sections":[
+                "sections": [
                     {
                         "name": "Dark Basement Right"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "PoD",
                         "x": 700,
@@ -239,15 +239,15 @@
             },
             {
                 "name": "Big Chest",
-                "access_rules":[
+                "access_rules": [
                     "@Palace of Darkness/Dark Maze Bottom, bombs, pod_bigkey"
                 ],
-                "sections":[
+                "sections": [
                     {
                         "name": "Big Chest"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "PoD",
                         "x": 540,
@@ -258,18 +258,18 @@
             },
             {
                 "name": "Boss",
-                "access_rules":[
+                "access_rules": [
                     "@Palace of Darkness/Map Chest, hammer, pod_bigkey, [$darkRooms], [$smallKeys|pod_smallkey|6], $getBossRef|pod_boss, bow",
                     "@Palace of Darkness/Map Chest, hammer, pod_bigkey, [$darkRooms], [$smallKeys|pod_smallkey|6], $getBossRef|pod_boss, enemizer"
                 ],
-                "sections":[
+                "sections": [
                     {
                         "name": "Boss Item",
                         "item_count":1,
                         "hosted_item": "pod_boss,palaceofdarkness"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "PoD",
                         "x": 680,

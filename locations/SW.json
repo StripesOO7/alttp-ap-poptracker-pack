@@ -3,18 +3,18 @@
         "name": "Skull Woods Front",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
-        "access_rules":[
+        "access_rules": [
             "@SW/Skull Woods Front"
         ],
-        "children":[
+        "children": [
             {
                 "name": "Pot Prison",
-                "sections":[
+                "sections": [
                     {
                         "name": "Pot Prison"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "SW",
                         "x": 410,
@@ -25,12 +25,12 @@
             },
             {
                 "name": "Compass Chest",
-                "sections":[
+                "sections": [
                     {
                         "name": "Compass Chest"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "SW",
                         "x": 430,
@@ -41,12 +41,12 @@
             },
             {
                 "name": "Pinball Room",
-                "sections":[
+                "sections": [
                     {
                         "name": "Pinball Room"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "SW",
                         "x": 525,
@@ -57,12 +57,12 @@
             },
             {
                 "name": "Map Chest",
-                "sections":[
+                "sections": [
                     {
                         "name": "Map Chest"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "SW",
                         "x": 575,
@@ -73,12 +73,12 @@
             },
             {
                 "name": "Big Key Chest",
-                "sections":[
+                "sections": [
                     {
                         "name": "Big Key Chest"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "SW",
                         "x": 295,
@@ -89,13 +89,13 @@
             },
             {
                 "name": "West Lobby Pot Key",
-                "visibility_rules":["key_drop_shuffle"],
-                "sections":[
+                "visibility_rules": ["key_drop_shuffle"],
+                "sections": [
                     {
                         "name": "West Lobby Pot Key"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "SW",
                         "x": 148,
@@ -106,15 +106,15 @@
             },
             {
                 "name": "Big Chest",
-                "access_rules":[
+                "access_rules": [
                     "sw_bigkey"
                 ],
-                "sections":[
+                "sections": [
                     {
                         "name": "Big Chest"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "SW",
                         "x": 495,
@@ -129,18 +129,18 @@
         "name": "Skull Woods Back",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
-        "access_rules":[
+        "access_rules": [
             "@SW/Skull Woods Back"
         ],
-        "children":[
+        "children": [
             {
                 "name": "Bridge Room",
-                "sections":[
+                "sections": [
                     {
                         "name": "Bridge Room"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "SW",
                         "x": 42,
@@ -151,16 +151,16 @@
             },
             {
                 "name": "Spike Corner Key Drop",
-                "access_rules":[
+                "access_rules": [
                     "firesource, $canRemoveCurtains"
                 ],
-                "visibility_rules":["key_drop_shuffle"],
-                "sections":[
+                "visibility_rules": ["key_drop_shuffle"],
+                "sections": [
                     {
                         "name": "Spike Corner Key Drop"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "SW",
                         "x": 32,
@@ -172,17 +172,17 @@
             {
                 "name": "Boss",
                 
-                "sections":[
+                "sections": [
                     {
                         "name": "Boss Item",
-                        "access_rules":[
+                        "access_rules": [
                             "$getBossRef|sw_boss, firesource, $canRemoveCurtains"
                         ],
                         "item_count":1,
                         "hosted_item": "sw_boss, skullwoods"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "SW",
                         "x": 160,

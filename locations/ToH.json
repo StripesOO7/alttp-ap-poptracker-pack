@@ -3,18 +3,18 @@
         "name": "Tower of Hera",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
-        "access_rules":[
+        "access_rules": [
             "@ToH/Tower of Hera"
         ],
-        "children":[
+        "children": [
             {
                 "name": "Basement Cage",
-                "sections":[
+                "sections": [
                     {
                         "name": "Basement Cage"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "ToH",
                         "x": 35,
@@ -25,15 +25,15 @@
             },
             {
                 "name": "Big Key Chest",
-                "access_rules":[
+                "access_rules": [
                     "$smallKeys|toh_smallkey|1, firesource"
                 ],
-                "sections":[
+                "sections": [
                     {
                         "name": "Big Key Chest"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "ToH",
                         "x": 95,
@@ -44,12 +44,12 @@
             },
             {
                 "name": "Map Chest",
-                "sections":[
+                "sections": [
                     {
                         "name": "Map Chest"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "ToH",
                         "x": 190,
@@ -60,16 +60,16 @@
             },
             {
                 "name": "Compass Chest",
-                "access_rules":[
+                "access_rules": [
                     "toh_bigkey",
                     "$checkGlitches|1, hookshot"
                 ],
-                "sections":[
+                "sections": [
                     {
                         "name": "Compass Chest"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "ToH",
                         "x": 190,
@@ -80,15 +80,15 @@
             },
             {
                 "name": "Big Chest",
-                "access_rules":[
+                "access_rules": [
                     "toh_bigkey"
                 ],
-                "sections":[
+                "sections": [
                     {
                         "name": "Big Chest"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "ToH",
                         "x": 190,
@@ -99,18 +99,18 @@
             },
             {
                 "name": "Boss",
-                "access_rules":[
+                "access_rules": [
                     "toh_bigkey, $getBossRef|toh_boss",
                     "$checkGlitches|1, hookshot, $getBossRef|toh_boss"
                 ],
-                "sections":[
+                "sections": [
                     {
                         "name": "Boss Item",
                         "item_count":1,
                         "hosted_item": "toh_boss, towerofhera"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "ToH",
                         "x": 195,

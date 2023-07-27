@@ -3,22 +3,22 @@
         "name": "Agahnim's Tower",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
-        "access_rules":[
+        "access_rules": [
             "@AT/Agahnim's Tower",
             "@AT-inverted/Agahnim's Tower"
         ],
-        "children":[
+        "children": [
             {
                 "name": "Front",
-                "access_rules":[
+                "access_rules": [
                     "@Agahnim's Tower"
                 ],
-                "sections":[
+                "sections": [
                     {
                         "name": "Front"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "AT",
                         "x": 110,
@@ -29,16 +29,16 @@
             },
             {
                 "name": "Dark Archer Key Drop",
-                "access_rules":[
+                "access_rules": [
                     "[$darkRooms], $smallKeys|at_smallkey|1"
                 ],
-                "visibility_rules":["key_drop_shuffle"],
-                "sections":[
+                "visibility_rules": ["key_drop_shuffle"],
+                "sections": [
                     {
                         "name": "Dark Archer Key Drop"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "AT",
                         "x": 85,
@@ -49,15 +49,15 @@
             },
             {
                 "name": "Maze Chest",
-                "access_rules":[
+                "access_rules": [
                     "[$darkRooms], $smallKeys|at_smallkey|1"
                 ],
-                "sections":[
+                "sections": [
                     {
                         "name": "Maze Chest"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "AT",
                         "x": 12,
@@ -68,16 +68,16 @@
             },
             {
                 "name": "Circle of Pots Key Drop",
-                "access_rules":[
+                "access_rules": [
                     "[$darkRooms], $smallKeys|at_smallkey|2"
                 ],
-                "visibility_rules":["key_drop_shuffle"],
-                "sections":[
+                "visibility_rules": ["key_drop_shuffle"],
+                "sections": [
                     {
                         "name": "Circle of Pots Key Drop"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "AT",
                         "x": 160,
@@ -88,16 +88,16 @@
             },
             {
                 "name": "Agahnim 1",
-                "access_rules":[
+                "access_rules": [
                     "[$darkRooms], $smallKeys|at_smallkey|2, $canRemoveCurtains"
                 ],
-                "sections":[
+                "sections": [
                     {
                         "name": "Agahnim 1",
                         "hosted_item": "aga1"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "AT",
                         "x": 305,

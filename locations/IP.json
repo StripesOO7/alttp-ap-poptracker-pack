@@ -3,19 +3,19 @@
         "name": "Ice Palace",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
-        "access_rules":[
+        "access_rules": [
             "@IP/Ice Palace"
         ],
-        "children":[
+        "children": [
             {
                 "name": "Jelly Key Drop",
-                "visibility_rules":["key_drop_shuffle"],
-                "sections":[
+                "visibility_rules": ["key_drop_shuffle"],
+                "sections": [
                     {
                         "name": "Jelly Key Drop"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "IP",
                         "x": 21,
@@ -26,13 +26,13 @@
             },
             {
                 "name": "Conveyor Key Drop",
-                "visibility_rules":["key_drop_shuffle"],
-                "sections":[
+                "visibility_rules": ["key_drop_shuffle"],
+                "sections": [
                     {
                         "name": "Conveyor Key Drop"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "IP",
                         "x": 84,
@@ -43,13 +43,13 @@
             },
             {
                 "name": "Hammer Block Key Drop",
-                "visibility_rules":["key_drop_shuffle"],
-                "sections":[
+                "visibility_rules": ["key_drop_shuffle"],
+                "sections": [
                     {
                         "name": "Hammer Block Key Drop"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "IP",
                         "x": 159,
@@ -60,13 +60,13 @@
             },
             {
                 "name": "Many Pots Pot Key",
-                "visibility_rules":["key_drop_shuffle"],
-                "sections":[
+                "visibility_rules": ["key_drop_shuffle"],
+                "sections": [
                     {
                         "name": "Many Pots Pot Key"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "IP",
                         "x": 514,
@@ -77,12 +77,12 @@
             },
             {
                 "name": "Compass Chest",
-                "sections":[
+                "sections": [
                     {
                         "name": "Compass Chest"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "IP",
                         "x": 95,
@@ -93,12 +93,12 @@
             },
             {
                 "name": "Freezor Chest",
-                "sections":[
+                "sections": [
                     {
                         "name": "Freezor Chest"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "IP",
                         "x": 205,
@@ -109,15 +109,15 @@
             },
             {
                 "name": "Spike Room",
-                "access_rules":[
+                "access_rules": [
                     "[hookshot], $smallKeys|ip_smallkey|1"
                 ],
-                "sections":[
+                "sections": [
                     {
                         "name": "Spike Room"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "IP",
                         "x": 320,
@@ -128,15 +128,15 @@
             },
             {
                 "name": "Map Chest",
-                "access_rules":[
+                "access_rules": [
                     "hammer, gloves, [hookshot], [$smallKeys|ip_smallkey|1]"
                 ],
-                "sections":[
+                "sections": [
                     {
                         "name": "Map Chest"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "IP",
                         "x": 173,
@@ -147,12 +147,12 @@
             },
             {
                 "name": "Iced T Room",
-                "sections":[
+                "sections": [
                     {
                         "name": "Iced T Room"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "IP",
                         "x": 455,
@@ -163,16 +163,16 @@
             },
             {
                 "name": "Big Key Chest",
-                "access_rules":[
+                "access_rules": [
                     "hammer, [hookshot], [$smallKeys|ip_smallkey|1]",
                     "$checkGlitches|1, [hammer], [hookshot], [$smallKeys|ip_smallkey|1], somaria"
                 ],
-                "sections":[
+                "sections": [
                     {
                         "name": "Big Key Chest"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "IP",
                         "x": 220,
@@ -183,15 +183,15 @@
             },
             {
                 "name": "Big Chest",
-                "access_rules":[
+                "access_rules": [
                     "ip_bigkey"
                 ],
-                "sections":[
+                "sections": [
                     {
                         "name": "Big Chest"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "IP",
                         "x": 390,
@@ -202,18 +202,18 @@
             },
             {
                 "name": "Boss",
-                "access_rules":[
+                "access_rules": [
                     "hammer, glove, $getBossRef|ip_boss, [ip_bigkey], [$smallKeys|ip_smallkey|2]",
                     "hammer, glove, [somaria], $getBossRef|ip_boss, [ip_bigkey], $smallKeys|ip_smallkey|1"
                 ],
-                "sections":[
+                "sections": [
                     {
                         "name": "Boss Item",
                         "item_count":1,
                         "hosted_item": "ip_boss, icepalace"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "IP",
                         "x": 470,

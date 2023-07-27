@@ -4,18 +4,18 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
-        "access_rules":[
+        "access_rules": [
             "@EP/Eastern Palace"
         ],
-        "children":[
+        "children": [
             {
                 "name": "Cannonball Chest",
-                "sections":[
+                "sections": [
                     {
                         "name": "Cannonball Chest"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "EP",
                         "x": 435,
@@ -26,12 +26,12 @@
             },
             {
                 "name": "Map Chest",
-                "sections":[
+                "sections": [
                     {
                         "name": "Map Chest"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "EP",
                         "x": 570,
@@ -42,12 +42,12 @@
             },
             {
                 "name": "Compass Chest",
-                "sections":[
+                "sections": [
                     {
                         "name": "Compass Chest"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "EP",
                         "x": 230,
@@ -58,15 +58,15 @@
             },
             {
                 "name": "Big Key Chest",
-                "access_rules":[
+                "access_rules": [
                     "[$darkRooms]"
                 ],
-                "sections":[
+                "sections": [
                     {
                         "name": "Big Key Chest"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "EP",
                         "x": 300,
@@ -77,15 +77,15 @@
             },
             {
                 "name": "Big Chest",
-                "access_rules":[
+                "access_rules": [
                     "ep_bigkey"
                 ],
-                "sections":[
+                "sections": [
                     {
                         "name": "Big Chest"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "EP",
                         "x": 397,
@@ -96,16 +96,16 @@
             },
             {
                 "name": "Dark Square Pot Key",
-                "visibility_rules":["key_drop_shuffle"],
-                "access_rules":[
+                "visibility_rules": ["key_drop_shuffle"],
+                "access_rules": [
                     "[$darkRooms]"
                 ],
-                "sections":[
+                "sections": [
                     {
                         "name": "Dark Square Pot Key"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "EP",
                         "x": 574,
@@ -116,16 +116,16 @@
             },
             {
                 "name": "Dark Eyegore Key Drop",
-                "visibility_rules":["key_drop_shuffle"],
-                "access_rules":[
+                "visibility_rules": ["key_drop_shuffle"],
+                "access_rules": [
                     "ep_bigkey, [$darkRooms]"
                 ],
-                "sections":[
+                "sections": [
                     {
                         "name": "Dark Eyegore Key Drop"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "EP",
                         "x": 404,
@@ -136,18 +136,18 @@
             },
             {
                 "name": "Boss",
-                "access_rules":[
+                "access_rules": [
                     "ep_bigkey, [$darkRooms], $getBossRef|ep_boss, bow",
                     "ep_bigkey, [$darkRooms], enemizer"
                 ],
-                "sections":[
+                "sections": [
                     {
                         "name": "Boss Item",
                         "item_count":1,
                         "hosted_item": "ep_boss, easternpalace"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "EP",
                         "x": 30,

@@ -3,23 +3,23 @@
         "name": "Desert Palace",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
-        "access_rules":[
+        "access_rules": [
             "@DP/Desert Palace"
         ],
-        "children":[
+        "children": [
             {
                 "name": "Torch",
-                "sections":[
+                "sections": [
                     {
                         "name": "Torch",
-                        "access_rules":[
+                        "access_rules": [
                             "boots",
                             "{@DP}"
                         ],
                         "capture_item": true
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "DP",
                         "x": 80,
@@ -30,15 +30,15 @@
             },
             {
                 "name": "Big Chest",
-                "sections":[
+                "sections": [
                     {
                         "name": "Big Chest",
-                        "access_rules":[
+                        "access_rules": [
                             "dp_bigkey"
                         ]
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "DP",
                         "x": 30,
@@ -49,12 +49,12 @@
             },
             {
                 "name": "Map Chest",
-                "sections":[
+                "sections": [
                     {
                         "name": "Map Chest"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "DP",
                         "x": 190,
@@ -65,15 +65,15 @@
             },
             {
                 "name": "Big Key Chest",
-                "sections":[
+                "sections": [
                     {
                         "name": "Big Key Chest",
-                        "access_rules":[
+                        "access_rules": [
                             "@Desert Palace/Compass Chest/Compass Chest"
                         ]
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "DP",
                         "x": 350,
@@ -84,16 +84,16 @@
             },
             {
                 "name": "Compass Chest",
-                "sections":[
+                "sections": [
                     {
                         "name": "Compass Chest",
-                        "access_rules":[
+                        "access_rules": [
                             "@DP Back/Desert Palace Back, [$smallKeys|dp_smallkey|1]",
                             "$smallKeys|dp_smallkey|1"
                         ]
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "DP",
                         "x": 350,
@@ -108,23 +108,23 @@
         "name": "Desert Palace Back",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/chest_opened_img.png",
-        "access_rules":[
+        "access_rules": [
             "@DP Back/Desert Palace Back"
         ],
-        "children":[
+        "children": [
             {
                 "name": "Boss",
-                "access_rules":[
+                "access_rules": [
                     "firesource, [$smallKeys|dp_smallkey|1], dp_bigkey, $getBossRef|dp_boss"
                 ],
-                "sections":[
+                "sections": [
                     {
                         "name": "Boss Item",
                         "item_count": 1,
                         "hosted_item": "dp_boss, desertpalace"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "DP",
                         "x": 455,
@@ -135,13 +135,13 @@
             },
             {
                 "name": "Desert Tiles 1 Pot Key",
-                "visibility_rules":["key_drop_shuffle"],
-                "sections":[
+                "visibility_rules": ["key_drop_shuffle"],
+                "sections": [
                     {
                         "name": "Desert Tiles 1 Pot Key"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "DP",
                         "x": 412,
@@ -152,13 +152,13 @@
             },
             {
                 "name": "Beamos Hall Pot Key",
-                "visibility_rules":["key_drop_shuffle"],
-                "sections":[
+                "visibility_rules": ["key_drop_shuffle"],
+                "sections": [
                     {
                         "name": "Beamos Hall Pot Key"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "DP",
                         "x": 564,
@@ -169,13 +169,13 @@
             },
             {
                 "name": "Desert Tiles 2 Pot Key",
-                "visibility_rules":["key_drop_shuffle"],
-                "sections":[
+                "visibility_rules": ["key_drop_shuffle"],
+                "sections": [
                     {
                         "name": "Desert Tiles 2 Pot Key"
                     }
                 ],
-                "map_locations":[
+                "map_locations": [
                     {
                         "map": "DP",
                         "x": 575,
