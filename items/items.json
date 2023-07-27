@@ -73,7 +73,7 @@
     {
         "name": "Bombs",
         "type": "consumable",
-        "allow_disabled":false,
+        "allow_disabled": false,
         "min_quantity": 10,
         "max_quantity": 50,
         "increment": 5,
@@ -143,17 +143,17 @@
             },
             {
                 "img": "/images/items/Bombos_for_TR.png",
-                "inherit_codes":false,
+                "inherit_codes": false,
                 "codes": "bombos, tr_medallion"
             },
             {
                 "img": "/images/items/Bombos_for_MM.png",
-                "inherit_codes":false,
+                "inherit_codes": false,
                 "codes": "bombos, mm_medallion"
             },
             {
                 "img": "/images/items/Bombos_for_both.png",
-                "inherit_codes":false,
+                "inherit_codes": false,
                 "codes": "bombos, bombos_both, mm_medallion, tr_medallion"
             }
         ]
@@ -168,17 +168,17 @@
             },
             {
                 "img": "/images/items/Ether_for_TR.png",
-                "inherit_codes":false,
+                "inherit_codes": false,
                 "codes": "ether, tr_medallion"
             },
             {
                 "img": "/images/items/Ether_for_MM.png",
-                "inherit_codes":false,
+                "inherit_codes": false,
                 "codes": "ether, mm_medallion"
             },
             {
                 "img": "/images/items/Ether_for_both.png",
-                "inherit_codes":false,
+                "inherit_codes": false,
                 "codes": "ether, ether_both, mm_medallion, tr_medallion"
             }
         ]
@@ -193,17 +193,17 @@
             },
             {
                 "img": "/images/items/Quake_for_TR.png",
-                "inherit_codes":false,
+                "inherit_codes": false,
                 "codes": "quake, tr_medallion"
             },
             {
                 "img": "/images/items/Quake_for_MM.png",
-                "inherit_codes":false,
+                "inherit_codes": false,
                 "codes": "quake, mm_medallion"
             },
             {
                 "img": "/images/items/Quake_for_both.png",
-                "inherit_codes":false,
+                "inherit_codes": false,
                 "codes": "quake, quake_both, mm_medallion, tr_medallion"
             }
         ]
@@ -355,7 +355,8 @@
     },
     {
         "name": "Half Magic",
-        "type": "progressive","stages": [
+        "type": "progressive",
+        "stages": [
             {
                 "img": "/images/items/Half_Magic.png",
                 "codes": "half_magic"
@@ -535,42 +536,42 @@
         "stages": [
             {
                 "img": "/images/goal_fast.png",
-                "inherit_codes":false,
+                "inherit_codes": false,
                 "codes": "fasst"
             },
             {
                 "img": "/images/goal_slow.png",
-                "inherit_codes":false,
+                "inherit_codes": false,
                 "codes": "slow"
             },
             {
                 "img": "/images/all_dungeons.png",
-                "inherit_codes":false,
+                "inherit_codes": false,
                 "codes": "all_dungeons"
             },
             {
                 "img": "/images/pedestal.png",
-                "inherit_codes":false,
+                "inherit_codes": false,
                 "codes": "ped"
             },
             {
                 "img": "/images/pedestal+ganon.png",
-                "inherit_codes":false,
+                "inherit_codes": false,
                 "codes": "ped+ganon"
             },
             {
                 "img": "/images/goal_triforce.png",
-                "inherit_codes":false,
+                "inherit_codes": false,
                 "codes": "triforce"
             },
             {
                 "img": "/images/goal_triforce+ganon.png",
-                "inherit_codes":false,
+                "inherit_codes": false,
                 "codes": "triforce+ganon"
             },
             {
                 "img": "/images/goal_icerod.png",
-                "inherit_codes":false,
+                "inherit_codes": false,
                 "codes": "icerod_hunt"
             }
         ],
@@ -583,17 +584,17 @@
         "stages": [
             {
                 "img": "/images/gm_open.png",
-                "inherit_codes":false,
+                "inherit_codes": false,
                 "codes": "start_option, open"
             },
             {
                 "img": "/images/gm_inverted.png",
-                "inherit_codes":false,
+                "inherit_codes": false,
                 "codes": "start_option, inverted"
             },
             {
                 "img": "/images/gm_standard.png",
-                "inherit_codes":false,
+                "inherit_codes": false,
                 "codes": "start_option, standard"
             }
         ]
@@ -660,22 +661,22 @@
         "stages": [
             {
                 "img": "/images/glitches_no.png",
-                "inherit_codes":false,
+                "inherit_codes": false,
                 "codes": "no_glitches"
             },
             // {
             //     "img": "/images/glitches_boots.png",
-            //     "inherit_codes":false,
+            //     "inherit_codes": false,
             //     "codes": "glitched_boots"
             // },
             {
                 "img": "/images/glitches_minor.png",
-                "inherit_codes":false,
+                "inherit_codes": false,
                 "codes": "minor"
             },
             {
                 "img": "/images/glitches_ow.png",
-                "inherit_codes":false,
+                "inherit_codes": false,
                 "codes": "ow"
             }
         ],
@@ -799,9 +800,9 @@
     {
         "name": "Triforce Piece needed",
         "type": "consumable",
-        "allow_disabled":false,
-        "max_quantity":90,
-        "min_quantity":0,
+        "allow_disabled": false,
+        "max_quantity": 90,
+        "min_quantity": 0,
         "overlay_background": "#000000",
         "img": "/images/triforce_piece2.png",
         "codes": "triforce_pieces_needed"
@@ -809,8 +810,8 @@
     {
         "name": "Triforce Piece",
         "type": "consumable",
-        "max_quantity":90,
-        "min_quantity":0,
+        "max_quantity": 90,
+        "min_quantity": 0,
         "overlay_background": "#000000",
         "img": "/images/triforce_piece2.png",
         "codes": "triforcepieces"
