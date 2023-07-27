@@ -4,16 +4,16 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "parent": "TT",
-        "children": [
+        "children":[
             {
                 "name": "Map Chest",
-                "sections": [
+                "sections":[
                     {
                         "name": "Map Chest"
                         
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "TT",
                         "x": 35,
@@ -24,12 +24,12 @@
             },
             {
                 "name": "Ambush Chest",
-                "sections": [
+                "sections":[
                     {
                         "name": "Ambush Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "TT",
                         "x": 50,
@@ -40,12 +40,12 @@
             },
             {
                 "name": "Compass Chest",
-                "sections": [
+                "sections":[
                     {
                         "name": "Compass Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "TT",
                         "x": 175,
@@ -56,12 +56,12 @@
             },
             {
                 "name": "Big Key Chest",
-                "sections": [
+                "sections":[
                     {
                         "name": "Big Key Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "TT",
                         "x": 100,
@@ -76,20 +76,20 @@
         "name": "Thieves Town Back",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
-        "access_rules": [
+        "access_rules":[
             "tt_bigkey"
         ],
         "parent": "TT",
-        "children": [
+        "children":[
             {
                 "name": "Hallway Pot Key",
                 "visibility_rules":["key_drop_shuffle"],
-                "sections": [
+                "sections":[
                     {
                         "name": "Hallway Pot Key"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "TT",
                         "x": 483,
@@ -101,12 +101,12 @@
             {
                 "name": "Spike Switch Pot Key",
                 "visibility_rules":["key_drop_shuffle"],
-                "sections": [
+                "sections":[
                     {
                         "name": "Spike Switch Pot Key"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "TT",
                         "x": 291,
@@ -117,12 +117,12 @@
             },
             {
                 "name": "Blind's Cell",
-                "sections": [
+                "sections":[
                     {
                         "name": "Blind's Cell"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "TT",
                         "x": 774,
@@ -133,12 +133,12 @@
             },
             {
                 "name": "Attic",
-                "sections": [
+                "sections":[
                     {
                         "name": "Attic"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "TT",
                         "x": 473,
@@ -152,12 +152,12 @@
                 "access_rules":[
                     "hammer, $smallKeys|tt_smallkey|1"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Big Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "TT",
                         "x": 568,
@@ -171,14 +171,14 @@
                 "access_rules":[
                     "$getBossRef|tt_boss"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Boss Item",
                         "item_count":1,
                         "hosted_item": "tt_boss, thievestown"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "TT",
                         "x": 490,

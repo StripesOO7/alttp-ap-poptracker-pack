@@ -2,7 +2,7 @@
     "settings_popup": {
         "type": "array",
         "margin": "5",
-        "content": [
+        "content":[
             {
                 "type": "group",
                 "header": "Autofill Settings",
@@ -24,12 +24,12 @@
         "content": {
             "type": "dock",
             "dropshadow": true,
-            "content": [
+            "content":[
                 {
                     "type": "dock",
                     "dock": "left",
                     "v_alignment": "stretch",
-                    "content": [
+                    "content":[
                         {
                             "type": "group",
                             "header": "Items",
@@ -85,11 +85,11 @@
         "content": {
             "type": "dock",
             "dropshadow": true,
-            "content": [
+            "content":[
                 {
                     "type": "dock",
                     "dock": "bottom",
-                    "content": [
+                    "content":[
                         {
                             "type": "group",
                             "header": "Items",

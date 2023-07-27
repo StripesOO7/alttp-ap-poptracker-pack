@@ -3,25 +3,25 @@
         "name": "Darkworld Left",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
-        "access_rules": [
+        "access_rules":[
             "pearl, titans",
             "pearl, hammer, glove",
             "@Darkworld Right, hookshot, pearl",
             "inverted",
             "$checkGlitches|2, boots, @Dark Death Mountain Left"
         ],
-        "children": [
+        "children":[
             {
                 "name": "Dark Lumberjack Shop",
-                "visibility_rules": ["shop_sanity"],
-                "sections": [
+                "visibility_rules":["shop_sanity"],
+                "sections":[
                     {
                         "name": "Shop Item",
                         "clear_as_group": false,
                         "item_count":3
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 670,
@@ -32,21 +32,19 @@
             },
             {
                 "name": "Bumper Cave",
-                "access_rules": [
+                "access_rules":[
                     "cape, glove",
                     "{}",
                     "$checkGlitches|2, boots"
                 ],
-                "visibility_rules":[
-                    "$openOrStandard"
-                ],
-                "sections": [
+                "visibility_rules":["$openOrStandard"],
+                "sections":[
                     {
                         "name": "Bumper Cave Item",
                         "capture_item": true
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 705,
@@ -57,15 +55,15 @@
             },
             {
                 "name": "Red Shield Shop",
-                "visibility_rules": ["shop_sanity"],
-                "sections": [
+                "visibility_rules":["shop_sanity"],
+                "sections":[
                     {
                         "name": "Shop Item",
                         "clear_as_group": false,
                         "item_count":3
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 660,
@@ -76,12 +74,12 @@
             },
             {
                 "name": "Chest Game (Money Making Game)",
-                "sections": [
+                "sections":[
                     {
                         "name": "Chest Game"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 95,
@@ -92,16 +90,16 @@
             },
             {
                 "name": "Breadsmiths",
-                "sections": [
+                "sections":[
                     {
                         "name": "Rescue Dwarf",
-                        "access_rules": [
+                        "access_rules":[
                             "titans",
                             "inverted, @Lightworld, mirror"
                         ]
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 600,
@@ -118,16 +116,18 @@
             },
             {
                 "name": "Dark Kakariko Shop",
-                "visibility_rules": ["shop_sanity"],
-                "access_rules":["hammer"],
-                "sections": [
+                "visibility_rules":["shop_sanity"],
+                "access_rules":[
+                    "hammer"
+                ],
+                "sections":[
                     {
                         "name": "Shop Item",
                         "clear_as_group": false,
                         "item_count":3
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 400,
@@ -138,12 +138,12 @@
             },
             {
                 "name": "C-Shaped House",
-                "sections": [
+                "sections":[
                     {
                         "name": "C-Shaped House"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 410,
@@ -154,16 +154,14 @@
             },
             {
                 "name": "Activate Flute",
-                "visibility_rules":[
-                    "flute, inverted"
-                ],
-                "sections": [
+                "visibility_rules":["flute, inverted"],
+                "sections":[
                     {
                         "name": "Hyrule Hymn o7",
                         "hosted_item": "flute_active"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 321,
@@ -177,12 +175,12 @@
                 "access_rules":[
                     "bombs"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Brewery"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 215,
@@ -197,12 +195,12 @@
                     "hammer, titans",
                     "inverted, hammer, mirror"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Peg Cave"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 625,
@@ -217,26 +215,24 @@
         "name": "Darkworld Bottom",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
-        "access_rules": [
+        "access_rules":[
             "@Darkworld Left",
             "@Darkworld Right, hammer, pearl",
             "inverted"
         ],
-        "children": [
+        "children":[
             {
                 "name": "Link's House",
                 "access_rules":[
                     "@Darkworld Bottom, inverted"
                 ],
-                "visibility_rules":[
-                    "inverted"
-                ],
-                "sections": [
+                "visibility_rules":["inverted"],
+                "sections":[
                     {
                         "name": "Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 1095,
@@ -247,7 +243,7 @@
             },
             {
                 "name": "Purple Chest Return",
-                "sections": [
+                "sections":[
                     {
                         "name": "Purple Chest Return",
                         "access_rules":[
@@ -256,7 +252,7 @@
                         ]
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 690,
@@ -273,12 +269,12 @@
             },
             {
                 "name": "Digging Game",
-                "sections": [
+                "sections":[
                     {
                         "name": "Digging Game"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 110,
@@ -289,12 +285,12 @@
             },
             {
                 "name": "Stumpy",
-                "sections": [
+                "sections":[
                     {
                         "name": "Stumpy"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 615,
@@ -308,14 +304,14 @@
                 "access_rules":[
                     "bombs"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Hype",
                         "item_count":5,
                         "clear_as_group": false
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 1195,
@@ -326,15 +322,15 @@
             },
             {
                 "name": "Dark Lake Hylia Shop",
-                "visibility_rules": ["shop_sanity"],
-                "sections": [
+                "visibility_rules":["shop_sanity"],
+                "sections":[
                     {
                         "name": "Shop Item",
                         "clear_as_group": false,
                         "item_count":3
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 1295,
@@ -349,7 +345,7 @@
         "name": "Darkworld Right",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
-        "access_rules": [
+        "access_rules":[
             "$openOrStandard, [pearl], aga1",
             "$openOrStandard, pearl, hammer, glove",
             "$openOrStandard, @Darkworld Left, flippers",
@@ -359,16 +355,16 @@
             "inverted, flute_active",
             "inverted, mirror, aga1"
         ],
-        "children": [
+        "children":[
             {
                 "name": "Pyramid Ledge",
-                "sections": [
+                "sections":[
                     {
                         "name": "Pyramid Ledge Item",
                         "capture_item": true
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 1160,
@@ -379,20 +375,20 @@
             },
             {
                 "name": "Big Bomb Fairy",
-                "access_rules": [
+                "access_rules":[
                     "$openOrStandard, pearl, crystal56:2, @Darkworld Bottom",
                     "inverted, @Lightworld, pearl, mirror, crystal56:2",
                     "inverted, @Lightworld, pearl, hammer, crystal56:2",
                     "inverted, @Lightworld, pearl, flute_active, crystal56:2"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Boom",
                         "clear_as_group": false,
                         "item_count": 2
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 935,
@@ -403,19 +399,19 @@
             },
             {
                 "name": "Dark Potion Shop",
-                "access_rules": [
+                "access_rules":[
                     "pearl",
                     "inverted"
                 ],
-                "visibility_rules": ["shop_sanity"],
-                "sections": [
+                "visibility_rules":["shop_sanity"],
+                "sections":[
                     {
                         "name": "Shop Item",
                         "clear_as_group": false,
                         "item_count":3
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 1605,
@@ -426,18 +422,18 @@
             },
             {
                 "name": "Catfish",
-                "access_rules": [
+                "access_rules":[
                     "$openOrStandard, pearl, glove",
                     "inverted, glove",
                     "inverted, @Lightworld, flippers, mirror",
                     "$openOrStandard, $checkGlitches|2, pearl, boots"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Catfish Item"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 1795,
@@ -452,7 +448,7 @@
         "name": "Darkworld Swamp",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
-        "access_rules": [
+        "access_rules":[
             "titans, flute_active",
             "inverted, flute_active",
             "inverted, mirror, @Lightworld",
@@ -460,21 +456,21 @@
             "@Darkworld Left, $checkGlitches|2, boots",
             "@Darkworld Bottom, $checkGlitches|2, boots"
         ],
-        "children": [
+        "children":[
             {
                 "name": "Mire Shed",
-                "access_rules": [ 
+                "access_rules":[ 
                     "pearl",
                     "inverted"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Shed",
                         "clear_as_group": false,
                         "item_count":2
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 75,
@@ -489,25 +485,25 @@
         "name": "Dark Death Mountain Left",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
-        "access_rules": [
+        "access_rules":[
             "@Light Death Mountain Left Bottom, pearl",
             // "@Light Death Mountain Left Bottom, $checkGlitches|2", //leave dm without pearl
             "inverted, flute_active",
             "inverted, [$darkRooms], glove"
         ],
-        "children": [
+        "children":[
             {
                 "name": "Spike Cave",
-                "access_rules": [
+                "access_rules":[
                     "bottle, invincibility, hammer, glove",
                     "half_magic, invincibility, hammer, glove"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Spike Cave Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 1145,
@@ -521,15 +517,13 @@
                 "access_rules":[
                     "[$darkRooms]"
                 ],
-                "visibility_rules":[
-                    "inverted"
-                ],
-                "sections": [
+                "visibility_rules":["inverted"],
+                "sections":[
                     {
                         "name": "Rescue Old Man"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 713,
@@ -550,23 +544,23 @@
         "name": "Dark Death Mountain Right",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
-        "access_rules": [
+        "access_rules":[
             "$openOrStandard, @Light Death Mountain Right, titans, pearl",
             "@Dark Death Mountain Left, $checkGlitches|2, boots",
             "inverted, @Dark Death Mountain Left"
         ],
-        "children": [
+        "children":[
             {
                 "name": "Dark Death Mountain Shop",
-                "visibility_rules": ["shop_sanity"],
-                "sections": [
+                "visibility_rules":["shop_sanity"],
+                "sections":[
                     {
                         "name": "Shop Item",
                         "clear_as_group": false,
                         "item_count":3
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 1715,
@@ -577,14 +571,14 @@
             },
             {
                 "name": "Hookshot Cave",
-                "access_rules": [
+                "access_rules":[
                     "glove",
                     "$checkGlitches|2, boots"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Bottom Right Chest",
-                        "access_rules": [
+                        "access_rules":[
                             "boots", 
                             "hookshot"
                         ]
@@ -592,11 +586,13 @@
                     {
                         "name": "remaining Chests",
                         "clear_as_group": false,
-                        "access_rules":["hookshot"],
+                        "access_rules":[
+                            "hookshot"
+                        ],
                         "item_count": 3
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 1660,
@@ -607,14 +603,14 @@
             },
             {
                 "name": "Superbunny Cave",
-                "sections": [
+                "sections":[
                     {
                         "name": "Superbunny Chest",
                         "clear_as_group": false,
                         "item_count": 2
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 1725,
@@ -640,14 +636,14 @@
             "@Darkworld Right, pearl",
             "inverted, @Darkworld Right"
         ],
-        "children": [
+        "children":[
             {
                 "name": "Palace of Darkness",
                 "item_count": 15,
-                "sections": [
+                "sections":[
                     {
                         "name": "Dungeon Chest" ,
-                        "access_rules": [
+                        "access_rules":[
                             "[$darkRooms], [$smallKeys|pod_smallkey|5], [pod_bigkey]"
                         ],
                         // "hosted_item": "pod_map, pod_compass, pod_bigkey",
@@ -657,14 +653,14 @@
                     {
                         "name": "Boss Item" ,
                         "clear_as_group": false,
-                        "access_rules": [
+                        "access_rules":[
                             "pod_bigkey, [$darkRooms], $getBossRef|pod_boss, hammer, bow"
                         ],
                         "item_count": 1,
                         "hosted_item": "pod_boss, palaceofdarkness"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 1925,
@@ -686,7 +682,7 @@
             "inverted, @Dark Death Mountain Right, $canUseMedallions, tr_medallion",
             "inverted, @Light Death Mountain Right, mirror"
         ],
-        "children": [
+        "children":[
             {
                 "name": "Turtle Rock Front",
                 "access_rules":[
@@ -694,10 +690,10 @@
                     "inverted, @TR/Turtle Rock Back"
                 ],
                 "item_count": 5,
-                "sections": [
+                "sections":[
                     {
                         "name": "Dungeon Chest" ,
-                        "access_rules": [
+                        "access_rules":[
                             "[$smallKeys|tr_smallkey|2], [somaria], [firerod]",
                             "$smallKeys|tr_smallkey|2, somaria, firerod"
                         ],
@@ -709,14 +705,14 @@
                         "name": "Key Drops",
                         "item_count": 2,
                         "clear_as_group": false,
-                        "access_rules": [
+                        "access_rules":[
                             "[$smallKeys|tr_smallkey|1], [somaria], [firerod]",
                             "$smallKeys|tr_smallkey|1, somaria, firerod"
                         ],
-                        "visibility_rules": ["key_drop_shuffle"]
+                        "visibility_rules":["key_drop_shuffle"]
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 1887,
@@ -738,10 +734,10 @@
                     "@Light Death Mountain Right, Mirror"
                 ],
                 "item_count": 8,
-                "sections": [
+                "sections":[
                     {
                         "name": "Dungeon Chest",
-                        "access_rules": [
+                        "access_rules":[
                             "[$smallKeys|tr_smallkey|3], [somaria], tr_bigkey"
                         ],
                         "clear_as_group": false,
@@ -750,14 +746,14 @@
                     {
                         "name": "Boss Item",
                         "clear_as_group": false,
-                        "access_rules": [
+                        "access_rules":[
                             "[$smallKeys|tr_smallkey|4], $darkRooms, $getBossRef|tr_boss, tr_bigkey, somaria"
                         ],
                         "item_count": 1
                         // "hosted_item": "tr_boss, turtlerock"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 1692,
@@ -773,12 +769,12 @@
                     "@TR/Turtle Rock Back",
                     "inverted, @Dark Death Mountain Right"
                 ],
-                "visibility_rules": ["inverted"],
+                "visibility_rules":["inverted"],
                 "item_count": 1,
                 "sections":[
                     {}
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 1645,
@@ -797,11 +793,11 @@
         "access_rules":[
             "@Darkworld Left"
         ],
-        "children": [
+        "children":[
             {
                 "name": "Skull Woods Front",
                 "item_count": 6,
-                "sections": [
+                "sections":[
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules":[
@@ -816,10 +812,10 @@
                         "name": "Key Drops",
                         "item_count": 1,
                         "clear_as_group": false,
-                        "visibility_rules": ["key_drop_shuffle"]
+                        "visibility_rules":["key_drop_shuffle"]
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 365,
@@ -830,9 +826,11 @@
             },
             {
                 "name": "Skull Woods Back",
-                "access_rules":["firerod"],
+                "access_rules":[
+                    "firerod"
+                ],
                 "item_count": 3,
-                "sections": [
+                "sections":[
                     {
                         "name": "Dungeon Chest" ,
                         "clear_as_group": false,
@@ -842,18 +840,22 @@
                         "name": "Key Drops",
                         "item_count": 1,
                         "clear_as_group": false,
-                        "access_rules":["$canRemoveCurtains"],
-                        "visibility_rules": ["key_drop_shuffle"]
+                        "access_rules":[
+                            "$canRemoveCurtains"
+                        ],
+                        "visibility_rules":["key_drop_shuffle"]
                     },
                     {
                         "name": "Boss Item" ,
                         "clear_as_group": false,
-                        "access_rules":["$canRemoveCurtains, $getBossRef|sw_boss"],
+                        "access_rules":[
+                            "$canRemoveCurtains, $getBossRef|sw_boss"
+                        ],
                         "item_count": 1,
                         "hosted_item": "sw_boss, skullwoods"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 80,
@@ -873,15 +875,15 @@
             "@Darkworld Swamp, pearl, $canUseMedallions, mm_medallion",
             "inverted, @Darkworld Swamp, $canUseMedallions, mm_medallion",
         ],
-        "children": [
+        "children":[
             {
                 "name": "Misery Mire",
-                "access_rules": [
+                "access_rules":[
                     "hookstot",
                     "boots"
                 ]
                 "item_count": 9,
-                "sections": [
+                "sections":[
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules":[
@@ -897,7 +899,7 @@
                         "access_rules":[
                             "[firesource]"
                         ],
-                        "visibility_rules": ["key_drop_shuffle"]
+                        "visibility_rules":["key_drop_shuffle"]
                     },
                     {
                         "name": "Boss Item" ,
@@ -909,7 +911,7 @@
                         "hosted_item": "mm_boss, miserymire"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 147,
@@ -930,12 +932,14 @@
             "@Darkworld Left, hookshot, hammer",
             "inverted, @Lightworld"
         ],
-        "children": [
+        "children":[
             {
                 "name": "Swamp Palace",
-                "access_rules":["flippers, mirror"],
+                "access_rules":[
+                    "flippers, mirror"
+                ],
                 "item_count": 11,
-                "sections": [
+                "sections":[
                     {
                         "name": "Dungeon Chest",
                         "access_rules":[
@@ -954,7 +958,7 @@
                             "[hookshot], [$smallKeys|sp_smallkey|1]",
                             "hookshot, $smallKeys|sp_smallkey|1"
                         ],
-                        "visibility_rules": ["key_drop_shuffle"]
+                        "visibility_rules":["key_drop_shuffle"]
                     },
                     {
                         "name": "Boss Item" ,
@@ -966,7 +970,7 @@
                         "hosted_item": "sp_boss, swamppalace"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 940,
@@ -988,12 +992,14 @@
             "@Darkworld Bottom, flippers, pearl, $checkGlitches|2, boots",
             "@Darkworld Bottom, pearl, $checkGlitches|2, boots, mirror"
         ],
-        "children": [
+        "children":[
             {
                 "name": "Ice Palace",
-                "access_rules":["firerod","bombos"],
+                "access_rules":[
+                    "firerod","bombos"
+                ],
                 "item_count": 9,
-                "sections": [
+                "sections":[
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules":[
@@ -1015,7 +1021,7 @@
                             "[ip_bigkey], hammer, glove",
                             "ip_bigkey, hammer, glove"
                         ],
-                        "visibility_rules": ["key_drop_shuffle"]
+                        "visibility_rules":["key_drop_shuffle"]
                     },
                     {
                         "name": "Boss Item" ,
@@ -1028,7 +1034,7 @@
                         "hosted_item": "ip_boss, icepalace"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 1600,
@@ -1047,11 +1053,11 @@
         "access_rules":[
             "@Darkworld Left"
         ],
-        "children": [
+        "children":[
             {
                 "name": "Thieves Town",
                 "item_count": 8,
-                "sections": [
+                "sections":[
                     { 
                         "name": "Front",
                         "clear_as_group": false,
@@ -1075,7 +1081,7 @@
                             "tt_bigkey, [$smallKeys|tt_smallkey|1]",
                             "tt_bigkey, $smallKeys|tt_smallkey|1"
                         ],
-                        "visibility_rules": ["key_drop_shuffle"]
+                        "visibility_rules":["key_drop_shuffle"]
                     },
                     {
                         "name": "Boss Item",
@@ -1089,12 +1095,10 @@
                     {
                         "name": "Hyrule Hymn o7",
                         "hosted_item": "flute_active",
-                        "visibility_rules":[
-                            "flute, inverted"
-                        ]
+                        "visibility_rules":["flute, inverted"]
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 250,
@@ -1115,13 +1119,11 @@
             "$openOrStandard, @Light Death Mountain Left Bottom, hookshot, titans, hammer, $gtCrystalCount",
             "$openOrStandard, @Dark Death Mountain Left, $checkGlitches|2, boots"
         ],
-        "visibility_rules":[
-            "$openOrStandard"
-        ],
-        "children": [
+        "visibility_rules":["$openOrStandard"],
+        "children":[
             {
                 "name": "Ganon's Tower",
-                "sections": [
+                "sections":[
                     {
                         "name": "Leftside",
                         "clear_as_group": false,
@@ -1182,7 +1184,7 @@
                         "access_rules":[
                             "@GT/Ganon's Tower/GT Top Moldorm refight"
                         ],
-                        "visibility_rules": ["key_drop_shuffle"]
+                        "visibility_rules":["key_drop_shuffle"]
                     },
                     {
                         "name": "GT Top Agahnim 2",
@@ -1193,7 +1195,7 @@
                         "hosted_item": "aga2"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 1130,
@@ -1213,14 +1215,12 @@
             "inverted, @Dark Death Mountain Left",
             "inverted, @Dark Death Mountain Left, $checkGlitches|2, boots"
         ],
-        "visibility_rules":[
-            "inverted"
-        ],
-        "children": [
+        "visibility_rules":["inverted"],
+        "children":[
             {
                 "name": "Agahnim's Tower",
                 "item_count": 3,
-                "sections": [
+                "sections":[
                     {
                         "name": "Front"
                     },
@@ -1237,7 +1237,7 @@
                         "access_rules":[
                             "[$darkRooms], $smallKeys|at_smallkey|1"
                         ],
-                        "visibility_rules": ["key_drop_shuffle"]
+                        "visibility_rules":["key_drop_shuffle"]
                     },
                     {
                         "name": "Agahnim 1",
@@ -1249,7 +1249,7 @@
                         "hosted_item": "aga1"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Darkworld",
                         "x": 1130,

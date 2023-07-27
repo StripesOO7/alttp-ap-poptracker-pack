@@ -6,15 +6,15 @@
         "access_rules":[
             "@SW/Skull Woods Front"
         ],
-        "children": [
+        "children":[
             {
                 "name": "Pot Prison",
-                "sections": [
+                "sections":[
                     {
                         "name": "Pot Prison"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "SW",
                         "x": 410,
@@ -25,12 +25,12 @@
             },
             {
                 "name": "Compass Chest",
-                "sections": [
+                "sections":[
                     {
                         "name": "Compass Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "SW",
                         "x": 430,
@@ -41,12 +41,12 @@
             },
             {
                 "name": "Pinball Room",
-                "sections": [
+                "sections":[
                     {
                         "name": "Pinball Room"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "SW",
                         "x": 525,
@@ -57,12 +57,12 @@
             },
             {
                 "name": "Map Chest",
-                "sections": [
+                "sections":[
                     {
                         "name": "Map Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "SW",
                         "x": 575,
@@ -73,12 +73,12 @@
             },
             {
                 "name": "Big Key Chest",
-                "sections": [
+                "sections":[
                     {
                         "name": "Big Key Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "SW",
                         "x": 295,
@@ -90,12 +90,12 @@
             {
                 "name": "West Lobby Pot Key",
                 "visibility_rules":["key_drop_shuffle"],
-                "sections": [
+                "sections":[
                     {
                         "name": "West Lobby Pot Key"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "SW",
                         "x": 148,
@@ -109,12 +109,12 @@
                 "access_rules":[
                     "sw_bigkey"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Big Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "SW",
                         "x": 495,
@@ -132,15 +132,15 @@
         "access_rules":[
             "@SW/Skull Woods Back"
         ],
-        "children": [
+        "children":[
             {
                 "name": "Bridge Room",
-                "sections": [
+                "sections":[
                     {
                         "name": "Bridge Room"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "SW",
                         "x": 42,
@@ -155,12 +155,12 @@
                     "firesource, $canRemoveCurtains"
                 ],
                 "visibility_rules":["key_drop_shuffle"],
-                "sections": [
+                "sections":[
                     {
                         "name": "Spike Corner Key Drop"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "SW",
                         "x": 32,
@@ -172,7 +172,7 @@
             {
                 "name": "Boss",
                 
-                "sections": [
+                "sections":[
                     {
                         "name": "Boss Item",
                         "access_rules":[
@@ -182,7 +182,7 @@
                         "hosted_item": "sw_boss, skullwoods"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "SW",
                         "x": 160,

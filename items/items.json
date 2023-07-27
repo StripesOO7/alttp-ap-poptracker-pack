@@ -6,7 +6,7 @@
         "min_quantity": 30,
         "max_quantity": 70,
         "increment": 5,
-        "stages": [
+        "stages":[
             {
                 "img": "/images/items/Bow+Arrows.png",
                 "codes": "bow, weapon, bow+arrow, bowandarrows"
@@ -36,7 +36,7 @@
         "type": "composite_toggle",
         "item_left": "blueboomerang",
         "item_right": "redboomerang",
-        "images": [
+        "images":[
             {
                 "left": false, "right": false,
                 "img": "/images/items/boomerangs_disabled.png",
@@ -92,7 +92,7 @@
         "name": "Magic Powder",
         "type": "progressive",
         "loop": false,
-        "stages": [
+        "stages":[
             {
                 "img": "/images/items/Magic_Powder.png",
                 "inherit_codes": false,
@@ -109,7 +109,7 @@
         "name": "Mushroom",
         "type": "progressive",
         "loop": false,
-        "stages": [
+        "stages":[
             {
                 "img": "/images/items/Mushroom.png",
                 "codes": "mushroom"
@@ -136,7 +136,7 @@
     {
         "name": "Bombos",
         "type": "progressive_toggle",
-        "stages": [
+        "stages":[
             {
                 "img": "/images/items/Bombos.png",
                 "codes": "bombos"
@@ -161,7 +161,7 @@
     {
         "name": "Ether",
         "type": "progressive_toggle",
-        "stages": [
+        "stages":[
             {
                 "img": "/images/items/Ether.png",
                 "codes": "ether"
@@ -186,7 +186,7 @@
     {
         "name": "Quake",
         "type": "progressive_toggle",
-        "stages": [
+        "stages":[
             {
                 "img": "/images/items/Quake.png",
                 "codes": "quake"
@@ -212,7 +212,7 @@
         "name": "Shovel",
         "type": "progressive",
         "loop": false,
-        "stages": [
+        "stages":[
             {
                 "img": "/images/items/Shovel.png",
                 "inherit_codes": false,
@@ -241,7 +241,7 @@
         "name": "Flute",
         "type": "progressive",
         "loop": false,
-        "stages": [
+        "stages":[
             {
                 "img": "/images/items/Flute.png",
                 "inherit_codes": false,
@@ -277,7 +277,7 @@
         "name": "Bottles",
         "type": "progressive",
         "loop": false,
-        "stages": [
+        "stages":[
             {
                 "img": "/images/items/1_Bottle.png",
                 "codes": "bottle, bottle1",
@@ -330,7 +330,7 @@
     {
         "name": "Glove",
         "type": "progressive",
-        "stages": [
+        "stages":[
             {
                 "img": "/images/items/Power_Glove.png",
                 "codes": "glove, powergloves"
@@ -355,7 +355,7 @@
     },
     {
         "name": "Half Magic",
-        "type": "progressive","stages": [
+        "type": "progressive","stages":[
             {
                 "img": "/images/items/Half_Magic.png",
                 "codes": "half_magic"
@@ -371,7 +371,7 @@
         "name": "Sword",
         "type": "progressive",
         "loop": false,
-        "stages": [
+        "stages":[
             {
                 "img": "/images/items/sword1.png",
                 "codes": "sword, fightersword",
@@ -395,7 +395,7 @@
         "name": "Shield",
         "type": "progressive",
         "loop": false,
-        "stages": [
+        "stages":[
             {
                 "img": "/images/items/Shield_lvl1.png",
                 "codes": "shield, blueshield"
@@ -416,7 +416,7 @@
         "initial_stage_idx": 0,
         "allow_disabled": false,
         "loop": false,
-        "stages": [
+        "stages":[
             {
                 "img": "/images/items/Green_Mail.png",
                 "codes": "armor, green_mail"
@@ -448,7 +448,7 @@
         "type": "composite_toggle",
         "item_left": "aga1",
         "item_right": "aga2",
-        "images": [
+        "images":[
             {
                 "left": false, "right": false,
                 "img": "/images/events/Agahnim_disabled.png"
@@ -486,7 +486,7 @@
         "type": "progressive",
         "loop": true,
         "allow_disabled": false,
-        "stages": [
+        "stages":[
             {
                 "img": "/images/events/0-4_Heartpieces.png",
                 "codes": "heartpieces, 0_heartpieces"
@@ -532,7 +532,7 @@
         "name": "Goal",
         "type": "progressive",
         "allow_disabled": false,
-        "stages": [
+        "stages":[
             {
                 "img": "/images/goal_fast.png",
                 "inherit_codes":false,
@@ -580,7 +580,7 @@
         "name": "Start Option",
         "type": "progressive",
         "allow_disabled": false,
-        "stages": [
+        "stages":[
             {
                 "img": "/images/gm_open.png",
                 "inherit_codes":false,
@@ -615,7 +615,7 @@
         "type": "progressive",
         "loop": true,
         "allow_disabled": false,
-        "stages": [
+        "stages":[
             {
                 "img": "/images/boss_vanilla.png",
                 "codes": "vanilla"
@@ -637,7 +637,7 @@
         "loop": true,
         "allow_disabled": false,
         "initial_stage_idx": 1,
-        "stages": [
+        "stages":[
             {
                 "img": "/images/darkroom_logic.png",
                 "codes": "dark_rooms"
@@ -657,7 +657,7 @@
         "name": "Glitches Option",
         "type": "progressive",
         "allow_disabled": false,
-        "stages": [
+        "stages":[
             {
                 "img": "/images/glitches_no.png",
                 "inherit_codes":false,
@@ -717,7 +717,7 @@
         "type": "composite_toggle",
         "item_left": "small_keys",
         "item_right": "big_keys",
-        "images": [
+        "images":[
             {
                 "left": false, "right": false,
                 "img": "/images/full_keysanity_disabled.png",
@@ -768,7 +768,7 @@
         "type": "composite_toggle",
         "item_left": "compass",
         "item_right": "map",
-        "images": [
+        "images":[
             {
                 "left": false, "right": false,
                 "img": "/images/map_compass_shuffle_disabled.png",

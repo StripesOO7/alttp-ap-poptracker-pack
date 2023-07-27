@@ -10,10 +10,10 @@
             "inverted, pearl, titans",
             "inverted, pearl, aga1"
         ],
-        "children": [
+        "children":[
             {
                 "name": "Kakariko Well",
-                "sections": [
+                "sections":[
                     {
                         "name": "Well Items",
                         "clear_as_group": false,
@@ -21,10 +21,12 @@
                     },
                     {
                         "name":"Back Chest",
-                        "access_rules": ["bombs"]
+                        "access_rules":[
+                            "bombs"
+                        ]
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 40,
@@ -35,7 +37,7 @@
             },
             {
                 "name": "Blind's Hideout",
-                "sections": [
+                "sections":[
                     {
                         "name": "Hideout",
                         "clear_as_group": false,
@@ -43,12 +45,12 @@
                     },
                     {
                         "name":"Back Chest",
-                        "access_rules": [
+                        "access_rules":[
                             "bombs"
                         ]
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 250,
@@ -59,12 +61,12 @@
             },
             {
                 "name": "Bottle Merchant",
-                "sections": [
+                "sections":[
                     {
                         "name": "Get Scammed (100 Rupees)"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 190,
@@ -75,16 +77,14 @@
             },
             {
                 "name": "Activate Flute",
-                "visibility_rules":[
-                    "flute, $openOrStandard"
-                ],
-                "sections": [
+                "visibility_rules":["flute, $openOrStandard"],
+                "sections":[
                     {
                         "name": "Hyrule Hymn o7",
                         "hosted_item": "flute_active"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 254,
@@ -98,12 +98,12 @@
                 "access_rules":[
                     "bombs"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Chicken Hut"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 190,
@@ -114,15 +114,15 @@
             },
             {
                 "name": "Kakariko Light-Shop",
-                "visibility_rules": ["shop_sanity"],
-                "sections": [
+                "visibility_rules":["shop_sanity"],
+                "sections":[
                     {
                         "name": "Shop Item",
                         "clear_as_group": false,
                         "item_count":3
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 210,
@@ -133,13 +133,15 @@
             },
             {
                 "name": "Sick Kid",
-                "sections": [
+                "sections":[
                     {
                         "name": "Sick Kid",
-                        "access_rules": ["bottle"]
+                        "access_rules":[
+                            "bottle"
+                        ]
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 320,
@@ -150,12 +152,12 @@
             },
             {
                 "name": "Backside Pub",
-                "sections": [
+                "sections":[
                     {
                         "name": "Backside Pub"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 315,
@@ -166,10 +168,10 @@
             },
             {
                 "name": "Satan",
-                "sections": [
+                "sections":[
                     {
                         "name": "Visit Satan",
-                        "access_rules": [
+                        "access_rules":[
                             "hammer, powder",
                             "$openOrStandard, titans, mirror, @Darkworld Left, powder",
                             "$checkGlitches|2, boots, powder"
@@ -177,7 +179,7 @@
                         "hosted_item": "satan_visited"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 640,
@@ -188,13 +190,13 @@
             },
             {
                 "name": "Lost Woods",
-                "sections": [
+                "sections":[
                     {
                         "name": "Mushroom",
                         "capture_item": true
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 250,
@@ -205,12 +207,12 @@
             },
             {
                 "name": "Lost Woods - Hideout",
-                "sections": [
+                "sections":[
                     {
                         "name": "Hideout"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 380,
@@ -225,13 +227,13 @@
                     "pendant:2, greenpendant",
                     "{book}"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Pedestal",
                         "capture_item": true
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 80,
@@ -246,13 +248,13 @@
                     "aga1, boots",
                     "{}"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Tree",
                         "capture_item": true
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 590,
@@ -266,12 +268,12 @@
                 "access_rules":[
                     "boots"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Bonk Pile Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 775,
@@ -286,13 +288,13 @@
                     "boots",
                     "{}"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Library",
                         "capture_item": true
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 325,
@@ -309,13 +311,13 @@
                     "{}",
                     "$checkGlitches|2, boots"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Race",
                         "capture_item": true
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 55,
@@ -326,17 +328,17 @@
             },
             {
                 "name": "Cave 45",
-                "access_rules": [
+                "access_rules":[
                     "@Darkworld Bottom, mirror",
                     "$checkGlitches|2, boots"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Cave 45"
                         
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 525,
@@ -347,15 +349,15 @@
             },
             {
                 "name": "Flute Spot",
-                "sections": [
+                "sections":[
                     {
                         "name": "Flute Spot",
-                        "access_rules": [
+                        "access_rules":[
                             "shovel"
                         ]
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 575,
@@ -372,13 +374,13 @@
                     "$checkGlitches|2, boots",
                     "{}"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Ledge Item",
                         "capture_item": true
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 45,
@@ -389,15 +391,15 @@
             },
             {
                 "name": "Aginah's Cave",
-                "sections": [
+                "sections":[
                     {
                         "name": "Aginah's Cave",
-                        "access_rules": [
+                        "access_rules":[
                             "bombs"
                         ]
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 390,
@@ -408,17 +410,17 @@
             },
             {
                 "name": "Checkerboard Cave",
-                "sections": [
+                "sections":[
                     {
                         "name": "Checkerboard Cave Item",
-                        "access_rules": [
+                        "access_rules":[
                             "$openOrStandard, mirror, titans, flute_active",
                             "inverted, glove",
                             "$checkGlitches|2, boots, glove"
                         ]
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 345,
@@ -429,7 +431,7 @@
             },
             {
                 "name": "Dam",
-                "sections": [
+                "sections":[
                     {
                         "name": "Sunken Treasure"
                     },
@@ -437,7 +439,7 @@
                         "name": "Dam Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 935,
@@ -448,17 +450,17 @@
             },
             {
                 "name": "Mini Moldorm Cave",
-                "access_rules": [
+                "access_rules":[
                     "bombs"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Mini Moldorm Chest",
                         "clear_as_group": false,
                         "item_count":5
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 1300,
@@ -469,15 +471,15 @@
             },
             {
                 "name": "Ice Rod Cave",
-                "sections": [
+                "sections":[
                     {
                         "name": "Ice Rod Chest",
-                        "access_rules": [
+                        "access_rules":[
                             "bombs"
                         ]
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 1790,
@@ -488,15 +490,15 @@
             },
             {
                 "name": "Hobo",
-                "sections": [
+                "sections":[
                     {
                         "name": "Hobo",
-                        "access_rules": [
+                        "access_rules":[
                             "$canSwim"
                         ]
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 1420,
@@ -507,15 +509,15 @@
             },
             {
                 "name": "Lake Hylia Light-Shop",
-                "visibility_rules": ["shop_sanity"],
-                "sections": [
+                "visibility_rules":["shop_sanity"],
+                "sections":[
                     {
                         "name": "Shop Item",
                         "clear_as_group": false,
                         "item_count":3
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 1450,
@@ -526,10 +528,10 @@
             },
             {
                 "name": "Lake Hylia",
-                "sections": [
+                "sections":[
                     {
                         "name": "Lake Island",
-                        "access_rules": [
+                        "access_rules":[
                             "$canSwim, @Darkworld Bottom, mirror",
                             "$canSwim, @Darkworld Right, mirror",
                             "$checkGlitches|2, boots",
@@ -538,7 +540,7 @@
                         "capture_item": true
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 1455,
@@ -549,18 +551,18 @@
             },
             {
                 "name": "Capacity Fairy",
-                "visibility_rules": ["shop_sanity"],
-                "sections": [
+                "visibility_rules":["shop_sanity"],
+                "sections":[
                     {
                         "name": "Shop Item",
-                        "access_rules": [
+                        "access_rules":[
                             "flippers"
                         ],
                         "clear_as_group": false,
                         "item_count":2
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 1592,
@@ -574,15 +576,13 @@
                 "access_rules":[
                     "$openOrStandard"
                 ],
-                "visibility_rules":[
-                    "$openOrStandard"
-                ],
-                "sections": [
+                "visibility_rules":["$openOrStandard"],
+                "sections":[
                     {
                         "name": "Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 1085,
@@ -593,20 +593,24 @@
             },
             {
                 "name": "Sahasrahla's Hut",
-                "sections": [
+                "sections":[
                     {
                         "name": "Back Items",
-                        "access_rules":["bombs"],
+                        "access_rules":[
+                            "bombs"
+                        ],
                         "clear_as_group": false,
                         "item_count":3
                     },
                     {
                         "name": "Sahasrahla's Item",
-                        "access_rules":["greenpendant"],
+                        "access_rules":[
+                            "greenpendant"
+                        ],
                         "capture_item": true
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 1620,
@@ -617,22 +621,22 @@
             },
             {
                 "name": "Potion Shop (Witch Hut)",
-                "sections": [
+                "sections":[
                     {
                         "name": "shop",
-                        "visibility_rules": ["shop_sanity"],
+                        "visibility_rules":["shop_sanity"],
                         "clear_as_group": false,
                         "item_count": 3
                     },
                     {
                         "name": "Deliver Mushroom (Brew Drugs)",
-                        "access_rules": [
+                        "access_rules":[
                             "mushroom"
                         ],
                         "hosted_item": "mushroom_delivered"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 1600,
@@ -649,14 +653,14 @@
                     "$canSwim, boots",
                     "flippers"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Chest",
                         "item_count": 2,
                         "clear_as_group": false
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 1800,
@@ -671,7 +675,7 @@
                     "$canSwim",
                     "glove"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "King Zora (Scam)"
                     },
@@ -685,7 +689,7 @@
                         "capture_item": true
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 1915,
@@ -700,7 +704,7 @@
                     "$openOrStandard"
                 ],
                 "inherit_codes":false,
-                "sections": [
+                "sections":[
                     {
                         "name": "Link's Uncle"
                     },
@@ -708,7 +712,7 @@
                         "name": "Secret Passage Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 1100,
@@ -730,12 +734,12 @@
                     "inverted",
                     "@Light Death Mountain Left Bottom, $checkGlitches|2, boots"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Graveyard Ledge"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 1135,
@@ -751,12 +755,12 @@
                     "titans, boots",
                     "@Light Death Mountain Left Bottom, $checkGlitches|2, boots"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "King's Tomb"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 1200,
@@ -775,13 +779,13 @@
                     "$checkGlitches|2, boots, book, $canActivateTablets",
                     "{$checkGlitches|2, boots, book}"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Bombos Tablet" ,
                         "capture_item": true
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 435,
@@ -792,20 +796,18 @@
             },
             {
                 "name": "Bumper Cave",
-                "access_rules": [
+                "access_rules":[
                     "cape, mirror",
                     "$checkGlitches|2, boots"
                 ],
-                "visibility_rules":[
-                    "inverted"
-                ],
-                "sections": [
+                "visibility_rules":["inverted"],
+                "sections":[
                     {
                         "name": "Bumper Cave Item",
                         "capture_item": true
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 713,
@@ -829,21 +831,19 @@
             "inverted, pearl, [$darkRooms], glove",
             "$openOrStandard, $checkGlitches|2, boots"
         ],
-        "children": [
+        "children":[
             {
                 "name": "Rescue Old Man",
                 "access_rules":[
                     "[$darkRooms]"
                 ],
-                "visibility_rules":[
-                    "$openOrStandard"
-                ],
-                "sections": [
+                "visibility_rules":["$openOrStandard"],
+                "sections":[
                     {
                         "name": "Rescue Old Man"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 705,
@@ -860,7 +860,7 @@
             },
             {
                 "name": "Spectacle Rock",
-                "sections": [
+                "sections":[
                     {
                         "name": "Top Item",
                         "access_rules":[
@@ -875,7 +875,7 @@
                         "name": "Item inside"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 1010,
@@ -903,7 +903,7 @@
             "$openOrStandard, @Light Death Mountain Right, hammer",
             "@Light Death Mountain Left Bottom, $checkGlitches|2, boots"
         ],
-        "children": [
+        "children":[
             {
                 "name": "Ether Tablet",
                 "access_rules":[
@@ -912,13 +912,13 @@
                     "$checkGlitches|2, book, $canActivateTablets",
                     "{$checkGlitches|2, book}"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Ether Tablet",
                         "capture_item": true
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 835,
@@ -941,7 +941,7 @@
             "inverted, pearl, @Dark Death Mountain Right, titans",
             "@Light Death Mountain Left Bottom, $checkGlitches|2, boots"
         ],
-        "children": [
+        "children":[
             {
                 "name": "Floating Island",
                 "access_rules":[
@@ -950,13 +950,13 @@
                     "{}",
                     "$checkGlitches|2, boots"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Item on Floating Island",
                         "capture_item": true
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 1625,
@@ -967,16 +967,16 @@
             },
             {
                 "name": "Light Death Mountain Shop",
-                "visibility_rules": ["shop_sanity"],
+                "visibility_rules":["shop_sanity"],
                 "item_count": 3,
-                "sections": [
+                "sections":[
                     {
                         "name": "Shop Item",
                         "clear_as_group": false,
                         "item_count":3
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 1710,
@@ -987,7 +987,7 @@
             },
             {
                 "name": "Paradox Cave",
-                "sections": [
+                "sections":[
                     {
                         "name": "Lower",
                         "clear_as_group": false,
@@ -999,7 +999,7 @@
                         "item_count": 2
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 1725,
@@ -1016,17 +1016,17 @@
             },
             {
                 "name": "Mimic Cave",
-                "access_rules": [
+                "access_rules":[
                     "$openOrStandard, mirror, hammer, @TR, $smallKeys|tr_smallkey|2, somaria",
                     "inverted, @Light Death Mountain Right, hammer",
                     "@Dark Death Mountain Right, $checkGlitches|2, boots, hammer"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Mimic Cave Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 1685,
@@ -1037,12 +1037,12 @@
             },
             {
                 "name": "Spiral Cave",
-                "sections": [
+                "sections":[
                     {
                         "name": "Spiral Cave Item"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 1595,
@@ -1062,7 +1062,7 @@
             "$openOrStandard",
             "inverted, @Lightworld"
         ],
-        "children": [
+        "children":[
             {
                 "name": "Desert Palace",
                 "access_rules":[
@@ -1071,7 +1071,7 @@
                     "@Lightworld, $checkGlitches|2, boots"
                 ],
                 "item_count": 5,
-                "sections": [
+                "sections":[
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules":[
@@ -1083,7 +1083,7 @@
                         "item_count": 5
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 147,
@@ -1103,7 +1103,7 @@
             "$openOrStandard",
             "inverted, @Lightworld"
         ],
-        "children": [
+        "children":[
             {
                 "name": "Desert Palace Back",
                 "access_rules":[
@@ -1112,22 +1112,24 @@
                     "@Lightworld, $checkGlitches|2, boots"
                 ],
                 "item_count": 2,
-                "sections": [
+                "sections":[
                     {
                         "name": "Key Drops",
                         "item_count": 3,
                         "clear_as_group": false,
-                        "visibility_rules": ["key_drop_shuffle"]
+                        "visibility_rules":["key_drop_shuffle"]
                     },
                     {
                         "name": "Boss Item" ,
-                        "access_rules":[ "$getBossRef|dp_boss, dp_bigkey"],
+                        "access_rules":[
+                            "$getBossRef|dp_boss, dp_bigkey"
+                        ],
                         "clear_as_group": true,
                         "item_count": 1,
                         "hosted_item": "dp_boss, desertpalace"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 147,
@@ -1147,14 +1149,14 @@
             "$openOrStandard",
             "inverted, @Lightworld"
         ],
-        "children": [
+        "children":[
             {
                 "name": "Eastern Palace",
                 "item_count": 7,
-                "sections": [
+                "sections":[
                     {
                         "name": "Dungeon Chest" ,
-                        "access_rules": [
+                        "access_rules":[
                             "[ep_bigkey],[$darkRooms]"
                         ],
                         // "hosted_item": "ep_map, ep_compass, ep_bigkey",
@@ -1165,22 +1167,22 @@
                         "name": "Key Drops",
                         "item_count": 2,
                         "clear_as_group": false,
-                        "access_rules": [
+                        "access_rules":[
                             "[ep_bigkey],[$darkRooms]"
                         ],
-                        "visibility_rules": ["key_drop_shuffle"]
+                        "visibility_rules":["key_drop_shuffle"]
                     },
                     {
                         "name": "Boss Item" ,
                         "clear_as_group": false,
-                        "access_rules": [
+                        "access_rules":[
                             "ep_bigkey, [$darkRooms], $getBossRef|ep_boss, $enemizerCheck|bow"
                         ],
                         "item_count": 1,
                         "hosted_item": "ep_boss, easternpalace"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 1925,
@@ -1200,10 +1202,8 @@
             "$openOrStandard",
             "inverted, @Lightworld"
         ],
-        "visibility_rules":[
-            "$openOrStandard"
-        ],
-        "children": [
+        "visibility_rules":["$openOrStandard"],
+        "children":[
             {
                 "name": "Agahnim's Tower",
                 "item_count": 3,
@@ -1211,7 +1211,7 @@
                     "$canClearAgaTowerBarrier",
                     "$checkGlitches|2, boots"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Front"
                     },
@@ -1228,7 +1228,7 @@
                         "access_rules":[
                             "[$darkRooms], $smallKeys|at_smallkey|1"
                         ],
-                        "visibility_rules": ["key_drop_shuffle"]
+                        "visibility_rules":["key_drop_shuffle"]
                     },
                     {
                         "name": "Agahnim 1",
@@ -1239,7 +1239,7 @@
                         "hosted_item": "aga1"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 1000,
@@ -1259,11 +1259,11 @@
             "$openOrStandard",
             "inverted, @Lightworld"
         ],
-        "children": [
+        "children":[
             {
                 "name": "Hyrule Castle",
                 "item_count": 3,
-                "sections": [
+                "sections":[
                     {
                         "name": "Map Chest",
                         // "hosted_item": "hc_map",
@@ -1279,10 +1279,10 @@
                         "name": "Key Drops",
                         "item_count": 3,
                         "clear_as_group": false,
-                        "visibility_rules": ["key_drop_shuffle"]
+                        "visibility_rules":["key_drop_shuffle"]
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 1000,
@@ -1302,11 +1302,11 @@
             "$openOrStandard",
             "inverted, @Lightworld"
         ],
-        "children": [
+        "children":[
             {
                 "name": "Castle Escape",
                 "item_count": 1,
-                "sections": [
+                "sections":[
                     {
                         "name": "Dark Cross",
                         "access_rules":[
@@ -1335,10 +1335,10 @@
                             "[$darkRooms], glove, $smallKeys|hc_smallkey|1",
                             "standard"
                         ],
-                        "visibility_rules": ["key_drop_shuffle"]
+                        "visibility_rules":["key_drop_shuffle"]
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 1040,
@@ -1355,12 +1355,12 @@
                     "open",
                     "inverted, @Lightworld"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Sanctuary Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 925,
@@ -1380,7 +1380,7 @@
             "$openOrStandard",
             "inverted, @Light Death Mountain Left Top"
         ],
-        "children": [
+        "children":[
             {
                 "name": "Tower of Hera",
                 "access_rules":[
@@ -1389,7 +1389,7 @@
                     "@Light Death Mountain Left Bottom, $checkGlitches|2, boots"
                 ],
                 "item_count": 7,
-                "sections": [
+                "sections":[
                     {
                         "name": "Lower" ,
                         "access_rules":[
@@ -1421,7 +1421,7 @@
                         "hosted_item": "toh_boss, towerofhera"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 1123,
@@ -1441,13 +1441,11 @@
             "inverted, @Lightworld, $gtCrystalCount",
             "inverted, @Lightworld, $checkGlitches|2, boots"
         ],
-        "visibility_rules":[
-            "inverted"
-        ],
-        "children": [
+        "visibility_rules":["inverted"],
+        "children":[
             {
                 "name": "Ganon's Tower",
-                "sections": [
+                "sections":[
                     {
                         "name": "Leftside",
                         "clear_as_group": false,
@@ -1508,7 +1506,7 @@
                         "access_rules":[
                             "@GT/Ganon's Tower/GT Top Moldorm refight"
                         ],
-                        "visibility_rules": ["key_drop_shuffle"]
+                        "visibility_rules":["key_drop_shuffle"]
                     },
                     {
                         "name": "GT Top Agahnim 2",
@@ -1519,7 +1517,7 @@
                         "hosted_item": "aga2"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "Lightworld",
                         "x": 1000,

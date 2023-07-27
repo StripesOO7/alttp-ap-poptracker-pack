@@ -6,18 +6,18 @@
         "access_rules":[
             "@TR/Turtle Rock Front"
         ],
-        "children": [
+        "children":[
             {
                 "name": "Compass Chest",
                 "access_rules":[
                     "somaria"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Compass Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "TR",
                         "x": 555,
@@ -31,12 +31,12 @@
                 "access_rules":[
                     "somaria, [$smallKeys|tr_smallkey|1]"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Chain Chomps"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "TR",
                         "x": 555,
@@ -51,12 +51,12 @@
                 "access_rules":[
                     "somaria, [$smallKeys|tr_smallkey|1]"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Pokey 1 Key Drop"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "TR",
                         "x": 554,
@@ -70,12 +70,12 @@
                 "access_rules":[
                     "somaria, firerod"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Map Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "TR",
                         "x": 675,
@@ -89,12 +89,12 @@
                 "access_rules":[
                     "somaria, firerod"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Roller Room Right"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "TR",
                         "x": 688,
@@ -109,12 +109,12 @@
                 "access_rules":[
                     "somaria, [$smallKeys|tr_smallkey|1]"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Pokey 2 Key Drop"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "TR",
                         "x": 217,
@@ -128,12 +128,12 @@
                 "access_rules":[
                     "[somaria], [$smallKeys|tr_smallkey|2]"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Big Key Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "TR",
                         "x": 312,
@@ -151,7 +151,7 @@
         "access_rules":[
             "@TR/Turtle Rock Back, [somaria]"
         ],
-        "children": [
+        "children":[
             {
                 "name": "Crystalroller Room",
                 "access_rules":[
@@ -160,12 +160,12 @@
                     "@Turtle Rock Front, tr_bigkey",
                     "@Turtle Rock Back, [tr_bigkey]"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Crystalroller Room"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "TR",
                         "x": 272,
@@ -186,12 +186,12 @@
                 "access_rules":[
                     "@Turtle Rock Back/Eye Bridge Accessible"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Eye Bridge Top Left"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "TR",
                         "x": 142,
@@ -205,12 +205,12 @@
                 "access_rules":[
                     "@Turtle Rock Back/Eye Bridge Accessible"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Eye Bridge Bottom Left"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "TR",
                         "x": 142,
@@ -224,12 +224,12 @@
                 "access_rules":[
                     "@Turtle Rock Back/Eye Bridge Accessible"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Eye Bridge Top Right"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "TR",
                         "x": 178,
@@ -243,12 +243,12 @@
                 "access_rules":[
                     "@Turtle Rock Back/Eye Bridge Accessible"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Eye Bridge Bottom Right"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "TR",
                         "x": 178,
@@ -263,12 +263,12 @@
                     "@TR/Turtle Rock Back, [somaria], tr_bigkey",
                     "@TR/Turtle Rock Back, [hookshot], tr_bigkey"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Big Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "TR",
                         "x": 355,
@@ -282,14 +282,14 @@
                 "access_rules":[
                     "@Turtle Rock Back, $smallKeys|tr_smallkey|1, [$smallKeys|tr_smallkey|4], $getBossRef|tr_boss"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Boss Item",
                         "item_count":1,
                         "hosted_item": "tr_boss, turtlerock"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "TR",
                         "x": 30,

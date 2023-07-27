@@ -6,15 +6,15 @@
         "access_rules":[
             "@SP/Swamp Palace"
         ],
-        "children": [
+        "children":[
             {
                 "name": "Entrance",
-                "sections": [
+                "sections":[
                     {
                         "name": "Entrance"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "SP",
                         "x": 622,
@@ -28,12 +28,12 @@
                 "access_rules":[
                     "$smallKeys|sp_smallkey|1"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Map Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "SP",
                         "x": 465,
@@ -48,12 +48,12 @@
                 "access_rules":[
                     "$smallKeys|sp_smallkey|1"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Pot Row Pot Key"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "SP",
                         "x": 550,
@@ -68,12 +68,12 @@
                 "access_rules":[
                     "$smallKeys|sp_smallkey|1"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Trench 1 Pot Key"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "SP",
                         "x": 447,
@@ -88,12 +88,12 @@
                     "$smallKeys|sp_smallkey|1, hammer",
                     "$checkGlitches|1, $smallKeys|sp_smallkey|1"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Big Key Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "SP",
                         "x": 175,
@@ -109,12 +109,12 @@
                     "$smallKeys|sp_smallkey|1, hammer, hookshot",
                     "$checkGlitches|1, $smallKeys|sp_smallkey|1, hookshot"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Hookshot Pot Key"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "SP",
                         "x": 373,
@@ -130,12 +130,12 @@
                     "$smallKeys|sp_smallkey|1, hammer",
                     "$checkGlitches|1, $smallKeys|sp_smallkey|1"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Trench 2 Pot Key"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "SP",
                         "x": 190,
@@ -150,12 +150,12 @@
                     "$smallKeys|sp_smallkey|1, hammer",
                     "$checkGlitches|1, $smallKeys|sp_smallkey|1"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "West Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "SP",
                         "x": 47,
@@ -170,12 +170,12 @@
                     "$smallKeys|sp_smallkey|1, hammer",
                     "$checkGlitches|1, $smallKeys|sp_smallkey|1"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Compass Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "SP",
                         "x": 287,
@@ -190,12 +190,12 @@
                     "$smallKeys|sp_smallkey|1, hammer, hookshot",
                     "$checkGlitches|1, $smallKeys|sp_smallkey|1, hookshot"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Flooded Room Left"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "SP",
                         "x": 475,
@@ -210,12 +210,12 @@
                     "$smallKeys|sp_smallkey|1, hammer, hookshot",
                     "$checkGlitches|1, $smallKeys|sp_smallkey|1, hookshot"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Flooded Room Right"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "SP",
                         "x": 485,
@@ -230,12 +230,12 @@
                     "$smallKeys|sp_smallkey|1, hammer, hookshot",
                     "$checkGlitches|1, $smallKeys|sp_smallkey|1, hookshot"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Waterfall Room"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "SP",
                         "x": 460,
@@ -251,12 +251,12 @@
                     "$smallKeys|sp_smallkey|1, hammer, hookshot",
                     "$checkGlitches|1, $smallKeys|sp_smallkey|1, hookshot"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Waterway Pot Key"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "SP",
                         "x": 631,
@@ -271,12 +271,12 @@
                     "$smallKeys|sp_smallkey|1, hammer, sp_bigkey",
                     "$checkGlitches|1, $smallKeys|sp_smallkey|1, sp_bigkey"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Big Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "SP",
                         "x": 320,
@@ -291,14 +291,14 @@
                     "$smallKeys|sp_smallkey|1, hammer, hookshot, $getBossRef|sp_boss",
                     "$checkGlitches|1, $smallKeys|sp_smallkey|1, $getBossRef|sp_boss, hookshot"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Boss Item",
                         "item_count":1,
                         "hosted_item": "sp_boss, swamppalace"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "SP",
                         "x": 550,

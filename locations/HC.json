@@ -3,16 +3,18 @@
         "name": "Hyrule Castle",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
-        "access_rules":["@HC/Hyrule Castle"],
-        "children": [
+        "access_rules":[
+            "@HC/Hyrule Castle"
+        ],
+        "children":[
             {
                 "name": "Map Chest",
-                "sections": [
+                "sections":[
                     {
                         "name": "Map Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "HC",
                         "x": 190,
@@ -23,12 +25,12 @@
             },
             {
                 "name": "Boomerang Chest",
-                "sections": [
+                "sections":[
                     {
                         "name": "Boomerang Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "HC",
                         "x": 95,
@@ -39,12 +41,12 @@
             },
             {
                 "name": "Zelda's Chest",
-                "sections": [
+                "sections":[
                     {
                         "name": "Zelda's Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "HC",
                         "x": 135,
@@ -55,15 +57,13 @@
             },
             {
                 "name": "Map Guard Key Drop",
-                "visibility_rules":[
-                    "key_drop_shuffle"
-                ],
-                "sections": [
+                "visibility_rules":["key_drop_shuffle"],
+                "sections":[
                     {
                         "name": "Map Guard Key Drop"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "HC",
                         "x": 200,
@@ -74,15 +74,13 @@
             },
             {
                 "name": "Boomerang Guard Key Drop",
-                "visibility_rules":[
-                    "key_drop_shuffle"
-                ],
-                "sections": [
+                "visibility_rules":["key_drop_shuffle"],
+                "sections":[
                     {
                         "name": "Boomerang Guard Key Drop"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "HC",
                         "x": 105,
@@ -93,15 +91,13 @@
             },
             {
                 "name": "Big Key Drop",
-                "visibility_rules":[
-                    "key_drop_shuffle"
-                ],
-                "sections": [
+                "visibility_rules":["key_drop_shuffle"],
+                "sections":[
                     {
                         "name": "Big Key Drop"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "HC",
                         "x": 155,
@@ -119,19 +115,19 @@
         "access_rules":[
             "@CE"
         ],
-        "children": [
+        "children":[
             {
                 "name": "Dark Cross",
                 "access_rules":[
                     "[$darkRooms]",
                     "standard"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Dark Cross"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "CE",
                         "x": 345,
@@ -142,15 +138,15 @@
             },
             {
                 "name": "Secret Passage Left",
-                "access_rules": [
+                "access_rules":[
                     "@CE/Castle Escape/Secret Room"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Secret Passage Left"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "CE",
                         "x": 125,
@@ -161,15 +157,15 @@
             },
             {
                 "name": "Secret Passage Middle",
-                "access_rules": [
+                "access_rules":[
                     "@CE/Castle Escape/Secret Room"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Secret Passage Middle"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "CE",
                         "x": 133,
@@ -180,15 +176,15 @@
             },
             {
                 "name": "Secret Passage Right",
-                "access_rules": [
+                "access_rules":[
                     "@CE/Castle Escape/Secret Room"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Secret Passage Right"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "CE",
                         "x": 141,
@@ -199,20 +195,18 @@
             },
             {
                 "name": "Key Rat Key Drop",
-                "visibility_rules":[
-                    "key_drop_shuffle"
-                ],
-                "access_rules": [
+                "visibility_rules":["key_drop_shuffle"],
+                "access_rules":[
                     "[$darkRooms]",
                     "[$darkRooms], glove, $smallKeys|hc_smallkey|1",
                     "standard"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Key Rat Key Drop"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "CE",
                         "x": 133,
@@ -230,15 +224,15 @@
         "access_rules":[
             "@CE/Sanctuary"
         ],
-        "children": [
+        "children":[
             {
                 "name": "Sanctuary Chest",
-                "sections": [
+                "sections":[
                     {
                         "name": "Sanctuary Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "CE",
                         "x": 35,

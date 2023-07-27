@@ -6,16 +6,16 @@
         "access_rules":[
             "@MM/Misery Mire"
         ],
-        "children": [
+        "children":[
             {
                 "name": "Spikes Pot Key",
                 "visibility_rules":["key_drop_shuffle"],
-                "sections": [
+                "sections":[
                     {
                         "name": "Spikes Pot Key"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "MM",
                         "x": 367,
@@ -27,12 +27,12 @@
             {
                 "name": "Fishbone Pot Key",
                 "visibility_rules":["key_drop_shuffle"],
-                "sections": [
+                "sections":[
                     {
                         "name": "Fishbone Pot Key"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "MM",
                         "x": 521,
@@ -44,12 +44,12 @@
             {
                 "name": "Conveyor Crystal Key Drop",
                 "visibility_rules":["key_drop_shuffle"],
-                "sections": [
+                "sections":[
                     {
                         "name": "Conveyor Crystal Key Drop"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "MM",
                         "x": 185,
@@ -60,12 +60,12 @@
             },
             {
                 "name": "Bridge Chest",
-                "sections": [
+                "sections":[
                     {
                         "name": "Bridge Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "MM",
                         "x": 720,
@@ -76,12 +76,12 @@
             },
             {
                 "name": "Main Lobby",
-                "sections": [
+                "sections":[
                     {
                         "name": "Main Lobby"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "MM",
                         "x": 300,
@@ -95,12 +95,12 @@
                 "access_rules":[
                     "firesource"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Compass Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "MM",
                         "x": 130,
@@ -114,12 +114,12 @@
                 "access_rules":[
                     "firesource"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Big Key Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "MM",
                         "x": 195,
@@ -134,12 +134,12 @@
                     "[invincibility]",
                     "[$health|4]"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Spike Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "MM",
                         "x": 395,
@@ -150,12 +150,12 @@
             },
             {
                 "name": "Map Chest",
-                "sections": [
+                "sections":[
                     {
                         "name": "Map Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "MM",
                         "x": 370,
@@ -169,12 +169,12 @@
                 "access_rules":[
                     "mm_bigkey"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Big Chest"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "MM",
                         "x": 450,
@@ -188,14 +188,14 @@
                 "access_rules":[
                     "mm_bigkey, $getBossRef|mm_boss, [$darkRooms], somaria"
                 ],
-                "sections": [
+                "sections":[
                     {
                         "name": "Boss Item",
                         "item_count":1,
                         "hosted_item": "mm_boss, miserymire"
                     }
                 ],
-                "map_locations": [
+                "map_locations":[
                     {
                         "map": "MM",
                         "x": 465,
