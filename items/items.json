@@ -122,13 +122,13 @@
         ]
     },
     {
-        "name": "Firerod",
+        "name": "Fire Rod",
         "type": "toggle",
         "img": "/images/items/Firerod.png",
         "codes": "firerod, firesource"
     },
     {
-        "name": "Icerod",
+        "name": "Ice Rod",
         "type": "toggle",
         "img": "/images/items/Icerod.png",
         "codes": "icerod"
@@ -256,7 +256,7 @@
         
     },
     {
-        "name": "Bugcatchingnet",
+        "name": "Bug Catching Net",
         "type": "toggle",
         "img": "/images/items/Bugcatchingnet.png",
         "codes": "bug_net"
@@ -473,7 +473,7 @@
         "codes": "agahnim"
     },
     {
-        "name": "Boss Heartcontainer",
+        "name": "Boss Heart Container",
         "type": "consumable",
         "allow_disabled": false,
         "min_quantity": 0,
@@ -483,7 +483,7 @@
         "codes": "heartcontainer"
     },
     {
-        "name": "Heartpieces",
+        "name": "Heart Pieces",
         "type": "progressive",
         "loop": true,
         "allow_disabled": false,
@@ -765,7 +765,7 @@
         "codes": "key_drop_shuffle"
     },
     {
-        "name": "Map&Compass Shuffle",
+        "name": "Map & Compass Shuffle",
         "type": "composite_toggle",
         "item_left": "compass",
         "item_right": "map",
@@ -798,7 +798,7 @@
         "codes": "map_compass_shuffle"
     },
     {
-        "name": "Triforce Piece needed",
+        "name": "Triforce Pieces needed",
         "type": "consumable",
         "allow_disabled": false,
         "max_quantity": 90,
