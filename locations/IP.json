@@ -107,6 +107,9 @@
             },
             {
                 "name": "Spike Room",
+                "access_rules":[
+                    "[hookshot], $smallKeys|ip_smallkey|1"
+                ],
                 "sections": [
                     {
                         "name": "Spike Room"
@@ -123,7 +126,9 @@
             },
             {
                 "name": "Map Chest",
-                "access_rules":["glove, hammer"],
+                "access_rules":[
+                    "hammer, gloves, [hookshot], [$smallKeys|ip_smallkey|1]"
+                ],
                 "sections": [
                     {
                         "name": "Map Chest"
@@ -156,6 +161,10 @@
             },
             {
                 "name": "Big Key Chest",
+                "access_rules":[
+                    "hammer, [hookshot], [$smallKeys|ip_smallkey|1]",
+                    "$checkGlitches|1, [hammer], [hookshot], [$smallKeys|ip_smallkey|1], somaria"
+                ],
                 "sections": [
                     {
                         "name": "Big Key Chest"
@@ -190,7 +199,8 @@
             {
                 "name": "Boss",
                 "access_rules":[
-                    "hammer, glove, $getBossRef|ip_boss, [ip_bigkey]"
+                    "hammer, glove, $getBossRef|ip_boss, [ip_bigkey], [$smallKeys|ip_smallkey|2]",
+                    "hammer, glove, [somaria], $getBossRef|ip_boss, [ip_bigkey], $smallKeys|ip_smallkey|1"
                 ],
                 "sections": [
                     {

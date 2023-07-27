@@ -88,6 +88,7 @@
                     {
                         "name": "Compass Chest",
                         "access_rules": [
+                            "@DP Back/Desert Palace Back, [$smallKeys|dp_smallkey|1]",
                             "$smallKeys|dp_smallkey|1"
                         ]
                     }
@@ -114,7 +115,7 @@
             {
                 "name": "Boss",
                 "access_rules":[
-                    "firesource, dp_bigkey, $getBossRef|dp_boss"
+                    "firesource, [$smallKeys|dp_smallkey|1], dp_bigkey, $getBossRef|dp_boss"
                 ],
                 "sections": [
                     {

@@ -83,27 +83,6 @@
                 ]
             },
             {
-                "name": "vanilla Map Chest",
-                "visibility_rules":["$getShuffle|map|vanilla"],
-                "access_rules":[
-                    "$smallKeys|sp_smallkey|1"
-                ],
-                "sections": [
-                    {
-                        "name": "Map Chest",
-                        "hosted_item": "sp_map"
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "SP",
-                        "x": 465,
-                        "y": 360,
-                        "size": 6
-                    }
-                ]
-            },
-            {
                 "name": "Big Key Chest",
                 "access_rules":[
                     "$smallKeys|sp_smallkey|1, hammer",
@@ -140,27 +119,6 @@
                         "map": "SP",
                         "x": 373,
                         "y": 392,
-                        "size": 6
-                    }
-                ]
-            },
-            {
-                "name": "vanilla Big Key Chest",
-                "visibility_rules":["$getShuffle|big_keys|vanilla"],
-                "access_rules":[
-                    "$smallKeys|sp_smallkey|1, hammer"
-                ],
-                "sections": [
-                    {
-                        "name": "Big Key Chest",
-                        "hosted_item": "sp_bigkey"
-                    }
-                ],
-                "map_locations": [
-                    {
-                        "map": "SP",
-                        "x": 175,
-                        "y": 360,
                         "size": 6
                     }
                 ]
@@ -310,8 +268,8 @@
             {
                 "name": "Big Chest",
                 "access_rules":[
-                    "$smallKeys|sp_smallkey|1, hammer, sp_bigkey, hookshot",
-                    "$checkGlitches|1, $smallKeys|sp_smallkey|1, sp_bigkey, hookshot"
+                    "$smallKeys|sp_smallkey|1, hammer, sp_bigkey",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1, sp_bigkey"
                 ],
                 "sections": [
                     {

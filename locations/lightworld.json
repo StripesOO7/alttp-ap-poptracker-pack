@@ -825,15 +825,15 @@
         "access_rules":[
             "$openOrStandard, flute_active",
             "inverted, pearl, flute_active",
-            "$openOrStandard, $darkRooms, glove",
-            "inverted, pearl, $darkRooms, glove",
+            "$openOrStandard, [$darkRooms], glove",
+            "inverted, pearl, [$darkRooms], glove",
             "$openOrStandard, $checkGlitches|2, boots"
         ],
         "children": [
             {
                 "name": "Rescue Old Man",
                 "access_rules":[
-                    "$darkRooms"
+                    "[$darkRooms]"
                 ],
                 "visibility_rules":[
                     "$openOrStandard"
@@ -1155,8 +1155,7 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": [
-                            "[ep_bigkey],[$darkRooms]",
-                            "ep_bigkey,$darkRooms"
+                            "[ep_bigkey],[$darkRooms]"
                         ],
                         // "hosted_item": "ep_map, ep_compass, ep_bigkey",
                         "clear_as_group": false,
@@ -1167,8 +1166,7 @@
                         "item_count": 2,
                         "clear_as_group": false,
                         "access_rules": [
-                            "[ep_bigkey],[$darkRooms]",
-                            "ep_bigkey,$darkRooms"
+                            "[ep_bigkey],[$darkRooms]"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     },
@@ -1176,8 +1174,7 @@
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules": [
-                            "ep_bigkey, [$darkRooms], $getBossRef|ep_boss, $enemizerCheck|bow",
-                            "ep_bigkey, $darkRooms, $getBossRef|ep_boss, $enemizerCheck|bow"
+                            "ep_bigkey, [$darkRooms], $getBossRef|ep_boss, $enemizerCheck|bow"
                         ],
                         "item_count": 1,
                         "hosted_item": "ep_boss, easternpalace"
@@ -1221,7 +1218,7 @@
                     {
                         "name": "Maze Chest",
                         "access_rules":[
-                            "$darkRooms, $smallKeys|at_smallkey|1"
+                            "[$darkRooms], $smallKeys|at_smallkey|1"
                         ]
                     },
                     {
@@ -1229,15 +1226,15 @@
                         "item_count": 2,
                         "clear_as_group": false,
                         "access_rules":[
-                            "$darkRooms, $smallKeys|at_smallkey|1"
+                            "[$darkRooms], $smallKeys|at_smallkey|1"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     },
                     {
                         "name": "Agahnim 1",
                         "access_rules":[
-                            "$canRemoveCurtains, sword, $smallKeys|at_smallkey|2",
-                            "$canRemoveCurtains, bug_net, $smallKeys|at_smallkey|2"
+                            "[$darkRooms], $canRemoveCurtains, sword, $smallKeys|at_smallkey|2",
+                            "[$darkRooms], $canRemoveCurtains, bug_net, $smallKeys|at_smallkey|2"
                         ],
                         "hosted_item": "aga1"
                     }
@@ -1309,17 +1306,11 @@
             {
                 "name": "Castle Escape",
                 "item_count": 1,
-                "access_rules":[
-                    "$darkRooms", 
-                    "glove",
-                    "standard"
-                ],
                 "sections": [
                     {
                         "name": "Dark Cross",
                         "access_rules":[
-                            "$darkRooms",
-                            "glove, $smallKeys|hc_smallkey|1",
+                            "[$darkRooms]",
                             "standard"
                         ]
                     },
@@ -1327,8 +1318,12 @@
                         "name": "Secret Room",
                         "item_count": 3,
                         "access_rules":[
-                            "bombs",
-                            "boots"
+                            "[$darkRooms], $smallKeys|hc_smallkey|1, bombs",
+                            "[$darkRooms], $smallKeys|hc_smallkey|1, boots",
+                            "standard, $smallKeys|hc_smallkey|1, bombs",
+                            "standard, $smallKeys|hc_smallkey|1, boots",
+                            "glove, bombs",
+                            "glove, boots"
                         ]
                     },
                     {
@@ -1336,8 +1331,8 @@
                         "item_count": 1,
                         "clear_as_group": false,
                         "access_rules":[
-                            "$darkRooms",
-                            "glove, $smallKeys|hc_smallkey|1",
+                            "[$darkRooms]",
+                            "[$darkRooms], glove, $smallKeys|hc_smallkey|1",
                             "standard"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]

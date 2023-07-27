@@ -92,6 +92,9 @@
             },
             {
                 "name": "Compass Chest",
+                "access_rules":[
+                    "firesource"
+                ],
                 "sections": [
                     {
                         "name": "Compass Chest"
@@ -127,6 +130,10 @@
             },
             {
                 "name": "Spike Chest",
+                "access_rules":[
+                    "[invincibility]",
+                    "[$health|4]"
+                ],
                 "sections": [
                     {
                         "name": "Spike Chest"
@@ -179,8 +186,7 @@
             {
                 "name": "Boss",
                 "access_rules":[
-                    "mm_bigkey, $getBossRef|mm_boss, lamp, somaria",
-                    "mm_bigkey, $getBossRef|mm_boss, dark_rooms, somaria"
+                    "mm_bigkey, $getBossRef|mm_boss, [$darkRooms], somaria"
                 ],
                 "sections": [
                     {

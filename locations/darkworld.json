@@ -493,14 +493,14 @@
             "@Light Death Mountain Left Bottom, pearl",
             // "@Light Death Mountain Left Bottom, $checkGlitches|2", //leave dm without pearl
             "inverted, flute_active",
-            "inverted, $darkRooms, glove"
+            "inverted, [$darkRooms], glove"
         ],
         "children": [
             {
                 "name": "Spike Cave",
                 "access_rules": [
-                    // "hammer, glove",
-                    "$health|14, hammer, glove"
+                    "bottle, invincibility, hammer, glove",
+                    "half_magic, invincibility, hammer, glove"
                 ],
                 "sections": [
                     {
@@ -519,7 +519,7 @@
             {
                 "name": "Rescue Old Man",
                 "access_rules":[
-                    "$darkRooms"
+                    "[$darkRooms]"
                 ],
                 "visibility_rules":[
                     "inverted"
@@ -648,8 +648,7 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": [
-                            "[$darkRooms], [$smallKeys|pod_smallkey|5], [pod_bigkey]",
-                            "$darkRooms, $smallKeys|pod_smallkey|5, pod_bigkey"
+                            "[$darkRooms], [$smallKeys|pod_smallkey|5], [pod_bigkey]"
                         ],
                         // "hosted_item": "pod_map, pod_compass, pod_bigkey",
                         "clear_as_group": false,
@@ -659,7 +658,7 @@
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules": [
-                            "pod_bigkey, $darkRooms, $getBossRef|pod_boss, hammer, bow"
+                            "pod_bigkey, [$darkRooms], $getBossRef|pod_boss, hammer, bow"
                         ],
                         "item_count": 1,
                         "hosted_item": "pod_boss, palaceofdarkness"
@@ -741,20 +740,18 @@
                 "item_count": 8,
                 "sections": [
                     {
-                        "name": "Dungeon Chest" ,
+                        "name": "Dungeon Chest",
                         "access_rules": [
-                            "[$smallKeys|tr_smallkey|3], [somaria], tr_bigkey",
-                            "$smallKeys|tr_smallkey|3, somaria, tr_bigkey"
+                            "[$smallKeys|tr_smallkey|3], [somaria], tr_bigkey"
                         ],
                         "clear_as_group": false,
                         "item_count": 6
                     },
                     {
-                        "name": "Boss Item" ,
+                        "name": "Boss Item",
                         "clear_as_group": false,
                         "access_rules": [
-                            "[$smallKeys|tr_smallkey|4], $darkRooms, $getBossRef|tr_boss, tr_bigkey, somaria",
-                            "$smallKeys|tr_smallkey|4, $darkRooms, $getBossRef|tr_boss, tr_bigkey, somaria"
+                            "[$smallKeys|tr_smallkey|4], $darkRooms, $getBossRef|tr_boss, tr_bigkey, somaria"
                         ],
                         "item_count": 1
                         // "hosted_item": "tr_boss, turtlerock"
@@ -874,21 +871,22 @@
         "overlay_background": "#000000",
         "access_rules":[
             "@Darkworld Swamp, pearl, $canUseMedallions, mm_medallion",
-            "inverted, @Darkworld Swamp, $canUseMedallions, mm_medallion"
+            "inverted, @Darkworld Swamp, $canUseMedallions, mm_medallion",
         ],
         "children": [
             {
                 "name": "Misery Mire",
+                "access_rules": [
+                    "hookstot",
+                    "boots"
+                ]
                 "item_count": 9,
                 "sections": [
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules":[
-                            "[boots],[hookshot],[firesource],[mm_bigkey]",
-                            "[boots],hookshot, firesource,mm_bigkey",
-                            "boots,[hookshot], firesource,mm_bigkey"
+                            "[firesource],[mm_bigkey]"
                         ],
-                        // "hosted_item": "mm_map, mm_compass, mm_bigkey",
                         "clear_as_group": false,
                         "item_count": 7
                     },
@@ -897,9 +895,7 @@
                         "item_count": 3,
                         "clear_as_group": false,
                         "access_rules":[
-                            "[boots],[hookshot],[firesource]",
-                            "[boots],hookshot, firesource",
-                            "boots,[hookshot], firesource"
+                            "[firesource]"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     },
@@ -907,8 +903,7 @@
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules":[
-                            "mm_bigkey, $getBossRef|mm_boss, lamp, somaria",
-                            "mm_bigkey, $getBossRef|mm_boss, dark_rooms, somaria"
+                            "mm_bigkey, $getBossRef|mm_boss, [$darkRooms], somaria"
                         ],
                         "item_count": 1,
                         "hosted_item": "mm_boss, miserymire"
@@ -988,7 +983,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules":[
-            "@Lightworld, $canSwim, pearl, titans",
+            "@Lightworld, [$canSwim], pearl, titans",
             "inverted, flippers",
             "@Darkworld Bottom, flippers, pearl, $checkGlitches|2, boots",
             "@Darkworld Bottom, pearl, $checkGlitches|2, boots, mirror"
@@ -1232,7 +1227,7 @@
                     {
                         "name": "Maze Chest",
                         "access_rules":[
-                            "$darkRooms, $smallKeys|at_smallkey|1"
+                            "[$darkRooms], $smallKeys|at_smallkey|1"
                         ]
                     },
                     {
@@ -1240,16 +1235,16 @@
                         "item_count": 2,
                         "clear_as_group": false,
                         "access_rules":[
-                            "$darkRooms, $smallKeys|at_smallkey|1"
+                            "[$darkRooms], $smallKeys|at_smallkey|1"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     },
                     {
                         "name": "Agahnim 1",
                         "access_rules":[
-                            "$canRemoveCurtains, sword, $smallKeys|at_smallkey|2",
-                            "$canRemoveCurtains, bug_net, $smallKeys|at_smallkey|2",
-                            "$canRemoveCurtains, hammer, $smallKeys|at_smallkey|2"
+                            "[$darkRooms], $canRemoveCurtains, sword, $smallKeys|at_smallkey|2",
+                            "[$darkRooms], $canRemoveCurtains, bug_net, $smallKeys|at_smallkey|2",
+                            "[$darkRooms], $canRemoveCurtains, hammer, $smallKeys|at_smallkey|2"
                         ],
                         "hosted_item": "aga1"
                     }

@@ -101,14 +101,10 @@ function canSwim() --fake flippers
 end
 
 function smallKeys(dungeon, count)
-    if Tracker:ProviderCountForCode("small_keys") == 0 then
+    if Tracker:FindObjectForCode(dungeon).AcquiredCount >= tonumber(count) then
         return true
-    else 
-        if Tracker:FindObjectForCode(dungeon).AcquiredCount >= tonumber(count) then
-            return true
-        else
-            return false
-        end
+    else
+        return false
     end
 end
 

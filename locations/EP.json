@@ -98,8 +98,7 @@
                 "name": "Dark Square Pot Key",
                 "visibility_rules":["key_drop_shuffle"],
                 "access_rules":[
-                    "$darkRooms",
-                    "lamp"
+                    "[$darkRooms]"
                 ],
                 "sections": [
                     {
@@ -119,7 +118,7 @@
                 "name": "Dark Eyegore Key Drop",
                 "visibility_rules":["key_drop_shuffle"],
                 "access_rules":[
-                    "ep_bigkey"
+                    "ep_bigkey, [$darkRooms]"
                 ],
                 "sections": [
                     {

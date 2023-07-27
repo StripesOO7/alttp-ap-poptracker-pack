@@ -29,7 +29,7 @@
             {
                 "name": "Chain Chomps",
                 "access_rules":[
-                    "somaria, [tr_smallkey|1]"
+                    "somaria, [$smallKeys|tr_smallkey|1]"
                 ],
                 "sections": [
                     {
@@ -49,7 +49,7 @@
                 "name": "Pokey 1 Key Drop",
                 "visibility_rules":["key_drop_shuffle"],
                 "access_rules":[
-                    "somaria, [tr_smallkey|1]"
+                    "somaria, [$smallKeys|tr_smallkey|1]"
                 ],
                 "sections": [
                     {
@@ -107,7 +107,7 @@
                 "name": "Pokey 2 Key Drop",
                 "visibility_rules":["key_drop_shuffle"],
                 "access_rules":[
-                    "somaria, [tr_smallkey|1]"
+                    "somaria, [$smallKeys|tr_smallkey|1]"
                 ],
                 "sections": [
                     {
@@ -157,8 +157,8 @@
                 "access_rules":[
                     "tr_bigkey, somaria",
                     "tr_bigkey, hookshot",
-                    "@Turtle Rock Front, tr_bigkey"
-
+                    "@Turtle Rock Front, tr_bigkey",
+                    "@Turtle Rock Back, [tr_bigkey]"
                 ],
                 "sections": [
                     {
@@ -175,9 +175,16 @@
                 ]
             },
             {
+                "name": "Eye Bridge Accessible",
+                "access_rules":[
+                    "@Turtle Rock Front, somaria, [$darkRooms], [$smallKeys|tr_smallkey|3], [mirrorshield]",
+                    "@Turtle Rock Front, somaria, [$darkRooms], [$smallKeys|tr_smallkey|3], [invincibility]"
+                ]
+            },
+            {
                 "name": "Eye Bridge Top Left",
                 "access_rules":[
-                    "@Turtle Rock Front, somaria, $darkRooms, [$smallKeys|tr_smallkey|3], [mirrorshield]"
+                    "@Turtle Rock Back/Eye Bridge Accessible"
                 ],
                 "sections": [
                     {
@@ -196,7 +203,7 @@
             {
                 "name": "Eye Bridge Bottom Left",
                 "access_rules":[
-                    "@Turtle Rock Front, somaria, $darkRooms, [$smallKeys|tr_smallkey|3], [mirrorshield]"
+                    "@Turtle Rock Back/Eye Bridge Accessible"
                 ],
                 "sections": [
                     {
@@ -215,7 +222,7 @@
             {
                 "name": "Eye Bridge Top Right",
                 "access_rules":[
-                    "@Turtle Rock Front, somaria, $darkRooms, [$smallKeys|tr_smallkey|3], [mirrorshield]"
+                    "@Turtle Rock Back/Eye Bridge Accessible"
                 ],
                 "sections": [
                     {
@@ -234,7 +241,7 @@
             {
                 "name": "Eye Bridge Bottom Right",
                 "access_rules":[
-                    "@Turtle Rock Front, somaria, $darkRooms, [$smallKeys|tr_smallkey|3], [mirrorshield]"
+                    "@Turtle Rock Back/Eye Bridge Accessible"
                 ],
                 "sections": [
                     {
@@ -273,7 +280,7 @@
             {
                 "name": "Boss",
                 "access_rules":[
-                    "@Turtle Rock Back/Eye Bridge Top Left/Eye Bridge Top Left, $smallKeys|tr_smallkey|4, $getBossRef|tr_boss"
+                    "@Turtle Rock Back, $smallKeys|tr_smallkey|1, [$smallKeys|tr_smallkey|4], $getBossRef|tr_boss"
                 ],
                 "sections": [
                     {

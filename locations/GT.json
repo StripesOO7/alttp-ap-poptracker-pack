@@ -27,10 +27,15 @@
                 ]
             },
             {
+                "name": "DMs Room",
+                "access_rules":[
+                    "hookshot, hammer"
+                ]
+            },
+            {
                 "name": "DMs Room Top Right",
                 "access_rules":[
-                    "hookshot, hammer",
-                    "boots, hammer"
+                    "@Ganon's Tower Bottom Left/DMs Room"
                 ],
                 "sections": [
                     {
@@ -49,8 +54,7 @@
             {
                 "name": "DMs Room Bottom Right",
                 "access_rules":[
-                    "hookshot, hammer",
-                    "boots, hammer"
+                    "@Ganon's Tower Bottom Left/DMs Room"
                 ],
                 "sections": [
                     {
@@ -69,8 +73,7 @@
             {
                 "name": "DMs Room Top Left",
                 "access_rules":[
-                    "hookshot, hammer",
-                    "boots, hammer"
+                    "@Ganon's Tower Bottom Left/DMs Room"
                 ],
                 "sections": [
                     {
@@ -89,8 +92,7 @@
             {
                 "name": "DMs Room Bottom Left",
                 "access_rules":[
-                    "hookshot, hammer",
-                    "boots, hammer"
+                    "@Ganon's Tower Bottom Left/DMs Room"
                 ],
                 "sections": [
                     {
@@ -109,8 +111,8 @@
             {
                 "name": "Map Chest",
                 "access_rules":[
-                    "$smallKeys|gt_smallkey|1, @Ganon's Tower Bottom Left/DMs Room Top Right",
-                    "$smallKeys|gt_smallkey|1, hammer, boots"
+                    "$smallKeys|gt_smallkey|1, [$smallKeys|gt_smallkey|4], @Ganon's Tower Bottom Left/DMs Room",
+                    "$smallKeys|gt_smallkey|1, [$smallKeys|gt_smallkey|4], hammer, [boots]"
                 ],
                 "sections": [
                     {
@@ -130,8 +132,8 @@
                 "name": "Double Switch Pot Key",
                 "visibility_rules":["key_drop_shuffle"],
                 "access_rules":[
-                    "$smallKeys|gt_smallkey|1, @Ganon's Tower Bottom Left/DMs Room Top Right",
-                    "$smallKeys|gt_smallkey|1, hammer, boots"
+                    "$smallKeys|gt_smallkey|1, @Ganon's Tower Bottom Left/DMs Room",
+                    "$smallKeys|gt_smallkey|1, hammer, [boots]"
                 ],
                 "sections": [
                     {
@@ -167,7 +169,8 @@
             {
                 "name": "Firesnake Room",
                 "access_rules":[
-                    "@Ganon's Tower Bottom Left/Map Chest"
+                    "[$smallKeys|gt_smallkey|3], @Ganon's Tower Bottom Left/DMs Room",
+                    "[$smallKeys|gt_smallkey|3], hammer, [boots]"
                 ],
                 "sections": [
                     {
@@ -184,9 +187,15 @@
                 ]
             },
             {
+                "name": "Randomizer Room",
+                "access_rules":[
+                    "@Ganon's Tower Bottom Left/Firesnake Room, $smallKeys|gt_smallkey|1, [$smallKeys|gt_smallkey|4]"
+                ]
+            },
+            {
                 "name": "Randomizer Room Bottom Left",
                 "access_rules":[
-                    "@Ganon's Tower Bottom Left/Firesnake Room"
+                    "@Ganon's Tower Bottom Left/Randomizer Room"
                 ],
                 "sections": [
                     {
@@ -205,7 +214,7 @@
             {
                 "name": "Randomizer Room Bottom Right",
                 "access_rules":[
-                    "@Ganon's Tower Bottom Left/Firesnake Room"
+                    "@Ganon's Tower Bottom Left/Randomizer Room"
                 ],
                 "sections": [
                     {
@@ -224,7 +233,7 @@
             {
                 "name": "Randomizer Room Top Left",
                 "access_rules":[
-                    "@Ganon's Tower Bottom Left/Firesnake Room"
+                    "@Ganon's Tower Bottom Left/Randomizer Room"
                 ],
                 "sections": [
                     {
@@ -243,7 +252,7 @@
             {
                 "name": "Randomizer Room Top Right",
                 "access_rules":[
-                    "@Ganon's Tower Bottom Left/Firesnake Room"
+                    "@Ganon's Tower Bottom Left/Randomizer Room"
                 ],
                 "sections": [
                     {
@@ -321,9 +330,15 @@
                 ]
             },
             {
-                "name": "Compass Chest",
+                "name": "Compass Room",
                 "access_rules":[
                     "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1, firerod"
+                ]
+            },
+            {
+                "name": "Compass Chest",
+                "access_rules":[
+                    "@Ganon's Tower Bottom Right/Compass Room"
                 ],
                 "sections": [
                     {
@@ -342,7 +357,7 @@
             {
                 "name": "Compass Room Top Right",
                 "access_rules":[
-                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1, firerod"
+                    "@Ganon's Tower Bottom Right/Compass Room"
                 ],
                 "sections": [
                     {
@@ -361,7 +376,7 @@
             {
                 "name": "Compass Room Bottom Left",
                 "access_rules":[
-                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1, firerod"
+                    "@Ganon's Tower Bottom Right/Compass Room"
                 ],
                 "sections": [
                     {
@@ -380,7 +395,7 @@
             {
                 "name": "Compass Room Bottom Right",
                 "access_rules":[
-                    "@Ganon's Tower Bottom Right/Tile Room, $smallKeys|gt_smallkey|1, firerod"
+                    "@Ganon's Tower Bottom Right/Compass Room"
                 ],
                 "sections": [
                     {
@@ -424,8 +439,8 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules":[
-            "@Ganon's Tower Bottom Right/Compass Room Bottom Right",
-            "@Ganon's Tower Bottom Left/Randomizer Room Top Right"
+            "@Ganon's Tower Bottom Right/Compass Room",
+            "@Ganon's Tower Bottom Left/Randomizer Room"
         ],
         "children": [
             {
@@ -528,13 +543,14 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules":[
-            "@GT/Ganon's Tower, gt_bigkey"
+            "@GT/Ganon's Tower, gt_bigkey, [$smallKeys|gt_smallkey|3], bow, firesource",
+            "@GT/Ganon's Tower, gt_bigkey, [$smallKeys|gt_smallkey|3], enemizer, firesource"
         ],
         "children": [
             {
                 "name": "Mini Helmasaur Key Drop",
                 "visibility_rules":["key_drop_shuffle"],
-                "access_rules":["firesource, $getBossRef|gt_lanmo"],
+                "access_rules":["$getBossRef|gt_lanmo"],
                 "sections": [
                     {
                         "name": "Mini Helmasaur Key Drop"
@@ -551,7 +567,7 @@
             },
             {
                 "name": "Mini Helmasaur Room Left",
-                "access_rules":["firesource, $getBossRef|gt_lanmo"],
+                "access_rules":["$getBossRef|gt_lanmo"],
                 "sections": [
                     {
                         "name": "Mini Helmasaur Room Left"
@@ -568,7 +584,7 @@
             },
             {
                 "name": "Mini Helmasaur Room Right",
-                "access_rules":["firesource, $getBossRef|gt_lanmo"],
+                "access_rules":["$getBossRef|gt_lanmo"],
                 "sections": [
                     {
                         "name": "Mini Helmasaur Room Right"
@@ -586,7 +602,7 @@
             {
                 "name": "Pre-Moldorm Chest",
                 "access_rules":[
-                    "@Ganon's Tower Top/Mini Helmasaur Room Right"
+                    "@Ganon's Tower Top/Mini Helmasaur Room Right, $smallKeys|gt_smallkey|1"
                 ],
                 "sections": [
                     {
@@ -605,7 +621,7 @@
             {
                 "name": "Validation Chest",
                 "access_rules":[
-                    "@Ganon's Tower Top/Pre-Moldorm Chest, $getBossRef|gt_boss, $smallKeys|gt_smallkey|1"
+                    "@Ganon's Tower Top/Pre-Moldorm Chest, $getBossRef|gt_boss, [$smallKeys|gt_smallkey|4], $smallKeys|gt_smallkey|2, hookshot"
                 ],
                 "sections": [
                     {
