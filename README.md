@@ -11,16 +11,14 @@ current working settings:
     - changing starting options between "open", "inverted" and "standard"
     - tracking of Dungonbosses and if they are beatable
     - every check should get tracked
-    - basic, glitchless logic for "open" and "inverted",
     - shop-sanity
+    - basic logic and minor and overworld glitched logic
 
 
 not working: 
-    - any glitch settings
-    - goal tracking not implemented yet
-    - big-/smallkey, map and compass shuffle option not implemented (current assumption is full-shuffle for everyone of those)
+    - any glitched setting beyond overworld glitches
 
-If you want to use Auto-Tracking ofor your Setttings add this to your alttp/\_\_init\_\_.py File within the "ALTTPWORLD"-class
+If you want to use Auto-Tracking for your Setttings add this to your alttp/\_\_init\_\_.py File within the "ALTTPWORLD"-class
 
 ```
 def fill_slot_data(self):
@@ -40,4 +38,4 @@ def fill_slot_data(self):
     return slot_data
 ```
 
-Some of these settings are curretnly purely cosmetic or just for keeping track of minor settings
+Some of these settings are currently purely cosmetic or just for keeping track of minor settings
