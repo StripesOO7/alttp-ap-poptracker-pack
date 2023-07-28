@@ -694,8 +694,7 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": [
-                            "[$smallKeys|tr_smallkey|2], [somaria], [firerod]",
-                            "$smallKeys|tr_smallkey|2, somaria, firerod"
+                            "[$smallKeys|tr_smallkey|2], [somaria], [firerod]"
                         ],
                         // "hosted_item": "tr_map, tr_compass, tr_bigkey",
                         "clear_as_group": false,
@@ -706,8 +705,7 @@
                         "item_count": 2,
                         "clear_as_group": false,
                         "access_rules": [
-                            "[$smallKeys|tr_smallkey|1], [somaria], [firerod]",
-                            "$smallKeys|tr_smallkey|1, somaria, firerod"
+                            "[$smallKeys|tr_smallkey|1], [somaria], [firerod]"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     }
@@ -801,8 +799,7 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": [
-                            "[$smallKeys|sw_smallkey|1],[sw_bigkey]",
-                            "$smallKeys|sw_smallkey|1,sw_bigkey"
+                            "[$smallKeys|sw_smallkey|1],[sw_bigkey]"
                         ],
                         // "hosted_item": "sw_map, sw_compass, sw_bigkey",
                         "clear_as_group": false,
@@ -881,7 +878,7 @@
                 "access_rules": [
                     "hookstot",
                     "boots"
-                ]
+                ],
                 "item_count": 9,
                 "sections": [
                     {
@@ -943,8 +940,7 @@
                     {
                         "name": "Dungeon Chest",
                         "access_rules": [
-                            "[sp_bigkey], [hookshot], [$smallKeys|sp_smallkey|1]",
-                            "sp_bigkey, hookshot, $smallKeys|sp_smallkey|1"
+                            "[sp_bigkey], [hookshot], [$smallKeys|sp_smallkey|1]"
                         ],
                         // "hosted_item": "sp_map, sp_compass, sp_bigkey",
                         "clear_as_group": false,
@@ -955,8 +951,7 @@
                         "item_count": 5,
                         "clear_as_group": false,
                         "access_rules": [
-                            "[hookshot], [$smallKeys|sp_smallkey|1]",
-                            "hookshot, $smallKeys|sp_smallkey|1"
+                            "[hookshot], [$smallKeys|sp_smallkey|1]"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     },
@@ -1003,8 +998,7 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": [
-                            "[ip_bigkey], [$smallKeys|ip_smallkey|2], [glove]",
-                            "ip_bigkey, $smallKeys|ip_smallkey|2, glove"//,
+                            "[ip_bigkey], [$smallKeys|ip_smallkey|2], [glove]"//,
                             // "[ip_bigkey], [$smallKeys|ip_smallkey|1], [glove], somaria, $checkGlitches|1",
                             // "ip_bigkey, $smallKeys|ip_smallkey|1, glove, somaria, $checkGlitches|1"
                             //icebreaker? ja? nein?
@@ -1018,8 +1012,7 @@
                         "item_count": 4,
                         "clear_as_group": false,
                         "access_rules": [
-                            "[ip_bigkey], hammer, glove",
-                            "ip_bigkey, hammer, glove"
+                            "[ip_bigkey], hammer, glove"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     },
@@ -1027,8 +1020,7 @@
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules": [
-                            "[ip_bigkey], $getBossRef|ip_boss, hammer, glove",
-                            "ip_bigkey, $getBossRef|ip_boss, hammer, glove"
+                            "[ip_bigkey], $getBossRef|ip_boss, hammer, glove"
                         ],
                         "item_count": 1,
                         "hosted_item": "ip_boss, icepalace"
@@ -1069,8 +1061,7 @@
                         "clear_as_group": false,
                         "item_count": 3,
                         "access_rules": [
-                            "tt_bigkey, [$smallKeys|tt_smallkey|1], [hammer]",
-                            "tt_bigkey, $smallKeys|tt_smallkey|1, hammer"
+                            "tt_bigkey, [$smallKeys|tt_smallkey|1], [hammer]"
                         ]
                     },
                     {
@@ -1078,8 +1069,7 @@
                         "item_count": 2,
                         "clear_as_group": false,
                         "access_rules": [
-                            "tt_bigkey, [$smallKeys|tt_smallkey|1]",
-                            "tt_bigkey, $smallKeys|tt_smallkey|1"
+                            "tt_bigkey, [$smallKeys|tt_smallkey|1]"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     },
@@ -1128,9 +1118,7 @@
                         "name": "Leftside",
                         "clear_as_group": false,
                         "access_rules": [
-                            "[boots],[hammer],[hookshot],[$smallKeys|gt_smallkey|1]",
-                            "[boots],hammer,hookshot,$smallKeys|gt_smallkey|1",
-                            "boots,hammer,[hookshot],$smallKeys|gt_smallkey|1"
+                            "[boots],[hammer],[hookshot],[$smallKeys|gt_smallkey|1]"
                         ],
                         // "hosted_item": "gt_map",
                         "item_count": 11
@@ -1138,8 +1126,7 @@
                     {
                         "name": "Rightside",
                         "access_rules": [
-                            "[somaria], [firerod], [$smallKeys|gt_smallkey|1]",
-                            "somaria, firerod, $smallKeys|gt_smallkey|1"
+                            "[somaria], [firerod], [$smallKeys|gt_smallkey|1]"
                         ],
                         // "hosted_item": "gt_compass",
                         "clear_as_group": false,
@@ -1150,9 +1137,7 @@
                         "clear_as_group": false,
                         "access_rules": [
                             "@GT/Ganon's Tower/Leftside, [gt_bigkey], [$getBossRef|gt_ice]",
-                            "@GT/Ganon's Tower/Rightside, [gt_bigkey], [$getBossRef|gt_ice]",
-                            "@GT/Ganon's Tower/Leftside, gt_bigkey, $getBossRef|gt_ice",
-                            "@GT/Ganon's Tower/Rightside, gt_bigkey, $getBossRef|gt_ice"
+                            "@GT/Ganon's Tower/Rightside, [gt_bigkey], [$getBossRef|gt_ice]"
                         ],
                         "item_count": 5,
                         "hosted_item": "gt_ice"//, gt_bigkey"
@@ -1160,8 +1145,7 @@
                     {
                         "name": "GT Top + Lanmo refight",
                         "access_rules": [
-                            "gt_bigkey, [$smallKeys|gt_smallkey|1], $getBossRef|gt_lanmo",
-                            "gt_bigkey, $smallKeys|gt_smallkey|1, $getBossRef|gt_lanmo"
+                            "gt_bigkey, [$smallKeys|gt_smallkey|1], $getBossRef|gt_lanmo"
                         ],
                         "clear_as_group": false,
                         "item_count": 3,
@@ -1170,8 +1154,7 @@
                     {
                         "name": "GT Top Moldorm refight",
                         "access_rules": [
-                            "gt_bigkey, [$smallKeys|gt_smallkey|2], $getBossRef|gt_boss",
-                            "gt_bigkey, $smallKeys|gt_smallkey|2, $getBossRef|gt_boss"
+                            "gt_bigkey, [$smallKeys|gt_smallkey|2], $getBossRef|gt_boss"
                         ],
                         "clear_as_group": false,
                         "item_count": 1,
