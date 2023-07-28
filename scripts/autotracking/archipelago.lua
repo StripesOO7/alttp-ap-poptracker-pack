@@ -119,7 +119,7 @@ function onClear(slot_data)
     -- mapGlitches={[0]=0,[1]=2,[2]=3,[3]=0,[4]=0}
     -- progressive={[]=,}
     mapMode={["open"]=0,["inverted"]=1,["standard"]=2}
-    mapGoals={["crystals"]=0,["ganon"]=1,["bosses"]=3,["pedestal"]=4,["ganon_pedestal"]=5,["triforce_hunt"]=6,["ganon_triforce_hunt"]=7,["ice_rod_hunt"]=8,["local_triforce_hunt"]=6,["local_ganon_triforce_hunt"]=7}
+    mapGoals={["crystals"]=0,["ganon"]=1,["bosses"]=3,["pedestal"]=4,["ganonpedestal"]=5,["triforcehunt"]=6,["ganontriforcehunt"]=7,["icerodhunt"]=8,["localtriforcehunt"]=6,["localganontriforcehunt"]=7}
     mapDark={["none"]=0,["lamp"]=1,["scornes"]=2} -- none=dark room, lamp=vanilla, scornes = firerod
     mapMedalion={["Bombos"]="bombos",["Ether"]="ether",["Quake"]="quake"}
     -- retro_caves={[]=}
@@ -153,7 +153,7 @@ function onClear(slot_data)
         triforce_pieces_required={code="triforce_pieces_needed", mapping=nil}
         -- glitch_boots={code="glitches", mapping=nil}
     }
-    -- print(dump_table(slot_data))
+    print(dump_table(slot_data))
     -- print(Tracker:FindObjectForCode("autofill_settings").Active)
     if Tracker:FindObjectForCode("autofill_settings").Active == true then
         for k,v in pairs(slot_data) do
