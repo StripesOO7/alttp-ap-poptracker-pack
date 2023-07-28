@@ -137,30 +137,30 @@ function calcHeartpieces()
     pieces.CurrentStage = (Tracker:FindObjectForCode("heartpieces").AcquiredCount % 4)
 end
 
-function health(targetHealth)
-    local target = tonumber(targetHealth)
-    local amount = 0
-    local base = 3
-    local container = Tracker:ProviderCountForCode("heartcontainer")
-    local pieces = Tracker:FindObjectForCode("heartpieces").AcquiredCount // 4
-    local byrna = Tracker:FindObjectForCode("byrna").Active
-    local cape = Tracker:FindObjectForCode("cape").Active
-    local magic = Tracker:FindObjectForCode("half_magic").Active
-    local bottles = Tracker:FindObjectForCode("bottle").CurrentStage
-    local amount = base + container + pieces
-    -- print(container, pieces, amount, target, bottles)
-    if amount >= target then
-        return true
-    elseif amount > ((target//2)) and (magic and (byrna or cape)) then
-        return true
-    elseif amount * (bottles+1) >= target then
-        return true
-    elseif bottles > 0 and amount > ((target//bottles+1)+1) and (byrna or cape) then
-        return true
-    else
-        return false
-    end
-end
+-- function health(targetHealth)
+--     local target = tonumber(targetHealth)
+--     local amount = 0
+--     local base = 3
+--     local container = Tracker:ProviderCountForCode("heartcontainer")
+--     local pieces = Tracker:FindObjectForCode("heartpieces").AcquiredCount // 4
+--     local byrna = Tracker:FindObjectForCode("byrna").Active
+--     local cape = Tracker:FindObjectForCode("cape").Active
+--     local magic = Tracker:FindObjectForCode("half_magic").Active
+--     local bottles = Tracker:FindObjectForCode("bottle").CurrentStage
+--     local amount = base + container + pieces
+--     -- print(container, pieces, amount, target, bottles)
+--     if amount >= target then
+--         return true
+--     elseif amount > ((target//2)) and (magic and (byrna or cape)) then
+--         return true
+--     elseif amount * (bottles+1) >= target then
+--         return true
+--     elseif bottles > 0 and amount > ((target//bottles+1)+1) and (byrna or cape) then
+--         return true
+--     else
+--         return false
+--     end
+-- end
 
 function enemizerCheck(item)
     if Tracker:FindObjectForCode("enemizer").Active == true then
