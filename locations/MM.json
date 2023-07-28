@@ -131,7 +131,10 @@
             {
                 "name": "Spike Chest",
                 "access_rules": [
-                    "[invincibility]"
+                    "[invincibility]",
+                    // "[$health|4]"
+                    "heartcontainer:1",
+                    "heartpieces:4"
                 ],
                 "sections": [
                     {
