@@ -861,7 +861,7 @@
     },
 // external settings toggles
     {
-        "name": "Autofill Settings",
+        "name": "Autofill Settings", ///used as tooltip within the settings popup. available on 0.25.3+ 
         "type": "toggle",
         "img": "/images/autofill_enabled.png",
         "disabled_img": "/images/autofill_disabled.png",
