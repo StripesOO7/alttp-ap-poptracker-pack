@@ -199,7 +199,7 @@ function autoFill()
     -- mapGlitches={[0]=0,[1]=2,[2]=3,[3]=0,[4]=0}
     -- progressive={[]=,}
     mapMode={["open"]=0,["inverted"]=1,["standard"]=2}
-    mapGoals={["crystals"]=0,["ganon"]=1,["bosses"]=3,["pedestal"]=4,["ganonpedestal"]=5,["triforcehunt"]=6,["ganontriforcehunt"]=7,["icerodhunt"]=8,["localtriforcehunt"]=6,["localganontriforcehunt"]=7}
+    mapGoals={["crystals"]=0,["ganon"]=1,["bosses"]=2,["pedestal"]=3,["ganonpedestal"]=4,["triforcehunt"]=5,["ganontriforcehunt"]=6,["icerodhunt"]=7,["localtriforcehunt"]=5,["localganontriforcehunt"]=6}
     mapDark={["none"]=0,["lamp"]=1,["scornes"]=2} -- none=dark room, lamp=vanilla, scornes = firerod
     mapMedalion={["Bombos"]="bombos",["Ether"]="ether",["Quake"]="quake"}
     -- retro_caves={[]=}
