@@ -1121,7 +1121,7 @@
                     {
                         "name": "Boss Item" ,
                         "access_rules": [
-                            "$getBossRef|dp_boss, dp_bigkey"
+                            "$getBossRef|dp_boss, dp_bigkey, firesource"
                         ],
                         "clear_as_group": true,
                         "item_count": 1,
