@@ -87,11 +87,11 @@ function onClear(slot_data)
     -- reset items
     for _, v in pairs(ITEM_MAPPING) do
         for _, w in pairs(v[1]) do
-            if w[1] and v[2] then
-                local obj = Tracker:FindObjectForCode(w[1])
+            if w and v[2] then
+                local obj = Tracker:FindObjectForCode(w)
                 if obj then
                     if v[2] == "toggle" then
-                        if w[1] == "bombos" or w[1] == "ether" or w[1] == "quake" then
+                        if w == "bombos" or w == "ether" or w == "quake" then
                             obj.CurrentStage = 0
                         end
                         obj.Active = false
@@ -130,7 +130,8 @@ function onItem(index, item_id, item_name, player_number)
         return
     end
     for _, w in pairs(v[1]) do
-        local obj = Tracker:FindObjectForCode(w[1])
+        -- print(v[1], w)
+        local obj = Tracker:FindObjectForCode(w)
         if obj then
             if v[2] == "toggle" then
                 if ( SECONDSTAGE[item_id] and obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
