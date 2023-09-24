@@ -355,7 +355,7 @@ function updateConsumableItemFromByte(segment, code, address, roomSlots)
         local value = ReadU8(segment, address)
         local keyDropCount = 0
 
-        if  Tracker:FindObjectForCode("key_drop_shuffle").Active then
+        if Tracker:FindObjectForCode("key_drop_shuffle").Active then
             for i,slot in ipairs(roomSlots) do
                 local roomData = ReadU16(segment, 0x7ef000 + (slot[1] * 2))
 
@@ -581,7 +581,7 @@ function updateNPCItemFlagsFromMemorySegment(segment)
     updateSectionChestCountFromByteAndFlag(segment, "@Lightworld/Lost Woods/Mushroom", 0x7ef411, 0x10)
     updateSectionChestCountFromByteAndFlag(segment, "@Lightworld/Potion Shop (Witch Hut)/Deliver Mushroom (Brew Drugs)", 0x7ef411, 0x20, updateMushroomStatus)
     -- 0x40 is unused
-    updateSectionChestCountFromByteAndFlag(segment, "@Lightworld/Satan/Visit Satan", 0x7ef411, 0x80, updateBatIndicatorStatus)    
+    updateSectionChestCountFromByteAndFlag(segment, "@Lightworld/Magic Bat/Visit Satan", 0x7ef411, 0x80, updateBatIndicatorStatus)    
 
 end
 
