@@ -7,7 +7,7 @@ CUR_INDEX = -1
 FLAG_CODES = {
     "","","","",
     "glitches_required",
-    "","","",
+    "","",
     "dark_room_logic",
     "bigkey_shuffle",
     "smallkey_shuffle",
@@ -26,11 +26,15 @@ FLAG_CODES = {
     "turtle_rock_medallion",
     "boss_shuffle",
     "enemy_shuffle",
+    "key_drop_shuffle",
     "pot_shuffle",
     "shop_shuffle",
     "glitch_boots",
     "triforce_pieces_required"
 }
+
+local SECONDSTAGE = { 5, 34, 28, 80 }
+local THIRDSTAGE = { 2, 6, 35 }
 
 SLOT_DATA = {}
 
@@ -82,22 +86,24 @@ function onClear(slot_data)
     end
     -- reset items
     for _, v in pairs(ITEM_MAPPING) do
-        if v[1] and v[2] then
-            local obj = Tracker:FindObjectForCode(v[1])
-            if obj then
-                if v[2] == "toggle" then
-                    if v[1] == "bombos" or v[1] == "ether" or v[1] == "quake" then
+        for _, w in pairs(v[1]) do
+            if w[1] and v[2] then
+                local obj = Tracker:FindObjectForCode(w[1])
+                if obj then
+                    if v[2] == "toggle" then
+                        if w[1] == "bombos" or w[1] == "ether" or w[1] == "quake" then
+                            obj.CurrentStage = 0
+                        end
+                        obj.Active = false
+                    elseif v[2] == "progressive" then
                         obj.CurrentStage = 0
-                    end
-                    obj.Active = false
-                elseif v[2] == "progressive" then
-                    obj.CurrentStage = 0
-                    obj.Active = false
-                elseif v[2] == "consumable" then
-                    if obj.MinCount then
-                        obj.AcquiredCount = obj.MinCount
-                    else
-                        obj.AcquiredCount = 0
+                        obj.Active = false
+                    elseif v[2] == "consumable" then
+                        if obj.MinCount then
+                            obj.AcquiredCount = obj.MinCount
+                        else
+                            obj.AcquiredCount = 0
+                        end
                     end
                 end
             end
@@ -123,25 +129,37 @@ function onItem(index, item_id, item_name, player_number)
         --print(string.format("onItem: could not find item mapping for id %s", item_id))
         return
     end
-    local obj = Tracker:FindObjectForCode(v[1])
-    if obj then
-        if v[2] == "toggle" then
-            obj.Active = true
-        elseif v[2] == "progressive" then
-            if obj.Active then
-                obj.CurrentStage = obj.CurrentStage + 1
-            else
+    for _, w in pairs(v[1]) do
+        local obj = Tracker:FindObjectForCode(w[1])
+        if obj then
+            if v[2] == "toggle" then
+                if ( SECONDSTAGE[item_id] and obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
+                    print(obj.CurrentStage, item_id)
+                    obj.CurrentStage = 2
+                elseif ( THIRDSTAGE[item_id] and obj.CurrentStage < 3 ) then -- tempered sword, red mail, mirror shield
+                    print(obj.CurrentStage, item_id)
+                    obj.CurrentStage = 3
+                elseif (item_id == 3  and obj.CurrentStage < 4) then
+                    print(obj.CurrentStage, item_id)
+                    obj.CurrentStage = 4
+                end
                 obj.Active = true
+            elseif v[2] == "progressive" then
+                if obj.Active then
+                    obj.CurrentStage = obj.CurrentStage + 1
+                else
+                    obj.Active = true
+                end
+            elseif v[2] == "consumable" then
+                if item_id == 82 or item_id == 84 then
+                    obj.AcquiredCount = obj.AcquiredCount + (2*obj.Increment)
+                else
+                    obj.AcquiredCount = obj.AcquiredCount + obj.Increment
+                end
             end
-        elseif v[2] == "consumable" then
-            if item_id == 82 or item_id == 84 then
-                obj.AcquiredCount = obj.AcquiredCount + (2*obj.Increment)
-            else
-                obj.AcquiredCount = obj.AcquiredCount + obj.Increment
-            end
+        else
+            print(string.format("onItem: could not find object for code %s", w[1]))
         end
-    else
-        print(string.format("onItem: could not find object for code %s", v[1]))
     end
     canFinish()
     calcHeartpieces()
@@ -189,7 +207,7 @@ function autoFill()
         print("its fucked")
         return
     end
-    -- print(dump_table(slot_data))
+    -- print(dump_table(SLOT_DATA))
 
     mapToggle={[0]=0,[1]=1}
     mapToggleReverse={[0]=1,[1]=0,[2]=0,[3]=0,[4]=0}
@@ -210,6 +228,8 @@ function autoFill()
 
     slotCodes = {
         -- glitches_required={code="glitches", mapping=mapToggleReverse},
+        key_drop_shuffle={code="key_drop_shuffle", mapping=mapDungeonItem},
+        pot_shuffle={code="key_drop_shuffle", mapping=mapDungeonItem},
         dark_room_logic={code="dark_mode", mapping=mapDark},
         bigkey_shuffle={code="big_keys", mapping=mapDungeonItem},
         smallkey_shuffle={code="small_keys", mapping=mapDungeonItem},
@@ -228,7 +248,6 @@ function autoFill()
         tr_medallion={code="", mapping=mapMedalion},
         boss_shuffle={code="boss_shuffle", mapping=mapBosses},
         enemy_shuffle={code="enemizer", mapping=mapEnemizer},
-        -- pot_shuffle={code="", mapping=nil},
         shop_shuffle={code="shop_sanity", mapping=nil},
         triforce_pieces_required={code="triforce_pieces_needed", mapping=nil}
         -- glitch_boots={code="glitches", mapping=nil}
