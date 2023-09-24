@@ -224,6 +224,15 @@ function checkGlitches(stage)
     return false
 end
 
+function keyDropLayoutChange()
+    local key_drop = Tracker:FindObjectForCode("key_drop_shuffle")
+    if key_drop.Active then
+        Tracker:AddLayouts("layouts/dungeon_items_keydrop.json")
+    else
+        Tracker:AddLayouts("layouts/dungeon_items.json")
+    end
+end
+
 -- function  chestCount(dungeon, baseCount)
 --     local counter = 0 
 --     local settings = {
@@ -258,3 +267,4 @@ end
 --     return baseKeys
 -- end
 
+ScriptHost:AddWatchForCode("keydropshuffle handler", "key_drop_shuffle", keyDropLayoutChange)
