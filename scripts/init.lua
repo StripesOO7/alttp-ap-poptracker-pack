@@ -5,14 +5,9 @@ Tracker:AddItems("items/items.json")
 -- Tracker:AddItems("items/keys.json")
 Tracker:AddItems("items/labels.json")
 Tracker:AddItems("items/dungeon_bosses.json")
-if  Tracker.ActiveVariantUID == "Map Tracker /w Pot-shuffle - SNES" or
-    Tracker.ActiveVariantUID == "Entrance Randomizer Tracker /w Pot-shuffle - SNES" or
-    Tracker.ActiveVariantUID == "Map Tracker /w Pot-shuffle - AP" or
-    Tracker.ActiveVariantUID == "Entrance Randomizer Tracker /w Pot-shuffle - AP" then
-    Tracker:AddItems("items/dungeon_items_pots.json")
-else 
-    Tracker:AddItems("items/dungeon_items.json")
-end
+Tracker:AddItems("items/dungeon_items_pots.json")
+Tracker:AddItems("items/dungeon_items.json")
+
 -- Logic
 ScriptHost:LoadScript("scripts/logic/logic.lua")
 
@@ -45,12 +40,13 @@ if PopVersion and PopVersion >= "0.23.0" then
 end
 
 -- Layout
-Tracker:AddLayouts("layouts/events.json")
-Tracker:AddLayouts("layouts/settings.json")
-Tracker:AddLayouts("layouts/items.json")
-Tracker:AddLayouts("layouts/tabs.json")
-Tracker:AddLayouts("layouts/tracker.json")
-Tracker:AddLayouts("layouts/broadcast.json")
+-- Tracker:AddLayouts("layouts/events.json")
+-- Tracker:AddLayouts("layouts/settings.json")
+-- Tracker:AddLayouts("layouts/items.json")
+-- Tracker:AddLayouts("layouts/tabs.json")
+-- Tracker:AddLayouts("layouts/tracker.json")
+-- Tracker:AddLayouts("layouts/broadcast.json")
+ScriptHost:LoadScript("scripts/layouts.lua")
 
 -- AutoTracking for Poptracker
 if PopVersion and PopVersion >= "0.18.0" then
