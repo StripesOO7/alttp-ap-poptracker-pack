@@ -940,7 +940,8 @@
                     {
                         "name": "Dungeon Chest",
                         "access_rules": [
-                            "[sp_bigkey], [hookshot], [$smallKeys|sp_smallkey|1]"
+                            "[sp_bigkey], [hookshot], [$smallKeys|sp_smallkey|1],[hammer]",
+                            "[sp_bigkey], [hookshot], [$smallKeys|sp_smallkey|1], $checkGlitches|1"
                         ],
                         // "hosted_item": "sp_map, sp_compass, sp_bigkey",
                         "clear_as_group": false,
@@ -951,7 +952,8 @@
                         "item_count": 5,
                         "clear_as_group": false,
                         "access_rules": [
-                            "[hookshot], [$smallKeys|sp_smallkey|1]"
+                            "[hookshot], [$smallKeys|sp_smallkey|1], [hammer]",
+                            "[hookshot], [$smallKeys|sp_smallkey|1], $checkGlitches|1"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     },
@@ -959,7 +961,8 @@
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules": [
-                            "hookshot, $getBossRef|sp_boss, $smallKeys|sp_smallkey|1"
+                            "hookshot, $getBossRef|sp_boss, $smallKeys|sp_smallkey|1, hammer",
+                            "hookshot, $getBossRef|sp_boss, $smallKeys|sp_smallkey|1, $checkGlitches|1"
                         ],
                         "item_count": 1,
                         "hosted_item": "sp_boss, swamppalace"
