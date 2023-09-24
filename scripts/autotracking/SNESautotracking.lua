@@ -355,10 +355,7 @@ function updateConsumableItemFromByte(segment, code, address, roomSlots)
         local value = ReadU8(segment, address)
         local keyDropCount = 0
 
-        if  Tracker.ActiveVariantUID == "Map Tracker /w Pot-shuffle - AP" or 
-            Tracker.ActiveVariantUID == "Map Tracker /w Pot-shuffle - SNES" or 
-            Tracker.ActiveVariantUID == "Entrance Randomizer Tracker /w Pot-shuffle - AP" or 
-            Tracker.ActiveVariantUID == "Entrance Randomizer Tracker /w Pot-shuffle - SNES" then
+        if  Tracker:FindObjectForCode("key_drop_shuffle").Active then
             for i,slot in ipairs(roomSlots) do
                 local roomData = ReadU16(segment, 0x7ef000 + (slot[1] * 2))
 
@@ -386,10 +383,7 @@ function updateConsumableItemFromTwoByteSum(segment, code, address, address2, ro
         local value2 = ReadU8(segment, address2)
         local keyDropCount = 0
 
-        if  Tracker.ActiveVariantUID == "Map Tracker /w Pot-shuffle - AP" or 
-            Tracker.ActiveVariantUID == "Map Tracker /w Pot-shuffle - SNES" or 
-            Tracker.ActiveVariantUID == "Entrance Randomizer Tracker /w Pot-shuffle - AP" or 
-            Tracker.ActiveVariantUID == "Entrance Randomizer Tracker /w Pot-shuffle - SNES" then
+        if  Tracker:FindObjectForCode("key_drop_shuffle").Active then
             for i,slot in ipairs(roomSlots) do
                 local roomData = ReadU16(segment, 0x7ef000 + (slot[1] * 2))
 
@@ -1132,6 +1126,19 @@ function updateChestKeysFromMemorySegment(segment)
             updateConsumableItemFromByte(segment, "tr_smallkey",  0x7ef4ec, { { 19, 10 }, { 182, 10 } })
             updateConsumableItemFromByte(segment, "gt_smallkey",  0x7ef4ed, { { 138, 10 }, { 155, 10 }, { 61, 10 }, { 123, 10 } })
         -- end
+            updateConsumableItemFromTwoByteSum(segment, "hc_smallkey_drop", 0x7ef4e0, 0x7ef4e1, { { 113, 10 }, { 114, 10 }, { 33, 10 } })
+            updateConsumableItemFromByte(segment, "ep_smallkey_drop",  0x7ef4e2, { { 186, 10 }, { 153, 10 } })
+            updateConsumableItemFromByte(segment, "dp_smallkey_drop",  0x7ef4e3, { { 67, 10 }, { 83, 10 }, { 99, 10 } })
+            updateConsumableItemFromByte(segment, "at_smallkey_drop",  0x7ef4e4, { { 176, 10 }, { 208, 10 } })
+            updateConsumableItemFromByte(segment, "sp_smallkey_drop",  0x7ef4e5, { { 53, 10 }, { 54, 10 }, { 55, 10 }, { 56, 10 }, { 22, 10 } })
+            updateConsumableItemFromByte(segment, "pod_smallkey_drop", 0x7ef4e6, {  })
+            updateConsumableItemFromByte(segment, "mm_smallkey_drop",  0x7ef4e7, { { 161, 10 }, { 179, 10 }, { 193, 10 } })
+            updateConsumableItemFromByte(segment, "sw_smallkey_drop",  0x7ef4e8, { { 86, 10 }, { 57, 10 } })
+            updateConsumableItemFromByte(segment, "ip_smallkey_drop",  0x7ef4e9, { { 14, 10 }, { 62, 10 }, { 63, 10 }, { 159, 10 } })
+            updateConsumableItemFromByte(segment, "toh_smallkey_drop", 0x7ef4ea, {  })
+            updateConsumableItemFromByte(segment, "tt_smallkey_drop",  0x7ef4eb, { { 171, 10}, { 188, 10 } })
+            updateConsumableItemFromByte(segment, "tr_smallkey_drop",  0x7ef4ec, { { 19, 10 }, { 182, 10 } })
+            updateConsumableItemFromByte(segment, "gt_smallkey_drop",  0x7ef4ed, { { 138, 10 }, { 155, 10 }, { 61, 10 }, { 123, 10 } })
     end
 end
 
