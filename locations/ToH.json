@@ -61,7 +61,7 @@
             {
                 "name": "Compass Chest",
                 "access_rules": [
-                    "toh_bigkey",
+                    "$bigKeys|toh_bigkey",
                     "$checkGlitches|1, hookshot"
                 ],
                 "sections": [
@@ -81,7 +81,7 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "toh_bigkey"
+                    "$bigKeys|toh_bigkey"
                 ],
                 "sections": [
                     {
@@ -100,7 +100,7 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "toh_bigkey, $getBossRef|toh_boss",
+                    "$bigKeys|toh_bigkey, $getBossRef|toh_boss",
                     "$checkGlitches|1, hookshot, $getBossRef|toh_boss"
                 ],
                 "sections": [

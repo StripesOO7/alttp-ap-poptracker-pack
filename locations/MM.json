@@ -169,7 +169,7 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "mm_bigkey"
+                    "$bigKeys|mm_bigkey"
                 ],
                 "sections": [
                     {
@@ -188,7 +188,7 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "mm_bigkey, $getBossRef|mm_boss, [$darkRooms], somaria"
+                    "$bigKeys|mm_bigkey, $getBossRef|mm_boss, [$darkRooms], somaria"
                 ],
                 "sections": [
                     {

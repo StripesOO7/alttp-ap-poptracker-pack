@@ -108,6 +108,14 @@ function smallKeys(dungeon, count)
     end
 end
 
+function bigKeys(key)
+    if Tracker:FindObjectForCode("big_keys").Active == true then
+        return Tracker:FindObjectForCode(key).Active
+    else
+        return true
+    end
+end
+
 function checkRequirements(reference, check_count)
     local reqCount = Tracker:ProviderCountForCode(reference)
     local count = Tracker:ProviderCountForCode(check_count)

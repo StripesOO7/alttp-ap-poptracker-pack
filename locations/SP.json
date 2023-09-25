@@ -268,8 +268,8 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "$smallKeys|sp_smallkey|1, hammer, sp_bigkey",
-                    "$checkGlitches|1, $smallKeys|sp_smallkey|1, sp_bigkey"
+                    "$smallKeys|sp_smallkey|1, hammer, $bigKeys|sp_bigkey",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1, $bigKeys|sp_bigkey"
                 ],
                 "sections": [
                     {

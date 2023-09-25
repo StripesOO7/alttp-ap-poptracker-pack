@@ -449,7 +449,7 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "gt_bigkey"
+                    "$bigKeys|gt_bigkey"
                 ],
                 "sections": [
                     {
@@ -546,7 +546,7 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "@GT/Ganon's Tower, gt_bigkey, [$smallKeys|gt_smallkey|3], firesource"
+            "@GT/Ganon's Tower, $bigKeys|gt_bigkey, [$smallKeys|gt_smallkey|3], firesource"
         ],
         "children": [
             {

@@ -184,7 +184,7 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "ip_bigkey"
+                    "$bigKeys|ip_bigkey"
                 ],
                 "sections": [
                     {
@@ -203,8 +203,8 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "hammer, glove, $getBossRef|ip_boss, [ip_bigkey], [$smallKeys|ip_smallkey|2]",
-                    "hammer, glove, [somaria], $getBossRef|ip_boss, [ip_bigkey], $smallKeys|ip_smallkey|1"
+                    "hammer, glove, $getBossRef|ip_boss, [$bigKeys|ip_bigkey], [$smallKeys|ip_smallkey|2]",
+                    "hammer, glove, [somaria], $getBossRef|ip_boss, [$bigKeys|ip_bigkey], $smallKeys|ip_smallkey|1"
                 ],
                 "sections": [
                     {

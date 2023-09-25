@@ -34,7 +34,7 @@
                     {
                         "name": "Big Chest",
                         "access_rules": [
-                            "dp_bigkey"
+                            "$bigKeys|dp_bigkey"
                         ]
                     }
                 ],
@@ -115,7 +115,7 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "firesource, [$smallKeys|dp_smallkey|1], dp_bigkey, $getBossRef|dp_boss"
+                    "firesource, [$smallKeys|dp_smallkey|1], $bigKeys|dp_bigkey, $getBossRef|dp_boss"
                 ],
                 "sections": [
                     {

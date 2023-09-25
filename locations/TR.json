@@ -155,10 +155,10 @@
             {
                 "name": "Crystalroller Room",
                 "access_rules": [
-                    "tr_bigkey, somaria",
-                    "tr_bigkey, hookshot",
-                    "@Turtle Rock Front, tr_bigkey",
-                    "@Turtle Rock Back, [tr_bigkey]"
+                    "$bigKeys|tr_bigkey, somaria",
+                    "$bigKeys|tr_bigkey, hookshot",
+                    "@Turtle Rock Front, $bigKeys|tr_bigkey",
+                    "@Turtle Rock Back, [$bigKeys|tr_bigkey]"
                 ],
                 "sections": [
                     {
@@ -260,8 +260,8 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "@TR/Turtle Rock Back, [somaria], tr_bigkey",
-                    "@TR/Turtle Rock Back, [hookshot], tr_bigkey"
+                    "@TR/Turtle Rock Back, [somaria], $bigKeys|tr_bigkey",
+                    "@TR/Turtle Rock Back, [hookshot], $bigKeys|tr_bigkey"
                 ],
                 "sections": [
                     {

@@ -239,7 +239,7 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "@Palace of Darkness/Dark Maze Bottom, bombs, pod_bigkey"
+                    "@Palace of Darkness/Dark Maze Bottom, bombs, $bigKeys|pod_bigkey"
                 ],
                 "sections": [
                     {
@@ -258,7 +258,7 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "@Palace of Darkness/Map Chest, hammer, pod_bigkey, [$darkRooms], [$smallKeys|pod_smallkey|6], $getBossRef|pod_boss, $enemizerCheck|bow"
+                    "@Palace of Darkness/Map Chest, hammer, $bigKeys|pod_bigkey, [$darkRooms], [$smallKeys|pod_smallkey|6], $getBossRef|pod_boss, $enemizerCheck|bow"
                 ],
                 "sections": [
                     {

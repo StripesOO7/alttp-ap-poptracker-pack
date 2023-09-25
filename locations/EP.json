@@ -78,7 +78,7 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "ep_bigkey"
+                    "$bigKeys|ep_bigkey"
                 ],
                 "sections": [
                     {
@@ -118,7 +118,7 @@
                 "name": "Dark Eyegore Key Drop",
                 "visibility_rules": ["key_drop_shuffle"],
                 "access_rules": [
-                    "ep_bigkey, [$darkRooms]"
+                    "$bigKeys|ep_bigkey, [$darkRooms]"
                 ],
                 "sections": [
                     {
@@ -137,7 +137,7 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "ep_bigkey, [$darkRooms], $getBossRef|ep_boss, $enemizerCheck|bow"
+                    "$bigKeys|ep_bigkey, [$darkRooms], $getBossRef|ep_boss, $enemizerCheck|bow"
                 ],
                 "sections": [
                     {

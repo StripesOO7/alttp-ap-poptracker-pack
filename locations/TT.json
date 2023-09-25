@@ -77,7 +77,7 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "tt_bigkey"
+            "$bigKeys|tt_bigkey"
         ],
         "parent": "TT",
         "children": [

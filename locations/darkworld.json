@@ -247,7 +247,7 @@
                     {
                         "name": "Purple Chest Return",
                         "access_rules": [
-                            "@Darkworld Left/Breadsmiths, titans",
+                            "$openOrStandard, @Darkworld Left, titans",
                             "inverted, @Lightworld, mirror"
                         ]
                     }
@@ -644,7 +644,7 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": [
-                            "[$darkRooms], [$smallKeys|pod_smallkey|5], [pod_bigkey]"
+                            "[$darkRooms], [$smallKeys|pod_smallkey|5], [$bigKeys|pod_bigkey]"
                         ],
                         // "hosted_item": "pod_map, pod_compass, pod_bigkey",
                         "clear_as_group": false,
@@ -654,7 +654,7 @@
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules": [
-                            "pod_bigkey, [$darkRooms], $getBossRef|pod_boss, hammer, bow"
+                            "$bigKeys|pod_bigkey, [$darkRooms], $getBossRef|pod_boss, hammer, bow"
                         ],
                         "item_count": 1,
                         "hosted_item": "pod_boss, palaceofdarkness"
@@ -736,7 +736,7 @@
                     {
                         "name": "Dungeon Chest",
                         "access_rules": [
-                            "[$smallKeys|tr_smallkey|3], [somaria], tr_bigkey"
+                            "[$smallKeys|tr_smallkey|3], [somaria], $bigKeys|tr_bigkey"
                         ],
                         "clear_as_group": false,
                         "item_count": 6
@@ -745,7 +745,7 @@
                         "name": "Boss Item",
                         "clear_as_group": false,
                         "access_rules": [
-                            "[$smallKeys|tr_smallkey|4], $darkRooms, $getBossRef|tr_boss, tr_bigkey, somaria"
+                            "[$smallKeys|tr_smallkey|4], $darkRooms, $getBossRef|tr_boss, $bigKeys|tr_bigkey, somaria"
                         ],
                         "item_count": 1
                         // "hosted_item": "tr_boss, turtlerock"
@@ -799,7 +799,7 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": [
-                            "[$smallKeys|sw_smallkey|1],[sw_bigkey]"
+                            "[$smallKeys|sw_smallkey|1],[$bigKeys|sw_bigkey]"
                         ],
                         // "hosted_item": "sw_map, sw_compass, sw_bigkey",
                         "clear_as_group": false,
@@ -884,7 +884,7 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": [
-                            "[firesource],[mm_bigkey]"
+                            "[firesource],[$bigKeys|mm_bigkey]"
                         ],
                         "clear_as_group": false,
                         "item_count": 7
@@ -902,7 +902,7 @@
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules": [
-                            "mm_bigkey, $getBossRef|mm_boss, [$darkRooms], somaria"
+                            "$bigKeys|mm_bigkey, $getBossRef|mm_boss, [$darkRooms], somaria"
                         ],
                         "item_count": 1,
                         "hosted_item": "mm_boss, miserymire"
@@ -940,8 +940,8 @@
                     {
                         "name": "Dungeon Chest",
                         "access_rules": [
-                            "[sp_bigkey], [hookshot], [$smallKeys|sp_smallkey|1],[hammer]",
-                            "[sp_bigkey], [hookshot], [$smallKeys|sp_smallkey|1], $checkGlitches|1"
+                            "[$bigKeys|sp_bigkey], [hookshot], [$smallKeys|sp_smallkey|1],[hammer]",
+                            "[$bigKeys|sp_bigkey], [hookshot], [$smallKeys|sp_smallkey|1], $checkGlitches|1"
                         ],
                         // "hosted_item": "sp_map, sp_compass, sp_bigkey",
                         "clear_as_group": false,
@@ -1001,7 +1001,7 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": [
-                            "[ip_bigkey], [$smallKeys|ip_smallkey|2], [glove]"//,
+                            "[$bigKeys|ip_bigkey], [$smallKeys|ip_smallkey|2], [glove]"//,
                             // "[ip_bigkey], [$smallKeys|ip_smallkey|1], [glove], somaria, $checkGlitches|1",
                             // "ip_bigkey, $smallKeys|ip_smallkey|1, glove, somaria, $checkGlitches|1"
                             //icebreaker? ja? nein?
@@ -1015,7 +1015,7 @@
                         "item_count": 4,
                         "clear_as_group": false,
                         "access_rules": [
-                            "[ip_bigkey], hammer, glove"
+                            "[$bigKeys|ip_bigkey], hammer, glove"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     },
@@ -1023,7 +1023,7 @@
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules": [
-                            "[ip_bigkey], $getBossRef|ip_boss, hammer, glove"
+                            "[$bigKeys|ip_bigkey], $getBossRef|ip_boss, hammer, glove"
                         ],
                         "item_count": 1,
                         "hosted_item": "ip_boss, icepalace"
@@ -1064,7 +1064,7 @@
                         "clear_as_group": false,
                         "item_count": 3,
                         "access_rules": [
-                            "tt_bigkey, [$smallKeys|tt_smallkey|1], [hammer]"
+                            "$bigKeys|tt_bigkey, [$smallKeys|tt_smallkey|1], [hammer]"
                         ]
                     },
                     {
@@ -1072,7 +1072,7 @@
                         "item_count": 2,
                         "clear_as_group": false,
                         "access_rules": [
-                            "tt_bigkey, [$smallKeys|tt_smallkey|1]"
+                            "$bigKeys|tt_bigkey, [$smallKeys|tt_smallkey|1]"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     },
@@ -1080,7 +1080,7 @@
                         "name": "Boss Item",
                         "clear_as_group": false,
                         "access_rules": [
-                            "tt_bigkey, $getBossRef|tt_boss"
+                            "$bigKeys|tt_bigkey, $getBossRef|tt_boss"
                         ],
                         "item_count": 1,
                         "hosted_item": "tt_boss, thievestown"
@@ -1139,8 +1139,8 @@
                         "name": "Big Chest + Ice refight",
                         "clear_as_group": false,
                         "access_rules": [
-                            "@GT/Ganon's Tower/Leftside, [gt_bigkey], [$getBossRef|gt_ice]",
-                            "@GT/Ganon's Tower/Rightside, [gt_bigkey], [$getBossRef|gt_ice]"
+                            "@GT/Ganon's Tower/Leftside, [$bigKeys|gt_bigkey], [$getBossRef|gt_ice]",
+                            "@GT/Ganon's Tower/Rightside, [$bigKeys|gt_bigkey], [$getBossRef|gt_ice]"
                         ],
                         "item_count": 5,
                         "hosted_item": "gt_ice"//, gt_bigkey"
@@ -1148,7 +1148,7 @@
                     {
                         "name": "GT Top + Lanmo refight",
                         "access_rules": [
-                            "gt_bigkey, [$smallKeys|gt_smallkey|1], $getBossRef|gt_lanmo"
+                            "$bigKeys|gt_bigkey, [$smallKeys|gt_smallkey|1], $getBossRef|gt_lanmo"
                         ],
                         "clear_as_group": false,
                         "item_count": 3,
@@ -1157,7 +1157,7 @@
                     {
                         "name": "GT Top Moldorm refight",
                         "access_rules": [
-                            "gt_bigkey, [$smallKeys|gt_smallkey|2], $getBossRef|gt_boss"
+                            "$bigKeys|gt_bigkey, [$smallKeys|gt_smallkey|2], $getBossRef|gt_boss"
                         ],
                         "clear_as_group": false,
                         "item_count": 1,
