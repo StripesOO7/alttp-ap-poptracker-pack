@@ -8,16 +8,28 @@ PopTracker v0.23.0 or higher is recommended.
 First version of an Archipelago compatible alttp-Tracker pack
 
 current working settings:
-    - changing starting options between "open", "inverted" and "standard"
+    - "open", "inverted" and "standard" starting-optoins are supported
     - tracking of Dungonbosses and if they are beatable
     - every check should get tracked
     - shop-sanity
     - basic logic and minor and overworld glitched logic
+    - pot_shuffle works, enemy_keydrop_shuffle should work but (WIP)
+
 
 
 not working: 
     - any glitched setting beyond overworld glitches
+    - "glitch-mode" as setting is not autotracked atm 
 
+
+in planning for future features:
+    - "major glitches"-logic
+    - entrance Randomizer logic
+    - maybe even Doors as day far in the future 
+    - "no logic"-logic
+
+
+only for AP below version 0.4.2:
 If you want to use Auto-Tracking for your Setttings add this to your alttp/\_\_init\_\_.py File within the "ALTTPWORLD"-class
 
 ```
@@ -37,5 +49,3 @@ def fill_slot_data(self):
 
     return slot_data
 ```
-
-Some of these settings are currently purely cosmetic or just for keeping track of minor settings
