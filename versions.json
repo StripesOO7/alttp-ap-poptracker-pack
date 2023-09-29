@@ -1,6 +1,24 @@
 {
 	"versions": [
 		{
+			"package_version": "0.0.6.9",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.0.6.1/alttp-ap-tracker-v0.0.6.1.zip",
+			"sha256": "f75d6941a6b751eca5ca8521e68463e655c07ac67e260be5c8900df96d25808d",
+			"changelog": [
+				"- nice",
+				"- logic fixed for Desert Palace Backentrance access",
+				"- corrected name of 'Magic Bat' check",
+				"- bunch of small changes to account for the duplicate smallkeys with and without _drop in the name",
+				"- removed the keydrop variants becuase got to work within one variant. only distinction again is the connection method",
+				"- layout change now works and changes when keydropshuffle is de-/actived",
+				"- fixed Spwam Palace Logic, Hammer was not considered needed in inverted glitchless setting",
+				
+				"- changed rules for purple chests access but not really tested.",
+
+				"-keydrop_shuffle should already work"
+			]
+		},
+		{
 			"package_version": "0.0.6.1",
 			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.0.6.1/alttp-ap-tracker-v0.0.6.1.zip",
 			"sha256": "f75d6941a6b751eca5ca8521e68463e655c07ac67e260be5c8900df96d25808d",
