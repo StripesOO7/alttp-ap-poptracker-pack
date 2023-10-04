@@ -73,36 +73,36 @@ function onClear(slot_data)
     for _, location_array in pairs(LOCATION_MAPPING) do
         for _, location in pairs(location_array) do
             if location then
-                local obj = Tracker:FindObjectForCode(location)
-                if obj then
+                local location_obj = Tracker:FindObjectForCode(location)
+                if location_obj then
                     if location:sub(1, 1) == "@" then
-                        obj.AvailableChestCount = obj.ChestCount
+                        location_obj.AvailableChestCount = location_obj.ChestCount
                     else
-                        obj.Active = false
+                        location_obj.Active = false
                     end
                 end
             end
         end
     end
     -- reset items
-    for _, v in pairs(ITEM_MAPPING) do
-        for _, w in pairs(v[1]) do
-            if w and v[2] then
-                local obj = Tracker:FindObjectForCode(w)
-                if obj then
-                    if v[2] == "toggle" then
-                        if w == "bombos" or w == "ether" or w == "quake" then
-                            obj.CurrentStage = 0
+    for _, item in pairs(ITEM_MAPPING) do
+        for _, item_code in pairs(item[1]) do
+            if item_code and item[2] then
+                local item_obj = Tracker:FindObjectForCode(item_code)
+                if item_obj then
+                    if item.Type == "toggle" then
+                        if item_code == "bombos" or item_code == "ether" or item_code == "quake" then
+                            item_obj.CurrentStage = 0
                         end
-                        obj.Active = false
-                    elseif v[2] == "progressive" then
-                        obj.CurrentStage = 0
-                        obj.Active = false
-                    elseif v[2] == "consumable" then
-                        if obj.MinCount then
-                            obj.AcquiredCount = obj.MinCount
+                        item_obj.Active = false
+                    elseif item.Type == "progressive" then
+                        item_obj.CurrentStage = 0
+                        item_obj.Active = false
+                    elseif item.Type == "consumable" then
+                        if item_obj.MinCount then
+                            item_obj.AcquiredCount = item_obj.MinCount
                         else
-                            obj.AcquiredCount = 0
+                            item_obj.AcquiredCount = 0
                         end
                     end
                 end
@@ -124,38 +124,38 @@ function onItem(index, item_id, item_name, player_number)
     end
     local is_local = player_number == Archipelago.PlayerNumber
     CUR_INDEX = index;
-    local v = ITEM_MAPPING[item_id]
-    if not v or not v[1] then
+    local item = ITEM_MAPPING[item_id]
+    if not item or not item[1] then
         --print(string.format("onItem: could not find item mapping for id %s", item_id))
         return
     end
-    for _, w in pairs(v[1]) do
+    for _, item_code in pairs(item[1]) do
         -- print(v[1], w)
-        local obj = Tracker:FindObjectForCode(w)
-        if obj then
-            if v[2] == "toggle" then
-                if ( SECONDSTAGE[item_id] and obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
-                    print(obj.CurrentStage, item_id)
-                    obj.CurrentStage = 2
-                elseif ( THIRDSTAGE[item_id] and obj.CurrentStage < 3 ) then -- tempered sword, red mail, mirror shield
-                    print(obj.CurrentStage, item_id)
-                    obj.CurrentStage = 3
-                elseif (item_id == 3  and obj.CurrentStage < 4) then
-                    print(obj.CurrentStage, item_id)
-                    obj.CurrentStage = 4
+        local item_obj = Tracker:FindObjectForCode(item_code)
+        if item_obj then
+            if item.Type == "toggle" then
+                if ( SECONDSTAGE[item_id] and item_obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
+                    print(item_obj.CurrentStage, item_id)
+                    item_obj.CurrentStage = 2
+                elseif ( THIRDSTAGE[item_id] and item_obj.CurrentStage < 3 ) then -- tempered sword, red mail, mirror shield
+                    print(item_obj.CurrentStage, item_id)
+                    item_obj.CurrentStage = 3
+                elseif (item_id == 3  and item_obj.CurrentStage < 4) then
+                    print(item_obj.CurrentStage, item_id)
+                    item_obj.CurrentStage = 4
                 end
-                obj.Active = true
-            elseif v[2] == "progressive" then
-                if obj.Active then
-                    obj.CurrentStage = obj.CurrentStage + 1
+                item_obj.Active = true
+            elseif item.Type == "progressive" then
+                if item_obj.Active then
+                    item_obj.CurrentStage = item_obj.CurrentStage + 1
                 else
-                    obj.Active = true
+                    item_obj.Active = true
                 end
-            elseif v[2] == "consumable" then
+            elseif item.Type == "consumable" then
                 if item_id == 82 or item_id == 84 then
-                    obj.AcquiredCount = obj.AcquiredCount + (2*obj.Increment)
+                    item_obj.AcquiredCount = item_obj.AcquiredCount + (2*item_obj.Increment)
                 else
-                    obj.AcquiredCount = obj.AcquiredCount + obj.Increment
+                    item_obj.AcquiredCount = item_obj.AcquiredCount + item_obj.Increment
                 end
             end
         else
@@ -175,20 +175,21 @@ function onLocation(location_id, location_name)
     end
     
     for _, location in pairs(location_array) do
-        local obj = Tracker:FindObjectForCode(location)
-        -- print(location, obj)
-        if obj then
+        local location_obj = Tracker:FindObjectForCode(location)
+        -- print(location, location_obj)
+        if location_obj then
 
             if location:sub(1, 1) == "@" then
-                obj.AvailableChestCount = obj.AvailableChestCount - 1
+                location_obj.AvailableChestCount = location_obj.AvailableChestCount - 1
             else
-                obj.Active = true
+                location_obj.Active = true
             end
             if location:sub(-9, -1) == "Key Drops" then
-                Tracker:FindObjectForCode(location:sub(2, 3).."_smallkey").AcquiredCount = Tracker:FindObjectForCode(location:sub(2, 3).."_smallkey").AcquiredCount + 1 
+                smallkey = Tracker:FindObjectForCode(location:sub(2, 3).."_smallkey")
+                smallkey.AcquiredCount = smallkey.AcquiredCount + 1 
             end
         else
-            print(string.format("onLocation: could not find object for code %s", location))
+            print(string.format("onLocation: could not find location_object for code %s", location))
         end
     end
     canFinish()
@@ -256,28 +257,34 @@ function autoFill()
     -- print(dump_table(SLOT_DATA))
     -- print(Tracker:FindObjectForCode("autofill_settings").Active)
     if Tracker:FindObjectForCode("autofill_settings").Active == true then
-        for k,v in pairs(SLOT_DATA) do
+        for settings_name , settings_value in pairs(SLOT_DATA) do
             -- print(k, v)
-            if k == "crystals_needed_for_gt" or k == "crystals_needed_for_ganon" or k == "triforce_pieces_required" then
-                Tracker:FindObjectForCode(slotCodes[k].code).AcquiredCount = v
-            elseif k == "shop_shuffle" then
-                if v ~= "none" then
-                    Tracker:FindObjectForCode(slotCodes[k].code).Active = true
-                elseif v == "none" then
-                    Tracker:FindObjectForCode(slotCodes[k].code).Active = false
+            if settings_name == "crystals_needed_for_gt" 
+            or settings_name == "crystals_needed_for_ganon" 
+            or settings_name == "triforce_pieces_required" then
+                Tracker:FindObjectForCode(slotCodes[settings_name].code).AcquiredCount = settings_value
+            elseif settings_name == "shop_shuffle" then
+                item = Tracker:FindObjectForCode(slotCodes[settings_name].code)
+                if settings_value ~= "none" then
+                    item.Active = true
+                elseif settings_value == "none" then
+                    item.Active = false
                 end
-            elseif k == "mm_medalion" then
-                mm_medal = Tracker:FindObjectForCode(mapMedalion[v]).CurrentStage
-                Tracker:FindObjectForCode(mapMedalion[v]).CurrentStage = mm_medal + 2
-            elseif k == "tr_medalion" then
-                tr_medal = Tracker:FindObjectForCode(mapMedalion[v]).CurrentStage
-                Tracker:FindObjectForCode(mapMedalion[v]).CurrentStage = tr_medal + 1
-            elseif slotCodes[k] then
-                if Tracker:FindObjectForCode(slotCodes[k].code).Type == "toggle" then
-                    Tracker:FindObjectForCode(slotCodes[k].code).Active = slotCodes[k].mapping[v]
+            elseif settings_name == "shop_slots" then
+                Tracker.FindObjectForCode("shop_shuffle").AcquiredCount = settings_value 
+            elseif settings_name == "mm_medalion" then
+                mm_medal = Tracker:FindObjectForCode(mapMedalion[settings_value])
+                mm_medal.CurrentStage = mm_medal.CurrentStage + 2
+            elseif settings_name == "tr_medalion" then
+                tr_medal = Tracker:FindObjectForCode(mapMedalion[settings_value])
+                tr_medal.CurrentStage = tr_medal.CurrentStage + 1
+            elseif slotCodes[settings_name] then
+                item = Tracker:FindObjectForCode(slotCodes[settings_name].code)
+                if item.Type == "toggle" then
+                    item.Active = slotCodes[settings_name].mapping[settings_value]
                 else 
                     -- print(k,v,Tracker:FindObjectForCode(slotCodes[k].code).CurrentStage, slotCodes[k].mapping[v])
-                    Tracker:FindObjectForCode(slotCodes[k].code).CurrentStage = slotCodes[k].mapping[v]
+                    item.CurrentStage = slotCodes[settings_name].mapping[settings_value]
                 end
             end
         end
