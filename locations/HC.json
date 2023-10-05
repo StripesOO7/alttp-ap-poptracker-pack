@@ -25,6 +25,10 @@
             },
             {
                 "name": "Boomerang Chest",
+                "access_rules": [
+                    "$smallKeys|hc_smallkey|0|1, [$smallKeys|hc_smallkey|0|3]",
+                    "standard"
+                ],
                 "sections": [
                     {
                         "name": "Boomerang Chest"
@@ -41,6 +45,10 @@
             },
             {
                 "name": "Zelda's Chest",
+                "access_rules": [
+                    "$bigKeys|hc_bigkey, $smallKeys|hc_smallkey|0|2, [$smallKeys|hc_smallkey|0|4]",
+                    "standard"
+                ],
                 "sections": [
                     {
                         "name": "Zelda's Chest"
@@ -74,6 +82,10 @@
             },
             {
                 "name": "Boomerang Guard Key Drop",
+                "access_rules": [
+                    "$smallKeys|hc_smallkey|0|1, [$smallKeys|hc_smallkey|0|3]",
+                    "standard"
+                ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {
@@ -91,6 +103,9 @@
             },
             {
                 "name": "Big Key Drop",
+                "access_rules": [
+                    "$smallKeys|hc_smallkey|0|2, [$smallKeys|hc_smallkey|0|4]",
+                    "standard"],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {
@@ -197,8 +212,8 @@
                 "name": "Key Rat Key Drop",
                 "visibility_rules": ["key_drop_shuffle"],
                 "access_rules": [
-                    "[$darkRooms]",
-                    "[$darkRooms], glove, $smallKeys|hc_smallkey|1",
+                    "[$darkRooms], $smallKeys|hc_smallkey|1|1, [$smallKeys|hc_smallkey|1|3]",
+                    "[$darkRooms], glove, $smallKeys|hc_smallkey|1|1, [$smallKeys|hc_smallkey|1|3]",
                     "standard"
                 ],
                 "sections": [

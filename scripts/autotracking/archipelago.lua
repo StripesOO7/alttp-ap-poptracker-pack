@@ -95,6 +95,9 @@ function onClear(slot_data)
                             item_obj.CurrentStage = 0
                         end
                         item_obj.Active = false
+                        if item_obj == "shop_shuffle" then
+                            item_obj.AcquiredCount = 0
+                        end
                     elseif item.Type == "progressive" then
                         item_obj.CurrentStage = 0
                         item_obj.Active = false

@@ -30,7 +30,7 @@
             {
                 "name": "Dark Archer Key Drop",
                 "access_rules": [
-                    "[$darkRooms], $smallKeys|at_smallkey|1"
+                    "[$darkRooms], $smallKeys|at_smallkey|1|1"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
@@ -50,7 +50,7 @@
             {
                 "name": "Maze Chest",
                 "access_rules": [
-                    "[$darkRooms], $smallKeys|at_smallkey|1"
+                    "[$darkRooms], $smallKeys|at_smallkey|1|1"
                 ],
                 "sections": [
                     {
@@ -69,7 +69,7 @@
             {
                 "name": "Circle of Pots Key Drop",
                 "access_rules": [
-                    "[$darkRooms], $smallKeys|at_smallkey|2"
+                    "[$darkRooms], $smallKeys|at_smallkey|2|3"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
@@ -89,7 +89,7 @@
             {
                 "name": "Agahnim 1",
                 "access_rules": [
-                    "[$darkRooms], $smallKeys|at_smallkey|2, $canRemoveCurtains"
+                    "[$darkRooms], $smallKeys|at_smallkey|2|4, $canRemoveCurtains"
                 ],
                 "sections": [
                     {

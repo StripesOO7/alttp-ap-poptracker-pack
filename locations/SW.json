@@ -57,6 +57,9 @@
             },
             {
                 "name": "Map Chest",
+                "access_rules": [
+                    "$smallKeys|sw_smallkey|0|0"
+                ],
                 "sections": [
                     {
                         "name": "Map Chest"
@@ -152,7 +155,7 @@
             {
                 "name": "Spike Corner Key Drop",
                 "access_rules": [
-                    "firesource, $canRemoveCurtains"
+                    "firesource, $canRemoveCurtains, $smallKeys|sw_smallkey|1|1"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
@@ -176,7 +179,7 @@
                     {
                         "name": "Boss Item",
                         "access_rules": [
-                            "$getBossRef|sw_boss, firesource, $canRemoveCurtains"
+                            "$getBossRef|sw_boss, firesource, $canRemoveCurtains, $smallKeys|sw_smallkey|2|2"
                         ],
                         "item_count": 1,
                         "hosted_item": "sw_boss, skullwoods"

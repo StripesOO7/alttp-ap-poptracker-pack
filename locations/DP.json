@@ -88,8 +88,8 @@
                     {
                         "name": "Compass Chest",
                         "access_rules": [
-                            "@DP Back/Desert Palace Back, [$smallKeys|dp_smallkey|1]",
-                            "$smallKeys|dp_smallkey|1"
+                            "@DP Back/Desert Palace Back, $smallKeys|dp_smallkey|1|4",
+                            "$smallKeys|dp_smallkey|1|1"
                         ]
                     }
                 ],
@@ -115,7 +115,7 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "firesource, [$smallKeys|dp_smallkey|1], $bigKeys|dp_bigkey, $getBossRef|dp_boss"
+                    "firesource, $smallKeys|dp_smallkey|0|3, [$smallKeys|dp_smallkey|1|4], $bigKeys|dp_bigkey, $getBossRef|dp_boss"
                 ],
                 "sections": [
                     {
@@ -152,6 +152,9 @@
             },
             {
                 "name": "Beamos Hall Pot Key",
+                "access_rules": [
+                    "$smallKeys|dp_smallkey|0|2"
+                ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {
@@ -169,6 +172,9 @@
             },
             {
                 "name": "Desert Tiles 2 Pot Key",
+                "access_rules": [
+                    "$smallKeys|dp_smallkey|0|3"
+                ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {

@@ -26,7 +26,7 @@
             {
                 "name": "Map Chest",
                 "access_rules": [
-                    "$smallKeys|sp_smallkey|1"
+                    "$smallKeys|sp_smallkey|1|1"
                 ],
                 "sections": [
                     {
@@ -46,7 +46,7 @@
                 "name": "Pot Row Pot Key",
                 "visibility_rules": ["key_drop_shuffle"],
                 "access_rules": [
-                    "$smallKeys|sp_smallkey|1"
+                    "$smallKeys|sp_smallkey|1|1"
                 ],
                 "sections": [
                     {
@@ -66,7 +66,7 @@
                 "name": "Trench 1 Pot Key",
                 "visibility_rules": ["key_drop_shuffle"],
                 "access_rules": [
-                    "$smallKeys|sp_smallkey|1"
+                    "$smallKeys|sp_smallkey|1|2"
                 ],
                 "sections": [
                     {
@@ -85,8 +85,8 @@
             {
                 "name": "Big Key Chest",
                 "access_rules": [
-                    "$smallKeys|sp_smallkey|1, hammer",
-                    "$checkGlitches|1, $smallKeys|sp_smallkey|1"
+                    "$smallKeys|sp_smallkey|1|4, hammer",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1|3"
                 ],
                 "sections": [
                     {
@@ -106,8 +106,8 @@
                 "name": "Hookshot Pot Key",
                 "visibility_rules": ["key_drop_shuffle"],
                 "access_rules": [
-                    "$smallKeys|sp_smallkey|1, hammer, hookshot",
-                    "$checkGlitches|1, $smallKeys|sp_smallkey|1, hookshot"
+                    "$smallKeys|sp_smallkey|1|3, hammer, hookshot",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1|2, hookshot"
                 ],
                 "sections": [
                     {
@@ -127,8 +127,8 @@
                 "name": "Trench 2 Pot Key",
                 "visibility_rules": ["key_drop_shuffle"],
                 "access_rules": [
-                    "$smallKeys|sp_smallkey|1, hammer",
-                    "$checkGlitches|1, $smallKeys|sp_smallkey|1"
+                    "$smallKeys|sp_smallkey|1|3, hammer",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1|2"
                 ],
                 "sections": [
                     {
@@ -147,8 +147,8 @@
             {
                 "name": "West Chest",
                 "access_rules": [
-                    "$smallKeys|sp_smallkey|1, hammer",
-                    "$checkGlitches|1, $smallKeys|sp_smallkey|1"
+                    "$smallKeys|sp_smallkey|1|4, hammer",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1|3"
                 ],
                 "sections": [
                     {
@@ -167,8 +167,8 @@
             {
                 "name": "Compass Chest",
                 "access_rules": [
-                    "$smallKeys|sp_smallkey|1, hammer",
-                    "$checkGlitches|1, $smallKeys|sp_smallkey|1"
+                    "$smallKeys|sp_smallkey|1|3, hammer",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1|2"
                 ],
                 "sections": [
                     {
@@ -187,8 +187,8 @@
             {
                 "name": "Flooded Room Left",
                 "access_rules": [
-                    "$smallKeys|sp_smallkey|1, hammer, hookshot",
-                    "$checkGlitches|1, $smallKeys|sp_smallkey|1, hookshot"
+                    "$smallKeys|sp_smallkey|1|4, [$smallKeys|sp_smallkey|1|5], hammer, hookshot",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1|3, [$smallKeys|sp_smallkey|1|4], hookshot"
                 ],
                 "sections": [
                     {
@@ -207,8 +207,8 @@
             {
                 "name": "Flooded Room Right",
                 "access_rules": [
-                    "$smallKeys|sp_smallkey|1, hammer, hookshot",
-                    "$checkGlitches|1, $smallKeys|sp_smallkey|1, hookshot"
+                    "$smallKeys|sp_smallkey|1|4, [$smallKeys|sp_smallkey|1|5], hammer, hookshot",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1|3, [$smallKeys|sp_smallkey|1|4], hookshot"
                 ],
                 "sections": [
                     {
@@ -227,8 +227,8 @@
             {
                 "name": "Waterfall Room",
                 "access_rules": [
-                    "$smallKeys|sp_smallkey|1, hammer, hookshot",
-                    "$checkGlitches|1, $smallKeys|sp_smallkey|1, hookshot"
+                    "$smallKeys|sp_smallkey|1|4, [$smallKeys|sp_smallkey|1|5], hammer, hookshot",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1|3, [$smallKeys|sp_smallkey|1|4], hookshot"
                 ],
                 "sections": [
                     {
@@ -248,8 +248,8 @@
                 "name": "Waterway Pot Key",
                 "visibility_rules": ["key_drop_shuffle"],
                 "access_rules": [
-                    "$smallKeys|sp_smallkey|1, hammer, hookshot",
-                    "$checkGlitches|1, $smallKeys|sp_smallkey|1, hookshot"
+                    "$smallKeys|sp_smallkey|1|4, [$smallKeys|sp_smallkey|1|5], hammer, hookshot",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1|3, [$smallKeys|sp_smallkey|1|4], hookshot"
                 ],
                 "sections": [
                     {
@@ -268,8 +268,8 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "$smallKeys|sp_smallkey|1, hammer, $bigKeys|sp_bigkey",
-                    "$checkGlitches|1, $smallKeys|sp_smallkey|1, $bigKeys|sp_bigkey"
+                    "$smallKeys|sp_smallkey|1|3, hammer, $bigKeys|sp_bigkey",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1|2, $bigKeys|sp_bigkey"
                 ],
                 "sections": [
                     {
@@ -288,8 +288,8 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "$smallKeys|sp_smallkey|1, hammer, hookshot, $getBossRef|sp_boss",
-                    "$checkGlitches|1, $smallKeys|sp_smallkey|1, $getBossRef|sp_boss, hookshot"
+                    "$smallKeys|sp_smallkey|1|4, [$smallKeys|sp_smallkey|1|5], hammer, hookshot, $getBossRef|sp_boss",
+                    "$checkGlitches|1, $smallKeys|sp_smallkey|1|4, [$smallKeys|sp_smallkey|1|6], $getBossRef|sp_boss, hookshot"
                 ],
                 "sections": [
                     {

@@ -59,7 +59,7 @@
             {
                 "name": "Big Key Chest",
                 "access_rules": [
-                    "[$darkRooms]"
+                    "[$darkRooms], $smallKeys|ep_smallkey|0|1, [$smallKeys|ep_smallkey|0|2]"
                 ],
                 "sections": [
                     {
@@ -137,7 +137,7 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "$bigKeys|ep_bigkey, [$darkRooms], $getBossRef|ep_boss, $enemizerCheck|bow"
+                    "$bigKeys|ep_bigkey, [$darkRooms], $getBossRef|ep_boss, $enemizerCheck|bow, $smallKeys|ep_smallkey|0|1, [$smallKeys|ep_smallkey|0|2]"
                 ],
                 "sections": [
                     {
