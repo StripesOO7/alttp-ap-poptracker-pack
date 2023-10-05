@@ -100,12 +100,18 @@ function canSwim() --fake flippers
     end
 end
 
-function smallKeys(dungeon, count)
-    if Tracker:FindObjectForCode(dungeon).AcquiredCount >= tonumber(count) then
-        return true
+function smallKeys(dungeon, count, keydrop_count)
+    local result = false
+    if Tracker:FindObjectForCode("key_drop_shuffle").Active then
+        if Tracker:FindObjectForCode(dungeon.."_drop").AcquiredCount >= tonumber(keydrop_count) then
+            result = true
+        end
     else
-        return false
+        if Tracker:FindObjectForCode(dungeon).AcquiredCount >= tonumber(count) then
+            result = true
+        end
     end
+    return result
 end
 
 function bigKeys(key)
