@@ -1022,7 +1022,9 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": [
-                            "[$bigKeys|ip_bigkey], [$smallKeys|ip_smallkey|2], [glove]"//,
+                            "[$bigKeys|ip_bigkey], $smallKeys|ip_smallkey|1|4, [$smallKeys|ip_smallkey|2|5], [hammer], [glove]", //vanilla
+                            "[$bigKeys|ip_bigkey], $smallKeys|ip_smallkey|0|3, $checkGlitches|1, [$smallKeys|ip_smallkey|1|4], [hammer], [glove]", // IP bomb jump
+                            "[$bigKeys|ip_bigkey], $smallKeys|ip_smallkey|0|3, $checkGlitches|2, somaria, [$smallKeys|ip_smallkey|1|4], [hammer], [glove]" // Icebreaker
                             // "[ip_bigkey], [$smallKeys|ip_smallkey|1], [glove], somaria, $checkGlitches|1",
                             // "ip_bigkey, $smallKeys|ip_smallkey|1, glove, somaria, $checkGlitches|1"
                             //icebreaker? ja? nein?
@@ -1036,7 +1038,9 @@
                         "item_count": 4,
                         "clear_as_group": false,
                         "access_rules": [
-                            "[$bigKeys|ip_bigkey], hammer, glove"
+                            "[$bigKeys|ip_bigkey], $smallKeys|ip_smallkey|1|4, [$smallKeys|ip_smallkey|2|5], [hammer], [glove]", //vanilla
+                            "$smallKeys|ip_smallkey|0|2, $checkGlitches|1, [$smallKeys|ip_smallkey|1|3], [hammer], [glove]", // IP bomb jump
+                            "$smallKeys|ip_smallkey|0|3, $checkGlitches|2, somaria, [$smallKeys|ip_smallkey|1|4], [hammer], [glove]" // Icebreaker
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     },
@@ -1044,7 +1048,10 @@
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules": [
-                            "[$bigKeys|ip_bigkey], $getBossRef|ip_boss, hammer, glove"
+                            "[$bigKeys|ip_bigkey], $smallKeys|ip_smallkey|1|4, [$smallKeys|ip_smallkey|2|5], [hammer], [glove]", //vanilla
+                            "$smallKeys|ip_smallkey|0|3, $checkGlitches|1, [$smallKeys|ip_smallkey|1|4], [hammer], [glove]", // IP bomb jump
+                            "$smallKeys|ip_smallkey|0|3, $checkGlitches|2, somaria, [$smallKeys|ip_smallkey|1|4], [hammer], [glove]" // Icebreaker
+                            //maybe add hookpush then no hammer but hookshot needed for kholdstare room
                         ],
                         "item_count": 1,
                         "hosted_item": "ip_boss, icepalace"
