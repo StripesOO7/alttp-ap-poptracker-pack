@@ -172,7 +172,8 @@
                 "name": "Iced T Room",
                 "access_rules": [
                     "$smallKeys|ip_smallkey|0|2, [$smallKeys|ip_smallkey|1|4]",
-                    "$smallKeys|ip_smallkey|1|2, [$smallKeys|ip_smallkey|1|4], somaria, $checkGlitches|2, hammer, gloves"
+                    "$smallKeys|ip_smallkey|1|2, [$smallKeys|ip_smallkey|1|4], somaria, $checkGlitches|2",
+                    "$smallKeys|ip_smallkey|0|2, [$smallKeys|ip_smallkey|0|4], somaria, $checkGlitches|2, hammer, glove"
                 ],
                 "sections": [
                     {
@@ -192,7 +193,8 @@
                 "name": "Big Key Chest",
                 "access_rules": [
                     "$smallKeys|ip_smallkey|0|3, [$smallKeys|ip_smallkey|1|4], hookshot",
-                    "$smallKeys|ip_smallkey|0|1, [$smallKeys|ip_smallkey|1|2], somaria, $checkGlitches|2"
+                    "$smallKeys|ip_smallkey|0|1, [$smallKeys|ip_smallkey|1|2], somaria, $checkGlitches|2",
+                    "$smallKeys|ip_smallkey|0|1, [$smallKeys|ip_smallkey|0|2], somaria, $checkGlitches|2, hammer, glove"
                 ],
                 "sections": [
                     {
@@ -212,7 +214,8 @@
                 "name": "Big Chest",
                 "access_rules": [
                     "$bigKeys|ip_bigkey, $smallKeys|ip_smallkey|0|2, [$smallKeys|ip_smallkey|2|4]",
-                    "$bigKeys|ip_bigkey, $smallKeys|ip_smallkey|1|2, [$smallKeys|ip_smallkey|2|4], somaria, $checkGlitches|2"
+                    "$bigKeys|ip_bigkey, $smallKeys|ip_smallkey|1|2, [$smallKeys|ip_smallkey|2|4], somaria, $checkGlitches|2",
+                    "$bigKeys|ip_bigkey, $smallKeys|ip_smallkey|0|2, [$smallKeys|ip_smallkey|0|4], somaria, $checkGlitches|2, hammer, glove"
                 ],
                 "sections": [
                     {
@@ -231,10 +234,10 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "$smallKeys|ip_smallkey|0|4, [$smallKeys|ip_smallkey|2|5], hookshot, $bigKeys|ip_bigkey, hammer, gloves",
-                    "$smallKeys|ip_smallkey|1|2, [$smallKeys|ip_smallkey|2|3], bombs, $checkGlitches|1, hammer, gloves", // bomb jump
-                    "$smallKeys|ip_smallkey|1|2, [$smallKeys|ip_smallkey|2|3], bombs, $checkGlitches|1, hookshot, gloves", //hookpush
-                    "$smallKeys|ip_smallkey|1|2, [$smallKeys|ip_smallkey|2|3], somaria, $checkGlitches|2, hammer, gloves" //icebreaker
+                    "$smallKeys|ip_smallkey|0|4, [$smallKeys|ip_smallkey|2|5], hookshot, $bigKeys|ip_bigkey, hammer, glove",
+                    "$smallKeys|ip_smallkey|1|2, [$smallKeys|ip_smallkey|2|3], bombs, $checkGlitches|1, hammer, glove", // bomb jump
+                    "$smallKeys|ip_smallkey|1|2, [$smallKeys|ip_smallkey|2|3], bombs, $checkGlitches|1, hookshot, glove", //hookpush
+                    "$smallKeys|ip_smallkey|1|2, [$smallKeys|ip_smallkey|2|3], somaria, $checkGlitches|2, hammer, glove" //icebreaker
                 ],
                 "sections": [
                     {
