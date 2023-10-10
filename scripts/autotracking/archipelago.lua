@@ -136,7 +136,7 @@ function onItem(index, item_id, item_name, player_number)
         -- print(v[1], w)
         local item_obj = Tracker:FindObjectForCode(item_code)
         if item_obj then
-            if item.Type == "toggle" then
+            if item[2] == "toggle" then
                 if ( SECONDSTAGE[item_id] and item_obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
                     print(item_obj.CurrentStage, item_id)
                     item_obj.CurrentStage = 2
@@ -148,13 +148,13 @@ function onItem(index, item_id, item_name, player_number)
                     item_obj.CurrentStage = 4
                 end
                 item_obj.Active = true
-            elseif item.Type == "progressive" then
+            elseif item[2] == "progressive" then
                 if item_obj.Active then
                     item_obj.CurrentStage = item_obj.CurrentStage + 1
                 else
                     item_obj.Active = true
                 end
-            elseif item.Type == "consumable" then
+            elseif item[2] == "consumable" then
                 if item_id == 82 or item_id == 84 then
                     item_obj.AcquiredCount = item_obj.AcquiredCount + (2*item_obj.Increment)
                 else
@@ -162,7 +162,7 @@ function onItem(index, item_id, item_name, player_number)
                 end
             end
         else
-            print(string.format("onItem: could not find object for code %s", w[1]))
+            print(string.format("onItem: could not find object for code %s", item_code[1]))
         end
     end
     canFinish()
@@ -254,7 +254,7 @@ function autoFill()
         boss_shuffle={code="boss_shuffle", mapping=mapBosses},
         enemy_shuffle={code="enemizer", mapping=mapEnemizer},
         shop_shuffle={code="shop_sanity", mapping=nil},
-                triforce_pieces_required={code="triforce_pieces_needed", mapping=nil}
+        triforce_pieces_required={code="triforce_pieces_needed", mapping=nil}
         -- glitch_boots={code="glitches", mapping=nil}
     }
     -- print(dump_table(SLOT_DATA))
@@ -274,7 +274,6 @@ function autoFill()
                     item.Active = false
                 end
             elseif settings_name == "shop_item_slots" then
-                print(settings_value)
                 Tracker:FindObjectForCode("shop_sanity").AcquiredCount = settings_value 
             elseif settings_name == "mm_medalion" then
                 mm_medal = Tracker:FindObjectForCode(mapMedalion[settings_value])
