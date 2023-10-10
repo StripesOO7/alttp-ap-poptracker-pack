@@ -133,10 +133,10 @@ function onItem(index, item_id, item_name, player_number)
         return
     end
     for _, item_code in pairs(item[1]) do
-        -- print(v[1], w)
+        -- print(item[1], item[2])
         local item_obj = Tracker:FindObjectForCode(item_code)
         if item_obj then
-            if item[2] == "toggle" then
+            if item_obj.Type == "toggle" then
                 if ( SECONDSTAGE[item_id] and item_obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
                     print(item_obj.CurrentStage, item_id)
                     item_obj.CurrentStage = 2
@@ -148,13 +148,13 @@ function onItem(index, item_id, item_name, player_number)
                     item_obj.CurrentStage = 4
                 end
                 item_obj.Active = true
-            elseif item[2] == "progressive" then
+            elseif item_obj.Type == "progressive" then
                 if item_obj.Active then
                     item_obj.CurrentStage = item_obj.CurrentStage + 1
                 else
                     item_obj.Active = true
                 end
-            elseif item[2] == "consumable" then
+            elseif item_obj.Type == "consumable" then
                 if item_id == 82 or item_id == 84 then
                     item_obj.AcquiredCount = item_obj.AcquiredCount + (2*item_obj.Increment)
                 else
