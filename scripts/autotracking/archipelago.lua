@@ -254,7 +254,7 @@ function autoFill()
         boss_shuffle={code="boss_shuffle", mapping=mapBosses},
         enemy_shuffle={code="enemizer", mapping=mapEnemizer},
         shop_shuffle={code="shop_sanity", mapping=nil},
-        triforce_pieces_required={code="triforce_pieces_needed", mapping=nil}
+                triforce_pieces_required={code="triforce_pieces_needed", mapping=nil}
         -- glitch_boots={code="glitches", mapping=nil}
     }
     -- print(dump_table(SLOT_DATA))
@@ -273,8 +273,9 @@ function autoFill()
                 elseif settings_value == "none" then
                     item.Active = false
                 end
-            elseif settings_name == "shop_slots" then
-                Tracker.FindObjectForCode("shop_shuffle").AcquiredCount = settings_value 
+            elseif settings_name == "shop_item_slots" then
+                print(settings_value)
+                Tracker:FindObjectForCode("shop_sanity").AcquiredCount = settings_value 
             elseif settings_name == "mm_medalion" then
                 mm_medal = Tracker:FindObjectForCode(mapMedalion[settings_value])
                 mm_medal.CurrentStage = mm_medal.CurrentStage + 2
