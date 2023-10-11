@@ -90,7 +90,7 @@ function onClear(slot_data)
             if item_code and item[2] then
                 local item_obj = Tracker:FindObjectForCode(item_code)
                 if item_obj then
-                    if item.Type == "toggle" then
+                    if item_obj.Type == "toggle" then
                         if item_code == "bombos" or item_code == "ether" or item_code == "quake" then
                             item_obj.CurrentStage = 0
                         end
@@ -98,10 +98,10 @@ function onClear(slot_data)
                         if item_obj == "shop_shuffle" then
                             item_obj.AcquiredCount = 0
                         end
-                    elseif item.Type == "progressive" then
+                    elseif item_obj.Type == "progressive" then
                         item_obj.CurrentStage = 0
                         item_obj.Active = false
-                    elseif item.Type == "consumable" then
+                    elseif item_obj.Type == "consumable" then
                         if item_obj.MinCount then
                             item_obj.AcquiredCount = item_obj.MinCount
                         else
