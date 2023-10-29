@@ -621,7 +621,27 @@
                 "visibility_rules": ["inverted"],
                 "item_count": 1,
                 "sections": [
-                    {}
+                    {
+                        "name": "Dungeon Chest",
+                        "access_rules": [
+                            "TR/Turtle Rock Front, [$smallKeys|tr_smallkey|3|5], [$darkRooms], [somaria], $bigKeys|tr_bigkey",
+                            "TR/Turtle Rock Back, [$smallKeys|tr_smallkey|2|2], [$darkRooms], [somaria], $bigKeys|tr_bigkey",
+                            "TR/Turtle Rock Eyebridge Entrance, [$smallKeys|tr_smallkey|1|1], [$darkRooms], [somaria], $bigKeys|tr_bigkey"
+                        ],
+                        "clear_as_group": false,
+                        "item_count": 6
+                    },
+                    {
+                        "name": "Boss Item",
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "TR/Turtle Rock Front, [$smallKeys|tr_smallkey|4|6], $darkRooms, $getBossRef|tr_boss, $bigKeys|tr_bigkey, somaria",
+                            "TR/Turtle Rock Back, [$smallKeys|tr_smallkey|2|2], $darkRooms, $getBossRef|tr_boss, $bigKeys|tr_bigkey, somaria",
+                            "TR/Turtle Rock Eyebridge Entrance, [$smallKeys|tr_smallkey|1|1], $darkRooms, $getBossRef|tr_boss, $bigKeys|tr_bigkey, somaria"
+                        ],
+                        "item_count": 1
+                        // "hosted_item": "tr_boss, turtlerock"
+                    }
                 ]
             },
             {

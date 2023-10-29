@@ -1,12 +1,12 @@
 [
     {
-        "name": "HC_Main_entrance",
+        "name": "AT_inverted_entrance",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "children": [
             {
                 "name": "Ganon's Tower",
-                "parent": "HC Main/Ganon's Tower",
+                "parent": "AT-inverted/Ganon's Tower",
                 "sections": [
                     {
                         "name": "Leftside",
@@ -74,9 +74,9 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "Lightworld",
-                        "x": 1000,
-                        "y": 885,
+                        "map": "Darkworld",
+                        "x": 1130,
+                        "y": 35,
                         "size": 44
                     }
                 ]
@@ -88,7 +88,7 @@
                     "@Light Death Mountain Right, hammer",
                     "@Light Death Mountain Left Bottom, $checkGlitches|2, boots"
                 ],
-                "parent": "HC Main/Tower of Hera",
+                "parent": "AT-inverted/Tower of Hera",
                 "item_count": 7,
                 "sections": [
                     {
@@ -123,9 +123,9 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "Lightworld",
-                        "x": 1000,
-                        "y": 885,
+                        "map": "Darkworld",
+                        "x": 1130,
+                        "y": 35,
                         "size": 44
                     }
                 ]
@@ -133,7 +133,7 @@
             {
                 "name": "Castle Escape",
                 "item_count": 1,
-                "parent": "HC Main/Castle Escape",
+                "parent": "AT-inverted/Castle Escape",
                 "sections": [
                     {
                         "name": "Dark Cross",
@@ -168,16 +168,16 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "Lightworld",
-                        "x": 1000,
-                        "y": 885,
+                        "map": "Darkworld",
+                        "x": 1130,
+                        "y": 35,
                         "size": 44
                     }
                 ]
             },
             {
                 "name": "Sanctuary",
-                "parent": "HC Main/Sanctuary",
+                "parent": "AT-inverted/Sanctuary",
                 "item_count": 1,
                 "access_rules": [
                     "standard, @CE/Castle Escape/Dark Cross",
@@ -191,16 +191,16 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "Lightworld",
-                        "x": 1000,
-                        "y": 885,
+                        "map": "Darkworld",
+                        "x": 1130,
+                        "y": 35,
                         "size": 44
                     }
                 ]
             },
             {
                 "name": "Hyrule Castle",
-                "parent": "HC Main/Hyrule Castle",
+                "parent": "AT-inverted/Hyrule Castle",
                 "item_count": 3,
                 "sections": [
                     {
@@ -232,16 +232,16 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "Lightworld",
-                        "x": 1000,
-                        "y": 885,
+                        "map": "Darkworld",
+                        "x": 1130,
+                        "y": 35,
                         "size": 44
                     }
                 ]
             },
             {
                 "name": "Agahnim's Tower",
-                "parent": "HC Main/Agahnim's Tower",
+                "parent": "AT-inverted/Agahnim's Tower",
                 "item_count": 3,
                 "access_rules": [
                     "$canClearAgaTowerBarrier",
@@ -277,16 +277,16 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "Lightworld",
-                        "x": 1000,
-                        "y": 885,
+                        "map": "Darkworld",
+                        "x": 1130,
+                        "y": 35,
                         "size": 44
                     }
                 ]
             },
             {
                 "name": "Eastern Palace",
-                "parent": "HC Main/Eastern Palace",
+                "parent": "AT-inverted/Eastern Palace",
                 "item_count": 7,
                 "sections": [
                     {
@@ -319,16 +319,16 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "Lightworld",
-                        "x": 1000,
-                        "y": 885,
+                        "map": "Darkworld",
+                        "x": 1130,
+                        "y": 35,
                         "size": 44
                     }
                 ]
             },
             {
                 "name": "Desert Palace Back",
-                "parent": "HC Main/Desert Palace Back",
+                "parent": "AT-inverted/Desert Palace Back",
                 "access_rules": [
                     "@DP/Desert Palace, glove",
                     "$openOrStandard, @Darkworld Swamp, mirror",
@@ -355,16 +355,16 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "Lightworld",
-                        "x": 1000,
-                        "y": 885,
+                        "map": "Darkworld",
+                        "x": 1130,
+                        "y": 35,
                         "size": 44
                     }
                 ]
             },
             {
                 "name": "Desert Palace",
-                "parent": "HC Main/Desert Palace",
+                "parent": "AT-inverted/Desert Palace",
                 "access_rules": [
                     "book",
                     "$openOrStandard, @Darkworld Swamp, mirror",
@@ -385,16 +385,16 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "Lightworld",
-                        "x": 1000,
-                        "y": 885,
+                        "map": "Darkworld",
+                        "x": 1130,
+                        "y": 35,
                         "size": 44
                     }
                 ]
             },
             {
                 "name": "Thieves Town",
-                "parent": "HC Main/Thieves Town",
+                "parent": "AT-inverted/Thieves Town",
                 "item_count": 8,
                 "sections": [
                     { 
@@ -437,16 +437,16 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "Lightworld",
-                        "x": 1000,
-                        "y": 885,
+                        "map": "Darkworld",
+                        "x": 1130,
+                        "y": 35,
                         "size": 44
                     }
                 ]
             },
             {
                 "name": "Ice Palace",
-                "parent": "HC Main/Ice Palace",
+                "parent": "AT-inverted/Ice Palace",
                 "access_rules": [
                     "firerod","bombos"
                 ],
@@ -492,16 +492,16 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "Lightworld",
-                        "x": 1000,
-                        "y": 885,
+                        "map": "Darkworld",
+                        "x": 1130,
+                        "y": 35,
                         "size": 44
                     }
                 ]
             },
             {
                 "name": "Swamp Palace",
-                "parent": "HC Main/Swamp Palace",
+                "parent": "AT-inverted/Swamp Palace",
                 "access_rules": [
                     "flippers, mirror"
                 ],
@@ -540,16 +540,16 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "Lightworld",
-                        "x": 1000,
-                        "y": 885,
+                        "map": "Darkworld",
+                        "x": 1130,
+                        "y": 35,
                         "size": 44
                     }
                 ]
             },
             {
                 "name": "Misery Mire",
-                "parent": "HC Main/Misery Mire",
+                "parent": "AT-inverted/Misery Mire",
                 "access_rules": [
                     "hookshot",
                     "boots"
@@ -585,16 +585,16 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "Lightworld",
-                        "x": 1000,
-                        "y": 885,
+                        "map": "Darkworld",
+                        "x": 1130,
+                        "y": 35,
                         "size": 44
                     }
                 ]
             },
             {
                 "name": "Skull Woods Front",
-                "parent": "HC Main/Skull Woods Front",
+                "parent": "AT-inverted/Skull Woods Front",
                 "item_count": 6,
                 "sections": [
                     {
@@ -615,16 +615,16 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "Lightworld",
-                        "x": 1000,
-                        "y": 885,
+                        "map": "Darkworld",
+                        "x": 1130,
+                        "y": 35,
                         "size": 44
                     }
                 ]
             },
             {
                 "name": "Skull Woods Back",
-                "parent": "HC Main/Skull Woods Back",
+                "parent": "AT-inverted/Skull Woods Back",
                 "access_rules": [
                     "firerod"
                 ],
@@ -656,16 +656,16 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "Lightworld",
-                        "x": 1000,
-                        "y": 885,
+                        "map": "Darkworld",
+                        "x": 1130,
+                        "y": 35,
                         "size": 44
                     }
                 ]
             },
             {
                 "name": "Turtle Rock Front",
-                "parent": "HC Main/Turtle Rock Front",
+                "parent": "AT-inverted/Turtle Rock Front",
                 "access_rules": [
                     "$openOrStandard, @TR, hammer, titans, $canUseMedallions, tr_medallion",
                     "$openOrStandard, @TR, $checkGlitches|2, boots, $canUseMedallions, tr_medallion",
@@ -703,16 +703,16 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "Lightworld",
-                        "x": 1000,
-                        "y": 885,
+                        "map": "Darkworld",
+                        "x": 1130,
+                        "y": 35,
                         "size": 44
                     }
                 ]
             },
             {
                 "name": "Turtle Rock Back",
-                "parent": "HC Main/Turtle Rock Back",
+                "parent": "AT-inverted/Turtle Rock Back",
                 "access_rules": [
                     "TR/Turtle Rock Front, $smallKeys|tr_smallkey|2|3, [$smallKeys|tr_smallkey|2|4], somaria",
                     "$openOrStandard, @Dark Death Mountain Right, $checkGlitches|2, mirror",
@@ -745,16 +745,16 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "Lightworld",
-                        "x": 1000,
-                        "y": 885,
+                        "map": "Darkworld",
+                        "x": 1130,
+                        "y": 35,
                         "size": 44
                     }
                 ]
             },
             {
                 "name": "Turtle Rock Eyebridge Entrance",
-                "parent": "HC Main/Turtle Rock Eyebridge Entrance",
+                "parent": "AT-inverted/Turtle Rock Eyebridge Entrance",
                 "access_rules": [
                     "@Dark Death Mountain Right, boot, mirror, $checkGlitches|2",
                     "TR/Turtle Rock Back, somaria, $smallKeys|tr_smallkey|1|1",
@@ -789,7 +789,7 @@
             },
             {
                 "name": "Palace of Darkness",
-                "parent": "HC Main/Palace of Darkness",
+                "parent": "AT-inverted/Palace of Darkness",
                 "chest_unopened_img": "/images/items/closed_Chest.png",
                 "chest_opened_img": "/images/items/open_Chest.png",
                 "item_count": 15,
@@ -815,9 +815,9 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "Lightworld",
-                        "x": 1000,
-                        "y": 885,
+                        "map": "Darkworld",
+                        "x": 1130,
+                        "y": 35,
                         "size": 44
                     }
                 ]
