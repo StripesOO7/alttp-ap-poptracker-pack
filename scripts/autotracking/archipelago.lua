@@ -311,7 +311,16 @@ function updateEvents(value)
     end
 end
 
+function dungeonER()
+    if Tracker:FindObjectForCode("dungeon_entrance_rando").Active then
+        Tracker:AddLayouts("layouts/trackerER.json")
+    else 
+        Tracker:AddLayouts("layouts/tracker.json")
+    end
+end
+
 ScriptHost:AddWatchForCode("settings autofill handler", "autofill_settings", autoFill)
+ScriptHost:AddWatchForCode("settings dungeon ER handler", "dungeon_entrance_rando", dungeonER)
 Archipelago:AddClearHandler("clear handler", onClear)
 Archipelago:AddItemHandler("item handler", onItem)
 Archipelago:AddLocationHandler("location handler", onLocation)

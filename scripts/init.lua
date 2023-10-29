@@ -7,6 +7,7 @@ Tracker:AddItems("items/labels.json")
 Tracker:AddItems("items/dungeon_bosses.json")
 Tracker:AddItems("items/dungeon_items_pots.json")
 Tracker:AddItems("items/dungeon_items.json")
+Tracker:AddItems("items/dungeon_entrances.json")
 
 -- Logic
 ScriptHost:LoadScript("scripts/logic/logic.lua")
@@ -18,26 +19,26 @@ else
     Tracker:AddMaps("maps/maps.json")  
 end  
 -- Locations
-Tracker:AddLocations("locations/darkworld.json")
-Tracker:AddLocations("locations/lightworld.json")
-Tracker:AddLocations("locations/HC.json")
-Tracker:AddLocations("locations/AT.json")
-Tracker:AddLocations("locations/EP.json")
-Tracker:AddLocations("locations/DP.json")
-Tracker:AddLocations("locations/ToH.json")
-Tracker:AddLocations("locations/PoD.json")
-Tracker:AddLocations("locations/SP.json")
-Tracker:AddLocations("locations/SW.json")
-Tracker:AddLocations("locations/TT.json")
-Tracker:AddLocations("locations/MM.json")
-Tracker:AddLocations("locations/IP.json")
-Tracker:AddLocations("locations/TR.json")
-Tracker:AddLocations("locations/GT.json")
-Tracker:AddLocations("locations/bosses.json")
+-- Tracker:AddLocations("locations/darkworld.json")
+-- Tracker:AddLocations("locations/lightworld.json")
+-- Tracker:AddLocations("locations/HC.json")
+-- Tracker:AddLocations("locations/AT.json")
+-- Tracker:AddLocations("locations/EP.json")
+-- Tracker:AddLocations("locations/DP.json")
+-- Tracker:AddLocations("locations/ToH.json")
+-- Tracker:AddLocations("locations/PoD.json")
+-- Tracker:AddLocations("locations/SP.json")
+-- Tracker:AddLocations("locations/SW.json")
+-- Tracker:AddLocations("locations/TT.json")
+-- Tracker:AddLocations("locations/MM.json")
+-- Tracker:AddLocations("locations/IP.json")
+-- Tracker:AddLocations("locations/TR.json")
+-- Tracker:AddLocations("locations/GT.json")
+-- Tracker:AddLocations("locations/bosses.json")
 
-if PopVersion and PopVersion >= "0.23.0" then
-    Tracker:AddLocations("locations/dungeons.json")
-end
+-- if PopVersion and PopVersion >= "0.23.0" then
+--     Tracker:AddLocations("locations/dungeons.json")
+-- end
 
 -- Layout
 -- Tracker:AddLayouts("layouts/events.json")
@@ -47,6 +48,8 @@ end
 -- Tracker:AddLayouts("layouts/tracker.json")
 -- Tracker:AddLayouts("layouts/broadcast.json")
 ScriptHost:LoadScript("scripts/layouts.lua")
+ScriptHost:LoadScript("scripts/locations.lua")
+ScriptHost:LoadScript("scripts/entrances.lua")
 
 -- AutoTracking for Poptracker
 if PopVersion and PopVersion >= "0.18.0" then
