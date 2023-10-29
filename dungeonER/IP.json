@@ -667,22 +667,22 @@
                 "name": "Turtle Rock Front",
                 "parent": "IP/Turtle Rock Front",
                 "access_rules": [
-                    "$openOrStandard, @TR, hammer, titans, $canUseMedallions, tr_medallion",
-                    "$openOrStandard, @TR, $checkGlitches|2, boots, $canUseMedallions, tr_medallion",
-                    "inverted, @TR, $canUseMedallions, tr_medallion",
+                    "$openOrStandard, @TR Main, hammer, titans, $canUseMedallions, tr_medallion",
+                    "$openOrStandard, @TR Main, $checkGlitches|2, boots, $canUseMedallions, tr_medallion",
+                    "inverted, @TR Main, $canUseMedallions, tr_medallion",
                     "inverted, @TR/Turtle Rock Back, boots, $checkGlitches|1",
                     "inverted, @TR/Turtle Rock Back, somaria",
                     "inverted, @TR/Turtle Rock Back"
                     // "@Dark Death Mountain Right, $checkGlitches|2, boots, @TR/Turtle Rock Back",
-                    // "TR/Turtle Rock Back"
+                    // "@TR/Turtle Rock Back"
                 ],
                 "item_count": 5,
                 "sections": [
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": [
-                            "TR/Turtle Rock Front, $smallKeys|tr_smallkey|0|0, [$smallKeys|tr_smallkey|2|6], [somaria], [firerod]",
-                            "TR/Turtle Rock Back, $smallKeys|tr_smallkey|0|0, [$smallKeys|tr_smallkey|1|5], [somaria], [firerod]"
+                            "@TR/Turtle Rock Front, $smallKeys|tr_smallkey|0|0, [$smallKeys|tr_smallkey|2|6], [somaria], [firerod]",
+                            "@TR/Turtle Rock Back, $smallKeys|tr_smallkey|0|0, [$smallKeys|tr_smallkey|1|5], [somaria], [firerod]"
                         ],
                         // "hosted_item": "tr_map, tr_compass, tr_bigkey",
                         "clear_as_group": false,
@@ -693,10 +693,10 @@
                         "item_count": 2,
                         "clear_as_group": false,
                         "access_rules": [
-                            "TR/Turtle Rock Front, $smallKeys|tr_smallkey|2|3, [$smallKeys|tr_smallkey|2|4], [somaria], [firerod]",
-                            "TR/Turtle Rock Back, $smallKeys|tr_smallkey|1|3, [$smallKeys|tr_smallkey|1|3], [somaria], [firerod]",
-                            "TR/Turtle Rock Back, $smallKeys|tr_smallkey|1|3, [$smallKeys|tr_smallkey|1|3], [hookshot], [firerod]",
-                            "TR/Turtle Rock Back, $smallKeys|tr_smallkey|1|3, [$smallKeys|tr_smallkey|1|3], [boots], [firerod], $checkGlitches|1"
+                            "@TR/Turtle Rock Front, $smallKeys|tr_smallkey|2|3, [$smallKeys|tr_smallkey|2|4], [somaria], [firerod]",
+                            "@TR/Turtle Rock Back, $smallKeys|tr_smallkey|1|3, [$smallKeys|tr_smallkey|1|3], [somaria], [firerod]",
+                            "@TR/Turtle Rock Back, $smallKeys|tr_smallkey|1|3, [$smallKeys|tr_smallkey|1|3], [hookshot], [firerod]",
+                            "@TR/Turtle Rock Back, $smallKeys|tr_smallkey|1|3, [$smallKeys|tr_smallkey|1|3], [boots], [firerod], $checkGlitches|1"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     }
@@ -714,19 +714,19 @@
                 "name": "Turtle Rock Back",
                 "parent": "IP/Turtle Rock Back",
                 "access_rules": [
-                    "TR/Turtle Rock Front, $smallKeys|tr_smallkey|2|3, [$smallKeys|tr_smallkey|2|4], somaria",
+                    "@TR/Turtle Rock Front, $smallKeys|tr_smallkey|2|3, [$smallKeys|tr_smallkey|2|4], somaria",
                     "$openOrStandard, @Dark Death Mountain Right, $checkGlitches|2, mirror",
                     "@Dark Death Mountain Right, $checkGlitches|2, boots",
-                    "TR/Turtle Rock Eyebridge Entrance, somaria, [$darkRooms], $smallKeys|tr_smallkey|2|2, [$smallKeys|tr_smallkey|4|6]"
+                    "@TR/Turtle Rock Eyebridge Entrance, somaria, [$darkRooms], $smallKeys|tr_smallkey|2|2, [$smallKeys|tr_smallkey|4|6]"
                 ],
                 "item_count": 8,
                 "sections": [
                     {
                         "name": "Dungeon Chest",
                         "access_rules": [
-                            "TR/Turtle Rock Front, [$smallKeys|tr_smallkey|3|5], [$darkRooms], [somaria], $bigKeys|tr_bigkey",
-                            "TR/Turtle Rock Back, [$smallKeys|tr_smallkey|2|2], [$darkRooms], [somaria], $bigKeys|tr_bigkey",
-                            "TR/Turtle Rock Eyebridge Entrance, [$smallKeys|tr_smallkey|1|1], [$darkRooms], [somaria], $bigKeys|tr_bigkey"
+                            "@TR/Turtle Rock Front, [$smallKeys|tr_smallkey|3|5], [$darkRooms], [somaria], $bigKeys|tr_bigkey",
+                            "@TR/Turtle Rock Back, [$smallKeys|tr_smallkey|2|2], [$darkRooms], [somaria], $bigKeys|tr_bigkey",
+                            "@TR/Turtle Rock Eyebridge Entrance, [$smallKeys|tr_smallkey|1|1], [$darkRooms], [somaria], $bigKeys|tr_bigkey"
                         ],
                         "clear_as_group": false,
                         "item_count": 6
@@ -735,9 +735,9 @@
                         "name": "Boss Item",
                         "clear_as_group": false,
                         "access_rules": [
-                            "TR/Turtle Rock Front, [$smallKeys|tr_smallkey|4|6], $darkRooms, $getBossRef|tr_boss, $bigKeys|tr_bigkey, somaria",
-                            "TR/Turtle Rock Back, [$smallKeys|tr_smallkey|2|2], $darkRooms, $getBossRef|tr_boss, $bigKeys|tr_bigkey, somaria",
-                            "TR/Turtle Rock Eyebridge Entrance, [$smallKeys|tr_smallkey|1|1], $darkRooms, $getBossRef|tr_boss, $bigKeys|tr_bigkey, somaria"
+                            "@TR/Turtle Rock Front, [$smallKeys|tr_smallkey|4|6], $darkRooms, $getBossRef|tr_boss, $bigKeys|tr_bigkey, somaria",
+                            "@TR/Turtle Rock Back, [$smallKeys|tr_smallkey|2|2], $darkRooms, $getBossRef|tr_boss, $bigKeys|tr_bigkey, somaria",
+                            "@TR/Turtle Rock Eyebridge Entrance, [$smallKeys|tr_smallkey|1|1], $darkRooms, $getBossRef|tr_boss, $bigKeys|tr_bigkey, somaria"
                         ],
                         "item_count": 1
                         // "hosted_item": "tr_boss, turtlerock"
@@ -757,8 +757,8 @@
                 "parent": "IP/Turtle Rock Eyebridge Entrance",
                 "access_rules": [
                     "@Dark Death Mountain Right, boot, mirror, $checkGlitches|2",
-                    "TR/Turtle Rock Back, somaria, $smallKeys|tr_smallkey|1|1",
-                    "TR/Turtle Rock Front, somaria, $smallKeys|tr_smallkey|3|5",
+                    "@TR/Turtle Rock Back, somaria, $smallKeys|tr_smallkey|1|1",
+                    "@TR/Turtle Rock Front, somaria, $smallKeys|tr_smallkey|3|5",
                     "inverted, @Light Death Mountain Right, mirror"
                 ],
                 "visibility_rules": ["inverted"],
@@ -767,9 +767,9 @@
                     {
                         "name": "Dungeon Chest",
                         "access_rules": [
-                            "TR/Turtle Rock Front, [$smallKeys|tr_smallkey|3|5], [$darkRooms], [somaria], $bigKeys|tr_bigkey",
-                            "TR/Turtle Rock Back, [$smallKeys|tr_smallkey|2|2], [$darkRooms], [somaria], $bigKeys|tr_bigkey",
-                            "TR/Turtle Rock Eyebridge Entrance, [$smallKeys|tr_smallkey|1|1], [$darkRooms], [somaria], $bigKeys|tr_bigkey"
+                            "@TR/Turtle Rock Front, [$smallKeys|tr_smallkey|3|5], [$darkRooms], [somaria], $bigKeys|tr_bigkey",
+                            "@TR/Turtle Rock Back, [$smallKeys|tr_smallkey|2|2], [$darkRooms], [somaria], $bigKeys|tr_bigkey",
+                            "@TR/Turtle Rock Eyebridge Entrance, [$smallKeys|tr_smallkey|1|1], [$darkRooms], [somaria], $bigKeys|tr_bigkey"
                         ],
                         "clear_as_group": false,
                         "item_count": 6
@@ -778,9 +778,9 @@
                         "name": "Boss Item",
                         "clear_as_group": false,
                         "access_rules": [
-                            "TR/Turtle Rock Front, [$smallKeys|tr_smallkey|4|6], $darkRooms, $getBossRef|tr_boss, $bigKeys|tr_bigkey, somaria",
-                            "TR/Turtle Rock Back, [$smallKeys|tr_smallkey|2|2], $darkRooms, $getBossRef|tr_boss, $bigKeys|tr_bigkey, somaria",
-                            "TR/Turtle Rock Eyebridge Entrance, [$smallKeys|tr_smallkey|1|1], $darkRooms, $getBossRef|tr_boss, $bigKeys|tr_bigkey, somaria"
+                            "@TR/Turtle Rock Front, [$smallKeys|tr_smallkey|4|6], $darkRooms, $getBossRef|tr_boss, $bigKeys|tr_bigkey, somaria",
+                            "@TR/Turtle Rock Back, [$smallKeys|tr_smallkey|2|2], $darkRooms, $getBossRef|tr_boss, $bigKeys|tr_bigkey, somaria",
+                            "@TR/Turtle Rock Eyebridge Entrance, [$smallKeys|tr_smallkey|1|1], $darkRooms, $getBossRef|tr_boss, $bigKeys|tr_bigkey, somaria"
                         ],
                         "item_count": 1
                         // "hosted_item": "tr_boss, turtlerock"
