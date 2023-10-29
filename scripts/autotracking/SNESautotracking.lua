@@ -901,10 +901,10 @@ function updateRoomsFromMemorySegment(segment)
     updateSectionChestCountFromRoomSlotList(segment, {"@Turtle Rock Front/Map Chest/Map Chest"}, { { 183, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Turtle Rock Front/Roller Room Right/Roller Room Right"}, { { 183, 5 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Turtle Rock Front/Big Key Chest/Big Key Chest"}, { { 20, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@Turtle Rock Back/Eye Bridge Top Left/Eye Bridge Top Left"}, { { 213, 4 }, })
-    updateSectionChestCountFromRoomSlotList(segment, {"@Turtle Rock Back/Eye Bridge Top Right/Eye Bridge Top Right"}, { { 213, 5 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@Turtle Rock Back/Eye Bridge Bottom Left/Eye Bridge Bottom Left"}, { { 213, 6 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@Turtle Rock Back/Eye Bridge Bottom Right/Eye Bridge Bottom Right"}, { { 213, 7 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Turtle Rock Back/Eyebridge Top Left/Eyebridge Top Left"}, { { 213, 4 }, })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Turtle Rock Back/Eyebridge Top Right/Eyebridge Top Right"}, { { 213, 5 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Turtle Rock Back/Eyebridge Bottom Left/Eyebridge Bottom Left"}, { { 213, 6 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Turtle Rock Back/Eyebridge Bottom Right/Eyebridge Bottom Right"}, { { 213, 7 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Turtle Rock Back/Big Chest/Big Chest"}, { { 36, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Turtle Rock Back/Crystalroller Room/Crystalroller Room"}, { { 4,4 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@TR/Turtle Rock Back/Boss Item","@Turtle Rock Back/Boss/Boss Item"}, { { 164, 11 } })
@@ -1238,7 +1238,16 @@ function updateStatisticsFromMemorySegment(segment)
 
     return true
 end
+function dungeonER()
+    if Tracker:FindObjectForCode("dungeon_entrance_rando").Active then
+        Tracker:AddLayouts("layouts/trackerER.json")
+    else 
+        Tracker:AddLayouts("layouts/tracker.json")
+    end
+end
 
+-- ScriptHost:AddWatchForCode("settings autofill handler", "autofill_settings", autoFill)
+ScriptHost:AddWatchForCode("settings dungeon ER handler", "dungeon_entrance_rando", dungeonER)
 -- Run the in-game status check more frequently (every 250ms) to catch save/quit scenarios more effectively
 ScriptHost:AddMemoryWatch("LTTP In-Game status", 0x7e0010, 0x90, updateInGameStatusFromMemorySegment, 250)
 ScriptHost:AddMemoryWatch("LTTP Item Data", 0x7ef340, 0x90, updateItemsFromMemorySegment)

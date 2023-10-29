@@ -717,7 +717,7 @@
                     "TR/Turtle Rock Front, $smallKeys|tr_smallkey|2|3, [$smallKeys|tr_smallkey|2|4], somaria",
                     "$openOrStandard, @Dark Death Mountain Right, $checkGlitches|2, mirror",
                     "@Dark Death Mountain Right, $checkGlitches|2, boots",
-                    "TR/Turtle Rock Eye Bridge Entrance, somaria, [$darkRooms], $smallKeys|tr_smallkey|2|2, [$smallKeys|tr_smallkey|4|6]"
+                    "TR/Turtle Rock Eyebridge Entrance, somaria, [$darkRooms], $smallKeys|tr_smallkey|2|2, [$smallKeys|tr_smallkey|4|6]"
                 ],
                 "item_count": 8,
                 "sections": [
@@ -726,7 +726,7 @@
                         "access_rules": [
                             "TR/Turtle Rock Front, [$smallKeys|tr_smallkey|3|5], [$darkRooms], [somaria], $bigKeys|tr_bigkey",
                             "TR/Turtle Rock Back, [$smallKeys|tr_smallkey|2|2], [$darkRooms], [somaria], $bigKeys|tr_bigkey",
-                            "TR/Turtle Rock Eye Bridge Entrance, [$smallKeys|tr_smallkey|1|1], [$darkRooms], [somaria], $bigKeys|tr_bigkey"
+                            "TR/Turtle Rock Eyebridge Entrance, [$smallKeys|tr_smallkey|1|1], [$darkRooms], [somaria], $bigKeys|tr_bigkey"
                         ],
                         "clear_as_group": false,
                         "item_count": 6
@@ -737,7 +737,7 @@
                         "access_rules": [
                             "TR/Turtle Rock Front, [$smallKeys|tr_smallkey|4|6], $darkRooms, $getBossRef|tr_boss, $bigKeys|tr_bigkey, somaria",
                             "TR/Turtle Rock Back, [$smallKeys|tr_smallkey|2|2], $darkRooms, $getBossRef|tr_boss, $bigKeys|tr_bigkey, somaria",
-                            "TR/Turtle Rock Eye Bridge Entrance, [$smallKeys|tr_smallkey|1|1], $darkRooms, $getBossRef|tr_boss, $bigKeys|tr_bigkey, somaria"
+                            "TR/Turtle Rock Eyebridge Entrance, [$smallKeys|tr_smallkey|1|1], $darkRooms, $getBossRef|tr_boss, $bigKeys|tr_bigkey, somaria"
                         ],
                         "item_count": 1
                         // "hosted_item": "tr_boss, turtlerock"
@@ -753,8 +753,8 @@
                 ]
             },
             {
-                "name": "Turtle Rock Eye Bridge Entrance",
-                "parent": "SW Front Left Skull/Turtle Rock Eye Bridge Entrance",
+                "name": "Turtle Rock Eyebridge Entrance",
+                "parent": "SW Front Left Skull/Turtle Rock Eyebridge Entrance",
                 "access_rules": [
                     "@Dark Death Mountain Right, boot, mirror, $checkGlitches|2",
                     "TR/Turtle Rock Back, somaria, $smallKeys|tr_smallkey|1|1",
