@@ -404,7 +404,8 @@
                 ] 
             }
         ]
-    },{
+    },
+    {
         "name": "DP Left",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
@@ -416,7 +417,7 @@
         "children": [
             {
                 "name": "Ganon's Tower",
-                "visibility_rules": ["dp_main_to_gt_main"],
+                "visibility_rules": ["dp_left_to_gt_main"],
                 "sections":[
                     {
                         "name": "Leftside",
@@ -454,7 +455,7 @@
             },
             {
                 "name": "Tower of Hera",
-                "visibility_rules": ["dp_main_to_toh_main"],
+                "visibility_rules": ["dp_left_to_toh_main"],
                 "sections":[
                     {
                         "name": "Lower" ,
@@ -476,7 +477,7 @@
             },
             {
                 "name": "Castle Escape",
-                "visibility_rules": ["dp_main_to_hc_sanc_hole"],
+                "visibility_rules": ["dp_left_to_hc_sanc_hole"],
                 "sections":[
                     {
                         "name": "Dark Cross" ,
@@ -498,7 +499,7 @@
             },
             {
                 "name": "Hyrule Castle",
-                "visibility_rules": ["dp_main_to_hc_main", "dp_main_to_hc_top_left", "dp_main_to_hc_top_right"],
+                "visibility_rules": ["dp_left_to_hc_main", "dp_left_to_hc_top_left", "dp_left_to_hc_top_right"],
                 "sections":[
                     {
                         "name": "Map Chest" ,
@@ -524,7 +525,7 @@
             },
             {
                 "name": "Sanctuary",
-                "visibility_rules": ["dp_main_to_hc_sanc"],
+                "visibility_rules": ["dp_left_to_hc_sanc"],
                 "sections":[
                     {
                         "name": "Sanctuary Chest" ,
@@ -534,7 +535,7 @@
             },
             {
                 "name": "Agahnim's Tower",
-                "visibility_rules": ["dp_main_to_at_main"],
+                "visibility_rules": ["dp_left_to_at_main"],
                 "sections":[
                     {
                         "name": "Front" ,
@@ -560,7 +561,7 @@
             },
             {
                 "name": "Eastern Palace",
-                "visibility_rules": ["dp_main_to_ep_main"],
+                "visibility_rules": ["dp_left_to_ep_main"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -582,7 +583,7 @@
             },
             {
                 "name": "Desert Palace Back",
-                "visibility_rules": ["dp_main_to_dp_back"],
+                "visibility_rules": ["dp_left_to_dp_back"],
                 "sections":[
                     {
                         "name": "Key Drops" ,
@@ -600,7 +601,7 @@
             },
             {
                 "name": "Desert Palace",
-                "visibility_rules": ["dp_main_to_dp_main", "dp_main_to_dp_left", "dp_main_to_dp_right"],
+                "visibility_rules": ["dp_left_to_dp_main", "dp_left_to_dp_left", "dp_left_to_dp_right"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -610,7 +611,7 @@
             },
             {
                 "name": "Thieves Town",
-                "visibility_rules": ["dp_main_to_tt_main"],
+                "visibility_rules": ["dp_left_to_tt_main"],
                 "sections":[
                     {
                         "name": "Front" ,
@@ -636,7 +637,7 @@
             },
             {
                 "name": "Ice Palace",
-                "visibility_rules": ["dp_main_to_ip_main"],
+                "visibility_rules": ["dp_left_to_ip_main"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -658,7 +659,7 @@
             },
             {
                 "name": "Swamp Palace",
-                "visibility_rules": ["dp_main_to_sp_main"],
+                "visibility_rules": ["dp_left_to_sp_main"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -680,7 +681,7 @@
             },
             {
                 "name": "Misery Mire",
-                "visibility_rules": ["dp_main_to_mm_main"],
+                "visibility_rules": ["dp_left_to_mm_main"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -702,7 +703,7 @@
             },
             {
                 "name": "Skull Woods Front",
-                "visibility_rules": ["dp_main_to_sw_front_right_skull", "dp_main_to_sw_front_right_hole", "dp_main_to_sw_front_top_hole", "dp_main_to_sw_front_left_skull", "dp_main_to_sw_front_left_hole", "dp_main_to_sw_back_skull", "dp_main_to_sw_back_hole"],
+                "visibility_rules": ["dp_left_to_sw_front_right_skull", "dp_left_to_sw_front_right_hole", "dp_left_to_sw_front_top_hole", "dp_left_to_sw_front_left_skull", "dp_left_to_sw_front_left_hole", "dp_left_to_sw_back_skull", "dp_left_to_sw_back_hole"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -720,7 +721,7 @@
             },
             {
                 "name": "Skull Woods Back",
-                "visibility_rules": ["dp_main_to_sw_back"],
+                "visibility_rules": ["dp_left_to_sw_back"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -742,7 +743,7 @@
             },
             {
                 "name": "Turtle Rock Front",
-                "visibility_rules": ["dp_main_to_tr_main", "dp_main_to_tr_main_back"],
+                "visibility_rules": ["dp_left_to_tr_main", "dp_left_to_tr_main_back"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -760,7 +761,7 @@
             },
             {
                 "name": "Turtle Rock Back",
-                "visibility_rules": ["dp_main_to_tr_back"],
+                "visibility_rules": ["dp_left_to_tr_back"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -778,7 +779,7 @@
             },
             {
                 "name": "Turtle Rock Eye Bridge Entrance",
-                "visibility_rules": ["dp_main_to_tr_eye"],
+                "visibility_rules": ["dp_left_to_tr_eye"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -792,7 +793,7 @@
             },
             {
                 "name": "Palace of Darkness",
-                "visibility_rules": ["dp_main_to_pod_main"],
+                "visibility_rules": ["dp_left_to_pod_main"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -809,7 +810,8 @@
                 ] 
             }
         ]
-    },{
+    },
+    {
         "name": "DP Right",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
@@ -821,7 +823,7 @@
         "children": [
             {
                 "name": "Ganon's Tower",
-                "visibility_rules": ["dp_main_to_gt_main"],
+                "visibility_rules": ["dp_right_to_gt_main"],
                 "sections":[
                     {
                         "name": "Leftside",
@@ -859,7 +861,7 @@
             },
             {
                 "name": "Tower of Hera",
-                "visibility_rules": ["dp_main_to_toh_main"],
+                "visibility_rules": ["dp_right_to_toh_main"],
                 "sections":[
                     {
                         "name": "Lower" ,
@@ -881,7 +883,7 @@
             },
             {
                 "name": "Castle Escape",
-                "visibility_rules": ["dp_main_to_hc_sanc_hole"],
+                "visibility_rules": ["dp_right_to_hc_sanc_hole"],
                 "sections":[
                     {
                         "name": "Dark Cross" ,
@@ -903,7 +905,7 @@
             },
             {
                 "name": "Hyrule Castle",
-                "visibility_rules": ["dp_main_to_hc_main", "dp_main_to_hc_top_left", "dp_main_to_hc_top_right"],
+                "visibility_rules": ["dp_right_to_hc_main", "dp_right_to_hc_top_left", "dp_right_to_hc_top_right"],
                 "sections":[
                     {
                         "name": "Map Chest" ,
@@ -929,7 +931,7 @@
             },
             {
                 "name": "Sanctuary",
-                "visibility_rules": ["dp_main_to_hc_sanc"],
+                "visibility_rules": ["dp_right_to_hc_sanc"],
                 "sections":[
                     {
                         "name": "Sanctuary Chest" ,
@@ -939,7 +941,7 @@
             },
             {
                 "name": "Agahnim's Tower",
-                "visibility_rules": ["dp_main_to_at_main"],
+                "visibility_rules": ["dp_right_to_at_main"],
                 "sections":[
                     {
                         "name": "Front" ,
@@ -965,7 +967,7 @@
             },
             {
                 "name": "Eastern Palace",
-                "visibility_rules": ["dp_main_to_ep_main"],
+                "visibility_rules": ["dp_right_to_ep_main"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -987,7 +989,7 @@
             },
             {
                 "name": "Desert Palace Back",
-                "visibility_rules": ["dp_main_to_dp_back"],
+                "visibility_rules": ["dp_right_to_dp_back"],
                 "sections":[
                     {
                         "name": "Key Drops" ,
@@ -1005,7 +1007,7 @@
             },
             {
                 "name": "Desert Palace",
-                "visibility_rules": ["dp_main_to_dp_main", "dp_main_to_dp_left", "dp_main_to_dp_right"],
+                "visibility_rules": ["dp_right_to_dp_main", "dp_right_to_dp_left", "dp_right_to_dp_right"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -1015,7 +1017,7 @@
             },
             {
                 "name": "Thieves Town",
-                "visibility_rules": ["dp_main_to_tt_main"],
+                "visibility_rules": ["dp_right_to_tt_main"],
                 "sections":[
                     {
                         "name": "Front" ,
@@ -1041,7 +1043,7 @@
             },
             {
                 "name": "Ice Palace",
-                "visibility_rules": ["dp_main_to_ip_main"],
+                "visibility_rules": ["dp_right_to_ip_main"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -1063,7 +1065,7 @@
             },
             {
                 "name": "Swamp Palace",
-                "visibility_rules": ["dp_main_to_sp_main"],
+                "visibility_rules": ["dp_right_to_sp_main"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -1085,7 +1087,7 @@
             },
             {
                 "name": "Misery Mire",
-                "visibility_rules": ["dp_main_to_mm_main"],
+                "visibility_rules": ["dp_right_to_mm_main"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -1107,7 +1109,7 @@
             },
             {
                 "name": "Skull Woods Front",
-                "visibility_rules": ["dp_main_to_sw_front_right_skull", "dp_main_to_sw_front_right_hole", "dp_main_to_sw_front_top_hole", "dp_main_to_sw_front_left_skull", "dp_main_to_sw_front_left_hole", "dp_main_to_sw_back_skull", "dp_main_to_sw_back_hole"],
+                "visibility_rules": ["dp_right_to_sw_front_right_skull", "dp_right_to_sw_front_right_hole", "dp_right_to_sw_front_top_hole", "dp_right_to_sw_front_left_skull", "dp_right_to_sw_front_left_hole", "dp_right_to_sw_back_skull", "dp_right_to_sw_back_hole"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -1125,7 +1127,7 @@
             },
             {
                 "name": "Skull Woods Back",
-                "visibility_rules": ["dp_main_to_sw_back"],
+                "visibility_rules": ["dp_right_to_sw_back"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -1147,7 +1149,7 @@
             },
             {
                 "name": "Turtle Rock Front",
-                "visibility_rules": ["dp_main_to_tr_main", "dp_main_to_tr_main_back"],
+                "visibility_rules": ["dp_right_to_tr_main", "dp_right_to_tr_main_back"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -1165,7 +1167,7 @@
             },
             {
                 "name": "Turtle Rock Back",
-                "visibility_rules": ["dp_main_to_tr_back"],
+                "visibility_rules": ["dp_right_to_tr_back"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -1183,7 +1185,7 @@
             },
             {
                 "name": "Turtle Rock Eye Bridge Entrance",
-                "visibility_rules": ["dp_main_to_tr_eye"],
+                "visibility_rules": ["dp_right_to_tr_eye"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -1197,7 +1199,7 @@
             },
             {
                 "name": "Palace of Darkness",
-                "visibility_rules": ["dp_main_to_pod_main"],
+                "visibility_rules": ["dp_right_to_pod_main"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -2852,7 +2854,7 @@
         "children": [
             {
                 "name": "Ganon's Tower",
-                "visibility_rules": ["hc_main_to_gt_main"],
+                "visibility_rules": ["hc_top_left_to_gt_main"],
                 "sections":[
                     {
                         "name": "Leftside",
@@ -2890,7 +2892,7 @@
             },
             {
                 "name": "Tower of Hera",
-                "visibility_rules": ["hc_main_to_toh_main"],
+                "visibility_rules": ["hc_top_left_to_toh_main"],
                 "sections":[
                     {
                         "name": "Lower" ,
@@ -2912,7 +2914,7 @@
             },
             {
                 "name": "Castle Escape",
-                "visibility_rules": ["hc_main_to_hc_sanc_hole"],
+                "visibility_rules": ["hc_top_left_to_hc_sanc_hole"],
                 "sections":[
                     {
                         "name": "Dark Cross" ,
@@ -2934,7 +2936,7 @@
             },
             {
                 "name": "Hyrule Castle",
-                "visibility_rules": ["hc_main_to_hc_main", "hc_main_to_hc_top_left", "hc_main_to_hc_top_right"],
+                "visibility_rules": ["hc_top_left_to_hc_main", "hc_top_left_to_hc_top_left", "hc_top_left_to_hc_top_right"],
                 "sections":[
                     {
                         "name": "Map Chest" ,
@@ -2960,7 +2962,7 @@
             },
             {
                 "name": "Sanctuary",
-                "visibility_rules": ["hc_main_to_hc_sanc"],
+                "visibility_rules": ["hc_top_left_to_hc_sanc"],
                 "sections":[
                     {
                         "name": "Sanctuary Chest" ,
@@ -2970,7 +2972,7 @@
             },
             {
                 "name": "Agahnim's Tower",
-                "visibility_rules": ["hc_main_to_at_main"],
+                "visibility_rules": ["hc_top_left_to_at_main"],
                 "sections":[
                     {
                         "name": "Front" ,
@@ -2996,7 +2998,7 @@
             },
             {
                 "name": "Eastern Palace",
-                "visibility_rules": ["hc_main_to_ep_main"],
+                "visibility_rules": ["hc_top_left_to_ep_main"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -3018,7 +3020,7 @@
             },
             {
                 "name": "Desert Palace Back",
-                "visibility_rules": ["hc_main_to_dp_back"],
+                "visibility_rules": ["hc_top_left_to_dp_back"],
                 "sections":[
                     {
                         "name": "Key Drops" ,
@@ -3036,7 +3038,7 @@
             },
             {
                 "name": "Desert Palace",
-                "visibility_rules": ["hc_main_to_dp_main", "hc_main_to_dp_left", "hc_main_to_dp_right"],
+                "visibility_rules": ["hc_top_left_to_dp_main", "hc_top_left_to_dp_left", "hc_top_left_to_dp_right"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -3046,7 +3048,7 @@
             },
             {
                 "name": "Thieves Town",
-                "visibility_rules": ["hc_main_to_tt_main"],
+                "visibility_rules": ["hc_top_left_to_tt_main"],
                 "sections":[
                     {
                         "name": "Front" ,
@@ -3072,7 +3074,7 @@
             },
             {
                 "name": "Ice Palace",
-                "visibility_rules": ["hc_main_to_ip_main"],
+                "visibility_rules": ["hc_top_left_to_ip_main"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -3094,7 +3096,7 @@
             },
             {
                 "name": "Swamp Palace",
-                "visibility_rules": ["hc_main_to_sp_main"],
+                "visibility_rules": ["hc_top_left_to_sp_main"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -3116,7 +3118,7 @@
             },
             {
                 "name": "Misery Mire",
-                "visibility_rules": ["hc_main_to_mm_main"],
+                "visibility_rules": ["hc_top_left_to_mm_main"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -3138,7 +3140,7 @@
             },
             {
                 "name": "Skull Woods Front",
-                "visibility_rules": ["hc_main_to_sw_front_right_skull", "hc_main_to_sw_front_right_hole", "hc_main_to_sw_front_top_hole", "hc_main_to_sw_front_left_skull", "hc_main_to_sw_front_left_hole", "hc_main_to_sw_back_skull", "hc_main_to_sw_back_hole"],
+                "visibility_rules": ["hc_top_left_to_sw_front_right_skull", "hc_top_left_to_sw_front_right_hole", "hc_top_left_to_sw_front_top_hole", "hc_top_left_to_sw_front_left_skull", "hc_top_left_to_sw_front_left_hole", "hc_top_left_to_sw_back_skull", "hc_top_left_to_sw_back_hole"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -3156,7 +3158,7 @@
             },
             {
                 "name": "Skull Woods Back",
-                "visibility_rules": ["hc_main_to_sw_back"],
+                "visibility_rules": ["hc_top_left_to_sw_back"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -3178,7 +3180,7 @@
             },
             {
                 "name": "Turtle Rock Front",
-                "visibility_rules": ["hc_main_to_tr_main", "hc_main_to_tr_main_back"],
+                "visibility_rules": ["hc_top_left_to_tr_main", "hc_top_left_to_tr_main_back"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -3196,7 +3198,7 @@
             },
             {
                 "name": "Turtle Rock Back",
-                "visibility_rules": ["hc_main_to_tr_back"],
+                "visibility_rules": ["hc_top_left_to_tr_back"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -3214,7 +3216,7 @@
             },
             {
                 "name": "Turtle Rock Eye Bridge Entrance",
-                "visibility_rules": ["hc_main_to_tr_eye"],
+                "visibility_rules": ["hc_top_left_to_tr_eye"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -3228,7 +3230,7 @@
             },
             {
                 "name": "Palace of Darkness",
-                "visibility_rules": ["hc_main_to_pod_main"],
+                "visibility_rules": ["hc_top_left_to_pod_main"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -3258,7 +3260,7 @@
         "children": [
             {
                 "name": "Ganon's Tower",
-                "visibility_rules": ["hc_main_to_gt_main"],
+                "visibility_rules": ["hc_top_right_to_gt_main"],
                 "sections":[
                     {
                         "name": "Leftside",
@@ -3296,7 +3298,7 @@
             },
             {
                 "name": "Tower of Hera",
-                "visibility_rules": ["hc_main_to_toh_main"],
+                "visibility_rules": ["hc_top_right_to_toh_main"],
                 "sections":[
                     {
                         "name": "Lower" ,
@@ -3318,7 +3320,7 @@
             },
             {
                 "name": "Castle Escape",
-                "visibility_rules": ["hc_main_to_hc_sanc_hole"],
+                "visibility_rules": ["hc_top_right_to_hc_sanc_hole"],
                 "sections":[
                     {
                         "name": "Dark Cross" ,
@@ -3340,7 +3342,7 @@
             },
             {
                 "name": "Hyrule Castle",
-                "visibility_rules": ["hc_main_to_hc_main", "hc_main_to_hc_top_left", "hc_main_to_hc_top_right"],
+                "visibility_rules": ["hc_top_right_to_hc_main", "hc_top_right_to_hc_top_left", "hc_top_right_to_hc_top_right"],
                 "sections":[
                     {
                         "name": "Map Chest" ,
@@ -3366,7 +3368,7 @@
             },
             {
                 "name": "Sanctuary",
-                "visibility_rules": ["hc_main_to_hc_sanc"],
+                "visibility_rules": ["hc_top_right_to_hc_sanc"],
                 "sections":[
                     {
                         "name": "Sanctuary Chest" ,
@@ -3376,7 +3378,7 @@
             },
             {
                 "name": "Agahnim's Tower",
-                "visibility_rules": ["hc_main_to_at_main"],
+                "visibility_rules": ["hc_top_right_to_at_main"],
                 "sections":[
                     {
                         "name": "Front" ,
@@ -3402,7 +3404,7 @@
             },
             {
                 "name": "Eastern Palace",
-                "visibility_rules": ["hc_main_to_ep_main"],
+                "visibility_rules": ["hc_top_right_to_ep_main"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -3424,7 +3426,7 @@
             },
             {
                 "name": "Desert Palace Back",
-                "visibility_rules": ["hc_main_to_dp_back"],
+                "visibility_rules": ["hc_top_right_to_dp_back"],
                 "sections":[
                     {
                         "name": "Key Drops" ,
@@ -3442,7 +3444,7 @@
             },
             {
                 "name": "Desert Palace",
-                "visibility_rules": ["hc_main_to_dp_main", "hc_main_to_dp_left", "hc_main_to_dp_right"],
+                "visibility_rules": ["hc_top_right_to_dp_main", "hc_top_right_to_dp_left", "hc_top_right_to_dp_right"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -3452,7 +3454,7 @@
             },
             {
                 "name": "Thieves Town",
-                "visibility_rules": ["hc_main_to_tt_main"],
+                "visibility_rules": ["hc_top_right_to_tt_main"],
                 "sections":[
                     {
                         "name": "Front" ,
@@ -3478,7 +3480,7 @@
             },
             {
                 "name": "Ice Palace",
-                "visibility_rules": ["hc_main_to_ip_main"],
+                "visibility_rules": ["hc_top_right_to_ip_main"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -3500,7 +3502,7 @@
             },
             {
                 "name": "Swamp Palace",
-                "visibility_rules": ["hc_main_to_sp_main"],
+                "visibility_rules": ["hc_top_right_to_sp_main"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -3522,7 +3524,7 @@
             },
             {
                 "name": "Misery Mire",
-                "visibility_rules": ["hc_main_to_mm_main"],
+                "visibility_rules": ["hc_top_right_to_mm_main"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -3544,7 +3546,7 @@
             },
             {
                 "name": "Skull Woods Front",
-                "visibility_rules": ["hc_main_to_sw_front_right_skull", "hc_main_to_sw_front_right_hole", "hc_main_to_sw_front_top_hole", "hc_main_to_sw_front_left_skull", "hc_main_to_sw_front_left_hole", "hc_main_to_sw_back_skull", "hc_main_to_sw_back_hole"],
+                "visibility_rules": ["hc_top_right_to_sw_front_right_skull", "hc_top_right_to_sw_front_right_hole", "hc_top_right_to_sw_front_top_hole", "hc_top_right_to_sw_front_left_skull", "hc_top_right_to_sw_front_left_hole", "hc_top_right_to_sw_back_skull", "hc_top_right_to_sw_back_hole"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -3562,7 +3564,7 @@
             },
             {
                 "name": "Skull Woods Back",
-                "visibility_rules": ["hc_main_to_sw_back"],
+                "visibility_rules": ["hc_top_right_to_sw_back"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -3584,7 +3586,7 @@
             },
             {
                 "name": "Turtle Rock Front",
-                "visibility_rules": ["hc_main_to_tr_main", "hc_main_to_tr_main_back"],
+                "visibility_rules": ["hc_top_right_to_tr_main", "hc_top_right_to_tr_main_back"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -3602,7 +3604,7 @@
             },
             {
                 "name": "Turtle Rock Back",
-                "visibility_rules": ["hc_main_to_tr_back"],
+                "visibility_rules": ["hc_top_right_to_tr_back"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -3620,7 +3622,7 @@
             },
             {
                 "name": "Turtle Rock Eye Bridge Entrance",
-                "visibility_rules": ["hc_main_to_tr_eye"],
+                "visibility_rules": ["hc_top_right_to_tr_eye"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -3634,7 +3636,7 @@
             },
             {
                 "name": "Palace of Darkness",
-                "visibility_rules": ["hc_main_to_pod_main"],
+                "visibility_rules": ["hc_top_right_to_pod_main"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -3664,7 +3666,7 @@
         "children": [
             {
                 "name": "Ganon's Tower",
-                "visibility_rules": ["ce_main_to_gt_main"],
+                "visibility_rules": ["hc_sanc_hole_to_gt_main"],
                 "sections":[
                     {
                         "name": "Leftside",
@@ -3702,7 +3704,7 @@
             },
             {
                 "name": "Tower of Hera",
-                "visibility_rules": ["ce_main_to_toh_main"],
+                "visibility_rules": ["hc_sanc_hole_to_toh_main"],
                 "sections":[
                     {
                         "name": "Lower" ,
@@ -3724,7 +3726,7 @@
             },
             {
                 "name": "Castle Escape",
-                "visibility_rules": ["ce_main_to_hc_sanc_hole"],
+                "visibility_rules": ["hc_sanc_hole_to_hc_sanc_hole"],
                 "sections":[
                     {
                         "name": "Dark Cross" ,
@@ -3746,7 +3748,7 @@
             },
             {
                 "name": "Hyrule Castle",
-                "visibility_rules": ["ce_main_to_hc_main", "ce_main_to_hc_top_left", "ce_main_to_hc_top_right"],
+                "visibility_rules": ["hc_sanc_hole_to_hc_main", "hc_sanc_hole_to_hc_top_left", "hc_sanc_hole_to_hc_top_right"],
                 "sections":[
                     {
                         "name": "Map Chest" ,
@@ -3772,7 +3774,7 @@
             },
             {
                 "name": "Sanctuary",
-                "visibility_rules": ["ce_main_to_hc_sanc"],
+                "visibility_rules": ["hc_sanc_hole_to_hc_sanc"],
                 "sections":[
                     {
                         "name": "Sanctuary Chest" ,
@@ -3782,7 +3784,7 @@
             },
             {
                 "name": "Agahnim's Tower",
-                "visibility_rules": ["ce_main_to_at_main"],
+                "visibility_rules": ["hc_sanc_hole_to_at_main"],
                 "sections":[
                     {
                         "name": "Front" ,
@@ -3808,7 +3810,7 @@
             },
             {
                 "name": "Eastern Palace",
-                "visibility_rules": ["ce_main_to_ep_main"],
+                "visibility_rules": ["hc_sanc_hole_to_ep_main"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -3830,7 +3832,7 @@
             },
             {
                 "name": "Desert Palace Back",
-                "visibility_rules": ["ce_main_to_dp_back"],
+                "visibility_rules": ["hc_sanc_hole_to_dp_back"],
                 "sections":[
                     {
                         "name": "Key Drops" ,
@@ -3848,7 +3850,7 @@
             },
             {
                 "name": "Desert Palace",
-                "visibility_rules": ["ce_main_to_dp_main", "ce_main_to_dp_left", "ce_main_to_dp_right"],
+                "visibility_rules": ["hc_sanc_hole_to_dp_main", "hc_sanc_hole_to_dp_left", "hc_sanc_hole_to_dp_right"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -3858,7 +3860,7 @@
             },
             {
                 "name": "Thieves Town",
-                "visibility_rules": ["ce_main_to_tt_main"],
+                "visibility_rules": ["hc_sanc_hole_to_tt_main"],
                 "sections":[
                     {
                         "name": "Front" ,
@@ -3884,7 +3886,7 @@
             },
             {
                 "name": "Ice Palace",
-                "visibility_rules": ["ce_main_to_ip_main"],
+                "visibility_rules": ["hc_sanc_hole_to_ip_main"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -3906,7 +3908,7 @@
             },
             {
                 "name": "Swamp Palace",
-                "visibility_rules": ["ce_main_to_sp_main"],
+                "visibility_rules": ["hc_sanc_hole_to_sp_main"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -3928,7 +3930,7 @@
             },
             {
                 "name": "Misery Mire",
-                "visibility_rules": ["ce_main_to_mm_main"],
+                "visibility_rules": ["hc_sanc_hole_to_mm_main"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -3950,7 +3952,7 @@
             },
             {
                 "name": "Skull Woods Front",
-                "visibility_rules": ["ce_main_to_sw_front_right_skull", "ce_main_to_sw_front_right_hole", "ce_main_to_sw_front_top_hole", "ce_main_to_sw_front_left_skull", "ce_main_to_sw_front_left_hole", "ce_main_to_sw_back_skull", "ce_main_to_sw_back_hole"],
+                "visibility_rules": ["hc_sanc_hole_to_sw_front_right_skull", "hc_sanc_hole_to_sw_front_right_hole", "hc_sanc_hole_to_sw_front_top_hole", "hc_sanc_hole_to_sw_front_left_skull", "hc_sanc_hole_to_sw_front_left_hole", "hc_sanc_hole_to_sw_back_skull", "hc_sanc_hole_to_sw_back_hole"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -3968,7 +3970,7 @@
             },
             {
                 "name": "Skull Woods Back",
-                "visibility_rules": ["ce_main_to_sw_back"],
+                "visibility_rules": ["hc_sanc_hole_to_sw_back"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -3990,7 +3992,7 @@
             },
             {
                 "name": "Turtle Rock Front",
-                "visibility_rules": ["ce_main_to_tr_main", "ce_main_to_tr_main_back"],
+                "visibility_rules": ["hc_sanc_hole_to_tr_main", "hc_sanc_hole_to_tr_main_back"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -4008,7 +4010,7 @@
             },
             {
                 "name": "Turtle Rock Back",
-                "visibility_rules": ["ce_main_to_tr_back"],
+                "visibility_rules": ["hc_sanc_hole_to_tr_back"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -4026,7 +4028,7 @@
             },
             {
                 "name": "Turtle Rock Eye Bridge Entrance",
-                "visibility_rules": ["ce_main_to_tr_eye"],
+                "visibility_rules": ["hc_sanc_hole_to_tr_eye"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -4040,7 +4042,7 @@
             },
             {
                 "name": "Palace of Darkness",
-                "visibility_rules": ["ce_main_to_pod_main"],
+                "visibility_rules": ["hc_sanc_hole_to_pod_main"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -4070,7 +4072,7 @@
         "children": [
             {
                 "name": "Ganon's Tower",
-                "visibility_rules": ["ce_main_to_gt_main"],
+                "visibility_rules": ["hc_sanc_to_gt_main"],
                 "sections":[
                     {
                         "name": "Leftside",
@@ -4108,7 +4110,7 @@
             },
             {
                 "name": "Tower of Hera",
-                "visibility_rules": ["ce_main_to_toh_main"],
+                "visibility_rules": ["hc_sanc_to_toh_main"],
                 "sections":[
                     {
                         "name": "Lower" ,
@@ -4130,7 +4132,7 @@
             },
             {
                 "name": "Castle Escape",
-                "visibility_rules": ["ce_main_to_hc_sanc_hole"],
+                "visibility_rules": ["hc_sanc_to_hc_sanc_hole"],
                 "sections":[
                     {
                         "name": "Dark Cross" ,
@@ -4152,7 +4154,7 @@
             },
             {
                 "name": "Hyrule Castle",
-                "visibility_rules": ["ce_main_to_hc_main", "ce_main_to_hc_top_left", "ce_main_to_hc_top_right"],
+                "visibility_rules": ["hc_sanc_to_hc_main", "hc_sanc_to_hc_top_left", "hc_sanc_to_hc_top_right"],
                 "sections":[
                     {
                         "name": "Map Chest" ,
@@ -4178,7 +4180,7 @@
             },
             {
                 "name": "Sanctuary",
-                "visibility_rules": ["ce_main_to_hc_sanc"],
+                "visibility_rules": ["hc_sanc_to_hc_sanc"],
                 "sections":[
                     {
                         "name": "Sanctuary Chest" ,
@@ -4188,7 +4190,7 @@
             },
             {
                 "name": "Agahnim's Tower",
-                "visibility_rules": ["ce_main_to_at_main"],
+                "visibility_rules": ["hc_sanc_to_at_main"],
                 "sections":[
                     {
                         "name": "Front" ,
@@ -4214,7 +4216,7 @@
             },
             {
                 "name": "Eastern Palace",
-                "visibility_rules": ["ce_main_to_ep_main"],
+                "visibility_rules": ["hc_sanc_to_ep_main"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -4236,7 +4238,7 @@
             },
             {
                 "name": "Desert Palace Back",
-                "visibility_rules": ["ce_main_to_dp_back"],
+                "visibility_rules": ["hc_sanc_to_dp_back"],
                 "sections":[
                     {
                         "name": "Key Drops" ,
@@ -4254,7 +4256,7 @@
             },
             {
                 "name": "Desert Palace",
-                "visibility_rules": ["ce_main_to_dp_main", "ce_main_to_dp_left", "ce_main_to_dp_right"],
+                "visibility_rules": ["hc_sanc_to_dp_main", "hc_sanc_to_dp_left", "hc_sanc_to_dp_right"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -4264,7 +4266,7 @@
             },
             {
                 "name": "Thieves Town",
-                "visibility_rules": ["ce_main_to_tt_main"],
+                "visibility_rules": ["hc_sanc_to_tt_main"],
                 "sections":[
                     {
                         "name": "Front" ,
@@ -4290,7 +4292,7 @@
             },
             {
                 "name": "Ice Palace",
-                "visibility_rules": ["ce_main_to_ip_main"],
+                "visibility_rules": ["hc_sanc_to_ip_main"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -4312,7 +4314,7 @@
             },
             {
                 "name": "Swamp Palace",
-                "visibility_rules": ["ce_main_to_sp_main"],
+                "visibility_rules": ["hc_sanc_to_sp_main"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -4334,7 +4336,7 @@
             },
             {
                 "name": "Misery Mire",
-                "visibility_rules": ["ce_main_to_mm_main"],
+                "visibility_rules": ["hc_sanc_to_mm_main"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -4356,7 +4358,7 @@
             },
             {
                 "name": "Skull Woods Front",
-                "visibility_rules": ["ce_main_to_sw_front_right_skull", "ce_main_to_sw_front_right_hole", "ce_main_to_sw_front_top_hole", "ce_main_to_sw_front_left_skull", "ce_main_to_sw_front_left_hole", "ce_main_to_sw_back_skull", "ce_main_to_sw_back_hole"],
+                "visibility_rules": ["hc_sanc_to_sw_front_right_skull", "hc_sanc_to_sw_front_right_hole", "hc_sanc_to_sw_front_top_hole", "hc_sanc_to_sw_front_left_skull", "hc_sanc_to_sw_front_left_hole", "hc_sanc_to_sw_back_skull", "hc_sanc_to_sw_back_hole"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -4374,7 +4376,7 @@
             },
             {
                 "name": "Skull Woods Back",
-                "visibility_rules": ["ce_main_to_sw_back"],
+                "visibility_rules": ["hc_sanc_to_sw_back"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -4396,7 +4398,7 @@
             },
             {
                 "name": "Turtle Rock Front",
-                "visibility_rules": ["ce_main_to_tr_main", "ce_main_to_tr_main_back"],
+                "visibility_rules": ["hc_sanc_to_tr_main", "hc_sanc_to_tr_main_back"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -4414,7 +4416,7 @@
             },
             {
                 "name": "Turtle Rock Back",
-                "visibility_rules": ["ce_main_to_tr_back"],
+                "visibility_rules": ["hc_sanc_to_tr_back"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -4432,7 +4434,7 @@
             },
             {
                 "name": "Turtle Rock Eye Bridge Entrance",
-                "visibility_rules": ["ce_main_to_tr_eye"],
+                "visibility_rules": ["hc_sanc_to_tr_eye"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
@@ -4446,7 +4448,7 @@
             },
             {
                 "name": "Palace of Darkness",
-                "visibility_rules": ["ce_main_to_pod_main"],
+                "visibility_rules": ["hc_sanc_to_pod_main"],
                 "sections":[
                     {
                         "name": "Dungeon Chest" ,
