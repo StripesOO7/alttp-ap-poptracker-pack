@@ -1,0 +1,807 @@
+[
+    {
+        "name": "TR_Eyebridge_entrance",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "children": [
+            {
+                "name": "Ganon's Tower",
+                "parent": "TR Eyebridge/Ganon's Tower",
+                "sections": [
+                    {
+                        "name": "Leftside",
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "[boots],[hammer],[hookshot],$smallKeys|gt_smallkey|1|3, [$smallKeys|gt_smallkey|3|5]"
+                        ],
+                        // "hosted_item": "gt_map",
+                        "item_count": 11
+                    },
+                    {
+                        "name": "Rightside",
+                        "access_rules": [
+                            "[somaria], [firerod], $smallKeys|gt_smallkey|1|2, [$smallKeys|gt_smallkey|3|5]"
+                        ],
+                        // "hosted_item": "gt_compass",
+                        "clear_as_group": false,
+                        "item_count": 7
+                    },
+                    {
+                        "name": "Big Chest + Ice refight",
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "@GT-inverted/Ganon's Tower/Leftside, $smallKeys|gt_smallkey|1|3, [$smallKeys|gt_smallkey|3|5], [$bigKeys|gt_bigkey], [$getBossRef|gt_ice]",
+                            "@GT-inverted/Ganon's Tower/Rightside, $smallKeys|gt_smallkey|1|2, [$smallKeys|gt_smallkey|3|5], [$bigKeys|gt_bigkey], [$getBossRef|gt_ice]"
+                        ],
+                        "item_count": 5,
+                        "hosted_item": "gt_ice"//, gt_bigkey"
+                    },
+                    {
+                        "name": "GT Top + Lanmo refight",
+                        "access_rules": [
+                            "$bigKeys|gt_bigkey, $smallKeys|gt_smallkey|0|2, [$smallKeys|gt_smallkey|3|5], $getBossRef|gt_lanmo"
+                        ],
+                        "clear_as_group": false,
+                        "item_count": 3,
+                        "hosted_item": "gt_lanmo"
+                    },
+                    {
+                        "name": "GT Top Moldorm refight",
+                        "access_rules": [
+                            "$bigKeys|gt_bigkey, $smallKeys|gt_smallkey|2|4, [$smallKeys|gt_smallkey|3|7], $getBossRef|gt_boss"
+                        ],
+                        "clear_as_group": false,
+                        "item_count": 1,
+                        "hosted_item": "gt_boss"
+                    },
+                    {
+                        "name": "Key Drops",
+                        "item_count": 4,
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "@GT/Ganon's Tower/GT Top Moldorm refight, $smallKeys|gt_smallkey|2|4, [$smallKeys|gt_smallkey|3|7]"
+                        ],
+                        "visibility_rules": ["key_drop_shuffle"]
+                    },
+                    {
+                        "name": "GT Top Agahnim 2",
+                        "access_rules": [
+                            "@GT-inverted/Ganon's Tower/GT Top Moldorm refight"
+                        ],
+                        "clear_as_group": false,
+                        "hosted_item": "aga2"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 1645,
+                        "y": 233,
+                        "size": 44
+                    }
+                ]
+            },
+            {
+                "name": "Tower of Hera",
+                "access_rules": [
+                    "@Light Death Mountain Left Top",
+                    "@Light Death Mountain Right, hammer",
+                    "@Light Death Mountain Left Bottom, $checkGlitches|2, boots"
+                ],
+                "parent": "TR Eyebridge/Tower of Hera",
+                "item_count": 7,
+                "sections": [
+                    {
+                        "name": "Lower" ,
+                        "access_rules": [
+                            "[firesource], [$smallKeys|toh_smallkey|1|1]"
+                        ],
+                        // "hosted_item": "toh_map, toh_bigkey",
+                        "clear_as_group": false,
+                        "item_count": 3
+                    },
+                    {
+                        "name": "Upper" ,
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "$bigKeys|toh_bigkey",
+                            "$checkGlitches|1, hookshot, [$bigKeys|toh_bigkey]"
+                        ],
+                        // "hosted_item": "toh_compass",
+                        "item_count": 2
+                    },
+                    {
+                        "name": "Boss Item" ,
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "@ToH/Tower of Hera/Upper, $getBossRef|toh_boss",
+                            "$getBossRef|toh_boss, $checkGlitches|1, hookshot"
+                        ],
+                        "item_count": 1,
+                        "hosted_item": "toh_boss, towerofhera"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 1645,
+                        "y": 233,
+                        "size": 44
+                    }
+                ]
+            },
+            {
+                "name": "Castle Escape",
+                "item_count": 1,
+                "parent": "TR Eyebridge/Castle Escape",
+                "sections": [
+                    {
+                        "name": "Dark Cross",
+                        "access_rules": [
+                            "[$darkRooms]",
+                            "standard"
+                        ]
+                    },
+                    {
+                        "name": "Secret Room",
+                        "item_count": 3,
+                        "access_rules": [
+                            "[$darkRooms], $smallKeys|hc_smallkey|1|2, [$smallKeys|hc_smallkey|1|4], bombs",
+                            "[$darkRooms], $smallKeys|hc_smallkey|1|2, [$smallKeys|hc_smallkey|1|4], boots",
+                            "standard, $smallKeys|hc_smallkey|1|2, [$smallKeys|hc_smallkey|1|4], bombs",
+                            "standard, $smallKeys|hc_smallkey|1|2, [$smallKeys|hc_smallkey|1|4], boots",
+                            "glove, bombs",
+                            "glove, boots"
+                        ]
+                    },
+                    {
+                        "name": "Key Drops",
+                        "item_count": 1,
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "[$darkRooms]",
+                            "[$darkRooms], glove, $smallKeys|hc_smallkey|1|1, [$smallKeys|hc_smallkey|1|3]",
+                            "standard"
+                        ],
+                        "visibility_rules": ["key_drop_shuffle"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 1645,
+                        "y": 233,
+                        "size": 44
+                    }
+                ]
+            },
+            {
+                "name": "Sanctuary",
+                "parent": "TR Eyebridge/Sanctuary",
+                "item_count": 1,
+                "access_rules": [
+                    "standard, @CE/Castle Escape/Dark Cross",
+                    "open",
+                    "inverted, @Lightworld"
+                ],
+                "sections": [
+                    {
+                        "name": "Sanctuary Chest"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 1645,
+                        "y": 233,
+                        "size": 44
+                    }
+                ]
+            },
+            {
+                "name": "Hyrule Castle",
+                "parent": "TR Eyebridge/Hyrule Castle",
+                "item_count": 3,
+                "sections": [
+                    {
+                        "name": "Map Chest",
+                        // "hosted_item": "hc_map",
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Boomerang Chest",
+                        "access_rules": [
+                            "$smallKeys|hc_smallkey|0|1"
+                        ]
+                    },
+                    {
+                        "name": "Zelda's Chest",
+                        "access_rules": [
+                            "$smallKeys|hc_smallkey|0|2"
+                        ]
+                    },
+                    {
+                        "name": "Key Drops",
+                        "access_rules": [
+                            "$bigKeys|hc_bigkey, $smallKeys|hc_smallkey|0|1, [$smallKeys|hc_smallkey|0|4]"
+                        ],
+                        "item_count": 3,
+                        "clear_as_group": false,
+                        "visibility_rules": ["key_drop_shuffle"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 1645,
+                        "y": 233,
+                        "size": 44
+                    }
+                ]
+            },
+            {
+                "name": "Agahnim's Tower",
+                "parent": "TR Eyebridge/Agahnim's Tower",
+                "item_count": 3,
+                "access_rules": [
+                    "$canClearAgaTowerBarrier",
+                    "$checkGlitches|2, boots"
+                ],
+                "sections": [
+                    {
+                        "name": "Front"
+                    },
+                    {
+                        "name": "Maze Chest",
+                        "access_rules": [
+                            "[$darkRooms], $smallKeys|at_smallkey|1|1"
+                        ]
+                    },
+                    {
+                        "name": "Key Drops",
+                        "item_count": 2,
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "[$darkRooms], $smallKeys|at_smallkey|1|1, [$smallKeys|at_smallkey|1|2]"
+                        ],
+                        "visibility_rules": ["key_drop_shuffle"]
+                    },
+                    {
+                        "name": "Agahnim 1",
+                        "access_rules": [
+                            "[$darkRooms], $canRemoveCurtains, sword, $smallKeys|at_smallkey|2|4",
+                            "[$darkRooms], $canRemoveCurtains, bug_net, $smallKeys|at_smallkey|2|4"
+                        ],
+                        "hosted_item": "aga1"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 1645,
+                        "y": 233,
+                        "size": 44
+                    }
+                ]
+            },
+            {
+                "name": "Eastern Palace",
+                "parent": "TR Eyebridge/Eastern Palace",
+                "item_count": 7,
+                "sections": [
+                    {
+                        "name": "Dungeon Chest" ,
+                        "access_rules": [
+                            "[$bigKeys|ep_bigkey],[$darkRooms], $smallKeys|ep_smallkey|0|1, [$smallKeys|ep_smallkey|0|2]"
+                        ],
+                        // "hosted_item": "ep_map, ep_compass, ep_bigkey",
+                        "clear_as_group": false,
+                        "item_count": 5
+                    },
+                    {
+                        "name": "Key Drops",
+                        "item_count": 2,
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "[$bigKeys|ep_bigkey],[$darkRooms]"
+                        ],
+                        "visibility_rules": ["key_drop_shuffle"]
+                    },
+                    {
+                        "name": "Boss Item" ,
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "$bigKeys|ep_bigkey, [$darkRooms], $getBossRef|ep_boss, $enemizerCheck|bow, $smallKeys|ep_smallkey|0|1, [$smallKeys|ep_smallkey|0|2]"
+                        ],
+                        "item_count": 1,
+                        "hosted_item": "ep_boss, easternpalace"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 1645,
+                        "y": 233,
+                        "size": 44
+                    }
+                ]
+            },
+            {
+                "name": "Desert Palace Back",
+                "parent": "TR Eyebridge/Desert Palace Back",
+                "access_rules": [
+                    "@DP/Desert Palace, glove",
+                    "$openOrStandard, @Darkworld Swamp, mirror",
+                    "@Lightworld, $checkGlitches|2, boots"
+                ],
+                "item_count": 2,
+                "sections": [
+                    {
+                        "name": "Key Drops",
+                        "access_rules": ["[$smallKeys|dp_smallkey|0|4]"],
+                        "item_count": 3,
+                        "clear_as_group": false,
+                        "visibility_rules": ["key_drop_shuffle"]
+                    },
+                    {
+                        "name": "Boss Item" ,
+                        "access_rules": [
+                            "$getBossRef|dp_boss, $bigKeys|dp_bigkey, firesource, $smallKeys|dp_smallkey|0|3, [$smallKeys|dp_smallkey|0|4]"
+                        ],
+                        "clear_as_group": true,
+                        "item_count": 1,
+                        "hosted_item": "dp_boss, desertpalace"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 1645,
+                        "y": 233,
+                        "size": 44
+                    }
+                ]
+            },
+            {
+                "name": "Desert Palace",
+                "parent": "TR Eyebridge/Desert Palace",
+                "access_rules": [
+                    "book",
+                    "$openOrStandard, @Darkworld Swamp, mirror",
+                    "@Lightworld, $checkGlitches|2, boots"
+                ],
+                "item_count": 5,
+                "sections": [
+                    {
+                        "name": "Dungeon Chest" ,
+                        "access_rules": [
+                            "[boots], [$bigKeys|dp_bigkey], [$smallKeys|dp_smallkey|1|1]",
+                            "@DP Back/Desert Palace Back, [boots], [$bigKeys|dp_bigkey],[$smallKeys|dp_smallkey|1|4]"
+                        ],
+                        // "hosted_item": "dp_map, dp_compass, dp_bigkey",
+                        "clear_as_group": false,
+                        "item_count": 5
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 1645,
+                        "y": 233,
+                        "size": 44
+                    }
+                ]
+            },
+            {
+                "name": "Thieves Town",
+                "parent": "TR Eyebridge/Thieves Town",
+                "item_count": 8,
+                "sections": [
+                    { 
+                        "name": "Front",
+                        "clear_as_group": false,
+                        // "hosted_item": "tt_map, tt_compass, tt_bigkey",
+                        "item_count": 4
+                    },
+                    {
+                        "name": "Back",
+                        "clear_as_group": false,
+                        "item_count": 3,
+                        "access_rules": [
+                            "$bigKeys|tt_bigkey, [$smallKeys|tt_smallkey|1|3], [hammer]"
+                        ]
+                    },
+                    {
+                        "name": "Key Drops",
+                        "item_count": 2,
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "$bigKeys|tt_bigkey, [$smallKeys|tt_smallkey|1|1]"
+                        ],
+                        "visibility_rules": ["key_drop_shuffle"]
+                    },
+                    {
+                        "name": "Boss Item",
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "$bigKeys|tt_bigkey, $getBossRef|tt_boss"
+                        ],
+                        "item_count": 1,
+                        "hosted_item": "tt_boss, thievestown"
+                    },
+                    {
+                        "name": "Hyrule Hymn o7",
+                        "hosted_item": "flute_active",
+                        "visibility_rules": ["flute, inverted"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 1645,
+                        "y": 233,
+                        "size": 44
+                    }
+                ]
+            },
+            {
+                "name": "Ice Palace",
+                "parent": "TR Eyebridge/Ice Palace",
+                "access_rules": [
+                    "firerod","bombos"
+                ],
+                "item_count": 9,
+                "sections": [
+                    {
+                        "name": "Dungeon Chest" ,
+                        "access_rules": [
+                            "[$bigKeys|ip_bigkey], $smallKeys|ip_smallkey|1|4, [$smallKeys|ip_smallkey|2|5], [hammer], [glove]", //vanilla
+                            "[$bigKeys|ip_bigkey], $smallKeys|ip_smallkey|0|3, $checkGlitches|1, [$smallKeys|ip_smallkey|1|4], [hammer], [glove]", // IP bomb jump
+                            "[$bigKeys|ip_bigkey], $smallKeys|ip_smallkey|0|3, $checkGlitches|2, somaria, [$smallKeys|ip_smallkey|1|4], [hammer], [glove]" // Icebreaker
+                            // "[ip_bigkey], [$smallKeys|ip_smallkey|1], [glove], somaria, $checkGlitches|1",
+                            // "ip_bigkey, $smallKeys|ip_smallkey|1, glove, somaria, $checkGlitches|1"
+                            //icebreaker? ja? nein?
+                        ],
+                        // "hosted_item": "ip_map, ip_compass, ip_bigkey",
+                        "clear_as_group": false,
+                        "item_count": 7
+                    },
+                    {
+                        "name": "Key Drops",
+                        "item_count": 4,
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "[$bigKeys|ip_bigkey], $smallKeys|ip_smallkey|1|4, [$smallKeys|ip_smallkey|2|5], [hammer], [glove]", //vanilla
+                            "$smallKeys|ip_smallkey|0|2, $checkGlitches|1, [$smallKeys|ip_smallkey|1|3], [hammer], [glove]", // IP bomb jump
+                            "$smallKeys|ip_smallkey|0|3, $checkGlitches|2, somaria, [$smallKeys|ip_smallkey|1|4], [hammer], [glove]" // Icebreaker
+                        ],
+                        "visibility_rules": ["key_drop_shuffle"]
+                    },
+                    {
+                        "name": "Boss Item" ,
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "[$bigKeys|ip_bigkey], $smallKeys|ip_smallkey|1|4, [$smallKeys|ip_smallkey|2|5], [hammer], [glove]", //vanilla
+                            "$smallKeys|ip_smallkey|0|3, $checkGlitches|1, [$smallKeys|ip_smallkey|1|4], [hammer], [glove]", // IP bomb jump
+                            "$smallKeys|ip_smallkey|0|3, $checkGlitches|2, somaria, [$smallKeys|ip_smallkey|1|4], [hammer], [glove]" // Icebreaker
+                            //maybe add hookpush then no hammer but hookshot needed for kholdstare room
+                        ],
+                        "item_count": 1,
+                        "hosted_item": "ip_boss, icepalace"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 1645,
+                        "y": 233,
+                        "size": 44
+                    }
+                ]
+            },
+            {
+                "name": "Swamp Palace",
+                "parent": "TR Eyebridge/Swamp Palace",
+                "access_rules": [
+                    "flippers, mirror"
+                ],
+                "item_count": 11,
+                "sections": [
+                    {
+                        "name": "Dungeon Chest",
+                        "access_rules": [
+                            "[$bigKeys|sp_bigkey], [hookshot], [$smallKeys|sp_smallkey|1|5],[hammer]",
+                            "[$bigKeys|sp_bigkey], [hookshot], [$smallKeys|sp_smallkey|1|4], $checkGlitches|1"
+                        ],
+                        // "hosted_item": "sp_map, sp_compass, sp_bigkey",
+                        "clear_as_group": false,
+                        "item_count": 9
+                    },
+                    {
+                        "name": "Key Drops",
+                        "item_count": 5,
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "[hookshot], $smallKeys|sp_smallkey|1|1, [$smallKeys|sp_smallkey|1|5], [hammer]",
+                            "[hookshot], $smallKeys|sp_smallkey|1|1, [$smallKeys|sp_smallkey|1|4], $checkGlitches|1"
+                        ],
+                        "visibility_rules": ["key_drop_shuffle"]
+                    },
+                    {
+                        "name": "Boss Item" ,
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "hookshot, $getBossRef|sp_boss, $smallKeys|sp_smallkey|1|5, [$smallKeys|sp_smallkey|1|6], hammer",
+                            "hookshot, $getBossRef|sp_boss, $smallKeys|sp_smallkey|1|4, [$smallKeys|sp_smallkey|1|5], $checkGlitches|1"
+                        ],
+                        "item_count": 1,
+                        "hosted_item": "sp_boss, swamppalace"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 1645,
+                        "y": 233,
+                        "size": 44
+                    }
+                ]
+            },
+            {
+                "name": "Misery Mire",
+                "parent": "TR Eyebridge/Misery Mire",
+                "access_rules": [
+                    "hookshot",
+                    "boots"
+                ],
+                "item_count": 9,
+                "sections": [
+                    {
+                        "name": "Dungeon Chest" ,
+                        "access_rules": [
+                            "[firesource],[$bigKeys|mm_bigkey], $smallKeys|mm_smallkey|0|0, [$smallKeys|mm_smallkey|1|3]" //0|2
+                        ],
+                        "clear_as_group": false,
+                        "item_count": 7
+                    },
+                    {
+                        "name": "Key Drops",
+                        "item_count": 3,
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "[firesource], $smallKeys|mm_smallkey|0|0, [$smallKeys|mm_smallkey|3|5]" //2|4
+                        ],
+                        "visibility_rules": ["key_drop_shuffle"]
+                    },
+                    {
+                        "name": "Boss Item" ,
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "$bigKeys|mm_bigkey, $getBossRef|mm_boss, [$darkRooms], somaria, $smallKeys|mm_smallkey|0|2, [$smallKeys|mm_smallkey|1|3]"
+                        ],
+                        "item_count": 1,
+                        "hosted_item": "mm_boss, miserymire"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 1645,
+                        "y": 233,
+                        "size": 44
+                    }
+                ]
+            },
+            {
+                "name": "Skull Woods Front",
+                "parent": "TR Eyebridge/Skull Woods Front",
+                "item_count": 6,
+                "sections": [
+                    {
+                        "name": "Dungeon Chest" ,
+                        "access_rules": [
+                            "$smallKeys|sw_smallkey|0|0, [$smallKeys|sw_smallkey|1|1],[$bigKeys|sw_bigkey]"
+                        ],
+                        // "hosted_item": "sw_map, sw_compass, sw_bigkey",
+                        "clear_as_group": false,
+                        "item_count": 6
+                    },
+                    {
+                        "name": "Key Drops",
+                        "item_count": 1,
+                        "clear_as_group": false,
+                        "visibility_rules": ["key_drop_shuffle"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 1645,
+                        "y": 233,
+                        "size": 44
+                    }
+                ]
+            },
+            {
+                "name": "Skull Woods Back",
+                "parent": "TR Eyebridge/Skull Woods Back",
+                "access_rules": [
+                    "firerod"
+                ],
+                "item_count": 3,
+                "sections": [
+                    {
+                        "name": "Dungeon Chest" ,
+                        "clear_as_group": false,
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Key Drops",
+                        "item_count": 1,
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "$canRemoveCurtains, $smallKeys|sw_smallkey|1|1, [$smallKeys|sw_smallkey|2|2]"
+                        ],
+                        "visibility_rules": ["key_drop_shuffle"]
+                    },
+                    {
+                        "name": "Boss Item" ,
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "$canRemoveCurtains, $getBossRef|sw_boss, $smallKeys|sw_smallkey|2|2, [$smallKeys|sw_smallkey|3|3]"
+                        ],
+                        "item_count": 1,
+                        "hosted_item": "sw_boss, skullwoods"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 1645,
+                        "y": 233,
+                        "size": 44
+                    }
+                ]
+            },
+            {
+                "name": "Turtle Rock Front",
+                "parent": "TR Eyebridge/Turtle Rock Front",
+                "access_rules": [
+                    "$openOrStandard, @TR, hammer, titans, $canUseMedallions, tr_medallion",
+                    "$openOrStandard, @TR, $checkGlitches|2, boots, $canUseMedallions, tr_medallion",
+                    "inverted, @TR, $canUseMedallions, tr_medallion",
+                    "inverted, @TR/Turtle Rock Back, boots, $checkGlitches|1",
+                    "inverted, @TR/Turtle Rock Back, somaria",
+                    "inverted, @TR/Turtle Rock Back"
+                    // "@Dark Death Mountain Right, $checkGlitches|2, boots, @TR/Turtle Rock Back",
+                    // "TR/Turtle Rock Back"
+                ],
+                "item_count": 5,
+                "sections": [
+                    {
+                        "name": "Dungeon Chest" ,
+                        "access_rules": [
+                            "TR/Turtle Rock Front, $smallKeys|tr_smallkey|0|0, [$smallKeys|tr_smallkey|2|6], [somaria], [firerod]",
+                            "TR/Turtle Rock Back, $smallKeys|tr_smallkey|0|0, [$smallKeys|tr_smallkey|1|5], [somaria], [firerod]"
+                        ],
+                        // "hosted_item": "tr_map, tr_compass, tr_bigkey",
+                        "clear_as_group": false,
+                        "item_count": 5
+                    },
+                    {
+                        "name": "Key Drops",
+                        "item_count": 2,
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "TR/Turtle Rock Front, $smallKeys|tr_smallkey|2|3, [$smallKeys|tr_smallkey|2|4], [somaria], [firerod]",
+                            "TR/Turtle Rock Back, $smallKeys|tr_smallkey|1|3, [$smallKeys|tr_smallkey|1|3], [somaria], [firerod]",
+                            "TR/Turtle Rock Back, $smallKeys|tr_smallkey|1|3, [$smallKeys|tr_smallkey|1|3], [hookshot], [firerod]",
+                            "TR/Turtle Rock Back, $smallKeys|tr_smallkey|1|3, [$smallKeys|tr_smallkey|1|3], [boots], [firerod], $checkGlitches|1"
+                        ],
+                        "visibility_rules": ["key_drop_shuffle"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 1645,
+                        "y": 233,
+                        "size": 44
+                    }
+                ]
+            },
+            {
+                "name": "Turtle Rock Back",
+                "parent": "TR Eyebridge/Turtle Rock Back",
+                "access_rules": [
+                    "TR/Turtle Rock Front, $smallKeys|tr_smallkey|2|3, [$smallKeys|tr_smallkey|2|4], somaria",
+                    "$openOrStandard, @Dark Death Mountain Right, $checkGlitches|2, mirror",
+                    "@Dark Death Mountain Right, $checkGlitches|2, boots",
+                    "TR/Turtle Rock Eye Bridge Entrance, somaria, [$darkRooms], $smallKeys|tr_smallkey|2|2, [$smallKeys|tr_smallkey|4|6]"
+                ],
+                "item_count": 8,
+                "sections": [
+                    {
+                        "name": "Dungeon Chest",
+                        "access_rules": [
+                            "TR/Turtle Rock Front, [$smallKeys|tr_smallkey|3|5], [$darkRooms], [somaria], $bigKeys|tr_bigkey",
+                            "TR/Turtle Rock Back, [$smallKeys|tr_smallkey|2|2], [$darkRooms], [somaria], $bigKeys|tr_bigkey",
+                            "TR/Turtle Rock Eye Bridge Entrance, [$smallKeys|tr_smallkey|1|1], [$darkRooms], [somaria], $bigKeys|tr_bigkey"
+                        ],
+                        "clear_as_group": false,
+                        "item_count": 6
+                    },
+                    {
+                        "name": "Boss Item",
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "TR/Turtle Rock Front, [$smallKeys|tr_smallkey|4|6], $darkRooms, $getBossRef|tr_boss, $bigKeys|tr_bigkey, somaria",
+                            "TR/Turtle Rock Back, [$smallKeys|tr_smallkey|2|2], $darkRooms, $getBossRef|tr_boss, $bigKeys|tr_bigkey, somaria",
+                            "TR/Turtle Rock Eye Bridge Entrance, [$smallKeys|tr_smallkey|1|1], $darkRooms, $getBossRef|tr_boss, $bigKeys|tr_bigkey, somaria"
+                        ],
+                        "item_count": 1
+                        // "hosted_item": "tr_boss, turtlerock"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 1645,
+                        "y": 233,
+                        "size": 44
+                    }
+                ]
+            },
+            {
+                "name": "Turtle Rock Eye Bridge Entrance",
+                "parent": "TR Eyebridge/Turtle Rock Eye Bridge Entrance",
+                "access_rules": [
+                    "@Dark Death Mountain Right, boot, mirror, $checkGlitches|2",
+                    "TR/Turtle Rock Back, somaria, $smallKeys|tr_smallkey|1|1",
+                    "TR/Turtle Rock Front, somaria, $smallKeys|tr_smallkey|3|5",
+                    "inverted, @Light Death Mountain Right, mirror"
+                ],
+                "visibility_rules": ["inverted"],
+                "item_count": 1,
+                "sections": [
+                    {}
+                ]
+            },
+            {
+                "name": "Palace of Darkness",
+                "parent": "TR Eyebridge/Palace of Darkness",
+                "chest_unopened_img": "/images/items/closed_Chest.png",
+                "chest_opened_img": "/images/items/open_Chest.png",
+                "item_count": 15,
+                "sections": [
+                    {
+                        "name": "Dungeon Chest" ,
+                        "access_rules": [
+                            "[$darkRooms], [$smallKeys|pod_smallkey|5|5], [$bigKeys|pod_bigkey]"
+                        ],
+                        // "hosted_item": "pod_map, pod_compass, pod_bigkey",
+                        "clear_as_group": false,
+                        "item_count": 13
+                    },
+                    {
+                        "name": "Boss Item" ,
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "$bigKeys|pod_bigkey, [$darkRooms], $getBossRef|pod_boss, hammer, bow"
+                        ],
+                        "item_count": 1,
+                        "hosted_item": "pod_boss, palaceofdarkness"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 1645,
+                        "y": 233,
+                        "size": 44
+                    }
+                ]
+            }
+        ]
+    }
+]
