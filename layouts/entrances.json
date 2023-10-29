@@ -1,0 +1,40 @@
+{
+    "dungeon_entrances_vertical": {
+        "type": "itemgrid",
+        "h_alignment": "center",
+        "item_h_alignment": "center",
+        "item_v_alignment": "center",
+        "item_margin": "0,2",
+        "item_height": 32,
+        "item_width": 32,
+        "rows": [
+            ["hc_main", "right_arrow", "hc_main_entrance", "", "hc_sanc", "right_arrow", "hc_sanc_entrance", "", "hc_sanc_hole", "right_arrow", "hc_sanc_hole_entrance"],
+            ["hc_top_left", "right_arrow", "hc_top_left_entrance", "", "at_main", "right_arrow", "at_main_entrance", "", "hc_top_right", "right_arrow", "hc_top_right_entrance"],
+            ["hc_sewers", "right_arrow", "hc_sewers_entrance", "", "hc_sewers_hole", "right_arrow", "hc_sewers_hole_entrance", "", "ep_main", "right_arrow", "ep_main_entrance"],
+            ["dp_main", "right_arrow", "dp_main_entrance", "", "dp_left", "right_arrow", "dp_left_entrance", "", "dp_right", "right_arrow", "dp_right_entrance"],
+            ["dp_back", "right_arrow", "dp_back_entrance", "", "toh_main", "right_arrow", "toh_main_entrance", "", "", "", ""],
+            ["pod_main", "right_arrow", "pod_main_entrance", "", "sp_main", "right_arrow", "sp_main_entrance", "", "tt_main", "right_arrow", "tt_main_entrance"],
+            ["sw_front_right_skull", "right_arrow", "sw_front_right_skull_entrance", "", "sw_front_right_hole", "right_arrow", "sw_front_right_hole_entrance", "", "sw_front_top_hole", "right_arrow", "sw_front_top_hole_entrance"],
+            ["sw_front_left_hole", "right_arrow", "sw_front_left_hole_entrance", "", "sw_front_left_skull", "right_arrow", "sw_front_left_skull_entrance", "", "ip_main", "right_arrow", "ip_main_entrance"],
+            ["sw_back", "right_arrow", "sw_back_entrance", "", "sw_back_skull", "right_arrow", "sw_back_skull_entrance", "", "sw_back_hole", "right_arrow", "sw_back_hole_entrance"],
+            ["tr_main", "right_arrow", "tr_main_entrance", "", "tr_main_back", "right_arrow", "tr_main_back_entrance", "", "tr_eye", "right_arrow", "tr_eye_entrance"],
+            ["tr_back", "right_arrow", "tr_back_entrance", "", "mm_main", "right_arrow", "mm_main_entrance", "", "gt_main", "right_arrow", "gt_main_entrance"]
+        ]
+    },
+    "dungeon_entrances_horizontal": {
+        "type": "itemgrid",
+        "h_alignment": "center",
+        "item_h_alignment": "center",
+        "item_v_alignment": "center",
+        "item_margin": "0,2",
+        "item_height": 32,
+        "item_width": 32,
+        "rows": [
+            [ "hc_main", "right_arrow", "hc_main_entrance", "", "hc_sanc", "right_arrow", "hc_sanc_entrance", "", "at_main", "right_arrow", "at_main_entrance", "", "sw_front_top_hole", "right_arrow", "sw_front_top_hole_entrance", "", "sw_back", "right_arrow", "sw_back_entrance" ],
+            [ "hc_top_left", "right_arrow", "hc_top_left_entrance", "", "hc_sanc_hole", "right_arrow", "hc_sanc_hole_entrance", "", "pod_main", "right_arrow", "pod_main_entrance", "", "sw_front_left_hole", "right_arrow", "sw_front_left_hole_entrance", "", "tt_main", "right_arrow", "tt_main_entrance" ],
+            [ "hc_top_right", "right_arrow", "hc_top_right_entrance", "", "ep_main", "right_arrow", "ep_main_entrance", "", "sp_main", "right_arrow", "sp_main_entrance", "", "sw_front_left_skull", "right_arrow", "sw_front_left_skull_entrance", "", "ip_main", "right_arrow", "ip_main_entrance" ],
+            [ "hc_sewers", "right_arrow", "hc_sewers_entrance", "", "dp_main", "right_arrow", "dp_main_entrance", "", "sw_front_right_skull", "right_arrow", "sw_front_right_skull_entrance", "", "sw_back_skull", "right_arrow", "sw_back_skull_entrance", "", "mm_main", "right_arrow", "mm_main_entrance" ],
+            [ "hc_sewers_hole", "right_arrow", "hc_sewers_hole_entrance", "", "toh_main", "right_arrow", "toh_main_entrance", "", "sw_front_right_hole", "right_arrow", "sw_front_right_hole_entrance", "", "sw_back_hole", "right_arrow", "sw_back_hole_entrance", "", "gt_main", "right_arrow", "gt_main_entrance" ]
+        ]
+    }
+}

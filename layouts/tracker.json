@@ -11,8 +11,21 @@
                 "content": [
                     {
                         "type": "item",
-                        "margin": "-5,-1,-5,-5",
+                        "margin": "5,1,5,5",
                         "item": "autofill_settings"
+                    }
+                ]
+            },
+            {
+                "type": "group",
+                "header": "Dungeon Entrance Rando",
+                "description": "Enable/Disable the ability to change Dungeon entrances on the map.",
+                "header_background": "#3e4b57",
+                "content": [
+                    {
+                        "type": "item",
+                        "margin": "5,1,5,5",
+                        "item": "dungeon_entrance_rando"
                     }
                 ]
             }            
@@ -56,17 +69,17 @@
                                 "type": "layout",
                                 "key": "setting_grid"
                             }
-                        },
-                        {
-                            "type": "group",
-                            "header": "Pinned Locations",
-                            "content": {
-                                "style": "wrap",
-                                "type": "recentpins",
-                                "orientation": "vertical",
-                                "compact": true
-                            }
-                        }
+                        }//,
+                        // {
+                        //     "type": "group",
+                        //     "header": "Pinned Locations",
+                        //     "content": {
+                        //         "style": "wrap",
+                        //         "type": "recentpins",
+                        //         "orientation": "vertical",
+                        //         "compact": true
+                        //     }
+                        // }
                     ]
                 },
                 {
@@ -102,18 +115,6 @@
                                 "key": "shared_item_grid_horizontal"
                             }
                         },
-                        // {
-                        //     "type": "group",
-                        //     "header": "Events",
-                        //     "dock": "left",
-                        //     "margin": "0,0,3,0",
-                        //     "content": {
-                        //         "type": "layout",
-                        //         "h_alignment": "center",
-                        //         "v_alignment": "center",
-                        //         "key": "event_grid"
-                        //     }
-                        // },
                         {
                             "type": "group",
                             "header": "Settings",
@@ -124,16 +125,6 @@
                                 "h_alignment": "center",
                                 "v_alignment": "center",
                                 "key": "setting_grid"
-                            }
-                        },
-                        {
-                            "type": "group",
-                            "header": "Pinned Locations",
-                            "content": {
-                                "style": "wrap",
-                                "type": "recentpins",
-                                "orientation": "horizontal",
-                                "compact": true
                             }
                         }
                     ]

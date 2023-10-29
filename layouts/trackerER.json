@@ -1,0 +1,191 @@
+﻿    {
+    "settings_popup": {
+        "type": "array",
+        "margin": "5",
+        "content": [
+            {
+                "type": "group",
+                "header": "Autofill Settings",
+                "description": "Enable/Disable the automatic fill of the settings pannel from for connected Slot_Data",
+                "header_background": "#3e4b57",
+                "content": [
+                    {
+                        "type": "item",
+                        "margin": "5,1,5,5",
+                        "item": "autofill_settings"
+                    }
+                ]
+            },
+            {
+                "type": "group",
+                "header": "Dungeon Entrance Rando",
+                "description": "Enable/Disable the ability to change Dungeon entrances on the map.",
+                "header_background": "#3e4b57",
+                "content": [
+                    {
+                        "type": "item",
+                        "margin": "5,1,5,5",
+                        "item": "dungeon_entrance_rando"
+                    }
+                ]
+            }
+        ]
+    },
+    "tracker_default": {
+        "type": "container",
+        "background": "#00000000",
+        "content": {
+            "type": "dock",
+            "dropshadow": true,
+            "content": [
+                {
+                    "type": "dock",
+                    "dock": "left",
+                    "v_alignment": "stretch",
+                    "content": [
+                        {
+                            "type": "group",
+                            "header": "Items",
+                            "dock": "top",
+                            "content": {
+                                "type": "layout",
+                                "key": "shared_item_grid_vertical"
+                            }
+                        },
+                        // {
+                        //     "type": "group",
+                        //     "header": "Events",
+                        //     "dock": "top",
+                        //     "content": {
+                        //         "type": "layout",
+                        //         "key": "event_grid"
+                        //     }
+                        // },
+                        {
+                            "type": "group",
+                            "header": "Settings",
+                            "dock": "top",
+                            "content": {
+                                "type": "layout",
+                                "key": "setting_grid"
+                            }
+                        },
+                        {
+                            "type": "group",
+                            "header": "Entrance Rando",
+                            "dock": "top",
+                            "content": {
+                                "type": "layout",
+                                "key": "dungeon_entrances_vertical"
+                            }
+                        }//,
+                        // {
+                        //     "type": "group",
+                        //     "header": "Pinned Locations",
+                        //     "content": {
+                        //         "style": "wrap",
+                        //         "type": "recentpins",
+                        //         "orientation": "vertical",
+                        //         "compact": true
+                        //     }
+                        // }
+                    ]
+                },
+                {
+                    "type": "dock",
+                    "content": {
+                        "type": "layout",
+                        "key": "tabbed_maps_vertical"
+                    }
+                }
+            ]
+        }
+    },
+    "tracker_horizontal": {
+        "type": "container",
+        "background": "#00000000",
+        "content": {
+            "type": "dock",
+            "dropshadow": true,
+            "content": [
+                {
+                    "type": "dock",
+                    "dock": "bottom",
+                    "content": [
+                        {
+                            "type": "group",
+                            "header": "Items",
+                            "dock": "left",
+                            "margin": "0,0,3,0",
+                            "content": {
+                                "type": "layout",
+                                "h_alignment": "center",
+                                "v_alignment": "center",
+                                "key": "shared_item_grid_horizontal"
+                            }
+                        },
+                        {
+                            "type": "group",
+                            "header": "Settings",
+                            "dock": "left",
+                            "margin": "0,0,3,0",
+                            "content": {
+                                "type": "layout",
+                                "h_alignment": "center",
+                                "v_alignment": "center",
+                                "key": "setting_grid"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "dock",
+                    "dock": "bottom",
+                    "content": [
+                        // {
+                        //     "type": "group",
+                        //     "header": "Events",
+                        //     "dock": "left",
+                        //     "margin": "0,0,3,0",
+                        //     "content": {
+                        //         "type": "layout",
+                        //         "h_alignment": "center",
+                        //         "v_alignment": "center",
+                        //         "key": "event_grid"
+                        //     }
+                        // },
+                        {
+                            "type": "group",
+                            "header": "Entrance Rando",
+                            "dock": "bottom",
+                            "margin": "0,0,3,0",
+                            "content": {
+                                "type": "layout",
+                                "h_alignment": "center",
+                                "v_alignment": "center",
+                                "key": "dungeon_entrances_horizontal"
+                            }
+                        }//,
+                        // {
+                        //     "type": "group",
+                        //     "header": "Pinned Locations",
+                        //     "content": {
+                        //         "style": "wrap",
+                        //         "type": "recentpins",
+                        //         "orientation": "horizontal",
+                        //         "compact": true
+                        //     }
+                        // }
+                    ]
+                },
+                {
+                    "type": "dock",
+                    "content": {
+                        "type": "layout",
+                        "key": "tabbed_maps_horizontal"
+                    }
+                }
+            ]
+        }
+    }
+}
