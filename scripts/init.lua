@@ -10,6 +10,7 @@ Tracker:AddItems("items/dungeon_items.json")
 Tracker:AddItems("items/dungeon_entrances.json")
 
 -- Logic
+ScriptHost:LoadScript("scripts/itemcodesER.lua")
 ScriptHost:LoadScript("scripts/logic/logic.lua")
 
 -- Maps

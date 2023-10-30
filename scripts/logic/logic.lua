@@ -250,6 +250,27 @@ function keyDropLayoutChange()
         Tracker:AddLayouts("layouts/dungeon_items.json")
     end
 end
+print(connectorList["_to_sp_main"][2])
+function EntranceRef(ERtarget)
+    for index, connector in pairs(connectorList[ERtarget]) do
+        print(index, connector)
+        if Tracker:FindObjectForCode(connector).Active then
+            location= "@"
+
+            starts, ends = string.find(connector, ERtarget)
+            location = "@".. string.sub(connector, 1, start-1)
+        end
+    end
+end
+
+
+function dungeonER()
+    if Tracker:FindObjectForCode("dungeon_entrance_rando").Active then
+        Tracker:AddLayouts("layouts/trackerER.json")
+    else 
+        Tracker:AddLayouts("layouts/tracker.json")
+    end
+end
 
 -- function  chestCount(dungeon, baseCount)
 --     local counter = 0 
@@ -285,4 +306,5 @@ end
 --     return baseKeys
 -- end
 
+ScriptHost:AddWatchForCode("settings dungeon ER handler", "dungeon_entrance_rando", dungeonER)
 ScriptHost:AddWatchForCode("keydropshuffle handler", "key_drop_shuffle", keyDropLayoutChange)
