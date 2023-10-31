@@ -251,38 +251,4 @@ function keyDropLayoutChange()
     end
 end
 
--- function  chestCount(dungeon, baseCount)
---     local counter = 0 
---     local settings = {
---         [1] = {Tracker:FindObjectForCode("map").Active},
---         [2] = {Tracker:FindObjectForCode("compass").Active},
---         [3] = {Tracker:FindObjectForCode("small_keys").Active},
---         [4] = {Tracker:FindObjectForCode("big_keys").Active},
---     }
---     -- local items = {
---     --     [1] = {Tracker:FindObjectForCode(dungeon.."_map")},
---     --     [2] = {Tracker:FindObjectForCode(dungeon.."_compass")},
---     --     [3] = {Tracker:FindObjectForCode(dungeon.."_smallkey")},
---     --     [4] = {Tracker:FindObjectForCode(dungeon.."_bigkey")},
---     -- }
---     for k,v in pairs(settings) do
---         print(k,v)
---         if v == true then
---             counter = coutner + 1
---         end
---     end
---     print(baseCount, counter)
---     -- return baseCount
--- end
-
--- function maxKeycount(baseKeys, keyDropShuffle)
---     print(baseKeys, keyDropShuffle)
---     if Tracker:FindObjectForCode("key_drop_shuffle").Active == true then
---         print("yes")
---         return baseKeys + keyDropShuffle
---     end
---     print("no")
---     return baseKeys
--- end
-
 ScriptHost:AddWatchForCode("keydropshuffle handler", "key_drop_shuffle", keyDropLayoutChange)
