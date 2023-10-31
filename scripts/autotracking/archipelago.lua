@@ -33,8 +33,18 @@ FLAG_CODES = {
     "triforce_pieces_required"
 }
 
-local SECONDSTAGE = { 5, 34, 28, 80 }
-local THIRDSTAGE = { 2, 6, 35 }
+local SECONDSTAGE = { 
+    [5] = 5, --red shield
+    [34] = 34, --blue mail
+    [28] = 28, --titans mitts
+    [80] = 80, --master sword
+    [59] = 59 --silver bow
+}
+local THIRDSTAGE = { 
+    [2] = 2, --tempered sword
+    [6] = 6, --mirror shield
+    [35] = 35 --red mail
+}
 
 SLOT_DATA = {}
 
@@ -136,29 +146,47 @@ function onItem(index, item_id, item_name, player_number)
         -- print(item[1], item[2])
         local item_obj = Tracker:FindObjectForCode(item_code)
         if item_obj then
+            -- print(item_id)
+            -- print(item_obj.Type)
             if item_obj.Type == "toggle" then
-                if ( SECONDSTAGE[item_id] and item_obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
-                    print(item_obj.CurrentStage, item_id)
-                    item_obj.CurrentStage = 2
-                elseif ( THIRDSTAGE[item_id] and item_obj.CurrentStage < 3 ) then -- tempered sword, red mail, mirror shield
-                    print(item_obj.CurrentStage, item_id)
-                    item_obj.CurrentStage = 3
-                elseif (item_id == 3  and item_obj.CurrentStage < 4) then
-                    print(item_obj.CurrentStage, item_id)
-                    item_obj.CurrentStage = 4
-                end
+                -- print("toggle")
                 item_obj.Active = true
             elseif item_obj.Type == "progressive" then
-                if item_obj.Active then
+                -- print("progressive")
+                if (SECONDSTAGE[item_id] == item_id and item_obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
+                    -- print(item_obj.CurrentStage, item_id)
+                    item_obj.CurrentStage = 2
+                elseif (THIRDSTAGE[item_id] == item_id and item_obj.CurrentStage < 3 ) then -- tempered sword, red mail, mirror shield
+                    -- print(item_obj.CurrentStage, item_id)
+                    item_obj.CurrentStage = 3
+                elseif (item_id == 3  and item_obj.CurrentStage < 4) then --golden sword
+                    -- print(item_obj.CurrentStage, item_id)
+                    item_obj.CurrentStage = 4
+                elseif item_obj.Active then
                     item_obj.CurrentStage = item_obj.CurrentStage + 1
                 else
                     item_obj.Active = true
                 end
             elseif item_obj.Type == "consumable" then
+                -- print("consumable")
                 if item_id == 82 or item_id == 84 then
                     item_obj.AcquiredCount = item_obj.AcquiredCount + (2*item_obj.Increment)
                 else
                     item_obj.AcquiredCount = item_obj.AcquiredCount + item_obj.Increment
+                end
+            elseif item_obj.Type == "progressive_toggle" then
+                -- print("progressive_toggle")
+                if (item_id == 88 and item_obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
+                    -- print(item_obj.CurrentStage, item_id)
+                    item_obj.CurrentStage = 2
+                elseif (item_id == 59 and item_obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
+                    -- print(item_obj.CurrentStage, item_id)
+                    item_obj.Active = true
+                    item_obj.CurrentStage = 2
+                elseif item_obj.Active then
+                    item_obj.CurrentStage = item_obj.CurrentStage + 1
+                else
+                    item_obj.Active = true
                 end
             end
         else
