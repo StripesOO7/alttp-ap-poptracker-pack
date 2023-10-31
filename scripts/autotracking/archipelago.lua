@@ -277,7 +277,7 @@ function autoFill()
         crystals_needed_for_ganon={code="ganon_killable", mapping=nil},
         mode={code="start_option", mapping=mapMode},
         -- retro_bow={code="", mapping=mapToggleReverse},
-        -- retro_caves={code="", mapping=mapToggleReverse},
+        retro_caves={code="retro_caves", mapping=mapDungeonItem},
         swordless={code="swordless", mapping=mapDungeonItem},
         -- item_pool={code="", mapping=mapToggle},
         me_medallion={code="", mapping=mapMedalion},
