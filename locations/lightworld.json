@@ -567,7 +567,8 @@
                         "map": "Lightworld",
                         "x": 1592,
                         "y": 1715,
-                        "size": 32
+                        "size": 32,
+                        "force_invisibility_rules" : ["retro_caves"]
                     }
                 ]
             },
@@ -826,7 +827,7 @@
         "overlay_background": "#000000",
         "access_rules": [
             "$openOrStandard, flute_active",
-            "inverted, pearl, flute_active",
+            "inverted, flute_active",
             "$openOrStandard, [$darkRooms], glove",
             "inverted, pearl, [$darkRooms], glove",
             "$openOrStandard, $checkGlitches|2, boots"
