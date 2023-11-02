@@ -1,6 +1,23 @@
 {
 	"versions": [
 		{
+			"package_version": "0.1",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.1/alttp-ap-tracker-v0.1.zip",
+			"sha256": "b2518d2226292d5527152f12e12d8cd4c0260e8fd849a24717fc10f73bea49c4",
+			"changelog": [
+				"- added Keydropshuffle as option to select and adjusted the Key-requiremts accordingly",
+				"- split small+big key icon as well as map+compass icon into separat toggles",
+				"- added universal keys as option to select (indicated wit a 'u' next to the small-key settings-icon",
+				"- non-progressive items should get tracked properly",
+				"- added 'retro caves' to the map --> they need to be marked of manually",
+				"(retro caves as option is in the settings popup next to settings-autofill)",
+				"- fixed typos for some locations and accesrules",
+				"- fixed access rule for specrock item --> does not need moon pearl in inverted",
+				"- fixed wrong changing of state for medallions when only reconnecting to AP with autofill on and without reset",
+				"- fixed swapped PoD arena bridge and ledge chest tracking for SNES-tracking"
+			]
+		},
+		{
 			"package_version": "0.0.6.9",
 			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.0.6.9/alttp-ap-tracker-v0.0.6.9.zip",
 			"sha256": "44743f24e6f10f08d80c27ec8823ece2a85a87ac798e588ee394064e27349caa",
