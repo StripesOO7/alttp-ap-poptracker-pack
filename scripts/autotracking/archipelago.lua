@@ -222,6 +222,15 @@ function onLocation(location_id, location_name)
                 smallkey = Tracker:FindObjectForCode(location:sub(2, 3).."_smallkey")
                 smallkey.AcquiredCount = smallkey.AcquiredCount + 1 
             end
+            -- x,_ = string.find(location, "universal")
+            -- if x > 0 and Tracker:FindObjectForCode("small_keys").CurrentStage == 2 then
+            --     universal = Tracker:FindObjectForCode("universal_keys")
+            --     universal.AcquiredCount = universal.AcquiredCount + 1
+            --     smallkey = Tracker:FindObjectForCode(location:sub(1, x-2).."_smallkey")
+            --     smallkey.AcquiredCount = smallkey.AcquiredCount + 1
+            -- end
+
+            -- Tracker:FindObjectForCode("universal_keys").Active
         else
             print(string.format("onLocation: could not find location_object for code %s", location))
         end

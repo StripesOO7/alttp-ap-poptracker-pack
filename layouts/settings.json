@@ -42,16 +42,18 @@
                         "content": [
                             {
                                 "type": "itemgrid",
-                                "item_margin": "2, 2",
-                                "item_size": "50, 40",
+                                "item_margin": "1, 1",
+                                "item_size": "25, 40",
                                 
                                 "v_alignment": "center",
                                 "item_h_alignment": "center",
                                 "item_v_alignment": "center",
                                 "rows": [                        
                                     [
-                                        "key_shuffle",
-                                        "map_compass_shuffle"
+                                        "small_keys",
+                                        "big_keys",
+                                        "map",
+                                        "compass"
                                     ]
                                 ]
                             }
