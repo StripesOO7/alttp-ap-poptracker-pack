@@ -565,7 +565,7 @@ function updateNPCItemFlagsFromMemorySegment(segment)
     
     updateSectionChestCountFromByteAndFlag(segment, "@Light Death Mountain Left Bottom/Rescue Old Man/Rescue Old Man", 0x7ef410, 0x01) --?
     updateSectionChestCountFromByteAndFlag(segment, "@Dark Death Mountain Left/Rescue Old Man/Rescue Old Man", 0x7ef410, 0x01)
-    updateSectionChestCountFromByteAndFlag(segment, "@Lightworld/Zora's Damoain/King Zora (Scam)", 0x7ef410, 0x02)
+    updateSectionChestCountFromByteAndFlag(segment, "@Lightworld/Zora's Domain/King Zora (Scam)", 0x7ef410, 0x02)
     updateSectionChestCountFromByteAndFlag(segment, "@Lightworld/Sick Kid/Sick Kid", 0x7ef410, 0x04)
     updateSectionChestCountFromByteAndFlag(segment, "@Darkworld Bottom/Stumpy/Stumpy", 0x7ef410, 0x08)
     updateSectionChestCountFromByteAndFlag(segment, "@Lightworld/Sahasrahla's Hut/Sahasrahla's Item", 0x7ef410, 0x10)
@@ -609,7 +609,7 @@ function updateOverworldEventsFromMemorySegment(segment)
     updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Darkworld Right/Pyramid Ledge/Pyramid Ledge Item",91)    
     updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Darkworld Bottom/Digging Game/Digging Game",104)    
     updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Lightworld/Master Sword Pedestal/Pedestal",128)    
-    updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Lightworld/Zora's Damoain/Zora Ledge",129)    
+    updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Lightworld/Zora's Domain/Zora Ledge",129)    
 end
 
 function updateRoomsFromMemorySegment(segment)
