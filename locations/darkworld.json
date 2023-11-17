@@ -693,8 +693,11 @@
                 "name": "Turtle Rock Front",
                 "access_rules": [
                     "$openOrStandard, @TR, hammer, titans, $canUseMedallions, tr_medallion",
+                    "$openOrStandard, @TR, hammer, titans, $canUseMedallions, medallion:3",
                     "$openOrStandard, @TR, $checkGlitches|2, boots, $canUseMedallions, tr_medallion",
+                    "$openOrStandard, @TR, $checkGlitches|2, boots, $canUseMedallions, medallion:3",
                     "inverted, @TR, $canUseMedallions, tr_medallion",
+                    "inverted, @TR, $canUseMedallions, medallion:3",
                     "inverted, @TR/Turtle Rock Back, boots, $checkGlitches|1",
                     "inverted, @TR/Turtle Rock Back, somaria",
                     "inverted, @TR/Turtle Rock Back"
@@ -893,7 +896,9 @@
         "overlay_background": "#000000",
         "access_rules": [
             "@Darkworld Swamp, pearl, $canUseMedallions, mm_medallion",
-            "inverted, @Darkworld Swamp, $canUseMedallions, mm_medallion"
+            "@Darkworld Swamp, pearl, $canUseMedallions, medallion:3",
+            "inverted, @Darkworld Swamp, $canUseMedallions, mm_medallion",
+            "inverted, @Darkworld Swamp, $canUseMedallions, medallion:3"
         ],
         "children": [
             {
