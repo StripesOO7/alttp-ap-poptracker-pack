@@ -153,11 +153,19 @@
         "type": "tabbed",
         "tabs": [
             {
-                "title": "Overworld",
+                "title": "Lightworld",
                 "content": {
                     "type": "map",
                     "maps": [
-                        "Lightworld",
+                        "Lightworld"
+                    ]
+                }
+            },
+            {
+                "title": "Darkworld",
+                "content": {
+                    "type": "map",
+                    "maps": [
                         "Darkworld"
                     ]
                 }
