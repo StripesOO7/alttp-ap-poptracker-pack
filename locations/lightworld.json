@@ -475,7 +475,8 @@
                     {
                         "name": "Ice Rod Chest",
                         "access_rules": [
-                            "bombs"
+                            "bombs",
+                            "$checkGlitches|2, boots"
                         ]
                     }
                 ],
@@ -1514,7 +1515,7 @@
                     {
                         "name": "GT Top Agahnim 2",
                         "access_rules": [
-                            "@GT-inveted/Ganon's Tower/GT Top Moldorm refight"
+                            "@GT-inverted/Ganon's Tower/GT Top Moldorm refight"
                         ],
                         "clear_as_group": false,
                         "hosted_item": "aga2"

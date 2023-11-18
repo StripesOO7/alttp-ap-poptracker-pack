@@ -54,8 +54,8 @@
                 "name": "Pokey 1 Key Drop",
                 "visibility_rules": ["key_drop_shuffle"],
                 "access_rules": [
-                    "TR/Turtle Rock Front, somaria, [$smallKeys|tr_smallkey|1|1]",
-                    "TR/Turtle Rock Back, somaria, [$smallKeys|tr_smallkey|1|1]",
+                    "@TR/Turtle Rock Front, somaria, [$smallKeys|tr_smallkey|1|1]",
+                    "@TR/Turtle Rock Back, somaria, [$smallKeys|tr_smallkey|1|1]",
                     "@TR/Turtle Rock Eye Bridge Entrance, [$darkRooms], somaria, $smallKeys|tr_smallkey|2|3, [$smallKeys|tr_smallkey|3|4]"
                 ],
                 "sections": [
@@ -75,8 +75,8 @@
             {
                 "name": "Map Chest",
                 "access_rules": [
-                    "TR/Turtle Rock Front, somaria, firerod",
-                    "TR/Turtle Rock Back, somariam  firerod, [$smallKeys|tr_smallkey|1|2]",
+                    "@TR/Turtle Rock Front, somaria, firerod",
+                    "@TR/Turtle Rock Back, somariam  firerod, [$smallKeys|tr_smallkey|1|2]",
                     "@TR/Turtle Rock Eye Bridge Entrance, [$darkRooms], firerod, somaria, $smallKeys|tr_smallkey|2|3, [$smallKeys|tr_smallkey|3|4]"
                 ],
                 "sections": [
@@ -96,8 +96,8 @@
             {
                 "name": "Roller Room Right",
                 "access_rules": [
-                    "TR/Turtle Rock Front, somaria, firerod",
-                    "TR/Turtle Rock Back, somariam  firerod, [$smallKeys|tr_smallkey|1|2]",
+                    "@TR/Turtle Rock Front, somaria, firerod",
+                    "@TR/Turtle Rock Back, somariam  firerod, [$smallKeys|tr_smallkey|1|2]",
                     "@TR/Turtle Rock Eye Bridge Entrance, [$darkRooms], firerod, somaria, $smallKeys|tr_smallkey|2|3, [$smallKeys|tr_smallkey|3|4]"
                 ],
                 "sections": [
@@ -118,8 +118,8 @@
                 "name": "Pokey 2 Key Drop",
                 "visibility_rules": ["key_drop_shuffle"],
                 "access_rules": [
-                    "TR/Turtle Rock Front, somaria, [$smallKeys|tr_smallkey|2|3]",
-                    "TR/Turtle Rock Back",
+                    "@TR/Turtle Rock Front, somaria, [$smallKeys|tr_smallkey|2|3]",
+                    "@TR/Turtle Rock Back",
                     "@TR/Turtle Rock Eye Bridge Entrance, [$darkRooms], somaria, $smallKeys|tr_smallkey|0|0, [$smallKeys|tr_smallkey|1|1]"
                 ],
                 "sections": [
@@ -139,8 +139,8 @@
             {
                 "name": "Big Key Chest",
                 "access_rules": [
-                    "TR/Turtle Rock Front, somaria, $smallKeys|tr_smallkey|2|4",
-                    "TR/Turtle Rock Back, $smallKeys|tr_smallkey|0|1",
+                    "@TR/Turtle Rock Front, somaria, $smallKeys|tr_smallkey|2|4",
+                    "@TR/Turtle Rock Back, $smallKeys|tr_smallkey|0|1",
                     "@TR/Turtle Rock Eye Bridge Entrance, [$darkRooms], somaria, $smallKeys|tr_smallkey|0|1, [$smallKeys|tr_smallkey|1|2]"
                 ],
                 "sections": [
