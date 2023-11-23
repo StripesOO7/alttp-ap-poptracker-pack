@@ -277,7 +277,7 @@ function autoFill()
         pot_shuffle={code="key_drop_shuffle", mapping=mapDungeonItem},
         dark_room_logic={code="dark_mode", mapping=mapDark},
         bigkey_shuffle={code="big_keys", mapping=mapDungeonItem},
-        smallkey_shuffle={code="small_keys", mapping=mapDungeonItem},
+        smallkey_shuffle={code="small_keys", mapping=mapToggle},
         map_shuffle={code="map", mapping=mapDungeonItem},
         compass_shuffle={code="compass", mapping=mapDungeonItem},
         -- progressive={code="progressive_items", mapping=mapToggle},
