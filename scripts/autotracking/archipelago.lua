@@ -125,13 +125,13 @@ function onClear(slot_data)
             end
         end
     end
-
     Archipelago:SetNotify({"events"})
     Archipelago:Get({"events"})
     SLOT_DATA = slot_data
     if Tracker:FindObjectForCode("autofill_settings").Active == true then
         autoFill(slot_data)
     end
+    bossShuffle()
 end
 
 function onItem(index, item_id, item_name, player_number)
@@ -254,7 +254,7 @@ function autoFill()
     end
     -- print(dump_table(SLOT_DATA))
 
-    mapToggle={[0]=0,[1]=1}
+    mapToggle={[0]=0,[1]=1,[2]=1,[3]=1,[4]=1}
     mapToggleReverse={[0]=1,[1]=0,[2]=0,[3]=0,[4]=0}
     mapTripleReverse={[0]=2,[1]=1,[2]=0}
     mapDungeonItem={[0]=false,[1]=true,[2]=true,[3]=true,[4]=true,[6]=true}

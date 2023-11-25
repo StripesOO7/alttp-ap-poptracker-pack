@@ -92,10 +92,12 @@ function ganonCrystalCount()
     return checkRequirements("ganon_killable", "crystal")
 end
 
-function canSwim() --fake flippers
-    if Tracker:FindObjectForCode("glitches").CurrentStage > 0 then
+function canSwim(itemNeeded) --fake flippers
+    if Tracker:FindObjectForCode("glitches").CurrentStage > 0 and itemNeeded ~= nil then
+        return Tracker:FindObjectForCode(itemNeeded).Active
+    elseif Tracker:FindObjectForCode("glitches").CurrentStage > 0 and itemNeeded == nil then 
         return true
-    else 
+    else
         return Tracker:ProviderCountForCode("flippers")
     end
 end
@@ -251,4 +253,37 @@ function keyDropLayoutChange()
     end
 end
 
+function bossShuffle()
+    local dungeon_list = {"ep","dp","toh","pod","sp","sw","tt","ip","mm","tr"}
+    if Tracker:FindObjectForCode("boss_shuffle").CurrentStage == 0 then
+        for index, dungeon in pairs(dungeon_list) do
+            Tracker:FindObjectForCode(dungeon.."_boss").CurrentStage = index
+            Tracker:FindObjectForCode("gt_ice").CurrentStage = 1
+            Tracker:FindObjectForCode("gt_lanmo").CurrentStage = 2
+            Tracker:FindObjectForCode("gt_boss").CurrentStage = 3
+        end
+    else
+        for index, dungeon in pairs(dungeon_list) do
+            Tracker:FindObjectForCode(dungeon.."_boss").CurrentStage = 0
+            Tracker:FindObjectForCode("gt_ice").CurrentStage = 0
+            Tracker:FindObjectForCode("gt_lanmo").CurrentStage = 0
+            Tracker:FindObjectForCode("gt_boss").CurrentStage = 0
+        end
+    end
+end
+
+
+function owDungeonDetails()
+    local dungeon_details = Tracker:FindObjectForCode("ow_dungeon_details")
+    if dungeon_details.Active then
+        Tracker:AddLocations("locations/darkworld_dungeons_detailed.json")
+        Tracker:AddLocations("locations/lightworld_dungeons_detailed.json")
+    else
+        Tracker:AddLocations("locations/darkworld_dungeons.json")
+        Tracker:AddLocations("locations/lightworld_dungeons.json")
+    end
+end
+
 ScriptHost:AddWatchForCode("keydropshuffle handler", "key_drop_shuffle", keyDropLayoutChange)
+ScriptHost:AddWatchForCode("boss handler", "boss_shuffle", bossShuffle)
+-- ScriptHost:AddWatchForCode("ow_dungeon details handler", "ow_dungeon_details", owDungeonDetails)

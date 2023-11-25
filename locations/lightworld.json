@@ -650,9 +650,9 @@
             {
                 "name": "Waterfall Fairy",
                 "access_rules": [
-                    "$canSwim, glove",
-                    "$canSwim, pearl",
-                    "$canSwim, boots",
+                    "$canSwim|pearl, glove",
+                    "$canSwim|pearl",
+                    "$canSwim|pearl, boots",
                     "flippers"
                 ],
                 "sections": [
