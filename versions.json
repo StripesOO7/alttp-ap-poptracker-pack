@@ -1,6 +1,21 @@
 {
 	"versions": [
 		{
+			"package_version": "0.1.1",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.1.1/alttp-ap-tracker-v0.1.1.zip",
+			"sha256": "3f40c6f0f39a074fa147f18f29ae4d37236ea21b9a292ad9d2a4b60b3519542c",
+			"changelog": [
+				"- fixed mixed up tracking of MM big chest and Map chest in SNES Tracking",
+				"- fixed typo in Zoras Domain + others",
+				"- fixed access rules for Darkworld left-side when only having hookshot and right-side Darkworld access",
+				"- fixed broken settings-autofill because of the smallkey-settings change from v0.1...it crashed when encountering the smallkey_shuffle option and did not track anything after that",
+				"- fixed Medallions changing state when reconnecting without reset or just toggeling the autofill-setting on and off",
+				
+				"- split Dark- and Lightworld Maps into their own tabs for vertical view, so images are bigger",
+				"- added marking MM and TR as available when having all 3 Medallions but not having them marked"
+			]
+		},
+		{
 			"package_version": "0.1",
 			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.1/alttp-ap-tracker-v0.1.zip",
 			"sha256": "b2518d2226292d5527152f12e12d8cd4c0260e8fd849a24717fc10f73bea49c4",
