@@ -315,12 +315,6 @@ function autoFill()
                 end
             elseif settings_name == "shop_item_slots" then
                 Tracker:FindObjectForCode("shop_sanity").AcquiredCount = settings_value 
-            elseif settings_name == "mm_medalion" then
-                mm_medal = Tracker:FindObjectForCode(mapMedalion[settings_value])
-                mm_medal.CurrentStage = mm_medal.CurrentStage + 2
-            elseif settings_name == "tr_medalion" then
-                tr_medal = Tracker:FindObjectForCode(mapMedalion[settings_value])
-                tr_medal.CurrentStage = tr_medal.CurrentStage + 1
             elseif slotCodes[settings_name] then
                 item = Tracker:FindObjectForCode(slotCodes[settings_name].code)
                 if item.Type == "toggle" then
@@ -331,6 +325,13 @@ function autoFill()
                 end
             end
         end
+        if SLOT_DATA["mm_medalion"] == SLOT_DATA["tr_medalion"] then
+            Tracker:FindObjectForCode(string.lower(SLOT_DATA["mm_medalion"])).CurrentStage = 3
+        else
+            Tracker:FindObjectForCode(string.lower(SLOT_DATA["mm_medalion"])).CurrentStage = 2
+            Tracker:FindObjectForCode(string.lower(SLOT_DATA["tr_medalion"])).CurrentStage = 1
+        end
+
     end
 end
 
