@@ -192,7 +192,8 @@
             {
                 "name": "Big Key Chest",
                 "access_rules": [
-                    "$smallKeys|ip_smallkey|0|3, [$smallKeys|ip_smallkey|1|4], hookshot",
+                    "$smallKeys|ip_smallkey|0|3, [$smallKeys|ip_smallkey|1|4], hookshot, hammer",
+                    "$smallKeys|ip_smallkey|1|3, [$smallKeys|ip_smallkey|1|4], hammer",
                     "$smallKeys|ip_smallkey|0|1, [$smallKeys|ip_smallkey|1|2], somaria, $checkGlitches|2",
                     "$smallKeys|ip_smallkey|0|1, [$smallKeys|ip_smallkey|0|2], somaria, $checkGlitches|2, hammer, glove"
                 ],

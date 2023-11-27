@@ -1023,14 +1023,15 @@
             {
                 "name": "Ice Palace",
                 "access_rules": [
-                    "firerod","bombos"
+                    "firerod",
+                    "bombos"
                 ],
                 "item_count": 9,
                 "sections": [
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": [
-                            "[$bigKeys|ip_bigkey], $smallKeys|ip_smallkey|1|4, [$smallKeys|ip_smallkey|2|5], [hammer], [glove]", //vanilla
+                            "[$bigKeys|ip_bigkey], $smallKeys|ip_smallkey|0|4, [$smallKeys|ip_smallkey|2|5], [hammer], [glove]", //vanilla
                             "[$bigKeys|ip_bigkey], $smallKeys|ip_smallkey|0|3, $checkGlitches|1, [$smallKeys|ip_smallkey|1|4], [hammer], [glove]", // IP bomb jump
                             "[$bigKeys|ip_bigkey], $smallKeys|ip_smallkey|0|3, $checkGlitches|2, somaria, [$smallKeys|ip_smallkey|1|4], [hammer], [glove]" // Icebreaker
                             // "[ip_bigkey], [$smallKeys|ip_smallkey|1], [glove], somaria, $checkGlitches|1",
