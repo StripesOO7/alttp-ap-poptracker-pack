@@ -125,8 +125,8 @@ function onClear(slot_data)
             end
         end
     end
-    Archipelago:SetNotify({"events"})
-    Archipelago:Get({"events"})
+    PLAYER_ID = Archipelago.PlayerNumber or -1
+	TEAM_NUMBER = Archipelago.TeamNumber or 0
     SLOT_DATA = slot_data
     if Tracker:FindObjectForCode("autofill_settings").Active == true then
         autoFill(slot_data)
@@ -149,21 +149,16 @@ function onItem(index, item_id, item_name, player_number)
         -- print(item[1], item[2])
         local item_obj = Tracker:FindObjectForCode(item_code)
         if item_obj then
-            -- print(item_id)
-            -- print(item_obj.Type)
             if item_obj.Type == "toggle" then
                 -- print("toggle")
                 item_obj.Active = true
             elseif item_obj.Type == "progressive" then
                 -- print("progressive")
                 if (SECONDSTAGE[item_id] == item_id and item_obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
-                    -- print(item_obj.CurrentStage, item_id)
                     item_obj.CurrentStage = 2
                 elseif (THIRDSTAGE[item_id] == item_id and item_obj.CurrentStage < 3 ) then -- tempered sword, red mail, mirror shield
-                    -- print(item_obj.CurrentStage, item_id)
                     item_obj.CurrentStage = 3
                 elseif (item_id == 3  and item_obj.CurrentStage < 4) then --golden sword
-                    -- print(item_obj.CurrentStage, item_id)
                     item_obj.CurrentStage = 4
                 elseif item_obj.Active then
                     item_obj.CurrentStage = item_obj.CurrentStage + 1
@@ -180,10 +175,8 @@ function onItem(index, item_id, item_name, player_number)
             elseif item_obj.Type == "progressive_toggle" then
                 -- print("progressive_toggle")
                 if (item_id == 88 and item_obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
-                    -- print(item_obj.CurrentStage, item_id)
                     item_obj.CurrentStage = 2
                 elseif (item_id == 59 and item_obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
-                    -- print(item_obj.CurrentStage, item_id)
                     item_obj.Active = true
                     item_obj.CurrentStage = 2
                 elseif item_obj.Active then
@@ -306,13 +299,6 @@ function autoFill()
             or settings_name == "crystals_needed_for_ganon" 
             or settings_name == "triforce_pieces_required" then
                 Tracker:FindObjectForCode(slotCodes[settings_name].code).AcquiredCount = settings_value
-            -- elseif settings_name == "shop_shuffle" then
-            --     item = Tracker:FindObjectForCode(slotCodes[settings_name].code)
-            --     if settings_value ~= "none" then
-            --         item.Active = true
-            --     elseif settings_value == "none" then
-            --         item.Active = false
-            --     end
             elseif settings_name == "shop_item_slots" then
                 Tracker:FindObjectForCode("shop_sanity").AcquiredCount = settings_value 
                 Tracker:FindObjectForCode("shop_sanity").Active = true
@@ -336,26 +322,8 @@ function autoFill()
     end
 end
 
-function updateEvents(value)
-    if value ~= nil then
-        local gyms = 0
-        for i, code in ipairs(FLAG_CODES) do
-            local bit = value >> (i - 1) & 1
-            if i < 9 then
-                gyms = gyms + bit
-            end
-            if #code>0 then
-                Tracker:FindObjectForCode(code).Active = bit
-            end
-        end
-        local gymObj = Tracker:FindObjectForCode("gyms")
-        gymObj.AcquiredCount = gyms
-    end
-end
 
 ScriptHost:AddWatchForCode("settings autofill handler", "autofill_settings", autoFill)
 Archipelago:AddClearHandler("clear handler", onClear)
 Archipelago:AddItemHandler("item handler", onItem)
 Archipelago:AddLocationHandler("location handler", onLocation)
-Archipelago:AddSetReplyHandler("event handler", onEvent)
-Archipelago:AddRetrievedHandler("event launch handler", onEventsLaunch)
