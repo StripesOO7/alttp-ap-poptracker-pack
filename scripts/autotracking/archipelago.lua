@@ -299,6 +299,13 @@ function autoFill()
             or settings_name == "crystals_needed_for_ganon" 
             or settings_name == "triforce_pieces_required" then
                 Tracker:FindObjectForCode(slotCodes[settings_name].code).AcquiredCount = settings_value
+            elseif settings_name == "shop_shuffle" then
+                item = Tracker:FindObjectForCode(slotCodes[settings_name].code)
+                if settings_value ~= "none" then
+                    item.Active = true
+                elseif settings_value == "none" then
+                    item.Active = false
+                end
             elseif settings_name == "shop_item_slots" then
                 Tracker:FindObjectForCode("shop_sanity").AcquiredCount = settings_value 
                 Tracker:FindObjectForCode("shop_sanity").Active = true
