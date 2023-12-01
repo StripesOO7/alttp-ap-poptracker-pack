@@ -100,7 +100,7 @@ function onClear(slot_data)
             if item_code and item[2] then
                 local item_obj = Tracker:FindObjectForCode(item_code)
                 if item_obj then
-                    if item_obj.Type == "toggle" then
+                    if item[2] == "toggle" then
                         if item_code == "bombos" or item_code == "ether" or item_code == "quake" then
                             item_obj.CurrentStage = 0
                         end
@@ -108,16 +108,16 @@ function onClear(slot_data)
                         if item_obj == "shop_shuffle" then
                             item_obj.AcquiredCount = 0
                         end
-                    elseif item_obj.Type == "progressive" then
+                    elseif item[2] == "progressive" then
                         item_obj.CurrentStage = 0
                         item_obj.Active = false
-                    elseif item_obj.Type == "consumable" then
+                    elseif item[2] == "consumable" then
                         if item_obj.MinCount then
                             item_obj.AcquiredCount = item_obj.MinCount
                         else
                             item_obj.AcquiredCount = 0
                         end
-                    elseif item_obj.Type == "progressive_toggle" then
+                    elseif item[2] == "progressive_toggle" then
                         item_obj.CurrentStage = 0
                         item_obj.Active = false
                     end
@@ -152,7 +152,7 @@ function onItem(index, item_id, item_name, player_number)
             if item_obj.Type == "toggle" then
                 -- print("toggle")
                 item_obj.Active = true
-            elseif item_obj.Type == "progressive" then
+            elseif item[2] == "progressive" then
                 -- print("progressive")
                 if (SECONDSTAGE[item_id] == item_id and item_obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
                     item_obj.CurrentStage = 2
@@ -165,14 +165,14 @@ function onItem(index, item_id, item_name, player_number)
                 else
                     item_obj.Active = true
                 end
-            elseif item_obj.Type == "consumable" then
+            elseif item[2] == "consumable" then
                 -- print("consumable")
                 if item_id == 82 or item_id == 84 then
                     item_obj.AcquiredCount = item_obj.AcquiredCount + (2*item_obj.Increment)
                 else
                     item_obj.AcquiredCount = item_obj.AcquiredCount + item_obj.Increment
                 end
-            elseif item_obj.Type == "progressive_toggle" then
+            elseif item[2] == "progressive_toggle" then
                 -- print("progressive_toggle")
                 if (item_id == 88 and item_obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
                     item_obj.CurrentStage = 2
