@@ -123,6 +123,8 @@ end
 function bigKeys(key)
     if Tracker:FindObjectForCode("big_keys").Active == true then
         return Tracker:FindObjectForCode(key).Active
+    -- elseif Tracker:FindObjectForCode("big_keys").Active == false and key == "sw_bigkey" and Tracker:FindObjectForCode("firerod").Active == false then
+    --     return false
     else
         return true
     end
