@@ -858,7 +858,7 @@
                 ]
             },
             {
-                "name": "Spectacle Rock",
+                "name": "Spectacle Rock Top",
                 "sections": [
                     {
                         "name": "Top Item",
@@ -869,9 +869,6 @@
                             "@Light Death Mountain Left Top, $checkGlitches|2, boots"
                         ],
                         "capture_item": true
-                    },
-                    {
-                        "name": "Item inside"
                     }
                 ],
                 "map_locations": [
@@ -880,7 +877,17 @@
                         "x": 1010,
                         "y": 161,
                         "size": 32
-                    },
+                    }
+                ]
+            },
+            {
+                "name": "Spectacle Rock inside",
+                "sections": [
+                    {
+                        "name": "Item inside"
+                    }
+                ],
+                "map_locations": [
                     {
                         "map": "Lightworld",
                         "x": 970,
