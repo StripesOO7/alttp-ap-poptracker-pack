@@ -1,6 +1,17 @@
 {
 	"versions": [
 		{
+			"package_version": "0.1.2",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.1.2/alttp-ap-tracker-v0.1.2.zip",
+			"sha256": "cf12b091c23c37afa5c8919575ed453d3de3962f4ccc2c798f86a076a055c408",
+			"changelog": [
+				"- clean up",
+				"- mostly fixes regarding keydrop shuffle and access_rules. specific changes should be listed here https://github.com/StripesOO7/alttp-ap-poptracker-pack/compare/v0.1.1...v0.1.2)",
+				"- hopefully fixed a bug where normal bow whould be displayed as silvers",
+				"- changed shop_sanity to activate with the right option. hopefully keydrop shuffle is also auto enabled (not tested)"
+			]
+		},
+		{
 			"package_version": "0.1.1",
 			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.1.1/alttp-ap-tracker-v0.1.1.zip",
 			"sha256": "ff1b2f3c70e85b933560179b6dd207b96f1beaa47ae6fd00889d6988412c3d2e",
