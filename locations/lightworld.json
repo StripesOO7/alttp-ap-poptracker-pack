@@ -1282,13 +1282,13 @@
                     {
                         "name": "Zelda's Chest",
                         "access_rules": [
-                            "$smallKeys|hc_smallkey|0|2"
+                            "$smallKeys|hc_smallkey|0|2, $bigKeys|hc_bigkey"
                         ]
                     },
                     {
                         "name": "Key Drops",
                         "access_rules": [
-                            "$bigKeys|hc_bigkey, $smallKeys|hc_smallkey|0|1, [$smallKeys|hc_smallkey|0|4]"
+                            "$smallKeys|hc_smallkey|0|2, [$smallKeys|hc_smallkey|0|4]"
                         ],
                         "item_count": 3,
                         "clear_as_group": false,
