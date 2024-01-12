@@ -160,7 +160,7 @@ function onItem(index, item_id, item_name, player_number)
                     item_obj.CurrentStage = 3
                 elseif (item_id == 3  and item_obj.CurrentStage < 4) then --golden sword
                     item_obj.CurrentStage = 4
-                elseif item_obj.Active then
+                elseif item_obj.Active == true then
                     item_obj.CurrentStage = item_obj.CurrentStage + 1
                 else
                     item_obj.Active = true
@@ -179,7 +179,7 @@ function onItem(index, item_id, item_name, player_number)
                 elseif (item_id == 59 and item_obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
                     item_obj.Active = true
                     item_obj.CurrentStage = 2
-                elseif item_obj.Active then
+                elseif item_obj.Active == true then
                     item_obj.CurrentStage = item_obj.CurrentStage + 1
                 else
                     item_obj.Active = true
