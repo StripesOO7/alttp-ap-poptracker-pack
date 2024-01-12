@@ -1173,7 +1173,7 @@
                         "item_count": 2,
                         "clear_as_group": false,
                         "access_rules": [
-                            "[$bigKeys|ep_bigkey],[$darkRooms]"
+                            "$[bigKeys|ep_bigkey],[$darkRooms]"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     },
@@ -1231,7 +1231,7 @@
                         "item_count": 2,
                         "clear_as_group": false,
                         "access_rules": [
-                            "[$darkRooms], $smallKeys|at_smallkey|1|1, [$smallKeys|at_smallkey|1|2]"
+                            "[$darkRooms], $smallKeys|at_smallkey|1|1, [$smallKeys|at_smallkey|1|3]"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     },
