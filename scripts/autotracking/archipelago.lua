@@ -286,7 +286,7 @@ function autoFill()
         tr_medallion={code="", mapping=mapMedalion},
         boss_shuffle={code="boss_shuffle", mapping=mapBosses},
         enemy_shuffle={code="enemizer", mapping=mapEnemizer},
-        shop_shuffle={code="shop_sanity", mapping=nil},
+        -- shop_shuffle={code="shop_sanity", mapping=nil},
         triforce_pieces_required={code="triforce_pieces_needed", mapping=nil}
         -- glitch_boots={code="glitches", mapping=nil}
     }
@@ -300,15 +300,17 @@ function autoFill()
             or settings_name == "triforce_pieces_required" then
                 Tracker:FindObjectForCode(slotCodes[settings_name].code).AcquiredCount = settings_value
             elseif settings_name == "shop_shuffle" then
-                item = Tracker:FindObjectForCode(slotCodes[settings_name].code)
-                if settings_value ~= "none" then
-                    item.Active = true
-                elseif settings_value == "none" then
-                    item.Active = false
-                end
+            --     item = Tracker:FindObjectForCode(slotCodes[settings_name].code)
+            --     if settings_value ~= "none" then
+            --         item.Active = true
+            --     elseif settings_value == "none" then
+            --         item.Active = false
+            --     end
             elseif settings_name == "shop_item_slots" then
-                Tracker:FindObjectForCode("shop_sanity").AcquiredCount = settings_value 
-                Tracker:FindObjectForCode("shop_sanity").Active = true
+                if settings_value > 0 then
+                    Tracker:FindObjectForCode("shop_sanity").Active = true
+                    Tracker:FindObjectForCode("shop_sanity").AcquiredCount = settings_value 
+                end
             elseif slotCodes[settings_name] then
                 item = Tracker:FindObjectForCode(slotCodes[settings_name].code)
                 if item.Type == "toggle" then
