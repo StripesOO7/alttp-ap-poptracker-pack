@@ -149,7 +149,7 @@ function onItem(index, item_id, item_name, player_number)
         -- print(item[1], item[2])
         local item_obj = Tracker:FindObjectForCode(item_code)
         if item_obj then
-            if item_obj.Type == "toggle" then
+            if item[2] == "toggle" then
                 -- print("toggle")
                 item_obj.Active = true
             elseif item[2] == "progressive" then
