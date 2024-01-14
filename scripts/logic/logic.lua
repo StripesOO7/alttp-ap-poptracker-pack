@@ -230,6 +230,14 @@ function keyDropLayoutChange()
     end
 end
 
+function tt_boss_check()
+    if Tracker:FindObjectForCode("tt_boss").CurrentStage == 7 then 
+        return (Tracker:FindObjectForCode("@Thieves Town Back/Blind's Cell").AccessibilityLevel and Tracker:FindObjectForCode("@Thieves Town Back/Attic").AccessibilityLevel)
+    else
+        return true
+    end
+end
+
 function bossShuffle()
     local dungeon_list = {"ep","dp","toh","pod","sp","sw","tt","ip","mm","tr"}
     if Tracker:FindObjectForCode("boss_shuffle").CurrentStage == 0 then

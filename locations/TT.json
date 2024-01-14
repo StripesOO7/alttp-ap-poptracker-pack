@@ -92,7 +92,7 @@
                 "map_locations": [
                     {
                         "map": "TT",
-                        "x": 483,
+                        "x": 500,
                         "y": 145,
                         "size": 6
                     }
@@ -178,7 +178,7 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "$getBossRef|tt_boss"
+                    "$getBossRef|tt_boss, $tt_boss_check"
                 ],
                 "sections": [
                     {
