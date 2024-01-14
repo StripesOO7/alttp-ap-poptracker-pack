@@ -1023,7 +1023,9 @@
             {
                 "name": "Mimic Cave",
                 "access_rules": [
-                    "$openOrStandard, mirror, hammer, @TR, $smallKeys|tr_smallkey|2|2, somaria",
+                    "$openOrStandard, mirror, hammer, @TR/Turtle Rock Front, $smallKeys|tr_smallkey|2|3, somaria",
+                    "$openOrStandard, mirror, hammer, @TR/Turtle Rock Back",
+                    // "$openOrStandard, mirror, hammer, @TR/Turtle Rock Eye Bridge Entrance",
                     "inverted, @Light Death Mountain Right, hammer",
                     "@Dark Death Mountain Right, $checkGlitches|2, boots, hammer"
                 ],
