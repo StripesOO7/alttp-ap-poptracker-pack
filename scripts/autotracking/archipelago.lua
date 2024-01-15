@@ -256,7 +256,7 @@ function autoFill()
     -- progressive={[]=,}
     mapMode={["open"]=0,["inverted"]=1,["standard"]=2}
     mapGoals={["crystals"]=0,["ganon"]=1,["bosses"]=2,["pedestal"]=3,["ganonpedestal"]=4,["triforcehunt"]=5,["ganontriforcehunt"]=6,["icerodhunt"]=7,["localtriforcehunt"]=5,["localganontriforcehunt"]=6}
-    mapDark={["none"]=0,["lamp"]=1,["scornes"]=2} -- none=dark room, lamp=vanilla, scornes = firerod
+    mapDark={["none"]=0,["lamp"]=1,["troches"]=2} -- none=dark room, lamp=vanilla, scornes = firerod
     mapMedalion={["Bombos"]="bombos",["Ether"]="ether",["Quake"]="quake"}
     -- retro_caves={[]=}
     mapBosses={[0]=0,[1]=1,[2]=1,[3]=1,[4]=2}
@@ -267,7 +267,7 @@ function autoFill()
     slotCodes = {
         -- glitches_required={code="glitches", mapping=mapToggleReverse},
         key_drop_shuffle={code="key_drop_shuffle", mapping=mapDungeonItem},
-        pot_shuffle={code="key_drop_shuffle", mapping=mapDungeonItem},
+        -- pot_shuffle={code="key_drop_shuffle", mapping=mapDungeonItem},
         dark_room_logic={code="dark_mode", mapping=mapDark},
         bigkey_shuffle={code="big_keys", mapping=mapDungeonItem},
         smallkey_shuffle={code="small_keys", mapping=mapToggle},
