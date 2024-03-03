@@ -318,7 +318,7 @@ function autoFill()
                     Tracker:FindObjectForCode("shop_sanity").Active = false
                     Tracker:FindObjectForCode("shop_sanity").AcquiredCount = settings_value 
                 end
-            elseif slotCodes[setti1ngs_name] then
+            elseif slotCodes[settings_name] then
                 item = Tracker:FindObjectForCode(slotCodes[settings_name].code)
                 if item.Type == "toggle" then
                     -- print("toggle", settings_name, settings_value)
