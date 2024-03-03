@@ -95,6 +95,18 @@
         "codes": "enemizer"
     },
     {
+        "name": "include Witchhut (Shop Sanity)",
+        "type": "toggle",
+        "img": "/images/shop_include_witchhut.png",
+        "codes": "shop_include_witchhut"
+    },
+    {
+        "name": "shop_shuffle_capacity+",
+        "type": "toggle",
+        "img": "/images/shop_shuffle_capacity.png",
+        "codes": "shop_shuffle_capacity+"
+    },
+    {
         "name": "Shop Sanity",
         "type": "toggle",
         "img": "/images/shop_sanity.png",
@@ -175,12 +187,12 @@
                 "codes": "ow"
             },
             {
-                "img": "/images/glitches_minor.png",
+                "img": "/images/glitches_hmg.png",
                 "inherit_codes": false,
                 "codes": "hybrid_major"
             },
             {
-                "img": "/images/glitches_ow.png",
+                "img": "/images/glitches_no_logic.png",
                 "inherit_codes": false,
                 "codes": "no+logic"
             }
@@ -196,14 +208,112 @@
     },
     {
         "name": "Progressive Items",
-        "type": "progressive_toggle",
-        "img": "/images/settings/swordless.png",
+        "type": "progressive",
+        "stages": 
+            [
+                {
+                    "img": "/images/items/lttp_small_key.png",
+                    "inherit_codes": false, 
+                    "name": "Small Keysanity",
+                    "codes": "small_keysanity"
+                },
+                {
+                    "img": "/images/items/universal_keys.png",
+                    "inherit_codes": false,
+                    "name": "Universal Small Keys",
+                    "codes": "universal_keys"
+                }
+            ],
         "codes": "progressive_items"
     },
     {
+        "name": "Enemy Health",
+        "type": "progressive",
+        "stages":
+            [
+                {
+                    "img": "/images/items/enemy_hp_easy.png",
+                    "inherit_codes": false, 
+                    "name": "Enemy HP Easy",
+                    "codes": "enemy_hp_easy"
+                },
+                {
+                    "img": "/images/items/enemy_hp_normal.png",
+                    "inherit_codes": false, 
+                    "name": "Enemy HP Normal",
+                    "codes": "enemy_hp_normal"
+                },
+                {
+                    "img": "/images/items/enemy_hp_hard.png",
+                    "inherit_codes": false, 
+                    "name": "Enemy HP Hard",
+                    "codes": "enemy_hp_hard"
+                },
+                {
+                    "img": "/images/items/enemy_hp_expert.png",
+                    "inherit_codes": false, 
+                    "name": "Enemy HP Expert",
+                    "codes": "enemy_hp_expert"
+                }
+            ],
+        "codes": "enemy_health"
+    },
+    {
+        "name": "Enemy Dmg",
+        "type": "progressive",
+        "stages":
+            [
+                {
+                    "img": "/images/items/enemy_dmg_default.png",
+                    "inherit_codes": false, 
+                    "name": "Enemy Dmg Default",
+                    "codes": "enemy_dmg_default"
+                },
+                {
+                    "img": "/images/items/enemy_dmg_shuffled.png",
+                    "inherit_codes": false, 
+                    "name": "Enemy Dmg shuffled",
+                    "codes": "enemy_dmg_shuffled"
+                },
+                {
+                    "img": "/images/items/enemy_dmg_chaos.png",
+                    "inherit_codes": false, 
+                    "name": "Enemy Dmg chaos",
+                    "codes": "enemy_dmg_chaos"
+                }
+            ],
+        "codes": "enemy_dmg"
+    },
+    {
         "name": "Item Modes",
-        "type": "progressive_toggle",
-        "img": "/images/items/swordless.png",
+        "type": "progressive",
+        "stages":
+            [
+                {
+                    "img": "/images/items/item_mode_easy.png",
+                    "inherit_codes": false, 
+                    "name": "Itemmode Easy",
+                    "codes": "item_mode_easy"
+                },
+                {
+                    "img": "/images/items/item_mode_normal.png",
+                    "inherit_codes": false, 
+                    "name": "Itemmode Normal",
+                    "codes": "item_mode_normal"
+                },
+                {
+                    "img": "/images/items/item_mode_hard.png",
+                    "inherit_codes": false, 
+                    "name": "Itemmode Hard",
+                    "codes": "item_mode_hard"
+                },
+                {
+                    "img": "/images/items/item_mode_expert.png",
+                    "inherit_codes": false, 
+                    "name": "Itemmode Expert",
+                    "codes": "item_mode_expert"
+                }
+            ],
         "codes": "item_mode"
     },
     {
