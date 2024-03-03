@@ -232,39 +232,6 @@
         "img": "/images/items/lttp_big_key.png",
         "codes": "big_keys"
     },
-    // {
-    //     "name": "Keysanity",
-    //     "type": "composite_toggle",
-    //     "item_left": "small_keys",
-    //     "item_right": "big_keys",
-    //     "images": [
-    //         {
-    //             "left": false, "right": false,
-    //             "img": "/images/full_keysanity_disabled.png",
-    //             "img_mods": "@disabled",
-    //             "codes": "vanilla_keys"
-    //             // img, mods like stage
-    //         },
-    //         {
-    //             "left": true, "right": false,
-    //             "img": "/images/full_keysanity_disabled.png",
-    //             "img_mods": "overlay|/images/small_keysanity.png",
-    //             "codes": "small_keysanity"
-    //         },
-    //         {
-    //             "left": false, "right": true,
-    //             "img": "/images/full_keysanity_disabled.png",
-    //             "img_mods": "overlay|/images/big_keysanity.png",
-    //             "codes": "big_keysanity"
-    //         },
-    //         {
-    //             "left": true, "right": true,
-    //             "img": "/images/full_keysanity.png",
-    //             "codes": "full_keysanity"
-    //         }
-    //     ],
-    //     "codes": "key_shuffle"
-    // },
     {
         "name": "Dungeon Map Shuffle",
         "type": "toggle",
@@ -283,39 +250,6 @@
         "img": "/images/key_drop_shuffle.png",
         "codes": "key_drop_shuffle"
     },
-    // {
-    //     "name": "Map & Compass Shuffle",
-    //     "type": "composite_toggle",
-    //     "item_left": "compass",
-    //     "item_right": "map",
-    //     "images": [
-    //         {
-    //             "left": false, "right": false,
-    //             "img": "/images/map_compass_shuffle_disabled.png",
-    //             "img_mods": "@disabled",
-    //             "codes": "vanilla_map_compass"
-    //             // img, mods like stage
-    //         },
-    //         {
-    //             "left": false, "right": true,
-    //             "img": "/images/map_compass_shuffle_disabled.png",
-    //             "img_mods": "overlay|/images/map_shuffle.png",
-    //             "codes": "map_shuffle"
-    //         },
-    //         {
-    //             "left": true, "right": false,
-    //             "img": "/images/map_compass_shuffle_disabled.png",
-    //             "img_mods": "overlay|/images/compass_shuffle.png",
-    //             "codes": "compass_shuffle"
-    //         },
-    //         {
-    //             "left": true, "right": true,
-    //             "img": "/images/map_compass_shuffle.png",
-    //             "codes": "full_map_compass_shuffle"
-    //         }
-    //     ],
-    //     "codes": "map_compass_shuffle"
-    // },
     {
         "name": "Triforce Pieces needed",
         "type": "consumable",
