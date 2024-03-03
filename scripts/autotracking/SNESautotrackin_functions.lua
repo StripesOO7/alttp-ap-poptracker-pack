@@ -26,6 +26,67 @@ U8_READ_CACHE_ADDRESS = 0
 U16_READ_CACHE = 0
 U16_READ_CACHE_ADDRESS = 0
 
+room_lookuptable = {
+    [14] = "Ice Palace",
+    [17] = "Castle Escape",
+    [18] = "Castle Escape",
+    [35] = "Turtle Rock",
+    [36] = "Turtle Rock",
+    [40] = "Swamp Palace",
+    [74] = "Palace of Darkness",
+    [86] = "Skull Woods",
+    [87] = "Skull Woods",
+    [88] = "Skull Woods",
+    [89] = "Skull Woods",
+    [96] = "Hyrule Castle",
+    [97] = "Hyrule Castle",
+    [98] = "Hyrule Castle",
+    [99] = "Desert Palace",
+    [103] = "Skull Woods",
+    [104] = "Skull Woods",
+    [107] = "Ganon's Tower - Top",
+    [119] = "Tower of Hera",
+    [131] = "Desert Palace",
+    [132] = "Desert Palace",
+    [133] = "Desert Palace",
+    [140] = "Ganon's Tower - Bottom",
+    [152] = "Misery Mire",
+    [201] = "Eastern Palace",
+    [213] = "Turtle Rock",
+    [214] = "Turtle Rock",
+    [219] = "Thieves Town",
+    [224] = "Agahnim's Tower",
+}
+
+function updateUI(segment, mainModuleIdx)
+    if mainModuleIdx > 0x05 then
+        new_ow_room = segment:ReadUInt16(0x7e008a)
+        if new_ow_room == 0 then
+            new_dungeon_room = segment:ReadUInt16(0x7e00a0)
+        else
+            dungeon_room = 0
+            new_dungeon_room = 0
+        end
+
+        if new_ow_room > 0 then -- and ow_room ~= new_ow_room then
+            ow_room = new_ow_room
+            changeTab("Overworld")
+        elseif new_dungeon_room > 0 and dungeon_room ~= new_dungeon_room then
+            dungeon_room = new_dungeon_room
+            changeTab(room_lookuptable[dungeon_room])
+        end
+        -- print("Current Room Index: ", new_dungeon_room)
+        -- print("Current OW   Index: ", new_ow_room)
+        -- print(room_lookuptable[dungeon_room])
+    end
+end
+
+function changeTab(target_tab)
+    if Tracker:FindObjectForCode("ui_hint").Active and target_tab ~= nil then
+        print(ow_room, dungeon_room, Tracker:FindObjectForCode("ui_hint").Active, target_tab)
+        Tracker:UiHint("ActivateTab", target_tab)
+    end
+end
 
 function InvalidateReadCaches()
     U8_READ_CACHE_ADDRESS = 0
@@ -72,6 +133,9 @@ function updateInGameStatusFromMemorySegment(segment)
             print("Current OW   Index: ", segment:ReadUInt16(0x7e008a))
         end
         return false
+    end
+    if Tracker:FindObjectForCode("ui_hint") then
+        updateUI(segment, mainModuleIdx)
     end
 
     return true
@@ -473,15 +537,18 @@ function updateStatisticsFromMemorySegment(segment)
 end
 
 -- Run the in-game status check more frequently (every 250ms) to catch save/quit scenarios more effectively
+
+
+-- ScriptHost:AddMemoryWatch("LTTP In-Game Rooms", 0x7e0010, 0x90,  updateInGameRoomsFromMemorySegment, 250)
 ScriptHost:AddMemoryWatch("LTTP In-Game status", 0x7e0010, 0x90, updateInGameStatusFromMemorySegment, 250)
-ScriptHost:AddMemoryWatch("LTTP Item Data", 0x7ef340, 0x90, updateItemsFromMemorySegment)
-ScriptHost:AddMemoryWatch("LTTP Room Data", 0x7ef000, 0x250, updateRoomsFromMemorySegment)
-ScriptHost:AddMemoryWatch("LTTP Overworld Event Data", 0x7ef280, 0x82, updateOverworldEventsFromMemorySegment)
-ScriptHost:AddMemoryWatch("LTTP NPC Item Data", 0x7ef410, 2, updateNPCItemFlagsFromMemorySegment)
-ScriptHost:AddMemoryWatch("LTTP Heart Piece Data", 0x7ef448, 1, updateHeartPiecesFromMemorySegment)
-ScriptHost:AddMemoryWatch("LTTP Heart Container Data", 0x7ef36c, 1, updateHeartContainersFromMemorySegment)
-ScriptHost:AddMemoryWatch("LTTP Upgrade updater", 0x7ef370, 2, updateBowAndBombUpgrade)
-ScriptHost:AddMemoryWatch("LTTP Chest Key Data", 0x7ef4e0, 32, updateChestKeysFromMemorySegment)
-ScriptHost:AddMemoryWatch("LTTP Keydrop Data", 0x7ef37c, 32, updateChestKeysFromMemorySegment)
-ScriptHost:AddMemoryWatch("LTTP Room Keydrop Data", 0x7ef000, 0x250, updateChestKeysFromMemorySegment)
+-- ScriptHost:AddMemoryWatch("LTTP Item Data", 0x7ef340, 0x90, updateItemsFromMemorySegment)
+-- ScriptHost:AddMemoryWatch("LTTP Room Data", 0x7ef000, 0x250, updateRoomsFromMemorySegment)
+-- ScriptHost:AddMemoryWatch("LTTP Overworld Event Data", 0x7ef280, 0x82, updateOverworldEventsFromMemorySegment)
+-- ScriptHost:AddMemoryWatch("LTTP NPC Item Data", 0x7ef410, 2, updateNPCItemFlagsFromMemorySegment)
+-- ScriptHost:AddMemoryWatch("LTTP Heart Piece Data", 0x7ef448, 1, updateHeartPiecesFromMemorySegment)
+-- ScriptHost:AddMemoryWatch("LTTP Heart Container Data", 0x7ef36c, 1, updateHeartContainersFromMemorySegment)
+-- ScriptHost:AddMemoryWatch("LTTP Upgrade updater", 0x7ef370, 2, updateBowAndBombUpgrade)
+-- ScriptHost:AddMemoryWatch("LTTP Chest Key Data", 0x7ef4e0, 32, updateChestKeysFromMemorySegment)
+-- ScriptHost:AddMemoryWatch("LTTP Keydrop Data", 0x7ef37c, 32, updateChestKeysFromMemorySegment)
+-- ScriptHost:AddMemoryWatch("LTTP Room Keydrop Data", 0x7ef000, 0x250, updateChestKeysFromMemorySegment)
 -- ScriptHost:AddMemoryWatch("LTTP Settings", 0x180000, 250, autofillSettings)
