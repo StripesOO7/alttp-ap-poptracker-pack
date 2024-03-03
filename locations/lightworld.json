@@ -826,15 +826,15 @@
         "access_rules": [
             "$openOrStandard, flute_active",
             "inverted, flute_active",
-            "$openOrStandard, [$darkRooms], glove",
-            "inverted, pearl, [$darkRooms], glove",
+            "$openOrStandard, [lamp], glove",
+            "inverted, pearl, [lamp], glove",
             "$openOrStandard, $checkGlitches|2, boots"
         ],
         "children": [
             {
                 "name": "Rescue Old Man",
                 "access_rules": [
-                    "[$darkRooms]"
+                    "[lamp]"
                 ],
                 "visibility_rules": ["$openOrStandard"],
                 "sections": [
