@@ -256,7 +256,7 @@ function autoFill()
     -- progressive={[]=,}
     mapMode={["open"]=0,["inverted"]=1,["standard"]=2}
     mapGoals={["crystals"]=0,["ganon"]=1,["bosses"]=2,["pedestal"]=3,["ganonpedestal"]=4,["triforcehunt"]=5,["ganontriforcehunt"]=6,["icerodhunt"]=7,["localtriforcehunt"]=5,["localganontriforcehunt"]=6}
-    mapDark={["none"]=0,["lamp"]=1,["torches"]=2} -- none=dark room, lamp=vanilla, scornes = firerod
+    mapDark={["none"]=2,["lamp"]=0,["torches"]=1} -- none=dark room, lamp=vanilla, scornes = firerod
     mapMedalion={["Bombos"]="bombos",["Ether"]="ether",["Quake"]="quake"}
     -- retro_caves={[]=}
     mapBosses={[0]=0,[1]=1,[2]=1,[3]=1,[4]=2}
