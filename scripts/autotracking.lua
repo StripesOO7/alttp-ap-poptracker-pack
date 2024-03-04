@@ -23,12 +23,14 @@ if  Tracker.ActiveVariantUID == "Map Tracker - AP" or
     Tracker.ActiveVariantUID == "Entrance Randomizer Tracker - AP" or 
     Tracker.ActiveVariantUID == "Entrance Randomizer Tracker /w Pot-shuffle - AP" then
     ScriptHost:LoadScript("scripts/autotracking/archipelago.lua")
+    ScriptHost:LoadScript("scripts/autotracking/SNESautotrackin_functions.lua")
 end
 -- loads the SNES autotrecking codes
 if  Tracker.ActiveVariantUID == "Map Tracker - SNES" or 
 Tracker.ActiveVariantUID == "Map Tracker /w detailed ow-Dungeons - SNES" or 
 Tracker.ActiveVariantUID == "Entrance Randomizer Tracker - SNES" or 
 Tracker.ActiveVariantUID == "Entrance Randomizer Tracker /w Pot-shuffle - SNES" then
-    ScriptHost:LoadScript("scripts/autotracking/SNESautotracking.lua")
+    ScriptHost:LoadScript("scripts/autotracking/SNESautotrackin_functions.lua")
+    ScriptHost:LoadScript("scripts/autotracking/SNESautotracking_ROMdata.lua")
 end
 
