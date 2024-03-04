@@ -212,10 +212,10 @@ room_lookuptable = {
     [216] = "Eastern Palace",
     [217] = "Eastern Palace",
     [218] = "Eastern Palace",
-    [219] = "Thieves Town"
+    [219] = "Thieves Town",
     [220] = "Thieves Town",
     [222] = "Ice Palace",
-    [224] = "Agahnim's Tower",
+    [224] = "Agahnim's Tower"
 }
 
 function updateUI(segment, mainModuleIdx)
