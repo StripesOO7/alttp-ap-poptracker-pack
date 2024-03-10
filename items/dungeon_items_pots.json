@@ -6,33 +6,33 @@
         "capturable": false,
         "stages": [
             {
-                "img": "images/unknown.png",
+                "img": "images/items/unknown.png",
                 "inherit_codes": false,
                 "codes": "ep,easternpalace"
             },
             {
-                "img": "images/Crystal.png",
+                "img": "images/items/Crystal.png",
                 "inherit_codes": false,
                 "codes": "ep,easternpalace,crystal",   
                 "secondary_codes": "crystal"
             },
             {
-                "img": "images/FFCrystal.png",
-                "disabled_img": "images/FFCrystalOFF.png",
+                "img": "images/items/FFCrystal.png",
+                "disabled_img": "images/items/FFCrystalOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
                 "codes": "ep,easternpalace,crystal56,crystal", 
                 "secondary_codes": "crystal five six, red_crystal, fairy crystal"
             },
             {
-                "img": "images/Pendant.png",
+                "img": "images/items/Pendant.png",
                 "inherit_codes": false,
                 "codes": "ep,easternpalace,pendant",   
                 "secondary_codes": "pendant, red_pendant, blue_pendant"
             },
             {
-                "img": "images/GreenPendant.png",
-                "disabled_img": "images/GreenPendantOFF.png",
+                "img": "images/items/GreenPendant.png",
+                "disabled_img": "images/items/GreenPendantOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
                 "codes": "ep,easternpalace,greenpendant",  
@@ -43,26 +43,26 @@
     {
         "name": "Eastern Palace Map",
         "type": "toggle",
-        "img": "images/map.png",
+        "img": "images/items/map.png",
         "codes": "ep_map"
     },
     {
         "name": "Eastern Palace Compass",
         "type": "toggle",
-        "img": "images/compass.png",
+        "img": "images/items/compass.png",
         "codes": "ep_compass"
     },
     {
         "name": "Eastern Palace Small Key",
         "type": "consumable",
-        "img": "images/lttp_small_key.png",
+        "img": "images/items/lttp_small_key.png",
         "codes": "ep_smallkey_drop",
         "max_quantity": 2
     },
     {
         "name": "Eastern Palace Big Key",
         "type": "toggle",
-        "img": "images/lttp_big_key.png",
+        "img": "images/items/lttp_big_key.png",
         "codes": "ep_bigkey"
     },
     // Desert Palace
@@ -72,33 +72,33 @@
         "type": "progressive_toggle",
         "stages": [
             {
-                "img": "images/unknown.png",
+                "img": "images/items/unknown.png",
                 "inherit_codes": false,
                 "codes": "dp,desertpalace"
             },
             {
-                "img": "images/Crystal.png",
+                "img": "images/items/Crystal.png",
                 "inherit_codes": false,
                 "codes": "dp,desertpalace,crystal",
                 "secondary_codes": "crystal"
             },
             {
-                "img": "images/FFCrystal.png",
-                "disabled_img": "images/FFCrystalOFF.png",
+                "img": "images/items/FFCrystal.png",
+                "disabled_img": "images/items/FFCrystalOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
                 "codes": "dp,desertpalace,crystal56,crystal",
                 "secondary_codes": "crystal five six, red_crystal, fairy crystal"
             },
             {
-                "img": "images/Pendant.png",
+                "img": "images/items/Pendant.png",
                 "inherit_codes": false,
                 "codes": "dp,desertpalace,pendant",
                 "secondary_codes": "pendant, red_pendant, blue_pendant"
             },
             {
-                "img": "images/GreenPendant.png",
-                "disabled_img": "images/GreenPendantOFF.png",
+                "img": "images/items/GreenPendant.png",
+                "disabled_img": "images/items/GreenPendantOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
                 "codes": "dp,desertpalace,greenpendant",
@@ -109,26 +109,26 @@
     {
         "name": "Desert Palace Map",
         "type": "toggle",
-        "img": "images/map.png",
+        "img": "images/items/map.png",
         "codes": "dp_map"
     },
     {
         "name": "Desert Palace Compass",
         "type": "toggle",
-        "img": "images/compass.png",
+        "img": "images/items/compass.png",
         "codes": "dp_compass"
     },
     {
         "name": "Desert Palace Small Key",
         "type": "consumable",
-        "img": "images/lttp_small_key.png",
+        "img": "images/items/lttp_small_key.png",
         "codes": "dp_smallkey_drop",
         "max_quantity": 4
     },
     {
         "name": "Desert Palace Big Key",
         "type": "toggle",
-        "img": "images/lttp_big_key.png",
+        "img": "images/items/lttp_big_key.png",
         "codes": "dp_bigkey"
     },
     // Tower of Hera
@@ -138,33 +138,33 @@
         "type": "progressive_toggle",
         "stages": [
             {
-                "img": "images/unknown.png",
+                "img": "images/items/unknown.png",
                 "inherit_codes": false,
                 "codes": "toh,towerofhera"
             },
             {
-                "img": "images/Crystal.png",
+                "img": "images/items/Crystal.png",
                 "inherit_codes": false,
                 "codes": "toh,towerofhera,crystal",
                 "secondary_codes": "crystal"
             },
             {
-                "img": "images/FFCrystal.png",
-                "disabled_img": "images/FFCrystalOFF.png",
+                "img": "images/items/FFCrystal.png",
+                "disabled_img": "images/items/FFCrystalOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
                 "codes": "toh,towerofhera,crystal56,crystal",
                 "secondary_codes": "crystal five six, red crystal, fairy crystal"
             },
             {
-                "img": "images/Pendant.png",
+                "img": "images/items/Pendant.png",
                 "inherit_codes": false,
                 "codes": "toh,towerofhera,pendant",
                 "secondary_codes": "pendant, red_pendant, blue_pendant"
             },
             {
-                "img": "images/GreenPendant.png",
-                "disabled_img": "images/GreenPendantOFF.png",
+                "img": "images/items/GreenPendant.png",
+                "disabled_img": "images/items/GreenPendantOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
                 "codes": "toh,towerofhera,greenpendant",
@@ -175,26 +175,26 @@
     {
         "name": "Tower of Hera Map",
         "type": "toggle",
-        "img": "images/map.png",
+        "img": "images/items/map.png",
         "codes": "toh_map"
     },
     {
         "name": "Tower of Hera Compass",
         "type": "toggle",
-        "img": "images/compass.png",
+        "img": "images/items/compass.png",
         "codes": "toh_compass"
     },
     {
         "name": "Tower of Hera Small Key",
         "type": "consumable",
-        "img": "images/lttp_small_key.png",
+        "img": "images/items/lttp_small_key.png",
         "codes": "toh_smallkey_drop",
         "max_quantity": 1
     },
     {
         "name": "Tower of Hera Big Key",
         "type": "toggle",
-        "img": "images/lttp_big_key.png",
+        "img": "images/items/lttp_big_key.png",
         "codes": "toh_bigkey"
     },
     // Palace of Darkness
@@ -204,33 +204,33 @@
         "type": "progressive_toggle",
         "stages": [
             {
-                "img": "images/unknown.png",
+                "img": "images/items/unknown.png",
                 "inherit_codes": false,
                 "codes": "pod,palaceofdarkness"
             },
             {
-                "img": "images/Crystal.png",
+                "img": "images/items/Crystal.png",
                 "inherit_codes": false,
                 "codes": "pod,palaceofdarkness,crystal",
                 "secondary_codes": "crystal"
             },
             {
-                "img": "images/FFCrystal.png",
-                "disabled_img": "images/FFCrystalOFF.png",
+                "img": "images/items/FFCrystal.png",
+                "disabled_img": "images/items/FFCrystalOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
                 "codes": "pod,palaceofdarkness,crystal56,crystal",
                 "secondary_codes": "crystal five six, red crystal, fairy crystal"
             },
             {
-                "img": "images/Pendant.png",
+                "img": "images/items/Pendant.png",
                 "inherit_codes": false,
                 "codes": "pod,palaceofdarkness,pendant",
                 "secondary_codes": "pendant, red_pendant, blue_pendant"
             },
             {
-                "img": "images/GreenPendant.png",
-                "disabled_img": "images/GreenPendantOFF.png",
+                "img": "images/items/GreenPendant.png",
+                "disabled_img": "images/items/GreenPendantOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
                 "codes": "pod,palaceofdarkness,greenpendant",
@@ -241,26 +241,26 @@
     {
         "name": "Palace of Darkness Map",
         "type": "toggle",
-        "img": "images/map.png",
+        "img": "images/items/map.png",
         "codes": "pod_map"
     },
     {
         "name": "Palace of Darkness Compass",
         "type": "toggle",
-        "img": "images/compass.png",
+        "img": "images/items/compass.png",
         "codes": "pod_compass"
     },
     {
         "name": "Palace of Darkness Small Key",
         "type": "consumable",
-        "img": "images/lttp_small_key.png",
+        "img": "images/items/lttp_small_key.png",
         "codes": "pod_smallkey_drop",
         "max_quantity": 6
     },
     {
         "name": "Palace of Darkness Big Key",
         "type": "toggle",
-        "img": "images/lttp_big_key.png",
+        "img": "images/items/lttp_big_key.png",
         "codes": "pod_bigkey"
     },
     // Swamp Palace
@@ -270,33 +270,33 @@
         "type": "progressive_toggle",
         "stages": [
             {
-                "img": "images/unknown.png",
+                "img": "images/items/unknown.png",
                 "inherit_codes": false,
                 "codes": "sp,swamppalace"
             },
             {
-                "img": "images/Crystal.png",
+                "img": "images/items/Crystal.png",
                 "inherit_codes": false,
                 "codes": "sp,swamppalace,crystal",
                 "secondary_codes": "crystal"
             },
             {
-                "img": "images/FFCrystal.png",
-                "disabled_img": "images/FFCrystalOFF.png",
+                "img": "images/items/FFCrystal.png",
+                "disabled_img": "images/items/FFCrystalOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
                 "codes": "sp,swamppalace,crystal56,crystal",
                 "secondary_codes": "crystal five six, red crystal, fairy crystal"
             },
             {
-                "img": "images/Pendant.png",
+                "img": "images/items/Pendant.png",
                 "inherit_codes": false,
                 "codes": "sp,swamppalace,pendant",
                 "secondary_codes": "pendant, red_pendant, blue_pendant"
             },
             {
-                "img": "images/GreenPendant.png",
-                "disabled_img": "images/GreenPendantOFF.png",
+                "img": "images/items/GreenPendant.png",
+                "disabled_img": "images/items/GreenPendantOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
                 "codes": "sp,swamppalace,greenpendant",
@@ -307,26 +307,26 @@
     {
         "name": "Swamp Palace Map",
         "type": "toggle",
-        "img": "images/map.png",
+        "img": "images/items/map.png",
         "codes": "sp_map"
     },
     {
         "name": "Swamp Palace Compass",
         "type": "toggle",
-        "img": "images/compass.png",
+        "img": "images/items/compass.png",
         "codes": "sp_compass"
     },
     {
         "name": "Swamp Palace Small Key",
         "type": "consumable",
-        "img": "images/lttp_small_key.png",
+        "img": "images/items/lttp_small_key.png",
         "codes": "sp_smallkey_drop",
         "max_quantity": 6
     },
     {
         "name": "Swamp Palace Big Key",
         "type": "toggle",
-        "img": "images/lttp_big_key.png",
+        "img": "images/items/lttp_big_key.png",
         "codes": "sp_bigkey"
     },
     // Skull Woods
@@ -336,33 +336,33 @@
         "type": "progressive_toggle",
         "stages": [
             {
-                "img": "images/unknown.png",
+                "img": "images/items/unknown.png",
                 "inherit_codes": false,
                 "codes": "sw,skullwoods"
             },
             {
-                "img": "images/Crystal.png",
+                "img": "images/items/Crystal.png",
                 "inherit_codes": false,
                 "codes": "sw,skullwoods,crystal",
                 "secondary_codes": "crystal"
             },
             {
-                "img": "images/FFCrystal.png",
-                "disabled_img": "images/FFCrystalOFF.png",
+                "img": "images/items/FFCrystal.png",
+                "disabled_img": "images/items/FFCrystalOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
                 "codes": "sw,skullwoods,crystal56,crystal",
                 "secondary_codes": "crystal five six, red crystal, fairy crystal"
             },
             {
-                "img": "images/Pendant.png",
+                "img": "images/items/Pendant.png",
                 "inherit_codes": false,
                 "codes": "sw,skullwoods,pendant",
                 "secondary_codes": "pendant, red_pendant, blue_pendant"
             },
             {
-                "img": "images/GreenPendant.png",
-                "disabled_img": "images/GreenPendantOFF.png",
+                "img": "images/items/GreenPendant.png",
+                "disabled_img": "images/items/GreenPendantOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
                 "codes": "sw,skullwoods,greenpendant",
@@ -373,26 +373,26 @@
     {
         "name": "Skull Woods Map",
         "type": "toggle",
-        "img": "images/map.png",
+        "img": "images/items/map.png",
         "codes": "sw_map"
     },
     {
         "name": "Skull Woods Compass",
         "type": "toggle",
-        "img": "images/compass.png",
+        "img": "images/items/compass.png",
         "codes": "sw_compass"
     },
     {
         "name": "Skull Woods Small Key",
         "type": "consumable",
-        "img": "images/lttp_small_key.png",
+        "img": "images/items/lttp_small_key.png",
         "codes": "sw_smallkey_drop",
         "max_quantity": 5
     },
     {
         "name": "Skull Woods Big Key",
         "type": "toggle",
-        "img": "images/lttp_big_key.png",
+        "img": "images/items/lttp_big_key.png",
         "codes": "sw_bigkey"
     },
     // Thieve's Town
@@ -402,33 +402,33 @@
         "type": "progressive_toggle",
         "stages": [
             {
-                "img": "images/unknown.png",
+                "img": "images/items/unknown.png",
                 "inherit_codes": false,
                 "codes": "tt,thievestown"
             },
             {
-                "img": "images/Crystal.png",
+                "img": "images/items/Crystal.png",
                 "inherit_codes": false,
                 "codes": "tt,thievestown,crystal",
                 "secondary_codes": "crystal"
             },
             {
-                "img": "images/FFCrystal.png",
-                "disabled_img": "images/FFCrystalOFF.png",
+                "img": "images/items/FFCrystal.png",
+                "disabled_img": "images/items/FFCrystalOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
                 "codes": "tt,thievestown,crystal56,crystal",
                 "secondary_codes": "crystal five six, red crystal, fairy crystal"
             },
             {
-                "img": "images/Pendant.png",
+                "img": "images/items/Pendant.png",
                 "inherit_codes": false,
                 "codes": "tt,thievestown,pendant",
                 "secondary_codes": "pendant, red_pendant, blue_pendant"
             },
             {
-                "img": "images/GreenPendant.png",
-                "disabled_img": "images/GreenPendantOFF.png",
+                "img": "images/items/GreenPendant.png",
+                "disabled_img": "images/items/GreenPendantOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
                 "codes": "tt,thievestown,greenpendant",
@@ -439,26 +439,26 @@
     {
         "name": "Thieves Town Map",
         "type": "toggle",
-        "img": "images/map.png",
+        "img": "images/items/map.png",
         "codes": "tt_map"
     },
     {
         "name": "Thieves Town Compass",
         "type": "toggle",
-        "img": "images/compass.png",
+        "img": "images/items/compass.png",
         "codes": "tt_compass"
     },
     {
         "name": "Thieves Town Small Key",
         "type": "consumable",
-        "img": "images/lttp_small_key.png",
+        "img": "images/items/lttp_small_key.png",
         "codes": "tt_smallkey_drop",
         "max_quantity": 3
     },
     {
         "name": "Thieves Town Big Key",
         "type": "toggle",
-        "img": "images/lttp_big_key.png",
+        "img": "images/items/lttp_big_key.png",
         "codes": "tt_bigkey"
     },
     // Ice Palace
@@ -468,33 +468,33 @@
         "type": "progressive_toggle",
         "stages": [
             {
-                "img": "images/unknown.png",
+                "img": "images/items/unknown.png",
                 "inherit_codes": false,
                 "codes": "ip,icepalace"
             },
             {
-                "img": "images/Crystal.png",
+                "img": "images/items/Crystal.png",
                 "inherit_codes": false,
                 "codes": "ip,icepalace,crystal",
                 "secondary_codes": "crystal"
             },
             {
-                "img": "images/FFCrystal.png",
-                "disabled_img": "images/FFCrystalOFF.png",
+                "img": "images/items/FFCrystal.png",
+                "disabled_img": "images/items/FFCrystalOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
                 "codes": "ip,icepalace,crystal56,crystal",
                 "secondary_codes": "crystal five six, red crystal, fairy crystal"
             },
             {
-                "img": "images/Pendant.png",
+                "img": "images/items/Pendant.png",
                 "inherit_codes": false,
                 "codes": "ip,icepalace,pendant",
                 "secondary_codes": "pendant, red_pendant, blue_pendant"
             },
             {
-                "img": "images/GreenPendant.png",
-                "disabled_img": "images/GreenPendantOFF.png",
+                "img": "images/items/GreenPendant.png",
+                "disabled_img": "images/items/GreenPendantOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
                 "codes": "ip,icepalace,greenpendant",
@@ -505,26 +505,26 @@
     {
         "name": "Ice Palace Map",
         "type": "toggle",
-        "img": "images/map.png",
+        "img": "images/items/map.png",
         "codes": "ip_map"
     },
     {
         "name": "Ice Palace Compass",
         "type": "toggle",
-        "img": "images/compass.png",
+        "img": "images/items/compass.png",
         "codes": "ip_compass"
     },
     {
         "name": "Ice Palace Small Key",
         "type": "consumable",
-        "img": "images/lttp_small_key.png",
+        "img": "images/items/lttp_small_key.png",
         "codes": "ip_smallkey_drop",
         "max_quantity": 6
     },
     {
         "name": "Ice Palace Big Key",
         "type": "toggle",
-        "img": "images/lttp_big_key.png",
+        "img": "images/items/lttp_big_key.png",
         "codes": "ip_bigkey"
     },
     // Misery Mire
@@ -534,33 +534,33 @@
         "type": "progressive_toggle",
         "stages": [
             {
-                "img": "images/unknown.png",
+                "img": "images/items/unknown.png",
                 "inherit_codes": false,
                 "codes": "mm,miserymire"
             },
             {
-                "img": "images/Crystal.png",
+                "img": "images/items/Crystal.png",
                 "inherit_codes": false,
                 "codes": "mm,miserymire,crystal",
                 "secondary_codes": "crystal"
             },
             {
-                "img": "images/FFCrystal.png",
-                "disabled_img": "images/FFCrystalOFF.png",
+                "img": "images/items/FFCrystal.png",
+                "disabled_img": "images/items/FFCrystalOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
                 "codes": "mm,miserymire,crystal56,crystal",
                 "secondary_codes": "crystal five six, red crystal, fairy crystal"
             },
             {
-                "img": "images/Pendant.png",
+                "img": "images/items/Pendant.png",
                 "inherit_codes": false,
                 "codes": "mm,miserymire,pendant",
                 "secondary_codes": "pendant, red_pendant, blue_pendant"
             },
             {
-                "img": "images/GreenPendant.png",
-                "disabled_img": "images/GreenPendantOFF.png",
+                "img": "images/items/GreenPendant.png",
+                "disabled_img": "images/items/GreenPendantOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
                 "codes": "mm,miserymire,greenpendant",
@@ -571,26 +571,26 @@
     {
         "name": "Misery Mire Map",
         "type": "toggle",
-        "img": "images/map.png",
+        "img": "images/items/map.png",
         "codes": "mm_map"
     },
     {
         "name": "Misery Mire Compass",
         "type": "toggle",
-        "img": "images/compass.png",
+        "img": "images/items/compass.png",
         "codes": "mm_compass"
     },
     {
         "name": "Misery Mire Small Key",
         "type": "consumable",
-        "img": "images/lttp_small_key.png",
+        "img": "images/items/lttp_small_key.png",
         "codes": "mm_smallkey_drop",
         "max_quantity": 6
     },
     {
         "name": "Misery Mire Big Key",
         "type": "toggle",
-        "img": "images/lttp_big_key.png",
+        "img": "images/items/lttp_big_key.png",
         "codes": "mm_bigkey"
     },
     // Turtle Rock
@@ -600,33 +600,33 @@
         "type": "progressive_toggle",
         "stages": [
             {
-                "img": "images/unknown.png",
+                "img": "images/items/unknown.png",
                 "inherit_codes": false,
                 "codes": "tr,turtlerock"
             },
             {
-                "img": "images/Crystal.png",
+                "img": "images/items/Crystal.png",
                 "inherit_codes": false,
                 "codes": "tr,turtlerock,crystal",
                 "secondary_codes": "crystal"
             },
             {
-                "img": "images/FFCrystal.png",
-                "disabled_img": "images/FFCrystalOFF.png",
+                "img": "images/items/FFCrystal.png",
+                "disabled_img": "images/items/FFCrystalOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
                 "codes": "tr,turtlerock,crystal56,crystal",
                 "secondary_codes": "crystal five six, red crystal, fairy crystal"
             },
             {
-                "img": "images/Pendant.png",
+                "img": "images/items/Pendant.png",
                 "inherit_codes": false,
                 "codes": "tr,turtlerock,pendant",
                 "secondary_codes": "pendant, red_pendant, blue_pendant"
             },
             {
-                "img": "images/GreenPendant.png",
-                "disabled_img": "images/GreenPendantOFF.png",
+                "img": "images/items/GreenPendant.png",
+                "disabled_img": "images/items/GreenPendantOFF.png",
                 "disabled_img_mods": "",
                 "inherit_codes": false,
                 "codes": "tr,turtlerock,greenpendant",
@@ -637,104 +637,104 @@
     {
         "name": "Turtle Rock Map",
         "type": "toggle",
-        "img": "images/map.png",
+        "img": "images/items/map.png",
         "codes": "tr_map"
     },
     {
         "name": "Turtle Rock Compass",
         "type": "toggle",
-        "img": "images/compass.png",
+        "img": "images/items/compass.png",
         "codes": "tr_compass"
     },
     {
         "name": "Turtle Rock Small Key",
         "type": "consumable",
-        "img": "images/lttp_small_key.png",
+        "img": "images/items/lttp_small_key.png",
         "codes": "tr_smallkey_drop",
         "max_quantity": 6
     },
     {
         "name": "Turtle Rock Big Key",
         "type": "toggle",
-        "img": "images/lttp_big_key.png",
+        "img": "images/items/lttp_big_key.png",
         "codes": "tr_bigkey"
     },
     //HC
     {
         "name": "HC Map",
         "type": "toggle",
-        "img": "images/map.png",
+        "img": "images/items/map.png",
         "codes": "hc_map"
     },
     {
         "name": "HC Compass",
         "type": "toggle",
-        "img": "images/compass.png",
+        "img": "images/items/compass.png",
         "codes": "hc_compass"
     },
     {
         "name": "HC Small Key",
         "type": "consumable",
-        "img": "images/lttp_small_key.png",
+        "img": "images/items/lttp_small_key.png",
         "codes": "hc_smallkey_drop",
         "max_quantity": 4
     },
     {
         "name": "HC Big Key",
         "type": "toggle",
-        "img": "images/lttp_big_key.png",
+        "img": "images/items/lttp_big_key.png",
         "codes": "hc_bigkey"
     },
     // AT
     {
         "name": "AT Map",
         "type": "toggle",
-        "img": "images/map.png",
+        "img": "images/items/map.png",
         "codes": "at_map"
     },
     {
         "name": "AT Compass",
         "type": "toggle",
-        "img": "images/compass.png",
+        "img": "images/items/compass.png",
         "codes": "at_compass"
     },
     {
         "name": "AT Small Key",
         "type": "consumable",
-        "img": "images/lttp_small_key.png",
+        "img": "images/items/lttp_small_key.png",
         "codes": "at_smallkey_drop",
         "max_quantity": 4
     },
     {
         "name": "AT Big Key",
         "type": "toggle",
-        "img": "images/lttp_big_key.png",
+        "img": "images/items/lttp_big_key.png",
         "codes": "at_bigkey"
     },
     // GT
     {
         "name": "GT Map",
         "type": "toggle",
-        "img": "images/map.png",
+        "img": "images/items/map.png",
         "codes": "gt_map"
     },
     {
         "name": "GT Compass",
         "type": "toggle",
-        "img": "images/compass.png",
+        "img": "images/items/compass.png",
         "codes": "gt_compass"
     },
     {
         "name": "GT Small Key",
         "type": "consumable",
-        "img": "images/lttp_small_key.png",
+        "img": "images/items/lttp_small_key.png",
         "codes": "gt_smallkey_drop",
         "max_quantity": 8
     },
     {
         "name": "GT Big Key",
         "type": "toggle",
-        "img": "images/lttp_big_key.png",
+        "img": "images/items/lttp_big_key.png",
         "codes": "gt_bigkey"
     }
 ]

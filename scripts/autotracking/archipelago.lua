@@ -123,14 +123,14 @@ function onItem(index, item_id, item_name, player_number)
             if item[2] == "toggle" then
                 -- print("toggle")
                 item_obj.Active = true
-            elseif item[2] == "progressive" then
-                -- print("progressive")
                 if (SECONDSTAGE[item_id] == item_id and item_obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
                     item_obj.CurrentStage = 2
                 elseif (THIRDSTAGE[item_id] == item_id and item_obj.CurrentStage < 3 ) then -- tempered sword, red mail, mirror shield
                     item_obj.CurrentStage = 3
                 elseif (item_id == 3  and item_obj.CurrentStage < 4) then --golden sword
                     item_obj.CurrentStage = 4
+            elseif item[2] == "progressive" then
+                -- print("progressive")
                 elseif item_obj.Active == true then
                     item_obj.CurrentStage = item_obj.CurrentStage + 1
                 else

@@ -8,7 +8,8 @@
         "min_quantity": 0,
         "max_quantity": 7,
         "initial_quantity": 7,
-        "img": "/images/gt_crystals.png",
+        "img": "/images/settings/gt_crystals.png",
+
         "codes": "gt_access"
     },
     {
@@ -19,7 +20,8 @@
         "min_quantity": 0,
         "max_quantity": 7,
         "initial_quantity": 7,
-        "img": "/images/bosses/ganon_crystals.png",
+        "img": "/images/settings/ganon_crystals.png",
+
         "codes": "ganon_killable"
     },
     {
@@ -28,37 +30,38 @@
         "allow_disabled": false,
         "stages": [
             {
-                "img": "/images/goal_slow.png",
+                "img": "/images/settings/goal_slow.png",
                 "inherit_codes": false,
                 "codes": "slow"
             },
             {
-                "img": "/images/goal_fast.png",
+                "img": "/images/settings/goal_fast.png",
                 "inherit_codes": false,
                 "codes": "fast"
             },
             {
-                "img": "/images/all_dungeons.png",
+                "img": "/images/settings/all_dungeons.png",
                 "inherit_codes": false,
                 "codes": "all_dungeons"
             },
             {
-                "img": "/images/pedestal.png",
+                "img": "/images/settings/pedestal.png",
                 "inherit_codes": false,
                 "codes": "ped"
             },
             {
-                "img": "/images/pedestal+ganon.png",
+                "img": "/images/settings/pedestal+ganon.png",
                 "inherit_codes": false,
                 "codes": "ped+ganon"
             },
             {
-                "img": "/images/goal_triforce.png",
+                "img": "/images/settings/goal_triforce.png",
+
                 "inherit_codes": false,
                 "codes": "triforce"
             },
             {
-                "img": "/images/goal_triforce+ganon.png",
+                "img": "/images/settings/goal_triforce+ganon.png",
                 "inherit_codes": false,
                 "codes": "triforce+ganon"
             }
@@ -72,17 +75,17 @@
         "initial_stage_idx": 2,
         "stages": [
             {
-                "img": "/images/gm_standard.png",
+                "img": "/images/settings/gm_standard.png",
                 "inherit_codes": false,
                 "codes": "start_option, standard"
             },
             {
-                "img": "/images/gm_open.png",
+                "img": "/images/settings/gm_open.png",
                 "inherit_codes": false,
                 "codes": "start_option, open"
             },
             {
-                "img": "/images/gm_inverted.png",
+                "img": "/images/settings/gm_inverted.png",
                 "inherit_codes": false,
                 "codes": "start_option, inverted"
             }
@@ -91,31 +94,33 @@
     {
         "name": "Enemizer",
         "type": "toggle",
-        "img": "/images/enemizer.png",
+        "img": "/images/settings/enemizer.png",
         "codes": "enemizer"
     },
     {
         "name": "include Witchhut (Shop Sanity)",
         "type": "toggle",
-        "img": "/images/shop_include_witchhut.png",
+        "img": "/images/settings/shop_include_witchhut.png",
+
         "codes": "shop_include_witchhut"
     },
     {
         "name": "Shuffle Capacity Upgrades",
         "type": "toggle",
-        "img": "/images/shop_shuffle_capacity.png",
+        "img": "/images/settings/shop_shuffle_capacity.png",
+
         "codes": "shop_shuffle_capacity+"
     },
     {
         "name": "Shop Sanity",
         "type": "toggle",
-        "img": "/images/shop_sanity.png",
+        "img": "/images/settings/shop_sanity.png",
         "codes": "shop_sanity"
     },
     // {
     //     "name": "Capacity upgrades",
     //     "type": "toggle",
-    //     "img": "/images/capacity_upgrades.png",
+    //     "img": "/images/settings/capacity_upgrades.png",
     //     "codes": "capacity_upgrades"
     // },
     {
@@ -125,15 +130,15 @@
         "allow_disabled": false,
         "stages": [
             {
-                "img": "/images/boss_vanilla.png",
+                "img": "/images/settings/boss_vanilla.png",
                 "codes": "vanilla"
             },
             {
-                "img": "/images/boss_random.png",
+                "img": "/images/settings/boss_random.png",
                 "codes": "random"
             },
             {
-                "img": "/images/boss_singularity.png",
+                "img": "/images/settings/boss_singularity.png",
                 "codes": "singularity"
             }
         ],
@@ -144,18 +149,18 @@
         "type": "progressive",
         "loop": true,
         "allow_disabled": false,
-        "initial_stage_idx": 1,
+        "initial_stage_idx": 0,
         "stages": [
             {
-                "img": "/images/darkroom_lamp.png",
+                "img": "/images/settings/darkroom_lamp.png",
                 "codes": "lamp_req"
             },
             {
-                "img": "/images/darkroom_firerod.png",
+                "img": "/images/settings/darkroom_firerod.png",
                 "codes": "firerod_req"
             },
             {
-                "img": "/images/darkroom_logic.png",
+                "img": "/images/settings/darkroom_logic.png",
                 "codes": "dark_rooms"
             }
         ],
@@ -167,43 +172,49 @@
         "allow_disabled": false,
         "stages": [
             {
-                "img": "/images/glitches_no.png",
+                "img": "/images/settings/glitches_no.png",
                 "inherit_codes": false,
                 "codes": "no_glitches"
             },
             // {
-            //     "img": "/images/glitches_boots.png",
+            //     "img": "/images/settings/glitches_boots.png",
             //     "inherit_codes": false,
             //     "codes": "glitched_boots"
             // },
             {
-                "img": "/images/glitches_minor.png",
+
+                "img": "/images/settings/glitches_minor.png",
                 "inherit_codes": false,
                 "codes": "minor"
             },
             {
-                "img": "/images/glitches_ow.png",
+
+                "img": "/images/settings/glitches_ow.png",
                 "inherit_codes": false,
                 "codes": "ow"
             },
             {
-                "img": "/images/glitches_hmg.png",
+
+                "img": "/images/settings/glitches_hmg.png",
                 "inherit_codes": false,
                 "codes": "hybrid_major"
             },
             {
-                "img": "/images/glitches_no_logic.png",
+
+                "img": "/images/settings/glitches_no_logic.png",
                 "inherit_codes": false,
                 "codes": "no+logic"
             }
         ],
-        "img": "/images/items/Pegasus_Boots.png",
+
+        "img": "/images/settings/items/Pegasus_Boots.png",
         "codes": "glitches"
     },
     {
         "name": "Swordless",
         "type": "toggle",
-        "img": "/images/items/swordless.png",
+
+        "img": "/images/settings/swordless.png",
         "codes": "swordless"
     },
     {
@@ -212,13 +223,15 @@
         "stages": 
             [
                 {
-                    "img": "/images/items/lttp_small_key.png",
+
+                    "img": "/images/settings/lttp_small_key.png",
                     "inherit_codes": false, 
                     "name": "Small Keysanity",
                     "codes": "small_keysanity"
                 },
                 {
-                    "img": "/images/items/universal_keys.png",
+
+                    "img": "/images/settings/universal_keys.png",
                     "inherit_codes": false,
                     "name": "Universal Small Keys",
                     "codes": "universal_keys"
@@ -232,25 +245,29 @@
         "stages":
             [
                 {
-                    "img": "/images/items/enemy_hp_easy.png",
+
+                    "img": "/images/settings/items/enemy_hp_easy.png",
                     "inherit_codes": false, 
                     "name": "Enemy HP Easy",
                     "codes": "enemy_hp_easy"
                 },
                 {
-                    "img": "/images/items/enemy_hp_normal.png",
+
+                    "img": "/images/settings/items/enemy_hp_normal.png",
                     "inherit_codes": false, 
                     "name": "Enemy HP Normal",
                     "codes": "enemy_hp_normal"
                 },
                 {
-                    "img": "/images/items/enemy_hp_hard.png",
+
+                    "img": "/images/settings/items/enemy_hp_hard.png",
                     "inherit_codes": false, 
                     "name": "Enemy HP Hard",
                     "codes": "enemy_hp_hard"
                 },
                 {
-                    "img": "/images/items/enemy_hp_expert.png",
+
+                    "img": "/images/settings/items/enemy_hp_expert.png",
                     "inherit_codes": false, 
                     "name": "Enemy HP Expert",
                     "codes": "enemy_hp_expert"
@@ -264,19 +281,22 @@
         "stages":
             [
                 {
-                    "img": "/images/items/enemy_dmg_default.png",
+
+                    "img": "/images/settings/items/enemy_dmg_default.png",
                     "inherit_codes": false, 
                     "name": "Enemy Dmg Default",
                     "codes": "enemy_dmg_default"
                 },
                 {
-                    "img": "/images/items/enemy_dmg_shuffled.png",
+
+                    "img": "/images/settings/items/enemy_dmg_shuffled.png",
                     "inherit_codes": false, 
                     "name": "Enemy Dmg shuffled",
                     "codes": "enemy_dmg_shuffled"
                 },
                 {
-                    "img": "/images/items/enemy_dmg_chaos.png",
+
+                    "img": "/images/settings/items/enemy_dmg_chaos.png",
                     "inherit_codes": false, 
                     "name": "Enemy Dmg chaos",
                     "codes": "enemy_dmg_chaos"
@@ -290,25 +310,29 @@
         "stages":
             [
                 {
-                    "img": "/images/items/item_mode_easy.png",
+
+                    "img": "/images/settings/items/item_mode_easy.png",
                     "inherit_codes": false, 
                     "name": "Itemmode Easy",
                     "codes": "item_mode_easy"
                 },
                 {
-                    "img": "/images/items/item_mode_normal.png",
+
+                    "img": "/images/settings/items/item_mode_normal.png",
                     "inherit_codes": false, 
                     "name": "Itemmode Normal",
                     "codes": "item_mode_normal"
                 },
                 {
-                    "img": "/images/items/item_mode_hard.png",
+
+                    "img": "/images/settings/items/item_mode_hard.png",
                     "inherit_codes": false, 
                     "name": "Itemmode Hard",
                     "codes": "item_mode_hard"
                 },
                 {
-                    "img": "/images/items/item_mode_expert.png",
+
+                    "img": "/images/settings/items/item_mode_expert.png",
                     "inherit_codes": false, 
                     "name": "Itemmode Expert",
                     "codes": "item_mode_expert"
@@ -321,43 +345,50 @@
         "type": "progressive",
         "stages": [
             {
-                "img": "/images/items/lttp_small_key.png",
+
+                "img": "/images/settings/lttp_small_key.png",
                 "inherit_codes": false, 
                 "name": "Small Keysanity",
                 "codes": "small_keysanity"
             },
             {
-                "img": "/images/items/universal_keys.png",
+
+                "img": "/images/settings/universal_keys.png",
                 "inherit_codes": false,
                 "name": "Universal Small Keys",
                 "codes": "universal_keys"
             }
         ],
-        "img": "/images/items/lttp_small_key.png",
+
+        "img": "/images/settings/lttp_small_key.png",
         "codes": "small_keys"
     },
     {
         "name": "Big Key Shuffle",
         "type": "toggle",
-        "img": "/images/items/lttp_big_key.png",
+
+        "img": "/images/settings/lttp_big_key.png",
         "codes": "big_keys"
     },
     {
         "name": "Dungeon Map Shuffle",
         "type": "toggle",
-        "img": "/images/map.png",
+
+        "img": "/images/settings/map.png",
         "codes": "map"
     },
     {
         "name": "Compass Shuffle",
         "type": "toggle",
-        "img": "/images/compass.png",
+
+        "img": "/images/settings/compass.png",
         "codes": "compass"
     },
     {
         "name": "Key Drop Shuffle",
         "type": "toggle",
-        "img": "/images/key_drop_shuffle.png",
+
+        "img": "/images/settings/key_drop_shuffle.png",
         "codes": "key_drop_shuffle"
     },
     {
@@ -367,45 +398,52 @@
         "max_quantity": 90,
         "min_quantity": 0,
         "overlay_background": "#000000",
-        "img": "/images/triforce_piece2.png",
+
+        "img": "/images/settings/triforce_piece2.png",
         "codes": "triforce_pieces_needed"
     },
     {
         "name": "AP item",
         "type": "toggle",
-        "img": "/images/AP-item.png",
+
+        "img": "/images/settings/AP-item.png",
         "codes": "AP_item"
     },
     {
         "name": "AP icon",
         "type": "toggle",
-        "img": "/images/AP-img.png",
+
+        "img": "/images/settings/AP-img.png",
         "codes": "AP_img"
     },
 // external settings toggles
     {
         "name": "Autofill Settings", ///used as tooltip within the settings popup. available on 0.25.3+ 
         "type": "toggle",
-        "img": "/images/autofill_enabled.png",
-        "disabled_img": "/images/autofill_disabled.png",
+
+        "img": "/images/settings/autofill_enabled.png",
+        "disabled_img": "/images/settings/autofill_disabled.png",
         "codes": "autofill_settings"
     },
     {
         "name": "Retro Caves",
         "type": "toggle",
-        "img": "/images/retro_caves.png",
+
+        "img": "/images/settings/retro_caves.png",
         "codes": "retro_caves"
     },
     {
         "name": "Bombless start",
         "type": "toggle",
-        "img": "/images/bombless.png",
+
+        "img": "/images/settings/bombless.png",
         "codes": "bombless"
     },
     {
         "name": "UI-Hints (auto tab switching)",
         "type": "toggle",
-        "img": "/images/swordless.png",
+
+        "img": "/images/settings/auto_mapswitching.png",
         "codes": "ui_hint"
     }
 
