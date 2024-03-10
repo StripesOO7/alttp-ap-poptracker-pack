@@ -1,36 +1,4 @@
 ﻿    {
-    "settings_popup": {
-        "type": "array",
-        "margin": "5",
-        "content": [
-            {
-                "type": "group",
-                "header": "Autofill Settings",
-                "description": "Enable/Disable the automatic fill of the settings pannel from for connected Slot_Data",
-                "header_background": "#3e4b57",
-                "content": [
-                    {
-                        "type": "item",
-                        "margin": "5,1,5,5",
-                        "item": "autofill_settings"
-                    }
-                ]
-            },
-            {
-                "type": "group",
-                "header": "Retro Caves",
-                "description": "Enable/Disable the automatic fill of the settings pannel from for connected Slot_Data",
-                "header_background": "#3e4b57",
-                "content": [
-                    {
-                        "type": "item",
-                        "margin": "5,1,5,5",
-                        "item": "retro_caves"
-                    }
-                ]
-            }
-        ]
-    },
     "tracker_default": {
         "type": "container",
         "background": "#00000000",

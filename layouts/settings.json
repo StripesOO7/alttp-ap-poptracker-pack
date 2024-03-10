@@ -1,104 +1,45 @@
 {
     "setting_grid": {
         "type": "array",
-        "orientation": "vertical",
+        "orientation": "horizontal",
         "margin": "0,0",
         "content": [
             {
                 "type": "array",
-                "orientation": "horizontal",
-                "margin": "0,0",
-                "content": [
-                    {
-                        "type": "itemgrid",
-                        "item_margin": "2, 2",
-                        "item_size": "45, 45",
-                        "h_alignment": "left",
-                        "item_h_alignment": "center",
-                        "item_v_alignment": "center",
-                        "rows": [                        
-                            [
-                                "gt_access", //gt crystal  count
-                                "ganon_killable", //ganon crystal count
-                                "triforce_pieces_needed",
-                                "swordless"
-                            ]
-                        ]
-                    }
-                ]
-            },
-            {
-                "type": "array",
-                "orientation": "horizontal",
+                "orientation": "vertical",
                 "margin": "0,0",
                 "content": [
                     {
                         "type": "array",
                         "orientation": "horizontal",
-                        "h_alignment": "center",
-                        "v_alignment": "center",
                         "margin": "0,0",
                         "content": [
                             {
                                 "type": "itemgrid",
-                                "item_margin": "1, 1",
-                                "item_size": "25, 40",
-                                
-                                "v_alignment": "center",
+                                "item_margin": "2, 2",
+                                "item_size": "45, 45",
+                                "h_alignment": "left",
                                 "item_h_alignment": "center",
                                 "item_v_alignment": "center",
                                 "rows": [                        
                                     [
-                                        "small_keys",
-                                        "big_keys",
-                                        "map",
+                                        "gt_access", //gt crystal  count
+                                        "small_keys"
+                                    ],
+                                    [
+                                        "ganon_killable", //ganon crystal count
+                                        "big_keys"
+                                    ],
+                                    [
+                                        "triforce_pieces_needed",
+                                        "map"
+                                    ],
+                                    [
+                                        "swordless",
                                         "compass"
                                     ]
                                 ]
                             }
-                        ]
-                    },
-                    {
-                        "type": "itemgrid",
-                        "item_margin": "2, 3",
-                        "item_size": "70,16",
-                        "h_alignment": "left",
-                        "item_h_alignment": "center",
-                        "item_v_alignment": "center",
-                        "rows": [
-                            [
-                                "enemizer"
-                            ],
-                            [
-                                "start_option" //standord, open, inverted
-                            ]
-                        ]
-                    }
-                ]
-            },
-            {
-                "type": "array",
-                "orientation": "horizontal",
-                "margin": "0,0",
-                "content": [
-                    {
-                        "type": "itemgrid",
-                        "item_margin": "2, 6",
-                        "item_size": "64,24",
-                        "h_alignment": "left",
-                        "item_h_alignment": "center",
-                        "item_v_alignment": "center",
-                        "rows": [
-                            [
-                                "glitches",
-                                "goal", //slow ganon, fast ganon, pedestal, triforce hunt, triforce hunt + ganon, icerod hunt
-                                "dark_mode"
-                            ],
-                            [
-                                "boss_shuffle",
-                                "shop_sanity",
-                                "key_drop_shuffle"
-                            ]
                         ]
                     }
                 ]
