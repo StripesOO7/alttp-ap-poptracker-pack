@@ -552,7 +552,7 @@
             },
             {
                 "name": "Capacity Fairy",
-                "visibility_rules": ["shop_sanity"],
+                "visibility_rules": ["shop_sanity, shop_shuffle_capacity"],
                 "sections": [
                     {
                         "name": "Shop Item",
@@ -626,7 +626,7 @@
                 "sections": [
                     {
                         "name": "shop",
-                        "visibility_rules": ["shop_sanity"],
+                        "visibility_rules": ["shop_sanity, shop_include_witchhut"],
                         "clear_as_group": false,
                         "item_count": 3
                     },
