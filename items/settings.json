@@ -70,7 +70,7 @@
         "name": "Start Option",
         "type": "progressive",
         "allow_disabled": false,
-        "initial_stage_idx": 2,
+        "initial_stage_idx": 0,
         "stages": [
             {
                 "img": "/images/settings/gm_standard.png",
@@ -148,16 +148,16 @@
         "initial_stage_idx": 0,
         "stages": [
             {
-                "img": "/images/settings/darkroom_logic.png",
-                "codes": "dark_rooms"
-            },
-            {
                 "img": "/images/settings/darkroom_lamp.png",
                 "codes": "lamp_req"
             },
             {
                 "img": "/images/settings/darkroom_firerod.png",
                 "codes": "firerod_req"
+            },
+            {
+                "img": "/images/settings/darkroom_logic.png",
+                "codes": "dark_rooms"
             }
         ],
         "codes": "dark_mode"

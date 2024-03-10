@@ -219,7 +219,7 @@ function autoFill()
     print(dump_table(SLOT_DATA))
 
     -- mapGlitcheMode = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4} -- noGlitches, minor, overworld, hybrid_major, no_logic
-    -- mapDarkRoomLogic = {[0]=0, [1]=1, [2]=2} --lamp, torches, none
+    mapDarkRoomLogic = {[0]=2, [1]=0, [2]=1} --lamp, torches, none
     mapGoal = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=6, [7]=5, [8]=6} --slow, fast, AD, ped, ped+ganon, tfh, local_tfh, tfh+ganon, local tfh+ganon
     -- mapEntranceRandomizer = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=6, [7]=7, [8]=8} --vanilla, dungeon simple, dungeon full, dungeon crossed, simple, restriced, full, crossed, insanity
     -- mapTriforcePiecesAvailable = {} --range 1-90
@@ -278,7 +278,7 @@ function autoFill()
         -- pot_shuffle = {code="pot_shuffle", mapping=}, 
         key_drop_shuffle = {code="key_drop_shuffle", mapping=mapToggle},
         bombless_start = {code="bombless", mapping=mapToggle},
-        dark_room_logic = {code="dark_mode", mapping=mapStages},
+        dark_room_logic = {code="dark_mode", mapping=mapDarkRoomLogic},
         swordless = {code="swordless", mapping=mapToggle}, 
         shop_item_slots = {code="shop_sanity", mapping=nil},
         -- randomize_shop_inventories = {code="", mapping=mapToggle}, 
