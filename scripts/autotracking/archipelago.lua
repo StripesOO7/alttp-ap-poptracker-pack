@@ -232,8 +232,8 @@ function autoFill()
     -- mapEnemyDmg = {[0]=0, [1]=1, [2]=2} --default, shuffled, chaos
     -- mapMedallions = {[0]="ether", [1]="bombos", [2]="quake"} -- ether, bombos, quake
     mapMedallions = {["Ether"]="ether", ["Bombos"]="bombos", ["Quake"]="quake"} -- ether, bombos, quake
-    -- mapCrystalGanon = {} -- range 1-7
-    -- mapGTCrystals = {} -- range 1-7
+    -- mapCrystalGanon = {} -- range 0-7
+    -- mapGTCrystals = {} -- range 0-7
     -- mapRandomizeShopInventory = {} -- range 0-30
     -- mapShuffleShopInventories = {[0]=false, [1]=true} -- false, true
     -- mapRandomizeShopPrices = {[0]=false, [1]=true} -- false, true
@@ -293,7 +293,7 @@ function autoFill()
     }
 
 
-    print(dump_table(SLOT_DATA))
+    -- print(dump_table(SLOT_DATA))
     -- print(Tracker:FindObjectForCode("autofill_settings").Active)
     if Tracker:FindObjectForCode("autofill_settings").Active == true then
         for settings_name , settings_value in pairs(SLOT_DATA) do

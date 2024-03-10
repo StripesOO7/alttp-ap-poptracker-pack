@@ -148,16 +148,16 @@
         "initial_stage_idx": 0,
         "stages": [
             {
+                "img": "/images/settings/darkroom_logic.png",
+                "codes": "dark_rooms"
+            },
+            {
                 "img": "/images/settings/darkroom_lamp.png",
                 "codes": "lamp_req"
             },
             {
                 "img": "/images/settings/darkroom_firerod.png",
                 "codes": "firerod_req"
-            },
-            {
-                "img": "/images/settings/darkroom_logic.png",
-                "codes": "dark_rooms"
             }
         ],
         "codes": "dark_mode"
@@ -178,91 +178,79 @@
             //     "codes": "glitched_boots"
             // },
             {
-
                 "img": "/images/settings/glitches_minor.png",
                 "inherit_codes": false,
                 "codes": "minor"
             },
             {
-
                 "img": "/images/settings/glitches_ow.png",
                 "inherit_codes": false,
                 "codes": "ow"
             },
             {
-
                 "img": "/images/settings/glitches_hmg.png",
                 "inherit_codes": false,
                 "codes": "hybrid_major"
             },
             {
-
                 "img": "/images/settings/glitches_no_logic.png",
                 "inherit_codes": false,
                 "codes": "no+logic"
             }
         ],
-
         "img": "/images/settings/items/Pegasus_Boots.png",
         "codes": "glitches"
     },
     {
         "name": "Swordless",
         "type": "toggle",
-
         "img": "/images/settings/swordless.png",
         "codes": "swordless"
     },
-    {
-        "name": "Progressive Items",
-        "type": "progressive",
-        "stages": 
-            [
-                {
-
-                    "img": "/images/settings/lttp_small_key.png",
-                    "inherit_codes": false, 
-                    "name": "Small Keysanity",
-                    "codes": "small_keysanity"
-                },
-                {
-
-                    "img": "/images/settings/universal_keys.png",
-                    "inherit_codes": false,
-                    "name": "Universal Small Keys",
-                    "codes": "universal_keys"
-                }
-            ],
-        "codes": "progressive_items"
-    },
+    // {
+    //     "name": "Progressive Items",
+    //     "type": "progressive",
+    //     "stages": 
+    //         [
+    //             {
+    //                 "img": "/images/settings/lttp_small_key.png",
+    //                 "inherit_codes": false, 
+    //                 "name": "Small Keysanity",
+    //                 "codes": "small_keysanity"
+    //             },
+    //             {
+    //                 "img": "/images/settings/universal_keys.png",
+    //                 "inherit_codes": false,
+    //                 "name": "Universal Small Keys",
+    //                 "codes": "universal_keys"
+    //             }
+    //         ],
+    //     "codes": "progressive_items"
+    // },
     {
         "name": "Enemy Health",
         "type": "progressive",
         "stages":
             [
                 {
-
                     "img": "/images/settings/items/enemy_hp_easy.png",
                     "inherit_codes": false, 
                     "name": "Enemy HP Easy",
                     "codes": "enemy_hp_easy"
                 },
                 {
-
                     "img": "/images/settings/items/enemy_hp_normal.png",
                     "inherit_codes": false, 
                     "name": "Enemy HP Normal",
                     "codes": "enemy_hp_normal"
                 },
                 {
-
                     "img": "/images/settings/items/enemy_hp_hard.png",
                     "inherit_codes": false, 
                     "name": "Enemy HP Hard",
                     "codes": "enemy_hp_hard"
                 },
                 {
-
                     "img": "/images/settings/items/enemy_hp_expert.png",
                     "inherit_codes": false, 
                     "name": "Enemy HP Expert",
@@ -277,21 +265,18 @@
         "stages":
             [
                 {
-
                     "img": "/images/settings/items/enemy_dmg_default.png",
                     "inherit_codes": false, 
                     "name": "Enemy Dmg Default",
                     "codes": "enemy_dmg_default"
                 },
                 {
-
                     "img": "/images/settings/items/enemy_dmg_shuffled.png",
                     "inherit_codes": false, 
                     "name": "Enemy Dmg shuffled",
                     "codes": "enemy_dmg_shuffled"
                 },
                 {
-
                     "img": "/images/settings/items/enemy_dmg_chaos.png",
                     "inherit_codes": false, 
                     "name": "Enemy Dmg chaos",
