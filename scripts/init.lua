@@ -5,6 +5,7 @@ IS_UNLABELLED = variant:find("maps-u")
 ScriptHost:LoadScript("scripts/items.lua")
 
 -- Logic
+ScriptHost:LoadScript("scripts/logic.lua")
 ScriptHost:LoadScript("scripts/logic/logic_helpers.lua")
 ScriptHost:LoadScript("scripts/logic/logic.lua")
 
@@ -24,7 +25,6 @@ ScriptHost:LoadScript("scripts/layouts.lua")
 
 -- Locations
 ScriptHost:LoadScript("scripts/locations.lua")
-
 
 -- AutoTracking for Poptracker
 if PopVersion and PopVersion >= "0.18.0" then
