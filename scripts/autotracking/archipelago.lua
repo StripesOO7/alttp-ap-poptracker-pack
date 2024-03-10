@@ -347,10 +347,12 @@ end
 
 function bombless()
     bombs = Tracker:FindObjectForCode("bombs")
-    if Tracker:FindObjectForCode("bombless").Active then
-        bombs.AcquiredCount = bombs.AcquiredCount - 10
-    else
+    if Tracker:FindObjectForCode("bombless").Active == false then
         bombs.AcquiredCount = bombs.AcquiredCount + 10
+    else
+        if bombs.AcquiredCount > 9 then
+            bombs.AcquiredCount = bombs.AcquiredCount - 10
+        end
     end
 end
 
