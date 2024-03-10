@@ -243,7 +243,7 @@ end
 
 function changeTab(target_tab)
     if Tracker:FindObjectForCode("ui_hint").Active and target_tab ~= nil then
-        print(ow_room, dungeon_room, Tracker:FindObjectForCode("ui_hint").Active, target_tab)
+        -- print(ow_room, dungeon_room, Tracker:FindObjectForCode("ui_hint").Active, target_tab)
         Tracker:UiHint("ActivateTab", target_tab)
     end
 end
