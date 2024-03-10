@@ -217,7 +217,7 @@ function autoFill()
         print("its fucked")
         return
     end
-    print(dump_table(SLOT_DATA))
+    -- print(dump_table(SLOT_DATA))
 
     mapToggle={[0]=0,[1]=1,[2]=1,[3]=1,[4]=1}
     mapToggleReverse={[0]=1,[1]=0,[2]=0,[3]=0,[4]=0}
@@ -262,7 +262,7 @@ function autoFill()
         triforce_pieces_required={code="triforce_pieces_needed", mapping=nil}
         -- glitch_boots={code="glitches", mapping=nil}
     }
-    -- print(dump_table(SLOT_DATA))
+    print(dump_table(SLOT_DATA))
     -- print(Tracker:FindObjectForCode("autofill_settings").Active)
     if Tracker:FindObjectForCode("autofill_settings").Active == true then
         for settings_name , settings_value in pairs(SLOT_DATA) do
@@ -281,7 +281,12 @@ function autoFill()
             elseif settings_name == "shop_item_slots" then
                 if settings_value > 0 then
                     Tracker:FindObjectForCode("shop_sanity").Active = true
-                    Tracker:FindObjectForCode("shop_sanity").AcquiredCount = settings_value 
+                    Tracker:FindObjectForCode("shop_sanity").AcquiredCount = settings_value
+                    if SLOT_DATA["shop_shuffle"]:find("w") ~= nil then
+                        Tracker:FindObjectForCode("shop_include_witchhut").Active = true
+                    else
+                        Tracker:FindObjectForCode("shop_include_witchhut").Active = false
+                    end
                 end
             elseif slotCodes[settings_name] then
                 item = Tracker:FindObjectForCode(slotCodes[settings_name].code)
