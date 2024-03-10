@@ -217,7 +217,7 @@ function autoFill()
         print("its fucked")
         return
     end
-    -- print(dump_table(SLOT_DATA))
+    print(dump_table(SLOT_DATA))
 
     mapToggle={[0]=0,[1]=1,[2]=1,[3]=1,[4]=1}
     mapToggleReverse={[0]=1,[1]=0,[2]=0,[3]=0,[4]=0}
@@ -227,8 +227,8 @@ function autoFill()
     -- mapGlitches={[0]=0,[1]=2,[2]=3,[3]=0,[4]=0}
     -- progressive={[]=,}
     mapMode={["open"]=1,["inverted"]=2,["standard"]=0}
-    mapGoals={["crystals"]=0,["ganon"]=1,["bosses"]=2,["pedestal"]=3,["ganonpedestal"]=4,["triforcehunt"]=5,["ganontriforcehunt"]=6,["icerodhunt"]=7,["localtriforcehunt"]=5,["localganontriforcehunt"]=6}
-    mapDark={["none"]=0,["lamp"]=1,["troches"]=2} -- none=dark room, lamp=vanilla, scornes = firerod
+    mapGoals={["crystals"]=1,["ganon"]=0,["bosses"]=2,["pedestal"]=3,["ganonpedestal"]=4,["triforcehunt"]=5,["ganontriforcehunt"]=6,["icerodhunt"]=7,["localtriforcehunt"]=5,["localganontriforcehunt"]=6}
+    mapDark={["none"]=2,["lamp"]=0,["troches"]=1} -- none=dark room, lamp=vanilla, scornes = firerod
     mapMedalion={["Bombos"]="bombos",["Ether"]="ether",["Quake"]="quake"}
     -- retro_caves={[]=}
     mapBosses={[0]=0,[1]=1,[2]=1,[3]=1,[4]=2}
