@@ -1,0 +1,7 @@
+Tracker:AddItems("items/items.json")
+Tracker:AddItems("items/settings.json")
+-- Tracker:AddItems("items/keys.json")
+Tracker:AddItems("items/labels.json")
+Tracker:AddItems("items/dungeon_bosses.json")
+Tracker:AddItems("items/dungeon_items_pots.json")
+Tracker:AddItems("items/dungeon_items.json")

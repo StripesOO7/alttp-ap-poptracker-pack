@@ -1,15 +1,11 @@
 local variant = Tracker.ActiveVariantUID
 IS_UNLABELLED = variant:find("maps-u")
 
-Tracker:AddItems("items/items.json")
-Tracker:AddItems("items/settings.json")
--- Tracker:AddItems("items/keys.json")
-Tracker:AddItems("items/labels.json")
-Tracker:AddItems("items/dungeon_bosses.json")
-Tracker:AddItems("items/dungeon_items_pots.json")
-Tracker:AddItems("items/dungeon_items.json")
+-- Items
+ScriptHost:LoadScript("scripts/items.lua")
 
 -- Logic
+ScriptHost:LoadScript("scripts/logic/logic_helpers.lua")
 ScriptHost:LoadScript("scripts/logic/logic.lua")
 
 -- Maps
