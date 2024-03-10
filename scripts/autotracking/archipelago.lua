@@ -2,7 +2,7 @@ ScriptHost:LoadScript("scripts/autotracking/item_mapping.lua")
 ScriptHost:LoadScript("scripts/autotracking/location_mapping.lua")
 
 CUR_INDEX = -1
---SLOT_DATA = nil
+SLOT_DATA = nil
 
 local SECONDSTAGE = { 
     [5] = 5, --red shield
@@ -17,7 +17,7 @@ local THIRDSTAGE = {
     [35] = 35 --red mail
 }
 
-SLOT_DATA = {}
+-- SLOT_DATA = {}
 
 function has_value (t, val)
     for i, v in ipairs(t) do
@@ -216,7 +216,7 @@ function autoFill()
         print("its fucked")
         return
     end
-    -- print(dump_table(SLOT_DATA))
+    print(dump_table(SLOT_DATA))
 
     -- mapGlitcheMode = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4} -- noGlitches, minor, overworld, hybrid_major, no_logic
     -- mapDarkRoomLogic = {[0]=0, [1]=1, [2]=2} --lamp, torches, none
@@ -283,7 +283,7 @@ function autoFill()
         shop_item_slots = {code="shop_sanity", mapping=nil},
         -- randomize_shop_inventories = {code="", mapping=mapToggle}, 
         -- shuffle_shop_inventories = {code="", mapping=mapToggle}, 
-        shuffle_capacity_upgrades = {code="capacity_upgrades", mapping=mapToggle},
+        shuffle_capacity_upgrades = {code="shop_shuffle_capacity", mapping=mapToggle},
         -- entrance_shuffle = {code="entrance_shuffle", mapping=}, 
 
 
@@ -339,7 +339,7 @@ function autoFill()
             Tracker:FindObjectForCode(mapMedallions[SLOT_DATA["mm_medalion"]]).CurrentStage = 2
             Tracker:FindObjectForCode(mapMedallions[SLOT_DATA["tr_medalion"]]).CurrentStage = 1
         end
-
+        goal_check()
     end
 end
 
@@ -353,7 +353,25 @@ function bombless()
     end
 end
 
+function goal_check()
+    if SLOT_DATA ~= nil then
+        local goal = Tracker:FindObjectForCode("goal")
+        local ganon = Tracker:FindObjectForCode("ganon_killable")
+        local triforce = Tracker:FindObjectForCode("triforce_pieces_needed")
+        if goal.CurrentStage == 3 or 
+        goal.CurrentStage == 5 or 
+        goal.CurrentStage == 6 then
+            ganon.AcquiredCount=0
+            triforce.AcquiredCount=SLOT_DATA["triforce_pieces_required"]
+        else
+            ganon.AcquiredCount=SLOT_DATA["crystals_needed_for_ganon"]
+            triforce.AcquiredCount=0
+        end
+    end
+end
+
 ScriptHost:AddWatchForCode("bombless start handler", "bombless", bombless)
+ScriptHost:AddWatchForCode("goal handler", "goal", goal_check)
 ScriptHost:AddWatchForCode("settings autofill handler", "autofill_settings", autoFill)
 Archipelago:AddClearHandler("clear handler", onClear)
 Archipelago:AddItemHandler("item handler", onItem)
