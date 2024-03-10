@@ -208,7 +208,7 @@ function canFinish()
 end
 
 function openOrStandard()
-    if Tracker:FindObjectForCode("start_option").CurrentStage ~= 1 then
+    if Tracker:FindObjectForCode("start_option").CurrentStage ~= 2 then
         return true
     end
     return false
