@@ -1,3 +1,11 @@
+function A(result)
+    if result then
+        return AccessibilityLevel.Normal
+    else
+        return AccessibilityLevel.None
+    end
+end
+
 function all(...)
     local args = { ... }
     local min = AccessibilityLevel.Normal
@@ -62,6 +70,21 @@ end
 --         return count >= amount
 --     end
 -- end
+
+function dealDamage()
+    return any(
+        has("sword"),
+        has("bombs"),
+        has("byrna"),
+        has("somaria"),
+        has("bombos"),
+        has("ether"),
+        has("quake"),
+        has("bow"),
+        has("hookshot"),
+        has("firerod")
+    )
+end
 
 function getBossRef(nameRef)
     local bosses = {
