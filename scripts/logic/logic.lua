@@ -10,6 +10,7 @@ alttp_location.__index = alttp_location
 named_locations = {}
 staleness = 0
 
+-- 
 function can_reach(name)
     local location
     if type(region_name) == "function" then
@@ -24,6 +25,8 @@ function can_reach(name)
     return location:accessibility()
 end
 
+-- creates a lua object for the given name. it acts as a representation of a overworld reagion or indoor locatoin and
+-- tracks its connected objects wvia the exit-table
 function alttp_location.new(name)
     local self = setmetatable({}, alttp_location)
     if name then
@@ -40,6 +43,7 @@ local function always()
     return AccessibilityLevel.Normal
 end
 
+-- markes a 1-way connections between 2 "locations/regions" in the source "locations" exit-table with rules if provided
 function alttp_location:connect_one_way(exit, rule)
     if type(exit) == "string" then
         exit = alttp_location.new(exit)
@@ -50,11 +54,14 @@ function alttp_location:connect_one_way(exit, rule)
     self.exits[#self.exits + 1] = { exit, rule }
 end
 
+-- markes a 2-way connection between 2 locations. acts as a shortcut for 2 connect_one_way-calls 
 function alttp_location:connect_two_ways(exit, rule)
     self:connect_one_way(exit, rule)
     exit:connect_one_way(self, rule)
 end
 
+-- creates a 1-way connection from a region/location to another one via a 1-way connector like a ledge, hole,
+-- self-closing door, 1-way teleport, ...
 function alttp_location:connect_one_way_entrance(name, exit, rule)
     if rule == nil then
         rule = always
@@ -62,6 +69,8 @@ function alttp_location:connect_one_way_entrance(name, exit, rule)
     self.exits[#self.exits + 1] = { exit, rule }
 end
 
+-- creates a connection between 2 locations that is traversable in both ways using the same rules both ways
+-- acts as a shortcut for 2 connect_one_way_entrance-calls
 function alttp_location:connect_two_ways_entrance(name, exit, rule)
     if exit == nil then -- for ER
         return
@@ -70,11 +79,14 @@ function alttp_location:connect_two_ways_entrance(name, exit, rule)
     exit:connect_one_way_entrance(name, self, rule)
 end
 
+-- creates a connection between 2 locations that is traversable in both ways but each connection follow different rules.
+-- acts as a shortcut for 2 connect_one_way_entrance-calls
 function alttp_location:connect_two_ways_entrance_door_stuck(name, exit, rule1, rule2)
     self:connect_one_way_entrance(name, exit, rule1)
     exit:connect_one_way_entrance(name, self, rule2)
 end
 
+-- checks for the accessibitliy of a regino/location given its own exit requirements
 function alttp_location:accessibility()
     if self.staleness < staleness then
         return AccessibilityLevel.None
@@ -83,6 +95,7 @@ function alttp_location:accessibility()
     end
 end
 
+-- 
 function alttp_location:discover(accessibility, keys)
     local change = false
     if accessibility > self:accessibility() then
@@ -119,6 +132,7 @@ end
 
 entry_point = alttp_location.new()
 
+-- 
 function stateChanged()
     staleness = staleness + 1
     entry_point:discover(AccessibilityLevel.Normal, 0)

@@ -76,6 +76,12 @@ light_spawn_old_man = alttp_location.new()
 kakariko_village = alttp_location.new()
 kakariko_village:connect_one_way(south_of_village)
 kakariko_village:connect_one_way(lost_woods)
+kakariko_village:connect_one_way(light_flute_map, function() 
+    return all(
+        has("flute"),
+        openOrStandard()
+    ) 
+end)
 
 kakariko_well = alttp_location.new()
 kakariko_well:connect_one_way("Kakariko Well - Top", function() return has("bombs") end)
@@ -123,6 +129,12 @@ darf_smiths = alttp_location.new()
 south_of_village = alttp_location.new()
 south_of_village:connect_one_way(kakariko_village)
 south_of_village:connect_one_way(links_house_area)
+south_of_village:connect_one_way(light_flute_map, function() 
+    return all(
+        has("flute"),
+        openOrStandard()
+    ) 
+end)
 
 library = alttp_location.new()
 library:connect_one_way("Library Item", function() return has("boots") end)
@@ -132,6 +144,12 @@ twin_house = alttp_location.new()
 sanctuary_area = alttp_location.new()
 sanctuary_area:connect_one_way(lost_woods)
 sanctuary_area:connect_one_way(eastern_palace)
+sanctuary_area:connect_one_way(light_flute_map, function() 
+    return all(
+        has("flute"),
+        openOrStandard()
+    ) 
+end)
 sanctuary_area:connect_one_way(light_lake_hylia, function()
     return has("flippers")
 end) --teleport
@@ -146,6 +164,12 @@ sanctuary:connect_one_way("Sanctuary Chest")
 lost_woods = alttp_location.new()
 lost_woods:connect_one_way(lumberjacks)
 lost_woods:connect_one_way(kakariko_village)
+lost_woods:connect_one_way(light_flute_map, function() 
+    return all(
+        has("flute"),
+        openOrStandard()
+    ) 
+end)
 
 lost_woods_fortune = alttp_location.new()
 lost_woods_hideout = alttp_location.new()
@@ -154,6 +178,12 @@ lost_woods_top = alttp_location.new()
 
 dam_area = alttp_location.new()
 dam_area:connect_one_way(desert_area)
+dam_area:connect_one_way(light_flute_map, function() 
+    return all(
+        has("flute"),
+        openOrStandard()
+    ) 
+end)
 dam_area:connect_one_way(links_house_area)
 dam_area:connect_one_way(light_lake_hylia, function()
     return has("flippers")
@@ -180,6 +210,12 @@ checkerboard_cave = alttp_location.new()
 
 lumberjacks = alttp_location.new()
 lumberjacks:connect_one_way(lost_woods)
+lumberjacks:connect_one_way(light_flute_map, function() 
+    return all(
+        has("flute"),
+        openOrStandard()
+    ) 
+end)
 lumberjacks:connect_one_way(sanctuary_area)
 lumberjacks:connect_one_way(light_lake_hylia, function()
     return has("flippers")
@@ -195,6 +231,12 @@ sanctuary_bonk_cave = alttp_location.new()
 light_lake_hylia = alttp_location.new()
 light_lake_hylia:connect_one_way(links_house_area)
 light_lake_hylia:connect_one_way(dam_area)
+light_lake_hylia:connect_one_way(light_flute_map, function() 
+    return all(
+        has("flute"),
+        openOrStandard()
+    ) 
+end)
 light_lake_hylia:connect_one_way(eastern_palace)
 light_lake_hylia:connect_one_way(witchhut, function() 
     return canSwim()
@@ -228,6 +270,12 @@ links_house_area:connect_one_way(dam_area)
 links_house_area:connect_one_way(light_lake_hylia)
 links_house_area:connect_one_way(eastern_palace)
 links_house_area:connect_one_way(hyrule_castel)
+links_house_area:connect_one_way(light_flute_map, function() 
+    return all(
+        has("flute"),
+        openOrStandard()
+    ) 
+end)
 
 links_fairy_fountain = alttp_location.new()
 links_house = alttp_location.new()
@@ -241,6 +289,12 @@ eastern_palace:connect_one_way(links_house_area)
 eastern_palace:connect_one_way(light_lake_hylia)
 eastern_palace:connect_one_way(witchhut)
 eastern_palace:connect_one_way(links_house_area)
+eastern_palace:connect_one_way(light_flute_map, function() 
+    return all(
+        has("flute"),
+        openOrStandard()
+    ) 
+end)
 
 eastern_teleporter_cave = alttp_location.new()
 easter_fairy = alttp_location.new()
@@ -279,6 +333,12 @@ hyrule_castel = alttp_location.new()
 hyrule_castel:connect_one_way(links_house_area)
 hyrule_castel:connect_one_way(eastern_palace)
 hyrule_castel:connect_one_way(lumberjacks)
+hyrule_castel:connect_one_way(light_flute_map, function() 
+    return all(
+        has("flute"),
+        openOrStandard()
+    ) 
+end)
 
 secret_passage = alttp_location.new()
 secret_passage:connect_one_way("Secret Passage")
@@ -287,6 +347,12 @@ secret_passage:connect_one_way("Link's Uncle")
 witchhut = alttp_location.new()
 witchhut:connect_one_way(eastern_palace)
 witchhut:connect_one_way(sanctuary_area)
+witchhut:connect_one_way(light_flute_map, function() 
+    return all(
+        has("flute"),
+        openOrStandard()
+    ) 
+end)
 witchhut:connect_one_way(zora_river, function() 
     return has("gloves") 
 end)
@@ -324,21 +390,77 @@ darkworld_teleport_desert_area:connect_one_way(mire_area, function()
     )
 end)
 
-lightworld_overworld = alttp_location.new()
+light_flute_map = alttp_location.new()
+light_flute_map:connect_one_way(light_death_mountain_left_bottom)
+light_flute_map:connect_one_way(witchhut)
+light_flute_map:connect_one_way(kakariko_village)
+light_flute_map:connect_one_way(links_house_area)
+light_flute_map:connect_one_way(eastern_palace)
+light_flute_map:connect_one_way(desert_area)
+light_flute_map:connect_one_way(dam_area)
+light_flute_map:connect_one_way(light_lake_hylia)
 
--- light_death_mountain_left_bottom = alttp_location.new()
+-- lightworld_overworld = alttp_location.new()
+-- light_death_mountain = alttp_location.new()
+
+light_death_mountain_left_bottom = alttp_location.new()
+light_death_mountain_left_bottom:connect_one_way(light_death_mountain_left_top, function() return has("mirror") end)
+light_death_mountain_left_bottom:connect_one_way(light_death_mountain_right_bottom, function() return has("hookshot") end)
+light_death_mountain_left_bottom:connect_one_way("Spectacle Rock", function() return has("mirror") end)
+light_death_mountain_left_bottom:connect_one_way(light_flute_map, function() 
+    return all(
+        has("flute"),
+        openOrStandard()
+    ) 
+end)
+light_death_mountain_left_bottom:connect_one_way()
+
+spectacle_rock_cave = alttp_location.new()
+
 -- -- light_death_mountain_left:connect_one_way(lumberjacks)
 -- light_death_mountain_left_bottom:connect_one_way(light_death_mountain_right_bottom)
 -- -- light_death_mountain_left_bottom:connect_one_way(light_death_mountain_left_top)
 
--- light_death_mountain_left_top = alttp_location.new()
+light_death_mountain_left_top = alttp_location.new()
+light_death_mountain_left_top:connect_one_way(light_death_mountain_left_bottom)
+light_death_mountain_left_top:connect_one_way(light_flute_map, function() 
+    return all(
+        has("flute"),
+        openOrStandard()
+    ) 
+end)
+light_death_mountain_left_top:connect_one_way(light_death_mountain_right_top, function() retrun has("hammer") end)
+light_death_mountain_left_top:connect_one_way("Ether Tablet", function() 
+    return all(
+        has("book"), 
+        canActivateTablets()
+    ) 
+end)
+
+
 -- light_death_mountain_left_top:connect_one_way(light_death_mountain_right_top)
 -- light_death_mountain_left_top:connect_one_way(light_death_mountain_left_bottom)
 
--- light_death_mountain_right_bottom = alttp_location.new()
+light_death_mountain_right_bottom = alttp_location.new()
+light_death_mountain_right_bottom:connect_one_way(light_death_mountain_left_bottom, function() return has("hookshot") end)
+light_death_mountain_right_bottom:connect_one_way(light_flute_map, function() 
+    return all(
+        has("flute"),
+        openOrStandard()
+    ) 
+end)
+hookshot_cave
 -- light_death_mountain_right_bottom:connect_one_way()
 -- light_death_mountain_right_bottom:connect_one_way()
 
--- light_death_mountain_right_top = alttp_location.new()
+light_death_mountain_right_top = alttp_location.new()
+light_death_mountain_right_top:connect_one_way(light_death_mountain_right_bottom)
+light_death_mountain_right_top:connect_one_way(light_flute_map, function() 
+    return all(
+        has("flute"),
+        openOrStandard()
+    ) 
+end)
+light_death_mountain_right_top:connect_one_way(light_death_mountain_left_top, function() return has("hammer") end)
 -- light_death_mountain_right_top:connect_one_way()
 -- light_death_mountain_right_top:connect_one_way()
