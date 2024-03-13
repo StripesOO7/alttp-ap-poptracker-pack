@@ -1,0 +1,14 @@
+ip_entrance
+local ip_freezor_entrance
+local ip_jelly_room
+local ip_compass_room
+local ip_conveyor_room
+local ip_map_room
+local ip_spike_room
+local ip_big_key_room
+local ip_freezor_room
+local ip_big_chest_room
+local ip_many_port_room
+local ip_iced_t_room
+local ip_
+local ip_boss_room

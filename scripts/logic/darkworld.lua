@@ -20,6 +20,36 @@
 -- dark_death_mountain_left_bottom
 -- dark_death_mountain_right_bottom
 
+big_bomb_shop = alttp_location.new()
+swamp_area = alttp_location.new()
+mire_area = alttp_location.new()
+dark_lake_hylia = alttp_location.new()
+dark_icerod_area = alttp_location.new()
+village_of_the_outcast = alttp_location.new()
+south_of_village_of_the_outcast = alttp_location.new()
+skull_woods_area = alttp_location.new()
+dark_lumpberjacks = alttp_location.new()
+dark_chapel = alttp_location.new()
+dark_potion_shop = alttp_location.new()
+catfish_area = alttp_location.new()
+pyramid = alttp_location.new()
+pod_area = alttp_location.new()
+dark_death_mountain_left_top = alttp_location.new()
+dark_death_mountain_right_top = alttp_location.new()
+dark_death_mountain_left_bottom = alttp_location.new()
+dark_death_mountain_right_bottom = alttp_location.new()
+
+palace_of_darkness = alttp_location.new()
+swamp_palace = alttp_location.new()
+skull_woods = alttp_location.new()
+thieves_town = alttp_location.new()
+ice_palace = alttp_location.new()
+misery_mire = alttp_location.new()
+turtle_rock = alttp_location.new()
+ganons_tower = alttp_location.new()
+
+
+
 
 dark_flute_map = alttp_location.new()
 dark_flute_map:connect_one_way(dark_death_mountain_left_bottom)
@@ -35,7 +65,10 @@ dark_spawn_big_bomb_shop = alttp_location.new()
 dark_spawn_dark_chapel = alttp_location.new()
 dark_spawn_old_man = alttp_location.new()
 
-big_bomb_shop = alttp_location.new()
+
+
+
+-- big_bomb_shop
 big_bomb_shop:connect_one_way(swamp_area)
 big_bomb_shop:connect_one_way(dark_flute_map, function() 
     return all(
@@ -49,9 +82,14 @@ big_bomb_shop:connect_one_way(south_of_village_of_the_outcast)
 --     return has("hammer")
 -- end)
 big_bomb_shop = alttp_location.new()
-big_bomb_shop_fairy = alttp_location.new()
+big_bomb_shop_fairy_cave = alttp_location.new()
 
-swamp_area = alttp_location.new()
+
+
+
+
+
+-- swamp_area
 swamp_area:connect_one_way(big_bomb_shop)
 swamp_area:connect_one_way(dark_lake_hylia)
 swamp_area:connect_one_way(dark_flute_map, function() 
@@ -69,7 +107,12 @@ hype_cave:connect_one_way("Hype Cave - Middle Left", function() return has("bomb
 hype_cave:connect_one_way("Hype Cave - Middle Right", function() return has("bombs") end)
 hype_cave:connect_one_way("Hype Cave - Bottom", function() return has("bombs") end)
 
-mire_area = alttp_location.new()
+
+
+
+
+
+-- mire_area
 mire_area:connect_one_way()
 mire_area:connect_one_way(dark_flute_map, function() 
     return all(
@@ -86,7 +129,12 @@ dark_aghina = alttp_location.new()
 
 
 
-dark_lake_hylia = alttp_location.new()
+
+
+
+
+
+-- dark_lake_hylia
 dark_lake_hylia:connect_one_way(big_bomb_shop)
 dark_lake_hylia:connect_one_way(ice_palace)
 dark_lake_hylia:connect_one_way(dark_flute_map, function() 
@@ -110,7 +158,12 @@ dark_lake_shop:connect_one_way("Dark Lake Shop Left")
 dark_lake_shop:connect_one_way("Dark Lake Shop Center")
 dark_lake_shop:connect_one_way("Dark Lake Shop Right")
 
-dark_icerod_area = alttp_location.new()
+
+
+
+
+
+-- dark_icerod_area
 dark_icerod_area:connect_one_way(dark_lake_hylia, function()
     return has("flippers")
 end)
@@ -126,7 +179,12 @@ dark_icerod_fairy = alttp_location.new()
 dark_icerod_stone = alttp_location.new()
 
 
-village_of_the_outcast = alttp_location.new()
+
+
+
+
+
+-- village_of_the_outcast
 village_of_the_outcast:connect_one_way(skull_woods_area)
 village_of_the_outcast:connect_one_way(dark_flute_map, function() 
     return all(
@@ -149,7 +207,12 @@ brewery:connect_one_way("Brewery Chest")
 peg_cave = alttp_location.new()
 peg_cave:connect_one_way("Peg-Cave Item")
 
-south_of_village_of_the_outcast = alttp_location.new()
+
+
+
+
+
+-- south_of_village_of_the_outcast
 south_of_village_of_the_outcast:connect_one_way(village_of_the_outcast, function()
     return has("titans")
 end)
@@ -165,11 +228,21 @@ end)
 archery_minigame = alttp_location.new()
 
 
-skull_woods_area = alttp_location.new()
+
+
+
+
+
+-- skull_woods_area
 skull_woods_area:connect_one_way(village_of_the_outcast)
 skull_woods_area:connect_one_way(dark_lumpberjacks)
 
-dark_lumpberjacks = alttp_location.new()
+
+
+
+
+
+-- dark_lumpberjacks
 dark_lumpberjacks:connect_one_way(skull_woods_area)
 dark_lumpberjacks:connect_one_way(dark_chapel)
 dark_lumpberjacks:connect_one_way(dark_flute_map, function() 
@@ -190,7 +263,12 @@ red_shield_shop:connect_one_way("Red Shield Shop Right")
 dark_death_mountain_decent = alttp_location.new()
 bumber_cave = alttp_location.new()
 
-dark_chapel = alttp_location.new()
+
+
+
+
+
+-- dark_chapel
 dark_chapel:connect_one_way(dark_lumpberjacks)
 dark_chapel:connect_one_way(dark_flute_map, function() 
     return all(
@@ -204,7 +282,12 @@ end)
 
 dark_chapel = alttp_location.new()
 
-dark_potion_shop = alttp_location.new()
+
+
+
+
+
+-- dark_potion_shop
 dark_potion_shop:connect_one_way(dark_chapel, function()
     return has("hookshot")
 end)
@@ -230,7 +313,12 @@ dark_potion_shop_inside:connect_one_way("Dark Potion Shop Center")
 dark_potion_shop_inside:connect_one_way("Dark Potion Shop Right")
 
 
-catfish_area = alttp_location.new()
+
+
+
+
+
+-- catfish_area
 catfish_area:connect_one_way(dark_potion_shop, function()
     return any(
         has("flippers"),
@@ -245,7 +333,12 @@ catfish_area:connect_one_way(dark_flute_map, function()
 end)
 -- catfish_area:connect_one_way() --glicht to pod
 
-pyramid = alttp_location.new()
+
+
+
+
+
+-- pyramid
 pyramid:connect_one_way(pod_area)
 pyramid:connect_one_way(dark_flute_map, function() 
     return all(
@@ -259,7 +352,12 @@ pyramid_fairy_cave = alttp_location.new()
 pyramid_fairy_cave:connect_one_way("Pyramid Fairy Left")
 pyramid_fairy_cave:connect_one_way("Pyramid Fairy Right")
 
-pod_area = alttp_location.new()
+
+
+
+
+
+-- pod_area
 pod_area:connect_one_way(pyramid)
 pod_area:connect_one_way(dark_flute_map, function() 
     return all(
@@ -278,14 +376,24 @@ pod_teleport_cave = alttp_location.new()
 pod_fairy_cave = alttp_location.new()
 kiki_cave = alttp_location.new()
 
--- ice_palace = alttp_location.new()
+
+
+
+
+
+-- ice_palace
 -- ice_palace:connect_one_way()
 -- ice_palace:connect_one_way()
 -- ice_palace:connect_one_way()
 
 
 
-dark_death_mountain_left_top = alttp_location.new()
+
+
+
+
+
+-- dark_death_mountain_left_top
 dark_death_mountain_left_top:connect_one_way(dark_flute_map, function() 
     return all(
         has("flute"),
@@ -295,7 +403,12 @@ end)
 dark_death_mountain_left_top:connect_one_way()
 
 
-dark_death_mountain_right_top = alttp_location.new()
+
+
+
+
+
+-- dark_death_mountain_right_top
 dark_death_mountain_right_top:cnnconnect_one_way(dark_flute_map, function() 
     return all(
         has("flute"),
@@ -305,7 +418,12 @@ end)
 dark_death_mountain_right_top:connect_one_way()
 
 
-dark_death_mountain_left_bottom = alttp_location.new()
+
+
+
+
+
+-- dark_death_mountain_left_bottom
 dark_death_mountain_left_bottom:connnconnect_one_way(dark_flute_map, function() 
     return all(
         has("flute"),
@@ -315,7 +433,12 @@ end)
 dark_death_mountain_left_bottom:connect_one_way()
 
 
-dark_death_mountain_right_bottom = alttp_location.new()
+
+
+
+
+
+-- dark_death_mountain_right_bottom
 dark_death_mountain_right_bottom:connect_one_way(dark_flute_map, function() 
     return all(
         has("flute"),
