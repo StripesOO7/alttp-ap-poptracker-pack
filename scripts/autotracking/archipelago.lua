@@ -113,7 +113,7 @@ function onItem(index, item_id, item_name, player_number)
     CUR_INDEX = index;
     local item = ITEM_MAPPING[item_id]
     if not item or not item[1] then
-        --print(string.format("onItem: could not find item mapping for id %s", item_id))
+        print(string.format("onItem: could not find item mapping for id %s", item_id))
         return
     end
     for _, item_code in pairs(item[1]) do
