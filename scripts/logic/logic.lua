@@ -131,6 +131,11 @@ function alttp_location:discover(accessibility, keys)
 end
 
 entry_point = alttp_location.new()
+lightworld_spawns = alttp_location.new()
+darkworld_spawns = alttp_location.new()
+
+entry_point:connect_one_way(lightworld_spawns, function() return openOrStandard() end)
+entry_point:connect_one_way(darkworld_spawns, function() return inverted() end)
 
 -- 
 function stateChanged()

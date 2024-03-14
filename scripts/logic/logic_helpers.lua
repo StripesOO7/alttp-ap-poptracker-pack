@@ -141,6 +141,12 @@ function checkSwordless()
     end
 end
 
+function canCheckWithBook()
+    if Tracker:FindObjectForCode("Book") then
+        return AccessibilityLevel.Scoutable
+    else
+        return AccessibilityLevel.None
+
 function canUseMedallions()
     return checkSwordless()
 end
@@ -292,6 +298,13 @@ function openOrStandard()
     return false
 end
 
+function inverted()
+    if Tracker:FindObjectForCode("inverted").Active then
+        return true
+    end
+    return false
+end
+
 function checkGlitches(stage)
     if Tracker:FindObjectForCode("glitches").CurrentStage >= tonumber(stage) then
         return true
@@ -336,13 +349,13 @@ function bossShuffle()
 end
 
 
-function owDungeonDetails()
-    local dungeon_details = Tracker:FindObjectForCode("ow_dungeon_details")
-    if dungeon_details.Active then
-        Tracker:AddLocations("locations/darkworld_dungeons_detailed.json")
-        Tracker:AddLocations("locations/lightworld_dungeons_detailed.json")
-    else
-        Tracker:AddLocations("locations/darkworld_dungeons.json")
-        Tracker:AddLocations("locations/lightworld_dungeons.json")
-    end
-end
+-- function owDungeonDetails()
+--     local dungeon_details = Tracker:FindObjectForCode("ow_dungeon_details")
+--     if dungeon_details.Active then
+--         Tracker:AddLocations("locations/darkworld_dungeons_detailed.json")
+--         Tracker:AddLocations("locations/lightworld_dungeons_detailed.json")
+--     else
+--         Tracker:AddLocations("locations/darkworld_dungeons.json")
+--         Tracker:AddLocations("locations/lightworld_dungeons.json")
+--     end
+-- end
