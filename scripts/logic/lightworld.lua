@@ -164,7 +164,12 @@ end)
 -- 
 
 
-twin_house_right:connect_two_ways(twin_house_left, function() return any(has("bombs"), has("boots")) end)
+twin_house_right:connect_two_ways(twin_house_left, function() 
+    return any(
+        has("bombs"), 
+        has("boots")
+    ) 
+end)
 
 
 
@@ -186,7 +191,7 @@ end) --teleport
 
 sanctuary:connect_two_ways(kings_tomb, function() return has("titans") end)
 
-kings_tomb:connect_two_ways_entrance("King's_Tomb_Entrance", , function() return has("boots") end)
+kings_tomb:connect_two_ways_entrance("King's_Tomb_Entrance", function() return has("boots") end)
 
 kings_tomb_inside:connect_one_way("King's Tomb")
 
@@ -596,7 +601,7 @@ end)
 -- light_death_mountain_left_bottom
 light_death_mountain_left_bottom:connect_one_way(light_death_mountain_left_top, function() return has("mirror") end)
 light_death_mountain_left_bottom:connect_one_way(light_death_mountain_right_bottom, function() return has("hookshot") end)
-light_death_mountain_left_bottom:connect_one_way("Spectacle Rock", function() return has("mirror") end)
+-- light_death_mountain_left_bottom:connect_one_way("Spectacle Rock", function() return has("mirror") end)
 light_death_mountain_left_bottom:connect_one_way(light_flute_map, function() 
     return all(
         has("flute"),
@@ -658,7 +663,6 @@ light_death_mountain_right_bottom:connect_one_way(light_flute_map, function()
         can_reach(light_activate_flute)
     ) 
 end)
-hookshot_cave
 -- light_death_mountain_right_bottom:connect_one_way()
 -- light_death_mountain_right_bottom:connect_one_way()
 

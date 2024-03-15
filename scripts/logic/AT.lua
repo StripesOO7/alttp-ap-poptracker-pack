@@ -13,21 +13,35 @@ at_golden_guards:connect_two_ways(at_first_chest)
 
 at_first_chest:connect_one_way("AT - First Chest", function() return weapon() end)
 at_first_chest:connect_two_ways(at_dark_maze, function() 
-    return any(
-        darkRooms()
+    return smallKeys("at", 1, 1, 1, 1) 
+end)
+at_dark_maze:connect_two_ways(at_dark_archer_key_drop, function() 
+    return all(
+        darkRooms(),
+        smallKeys("at", 2, 2, 2, 2)
     ) 
 end)
-at_dark_maze:connect_two_ways(at_dark_archer_key_drop)
 at_dark_maze:connect_one_way("AT - Maze Chest", function() 
-    return any(
-        darkRooms()
-    ) 
+    return darkRooms(), 
 end)
 
-at_dark_archer_key_drop:connect_two_ways(at_circle_of_pots)
+at_dark_archer_key_drop:connect_two_ways(at_circle_of_pots, function() 
+    return smallKeys("at", 2, 2, 3, 3) 
+end)
 at_dark_archer_key_drop:connect_one_way("AT - Dark Archer Key Drop")
 
-at_circle_of_pots:connect_two_ways(at_aga1)
+at_circle_of_pots:connect_two_ways(at_aga1, function() 
+    return all(
+        smallKeys("at", 2, 2, 4, 4),
+        canRemoveCurtains()
+    )
+end)
 at_circle_of_pots:connect_one_way("AT - Circle of Pots Key Drop")
 
-at_aga1:connect_one_way("AT - Aga1")
+at_aga1:connect_one_way("AT - Aga1", function() 
+    return any(
+        has("sword"),
+        has("hammer"),
+        has("bug_net")
+    ) 
+end)

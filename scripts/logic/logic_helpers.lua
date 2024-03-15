@@ -186,27 +186,30 @@ function canSwim(itemNeeded) --fake flippers
     end
 end
 
-function smallKeys(dungeon, count, keydrop_count)
+function smallKeys(dungeon, count, count_in_logic, keydrop_count, keydrop_count_in_logic)
     if Tracker:FindObjectForCode("small_keys").CurrentStage == 1 then
         if Tracker:FindObjectForCode("key_drop_shuffle").Active == true then
-            if Tracker:FindObjectForCode(dungeon.."_drop").AcquiredCount >= tonumber(keydrop_count) then
-                return true
-            else
-                return false
-            end
-        elseif Tracker:FindObjectForCode(dungeon).AcquiredCount >= tonumber(count) then  
-            return true
+            has(dungeon.."_smallkey_drop", keydrop_count, keydrop_count_in_logic)
+            -- if Tracker:FindObjectForCode(dungeon.."_drop").AcquiredCount >= tonumber(keydrop_count) then
+            --     return true
+            -- else
+            --     return false
+            -- end
+        -- elseif Tracker:FindObjectForCode(dungeon).AcquiredCount >= tonumber(count) then  
+        --     return true
+        -- else
+        --     return false
+        -- end
         else
-            return false
-        end
+            has(dungeon.."_smallkey", count, count_in_logic)
     else
         return true
     end
 end
 
-function bigKeys(key)
+function bigKeys(dungeon)
     if Tracker:FindObjectForCode("big_keys").Active == true then
-        return Tracker:FindObjectForCode(key).Active
+        return Tracker:FindObjectForCode(dungeon.."_bigkey").Active
     -- elseif Tracker:FindObjectForCode("big_keys").Active == false and key == "sw_bigkey" and Tracker:FindObjectForCode("firerod").Active == false then
     --     return false
     else

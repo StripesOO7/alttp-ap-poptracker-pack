@@ -13,23 +13,63 @@ local sp_boss_room = alttp_location.new()
 
 sp_entrance:connect_two_ways(sp_first_room)
 
-sp_first_room:connect_two_ways(sp_hallway_before_first_trench)
-sp_first_room:connect_one_way("SP - Entrance Chest")
+sp_first_room:connect_two_ways(sp_hallway_before_first_trench, function() return smallKeys("sp", 1, 1, 1, 1) end)
+sp_first_room:connect_one_way("SP - Entrance Chest", function() 
+    return all(
+        can_reach(dam_inside),
+        has("flippers"),
+        weapon()
+    )
+end)
 
-sp_hallway_before_first_trench:connect_two_ways(sp_first_trench)
+sp_hallway_before_first_trench:connect_two_ways(sp_first_trench, function() return smallKeys("sp", 1, 1, 2, 2) end)
 sp_hallway_before_first_trench:connect_one_way("SP - Pot Row Key")
-sp_hallway_before_first_trench:connect_one_way("SP - Map chest")
+sp_hallway_before_first_trench:connect_one_way("SP - Map chest", function() return has("bombs") end)
 
-sp_first_trench:connect_two_ways(sp_main_room)
+sp_first_trench:connect_two_ways(sp_main_room, function() 
+    return any(
+        all(
+            smallKeys("sp", 1, 1, 2, 2),
+            checkGlitches(1),
+            has("hookshot")
+        ),
+        all(
+            has("hammer"),
+            smallKeys("sp", 1, 1, 3, 3)
+        )
+    )
+end)
 sp_first_room:connect_one_way("SP - Tench 1 Pot Key")
 
 sp_main_room:connect_two_ways(sp_roundabout)
 sp_main_room:connect_two_ways(sp_second_trench)
-sp_main_room:connect_two_ways(sp_flooded_room)
-sp_main_room:connect_one_way("SP - Hookshot Pot Key")
-sp_main_room:connect_one_way("SP - Big Chest")
+sp_main_room:connect_two_ways(sp_flooded_room, function() 
+    return any(
+        all(
+            smallKeys("sp", 1, 1, 3, 4),
+            checkGlitches(1),
+            has("hookshot")
+        ),
+        all(
+            smallKeys("sp", 1, 1, 4, 5),
+            has("hookshot")
+        )
+    )
+end)
+sp_main_room:connect_one_way("SP - Hookshot Pot Key", function() return has("hookshot") end)
+sp_main_room:connect_one_way("SP - Big Chest" function() return bigKeys("sp") end)
 
-sp_second_trench:connect_two_ways(sp_hallway_after_second_trench)
+sp_second_trench:connect_two_ways(sp_hallway_after_second_trench, function() 
+    return any(
+        all(
+            smallKeys("sp", 1, 1, 3, 3),
+            checkGlitches(1)
+        ),
+        all(
+            smallKeys("sp", 1, 1, 4, 4)
+        )
+    )
+end)
 sp_second_trench:connect_one_way("SP - Trench 2 Pot Key")
 
 sp_hallway_after_second_trench:connect_one_way("SP - West Chest")
@@ -44,7 +84,17 @@ sp_flooded_room:connect_one_way("SP - Flooded Room Right")
 sp_waterfall_room:connect_two_ways(sp_after_waterfall_room)
 sp_waterfall_room:connect_one_way("SP - Waterfall Room")
 
-sp_after_waterfall_room:connect_two_ways(sp_boss_room)
+sp_after_waterfall_room:connect_two_ways(sp_boss_room, function() 
+    return any(
+        all(
+            smallKeys("sp", 1, 1, 4, 5),
+            checkGlitches(1)
+        ),
+        all(
+            smallKeys("sp", 1, 1, 5, 6)
+        )
+    )
+end)
 sp_after_waterfall_room:connect_one_way("SP - Waterway Pot Key")
 
-sp_boss_room:connect_one_way("SP - Boss")
+sp_boss_room:connect_one_way("SP - Boss", function() return getBossRef("sp_boss") end)
