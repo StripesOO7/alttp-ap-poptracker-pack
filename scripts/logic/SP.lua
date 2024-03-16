@@ -31,6 +31,7 @@ sp_first_trench:connect_two_ways(sp_main_room, function()
         all(
             smallKeys("sp", 1, 1, 2, 2),
             checkGlitches(1),
+            has("bombs"),
             has("hookshot")
         ),
         all(
@@ -57,7 +58,7 @@ sp_main_room:connect_two_ways(sp_flooded_room, function()
     )
 end)
 sp_main_room:connect_one_way("SP - Hookshot Pot Key", function() return has("hookshot") end)
-sp_main_room:connect_one_way("SP - Big Chest" function() return bigKeys("sp") end)
+sp_main_room:connect_one_way("SP - Big Chest" function() return has("sp_bigkey") end)
 
 sp_second_trench:connect_two_ways(sp_hallway_after_second_trench, function() 
     return any(

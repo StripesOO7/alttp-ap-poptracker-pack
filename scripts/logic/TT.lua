@@ -21,7 +21,7 @@ tt_front_top_left:connect_two_ways(tt_front_top_right)
 tt_front_top_left:connect_one_way("TT - Ambush Chest")
 
 tt_front_top_right:connect_two_ways(tt_front_bottom_right)
-tt_front_top_right:connect_two_ways(tt_back_hallway, function() return bigKeys("tt") end)
+tt_front_top_right:connect_two_ways(tt_back_hallway, function() return has("tt_bigkey") end)
 
 tt_front_bottom_right:connect_one_way(tt_front_bottom_left)
 tt_front_bottom_right:connect_one_way("TT - Compass Chest")
