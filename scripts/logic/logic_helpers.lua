@@ -42,8 +42,15 @@ function any(...)
     return max
 end
 
-function has(item, amount, amountInLogic)
+function has(item, noKDS_amount, noKDS_amountInLogic, KDS_amount, KDS_amountInLogic)
     local count = Tracker:ProviderCountForCode(item)
+    amount = noKDS_amount
+    amountInLogic = noKDS_amountInLogic
+    if (Tracker:FindObjectForCode("key_drop_shuffle").Active == true) and (item:sub(-8,-1) == "smallkey") then
+        amount = KDS_amount
+        amountInLogic = KDS_amountInLogic
+        count = Tracker:ProviderCountForCode(item.."_drop")
+    end
     if amountInLogic then
         if count >= amountInLogic then
             return AccessibilityLevel.Normal

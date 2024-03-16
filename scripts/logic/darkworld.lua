@@ -331,7 +331,7 @@ end)
 dark_potion_shop:connect_one_way(pod_area, function()
     return any(
         has("hammer"),
-        has("gloves")
+        has("glove")
     )
 end)
 dark_potion_shop:connect_one_way(dark_flute_map, function() 
@@ -357,7 +357,7 @@ dark_potion_shop_inside:connect_one_way("Dark Potion Shop Right")
 catfish_area:connect_one_way(dark_potion_shop, function()
     return any(
         has("flippers"),
-        has("gloves")
+        has("glove")
     )
 end)
 catfish_area:connect_one_way(dark_flute_map, function() 
@@ -406,7 +406,7 @@ end)
 pod_area:connect_one_way(dark_potion_shop,function()
     return any(
         has("hammer"),
-        has("gloves")
+        has("glove")
     )
 end)
 

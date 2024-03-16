@@ -25,16 +25,21 @@ local ip_boss_dropdown
 local ip_boss_room
 
 ip_entrance:connect_two_ways(ip_freezor_entrance)
-ip_freezor_entrance:connect_two_ways(ip_jelly_room)
-ip_jelly_room:connect_two_ways(ip_push_cross)
+ip_freezor_entrance:connect_two_ways(ip_jelly_room, function() 
+    return any(
+        has("fireros"), 
+        has("bombos")
+    ) 
+end)
+ip_jelly_room:connect_two_ways(ip_push_cross, function(keys) return has("ip_smallkey", keys + 1, 0, 0, keys + 1, 1, 1) end)
 ip_jelly_room:connect_one_way("IP - Jelly Key Drop")
 ip_push_cross:connect_two_ways(ip_bomb_dropdown)
 ip_push_cross:connect_two_ways(ip_sliding_switch_room)
 ip_push_cross:connect_two_ways(ip_compass_room)
 ip_compass_room:connect_one_way("IP - Compass Chest")
-ip_bomb_dropdown:connect_one_way(ip_conveyor_room)
+ip_bomb_dropdown:connect_one_way(ip_conveyor_room, function() return has("bombs") end)
 
-ip_conveyor_room:connect_two_ways(ip_spliding_penguins)
+ip_conveyor_room:connect_two_ways(ip_spliding_penguins, function(keys) return has("ip_smallkey", keys + 1, 0, 0, keys + 1, 2, 2) end)
 ip_conveyor_room::connect_one_way("IP - Conveyor Key Drop")
 ip_spliding_penguins:connect_two_ways(ip_cross)
 ip_cross:connect_two_ways(ip_falling_floor)
@@ -67,6 +72,12 @@ ip_map_room:connect_two_ways(ip_big_key_room)
 ip_map_room:connect_one_way("IP - Map Chest")
 ip_map_room:connect_one_way("IP - Hammer Block Key Drop")
 
+ip_sliding_switch_room:connect_two_ways(ip_big_key_room, function() 
+    return all(
+        has("somaria"),
+        checkGlitches(2)
+    ) 
+end)
 ip_big_key_room:connect_one_way(ip_sliding_switch_room)
 ip_big_key_room:connect_one_way("IP - Big Key Chest")
 -- ip_sliding_switch_room:connect_two_ways(ip_big_key_room) --icebreaker

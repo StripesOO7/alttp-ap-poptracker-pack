@@ -482,7 +482,7 @@ sahasralahs_hut:connect_one_way("Sahasrahla's Hut - Right", function() return ha
 -- zora_river
 zora_river:connect_one_way(witchhut, function() 
     return any(
-        has("gloves"),
+        has("glove"),
         has("flippers")
     )
 end)
@@ -546,7 +546,7 @@ witchhut:connect_one_way(light_flute_map, function()
     ) 
 end)
 witchhut:connect_one_way(zora_river, function() 
-    return has("gloves") 
+    return has("glove") 
 end)
 
 
@@ -562,7 +562,7 @@ darkworld_teleport_kakariko_village:connect_one_way(skull_woods_area, function()
     return any(
         has("titans"),
         all(
-            has("gloves"),
+            has("glove"),
             has("hammer")
         )
     )

@@ -23,19 +23,19 @@ hc_back_hall:connect_two_ways(hc_map_chest_room)
 hc_map_chest_room:connect_one_way("HC - Map Chest")
 hc_map_chest_room:connect_one_way("HC - Map Guard Key Drop")
 
-hc_map_chest_room:connect_two_ways(hc_boomerang_chest_room, function() 
+hc_map_chest_room:connect_two_ways(hc_boomerang_chest_room, function(keys) 
     return any(
         has("standard"),
-        smallKeys("hc", 0, 0, 1, 3)
+        has("hc_smallkey", keys + 0, 0, keys + 1, 3)
     )
 end)
 hc_boomerang_chest_room:connect_one_way("HC - Boomerang Chest")
 hc_boomerang_chest_room:connect_one_way("HC - Booomerang Guard Key Drop")
 
-dp_map_chest_room:connect_two_ways(hc_ball_guard_room, function() 
+dp_map_chest_room:connect_two_ways(hc_ball_guard_room, function(keys) 
     return any(
         has("standard"),
-        smallKeys("hc", 0, 0, 2, 4)
+        has("hc_smallkey", keys + 0, 0, keys + 1, 4)
     )
 end)
 hc_ball_guard_room:connect_one_way("HC - Big Key")
@@ -50,15 +50,15 @@ ce_entrance:connect_two_ways(ce_dark_cross, function()
     )
 end)
 
-ce_dark_cross:connect_two_ways(ce_rat_key_room, function() 
+ce_dark_cross:connect_two_ways(ce_rat_key_room, function(keys) 
     return any(
         all(
             darkRooms()
-            small_keys("hc", 1, 1, 1, 3),
+            small_keys("hc", keys + 1, 1, keys + 1, 3),
         )
         all(
             darkRooms(),
-            small_keys("hc", 1, 1, 1, 3),
+            small_keys("hc", keys + 1, 1, keys + 1, 3),
             has("glove")
         ),
         has("standard")
@@ -71,7 +71,7 @@ ce_rat_key_room:connect_two_ways(ce_dropdown_entrance, function()
     return any(
         all(
             darkRooms(),
-            smallKeys("hc", 1, 1, 2, 4)
+            has("hc_smallkey", keys + 0, 1, keys + 1, 4)
             any(
                 has("bomb"),
                 has("boots")
@@ -79,7 +79,7 @@ ce_rat_key_room:connect_two_ways(ce_dropdown_entrance, function()
         ),
         all(
             has("standard")
-            smallKeys("hc", 1, 1, 2, 4)
+            has("hc_smallkey", keys + 0, 1, keys + 1, 4)
             any(
                 has("bomb"),
                 has("boots")

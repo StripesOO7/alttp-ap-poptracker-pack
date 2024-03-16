@@ -27,9 +27,9 @@ gt_entrance:connect_two_ways(pod_three_way_room_right)
 pod_three_way_room_middle:connect_two_ways(pod_three_way_room_right)
 
 pod_three_way_room_left:connect_two_ways(pod_shooter_room)
-pod_three_way_room_middle:connect_two_ways(pod_big_key_chest_room, function() 
+pod_three_way_room_middle:connect_two_ways(pod_big_key_chest_room, function(keys) 
     return any(
-        smallKeys("pod", 1, 6, 1, 6),
+        has("pod_smallkey", keys + 1, 6, keys + 1, 6),
         all(
             can_reach(pod_switch_room_top),
             has("hammer")
@@ -42,7 +42,7 @@ pod_big_key_chest_room:connect_one_way(pod_basement_ledge, function() return has
 pod_shooter_room:connect_one_way("PoD - Shooter Room")
 
 pod_basement_ledge:connect_one_way(pod_basement_floor)
-pod_basement_ledge:connect_two_ways(pod_big_key_chest_ledge, function() return smallKeys("pod", 2, 6, 2, 6) end)
+pod_basement_ledge:connect_two_ways(pod_big_key_chest_ledge, function(keys) return has("pod_smallkey", keys + 1, 6, keys + 1, 6) end)
 
 pod_big_key_chest_ledge:connect_one_way(pod_basement_floor)
 pod_big_key_chest_ledge:connect_one_way("PoD - Big Key Chest")
@@ -73,14 +73,14 @@ pod_switch_room_bottom:connect_two_ways(pod_arena)
 
 pod_big_key_chest_room:connect_two_ways(pod_arena)
 
-pod_arena:connect_one_way(pod_collapsin_bridge, function() 
+pod_arena:connect_one_way(pod_collapsin_bridge, function(keys) 
     return all(
         any(
             all(
-                smallKeys("pod", 2, 4, 2, 4)
+                has("pod_smallkey", keys + 1, 4, keys + 1, 4)
             ),
             all(
-                smallKeys("pod", 1, 4, 1, 4)
+                has("pod_smallkey", keys + 0, 4, keys + 0, 4)
                 can_reach(pod_switch_room_top),
                 has("hammer")
             )
@@ -94,11 +94,11 @@ pod_arena:connect_one_way(pod_collapsin_bridge, function()
 end)
 pod_arena:connect_one_way("PoD - Arena Bridge")
 
-pod_collapsin_bridge:connect_two_ways(pod_dark_maze, function() 
+pod_collapsin_bridge:connect_two_ways(pod_dark_maze, function(keys) 
     return all(
         can_reach(pod_compass_room),
         darkRooms(),
-        smallKeys("pod", 2, 6, 2, 6)
+        has("pod_smallkey", keys + 1, 6, keys + 1, 6)
     )
 end)
 pod_collapsin_bridge:connect_two_ways(pod_compass_room)
@@ -113,7 +113,7 @@ pod_dark_maze:connect_one_way("PoD - Big Chest", function()
 end)
 
 pod_compass_room:connect_two_ways(pod_dark_basement, function() return darkRooms() end)
-pod_compass_room:connect_two_ways(pod_harmless_hellway, function() return smallKeys("pod", 2, 6, 2, 6) end)
+pod_compass_room:connect_two_ways(pod_harmless_hellway, function(keys) return has("pod_smallkey", keys + 1, 6, keys + 1, 6) end)
 
 pod_dark_basement:connect_one_way("PoD - Dark Basement Left")
 pod_dark_basement:connect_one_way("PoD - Dark Basement Right")

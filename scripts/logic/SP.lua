@@ -13,7 +13,7 @@ local sp_boss_room = alttp_location.new()
 
 sp_entrance:connect_two_ways(sp_first_room)
 
-sp_first_room:connect_two_ways(sp_hallway_before_first_trench, function() return smallKeys("sp", 1, 1, 1, 1) end)
+sp_first_room:connect_two_ways(sp_hallway_before_first_trench, function(keys) return has("sp_smallkey_smallkey", keys + 1, 1, keys + 1, 1) end)
 sp_first_room:connect_one_way("SP - Entrance Chest", function() 
     return all(
         can_reach(dam_inside),
@@ -22,21 +22,21 @@ sp_first_room:connect_one_way("SP - Entrance Chest", function()
     )
 end)
 
-sp_hallway_before_first_trench:connect_two_ways(sp_first_trench, function() return smallKeys("sp", 1, 1, 2, 2) end)
+sp_hallway_before_first_trench:connect_two_ways(sp_first_trench, function(keys) return has("sp_smallkey", keys + 0, 1, keys + 1, 2) end)
 sp_hallway_before_first_trench:connect_one_way("SP - Pot Row Key")
 sp_hallway_before_first_trench:connect_one_way("SP - Map chest", function() return has("bombs") end)
 
-sp_first_trench:connect_two_ways(sp_main_room, function() 
+sp_first_trench:connect_two_ways(sp_main_room, function(keys) 
     return any(
         all(
-            smallKeys("sp", 1, 1, 2, 2),
+            has("sp_smallkey", keys + 0, 1, keys + 0, 2),
             checkGlitches(1),
             has("bombs"),
             has("hookshot")
         ),
         all(
             has("hammer"),
-            smallKeys("sp", 1, 1, 3, 3)
+            has("sp_smallkey", keys + 0, 1, keys + 1, 3)
         )
     )
 end)
@@ -44,15 +44,15 @@ sp_first_room:connect_one_way("SP - Tench 1 Pot Key")
 
 sp_main_room:connect_two_ways(sp_roundabout)
 sp_main_room:connect_two_ways(sp_second_trench)
-sp_main_room:connect_two_ways(sp_flooded_room, function() 
+sp_main_room:connect_two_ways(sp_flooded_room, function(keys) 
     return any(
         all(
-            smallKeys("sp", 1, 1, 3, 4),
+            has("sp_smallkey", keys + 0, 1, keys + 1, 4),
             checkGlitches(1),
             has("hookshot")
         ),
         all(
-            smallKeys("sp", 1, 1, 4, 5),
+            has("sp_smallkey", keys + 0, 1, keys + 1, 5),
             has("hookshot")
         )
     )
@@ -60,14 +60,14 @@ end)
 sp_main_room:connect_one_way("SP - Hookshot Pot Key", function() return has("hookshot") end)
 sp_main_room:connect_one_way("SP - Big Chest" function() return has("sp_bigkey") end)
 
-sp_second_trench:connect_two_ways(sp_hallway_after_second_trench, function() 
+sp_second_trench:connect_two_ways(sp_hallway_after_second_trench, function(keys) 
     return any(
         all(
-            smallKeys("sp", 1, 1, 3, 3),
+            has("sp_smallkey", keys + 0, 1, keys + 1, 3),
             checkGlitches(1)
         ),
         all(
-            smallKeys("sp", 1, 1, 4, 4)
+            has("sp_smallkey", keys + 0, 1, keys + 1, 4)
         )
     )
 end)
@@ -85,14 +85,14 @@ sp_flooded_room:connect_one_way("SP - Flooded Room Right")
 sp_waterfall_room:connect_two_ways(sp_after_waterfall_room)
 sp_waterfall_room:connect_one_way("SP - Waterfall Room")
 
-sp_after_waterfall_room:connect_two_ways(sp_boss_room, function() 
+sp_after_waterfall_room:connect_two_ways(sp_boss_room, function(keys) 
     return any(
         all(
-            smallKeys("sp", 1, 1, 4, 5),
+            has("sp_smallkey", keys + 0, 1, keys + 1, 5),
             checkGlitches(1)
         ),
         all(
-            smallKeys("sp", 1, 1, 5, 6)
+            has("sp_smallkey", keys + 0, 1, keys + 1, 6)
         )
     )
 end)

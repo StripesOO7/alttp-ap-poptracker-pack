@@ -28,18 +28,18 @@ dp_main_entrance:connect_two_ways(dp_map_chest_room)
 dp_map_chest_room:connect_one_way("DP - Map Chest")
 
 dp_main_entrance:connect_two_ways(dp_compass_room)
-dp_compass_room:connect_one_way("DP - Compass Chest", function() 
+dp_compass_room:connect_one_way("DP - Compass Chest", function(keys) 
     return any(
         all(
-            smallKeys("dp", 1, 1, 1, 4),
+            has("dp_smallkey", keys + 1, 1, keys + 1, 4),
             can_reach(dp_boss)
         )
         all(
-            smallKeys("dp", 1, 1, 1, 2),
+            has("dp_smallkey", keys + 1, 1, keys + 1, 2),
             can_reach(dp_back_tile1_room)
         ),
         all(
-            smallKeys("dp", 1, 1, 1, 1),
+            has("dp_smallkey", keys + 1, 1, keys + 1, 1),
             can_reach(dp_main_entrance)
         )
     ) 
@@ -50,42 +50,42 @@ dp_big_key_chest_room:connect_one_way("DP - Big Key Chest", function() return ca
 
 dp_back_entrance:connect_two_ways(dp_back_tile1_room)
 
-dp_back_tile1_room:connect_two_ways(dp_back_beamos_hallway, function() 
+dp_back_tile1_room:connect_two_ways(dp_back_beamos_hallway, function(keys) 
     return any(
         all(
-            smallKeys("dp", 0, 0, 1, 1),
+            has("dp_smallkey", keys + 0, 0, keys + 1, 1),
             can_reach(dp_back_tile1_room)
         ),
         all(
-            smallKeys("dp", 0, 0, 1, 2),
+            has("dp_smallkey", keys + 0, 0, keys + 1, 2),
             can_reach(dp_main_entrance)
         )
     )
 end)
 dp_back_tile1_room:connect_one_way("DP - Tile 1 Key Drop")
 
-dp_back_beamos_hallway:connect_two_ways(dp_back_tiles2_room, function() 
+dp_back_beamos_hallway:connect_two_ways(dp_back_tiles2_room, function(keys) 
     return any(
         all(
-            smallKeys("dp", 0, 0, 2, 2),
+            has("dp_smallkey", keys + 0, 0, keys + 1, 2, 2),
             can_reach(dp_back_tile1_room)
         ),
         all(
-            smallKeys("dp", 0, 0, 2, 3),
+            has("dp_smallkey", keys + 0, 0, keys + 1, 2, 3),
             can_reach(dp_main_entrance)
         )
     )
 en)
 dp_back_beamos_hallway:connect_one_way("DP - Beamos Hallway Key Drop")
 
-dp_back_tiles2_room:connect_two_ways(dp_back_torch_room, function() 
+dp_back_tiles2_room:connect_two_ways(dp_back_torch_room, function(keys) 
     return any(
         all(
-            smallKeys("dp", 0, 0, 3, 3),
+            has("dp_smallkey", keys + 0, 0, keys + 1, 3),
             can_reach(dp_back_tile1_room)
         ),
         all(
-            smallKeys("dp", 0, 0, 3, 4),
+            has("dp_smallkey", keys + 0, 0, keys + 1, 4),
             can_reach(dp_main_entrance)
         )
     )
