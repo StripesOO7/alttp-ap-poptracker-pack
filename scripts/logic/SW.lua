@@ -28,12 +28,12 @@ sw_compass_room:connect_two_ways(sw_pot_prison)
 sw_compass_room:connect_one_way(sw_pinball_room)
 sw_compass_room:connect_one_way("SW - compass Chest")
 
-sw_pot_prison:connect_two_ways(sw_big_chest_entrance)
+sw_pot_prison:connect_two_ways(sw_big_chest_entrance, function() return smallKeys("sw", 0, 1, 0, 1) end)
 sw_pot_prison:connect_one_way("SW - Pot Prison")
 
 sw_pinball_drop:connect_one_way(sw_pinball_room)
 
-sw_pinball_room:connect_two_ways(sw_map_room)
+sw_pinball_room:connect_two_ways(sw_map_room, function() return smallKeys("sw", 0, 1, 0, 1) end)
 sw_pinball_room:connect_one_way("SW - Pinball Chest")
 
 sw_pot_circle_drop:connect_one_way(sw_pot_circle)
@@ -43,7 +43,12 @@ sw_pot_circle:connect_two_ways(sw_big_chest_entrance)
 sw_map_room:connect_two_ways(sw_big_chest_entrance)
 sw_map_room:connect_one_way("SW - Map Chest")
 
-sw_big_chest_entrance:connect_one_way("SW - Big Chest")
+sw_big_chest_entrance:connect_one_way("SW - Big Chest", function() 
+    return all(
+        has("sw_bigkey"), 
+        has("bombs")
+    ) 
+end)
 
 sw_gibdo_entrance:connect_two_ways(sw_big_key_room)
 sw_gibdo_entrance:connect_two_ways(sw_west_lobby_entrance)
@@ -52,18 +57,23 @@ sw_big_key_room:connect_one_way("SW - Big Key Chest")
 
 sw_north_drop:connect_one_way(sw_gibdo_entrance)
 
-sw_west_lobby_entrance:connect_one_way("SW - West L:obby Key Drop")
+sw_west_lobby_entrance:connect_one_way("SW - West Lobby Key Drop")
 
 sw_back_entracne:connect_two_ways(sw_back_bridge)
 sw_back_entracne:connect_two_ways(sw_back_bottom_hallway)
 
 sw_back_bottom_hallway:connect_one_way("SW - Bridge Chest")
 
-sw_back_bridge:connect_two_ways(sw_back_troch_puzzle)
+sw_back_bridge:connect_two_ways(sw_back_troch_puzzle, function() return smallKeys("sw", 1, 3, 1, 3) end)
 
-sw_back_troch_puzzle:connect_one_way(sw_back_spike_corner_room)
+sw_back_troch_puzzle:connect_one_way(sw_back_spike_corner_room, function() 
+    return all(
+        has("firerod"), 
+        canRemoveCurtains()
+    ) 
+end)
 
-sw_back_spike_corner_room:connect_two_ways(sw_back_boss_room)
+sw_back_spike_corner_room:connect_two_ways(sw_back_boss_room, function() return smallKeys("sw", 2, 4, 2, 4) end)
 sw_back_spike_corner_room:connect_one_way("SW - Spike Corner Key Drop")
 
 sw_back_boss_room:connnconnect_one_way("SW - Boss")

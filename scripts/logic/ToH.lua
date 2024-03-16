@@ -7,12 +7,20 @@ local toh_above_big_chest
 
 
 toh_entrance:connect_two_ways(toh_basement_cage)
-toh_entrance:connect_two_ways(toh_big_key_chest)
-toh_entrance:connect_two_ways(toh_big_chest_room)
+toh_entrance:connect_two_ways(toh_big_key_chest, function() return smallKeys("toh", 1, 1, 1, 1) end)
+toh_entrance:connect_two_ways(toh_big_chest_room, function() 
+    return any(
+        has("toh_bigkey"),
+        all(
+            checkGlitches(2),
+            has("hookshot")
+        )
+    )
+end)
 toh_entrance:connect_one_way("ToH - Map Chest")
 
 toh_basement_cage:connect_one_way("ToH - Basement Cage")
-toh_big_key_chest:connect_one_way("ToH - Big Key Chest")
+toh_big_key_chest:connect_one_way("ToH - Big Key Chest", function() return has("toh_bigkey") end)
 
 toh_big_chest_room:connect_two_ways(toh_above_big_chest)
 toh_big_chest_room:connect_one_way("ToH - Compass Chest")
@@ -20,4 +28,4 @@ toh_big_chest_room:connect_one_way("ToH - Compass Chest")
 toh_above_big_chest:connect_two_ways(toh_boss_room)
 toh_above_big_chest:connect_one_way("ToH - Big Chest")
 
-toh_boss_room:connect_one_way("ToH - Boss")
+toh_boss_room:connect_one_way("ToH - Boss", function() return getBossRef("toh_boss") end)
