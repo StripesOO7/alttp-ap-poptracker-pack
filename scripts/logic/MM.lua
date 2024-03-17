@@ -24,23 +24,23 @@ mm_entrance:connect_two_ways(mm_main_room, function()
     ) 
 end)
 mm_main_room:connect_two_ways(mm_map_room_bottom)
-mm_main_room:connect_two_ways(mm_map_room_top, function(keys) return has("mm_smallkey", keys + 1, 4, keys + 1, 6) end)
-mm_main_room:connect_two_ways(mm_conveyor_crystal_room,function(keys) return has("mm_smallkey", keys, 4, keys + 1, 6) end)
+mm_main_room:connect_two_ways(mm_map_room_top, function(keys) return has("mm_smallkey", keys + 1, 2, keys + 1, 5) end)
+mm_main_room:connect_two_ways(mm_conveyor_crystal_room,function(keys) return has("mm_smallkey", keys, 2, keys + 1, 5) end)
 mm_main_room:connect_two_ways(mm_block_push)
 mm_main_room:connect_one_way("MM - Main Lobby Chest", function() return can_reach(mm_conveyor_crystal_room) end)
 
 mm_map_room_bottom:connect_two_ways(mm_big_chest_room)
 
-mm_big_chest_room:connect_one_way(mm_map_room_top function() 
-    return any(
-        can_reach(mm_conveyor_crystal_room),
-        has("mm_smallkey", keys, 4, keys + 1, 6)
-    ) 
-end)
+mm_big_chest_room:connect_one_way(mm_map_room_top)
 mm_big_chest_room:connect_one_way("MM - Big Chest", function() return has("mm_bigkey") end)
 
 mm_map_room_top:connect_one_way(mm_map_room_bottom)
-mm_map_room_top:connect_two_ways(mm_spike_room, function() return can_reach(mm_conveyor_crystal_room) end)
+mm_map_room_top:connect_two_ways(mm_spike_room, function() 
+    return all(
+        can_reach(mm_conveyor_crystal_room),
+        has("mm_smallkey", keys + 1, 2, keys + 1, 5)
+    ) 
+end)
 mm_map_room_top:connect_one_way("MM - Map Chest")
 
 mm_block_push:connect_two_ways(mm_bridge_right)
@@ -48,8 +48,8 @@ mm_block_push:connect_two_ways(mm_spike_room)
 
 mm_bridge_right:connect_one_way("MM - Bridge Chest")
 
-mm_spike_room:connect_two_ways(mm_big_key_door, function(keys) return has("mm_smallkey", keys, 4, keys + 1, 6) end)
-mm_spike_room:connect_two_ways(mm_fishbone_room, function(keys) return has("mm_smallkey", keys, 4, keys + 1, 6) end)
+mm_spike_room:connect_two_ways(mm_big_key_door, function(keys) return has("mm_smallkey", keys, 2, keys + 1, 5) end)
+mm_spike_room:connect_two_ways(mm_fishbone_room, function(keys) return has("mm_smallkey", keys, 2, keys + 1, 5) end)
 mm_spike_room:connect_one_way("MM - Spike Chest", function() 
     return any(
         has("heartcontainerm", 1, 1),
@@ -59,7 +59,7 @@ mm_spike_room:connect_one_way("MM - Spike Chest", function()
 end)
 mm_spike_room:connect_one_way("MM - Spike Key Drop")
 
-mm_fishbone_room:connect_one_way(mm_hourlgas_room, function(keys) return has("mm_smallkey", keys, 4, keys + 1, 6) end)
+mm_fishbone_room:connect_one_way(mm_hourlgas_room, function(keys) return has("mm_smallkey", keys, 2, keys + 1, 5) end)
 mm_fishbone_room:connect_one_way("MM - Fishbone Key Drop")
 
 mm_hourlgas_room:connect_two_ways(mm_main_room)
@@ -68,12 +68,12 @@ mm_hourlgas_room:connect_two_ways(mm_teleporter_room)
 mm_conveyor_crystal_room:connect_two_ways(mm_compass_room, function(keys) 
     return all(
         has("firesource"),
-        has("mm_smallkey", keys, 4, keys + 1, 6)
+        has("mm_smallkey", keys, 2, keys + 1, 5)
     ) 
 end)
 mm_conveyor_crystal_room:connect_two_ways(mm_cutscene_room, function(keys) 
     return all(
-        has("mm_smallkey", keys, 4, keys + 1, 6)
+        has("mm_smallkey", keys, 2, keys + 1, 5)
     ) 
 end)
 mm_conveyor_crystal_room:connect_one_way("MM - Conveyor Crystal Key Drop")
@@ -84,7 +84,7 @@ mm_compass_room:connect_one_way("MM - Comapss Chest")
 mm_cutscene_room:connect_one_way(mm_big_key_chest, function(keys) 
     return all(
         has("firesource"),
-        has("mm_smallkey", keys, 4, keys + 1, 6)
+        has("mm_smallkey", keys, 2, keys + 1, 5)
     ) 
 end)
 
@@ -99,7 +99,7 @@ mm_bridge_middle:connect_two_ways(mm_boss_room, function(keys)
         has("somaria"), 
         has("bombs"),
         darkRooms(),
-        has("mm_smallkey", keys, 4, keys + 1, 6)--,
+        has("mm_smallkey", keys, 2, keys + 1, 5)--,
         -- has("mm_bigkey")
     ) 
 end) 

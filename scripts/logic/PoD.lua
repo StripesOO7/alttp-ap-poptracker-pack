@@ -80,7 +80,7 @@ pod_arena:connect_one_way(pod_collapsin_bridge, function(keys)
                 has("pod_smallkey", keys + 1, 4, keys + 1, 4)
             ),
             all(
-                has("pod_smallkey", keys + 0, 4, keys + 0, 4)
+                has("pod_smallkey", keys, 4, keys, 4)
                 can_reach(pod_switch_room_top),
                 has("hammer")
             )

@@ -31,7 +31,7 @@ ep_main_room_bottom:connect_two_ways(ep_dark_eyegore_room, function()
 end)
 ep_main_room_bottom:connect_one_way("EP - Big Chest", function() return has("ep_bigkey") end)
 
-ep_dark_square_room:connect_two_ways(ep_big_key_chest_room, function(keys) return has("ep_smallkey", keys + 0, 0, keys + 1, 2) end)
+ep_dark_square_room:connect_two_ways(ep_big_key_chest_room, function(keys) return has("ep_smallkey", keys, 0, keys + 1, 2) end)
 ep_dark_square_room:connect_one_way("EP - Dark Square Key Drop")
 
 ep_big_key_chest_room:connect_one_way(ep_main_room_bottom)
@@ -39,7 +39,7 @@ ep_big_key_chest_room:connect_one_way("EP - Big Key Chest")
 
 ep_dark_eyegore_room:connect_two_ways(ep_boss_room, function(keys) 
     return all(
-        has("ep_smallkey", keys + 0, 0, keys + 1, 2), 
+        has("ep_smallkey", keys, 0, keys + 1, 2), 
         enemizerCheck("bow")
     ) 
 end)
