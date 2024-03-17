@@ -55,7 +55,30 @@ end)
 
 
 -- 
-
+kakariko_village:connect_one_way_entrance("Kakariko Well Hole", kakariko_well_hole)
+kakariko_village:connect_one_way_entrance("Kakariko Magic Bat Hole", magic_bat_hole, function() 
+    return any(
+        has("hammer"),
+        all(
+            has("mirror"),
+            can_reach(purple_chest_pickup)
+        )
+    ) 
+end)
+kakariko_village:connect_two_ways_entrance("Kakariko Well Cave", kakariko_well_cave)
+kakariko_village:connect_two_ways_entrance("Kakariko Blind's hideout", kakariko_blinds_hideout)
+kakariko_village:connect_two_ways_entrance("Kakariko Hill House", kakariko_house_hill_top)
+kakariko_village:connect_two_ways_entrance("Kakariko House Top Left", kakariko_house_top_left)
+kakariko_village:connect_two_ways_entrance("Kakariko House Top Right", kakariko_house_right_top)
+kakariko_village:connect_two_ways_entrance("Kakariko House Center Right", kakariko_house_right_center)
+kakariko_village:connect_two_ways_entrance("Kakariko Sick Kid", kakariko_sick_kid)
+kakariko_village:connect_two_ways_entrance("Kakariko Chickenhut", kakariko_chickenhut)
+kakariko_village:connect_two_ways_entrance("Kakariko Bombhut", kakariko_bombhut, function() return has("bombs") end)
+kakariko_village:connect_two_ways_entrance("Kakariko Backside Pub", kakariko_backside_pub)
+kakariko_village:connect_two_ways_entrance("Kakariko Frontside Pub", kakariko_frontside_pub)
+kakariko_village:connect_two_ways_entrance("Kakariko Shop", kakariko_shop)
+kakariko_village:connect_two_ways_entrance("Kakariko Magic Bat Cave", magic_bat_cave)
+kakariko_village:connect_two_ways_entrance("Kakariko Dwarf Smiths", darf_smiths)
 
 
 
@@ -102,7 +125,7 @@ kakariko_backside_pub:connect_one_way("Backside Pub")
 
 
 
--- darf_smiths:connect_one_way("Rescue Dwarf")
+darf_smiths:connect_one_way("Rescue Dwarf")
 
 
 kakariko_village:connect_one_way(magic_bat_hole, function() 
@@ -151,6 +174,11 @@ south_of_village:connect_one_way(light_flute_map, function()
 end)
 
 
+south_of_village:connect_two_ways_entrance("Library", library)
+south_of_village:connect_two_ways_entrance("Light Archery Mini Game", archery_minigame)
+south_of_village:connect_two_ways_entrance("Twin House Right", twin_house_right)
+south_of_village:connect_two_ways_entrance()
+
 
 library:connect_one_way("Library Item", function() 
     return any(
@@ -164,15 +192,16 @@ end)
 -- 
 
 
-twin_house_right:connect_two_ways(twin_house_left, function() 
+twin_house_right:connect_two_ways_entrance("Twin House Left", twin_house_left, function() 
     return any(
         has("bombs"), 
         has("boots")
     ) 
 end)
-
-
-
+twin_house_left:connect_two_ways_entrance("Race Ledge", race_ledge)
+twin_house_left:connect_one_way(south_of_village)
+race_ledge:connect_one_way(south_of_village)
+race_ledge:connect_one_way("Race Minigame")
 
 
 -- sanctuary_area
@@ -189,9 +218,9 @@ sanctuary_area:connect_one_way(light_lake_hylia, function()
     return has("flippers")
 end) --teleport
 
-sanctuary:connect_two_ways(kings_tomb, function() return has("titans") end)
+sanctuary_area:connect_two_ways(kings_tomb, function() return has("titans") end)
 
-kings_tomb:connect_two_ways_entrance("King's_Tomb_Entrance", function() return has("boots") end)
+kings_tomb:connect_two_ways_entrance("King's_Tomb_Entrance", kings_tomb_inside, function() return has("boots") end)
 
 kings_tomb_inside:connect_one_way("King's Tomb")
 
@@ -223,9 +252,10 @@ lost_woods:connect_one_way(light_flute_map, function()
 end)
 
 
-
-
-
+lost_woods:connect_one_way_entrance("Lost Woods Hideout Hole", lost_woods_hideout_hole)
+lost_woods:connect_two_ways_entrance("Lost Woods Hideout Cave", lost_woods_hideout_cave)
+lost_woods:connect_two_ways_entrance("Lost Woods Top", lost_woods_top)
+lost_woods:connect_two_ways_entrance("Pedestal", lost_woods_pedestal)
 
 
 lost_woods_hideout_hole:connect_one_way(hideout_item)
@@ -261,8 +291,12 @@ dam_area:connect_one_way(light_lake_hylia, function()
 end) --teleport
 
 
-
-
+dam_area:connect_two_ways_entrance("Dam Inside", dam_inside)
+dam_area:connect_two_ways_entrance("Dam Area Top Cave", dam_top_right_cave, function() return has("bombs") end)
+dam_area:connect_two_ways_entrance("Dam Fairy", dam_desert_fairy)
+dam_area:connect_two_ways_entrance("Dam 20 Rupee Cave", twenty_rupee_thief, function() return has("glove") end)
+dam_area:connect_two_ways_entrance("Dam Sunken Treasure", sunken_treasure, function() return can_reach(dam_inside) end)
+dam_area:connect_two_ways_entrance("Mini Moldorm Cave", mini_moldorm_cave, function() return has("bombs") end)
 
 dam_inside:connect_one_way("Floodgate Chest")
 
@@ -288,21 +322,33 @@ mini_moldorm_cave:connect_one_way("Mini Moldorm Cave - Far Right", function() re
 
 -- desert_area
 desert_area:connect_one_way(dam_area)
-
+checkerboard_lege:connect_one_way(desert_area)
 desert_area:connect_one_way_entrance("desert_palace_front_entrance", desert_palace_front, function() return has("book") end)
 -- desert_area:connect_two_ways_entrance("aginah_cave_entrance", aginah_cave)
 -- desert_area:connect_one_way_entrance("desert_palace_front_entrance", desert_palace_front, function() return has("book") end)
 -- desert_area:connect_one_way_entrance("desert_palace_front_entrance", desert_palace_front, function() return has("book") end)
 -- desert_area:connect_one_way(desert_palace_front, function() return has("book") end)
-
+desert_area:connect_two_ways_entrance("Aginah Cave", aginah_cave)
+desert_area:connect_one_way_entrance("Desert Palace Front", desert_palace_front, function() return has("book") end)
+desert_area:connect_two_ways_entrance()
+desert_area:connect_two_ways_entrance()
+desert_area:connect_two_ways_entrance()
 
 aginah_cave:connect_one_way("Aginah Item", function() return has("bombs") end)
 
-
+checkerboard_lege:connect_two_ways_entrance("Checkerboard Cave", checkerboard_cave, function() return has("glove") end)
 checkerboard_cave:connect_one_way("Checkerboard Cave")
 
 
-desert_ledge:connect_one_way("Desert Ledge")
+desert_ledge:connect_one_way("Desert Ledge", function() 
+    return any(
+        can_reach(desert_ledge),
+        all(
+            can_reach(desert_area)
+            AccessibilityLevel.Inspect
+        )
+    )
+end)
 desert_ledge:connect_one_way(desert_area)
 
 desert_palace_back:connect_two_ways(desert_ledge)
@@ -340,8 +386,10 @@ lumberjacks_area:connect_one_way(light_lake_hylia, function()
 end) --teleport
 -- lumberjacks_area:connect_one_way(light_death_mountain_left_bottom)
 
-
-
+lumberjacks_area:connect_one_way_entrance("Tree Hole", lumberjacks_hole, function() return has("aga1") end)
+lumberjacks_area:connect_two_ways_entrance("Lumberjacks Cave", lumberjacks_cave)
+lumberjacks_area:connect_two_ways_entrance("Lumberjacks House", lumberjacks_house)
+lumberjacks_area:connect_two_ways_entrance("Light Death Mountain Ascend", light_death_mountain_ascend, function() return has("glove") end)
  -- aga item cave
 
 
@@ -358,6 +406,7 @@ lumberjacks_item:connect_one_way("Lumberjacks Item")
 light_bumper_cave_ledge:connect_one_way(lumberjacks_area)
 light_bumper_cave_ledge:connect_one_way("Bumper Ledge Item")
 
+light_bumper_cave_ledge:connect_two_ways_entrance("Light Bumber Cave", light_bumper_cave)
 
 
 
@@ -388,8 +437,11 @@ light_lake_hylia:connect_one_way(zora_river, function()
 end) --teleport
 -- light_lake_hylia:connect_one_way()
 
-
-
+light_lake_hylia:connect_two_ways_entrance("Light Lake Forune", light_lake_fortune)
+light_lake_hylia:connect_two_ways_entrance("Light Lake Shop", light_lake_shop)
+light_lake_hylia:connect_two_ways_entrance("Icerod Cave", icerod_cave)
+light_lake_hylia:connect_two_ways_entrance("Icerod Fairy", icerod_fairy, function() return has("bombs") end)
+light_lake_hylia:connect_two_ways_entrance("Icerod Stone", icerod_stone, function() return has("glove") end)
 
 light_lake_shop:connect_one_way("Lake Hylia Shop - Left")
 light_lake_shop:connect_one_way("Lake Hylia Shop - Center")
