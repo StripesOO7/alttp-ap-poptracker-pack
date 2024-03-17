@@ -484,12 +484,14 @@ links_house_area:connect_one_way(light_flute_map, function()
 end)
 
 
-
-
+links_house_area:connect_two_ways_entrance("Link's House", links_house)
+links_house_area:connect_two_ways_entrance("Links Fairy", links_fairy_fountain, function() return has("boots") end)
 
 links_house:connect_one_way("Link's House Chest")
 
-
+cave45_ledge:connect_two_ways_entrance("Cave 45", cave45)
+cave45_ledge:connect_one_way(links_house_area, function() return openOrStandard() end)
+cave45_ledge:connect_two_ways(links_house_area, function() return inverted() end)
 cave45:connect_one_way("Cave 45")
 
 
@@ -513,15 +515,19 @@ eastern_palace_area:connect_one_way(light_flute_map, function()
 end)
 
 
-
+eastern_palace_area:connect_two_ways_entrance("Eastern Teleporterr Cave", eastern_teleporter_cave)
+eastern_palace_area:connect_two_ways_entrance("Easter Fairy", eastern_fairy, function() return has("bombs") end)
+eastern_palace_area:connect_two_ways_entrance("Sahasrahla", sahasralahs_hut)
+eastern_palace_area:connect_two_ways_entrance("Eastern Palace Entrance", eastern_palace)
 
 
 
 
 sahasralahs_hut:connect_one_way("Sahasrahla", function() return has("greenpendant") end)
-sahasralahs_hut:connect_one_way("Sahasrahla's Hut - Left", function() return has("bombs") end)
-sahasralahs_hut:connect_one_way("Sahasrahla's Hut - Center", function() return has("bombs") end)
-sahasralahs_hut:connect_one_way("Sahasrahla's Hut - Right", function() return has("bombs") end)
+sahasralahs_hut:connect_two_ways(sahasralahs_hut_back, function() return has("bombs") end)
+sahasralahs_hut_back:connect_one_way("Sahasrahla's Hut - Left")
+sahasralahs_hut_back:connect_one_way("Sahasrahla's Hut - Center")
+sahasralahs_hut_back:connect_one_way("Sahasrahla's Hut - Right")
 
 
 
@@ -550,7 +556,15 @@ zora_river:connect_one_way("Zora Ledge", function()
     )
 end)
 
-
+zora_river:connect_two_ways_entrance("Waterfall Fairy", waterfall_fairy_inside, function()
+    return any(
+        has("flippers"),
+        all(
+            canSwim(),
+            has("pearl")
+        )
+    )
+end)
 
 
 waterfall_fairy_inside:connect_one_way("Waterfall Fairy - Left")
@@ -574,8 +588,22 @@ hyrule_castle_area:connect_one_way(light_flute_map, function()
     ) 
 end)
 
-
-
+hyrule_castle_top_outside:connect_two_ways_entrance("Castle Tower", agahnims_tower, function() 
+    return any(
+        all(
+            checkGlitches(3),
+            has("boots"),
+            can_reach(sanctuary_area)
+        ),
+        canClearAgaTowerBarrier()
+    ) 
+end)
+hyrule_castle_top_outside:connect_two_ways_entrance("Hyrule Castle Top Left", hyrule_castle_top_left)
+hyrule_castle_top_outside:connect_two_ways_entrance("Hyrule Castle Top Right", hyrule_castle_top_right)
+hyrule_castle_top_outside:connect_one_way(hyrule_castle_area)
+hyrule_castle_area:connect_two_ways_entrance(hyrule_castle_front)
+hyrule_castle_area:connect_one_way_entrance("Secret Passage Hole", secret_passage_hole)
+hyrule_castle_area:connect_two_ways_entrance("Secret Passage Stairs", secret_passage_stairs)
 
 
 secret_passage:connect_one_way("Secret Passage")
@@ -601,7 +629,7 @@ witchhut:connect_one_way(zora_river, function()
     return has("glove") 
 end)
 
-
+witchhut:connect_two_ways_entrance(light_potion_shop)
 
 light_potion_shop:connect_one_way("Potion Shop", function() return deliverMushroom() end)
 light_potion_shop:connect_one_way("Potion Shop - Left")
