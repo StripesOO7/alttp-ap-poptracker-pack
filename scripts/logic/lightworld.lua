@@ -34,7 +34,7 @@ light_flute_map:connect_one_way(light_lake_hylia)
 -- 
 lightworld_spawns:connect_one_way(light_spawn_sanctuary)
 lightworld_spawns:connect_one_way(light_spawn_links_house_area)
-lightworld_spawns:connect_one_way(light_spawn_old_man, function() return has() end) --rescued old man
+lightworld_spawns:connect_one_way(light_spawn_old_man, function() return can_reach(light_death_mountain_ascend) end) --rescued old man
 
 light_spawn_sanctuary:connect_one_way(links_house)
 light_spawn_links_house_area:connect_one_way(sanctuary)
@@ -261,7 +261,7 @@ lost_woods:connect_two_ways_entrance("Lost Woods Top", lost_woods_top)
 lost_woods:connect_two_ways_entrance("Pedestal", lost_woods_pedestal)
 
 
-lost_woods_hideout_hole:connect_one_way(hideout_item)
+lost_woods_hideout_hole:connect_one_way(lost_woods_hideout_item)
 lost_woods_hideout_item:connect_one_way("Lost Woods Hideout")
 lost_woods_hideout_hole:connect_one_way(lost_woods_hideout_cave)
 
@@ -594,7 +594,7 @@ end)
 hyrule_castle_top_outside:connect_two_ways_entrance("Castle Tower", at_entrance, function() 
     return any(
         all(
-            checkGlitches(3),
+            checkGlitches(2),
             has("boots"),
             can_reach(sanctuary_area)
         ),
@@ -692,7 +692,7 @@ light_death_mountain_left_bottom:connect_one_way(light_flute_map, function()
         can_reach(light_activate_flute)
     ) 
 end)
-light_death_mountain_left_bottom:connect_one_way()
+-- light_death_mountain_left_bottom:connect_one_way()
 
 
 

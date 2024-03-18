@@ -35,7 +35,7 @@ mm_big_chest_room:connect_one_way(mm_map_room_top)
 mm_big_chest_room:connect_one_way("MM - Big Chest", function() return has("mm_bigkey") end)
 
 mm_map_room_top:connect_one_way(mm_map_room_bottom)
-mm_map_room_top:connect_two_ways(mm_spike_room, function() 
+mm_map_room_top:connect_two_ways(mm_spike_room, function(keys) 
     return all(
         can_reach(mm_conveyor_crystal_room),
         has("mm_smallkey", keys + 1, 2, keys + 1, 5)

@@ -6,6 +6,15 @@ ScriptHost:AddWatchForCode("boss handler", "boss_shuffle", bossShuffle)
 alttp_location = {}
 alttp_location.__index = alttp_location
 
+accessLVL= {
+    [0] = "none",
+    [1] = "partial",
+    [3] = "inspect",
+    [5] = "sequence break",
+    [6] = "normal",
+    [7] = "cleared"
+}
+
 -- Table to store named locations
 named_locations = {}
 staleness = 0
@@ -132,7 +141,7 @@ function alttp_location:discover(accessibility, keys)
             if key == nil then
                 key = keys
             end
-            print("location", location, location.name)
+            print("location", location.name, accessLVL[location.accessibility_level])
             -- dump_table(location)
             location:discover(access, key)
         end

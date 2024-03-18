@@ -40,7 +40,7 @@ dark_flute_map:connect_one_way(dark_icerod_area)
 
 darkworld_spawns:connect_one_way(dark_spawn_links_house)
 darkworld_spawns:connect_one_way(dark_spawn_dark_chapel_area)
-darkworld_spawns:connect_one_way(dark_spawn_old_man, function() return has() end) --has rescued old man
+darkworld_spawns:connect_one_way(dark_spawn_old_man, function() return can_reach(light_death_mountain_ascend) end) --has rescued old man
 
 dark_spawn_links_house:connect_one_way(big_bomb_shop)
 dark_spawn_dark_chapel_area:connect_one_way(dark_chapel)
@@ -110,7 +110,7 @@ hype_cave_back:connect_one_way("Hype Cave_Bottom")
 
 
 -- mire_area
-mire_area:connect_one_way()
+-- mire_area:connect_one_way()
 mire_area:connect_one_way(dark_flute_map, function() 
     return all(
         has("flute"),
@@ -498,7 +498,7 @@ dark_death_mountain_left_top:connect_one_way(dark_flute_map, function()
         can_reach(inverted_activate_flute)
     ) 
 end)
-dark_death_mountain_left_top:connect_one_way()
+-- dark_death_mountain_left_top:connect_one_way()
 
 
 
@@ -514,7 +514,7 @@ dark_death_mountain_right_top:connect_one_way(dark_flute_map, function()
         can_reach(inverted_activate_flute)
     ) 
 end)
-dark_death_mountain_right_top:connect_one_way()
+-- dark_death_mountain_right_top:connect_one_way()
 
 
 
@@ -530,7 +530,7 @@ dark_death_mountain_left_bottom:connect_one_way(dark_flute_map, function()
         can_reach(inverted_activate_flute)
     ) 
 end)
-dark_death_mountain_left_bottom:connect_one_way()
+-- dark_death_mountain_left_bottom:connect_one_way()
 
 
 
@@ -546,7 +546,7 @@ dark_death_mountain_right_bottom:connect_one_way(dark_flute_map, function()
         can_reach(inverted_activate_flute)
     ) 
 end)
-dark_death_mountain_right_bottom:connect_one_way()
+-- dark_death_mountain_right_bottom:connect_one_way()
 
 
 

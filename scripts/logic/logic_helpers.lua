@@ -43,6 +43,7 @@ function any(...)
 end
 
 function has(item, noKDS_amount, noKDS_amountInLogic, KDS_amount, KDS_amountInLogic)
+    -- print(item)
     local count = Tracker:ProviderCountForCode(item)
     amount = noKDS_amount
     amountInLogic = noKDS_amountInLogic

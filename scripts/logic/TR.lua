@@ -38,11 +38,11 @@ tr_torch_puzzle:connect_two_ways(tr_map_room)
 tr_map_room:connect_one_way("TR - Roller Room Left")
 tr_map_room:connect_one_way("TR - Roller Room Right")
 
-tr_poke_1_room:connect_two_ways(tr_chain_chomps_room, function(keys) return has("tr_smallkeys", keys, 3, keys + 1, 5) end)
+tr_poke_1_room:connect_two_ways(tr_chain_chomps_room, function(keys) return has("tr_smallkey", keys, 3, keys + 1, 5) end)
 tr_poke_1_room:connect_one_way("TR - Poke 1 Key Drop")
 
-tr_chain_chomps_room:connect_one_way(tr_big_key_room_top_right, function(keys) return has("tr_smallkeys", keys + 1, 3, keys + 1, 5) end)
-tr_big_key_room_top_right:connect_one_way(tr_chain_chomps_room, function(keys) return has("tr_smallkeys", keys, 3, keys, 5) end)
+tr_chain_chomps_room:connect_one_way(tr_big_key_room_top_right, function(keys) return has("tr_smallkey", keys + 1, 3, keys + 1, 5) end)
+tr_big_key_room_top_right:connect_one_way(tr_chain_chomps_room, function(keys) return has("tr_smallkey", keys, 3, keys, 5) end)
 tr_chain_chomps_room:connect_one_way("TR - Chain Chomp Chest")
 
 tr_big_key_room_top_right:connect_two_ways(tr_big_key_room_top_left)
@@ -50,7 +50,7 @@ tr_big_key_room_top_right:connect_two_ways(tr_shooter_after_big_key)
 
 tr_big_key_room_top_left:connect_two_ways(tr_poke_2_room)
 
-tr_poke_2_room:connect_two_ways(tr_big_key_room_bottom_left, function(keys) return has("tr_smallkeys", keys, 3, keys + 1, 5) end)
+tr_poke_2_room:connect_two_ways(tr_big_key_room_bottom_left, function(keys) return has("tr_smallkey", keys, 3, keys + 1, 5) end)
 tr_poke_2_room:connect_one_way("TR - Poke 2 Key Drop")
 
 tr_big_key_room_bottom_left:connect_two_ways(tr_big_key_room_bottom_right)
@@ -80,16 +80,16 @@ tr_big_chest_entrance:connect_one_way("TR - Big Chest", function()
 end)
 
 tr_big_key_door_room:connect_one_way(tr_crystalroller_room, function() return has("tr_bigkey") end)
-tr_crystalroller_room:connect_one_way(tr_big_key_door_room, function(keys) return has("tr_smallkeys", keys + 1, 4, keys + 1, 6) end)
+tr_crystalroller_room:connect_one_way(tr_big_key_door_room, function(keys) return has("tr_smallkey", keys + 1, 4, keys + 1, 6) end)
 
-tr_crystalroller_room:connect_one_way(tr_travel_maze, function(keys) return has("tr_smallkeys", keys + 1, 3, keys + 1, 5) end)
-tr_travel_maze:connect_one_way(tr_crystalroller_room, function(keys) return has("tr_smallkeys", keys, 3, keys, 5) end)
+tr_crystalroller_room:connect_one_way(tr_travel_maze, function(keys) return has("tr_smallkey", keys + 1, 3, keys + 1, 5) end)
+tr_travel_maze:connect_one_way(tr_crystalroller_room, function(keys) return has("tr_smallkey", keys, 3, keys, 5) end)
 tr_crystalroller_room:connect_one_way("TR_Crystalroller Chest")
 
 tr_travel_maze:connect_two_ways(tr_eye_hallway)
 
 tr_eye_hallway:connect_two_ways(tr_eye_bridge_entrance)
-tr_eye_hallway:connect_two_ways(tr_switch_puzzle, function(keys) return has("tr_smallkeys", keys + 1, 3, keys + 1, 5) end)
+tr_eye_hallway:connect_two_ways(tr_switch_puzzle, function(keys) return has("tr_smallkey", keys + 1, 3, keys + 1, 5) end)
 
 tr_eye_bridge_entrance:connect_one_way("TR - Eyebridge Top Right")
 tr_eye_bridge_entrance:connect_one_way("TR - Eyebridge Top Left")
