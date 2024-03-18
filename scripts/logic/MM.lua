@@ -1,21 +1,21 @@
-mm_entrance
-local mm_main_room
-local mm_big_chest_room
-local mm_map_room_top
-local mm_map_room_bottom
-local mm_conveyor_crystal_room
-local mm_compass_room
-local mm_block_push
-local mm_cutscene_room
-local mm_big_key_chest
-local mm_spike_room
-local mm_fishbone_room
-local mm_bridge_right
-local mm_bridge_middle
-local mm_big_key_door
-local mm_hourlgas_room
-local mm_teleporter_room
-local mm_boss_room
+-- mm_entrance = alttp_location.new("")
+local mm_main_room = alttp_location.new("mm_main_room")
+local mm_big_chest_room = alttp_location.new("mm_big_chest_room")
+local mm_map_room_top = alttp_location.new("mm_map_room_top")
+local mm_map_room_bottom = alttp_location.new("mm_map_room_bottom")
+local mm_conveyor_crystal_room = alttp_location.new("mm_conveyor_crystal_room")
+local mm_compass_room = alttp_location.new("mm_compass_room")
+local mm_block_push = alttp_location.new("mm_block_push")
+local mm_cutscene_room = alttp_location.new("mm_cutscene_room")
+local mm_big_key_chest = alttp_location.new("mm_big_key_chest")
+local mm_spike_room = alttp_location.new("mm_spike_room")
+local mm_fishbone_room = alttp_location.new("mm_fishbone_room")
+local mm_bridge_right = alttp_location.new("mm_bridge_right")
+local mm_bridge_middle = alttp_location.new("mm_bridge_middle")
+local mm_big_key_door = alttp_location.new("mm_big_key_door")
+local mm_hourlgas_room = alttp_location.new("mm_hourlgas_room")
+local mm_teleporter_room = alttp_location.new("mm_teleporter_room")
+local mm_boss_room = alttp_location.new("mm_boss_room")
 
 mm_entrance:connect_two_ways(mm_main_room, function() 
     return any(

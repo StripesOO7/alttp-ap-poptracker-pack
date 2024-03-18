@@ -12,12 +12,12 @@
 -- zora river
 -- hyrule castle/centre area
 
-AccessibilityLevel.None
-AccessibilityLevel.Partial
-AccessibilityLevel.Inspect
-AccessibilityLevel.SequenceBreak
-AccessibilityLevel.Normal
-AccessibilityLevel.Cleared
+-- AccessibilityLevel.None
+-- AccessibilityLevel.Partial
+-- AccessibilityLevel.Inspect
+-- AccessibilityLevel.SequenceBreak
+-- AccessibilityLevel.Normal
+-- AccessibilityLevel.Cleared
 
 
 
@@ -36,6 +36,9 @@ lightworld_spawns:connect_one_way(light_spawn_sanctuary)
 lightworld_spawns:connect_one_way(light_spawn_links_house_area)
 lightworld_spawns:connect_one_way(light_spawn_old_man, function() return has() end) --rescued old man
 
+light_spawn_sanctuary:connect_one_way(links_house)
+light_spawn_links_house_area:connect_one_way(sanctuary)
+light_spawn_old_man:connect_one_way(old_man_cave)
 
 -- kakariko_village
 kakariko_village:connect_one_way(south_of_village)
@@ -128,15 +131,15 @@ kakariko_backside_pub:connect_one_way("Backside Pub")
 darf_smiths:connect_one_way("Rescue Dwarf")
 
 
-kakariko_village:connect_one_way(magic_bat_hole, function() 
-    return any(
-        has("hammer")
-        all(
-            can_reach(purple_chest_pickup),
-            has("mirror")
-        )
-    ) 
-end)
+-- kakariko_village:connect_one_way(magic_bat_hole, function() 
+--     return any(
+--         has("hammer"),
+--         all(
+--             can_reach(purple_chest_pickup),
+--             has("mirror")
+--         )
+--     ) 
+-- end)
 
 
 magic_bat_item:connect_one_way("Magic Bat", function()
@@ -169,7 +172,7 @@ south_of_village:connect_one_way(links_house_area)
 south_of_village:connect_one_way(light_flute_map, function() 
     return all(
         has("flute"),
-        openOrStandard(),
+        openOrStandard()
     ) 
 end)
 
@@ -344,7 +347,7 @@ desert_ledge:connect_one_way("Desert Ledge", function()
     return any(
         can_reach(desert_ledge),
         all(
-            can_reach(desert_area)
+            can_reach(desert_area),
             AccessibilityLevel.Inspect
         )
     )
@@ -393,7 +396,7 @@ lumberjacks_area:connect_two_ways_entrance("Light Death Mountain Ascend", light_
  -- aga item cave
 
 
-lumberjacks_hole:connect_one_way(lumberjacks_item, function() retrun has("aga1") end)
+lumberjacks_hole:connect_one_way(lumberjacks_item, function() return has("aga1") end)
 lumberjacks_hole:connect_one_way(lumberjacks_cave)
 lumberjacks_item:connect_one_way("Lumberjacks Item")
 
@@ -588,7 +591,7 @@ hyrule_castle_area:connect_one_way(light_flute_map, function()
     ) 
 end)
 
-hyrule_castle_top_outside:connect_two_ways_entrance("Castle Tower", agahnims_tower, function() 
+hyrule_castle_top_outside:connect_two_ways_entrance("Castle Tower", at_entrance, function() 
     return any(
         all(
             checkGlitches(3),
@@ -713,7 +716,7 @@ light_death_mountain_left_top:connect_one_way(light_flute_map, function()
         can_reach(light_activate_flute)
     ) 
 end)
-light_death_mountain_left_top:connect_one_way(light_death_mountain_right_top, function() retrun has("hammer") end)
+light_death_mountain_left_top:connect_one_way(light_death_mountain_right_top, function() return has("hammer") end)
 light_death_mountain_left_top:connect_one_way("Ether Tablet", function() 
     return any(
         all(

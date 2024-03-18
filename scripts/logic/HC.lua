@@ -1,16 +1,16 @@
-hc_main_entrance
-hc_left_entrance
-hc_right_entrance
-local hc_back_hall
-local hc_map_chest_room
-local hc_boomerang_chest_room
-local hc_ball_guard_room
-local hc_zeldas_cell
-ce_entrance
-ce_dropdown_entrance
-local ce_dark_cross
-local ce_rat_key_room
-local ce_secret_room
+-- hc_main_entrance =alttp_location.new("")
+-- hc_left_entrance =alttp_location.new("")
+-- hc_right_entrance =alttp_location.new("")
+local hc_back_hall = alttp_location.new("hc_back_hall")
+local hc_map_chest_room = alttp_location.new("hc_map_chest_room")
+local hc_boomerang_chest_room = alttp_location.new("hc_boomerang_chest_room")
+local hc_ball_guard_room = alttp_location.new("hc_ball_guard_room")
+local hc_zeldas_cell = alttp_location.new("hc_zeldas_cell")
+-- ce_entrance =alttp_location.new("")
+-- ce_dropdown_entrance =alttp_location.new("")
+local ce_dark_cross = alttp_location.new("ce_dark_cross")
+local ce_rat_key_room = alttp_location.new("ce_rat_key_room")
+local ce_secret_room = alttp_location.new("ce_secret_room")
 
 hc_main_entrance:connect_two_ways(hc_left_entrance)
 hc_main_entrance:connect_two_ways(hc_right_entrance)
@@ -32,7 +32,7 @@ end)
 hc_boomerang_chest_room:connect_one_way("HC - Boomerang Chest")
 hc_boomerang_chest_room:connect_one_way("HC - Booomerang Guard Key Drop")
 
-dp_map_chest_room:connect_two_ways(hc_ball_guard_room, function(keys) 
+hc_map_chest_room:connect_two_ways(hc_ball_guard_room, function(keys) 
     return any(
         has("standard"),
         has("hc_smallkey", keys, 0, keys + 1, 4)
@@ -53,9 +53,9 @@ end)
 ce_dark_cross:connect_two_ways(ce_rat_key_room, function(keys) 
     return any(
         all(
-            darkRooms()
-            small_keys("hc", keys + 1, 1, keys + 1, 3),
-        )
+            darkRooms(),
+            small_keys("hc", keys + 1, 1, keys + 1, 3)
+        ),
         all(
             darkRooms(),
             small_keys("hc", keys + 1, 1, keys + 1, 3),
@@ -71,27 +71,27 @@ ce_rat_key_room:connect_two_ways(ce_dropdown_entrance, function()
     return any(
         all(
             darkRooms(),
-            has("hc_smallkey", keys, 1, keys + 1, 4)
+            has("hc_smallkey", keys, 1, keys + 1, 4),
             any(
                 has("bomb"),
                 has("boots")
             )
         ),
         all(
-            has("standard")
-            has("hc_smallkey", keys, 1, keys + 1, 4)
+            has("standard"),
+            has("hc_smallkey", keys, 1, keys + 1, 4),
             any(
                 has("bomb"),
                 has("boots")
             )
         ),
         all(
-            has("golve")
+            has("golve"),
             any(
                 has("bomb"),
                 has("boots")
             )
-        ),
+        )
     ) 
 end)
 ce_rat_key_room:connect_one_way("CE - Rat Key Drop")

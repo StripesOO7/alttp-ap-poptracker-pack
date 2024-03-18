@@ -1,17 +1,17 @@
-dp_main_entrance = alttp_location.new()
-dp_left_entracne = alttp_location.new()
-dp_right_entrance = alttp_location.new()
-local dp_big_chest_room = alttp_location.new()
-local dp_torch_room = alttp_location.new()
-local dp_map_chest_room = alttp_location.new()
-local dp_compass_room = alttp_location.new()
-local dp_big_key_chest_room = alttp_location.new()
-dp_back_entrance = alttp_location.new()
-local dp_back_tile1_room = alttp_location.new()
-local dp_back_beamos_hallway = alttp_location.new()
-local dp_back_tiles2_room = alttp_location.new()
-local dp_back_torch_room = alttp_location.new()
-local dp_back_boss_room = alttp_location.new()
+-- dp_main_entrance = alttp_location.new("")
+-- dp_left_entracne = alttp_location.new("")
+-- dp_right_entrance = alttp_location.new("")
+local dp_big_chest_room = alttp_location.new("dp_big_chest_room")
+local dp_torch_room = alttp_location.new("dp_torch_room")
+local dp_map_chest_room = alttp_location.new("dp_map_chest_room")
+local dp_compass_room = alttp_location.new("dp_compass_room")
+local dp_big_key_chest_room = alttp_location.new("dp_big_key_chest_room")
+-- dp_back_entrance = alttp_location.new("")
+local dp_back_tile1_room = alttp_location.new("dp_back_tile1_room")
+local dp_back_beamos_hallway = alttp_location.new("dp_back_beamos_hallway")
+local dp_back_tiles2_room = alttp_location.new("dp_back_tiles2_room")
+local dp_back_torch_room = alttp_location.new("dp_back_torch_room")
+local dp_back_boss_room = alttp_location.new("dp_back_boss_room")
 
 
 
@@ -33,7 +33,7 @@ dp_compass_room:connect_one_way("DP - Compass Chest", function(keys)
         all(
             has("dp_smallkey", keys + 1, 1, keys + 1, 4),
             can_reach(dp_boss)
-        )
+        ),
         all(
             has("dp_smallkey", keys + 1, 1, keys + 1, 2),
             can_reach(dp_back_tile1_room)
@@ -75,7 +75,7 @@ dp_back_beamos_hallway:connect_two_ways(dp_back_tiles2_room, function(keys)
             can_reach(dp_main_entrance)
         )
     )
-en)
+end)
 dp_back_beamos_hallway:connect_one_way("DP - Beamos Hallway Key Drop")
 
 dp_back_tiles2_room:connect_two_ways(dp_back_torch_room, function(keys) 
@@ -89,7 +89,7 @@ dp_back_tiles2_room:connect_two_ways(dp_back_torch_room, function(keys)
             can_reach(dp_main_entrance)
         )
     )
-en)
+end)
 dp_back_tiles2_room:connect_one_way("DP - Tile 2 Key Drop")
 
 

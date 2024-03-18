@@ -1,28 +1,28 @@
-ip_entrance
-local ip_freezor_entrance
-local ip_jelly_room
-local ip_push_cross
-local ip_bomb_dropdown
-local ip_sliding_switch_room
-local ip_compass_room
-local ip_conveyor_room
-local ip_map_room
-local ip_spliding_penguins
-local ip_cross
-local ip_falling_floor
-local ip_sliding_firebar
-local ip_ice_hallway
-local ip_hookshot_pit
-local ip_big_spikeballs
-local ip_spike_room
-local ip_big_key_room
-local ip_freezor_room
-local ip_big_chest_room
-local ip_many_pots_room
-local ip_iced_t_room
-local ip_above_boss_dropdown
-local ip_boss_dropdown
-local ip_boss_room
+-- ip_entrance = alttp_location.new("")
+local ip_freezor_entrance = alttp_location.new("ip_freezor_entrance")
+local ip_jelly_room = alttp_location.new("ip_jelly_room")
+local ip_push_cross = alttp_location.new("ip_push_cross")
+local ip_bomb_dropdown = alttp_location.new("ip_bomb_dropdown")
+local ip_sliding_switch_room = alttp_location.new("ip_sliding_switch_room")
+local ip_compass_room = alttp_location.new("ip_compass_room")
+local ip_conveyor_room = alttp_location.new("ip_conveyor_room")
+local ip_map_room = alttp_location.new("ip_map_room")
+local ip_spliding_penguins = alttp_location.new("ip_spliding_penguins")
+local ip_cross = alttp_location.new("ip_cross")
+local ip_falling_floor = alttp_location.new("ip_falling_floor")
+local ip_sliding_firebar = alttp_location.new("ip_sliding_firebar")
+local ip_ice_hallway = alttp_location.new("ip_ice_hallway")
+local ip_hookshot_pit = alttp_location.new("ip_hookshot_pit")
+local ip_big_spikeballs = alttp_location.new("ip_big_spikeballs")
+local ip_spike_room = alttp_location.new("ip_spike_room")
+local ip_big_key_room = alttp_location.new("ip_big_key_room")
+local ip_freezor_room = alttp_location.new("ip_freezor_room")
+local ip_big_chest_room = alttp_location.new("ip_big_chest_room")
+local ip_many_pots_room = alttp_location.new("ip_many_pots_room")
+local ip_iced_t_room = alttp_location.new("ip_iced_t_room")
+local ip_above_boss_dropdown = alttp_location.new("ip_above_boss_dropdown")
+local ip_boss_dropdown = alttp_location.new("ip_boss_dropdown")
+local ip_boss_room = alttp_location.new("ip_boss_room")
 
 ip_entrance:connect_two_ways(ip_freezor_entrance)
 ip_freezor_entrance:connect_two_ways(ip_jelly_room, function() 
@@ -40,7 +40,7 @@ ip_compass_room:connect_one_way("IP - Compass Chest")
 ip_bomb_dropdown:connect_one_way(ip_conveyor_room, function() return has("bombs") end)
 
 ip_conveyor_room:connect_two_ways(ip_spliding_penguins, function(keys) return has("ip_smallkey", keys, 0, keys + 1, 2) end)
-ip_conveyor_room::connect_one_way("IP - Conveyor Key Drop")
+ip_conveyor_room:connect_one_way("IP - Conveyor Key Drop")
 ip_spliding_penguins:connect_two_ways(ip_cross)
 ip_cross:connect_two_ways(ip_falling_floor)
 ip_cross:connect_two_ways(ip_spike_room, function(keys) return has("ip_smallkey", keys + 1, 2, keys + 1, 4) end)

@@ -1,13 +1,13 @@
-ep_entrance
-local ep_cannonball_room
-local ep_main_room_top
-local ep_map_chest_room
-local ep_compass_chest_room
-local ep_main_room_bottom
-local ep_dark_square_room
-local ep_big_key_chest_room
-local ep_dark_eyegore_room
-local ep_boss_room
+-- ep_entrance = alttp_location.new("")
+local ep_cannonball_room = alttp_location.new("ep_cannonball_room")
+local ep_main_room_top = alttp_location.new("ep_main_room_top")
+local ep_map_chest_room = alttp_location.new("ep_map_chest_room")
+local ep_compass_chest_room = alttp_location.new("ep_compass_chest_room")
+local ep_main_room_bottom = alttp_location.new("ep_main_room_bottom")
+local ep_dark_square_room = alttp_location.new("ep_dark_square_room")
+local ep_big_key_chest_room = alttp_location.new("ep_big_key_chest_room")
+local ep_dark_eyegore_room = alttp_location.new("ep_dark_eyegore_room")
+local ep_boss_room = alttp_location.new("ep_boss_room")
 
 ep_entrance:connect_two_ways(ep_cannonball_room)
 

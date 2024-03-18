@@ -1,10 +1,10 @@
-at_entrance = alttp_location.new()
-local at_golden_guards = alttp_location.new()
-local at_first_chest = alttp_location.new()
-local at_dark_maze = alttp_location.new()
-local at_dark_archer_key_drop = alttp_location.new()
-local at_circle_of_pots = alttp_location.new()
-local at_aga1 = alttp_location.new()
+-- at_entrance = alttp_location.new("")
+local at_golden_guards = alttp_location.new("at_golden_guards")
+local at_first_chest = alttp_location.new("at_first_chest")
+local at_dark_maze = alttp_location.new("at_dark_maze")
+local at_dark_archer_key_drop = alttp_location.new("at_dark_archer_key_drop")
+local at_circle_of_pots = alttp_location.new("at_circle_of_pots")
+local at_aga1 = alttp_location.new("at_aga1")
 
 at_entrance:connect_one_way(at_golden_guards)
 
@@ -22,7 +22,7 @@ at_dark_maze:connect_two_ways(at_dark_archer_key_drop, function(keys)
     ) 
 end)
 at_dark_maze:connect_one_way("AT - Maze Chest", function() 
-    return darkRooms(), 
+    return darkRooms()
 end)
 
 at_dark_archer_key_drop:connect_two_ways(at_circle_of_pots, function(keys) 

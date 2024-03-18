@@ -1,24 +1,24 @@
-sw_gibdo_entrance
-sw_big_chest_entrance
-sw_pot_circle_drop
-sw_bottom_left_drop
-sw_pinball_drop
-sw_north_drop
-sw_west_lobby_entrance
-sw_back_entracne
+-- sw_gibdo_entrance = alttp_location.new("")
+-- sw_big_chest_entrance = alttp_location.new("")
+-- sw_pot_circle_drop = alttp_location.new("")
+-- sw_bottom_left_drop = alttp_location.new("")
+-- sw_pinball_drop = alttp_location.new("")
+-- sw_north_drop = alttp_location.new("")
+-- sw_west_lobby_entrance = alttp_location.new("")
+-- sw_back_entracne = alttp_location.new("")
 
-local sw_compass_room
-local sw_pot_prison
-local sw_pinball_room
-local sw_bottom_left_room
-local sw_map_room
-local sw_pot_circle
-local sw_big_key_room
-local sw_back_bridge
-local sw_back_bottom_hallway
-local sw_back_troch_puzzle
-local sw_back_spike_corner_room
-local sw_back_boss_room
+local sw_compass_room = alttp_location.new("sw_compass_room")
+local sw_pot_prison = alttp_location.new("sw_pot_prison")
+local sw_pinball_room = alttp_location.new("sw_pinball_room")
+local sw_bottom_left_room = alttp_location.new("sw_bottom_left_room")
+local sw_map_room = alttp_location.new("sw_map_room")
+local sw_pot_circle = alttp_location.new("sw_pot_circle")
+local sw_big_key_room = alttp_location.new("sw_big_key_room")
+local sw_back_bridge = alttp_location.new("sw_back_bridge")
+local sw_back_bottom_hallway = alttp_location.new("sw_back_bottom_hallway")
+local sw_back_troch_puzzle = alttp_location.new("sw_back_troch_puzzle")
+local sw_back_spike_corner_room = alttp_location.new("sw_back_spike_corner_room")
+local sw_back_boss_room = alttp_location.new("sw_back_boss_room")
 
 
 sw_bottom_left_drop:connect_one_way(sw_bottom_left_room)
@@ -76,4 +76,4 @@ end)
 sw_back_spike_corner_room:connect_two_ways(sw_back_boss_room, function(keys) return has("sw_smallkey", keys + 1, 4, keys + 1, 4) end)
 sw_back_spike_corner_room:connect_one_way("SW - Spike Corner Key Drop")
 
-sw_back_boss_room:connnconnect_one_way("SW - Boss")
+sw_back_boss_room:connect_one_way("SW - Boss")

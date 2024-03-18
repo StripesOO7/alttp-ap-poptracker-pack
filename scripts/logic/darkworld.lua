@@ -42,6 +42,9 @@ darkworld_spawns:connect_one_way(dark_spawn_links_house)
 darkworld_spawns:connect_one_way(dark_spawn_dark_chapel_area)
 darkworld_spawns:connect_one_way(dark_spawn_old_man, function() return has() end) --has rescued old man
 
+dark_spawn_links_house:connect_one_way(big_bomb_shop)
+dark_spawn_dark_chapel_area:connect_one_way(dark_chapel)
+dark_spawn_old_man:connect_one_way(dark_old_man_cave)
 
 -- big_bomb_shop_area
 big_bomb_shop_area:connect_one_way(swamp_area)
@@ -86,20 +89,20 @@ swamp_area:connect_two_ways(bombos_tablet, function()
         all(
             checkGlitches(2), 
             has("boots")
-        ),
+        )
     ) 
 end)
 
 swamp_area:connect_two_ways_entrance("Hype Cave", hype_cave, function() return has("bombs") end)
 swamp_area:connect_two_ways_entrance("Swamp Palace", swamp_palace, function() return can_reach(dam_inside) end)
 
-hype_cave:connect_one_way("Hype Cave - Generous Guy")
+hype_cave:connect_one_way("Hype Cave_Generous Guy")
 hype_cave:connect_two_ways(hype_cave_back, function() return has("bombs") end)
 
-hype_cave_back:connect_one_way("Hype Cave - Top")
-hype_cave_back:connect_one_way("Hype Cave - Middle Left")
-hype_cave_back:connect_one_way("Hype Cave - Middle Right")
-hype_cave_back:connect_one_way("Hype Cave - Bottom")
+hype_cave_back:connect_one_way("Hype Cave_Top")
+hype_cave_back:connect_one_way("Hype Cave_Middle Left")
+hype_cave_back:connect_one_way("Hype Cave_Middle Right")
+hype_cave_back:connect_one_way("Hype Cave_Bottom")
 
 
 
@@ -116,21 +119,21 @@ mire_area:connect_one_way(dark_flute_map, function()
     ) 
 end)
 
-mire_area:connect_two_ways_entrance("Misery Mire", function() 
+mire_area:connect_two_ways_entrance("Misery Mire", mm_entrance,function() 
     return all(
         any(
             has("mm_medallion"), 
-            has("medallion",3, 3)
+            has("medallion", 3, 3)
         ),
         canUseMedallions()
     )
 end)
-mire_area:connect_two_ways_entrance("Mire Shed Left")
-mire_area:connect_two_ways_entrance("Mire Shed Right")
-mire_area:connect_two_ways_entrance("Dark Desert Hint")
+mire_area:connect_two_ways_entrance("Mire Shed Left", mire_shed_left)
+mire_area:connect_two_ways_entrance("Mire Shed Right", mire_shed_right)
+mire_area:connect_two_ways_entrance("Dark Desert Hint", dark_desert_hint_cave)
 
-mire_shed_left:connect_one_way("Mire Shed - Left")
-mire_shed_left:connect_one_way("Mire Shed - Right")
+mire_shed_left:connect_one_way("Mire Shed_Left")
+mire_shed_left:connect_one_way("Mire Shed_Right")
 
 
 mire_area:connect_one_way(desert_ledge, function() 
@@ -178,11 +181,11 @@ dark_lake_hylia:connect_two_ways_entrance("Dark Lake Shop", dark_lake_shop)
 dark_lake_hylia:connect_one_way(lake_hylia_island, function() 
     return all(
         has("flippers"),
-        openOrStandard()
+        openOrStandard(),
         has("mirror")
     ) 
 end)
-dark_lake_hylia:connect_two_ways_entrance("Ice Palace", ice_palace, function() \
+dark_lake_hylia:connect_two_ways_entrance("Ice Palace", ice_palace, function() 
     return all(
         canSwim(), 
         inverted()
@@ -218,6 +221,12 @@ dark_icerod_area:connect_two_ways_entrance("Dark Icerod Stone", dark_icerod_ston
 
 
 -- village_of_the_outcast
+village_of_the_outcast:connect_two_ways(inverted_activate_flute, function() 
+    return all(
+        has("flute"),
+        inverted()
+    ) 
+end)
 village_of_the_outcast:connect_one_way(skull_woods_area)
 village_of_the_outcast:connect_one_way(dark_flute_map, function() 
     return all(
@@ -237,7 +246,7 @@ end)
 village_of_the_outcast:connect_two_ways_entrance("C-Shaped house", c_shaped_house)
 village_of_the_outcast:connect_two_ways_entrance("Chest Game", chest_game)
 village_of_the_outcast:connect_two_ways_entrance("Thieves Town", thieves_town)
-village_of_the_outcast:connect_two_ways_entrance("Dark Village Shop", dark_village_shop, function() return has("hammer"), end)
+village_of_the_outcast:connect_two_ways_entrance("Dark Village Shop", dark_village_shop, function() return has("hammer") end)
 village_of_the_outcast:connect_two_ways_entrance("Brewery", brewery, function() return has("bombs") end)
 
 chest_game:connect_one_way("Chest Game")
@@ -277,7 +286,7 @@ south_of_village_of_the_outcast:connect_two_ways_entrance("Dark Archery", dark_a
 -- south_of_village_of_the_outcast:connect_one_way(mire_area) -- glitches
 
 big_bomb_shop_area:connect_two_ways(stumpy)
-big_bomb_shop_area:connect_two_ways(cave45, function() return all(openOrStandard(), ))
+big_bomb_shop_area:connect_two_ways(cave45, function() return all(openOrStandard()) end)
 stumpy:connect_one_way("Stumpy")
 
 
@@ -498,7 +507,7 @@ dark_death_mountain_left_top:connect_one_way()
 
 
 -- dark_death_mountain_right_top
-dark_death_mountain_right_top:cnnconnect_one_way(dark_flute_map, function() 
+dark_death_mountain_right_top:connect_one_way(dark_flute_map, function() 
     return all(
         has("flute"),
         inverted(),
@@ -514,7 +523,7 @@ dark_death_mountain_right_top:connect_one_way()
 
 
 -- dark_death_mountain_left_bottom
-dark_death_mountain_left_bottom:connnconnect_one_way(dark_flute_map, function() 
+dark_death_mountain_left_bottom:connect_one_way(dark_flute_map, function() 
     return all(
         has("flute"),
         inverted(),

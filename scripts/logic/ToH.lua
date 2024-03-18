@@ -1,9 +1,9 @@
-toh_entrance
-local toh_basement_cage
-local toh_big_key_chest
-local toh_big_chest_room
-local toh_boss_room
-local toh_above_big_chest
+-- toh_entrance = alttp_location.new("")
+local toh_basement_cage = alttp_location.new("toh_basement_cage")
+local toh_big_key_chest = alttp_location.new("toh_big_key_chest")
+local toh_big_chest_room = alttp_location.new("toh_big_chest_room")
+local toh_boss_room = alttp_location.new("toh_boss_room")
+local toh_above_big_chest = alttp_location.new("toh_above_big_chest")
 
 
 toh_entrance:connect_two_ways(toh_basement_cage)
