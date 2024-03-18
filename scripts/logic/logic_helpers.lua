@@ -199,7 +199,7 @@ end
 function smallKeys(dungeon, count, count_in_logic, keydrop_count, keydrop_count_in_logic)
     if Tracker:FindObjectForCode("small_keys").CurrentStage == 1 then
         if Tracker:FindObjectForCode("key_drop_shuffle").Active == true then
-            has(dungeon.."_drop", keydrop_count, keydrop_count_in_logic)
+            has(dungeon.."_drop", tonumber(keydrop_count), tonumber(keydrop_count_in_logic))
             -- if Tracker:FindObjectForCode(dungeon.."_drop").AcquiredCount >= tonumber(keydrop_count) then
             --     return true
             -- else
@@ -211,7 +211,7 @@ function smallKeys(dungeon, count, count_in_logic, keydrop_count, keydrop_count_
         --     return false
         -- end
         else
-            has(dungeon, count, count_in_logic)
+            has(dungeon, tonumber(count), tonumber(count_in_logic))
         end
     else
         return true
