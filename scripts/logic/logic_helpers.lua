@@ -153,6 +153,8 @@ function canCheckWithBook()
         return AccessibilityLevel.Scoutable
     else
         return AccessibilityLevel.None
+    end
+end
 
 function canUseMedallions()
     return checkSwordless()
@@ -196,7 +198,7 @@ end
 function smallKeys(dungeon, count, count_in_logic, keydrop_count, keydrop_count_in_logic)
     if Tracker:FindObjectForCode("small_keys").CurrentStage == 1 then
         if Tracker:FindObjectForCode("key_drop_shuffle").Active == true then
-            has(dungeon.."_smallkey_drop", keydrop_count, keydrop_count_in_logic)
+            has(dungeon.."_drop", keydrop_count, keydrop_count_in_logic)
             -- if Tracker:FindObjectForCode(dungeon.."_drop").AcquiredCount >= tonumber(keydrop_count) then
             --     return true
             -- else
@@ -208,7 +210,8 @@ function smallKeys(dungeon, count, count_in_logic, keydrop_count, keydrop_count_
         --     return false
         -- end
         else
-            has(dungeon.."_smallkey", count, count_in_logic)
+            has(dungeon, count, count_in_logic)
+        end
     else
         return true
     end
@@ -216,7 +219,7 @@ end
 
 function bigKeys(dungeon)
     if Tracker:FindObjectForCode("big_keys").Active == true then
-        return Tracker:FindObjectForCode(dungeon.."_bigkey").Active
+        return Tracker:FindObjectForCode(dungeon).Active
     -- elseif Tracker:FindObjectForCode("big_keys").Active == false and key == "sw_bigkey" and Tracker:FindObjectForCode("firerod").Active == false then
     --     return false
     else

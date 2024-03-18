@@ -19,7 +19,12 @@ function can_reach(name)
         location = named_locations[name]
     end
     if location == nil then
+        -- print(name)
+        if type(name) == "table" then
+            -- print("table")
+        else
         print("Unknown location : " .. name)
+        end
         return AccessibilityLevel.None
     end
     return location:accessibility()
@@ -31,7 +36,9 @@ function alttp_location.new(name)
     local self = setmetatable({}, alttp_location)
     if name then
         named_locations[name] = self
+        self.name = name
     end
+    -- self.name = name
     self.exits = {}
     self.staleness = -1
     self.keys = math.huge
@@ -111,6 +118,7 @@ function alttp_location:discover(accessibility, keys)
 
     if change then
         for _, exit in pairs(self.exits) do
+            -- print("exit", exit[1], exit[2])
             local location = exit[1]
             local rule = exit[2]
 
@@ -124,15 +132,16 @@ function alttp_location:discover(accessibility, keys)
             if key == nil then
                 key = keys
             end
-
+            print("location", location, location.name)
+            -- dump_table(location)
             location:discover(access, key)
         end
     end
 end
 
-entry_point = alttp_location.new()
-lightworld_spawns = alttp_location.new()
-darkworld_spawns = alttp_location.new()
+entry_point = alttp_location.new("entry_point")
+lightworld_spawns = alttp_location.new("lightworld_spawns")
+darkworld_spawns = alttp_location.new("darkworld_spawns")
 
 entry_point:connect_one_way(lightworld_spawns, function() return openOrStandard() end)
 entry_point:connect_one_way(darkworld_spawns, function() return inverted() end)

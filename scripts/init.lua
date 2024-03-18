@@ -5,9 +5,9 @@ IS_UNLABELLED = variant:find("maps-u")
 ScriptHost:LoadScript("scripts/items.lua")
 
 -- Logic
-ScriptHost:LoadScript("scripts/logic.lua")
 ScriptHost:LoadScript("scripts/logic/logic_helpers.lua")
 ScriptHost:LoadScript("scripts/logic/logic.lua")
+ScriptHost:LoadScript("scripts/logic.lua")
 
 -- Maps
 if Tracker.ActiveVariantUID == "maps-u" then
