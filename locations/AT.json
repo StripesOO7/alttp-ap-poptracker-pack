@@ -4,15 +4,15 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "@AT/Agahnim's Tower",
-            "@AT-inverted/Agahnim's Tower"
+            "^$can_reach|at_entrance"
+            // "@AT-inverted/Agahnim's Tower"
         ],
         "children": [
             {
                 "name": "Front",
-                "access_rules": [
-                    "@Agahnim's Tower"
-                ],
+                // "access_rules": [
+                //     "^$can_reach|AT_First_Chest"
+                // ],
                 "sections": [
                     {
                         "name": "Front"
@@ -29,9 +29,9 @@
             },
             {
                 "name": "Dark Archer Key Drop",
-                "access_rules": [
-                    "[$darkRooms], $smallKeys|at_smallkey|1|1"
-                ],
+                // "access_rules": [
+                //     "^$can_reach|AT_Maze_Chest"
+                // ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {
@@ -49,9 +49,9 @@
             },
             {
                 "name": "Maze Chest",
-                "access_rules": [
-                    "[$darkRooms], $smallKeys|at_smallkey|1|1"
-                ],
+                // "access_rules": [
+                //     "^$can_reach|AT_Dark_Archer_Key_Drop"
+                // ],
                 "sections": [
                     {
                         "name": "Maze Chest"
@@ -68,9 +68,9 @@
             },
             {
                 "name": "Circle of Pots Key Drop",
-                "access_rules": [
-                    "[$darkRooms], $smallKeys|at_smallkey|2|3"
-                ],
+                // "access_rules": [
+                //     "^$can_reach|AT_Circle_of_Pots_Key_Drop"
+                // ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {
@@ -88,9 +88,9 @@
             },
             {
                 "name": "Agahnim 1",
-                "access_rules": [
-                    "[$darkRooms], $smallKeys|at_smallkey|2|4, $canRemoveCurtains"
-                ],
+                // "access_rules": [
+                //     "^$can_reach|AT_Aga1"
+                // ],
                 "sections": [
                     {
                         "name": "Agahnim 1",
