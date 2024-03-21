@@ -4,16 +4,15 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "@TR/Turtle Rock Front",
-            "@TR/Turtle Rock Eye Bridge Entrance, [$darkRooms], somaria, $smallKeys|tr_smallkey|2|2" 
+            "^$can_reach|tr_main_entrance",
+            "^$can_reach|tr_big_chest_entrance",
+            "^$can_reach|tr_laser_entrance"
         ],
         "children": [
             {
                 "name": "Compass Chest",
                 "access_rules": [
-                    "@TR/Turtle Rock Front, somaria",
-                    "@TR/Turtle Rock Back, somaria, $smallKeys|tr_smallkey|1|2, [$smallKeys|tr_smallkey|2|3]",
-                    "@TR/Turtle Rock Eye Bridge Entrance, [$darkRooms], somaria, $smallKeys|tr_smallkey|2|3, [$smallKeys|tr_smallkey|3|4]"
+                    "^$can_reach|TR - Compass Chest"
                 ],
                 "sections": [
                     {
@@ -32,9 +31,7 @@
             {
                 "name": "Chain Chomps",
                 "access_rules": [
-                    "@TR/Turtle Rock Front, somaria, [$smallKeys|tr_smallkey|1|2]",
-                    "@TR/Turtle Rock Back",
-                    "@TR/Turtle Rock Eye Bridge Entrance, [$darkRooms], somaria, $smallKeys|tr_smallkey|0|0, [$smallKeys|tr_smallkey|1|1]"
+                    "^$can_reach|TR - Chain Chomp Chest"
                 ],
                 "sections": [
                     {
@@ -54,9 +51,7 @@
                 "name": "Pokey 1 Key Drop",
                 "visibility_rules": ["key_drop_shuffle"],
                 "access_rules": [
-                    "@TR/Turtle Rock Front, somaria, [$smallKeys|tr_smallkey|1|1]",
-                    "@TR/Turtle Rock Back, somaria, [$smallKeys|tr_smallkey|1|1]",
-                    "@TR/Turtle Rock Eye Bridge Entrance, [$darkRooms], somaria, $smallKeys|tr_smallkey|2|3, [$smallKeys|tr_smallkey|3|4]"
+                    "^$can_reach|TR - Poke 1 Key Drop"
                 ],
                 "sections": [
                     {
@@ -75,9 +70,7 @@
             {
                 "name": "Map Chest",
                 "access_rules": [
-                    "@TR/Turtle Rock Front, somaria, firerod",
-                    "@TR/Turtle Rock Back, somariam  firerod, [$smallKeys|tr_smallkey|1|2]",
-                    "@TR/Turtle Rock Eye Bridge Entrance, [$darkRooms], firerod, somaria, $smallKeys|tr_smallkey|2|3, [$smallKeys|tr_smallkey|3|4]"
+                    "^$can_reach|TR - Roller Room Left"
                 ],
                 "sections": [
                     {
@@ -96,9 +89,7 @@
             {
                 "name": "Roller Room Right",
                 "access_rules": [
-                    "@TR/Turtle Rock Front, somaria, firerod",
-                    "@TR/Turtle Rock Back, somariam  firerod, [$smallKeys|tr_smallkey|1|2]",
-                    "@TR/Turtle Rock Eye Bridge Entrance, [$darkRooms], firerod, somaria, $smallKeys|tr_smallkey|2|3, [$smallKeys|tr_smallkey|3|4]"
+                    "^$can_reach|TR - Roller Room Right"
                 ],
                 "sections": [
                     {
@@ -118,9 +109,7 @@
                 "name": "Pokey 2 Key Drop",
                 "visibility_rules": ["key_drop_shuffle"],
                 "access_rules": [
-                    "@TR/Turtle Rock Front, somaria, [$smallKeys|tr_smallkey|2|3]",
-                    "@TR/Turtle Rock Back",
-                    "@TR/Turtle Rock Eye Bridge Entrance, [$darkRooms], somaria, $smallKeys|tr_smallkey|0|0, [$smallKeys|tr_smallkey|1|1]"
+                    "^$can_reach|TR - Poke 2 Key Drop"
                 ],
                 "sections": [
                     {
@@ -139,9 +128,7 @@
             {
                 "name": "Big Key Chest",
                 "access_rules": [
-                    "@TR/Turtle Rock Front, somaria, $smallKeys|tr_smallkey|2|4",
-                    "@TR/Turtle Rock Back, $smallKeys|tr_smallkey|0|1",
-                    "@TR/Turtle Rock Eye Bridge Entrance, [$darkRooms], somaria, $smallKeys|tr_smallkey|0|1, [$smallKeys|tr_smallkey|1|2]"
+                    "^$can_reach|TR - Big Key Chest"
                 ],
                 "sections": [
                     {
@@ -164,20 +151,13 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "@TR/Turtle Rock Back, boots",
-            "@TR/Turtle Rock Back, hookshot",
-            "@TR/Turtle Rock Back, somaria",
-            "@TR/Turtle Rock Eye Bridge Entrance"
+            "^$can_reach|tr_big_key_door_room"
         ],
         "children": [
             {
                 "name": "Crystalroller Room",
                 "access_rules": [
-                    "$bigKeys|tr_bigkey",
-                    "@Turtle Rock Front, $bigKeys|tr_bigkey, $smallKeys|tr_smallkey|2|4",
-                    "@TR/Turtle Rock Eye Bridge Entrance, $smallKeys|tr_smallkey|0|0, [$darkRooms], somaria"
-                    //,
-                    //"@Turtle Rock Back, [$bigKeys|tr_bigkey]"
+                    "^$can_reach|TR - Crystalroller Chest"
                 ],
                 "sections": [
                     {
@@ -196,17 +176,13 @@
             {
                 "name": "Eye Bridge Accessible",
                 "access_rules": [
-                    "@Turtle Rock Front, somaria, [$darkRooms], [$smallKeys|tr_smallkey|3|5], [mirrorshield]",
-                    "@Turtle Rock Front, somaria, [$darkRooms], [$smallKeys|tr_smallkey|3|5], [invincibility]",
-                    "@Turtle Rock Back, somaria, [$darkRooms], $smallKeys|tr_smallkey|3|5, [$smallKeys|tr_smallkey|3|5], [mirrorshield]",
-                    "@Turtle Rock Back, somaria, [$darkRooms], $smallKeys|tr_smallkey|3|5, [$smallKeys|tr_smallkey|3|5], [invincibility]",
-                    "@TR/Turtle Rock Eye Bridge Entrance"
+                    "^$can_reach|tr_eye_bridge_entrance"
                 ]
             },
             {
                 "name": "Eye Bridge Top Left",
                 "access_rules": [
-                    "@Turtle Rock Back/Eye Bridge Accessible"
+                    "^$can_reach|TR - Eyebridge Top Left"
                 ],
                 "sections": [
                     {
@@ -225,7 +201,7 @@
             {
                 "name": "Eye Bridge Bottom Left",
                 "access_rules": [
-                    "@Turtle Rock Back/Eye Bridge Accessible"
+                    "^$can_reach|TR - Eyebridge Bottom Left"
                 ],
                 "sections": [
                     {
@@ -244,7 +220,7 @@
             {
                 "name": "Eye Bridge Top Right",
                 "access_rules": [
-                    "@Turtle Rock Back/Eye Bridge Accessible"
+                    "^$can_reach|TR - Eyebridge Top Right"
                 ],
                 "sections": [
                     {
@@ -263,7 +239,7 @@
             {
                 "name": "Eye Bridge Bottom Right",
                 "access_rules": [
-                    "@Turtle Rock Back/Eye Bridge Accessible"
+                    "^$can_reach|TR - Eyebridge Bottom Right"
                 ],
                 "sections": [
                     {
@@ -282,11 +258,7 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    // "@TR/Turtle Rock Back, [somaria], $bigKeys|tr_bigkey",
-                    // "@TR/Turtle Rock Back, [hookshot], $bigKeys|tr_bigkey"
-                    "@TR/Turtle Rock Back, $bigKeys|tr_bigkey",
-                    "@TR/Turtle Rock Front, $bigKeys|tr_bigkey, $smallKeys|tr_smallkey|2|3, [$smallKeys|tr_smallkey|3|5]",
-                    "@TR/Turtle Rock Eye Bridge Entrance, [$darkRooms], somaria, $bigKeys|tr_bigkey, $smallKeys|tr_smallkey|0|0, [$smallKeys|tr_smallkey|1|1]"
+                    "^$can_reach|TR - Big Key Chest"
                 ],
                 "sections": [
                     {
@@ -305,9 +277,7 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "@TR/Turtle Rock Eye Bridge Entrance, $smallKeys|tr_smallkey|1|1, [$smallKeys|tr_smallkey|4|6], $getBossRef|tr_boss",
-                    "@Turtle Rock Back, [$darkRooms], somaria, $smallKeys|tr_smallkey|2|2, [$smallKeys|tr_smallkey|4|6], $getBossRef|tr_boss",
-                    "@Turtle Rock Front, [$darkRooms], somaria, $smallKeys|tr_smallkey|3|5, [$smallKeys|tr_smallkey|4|6], $getBossRef|tr_boss"
+                    "^$can_reach|TR - Boss"
                 ],
                 "sections": [
                     {

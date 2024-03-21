@@ -84,7 +84,7 @@ tr_crystalroller_room:connect_one_way(tr_big_key_door_room, function(keys) retur
 
 tr_crystalroller_room:connect_one_way(tr_travel_maze, function(keys) return has("tr_smallkey", keys + 1, 3, keys + 1, 5), KDSreturn(keys + 1, keys + 1) end)
 tr_travel_maze:connect_one_way(tr_crystalroller_room, function(keys) return has("tr_smallkey", keys, 3, keys, 5), KDSreturn(keys, keys + 1) end)
-tr_crystalroller_room:connect_one_way("TR_Crystalroller Chest")
+tr_crystalroller_room:connect_one_way("TR - Crystalroller Chest")
 
 tr_travel_maze:connect_two_ways(tr_eye_hallway)
 
