@@ -4,14 +4,14 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "@AT/Agahnim's Tower",
+            "^$can_reach|at_entrance",
             "@AT-inverted/Agahnim's Tower"
         ],
         "children": [
             {
                 "name": "Front",
                 "access_rules": [
-                    "@Agahnim's Tower"
+                    "^$can_reach|AT - First Chest"
                 ],
                 "sections": [
                     {
@@ -30,7 +30,7 @@
             {
                 "name": "Dark Archer Key Drop",
                 "access_rules": [
-                    "[$darkRooms], $smallKeys|at_smallkey|1|1"
+                    "^$can_reach|AT - Dark Archer Key Drop"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
@@ -50,7 +50,7 @@
             {
                 "name": "Maze Chest",
                 "access_rules": [
-                    "[$darkRooms], $smallKeys|at_smallkey|1|1"
+                    "^$can_reach|AT - Maze Chest"
                 ],
                 "sections": [
                     {
@@ -69,7 +69,7 @@
             {
                 "name": "Circle of Pots Key Drop",
                 "access_rules": [
-                    "[$darkRooms], $smallKeys|at_smallkey|2|3"
+                    "^$can_reach|AT - Circle of Pots Key Drop"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
@@ -89,7 +89,7 @@
             {
                 "name": "Agahnim 1",
                 "access_rules": [
-                    "[$darkRooms], $smallKeys|at_smallkey|2|4, $canRemoveCurtains"
+                    "^$can_reach|AT - Aga1"
                 ],
                 "sections": [
                     {
