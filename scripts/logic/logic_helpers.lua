@@ -42,16 +42,33 @@ function any(...)
     return max
 end
 
+function KDSreturn( noKDS, KDS)
+    if Tracker:FindObjectForCode("key_drop_shuffle").Active then
+        return KDS
+    else
+        return noKDS
+    end
+end
+
 function has(item, noKDS_amount, noKDS_amountInLogic, KDS_amount, KDS_amountInLogic)
-    -- print(item)
-    local count = Tracker:ProviderCountForCode(item)
-    amount = noKDS_amount
-    amountInLogic = noKDS_amountInLogic
-    if (Tracker:FindObjectForCode("key_drop_shuffle").Active == true) and (item:sub(-8,-1) == "smallkey") then
+    local count
+    local amount
+    local amountInLogic
+    if Tracker:FindObjectForCode("key_drop_shuffle").Active then
         amount = KDS_amount
         amountInLogic = KDS_amountInLogic
-        count = Tracker:ProviderCountForCode(item.."_drop")
+        if item:sub(-8,-1) == "smallkey" then
+            count = Tracker:ProviderCountForCode(item.."_drop")
+        else
+            count = Tracker:ProviderCountForCode(item)
+        end
+
+    else
+        count = Tracker:ProviderCountForCode(item)
+        amount = noKDS_amount
+        amountInLogic = noKDS_amountInLogic
     end
+    -- print(item, count, amount, amountInLogic)
     if amountInLogic then
         if count >= amountInLogic then
             return AccessibilityLevel.Normal
@@ -197,25 +214,25 @@ function canSwim(itemNeeded) --fake flippers
 end
 
 function smallKeys(dungeon, count, count_in_logic, keydrop_count, keydrop_count_in_logic)
-    if Tracker:FindObjectForCode("small_keys").CurrentStage == 1 then
-        if Tracker:FindObjectForCode("key_drop_shuffle").Active == true then
-            has(dungeon.."_drop", tonumber(keydrop_count), tonumber(keydrop_count_in_logic))
-            -- if Tracker:FindObjectForCode(dungeon.."_drop").AcquiredCount >= tonumber(keydrop_count) then
-            --     return true
-            -- else
-            --     return false
-            -- end
-        -- elseif Tracker:FindObjectForCode(dungeon).AcquiredCount >= tonumber(count) then  
-        --     return true
-        -- else
-        --     return false
-        -- end
-        else
-            has(dungeon, tonumber(count), tonumber(count_in_logic))
-        end
-    else
-        return true
-    end
+    -- if Tracker:FindObjectForCode("small_keys").CurrentStage == 1 then
+    --     if Tracker:FindObjectForCode("key_drop_shuffle").Active == true then
+    --         -- has(dungeon.."_drop", tonumber(keydrop_count), tonumber(keydrop_count_in_logic))
+    --         if Tracker:FindObjectForCode(dungeon.."_drop").AcquiredCount >= tonumber(keydrop_count) then
+    --             return true
+    --         else
+    --             return false
+    --         end
+    --     elseif Tracker:FindObjectForCode(dungeon).AcquiredCount >= tonumber(count) then  
+    --         return true
+    --     else
+    --         return false
+    --     end
+    --     -- else
+    --     --     -- has(dungeon, tonumber(count), tonumber(count_in_logic))
+    --     -- end
+    -- else
+    --     return true
+    -- end
 end
 
 function bigKeys(dungeon)
@@ -241,11 +258,11 @@ end
 
 function darkRooms()
     local dark_mode = Tracker:FindObjectForCode("dark_mode").CurrentStage
-    if dark_mode == 0 then --none
+    if dark_mode == 2 then --none
         return true
-    elseif  dark_mode == 1 and Tracker:ProviderCountForCode("lamp") > 0 then -- lamp
+    elseif  dark_mode == 0 and Tracker:ProviderCountForCode("lamp") > 0 then -- lamp
         return true
-    elseif  dark_mode == 2 and (Tracker:ProviderCountForCode("firerod") > 0 or Tracker:ProviderCountForCode("lamp") > 0) then -- scornes/firerod
+    elseif  dark_mode == 1 and (Tracker:ProviderCountForCode("firerod") > 0 or Tracker:ProviderCountForCode("lamp") > 0) then -- scornes/firerod
         return true
     else
         return false
