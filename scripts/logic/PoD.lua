@@ -74,25 +74,27 @@ pod_switch_room_bottom:connect_two_ways(pod_arena)
 pod_big_key_chest_room:connect_two_ways(pod_arena)
 
 pod_arena:connect_one_way(pod_collapsin_bridge, function(keys) 
-    return all(local key1
-        any(
-            all(
-                has("pod_smallkey", keys + 1, 4, keys + 1, 4),
-                key1 = keys + 1
-            ),
-            all(
-                has("pod_smallkey", keys, 4, keys, 4),
-                can_reach(pod_switch_room_top),
-                has("hammer"),
-                key1 = keys
+    if can_reach(pod_switch_room_top) then
+        return all(
+            has("pod_smallkey", keys, 4, keys, 4),
+            can_reach(pod_switch_room_top),
+            has("hammer"),
+            any(
+                has("bombs"),
+                has('bow'),
+                has("somaria")
             )
-        ),
-        any(
-            has("bombs"),
-            has('bow'),
-            has("somaria")
-        )
-    ), KDSreturn(key1, keys + 1)
+        ), KDSreturn(keys, keys + 1)
+    else
+        return all(
+            has("pod_smallkey", keys + 1, 4, keys + 1, 4),
+            any(
+                has("bombs"),
+                has('bow'),
+                has("somaria")
+            )
+        ), KDSreturn(keys + 1, keys + 1)
+    end
 end)
 pod_arena:connect_one_way("PoD - Arena Bridge")
 

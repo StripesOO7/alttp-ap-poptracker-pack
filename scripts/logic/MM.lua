@@ -50,7 +50,7 @@ mm_bridge_right:connect_one_way("MM - Bridge Chest")
 
 mm_spike_room:connect_two_ways(mm_big_key_door, function(keys) return has("mm_smallkey", keys, 2, keys + 1, 5), KDSreturn(keys, keys + 1) end)
 mm_spike_room:connect_two_ways(mm_fishbone_room, function(keys) return has("mm_smallkey", keys, 2, keys + 1, 5), KDSreturn(keys, keys + 1) end)
-mm_spike_room:connect_one_way("MM - Spike Chest", function() 
+mm_spike_room:connect_one_way("MM - Spike Chest", function(keys) 
     return any(
         has("heartcontainerm", 1, 1),
         has("heartpieces", 4, 4),
