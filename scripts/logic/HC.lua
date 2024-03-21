@@ -27,7 +27,7 @@ hc_map_chest_room:connect_two_ways(hc_boomerang_chest_room, function(keys)
     return any(
         has("standard"),
         has("hc_smallkey", keys, 0, keys + 1, 3)
-    ), KDS(keys, keys + 1)
+    ), KDSreturn(keys, keys + 1)
 end)
 hc_boomerang_chest_room:connect_one_way("HC - Boomerang Chest")
 hc_boomerang_chest_room:connect_one_way("HC - Booomerang Guard Key Drop")
@@ -36,7 +36,7 @@ hc_map_chest_room:connect_two_ways(hc_ball_guard_room, function(keys)
     return any(
         has("standard"),
         has("hc_smallkey", keys, 0, keys + 1, 4)
-    ), KDS(keys, keys + 1)
+    ), KDSreturn(keys, keys + 1)
 end)
 hc_ball_guard_room:connect_one_way("HC - Big Key")
 
@@ -62,7 +62,7 @@ ce_dark_cross:connect_two_ways(ce_rat_key_room, function(keys)
             has("glove")
         ),
         has("standard")
-    ), KDS(keys + 1, keys + 1) 
+    ), KDSreturn(keys + 1, keys + 1) 
 end)
 ce_dark_cross:connect_one_way("CE - Dark sross")
 
@@ -92,7 +92,7 @@ ce_rat_key_room:connect_two_ways(ce_dropdown_entrance, function(keys)
                 has("boots")
             )
         )
-    ), KDS(keys, keys + 1) 
+    ), KDSreturn(keys, keys + 1) 
 end)
 ce_rat_key_room:connect_one_way("CE - Rat Key Drop")
 

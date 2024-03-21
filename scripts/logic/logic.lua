@@ -28,11 +28,9 @@ function can_reach(name)
         location = named_locations[name]
     end
     if location == nil then
-        -- print(name)
         if type(name) == "table" then
-            -- print("table")
         else
-        print("Unknown location : " .. name)
+            print("Unknown location : " .. tostring(name))
         end
         return AccessibilityLevel.None
     end
@@ -113,6 +111,7 @@ end
 
 -- 
 function alttp_location:discover(accessibility, keys)
+    
     local change = false
     if accessibility > self:accessibility() then
         change = true
@@ -127,12 +126,10 @@ function alttp_location:discover(accessibility, keys)
 
     if change then
         for _, exit in pairs(self.exits) do
-            -- print("exit", exit[1], exit[2])
             local location = exit[1]
             local rule = exit[2]
 
             local access, key = rule(keys)
-
             if access == true then
                 access = AccessibilityLevel.Normal
             elseif access == false then
@@ -141,8 +138,6 @@ function alttp_location:discover(accessibility, keys)
             if key == nil then
                 key = keys
             end
-            print("location", location.name, accessLVL[location.accessibility_level])
-            -- dump_table(location)
             location:discover(access, key)
         end
     end

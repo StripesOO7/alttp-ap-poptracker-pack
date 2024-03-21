@@ -32,7 +32,7 @@ local gt_top_aga2 = alttp_location.new("gt_top_aga2")
 
 gt_entrance:connect_two_ways(gt_bottom_main_room)
 gt_bottom_main_room:connect_two_ways(gt_bottom_bobs_torch)
-gt_bottom_main_room:connect_two_ways(gt_bottom_hope_room, function(keys) return has("gt_smallkey", keys + 1, 4, keys + 1, 6), KDS(keys + 1, keys + 1) end)
+gt_bottom_main_room:connect_two_ways(gt_bottom_hope_room, function(keys) return has("gt_smallkey", keys + 1, 4, keys + 1, 6), KDSreturn(keys + 1, keys + 1) end)
 gt_bottom_main_room:connect_two_ways(gt_top_entrance)
 
 gt_bottom_bobs_torch:connect_two_ways(gt_bottom_conveyor_cross_room)
@@ -52,7 +52,7 @@ gt_bottom_bonk_pit_room:connect_two_ways(gt_bottom_map_room, function(keys)
     return all(
         has("hookshot"),
         has("gt_smallkey", keys, 3, keys + 1, 5)
-    ), KDS(keys, keys + 1) 
+    ), KDSreturn(keys, keys + 1) 
 end)
 gt_bottom_bonk_pit_room:connect_two_ways(gt_bottom_double_switch_room, function() return has("hookshot") end)
 
@@ -63,7 +63,7 @@ gt_bottom_dm_room:connect_one_way("GT - DM Room Bottom Right")
 
 gt_bottom_map_room:connect_one_way("GT - Map Chest")
 
-gt_bottom_double_switch_room:connect_two_ways(gt_bottom_firesnake_room, function(keys) return has("gt_smallkey", keys, 3, keys + 1, 5), KDS(keys, keys + 1) end)
+gt_bottom_double_switch_room:connect_two_ways(gt_bottom_firesnake_room, function(keys) return has("gt_smallkey", keys, 3, keys + 1, 5), KDSreturn(keys, keys + 1) end)
 gt_bottom_double_switch_room:connect_one_way("GT - Double Switch Room Chest", function() 
     return any(
         has("boots"), 
@@ -71,7 +71,7 @@ gt_bottom_double_switch_room:connect_one_way("GT - Double Switch Room Chest", fu
     )
 end)
 
-gt_bottom_firesnake_room:connect_two_ways(gt_bottom_teleporter_puzzle_room, function(keys) return has("gt_smallkey", keys + 1, 3, keys + 1, 5), KDS(keys + 1, keys + 1) end)
+gt_bottom_firesnake_room:connect_two_ways(gt_bottom_teleporter_puzzle_room, function(keys) return has("gt_smallkey", keys + 1, 3, keys + 1, 5), KDSreturn(keys + 1, keys + 1) end)
 gt_bottom_firesnake_room:connect_one_way("GT - Firesnake Room")
 
 gt_bottom_teleporter_puzzle_room:connect_two_ways(gt_bottom_randomizer_room, function() return has("bombs") end)
@@ -101,7 +101,7 @@ gt_bottom_hope_room:connect_two_ways(gt_bottom_tile_room, function() return has(
 gt_bottom_hope_room:connect_one_way("GT - Hope Room Left")
 gt_bottom_hope_room:connect_one_way("GT - Hope Room Right")
 
-gt_bottom_tile_room:connect_two_ways(gt_bottom_torch_puzzle, function() return has("gt_smallkey", keys + 1, 2, keys + 1, 4), KDS(keys + 1, keys + 1) end)
+gt_bottom_tile_room:connect_two_ways(gt_bottom_torch_puzzle, function() return has("gt_smallkey", keys + 1, 2, keys + 1, 4), KDSreturn(keys + 1, keys + 1) end)
 gt_bottom_tile_room:connect_one_way("GT - Tile Room Chest")
 
 gt_bottom_torch_puzzle:connect_one_way(gt_bottom_compass_room, function() 
@@ -120,7 +120,7 @@ gt_bottom_compass_room:connect_one_way("GT - Compass Room Top Right")
 gt_bottom_compass_room:connect_one_way("GT - Compass Room Bottom Left")
 gt_bottom_compass_room:connect_one_way("GT - Compass Room Bottom Right")
 
-gt_bottom_conveyor_star_room:connect_one_way(gt_bottom_invisibile_bonk_room, function(keys) return has("gt_smallkey", keys + 1, 2, keys + 1, 5), KDS(keys + 1, keys + 1) end)
+gt_bottom_conveyor_star_room:connect_one_way(gt_bottom_invisibile_bonk_room, function(keys) return has("gt_smallkey", keys + 1, 2, keys + 1, 5), KDSreturn(keys + 1, keys + 1) end)
 gt_bottom_conveyor_star_room:connect_one_way("GT_Conveyor Star Key Drop")
 
 gt_top_entrance:connect_two_ways(gt_top_gauntlet, function() return has("gt_bigkey") end)
@@ -132,13 +132,13 @@ gt_top_mini_helmasaur_room:connect_two_ways(gt_top_pre_moldorm_room, function(ke
     return all(
         has("gt_smallkey", keys, 3, keys + 1, 6),
         has("bombs")
-    ), KDS(keys, keys + 1)
+    ), KDSreturn(keys, keys + 1)
 end)
 gt_top_mini_helmasaur_room:connect_one_way("GT_Mini Helmasaur Left")
 gt_top_mini_helmasaur_room:connect_one_way("GT_Mini Helmasaur Right")
 gt_top_mini_helmasaur_room:connect_one_way("GT_Mini Helmasaur Key Drop")
 
-gt_top_pre_moldorm_room:connect_one_way(gt_top_top_refight, function(keys) return has("gt_smallkey", keys + 1, 4, keys + 1, 7), KDS(keys + 1, keys + 1) end)
+gt_top_pre_moldorm_room:connect_one_way(gt_top_top_refight, function(keys) return has("gt_smallkey", keys + 1, 4, keys + 1, 7), KDSreturn(keys + 1, keys + 1) end)
 gt_top_pre_moldorm_room:connect_one_way("GT_Pre Moldorm Chest")
 
 gt_top_top_refight:connect_one_way(gt_top_validation,function() return all(

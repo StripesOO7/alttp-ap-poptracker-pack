@@ -581,6 +581,7 @@ waterfall_fairy_inside:connect_one_way("Waterfall Fairy - Right")
 
 -- hyrule_castle_area
 hyrule_castle_area:connect_one_way(links_house_area)
+hyrule_castle_area:connect_two_ways(hyrule_castle_top_outside)
 hyrule_castle_area:connect_one_way(eastern_palace_area)
 hyrule_castle_area:connect_one_way(lumberjacks_area)
 hyrule_castle_area:connect_one_way(light_flute_map, function() 
@@ -604,7 +605,7 @@ end)
 hyrule_castle_top_outside:connect_two_ways_entrance("Hyrule Castle Top Left", hyrule_castle_top_left)
 hyrule_castle_top_outside:connect_two_ways_entrance("Hyrule Castle Top Right", hyrule_castle_top_right)
 hyrule_castle_top_outside:connect_one_way(hyrule_castle_area)
-hyrule_castle_area:connect_two_ways_entrance(hyrule_castle_front)
+hyrule_castle_area:connect_two_ways_entrance(hc_main_entrance)
 hyrule_castle_area:connect_one_way_entrance("Secret Passage Hole", secret_passage_hole)
 hyrule_castle_area:connect_two_ways_entrance("Secret Passage Stairs", secret_passage_stairs)
 
