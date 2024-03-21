@@ -64,7 +64,7 @@ gt_bottom_dm_room:connect_one_way("GT - DM Room Bottom Right")
 gt_bottom_map_room:connect_one_way("GT - Map Chest")
 
 gt_bottom_double_switch_room:connect_two_ways(gt_bottom_firesnake_room, function(keys) return has("gt_smallkey", keys, 3, keys + 1, 5), KDSreturn(keys, keys + 1) end)
-gt_bottom_double_switch_room:connect_one_way("GT - Double Switch Room Chest", function() 
+gt_bottom_double_switch_room:connect_one_way("GT - Double Switch Pot Key", function() 
     return any(
         has("boots"), 
         has("hookshot")
@@ -121,7 +121,7 @@ gt_bottom_compass_room:connect_one_way("GT - Compass Room Bottom Left")
 gt_bottom_compass_room:connect_one_way("GT - Compass Room Bottom Right")
 
 gt_bottom_conveyor_star_room:connect_one_way(gt_bottom_invisibile_bonk_room, function(keys) return has("gt_smallkey", keys + 1, 2, keys + 1, 5), KDSreturn(keys + 1, keys + 1) end)
-gt_bottom_conveyor_star_room:connect_one_way("GT_Conveyor Star Key Drop")
+gt_bottom_conveyor_star_room:connect_one_way("GT - Conveyor Star Key Drop")
 
 gt_top_entrance:connect_two_ways(gt_top_gauntlet, function() return has("gt_bigkey") end)
 gt_top_gauntlet:connect_two_ways(gt_top_desert_refight, function() return getBossRef("gt_lanmo") end)
@@ -134,17 +134,17 @@ gt_top_mini_helmasaur_room:connect_two_ways(gt_top_pre_moldorm_room, function(ke
         has("bombs")
     ), KDSreturn(keys, keys + 1)
 end)
-gt_top_mini_helmasaur_room:connect_one_way("GT_Mini Helmasaur Left")
-gt_top_mini_helmasaur_room:connect_one_way("GT_Mini Helmasaur Right")
-gt_top_mini_helmasaur_room:connect_one_way("GT_Mini Helmasaur Key Drop")
+gt_top_mini_helmasaur_room:connect_one_way("GT - Mini Helmasaur Left")
+gt_top_mini_helmasaur_room:connect_one_way("GT - Mini Helmasaur Right")
+gt_top_mini_helmasaur_room:connect_one_way("GT - Mini Helmasaur Key Drop")
 
 gt_top_pre_moldorm_room:connect_one_way(gt_top_top_refight, function(keys) return has("gt_smallkey", keys + 1, 4, keys + 1, 7), KDSreturn(keys + 1, keys + 1) end)
-gt_top_pre_moldorm_room:connect_one_way("GT_Pre Moldorm Chest")
+gt_top_pre_moldorm_room:connect_one_way("GT - Pre Moldorm Chest")
 
 gt_top_top_refight:connect_one_way(gt_top_validation,function() return all(
         getBossRef(), 
         has("hookshoot")
     )
 end)
-gt_top_top_refight:connect_one_way("GT_Validation Chest")
+gt_top_top_refight:connect_one_way("GT - Validation Chest")
 gt_top_validation:connect_one_way(gt_top_aga2)
