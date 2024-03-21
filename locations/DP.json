@@ -4,18 +4,19 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "@DP/Desert Palace"
+            "^$can_reach|dp_main_entrance",
+            "^$can_reach|dp_left_entracne",
+            "^$can_reach|dp_right_entrance"
         ],
         "children": [
             {
                 "name": "Torch",
+                "access_rules": [
+                    "^$can_reach|DP - Torch"
+                ],
                 "sections": [
                     {
                         "name": "Torch",
-                        "access_rules": [
-                            "boots",
-                            "{@DP}"
-                        ],
                         "capture_item": true
                     }
                 ],
@@ -30,12 +31,12 @@
             },
             {
                 "name": "Big Chest",
+                "access_rules": [
+                    "^$can_reach|DP - Big Chest"
+                ],
                 "sections": [
                     {
-                        "name": "Big Chest",
-                        "access_rules": [
-                            "$bigKeys|dp_bigkey"
-                        ]
+                        "name": "Big Chest"
                     }
                 ],
                 "map_locations": [
@@ -49,6 +50,9 @@
             },
             {
                 "name": "Map Chest",
+                "access_rules": [
+                    "^$can_reach|DP - Map Chest"
+                ],
                 "sections": [
                     {
                         "name": "Map Chest"
@@ -65,12 +69,12 @@
             },
             {
                 "name": "Big Key Chest",
+                "access_rules": [
+                    "^$can_reach|DP - Big Key Chest"
+                ],
                 "sections": [
                     {
-                        "name": "Big Key Chest",
-                        "access_rules": [
-                            "@Desert Palace/Compass Chest/Compass Chest"
-                        ]
+                        "name": "Big Key Chest"
                     }
                 ],
                 "map_locations": [
@@ -84,13 +88,12 @@
             },
             {
                 "name": "Compass Chest",
+                "access_rules": [
+                    "^$can_reach|DP - Compass Chest"
+                ],
                 "sections": [
                     {
-                        "name": "Compass Chest",
-                        "access_rules": [
-                            "@DP Back/Desert Palace Back, $smallKeys|dp_smallkey|1|4",
-                            "$smallKeys|dp_smallkey|1|1"
-                        ]
+                        "name": "Compass Chest"
                     }
                 ],
                 "map_locations": [
@@ -109,13 +112,13 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/chest_opened_img.png",
         "access_rules": [
-            "@DP Back/Desert Palace Back"
+            "^$can_reach|dp_back_entrance"
         ],
         "children": [
             {
                 "name": "Boss",
                 "access_rules": [
-                    "firesource, $smallKeys|dp_smallkey|0|3, [$smallKeys|dp_smallkey|1|4], $bigKeys|dp_bigkey, $getBossRef|dp_boss"
+                    "^$can_reach|DP - Boss"
                 ],
                 "sections": [
                     {
@@ -135,6 +138,9 @@
             },
             {
                 "name": "Desert Tiles 1 Pot Key",
+                "access_rules": [
+                    "^$can_reach|DP - Tile 1 Key Drop"
+                ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {
@@ -153,7 +159,7 @@
             {
                 "name": "Beamos Hall Pot Key",
                 "access_rules": [
-                    "$smallKeys|dp_smallkey|0|2"
+                    "^$can_reach|DP - Beamos Hallway Key Drop"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
@@ -173,7 +179,7 @@
             {
                 "name": "Desert Tiles 2 Pot Key",
                 "access_rules": [
-                    "$smallKeys|dp_smallkey|0|3"
+                    "^$can_reach|DP - Tile 2 Key Drop"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [

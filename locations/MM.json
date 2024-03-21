@@ -4,11 +4,14 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "@MM/Misery Mire"
+            "^$can_reach|mm_entrance"
         ],
         "children": [
             {
                 "name": "Spikes Pot Key",
+                "access_rules": [
+                    "^$can_reach|MM - Spike Key Drop"
+                ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {
@@ -27,7 +30,7 @@
             {
                 "name": "Fishbone Pot Key",
                 "access_rules": [
-                    "$smallKeys|mm_smallkey|1|1, [$smallKeys|mm_smallkey|4|6]"
+                    "^$can_reach|MM - Fishbone Key Drop"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
@@ -47,7 +50,7 @@
             {
                 "name": "Conveyor Crystal Key Drop",
                 "access_rules": [
-                    "$smallKeys|mm_smallkey|0|1, [$smallKeys|mm_smallkey|4|6]"
+                    "^$can_reach|MM - Conveyor Crystal Key Drop"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
@@ -66,6 +69,9 @@
             },
             {
                 "name": "Bridge Chest",
+                "access_rules": [
+                    "^$can_reach|MM - Bridge Chest"
+                ],
                 "sections": [
                     {
                         "name": "Bridge Chest"
@@ -83,7 +89,7 @@
             {
                 "name": "Main Lobby",
                 "access_rules": [
-                    "$smallKeys|mm_smallkey|0|1, [$smallKeys|mm_smallkey|4|6]"
+                    "^$can_reach|MM - Main Lobby Chest"
                 ],
                 "sections": [
                     {
@@ -102,7 +108,7 @@
             {
                 "name": "Compass Chest",
                 "access_rules": [
-                    "firesource, $smallKeys|mm_smallkey|0|2, [$smallKeys|mm_smallkey|4|6]"
+                    "^$can_reach|MM - Comapss Chest"
                 ],
                 "sections": [
                     {
@@ -121,7 +127,7 @@
             {
                 "name": "Big Key Chest",
                 "access_rules": [
-                    "firesource"
+                    "^$can_reach|MM - Big Key Chest"
                 ],
                 "sections": [
                     {
@@ -140,10 +146,7 @@
             {
                 "name": "Spike Chest",
                 "access_rules": [
-                    "[invincibility]",
-                    // "[$health|4]"
-                    "heartcontainer:1",
-                    "heartpieces:4"
+                    "^$can_reach|MM - Spike Chest"
                 ],
                 "sections": [
                     {
@@ -162,8 +165,7 @@
             {
                 "name": "Map Chest",
                 "access_rules": [
-                    "$smallKeys|mm_smallkey|0|1, [$smallKeys|mm_smallkey|4|6]",
-                    "$smallKeys|mm_smallkey|1|1, [$smallKeys|mm_smallkey|4|6]"
+                    "^$can_reach|MM - Map Chest"
                 ],
                 "sections": [
                     {
@@ -182,7 +184,7 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "$bigKeys|mm_bigkey"
+                    "^$can_reach|MM - Big Chest"
                 ],
                 "sections": [
                     {
@@ -201,7 +203,7 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "$bigKeys|mm_bigkey, $getBossRef|mm_boss, [$darkRooms], somaria, $smallKeys|mm_smallkey|0|2, [$smallKeys|mm_smallkey|1|3]"
+                    "^$can_reach|MM - Boss"
                 ],
                 "sections": [
                     {

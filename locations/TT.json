@@ -4,9 +4,15 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "parent": "TT",
+        "access_rules": [
+            "^$can_reach|TT - Map Chest"
+        ],
         "children": [
             {
                 "name": "Map Chest",
+                "access_rules": [
+                    "^$can_reach|TT - Map Chest"
+                ],
                 "sections": [
                     {
                         "name": "Map Chest"
@@ -24,6 +30,9 @@
             },
             {
                 "name": "Ambush Chest",
+                "access_rules": [
+                    "^$can_reach|TT - Ambush Chest"
+                ],
                 "sections": [
                     {
                         "name": "Ambush Chest"
@@ -40,6 +49,9 @@
             },
             {
                 "name": "Compass Chest",
+                "access_rules": [
+                    "^$can_reach|TT - Compass Chest"
+                ],
                 "sections": [
                     {
                         "name": "Compass Chest"
@@ -56,6 +68,9 @@
             },
             {
                 "name": "Big Key Chest",
+                "access_rules": [
+                    "^$can_reach|TT - Big Key Chest"
+                ],
                 "sections": [
                     {
                         "name": "Big Key Chest"
@@ -77,13 +92,16 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "$bigKeys|tt_bigkey"
+            "^$can_reach|tt_back_hallway"
         ],
         "parent": "TT",
         "children": [
             {
                 "name": "Hallway Pot Key",
                 "visibility_rules": ["key_drop_shuffle"],
+                "access_rules": [
+                    "^$can_reach|TT - Hallway Pot Key"
+                ],
                 "sections": [
                     {
                         "name": "Hallway Pot Key"
@@ -101,7 +119,7 @@
             {
                 "name": "Spike Switch Pot Key",
                 "access_rules": [
-                    "$smallKeys|tt_smallkey|0|1"
+                    "^$can_reach|TT - Spike Switch Pot Key"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
@@ -121,7 +139,7 @@
             {
                 "name": "Blind's Cell",
                 "access_rules": [
-                    "$smallKeys|tt_smallkey|0|1"
+                    "^$can_reach|TT - Blind's Cell"
                 ],
                 "sections": [
                     {
@@ -140,7 +158,7 @@
             {
                 "name": "Attic",
                 "access_rules": [
-                    "$smallKeys|tt_smallkey|0|2"
+                    "^$can_reach|TT - Attic"
                 ],
                 "sections": [
                     {
@@ -159,7 +177,7 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "hammer, $smallKeys|tt_smallkey|0|2, [$smallKeys|tt_smallkey|1|3]"
+                    "^$can_reach|TT - Big Chest"
                 ],
                 "sections": [
                     {
@@ -178,7 +196,7 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "$getBossRef|tt_boss, $tt_boss_check"
+                    "^$can_reach|TT - Boss"
                 ],
                 "sections": [
                     {

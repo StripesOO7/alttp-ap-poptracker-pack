@@ -4,11 +4,14 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "@ToH/Tower of Hera"
+            "^$can_reach|toh_entrance"
         ],
         "children": [
             {
                 "name": "Basement Cage",
+                "access_rules": [
+                    "^$can_reach|ToH - Basement Cage"
+                ],
                 "sections": [
                     {
                         "name": "Basement Cage"
@@ -26,7 +29,7 @@
             {
                 "name": "Big Key Chest",
                 "access_rules": [
-                    "$smallKeys|toh_smallkey|1|1, firesource"
+                    "^$can_reach|ToH - Big Key Chest"
                 ],
                 "sections": [
                     {
@@ -44,6 +47,9 @@
             },
             {
                 "name": "Map Chest",
+                "access_rules": [
+                    "^$can_reach|ToH - Map Chest"
+                ],
                 "sections": [
                     {
                         "name": "Map Chest"
@@ -61,8 +67,7 @@
             {
                 "name": "Compass Chest",
                 "access_rules": [
-                    "$bigKeys|toh_bigkey",
-                    "$checkGlitches|1, hookshot"
+                    "^$can_reach|ToH - Compass Chest"
                 ],
                 "sections": [
                     {
@@ -81,7 +86,7 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "$bigKeys|toh_bigkey"
+                    "^$can_reach|ToH - Big Chest"
                 ],
                 "sections": [
                     {
@@ -100,8 +105,7 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "$bigKeys|toh_bigkey, $getBossRef|toh_boss",
-                    "$checkGlitches|1, hookshot, $getBossRef|toh_boss"
+                    "^$can_reach|ToH - Boss"
                 ],
                 "sections": [
                     {

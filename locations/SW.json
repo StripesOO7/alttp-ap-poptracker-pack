@@ -4,11 +4,20 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "@SW/Skull Woods Front"
+            "^$can_reach|sw_bottom_left_drop",
+            "^$can_reach|sw_pinball_drop",
+            "^$can_reach|sw_pot_circle_drop",
+            "^$can_reach|sw_big_chest_entrance",
+            "^$can_reach|sw_gibdo_entrance",
+            "^$can_reach|sw_west_lobby_entrance",
+            "^$can_reach|sw_north_drop"
         ],
         "children": [
             {
                 "name": "Pot Prison",
+                "access_rules": [
+                    "^$can_reach|SW - Pot Prison"
+                ],
                 "sections": [
                     {
                         "name": "Pot Prison"
@@ -25,6 +34,9 @@
             },
             {
                 "name": "Compass Chest",
+                "access_rules": [
+                    "^$can_reach|SW - compass Chest"
+                ],
                 "sections": [
                     {
                         "name": "Compass Chest"
@@ -41,6 +53,9 @@
             },
             {
                 "name": "Pinball Room",
+                "access_rules": [
+                    "^$can_reach|SW - Pinball Chest"
+                ],
                 "sections": [
                     {
                         "name": "Pinball Room"
@@ -58,7 +73,7 @@
             {
                 "name": "Map Chest",
                 "access_rules": [
-                    "$smallKeys|sw_smallkey|0|0"
+                    "^$can_reach|SW - Map Chest"
                 ],
                 "sections": [
                     {
@@ -76,6 +91,9 @@
             },
             {
                 "name": "Big Key Chest",
+                "access_rules": [
+                    "^$can_reach|SW - Big Key Chest"
+                ],
                 "sections": [
                     {
                         "name": "Big Key Chest"
@@ -92,6 +110,9 @@
             },
             {
                 "name": "West Lobby Pot Key",
+                "access_rules": [
+                    "^$can_reach|SW - West Lobby Key Drop"
+                ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {
@@ -110,7 +131,7 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "$bigKeys|sw_bigkey"
+                    "^$can_reach|SW - Big Chest"
                 ],
                 "sections": [
                     {
@@ -133,11 +154,14 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "@SW/Skull Woods Back"
+            "^$can_reach|sw_back_entrance",
         ],
         "children": [
             {
                 "name": "Bridge Room",
+                "access_rules": [
+                    "^$can_reach|SW - Bridge Chest"
+                ],
                 "sections": [
                     {
                         "name": "Bridge Room"
@@ -155,7 +179,7 @@
             {
                 "name": "Spike Corner Key Drop",
                 "access_rules": [
-                    "firesource, $canRemoveCurtains, $smallKeys|sw_smallkey|1|1"
+                    "^$can_reach|SW - Spike Corner Key Drop"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
@@ -174,13 +198,12 @@
             },
             {
                 "name": "Boss",
-                
+                "access_rules": [
+                    "^$can_reach|SW - Boss"
+                ],
                 "sections": [
                     {
                         "name": "Boss Item",
-                        "access_rules": [
-                            "$getBossRef|sw_boss, firesource, $canRemoveCurtains, $smallKeys|sw_smallkey|2|2"
-                        ],
                         "item_count": 1,
                         "hosted_item": "sw_boss, skullwoods"
                     }

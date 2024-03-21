@@ -64,7 +64,7 @@ ce_dark_cross:connect_two_ways(ce_rat_key_room, function(keys)
         has("standard")
     ), KDSreturn(keys + 1, keys + 1) 
 end)
-ce_dark_cross:connect_one_way("CE - Dark sross")
+ce_dark_cross:connect_one_way("CE - Dark Cross")
 
 -- ce_rat_key_room:connect_two_ways(ce_dropdown_entrance) 
 ce_rat_key_room:connect_two_ways(ce_dropdown_entrance, function(keys) 

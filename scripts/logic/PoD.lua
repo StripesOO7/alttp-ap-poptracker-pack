@@ -118,6 +118,7 @@ end)
 
 pod_compass_room:connect_two_ways(pod_dark_basement, function() return darkRooms() end)
 pod_compass_room:connect_two_ways(pod_harmless_hellway, function(keys) return has("pod_smallkey", keys + 1, 6, keys + 1, 6), KDSreturn(keys + 1, keys + 1) end)
+pod_compass_room:connect_one_way("PoD - Compass Chest")
 
 pod_dark_basement:connect_one_way("PoD - Dark Basement Left")
 pod_dark_basement:connect_one_way("PoD - Dark Basement Right")

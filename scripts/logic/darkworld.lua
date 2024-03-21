@@ -47,6 +47,7 @@ dark_spawn_dark_chapel_area:connect_one_way(dark_chapel)
 dark_spawn_old_man:connect_one_way(dark_old_man_cave)
 
 -- big_bomb_shop_area
+big_bomb_shop_area:connect_two_ways_entrance("Big Bomb Shop", big_bomb_shop)
 big_bomb_shop_area:connect_one_way(swamp_area)
 big_bomb_shop_area:connect_one_way(dark_flute_map, function() 
     return all(
@@ -243,9 +244,9 @@ village_of_the_outcast:connect_two_ways(inverted_activate_flute, function()
     )
 end)
 
-village_of_the_outcast:connect_two_ways_entrance("C-Shaped house", c_shaped_house)
+village_of_the_outcast:connect_two_ways_entrance("C-Shaped House", c_shaped_house)
 village_of_the_outcast:connect_two_ways_entrance("Chest Game", chest_game)
-village_of_the_outcast:connect_two_ways_entrance("Thieves Town", thieves_town)
+village_of_the_outcast:connect_two_ways_entrance("Thieves Town", tt_entrance)
 village_of_the_outcast:connect_two_ways_entrance("Dark Village Shop", dark_village_shop, function() return has("hammer") end)
 village_of_the_outcast:connect_two_ways_entrance("Brewery", brewery, function() return has("bombs") end)
 

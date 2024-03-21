@@ -120,7 +120,7 @@
                 "name": "Dark Kakariko Shop",
                 "visibility_rules": ["shop_sanity"],
                 "access_rules": [
-                    "hammer"
+                    "^$can_reach|dark_village_shop"
                 ],
                 "sections": [
                     {
@@ -140,6 +140,9 @@
             },
             {
                 "name": "C-Shaped House",
+                "access_rules": [
+                    "^$can_reach|C-Shaped House"
+                ],
                 "sections": [
                     {
                         "name": "C-Shaped House"
@@ -175,7 +178,7 @@
             {
                 "name": "Brewery (Glory Hole)",
                 "access_rules": [
-                    "bombs"
+                    "^$can_reach|brewery"
                 ],
                 "sections": [
                     {
@@ -226,7 +229,7 @@
             {
                 "name": "Link's House",
                 "access_rules": [
-                    "@Darkworld Bottom, inverted"
+                    "^$can_reach|dark_spawn_links_house"
                 ],
                 "visibility_rules": ["inverted"],
                 "sections": [

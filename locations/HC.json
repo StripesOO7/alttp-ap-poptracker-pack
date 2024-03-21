@@ -4,11 +4,16 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "@HC/Hyrule Castle"
+            "^$can_reach|hc_main_entrance",
+            "^$can_reach|hc_left_entrance",
+            "^$can_reach|hc_right_entrance"
         ],
         "children": [
             {
                 "name": "Map Chest",
+                "access_rules": [
+                    "^$can_reach|HC - Map Chest"
+                ],
                 "sections": [
                     {
                         "name": "Map Chest"
@@ -26,8 +31,7 @@
             {
                 "name": "Boomerang Chest",
                 "access_rules": [
-                    "$smallKeys|hc_smallkey|0|1, [$smallKeys|hc_smallkey|0|3]",
-                    "standard"
+                    "^$can_reach|HC - Boomerang Chest"
                 ],
                 "sections": [
                     {
@@ -46,8 +50,7 @@
             {
                 "name": "Zelda's Chest",
                 "access_rules": [
-                    "$bigKeys|hc_bigkey, $smallKeys|hc_smallkey|0|2, [$smallKeys|hc_smallkey|0|4]",
-                    "standard"
+                    "^$can_reach|HC - Zelda's Chest"
                 ],
                 "sections": [
                     {
@@ -65,6 +68,9 @@
             },
             {
                 "name": "Map Guard Key Drop",
+                "access_rules": [
+                    "^$can_reach|HC - Map Guard Key Drop"
+                ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {
@@ -83,8 +89,7 @@
             {
                 "name": "Boomerang Guard Key Drop",
                 "access_rules": [
-                    "$smallKeys|hc_smallkey|0|1, [$smallKeys|hc_smallkey|0|3]",
-                    "standard"
+                    "^$can_reach|HC - Booomerang Guard Key Drop"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
@@ -104,8 +109,8 @@
             {
                 "name": "Big Key Drop",
                 "access_rules": [
-                    "$smallKeys|hc_smallkey|0|2, [$smallKeys|hc_smallkey|0|4]",
-                    "standard"],
+                    "^$can_reach|HC - Big Key"
+                ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {
@@ -128,14 +133,14 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "@CE"
+            "^$can_reach|ce_entrance",
+            "^$can_reach|ce_dropdown_entrance"
         ],
         "children": [
             {
                 "name": "Dark Cross",
                 "access_rules": [
-                    "[$darkRooms]",
-                    "standard"
+                    "^$can_reach|CE - Dark Cross"
                 ],
                 "sections": [
                     {
@@ -154,7 +159,7 @@
             {
                 "name": "Secret Passage Left",
                 "access_rules": [
-                    "@CE/Castle Escape/Secret Room"
+                    "^$can_reach|CE - Secret Room Left"
                 ],
                 "sections": [
                     {
@@ -173,7 +178,7 @@
             {
                 "name": "Secret Passage Middle",
                 "access_rules": [
-                    "@CE/Castle Escape/Secret Room"
+                    "^$can_reach|CE - Secret Room Center"
                 ],
                 "sections": [
                     {
@@ -192,7 +197,7 @@
             {
                 "name": "Secret Passage Right",
                 "access_rules": [
-                    "@CE/Castle Escape/Secret Room"
+                    "^$can_reach|CE - Secret Room Right"
                 ],
                 "sections": [
                     {
@@ -212,9 +217,7 @@
                 "name": "Key Rat Key Drop",
                 "visibility_rules": ["key_drop_shuffle"],
                 "access_rules": [
-                    "[$darkRooms], $smallKeys|hc_smallkey|1|1, [$smallKeys|hc_smallkey|1|3]",
-                    "[$darkRooms], glove, $smallKeys|hc_smallkey|1|1, [$smallKeys|hc_smallkey|1|3]",
-                    "standard"
+                    "^$can_reach|CE - Rat Key Drop"
                 ],
                 "sections": [
                     {
@@ -237,11 +240,14 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "@CE/Sanctuary"
+            "^$can_reach|sanctuary"
         ],
         "children": [
             {
                 "name": "Sanctuary Chest",
+                "access_rules": [
+                    "^$can_reach|Sanctuary Chest"
+                ],
                 "sections": [
                     {
                         "name": "Sanctuary Chest"

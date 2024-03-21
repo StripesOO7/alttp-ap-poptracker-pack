@@ -5,11 +5,14 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules": [
-            "@EP/Eastern Palace"
+            "^$can_reach|"
         ],
         "children": [
             {
                 "name": "Cannonball Chest",
+                "access_rules": [
+                    "^$can_reach|EP - Cannonball Chest"
+                ],
                 "sections": [
                     {
                         "name": "Cannonball Chest"
@@ -26,6 +29,9 @@
             },
             {
                 "name": "Map Chest",
+                "access_rules": [
+                    "^$can_reach|EP - Map Chest"
+                ],
                 "sections": [
                     {
                         "name": "Map Chest"
@@ -42,6 +48,9 @@
             },
             {
                 "name": "Compass Chest",
+                "access_rules": [
+                    "^$can_reach|EP - Compass Chest"
+                ],
                 "sections": [
                     {
                         "name": "Compass Chest"
@@ -59,7 +68,7 @@
             {
                 "name": "Big Key Chest",
                 "access_rules": [
-                    "[$darkRooms], $smallKeys|ep_smallkey|0|1, [$smallKeys|ep_smallkey|0|2]"
+                    "^$can_reach|EP - Big Key Chest"
                 ],
                 "sections": [
                     {
@@ -78,7 +87,7 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "$bigKeys|ep_bigkey"
+                    "^$can_reach|EP - Big Chest"
                 ],
                 "sections": [
                     {
@@ -98,7 +107,7 @@
                 "name": "Dark Square Pot Key",
                 "visibility_rules": ["key_drop_shuffle"],
                 "access_rules": [
-                    "[$darkRooms]"
+                    "^$can_reach|EP - Dark Square Key Drop"
                 ],
                 "sections": [
                     {
@@ -118,7 +127,7 @@
                 "name": "Dark Eyegore Key Drop",
                 "visibility_rules": ["key_drop_shuffle"],
                 "access_rules": [
-                    "$bigKeys|ep_bigkey, [$darkRooms]"
+                    "^$can_reach|EP - Dark Eyegore Key Drop"
                 ],
                 "sections": [
                     {
@@ -137,7 +146,7 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "$bigKeys|ep_bigkey, [$darkRooms], $getBossRef|ep_boss, $enemizerCheck|bow, $smallKeys|ep_smallkey|0|1, [$smallKeys|ep_smallkey|0|2]"
+                    "^$can_reach|EP - Boss"
                 ],
                 "sections": [
                     {

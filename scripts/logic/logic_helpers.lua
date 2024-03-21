@@ -43,6 +43,7 @@ function any(...)
 end
 
 function KDSreturn( noKDS, KDS)
+    -- print(noKDS, KDS)
     if Tracker:FindObjectForCode("key_drop_shuffle").Active then
         return KDS
     else
@@ -51,23 +52,59 @@ function KDSreturn( noKDS, KDS)
 end
 
 function has(item, noKDS_amount, noKDS_amountInLogic, KDS_amount, KDS_amountInLogic)
+    -- local count
+    -- local amount
+    -- local amountInLogic
+    -- if Tracker:FindObjectForCode("key_drop_shuffle").Active then
+    --     amount = KDS_amount
+    --     amountInLogic = KDS_amountInLogic
+    --     if item:sub(-8,-1) == "smallkey" then
+    --         count = Tracker:ProviderCountForCode(item.."_drop")
+    --     else
+    --         count = Tracker:ProviderCountForCode(item)
+    --     end
+
+    -- else
+    --     count = Tracker:ProviderCountForCode(item)
+    --     amount = noKDS_amount
+    --     amountInLogic = noKDS_amountInLogic
+    -- end
+    -- print(item, count, amount, amountInLogic)
+
+
     local count
     local amount
     local amountInLogic
+    -- print("item", item, "noKDS_amount", noKDS_amount, "noKDS_amountInLogic", noKDS_amountInLogic, "KDS_amount", KDS_amount, "KDS_amountInLogic", KDS_amountInLogic)
+    -- if item == "at_smallkey" then
+    --     print("before", item, count, noKDS_amount, noKDS_amountInLogic, KDS_amount, KDS_amountInLogic)
+    -- end
     if Tracker:FindObjectForCode("key_drop_shuffle").Active then
+        -- print(KDS_amount, KDS_amountInLogic)
         amount = KDS_amount
         amountInLogic = KDS_amountInLogic
         if item:sub(-8,-1) == "smallkey" then
+            -- print("yes")
             count = Tracker:ProviderCountForCode(item.."_drop")
+            -- print(count)
+            -- print(item, "amount", amount, "amountInLogic", amountInLogic, "count", count)
+        -- if item == "at_smallkey_drop" then
+        --     print("middle", item, count, amount, amountInLogic)
+        -- end
         else
+            -- print("aaah. no", item)
             count = Tracker:ProviderCountForCode(item)
         end
 
     else
+        -- print("what", item)
         count = Tracker:ProviderCountForCode(item)
         amount = noKDS_amount
         amountInLogic = noKDS_amountInLogic
     end
+    -- if item == "at_smallkey_drop" then
+    --     print("after", item, count, amount, amountInLogic)
+    -- end
     -- print(item, count, amount, amountInLogic)
     if amountInLogic then
         if count >= amountInLogic then
@@ -330,7 +367,7 @@ function openOrStandard()
 end
 
 function inverted()
-    if Tracker:FindObjectForCode("inverted").Active then
+    if Tracker:FindObjectForCode("start_option").CurrentStage == 2 then
         return true
     end
     return false
@@ -354,7 +391,11 @@ end
 
 function tt_boss_check()
     if Tracker:FindObjectForCode("tt_boss").CurrentStage == 7 then 
-        return (Tracker:FindObjectForCode("@Thieves Town Back/Blind's Cell").AccessibilityLevel and Tracker:FindObjectForCode("@Thieves Town Back/Attic").AccessibilityLevel)
+        return all(
+            can_reach("tt_attic"),
+            can_reach("TT - Blind's Cell"),
+            has("bombs")
+        )
     else
         return true
     end

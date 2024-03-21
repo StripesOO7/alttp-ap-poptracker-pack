@@ -5,7 +5,7 @@
 -- sw_pinball_drop = alttp_location.new("")
 -- sw_north_drop = alttp_location.new("")
 -- sw_west_lobby_entrance = alttp_location.new("")
--- sw_back_entracne = alttp_location.new("")
+-- sw_back_entrance = alttp_location.new("")
 
 local sw_compass_room = alttp_location.new("sw_compass_room")
 local sw_pot_prison = alttp_location.new("sw_pot_prison")
@@ -59,8 +59,8 @@ sw_north_drop:connect_one_way(sw_gibdo_entrance)
 
 sw_west_lobby_entrance:connect_one_way("SW - West Lobby Key Drop")
 
-sw_back_entracne:connect_two_ways(sw_back_bridge)
-sw_back_entracne:connect_two_ways(sw_back_bottom_hallway)
+sw_back_entrance:connect_two_ways(sw_back_bridge)
+sw_back_entrance:connect_two_ways(sw_back_bottom_hallway)
 
 sw_back_bottom_hallway:connect_one_way("SW - Bridge Chest")
 

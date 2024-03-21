@@ -132,12 +132,15 @@ function alttp_location:discover(accessibility, keys)
             local access, key = rule(keys)
             if access == true then
                 access = AccessibilityLevel.Normal
+            elseif self.accessibility_level == 5 then
+                access = AccessibilityLevel.SequenceBreak
             elseif access == false then
                 access = AccessibilityLevel.None
             end
             if key == nil then
                 key = keys
             end
+            -- print(accessLVL[self.accessibility_level], "from", self.name, "to", location.name, ":", accessLVL[location.accessibility_level])
             location:discover(access, key)
         end
     end

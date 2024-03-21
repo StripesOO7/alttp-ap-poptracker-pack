@@ -28,7 +28,7 @@ tt_front_bottom_right:connect_one_way("TT - Compass Chest")
 tt_front_bottom_right:connect_one_way("TT - Big Key Chest")
 
 
-tt_back_hallway:connect_two_ways(tt_boss_room)
+
 tt_back_hallway:connect_two_ways(tt_crystal_switch_room, function(keys) 
     return has("tt_smallkey", keys, 0, keys + 1, 1), KDSreturn(keys, keys + 1)
 end)
@@ -54,7 +54,7 @@ tt_big_chest_room:connect_one_way("TT - Big Chest", function()
         has("tt_bigkey")
     ) 
 end)
-
+tt_back_hallway:connect_two_ways(tt_boss_room)
 tt_boss_room:connect_one_way("TT - Boss", function() 
     return all(
         getBossRef("tt_boss"),

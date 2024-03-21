@@ -43,5 +43,7 @@ ep_dark_eyegore_room:connect_two_ways(ep_boss_room, function(keys)
         enemizerCheck("bow")
     ), KDSreturn(keys, keys + 1) 
 end)
+ep_dark_eyegore_room:connect_one_way("EP - Dark Eyegore Key Drop")
+
 ep_boss_room:connect_one_way("EP - Boss", function() return getBossRef("ep_boss") end)
 
