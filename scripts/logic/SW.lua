@@ -28,12 +28,12 @@ sw_compass_room:connect_two_ways(sw_pot_prison)
 sw_compass_room:connect_one_way(sw_pinball_room)
 sw_compass_room:connect_one_way("SW - compass Chest")
 
-sw_pot_prison:connect_two_ways(sw_big_chest_entrance, function(keys) return has("sw_smallkey", keys + 1, 1, keys + 1, 1) end)
+sw_pot_prison:connect_two_ways(sw_big_chest_entrance, function(keys) return has("sw_smallkey", keys + 1, 1, keys + 1, 1), KDS(keys + 1, keys + 1) end)
 sw_pot_prison:connect_one_way("SW - Pot Prison")
 
 sw_pinball_drop:connect_one_way(sw_pinball_room)
 
-sw_pinball_room:connect_two_ways(sw_map_room, function(keys) return has("sw_smallkey", keys + 1, 1, keys + 1, 1) end)
+sw_pinball_room:connect_two_ways(sw_map_room, function(keys) return has("sw_smallkey", keys + 1, 1, keys + 1, 1), KDS(keys + 1, keys + 1) end)
 sw_pinball_room:connect_one_way("SW - Pinball Chest")
 
 sw_pot_circle_drop:connect_one_way(sw_pot_circle)
@@ -64,7 +64,7 @@ sw_back_entracne:connect_two_ways(sw_back_bottom_hallway)
 
 sw_back_bottom_hallway:connect_one_way("SW - Bridge Chest")
 
-sw_back_bridge:connect_two_ways(sw_back_troch_puzzle, function(keys) return has("sw_smallkey", keys + 1, 3, keys + 1, 3) end)
+sw_back_bridge:connect_two_ways(sw_back_troch_puzzle, function(keys) return has("sw_smallkey", keys + 1, 3, keys + 1, 3), KDS(keys + 1, keys + 1) end)
 
 sw_back_troch_puzzle:connect_one_way(sw_back_spike_corner_room, function() 
     return all(
@@ -73,7 +73,7 @@ sw_back_troch_puzzle:connect_one_way(sw_back_spike_corner_room, function()
     ) 
 end)
 
-sw_back_spike_corner_room:connect_two_ways(sw_back_boss_room, function(keys) return has("sw_smallkey", keys + 1, 4, keys + 1, 4) end)
+sw_back_spike_corner_room:connect_two_ways(sw_back_boss_room, function(keys) return has("sw_smallkey", keys + 1, 4, keys + 1, 4), KDS(keys + 1, keys + 1) end)
 sw_back_spike_corner_room:connect_one_way("SW - Spike Corner Key Drop")
 
 sw_back_boss_room:connect_one_way("SW - Boss")

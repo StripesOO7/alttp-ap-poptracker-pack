@@ -13,7 +13,7 @@ local sp_boss_room = alttp_location.new("sp_boss_room")
 
 sp_entrance:connect_two_ways(sp_first_room)
 
-sp_first_room:connect_two_ways(sp_hallway_before_first_trench, function(keys) return has("sp_smallkey_smallkey", keys + 1, 1, keys + 1, 1) end)
+sp_first_room:connect_two_ways(sp_hallway_before_first_trench, function(keys) return has("sp_smallkey_smallkey", keys + 1, 1, keys + 1, 1), KDS(keys + 1, keys + 1) end)
 sp_first_room:connect_one_way("SP - Entrance Chest", function() 
     return all(
         can_reach(dam_inside),
@@ -22,7 +22,7 @@ sp_first_room:connect_one_way("SP - Entrance Chest", function()
     )
 end)
 
-sp_hallway_before_first_trench:connect_two_ways(sp_first_trench, function(keys) return has("sp_smallkey", keys, 1, keys + 1, 2) end)
+sp_hallway_before_first_trench:connect_two_ways(sp_first_trench, function(keys) return has("sp_smallkey", keys, 1, keys + 1, 2), KDS(keys, keys + 1) end)
 sp_hallway_before_first_trench:connect_one_way("SP - Pot Row Key")
 sp_hallway_before_first_trench:connect_one_way("SP - Map chest", function() return has("bombs") end)
 
@@ -38,7 +38,7 @@ sp_first_trench:connect_two_ways(sp_main_room, function(keys)
             has("hammer"),
             has("sp_smallkey", keys, 1, keys + 1, 3)
         )
-    )
+    ), KDS(keys, keys + 1)
 end)
 sp_first_room:connect_one_way("SP - Tench 1 Pot Key")
 
@@ -55,7 +55,7 @@ sp_main_room:connect_two_ways(sp_flooded_room, function(keys)
             has("sp_smallkey", keys, 1, keys + 1, 5),
             has("hookshot")
         )
-    )
+    ), KDS(keys, keys + 1)
 end)
 sp_main_room:connect_one_way("SP - Hookshot Pot Key", function() return has("hookshot") end)
 sp_main_room:connect_one_way("SP - Big Chest", function() return has("sp_bigkey") end)
@@ -69,7 +69,7 @@ sp_second_trench:connect_two_ways(sp_hallway_after_second_trench, function(keys)
         all(
             has("sp_smallkey", keys, 1, keys + 1, 4)
         )
-    )
+    ), KDS(keys, keys + 1)
 end)
 sp_second_trench:connect_one_way("SP - Trench 2 Pot Key")
 
@@ -94,7 +94,7 @@ sp_after_waterfall_room:connect_two_ways(sp_boss_room, function(keys)
         all(
             has("sp_smallkey", keys, 1, keys + 1, 6)
         )
-    )
+    ), KDS(keys, keys + 1)
 end)
 sp_after_waterfall_room:connect_one_way("SP - Waterway Pot Key")
 

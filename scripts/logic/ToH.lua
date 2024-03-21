@@ -7,7 +7,7 @@ local toh_above_big_chest = alttp_location.new("toh_above_big_chest")
 
 
 toh_entrance:connect_two_ways(toh_basement_cage)
-toh_entrance:connect_two_ways(toh_big_key_chest, function(keys) return has("toh_smallkey", keys + 1, 1, keys + 1, 1) end)
+toh_entrance:connect_two_ways(toh_big_key_chest, function(keys) return has("toh_smallkey", keys + 1, 1, keys + 1, 1), KDS(keys + 1, keys + 1) end)
 toh_entrance:connect_two_ways(toh_big_chest_room, function() 
     return any(
         has("toh_bigkey"),

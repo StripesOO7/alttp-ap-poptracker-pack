@@ -12,8 +12,8 @@ local ce_dark_cross = alttp_location.new("ce_dark_cross")
 local ce_rat_key_room = alttp_location.new("ce_rat_key_room")
 local ce_secret_room = alttp_location.new("ce_secret_room")
 
-hc_main_entrance:connect_two_ways(hc_left_entrance)
-hc_main_entrance:connect_two_ways(hc_right_entrance)
+hc_main_entrance:connect_two_ways(hyrule_castle_top_left)
+hc_main_entrance:connect_two_ways(hyrule_castle_top_right)
 hc_main_entrance:connect_one_way(ce_entrance)
 
 hc_left_entrance:connect_two_ways(hc_back_hall)
@@ -27,7 +27,7 @@ hc_map_chest_room:connect_two_ways(hc_boomerang_chest_room, function(keys)
     return any(
         has("standard"),
         has("hc_smallkey", keys, 0, keys + 1, 3)
-    )
+    ), KDS(keys, keys + 1)
 end)
 hc_boomerang_chest_room:connect_one_way("HC - Boomerang Chest")
 hc_boomerang_chest_room:connect_one_way("HC - Booomerang Guard Key Drop")
@@ -36,14 +36,14 @@ hc_map_chest_room:connect_two_ways(hc_ball_guard_room, function(keys)
     return any(
         has("standard"),
         has("hc_smallkey", keys, 0, keys + 1, 4)
-    )
+    ), KDS(keys, keys + 1)
 end)
 hc_ball_guard_room:connect_one_way("HC - Big Key")
 
 hc_ball_guard_room:connect_two_ways(hc_zeldas_cell, function() return has("hc_bigkey") end)
 hc_zeldas_cell:connect_one_way("HC - Zelda's Chest")
 
-ce_entrance:connect_two_ways(ce_dark_cross, function() 
+ce_entrance:connect_two_ways(ce_dark_cross, function(keys) 
     return any(
         darkRooms(),
         has("standard")
@@ -54,20 +54,20 @@ ce_dark_cross:connect_two_ways(ce_rat_key_room, function(keys)
     return any(
         all(
             darkRooms(),
-            small_keys("hc", keys + 1, 1, keys + 1, 3)
+            smallKeys("hc_smallkey", keys + 1, 1, keys + 1, 3)
         ),
         all(
             darkRooms(),
-            small_keys("hc", keys + 1, 1, keys + 1, 3),
+            smallKeys("hc_smallkey", keys + 1, 1, keys + 1, 3),
             has("glove")
         ),
         has("standard")
-    ) 
+    ), KDS(keys + 1, keys + 1) 
 end)
 ce_dark_cross:connect_one_way("CE - Dark sross")
 
 -- ce_rat_key_room:connect_two_ways(ce_dropdown_entrance) 
-ce_rat_key_room:connect_two_ways(ce_dropdown_entrance, function() 
+ce_rat_key_room:connect_two_ways(ce_dropdown_entrance, function(keys) 
     return any(
         all(
             darkRooms(),
@@ -92,7 +92,7 @@ ce_rat_key_room:connect_two_ways(ce_dropdown_entrance, function()
                 has("boots")
             )
         )
-    ) 
+    ), KDS(keys, keys + 1) 
 end)
 ce_rat_key_room:connect_one_way("CE - Rat Key Drop")
 

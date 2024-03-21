@@ -29,16 +29,22 @@ tt_front_bottom_right:connect_one_way("TT - Big Key Chest")
 
 
 tt_back_hallway:connect_two_ways(tt_boss_room)
-tt_back_hallway:connect_two_ways(tt_crystal_switch_room, function(keys) return has("tt_smallkey", keys, 0, keys + 1, 1) end)
+tt_back_hallway:connect_two_ways(tt_crystal_switch_room, function(keys) 
+    return has("tt_smallkey", keys, 0, keys + 1, 1), KDS(keys, keys + 1)
+end)
 tt_back_hallway:connect_one_way("TT - Hallway Pot Key")
 
 tt_crystal_switch_room:connect_two_ways(tt_basement)
-tt_crystal_switch_room:connect_two_ways(tt_attic, function(keys) return has("tt_smallkey", keys, 0, keys + 1, 3) end)
+tt_crystal_switch_room:connect_two_ways(tt_attic, function(keys) 
+    return has("tt_smallkey", keys, 0, keys + 1, 3), KDS(keys, keys + 1)
+end)
 tt_crystal_switch_room:connect_one_way("TT - Spike Switch Pot Key")
 
 tt_attic:connect_one_way("TT - Attic")
 
-tt_basement:connect_two_ways(tt_big_chest_room, function(keys) return has("tt_smallkey", keys + 1, 1, keys + 1, 3) end)
+tt_basement:connect_two_ways(tt_big_chest_room, function(keys) 
+    return has("tt_smallkey", keys + 1, 1, keys + 1, 3), KDS(keys + 1, keys + 1)
+end)
 tt_basement:connect_two_ways(tt_basement_cell)
 
 tt_basement_cell:connect_one_way("TT - Blind's Cell")
