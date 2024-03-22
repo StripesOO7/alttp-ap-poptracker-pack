@@ -227,7 +227,8 @@ kings_tomb:connect_two_ways_entrance("King's_Tomb_Entrance", kings_tomb_inside, 
 
 kings_tomb_inside:connect_one_way("King's Tomb")
 
-
+sanctuary_area:connect_two_ways_entrance("Bonk Cave", sanctuary_bonk_cave, function() return has("boots") end)
+sanctuary_bonk_cave:connect_one_way("Bonk Pile Chest")
 
 graveyard_ledge_inside:connect_one_way("Graveyard Ledge")
 
@@ -392,16 +393,14 @@ end) --teleport
 lumberjacks_area:connect_one_way_entrance("Tree Hole", lumberjacks_hole, function() return has("aga1") end)
 lumberjacks_area:connect_two_ways_entrance("Lumberjacks Cave", lumberjacks_cave)
 lumberjacks_area:connect_two_ways_entrance("Lumberjacks House", lumberjacks_house)
-lumberjacks_area:connect_two_ways_entrance("Bonk Cave", bonk_pile_cave, function() return has("boots") end)
 lumberjacks_area:connect_two_ways_entrance("Light Death Mountain Ascend", light_death_mountain_ascend, function() return has("glove") end)
  -- aga item cave
-bonk_pile_cave:connect_one_way("Bonk Pile Chest")
 
 lumberjacks_hole:connect_one_way(lumberjacks_item, function() return has("aga1") end)
 lumberjacks_hole:connect_one_way(lumberjacks_cave)
 lumberjacks_item:connect_one_way("Lumberjacks Item")
 
-
+lumberjacks_area:connect_two_ways_entrance("Lower Light Death Mountain Ascend Ledge", death_mountain_accend_ledge, function() return has("gloves") end)
 
  -- rescue old man
 
@@ -488,7 +487,8 @@ links_house_area:connect_one_way(light_flute_map, function()
 end)
 
 
-links_house_area:connect_two_ways_entrance("Link's House", links_house)
+links_house_area:connect_two_ways_entrance("Link's House", links_house, function() return openOrStandard() end)
+links_house_area:connect_two_ways_entrance("Big Bomb Shop", big_bomb_shop, function() return inverted() end)
 links_house_area:connect_two_ways_entrance("Links Fairy", links_fairy_fountain, function() return has("boots") end)
 
 links_house:connect_one_way("Link's House Chest")
@@ -695,18 +695,36 @@ light_death_mountain_left_bottom:connect_one_way(light_flute_map, function()
     ) 
 end)
 -- light_death_mountain_left_bottom:connect_one_way()
+death_mountain_accend_ledge:connect_one_way(light_death_mountain_ascend, function() return darkRooms() end)
+light_death_mountain_ascend:connect_two_ways_entrance("Upper Light Death Mountain Ascend", light_death_mountain_left_bottom, function() return darkRooms() end)
 
+light_death_mountain_left_bottom:connect_two_ways_entrance("Old Man Cave Entrance", old_man_cave)
+light_death_mountain_left_bottom:connect_two_ways_entrance("Spectecal Rock Top Entrance", spec_rock_top_entrance)
+light_death_mountain_left_bottom:connect_two_ways_entrance("Old Man Cave Backside", old_man_cave_back)
 
-
-
+light_death_mountain_left_bottom:connect_one_way("Old Man Item", function() return can_reach(death_mountain_accend) end)
+light_death_mountain_left_bottom:connect_one_way("Spec Rock Top Item", function() return has(mirror) end)
 -- -- light_death_mountain_left:connect_one_way(lumberjacks_area)
 -- light_death_mountain_left_bottom:connect_one_way(light_death_mountain_right_bottom)
 -- -- light_death_mountain_left_bottom:connect_one_way(light_death_mountain_left_top)
 
+light_death_mountain_left_bottom:connect_one_way(spec_rock_ledge_entrance)
+light_death_mountain_left_bottom:connect_one_way(spec_rock_ledge_exit)
+spec_rock_top_entrance:connect_one_way(spectacle_rock_inside_top)
 
+spec_rock_ledge_entrance:connect_two_ways_entrance("Spectecal Rock Ledge Entrance", spectacle_rock_inside_bottom)
+spec_rock_ledge_exit:connect_two_ways_entrance("Spectecal Rock Ledge exit", spectacle_rock_cave)
 
+spectacle_rock_inside_top:connect_one_way(spectacle_rock_cave)
+spectacle_rock_inside_bottom:connect_one_way(spectacle_rock_cave)
+spectacle_rock_inside_bottom:connect_one_way("Spec Rock Item")
 
+spec_rock_ledge_entrance:connect_one_way(light_death_mountain_left_bottom)
+spec_rock_ledge_exit:connect_one_way(light_death_mountain_left_bottom)
 
+-- cave mide left lightg DM bottom
+
+old_man_cave:connect_two_ways(old_man_cave_back, function() return darkRooms() end)
 
 
 -- light_death_mountain_left_top
@@ -729,6 +747,7 @@ light_death_mountain_left_top:connect_one_way("Ether Tablet", function()
     )
 end)
 
+light_death_mountain_left_top:connect_two_ways_entrance("Tower of Hera", toh_entrance)
 
 -- light_death_mountain_left_top:connect_one_way(light_death_mountain_right_top)
 -- light_death_mountain_left_top:connect_one_way(light_death_mountain_left_bottom)
@@ -751,9 +770,13 @@ end)
 -- light_death_mountain_right_bottom:connect_one_way()
 -- light_death_mountain_right_bottom:connect_one_way()
 
+light_death_mountain_right_bottom:connect_two_ways_entrance("Spiral Cave Bottom Entrance", spiral_cave_bottom)
+light_death_mountain_right_bottom:connect_two_ways_entrance("Light Death Mountain Shop", light_death_mountain_shop)
+light_death_mountain_right_bottom:connect_two_ways_entrance("Paradox Cave Bottom Entrance", paradox_cave_bottom)
+-- light_death_mountain_right_bottom:connect_two_ways_entrance("useless cave1")
+-- light_death_mountain_right_bottom:connect_two_ways_entrance("useless cave2")
 
-
-
+paradox_cave_bottom:connect_one_way(paradox_cave_top)
 
 
 
@@ -769,3 +792,38 @@ end)
 light_death_mountain_right_top:connect_one_way(light_death_mountain_left_top, function() return has("hammer") end)
 -- light_death_mountain_right_top:connect_one_way()
 -- light_death_mountain_right_top:connect_one_way()
+
+light_death_mountain_right_top:connect_two_ways_entrance("Paradox Cave Top Entrance", paradox_cave_top)
+light_death_mountain_right_top:connect_two_ways_entrance("Spiral Cave Top Entrance", spiral_cave_top)
+-- light_death_mountain_right_top:connect_two_ways_entrance("Mimic Cave Entrance", mimic_cave)
+light_death_mountain_right_top:connect_two_ways_entrance("Light Eyebridge Fairy", light_eyebridge_fairy)
+
+spiral_cave_top:connect_one_way(spiral_cave_bottom)
+spiral_cave_top:connect_one_way("Spiral Cave Item")
+
+paradox_cave_bottom:connect_one_way(paradox_cave_bottom_back)
+paradox_cave_bottom:connect_two_ways(paradox_cave_top)
+
+paradox_cave_bottom_back:connect_one_way(light_death_mountain_shop)
+paradox_cave_bottom_back:connect_two_ways_entrance_door_stuck("Paradox Cave Top Back", paradox_cave_top_back, function() return true end, function() 
+    return any(
+        has("bombs"),
+        has("boomerang"),
+        has("somaria")
+    )
+end)
+light_death_mountain_shop:connect_two_ways:(paradox_cave_bottom_back, function() return has("mirror") end)
+
+paradox_cave_bottom_back:connect_one_way("Paradox Cave Bottom Left", function() return has("bombs") end)
+paradox_cave_bottom_back:connect_one_way("Paradox Cave Bottom Right", function() return has("bombs") end)
+paradox_cave_top_back:connect_one_way("Paradox Cave Top Far Left")
+paradox_cave_top_back:connect_one_way("Paradox Cave Top Left")
+paradox_cave_top_back:connect_one_way("Paradox Cave Top Middle")
+paradox_cave_top_back:connect_one_way("Paradox Cave Top Right")
+paradox_cave_top_back:connect_one_way("Paradox Cave Top Far Right")
+
+
+
+light_death_mountain_right_top:connect_two_ways(floating_island, function() return inverted() end)
+
+floating_island:connect_one_way("Floating Island Item")

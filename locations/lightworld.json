@@ -964,13 +964,13 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
-        "access_rules": [
-            "$openOrStandard, flute_active",
-            "inverted, flute_active",
-            "$openOrStandard, [lamp], glove",
-            "inverted, pearl, [lamp], glove",
-            "$openOrStandard, $checkGlitches|2, boots"
-        ],
+        // "access_rules": [
+        //     "$openOrStandard, flute_active",
+        //     "inverted, flute_active",
+        //     "$openOrStandard, [lamp], glove",
+        //     "inverted, pearl, [lamp], glove",
+        //     "$openOrStandard, $checkGlitches|2, boots"
+        // ],
         "children": [
             {
                 "name": "Rescue Old Man",
@@ -982,7 +982,7 @@
                     {
                         "name": "Rescue Old Man",
                         "access_rules": [
-                            "^$can_reach|"
+                            "^$can_reach|Old Man Item"
                         ]
                     }
                 ],
@@ -1004,16 +1004,13 @@
             {
                 "name": "Spectacle Rock Top",
                 "access_rules": [
-                    "^$can_reach|"
+                    "^$can_reach|Spec Rock Top Item"
                 ],
                 "sections": [
                     {
                         "name": "Top Item",
                         "access_rules": [
-                            "$openOrStandard, mirror",
-                            "inverted, @Light Death Mountain Left Top",
-                            "{@Light Death Mountain Left Bottom}",
-                            "@Light Death Mountain Left Top, $checkGlitches|2, boots"
+                            "^$can_reach|Spec Rock Top Item"
                         ],
                         "capture_item": true
                     }
@@ -1030,13 +1027,13 @@
             {
                 "name": "Spectacle Rock inside",
                 "access_rules": [
-                    "^$can_reach|"
+                    "^$can_reach|spectacle_rock_inside_bottom"
                 ],
                 "sections": [
                     {
                         "name": "Item inside",
                         "access_rules": [
-                            "^$can_reach|"
+                            "^$can_reach|Spec Rock Item"
                         ]
                     }
                 ],
@@ -1056,26 +1053,26 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
-        "access_rules": [
-            "$openOrStandard, @Light Death Mountain Left Bottom, mirror",
-            "inverted, pearl, @Light Death Mountain Right, hammer",
-            "$openOrStandard, @Light Death Mountain Right, hammer",
-            "@Light Death Mountain Left Bottom, $checkGlitches|2, boots"
-        ],
+        // "access_rules": [
+        //     "$openOrStandard, @Light Death Mountain Left Bottom, mirror",
+        //     "inverted, pearl, @Light Death Mountain Right, hammer",
+        //     "$openOrStandard, @Light Death Mountain Right, hammer",
+        //     "@Light Death Mountain Left Bottom, $checkGlitches|2, boots"
+        // ],
         "children": [
             {
                 "name": "Ether Tablet",
-                "access_rules": [
-                    "book, $canActivateTablets",
-                    "{book}",
-                    "$checkGlitches|2, book, $canActivateTablets",
-                    "{$checkGlitches|2, book}"
-                ],
+                // "access_rules": [
+                //     "book, $canActivateTablets",
+                //     "{book}",
+                //     "$checkGlitches|2, book, $canActivateTablets",
+                //     "{$checkGlitches|2, book}"
+                // ],
                 "sections": [
                     {
                         "name": "Ether Tablet",
                         "access_rules": [
-                            "^$can_reach|"
+                            "^$can_reach|Ether Tablet"
                         ],
                         "capture_item": true
                     }
@@ -1096,13 +1093,13 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
-        "access_rules": [
-            "$openOrStandard, @Light Death Mountain Left Bottom, hookshot",
-            "$openOrStandard, @Light Death Mountain Left Top, hammer",
-            "inverted, pearl, @Light Death Mountain Left Bottom, hookshot",
-            "inverted, pearl, @Dark Death Mountain Right, titans",
-            "@Light Death Mountain Left Bottom, $checkGlitches|2, boots"
-        ],
+        // "access_rules": [
+        //     "$openOrStandard, @Light Death Mountain Left Bottom, hookshot",
+        //     "$openOrStandard, @Light Death Mountain Left Top, hammer",
+        //     "inverted, pearl, @Light Death Mountain Left Bottom, hookshot",
+        //     "inverted, pearl, @Dark Death Mountain Right, titans",
+        //     "@Light Death Mountain Left Bottom, $checkGlitches|2, boots"
+        // ],
         "children": [
             {
                 "name": "Floating Island",
@@ -1116,7 +1113,7 @@
                     {
                         "name": "Item on Floating Island",
                         "access_rules": [
-                            "^$can_reach|"
+                            "^$can_reach|Floating Island Item"
                         ],
                         "capture_item": true
                     }
@@ -1133,16 +1130,13 @@
             {
                 "name": "Light Death Mountain Shop",
                 "access_rules": [
-                    
+                    "^$can_reach|light_death_mountain_shop"
                 ],
                 "visibility_rules": ["shop_sanity"],
                 "item_count": 3,
                 "sections": [
                     {
                         "name": "Shop Item",
-                        "access_rules": [
-                            "^$can_reach|"
-                        ],
                         "clear_as_group": false,
                         "item_count": 3
                     }
@@ -1159,13 +1153,13 @@
             {
                 "name": "Paradox Cave",
                 "access_rules": [
-                    "^$can_reach|"
+                    "^$can_reach|paradox_cave_top"
                 ],
                 "sections": [
                     {
                         "name": "Lower",
                         "access_rules": [
-                            "^$can_reach|"
+                            "^$can_reach|paradox_cave_bottom_back"
                         ],
                         "clear_as_group": false,
                         "item_count": 5
@@ -1173,7 +1167,7 @@
                     {
                         "name": "Upper",
                         "access_rules": [
-                            "^$can_reach|"
+                            "^$can_reach|paradox_cave_top_back"
                         ],
                         "clear_as_group": false,
                         "item_count": 2

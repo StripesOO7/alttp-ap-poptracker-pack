@@ -42,7 +42,8 @@ darkworld_spawns:connect_one_way(dark_spawn_links_house)
 darkworld_spawns:connect_one_way(dark_spawn_dark_chapel_area)
 darkworld_spawns:connect_one_way(dark_spawn_old_man, function() return can_reach(light_death_mountain_ascend) end) --has rescued old man
 
-dark_spawn_links_house:connect_one_way(big_bomb_shop)
+dark_spawn_links_house:connect_two_ways_entrance("Link's House", links_house, function() return inverted() end)
+dark_spawn_links_house:connect_two_ways_entrance("Big Bomb Shop", big_bomb_shop, function() return openOrStandard() end)
 dark_spawn_dark_chapel_area:connect_one_way(dark_chapel)
 dark_spawn_old_man:connect_one_way(dark_old_man_cave)
 
@@ -245,12 +246,12 @@ village_of_the_outcast:connect_two_ways(inverted_activate_flute, function()
 end)
 
 village_of_the_outcast:connect_two_ways_entrance("C-Shaped House", c_shaped_house)
-village_of_the_outcast:connect_two_ways_entrance("Chest Game", chest_game)
+village_of_the_outcast:connect_two_ways_entrance("Chest Game Entrance", chest_game)
 village_of_the_outcast:connect_two_ways_entrance("Thieves Town", tt_entrance)
 village_of_the_outcast:connect_two_ways_entrance("Dark Village Shop", dark_village_shop, function() return has("hammer") end)
 village_of_the_outcast:connect_two_ways_entrance("Brewery", brewery, function() return has("bombs") end)
 
-chest_game:connect_one_way("Chest Game")
+chest_game:connect_one_way("Chest Game Item")
 
 c_shaped_house:connect_one_way("C-Shaped House")
 
@@ -261,13 +262,10 @@ dark_village_shop:connect_one_way("Village of Outcasts Shop Right")
 brewery:connect_one_way("Brewery Chest")
 
 
-
-peg_cave_inside:connect_one_way("Peg-Cave Item")
-
 village_of_the_outcast:connect_two_ways(purple_chest_pickup, function() return has("titans") end)
 purple_chest_pickup:connect_two_ways_entrance("Peg Cave", peg_cave_inside, function() return has("hammer") end)
 
-
+peg_cave_inside:connect_one_way("Peg-Cave Item")
 
 -- south_of_village_of_the_outcast
 south_of_village_of_the_outcast:connect_one_way(village_of_the_outcast, function()
@@ -282,7 +280,7 @@ south_of_village_of_the_outcast:connect_one_way(dark_flute_map, function()
     ) 
 end)
 south_of_village_of_the_outcast:connect_two_ways_entrance("Dark Archery", dark_archery_minigame)
-
+south_of_village_of_the_outcast:connect_one_way("Digging Game")
 
 -- south_of_village_of_the_outcast:connect_one_way(mire_area) -- glitches
 
@@ -424,7 +422,8 @@ catfish_area:connect_one_way(dark_flute_map, function()
         can_reach(inverted_activate_flute)
     ) 
 end)
--- catfish_area:connect_one_way() --glicht to pod
+catfish_area:connect_one_way("Catfish Item")
+catfish_area:connect_one_way() --glicht to pod
 
 
 
@@ -554,3 +553,5 @@ end)
 
 
 
+dark_death_mountain_right_bottom:connect_two_ways_entrance("Super Bunny Cave Bottom Entrance", superbunny_cave_bottom)
+dark_death_mountain_right_top:connect_two_ways_entrance("Super Bunny Cave Top Entrance", superbunny_cave_top)

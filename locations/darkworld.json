@@ -3,18 +3,21 @@
         "name": "Darkworld Left",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
-        "access_rules": [
-            "pearl, titans",
-            "pearl, hammer, glove",
-            "@Darkworld Right, hookshot, hammer, pearl",
-            "@Darkworld Right, hookshot, $canSwim, pearl",
-            "@Darkworld Right, hookshot, glove, pearl",
-            "inverted",
-            "$checkGlitches|2, boots, @Dark Death Mountain Left"
-        ],
+        // "access_rules": [
+        //     "pearl, titans",
+        //     "pearl, hammer, glove",
+        //     "@Darkworld Right, hookshot, hammer, pearl",
+        //     "@Darkworld Right, hookshot, $canSwim, pearl",
+        //     "@Darkworld Right, hookshot, glove, pearl",
+        //     "inverted",
+        //     "$checkGlitches|2, boots, @Dark Death Mountain Left"
+        // ],
         "children": [
             {
                 "name": "Dark Lumberjack Shop",
+                "access_rules":[
+                    "^$can_reach|dark_lumpberjacks_shop"
+                ],
                 "visibility_rules": ["shop_sanity"],
                 "sections": [
                     {
@@ -43,6 +46,9 @@
                 "sections": [
                     {
                         "name": "Bumper Cave Item",
+                        "access_rules":[
+                            "^$can_reach|Bumber Cave"
+                        ],
                         "capture_item": true
                     }
                 ],
@@ -57,6 +63,9 @@
             },
             {
                 "name": "Red Shield Shop",
+                "access_rules":[
+                    "^$can_reach|red_shield_shop"
+                ],
                 "visibility_rules": ["shop_sanity"],
                 "sections": [
                     {
@@ -76,9 +85,15 @@
             },
             {
                 "name": "Chest Game (Money Making Game)",
+                "access_rules":[
+                    "^$can_reach|chest_game"
+                ],
                 "sections": [
                     {
-                        "name": "Chest Game"
+                        "name": "Chest Game",
+                        "access_rules":[
+                            "^$can_reach|Chest Game Item"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -92,6 +107,9 @@
             },
             {
                 "name": "Breadsmiths",
+                // "access_rules":[
+                //     "^$can_reach|"
+                // ],
                 "sections": [
                     {
                         "name": "Rescue Dwarf",
@@ -159,6 +177,9 @@
             },
             {
                 "name": "Activate Flute",
+                "access_rules":[
+                    "^$can_reach|inverted_activate_flute"
+                ],
                 "visibility_rules": ["flute, inverted"],
                 "sections": [
                     {
@@ -182,7 +203,10 @@
                 ],
                 "sections": [
                     {
-                        "name": "Brewery"
+                        "name": "Brewery",
+                        "access_rules":[
+                            "^$can_reach|Brewery Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -202,7 +226,10 @@
                 ],
                 "sections": [
                     {
-                        "name": "Peg Cave"
+                        "name": "Peg Cave",
+                        "access_rules":[
+                            "^$can_reach|Peg-Cave Item"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -220,11 +247,11 @@
         "name": "Darkworld Bottom",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
-        "access_rules": [
-            "@Darkworld Left",
-            "@Darkworld Right, hammer, pearl",
-            "inverted"
-        ],
+        // "access_rules": [
+        //     "@Darkworld Left",
+        //     "@Darkworld Right, hammer, pearl",
+        //     "inverted"
+        // ],
         "children": [
             {
                 "name": "Link's House",
@@ -234,7 +261,10 @@
                 "visibility_rules": ["inverted"],
                 "sections": [
                     {
-                        "name": "Chest"
+                        "name": "Chest",
+                        "access_rules":[
+                            "^$can_reach|Link's House Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -248,6 +278,9 @@
             },
             {
                 "name": "Purple Chest Return",
+                "access_rules":[
+                    "^$can_reach|purple_chest_pickup"
+                ],
                 "sections": [
                     {
                         "name": "Purple Chest Return",
@@ -274,9 +307,15 @@
             },
             {
                 "name": "Digging Game",
+                "access_rules":[
+                    "^$can_reach|south_of_village_of_the_outcast"
+                ],
                 "sections": [
                     {
-                        "name": "Digging Game"
+                        "name": "Digging Game",
+                        "access_rules":[
+                            "^$can_reach|Digging Game"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -290,9 +329,15 @@
             },
             {
                 "name": "Stumpy",
+                "access_rules":[
+                    "^$can_reach|stumpy"
+                ],
                 "sections": [
                     {
-                        "name": "Stumpy"
+                        "name": "Stumpy",
+                        "access_rules":[
+                            "^$can_reach|Stumpy"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -307,11 +352,14 @@
             {
                 "name": "Hype Cave",
                 "access_rules": [
-                    "bombs"
+                    "^$can_reach|hype_cave"
                 ],
                 "sections": [
                     {
                         "name": "Hype",
+                        "access_rules":[
+                            "^$can_reach|Hype Cave_Generous Guy, [^$can_reach|hype_cave_back]"
+                        ],
                         "item_count": 5,
                         "clear_as_group": false
                     }
@@ -327,6 +375,9 @@
             },
             {
                 "name": "Dark Lake Hylia Shop",
+                "access_rules":[
+                    "^$can_reach|dark_lake_shop"
+                ],
                 "visibility_rules": ["shop_sanity"],
                 "sections": [
                     {
@@ -350,22 +401,23 @@
         "name": "Darkworld Right",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
-        "access_rules": [
-            "$openOrStandard, [pearl], aga1",
-            "$openOrStandard, pearl, hammer, glove",
-            "$openOrStandard, @Darkworld Left, flippers",
-            "@Dark Death Mountain Right, $checkGlitches|2, boots",
-            "inverted, hammer",
-            "inverted, flippers",
-            "inverted, flute_active",
-            "inverted, mirror, aga1"
-        ],
+        // "access_rules": [
+        //     "^$can_reach|pyramid",
+        //     "^$can_reach|pyramid",
+        //     "^$can_reach|pyramid"
+        // ],
         "children": [
             {
                 "name": "Pyramid Ledge",
+                "access_rules":[
+                    "^$can_reach|pyramid"
+                ],
                 "sections": [
                     {
                         "name": "Pyramid Ledge Item",
+                        "access_rules":[
+                            "^$can_reach|Pyramid Item"
+                        ],
                         "capture_item": true
                     }
                 ],
@@ -389,6 +441,9 @@
                 "sections": [
                     {
                         "name": "Boom",
+                        "access_rules":[
+                            "^$can_reach|pyramid_fairy_cave"
+                        ],
                         "clear_as_group": false,
                         "item_count": 2
                     }
@@ -405,8 +460,7 @@
             {
                 "name": "Dark Potion Shop",
                 "access_rules": [
-                    "pearl",
-                    "inverted"
+                    "^$can_reach|dark_potion_shop_inside"
                 ],
                 "visibility_rules": ["shop_sanity"],
                 "sections": [
@@ -428,14 +482,14 @@
             {
                 "name": "Catfish",
                 "access_rules": [
-                    "$openOrStandard, pearl, glove",
-                    "inverted, glove",
-                    "inverted, @Lightworld, flippers, mirror",
-                    "$openOrStandard, $checkGlitches|2, pearl, boots"
+                    "^$can_reach|catfish_area"
                 ],
                 "sections": [
                     {
-                        "name": "Catfish Item"
+                        "name": "Catfish Item",
+                        "access_rules":[
+                            "^$can_reach|Catfish Item"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -454,23 +508,20 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "titans, flute_active",
-            "inverted, flute_active",
-            "inverted, mirror, @Lightworld",
-            "inverted, mirror, aga1",
-            "@Darkworld Left, $checkGlitches|2, boots",
-            "@Darkworld Bottom, $checkGlitches|2, boots"
+            "^$can_reach|mire_area"
         ],
         "children": [
             {
                 "name": "Mire Shed",
                 "access_rules": [ 
-                    "pearl",
-                    "inverted"
+                    "^$can_reach|mire_shed_left"
                 ],
                 "sections": [
                     {
                         "name": "Shed",
+                        "access_rules":[
+                            "^$can_reach|mire_shed_left"
+                        ],
                         "clear_as_group": false,
                         "item_count": 2
                     }
@@ -490,12 +541,12 @@
         "name": "Dark Death Mountain Left",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
-        "access_rules": [
-            "@Light Death Mountain Left Bottom, pearl",
-            // "@Light Death Mountain Left Bottom, $checkGlitches|2", //leave dm without pearl
-            "inverted, flute_active",
-            "inverted, [$darkRooms], glove"
-        ],
+        // "access_rules": [
+        //     "@Light Death Mountain Left Bottom, pearl",
+        //     // "@Light Death Mountain Left Bottom, $checkGlitches|2", //leave dm without pearl
+        //     "inverted, flute_active",
+        //     "inverted, [$darkRooms], glove"
+        // ],
         "children": [
             {
                 "name": "Spike Cave",
@@ -505,7 +556,10 @@
                 ],
                 "sections": [
                     {
-                        "name": "Spike Cave Chest"
+                        "name": "Spike Cave Chest",
+                        "access_rules":[
+                            "^$can_reach|"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -525,7 +579,10 @@
                 "visibility_rules": ["inverted"],
                 "sections": [
                     {
-                        "name": "Rescue Old Man"
+                        "name": "Rescue Old Man",
+                        "access_rules":[
+                            "^$can_reach|"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -558,6 +615,9 @@
         "children": [
             {
                 "name": "Dark Death Mountain Shop",
+                "access_rules":[
+                    "^$can_reach|"
+                ],
                 "visibility_rules": ["shop_sanity"],
                 "sections": [
                     {
@@ -609,9 +669,15 @@
             },
             {
                 "name": "Superbunny Cave",
+                "access_rules":[
+                    "^$can_reach|"
+                ],
                 "sections": [
                     {
                         "name": "Superbunny Chest",
+                        "access_rules":[
+                            "^$can_reach|"
+                        ],
                         "clear_as_group": false,
                         "item_count": 2
                     }
