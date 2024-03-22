@@ -227,7 +227,7 @@ peg_cave_inside = alttp_location.new("peg_cave_inside")
 dark_archery_minigame = alttp_location.new("dark_archery_minigame")
 dark_lumpberjacks_shop = alttp_location.new("dark_lumpberjacks_shop")
 red_shield_shop = alttp_location.new("red_shield_shop")
-dark_death_mountain_decent = alttp_location.new("dark_death_mountain_decent")
+dark_death_mountain_descent = alttp_location.new("dark_death_mountain_descent")
 bumber_cave = alttp_location.new("bumber_cave")
 dark_chapel = alttp_location.new("dark_chapel")
 dark_potion_shop_inside = alttp_location.new("dark_potion_shop_inside")
@@ -244,6 +244,8 @@ spike_cave = alttp_location.new("spike_cave")
 dark_death_mountain_shop = alttp_location.new("dark_death_mountain_shop")
 dark_old_man_cave = alttp_location.new("dark_old_man_cave")
 mire_ledge = alttp_location.new("mire_ledge")
+turtle_rock_ledge = alttp_location.new("turtle_rock_ledge")
+
 -- dungeons
 
 hc_main_entrance = alttp_location.new("hc_main_entrance")

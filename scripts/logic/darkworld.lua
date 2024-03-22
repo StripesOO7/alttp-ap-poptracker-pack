@@ -321,9 +321,10 @@ village_of_the_outcast:connect_two_ways(inverted_activate_flute, function()
     )
 end)
 
+
 village_of_the_outcast:connect_two_ways_entrance("C-Shaped House", c_shaped_house)
 village_of_the_outcast:connect_two_ways_entrance("Chest Game Entrance", chest_game)
-village_of_the_outcast:connect_two_ways_entrance("Thieves Town", tt_entrance)
+village_of_the_outcast:connect_two_ways_entrance("Thieves Town Entrance", tt_entrance)
 village_of_the_outcast:connect_two_ways_entrance("Dark Village Shop", dark_village_shop, function() return has("hammer") end)
 village_of_the_outcast:connect_two_ways_entrance("Brewery", brewery, function() return has("bombs") end)
 
@@ -550,7 +551,7 @@ pod_area:connect_two_ways_entrance("Palace of Darkness", palace_of_darkness)
 pod_area:connect_two_ways_entrance("Dark PoD Fairy", pod_fairy_cave)
 pod_area:connect_two_ways_entrance("PoD Teleporter Cave", pod_teleport_cave)
 
-
+pod_area:connect_two_ways_entrance("Palace of Darkness Entrance", pod_entrance)
 
 
 
@@ -578,8 +579,13 @@ dark_death_mountain_left_top:connect_one_way(dark_flute_map, function()
     ) 
 end)
 -- dark_death_mountain_left_top:connect_one_way()
-
-
+dark_death_mountain_left_top:connect_one_way(light_death_mountain_left, function() 
+    return all(
+        openOrStandard(),
+        has("mirror")
+    ) 
+end)
+dark_death_mountain_left_top:connect_two_ways_entrance("Ganons Tower", gt_entrance, function() return gt_access() end)
 
 
 
@@ -594,11 +600,31 @@ dark_death_mountain_right_top:connect_one_way(dark_flute_map, function()
     ) 
 end)
 -- dark_death_mountain_right_top:connect_one_way()
-
-
-
-
-
+dark_death_mountain_right_top:connect_one_way(teleporter_at_dark_turtle_rock, function() return inverted() end)
+teleporter_at_dark_turtle_rock:connect_one_way(dark_death_mountain_right_top)
+teleporter_at_dark_turtle_rock:connect_two_ways_entrance("Trutle Rock Main Entrance", tr_main_entrance, function() 
+    return all(
+        any(
+            has("tr_medallion"),
+            has("medallion", 3, 3)
+        ),
+        canUseMedallions()
+    ) 
+end)
+dark_death_mountain_right_top:connect_two_ways_entrance("Hookshot Cave", hookshot_cave, function() return has("glove") end)
+hookshot_cave:connect_two_ways(floating_island, function() 
+    return all(
+        has("bombs"),
+        has("mirror")
+    ) 
+end)
+tr_eye_bridge_entrance:connect_two_ways_entrance(light_eyebridge_fairy, function() 
+    return all(
+        openOrStandard(), 
+        has("mirror")
+    ) 
+end)
+dark_death_mountain_right_top:connect_one_way(tr_eye_bridge_entrance, function() return inverted() end)
 
 
 -- dark_death_mountain_left_bottom
@@ -610,10 +636,19 @@ dark_death_mountain_left_bottom:connect_one_way(dark_flute_map, function()
     ) 
 end)
 -- dark_death_mountain_left_bottom:connect_one_way()
+dark_death_mountain_left_bottom:connect_one_way(teleporter_at_dark_death_mountain_left_bottom, function() return inverted() end)
+teleporter_at_dark_death_mountain_left_bottom:connect_one_way(dark_death_mountain_left_bottom, function() return has("pearl") end)
+dark_death_mountain_left_bottom:connect_two_ways_entrance("Spike Cave", spike_cave)
+dark_death_mountain_left_bottom:connect_one_way()
+spike_cave:connect_one_way("Spike Cave Chest", function() 
+    return all(
+        has("hammer"),
+        has("glove") --,
+        -- has("heartpieces", )
+    )
+end)
 
-
-
-
+dark_death_mountain_left_bottom:connect_two_ways_entrance(dark_death_mountain_descent, function() return darkRooms() end)
 
 
 
@@ -626,21 +661,16 @@ dark_death_mountain_right_bottom:connect_one_way(dark_flute_map, function()
     ) 
 end)
 -- dark_death_mountain_right_bottom:connect_one_way()
+dark_death_mountain_right_bottom:connect_one_way(teleporter_at_dark_death_mountain_right_bottom, function() return inverted() end)
+teleporter_at_dark_death_mountain_right_bottom:connect_one_way(dark_death_mountain_right_bottom)
 
-
-
+turtle_rock_ledge:connect_two_ways_entrance("Turtle Rock Big Chest Entrance", tr_big_chest_entrance)
+turtle_rock_ledge:connect_two_ways_entrance("Turtle Rock Laser Entrance", tr_laser_entrance)
+-- tr_laser_entrance:connect_two_ways_entrance("Light Death Mountain Fairy", light_death_mountain_cave1, function() return has("mirror") end)
+tr_big_chest_entrance:connect_two_ways_entrance("Mimic Cave Teleport", mimic_cave, function() return has("mirror") end)
 
 
 
 dark_death_mountain_right_bottom:connect_two_ways_entrance("Super Bunny Cave Bottom Entrance", superbunny_cave_bottom)
 dark_death_mountain_right_top:connect_two_ways_entrance("Super Bunny Cave Top Entrance", superbunny_cave_top)
 
-
-teleporter_at_village_of_the_outcast
-teleporter_at_turtle_rock
-teleporter_at_dark_death_mountain_left_bottom
-teleporter_at_dark_death_mountain_right_bottom
-teleporter_at_pod
-teleporter_at_mire
-teleporter_at_swamp
-teleporter_at_ice_palace

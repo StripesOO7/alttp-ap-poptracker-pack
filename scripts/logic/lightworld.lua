@@ -774,6 +774,8 @@ old_man_cave:connect_two_ways(old_man_cave_back, function() return darkRooms() e
 
 
 -- light_death_mountain_left_top
+
+light_death_mountain_left_top:connect_two_ways_entrance("Tower of Hera Entrance", toh_entrance)
 light_death_mountain_left_top:connect_one_way(dark_death_mountain_left_top, function() return all(has("mirror"), inverted()) end)
 light_death_mountain_left_top:connect_one_way(light_death_mountain_left_bottom)
 light_death_mountain_left_top:connect_one_way(light_flute_map, function() 
