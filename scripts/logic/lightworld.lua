@@ -27,9 +27,54 @@ light_flute_map:connect_one_way(witchhut)
 light_flute_map:connect_one_way(kakariko_village)
 light_flute_map:connect_one_way(links_house_area)
 light_flute_map:connect_one_way(eastern_palace_area)
-light_flute_map:connect_one_way(darkworld_teleport_desert_area)
+light_flute_map:connect_one_way(teleporter_at_desert_ledge)
 light_flute_map:connect_one_way(dam_area)
 light_flute_map:connect_one_way(light_lake_hylia)
+
+teleporter_at_kakariko_village:connect_one_way(teleporter_at_village_of_the_outcast, function() 
+    return any(
+        all(
+            has("hammer"), 
+            has("glove")
+        ),
+        has("titans")
+    )
+end)
+
+teleporter_at_light_turtle_rock:connect_one_way(teleporter_at_dark_turtle_rock, function() 
+    return all(
+        has("titans"), 
+        has("hammer")
+    ) 
+
+end)
+teleporter_at_light_death_mountain_right_bottom:connect_one_way(teleporter_at_dark_death_mountain_left_bottom, function() 
+    return all(
+        has("hammer"), 
+        has("glove")
+    )
+end)
+
+teleporter_at_light_death_mountain_left_bottom:connect_one_way(teleporter_at_dark_death_mountain_right_bottom, function() return has("glove") end)
+
+teleporter_at_eastern:connect_one_way(teleporter_at_pod, function() 
+    return all(
+        has("gloves"), 
+        has("hammer")
+    )
+end)
+
+teleporter_at_desert:connect_one_way(teleporter_at_mire, function() return has("titans") end)
+
+teleporter_at_dam:connect_one_way(teleporter_at_swamp, function()
+    return all(
+        has("gloves"), 
+        has("hammer")
+    )
+end)
+
+teleporter_at_upgrade_fairy:connect_one_way(teleporter_at_ice_palace, function() return has("titans") end)
+
 
 -- 
 lightworld_spawns:connect_one_way(light_spawn_sanctuary)
@@ -58,6 +103,13 @@ end)
 
 
 -- 
+kakariko_village:connect_one_way(teleporter_at_kakariko_village)
+teleporter_at_kakariko_village:connect_one_way(kakariko_village, function() 
+    return all(
+        inverted(), 
+        has("pearl")
+    )
+end)
 kakariko_village:connect_one_way_entrance("Kakariko Well Hole", kakariko_well_hole)
 kakariko_village:connect_one_way_entrance("Kakariko Magic Bat Hole", magic_bat_hole, function() 
     return any(
@@ -281,6 +333,14 @@ end)
 
 
 -- dam_area
+teleporter_at_dam:connect_one_way(dam_area,function() 
+    return all(
+        inverted(),
+        has("pearl")
+    ) 
+end)
+dam_area:connect_one_way(teleporter_at_dam)
+
 dam_area:connect_one_way(desert_area)
 dam_area:connect_one_way(light_flute_map, function() 
     return all(
@@ -325,6 +385,11 @@ mini_moldorm_cave_back:connect_one_way("Mini Moldorm Cave - Far Right")
 
 
 -- desert_area
+
+teleporter_at_desert_ledge:connect_one_way(desert_area)
+teleporter_at_desert_ledge:connect_one_way(teleporter_at_desert)
+teleporter_at_desert:connect_one_way(teleporter_at_desert_ledge)
+
 desert_area:connect_one_way(dam_area)
 checkerboard_lege:connect_one_way(desert_area)
 desert_area:connect_one_way_entrance("desert_palace_front_entrance", desert_palace_front, function() return has("book") end)
@@ -450,12 +515,13 @@ light_lake_shop:connect_one_way("Lake Hylia Shop - Left")
 light_lake_shop:connect_one_way("Lake Hylia Shop - Center")
 light_lake_shop:connect_one_way("Lake Hylia Shop - Right")
 
-
+upgrade_fairy_island:connect_two_ways_entrance("Upgrade Fairy Entrance", upgrade_fairy)
 upgrade_fairy:connect_one_way("Capacity Upgrade Left")
 upgrade_fairy:connect_one_way("Capacity Upgrade Center")
 upgrade_fairy:connect_one_way("Capacity Upgrade Right")
 
-
+upgrade_fairy_island:connect_one_way(teleporter_at_upgrade_fairy)
+teleporter_at_upgrade_fairy:connect_one_way(upgrade_fairy_island, function() return inverted() end)
 
 
 
@@ -505,6 +571,10 @@ links_house_area:connect_one_way("Flute Spot", function() return has("shovel") e
 
 
 -- eastern_palace_area
+
+eastern_palace_area:connect_one_way(teleporter_at_eastern)
+teleporter_at_eastern:connect_one_way(eastern_palace_area, function() return has("pearl") end)
+
 eastern_palace_area:connect_one_way(light_lake_hylia)
 eastern_palace_area:connect_one_way(links_house_area)
 eastern_palace_area:connect_one_way(light_lake_hylia)
@@ -643,35 +713,6 @@ light_potion_shop:connect_one_way("Potion Shop - Center")
 
 
 
-darkworld_teleport_kakariko_village:connect_one_way(skull_woods_area, function() 
-    return any(
-        has("titans"),
-        all(
-            has("glove"),
-            has("hammer")
-        )
-    )
-end)
-
-
-
-darkworld_teleport_turtle_rock:connect_one_way(dark_death_mountain_right_top, function() 
-    return all(
-        has("hammer"), 
-        has("titans")
-    )
-end)
-
-
-darkworld_teleport_desert_area:connect_one_way(desert_area)
-darkworld_teleport_desert_area:connect_one_way(mire_area, function() 
-    return all(
-        has("titans")
-    )
-end)
-
-
-
 
 -- 
 
@@ -684,6 +725,11 @@ end)
 
 
 -- light_death_mountain_left_bottom
+light_death_mountain_left_bottom:connect_one_way(dark_death_mountain_left_bottom, function() return all(has("mirror"), inverted()) end)
+
+light_death_mountain_left_bottom:connect_one_way(teleporter_at_dark_death_mountain_left_bottom)
+teleporter_at_dark_death_mountain_left_bottom:connect_one_way(light_death_mountain_left_bottom, function() return inverted() end)
+
 light_death_mountain_left_bottom:connect_one_way(light_death_mountain_left_top, function() return has("mirror") end)
 light_death_mountain_left_bottom:connect_one_way(light_death_mountain_right_bottom, function() return has("hookshot") end)
 -- light_death_mountain_left_bottom:connect_one_way("Spectacle Rock", function() return has("mirror") end)
@@ -728,6 +774,7 @@ old_man_cave:connect_two_ways(old_man_cave_back, function() return darkRooms() e
 
 
 -- light_death_mountain_left_top
+light_death_mountain_left_top:connect_one_way(dark_death_mountain_left_top, function() return all(has("mirror"), inverted()) end)
 light_death_mountain_left_top:connect_one_way(light_death_mountain_left_bottom)
 light_death_mountain_left_top:connect_one_way(light_flute_map, function() 
     return all(
@@ -759,6 +806,7 @@ light_death_mountain_left_top:connect_two_ways_entrance("Tower of Hera", toh_ent
 
 
 -- light_death_mountain_right_bottom
+dark_death_mountain_right_bottom:connect_one_way(dark_death_mountain_right_bottom, function() return all(has("mirror"), inverted()) end)
 light_death_mountain_right_bottom:connect_one_way(light_death_mountain_left_bottom, function() return has("hookshot") end)
 light_death_mountain_right_bottom:connect_one_way(light_flute_map, function() 
     return all(
@@ -767,6 +815,9 @@ light_death_mountain_right_bottom:connect_one_way(light_flute_map, function()
         can_reach(light_activate_flute)
     ) 
 end)
+light_death_mountain_right_bottom:connect_one_way(teleporter_at_dark_death_mountain_right_bottom)
+teleporter_at_dark_death_mountain_right_bottom:connect_one_way(light_death_mountain_right_bottom, function() return inverted() end)
+
 -- light_death_mountain_right_bottom:connect_one_way()
 -- light_death_mountain_right_bottom:connect_one_way()
 
@@ -781,6 +832,9 @@ paradox_cave_bottom:connect_one_way(paradox_cave_top)
 
 
 -- light_death_mountain_right_top
+light_death_mountain_right_top:connect_one_way(teleporter_at_light_turtle_rock)
+teleporter_at_light_turtle_rock:connect_one_way(light_death_mountain_right_top, function() return inverted() end)
+
 light_death_mountain_right_top:connect_one_way(light_death_mountain_right_bottom)
 light_death_mountain_right_top:connect_one_way(light_flute_map, function() 
     return all(
@@ -813,7 +867,7 @@ paradox_cave_bottom_back:connect_two_ways_entrance_door_stuck("Paradox Cave Top 
     )
 end)
 light_death_mountain_shop:connect_two_ways:(paradox_cave_bottom_back, function() return has("mirror") end)
-
+light_death_mountain_right_top:connect_one_way(dark_death_mountain_right_top, function() return all(has("mirror"), inverted()) end)
 paradox_cave_bottom_back:connect_one_way("Paradox Cave Bottom Left", function() return has("bombs") end)
 paradox_cave_bottom_back:connect_one_way("Paradox Cave Bottom Right", function() return has("bombs") end)
 paradox_cave_top_back:connect_one_way("Paradox Cave Top Far Left")

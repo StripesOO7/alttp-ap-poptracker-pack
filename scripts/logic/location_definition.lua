@@ -154,7 +154,7 @@ paradox_cave_top_back = alttp_location.new("paradox_cave_top_back")
 paradox_cave_top = alttp_location.new("paradox_cave_top")
 old_man_cave = alttp_location.new("old_man_cave")
 old_man_cave_back = alttp_location.new("old_man_cave")
-
+teleporter_at_desert_ledge = alttp_location.new("teleporter_at_desert_ledge")
 
 --darkworld
 
@@ -197,6 +197,7 @@ skull_woods_west_lobby_entrance = alttp_location.new("skull_woods_west_lobby_ent
 skull_woods_back_entrance = alttp_location.new("skull_woods_back_entrance")
 thieves_town = alttp_location.new("thieves_town")
 ice_palace = alttp_location.new("ice_palace")
+ice_palace_island = alttp_location.new("ice_palace_island")
 misery_mire = alttp_location.new("misery_mire")
 turtle_rock = alttp_location.new("turtle_rock")
 ganons_tower = alttp_location.new("ganons_tower")
@@ -242,7 +243,7 @@ superbunny_cave = alttp_location.new("superbunny_cave")
 spike_cave = alttp_location.new("spike_cave")
 dark_death_mountain_shop = alttp_location.new("dark_death_mountain_shop")
 dark_old_man_cave = alttp_location.new("dark_old_man_cave")
-
+mire_ledge = alttp_location.new("mire_ledge")
 -- dungeons
 
 hc_main_entrance = alttp_location.new("hc_main_entrance")
@@ -275,3 +276,22 @@ tr_eye_bridge_entrance = alttp_location.new("tr_eye_bridge_entrance")
 tr_laser_entrance = alttp_location.new("tr_laser_entrance")
 tr_big_chest_entrance = alttp_location.new("tr_big_chest_entrance")
 gt_entrance = alttp_location.new("gt_entrance")
+
+--teleporter
+
+teleporter_at_kakariko_village = alttp_location.new("teleporter_at_kakariko_village")
+teleporter_at_village_of_the_outcast = alttp_location.new("teleporter_at_village_of_the_outcast")
+teleporter_at_light_turtle_rock = alttp_location.new("teleporter_at_light_turtle_rock") 
+teleporter_at_dark_turtle_rock = alttp_location.new("teleporter_at_dark_turtle_rock") 
+teleporter_at_light_death_mountain_right_bottom = alttp_location.new("teleporter_at_light_death_mountain_right_bottom")
+teleporter_at_light_death_mountain_left_bottom = alttp_location.new("teleporter_at_light_death_mountain_left_bottom")
+teleporter_at_dark_death_mountain_left_bottom = alttp_location.new("teleporter_at_dark_death_mountain_left_bottom")
+teleporter_at_dark_death_mountain_right_bottom = alttp_location.new("teleporter_at_dark_death_mountain_right_bottom")
+teleporter_at_eastern = alttp_location.new("teleporter_at_eastern")
+teleporter_at_pod = alttp_location.new("teleporter_at_pod")
+teleporter_at_desert = alttp_location.new("teleporter_at_desert")
+teleporter_at_mire = alttp_location.new("teleporter_at_mire")
+teleporter_at_dam = alttp_location.new("teleporter_at_dam")
+teleporter_at_swamp = alttp_location.new("teleporter_at_swamp")
+teleporter_at_upgrade_fairy = alttp_location.new("teleporter_at_upgrade_fairy")
+teleporter_at_ice_palace = alttp_location.new("teleporter_at_ice_palace")

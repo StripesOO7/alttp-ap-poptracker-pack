@@ -35,6 +35,71 @@ dark_flute_map:connect_one_way(swamp_area)
 dark_flute_map:connect_one_way(dark_icerod_area)
 
 
+teleporter_at_village_of_the_outcast:connect_one_way(teleporter_at_kakariko_village, function() 
+    return any(
+        all(
+            has("hammer"), 
+            has("glove"),
+            inverted()
+        ),
+        all(
+            has("titans"),
+            inverted()
+        )
+    )
+end)
+
+teleporter_at_dark_turtle_rock:connect_one_way(teleporter_at_light_turtle_rock, function() 
+    return all(
+        has("gloves"), 
+        has("hammer"),
+        inverted()
+    ) 
+end)
+
+teleporter_at_dark_death_mountain_left_bottom:connect_one_way(teleporter_at_light_death_mountain_right_bottom, function() 
+    return all(
+        has("hammer"), 
+        has("glove"),
+        inverted()
+    )
+end)
+
+teleporter_at_dark_death_mountain_right_bottom:connect_one_way(teleporter_at_light_death_mountain_left_bottom, function() 
+    return all(
+        has("glove"),
+        inverted()
+    ) 
+end)
+
+teleporter_at_pod:connect_one_way(teleporter_at_eastern, function() 
+    return all(
+        has("gloves"), 
+        has("hammer"),
+        inverted()
+    )
+end)
+
+teleporter_at_mire:connect_one_way(teleporter_at_desert, function() 
+    return all(
+        has("titans"),
+        inverted()
+    )
+end)
+
+teleporter_at_swamp:connect_one_way(teleporter_at_dam, function()
+    return all(
+        has("gloves"), 
+        has("hammer")
+    )
+end)
+
+teleporter_at_ice_palace:connect_one_way(teleporter_at_upgrade_fairy, function() 
+    return all(
+        has("titans"),
+        inverted()
+    )
+end)
 
 
 
@@ -71,6 +136,9 @@ big_bomb_shop_area:connect_one_way(cave45_ledge, function() return has("mirror")
 
 
 -- swamp_area
+swamp_area:connect_one_way(teleporter_at_swamp, function() return inverted() end)
+teleporter_at_swamp:connect_one_way(swamp_area, function() return has("pearl") end)
+
 swamp_area:connect_one_way(big_bomb_shop_area)
 swamp_area:connect_one_way(dark_lake_hylia)
 swamp_area:connect_one_way(dark_flute_map, function() 
@@ -113,6 +181,9 @@ hype_cave_back:connect_one_way("Hype Cave_Bottom")
 
 -- mire_area
 -- mire_area:connect_one_way()
+mire_ledge:connect_one_way(mire_area)
+mire_ledge:connect_one_way(teleporter_at_mire, function() return inverted() end)
+teleporter_at_mire:connect_one_way(mire_ledge)
 mire_area:connect_one_way(dark_flute_map, function() 
     return all(
         has("flute"),
@@ -187,13 +258,15 @@ dark_lake_hylia:connect_one_way(lake_hylia_island, function()
         has("mirror")
     ) 
 end)
-dark_lake_hylia:connect_two_ways_entrance("Ice Palace", ice_palace, function() 
+dark_lake_hylia:connect_two_ways(ice_palace_island, function() 
     return all(
         canSwim(), 
         inverted()
     ) 
 end)
-
+ice_palace_island:connect_one_way(teleporter_at_ice_palace, function() return inverted() end)
+teleporter_at_ice_palace:connect_one_way(ice_palace_island)
+ice_palace_island:connect_two_ways_entrance("Ice Palace", ice_palace)
 
 
 
@@ -223,6 +296,9 @@ dark_icerod_area:connect_two_ways_entrance("Dark Icerod Stone", dark_icerod_ston
 
 
 -- village_of_the_outcast
+village_of_the_outcast:connect_one_way(teleporter_at_village_of_the_outcast, function() return inverted() end)
+teleporter_at_village_of_the_outcast:connect_one_way(village_of_the_outcast, function() return has("pearl") end)
+
 village_of_the_outcast:connect_two_ways(inverted_activate_flute, function() 
     return all(
         has("flute"),
@@ -451,6 +527,9 @@ pyramid_fairy_cave:connect_one_way("Pyramid Fairy Right")
 
 
 -- pod_area
+pod_area:connect_one_way(teleporter_at_pod, function() return inverted() end)
+teleporter_at_pod:connect_one_way(pod_area, function() return has("pearl") end)
+
 pod_area:connect_one_way(pyramid)
 pod_area:connect_one_way(dark_flute_map, function() 
     return all(
@@ -555,3 +634,13 @@ end)
 
 dark_death_mountain_right_bottom:connect_two_ways_entrance("Super Bunny Cave Bottom Entrance", superbunny_cave_bottom)
 dark_death_mountain_right_top:connect_two_ways_entrance("Super Bunny Cave Top Entrance", superbunny_cave_top)
+
+
+teleporter_at_village_of_the_outcast
+teleporter_at_turtle_rock
+teleporter_at_dark_death_mountain_left_bottom
+teleporter_at_dark_death_mountain_right_bottom
+teleporter_at_pod
+teleporter_at_mire
+teleporter_at_swamp
+teleporter_at_ice_palace
