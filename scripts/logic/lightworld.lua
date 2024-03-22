@@ -108,7 +108,7 @@ kakariko_blinds_hideout:connect_one_way("Blind's Hideout - Far Right")
 
 
 
-kakariko_chickenhut:connect_one_way("Chicken House", function() return has("bombs") end)
+kakariko_chickenhut:connect_one_way("Chicken Hut", function() return has("bombs") end)
 
 
 kakariko_sick_kid:connect_one_way("Sick Kid", function() return has("bottle") end)
@@ -180,7 +180,7 @@ end)
 south_of_village:connect_two_ways_entrance("Library", library)
 south_of_village:connect_two_ways_entrance("Light Archery Mini Game", archery_minigame)
 south_of_village:connect_two_ways_entrance("Twin House Right", twin_house_right)
-south_of_village:connect_two_ways_entrance()
+-- south_of_village:connect_two_ways_entrance()
 
 
 library:connect_one_way("Library Item", function() 
@@ -259,7 +259,7 @@ lost_woods:connect_one_way_entrance("Lost Woods Hideout Hole", lost_woods_hideou
 lost_woods:connect_two_ways_entrance("Lost Woods Hideout Cave", lost_woods_hideout_cave)
 lost_woods:connect_two_ways_entrance("Lost Woods Top", lost_woods_top)
 lost_woods:connect_two_ways_entrance("Pedestal", lost_woods_pedestal)
-
+lost_woods:connect_one_way("Lost Woods Mushroom")
 
 lost_woods_hideout_hole:connect_one_way(lost_woods_hideout_item)
 lost_woods_hideout_item:connect_one_way("Lost Woods Hideout")
@@ -306,12 +306,12 @@ dam_inside:connect_one_way("Floodgate Chest")
 
 sunken_treasure:connect_one_way("Sunken Treasure", function() return can_reach(dam_inside) end)
 
-
-mini_moldorm_cave:connect_one_way("Mini Moldorm Cave - Far Left", function() return dealDamage() end)
-mini_moldorm_cave:connect_one_way("Mini Moldorm Cave - Left", function() return dealDamage() end)
-mini_moldorm_cave:connect_one_way("Mini Moldorm Cave - Generous Guy", function() return dealDamage() end)
-mini_moldorm_cave:connect_one_way("Mini Moldorm Cave - Right", function() return dealDamage() end)
-mini_moldorm_cave:connect_one_way("Mini Moldorm Cave - Far Right", function() return dealDamage() end)
+mini_moldorm_cave:connect_two_ways(mini_moldorm_cave_back, function() return dealDamage() end)
+mini_moldorm_cave_back:connect_one_way("Mini Moldorm Cave - Far Left")
+mini_moldorm_cave_back:connect_one_way("Mini Moldorm Cave - Left")
+mini_moldorm_cave_back:connect_one_way("Mini Moldorm Cave - Generous Guy")
+mini_moldorm_cave_back:connect_one_way("Mini Moldorm Cave - Right")
+mini_moldorm_cave_back:connect_one_way("Mini Moldorm Cave - Far Right")
 
 
 
@@ -343,7 +343,7 @@ checkerboard_lege:connect_two_ways_entrance("Checkerboard Cave", checkerboard_ca
 checkerboard_cave:connect_one_way("Checkerboard Cave")
 
 
-desert_ledge:connect_one_way("Desert Ledge", function() 
+desert_ledge:connect_one_way("Desert Ledge Item", function() 
     return any(
         can_reach(desert_ledge),
         all(
@@ -392,9 +392,10 @@ end) --teleport
 lumberjacks_area:connect_one_way_entrance("Tree Hole", lumberjacks_hole, function() return has("aga1") end)
 lumberjacks_area:connect_two_ways_entrance("Lumberjacks Cave", lumberjacks_cave)
 lumberjacks_area:connect_two_ways_entrance("Lumberjacks House", lumberjacks_house)
+lumberjacks_area:connect_two_ways_entrance("Bonk Cave", bonk_pile_cave, function() return has("boots") end)
 lumberjacks_area:connect_two_ways_entrance("Light Death Mountain Ascend", light_death_mountain_ascend, function() return has("glove") end)
  -- aga item cave
-
+bonk_pile_cave:connect_one_way("Bonk Pile Chest")
 
 lumberjacks_hole:connect_one_way(lumberjacks_item, function() return has("aga1") end)
 lumberjacks_hole:connect_one_way(lumberjacks_cave)
@@ -459,7 +460,7 @@ upgrade_fairy:connect_one_way("Capacity Upgrade Right")
 
 
 
-icerod_cave_inside:connect_one_way("Icerod Chest")
+icerod_cave:connect_one_way("Icerod Chest")
 
 
 
@@ -496,7 +497,7 @@ cave45_ledge:connect_two_ways_entrance("Cave 45", cave45)
 cave45_ledge:connect_one_way(links_house_area, function() return openOrStandard() end)
 cave45_ledge:connect_two_ways(links_house_area, function() return inverted() end)
 cave45:connect_one_way("Cave 45")
-
+links_house_area:connect_one_way("Flute Spot", function() return has("shovel") end)
 
 
 
