@@ -415,7 +415,7 @@ red_shield_shop:connect_one_way("Red Shield Shop Right")
 
 dark_lumpberjacks:connect_two_ways_entrance("Dark Lumberjacks Shop", dark_lumpberjacks_shop)
 dark_lumpberjacks:connect_two_ways_entrance("Red Shield Shop", red_shield_shop)
-dark_lumpberjacks:connect_two_ways_entrance("Bumber Cave", bumber_cave, function() return has("glove") end)
+dark_lumpberjacks:connect_two_ways_entrance("Bumper Cave", bumper_cave, function() return has("glove") end)
 
 
 
@@ -673,4 +673,8 @@ tr_big_chest_entrance:connect_two_ways_entrance("Mimic Cave Teleport", mimic_cav
 
 dark_death_mountain_right_bottom:connect_two_ways_entrance("Super Bunny Cave Bottom Entrance", superbunny_cave_bottom)
 dark_death_mountain_right_top:connect_two_ways_entrance("Super Bunny Cave Top Entrance", superbunny_cave_top)
+
+superbunny_cave_bottom:connect_one_way(superbunny_cave_top)
+superbunny_cave_top:connect_one_way("Super Bunny Cave Chest Top")
+superbunny_cave_top:connect_one_way("Super Bunny Cave Chest Bottom")
 

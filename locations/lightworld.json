@@ -206,7 +206,7 @@
             {
                 "name": "Magic Bat",
                 "access_rules": [
-                    "^$can_reach|"
+                    "^$can_reach|Magic Bat"
                 ],
                 "sections": [
                     {
@@ -1201,7 +1201,7 @@
                     {
                         "name": "Mimic Cave Chest",
                         "access_rules": [
-                            "^$can_reach|"
+                            "^$can_reach|Mimic Cave"
                         ]
                     }
                 ],
@@ -1216,14 +1216,14 @@
             },
             {
                 "name": "Spiral Cave",
-                "access_rules": [
-                    "^$can_reach|"
-                ],
+                // "access_rules": [
+                //     "^$can_reach|"
+                // ],
                 "sections": [
                     {
                         "name": "Spiral Cave Item",
                         "access_rules": [
-                            "^$can_reach|"
+                            "^$can_reach|Spiral Cave Item"
                         ]
                     }
                 ],

@@ -558,7 +558,7 @@
                     {
                         "name": "Spike Cave Chest",
                         "access_rules":[
-                            "^$can_reach|"
+                            "^$can_reach|Spike Cave Chest"
                         ]
                     }
                 ],
@@ -581,7 +581,7 @@
                     {
                         "name": "Rescue Old Man",
                         "access_rules":[
-                            "^$can_reach|"
+                            "^$can_reach|Old Man Item"
                         ]
                     }
                 ],
@@ -615,9 +615,9 @@
         "children": [
             {
                 "name": "Dark Death Mountain Shop",
-                "access_rules":[
-                    "^$can_reach|"
-                ],
+                // "access_rules":[
+                //     "^$can_reach|"
+                // ],
                 "visibility_rules": ["shop_sanity"],
                 "sections": [
                     {
@@ -670,13 +670,13 @@
             {
                 "name": "Superbunny Cave",
                 "access_rules":[
-                    "^$can_reach|"
+                    "^$can_reach|superbunny_cave_top"
                 ],
                 "sections": [
                     {
                         "name": "Superbunny Chest",
                         "access_rules":[
-                            "^$can_reach|"
+                            "^$can_reach|superbunny_cave_top"
                         ],
                         "clear_as_group": false,
                         "item_count": 2

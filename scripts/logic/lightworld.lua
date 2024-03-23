@@ -474,7 +474,7 @@ lumberjacks_area:connect_two_ways_entrance("Lower Light Death Mountain Ascend Le
 light_bumper_cave_ledge:connect_one_way(lumberjacks_area)
 light_bumper_cave_ledge:connect_one_way("Bumper Ledge Item")
 
-light_bumper_cave_ledge:connect_two_ways_entrance("Light Bumber Cave", light_bumper_cave)
+light_bumper_cave_ledge:connect_two_ways_entrance("Light Bumper Cave", light_bumper_cave)
 
 
 
