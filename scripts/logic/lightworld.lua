@@ -31,72 +31,20 @@ light_flute_map:connect_one_way(teleporter_at_desert_ledge)
 light_flute_map:connect_one_way(dam_area)
 light_flute_map:connect_one_way(light_lake_hylia)
 
-teleporter_at_kakariko_village:connect_one_way(teleporter_at_village_of_the_outcast, function() 
-    return any(
-        all(
-            has("hammer"), 
-            has("glove"),
-            has("pearl")
-        ),
-        all(
-            has("titans"),
-            has("pearl")
-        )
-    )
-end)
+teleporter_at_kakariko_village:connect_one_way(teleporter_at_village_of_the_outcast, function() return has("glove") end)
 
-teleporter_at_light_turtle_rock:connect_one_way(teleporter_at_dark_turtle_rock, function() 
-    return all(
-        has("titans"), 
-        has("hammer"),
-        has("pearl")
-    ) 
+teleporter_at_light_turtle_rock:connect_one_way(teleporter_at_dark_turtle_rock)
+teleporter_at_light_death_mountain_left_bottom:connect_one_way(teleporter_at_dark_death_mountain_left_bottom)
 
-end)
-teleporter_at_light_death_mountain_left_bottom:connect_one_way(teleporter_at_dark_death_mountain_left_bottom, function() 
-    return all(
-        has("hammer"), 
-        has("glove"),
-        has("pearl")
-    )
-end)
+teleporter_at_light_death_mountain_right_bottom:connect_one_way(teleporter_at_dark_death_mountain_right_bottom)
 
-teleporter_at_light_death_mountain_right_bottom:connect_one_way(teleporter_at_dark_death_mountain_right_bottom, function() 
-    return all(
-        has("glove"),
-        has("pearl")
-    ) 
-end)
+teleporter_at_eastern:connect_one_way(teleporter_at_pod, function() return has("gloves") end)
 
-teleporter_at_eastern:connect_one_way(teleporter_at_pod, function() 
-    return all(
-        has("gloves"), 
-        has("hammer"),
-        has("pearl")
-    )
-end)
+teleporter_at_desert:connect_one_way(teleporter_at_mire)
 
-teleporter_at_desert:connect_one_way(teleporter_at_mire, function() 
-    return all(
-        has("titans"),
-        has("pearl")
-    )
-end)
+teleporter_at_dam:connect_one_way(teleporter_at_swamp, function() return has("gloves") end)
 
-teleporter_at_dam:connect_one_way(teleporter_at_swamp, function()
-    return all(
-        has("gloves"), 
-        has("hammer"),
-        has("pearl")
-    )
-end)
-
-teleporter_at_upgrade_fairy:connect_one_way(teleporter_at_ice_palace, function() 
-    return all(
-        has("titans"),
-        has("pearl")
-    )
-end)
+teleporter_at_upgrade_fairy:connect_one_way(teleporter_at_ice_palace)
 
 
 -- 
@@ -126,13 +74,23 @@ end)
 
 
 -- 
-kakariko_village:connect_one_way(teleporter_at_kakariko_village)
+kakariko_village:connect_one_way(teleporter_at_kakariko_village, function() 
+    return any(
+        has("hammer"),
+        has("titans")
+    ) 
+end)
 teleporter_at_kakariko_village:connect_one_way(kakariko_village, function() 
     return all(
+        any(
+        has("hammer"),
+        has("titans")
+        ),
         inverted(), 
         has("pearl")
     )
 end)
+
 kakariko_village:connect_one_way_entrance("Kakariko Well Hole", kakariko_well_hole)
 kakariko_village:connect_one_way_entrance("Kakariko Magic Bat Hole", magic_bat_hole, function() 
     return any(
@@ -359,10 +317,11 @@ end)
 teleporter_at_dam:connect_one_way(dam_area,function() 
     return all(
         inverted(),
-        has("pearl")
+        has("pearl"),
+        has("hammer")
     ) 
 end)
-dam_area:connect_one_way(teleporter_at_dam)
+dam_area:connect_one_way(teleporter_at_dam, function() return has("hammer") end)
 
 dam_area:connect_one_way(desert_area)
 dam_area:connect_one_way(light_flute_map, function() 
@@ -410,7 +369,7 @@ mini_moldorm_cave_back:connect_one_way("Mini Moldorm Cave - Far Right")
 -- desert_area
 
 teleporter_at_desert_ledge:connect_one_way(desert_area)
-teleporter_at_desert_ledge:connect_one_way(teleporter_at_desert)
+teleporter_at_desert_ledge:connect_one_way(teleporter_at_desert, function() return has("titans") end)
 teleporter_at_desert:connect_one_way(teleporter_at_desert_ledge)
 
 desert_area:connect_one_way(dam_area)
@@ -422,14 +381,14 @@ desert_area:connect_one_way_entrance("desert_palace_front_entrance", desert_pala
 -- desert_area:connect_one_way(desert_palace_front, function() return has("book") end)
 desert_area:connect_two_ways_entrance("Aginah Cave", aginah_cave)
 desert_area:connect_one_way_entrance("Desert Palace Front", desert_palace_front, function() return has("book") end)
-desert_area:connect_two_ways_entrance()
-desert_area:connect_two_ways_entrance()
-desert_area:connect_two_ways_entrance()
+-- desert_area:connect_two_ways_entrance()
+-- desert_area:connect_two_ways_entrance()
+-- desert_area:connect_two_ways_entrance()
 
 aginah_cave:connect_one_way("Aginah Item", function() return has("bombs") end)
 
 checkerboard_lege:connect_two_ways_entrance("Checkerboard Cave", checkerboard_cave, function() return has("glove") end)
-checkerboard_cave:connect_one_way("Checkerboard Cave")
+checkerboard_cave:connect_one_way("Checkerboard Cave Item")
 
 
 desert_ledge:connect_one_way("Desert Ledge Item", function() 
@@ -543,7 +502,7 @@ upgrade_fairy:connect_one_way("Capacity Upgrade Left")
 upgrade_fairy:connect_one_way("Capacity Upgrade Center")
 upgrade_fairy:connect_one_way("Capacity Upgrade Right")
 
-upgrade_fairy_island:connect_one_way(teleporter_at_upgrade_fairy)
+upgrade_fairy_island:connect_one_way(teleporter_at_upgrade_fairy, function() return has("titans") end)
 teleporter_at_upgrade_fairy:connect_one_way(upgrade_fairy_island, function() return inverted() end)
 
 
@@ -595,8 +554,14 @@ links_house_area:connect_one_way("Flute Spot", function() return has("shovel") e
 
 -- eastern_palace_area
 
-eastern_palace_area:connect_one_way(teleporter_at_eastern)
-teleporter_at_eastern:connect_one_way(eastern_palace_area, function() return has("pearl") end)
+eastern_palace_area:connect_one_way(teleporter_at_eastern, function() return has("hammer") end)
+teleporter_at_eastern:connect_one_way(eastern_palace_area, function() 
+    return all(
+        inverted(),
+        has("pearl"), 
+        has("hammer")
+    ) 
+end)
 
 eastern_palace_area:connect_one_way(light_lake_hylia)
 eastern_palace_area:connect_one_way(links_house_area)
@@ -840,7 +805,7 @@ light_death_mountain_right_bottom:connect_one_way(light_flute_map, function()
         can_reach(light_activate_flute)
     ) 
 end)
-light_death_mountain_right_bottom:connect_one_way(teleporter_at_dark_death_mountain_right_bottom)
+light_death_mountain_right_bottom:connect_one_way(teleporter_at_dark_death_mountain_right_bottom, function() return has("titans") end)
 teleporter_at_dark_death_mountain_right_bottom:connect_one_way(light_death_mountain_right_bottom, function() return inverted() end)
 
 -- light_death_mountain_right_bottom:connect_one_way()
@@ -857,8 +822,19 @@ paradox_cave_bottom:connect_one_way(paradox_cave_top)
 
 
 -- light_death_mountain_right_top
-light_death_mountain_right_top:connect_one_way(teleporter_at_light_turtle_rock)
-teleporter_at_light_turtle_rock:connect_one_way(light_death_mountain_right_top, function() return inverted() end)
+light_death_mountain_right_top:connect_one_way(teleporter_at_light_turtle_rock, function() 
+    return all(
+        has("hammer"),
+        has("titans")
+    ) 
+end)
+teleporter_at_light_turtle_rock:connect_one_way(light_death_mountain_right_top, function() 
+    return all(
+        has("pearl"), 
+        inverted(), 
+        has("hammer")
+    ) 
+end)
 
 light_death_mountain_right_top:connect_one_way(light_death_mountain_right_bottom)
 light_death_mountain_right_top:connect_one_way(light_flute_map, function() 

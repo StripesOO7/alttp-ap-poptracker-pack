@@ -36,79 +36,40 @@ dark_flute_map:connect_one_way(dark_icerod_area)
 
 
 teleporter_at_village_of_the_outcast:connect_one_way(teleporter_at_kakariko_village, function() 
-    return any(
-        all(
-            has("hammer"), 
-            has("glove"),
-            inverted(),
-            has("pearl")
-        ),
-        all(
-            has("titans"),
-            inverted(),
-            has("pearl")
-        )
+    return all(
+        has("glove"),
+        inverted()
     )
 end)
 
-teleporter_at_dark_turtle_rock:connect_one_way(teleporter_at_light_turtle_rock, function() 
-    return all(
-        has("gloves"), 
-        has("hammer"),
-        inverted(),
-        has("pearl")
-    ) 
-end)
+teleporter_at_dark_turtle_rock:connect_one_way(teleporter_at_light_turtle_rock, function() return inverted() end)
 
-teleporter_at_dark_death_mountain_left_bottom:connect_one_way(teleporter_at_light_death_mountain_left_bottom, function() 
-    return all(
-        has("hammer"), 
-        has("glove"),
-        inverted(),
-        has("pearl")
-    )
-end)
+teleporter_at_dark_death_mountain_left_bottom:connect_one_way(teleporter_at_light_death_mountain_left_bottom, function() return inverted() end)
 
-teleporter_at_dark_death_mountain_right_bottom:connect_one_way(teleporter_at_light_death_mountain_right_bottom, function() 
-    return all(
-        has("glove"),
-        inverted(),
-        has("pearl")
-    ) 
-end)
+teleporter_at_dark_death_mountain_right_bottom:connect_one_way(teleporter_at_light_death_mountain_right_bottom, function() return inverted() end)
 
 teleporter_at_pod:connect_one_way(teleporter_at_eastern, function() 
     return all(
-        has("gloves"), 
-        has("hammer"),
-        inverted(),
-        has("pearl")
+        has("gloves"),
+        inverted()
     )
 end)
 
 teleporter_at_mire:connect_one_way(teleporter_at_desert, function() 
     return all(
         has("titans"),
-        inverted(),
-        has("pearl")
+        inverted()
     )
 end)
 
 teleporter_at_swamp:connect_one_way(teleporter_at_dam, function()
     return all(
         has("gloves"), 
-        has("hammer"),
-        has("pearl")
+        inverted()
     )
 end)
 
-teleporter_at_ice_palace:connect_one_way(teleporter_at_upgrade_fairy, function() 
-    return all(
-        has("titans"),
-        inverted(),
-        has("pearl")
-    )
-end)
+teleporter_at_ice_palace:connect_one_way(teleporter_at_upgrade_fairy, function() return inverted() end)
 
 
 
@@ -145,8 +106,18 @@ big_bomb_shop_area:connect_one_way(cave45_ledge, function() return has("mirror")
 
 
 -- swamp_area
-swamp_area:connect_one_way(teleporter_at_swamp, function() return inverted() end)
-teleporter_at_swamp:connect_one_way(swamp_area, function() return has("pearl") end)
+swamp_area:connect_one_way(teleporter_at_swamp, function() 
+    return all(
+        inverted(),
+        has("hammer")
+    )
+end)
+teleporter_at_swamp:connect_one_way(swamp_area, function() 
+    return all(
+        has("pearl"), 
+        has("hammer")
+    ) 
+end)
 
 swamp_area:connect_one_way(big_bomb_shop_area)
 swamp_area:connect_one_way(dark_lake_hylia)
@@ -191,8 +162,14 @@ hype_cave_back:connect_one_way("Hype Cave_Bottom")
 -- mire_area
 -- mire_area:connect_one_way()
 mire_ledge:connect_one_way(mire_area)
-mire_ledge:connect_one_way(teleporter_at_mire, function() return inverted() end)
+mire_ledge:connect_one_way(teleporter_at_mire, function() 
+    return all(
+        inverted(), 
+        has("titans")
+    ) 
+end)
 teleporter_at_mire:connect_one_way(mire_ledge)
+
 mire_area:connect_one_way(dark_flute_map, function() 
     return all(
         has("flute"),
@@ -273,8 +250,15 @@ dark_lake_hylia:connect_two_ways(ice_palace_island, function()
         inverted()
     ) 
 end)
-ice_palace_island:connect_one_way(teleporter_at_ice_palace, function() return inverted() end)
+
+ice_palace_island:connect_one_way(teleporter_at_ice_palace, function() 
+    return all(
+        inverted(), 
+        has("titans")
+    ) 
+end)
 teleporter_at_ice_palace:connect_one_way(ice_palace_island)
+
 ice_palace_island:connect_two_ways_entrance("Ice Palace", ice_palace)
 
 
@@ -305,8 +289,24 @@ dark_icerod_area:connect_two_ways_entrance("Dark Icerod Stone", dark_icerod_ston
 
 
 -- village_of_the_outcast
-village_of_the_outcast:connect_one_way(teleporter_at_village_of_the_outcast, function() return inverted() end)
-teleporter_at_village_of_the_outcast:connect_one_way(village_of_the_outcast, function() return has("pearl") end)
+village_of_the_outcast:connect_one_way(teleporter_at_village_of_the_outcast, function() 
+    return all(
+        inverted(),
+        any(
+            has("hammer"), 
+            has("titans")
+        )
+    ) 
+end)
+teleporter_at_village_of_the_outcast:connect_one_way(village_of_the_outcast, function() 
+    return all(
+        has("pearl"), 
+        any(
+            has("hammer"), 
+            has("titans")
+        )
+    ) 
+end)
 
 village_of_the_outcast:connect_two_ways(inverted_activate_flute, function() 
     return all(
@@ -537,8 +537,18 @@ pyramid_fairy_cave:connect_one_way("Pyramid Fairy Right")
 
 
 -- pod_area
-pod_area:connect_one_way(teleporter_at_pod, function() return inverted() end)
-teleporter_at_pod:connect_one_way(pod_area, function() return has("pearl") end)
+pod_area:connect_one_way(teleporter_at_pod, function() 
+    return all(
+        inverted(), 
+        has("hammer")
+    ) 
+end)
+teleporter_at_pod:connect_one_way(pod_area, function() 
+    return all(
+        has("pearl"), 
+        has("hammer")
+    ) 
+end)
 
 pod_area:connect_one_way(pyramid)
 pod_area:connect_one_way(dark_flute_map, function() 
@@ -609,8 +619,15 @@ dark_death_mountain_right_top:connect_one_way(dark_flute_map, function()
     ) 
 end)
 -- dark_death_mountain_right_top:connect_one_way()
-dark_death_mountain_right_top:connect_one_way(teleporter_at_dark_turtle_rock, function() return inverted() end)
+dark_death_mountain_right_top:connect_one_way(teleporter_at_dark_turtle_rock, function() 
+    return all(
+        inverted(),
+        has("titans")
+    ) 
+end)
 teleporter_at_dark_turtle_rock:connect_one_way(dark_death_mountain_right_top)
+
+
 teleporter_at_dark_turtle_rock:connect_two_ways_entrance("Trutle Rock Main Entrance", tr_main_entrance, function() 
     return all(
         any(
@@ -646,7 +663,9 @@ dark_death_mountain_left_bottom:connect_one_way(dark_flute_map, function()
 end)
 -- dark_death_mountain_left_bottom:connect_one_way()
 dark_death_mountain_left_bottom:connect_one_way(teleporter_at_dark_death_mountain_left_bottom, function() return inverted() end)
-teleporter_at_dark_death_mountain_left_bottom:connect_one_way(dark_death_mountain_left_bottom, function() return has("pearl") end)
+-- teleporter_at_dark_death_mountain_left_bottom:connect_one_way(dark_death_mountain_left_bottom, function() return has("pearl") end)
+teleporter_at_dark_death_mountain_left_bottom:connect_one_way(dark_death_mountain_left_bottom)
+
 dark_death_mountain_left_bottom:connect_two_ways_entrance("Spike Cave", spike_cave)
 -- dark_death_mountain_left_bottom:connect_one_way()
 spike_cave:connect_one_way("Spike Cave Chest", function() 
@@ -670,7 +689,12 @@ dark_death_mountain_right_bottom:connect_one_way(dark_flute_map, function()
     ) 
 end)
 -- dark_death_mountain_right_bottom:connect_one_way()
-dark_death_mountain_right_bottom:connect_one_way(teleporter_at_dark_death_mountain_right_bottom, function() return inverted() end)
+dark_death_mountain_right_bottom:connect_one_way(teleporter_at_dark_death_mountain_right_bottom, function() 
+    return all(
+        inverted(), 
+        has("titans")
+    ) 
+end)
 teleporter_at_dark_death_mountain_right_bottom:connect_one_way(dark_death_mountain_right_bottom)
 
 turtle_rock_ledge:connect_two_ways_entrance("Turtle Rock Big Chest Entrance", tr_big_chest_entrance)
