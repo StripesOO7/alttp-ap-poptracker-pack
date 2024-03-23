@@ -126,4 +126,4 @@ pod_dark_basement:connect_one_way("PoD - Dark Basement Right")
 pod_harmless_hellway:connect_one_way(pod_arena)
 pod_harmless_hellway:connect_one_way("PoD - Harmless Hellway")
 
-pod_boss_room:connect_one_way("PoD - Boss", function() return getBossRef("opd_boss") end)
+pod_boss_room:connect_one_way("PoD - Boss", function() return getBossRef("pod_boss") end)

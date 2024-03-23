@@ -35,45 +35,68 @@ teleporter_at_kakariko_village:connect_one_way(teleporter_at_village_of_the_outc
     return any(
         all(
             has("hammer"), 
-            has("glove")
+            has("glove"),
+            has("pearl")
         ),
-        has("titans")
+        all(
+            has("titans"),
+            has("pearl")
+        )
     )
 end)
 
 teleporter_at_light_turtle_rock:connect_one_way(teleporter_at_dark_turtle_rock, function() 
     return all(
         has("titans"), 
-        has("hammer")
+        has("hammer"),
+        has("pearl")
     ) 
 
 end)
-teleporter_at_light_death_mountain_right_bottom:connect_one_way(teleporter_at_dark_death_mountain_left_bottom, function() 
+teleporter_at_light_death_mountain_left_bottom:connect_one_way(teleporter_at_dark_death_mountain_left_bottom, function() 
     return all(
         has("hammer"), 
-        has("glove")
+        has("glove"),
+        has("pearl")
     )
 end)
 
-teleporter_at_light_death_mountain_left_bottom:connect_one_way(teleporter_at_dark_death_mountain_right_bottom, function() return has("glove") end)
+teleporter_at_light_death_mountain_right_bottom:connect_one_way(teleporter_at_dark_death_mountain_right_bottom, function() 
+    return all(
+        has("glove"),
+        has("pearl")
+    ) 
+end)
 
 teleporter_at_eastern:connect_one_way(teleporter_at_pod, function() 
     return all(
         has("gloves"), 
-        has("hammer")
+        has("hammer"),
+        has("pearl")
     )
 end)
 
-teleporter_at_desert:connect_one_way(teleporter_at_mire, function() return has("titans") end)
+teleporter_at_desert:connect_one_way(teleporter_at_mire, function() 
+    return all(
+        has("titans"),
+        has("pearl")
+    )
+end)
 
 teleporter_at_dam:connect_one_way(teleporter_at_swamp, function()
     return all(
         has("gloves"), 
-        has("hammer")
+        has("hammer"),
+        has("pearl")
     )
 end)
 
-teleporter_at_upgrade_fairy:connect_one_way(teleporter_at_ice_palace, function() return has("titans") end)
+teleporter_at_upgrade_fairy:connect_one_way(teleporter_at_ice_palace, function() 
+    return all(
+        has("titans"),
+        has("pearl")
+    )
+end)
 
 
 -- 
@@ -81,8 +104,8 @@ lightworld_spawns:connect_one_way(light_spawn_sanctuary)
 lightworld_spawns:connect_one_way(light_spawn_links_house_area)
 lightworld_spawns:connect_one_way(light_spawn_old_man, function() return can_reach(light_death_mountain_ascend) end) --rescued old man
 
-light_spawn_sanctuary:connect_one_way(links_house)
-light_spawn_links_house_area:connect_one_way(sanctuary)
+light_spawn_sanctuary:connect_one_way(sanctuary)
+light_spawn_links_house_area:connect_one_way(links_house)
 light_spawn_old_man:connect_one_way(old_man_cave)
 
 -- kakariko_village
@@ -287,7 +310,7 @@ graveyard_ledge_inside:connect_one_way("Graveyard Ledge")
 
 -- castle_escape_dropdown_room
 
-
+sanctuary:connect_two_ways(sanctuary_area)
 sanctuary:connect_one_way("Sanctuary Chest")
 
 
@@ -322,7 +345,7 @@ lost_woods_hideout_hole:connect_one_way(lost_woods_hideout_cave)
 
 lost_woods_pedestal:connect_one_way("Pedestal", function() 
     return any(
-        has("pendant", 3),
+        has("pendant", 3, 3),
         canCheckWithBook()
     )
 end)
@@ -725,7 +748,7 @@ light_potion_shop:connect_one_way("Potion Shop - Center")
 
 
 -- light_death_mountain_left_bottom
-light_death_mountain_left_bottom:connect_one_way(dark_death_mountain_left_bottom, function() return all(has("mirror"), inverted()) end)
+-- light_death_mountain_left_bottom:connect_one_way(dark_death_mountain_left_bottom, function() return all(has("mirror"), inverted()) end)
 
 light_death_mountain_left_bottom:connect_one_way(teleporter_at_dark_death_mountain_left_bottom)
 teleporter_at_dark_death_mountain_left_bottom:connect_one_way(light_death_mountain_left_bottom, function() return inverted() end)
@@ -748,8 +771,8 @@ light_death_mountain_left_bottom:connect_two_ways_entrance("Old Man Cave Entranc
 light_death_mountain_left_bottom:connect_two_ways_entrance("Spectecal Rock Top Entrance", spec_rock_top_entrance)
 light_death_mountain_left_bottom:connect_two_ways_entrance("Old Man Cave Backside", old_man_cave_back)
 
-light_death_mountain_left_bottom:connect_one_way("Old Man Item", function() return can_reach(death_mountain_accend) end)
-light_death_mountain_left_bottom:connect_one_way("Spec Rock Top Item", function() return has(mirror) end)
+light_death_mountain_left_bottom:connect_one_way("Old Man Item", function() return can_reach(death_mountain_ascend) end)
+light_death_mountain_left_bottom:connect_one_way("Spec Rock Top Item", function() return has("mirror") end)
 -- -- light_death_mountain_left:connect_one_way(lumberjacks_area)
 -- light_death_mountain_left_bottom:connect_one_way(light_death_mountain_right_bottom)
 -- -- light_death_mountain_left_bottom:connect_one_way(light_death_mountain_left_top)
@@ -868,7 +891,7 @@ paradox_cave_bottom_back:connect_two_ways_entrance_door_stuck("Paradox Cave Top 
         has("somaria")
     )
 end)
-light_death_mountain_shop:connect_two_ways:(paradox_cave_bottom_back, function() return has("mirror") end)
+light_death_mountain_shop:connect_two_ways(paradox_cave_bottom_back, function() return has("mirror") end)
 light_death_mountain_right_top:connect_one_way(dark_death_mountain_right_top, function() return all(has("mirror"), inverted()) end)
 paradox_cave_bottom_back:connect_one_way("Paradox Cave Bottom Left", function() return has("bombs") end)
 paradox_cave_bottom_back:connect_one_way("Paradox Cave Bottom Right", function() return has("bombs") end)
