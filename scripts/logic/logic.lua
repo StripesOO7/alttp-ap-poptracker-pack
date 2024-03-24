@@ -141,7 +141,7 @@ function alttp_location:discover(accessibility, keys)
                 key = keys
             end
             -- print(self.name)
-            -- print(accessLVL[self.accessibility_level], "from", self.name, "to", location.name, ":", accessLVL[location.accessibility_level])
+            print(accessLVL[self.accessibility_level], "from", self.name, "to", location.name, ":", accessLVL[location.accessibility_level])
             location:discover(access, key)
         end
     end

@@ -177,10 +177,10 @@ function getBossRef(nameRef)
 end
 
 function canActivateTablets()
-    if Tracker:ProviderCountForCode("swordless") > 0 then
-        return Tracker:ProviderCountForCode("hammer")
+    if Tracker:FindObjectForCode("swordless").Active then
+        return Tracker:FindObjectForCode("hammer").Active
     else
-        return Tracker:ProviderCountForCode("mastersword")
+        return (Tracker:FindObjectForCode("sword").CurrentStage > 1)
     end
 end
 
@@ -205,7 +205,7 @@ end
 
 function canCheckWithBook()
     if Tracker:FindObjectForCode("Book") then
-        return AccessibilityLevel.Scoutable
+        return AccessibilityLevel.Inspect
     else
         return AccessibilityLevel.None
     end
@@ -359,15 +359,28 @@ function canFinish()
     end
 end
 
-function openOrStandard()
-    if Tracker:FindObjectForCode("start_option").CurrentStage ~= 2 then
+function canChangeWorldWithMirror()
+    if Tracker:FindObjectForCode("mirror").Active then
         return true
     end
     return false
 end
 
-function inverted()
+function openOrStandard(item)
+    if Tracker:FindObjectForCode("start_option").CurrentStage ~= 2 then
+        if item then
+            return Tracker:FindObjectForCode(item).Active
+        end
+        return true
+    end
+    return false
+end
+
+function inverted(item)
     if Tracker:FindObjectForCode("start_option").CurrentStage == 2 then
+        if item then
+            return Tracker:FindObjectForCode(item).Active
+        end
         return true
     end
     return false

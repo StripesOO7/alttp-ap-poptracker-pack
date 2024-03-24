@@ -50,7 +50,7 @@ teleporter_at_dark_death_mountain_right_bottom:connect_one_way(teleporter_at_lig
 
 teleporter_at_pod:connect_one_way(teleporter_at_eastern, function() 
     return all(
-        has("gloves"),
+        has("glove"),
         inverted()
     )
 end)
@@ -64,7 +64,7 @@ end)
 
 teleporter_at_swamp:connect_one_way(teleporter_at_dam, function()
     return all(
-        has("gloves"), 
+        has("glove"), 
         inverted()
     )
 end)
@@ -77,13 +77,14 @@ darkworld_spawns:connect_one_way(dark_spawn_links_house)
 darkworld_spawns:connect_one_way(dark_spawn_dark_chapel_area)
 darkworld_spawns:connect_one_way(dark_spawn_old_man, function() return can_reach(light_death_mountain_ascend) end) --has rescued old man
 
-dark_spawn_links_house:connect_two_ways_entrance("Link's House", links_house, function() return inverted() end)
-dark_spawn_links_house:connect_two_ways_entrance("Big Bomb Shop", big_bomb_shop, function() return openOrStandard() end)
-dark_spawn_dark_chapel_area:connect_one_way(dark_chapel)
-dark_spawn_old_man:connect_one_way(dark_old_man_cave)
+dark_spawn_links_house:connect_one_way(links_house, function() return inverted() end)
+-- dark_spawn_links_house:connect_two_ways_entrance("Big Bomb Shop", big_bomb_shop, function() return openOrStandard() end)
+dark_spawn_dark_chapel_area:connect_one_way(dark_chapel, function() return inverted() end)
+dark_spawn_old_man:connect_one_way(dark_old_man_cave, function() return inverted() end)
 
 -- big_bomb_shop_area
-big_bomb_shop_area:connect_two_ways_entrance("Big Bomb Shop", big_bomb_shop)
+links_house:connect_two_ways_entrance("Inverted Spawn", big_bomb_shop_area, function() return inverted() end)
+big_bomb_shop_area:connect_two_ways_entrance("Big Bomb Shop", big_bomb_shop, function() return openOrStandard() end)
 big_bomb_shop_area:connect_one_way(swamp_area)
 big_bomb_shop_area:connect_one_way(dark_flute_map, function() 
     return all(
@@ -101,7 +102,7 @@ big_bomb_shop_area:connect_one_way(south_of_village_of_the_outcast)
 
 big_bomb_shop_area:connect_two_ways_entrance("Big Bomb Shop Fairy Cave", big_bomb_shop_fairy_cave, function() return has("boots") end)
 
-big_bomb_shop_area:connect_one_way(cave45_ledge, function() return has("mirror") end)
+big_bomb_shop_area:connect_one_way(cave45_ledge, function() return canChangeWorldWithMirror() end)
 
 
 
@@ -129,16 +130,16 @@ swamp_area:connect_one_way(dark_flute_map, function()
     ) 
 end)
 -- swamp_area:connect_one_way(desert_area, function() return(all(has("mirror"), canActivateTablets())) end)
-swamp_area:connect_two_ways(bombos_tablet, function() 
+swamp_area:connect_two_ways(bombos_tablet_ledge, function() 
     return any(
         all(
-            has("mirror"),
+            canChangeWorldWithMirror(),
             openOrStandard()
         ),
-        inverted(),
         all(
             checkGlitches(2), 
-            has("boots")
+            has("boots"),
+            canChangeWorldWithMirror()
         )
     ) 
 end)
@@ -196,11 +197,12 @@ mire_shed_left:connect_one_way("Mire Shed_Right")
 
 
 mire_area:connect_one_way(desert_ledge, function() 
-    return has("mirror") 
+    return all(
+        canChangeWorldWithMirror(),
+        openOrStandard()
+    ) 
 end)
-mire_area:connect_one_way(desert_ledge, function() 
-    return has("mirror") 
-end)
+
 -- mire_area:connect_one_way(teleper, function() return has("mirror") end)
 
 
@@ -241,7 +243,7 @@ dark_lake_hylia:connect_one_way(lake_hylia_island, function()
     return all(
         has("flippers"),
         openOrStandard(),
-        has("mirror")
+        canChangeWorldWithMirror()
     ) 
 end)
 dark_lake_hylia:connect_two_ways(ice_palace_island, function() 
@@ -446,13 +448,14 @@ end)
 dark_chapel_area:connect_one_way(graveyard_ledge_cave, function()
     return all(
         openOrStandard(),
-        has("mirror")
+        canChangeWorldWithMirror()
     )
 end)
 dark_chapel_area:connect_one_way(kings_tomb, function()
     return all(
         openOrStandard(),
-        has("mirror")
+        canChangeWorldWithMirror(),
+        has("pearl")
     )
 end)
 
@@ -601,7 +604,7 @@ end)
 dark_death_mountain_left_top:connect_one_way(light_death_mountain_left, function() 
     return all(
         openOrStandard(),
-        has("mirror")
+        canChangeWorldWithMirror()
     ) 
 end)
 dark_death_mountain_left_top:connect_two_ways_entrance("Ganons Tower", gt_entrance, function() return gt_access() end)
@@ -641,13 +644,13 @@ dark_death_mountain_right_top:connect_two_ways_entrance("Hookshot Cave", hooksho
 hookshot_cave:connect_two_ways(floating_island, function() 
     return all(
         has("bombs"),
-        has("mirror")
+        canChangeWorldWithMirror()
     ) 
 end)
 tr_eye_bridge_entrance:connect_two_ways_entrance("Light Eyebridge Connector", light_eyebridge_fairy, function() 
     return all(
         openOrStandard(), 
-        has("mirror")
+        canChangeWorldWithMirror()
     ) 
 end)
 dark_death_mountain_right_top:connect_one_way(tr_eye_bridge_entrance, function() return inverted() end)
@@ -699,8 +702,8 @@ teleporter_at_dark_death_mountain_right_bottom:connect_one_way(dark_death_mounta
 
 turtle_rock_ledge:connect_two_ways_entrance("Turtle Rock Big Chest Entrance", tr_big_chest_entrance)
 turtle_rock_ledge:connect_two_ways_entrance("Turtle Rock Laser Entrance", tr_laser_entrance)
+turtle_rock_ledge:connect_one_way(mimic_cave_ledge, function() return canChangeWorldWithMirror() end)
 -- tr_laser_entrance:connect_two_ways_entrance("Light Death Mountain Fairy", light_death_mountain_cave1, function() return has("mirror") end)
-tr_big_chest_entrance:connect_two_ways_entrance("Mimic Cave Teleport", mimic_cave, function() return has("mirror") end)
 
 
 

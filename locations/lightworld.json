@@ -5,10 +5,10 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         // "access_rules": [
-        //     "$openOrStandard",
-        //     "inverted, pearl, hammer, glove",
-        //     "inverted, pearl, titans",
-        //     "inverted, pearl, aga1"
+        //     "^$openOrStandard",
+        //     "^$inverted, pearl, hammer, glove",
+        //     "^$inverted, pearl, titans",
+        //     "^$inverted, pearl, aga1"
         // ],
         "children": [
             {
@@ -58,7 +58,7 @@
                     {
                         "name": "Back Chest",
                         "access_rules": [
-                            "bombs"
+                            "^$can_reach|Blind's Hideout - Back"
                         ]
                     }
                 ],
@@ -95,7 +95,7 @@
                 "access_rules": [
                     "^$can_reach|light_activate_flute"
                 ],
-                "visibility_rules": ["flute, $openOrStandard"],
+                "visibility_rules": ["flute, ^$openOrStandard"],
                 "sections": [
                     {
                         "name": "Hyrule Hymn o7",
@@ -167,8 +167,7 @@
                     {
                         "name": "Sick Kid",
                         "access_rules": [
-                            "^$can_reach|Sick Kid",
-                            "bottle"
+                            "^$can_reach|Sick Kid"
                         ]
                     }
                 ],
@@ -212,9 +211,6 @@
                     {
                         "name": "Visit Satan",
                         "access_rules": [
-                            "hammer, powder",
-                            "$openOrStandard, titans, mirror, @Darkworld Left, powder",
-                            "$checkGlitches|2, boots, powder"
                         ]//,
                         // "hosted_item": "satan_visited"
                     }
@@ -282,8 +278,7 @@
                     {
                         "name": "Pedestal",
                         "access_rules": [
-                            "pendant:2, greenpendant",
-                            "{book}"
+                            "^$can_reach|Pedestal"
                         ],
                         "capture_item": true
                     }
@@ -323,13 +318,13 @@
             {
                 "name": "Bonk Pile",
                 "access_rules": [
-                    "boots"
+                    "^$can_reach|sanctuary_bonk_pile_cave"
                 ],
                 "sections": [
                     {
                         "name": "Bonk Pile Chest",
                         "access_rules": [
-                            "^$can_reach|Bonk Cave Chest"
+                            "^$can_reach|Bonk Pile Chest"
                         ]
                     }
                 ],
@@ -368,10 +363,6 @@
             {
                 "name": "Race",
                 "access_rules": [
-                    "bombs",
-                    "boots",
-                    "{}",
-                    "$checkGlitches|2, boots",
                     "^$can_reach|race_ledge"
                 ],
                 "sections": [
@@ -395,8 +386,6 @@
             {
                 "name": "Cave 45",
                 "access_rules": [
-                    "@Darkworld Bottom, mirror",
-                    "$checkGlitches|2, boots",
                     "^$can_reach|cave45_ledge"
                 ],
                 "sections": [
@@ -426,7 +415,7 @@
                     {
                         "name": "Flute Spot",
                         "access_rules": [
-                            "shovel"
+                            "^$can_reach|Flute Spot"
                         ]
                     }
                 ],
@@ -442,10 +431,7 @@
             {
                 "name": "Desert Ledge",
                 "access_rules": [
-                    "@DP/Desert Palace",
-                    "@DP Back/Desert Palace Back",
-                    "$checkGlitches|2, boots",
-                    "{}"
+                    "^$can_reach|desert_ledge"
                 ],
                 "sections": [
                     {
@@ -474,7 +460,7 @@
                     {
                         "name": "Aginah's Cave",
                         "access_rules": [
-                            "bombs"
+                            "^$can_reach|Aginah Item"
                         ]
                     }
                 ],
@@ -496,9 +482,7 @@
                     {
                         "name": "Checkerboard Cave Item",
                         "access_rules": [
-                            "$openOrStandard, mirror, titans, flute_active",
-                            "inverted, glove",
-                            "$checkGlitches|2, boots, glove"
+                            "^$can_reach|Checkerboard Cave Item"
                         ]
                     }
                 ],
@@ -520,7 +504,7 @@
                     {
                         "name": "Sunken Treasure",
                         "access_rules": [
-                            "^$can_reach|Dam Sunken Treasure"
+                            "^$can_reach|Sunken Treasure"
                         ]
                     },
                     {
@@ -594,7 +578,7 @@
                     {
                         "name": "Hobo",
                         "access_rules": [
-                            "$canSwim"
+                            "^$can_reach|Hobo Item"
                         ]
                     }
                 ],
@@ -632,16 +616,13 @@
             {
                 "name": "Lake Hylia",
                 "access_rules": [
-                    "^$can_reach|light_lake_hylia"
+                    "^$can_reach|lake_hylia_island"
                 ],
                 "sections": [
                     {
                         "name": "Lake Island",
                         "access_rules": [
-                            "$canSwim, @Darkworld Bottom, mirror",
-                            "$canSwim, @Darkworld Right, mirror",
-                            "$checkGlitches|2, boots",
-                            "{}"
+                            "^$can_reach|Lake Hylia Item"
                         ],
                         "capture_item": true
                     }
@@ -710,7 +691,7 @@
                     {
                         "name": "Back Items",
                         "access_rules": [
-                            "bombs"
+                            "^$can_reach|sahasralahs_hut_back"
                         ],
                         "clear_as_group": false,
                         "item_count": 3
@@ -718,7 +699,7 @@
                     {
                         "name": "Sahasrahla's Item",
                         "access_rules": [
-                            "greenpendant"
+                            "^$can_reach|Sahasrahla"
                         ],
                         "capture_item": true
                     }
@@ -747,7 +728,7 @@
                     {
                         "name": "Deliver Mushroom (Brew Drugs)",
                         "access_rules": [
-                            "mushroom"
+                            "^$can_reach|Deliver Mushroom"
                         ]//,
                         // "hosted_item": "mushroom_delivered"
                     }
@@ -764,10 +745,7 @@
             {
                 "name": "Waterfall Fairy",
                 "access_rules": [
-                    "$canSwim|pearl, glove",
-                    "$canSwim|pearl",
-                    "$canSwim|pearl, boots",
-                    "flippers"
+                    "^$can_reach|waterfall_fairy_inside"
                 ],
                 "sections": [
                     {
@@ -791,8 +769,7 @@
             {
                 "name": "Zora's Domain",
                 "access_rules": [
-                    "$canSwim",
-                    "glove"
+                    "^$can_reach|zora_river"
                 ],
                 "sections": [
                     {
@@ -804,9 +781,7 @@
                     {
                         "name": "Zora Ledge",
                         "access_rules": [
-                            "{}",
-                            "flippers",
-                            "$checkGlitches|2, boots"
+                            "^$can_reach|Zora Ledge"
                         ],
                         "capture_item": true
                     }
@@ -858,9 +833,6 @@
             {
                 "name": "Graveyard Ledge",
                 "access_rules": [
-                    "@Darkworld Left, mirror",
-                    "inverted",
-                    "@Light Death Mountain Left Bottom, $checkGlitches|2, boots"
                 ],
                 "sections": [
                     {
@@ -882,9 +854,7 @@
             {
                 "name": "King's Tomb",
                 "access_rules": [
-                    "$openOrStandard, @Darkworld Left, mirror, boots",
-                    "titans, boots",
-                    "@Light Death Mountain Left Bottom, $checkGlitches|2, boots"
+                    "^$can_reach|kings_tomb"
                 ],
                 "sections": [
                     {
@@ -906,12 +876,7 @@
             {
                 "name": "Bombos Tablet",
                 "access_rules": [
-                    "@Darkworld Bottom, mirror, book, $canActivateTablets",
-                    "{@Darkworld Bottom, mirror, book}",
-                    "inverted, $canActivateTablets, book",
-                    "{inverted, book}",
-                    "$checkGlitches|2, boots, book, $canActivateTablets",
-                    "{$checkGlitches|2, boots, book}"
+                    "^$can_reach|bombos_tablet"
                 ],
                 "sections": [
                     {
@@ -934,8 +899,6 @@
             {
                 "name": "Bumper Cave",
                 "access_rules": [
-                    "cape, mirror",
-                    "$checkGlitches|2, boots"
                 ],
                 "visibility_rules": ["inverted"],
                 "sections": [
@@ -975,7 +938,7 @@
             {
                 "name": "Rescue Old Man",
                 "access_rules": [
-                    "[lamp]"
+                    "^$can_reach|Old Man Item"
                 ],
                 "visibility_rules": ["$openOrStandard"],
                 "sections": [
@@ -1104,10 +1067,6 @@
             {
                 "name": "Floating Island",
                 "access_rules": [
-                    "$openOrStandard, @Dark Death Mountain Right, mirror",
-                    "inverted, @Light Death Mountain Right",
-                    "{}",
-                    "$checkGlitches|2, boots"
                 ],
                 "sections": [
                     {
@@ -1191,17 +1150,12 @@
             {
                 "name": "Mimic Cave",
                 "access_rules": [
-                    "$openOrStandard, mirror, hammer, @TR/Turtle Rock Front, $smallKeys|tr_smallkey|2|3, somaria",
-                    "$openOrStandard, mirror, hammer, @TR/Turtle Rock Back",
-                    // "$openOrStandard, mirror, hammer, @TR/Turtle Rock Eye Bridge Entrance",
-                    "inverted, @Light Death Mountain Right, hammer",
-                    "@Dark Death Mountain Right, $checkGlitches|2, boots, hammer"
                 ],
                 "sections": [
                     {
                         "name": "Mimic Cave Chest",
                         "access_rules": [
-                            "^$can_reach|Mimic Cave"
+                            "^$can_reach|Mimic Cave Chest"
                         ]
                     }
                 ],
