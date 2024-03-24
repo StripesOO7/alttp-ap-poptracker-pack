@@ -97,7 +97,8 @@ kakariko_village:connect_one_way_entrance("Kakariko Magic Bat Hole", magic_bat_h
         has("hammer"),
         all(
             canChangeWorldWithMirror(),
-            can_reach(purple_chest_pickup)
+            can_reach(purple_chest_pickup),
+            openOrStandard()
         )
     ) 
 end)
@@ -359,7 +360,7 @@ mini_moldorm_cave_back:connect_one_way("Mini Moldorm Cave - Right")
 mini_moldorm_cave_back:connect_one_way("Mini Moldorm Cave - Far Right")
 
 
-dam_area:connect_one_way("Sunken Treasure", function() return can_reach(dam_inside) end)
+dam_area:connect_one_way("Sunken Treasure", function() return can_reach("Floodgate Chest") end)
 
 
 
@@ -376,13 +377,13 @@ teleporter_at_desert:connect_one_way(teleporter_at_desert_ledge)
 
 desert_area:connect_one_way(dam_area)
 checkerboard_lege:connect_one_way(desert_area)
-desert_area:connect_one_way_entrance("desert_palace_front_entrance", desert_palace_front, function() return has("book") end)
+
 -- desert_area:connect_two_ways_entrance("aginah_cave_entrance", aginah_cave)
 -- desert_area:connect_one_way_entrance("desert_palace_front_entrance", desert_palace_front, function() return has("book") end)
 -- desert_area:connect_one_way_entrance("desert_palace_front_entrance", desert_palace_front, function() return has("book") end)
 -- desert_area:connect_one_way(desert_palace_front, function() return has("book") end)
 desert_area:connect_two_ways_entrance("Aginah Cave", aginah_cave)
-desert_area:connect_one_way_entrance("Desert Palace Front", desert_palace_front, function() return has("book") end)
+desert_area:connect_one_way_entrance("Desert Palace Front", dp_main_entrance, function() return has("book") end)
 -- desert_area:connect_two_ways_entrance()
 -- desert_area:connect_two_ways_entrance()
 -- desert_area:connect_two_ways_entrance()
@@ -404,10 +405,10 @@ desert_ledge:connect_one_way("Desert Ledge Item", function()
 end)
 desert_ledge:connect_one_way(desert_area)
 
-desert_palace_back:connect_two_ways(desert_ledge)
-desert_palace_left:connect_two_ways(desert_ledge)
+dp_back_entrance:connect_two_ways_entrance("Deser Palace Back Entrance", desert_ledge, function() return has("glove") end)
+dp_left_entrance:connect_two_ways_entrance("Deser Palace Left Entrance", desert_ledge)
 
-desert_palace_right:connect_one_way(desert_area)
+dp_right_entrance:connect_one_way(desert_area)
 
 desert_area:connect_two_ways(bombos_tablet_ledge, function() return inverted() end)
 

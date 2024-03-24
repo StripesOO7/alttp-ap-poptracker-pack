@@ -205,12 +205,13 @@
             {
                 "name": "Magic Bat",
                 "access_rules": [
-                    "^$can_reach|Magic Bat"
+                    "^$can_reach|magic_bat_cave"
                 ],
                 "sections": [
                     {
                         "name": "Visit Satan",
                         "access_rules": [
+                            "^$can_reach|Magic Bat"
                         ]//,
                         // "hosted_item": "satan_visited"
                     }
@@ -1198,25 +1199,24 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules": [
-            "$openOrStandard",
-            "inverted, @Lightworld"
+            "^$can_reach|dp_main_entrance"
         ],
         "children": [
             {
                 "name": "Desert Palace",
-                "access_rules": [
-                    "book",
-                    "$openOrStandard, @Darkworld Swamp, mirror",
-                    "@Lightworld, $checkGlitches|2, boots"
-                ],
+                // "access_rules": [
+                //     "book",
+                //     "$openOrStandard, @Darkworld Swamp, mirror",
+                //     "@Lightworld, $checkGlitches|2, boots"
+                // ],
                 "item_count": 5,
                 "sections": [
                     {
                         "name": "Dungeon Chest" ,
-                        "access_rules": [
-                            "[boots], [$bigKeys|dp_bigkey], [$smallKeys|dp_smallkey|1|1]",
-                            "@DP Back/Desert Palace Back, [boots], [$bigKeys|dp_bigkey],[$smallKeys|dp_smallkey|1|4]"
-                        ],
+                        // "access_rules": [
+                        //     "[boots], [$bigKeys|dp_bigkey], [$smallKeys|dp_smallkey|1|1]",
+                        //     "@DP Back/Desert Palace Back, [boots], [$bigKeys|dp_bigkey],[$smallKeys|dp_smallkey|1|4]"
+                        // ],
                         "clear_as_group": false,
                         "item_count": 5
                     }
@@ -1238,22 +1238,21 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules": [
-            "$openOrStandard",
-            "inverted, @Lightworld"
+            "^$can_reach|dp_back_entrance"
         ],
         "children": [
             {
                 "name": "Desert Palace Back",
-                "access_rules": [
-                    "@DP/Desert Palace, glove",
-                    "$openOrStandard, @Darkworld Swamp, mirror",
-                    "@Lightworld, $checkGlitches|2, boots"
-                ],
+                // "access_rules": [
+                //     "@DP/Desert Palace, glove",
+                //     "$openOrStandard, @Darkworld Swamp, mirror",
+                //     "@Lightworld, $checkGlitches|2, boots"
+                // ],
                 "item_count": 2,
                 "sections": [
                     {
                         "name": "Key Drops",
-                        "access_rules": ["[$smallKeys|dp_smallkey|0|4]"],
+                        // "access_rules": ["[$smallKeys|dp_smallkey|0|4]"],
                         "item_count": 3,
                         "clear_as_group": false,
                         "visibility_rules": ["key_drop_shuffle"]
@@ -1285,8 +1284,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules": [
-            "$openOrStandard",
-            "inverted, @Lightworld"
+            "^$can_reach|ep_entrance"
         ],
         "children": [
             {
@@ -1295,9 +1293,9 @@
                 "sections": [
                     {
                         "name": "Dungeon Chest" ,
-                        "access_rules": [
-                            "[$bigKeys|ep_bigkey],[$darkRooms], $smallKeys|ep_smallkey|0|1, [$smallKeys|ep_smallkey|0|2]"
-                        ],
+                        // "access_rules": [
+                        //     "[$bigKeys|ep_bigkey],[$darkRooms], $smallKeys|ep_smallkey|0|1, [$smallKeys|ep_smallkey|0|2]"
+                        // ],
                         "clear_as_group": false,
                         "item_count": 5
                     },

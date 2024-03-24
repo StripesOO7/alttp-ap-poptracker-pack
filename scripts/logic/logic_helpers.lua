@@ -31,11 +31,11 @@ function any(...)
         if type(v) == "boolean" then
             v = A(v)
         end
-        if v > max then
-            if v == AccessibilityLevel.Normal then
+        if tonumber(v) > tonumber(max) then
+            if tonumber(v) == AccessibilityLevel.Normal then
                 return AccessibilityLevel.Normal
             else
-                max = v
+                max = tonumber(v)
             end
         end
     end
