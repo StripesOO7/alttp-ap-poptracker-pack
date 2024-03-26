@@ -601,15 +601,15 @@ dark_death_mountain_left_top:connect_one_way(dark_flute_map, function()
     ) 
 end)
 -- dark_death_mountain_left_top:connect_one_way()
-dark_death_mountain_left_top:connect_one_way(light_death_mountain_left, function() 
+dark_death_mountain_left_top:connect_one_way(light_death_mountain_left_top, function() 
     return all(
         openOrStandard(),
         canChangeWorldWithMirror()
     ) 
 end)
-dark_death_mountain_left_top:connect_two_ways_entrance("Ganons Tower", gt_entrance, function() return gt_access() end)
+dark_death_mountain_left_top:connect_two_ways_entrance("Ganons Tower", gt_entrance, function() return gtCrystalCount() end)
 
-
+dark_death_mountain_left_top:connect_two_ways(dark_death_mountain_right_top)
 
 
 

@@ -101,7 +101,7 @@ gt_bottom_hope_room:connect_two_ways(gt_bottom_tile_room, function() return has(
 gt_bottom_hope_room:connect_one_way("GT - Hope Room Left")
 gt_bottom_hope_room:connect_one_way("GT - Hope Room Right")
 
-gt_bottom_tile_room:connect_two_ways(gt_bottom_torch_puzzle, function() return has("gt_smallkey", keys + 1, 2, keys + 1, 4), KDSreturn(keys + 1, keys + 1) end)
+gt_bottom_tile_room:connect_two_ways(gt_bottom_torch_puzzle, function(keys) return has("gt_smallkey", keys + 1, 2, keys + 1, 4), KDSreturn(keys + 1, keys + 1) end)
 gt_bottom_tile_room:connect_one_way("GT - Tile Room Chest")
 
 gt_bottom_torch_puzzle:connect_one_way(gt_bottom_compass_room, function() 
@@ -141,9 +141,9 @@ gt_top_mini_helmasaur_room:connect_one_way("GT - Mini Helmasaur Key Drop")
 gt_top_pre_moldorm_room:connect_one_way(gt_top_top_refight, function(keys) return has("gt_smallkey", keys + 1, 4, keys + 1, 7), KDSreturn(keys + 1, keys + 1) end)
 gt_top_pre_moldorm_room:connect_one_way("GT - Pre Moldorm Chest")
 
-gt_top_top_refight:connect_one_way(gt_top_validation,function() return all(
-        getBossRef(), 
-        has("hookshoot")
+gt_top_top_refight:connect_one_way(gt_top_validation, function() return all(
+        getBossRef("gt_boss"), 
+        has("hookshot")
     )
 end)
 gt_top_validation:connect_one_way("GT - Validation Chest")
