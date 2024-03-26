@@ -145,7 +145,7 @@ swamp_area:connect_two_ways(bombos_tablet_ledge, function()
 end)
 
 swamp_area:connect_two_ways_entrance("Hype Cave", hype_cave, function() return has("bombs") end)
-swamp_area:connect_two_ways_entrance("Swamp Palace", swamp_palace, function() return can_reach(dam_inside) end)
+swamp_area:connect_two_ways_entrance("Swamp Palace", sp_entrance, function() return can_reach(dam_inside) end)
 
 hype_cave:connect_one_way("Hype Cave_Generous Guy")
 hype_cave:connect_two_ways(hype_cave_back, function() return has("bombs") end)
@@ -261,7 +261,7 @@ ice_palace_island:connect_one_way(teleporter_at_ice_palace, function()
 end)
 teleporter_at_ice_palace:connect_one_way(ice_palace_island)
 
-ice_palace_island:connect_two_ways_entrance("Ice Palace", ice_palace)
+ice_palace_island:connect_two_ways_entrance("Ice Palace", ip_entrance)
 
 
 

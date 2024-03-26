@@ -1579,7 +1579,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules": [
-            "^$can_reach|ep_entrance"
+            "^$can_reach|gt_entrance"
         ],
         "visibility_rules": ["inverted"],
         "children": [
@@ -1590,14 +1590,14 @@
                         "name": "Leftside",
                         "clear_as_group": false,
                         "access_rules": [
-                            "[boots],[hammer],[hookshot],$smallKeys|gt_smallkey|1|3, [$smallKeys|gt_smallkey|3|5]"
+                            "^$owDungeonChecks|@Ganon's Tower Bottom Left/Bob's Torch/Bob's Torch|@Ganon's Tower Bottom Left/DMs Room Top Left/DMs Room Top Left|@Ganon's Tower Bottom Left/DMs Room Top Right/DMs Room Top Right|@Ganon's Tower Bottom Left/DMs Room Bottom Left/DMs Room Bottom Left|@Ganon's Tower Bottom Left/DMs Room Bottom Right/DMs Room Bottom Right|@Ganon's Tower Bottom Left/Map Chest/Map Chest|@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room|@Ganon's Tower Bottom Left/Randomizer Room Top Left/Randomizer Room Top Left|@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right|@Ganon's Tower Bottom Left/Randomizer Room Bottom Left/Randomizer Room Bottom Left|@Ganon's Tower Bottom Left/Randomizer Room Bottom Right/Randomizer Room Bottom Right"
                         ],
                         "item_count": 11
                     },
                     {
                         "name": "Rightside",
                         "access_rules": [
-                            "[somaria], [firerod], $smallKeys|gt_smallkey|1|2, [$smallKeys|gt_smallkey|3|5]"
+                            "^$owDungeonChecks|@Ganon's Tower Bottom Right/Hope Room Left/Hope Room Left|@Ganon's Tower Bottom Right/Hope Room Right/Hope Room Right|@Ganon's Tower Bottom Right/Tile Room/Tile Room|@Ganon's Tower Bottom Right/Compass Chest/Compass Chest|@Ganon's Tower Bottom Right/Compass Room Top Right/Compass Room Top Right|@Ganon's Tower Bottom Right/Compass Room Bottom Left/Compass Room Bottom Left|@Ganon's Tower Bottom Right/Compass Room Bottom Right/Compass Room Bottom Right"
                         ],
                         "clear_as_group": false,
                         "item_count": 7
@@ -1606,8 +1606,7 @@
                         "name": "Big Chest + Ice refight",
                         "clear_as_group": false,
                         "access_rules": [
-                            "@GT-inverted/Ganon's Tower/Leftside, $smallKeys|gt_smallkey|1|3, [$smallKeys|gt_smallkey|3|5], [$bigKeys|gt_bigkey], [$getBossRef|gt_ice]",
-                            "@GT-inverted/Ganon's Tower/Rightside, $smallKeys|gt_smallkey|1|2, [$smallKeys|gt_smallkey|3|5], [$bigKeys|gt_bigkey], [$getBossRef|gt_ice]"
+                            "^$owDungeonChecks|@Ganon's Tower Bottom Refight/Bob's Chest/Bob's Chest|@Ganon's Tower Bottom Refight/Big Chest/Big Chest|@Ganon's Tower Bottom Refight/Big Key Room Left/Big Key Room Left|@Ganon's Tower Bottom Refight/Big Key Room Right/Big Key Room Right|@Ganon's Tower Bottom Refight/Big Key Chest/Big Key Chest"
                         ],
                         "item_count": 5,
                         "hosted_item": "gt_ice"
@@ -1615,7 +1614,7 @@
                     {
                         "name": "GT Top + Lanmo refight",
                         "access_rules": [
-                            "$bigKeys|gt_bigkey, $smallKeys|gt_smallkey|0|2, [$smallKeys|gt_smallkey|3|5], $getBossRef|gt_lanmo"
+                            "^$owDungeonChecks|@Ganon's Tower Top/Mini Helmasaur Room Left/Mini Helmasaur Room Left|@Ganon's Tower Top/Mini Helmasaur Room Right/Mini Helmasaur Room Right|@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest"
                         ],
                         "clear_as_group": false,
                         "item_count": 3,
@@ -1624,7 +1623,7 @@
                     {
                         "name": "GT Top Moldorm refight",
                         "access_rules": [
-                            "$bigKeys|gt_bigkey, $smallKeys|gt_smallkey|2|4, [$smallKeys|gt_smallkey|3|7], $getBossRef|gt_boss"
+                            "^$owDungeonChecks|@Ganon's Tower Top/Validation Chest/Validation Chest"
                         ],
                         "clear_as_group": false,
                         "item_count": 1,
@@ -1635,14 +1634,14 @@
                         "item_count": 4,
                         "clear_as_group": false,
                         "access_rules": [
-                            "@GT/Ganon's Tower/GT Top Moldorm refight, $smallKeys|gt_smallkey|2|4, [$smallKeys|gt_smallkey|3|7]"
+                            "^$owDungeonChecks|@Ganon's Tower Bottom Left/Conveyor Cross Pot Key/Conveyor Cross Pot Key|@Ganon's Tower Bottom Left/Double Switch Pot Key/Double Switch Pot Key|@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key|@Ganon's Tower Top/Mini Helmasaur Key Drop/Mini Helmasaur Key Drop"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     },
                     {
                         "name": "GT Top Agahnim 2",
                         "access_rules": [
-                            "@GT-inverted/Ganon's Tower/GT Top Moldorm refight"
+                            "^$owDungeonChecks|@Ganon's Tower Top/Agahnim 2/Agahnim 2"
                         ],
                         "clear_as_group": false,
                         "hosted_item": "aga2"

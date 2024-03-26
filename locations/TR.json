@@ -12,11 +12,14 @@
             {
                 "name": "Compass Chest",
                 "access_rules": [
-                    "^$can_reach|TR - Compass Chest"
+                    "^$can_reach|tr_compass_room"
                 ],
                 "sections": [
                     {
-                        "name": "Compass Chest"
+                        "name": "Compass Chest",
+                        "access_rules": [
+                            "^$can_reach|TR - Compass Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -31,11 +34,14 @@
             {
                 "name": "Chain Chomps",
                 "access_rules": [
-                    "^$can_reach|TR - Chain Chomp Chest"
+                    "^$can_reach|tr_chain_chomps_room"
                 ],
                 "sections": [
                     {
-                        "name": "Chain Chomps"
+                        "name": "Chain Chomps",
+                        "access_rules": [
+                            "^$can_reach|TR - Compass Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -51,11 +57,14 @@
                 "name": "Pokey 1 Key Drop",
                 "visibility_rules": ["key_drop_shuffle"],
                 "access_rules": [
-                    "^$can_reach|TR - Poke 1 Key Drop"
+                    "^$can_reach|tr_poke_1_room"
                 ],
                 "sections": [
                     {
-                        "name": "Pokey 1 Key Drop"
+                        "name": "Pokey 1 Key Drop",
+                        "access_rules": [
+                            "^$can_reach|TR - Compass Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -70,11 +79,14 @@
             {
                 "name": "Map Chest",
                 "access_rules": [
-                    "^$can_reach|TR - Roller Room Left"
+                    "^$can_reach|tr_map_room"
                 ],
                 "sections": [
                     {
-                        "name": "Map Chest"
+                        "name": "Map Chest",
+                        "access_rules": [
+                            "^$can_reach|TR - Compass Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -89,11 +101,14 @@
             {
                 "name": "Roller Room Right",
                 "access_rules": [
-                    "^$can_reach|TR - Roller Room Right"
+                    "^$can_reach|tr_map_room"
                 ],
                 "sections": [
                     {
-                        "name": "Roller Room Right"
+                        "name": "Roller Room Right",
+                        "access_rules": [
+                            "^$can_reach|TR - Compass Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -109,11 +124,14 @@
                 "name": "Pokey 2 Key Drop",
                 "visibility_rules": ["key_drop_shuffle"],
                 "access_rules": [
-                    "^$can_reach|TR - Poke 2 Key Drop"
+                    "^$can_reach|tr_poke_2_room"
                 ],
                 "sections": [
                     {
-                        "name": "Pokey 2 Key Drop"
+                        "name": "Pokey 2 Key Drop",
+                        "access_rules": [
+                            "^$can_reach|TR - Compass Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -132,7 +150,11 @@
                 ],
                 "sections": [
                     {
-                        "name": "Big Key Chest"
+                        "name": "Big Key Chest",
+                        "access_rules": [
+                            "^$can_reach|tr_big_key_room_bottom_left",
+                            "^$can_reach|tr_big_key_room_bottom_right"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -157,11 +179,14 @@
             {
                 "name": "Crystalroller Room",
                 "access_rules": [
-                    "^$can_reach|TR - Crystalroller Chest"
+                    "^$can_reach|tr_crystalroller_room"
                 ],
                 "sections": [
                     {
-                        "name": "Crystalroller Room"
+                        "name": "Crystalroller Room",
+                        "access_rules": [
+                            "^$can_reach|TR - Compass Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -182,11 +207,14 @@
             {
                 "name": "Eye Bridge Top Left",
                 "access_rules": [
-                    "^$can_reach|TR - Eyebridge Top Left"
+                    "^$can_reach|tr_eye_bridge_entrance"
                 ],
                 "sections": [
                     {
-                        "name": "Eye Bridge Top Left"
+                        "name": "Eye Bridge Top Left",
+                        "access_rules": [
+                            "^$can_reach|TR - Compass Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -201,11 +229,14 @@
             {
                 "name": "Eye Bridge Bottom Left",
                 "access_rules": [
-                    "^$can_reach|TR - Eyebridge Bottom Left"
+                    "^$can_reach|tr_eye_bridge_entrance"
                 ],
                 "sections": [
                     {
-                        "name": "Eye Bridge Bottom Left"
+                        "name": "Eye Bridge Bottom Left",
+                        "access_rules": [
+                            "^$can_reach|TR - Compass Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -220,11 +251,14 @@
             {
                 "name": "Eye Bridge Top Right",
                 "access_rules": [
-                    "^$can_reach|TR - Eyebridge Top Right"
+                    "^$can_reach|tr_eye_bridge_entrance"
                 ],
                 "sections": [
                     {
-                        "name": "Eye Bridge Top Right"
+                        "name": "Eye Bridge Top Right",
+                        "access_rules": [
+                            "^$can_reach|TR - Compass Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -239,11 +273,14 @@
             {
                 "name": "Eye Bridge Bottom Right",
                 "access_rules": [
-                    "^$can_reach|TR - Eyebridge Bottom Right"
+                    "^$can_reach|tr_eye_bridge_entrance"
                 ],
                 "sections": [
                     {
-                        "name": "Eye Bridge Bottom Right"
+                        "name": "Eye Bridge Bottom Right",
+                        "access_rules": [
+                            "^$can_reach|TR - Compass Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -258,11 +295,14 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "^$can_reach|TR - Big Key Chest"
+                    "^$can_reach|tr_big_chest_entrance"
                 ],
                 "sections": [
                     {
-                        "name": "Big Chest"
+                        "name": "Big Chest",
+                        "access_rules": [
+                            "^$can_reach|TR - Compass Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -277,11 +317,14 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "^$can_reach|TR - Boss"
+                    "^$can_reach|tr_boss_room"
                 ],
                 "sections": [
                     {
                         "name": "Boss Item",
+                        "access_rules": [
+                            "^$can_reach|TR - Compass Chest"
+                        ],
                         "item_count": 1,
                         "hosted_item": "tr_boss, turtlerock"
                     }

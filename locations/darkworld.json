@@ -705,8 +705,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules": [
-            "@Darkworld Right, pearl",
-            "inverted, @Darkworld Right"
+            "^$can_reach|pod_entrance"
         ],
         "children": [
             {
@@ -716,7 +715,7 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": [
-                            "[$darkRooms], [$smallKeys|pod_smallkey|5|5], [$bigKeys|pod_bigkey]"
+                            "^$owDungeonChecks|@Palace of Darkness/Shooter Room/Shooter Room|@Palace of Darkness/The Arena Bridge/Bridge|@Palace of Darkness/Stalfos Basement/Stalfos Basement|@Palace of Darkness/Big Key Chest/Big Key Chest|@Palace of Darkness/The Arena Ledge/Ledge|@Palace of Darkness/Map Chest/Map Chest|@Palace of Darkness/Compass Chest/Compass Chest|@Palace of Darkness/Dark Basement Left/Dark Basement Left|@Palace of Darkness/Dark Basement Right/Dark Basement Right|@Palace of Darkness/Dark Maze Top/Dark Maze Top|@Palace of Darkness/Dark Maze Bottom/Dark Maze Bottom|@Palace of Darkness/Big Chest/Big Chest|@Palace of Darkness/Harmless Hellway/Harmless Hellway"
                         ],
                         "clear_as_group": false,
                         "item_count": 13
@@ -725,7 +724,7 @@
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules": [
-                            "$bigKeys|pod_bigkey, [$darkRooms], $getBossRef|pod_boss, hammer, bow"
+                            "^$owDungeonChecks|@Palace of Darkness/Boss/Boss Item"
                         ],
                         "item_count": 1,
                         "hosted_item": "pod_boss, palaceofdarkness"
@@ -747,39 +746,22 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
-        "access_rules": [
-            // "@Dark Death Mountain Right, hammer, $canUseMedallions, tr_medallion",
-            // "@Dark Death Mountain Right, $checkGlitches|2, boots",
-            // "inverted, @Dark Death Mountain Right, $canUseMedallions, tr_medallion",
-            // "inverted, @Light Death Mountain Right, mirror"
-            "@Dark Death Mountain Right", //top
-            // "@Light Death Mountain Right, hammer, titans, pearl", //top
-            "@Dark Death Mountain Left, $checkGlitches|2, boots" //eyebridge glitch
-        ],
+        // "access_rules": [
+        //     "^$can_reach|ip_entrance"
+        // ],
         "children": [
             {
                 "name": "Turtle Rock Front",
                 "access_rules": [
-                    "$openOrStandard, @TR, hammer, titans, $canUseMedallions, tr_medallion",
-                    "$openOrStandard, @TR, hammer, titans, $canUseMedallions, medallion:3",
-                    "$openOrStandard, @TR, $checkGlitches|2, boots, $canUseMedallions, tr_medallion",
-                    "$openOrStandard, @TR, $checkGlitches|2, boots, $canUseMedallions, medallion:3",
-                    "@TR, $checkGlitches|2, boots",
-                    "inverted, @TR, $canUseMedallions, tr_medallion",
-                    "inverted, @TR, $canUseMedallions, medallion:3",
-                    "inverted, @TR/Turtle Rock Back, boots, $checkGlitches|1",
-                    "inverted, @TR/Turtle Rock Back, somaria",
-                    "inverted, @TR/Turtle Rock Back"
-                    // "@Dark Death Mountain Right, $checkGlitches|2, boots, @TR/Turtle Rock Back",
-                    // "@TR/Turtle Rock Back"
+                    "^$can_reach|tr_main_entrance",
+                    "^$can_reach|tr_laser_entrance"
                 ],
                 "item_count": 5,
                 "sections": [
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": [
-                            "@TR/Turtle Rock Front, $smallKeys|tr_smallkey|0|0, [$smallKeys|tr_smallkey|2|6], [somaria], [firerod]",
-                            "@TR/Turtle Rock Back, $smallKeys|tr_smallkey|0|0, [$smallKeys|tr_smallkey|1|5], [somaria], [firerod]"
+                            "^$owDungeonChecks|@Turtle Rock Front/Compass Chest/Compass Chest|@Turtle Rock Front/Map Chest/Map Chest|@Turtle Rock Front/Roller Room Right/Roller Room Right|@Turtle Rock Front/Chain Chomps/Chain Chomps|@Turtle Rock Front/Big Key Chest/Big Key Chest"
                         ],
                         "clear_as_group": false,
                         "item_count": 5
@@ -789,10 +771,7 @@
                         "item_count": 2,
                         "clear_as_group": false,
                         "access_rules": [
-                            "@TR/Turtle Rock Front, $smallKeys|tr_smallkey|2|3, [$smallKeys|tr_smallkey|2|4], [somaria], [firerod]",
-                            "@TR/Turtle Rock Back, $smallKeys|tr_smallkey|1|3, [$smallKeys|tr_smallkey|1|3], [somaria], [firerod]",
-                            "@TR/Turtle Rock Back, $smallKeys|tr_smallkey|1|3, [$smallKeys|tr_smallkey|1|3], [hookshot], [firerod]",
-                            "@TR/Turtle Rock Back, $smallKeys|tr_smallkey|1|3, [$smallKeys|tr_smallkey|1|3], [boots], [firerod], $checkGlitches|1"
+                            "^$owDungeonChecks|@Turtle Rock Front/Pokey 1 Key Drop/Pokey 1 Key Drop|@Turtle Rock Front/Pokey 2 Key Drop/Pokey 2 Key Drop"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     }
@@ -815,19 +794,14 @@
             {
                 "name": "Turtle Rock Back",
                 "access_rules": [
-                    "@TR/Turtle Rock Front, $smallKeys|tr_smallkey|2|3, [$smallKeys|tr_smallkey|2|4], somaria",
-                    "$openOrStandard, @Dark Death Mountain Right, $checkGlitches|2, mirror",
-                    "@Dark Death Mountain Right, $checkGlitches|2, boots",
-                    "@TR/Turtle Rock Eye Bridge Entrance, somaria, [$darkRooms], $smallKeys|tr_smallkey|2|2, [$smallKeys|tr_smallkey|4|6]"
+                    "^$can_reach|tr_big_chest_entrance"
                 ],
                 "item_count": 8,
                 "sections": [
                     {
                         "name": "Dungeon Chest",
                         "access_rules": [
-                            "@TR/Turtle Rock Front, [$smallKeys|tr_smallkey|3|5], [$darkRooms], [somaria], $bigKeys|tr_bigkey",
-                            "@TR/Turtle Rock Back, [$smallKeys|tr_smallkey|2|2], [$darkRooms], [somaria], $bigKeys|tr_bigkey",
-                            "@TR/Turtle Rock Eye Bridge Entrance, [$smallKeys|tr_smallkey|1|1], [$darkRooms], [somaria], $bigKeys|tr_bigkey"
+                            "^$owDungeonChecks|@Turtle Rock Back/Big Chest/Big Chest|@Turtle Rock Back/Crystalroller Room/Crystalroller Room|@Turtle Rock Back/Eye Bridge Bottom Left/Eye Bridge Bottom Left|@Turtle Rock Back/Eye Bridge Bottom Right/Eye Bridge Bottom Right|@Turtle Rock Back/Eye Bridge Top Left/Eye Bridge Top Left|@Turtle Rock Back/Eye Bridge Top Right/Eye Bridge Top Right"
                         ],
                         "clear_as_group": false,
                         "item_count": 6
@@ -836,9 +810,7 @@
                         "name": "Boss Item",
                         "clear_as_group": false,
                         "access_rules": [
-                            "@TR/Turtle Rock Front, [$smallKeys|tr_smallkey|4|6], $darkRooms, $getBossRef|tr_boss, $bigKeys|tr_bigkey, somaria",
-                            "@TR/Turtle Rock Back, [$smallKeys|tr_smallkey|2|2], $darkRooms, $getBossRef|tr_boss, $bigKeys|tr_bigkey, somaria",
-                            "@TR/Turtle Rock Eye Bridge Entrance, [$smallKeys|tr_smallkey|1|1], $darkRooms, $getBossRef|tr_boss, $bigKeys|tr_bigkey, somaria"
+                            "^$owDungeonChecks|@Turtle Rock Back/Boss/Boss Item"
                         ],
                         "item_count": 1
                         // "hosted_item": "tr_boss, turtlerock"
@@ -856,10 +828,7 @@
             {
                 "name": "Turtle Rock Eye Bridge Entrance",
                 "access_rules": [
-                    "@Dark Death Mountain Right, boot, mirror, $checkGlitches|2",
-                    "@TR/Turtle Rock Back, somaria, $smallKeys|tr_smallkey|1|1",
-                    "@TR/Turtle Rock Front, somaria, $smallKeys|tr_smallkey|3|5",
-                    "inverted, @Light Death Mountain Right, mirror"
+                    "^$can_reach|tr_eye_bridge_entrance"
                 ],
                 "visibility_rules": ["inverted"],
                 "item_count": 1,
@@ -882,24 +851,42 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
-        "access_rules": [
-            "@Darkworld Left"
-        ],
+        // "access_rules": [
+        //     "^$can_reach|sw_gibdo_entrance",
+        //     "^$can_reach|sw_big_chest_entrance",
+        //     "^$can_reach|sw_pot_circle_drop",
+        //     "^$can_reach|sw_bottom_left_drop",
+        //     "^$can_reach|sw_pinball_drop",
+        //     "^$can_reach|sw_west_lobby_entrance",
+        //     "^$can_reach|sw_north_drop"
+        // ],
         "children": [
             {
                 "name": "Skull Woods Front",
+                "access_rules": [
+                    "^$can_reach|sw_gibdo_entrance",
+                    "^$can_reach|sw_big_chest_entrance",
+                    "^$can_reach|sw_pot_circle_drop",
+                    "^$can_reach|sw_bottom_left_drop",
+                    "^$can_reach|sw_pinball_drop",
+                    "^$can_reach|sw_west_lobby_entrance",
+                    "^$can_reach|sw_north_drop"
+                ],
                 "item_count": 6,
                 "sections": [
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": [
-                            "$smallKeys|sw_smallkey|0|0, [$smallKeys|sw_smallkey|1|1],[$bigKeys|sw_bigkey]"
+                            "^$owDungeonChecks|@Skull Woods Front/Compass Chest/Compass Chest|@Skull Woods Front/Map Chest/Map Chest|@Skull Woods Front/Big Chest/Big Chest|@Skull Woods Front/Pot Prison/Pot Prison|@Skull Woods Front/Pinball Room/Pinball Room|@Skull Woods Front/Big Key Chest/Big Key Chest"
                         ],
                         "clear_as_group": false,
                         "item_count": 6
                     },
                     {
                         "name": "Key Drops",
+                        "access_rules": [
+                            "^$owDungeonChecks|@Skull Woods Front/West Lobby Pot Key/West Lobby Pot Key"
+                        ],
                         "item_count": 1,
                         "clear_as_group": false,
                         "visibility_rules": ["key_drop_shuffle"]
@@ -917,12 +904,15 @@
             {
                 "name": "Skull Woods Back",
                 "access_rules": [
-                    "firerod"
+                    "^$can_reach|sw_back_entrance"
                 ],
                 "item_count": 3,
                 "sections": [
                     {
                         "name": "Dungeon Chest" ,
+                        "access_rules": [
+                            "^$owDungeonChecks|@Skull Woods Back/Bridge Room/Bridge Room"
+                        ],
                         "clear_as_group": false,
                         "item_count": 1
                     },
@@ -931,7 +921,7 @@
                         "item_count": 1,
                         "clear_as_group": false,
                         "access_rules": [
-                            "$canRemoveCurtains, $smallKeys|sw_smallkey|1|1, [$smallKeys|sw_smallkey|2|2]"
+                            "^$owDungeonChecks|@Skull Woods Back/Spike Corner Key Drop/Spike Corner Key Drop"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     },
@@ -939,7 +929,7 @@
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules": [
-                            "$canRemoveCurtains, $getBossRef|sw_boss, $smallKeys|sw_smallkey|2|2, [$smallKeys|sw_smallkey|3|3]"
+                            "^$owDungeonChecks|@Skull Woods Back/Boss/Boss Item"
                         ],
                         "item_count": 1,
                         "hosted_item": "sw_boss, skullwoods"
@@ -962,10 +952,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules": [
-            "@Darkworld Swamp, pearl, $canUseMedallions, mm_medallion",
-            "@Darkworld Swamp, pearl, $canUseMedallions, medallion:3",
-            "inverted, @Darkworld Swamp, $canUseMedallions, mm_medallion",
-            "inverted, @Darkworld Swamp, $canUseMedallions, medallion:3"
+            "^$can_reach|ip_entrance"
         ],
         "children": [
             {
@@ -979,7 +966,7 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": [
-                            "[firesource],[$bigKeys|mm_bigkey], $smallKeys|mm_smallkey|0|0, [$smallKeys|mm_smallkey|1|3]" //0|2
+                            "^$owDungeonChecks|@Misery Mire/Big Chest/Big Chest|@Misery Mire/Map Chest/Map Chest|@Misery Mire/Main Lobby/Main Lobby|@Misery Mire/Bridge Chest/Bridge Chest|@Misery Mire/Spike Chest/Spike Chest|@Misery Mire/Compass Chest/Compass Chest|@Misery Mire/Big Key Chest/Big Key Chest"
                         ],
                         "clear_as_group": false,
                         "item_count": 7
@@ -989,7 +976,7 @@
                         "item_count": 3,
                         "clear_as_group": false,
                         "access_rules": [
-                            "[firesource], $smallKeys|mm_smallkey|0|0, [$smallKeys|mm_smallkey|3|5]" //2|4
+                            "^$owDungeonChecks|@Misery Mire/Spikes Pot Key/Spikes Pot Key|@Misery Mire/Fishbone Pot Key/Fishbone Pot Key|@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     },
@@ -997,7 +984,7 @@
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules": [
-                            "$bigKeys|mm_bigkey, $getBossRef|mm_boss, [$darkRooms], somaria, $smallKeys|mm_smallkey|0|2, [$smallKeys|mm_smallkey|1|3]"
+                            "^$owDungeonChecks|@Misery Mire/Boss/Boss Item"
                         ],
                         "item_count": 1,
                         "hosted_item": "mm_boss, miserymire"
@@ -1020,9 +1007,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules": [
-            "@Darkworld Bottom",
-            "@Darkworld Left, hookshot, hammer",
-            "inverted, @Lightworld"
+            "^$can_reach|sp_entrance"
         ],
         "children": [
             {
@@ -1035,8 +1020,7 @@
                     {
                         "name": "Dungeon Chest",
                         "access_rules": [
-                            "[$bigKeys|sp_bigkey], [hookshot], [$smallKeys|sp_smallkey|1|5],[hammer]",
-                            "[$bigKeys|sp_bigkey], [hookshot], [$smallKeys|sp_smallkey|1|4], $checkGlitches|1"
+                            "^$owDungeonChecks|@Swamp Palace/Entrance/Entrance|@Swamp Palace/Map Chest/Map Chest|@Swamp Palace/Big Chest/Big Chest|@Swamp Palace/Compass Chest/Compass Chest|@Swamp Palace/Big Key Chest/Big Key Chest|@Swamp Palace/West Chest/West Chest|@Swamp Palace/Flooded Room Left/Flooded Room Left|@Swamp Palace/Flooded Room Right/Flooded Room Right|@Swamp Palace/Waterfall Room/Waterfall Room"
                         ],
                         "clear_as_group": false,
                         "item_count": 9
@@ -1046,8 +1030,7 @@
                         "item_count": 5,
                         "clear_as_group": false,
                         "access_rules": [
-                            "[hookshot], $smallKeys|sp_smallkey|1|1, [$smallKeys|sp_smallkey|1|5], [hammer]",
-                            "[hookshot], $smallKeys|sp_smallkey|1|1, [$smallKeys|sp_smallkey|1|4], $checkGlitches|1"
+                            "^$owDungeonChecks|@Swamp Palace/Pot Row Pot Key/Pot Row Pot Key|@Swamp Palace/Trench 1 Pot Key/Trench 1 Pot Key|@Swamp Palace/Hookshot Pot Key/Hookshot Pot Key|@Swamp Palace/Trench 2 Pot Key/Trench 2 Pot Key|@Swamp Palace/Waterway Pot Key/Waterway Pot Key"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     },
@@ -1055,8 +1038,7 @@
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules": [
-                            "hookshot, $getBossRef|sp_boss, $smallKeys|sp_smallkey|1|5, [$smallKeys|sp_smallkey|1|6], hammer",
-                            "hookshot, $getBossRef|sp_boss, $smallKeys|sp_smallkey|1|4, [$smallKeys|sp_smallkey|1|5], $checkGlitches|1"
+                            "^$owDungeonChecks|@Swamp Palace/Boss/Boss Item"
                         ],
                         "item_count": 1,
                         "hosted_item": "sp_boss, swamppalace"
@@ -1079,29 +1061,21 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules": [
-            "@Lightworld, [$canSwim], pearl, titans",
-            "inverted, flippers",
-            "@Darkworld Bottom, flippers, pearl, $checkGlitches|2, boots",
-            "@Darkworld Bottom, pearl, $checkGlitches|2, boots, mirror"
+            "^$can_reach|ip_entrance"
         ],
         "children": [
             {
                 "name": "Ice Palace",
-                "access_rules": [
-                    "firerod",
-                    "bombos"
-                ],
+                // "access_rules": [
+                //     "firerod",
+                //     "bombos"
+                // ],
                 "item_count": 9,
                 "sections": [
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": [
-                            "[$bigKeys|ip_bigkey], $smallKeys|ip_smallkey|0|4, [$smallKeys|ip_smallkey|2|5], [hammer], [glove]", //vanilla
-                            "[$bigKeys|ip_bigkey], $smallKeys|ip_smallkey|0|3, $checkGlitches|1, [$smallKeys|ip_smallkey|1|4], [hammer], [glove]", // IP bomb jump
-                            "[$bigKeys|ip_bigkey], $smallKeys|ip_smallkey|0|3, $checkGlitches|2, somaria, [$smallKeys|ip_smallkey|1|4], [hammer], [glove]" // Icebreaker
-                            // "[ip_bigkey], [$smallKeys|ip_smallkey|1], [glove], somaria, $checkGlitches|1",
-                            // "ip_bigkey, $smallKeys|ip_smallkey|1, glove, somaria, $checkGlitches|1"
-                            //icebreaker? ja? nein?
+                            "^$owDungeonChecks|@Ice Palace/Compass Chest/Compass Chest|@Ice Palace/Freezor Chest/Freezor Chest|@Ice Palace/Big Chest/Big Chest|@Ice Palace/Iced T Room/Iced T Room|@Ice Palace/Spike Room/Spike Room|@Ice Palace/Big Key Chest/Big Key Chest|@Ice Palace/Map Chest/Map Chest"
                         ],
                         "clear_as_group": false,
                         "item_count": 7
@@ -1111,9 +1085,7 @@
                         "item_count": 4,
                         "clear_as_group": false,
                         "access_rules": [
-                            "[$bigKeys|ip_bigkey], $smallKeys|ip_smallkey|1|4, [$smallKeys|ip_smallkey|2|5], [hammer], [glove]", //vanilla
-                            "$smallKeys|ip_smallkey|0|2, $checkGlitches|1, [$smallKeys|ip_smallkey|1|3], [hammer], [glove]", // IP bomb jump
-                            "$smallKeys|ip_smallkey|0|3, $checkGlitches|2, somaria, [$smallKeys|ip_smallkey|1|4], [hammer], [glove]" // Icebreaker
+                            "^$owDungeonChecks|@Ice Palace/Jelly Key Drop/Jelly Key Drop|@Ice Palace/Conveyor Key Drop/Conveyor Key Drop|@Ice Palace/Hammer Block Key Drop/Hammer Block Key Drop|@Ice Palace/Many Pots Pot Key/Many Pots Pot Key"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     },
@@ -1121,10 +1093,7 @@
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules": [
-                            "[$bigKeys|ip_bigkey], $smallKeys|ip_smallkey|1|4, [$smallKeys|ip_smallkey|2|5], [hammer], [glove]", //vanilla
-                            "$smallKeys|ip_smallkey|0|3, $checkGlitches|1, [$smallKeys|ip_smallkey|1|4], [hammer], [glove]", // IP bomb jump
-                            "$smallKeys|ip_smallkey|0|3, $checkGlitches|2, somaria, [$smallKeys|ip_smallkey|1|4], [hammer], [glove]" // Icebreaker
-                            //maybe add hookpush then no hammer but hookshot needed for kholdstare room
+                            "^$owDungeonChecks|@Ice Palace/Boss/Boss Item"
                         ],
                         "item_count": 1,
                         "hosted_item": "ip_boss, icepalace"
@@ -1147,7 +1116,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules": [
-            "@Darkworld Left"
+            "^$can_reach|tt_entrance"
         ],
         "children": [
             {
@@ -1156,23 +1125,26 @@
                 "sections": [
                     { 
                         "name": "Front",
+                        "access_rules": [
+                            "^$owDungeonChecks|@Thieves Town Front/Big Key Chest/Big Key Chest|@Thieves Town Front/Map Chest/Map Chest|@Thieves Town Front/Compass Chest/Compass Chest|@Thieves Town Front/Ambush Chest/Ambush Chest"
+                        ],
                         "clear_as_group": false,
                         "item_count": 4
                     },
                     {
                         "name": "Back",
-                        "clear_as_group": false,
-                        "item_count": 3,
                         "access_rules": [
-                            "$bigKeys|tt_bigkey, [$smallKeys|tt_smallkey|1|3], [hammer]"
-                        ]
+                            "^$owDungeonChecks|@Thieves Town Back/Attic/Attic|@Thieves Town Back/Big Chest/Big Chest|@Thieves Town Back/Blind's Cell/Blind's Cell"
+                        ],
+                        "clear_as_group": false,
+                        "item_count": 3
                     },
                     {
                         "name": "Key Drops",
                         "item_count": 2,
                         "clear_as_group": false,
                         "access_rules": [
-                            "$bigKeys|tt_bigkey, [$smallKeys|tt_smallkey|1|1]"
+                            "^$owDungeonChecks|@Thieves Town Back/Hallway Pot Key/Hallway Pot Key|@Thieves Town Back/Spike Switch Pot Key/Spike Switch Pot Key"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     },
@@ -1180,7 +1152,7 @@
                         "name": "Boss Item",
                         "clear_as_group": false,
                         "access_rules": [
-                            "$bigKeys|tt_bigkey, $getBossRef|tt_boss"
+                            "^$owDungeonChecks|@Thieves Town Back/Boss/Boss Item"
                         ],
                         "item_count": 1,
                         "hosted_item": "tt_boss, thievestown"
@@ -1208,9 +1180,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules": [
-            "$openOrStandard, @Dark Death Mountain Right, $gtCrystalCount",
-            "$openOrStandard, @Light Death Mountain Left Bottom, hookshot, titans, hammer, $gtCrystalCount",
-            "$openOrStandard, @Dark Death Mountain Left, $checkGlitches|2, boots"
+            "^$can_reach|gt_entrance"
         ],
         "visibility_rules": ["$openOrStandard"],
         "children": [
@@ -1221,14 +1191,14 @@
                         "name": "Leftside",
                         "clear_as_group": false,
                         "access_rules": [
-                            "[boots],[hammer],[hookshot], $smallKeys|gt_smallkey|1|3, [$smallKeys|gt_smallkey|3|5]"
+                            "^$owDungeonChecks|@Ganon's Tower Bottom Left/Bob's Torch/Bob's Torch|@Ganon's Tower Bottom Left/DMs Room Top Left/DMs Room Top Left|@Ganon's Tower Bottom Left/DMs Room Top Right/DMs Room Top Right|@Ganon's Tower Bottom Left/DMs Room Bottom Left/DMs Room Bottom Left|@Ganon's Tower Bottom Left/DMs Room Bottom Right/DMs Room Bottom Right|@Ganon's Tower Bottom Left/Map Chest/Map Chest|@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room|@Ganon's Tower Bottom Left/Randomizer Room Top Left/Randomizer Room Top Left|@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right|@Ganon's Tower Bottom Left/Randomizer Room Bottom Left/Randomizer Room Bottom Left|@Ganon's Tower Bottom Left/Randomizer Room Bottom Right/Randomizer Room Bottom Right"
                         ],
                         "item_count": 11
                     },
                     {
                         "name": "Rightside",
                         "access_rules": [
-                            "[somaria], [firerod], $smallKeys|gt_smallkey|1|2, [$smallKeys|gt_smallkey|3|5]"
+                            "^$owDungeonChecks|@Ganon's Tower Bottom Right/Hope Room Left/Hope Room Left|@Ganon's Tower Bottom Right/Hope Room Right/Hope Room Right|@Ganon's Tower Bottom Right/Tile Room/Tile Room|@Ganon's Tower Bottom Right/Compass Chest/Compass Chest|@Ganon's Tower Bottom Right/Compass Room Top Right/Compass Room Top Right|@Ganon's Tower Bottom Right/Compass Room Bottom Left/Compass Room Bottom Left|@Ganon's Tower Bottom Right/Compass Room Bottom Right/Compass Room Bottom Right"
                         ],
                         "clear_as_group": false,
                         "item_count": 7
@@ -1237,8 +1207,7 @@
                         "name": "Big Chest + Ice refight",
                         "clear_as_group": false,
                         "access_rules": [
-                            "@GT/Ganon's Tower/Leftside, $smallKeys|gt_smallkey|1|3, [$smallKeys|gt_smallkey|3|5], [$bigKeys|gt_bigkey], [$getBossRef|gt_ice]",
-                            "@GT/Ganon's Tower/Rightside, $smallKeys|gt_smallkey|1|2, [$smallKeys|gt_smallkey|3|5], [$bigKeys|gt_bigkey], [$getBossRef|gt_ice]"
+                            "^$owDungeonChecks|@Ganon's Tower Bottom Refight/Bob's Chest/Bob's Chest|@Ganon's Tower Bottom Refight/Big Chest/Big Chest|@Ganon's Tower Bottom Refight/Big Key Room Left/Big Key Room Left|@Ganon's Tower Bottom Refight/Big Key Room Right/Big Key Room Right|@Ganon's Tower Bottom Refight/Big Key Chest/Big Key Chest"
                         ],
                         "item_count": 5,
                         "hosted_item": "gt_ice"
@@ -1246,7 +1215,7 @@
                     {
                         "name": "GT Top + Lanmo refight",
                         "access_rules": [
-                            "$bigKeys|gt_bigkey, $smallKeys|gt_smallkey|0|2, [$smallKeys|gt_smallkey|3|5], $getBossRef|gt_lanmo"
+                            "^$owDungeonChecks|@Ganon's Tower Top/Mini Helmasaur Room Left/Mini Helmasaur Room Left|@Ganon's Tower Top/Mini Helmasaur Room Right/Mini Helmasaur Room Right|@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest"
                         ],
                         "clear_as_group": false,
                         "item_count": 3,
@@ -1255,7 +1224,7 @@
                     {
                         "name": "GT Top Moldorm refight",
                         "access_rules": [
-                            "$bigKeys|gt_bigkey, $smallKeys|gt_smallkey|2|4, [$smallKeys|gt_smallkey|3|7], $getBossRef|gt_boss"
+                            "^$owDungeonChecks|@Ganon's Tower Top/Validation Chest/Validation Chest"
                         ],
                         "clear_as_group": false,
                         "item_count": 1,
@@ -1266,14 +1235,14 @@
                         "item_count": 4,
                         "clear_as_group": false,
                         "access_rules": [
-                            "@GT/Ganon's Tower/GT Top Moldorm refight, $smallKeys|gt_smallkey|2|4, [$smallKeys|gt_smallkey|3|7]"
+                            "^$owDungeonChecks|@Ganon's Tower Bottom Left/Conveyor Cross Pot Key/Conveyor Cross Pot Key|@Ganon's Tower Bottom Left/Double Switch Pot Key/Double Switch Pot Key|@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key|@Ganon's Tower Top/Mini Helmasaur Key Drop/Mini Helmasaur Key Drop"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     },
                     {
                         "name": "GT Top Agahnim 2",
                         "access_rules": [
-                            "@GT/Ganon's Tower/GT Top Moldorm refight"
+                            "^$owDungeonChecks|@Ganon's Tower Top/Agahnim 2/Agahnim 2"
                         ],
                         "clear_as_group": false,
                         "hosted_item": "aga2"
@@ -1296,8 +1265,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules": [
-            "inverted, @Dark Death Mountain Left",
-            "inverted, @Dark Death Mountain Left, $checkGlitches|2, boots"
+            "^$can_reach|at_entrance"
         ],
         "visibility_rules": ["inverted"],
         "children": [
@@ -1306,12 +1274,15 @@
                 "item_count": 3,
                 "sections": [
                     {
-                        "name": "Front"
+                        "name": "Front",
+                        "access_rules": [
+                            "^$owDungeonChecks|@Agahnim's Tower/Front/Front"
+                        ]
                     },
                     {
                         "name": "Maze Chest",
                         "access_rules": [
-                            "[$darkRooms], $smallKeys|at_smallkey|1|1"
+                            "^$owDungeonChecks|@Agahnim's Tower/Maze Chest/Maze Chest"
                         ]
                     },
                     {
@@ -1319,16 +1290,14 @@
                         "item_count": 2,
                         "clear_as_group": false,
                         "access_rules": [
-                            "[$darkRooms], $smallKeys|at_smallkey|1|1, [$smallKeys|at_smallkey|1|2]"
+                            "^$owDungeonChecks|@Agahnim's Tower/Dark Archer Key Drop/Dark Archer Key Drop|@Agahnim's Tower/Circle of Pots Key Drop/Circle of Pots Key Drop"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     },
                     {
                         "name": "Agahnim 1",
                         "access_rules": [
-                            "[$darkRooms], $canRemoveCurtains, sword, $smallKeys|at_smallkey|2|4",
-                            "[$darkRooms], $canRemoveCurtains, bug_net, $smallKeys|at_smallkey|2|4",
-                            "[$darkRooms], $canRemoveCurtains, hammer, $smallKeys|at_smallkey|2|4"
+                            "^$owDungeonChecks|@Agahnim's Tower/Agahnim 1/Agahnim 1"
                         ],
                         "hosted_item": "aga1"
                     }

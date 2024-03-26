@@ -26,7 +26,7 @@ sw_bottom_left_room:connect_two_ways(sw_compass_room)
 
 sw_compass_room:connect_two_ways(sw_pot_prison)
 sw_compass_room:connect_one_way(sw_pinball_room)
-sw_compass_room:connect_one_way("SW - compass Chest")
+sw_compass_room:connect_one_way("SW - Compass Chest")
 
 sw_pot_prison:connect_two_ways(sw_big_chest_entrance, function(keys) return has("sw_smallkey", keys + 1, 1, keys + 1, 1), KDSreturn(keys + 1, keys + 1) end)
 sw_pot_prison:connect_one_way("SW - Pot Prison")

@@ -10,11 +10,14 @@
             {
                 "name": "Shooter Room",
                 "access_rules": [
-                    "^$can_reach|PoD - Shooter Room"
+                    "^$can_reach|pod_shooter_room"
                 ],
                 "sections": [
                     {
-                        "name": "Shooter Room"
+                        "name": "Shooter Room",
+                        "access_rules": [
+                            "^$can_reach|PoD - Shooter Room"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -29,11 +32,14 @@
             {
                 "name": "Stalfos Basement",
                 "access_rules": [
-                    "^$can_reach|PoD - Stalfos Basement"
+                    "^$can_reach|pod_basement_floor"
                 ],
                 "sections": [
                     {
-                        "name": "Stalfos Basement"
+                        "name": "Stalfos Basement",
+                        "access_rules": [
+                            "^$can_reach|PoD - Stalfos Basement"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -48,11 +54,14 @@
             {
                 "name": "Big Key Chest",
                 "access_rules": [
-                    "^$can_reach|PoD - Big Key Chest"
+                    "^$can_reach|pod_big_key_chest_ledge"
                 ],
                 "sections": [
                     {
-                        "name": "Big Key Chest"
+                        "name": "Big Key Chest",
+                        "access_rules": [
+                            "^$can_reach|PoD - Big Key Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -67,11 +76,14 @@
             {
                 "name": "Dark Maze Top",
                 "access_rules": [
-                    "^$can_reach|PoD - Dark Maze Top"
+                    "^$can_reach|pod_dark_maze"
                 ],
                 "sections": [
                     {
-                        "name": "Dark Maze Top"
+                        "name": "Dark Maze Top",
+                        "access_rules": [
+                            "^$can_reach|PoD - Dark Maze Top"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -86,11 +98,14 @@
             {
                 "name": "Dark Maze Bottom",
                 "access_rules": [
-                    "^$can_reach|PoD - Dark Maze Bottom"
+                    "^$can_reach|pod_dark_maze"
                 ],
                 "sections": [
                     {
-                        "name": "Dark Maze Bottom"
+                        "name": "Dark Maze Bottom",
+                        "access_rules": [
+                            "^$can_reach|PoD - Dark Maze Bottom"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -105,11 +120,14 @@
             {
                 "name": "Compass Chest",
                 "access_rules": [
-                    "^$can_reach|PoD - Compass Chest"
+                    "^$can_reach|pod_compass_room"
                 ],
                 "sections": [
                     {
-                        "name": "Compass Chest"
+                        "name": "Compass Chest",
+                        "access_rules": [
+                            "^$can_reach|PoD - Compass Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -124,11 +142,14 @@
             {
                 "name": "Harmless Hellway",
                 "access_rules": [
-                    "^$can_reach|PoD - Harmless Hellway"
+                    "^$can_reach|pod_harmless_hellway"
                 ],
                 "sections": [
                     {
-                        "name": "Harmless Hellway"
+                        "name": "Harmless Hellway",
+                        "access_rules": [
+                            "^$can_reach|PoD - Harmless Hellway"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -143,11 +164,14 @@
             {
                 "name": "The Arena Bridge",
                 "access_rules": [
-                    "^$can_reach|PoD - Arena Bridge"
+                    "^$can_reach|pod_arena"
                 ],
                 "sections": [
                     {
-                        "name": "Bridge"
+                        "name": "Bridge",
+                        "access_rules": [
+                            "^$can_reach|PoD - Arena Bridge"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -162,11 +186,14 @@
             {
                 "name": "The Arena Ledge",
                 "access_rules": [
-                    "^$can_reach|PoD - Arena Ledge"
+                    "^$can_reach|pod_switch_room_top"
                 ],
                 "sections": [
                     {
-                        "name": "Ledge"
+                        "name": "Ledge",
+                        "access_rules": [
+                            "^$can_reach|PoD - Arena Ledge"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -181,11 +208,14 @@
             {
                 "name": "Map Chest",
                 "access_rules": [
-                    "^$can_reach|PoD - Map Chest"
+                    "^$can_reach|pod_switch_room_top"
                 ],
                 "sections": [
                     {
-                        "name": "Map Chest"
+                        "name": "Map Chest",
+                        "access_rules": [
+                            "^$can_reach|PoD - Map Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -200,11 +230,14 @@
             {
                 "name": "Dark Basement Left",
                 "access_rules": [
-                    "^$can_reach|PoD - Dark Basement Left"
+                    "^$can_reach|pod_dark_basement"
                 ],
                 "sections": [
                     {
-                        "name": "Dark Basement Left"
+                        "name": "Dark Basement Left",
+                        "access_rules": [
+                            "^$can_reach|PoD - Dark Basement Left"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -219,11 +252,14 @@
             {
                 "name": "Dark Basement Right",
                 "access_rules": [
-                    "^$can_reach|PoD - Dark Basement Right"
+                    "^$can_reach|pod_dark_basement"
                 ],
                 "sections": [
                     {
-                        "name": "Dark Basement Right"
+                        "name": "Dark Basement Right",
+                        "access_rules": [
+                            "^$can_reach|PoD - Dark Basement Right"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -238,11 +274,14 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "^$can_reach|PoD - Big Chest"
+                    "^$can_reach|pod_dark_maze"
                 ],
                 "sections": [
                     {
-                        "name": "Big Chest"
+                        "name": "Big Chest",
+                        "access_rules": [
+                            "^$can_reach|PoD - Big Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -257,11 +296,14 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "^$can_reach|PoD - Boss"
+                    "^$can_reach|pod_boss_room"
                 ],
                 "sections": [
                     {
                         "name": "Boss Item",
+                        "access_rules": [
+                            "^$can_reach|PoD - Boss"
+                        ],
                         "item_count": 1,
                         "hosted_item": "pod_boss,palaceofdarkness"
                     }

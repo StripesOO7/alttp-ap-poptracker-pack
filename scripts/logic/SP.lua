@@ -18,7 +18,7 @@ sp_first_room:connect_one_way("SP - Entrance Chest", function()
     return all(
         can_reach(dam_inside),
         has("flippers"),
-        weapon()
+        dealDamage()
     )
 end)
 
@@ -40,7 +40,7 @@ sp_first_trench:connect_two_ways(sp_main_room, function(keys)
         )
     ), KDSreturn(keys, keys + 1)
 end)
-sp_first_room:connect_one_way("SP - Tench 1 Pot Key")
+sp_first_trench:connect_one_way("SP - Tench 1 Pot Key")
 
 sp_main_room:connect_two_ways(sp_roundabout)
 sp_main_room:connect_two_ways(sp_second_trench)

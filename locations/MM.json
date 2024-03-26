@@ -10,12 +10,15 @@
             {
                 "name": "Spikes Pot Key",
                 "access_rules": [
-                    "^$can_reach|MM - Spike Key Drop"
+                    "^$can_reach|mm_spike_room"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {
-                        "name": "Spikes Pot Key"
+                        "name": "Spikes Pot Key",
+                        "access_rules": [
+                            "^$can_reach|MM - Spike Key Drop"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -30,12 +33,15 @@
             {
                 "name": "Fishbone Pot Key",
                 "access_rules": [
-                    "^$can_reach|MM - Fishbone Key Drop"
+                    "^$can_reach|mm_fishbone_room"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {
-                        "name": "Fishbone Pot Key"
+                        "name": "Fishbone Pot Key",
+                        "access_rules": [
+                            "^$can_reach|MM - Fishbone Key Drop"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -50,12 +56,15 @@
             {
                 "name": "Conveyor Crystal Key Drop",
                 "access_rules": [
-                    "^$can_reach|MM - Conveyor Crystal Key Drop"
+                    "^$can_reach|mm_conveyor_crystal_room"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {
-                        "name": "Conveyor Crystal Key Drop"
+                        "name": "Conveyor Crystal Key Drop",
+                        "access_rules": [
+                            "^$can_reach|MM - Conveyor Crystal Key Drop"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -74,7 +83,10 @@
                 ],
                 "sections": [
                     {
-                        "name": "Bridge Chest"
+                        "name": "Bridge Chest",
+                        "access_rules": [
+                            "^$can_reach|MM - Bridge Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -89,11 +101,14 @@
             {
                 "name": "Main Lobby",
                 "access_rules": [
-                    "^$can_reach|MM - Main Lobby Chest"
+                    "^$can_reach|mm_main_room"
                 ],
                 "sections": [
                     {
-                        "name": "Main Lobby"
+                        "name": "Main Lobby",
+                        "access_rules": [
+                            "^$can_reach|MM - Main Lobby Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -108,11 +123,14 @@
             {
                 "name": "Compass Chest",
                 "access_rules": [
-                    "^$can_reach|MM - Comapss Chest"
+                    "^$can_reach|mm_compass_room"
                 ],
                 "sections": [
                     {
-                        "name": "Compass Chest"
+                        "name": "Compass Chest",
+                        "access_rules": [
+                            "^$can_reach|MM - Comapss Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -127,11 +145,14 @@
             {
                 "name": "Big Key Chest",
                 "access_rules": [
-                    "^$can_reach|MM - Big Key Chest"
+                    "^$can_reach|mm_big_key_chest"
                 ],
                 "sections": [
                     {
-                        "name": "Big Key Chest"
+                        "name": "Big Key Chest",
+                        "access_rules": [
+                            "^$can_reach|MM - Big Key Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -146,11 +167,14 @@
             {
                 "name": "Spike Chest",
                 "access_rules": [
-                    "^$can_reach|MM - Spike Chest"
+                    "^$can_reach|mm_spike_room"
                 ],
                 "sections": [
                     {
-                        "name": "Spike Chest"
+                        "name": "Spike Chest",
+                        "access_rules": [
+                            "^$can_reach|MM - Spike Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -165,11 +189,14 @@
             {
                 "name": "Map Chest",
                 "access_rules": [
-                    "^$can_reach|MM - Map Chest"
+                    "^$can_reach|mm_map_room_top"
                 ],
                 "sections": [
                     {
-                        "name": "Map Chest"
+                        "name": "Map Chest",
+                        "access_rules": [
+                            "^$can_reach|MM - Map Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -184,11 +211,14 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "^$can_reach|MM - Big Chest"
+                    "^$can_reach|mm_big_chest_room"
                 ],
                 "sections": [
                     {
-                        "name": "Big Chest"
+                        "name": "Big Chest",
+                        "access_rules": [
+                            "^$can_reach|MM - Big Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -203,11 +233,14 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "^$can_reach|MM - Boss"
+                    "^$can_reach|mm_boss_room"
                 ],
                 "sections": [
                     {
                         "name": "Boss Item",
+                        "access_rules": [
+                            "^$can_reach|MM - Boss"
+                        ],
                         "item_count": 1,
                         "hosted_item": "mm_boss, miserymire"
                     }

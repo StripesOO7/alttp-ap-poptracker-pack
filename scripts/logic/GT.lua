@@ -146,5 +146,12 @@ gt_top_top_refight:connect_one_way(gt_top_validation,function() return all(
         has("hookshoot")
     )
 end)
-gt_top_top_refight:connect_one_way("GT - Validation Chest")
+gt_top_validation:connect_one_way("GT - Validation Chest")
 gt_top_validation:connect_one_way(gt_top_aga2)
+gt_top_aga2:connect_one_way("GT - Aga2", function() 
+    return any(
+        has("sword"),
+        has("hammer"),
+        has("bug_net")
+    ) 
+end)
