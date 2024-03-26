@@ -10,11 +10,14 @@
             {
                 "name": "Basement Cage",
                 "access_rules": [
-                    "^$can_reach|ToH - Basement Cage"
+                    "^$can_reach|toh_basement_cage"
                 ],
                 "sections": [
                     {
-                        "name": "Basement Cage"
+                        "name": "Basement Cage",
+                        "access_rules": [
+                            "^$can_reach|ToH - Basement Cage"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -29,11 +32,14 @@
             {
                 "name": "Big Key Chest",
                 "access_rules": [
-                    "^$can_reach|ToH - Big Key Chest"
+                    "^$can_reach|toh_big_key_chest"
                 ],
                 "sections": [
                     {
-                        "name": "Big Key Chest"
+                        "name": "Big Key Chest",
+                        "access_rules": [
+                            "^$can_reach|ToH - Big Key Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -48,11 +54,14 @@
             {
                 "name": "Map Chest",
                 "access_rules": [
-                    "^$can_reach|ToH - Map Chest"
+                    "^$can_reach|toh_entrance"
                 ],
                 "sections": [
                     {
-                        "name": "Map Chest"
+                        "name": "Map Chest",
+                        "access_rules": [
+                            "^$can_reach|ToH - Map Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -67,11 +76,14 @@
             {
                 "name": "Compass Chest",
                 "access_rules": [
-                    "^$can_reach|ToH - Compass Chest"
+                    "^$can_reach|toh_big_chest_room"
                 ],
                 "sections": [
                     {
-                        "name": "Compass Chest"
+                        "name": "Compass Chest",
+                        "access_rules": [
+                            "^$can_reach|ToH - Compass Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -86,11 +98,14 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "^$can_reach|ToH - Big Chest"
+                    "^$can_reach|toh_big_chest_room"
                 ],
                 "sections": [
                     {
-                        "name": "Big Chest"
+                        "name": "Big Chest",
+                        "access_rules": [
+                            "^$can_reach|ToH - Big Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -105,11 +120,14 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "^$can_reach|ToH - Boss"
+                    "^$can_reach|toh_above_big_chest"
                 ],
                 "sections": [
                     {
                         "name": "Boss Item",
+                        "access_rules": [
+                            "^$can_reach|toh_boss_room, ^$can_reach|ToH - Boss"
+                        ],
                         "item_count": 1,
                         "hosted_item": "toh_boss, towerofhera"
                     }

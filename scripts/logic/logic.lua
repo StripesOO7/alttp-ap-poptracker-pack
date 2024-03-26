@@ -22,12 +22,19 @@ staleness = 0
 -- 
 function can_reach(name)
     local location
-    if type(region_name) == "function" then
-        location = self
-    else
+    -- if type(region_name) == "function" then
+    --     location = self
+    -- else
+    if type(name) == "table" then
+        -- print(name.name)
+        location = named_locations[name.name]
+    else 
         location = named_locations[name]
     end
+    -- print(location, name)
+    -- end
     if location == nil then
+        -- print(location, name)
         if type(name) == "table" then
         else
             print("Unknown location : " .. tostring(name))
@@ -44,8 +51,10 @@ function alttp_location.new(name)
     if name then
         named_locations[name] = self
         self.name = name
+    else
+        self.name = self
     end
-    -- self.name = name
+    
     self.exits = {}
     self.staleness = -1
     self.keys = math.huge
@@ -100,7 +109,7 @@ function alttp_location:connect_two_ways_entrance_door_stuck(name, exit, rule1, 
     exit:connect_one_way_entrance(name, self, rule2)
 end
 
--- checks for the accessibitliy of a regino/location given its own exit requirements
+-- checks for the accessibility of a regino/location given its own exit requirements
 function alttp_location:accessibility()
     if self.staleness < staleness then
         return AccessibilityLevel.None
@@ -130,18 +139,19 @@ function alttp_location:discover(accessibility, keys)
             local rule = exit[2]
 
             local access, key = rule(keys)
-            if access == true then
-                access = AccessibilityLevel.Normal
-            elseif self.accessibility_level == 5 then
+            -- print(access)
+            if access == 5 then
                 access = AccessibilityLevel.SequenceBreak
+            elseif access == true then
+                access = AccessibilityLevel.Normal
             elseif access == false then
                 access = AccessibilityLevel.None
             end
             if key == nil then
                 key = keys
             end
-            -- print(self.name)
-            print(accessLVL[self.accessibility_level], "from", self.name, "to", location.name, ":", accessLVL[location.accessibility_level])
+            -- print(self.name) 
+            -- print(accessLVL[self.accessibility_level], "from", self.name, "to", location.name, ":", accessLVL[access])
             location:discover(access, key)
         end
     end

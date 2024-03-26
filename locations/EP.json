@@ -145,12 +145,15 @@
             },
             {
                 "name": "Boss",
-                "access_rules": [
-                    "^$can_reach|EP - Boss"
-                ],
+                // "access_rules": [
+                //     "^$can_reach|EP - Boss"
+                // ],
                 "sections": [
                     {
                         "name": "Boss Item",
+                        "access_rules": [
+                            "^$can_reach|EP - Boss, ^$can_reach|ep_boss_room"
+                        ],
                         "item_count": 1,
                         "hosted_item": "ep_boss, easternpalace"
                     }

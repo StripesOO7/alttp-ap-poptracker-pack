@@ -277,6 +277,8 @@ graveyard_ledge_inside:connect_one_way("Graveyard Ledge")
 sanctuary:connect_two_ways(sanctuary_area)
 sanctuary:connect_one_way("Sanctuary Chest")
 
+sanctuary_area:connect_one_way_entrance("Castel Escape Dropdown", ce_dropdown_entrance, function() return has("glove") end)
+
 
 
 
@@ -586,10 +588,10 @@ eastern_palace_area:connect_one_way(light_flute_map, function()
 end)
 
 
-eastern_palace_area:connect_two_ways_entrance("Eastern Teleporterr Cave", eastern_teleporter_cave)
+eastern_palace_area:connect_two_ways_entrance("Eastern Teleporter Cave", eastern_teleporter_cave)
 eastern_palace_area:connect_two_ways_entrance("Easter Fairy", eastern_fairy, function() return has("bombs") end)
 eastern_palace_area:connect_two_ways_entrance("Sahasrahla", sahasralahs_hut)
-eastern_palace_area:connect_two_ways_entrance("Eastern Palace Entrance", eastern_palace)
+eastern_palace_area:connect_two_ways_entrance("Eastern Palace Entrance", ep_entrance)
 
 
 
@@ -670,10 +672,10 @@ hyrule_castle_top_outside:connect_two_ways_entrance("Castle Tower", at_entrance,
         canClearAgaTowerBarrier()
     ) 
 end)
-hyrule_castle_top_outside:connect_two_ways_entrance("Hyrule Castle Top Left", hyrule_castle_top_left)
-hyrule_castle_top_outside:connect_two_ways_entrance("Hyrule Castle Top Right", hyrule_castle_top_right)
+hyrule_castle_top_outside:connect_two_ways_entrance("Hyrule Castle Top Left", hc_left_entrance)
+hyrule_castle_top_outside:connect_two_ways_entrance("Hyrule Castle Top Right", hc_right_entrance)
 hyrule_castle_top_outside:connect_one_way(hyrule_castle_area)
-hyrule_castle_area:connect_two_ways_entrance(hc_main_entrance)
+hyrule_castle_area:connect_two_ways_entrance("Hyrule Castle Main Entrance", hc_main_entrance)
 hyrule_castle_area:connect_one_way_entrance("Secret Passage Hole", secret_passage_hole)
 hyrule_castle_area:connect_two_ways_entrance("Secret Passage Stairs", secret_passage_stairs)
 

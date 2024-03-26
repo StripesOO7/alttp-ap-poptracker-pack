@@ -42,62 +42,21 @@ function any(...)
     return max
 end
 
-function KDSreturn( noKDS, KDS)
-    -- print(noKDS, KDS)
-    if Tracker:FindObjectForCode("key_drop_shuffle").Active then
-        return KDS
-    else
-        return noKDS
-    end
-end
-
 function has(item, noKDS_amount, noKDS_amountInLogic, KDS_amount, KDS_amountInLogic)
-    -- local count
-    -- local amount
-    -- local amountInLogic
-    -- if Tracker:FindObjectForCode("key_drop_shuffle").Active then
-    --     amount = KDS_amount
-    --     amountInLogic = KDS_amountInLogic
-    --     if item:sub(-8,-1) == "smallkey" then
-    --         count = Tracker:ProviderCountForCode(item.."_drop")
-    --     else
-    --         count = Tracker:ProviderCountForCode(item)
-    --     end
-
-    -- else
-    --     count = Tracker:ProviderCountForCode(item)
-    --     amount = noKDS_amount
-    --     amountInLogic = noKDS_amountInLogic
-    -- end
-    -- print(item, count, amount, amountInLogic)
-
-
     local count
     local amount
     local amountInLogic
-    -- print("item", item, "noKDS_amount", noKDS_amount, "noKDS_amountInLogic", noKDS_amountInLogic, "KDS_amount", KDS_amount, "KDS_amountInLogic", KDS_amountInLogic)
-    -- if item == "at_smallkey" then
-    --     print("before", item, count, noKDS_amount, noKDS_amountInLogic, KDS_amount, KDS_amountInLogic)
-    -- end
+
     if Tracker:FindObjectForCode("key_drop_shuffle").Active then
         -- print(KDS_amount, KDS_amountInLogic)
         amount = KDS_amount
         amountInLogic = KDS_amountInLogic
         if item:sub(-8,-1) == "smallkey" then
-            -- print("yes")
             count = Tracker:ProviderCountForCode(item.."_drop")
-            -- print(count)
-            -- print(item, "amount", amount, "amountInLogic", amountInLogic, "count", count)
-        -- if item == "at_smallkey_drop" then
-        --     print("middle", item, count, amount, amountInLogic)
-        -- end
         else
-            -- print("aaah. no", item)
             count = Tracker:ProviderCountForCode(item)
         end
-
     else
-        -- print("what", item)
         count = Tracker:ProviderCountForCode(item)
         amount = noKDS_amount
         amountInLogic = noKDS_amountInLogic
@@ -123,15 +82,42 @@ function has(item, noKDS_amount, noKDS_amountInLogic, KDS_amount, KDS_amountInLo
     end
 end
 
--- function has(item, amount)
---     local count = Tracker:ProviderCountForCode(item)
---     amount = tonumber(amount)
---     if not amount then
---         return count > 0
---     else
---         return count >= amount
---     end
--- end
+function KDSreturn( noKDS, KDS)
+    -- print(noKDS, KDS)
+    if Tracker:FindObjectForCode("key_drop_shuffle").Active then
+        return KDS
+    else
+        return noKDS
+    end
+end
+
+function owDungeonChecks(...)
+    local locations = { ... }
+    local availale 
+    local access_check
+    availale = 0
+    local sequence_breakable 
+    sequence_breakable= 0
+    for _, location in ipairs(locations) do
+       
+        -- access_check =  can_reach(location) 
+        access_check = Tracker:FindObjectForCode(location).AccessibilityLevel
+        -- print(location, access_check)
+        if access_check == 5 then
+            sequence_breakable = sequence_breakable+1
+        elseif access_check == 6 then
+            availale = availale + 1
+        end
+    end
+    if availale > 0 then
+        return AccessibilityLevel.Normal
+    elseif sequence_breakable > 0 then
+        return AccessibilityLevel.SequenceBreak
+    else
+        return AccessibilityLevel.None
+    end
+end
+
 
 function dealDamage()
     return any(
@@ -144,7 +130,8 @@ function dealDamage()
         has("quake"),
         has("bow"),
         has("hookshot"),
-        has("firerod")
+        has("firerod"),
+        has("hammer")
     )
 end
 

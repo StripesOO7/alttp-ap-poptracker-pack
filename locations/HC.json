@@ -12,11 +12,14 @@
             {
                 "name": "Map Chest",
                 "access_rules": [
-                    "^$can_reach|HC - Map Chest"
+                    "^$can_reach|hc_map_chest_room"
                 ],
                 "sections": [
                     {
-                        "name": "Map Chest"
+                        "name": "Map Chest",
+                        "access_rules": [
+                            "^$can_reach|HC - Map Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -31,11 +34,14 @@
             {
                 "name": "Boomerang Chest",
                 "access_rules": [
-                    "^$can_reach|HC - Boomerang Chest"
+                    "^$can_reach|hc_boomerang_chest_room"
                 ],
                 "sections": [
                     {
-                        "name": "Boomerang Chest"
+                        "name": "Boomerang Chest",
+                        "access_rules": [
+                            "^$can_reach|HC - Boomerang Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -50,11 +56,14 @@
             {
                 "name": "Zelda's Chest",
                 "access_rules": [
-                    "^$can_reach|HC - Zelda's Chest"
+                    "^$can_reach|hc_zeldas_cell, ^$can_reach|hc_ball_guard_room"
                 ],
                 "sections": [
                     {
-                        "name": "Zelda's Chest"
+                        "name": "Zelda's Chest",
+                        "access_rules": [
+                            "^$can_reach|HC - Zelda's Chest"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -69,12 +78,15 @@
             {
                 "name": "Map Guard Key Drop",
                 "access_rules": [
-                    "^$can_reach|HC - Map Guard Key Drop"
+                    "^$can_reach|hc_map_chest_room"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {
-                        "name": "Map Guard Key Drop"
+                        "name": "Map Guard Key Drop",
+                        "access_rules": [
+                            "^$can_reach|HC - Map Guard Key Drop"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -89,12 +101,15 @@
             {
                 "name": "Boomerang Guard Key Drop",
                 "access_rules": [
-                    "^$can_reach|HC - Booomerang Guard Key Drop"
+                    "^$can_reach|hc_boomerang_chest_room"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {
-                        "name": "Boomerang Guard Key Drop"
+                        "name": "Boomerang Guard Key Drop",
+                        "access_rules": [
+                            "^$can_reach|HC - Booomerang Guard Key Drop"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -109,12 +124,15 @@
             {
                 "name": "Big Key Drop",
                 "access_rules": [
-                    "^$can_reach|HC - Big Key"
+                    "^$can_reach|hc_ball_guard_room"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {
-                        "name": "Big Key Drop"
+                        "name": "Big Key Drop",
+                        "access_rules": [
+                            "^$can_reach|HC - Big Key"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -140,11 +158,14 @@
             {
                 "name": "Dark Cross",
                 "access_rules": [
-                    "^$can_reach|CE - Dark Cross"
+                    "^$can_reach|ce_dark_cross"
                 ],
                 "sections": [
                     {
-                        "name": "Dark Cross"
+                        "name": "Dark Cross",
+                        "access_rules": [
+                            "^$can_reach|CE - Dark Cross"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -159,11 +180,14 @@
             {
                 "name": "Secret Passage Left",
                 "access_rules": [
-                    "^$can_reach|CE - Secret Room Left"
+                    "^$can_reach|ce_secret_room"
                 ],
                 "sections": [
                     {
-                        "name": "Secret Passage Left"
+                        "name": "Secret Passage Left",
+                        "access_rules": [
+                            "^$can_reach|CE - Secret Room Left"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -178,11 +202,14 @@
             {
                 "name": "Secret Passage Middle",
                 "access_rules": [
-                    "^$can_reach|CE - Secret Room Center"
+                    "^$can_reach|ce_secret_room"
                 ],
                 "sections": [
                     {
-                        "name": "Secret Passage Middle"
+                        "name": "Secret Passage Middle",
+                        "access_rules": [
+                            "^$can_reach|CE - Secret Room Center"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -197,11 +224,14 @@
             {
                 "name": "Secret Passage Right",
                 "access_rules": [
-                    "^$can_reach|CE - Secret Room Right"
+                    "^$can_reach|ce_secret_room"
                 ],
                 "sections": [
                     {
-                        "name": "Secret Passage Right"
+                        "name": "Secret Passage Right",
+                        "access_rules": [
+                            "^$can_reach|CE - Secret Room Right"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -217,11 +247,14 @@
                 "name": "Key Rat Key Drop",
                 "visibility_rules": ["key_drop_shuffle"],
                 "access_rules": [
-                    "^$can_reach|CE - Rat Key Drop"
+                    "^$can_reach|ce_rat_key_room"
                 ],
                 "sections": [
                     {
-                        "name": "Key Rat Key Drop"
+                        "name": "Key Rat Key Drop",
+                        "access_rules": [
+                            "^$can_reach|CE - Rat Key Drop"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -246,11 +279,14 @@
             {
                 "name": "Sanctuary Chest",
                 "access_rules": [
-                    "^$can_reach|Sanctuary Chest"
+                    "^$can_reach|sanctuary"
                 ],
                 "sections": [
                     {
-                        "name": "Sanctuary Chest"
+                        "name": "Sanctuary Chest",
+                        "access_rules": [
+                            "^$can_reach|Sanctuary Chest"
+                        ]
                     }
                 ],
                 "map_locations": [

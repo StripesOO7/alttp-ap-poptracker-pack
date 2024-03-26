@@ -70,7 +70,7 @@
             {
                 "name": "Big Key Chest",
                 "access_rules": [
-                    "^$can_reach|DP - Big Key Chest"
+                    "^$can_reach|dp_compass_room, ^$can_reach|DP - Big Key Chest"
                 ],
                 "sections": [
                     {
@@ -89,7 +89,7 @@
             {
                 "name": "Compass Chest",
                 "access_rules": [
-                    "^$can_reach|DP - Compass Chest"
+                    "^$can_reach|dp_compass_room, ^$can_reach|DP - Compass Chest"
                 ],
                 "sections": [
                     {
@@ -118,11 +118,14 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "^$can_reach|DP - Boss"
+                    "^$can_reach|dp_back_torch_room"
                 ],
                 "sections": [
                     {
                         "name": "Boss Item",
+                        "access_rules": [
+                            "^$can_reach|dp_back_boss_room, ^$can_reach|DP - Boss"
+                        ],
                         "item_count": 1,
                         "hosted_item": "dp_boss, desertpalace"
                     }
@@ -139,7 +142,7 @@
             {
                 "name": "Desert Tiles 1 Pot Key",
                 "access_rules": [
-                    "^$can_reach|DP - Tile 1 Key Drop"
+                    "^$can_reach|dp_back_tile1_room, ^$can_reach|DP - Tile 1 Key Drop"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
@@ -159,7 +162,7 @@
             {
                 "name": "Beamos Hall Pot Key",
                 "access_rules": [
-                    "^$can_reach|DP - Beamos Hallway Key Drop"
+                    "^$can_reach|dp_back_beamos_hallway, ^$can_reach|DP - Beamos Hallway Key Drop"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
@@ -179,7 +182,7 @@
             {
                 "name": "Desert Tiles 2 Pot Key",
                 "access_rules": [
-                    "^$can_reach|DP - Tile 2 Key Drop"
+                    "^$can_reach|dp_back_tiles2_room, ^$can_reach|DP - Tile 2 Key Drop"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [

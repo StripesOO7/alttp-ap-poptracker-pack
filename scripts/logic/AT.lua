@@ -26,9 +26,9 @@ at_dark_maze:connect_one_way("AT - Maze Chest", function()
 end)
 
 at_dark_archer_key_drop:connect_two_ways(at_circle_of_pots, function(keys) 
-    return has("at_smallkey", keys, 2, keys + 1, 3), KDSreturn(keys, keys+1)
+    return has("at_smallkey", keys, 2, keys + 1, 3), KDSreturn(keys, keys + 1)
 end)
-at_dark_archer_key_drop:connect_one_way("AT - Dark Archer Key Drop")
+at_dark_archer_key_drop:connect_one_way("AT - Dark Archer Key Drop", function() return dealDamage() end)
 
 at_circle_of_pots:connect_two_ways(at_aga1, function(keys) 
     return all(
