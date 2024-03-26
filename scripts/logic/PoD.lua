@@ -100,7 +100,7 @@ pod_arena:connect_one_way("PoD - Arena Bridge")
 
 pod_collapsin_bridge:connect_two_ways(pod_dark_maze, function(keys) 
     return all(
-        can_reach(pod_compass_room),
+        -- can_reach(pod_compass_room),
         darkRooms(),
         has("pod_smallkey", keys + 1, 6, keys + 1, 6)
     ), KDSreturn(keys + 1, keys + 1)

@@ -386,21 +386,21 @@ stumpy:connect_one_way("Stumpy")
 skull_woods_area:connect_one_way(village_of_the_outcast)
 skull_woods_area:connect_one_way(dark_lumpberjacks)
 
-skull_woods_area:connect_one_way_entrance("Skull Woods Back North Drop", skull_woods_north_drop, function() return can_reach(skull_woods_west_lobby_entrance) end)
-skull_woods_area:connect_one_way_entrance("Skull Woods Pinball Drop", skull_woods_pinball_drop)
-skull_woods_area:connect_one_way_entrance("Skull Woods Pot Circle Drop", skull_woods_pot_circle_drop)
+skull_woods_area:connect_one_way_entrance("Skull Woods Pinball Drop", sw_pinball_drop)
+skull_woods_area:connect_one_way_entrance("Skull Woods Pot Circle Drop", sw_pot_circle_drop)
 skull_woods_area:connect_one_way_entrance("Skull Woods Bottom Left Drop", sw_bottom_left_drop)
-skull_woods_area:connect_two_ways_entrance("Skull Woods Front", skull_woods_big_chest_entrance)
-skull_woods_area:connect_two_ways_entrance("Skull Woods Back", skull_woods_back_entrance, function() 
+
+skull_woods_area:connect_two_ways_entrance("Skull Woods Front", sw_big_chest_entrance)
+skull_woods_area:connect_two_ways_entrance("Skull Woods West Lobby", sw_west_lobby_entrance)
+skull_woods_area:connect_two_ways_entrance("Skull Woods Gibdo Lobby", sw_gibdo_entrance)
+
+skull_woods_area:connect_one_way_entrance("Skull Woods Back North Drop", sw_north_drop, function() return can_reach(sw_west_lobby_entrance) end)
+skull_woods_area:connect_two_ways_entrance("Skull Woods Back", sw_back_entrance, function() 
     return all(
-        can_reach(skull_woods_west_lobby_entrance),
+        can_reach(sw_west_lobby_entrance),
         has("firerod")
     )
 end)
-skull_woods_area:connect_two_ways_entrance("Skull Woods West Lobby", skull_woods_west_lobby_entrance)
-skull_woods_area:connect_two_ways_entrance("Skull Woods Gibdo Lobby", skull_woods_gibdo_entrance)
-
-
 
 
 -- dark_lumpberjacks
