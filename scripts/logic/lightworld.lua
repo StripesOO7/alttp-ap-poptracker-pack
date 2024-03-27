@@ -269,6 +269,11 @@ kings_tomb_inside:connect_one_way("King's Tomb")
 sanctuary_area:connect_two_ways_entrance("Bonk Pile Cave", sanctuary_bonk_pile_cave, function() return has("boots") end)
 sanctuary_bonk_pile_cave:connect_one_way("Bonk Pile Chest")
 
+sanctuary_area:connect_two_ways(graveyard_ledge, function() return inverted() end)
+
+graveyard_ledge:connect_two_ways(graveyard_ledge_inside)
+graveyard_ledge:connect_one_way(sanctuary_area, function() return openOrStandard() end)
+
 graveyard_ledge_inside:connect_one_way("Graveyard Ledge")
 
 
@@ -378,6 +383,7 @@ teleporter_at_desert_ledge:connect_one_way(teleporter_at_desert, function() retu
 teleporter_at_desert:connect_one_way(teleporter_at_desert_ledge)
 
 desert_area:connect_one_way(dam_area)
+desert_area:connect_two_ways(checkerboard_lege, function() return inverted() end)
 checkerboard_lege:connect_one_way(desert_area)
 
 -- desert_area:connect_two_ways_entrance("aginah_cave_entrance", aginah_cave)
@@ -703,7 +709,7 @@ witchhut:connect_one_way(zora_river, function()
     return has("glove") 
 end)
 
-witchhut:connect_two_ways_entrance(light_potion_shop)
+witchhut:connect_two_ways_entrance("Witchhut Shop", light_potion_shop)
 
 light_potion_shop:connect_one_way("Deliver Mushroom", function() 
     return all(
@@ -753,7 +759,12 @@ light_death_mountain_left_bottom:connect_two_ways_entrance("Spectecal Rock Top E
 light_death_mountain_left_bottom:connect_two_ways_entrance("Old Man Cave Backside", old_man_cave_back)
 
 light_death_mountain_left_bottom:connect_one_way("Old Man Item", function() return can_reach(light_death_mountain_ascend) end)
-light_death_mountain_left_bottom:connect_one_way("Spec Rock Top Item", function() return has("mirror") end)
+light_death_mountain_left_bottom:connect_one_way("Spec Rock Top Item", function() 
+    return all(
+        openOrStandard(), 
+        has("mirror")
+    )
+end)
 -- -- light_death_mountain_left:connect_one_way(lumberjacks_area)
 -- light_death_mountain_left_bottom:connect_one_way(light_death_mountain_right_bottom)
 -- -- light_death_mountain_left_bottom:connect_one_way(light_death_mountain_left_top)

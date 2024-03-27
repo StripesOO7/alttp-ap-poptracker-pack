@@ -834,6 +834,7 @@
             {
                 "name": "Graveyard Ledge",
                 "access_rules": [
+                    "^$can_reach|graveyard_ledge_inside"
                 ],
                 "sections": [
                     {
@@ -967,9 +968,9 @@
             },
             {
                 "name": "Spectacle Rock Top",
-                "access_rules": [
-                    "^$can_reach|Spec Rock Top Item"
-                ],
+                // "access_rules": [
+                //     "^$can_reach|light_death_mountain_left_bottom"
+                // ],
                 "sections": [
                     {
                         "name": "Top Item",
@@ -1067,8 +1068,8 @@
         "children": [
             {
                 "name": "Floating Island",
-                "access_rules": [
-                ],
+                // "access_rules": [
+                // ],
                 "sections": [
                     {
                         "name": "Item on Floating Island",
@@ -1150,8 +1151,8 @@
             },
             {
                 "name": "Mimic Cave",
-                "access_rules": [
-                ],
+                // "access_rules": [
+                // ],
                 "sections": [
                     {
                         "name": "Mimic Cave Chest",

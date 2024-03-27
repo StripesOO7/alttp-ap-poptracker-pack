@@ -104,7 +104,7 @@ big_bomb_shop_area:connect_two_ways_entrance("Big Bomb Shop Fairy Cave", big_bom
 
 big_bomb_shop_area:connect_one_way(cave45_ledge, function() return canChangeWorldWithMirror() end)
 
-
+big_bomb_shop:connect_one_way("Buy Big Bomb", function() return has("red_pendant", 2, 2) end)
 
 -- swamp_area
 swamp_area:connect_one_way(teleporter_at_swamp, function() 
@@ -203,6 +203,12 @@ mire_area:connect_one_way(desert_ledge, function()
     ) 
 end)
 
+mire_area:connect_one_way(checkerboard_lege, function() 
+    return all(
+        openOrStandard(),
+        has("mirror")
+    ) 
+end)
 -- mire_area:connect_one_way(teleper, function() return has("mirror") end)
 
 
@@ -445,7 +451,7 @@ dark_chapel_area:connect_one_way(dark_potion_shop, function()
     return has("flippers")
 end)
 
-dark_chapel_area:connect_one_way(graveyard_ledge_cave, function()
+dark_chapel_area:connect_one_way(graveyard_ledge, function()
     return all(
         openOrStandard(),
         canChangeWorldWithMirror()
