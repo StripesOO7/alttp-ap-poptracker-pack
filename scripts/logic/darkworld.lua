@@ -536,10 +536,10 @@ pyramid:connect_one_way(dark_flute_map, function()
 end)
 
 pyramid:connect_one_way("Pyramid Item")
-pyramid:connect_two_ways_entrance("Fat Fairy", pyramid_fairy_cave, function() 
+pyramid:connect_one_way_entrance("Fat Fairy", pyramid_fairy_cave, function() 
     return all(
         has("crystal", 2, 2, 2, 2), 
-        can_reach(big_bomb_shop)
+        big_bomb_shop.accessibility_level
     )
 end)
 
