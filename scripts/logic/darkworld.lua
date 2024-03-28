@@ -104,7 +104,7 @@ big_bomb_shop_area:connect_two_ways_entrance("Big Bomb Shop Fairy Cave", big_bom
 
 big_bomb_shop_area:connect_one_way(cave45_ledge, function() return canChangeWorldWithMirror() end)
 
-big_bomb_shop:connect_one_way("Buy Big Bomb", function() return has("red_pendant", 2, 2) end)
+big_bomb_shop:connect_one_way("Buy Big Bomb", function() return has("crystal",2, 2, 2, 2) end)
 
 -- swamp_area
 swamp_area:connect_one_way(teleporter_at_swamp, function() 
@@ -183,7 +183,7 @@ mire_area:connect_two_ways_entrance("Misery Mire", mm_entrance,function()
     return all(
         any(
             has("mm_medallion"), 
-            has("medallion", 3, 3)
+            has("medallion", 3, 3, 3, 3)
         ),
         canUseMedallions()
     )
@@ -536,7 +536,13 @@ pyramid:connect_one_way(dark_flute_map, function()
 end)
 
 pyramid:connect_one_way("Pyramid Item")
-pyramid:connect_two_ways_entrance("Fat Fairy", pyramid_fairy_cave, function() return can_reach(big_bomb_shop) end)
+pyramid:connect_two_ways_entrance("Fat Fairy", pyramid_fairy_cave, function() 
+    return all(
+        has("crystal", 2, 2, 2, 2), 
+        can_reach(big_bomb_shop)
+    )
+end)
+
 pyramid_fairy_cave:connect_one_way("Pyramid Fairy Left")
 pyramid_fairy_cave:connect_one_way("Pyramid Fairy Right")
 
@@ -637,11 +643,11 @@ end)
 teleporter_at_dark_turtle_rock:connect_one_way(dark_death_mountain_right_top)
 
 
-teleporter_at_dark_turtle_rock:connect_two_ways_entrance("Trutle Rock Main Entrance", tr_main_entrance, function() 
+teleporter_at_dark_turtle_rock:connect_two_ways_entrance("Turtle Rock Main Entrance", tr_main_entrance, function() 
     return all(
         any(
             has("tr_medallion"),
-            has("medallion", 3, 3)
+            has("medallion", 3, 3, 3, 3)
         ),
         canUseMedallions()
     ) 
@@ -719,7 +725,7 @@ end)
 teleporter_at_dark_death_mountain_right_bottom:connect_one_way(dark_death_mountain_right_bottom)
 
 turtle_rock_ledge:connect_two_ways_entrance("Turtle Rock Big Chest Entrance", tr_big_chest_entrance)
-turtle_rock_ledge:connect_two_ways_entrance("Turtle Rock Laser Entrance", tr_laser_entrance)
+turtle_rock_ledge:connect_two_ways_entrance("Turtle Rock Laser Entrance", tr_laser_entrance, function() return has("bombs") end)
 turtle_rock_ledge:connect_one_way(mimic_cave_ledge, function() return canChangeWorldWithMirror() end)
 -- tr_laser_entrance:connect_two_ways_entrance("Light Death Mountain Fairy", light_death_mountain_cave1, function() return has("mirror") end)
 

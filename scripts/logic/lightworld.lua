@@ -316,7 +316,10 @@ lost_woods_hideout_hole:connect_one_way(lost_woods_hideout_cave)
 
 lost_woods_pedestal:connect_one_way("Pedestal", function() 
     return any(
-        has("pendant", 3, 3),
+        all(
+            has("pendant", 2, 2, 2, 2),
+            has("greenpendant")
+        ),
         canCheckWithBook()
     )
 end)
@@ -564,7 +567,7 @@ cave45_ledge:connect_two_ways(links_house_area, function() return inverted() end
 cave45:connect_one_way("Cave 45")
 links_house_area:connect_one_way("Flute Spot", function() return has("shovel") end)
 
-
+links_house_area:connect_one_way(pyramid, function() return has("aga1") end)
 
 
 
@@ -791,7 +794,12 @@ old_man_cave:connect_two_ways(old_man_cave_back, function() return darkRooms() e
 -- light_death_mountain_left_top
 
 light_death_mountain_left_top:connect_two_ways_entrance("Tower of Hera Entrance", toh_entrance)
-light_death_mountain_left_top:connect_one_way(dark_death_mountain_left_top, function() return all(has("mirror"), inverted()) end)
+light_death_mountain_left_top:connect_one_way(dark_death_mountain_left_top, function() 
+    return all(
+        has("mirror"), 
+        inverted()
+    ) 
+end)
 light_death_mountain_left_top:connect_one_way(light_death_mountain_left_bottom)
 light_death_mountain_left_top:connect_one_way(light_flute_map, function() 
     return all(
