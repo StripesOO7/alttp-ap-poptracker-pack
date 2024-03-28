@@ -433,10 +433,7 @@
             {
                 "name": "Big Bomb Fairy",
                 "access_rules": [
-                    "$openOrStandard, pearl, crystal56:2, @Darkworld Bottom",
-                    "inverted, @Lightworld, pearl, mirror, crystal56:2",
-                    "inverted, @Lightworld, pearl, hammer, crystal56:2",
-                    "inverted, @Lightworld, pearl, flute_active, crystal56:2"
+                    "^$can_reach|pyramid"
                 ],
                 "sections": [
                     {
@@ -550,10 +547,10 @@
         "children": [
             {
                 "name": "Spike Cave",
-                "access_rules": [
-                    "bottle, invincibility, hammer, glove",
-                    "half_magic, invincibility, hammer, glove"
-                ],
+                // "access_rules": [
+                //     "bottle, invincibility, hammer, glove",
+                //     "half_magic, invincibility, hammer, glove"
+                // ],
                 "sections": [
                     {
                         "name": "Spike Cave Chest",
@@ -615,9 +612,9 @@
         "children": [
             {
                 "name": "Dark Death Mountain Shop",
-                // "access_rules":[
-                //     "^$can_reach|"
-                // ],
+                "access_rules":[
+                    "^$can_reach|"
+                ],
                 "visibility_rules": ["shop_sanity"],
                 "sections": [
                     {
