@@ -222,6 +222,7 @@ function updateUI(segment, mainModuleIdx)
     if mainModuleIdx > 0x05 then
         new_ow_room = segment:ReadUInt16(0x7e008a)
         if new_ow_room == 0 then
+            ow_room = 0
             new_dungeon_room = segment:ReadUInt16(0x7e00a0)
         else
             dungeon_room = 0
@@ -229,8 +230,10 @@ function updateUI(segment, mainModuleIdx)
         end
 
         if new_ow_room > 0 then -- and ow_room ~= new_ow_room then
-            ow_room = new_ow_room
-            changeTab("Overworld")
+            if  ow_room ~= new_ow_room then
+                ow_room = new_ow_room
+                changeTab("Overworld")
+            end
         elseif new_dungeon_room > 0 and dungeon_room ~= new_dungeon_room then
             dungeon_room = new_dungeon_room
             changeTab(room_lookuptable[dungeon_room])
@@ -240,6 +243,29 @@ function updateUI(segment, mainModuleIdx)
         -- print(room_lookuptable[dungeon_room])
     end
 end
+
+-- function updateUI(segment, mainModuleIdx)
+--     if mainModuleIdx > 0x05 then
+--         new_ow_room = segment:ReadUInt16(0x7e008a)
+--         if new_ow_room == 0 then
+--             new_dungeon_room = segment:ReadUInt16(0x7e00a0)
+--         else
+--             dungeon_room = 0
+--             new_dungeon_room = 0
+--         end
+
+--         if new_ow_room > 0 then -- and ow_room ~= new_ow_room then
+--             ow_room = new_ow_room
+--             changeTab("Overworld")
+--         elseif new_dungeon_room > 0 and dungeon_room ~= new_dungeon_room then
+--             dungeon_room = new_dungeon_room
+--             changeTab(room_lookuptable[dungeon_room])
+--         end
+--         -- print("Current Room Index: ", new_dungeon_room)
+--         -- print("Current OW   Index: ", new_ow_room)
+--         -- print(room_lookuptable[dungeon_room])
+--     end
+-- end
 
 function changeTab(target_tab)
     if Tracker:FindObjectForCode("ui_hint").Active and target_tab ~= nil then
