@@ -432,10 +432,17 @@ red_shield_shop:connect_one_way("Red Shield Shop Right")
 
 dark_lumpberjacks:connect_two_ways_entrance("Dark Lumberjacks Shop", dark_lumpberjacks_shop)
 dark_lumpberjacks:connect_two_ways_entrance("Red Shield Shop", red_shield_shop)
-dark_lumpberjacks:connect_two_ways_entrance("Bumper Cave", bumper_cave, function() return has("glove") end)
-
-
-
+dark_lumpberjacks:connect_two_ways_entrance("Bumper Cave", dark_bumper_cave, function() return has("glove") end)
+dark_bumper_cave:connect_one_way_entrance("Normal Bumpercave", dark_bumper_cave_ledge,function() return has("cape") end)
+dark_bumper_cave_ledge:connect_one_way_entrance(dark_bumper_cave, function() 
+    return any(
+        has("hookshot"), 
+        has("cape")
+    )
+end)
+dark_bumper_cave_ledge:connect_one_way("Bumper Ledge Item")
+dark_bumper_cave_ledge:connect_one_way(light_bumper_cave_ledge, function() return canChangeWorldWithMirror() end)
+dark_bumper_cave_ledge:connect_one_way(dark_lumpberjacks)
 
 
 -- dark_chapel_area
