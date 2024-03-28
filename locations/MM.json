@@ -189,7 +189,7 @@
             {
                 "name": "Map Chest",
                 "access_rules": [
-                    "^$can_reach|mm_map_room_top"
+                    "^$can_reach|mm_map_room_top"//, ^$can_reach|mm_conveyor_crystal_room"
                 ],
                 "sections": [
                     {

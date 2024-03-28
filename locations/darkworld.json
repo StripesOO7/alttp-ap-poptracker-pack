@@ -963,15 +963,15 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules": [
-            "^$can_reach|ip_entrance"
+            "^$can_reach|mm_entrance"
         ],
         "children": [
             {
                 "name": "Misery Mire",
-                "access_rules": [
-                    "hookshot",
-                    "boots"
-                ],
+                // "access_rules": [
+                //     "hookshot",
+                //     "boots"
+                // ],
                 "item_count": 9,
                 "sections": [
                     {

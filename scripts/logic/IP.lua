@@ -28,7 +28,10 @@ ip_entrance:connect_two_ways(ip_freezor_entrance)
 ip_freezor_entrance:connect_two_ways(ip_jelly_room, function() 
     return any(
         has("firerod"), 
-        has("bombos")
+        all(
+            has("bombos"),
+            canUseMedallions()
+        )
     ) 
 end)
 ip_jelly_room:connect_two_ways(ip_push_cross, function(keys) return has("ip_smallkey", keys, 0, keys + 1, 1), KDSreturn(keys, keys + 1) end)

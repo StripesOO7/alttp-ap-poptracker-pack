@@ -968,15 +968,18 @@
             },
             {
                 "name": "Spectacle Rock Top",
+                // "access_rules": [
+                //     "^$can_reach|light_death_mountain_left_bottom"
+                // ],
                 "access_rules": [
-                    "^$can_reach|light_death_mountain_left_bottom"
+                    "^$can_reach|Spec Rock Top Item"
                 ],
                 "sections": [
                     {
                         "name": "Top Item",
-                        "access_rules": [
-                            "^$can_reach|Spec Rock Top Item"
-                        ],
+                        // "access_rules": [
+                        //     "^$can_reach|Spec Rock Top Item"
+                        // ],
                         "capture_item": true
                     }
                 ],
