@@ -901,6 +901,7 @@
             {
                 "name": "Bumper Cave",
                 "access_rules": [
+                    "^$can_reach|light_bumper_cave_ledge"
                 ],
                 "visibility_rules": ["inverted"],
                 "sections": [
