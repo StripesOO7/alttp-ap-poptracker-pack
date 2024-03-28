@@ -23,7 +23,12 @@ local tr_boss_room = alttp_location.new("tr_boss_room")
 
 tr_main_entrance:connect_two_ways(tr_square_travel_room, function() return has("somaria") end)
 tr_square_travel_room:connect_two_ways(tr_compass_room, function() return has("somaria") end)
-tr_square_travel_room:connect_two_ways(tr_torch_puzzle, function() return has("somaria") end)
+tr_square_travel_room:connect_two_ways(tr_torch_puzzle, function() 
+    return all(
+        has("somaria"), 
+        has("firerod")
+    ) 
+end)
 tr_square_travel_room:connect_two_ways(tr_poke_1_room, function(keys) 
     return all(
         has("somaria"),
@@ -41,8 +46,8 @@ tr_map_room:connect_one_way("TR - Roller Room Right")
 tr_poke_1_room:connect_two_ways(tr_chain_chomps_room, function(keys) return has("tr_smallkey", keys, 3, keys + 1, 5), KDSreturn(keys, keys + 1) end)
 tr_poke_1_room:connect_one_way("TR - Poke 1 Key Drop")
 
-tr_chain_chomps_room:connect_one_way(tr_big_key_room_top_right, function(keys) return has("tr_smallkey", keys + 1, 3, keys + 1, 5), KDSreturn(keys + 1, keys + 1) end)
-tr_big_key_room_top_right:connect_one_way(tr_chain_chomps_room, function(keys) return has("tr_smallkey", keys, 3, keys, 5), KDSreturn(keys, keys + 1) end)
+tr_chain_chomps_room:connect_two_ways(tr_big_key_room_top_right, function(keys) return has("tr_smallkey", keys + 1, 3, keys + 1, 5), KDSreturn(keys + 1, keys + 1) end)
+-- tr_big_key_room_top_right:connect_one_way(tr_chain_chomps_room, function(keys) return has("tr_smallkey", keys, 3, keys, 5), KDSreturn(keys, keys + 1) end)
 tr_chain_chomps_room:connect_one_way("TR - Chain Chomp Chest")
 
 tr_big_key_room_top_right:connect_two_ways(tr_big_key_room_top_left)
@@ -83,10 +88,20 @@ tr_big_key_door_room:connect_one_way(tr_crystalroller_room, function() return ha
 tr_crystalroller_room:connect_one_way(tr_big_key_door_room, function(keys) return has("tr_smallkey", keys + 1, 4, keys + 1, 6), KDSreturn(keys + 1, keys + 1) end)
 
 tr_crystalroller_room:connect_one_way(tr_travel_maze, function(keys) return has("tr_smallkey", keys + 1, 3, keys + 1, 5), KDSreturn(keys + 1, keys + 1) end)
-tr_travel_maze:connect_one_way(tr_crystalroller_room, function(keys) return has("tr_smallkey", keys, 3, keys, 5), KDSreturn(keys, keys + 1) end)
+tr_travel_maze:connect_one_way(tr_crystalroller_room, function(keys) 
+    return all(
+        has("tr_smallkey", keys, 3, keys, 5),
+        darkRooms()
+    ), KDSreturn(keys, keys + 1) 
+end)
 tr_crystalroller_room:connect_one_way("TR - Crystalroller Chest")
 
-tr_travel_maze:connect_two_ways(tr_eye_hallway)
+tr_travel_maze:connect_two_ways(tr_eye_hallway, function() 
+    return all(
+        has("somaria"),
+        darkRooms()
+    ) 
+end)
 
 tr_eye_hallway:connect_two_ways(tr_eye_bridge_entrance)
 tr_eye_hallway:connect_two_ways(tr_switch_puzzle, function(keys) return has("tr_smallkey", keys + 1, 3, keys + 1, 5), KDSreturn(keys + 1, keys + 1) end)

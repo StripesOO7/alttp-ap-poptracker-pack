@@ -883,7 +883,7 @@ light_death_mountain_right_top:connect_one_way(light_death_mountain_left_top, fu
 
 light_death_mountain_right_top:connect_two_ways_entrance("Paradox Cave Top Entrance", paradox_cave_top)
 light_death_mountain_right_top:connect_two_ways_entrance("Spiral Cave Top Entrance", spiral_cave_top)
-light_death_mountain_right_top:connect_two_ways_entrance("Light Eyebridge Fairy", light_eyebridge_fairy)
+tr_eye_bridge_entrance:connect_one_way_entrance("Light Eyebridge Fairy", light_eyebridge_fairy, function() return has("mirror") end)
 
 spiral_cave_top:connect_one_way(spiral_cave_bottom)
 spiral_cave_top:connect_one_way("Spiral Cave Item")

@@ -653,6 +653,18 @@ hookshot_cave:connect_two_ways(floating_island, function()
         canChangeWorldWithMirror()
     ) 
 end)
+
+hookshot_cave:connect_one_way("Hookshot Cave Item Bottom Right", function() 
+    return any(
+        has("hookshot"),
+        has("boots")
+    )
+end)
+hookshot_cave:connect_one_way("Hookshot Cave Item Top Right", function() return has("hookshot") end)
+hookshot_cave:connect_one_way("Hookshot Cave Item Top Left", function() return has("hookshot") end)
+hookshot_cave:connect_one_way("Hookshot Cave Item Bottom Left", function() return has("hookshot") end)
+
+
 tr_eye_bridge_entrance:connect_two_ways_entrance("Light Eyebridge Connector", light_eyebridge_fairy, function() 
     return all(
         openOrStandard(), 
@@ -712,6 +724,7 @@ turtle_rock_ledge:connect_one_way(mimic_cave_ledge, function() return canChangeW
 -- tr_laser_entrance:connect_two_ways_entrance("Light Death Mountain Fairy", light_death_mountain_cave1, function() return has("mirror") end)
 
 
+dark_death_mountain_right_bottom:connect_two_ways_entrance("Dark Death Mountain Shop", dark_death_mountain_shop)
 
 dark_death_mountain_right_bottom:connect_two_ways_entrance("Super Bunny Cave Bottom Entrance", superbunny_cave_bottom)
 dark_death_mountain_right_top:connect_two_ways_entrance("Super Bunny Cave Top Entrance", superbunny_cave_top)

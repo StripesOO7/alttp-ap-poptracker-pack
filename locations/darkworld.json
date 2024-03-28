@@ -551,6 +551,9 @@
                 //     "bottle, invincibility, hammer, glove",
                 //     "half_magic, invincibility, hammer, glove"
                 // ],
+                "access_rules":[
+                    "^$can_reach|spike_cave"
+                ],
                 "sections": [
                     {
                         "name": "Spike Cave Chest",
@@ -571,7 +574,7 @@
             {
                 "name": "Rescue Old Man",
                 "access_rules": [
-                    "[$darkRooms]"
+                    "^$can_reach|Old Man Item"
                 ],
                 "visibility_rules": ["inverted"],
                 "sections": [
@@ -603,17 +606,17 @@
         "name": "Dark Death Mountain Right",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
-        "access_rules": [
-            "$openOrStandard, @Light Death Mountain Right, titans, pearl",
-            "$openOrStandard, @Light Death Mountain Right, titans, hammer, pearl",
-            "@Dark Death Mountain Left, $checkGlitches|2, boots",
-            "inverted, @Dark Death Mountain Left"
-        ],
+        // "access_rules": [
+        //     "$openOrStandard, @Light Death Mountain Right, titans, pearl",
+        //     "$openOrStandard, @Light Death Mountain Right, titans, hammer, pearl",
+        //     "@Dark Death Mountain Left, $checkGlitches|2, boots",
+        //     "inverted, @Dark Death Mountain Left"
+        // ],
         "children": [
             {
                 "name": "Dark Death Mountain Shop",
                 "access_rules":[
-                    "^$can_reach|"
+                    "^$can_reach|dark_death_mountain_shop"
                 ],
                 "visibility_rules": ["shop_sanity"],
                 "sections": [
@@ -634,23 +637,34 @@
             },
             {
                 "name": "Hookshot Cave",
-                "access_rules": [
-                    "glove",
-                    "$checkGlitches|2, boots"
+                // "access_rules": [
+                //     "glove",
+                //     "$checkGlitches|2, boots"
+                // ],
+                "access_rules":[
+                    "^$can_reach|hookshot_cave"
                 ],
                 "sections": [
                     {
                         "name": "Bottom Right Chest",
-                        "access_rules": [
-                            "boots", 
-                            "hookshot"
+                        // "access_rules": [
+                        //     "boots", 
+                        //     "hookshot"
+                        // ]
+                        "access_rules":[
+                            "^$can_reach|Hookshot Cave Item Bottom Right"
                         ]
                     },
                     {
-                        "name": "remaining Chests",
+                        "name": "remaining Hookshot Chests",
                         "clear_as_group": false,
-                        "access_rules": [
-                            "hookshot"
+                        // "access_rules": [
+                        //     "hookshot"
+                        // ],
+                        "access_rules":[
+                            "^$can_reach|Hookshot Cave Item Top Right",
+                            "^$can_reach|Hookshot Cave Item Top Left",
+                            "^$can_reach|Hookshot Cave Item Bottom Left"
                         ],
                         "item_count": 3
                     }
