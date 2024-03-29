@@ -8,8 +8,8 @@ local at_aga1 = alttp_location.new("at_aga1")
 
 at_entrance:connect_one_way(at_golden_guards)
 
-at_golden_guards:connect_one_way(at_entrance, function() return dealDamage() end)
-at_golden_guards:connect_two_ways(at_first_chest)
+at_golden_guards:connect_one_way(at_entrance)
+at_golden_guards:connect_two_ways(at_first_chest, function() return dealDamage() end)
 
 at_first_chest:connect_one_way("AT - First Chest", function() return dealDamage() end)
 at_first_chest:connect_two_ways(at_dark_maze, function(keys) 
@@ -47,6 +47,7 @@ at_aga1:connect_one_way("AT - Aga1", function()
 end)
 
 at_aga1:connect_one_way(pyramid, function() return openOrStandard() end)
+-- at_aga1:connect_one_way(hyrule_castle_area, function() return inverted() end)
 -- at_aga1:connect_one_way("Kakariko Well - Left", function() return inverted() end)
 -- at_aga1:connect_one_way("Kakariko Well - Middle", function() return inverted() end)
 -- at_aga1:connect_one_way("Kakariko Well - Right", function() return inverted() end)
