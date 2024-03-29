@@ -50,7 +50,7 @@ teleporter_at_upgrade_fairy:connect_one_way(teleporter_at_ice_palace)
 -- 
 lightworld_spawns:connect_one_way(light_spawn_sanctuary)
 lightworld_spawns:connect_one_way(light_spawn_links_house_area)
-lightworld_spawns:connect_one_way(light_spawn_old_man, function() return can_reach(light_death_mountain_ascend) end) --rescued old man
+lightworld_spawns:connect_one_way(light_spawn_old_man, function() return can_reach(light_death_mountain_ascent) end) --rescued old man
 
 light_spawn_sanctuary:connect_one_way(sanctuary, function() return openOrStandard() end)
 light_spawn_links_house_area:connect_one_way(links_house, function() return openOrStandard() end)
@@ -457,14 +457,14 @@ end) --teleport
 lumberjacks_area:connect_one_way_entrance("Tree Hole", lumberjacks_hole, function() return has("aga1") end)
 lumberjacks_area:connect_two_ways_entrance("Lumberjacks Cave", lumberjacks_cave)
 lumberjacks_area:connect_two_ways_entrance("Lumberjacks House", lumberjacks_house)
-lumberjacks_area:connect_two_ways_entrance("Light Death Mountain Ascend", light_death_mountain_ascend, function() return has("glove") end)
+-- lumberjacks_area:connect_two_ways_entrance("Light Death Mountain Ascent", light_death_mountain_ascent, function() return has("glove") end)
  -- aga item cave
 
 lumberjacks_hole:connect_one_way(lumberjacks_item, function() return has("aga1") end)
 lumberjacks_hole:connect_one_way(lumberjacks_cave)
 lumberjacks_item:connect_one_way("Lumberjacks Item")
 
-lumberjacks_area:connect_two_ways_entrance("Lower Light Death Mountain Ascend Ledge", death_mountain_accend_ledge, function() return has("glove") end)
+lumberjacks_area:connect_two_ways_entrance("Lower Light Death Mountain Ascent Ledge", death_mountain_ascent_ledge, function() return has("glove") end)
 
  -- rescue old man
 
@@ -772,14 +772,14 @@ light_death_mountain_left_bottom:connect_one_way(light_flute_map, function()
     ) 
 end)
 -- light_death_mountain_left_bottom:connect_one_way()
-death_mountain_accend_ledge:connect_one_way(light_death_mountain_ascend, function() return darkRooms() end)
-light_death_mountain_ascend:connect_two_ways_entrance("Upper Light Death Mountain Ascend", light_death_mountain_left_bottom, function() return darkRooms() end)
+death_mountain_ascent_ledge:connect_one_way(light_death_mountain_ascent, function() return darkRooms() end)
+light_death_mountain_ascent:connect_two_ways_entrance("Upper Light Death Mountain Ascent", light_death_mountain_left_bottom, function() return darkRooms() end)
 
 light_death_mountain_left_bottom:connect_two_ways_entrance("Old Man Cave Entrance", old_man_cave)
 light_death_mountain_left_bottom:connect_two_ways_entrance("Spectecal Rock Top Entrance", spec_rock_top_entrance)
 light_death_mountain_left_bottom:connect_two_ways_entrance("Old Man Cave Backside", old_man_cave_back)
 
-light_death_mountain_left_bottom:connect_one_way("Old Man Item", function() return can_reach(light_death_mountain_ascend) end)
+light_death_mountain_left_bottom:connect_one_way("Old Man Item", function() return can_reach(light_death_mountain_ascent) end)
 light_death_mountain_left_bottom:connect_one_way("Spec Rock Top Item", function() 
     return all(
         openOrStandard(), 

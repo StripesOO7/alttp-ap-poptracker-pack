@@ -75,7 +75,7 @@ teleporter_at_ice_palace:connect_one_way(teleporter_at_upgrade_fairy, function()
 
 darkworld_spawns:connect_one_way(dark_spawn_links_house)
 darkworld_spawns:connect_one_way(dark_spawn_dark_chapel_area)
-darkworld_spawns:connect_one_way(dark_spawn_old_man, function() return can_reach(light_death_mountain_ascend) end) --has rescued old man
+darkworld_spawns:connect_one_way(dark_spawn_old_man, function() return can_reach(light_death_mountain_ascent) end) --has rescued old man
 
 dark_spawn_links_house:connect_one_way(links_house, function() return inverted() end)
 -- dark_spawn_links_house:connect_two_ways_entrance("Big Bomb Shop", big_bomb_shop, function() return openOrStandard() end)
