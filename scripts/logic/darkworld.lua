@@ -155,10 +155,10 @@ swamp_area:connect_two_ways_entrance("Swamp Palace", sp_entrance, function() ret
 hype_cave:connect_one_way("Hype Cave_Generous Guy")
 hype_cave:connect_two_ways(hype_cave_back, function() return has("bombs") end)
 
-hype_cave_back:connect_one_way("Hype Cave_Top")
-hype_cave_back:connect_one_way("Hype Cave_Middle Left")
-hype_cave_back:connect_one_way("Hype Cave_Middle Right")
-hype_cave_back:connect_one_way("Hype Cave_Bottom")
+hype_cave_back:connect_one_way("Hype Cave Top")
+hype_cave_back:connect_one_way("Hype Cave Middle Left")
+hype_cave_back:connect_one_way("Hype Cave Middle Right")
+hype_cave_back:connect_one_way("Hype Cave Bottom")
 
 swamp_area:connect_one_way("Purple Chest Return", function() return can_reach(purple_chest_pickup) end)
 
