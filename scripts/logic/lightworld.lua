@@ -475,7 +475,7 @@ light_bumper_cave_ledge:connect_one_way(lumberjacks_area)
 light_bumper_cave_ledge:connect_two_ways_entrance("Light Bumper Cave", light_bumper_cave)
 light_bumper_cave_ledge:connect_one_way(dark_bumper_cave_ledge, function() 
     return all(
-        has("mirror"),
+        canChangeWorldWithMirror(),
         inverted()
     ) 
 end)
@@ -676,13 +676,22 @@ hyrule_castle_area:connect_one_way(light_flute_map, function()
 end)
 
 hyrule_castle_top_outside:connect_two_ways_entrance("Castle Tower", at_entrance, function() 
-    return any(
-        all(
-            checkGlitches(2),
-            has("boots"),
-            can_reach(sanctuary_area)
+    return all(
+        any(
+            all(
+                checkGlitches(2),
+                has("boots"),
+                can_reach(sanctuary_area)
+            ),
+            canClearAgaTowerBarrier()
         ),
-        canClearAgaTowerBarrier()
+        openOrStandard()
+    ) 
+end)
+hyrule_castle_top_outside:connect_two_ways_entrance("Inverted Ganons Tower", gt_entrance, function() 
+    return all(
+        gtCrystalCount(),
+        inverted()
     ) 
 end)
 hyrule_castle_top_outside:connect_two_ways_entrance("Hyrule Castle Top Left", hc_left_entrance)
@@ -747,7 +756,12 @@ light_potion_shop:connect_one_way("Potion Shop - Center")
 light_death_mountain_left_bottom:connect_one_way(teleporter_at_dark_death_mountain_left_bottom)
 teleporter_at_dark_death_mountain_left_bottom:connect_one_way(light_death_mountain_left_bottom, function() return inverted() end)
 
-light_death_mountain_left_bottom:connect_one_way(light_death_mountain_left_top, function() return canChangeWorldWithMirror() end)
+light_death_mountain_left_bottom:connect_one_way(dark_death_mountain_left_top, function() 
+    return all(
+        canChangeWorldWithMirror(), 
+        inverted()
+    ) 
+end)
 light_death_mountain_left_bottom:connect_one_way(light_death_mountain_right_bottom, function() return has("hookshot") end)
 -- light_death_mountain_left_bottom:connect_one_way("Spectacle Rock", function() return has("mirror") end)
 light_death_mountain_left_bottom:connect_one_way(light_flute_map, function() 
@@ -769,7 +783,7 @@ light_death_mountain_left_bottom:connect_one_way("Old Man Item", function() retu
 light_death_mountain_left_bottom:connect_one_way("Spec Rock Top Item", function() 
     return all(
         openOrStandard(), 
-        has("mirror")
+        canChangeWorldWithMirror()
     )
 end)
 -- -- light_death_mountain_left:connect_one_way(lumberjacks_area)
@@ -785,7 +799,15 @@ spec_rock_ledge_exit:connect_two_ways_entrance("Spectecal Rock Ledge exit", spec
 
 spectacle_rock_inside_top:connect_one_way(spectacle_rock_cave)
 spectacle_rock_inside_bottom:connect_one_way(spectacle_rock_cave)
-spectacle_rock_inside_bottom:connect_one_way("Spec Rock Item")
+spectacle_rock_inside_bottom:connect_one_way("Spec Rock Item", function() 
+    return any(
+        openOrStandard(), 
+        all(
+            has("pearl"), 
+            inverted()
+        )
+    ) 
+end)
 
 spec_rock_ledge_entrance:connect_one_way(light_death_mountain_left_bottom)
 spec_rock_ledge_exit:connect_one_way(light_death_mountain_left_bottom)
@@ -800,7 +822,7 @@ old_man_cave:connect_two_ways(old_man_cave_back, function() return darkRooms() e
 light_death_mountain_left_top:connect_two_ways_entrance("Tower of Hera Entrance", toh_entrance)
 light_death_mountain_left_top:connect_one_way(dark_death_mountain_left_top, function() 
     return all(
-        has("mirror"), 
+        canChangeWorldWithMirror(), 
         inverted()
     ) 
 end)
@@ -895,7 +917,12 @@ light_death_mountain_right_top:connect_one_way(light_death_mountain_left_top, fu
 
 light_death_mountain_right_top:connect_two_ways_entrance("Paradox Cave Top Entrance", paradox_cave_top)
 light_death_mountain_right_top:connect_two_ways_entrance("Spiral Cave Top Entrance", spiral_cave_top)
-tr_eye_bridge_entrance:connect_one_way_entrance("Light Eyebridge Fairy", light_eyebridge_fairy, function() return has("mirror") end)
+tr_eye_bridge_entrance:connect_one_way_entrance("Light Eyebridge Fairy", light_eyebridge_fairy, function() 
+    return all(
+        canChangeWorldWithMirror(), 
+        openOrStandard()
+    ) 
+end)
 
 spiral_cave_top:connect_one_way(spiral_cave_bottom)
 spiral_cave_top:connect_one_way("Spiral Cave Item")

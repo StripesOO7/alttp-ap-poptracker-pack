@@ -283,8 +283,7 @@
                     {
                         "name": "Purple Chest Return",
                         "access_rules": [
-                            "$openOrStandard, @Darkworld Left, titans",
-                            "inverted, @Lightworld, mirror"
+                            "^$can_reach|Purple Chest Return"
                         ]
                     }
                 ],

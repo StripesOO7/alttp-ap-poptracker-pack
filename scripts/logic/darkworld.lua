@@ -102,7 +102,12 @@ big_bomb_shop_area:connect_one_way(south_of_village_of_the_outcast)
 
 big_bomb_shop_area:connect_two_ways_entrance("Big Bomb Shop Fairy Cave", big_bomb_shop_fairy_cave, function() return has("boots") end)
 
-big_bomb_shop_area:connect_one_way(cave45_ledge, function() return canChangeWorldWithMirror() end)
+big_bomb_shop_area:connect_one_way(cave45_ledge, function() 
+    return all(
+        canChangeWorldWithMirror(), 
+        openOrStandard()
+    ) 
+end)
 
 big_bomb_shop:connect_one_way("Buy Big Bomb", function() return has("crystal",2, 2, 2, 2) end)
 
@@ -155,7 +160,7 @@ hype_cave_back:connect_one_way("Hype Cave_Middle Left")
 hype_cave_back:connect_one_way("Hype Cave_Middle Right")
 hype_cave_back:connect_one_way("Hype Cave_Bottom")
 
-
+swamp_area:connect_one_way("Purple Chest Return", function() return can_reach(purple_chest_pickup) end)
 
 
 
@@ -206,7 +211,7 @@ end)
 mire_area:connect_one_way(checkerboard_lege, function() 
     return all(
         openOrStandard(),
-        has("mirror")
+        canChangeWorldWithMirror()
     ) 
 end)
 -- mire_area:connect_one_way(teleper, function() return has("mirror") end)
@@ -236,8 +241,9 @@ dark_lake_hylia:connect_one_way(pod_area, function()
 end)
 dark_lake_hylia:connect_one_way(lake_hylia_island, function() 
     return all(
-        has("mirror"),
-        canSwim()
+        canChangeWorldWithMirror(),
+        canSwim(),
+        openOrStandard()
 ) end)
 
 dark_lake_shop:connect_one_way("Dark Lake Shop Left")
@@ -441,7 +447,12 @@ dark_bumper_cave_ledge:connect_one_way_entrance("Reverse Bumpercave", dark_bumpe
     )
 end)
 dark_bumper_cave_ledge:connect_one_way("Bumper Cave Item")
-dark_bumper_cave_ledge:connect_one_way(light_bumper_cave_ledge, function() return canChangeWorldWithMirror() end)
+dark_bumper_cave_ledge:connect_one_way(light_bumper_cave_ledge, function() 
+    return all(
+        canChangeWorldWithMirror(), 
+        openOrStandard()
+    )
+end)
 dark_bumper_cave_ledge:connect_one_way(dark_lumpberjacks)
 
 
@@ -626,7 +637,13 @@ dark_death_mountain_left_top:connect_one_way(light_death_mountain_left_top, func
         canChangeWorldWithMirror()
     ) 
 end)
-dark_death_mountain_left_top:connect_two_ways_entrance("Ganons Tower", gt_entrance, function() return gtCrystalCount() end)
+dark_death_mountain_left_top:connect_two_ways_entrance("Ganons Tower", gt_entrance, function() 
+    return all(
+        gtCrystalCount(), 
+        openOrStandard()
+    ) 
+end)
+dark_death_mountain_left_top:connect_two_ways_entrance("Ganons Tower", at_entrance, function() return inverted() end)
 
 dark_death_mountain_left_top:connect_two_ways(dark_death_mountain_right_top)
 
@@ -663,7 +680,8 @@ dark_death_mountain_right_top:connect_two_ways_entrance("Hookshot Cave", hooksho
 hookshot_cave:connect_two_ways(floating_island, function() 
     return all(
         has("bombs"),
-        canChangeWorldWithMirror()
+        canChangeWorldWithMirror(),
+        openOrStandard()
     ) 
 end)
 
@@ -701,7 +719,12 @@ dark_death_mountain_left_bottom:connect_one_way(teleporter_at_dark_death_mountai
 teleporter_at_dark_death_mountain_left_bottom:connect_one_way(dark_death_mountain_left_bottom)
 
 dark_death_mountain_left_bottom:connect_two_ways_entrance("Spike Cave", spike_cave)
--- dark_death_mountain_left_bottom:connect_one_way()
+dark_death_mountain_left_bottom:connect_one_way(light_death_mountain_left_top, function() 
+    return all(
+        canChangeWorldWithMirror(), 
+        openOrStandard()
+    ) 
+end)
 spike_cave:connect_one_way("Spike Cave Chest", function() 
     return all(
         has("hammer"),
@@ -733,7 +756,12 @@ teleporter_at_dark_death_mountain_right_bottom:connect_one_way(dark_death_mounta
 
 turtle_rock_ledge:connect_two_ways_entrance("Turtle Rock Big Chest Entrance", tr_big_chest_entrance)
 turtle_rock_ledge:connect_two_ways_entrance("Turtle Rock Laser Entrance", tr_laser_entrance, function() return has("bombs") end)
-turtle_rock_ledge:connect_one_way(mimic_cave_ledge, function() return canChangeWorldWithMirror() end)
+turtle_rock_ledge:connect_one_way(mimic_cave_ledge, function() 
+    return all(
+        canChangeWorldWithMirror(), 
+        openOrStandard()
+    ) 
+end)
 -- tr_laser_entrance:connect_two_ways_entrance("Light Death Mountain Fairy", light_death_mountain_cave1, function() return has("mirror") end)
 
 
