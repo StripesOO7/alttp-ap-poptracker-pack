@@ -13,7 +13,7 @@ local sp_boss_room = alttp_location.new("sp_boss_room")
 
 sp_entrance:connect_two_ways(sp_first_room)
 
-sp_first_room:connect_two_ways(sp_hallway_before_first_trench, function(keys) return has("sp_smallkey_smallkey", keys + 1, 1, keys + 1, 1), KDSreturn(keys + 1, keys + 1) end)
+sp_first_room:connect_two_ways(sp_hallway_before_first_trench, function(keys) return has("sp_smallkey", keys + 1, 1, keys + 1, 1), KDSreturn(keys + 1, keys + 1) end)
 sp_first_room:connect_one_way("SP - Entrance Chest", function() 
     return all(
         has("flippers"),
