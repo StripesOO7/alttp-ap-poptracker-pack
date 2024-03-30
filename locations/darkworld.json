@@ -105,16 +105,19 @@
             },
             {
                 "name": "Breadsmiths",
-                // "access_rules":[
-                //     "^$can_reach|"
-                // ],
+                "access_rules":[
+                    "^$can_reach|helpless_frog"
+                ],
                 "sections": [
                     {
-                        "name": "Rescue Dwarf",
-                        "access_rules": [
-                            "$openOrStandard, titans",
-                            "inverted, @Lightworld, mirror"
-                        ]
+                        "name": "Rescue Dwarf"
+                        // "access_rules": [
+                        //     "$openOrStandard, titans",
+                        //     "inverted, @Lightworld, mirror"
+                        // ]
+                        // "access_rules":[
+                        //     "^$can_reach|Rescue Dwarf"
+                        // ]
                     }
                 ],
                 "map_locations": [
@@ -289,7 +292,7 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "Darkworld",
+                        "map": "Lightworld",
                         "x": 690,
                         "y": 1800,
                         "size": 32

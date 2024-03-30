@@ -210,6 +210,12 @@ south_of_village:connect_one_way(light_flute_map, function()
     ) 
 end)
 
+south_of_village:connect_one_way(helpless_frog, function() 
+    return all(
+        inverted(), 
+        canChangeWorldWithMirror()
+    ) 
+end)
 
 south_of_village:connect_two_ways_entrance("Library", library)
 south_of_village:connect_two_ways_entrance("Light Archery Mini Game", archery_minigame)
@@ -372,7 +378,7 @@ mini_moldorm_cave_back:connect_one_way("Mini Moldorm Cave - Far Right")
 
 dam_area:connect_one_way("Sunken Treasure", function() return can_reach("Floodgate Chest") end)
 
-
+dam_area:connect_one_way("Purple Chest Return", function() return purple_chest_pickup.accessibility_level end)
 
 
 
@@ -454,7 +460,12 @@ lumberjacks_area:connect_one_way(light_lake_hylia, function()
 end) --teleport
 -- lumberjacks_area:connect_one_way(light_death_mountain_left_bottom)
 
-lumberjacks_area:connect_one_way_entrance("Tree Hole", lumberjacks_hole, function() return has("aga1") end)
+lumberjacks_area:connect_one_way_entrance("Tree Hole", lumberjacks_hole, function() 
+    return all(
+        has("aga1"), 
+        has("boots")
+    ) 
+end)
 lumberjacks_area:connect_two_ways_entrance("Lumberjacks Cave", lumberjacks_cave)
 lumberjacks_area:connect_two_ways_entrance("Lumberjacks House", lumberjacks_house)
 -- lumberjacks_area:connect_two_ways_entrance("Light Death Mountain Ascent", light_death_mountain_ascent, function() return has("glove") end)
@@ -638,7 +649,8 @@ zora_river:connect_one_way("Zora Ledge", function()
         all(
             checkGlitches(2),
             has("boots")
-        )
+        ),
+        AccessibilityLevel.Inspect
     )
 end)
 
