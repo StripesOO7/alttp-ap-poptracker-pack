@@ -109,7 +109,7 @@ big_bomb_shop_area:connect_one_way(cave45_ledge, function()
     ) 
 end)
 
-big_bomb_shop:connect_one_way("Buy Big Bomb", function() return has("crystal",2, 2, 2, 2) end)
+big_bomb_shop:connect_one_way("Buy Big Bomb", function() return has("crystal56",2, 2, 2, 2) end)
 
 -- swamp_area
 swamp_area:connect_one_way(teleporter_at_swamp, function() 
@@ -160,7 +160,7 @@ hype_cave_back:connect_one_way("Hype Cave Middle Left")
 hype_cave_back:connect_one_way("Hype Cave Middle Right")
 hype_cave_back:connect_one_way("Hype Cave Bottom")
 
-swamp_area:connect_one_way("Purple Chest Return", function() return can_reach(purple_chest_pickup) end)
+-- swamp_area:connect_one_way("Purple Chest Return", function() return can_reach(purple_chest_pickup) end)
 
 
 
@@ -367,6 +367,8 @@ purple_chest_pickup:connect_two_ways_entrance("Peg Cave", peg_cave_inside, funct
 
 peg_cave_inside:connect_one_way("Peg-Cave Item")
 
+village_of_the_outcast:connect_two_ways(helpless_frog, function() return has("titans") end)
+
 -- south_of_village_of_the_outcast
 south_of_village_of_the_outcast:connect_one_way(village_of_the_outcast, function()
     return has("titans")
@@ -385,7 +387,12 @@ south_of_village_of_the_outcast:connect_one_way("Digging Game")
 -- south_of_village_of_the_outcast:connect_one_way(mire_area) -- glitches
 
 big_bomb_shop_area:connect_two_ways(stumpy)
-big_bomb_shop_area:connect_two_ways(cave45, function() return all(openOrStandard()) end)
+big_bomb_shop_area:connect_two_ways(cave45, function() 
+    return all(
+        openOrStandard(), 
+        canChangeWorldWithMirror()
+    ) 
+end)
 stumpy:connect_one_way("Stumpy")
 
 
@@ -446,7 +453,12 @@ dark_bumper_cave_ledge:connect_one_way_entrance("Reverse Bumpercave", dark_bumpe
         has("cape")
     )
 end)
-dark_bumper_cave_ledge:connect_one_way("Bumper Cave Item")
+dark_bumper_cave_ledge:connect_one_way("Bumper Cave Item", function() 
+    return any(
+        dark_bumper_cave_ledge.accessibility_level, 
+        AccessibilityLevel.Inspect
+    ) 
+end)
 dark_bumper_cave_ledge:connect_one_way(light_bumper_cave_ledge, function() 
     return all(
         canChangeWorldWithMirror(), 
@@ -509,7 +521,7 @@ dark_potion_shop:connect_one_way(dark_flute_map, function()
     ) 
 end)
 
-dark_potion_shop:connect_two_ways_entrance("Dark Porion Shop", dark_potion_shop_inside)
+dark_potion_shop:connect_two_ways_entrance("Dark Potion Shop", dark_potion_shop_inside)
 
 dark_potion_shop_inside:connect_one_way("Dark Potion Shop Left")
 dark_potion_shop_inside:connect_one_way("Dark Potion Shop Center")
@@ -556,7 +568,7 @@ end)
 pyramid:connect_one_way("Pyramid Item")
 pyramid:connect_one_way_entrance("Fat Fairy", pyramid_fairy_cave, function() 
     return all(
-        has("crystal", 2, 2, 2, 2), 
+        has("crystal56", 2, 2, 2, 2), 
         big_bomb_shop.accessibility_level
     )
 end)
@@ -595,6 +607,13 @@ pod_area:connect_one_way(dark_potion_shop,function()
     return any(
         has("hammer"),
         has("glove")
+    )
+end)
+
+pod_area:connect_one_way(dark_lake_hylia, function()
+    return any(
+        has("hammer"),
+        has("flippers")
     )
 end)
 

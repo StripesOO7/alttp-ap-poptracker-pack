@@ -21,7 +21,12 @@ hc_right_entrance:connect_two_ways(hc_back_hall)
 
 hc_back_hall:connect_two_ways(hc_map_chest_room)
 hc_map_chest_room:connect_one_way("HC - Map Chest")
-hc_map_chest_room:connect_one_way("HC - Map Guard Key Drop", function() return dealDamage() end)
+hc_map_chest_room:connect_one_way("HC - Map Guard Key Drop", function() 
+    return any(
+        dealDamage(), 
+        has("standard")
+    ) 
+end)
 
 hc_map_chest_room:connect_two_ways(hc_boomerang_chest_room, function(keys) 
     return any(
@@ -30,7 +35,12 @@ hc_map_chest_room:connect_two_ways(hc_boomerang_chest_room, function(keys)
     ), KDSreturn(keys, keys + 1)
 end)
 hc_boomerang_chest_room:connect_one_way("HC - Boomerang Chest")
-hc_boomerang_chest_room:connect_one_way("HC - Booomerang Guard Key Drop", function() return dealDamage() end)
+hc_boomerang_chest_room:connect_one_way("HC - Booomerang Guard Key Drop", function() 
+    return any(
+        dealDamage(), 
+        has("standard")
+    ) 
+end)
 
 hc_map_chest_room:connect_two_ways(hc_ball_guard_room, function(keys) 
     return any(
@@ -38,7 +48,12 @@ hc_map_chest_room:connect_two_ways(hc_ball_guard_room, function(keys)
         has("hc_smallkey", keys, 0, keys + 1, 4)
     ), KDSreturn(keys, keys + 1)
 end)
-hc_ball_guard_room:connect_one_way("HC - Big Key", function() return dealDamage() end)
+hc_ball_guard_room:connect_one_way("HC - Big Key", function() 
+    return any(
+        dealDamage(), 
+        has("standard")
+    ) 
+end)
 
 hc_ball_guard_room:connect_two_ways(hc_zeldas_cell, function() return has("hc_bigkey") end)
 hc_zeldas_cell:connect_one_way("HC - Zelda's Chest")
@@ -87,7 +102,16 @@ ce_rat_key_room:connect_two_ways(ce_dropdown_entrance, function(keys)
         has("standard")
     ), KDSreturn(keys, keys + 1) 
 end)
-ce_rat_key_room:connect_one_way("CE - Rat Key Drop", function() return dealDamage() end)
+ce_rat_key_room:connect_one_way("CE - Rat Key Drop", function(keys) 
+    return any(
+        all(
+            darkRooms(),
+            has("hc_smallkey", keys, 1, keys, 4),
+            dealDamage()
+        ),
+        has("standard")
+    ), KDSreturn(keys, keys)
+end)
 
 ce_dropdown_entrance:connect_two_ways(ce_secret_room, function() 
     return any(

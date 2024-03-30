@@ -232,7 +232,7 @@ function autoFill()
     -- mapEnemyHealth = {[0]=0, [1]=1, [2]=2, [3]=3} --easy, normal. hard, expert
     -- mapEnemyDmg = {[0]=0, [1]=1, [2]=2} --default, shuffled, chaos
     -- mapMedallions = {[0]="ether", [1]="bombos", [2]="quake"} -- ether, bombos, quake
-    mapMedallions = {["Ether"]="ether", ["Bombos"]="bombos", ["Quake"]="quake"} -- ether, bombos, quake
+    mapMedallions = {[0]="ether", [1]="bombos", [2]="quake", ["Ether"]="ether", ["Bombos"]="bombos", ["Quake"]="quake"} -- ether, bombos, quake
     -- mapCrystalGanon = {} -- range 0-7
     -- mapGTCrystals = {} -- range 0-7
     -- mapRandomizeShopInventory = {} -- range 0-30
