@@ -115,7 +115,7 @@ pod_collapsin_bridge:connect_two_ways(pod_dark_maze, function(keys)
         has("pod_smallkey", keys + 1, 6, keys + 1, 6)
     ), KDSreturn(keys + 1, keys + 1)
 end)
-pod_collapsin_bridge:connect_two_ways(pod_compass_room)
+pod_collapsin_bridge:connect_two_ways(pod_compass_room, function() return pod_collapsin_bridge.accessibility_level end)
 
 pod_dark_maze:connect_one_way("PoD - Dark Maze Top")
 pod_dark_maze:connect_one_way("PoD - Dark Maze Bottom")
