@@ -65,18 +65,18 @@ gt_bottom_dm_room:connect_one_way("GT - DM Room Bottom Right")
 gt_bottom_map_room:connect_one_way("GT - Map Chest")
 
 gt_bottom_double_switch_room:connect_two_ways(gt_bottom_firesnake_room, function(keys) return has("gt_smallkey", keys, 3, keys + 1, 5), KDSreturn(keys, keys + 1) end)
-gt_bottom_double_switch_room:connect_one_way("GT - Double Switch Pot Key", function() 
-    return any(
-        has("boots"), 
-        has("hookshot")
-    )
-end)
+gt_bottom_double_switch_room:connect_one_way("GT - Double Switch Pot Key")--, function() ret
+--     return any(
+--         has("boots"), 
+--         has("hookshot")
+--     )
+-- end)
 
 gt_bottom_firesnake_room:connect_two_ways(gt_bottom_teleporter_puzzle_room, function(keys) return has("gt_smallkey", keys + 1, 3, keys + 1, 5), KDSreturn(keys + 1, keys + 1) end)
 gt_bottom_firesnake_room:connect_one_way("GT - Firesnake Room")
 
 gt_bottom_teleporter_puzzle_room:connect_two_ways(gt_bottom_randomizer_room, function() return has("bombs") end)
-gt_bottom_teleporter_puzzle_room:connect_two_ways(gt_bottom_invisibile_bonk_room)
+gt_bottom_teleporter_puzzle_room:connect_one_way(gt_bottom_invisibile_bonk_room)
 
 gt_bottom_randomizer_room:connect_one_way("GT - Randomizer Room Top Left")
 gt_bottom_randomizer_room:connect_one_way("GT - Randomizer Room Top Right")
@@ -124,7 +124,12 @@ gt_bottom_compass_room:connect_one_way("GT - Compass Room Bottom Right")
 gt_bottom_conveyor_star_room:connect_one_way(gt_bottom_invisibile_bonk_room, function(keys) return has("gt_smallkey", keys + 1, 2, keys + 1, 5), KDSreturn(keys + 1, keys + 1) end)
 gt_bottom_conveyor_star_room:connect_one_way("GT - Conveyor Star Key Drop")
 
-gt_top_entrance:connect_two_ways(gt_top_gauntlet, function() return has("gt_bigkey") end)
+gt_top_entrance:connect_two_ways(gt_top_gauntlet, function() 
+    return all(
+        has("gt_bigkey"), 
+        enemizerCheck("bow")
+    ) 
+end)
 gt_top_gauntlet:connect_two_ways(gt_top_desert_refight, function() return getBossRef("gt_lanmo") end)
 gt_top_desert_refight:connect_two_ways(gt_top_torch_puzzle)
 gt_top_torch_puzzle:connect_one_way(gt_top_mini_helmasaur_room, function() return has("firesource") end)
