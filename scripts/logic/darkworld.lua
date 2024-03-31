@@ -42,6 +42,7 @@ teleporter_at_village_of_the_outcast:connect_one_way(teleporter_at_kakariko_vill
     )
 end)
 
+
 teleporter_at_dark_turtle_rock:connect_one_way(teleporter_at_light_turtle_rock, function() return inverted() end)
 
 teleporter_at_dark_death_mountain_left_bottom:connect_one_way(teleporter_at_light_death_mountain_left_bottom, function() return inverted() end)
@@ -109,7 +110,7 @@ big_bomb_shop_area:connect_one_way(cave45_ledge, function()
     ) 
 end)
 
-big_bomb_shop:connect_one_way("Buy Big Bomb", function() return has("crystal56",2, 2, 2, 2) end)
+big_bomb_shop:connect_one_way("Buy Big Bomb", function() return all(has("crystal56",2, 2, 2, 2), can_interact("dark")) end)
 
 -- swamp_area
 swamp_area:connect_one_way(teleporter_at_swamp, function() 
@@ -149,11 +150,11 @@ swamp_area:connect_two_ways(bombos_tablet_ledge, function()
     ) 
 end)
 
-swamp_area:connect_two_ways_entrance("Hype Cave", hype_cave, function() return has("bombs") end)
+swamp_area:connect_two_ways_entrance("Hype Cave", hype_cave, function() return all(has("bombs"), can_interact("dark")) end)
 swamp_area:connect_two_ways_entrance("Swamp Palace", sp_entrance, function() return can_reach(dam_inside) end)
 
 hype_cave:connect_one_way("Hype Cave_Generous Guy")
-hype_cave:connect_two_ways(hype_cave_back, function() return has("bombs") end)
+hype_cave:connect_two_ways(hype_cave_back, function() return all(has("bombs"), can_interact("dark")) end)
 
 hype_cave_back:connect_one_way("Hype Cave Top")
 hype_cave_back:connect_one_way("Hype Cave Middle Left")
@@ -190,15 +191,16 @@ mire_area:connect_two_ways_entrance("Misery Mire", mm_entrance,function()
             has("mm_medallion"), 
             has("medallion", 3, 3, 3, 3)
         ),
-        canUseMedallions()
+        canUseMedallions(),
+        can_interact("dark")
     )
 end)
 mire_area:connect_two_ways_entrance("Mire Shed Left", mire_shed_left)
 mire_area:connect_two_ways_entrance("Mire Shed Right", mire_shed_right)
 mire_area:connect_two_ways_entrance("Dark Desert Hint", dark_desert_hint_cave)
 
-mire_shed_left:connect_one_way("Mire Shed_Left")
-mire_shed_left:connect_one_way("Mire Shed_Right")
+mire_shed_left:connect_one_way("Mire Shed_Left", function() return can_interact("dark") end)
+mire_shed_left:connect_one_way("Mire Shed_Right", function() return can_interact("dark") end)
 
 
 mire_area:connect_one_way(desert_ledge, function() 
@@ -231,19 +233,26 @@ dark_lake_hylia:connect_one_way(dark_flute_map, function()
     ) 
 end)
 dark_lake_hylia:connect_one_way(dark_icerod_area, function()
-    return has("flippers")
+    return all(
+        has("flippers"),
+        can_interact("dark")
+    )
 end)
 dark_lake_hylia:connect_one_way(pod_area, function()
-    return any(
-        has("hammer"),
-        has("flippers")
+    return all(
+        any(
+            has("hammer"),
+            has("flippers")
+        ),
+        can_interact("dark")
     )
 end)
 dark_lake_hylia:connect_one_way(lake_hylia_island, function() 
     return all(
         canChangeWorldWithMirror(),
         canSwim(),
-        openOrStandard()
+        openOrStandard(),
+        can_interact("dark")
 ) end)
 
 dark_lake_shop:connect_one_way("Dark Lake Shop Left")
@@ -255,13 +264,15 @@ dark_lake_hylia:connect_one_way(lake_hylia_island, function()
     return all(
         has("flippers"),
         openOrStandard(),
-        canChangeWorldWithMirror()
+        canChangeWorldWithMirror(),
+        can_interact("dark")
     ) 
 end)
 dark_lake_hylia:connect_two_ways(ice_palace_island, function() 
     return all(
         canSwim(), 
-        inverted()
+        inverted(),
+        can_interact("dark")
     ) 
 end)
 
@@ -280,7 +291,10 @@ ice_palace_island:connect_two_ways_entrance("Ice Palace", ip_entrance)
 
 -- dark_icerod_area
 dark_icerod_area:connect_one_way(dark_lake_hylia, function()
-    return has("flippers")
+    return all(
+        has("flippers"),
+        can_interact("dark")
+    )
 end)
 dark_icerod_area:connect_one_way(dark_flute_map, function() 
     return all(
@@ -290,9 +304,9 @@ dark_icerod_area:connect_one_way(dark_flute_map, function()
     ) 
 end)
 
-dark_icerod_area:connect_two_ways_entrance("Dark Icerod Cave", dark_icerod_cave)
-dark_icerod_area:connect_two_ways_entrance("Dark Icerod Fairy", dark_icerod_fairy, function() return has("bombs") end)
-dark_icerod_area:connect_two_ways_entrance("Dark Icerod Stone", dark_icerod_stone, function() return has("glove") end)
+dark_icerod_area:connect_two_ways_entrance("Dark Icerod Cave", dark_icerod_cave, function() return all(has("bombs"), can_interact("dark")) end)
+dark_icerod_area:connect_two_ways_entrance("Dark Icerod Fairy", dark_icerod_fairy)
+dark_icerod_area:connect_two_ways_entrance("Dark Icerod Stone", dark_icerod_stone, function() return all(has("glove"), can_interact("dark")) end)
 
 
 
@@ -348,26 +362,26 @@ end)
 village_of_the_outcast:connect_two_ways_entrance("C-Shaped House", c_shaped_house)
 village_of_the_outcast:connect_two_ways_entrance("Chest Game Entrance", chest_game)
 village_of_the_outcast:connect_two_ways_entrance("Thieves Town Entrance", tt_entrance)
-village_of_the_outcast:connect_two_ways_entrance("Dark Village Shop", dark_village_shop, function() return has("hammer") end)
-village_of_the_outcast:connect_two_ways_entrance("Brewery", brewery, function() return has("bombs") end)
+village_of_the_outcast:connect_two_ways_entrance("Dark Village Shop", dark_village_shop, function() return all(has("hammer"), can_interact("dark")) end)
+village_of_the_outcast:connect_two_ways_entrance("Brewery", brewery, function() return all(has("bombs"), can_interact("dark")) end)
 
-chest_game:connect_one_way("Chest Game Item")
+chest_game:connect_one_way("Chest Game Item", function() return can_interact("dark") end)
 
-c_shaped_house:connect_one_way("C-Shaped House")
+c_shaped_house:connect_one_way("C-Shaped House", function() return can_interact("dark") end)
 
 dark_village_shop:connect_one_way("Village of Outcasts Shop Left")
 dark_village_shop:connect_one_way("Village of Outcasts Shop Center")
 dark_village_shop:connect_one_way("Village of Outcasts Shop Right")
 
-brewery:connect_one_way("Brewery Chest")
+brewery:connect_one_way("Brewery Chest", function() return can_interact("dark") end)
 
 
-village_of_the_outcast:connect_two_ways(purple_chest_pickup, function() return has("titans") end)
-purple_chest_pickup:connect_two_ways_entrance("Peg Cave", peg_cave_inside, function() return has("hammer") end)
+village_of_the_outcast:connect_two_ways(purple_chest_pickup, function() return all(has("titans"), can_interact("dark")) end)
+purple_chest_pickup:connect_two_ways_entrance("Peg Cave", peg_cave_inside, function() return all(has("hammer"), can_interact("dark")) end)
 
 peg_cave_inside:connect_one_way("Peg-Cave Item")
 
-village_of_the_outcast:connect_two_ways(helpless_frog, function() return has("titans") end)
+village_of_the_outcast:connect_two_ways(helpless_frog, function() return all(has("titans"), can_interact("dark")) end)
 
 -- south_of_village_of_the_outcast
 south_of_village_of_the_outcast:connect_one_way(village_of_the_outcast, function()
@@ -382,7 +396,7 @@ south_of_village_of_the_outcast:connect_one_way(dark_flute_map, function()
     ) 
 end)
 south_of_village_of_the_outcast:connect_two_ways_entrance("Dark Archery", dark_archery_minigame)
-south_of_village_of_the_outcast:connect_one_way("Digging Game")
+south_of_village_of_the_outcast:connect_one_way("Digging Game", function () return can_interact("dark") end)
 
 -- south_of_village_of_the_outcast:connect_one_way(mire_area) -- glitches
 
@@ -417,7 +431,8 @@ skull_woods_area:connect_one_way_entrance("Skull Woods Back North Drop", sw_nort
 skull_woods_area:connect_two_ways_entrance("Skull Woods Back", sw_back_entrance, function() 
     return all(
         can_reach(sw_west_lobby_entrance),
-        has("firerod")
+        has("firerod"),
+        can_interact("dark")
     )
 end)
 
@@ -445,12 +460,15 @@ red_shield_shop:connect_one_way("Red Shield Shop Right")
 
 dark_lumpberjacks:connect_two_ways_entrance("Dark Lumberjacks Shop", dark_lumpberjacks_shop)
 dark_lumpberjacks:connect_two_ways_entrance("Red Shield Shop", red_shield_shop)
-dark_lumpberjacks:connect_two_ways_entrance("Bumper Cave", dark_bumper_cave, function() return has("glove") end)
-dark_bumper_cave:connect_one_way_entrance("Normal Bumpercave", dark_bumper_cave_ledge,function() return has("cape") end)
+dark_lumpberjacks:connect_two_ways_entrance("Bumper Cave", dark_bumper_cave, function() return all(has("glove"), can_interact("dark")) end)
+dark_bumper_cave:connect_one_way_entrance("Normal Bumpercave", dark_bumper_cave_ledge,function() return all(has("cape"), can_interact("dark")) end)
 dark_bumper_cave_ledge:connect_one_way_entrance("Reverse Bumpercave", dark_bumper_cave, function() 
-    return any(
-        has("hookshot"), 
-        has("cape")
+    return all(
+        any(
+            has("hookshot"), 
+            has("cape")
+        ),
+        can_interact("dark")
     )
 end)
 dark_bumper_cave_ledge:connect_one_way("Bumper Cave Item", function() 
@@ -478,7 +496,10 @@ dark_chapel_area:connect_one_way(dark_flute_map, function()
     ) 
 end)
 dark_chapel_area:connect_one_way(dark_potion_shop, function()
-    return has("flippers")
+    return all(
+        has("flippers"),
+        can_interact("dark")
+    )
 end)
 
 dark_chapel_area:connect_one_way(graveyard_ledge, function()
@@ -502,15 +523,24 @@ dark_chapel_area:connect_two_ways_entrance("Dark Chapel", dark_chapel)
 
 -- dark_potion_shop
 dark_potion_shop:connect_one_way(dark_chapel_area, function()
-    return has("hookshot")
+    return all(
+        has("hookshot"),
+        can_interact("dark")
+    )
 end)
 dark_potion_shop:connect_one_way(catfish_area, function()
-    return has("titans")
+    return all(
+        has("titans"),
+        can_interact("dark")
+    )
 end)
 dark_potion_shop:connect_one_way(pod_area, function()
-    return any(
-        has("hammer"),
-        has("glove")
+    return all(
+        any(
+            has("hammer"),
+            has("glove")
+        ),
+        can_interact("dark")
     )
 end)
 dark_potion_shop:connect_one_way(dark_flute_map, function() 
@@ -535,9 +565,12 @@ dark_potion_shop_inside:connect_one_way("Dark Potion Shop Right")
 
 -- catfish_area
 catfish_area:connect_one_way(dark_potion_shop, function()
-    return any(
-        has("flippers"),
-        has("glove")
+    return all(
+        any(
+            has("flippers"),
+            has("glove")
+        ),
+        can_interact("dark")
     )
 end)
 catfish_area:connect_one_way(dark_flute_map, function() 
@@ -547,7 +580,7 @@ catfish_area:connect_one_way(dark_flute_map, function()
         can_reach(inverted_activate_flute)
     ) 
 end)
-catfish_area:connect_one_way("Catfish Item")
+catfish_area:connect_one_way("Catfish Item", function() return can_interact("dark") end)
 -- catfish_area:connect_one_way() --glicht to pod
 
 
@@ -569,7 +602,8 @@ pyramid:connect_one_way("Pyramid Item")
 pyramid:connect_one_way_entrance("Fat Fairy", pyramid_fairy_cave, function() 
     return all(
         has("crystal56", 2, 2, 2, 2), 
-        big_bomb_shop.accessibility_level
+        big_bomb_shop.accessibility_level,
+        can_interact("dark")
     )
 end)
 
@@ -604,21 +638,27 @@ pod_area:connect_one_way(dark_flute_map, function()
     ) 
 end)
 pod_area:connect_one_way(dark_potion_shop,function()
-    return any(
-        has("hammer"),
-        has("glove")
+    return all(
+        any(
+            has("hammer"),
+            has("glove")
+        ),
+        can_interact("dark")
     )
 end)
 
 pod_area:connect_one_way(dark_lake_hylia, function()
-    return any(
-        has("hammer"),
-        has("flippers")
+    return all(
+        any(
+            has("hammer"),
+            has("flippers")
+        ),
+        can_interact("dark")
     )
 end)
 
 pod_area:connect_two_ways_entrance("Kiki Cave", kiki_cave)
-pod_area:connect_two_ways_entrance("Palace of Darkness", palace_of_darkness)
+pod_area:connect_two_ways_entrance("Palace of Darkness", palace_of_darkness, function() return can_interact("dark") end)
 pod_area:connect_two_ways_entrance("Dark PoD Fairy", pod_fairy_cave)
 pod_area:connect_two_ways_entrance("PoD Teleporter Cave", pod_teleport_cave)
 
@@ -692,7 +732,8 @@ teleporter_at_dark_turtle_rock:connect_two_ways_entrance("Turtle Rock Main Entra
             has("tr_medallion"),
             has("medallion", 3, 3, 3, 3)
         ),
-        canUseMedallions()
+        canUseMedallions(),
+        can_interact("dark")
     ) 
 end)
 dark_death_mountain_right_top:connect_two_ways_entrance("Hookshot Cave", hookshot_cave, function() return has("glove") end)
@@ -700,19 +741,38 @@ hookshot_cave:connect_two_ways(floating_island, function()
     return all(
         has("bombs"),
         canChangeWorldWithMirror(),
-        openOrStandard()
+        openOrStandard(),
+        can_interact("dark")
     ) 
 end)
 
 hookshot_cave:connect_one_way("Hookshot Cave Item Bottom Right", function() 
-    return any(
-        has("hookshot"),
-        has("boots")
+    return all(
+        any(
+            has("hookshot"),
+            has("boots")
+        ),
+        can_interact("dark")
     )
 end)
-hookshot_cave:connect_one_way("Hookshot Cave Item Top Right", function() return has("hookshot") end)
-hookshot_cave:connect_one_way("Hookshot Cave Item Top Left", function() return has("hookshot") end)
-hookshot_cave:connect_one_way("Hookshot Cave Item Bottom Left", function() return has("hookshot") end)
+hookshot_cave:connect_one_way("Hookshot Cave Item Top Right", function() 
+    return all(
+        has("hookshot"), 
+        can_interact("dark")
+    ) 
+end)
+hookshot_cave:connect_one_way("Hookshot Cave Item Top Left", function() 
+    return all(
+        has("hookshot"), 
+        can_interact("dark")
+    ) 
+end)
+hookshot_cave:connect_one_way("Hookshot Cave Item Bottom Left", function() 
+    return all(
+        has("hookshot"), 
+        can_interact("dark")
+    ) 
+end)
 
 
 tr_eye_bridge_entrance:connect_two_ways_entrance("Light Eyebridge Connector", light_eyebridge_fairy, function() 
@@ -747,7 +807,8 @@ end)
 spike_cave:connect_one_way("Spike Cave Chest", function() 
     return all(
         has("hammer"),
-        has("glove") --,
+        has("glove"),
+        can_interact("dark") --,
         -- has("heartpieces", )
     )
 end)
@@ -774,7 +835,12 @@ end)
 teleporter_at_dark_death_mountain_right_bottom:connect_one_way(dark_death_mountain_right_bottom)
 
 turtle_rock_ledge:connect_two_ways_entrance("Turtle Rock Big Chest Entrance", tr_big_chest_entrance)
-turtle_rock_ledge:connect_two_ways_entrance("Turtle Rock Laser Entrance", tr_laser_entrance, function() return has("bombs") end)
+turtle_rock_ledge:connect_two_ways_entrance("Turtle Rock Laser Entrance", tr_laser_entrance, function() 
+    return all(
+        has("bombs"), 
+        can_interact("dark")
+    ) 
+end)
 turtle_rock_ledge:connect_one_way(mimic_cave_ledge, function() 
     return all(
         canChangeWorldWithMirror(), 

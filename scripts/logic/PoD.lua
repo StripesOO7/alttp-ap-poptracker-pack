@@ -21,9 +21,9 @@ local pod_harmless_hellway = alttp_location.new("pod_harmless_hellway")
 local pod_boss_room = alttp_location.new("pod_boss_room")
 
 
-pod_entrance:connect_two_ways(pod_three_way_room_left)
-pod_entrance:connect_two_ways(pod_three_way_room_middle)
-pod_entrance:connect_two_ways(pod_three_way_room_right)
+pod_entrance:connect_two_ways(pod_three_way_room_left, function() return can_interact("dark") end)
+pod_entrance:connect_two_ways(pod_three_way_room_middle, function() return can_interact("dark") end)
+pod_entrance:connect_two_ways(pod_three_way_room_right, function() return can_interact("dark") end)
 pod_three_way_room_middle:connect_two_ways(pod_three_way_room_right)
 
 pod_three_way_room_left:connect_two_ways(pod_shooter_room)

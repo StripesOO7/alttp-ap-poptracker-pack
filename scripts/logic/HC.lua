@@ -14,10 +14,10 @@ local ce_secret_room = alttp_location.new("ce_secret_room")
 
 hc_main_entrance:connect_two_ways(hyrule_castle_top_left)
 hc_main_entrance:connect_two_ways(hyrule_castle_top_right)
-hc_main_entrance:connect_one_way(ce_entrance)
+hc_main_entrance:connect_one_way(ce_entrance, function() return can_interact("light") end)
 
-hc_left_entrance:connect_two_ways(hc_back_hall)
-hc_right_entrance:connect_two_ways(hc_back_hall)
+hc_left_entrance:connect_two_ways(hc_back_hall, function() return can_interact("light") end)
+hc_right_entrance:connect_two_ways(hc_back_hall, function() return can_interact("light") end)
 
 hc_back_hall:connect_two_ways(hc_map_chest_room)
 hc_map_chest_room:connect_one_way("HC - Map Chest")

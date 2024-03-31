@@ -19,10 +19,13 @@ local mm_teleporter_room = alttp_location.new("mm_teleporter_room")
 local mm_boss_room = alttp_location.new("mm_boss_room")
 
 mm_entrance:connect_two_ways(mm_main_room, function() 
-    return any(
-        has("hookshot"),
-        has("boots")
-    ) 
+    return all(
+        any(
+            has("hookshot"),
+            has("boots")
+        ),
+        can_interact("dark")
+    )
 end)
 mm_main_room:connect_two_ways(mm_map_room_bottom)
 mm_main_room:connect_two_ways(mm_conveyor_crystal_room,function(keys) return has("mm_smallkey", keys, 2, keys + 1, 5), KDSreturn(keys, keys + 1) end)
