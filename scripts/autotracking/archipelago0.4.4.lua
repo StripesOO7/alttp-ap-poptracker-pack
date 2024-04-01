@@ -113,7 +113,7 @@ function onItem(index, item_id, item_name, player_number)
     CUR_INDEX = index;
     local item = ITEM_MAPPING[item_id]
     if not item or not item[1] then
-        --print(string.format("onItem: could not find item mapping for id %s", item_id))
+        print(string.format("onItem: could not find item mapping for id %s", item_id))
         return
     end
     for _, item_code in pairs(item[1]) do
@@ -183,10 +183,10 @@ function onLocation(location_id, location_name)
             else
                 location_obj.Active = true
             end
-            if location:sub(-9, -1) == "Key Drops" then
-                smallkey = Tracker:FindObjectForCode(location:sub(2, 3).."_smallkey")
-                smallkey.AcquiredCount = smallkey.AcquiredCount + 1 
-            end
+            -- if location:sub(-9, -1) == "Key Drops" then
+            --     smallkey = Tracker:FindObjectForCode(location:sub(2, 3).."_smallkey")
+            --     smallkey.AcquiredCount = smallkey.AcquiredCount + 1 
+            -- end
             -- x,_ = string.find(location, "universal")
             -- if x > 0 and Tracker:FindObjectForCode("small_keys").CurrentStage == 2 then
             --     universal = Tracker:FindObjectForCode("universal_keys")
@@ -217,130 +217,95 @@ function autoFill()
         print("its fucked")
         return
     end
-    print(dump_table(SLOT_DATA))
+    -- print(dump_table(SLOT_DATA))
 
-    -- mapGlitcheMode = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4} -- noGlitches, minor, overworld, hybrid_major, no_logic
-    mapDarkRoomLogic = {[0]=2, [1]=0, [2]=1} --lamp, torches, none
-    mapGoal = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=6, [7]=5, [8]=6} --slow, fast, AD, ped, ped+ganon, tfh, local_tfh, tfh+ganon, local tfh+ganon
-    -- mapEntranceRandomizer = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=6, [7]=7, [8]=8} --vanilla, dungeon simple, dungeon full, dungeon crossed, simple, restriced, full, crossed, insanity
-    -- mapTriforcePiecesAvailable = {} --range 1-90
-    -- mapTriforcePiecesRequiered = {} --range 1-90
-    mapDungeonItem = {[0]=0, [1]=1, [2]=1, [3]=1, [4]=1, [5]=2, [6]=0} --og dungeon, own dungeons,
-    -- mapStartMode = {[0]=0, [1]=1, [2]=2} --standard, open, inverted
-    -- mapItemPool = {[0]=0, [1]=1, [2]=2, [3]=3} --easy, normal. hard, expert
-    -- mapItemFunctionality = {[0]=0, [1]=1, [2]=2, [3]=3} --easy, normal. hard, expert
-    -- mapEnemyHealth = {[0]=0, [1]=1, [2]=2, [3]=3} --easy, normal. hard, expert
-    -- mapEnemyDmg = {[0]=0, [1]=1, [2]=2} --default, shuffled, chaos
-    -- mapMedallions = {[0]="ether", [1]="bombos", [2]="quake"} -- ether, bombos, quake
-    mapMedallions = {[0]="ether", [1]="bombos", [2]="quake", ["Ether"]="ether", ["Bombos"]="bombos", ["Quake"]="quake"} -- ether, bombos, quake
-    -- mapCrystalGanon = {} -- range 0-7
-    -- mapGTCrystals = {} -- range 0-7
-    -- mapRandomizeShopInventory = {} -- range 0-30
-    -- mapShuffleShopInventories = {[0]=false, [1]=true} -- false, true
-    -- mapRandomizeShopPrices = {[0]=false, [1]=true} -- false, true
-    -- mapRandomizeCostType = {[0]=false, [1]=true} -- false, true
-    -- mapIncludeWitchhut = {[0]=false, [1]=true} -- false, true
-    -- mapShopPriceModifier = {} -- range 0-400
-    -- mapShuffleCapacityUpgrades = {[0]=0, [1]=1, [2]=2} -- off, on, combined into one
-    mapBosses = {[0]=0, [1]=1, [2]=1, [3]=1, [4]=2} -- vanilla, basic, full, chaos, singularity
-    -- mapEnemizer = {[0]=false, [1]=true} -- false, true
-    -- mapProgressive = {[0]=0, [1]=1, [2]=2} -- off, grouped,_random, on
-    -- mapSwordless = {[0]=false, [1]=true} -- false, true
-    -- mapBomblessStart = {[0]=false, [1]=true} -- false, true
-    -- mapRetroBow = {[0]=false, [1]=true} -- false, true
-    -- mapRetroCave = {[0]=false, [1]=true} -- false, true
+    mapToggle={[0]=0,[1]=1,[2]=1,[3]=1,[4]=1}
+    mapToggleReverse={[0]=1,[1]=0,[2]=0,[3]=0,[4]=0}
+    mapTripleReverse={[0]=2,[1]=1,[2]=0}
+    mapDungeonItem={[0]=false,[1]=true,[2]=true,[3]=true,[4]=true,[6]=true}
 
-    mapStages = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=6, [7]=7, [8]=8}
-    mapToggle = {[0]=false, [1]=true} -- false, true
+    -- mapGlitches={[0]=0,[1]=2,[2]=3,[3]=0,[4]=0}
+    -- progressive={[]=,}
+    mapMode={["open"]=1,["inverted"]=2,["standard"]=0}
+    mapGoals={["crystals"]=1,["ganon"]=0,["bosses"]=2,["pedestal"]=3,["ganonpedestal"]=4,["triforcehunt"]=5,["ganontriforcehunt"]=6,["icerodhunt"]=7,["localtriforcehunt"]=5,["localganontriforcehunt"]=6}
+    mapDark={["none"]=2,["lamp"]=0,["troches"]=1} -- none=dark room, lamp=vanilla, scornes = firerod
+    mapMedalion={["Bombos"]="bombos",["Ether"]="ether",["Quake"]="quake"}
+    -- retro_caves={[]=}
+    mapBosses={[0]=0,[1]=1,[2]=1,[3]=1,[4]=2}
+    mapEnemizer={[0]=false,[1]=true,[2]=true}
+    -- shop_shuffle={[]=,}
+
 
     slotCodes = {
-        crystals_needed_for_gt = {code="gt_access", mapping=nil}, 
-        crystals_needed_for_ganon = {code="ganon_killable", mapping=nil}, 
-        triforce_pieces_required = {code="triforce_pieces_needed", mapping=nil},
-        -- open_pyramid = {code="", mapping=},
-        -- triforce_pieces_mode = {code="", mapping=}, 
-        -- triforce_pieces_percentage = {code="", mapping=}, 
-        -- triforce_pieces_available = {code="triforce_pieces_needed", mapping=}, 
-        -- triforce_pieces_extra = {code="", mapping=}
-
-
-        big_key_shuffle = {code="big_keys", mapping=mapDungeonItem}, 
-        small_key_shuffle = {code="small_keys", mapping=mapDungeonItem}, 
-        compass_shuffle = {code="compass", mapping=mapDungeonItem}, 
-        map_shuffle = {code="map", mapping=mapDungeonItem},
-        boss_shuffle = {code="boss_shuffle", mapping=mapBosses}, 
-        -- progressive = {code="progressive_items", mapping=mapStages}, 
-
-
-        -- retro_bow = {code="", mapping=}, 
-        retro_caves = {code="retro_caves", mapping=mapToggle}, 
-
-
-        -- pot_shuffle = {code="pot_shuffle", mapping=}, 
-        key_drop_shuffle = {code="key_drop_shuffle", mapping=mapToggle},
-        bombless_start = {code="bombless", mapping=mapToggle},
-        dark_room_logic = {code="dark_mode", mapping=mapDarkRoomLogic},
-        swordless = {code="swordless", mapping=mapToggle}, 
-        shop_item_slots = {code="shop_sanity", mapping=nil},
-        -- randomize_shop_inventories = {code="", mapping=mapToggle}, 
-        -- shuffle_shop_inventories = {code="", mapping=mapToggle}, 
-        shuffle_capacity_upgrades = {code="shop_shuffle_capacity", mapping=mapToggle},
-        -- entrance_shuffle = {code="entrance_shuffle", mapping=}, 
-
-
-        goal = {code="goal", mapping=mapGoal}, 
-        mode = {code="start_option", mapping=mapStages},
-        enemy_shuffle = {code="enemizer", mapping=mapToggle}, 
+        -- glitches_required={code="glitches", mapping=mapToggleReverse},
+        key_drop_shuffle={code="key_drop_shuffle", mapping=mapDungeonItem},
+        -- pot_shuffle={code="key_drop_shuffle", mapping=mapDungeonItem},
+        dark_room_logic={code="dark_mode", mapping=mapDark},
+        bigkey_shuffle={code="big_keys", mapping=mapDungeonItem},
+        smallkey_shuffle={code="small_keys", mapping=mapToggle},
+        map_shuffle={code="map", mapping=mapDungeonItem},
+        compass_shuffle={code="compass", mapping=mapDungeonItem},
+        -- progressive={code="progressive_items", mapping=mapToggle},
+        goal={code="goal", mapping=mapGoals},
+        crystals_needed_for_gt={code="gt_access", mapping=nil},
+        crystals_needed_for_ganon={code="ganon_killable", mapping=nil},
+        mode={code="start_option", mapping=mapMode},
+        -- retro_bow={code="", mapping=mapToggleReverse},
+        retro_caves={code="retro_caves", mapping=mapDungeonItem},
+        swordless={code="swordless", mapping=mapDungeonItem},
+        -- item_pool={code="", mapping=mapToggle},
+        me_medallion={code="", mapping=mapMedalion},
+        tr_medallion={code="", mapping=mapMedalion},
+        boss_shuffle={code="boss_shuffle", mapping=mapBosses},
+        enemy_shuffle={code="enemizer", mapping=mapEnemizer},
+        -- shop_shuffle={code="shop_sanity", mapping=nil},
+        triforce_pieces_required={code="triforce_pieces_needed", mapping=nil}
+        -- glitch_boots={code="glitches", mapping=nil}
     }
-
-
-    -- print(dump_table(SLOT_DATA))
+    print(dump_table(SLOT_DATA))
     -- print(Tracker:FindObjectForCode("autofill_settings").Active)
     if Tracker:FindObjectForCode("autofill_settings").Active == true then
         for settings_name , settings_value in pairs(SLOT_DATA) do
             -- print(k, v)
-            -- if settings_name == "crystals_needed_for_gt" 
-            -- or settings_name == "crystals_needed_for_ganon" 
-            -- or settings_name == "triforce_pieces_required" then
-            --     Tracker:FindObjectForCode(slotCodes[settings_name].code).AcquiredCount = settings_value
-
-            -- elseif settings_name == "shop_shuffle" then
+            -- print(slotCodes[settings_name].code, settings_name, settings_value)
+            if settings_name == "crystals_needed_for_gt" 
+            or settings_name == "crystals_needed_for_ganon" 
+            or settings_name == "triforce_pieces_required" then
+                Tracker:FindObjectForCode(slotCodes[settings_name].code).AcquiredCount = settings_value
+            elseif settings_name == "shop_shuffle" then
             --     item = Tracker:FindObjectForCode(slotCodes[settings_name].code)
             --     if settings_value ~= "none" then
             --         item.Active = true
             --     elseif settings_value == "none" then
             --         item.Active = false
             --     end
-            if settings_name == "shop_item_slots" then
+            elseif settings_name == "shop_item_slots" then
                 if settings_value > 0 then
                     Tracker:FindObjectForCode("shop_sanity").Active = true
                     Tracker:FindObjectForCode("shop_sanity").AcquiredCount = settings_value
-                else
-                    Tracker:FindObjectForCode("shop_sanity").Active = false
-                    Tracker:FindObjectForCode("shop_sanity").AcquiredCount = settings_value 
+                    if SLOT_DATA["shop_shuffle"]:find("w") ~= nil then
+                        Tracker:FindObjectForCode("shop_include_witchhut").Active = true
+                    else
+                        Tracker:FindObjectForCode("shop_include_witchhut").Active = false
+                    end
                 end
             elseif slotCodes[settings_name] then
                 item = Tracker:FindObjectForCode(slotCodes[settings_name].code)
                 if item.Type == "toggle" then
-                    -- print("toggle", settings_name, settings_value)
                     item.Active = slotCodes[settings_name].mapping[settings_value]
-                elseif slotCodes[settings_name].mapping == nil then
-                    -- print("toggle", settings_name, settings_value)
-                    item.AcquiredCount = settings_value
                 else 
-                    -- print("else", settings_name, settings_value)
                     -- print(k,v,Tracker:FindObjectForCode(slotCodes[k].code).CurrentStage, slotCodes[k].mapping[v])
                     item.CurrentStage = slotCodes[settings_name].mapping[settings_value]
                 end
             end
         end
         if SLOT_DATA["mm_medalion"] == SLOT_DATA["tr_medalion"] then
-            Tracker:FindObjectForCode(mapMedallions[SLOT_DATA["mm_medalion"]]).CurrentStage = 3
+            Tracker:FindObjectForCode(string.lower(SLOT_DATA["mm_medalion"])).CurrentStage = 3
         else
-            Tracker:FindObjectForCode(mapMedallions[SLOT_DATA["mm_medalion"]]).CurrentStage = 2
-            Tracker:FindObjectForCode(mapMedallions[SLOT_DATA["tr_medalion"]]).CurrentStage = 1
+            Tracker:FindObjectForCode(string.lower(SLOT_DATA["mm_medalion"])).CurrentStage = 2
+            Tracker:FindObjectForCode(string.lower(SLOT_DATA["tr_medalion"])).CurrentStage = 1
         end
-        goal_check()
+    goal_check()
     end
 end
 
