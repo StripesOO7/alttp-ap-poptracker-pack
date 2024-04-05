@@ -46,7 +46,9 @@ function has(item, noKDS_amount, noKDS_amountInLogic, KDS_amount, KDS_amountInLo
     local count
     local amount
     local amountInLogic
-
+    if Tracker:FindObjectForCode("universal_keys").Active == true and item:sub(-8,-1) == "smallkey" then 
+        return true
+    end
     if Tracker:FindObjectForCode("key_drop_shuffle").Active then
         -- print(KDS_amount, KDS_amountInLogic)
         amount = KDS_amount
@@ -61,9 +63,7 @@ function has(item, noKDS_amount, noKDS_amountInLogic, KDS_amount, KDS_amountInLo
         amount = noKDS_amount
         amountInLogic = noKDS_amountInLogic
     end
-    -- if item == "at_smallkey_drop" then
-    --     print("after", item, count, amount, amountInLogic)
-    -- end
+
     -- print(item, count, amount, amountInLogic)
     if amountInLogic then
         if count >= amountInLogic then
