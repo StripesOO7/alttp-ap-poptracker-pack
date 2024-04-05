@@ -6,8 +6,8 @@ local at_dark_archer_key_drop = alttp_location.new("at_dark_archer_key_drop")
 local at_circle_of_pots = alttp_location.new("at_circle_of_pots")
 local at_aga1 = alttp_location.new("at_aga1")
 
-at_entrance:connect_one_way(at_golden_guards, function() return all(can_interact("light"), openOrStandard()) end)
-at_entrance:connect_one_way(at_golden_guards, function() return all(can_interact("dark"), inverted()) end)
+at_entrance:connect_one_way(at_golden_guards, function() return all(can_interact("light", 1), openOrStandard()) end)
+at_entrance:connect_one_way(at_golden_guards, function() return all(can_interact("dark", 1), inverted()) end)
 
 at_golden_guards:connect_one_way(at_entrance)
 at_golden_guards:connect_two_ways(at_first_chest, function() return dealDamage() end)

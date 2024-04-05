@@ -11,7 +11,7 @@ local sp_waterfall_room = alttp_location.new("sp_waterfall_room")
 local sp_after_waterfall_room = alttp_location.new("sp_after_waterfall_room")
 local sp_boss_room = alttp_location.new("sp_boss_room")
 
-sp_entrance:connect_two_ways(sp_first_room, function() return can_interact("dark") end)
+sp_entrance:connect_two_ways(sp_first_room, function() return can_interact("dark", 1) end)
 
 sp_first_room:connect_two_ways(sp_hallway_before_first_trench, function(keys) return has("sp_smallkey", keys + 1, 1, keys + 1, 1), KDSreturn(keys + 1, keys + 1) end)
 sp_first_room:connect_one_way("SP - Entrance Chest", function() 

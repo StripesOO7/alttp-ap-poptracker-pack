@@ -7,7 +7,7 @@ local toh_boss_room = alttp_location.new("toh_boss_room")
 local toh_above_big_chest = alttp_location.new("toh_above_big_chest")
 
 
-toh_entrance:connect_two_ways(toh_main_room, function() return can_interact("light") end)
+toh_entrance:connect_two_ways(toh_main_room, function() return can_interact("light", 1) end)
 toh_main_room:connect_two_ways(toh_basement_cage)
 toh_main_room:connect_two_ways(toh_big_key_chest, function(keys) return has("toh_smallkey", keys + 1, 1, keys + 1, 1), KDSreturn(keys + 1, keys + 1) end)
 toh_main_room:connect_two_ways(toh_big_chest_room, function() 
