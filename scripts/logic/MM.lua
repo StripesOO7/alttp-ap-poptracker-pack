@@ -24,7 +24,7 @@ mm_entrance:connect_two_ways(mm_main_room, function()
             has("hookshot"),
             has("boots")
         ),
-        can_interact("dark")
+        can_interact("dark", 1)
     )
 end)
 mm_main_room:connect_two_ways(mm_map_room_bottom)

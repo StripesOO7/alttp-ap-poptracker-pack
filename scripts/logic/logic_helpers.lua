@@ -309,11 +309,14 @@ function enemizerCheck(item)
     end
 end
 
-function can_interact(world)
+function can_interact(world, glitch_lvl)
     if (world == "light" and openOrStandard()) or (world == "dark" and inverted()) then
         return true
     elseif (world == "light" and inverted()) or (world == "dark" and openOrStandard()) then
         if Tracker:FindObjectForCode("pearl").Active then
+            return true
+        end
+        if Tracker:FindObjectForCode("glichtes").CurrentStage >= glitch_lvl then
             return true
         end
         return false
