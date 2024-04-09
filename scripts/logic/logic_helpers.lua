@@ -316,7 +316,7 @@ function can_interact(world, glitch_lvl)
         if Tracker:FindObjectForCode("pearl").Active then
             return true
         end
-        if Tracker:FindObjectForCode("glichtes").CurrentStage >= glitch_lvl then
+        if Tracker:FindObjectForCode("glitches").CurrentStage >= glitch_lvl then
             return true
         end
         return false
