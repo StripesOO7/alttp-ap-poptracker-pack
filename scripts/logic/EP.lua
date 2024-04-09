@@ -9,7 +9,7 @@ local ep_big_key_chest_room = alttp_location.new("ep_big_key_chest_room")
 local ep_dark_eyegore_room = alttp_location.new("ep_dark_eyegore_room")
 local ep_boss_room = alttp_location.new("ep_boss_room")
 
-ep_entrance:connect_two_ways(ep_cannonball_room, function() return can_interact(, 1) end)
+ep_entrance:connect_two_ways(ep_cannonball_room, function() return can_interact("light", 1) end)
 
 ep_cannonball_room:connect_two_ways(ep_main_room_top)
 ep_cannonball_room:connect_one_way("EP - Cannonball Chest")
