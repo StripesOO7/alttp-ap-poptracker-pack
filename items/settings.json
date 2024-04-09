@@ -75,7 +75,7 @@
         "name": "Start Option",
         "type": "progressive",
         "allow_disabled": false,
-        "initial_stage_idx": 0,
+        "initial_stage_idx": 1,
         "stages": [
             {
                 "img": "/images/settings/gm_standard.png",
@@ -170,6 +170,7 @@
     {
         "name": "Glitches Option",
         "type": "progressive",
+        "initial_stage_idx": 0,
         "allow_disabled": false,
         "stages": [
             {
