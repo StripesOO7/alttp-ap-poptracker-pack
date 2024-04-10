@@ -183,10 +183,10 @@ function onLocation(location_id, location_name)
             else
                 location_obj.Active = true
             end
-            if location:sub(-9, -1) == "Key Drops" then
-                smallkey = Tracker:FindObjectForCode(location:sub(2, 3).."_smallkey")
-                smallkey.AcquiredCount = smallkey.AcquiredCount + 1 
-            end
+            -- if location:sub(-9, -1) == "Key Drops" then
+            --     smallkey = Tracker:FindObjectForCode(location:sub(2, 3).."_smallkey")
+            --     smallkey.AcquiredCount = smallkey.AcquiredCount + 1 
+            -- end
             -- x,_ = string.find(location, "universal")
             -- if x > 0 and Tracker:FindObjectForCode("small_keys").CurrentStage == 2 then
             --     universal = Tracker:FindObjectForCode("universal_keys")
@@ -251,7 +251,7 @@ function autoFill()
     -- mapRetroCave = {[0]=false, [1]=true} -- false, true
 
     mapStages = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=6, [7]=7, [8]=8, ["open"]=1,["inverted"]=2,["standard"]=0}
-    mapToggle = {[0]=false, [1]=true, ,[2]=true,[3]=true,[4]=true,[6]=true} -- false, true
+    mapToggle = {[0]=false, [1]=true, [2]=true,[3]=true,[4]=true,[6]=true} -- false, true
 
     slotCodes = {
         crystals_needed_for_gt = {code="gt_access", mapping=nil}, 
