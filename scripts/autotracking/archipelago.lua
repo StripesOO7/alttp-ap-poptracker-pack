@@ -220,8 +220,8 @@ function autoFill()
     print(dump_table(SLOT_DATA))
 
     -- mapGlitcheMode = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4} -- noGlitches, minor, overworld, hybrid_major, no_logic
-    mapDarkRoomLogic = {[0]=2, [1]=0, [2]=1} --lamp, torches, none
-    mapGoal = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=6, [7]=5, [8]=6} --slow, fast, AD, ped, ped+ganon, tfh, local_tfh, tfh+ganon, local tfh+ganon
+    mapDarkRoomLogic = {[0]=2, [1]=0, [2]=1, ["none"]=2,["lamp"]=0,["troches"]=1} --lamp, torches, none
+    mapGoal = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=6, [7]=5, [8]=6, ["crystals"]=1,["ganon"]=0,["bosses"]=2,["pedestal"]=3,["ganonpedestal"]=4,["triforcehunt"]=5,["ganontriforcehunt"]=6,["localtriforcehunt"]=5,["localganontriforcehunt"]=6} --slow, fast, AD, ped, ped+ganon, tfh, local_tfh, tfh+ganon, local tfh+ganon
     -- mapEntranceRandomizer = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=6, [7]=7, [8]=8} --vanilla, dungeon simple, dungeon full, dungeon crossed, simple, restriced, full, crossed, insanity
     -- mapTriforcePiecesAvailable = {} --range 1-90
     -- mapTriforcePiecesRequiered = {} --range 1-90
@@ -232,7 +232,7 @@ function autoFill()
     -- mapEnemyHealth = {[0]=0, [1]=1, [2]=2, [3]=3} --easy, normal. hard, expert
     -- mapEnemyDmg = {[0]=0, [1]=1, [2]=2} --default, shuffled, chaos
     -- mapMedallions = {[0]="ether", [1]="bombos", [2]="quake"} -- ether, bombos, quake
-    mapMedallions = {[0]="ether", [1]="bombos", [2]="quake", ["Ether"]="ether", ["Bombos"]="bombos", ["Quake"]="quake"} -- ether, bombos, quake
+    mapMedallions = {[0]="ether", [1]="bombos", [2]="quake", ["Ether"]="ether", ["Bombos"]="bombos", ["Quake"]="quake", ["Bombos"]="bombos",["Ether"]="ether",["Quake"]="quake"} -- ether, bombos, quake
     -- mapCrystalGanon = {} -- range 0-7
     -- mapGTCrystals = {} -- range 0-7
     -- mapRandomizeShopInventory = {} -- range 0-30
@@ -250,8 +250,8 @@ function autoFill()
     -- mapRetroBow = {[0]=false, [1]=true} -- false, true
     -- mapRetroCave = {[0]=false, [1]=true} -- false, true
 
-    mapStages = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=6, [7]=7, [8]=8}
-    mapToggle = {[0]=false, [1]=true} -- false, true
+    mapStages = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=6, [7]=7, [8]=8, ["open"]=1,["inverted"]=2,["standard"]=0}
+    mapToggle = {[0]=false, [1]=true, ,[2]=true,[3]=true,[4]=true,[6]=true} -- false, true
 
     slotCodes = {
         crystals_needed_for_gt = {code="gt_access", mapping=nil}, 
