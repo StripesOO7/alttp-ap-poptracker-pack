@@ -46,7 +46,7 @@ function has(item, noKDS_amount, noKDS_amountInLogic, KDS_amount, KDS_amountInLo
     local count
     local amount
     local amountInLogic
-    if Tracker:FindObjectForCode("universal_keys").Active == true and item:sub(-8,-1) == "smallkey" then 
+    if (Tracker:FindObjectForCode("small_keys").CurrentStage == 2) and item:sub(-8,-1) == "smallkey" then -- universal keys
         return true
     end
     if Tracker:FindObjectForCode("key_drop_shuffle").Active then
