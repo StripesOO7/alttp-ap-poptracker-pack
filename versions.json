@@ -1,6 +1,18 @@
 {
 	"versions": [
 		{
+			"package_version": "0.2.3",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.2.3/alttp-ap-tracker-v0.2.3.zip",
+			"sha256": "a503efec6ce668c1bc8615670b8704a282c68014552985a339d31f09f8e888b2",
+			"changelog": [
+				"- fixed checks turning red when certain items where collected",
+				"- fixed universal keys image missing",
+				"- combined connection handling for almost every option. so no more 2 files for <=0.4.4 and 0.4.5.",
+				"- whichhut and capacity upgrade ar to toggle manually",
+				"- changes default option for 'startMode' from 'standard' to 'open'"
+			]
+		},
+		{
 			"package_version": "0.2.2",
 			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.2.2/alttp-ap-tracker-v0.2.2.zip",
 			"sha256": "910cd467a8c76c62f00e1427f53c5bd43cc8fc37545cd5bf152587f022161f14",
