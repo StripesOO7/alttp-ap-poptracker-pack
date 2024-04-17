@@ -440,7 +440,7 @@ mini_moldorm_cave_back:connect_one_way("Mini Moldorm Cave - Far Right")
 
 dam_area:connect_one_way("Sunken Treasure", function() return can_reach("Floodgate Chest") end)
 
-dam_area:connect_one_way("Purple Chest Return", function() return purple_chest_pickup.accessibility_level end)
+dam_area:connect_one_way("Purple Chest Return", function() return purple_chest_pickup:accessibility() end)
 
 
 

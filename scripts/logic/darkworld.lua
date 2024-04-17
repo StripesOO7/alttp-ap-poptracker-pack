@@ -473,7 +473,7 @@ dark_bumper_cave_ledge:connect_one_way_entrance("Reverse Bumpercave", dark_bumpe
 end)
 dark_bumper_cave_ledge:connect_one_way("Bumper Cave Item", function() 
     return any(
-        dark_bumper_cave_ledge.accessibility_level, 
+        dark_bumper_cave_ledge:accessibility(),
         AccessibilityLevel.Inspect
     ) 
 end)
@@ -602,7 +602,7 @@ pyramid:connect_one_way("Pyramid Item")
 pyramid:connect_one_way_entrance("Fat Fairy", pyramid_fairy_cave, function() 
     return all(
         has("crystal56", 2, 2, 2, 2), 
-        big_bomb_shop.accessibility_level,
+        big_bomb_shop:accessibility(),
         can_interact("dark",1 )
     )
 end)

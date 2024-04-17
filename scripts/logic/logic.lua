@@ -17,11 +17,37 @@ accessLVL= {
 
 -- Table to store named locations
 named_locations = {}
-staleness = 0
+local stale = true
+local accessibilityCache = {}
+local accessibilityCacheComplete = false
+local currentParent = nil
+local currentLocation = nil
+local indirectConnections = {}
+
 
 -- 
 function can_reach(name)
     local location
+    if stale then
+        stale = false
+        accessibilityCacheComplete = false
+        accessibilityCache = {}
+        indirectConnections = {}
+        while not accessibilityCacheComplete do
+            accessibilityCacheComplete = true
+            entry_point:discover(AccessibilityLevel.Normal, 0)
+            for dst, parents in pairs(indirectConnections) do
+                if dst:accessibility() < AccessibilityLevel.Normal then
+                    for parent, src in pairs(parents) do
+                        --print("Checking indirect " .. src.name .. " for " .. parent.name .. " -> " .. dst.name)
+                        parent:discover(parent:accessibility(), parent.keys)
+                    end
+                end
+            end
+        end
+        --entry_point:discover(AccessibilityLevel.Normal, 0) -- since there is no code to track indirect connections, we run it twice here
+        --entry_point:discover(AccessibilityLevel.Normal, 0)
+    end
     -- if type(region_name) == "function" then
     --     location = self
     -- else
@@ -56,9 +82,7 @@ function alttp_location.new(name)
     end
     
     self.exits = {}
-    self.staleness = -1
     self.keys = math.huge
-    self.accessibility_level = AccessibilityLevel.None
     return self
 end
 
@@ -69,7 +93,13 @@ end
 -- markes a 1-way connections between 2 "locations/regions" in the source "locations" exit-table with rules if provided
 function alttp_location:connect_one_way(exit, rule)
     if type(exit) == "string" then
-        exit = alttp_location.new(exit)
+        local existing = named_locations[exit]
+        if existing then
+            print("Warning: " .. exit .. " defined multiple times")  -- not sure if it's worth fixing in data or simply allowing this
+            exit = existing
+        else
+            exit = alttp_location.new(exit)
+        end
     end
     if rule == nil then
         rule = always
@@ -111,48 +141,64 @@ end
 
 -- checks for the accessibility of a regino/location given its own exit requirements
 function alttp_location:accessibility()
-    if self.staleness < staleness then
-        return AccessibilityLevel.None
-    else
-        return self.accessibility_level
+    if currentLocation ~= nil and currentParent ~= nil then
+        if indirectConnections[currentLocation] == nil then
+            indirectConnections[currentLocation] = {}
+        end
+        indirectConnections[currentLocation][currentParent] = self
     end
+    local res = accessibilityCache[self]
+    if res == nil then
+        res = AccessibilityLevel.None
+        accessibilityCache[self] = res
+    end
+    return res
 end
 
 -- 
 function alttp_location:discover(accessibility, keys)
-    
-    local change = false
     if accessibility > self:accessibility() then
-        change = true
-        self.staleness = staleness
-        self.accessibility_level = accessibility
         self.keys = math.huge
+        accessibilityCache[self] = accessibility
+        accessibilityCacheComplete = false
     end
     if keys < self.keys then
         self.keys = keys
-        change = true
     end
 
-    if change then
+    if accessibility > 0 then
         for _, exit in pairs(self.exits) do
             local location = exit[1]
-            local rule = exit[2]
+            local oldAccess = location:accessibility()
+            local oldKey = location.keys or 0
+            if oldAccess < accessibility then
+                local rule = exit[2]
 
-            local access, key = rule(keys)
-            -- print(access)
-            if access == 5 then
-                access = AccessibilityLevel.SequenceBreak
-            elseif access == true then
-                access = AccessibilityLevel.Normal
-            elseif access == false then
-                access = AccessibilityLevel.None
+                currentParent, currentLocation = self, location
+                local access, key = rule(keys)
+                currentParent, currentLocation = nil, nil
+
+                -- print(access)
+                if access == 5 then
+                    access = AccessibilityLevel.SequenceBreak
+                elseif access == true then
+                    access = AccessibilityLevel.Normal
+                elseif access == false then
+                    access = AccessibilityLevel.None
+                end
+                if access == nil then
+                    print("Warning: " .. self.name .. " -> " .. location.name .. " rule returned nil")
+                    access = AccessibilityLevel.None
+                end
+                if key == nil then
+                    key = keys
+                end
+                if access > oldAccess or (access == oldAccess and key < oldKey) then -- not sure about the <
+                -- print(self.name) 
+                -- print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access])
+                    location:discover(access, key)
+                end
             end
-            if key == nil then
-                key = keys
-            end
-            -- print(self.name) 
-            -- print(accessLVL[self.accessibility_level], "from", self.name, "to", location.name, ":", accessLVL[access])
-            location:discover(access, key)
         end
     end
 end
@@ -166,8 +212,7 @@ entry_point:connect_one_way(darkworld_spawns, function() return inverted() end)
 
 -- 
 function stateChanged()
-    staleness = staleness + 1
-    entry_point:discover(AccessibilityLevel.Normal, 0)
+    stale = true
 end
 
 ScriptHost:AddWatchForCode("stateChanged", "*", stateChanged)

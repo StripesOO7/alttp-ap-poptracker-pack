@@ -31,7 +31,7 @@ pod_three_way_room_middle:connect_two_ways(pod_big_key_chest_room, function(keys
     return any(
         has("pod_smallkey", keys + 1, 6, keys + 1, 6),
         all(
-            pod_switch_room_top.accessibility_level,
+            pod_switch_room_top:accessibility(),
             has("pod_smallkey", keys + 1, 4, keys + 1, 4)
         )
     ), KDSreturn(keys + 1, keys + 1) 
@@ -72,7 +72,7 @@ pod_switch_room_bottom:connect_two_ways(pod_boss_room, function(keys)
         any(
             all(
                 has("pod_smallkey", keys + 1, 4, keys + 1, 4),
-                pod_switch_room_top.accessibility_level,
+                pod_switch_room_top:accessibility(),
                 has("hammer")
             ),
             has("pod_smallkey", keys + 1, 6, keys + 1, 6)
@@ -84,10 +84,10 @@ pod_switch_room_bottom:connect_two_ways(pod_arena)
 pod_big_key_chest_room:connect_two_ways(pod_arena)
 
 pod_arena:connect_one_way(pod_collapsin_bridge, function(keys) 
-    if pod_switch_room_top.accessibility_level > 5 then
+    if pod_switch_room_top:accessibility() > 5 then
         return all(
             has("pod_smallkey", keys, 4, keys, 4),
-            pod_switch_room_top.accessibility_level,
+            pod_switch_room_top:accessibility(),
             has("hammer"),
             any(
                 has("bombs"),
@@ -110,12 +110,12 @@ pod_arena:connect_one_way("PoD - Arena Bridge")
 
 pod_collapsin_bridge:connect_two_ways(pod_dark_maze, function(keys) 
     return all(
-        pod_compass_room.accessibility_level,
+        pod_compass_room:accessibility(),
         darkRooms(),
         has("pod_smallkey", keys + 1, 6, keys + 1, 6)
     ), KDSreturn(keys + 1, keys + 1)
 end)
-pod_collapsin_bridge:connect_two_ways(pod_compass_room, function() return pod_collapsin_bridge.accessibility_level end)
+pod_collapsin_bridge:connect_two_ways(pod_compass_room, function() return pod_collapsin_bridge:accessibility() end)
 
 pod_dark_maze:connect_one_way("PoD - Dark Maze Top")
 pod_dark_maze:connect_one_way("PoD - Dark Maze Bottom")

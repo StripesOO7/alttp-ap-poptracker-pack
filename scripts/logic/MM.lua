@@ -32,7 +32,7 @@ mm_main_room:connect_two_ways(mm_conveyor_crystal_room,function(keys) return has
 mm_main_room:connect_two_ways(mm_map_room_top, function(keys) return has("mm_smallkey", keys + 1, 2, keys + 1, 5), KDSreturn(keys + 1, keys + 1) end)
 mm_main_room:connect_two_ways(mm_block_push)
 mm_main_room:connect_one_way("MM - Main Lobby Chest", function() 
-    return mm_conveyor_crystal_room.accessibility_level end)
+    return mm_conveyor_crystal_room:accessibility() end)
 
 mm_map_room_bottom:connect_two_ways(mm_big_chest_room)
 
@@ -40,8 +40,8 @@ mm_big_chest_room:connect_one_way(mm_map_room_top)
 mm_big_chest_room:connect_one_way("MM - Big Chest", function() return has("mm_bigkey") end)
 
 mm_map_room_top:connect_one_way(mm_map_room_bottom)
-mm_map_room_top:connect_two_ways(mm_spike_room, function() return mm_conveyor_crystal_room.accessibility_level end)
-mm_map_room_top:connect_one_way("MM - Map Chest", function() return mm_conveyor_crystal_room.accessibility_level end)
+mm_map_room_top:connect_two_ways(mm_spike_room, function() return mm_conveyor_crystal_room:accessibility() end)
+mm_map_room_top:connect_one_way("MM - Map Chest", function() return mm_conveyor_crystal_room:accessibility() end)
 
 mm_block_push:connect_two_ways(mm_bridge_right)
 mm_block_push:connect_two_ways(mm_spike_room)
