@@ -9,7 +9,7 @@ end
 function all(...)
     local args = { ... }
     local min = AccessibilityLevel.Normal
-    for i, v in ipairs(args) do
+    for _, v in ipairs(args) do
         if type(v) == "boolean" then
             v = A(v)
         end
@@ -27,7 +27,7 @@ end
 function any(...)
     local args = { ... }
     local max = AccessibilityLevel.None
-    for i, v in ipairs(args) do
+    for _, v in ipairs(args) do
         if type(v) == "boolean" then
             v = A(v)
         end

@@ -39,7 +39,7 @@ function can_reach(name)
             for dst, parents in pairs(indirectConnections) do
                 if dst:accessibility() < AccessibilityLevel.Normal then
                     for parent, src in pairs(parents) do
-                        --print("Checking indirect " .. src.name .. " for " .. parent.name .. " -> " .. dst.name)
+                        -- print("Checking indirect " .. src.name .. " for " .. parent.name .. " -> " .. dst.name)
                         parent:discover(parent:accessibility(), parent.keys)
                     end
                 end
@@ -141,13 +141,15 @@ end
 
 -- checks for the accessibility of a regino/location given its own exit requirements
 function alttp_location:accessibility()
+    -- only executed when run from a rules within a connection
     if currentLocation ~= nil and currentParent ~= nil then
         if indirectConnections[currentLocation] == nil then
             indirectConnections[currentLocation] = {}
         end
         indirectConnections[currentLocation][currentParent] = self
     end
-    local res = accessibilityCache[self]
+    -- up to here
+    local res = accessibilityCache[self] -- get accessibilty lvl set in discover for a given location
     if res == nil then
         res = AccessibilityLevel.None
         accessibilityCache[self] = res
@@ -157,26 +159,28 @@ end
 
 -- 
 function alttp_location:discover(accessibility, keys)
+    -- checks if given Accessbibility is higer then last stored one
+    -- prevents walking in circles
     if accessibility > self:accessibility() then
-        self.keys = math.huge
+        self.keys = math.huge -- resets keys used up to this point
         accessibilityCache[self] = accessibility
-        accessibilityCacheComplete = false
+        accessibilityCacheComplete = false -- forces can_reach tu run again/further
     end
     if keys < self.keys then
-        self.keys = keys
+        self.keys = keys -- sets current amout of keys used
     end
 
-    if accessibility > 0 then
-        for _, exit in pairs(self.exits) do
-            local location = exit[1]
-            local oldAccess = location:accessibility()
+    if accessibility > 0 then -- if parent-location was accessible
+        for _, exit in pairs(self.exits) do -- iterate over current watched locations exits
+            local location = exit[1] -- exit name
+            local oldAccess = location:accessibility() -- get most recent accessibilty level for exit
             local oldKey = location.keys or 0
-            if oldAccess < accessibility then
-                local rule = exit[2]
+            if oldAccess < accessibility then -- if new accessibility from above is higher then currently stored one, so is more accessible then before
+                local rule = exit[2] -- get rules to check
 
-                currentParent, currentLocation = self, location
+                currentParent, currentLocation = self, location -- just set for ":accessibilty()" check within rules
                 local access, key = rule(keys)
-                currentParent, currentLocation = nil, nil
+                currentParent, currentLocation = nil, nil -- just set for ":accessibilty()" check within rules
 
                 -- print(access)
                 if access == 5 then
