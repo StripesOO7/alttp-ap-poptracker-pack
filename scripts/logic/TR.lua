@@ -12,6 +12,7 @@ local tr_big_key_room_top_right = alttp_location.new("tr_big_key_room_top_right"
 local tr_big_key_room_top_left = alttp_location.new("tr_big_key_room_top_left")
 local tr_big_key_room_bottom_right = alttp_location.new("tr_big_key_room_bottom_right")
 local tr_big_key_room_bottom_left = alttp_location.new("tr_big_key_room_bottom_left")
+local tr_big_key_chest_island = alttp_location.new("tr_big_key_chest_island")
 local tr_shooter_after_big_key = alttp_location.new("tr_shooter_after_big_key")
 local tr_poke_2_room = alttp_location.new("tr_poke_2_room")
 local tr_big_key_door_room = alttp_location.new("tr_big_key_door_room")
@@ -59,10 +60,13 @@ tr_poke_2_room:connect_two_ways(tr_big_key_room_bottom_left, function(keys) retu
 tr_poke_2_room:connect_one_way("TR - Poke 2 Key Drop")
 
 tr_big_key_room_bottom_left:connect_two_ways(tr_big_key_room_bottom_right)
-tr_big_key_room_bottom_left:connect_one_way("TR - Big Key Chest")
+tr_big_key_room_bottom_left:connect_two_ways(tr_big_key_chest_island)
+
 
 tr_big_key_room_bottom_right:connect_one_way(tr_big_key_room_top_right)
-tr_big_key_room_bottom_right:connect_one_way("TR - Big Key Chest")
+tr_big_key_room_bottom_right:connect_two_ways(tr_big_key_chest_island)
+
+tr_big_key_chest_island:connect_one_way("TR - Big Key Chest")
 
 tr_shooter_after_big_key:connect_two_ways(tr_big_key_door_room)
 tr_shooter_after_big_key:connect_two_ways(tr_laser_entrance)

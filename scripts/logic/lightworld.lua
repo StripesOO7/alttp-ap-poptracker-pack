@@ -955,7 +955,7 @@ light_death_mountain_left_bottom:connect_two_ways_entrance("Spectecal Rock Top E
 light_death_mountain_left_bottom:connect_two_ways_entrance("Old Man Cave Backside", old_man_cave_back)
 
 light_death_mountain_left_bottom:connect_one_way("Old Man Item", function() return can_reach(light_death_mountain_ascent) end)
-light_death_mountain_left_bottom:connect_one_way("Spec Rock Top Item", function() 
+light_death_mountain_left_bottom:connect_one_way(spectacle_rock_top, function() 
     return all(
         openOrStandard(), 
         canChangeWorldWithMirror()
@@ -1021,8 +1021,8 @@ light_death_mountain_left_top:connect_one_way("Ether Tablet", function()
 end)
 
 light_death_mountain_left_top:connect_two_ways_entrance("Tower of Hera", toh_entrance)
-light_death_mountain_left_top:connect_one_way("Spec Rock Top Item", function() return inverted() end)
-
+light_death_mountain_left_top:connect_one_way(spectacle_rock_top, function() return inverted() end)
+spectacle_rock_top:connect_one_way("Spec Rock Top Item")
 -- light_death_mountain_left_top:connect_one_way(light_death_mountain_right_top)
 -- light_death_mountain_left_top:connect_one_way(light_death_mountain_left_bottom)
 
