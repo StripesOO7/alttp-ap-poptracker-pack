@@ -145,30 +145,23 @@ end
 
 function getBossRef(nameRef)
     local bosses = {
-        [1.0] = {"@Bosses/Armos Knights"},
-        [2.0] = {"@Bosses/Lanmolas"},
-        [3.0] = {"@Bosses/Moldorm"},
-        [4.0] = {"@Bosses/Helmasaur King"},
-        [5.0] = {"@Bosses/Arrghus"},
-        [6.0] = {"@Bosses/Mothula"},
-        [7.0] = {"@Bosses/Blind"},
-        [8.0] = {"@Bosses/Kholdstare"},
-        [9.0] = {"@Bosses/Vitreous"},
-        [10.0] = {"@Bosses/Trinexx"}
+        [0] = "@Bosses/Unknown",
+        [1] = "@Bosses/Armos Knights",
+        [2] = "@Bosses/Lanmolas",
+        [3] = "@Bosses/Moldorm",
+        [4] = "@Bosses/Helmasaur King",
+        [5] = "@Bosses/Arrghus",
+        [6] = "@Bosses/Mothula",
+        [7] = "@Bosses/Blind",
+        [8] = "@Bosses/Kholdstare",
+        [9] = "@Bosses/Vitreous",
+        [10] = "@Bosses/Trinexx"
     }
     local stage = Tracker:FindObjectForCode(nameRef).CurrentStage
     local access_lvl = 0
-    -- print("if")
-    if stage == 0.0 then
-       access_lvl = 1
-    else
-       access_lvl = Tracker:FindObjectForCode(bosses[stage][1]).AccessibilityLevel
-    end
-    if access_lvl > 0 then
-        return true
-    end
-    -- print("Failed Boss_check with ".. name .. "and" .. stage)
-    return 0
+    
+    access_lvl = Tracker:FindObjectForCode(bosses[stage]).AccessibilityLevel
+    return access_lvl
 end
 
 function canActivateTablets()
