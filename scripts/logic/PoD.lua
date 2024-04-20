@@ -69,6 +69,7 @@ pod_switch_room_bottom:connect_two_ways(pod_boss_room, function(keys)
     return all(
         has("bow"),
         darkRooms(),
+        has("pod_bigkey"),
         any(
             all(
                 has("pod_smallkey", keys + 1, 4, keys + 1, 4),
@@ -77,7 +78,7 @@ pod_switch_room_bottom:connect_two_ways(pod_boss_room, function(keys)
             ),
             has("pod_smallkey", keys + 1, 6, keys + 1, 6)
         )
-    )
+    ), KDSreturn(keys + 1, keys + 1)
 end)
 pod_switch_room_bottom:connect_two_ways(pod_arena)
 
@@ -86,7 +87,7 @@ pod_big_key_chest_room:connect_two_ways(pod_arena)
 pod_arena:connect_one_way(pod_collapsin_bridge, function(keys) 
     if pod_switch_room_top:accessibility() > 5 then
         return all(
-            has("pod_smallkey", keys, 4, keys, 4),
+            has("pod_smallkey", keys + 1, 4, keys + 1, 4),
             pod_switch_room_top:accessibility(),
             has("hammer"),
             any(
@@ -94,7 +95,7 @@ pod_arena:connect_one_way(pod_collapsin_bridge, function(keys)
                 has('bow'),
                 has("somaria")
             )
-        ), KDSreturn(keys, keys + 1)
+        ), KDSreturn(keys + 1, keys + 1)
     else
         return all(
             has("pod_smallkey", keys + 1, 4, keys + 1, 4),
