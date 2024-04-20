@@ -75,10 +75,18 @@ function has(item, noKDS_amount, noKDS_amountInLogic, KDS_amount, KDS_amountInLo
         end
     end
     if not amount then
-        return count > 0
+        if count > 0 then
+            return AccessibilityLevel.Normal
+        else
+            return AccessibilityLevel.None
+        end
     else
         amount = tonumber(amount)
-        return count >= amount
+        if count >= amount then
+            return AccessibilityLevel.SequenceBreak
+        else
+            return AccessibilityLevel.None
+        end
     end
 end
 
