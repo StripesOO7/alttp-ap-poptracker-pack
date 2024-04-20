@@ -180,6 +180,13 @@ function alttp_location:discover(accessibility, keys)
 
                 currentParent, currentLocation = self, location -- just set for ":accessibilty()" check within rules
                 local access, key = rule(keys)
+                local parent_access = currentParent:accessibility()
+                if type(access) == "boolean" then
+                    access = A(access)
+                end
+                if access > parent_access then
+                    access = parent_access
+                end
                 currentParent, currentLocation = nil, nil -- just set for ":accessibilty()" check within rules
 
                 -- print(access)
