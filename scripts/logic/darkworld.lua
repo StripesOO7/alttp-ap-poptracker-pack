@@ -223,7 +223,7 @@ end)
 
 
 -- dark_lake_hylia
-dark_lake_hylia:connect_one_way(big_bomb_shop_area)
+-- dark_lake_hylia:connect_one_way(big_bomb_shop_area)
 dark_lake_hylia:connect_one_way(ice_palace)
 dark_lake_hylia:connect_one_way(dark_flute_map, function() 
     return all(
@@ -235,7 +235,7 @@ end)
 dark_lake_hylia:connect_one_way(dark_icerod_area, function()
     return all(
         has("flippers"),
-        can_interact("dark",1 )
+        can_interact("dark",1)
     )
 end)
 dark_lake_hylia:connect_one_way(pod_area, function()
@@ -244,7 +244,7 @@ dark_lake_hylia:connect_one_way(pod_area, function()
             has("hammer"),
             has("flippers")
         ),
-        can_interact("dark",1 )
+        can_interact("dark",1)
     )
 end)
 dark_lake_hylia:connect_one_way(lake_hylia_island, function() 
@@ -653,7 +653,14 @@ pod_area:connect_one_way(dark_lake_hylia, function()
             has("hammer"),
             has("flippers")
         ),
-        can_interact("dark",1 )
+        can_interact("dark",1)
+    )
+end)
+
+pod_area:connect_one_way(big_bomb_shop_area, function()
+    return all(
+        has("hammer"),
+        can_interact("dark", 1)
     )
 end)
 
