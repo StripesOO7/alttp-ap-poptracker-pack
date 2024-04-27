@@ -83,21 +83,6 @@ gt_bottom_randomizer_room:connect_one_way("GT - Randomizer Room Top Right")
 gt_bottom_randomizer_room:connect_one_way("GT - Randomizer Room Bottom Left")
 gt_bottom_randomizer_room:connect_one_way("GT - Randomizer Room Bottom Right")
 
-gt_bottom_invisibile_bonk_room:connect_two_ways(gt_bottom_big_chest_room)
-gt_bottom_invisibile_bonk_room:connect_two_ways(gt_bottom_above_ice_fight)
-
-gt_bottom_big_chest_room:connect_one_way("GT - Big Chest", function() return has("gt_bigkey") end)
-
-gt_bottom_above_ice_fight:connect_one_way(gt_bottom_ice_fight, function() return has("bombs") end)
-gt_bottom_above_ice_fight:connect_one_way("GT - Bob's Chest")
-
-gt_bottom_ice_fight:connect_two_ways(gt_bottom_big_key_room, function() return getBossRef("gt_ice") end)
-gt_bottom_ice_fight:connect_one_way(gt_bottom_big_chest_room, function() return getBossRef("gt_ice") end)
-
-gt_bottom_big_key_room:connect_one_way("GT - Big Key Chest")
-gt_bottom_big_key_room:connect_one_way("GT - Big Key Room Left")
-gt_bottom_big_key_room:connect_one_way("GT - Big Key Room Right")
-
 gt_bottom_hope_room:connect_two_ways(gt_bottom_tile_room, function() return has("somaria") end)
 gt_bottom_hope_room:connect_one_way("GT - Hope Room Left")
 gt_bottom_hope_room:connect_one_way("GT - Hope Room Right")
@@ -123,6 +108,21 @@ gt_bottom_compass_room:connect_one_way("GT - Compass Room Bottom Right")
 
 gt_bottom_conveyor_star_room:connect_one_way(gt_bottom_invisibile_bonk_room, function(keys) return has("gt_smallkey", keys + 1, 2, keys + 1, 5), KDSreturn(keys + 1, keys + 1) end)
 gt_bottom_conveyor_star_room:connect_one_way("GT - Conveyor Star Key Drop")
+
+gt_bottom_invisibile_bonk_room:connect_two_ways(gt_bottom_big_chest_room)
+gt_bottom_invisibile_bonk_room:connect_two_ways(gt_bottom_above_ice_fight)
+
+gt_bottom_big_chest_room:connect_one_way("GT - Big Chest", function() return has("gt_bigkey") end)
+
+gt_bottom_above_ice_fight:connect_one_way(gt_bottom_ice_fight, function() return has("bombs") end)
+gt_bottom_above_ice_fight:connect_one_way("GT - Bob's Chest")
+
+gt_bottom_ice_fight:connect_two_ways(gt_bottom_big_key_room, function() return getBossRef("gt_ice") end)
+gt_bottom_ice_fight:connect_one_way(gt_bottom_big_chest_room, function() return getBossRef("gt_ice") end)
+
+gt_bottom_big_key_room:connect_one_way("GT - Big Key Chest")
+gt_bottom_big_key_room:connect_one_way("GT - Big Key Room Left")
+gt_bottom_big_key_room:connect_one_way("GT - Big Key Room Right")
 
 gt_top_entrance:connect_two_ways(gt_top_gauntlet, function() 
     return all(
