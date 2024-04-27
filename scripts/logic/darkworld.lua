@@ -800,9 +800,9 @@ teleporter_at_dark_death_mountain_left_bottom:connect_one_way(dark_death_mountai
 dark_death_mountain_left_bottom:connect_two_ways_entrance("Spike Cave", spike_cave)
 dark_death_mountain_left_bottom:connect_one_way(light_death_mountain_left_top, function() 
     return all(
-        canChangeWorldWithMirror(), 
+        canChangeWorldWithMirror(),
         openOrStandard()
-    ) 
+    )
 end)
 spike_cave:connect_one_way("Spike Cave Chest", function() 
     return all(
@@ -812,6 +812,7 @@ spike_cave:connect_one_way("Spike Cave Chest", function()
         -- has("heartpieces", )
     )
 end)
+dark_death_mountain_left_bottom:connect_one_way(dark_death_mountain_left_top, function() return inverted() end)
 
 dark_death_mountain_left_bottom:connect_two_ways_entrance("Dark Death Mountain Descent", dark_death_mountain_descent, function() return darkRooms() end)
 
