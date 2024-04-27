@@ -353,7 +353,7 @@ end)
 lost_woods:connect_one_way_entrance("Lost Woods Hideout Hole", lost_woods_hideout_hole, function() return can_interact("light",1 ) end)
 lost_woods:connect_two_ways_entrance("Lost Woods Hideout Cave", lost_woods_hideout_cave)
 lost_woods:connect_two_ways_entrance("Lost Woods Top", lost_woods_top)
-lost_woods:connect_two_ways_entrance("Pedestal", lost_woods_pedestal)
+lost_woods:connect_two_ways_entrance("Pedestal Glade", lost_woods_pedestal)
 lost_woods:connect_one_way("Lost Woods Mushroom", function() return can_interact("light",1 ) end)
 
 lost_woods_hideout_hole:connect_one_way(lost_woods_hideout_item)
@@ -746,7 +746,7 @@ end)
 eastern_palace_area:connect_one_way(light_lake_hylia)
 eastern_palace_area:connect_one_way(links_house_area)
 eastern_palace_area:connect_one_way(light_lake_hylia)
-eastern_palace_area:connect_one_way(witchhut)
+eastern_palace_area:connect_one_way(witchhut, function() return can_interact("light", 1) end)
 eastern_palace_area:connect_one_way(links_house_area)
 eastern_palace_area:connect_one_way(light_flute_map, function() 
     return all(
@@ -882,7 +882,7 @@ secret_passage_stairs:connect_two_ways(secret_passage)
 
 
 -- witchhut
-witchhut:connect_one_way(eastern_palace_area)
+witchhut:connect_one_way(eastern_palace_area, function() return can_interact("light", 1) end)
 witchhut:connect_one_way(sanctuary_area)
 witchhut:connect_one_way(light_flute_map, function() 
     return all(
@@ -892,7 +892,10 @@ witchhut:connect_one_way(light_flute_map, function()
     ) 
 end)
 witchhut:connect_one_way(zora_river, function() 
-    return has("glove") 
+    return all(
+        has("glove"),
+        can_interact("light", 1)
+    )
 end)
 
 witchhut:connect_two_ways_entrance("Witchhut Shop", light_potion_shop)
