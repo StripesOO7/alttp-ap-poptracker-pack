@@ -4,20 +4,20 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$can_reach|mm_entrance"
+            "^$CanReach|mm_entrance"
         ],
         "children": [
             {
                 "name": "Spikes Pot Key",
                 "access_rules": [
-                    "^$can_reach|mm_spike_room"
+                    "^$CanReach|mm_spike_room"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {
                         "name": "Spikes Pot Key",
                         "access_rules": [
-                            "^$can_reach|MM - Spike Key Drop"
+                            "^$CanReach|MM - Spike Key Drop"
                         ]
                     }
                 ],
@@ -33,14 +33,14 @@
             {
                 "name": "Fishbone Pot Key",
                 "access_rules": [
-                    "^$can_reach|mm_fishbone_room"
+                    "^$CanReach|mm_fishbone_room"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {
                         "name": "Fishbone Pot Key",
                         "access_rules": [
-                            "^$can_reach|MM - Fishbone Key Drop"
+                            "^$CanReach|MM - Fishbone Key Drop"
                         ]
                     }
                 ],
@@ -56,14 +56,14 @@
             {
                 "name": "Conveyor Crystal Key Drop",
                 "access_rules": [
-                    "^$can_reach|mm_conveyor_crystal_room"
+                    "^$CanReach|mm_conveyor_crystal_room"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {
                         "name": "Conveyor Crystal Key Drop",
                         "access_rules": [
-                            "^$can_reach|MM - Conveyor Crystal Key Drop"
+                            "^$CanReach|MM - Conveyor Crystal Key Drop"
                         ]
                     }
                 ],
@@ -79,13 +79,13 @@
             {
                 "name": "Bridge Chest",
                 "access_rules": [
-                    "^$can_reach|MM - Bridge Chest"
+                    "^$CanReach|MM - Bridge Chest"
                 ],
                 "sections": [
                     {
                         "name": "Bridge Chest",
                         "access_rules": [
-                            "^$can_reach|MM - Bridge Chest"
+                            "^$CanReach|MM - Bridge Chest"
                         ]
                     }
                 ],
@@ -101,13 +101,13 @@
             {
                 "name": "Main Lobby",
                 "access_rules": [
-                    "^$can_reach|mm_main_room"
+                    "^$CanReach|mm_main_room"
                 ],
                 "sections": [
                     {
                         "name": "Main Lobby",
                         "access_rules": [
-                            "^$can_reach|MM - Main Lobby Chest"
+                            "^$CanReach|MM - Main Lobby Chest"
                         ]
                     }
                 ],
@@ -123,13 +123,13 @@
             {
                 "name": "Compass Chest",
                 "access_rules": [
-                    "^$can_reach|mm_compass_room"
+                    "^$CanReach|mm_compass_room"
                 ],
                 "sections": [
                     {
                         "name": "Compass Chest",
                         "access_rules": [
-                            "^$can_reach|MM - Comapss Chest"
+                            "^$CanReach|MM - Comapss Chest"
                         ]
                     }
                 ],
@@ -145,13 +145,13 @@
             {
                 "name": "Big Key Chest",
                 "access_rules": [
-                    "^$can_reach|mm_big_key_chest"
+                    "^$CanReach|mm_big_key_chest"
                 ],
                 "sections": [
                     {
                         "name": "Big Key Chest",
                         "access_rules": [
-                            "^$can_reach|MM - Big Key Chest"
+                            "^$CanReach|MM - Big Key Chest"
                         ]
                     }
                 ],
@@ -167,13 +167,13 @@
             {
                 "name": "Spike Chest",
                 "access_rules": [
-                    "^$can_reach|mm_spike_room"
+                    "^$CanReach|mm_spike_room"
                 ],
                 "sections": [
                     {
                         "name": "Spike Chest",
                         "access_rules": [
-                            "^$can_reach|MM - Spike Chest"
+                            "^$CanReach|MM - Spike Chest"
                         ]
                     }
                 ],
@@ -189,13 +189,13 @@
             {
                 "name": "Map Chest",
                 "access_rules": [
-                    "^$can_reach|mm_map_room_top"//, ^$can_reach|mm_conveyor_crystal_room"
+                    "^$CanReach|mm_map_room_top"//, ^$CanReach|mm_conveyor_crystal_room"
                 ],
                 "sections": [
                     {
                         "name": "Map Chest",
                         "access_rules": [
-                            "^$can_reach|MM - Map Chest"
+                            "^$CanReach|MM - Map Chest"
                         ]
                     }
                 ],
@@ -211,13 +211,13 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "^$can_reach|mm_big_chest_room"
+                    "^$CanReach|mm_big_chest_room"
                 ],
                 "sections": [
                     {
                         "name": "Big Chest",
                         "access_rules": [
-                            "^$can_reach|MM - Big Chest"
+                            "^$CanReach|MM - Big Chest"
                         ]
                     }
                 ],
@@ -233,13 +233,13 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "^$can_reach|mm_boss_room"
+                    "^$CanReach|mm_boss_room"
                 ],
                 "sections": [
                     {
                         "name": "Boss Item",
                         "access_rules": [
-                            "^$can_reach|MM - Boss"
+                            "^$CanReach|MM - Boss"
                         ],
                         "item_count": 1,
                         "hosted_item": "mm_boss, miserymire"

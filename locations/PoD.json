@@ -4,19 +4,19 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$can_reach|pod_entrance"
+            "^$CanReach|pod_entrance"
         ],
         "children": [
             {
                 "name": "Shooter Room",
                 "access_rules": [
-                    "^$can_reach|pod_shooter_room"
+                    "^$CanReach|pod_shooter_room"
                 ],
                 "sections": [
                     {
                         "name": "Shooter Room",
                         "access_rules": [
-                            "^$can_reach|PoD - Shooter Room"
+                            "^$CanReach|PoD - Shooter Room"
                         ]
                     }
                 ],
@@ -32,13 +32,13 @@
             {
                 "name": "Stalfos Basement",
                 "access_rules": [
-                    "^$can_reach|pod_basement_floor"
+                    "^$CanReach|pod_basement_floor"
                 ],
                 "sections": [
                     {
                         "name": "Stalfos Basement",
                         "access_rules": [
-                            "^$can_reach|PoD - Stalfos Basement"
+                            "^$CanReach|PoD - Stalfos Basement"
                         ]
                     }
                 ],
@@ -54,13 +54,13 @@
             {
                 "name": "Big Key Chest",
                 "access_rules": [
-                    "^$can_reach|pod_big_key_chest_ledge"
+                    "^$CanReach|pod_big_key_chest_ledge"
                 ],
                 "sections": [
                     {
                         "name": "Big Key Chest",
                         "access_rules": [
-                            "^$can_reach|PoD - Big Key Chest"
+                            "^$CanReach|PoD - Big Key Chest"
                         ]
                     }
                 ],
@@ -76,13 +76,13 @@
             {
                 "name": "Dark Maze Top",
                 "access_rules": [
-                    "^$can_reach|pod_dark_maze"
+                    "^$CanReach|pod_dark_maze"
                 ],
                 "sections": [
                     {
                         "name": "Dark Maze Top",
                         "access_rules": [
-                            "^$can_reach|PoD - Dark Maze Top"
+                            "^$CanReach|PoD - Dark Maze Top"
                         ]
                     }
                 ],
@@ -98,13 +98,13 @@
             {
                 "name": "Dark Maze Bottom",
                 "access_rules": [
-                    "^$can_reach|pod_dark_maze"
+                    "^$CanReach|pod_dark_maze"
                 ],
                 "sections": [
                     {
                         "name": "Dark Maze Bottom",
                         "access_rules": [
-                            "^$can_reach|PoD - Dark Maze Bottom"
+                            "^$CanReach|PoD - Dark Maze Bottom"
                         ]
                     }
                 ],
@@ -120,13 +120,13 @@
             {
                 "name": "Compass Chest",
                 "access_rules": [
-                    "^$can_reach|pod_compass_room"
+                    "^$CanReach|pod_compass_room"
                 ],
                 "sections": [
                     {
                         "name": "Compass Chest",
                         "access_rules": [
-                            "^$can_reach|PoD - Compass Chest"
+                            "^$CanReach|PoD - Compass Chest"
                         ]
                     }
                 ],
@@ -142,13 +142,13 @@
             {
                 "name": "Harmless Hellway",
                 "access_rules": [
-                    "^$can_reach|pod_harmless_hellway"
+                    "^$CanReach|pod_harmless_hellway"
                 ],
                 "sections": [
                     {
                         "name": "Harmless Hellway",
                         "access_rules": [
-                            "^$can_reach|PoD - Harmless Hellway"
+                            "^$CanReach|PoD - Harmless Hellway"
                         ]
                     }
                 ],
@@ -164,13 +164,13 @@
             {
                 "name": "The Arena Bridge",
                 "access_rules": [
-                    "^$can_reach|pod_arena"
+                    "^$CanReach|pod_arena"
                 ],
                 "sections": [
                     {
                         "name": "Bridge",
                         "access_rules": [
-                            "^$can_reach|PoD - Arena Bridge"
+                            "^$CanReach|PoD - Arena Bridge"
                         ]
                     }
                 ],
@@ -186,13 +186,13 @@
             {
                 "name": "The Arena Ledge",
                 "access_rules": [
-                    "^$can_reach|pod_switch_room_top"
+                    "^$CanReach|pod_switch_room_top"
                 ],
                 "sections": [
                     {
                         "name": "Ledge",
                         "access_rules": [
-                            "^$can_reach|PoD - Arena Ledge"
+                            "^$CanReach|PoD - Arena Ledge"
                         ]
                     }
                 ],
@@ -208,13 +208,13 @@
             {
                 "name": "Map Chest",
                 "access_rules": [
-                    "^$can_reach|pod_switch_room_top"
+                    "^$CanReach|pod_switch_room_top"
                 ],
                 "sections": [
                     {
                         "name": "Map Chest",
                         "access_rules": [
-                            "^$can_reach|PoD - Map Chest"
+                            "^$CanReach|PoD - Map Chest"
                         ]
                     }
                 ],
@@ -230,13 +230,13 @@
             {
                 "name": "Dark Basement Left",
                 "access_rules": [
-                    "^$can_reach|pod_dark_basement"
+                    "^$CanReach|pod_dark_basement"
                 ],
                 "sections": [
                     {
                         "name": "Dark Basement Left",
                         "access_rules": [
-                            "^$can_reach|PoD - Dark Basement Left"
+                            "^$CanReach|PoD - Dark Basement Left"
                         ]
                     }
                 ],
@@ -252,13 +252,13 @@
             {
                 "name": "Dark Basement Right",
                 "access_rules": [
-                    "^$can_reach|pod_dark_basement"
+                    "^$CanReach|pod_dark_basement"
                 ],
                 "sections": [
                     {
                         "name": "Dark Basement Right",
                         "access_rules": [
-                            "^$can_reach|PoD - Dark Basement Right"
+                            "^$CanReach|PoD - Dark Basement Right"
                         ]
                     }
                 ],
@@ -274,13 +274,13 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "^$can_reach|pod_dark_maze"
+                    "^$CanReach|pod_dark_maze"
                 ],
                 "sections": [
                     {
                         "name": "Big Chest",
                         "access_rules": [
-                            "^$can_reach|PoD - Big Chest"
+                            "^$CanReach|PoD - Big Chest"
                         ]
                     }
                 ],
@@ -296,13 +296,13 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "^$can_reach|pod_boss_room"
+                    "^$CanReach|pod_boss_room"
                 ],
                 "sections": [
                     {
                         "name": "Boss Item",
                         "access_rules": [
-                            "^$can_reach|PoD - Boss"
+                            "^$CanReach|PoD - Boss"
                         ],
                         "item_count": 1,
                         "hosted_item": "pod_boss,palaceofdarkness"

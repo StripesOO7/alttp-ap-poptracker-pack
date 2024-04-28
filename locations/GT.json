@@ -4,19 +4,19 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$can_reach|gt_entrance"
+            "^$CanReach|gt_entrance"
         ],
         "children": [
             {
                 "name": "Bob's Torch",
                 "access_rules": [
-                    "^$can_reach|gt_bottom_bobs_torch"
+                    "^$CanReach|gt_bottom_bobs_torch"
                 ],
                 "sections": [
                     {
                         "name": "Bob's Torch",
                         "access_rules": [
-                            "^$can_reach|GT - Bob's Torch"
+                            "^$CanReach|GT - Bob's Torch"
                         ],
                         "capture_item": true
                     }
@@ -33,19 +33,19 @@
             {
                 "name": "DMs Room",
                 "access_rules": [
-                    "^$can_reach|gt_bottom_dm_room"
+                    "^$CanReach|gt_bottom_dm_room"
                 ]
             },
             {
                 "name": "DMs Room Top Right",
                 "access_rules": [
-                    "^$can_reach|gt_bottom_dm_room"
+                    "^$CanReach|gt_bottom_dm_room"
                 ],
                 "sections": [
                     {
                         "name": "DMs Room Top Right",
                         "access_rules": [
-                            "^$can_reach|GT - DM Room Top Right"
+                            "^$CanReach|GT - DM Room Top Right"
                         ]
                     }
                 ],
@@ -61,13 +61,13 @@
             {
                 "name": "DMs Room Bottom Right",
                 "access_rules": [
-                    "^$can_reach|gt_bottom_dm_room"
+                    "^$CanReach|gt_bottom_dm_room"
                 ],
                 "sections": [
                     {
                         "name": "DMs Room Bottom Right",
                         "access_rules": [
-                            "^$can_reach|GT - DM Room Bottom Right"
+                            "^$CanReach|GT - DM Room Bottom Right"
                         ]
                     }
                 ],
@@ -83,13 +83,13 @@
             {
                 "name": "DMs Room Top Left",
                 "access_rules": [
-                    "^$can_reach|gt_bottom_dm_room"
+                    "^$CanReach|gt_bottom_dm_room"
                 ],
                 "sections": [
                     {
                         "name": "DMs Room Top Left",
                         "access_rules": [
-                            "^$can_reach|GT - DM Room Top Left"
+                            "^$CanReach|GT - DM Room Top Left"
                         ]
                     }
                 ],
@@ -105,13 +105,13 @@
             {
                 "name": "DMs Room Bottom Left",
                 "access_rules": [
-                    "^$can_reach|gt_bottom_dm_room"
+                    "^$CanReach|gt_bottom_dm_room"
                 ],
                 "sections": [
                     {
                         "name": "DMs Room Bottom Left",
                         "access_rules": [
-                            "^$can_reach|GT - DM Room Bottom Left"
+                            "^$CanReach|GT - DM Room Bottom Left"
                         ]
                     }
                 ],
@@ -127,13 +127,13 @@
             {
                 "name": "Map Chest",
                 "access_rules": [
-                    "^$can_reach|gt_bottom_map_room"
+                    "^$CanReach|gt_bottom_map_room"
                 ],
                 "sections": [
                     {
                         "name": "Map Chest",
                         "access_rules": [
-                            "^$can_reach|GT - Map Chest"
+                            "^$CanReach|GT - Map Chest"
                         ]
                     }
                 ],
@@ -150,13 +150,13 @@
                 "name": "Double Switch Pot Key",
                 "visibility_rules": ["key_drop_shuffle"],
                 "access_rules": [
-                    "^$can_reach|gt_bottom_double_switch_room"
+                    "^$CanReach|gt_bottom_double_switch_room"
                 ],
                 "sections": [
                     {
                         "name": "Double Switch Pot Key",
                         "access_rules": [
-                            "^$can_reach|GT - Double Switch Pot Key"
+                            "^$CanReach|GT - Double Switch Pot Key"
                         ]
                     }
                 ],
@@ -172,14 +172,14 @@
             {
                 "name": "Conveyor Cross Pot Key",
                 "access_rules": [
-                    "^$can_reach|gt_bottom_conveyor_cross_room"
+                    "^$CanReach|gt_bottom_conveyor_cross_room"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {
                         "name": "Conveyor Cross Pot Key",
                         "access_rules": [
-                            "^$can_reach|GT - Conveyor Cross Key Drop"
+                            "^$CanReach|GT - Conveyor Cross Key Drop"
                         ]
                     }
                 ],
@@ -195,13 +195,13 @@
             {
                 "name": "Firesnake Room",
                 "access_rules": [
-                    "^$can_reach|gt_bottom_firesnake_room"
+                    "^$CanReach|gt_bottom_firesnake_room"
                 ],
                 "sections": [
                     {
                         "name": "Firesnake Room",
                         "access_rules": [
-                            "^$can_reach|GT - Firesnake Room"
+                            "^$CanReach|GT - Firesnake Room"
                         ]
                     }
                 ],
@@ -217,19 +217,19 @@
             {
                 "name": "Randomizer Room",
                 "access_rules": [
-                    "^$can_reach|gt_bottom_randomizer_room"
+                    "^$CanReach|gt_bottom_randomizer_room"
                 ]
             },
             {
                 "name": "Randomizer Room Bottom Left",
                 "access_rules": [
-                    "^$can_reach|gt_bottom_randomizer_room"
+                    "^$CanReach|gt_bottom_randomizer_room"
                 ],
                 "sections": [
                     {
                         "name": "Randomizer Room Bottom Left",
                         "access_rules": [
-                            "^$can_reach|GT - Randomizer Room Bottom Left"
+                            "^$CanReach|GT - Randomizer Room Bottom Left"
                         ]
                     }
                 ],
@@ -245,13 +245,13 @@
             {
                 "name": "Randomizer Room Bottom Right",
                 "access_rules": [
-                    "^$can_reach|gt_bottom_randomizer_room"
+                    "^$CanReach|gt_bottom_randomizer_room"
                 ],
                 "sections": [
                     {
                         "name": "Randomizer Room Bottom Right",
                         "access_rules": [
-                            "^$can_reach|GT - Randomizer Room Bottom Right"
+                            "^$CanReach|GT - Randomizer Room Bottom Right"
                         ]
                     }
                 ],
@@ -267,13 +267,13 @@
             {
                 "name": "Randomizer Room Top Left",
                 "access_rules": [
-                    "^$can_reach|gt_bottom_randomizer_room"
+                    "^$CanReach|gt_bottom_randomizer_room"
                 ],
                 "sections": [
                     {
                         "name": "Randomizer Room Top Left",
                         "access_rules": [
-                            "^$can_reach|GT - Randomizer Room Top Left"
+                            "^$CanReach|GT - Randomizer Room Top Left"
                         ]
                     }
                 ],
@@ -289,13 +289,13 @@
             {
                 "name": "Randomizer Room Top Right",
                 "access_rules": [
-                    "^$can_reach|gt_bottom_randomizer_room"
+                    "^$CanReach|gt_bottom_randomizer_room"
                 ],
                 "sections": [
                     {
                         "name": "Randomizer Room Top Right",
                         "access_rules": [
-                            "^$can_reach|GT - Randomizer Room Top Right"
+                            "^$CanReach|GT - Randomizer Room Top Right"
                         ]
                     }
                 ],
@@ -315,19 +315,19 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$can_reach|gt_entrance"
+            "^$CanReach|gt_entrance"
         ],
         "children": [
             {
                 "name": "Hope Room Left",
                 "access_rules": [
-                    "^$can_reach|gt_bottom_hope_room"
+                    "^$CanReach|gt_bottom_hope_room"
                 ],
                 "sections": [
                     {
                         "name": "Hope Room Left",
                         "access_rules": [
-                            "^$can_reach|GT - Hope Room Left"
+                            "^$CanReach|GT - Hope Room Left"
                         ]
                     }
                 ],
@@ -343,13 +343,13 @@
             {
                 "name": "Hope Room Right",
                 "access_rules": [
-                    "^$can_reach|gt_bottom_hope_room"
+                    "^$CanReach|gt_bottom_hope_room"
                 ],
                 "sections": [
                     {
                         "name": "Hope Room Right",
                         "access_rules": [
-                            "^$can_reach|GT - Hope Room Right"
+                            "^$CanReach|GT - Hope Room Right"
                         ]
                     }
                 ],
@@ -365,13 +365,13 @@
             {
                 "name": "Tile Room",
                 "access_rules": [
-                    "^$can_reach|gt_bottom_tile_room"
+                    "^$CanReach|gt_bottom_tile_room"
                 ],
                 "sections": [
                     {
                         "name": "Tile Room",
                         "access_rules": [
-                            "^$can_reach|GT - Tile Room Chest"
+                            "^$CanReach|GT - Tile Room Chest"
                         ]
                     }
                 ],
@@ -387,19 +387,19 @@
             {
                 "name": "Compass Room",
                 "access_rules": [
-                    "^$can_reach|gt_bottom_compass_room"
+                    "^$CanReach|gt_bottom_compass_room"
                 ]
             },
             {
                 "name": "Compass Chest",
                 "access_rules": [
-                    "^$can_reach|gt_bottom_compass_room"
+                    "^$CanReach|gt_bottom_compass_room"
                 ],
                 "sections": [
                     {
                         "name": "Compass Chest",
                         "access_rules": [
-                            "^$can_reach|GT - Compass Room Top Left"
+                            "^$CanReach|GT - Compass Room Top Left"
                         ]
                     }
                 ],
@@ -415,13 +415,13 @@
             {
                 "name": "Compass Room Top Right",
                 "access_rules": [
-                    "^$can_reach|gt_bottom_compass_room"
+                    "^$CanReach|gt_bottom_compass_room"
                 ],
                 "sections": [
                     {
                         "name": "Compass Room Top Right",
                         "access_rules": [
-                            "^$can_reach|GT - Compass Room Top Right"
+                            "^$CanReach|GT - Compass Room Top Right"
                         ]
                     }
                 ],
@@ -437,13 +437,13 @@
             {
                 "name": "Compass Room Bottom Left",
                 "access_rules": [
-                    "^$can_reach|gt_bottom_compass_room"
+                    "^$CanReach|gt_bottom_compass_room"
                 ],
                 "sections": [
                     {
                         "name": "Compass Room Bottom Left",
                         "access_rules": [
-                            "^$can_reach|GT - Compass Room Bottom Left"
+                            "^$CanReach|GT - Compass Room Bottom Left"
                         ]
                     }
                 ],
@@ -459,13 +459,13 @@
             {
                 "name": "Compass Room Bottom Right",
                 "access_rules": [
-                    "^$can_reach|gt_bottom_compass_room"
+                    "^$CanReach|gt_bottom_compass_room"
                 ],
                 "sections": [
                     {
                         "name": "Compass Room Bottom Right",
                         "access_rules": [
-                            "^$can_reach|GT - Compass Room Bottom Right"
+                            "^$CanReach|GT - Compass Room Bottom Right"
                         ]
                     }
                 ],
@@ -482,13 +482,13 @@
                 "name": "Conveyor Star Pits Pot Key",
                 "visibility_rules": ["key_drop_shuffle"],
                 "access_rules": [
-                    "^$can_reach|gt_bottom_conveyor_star_room"
+                    "^$CanReach|gt_bottom_conveyor_star_room"
                 ],
                 "sections": [
                     {
                         "name": "Conveyor Star Pits Pot Key",
                         "access_rules": [
-                            "^$can_reach|GT - Conveyor Star Key Drop"
+                            "^$CanReach|GT - Conveyor Star Key Drop"
                         ]
                     }
                 ],
@@ -509,19 +509,19 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$can_reach|gt_bottom_above_ice_fight"
+            "^$CanReach|gt_bottom_above_ice_fight"
         ],
         "children": [
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "^$can_reach|gt_bottom_big_chest_room"
+                    "^$CanReach|gt_bottom_big_chest_room"
                 ],
                 "sections": [
                     {
                         "name": "Big Chest",
                         "access_rules": [
-                            "^$can_reach|GT - Big Chest"
+                            "^$CanReach|GT - Big Chest"
                         ]
                     }
                 ],
@@ -537,13 +537,13 @@
             {
                 "name": "Bob's Chest",
                 "access_rules": [
-                    "^$can_reach|gt_bottom_above_ice_fight"
+                    "^$CanReach|gt_bottom_above_ice_fight"
                 ],
                 "sections": [
                     {
                         "name": "Bob's Chest",
                         "access_rules": [
-                            "^$can_reach|GT - Bob's Chest"
+                            "^$CanReach|GT - Bob's Chest"
                         ]
                     }
                 ],
@@ -559,13 +559,13 @@
             {
                 "name": "Big Key Room Left",
                 "access_rules": [
-                    "^$can_reach|gt_bottom_big_key_room"
+                    "^$CanReach|gt_bottom_big_key_room"
                 ],
                 "sections": [
                     {
                         "name": "Big Key Room Left",
                         "access_rules": [
-                            "^$can_reach|GT - Big Key Room Left"
+                            "^$CanReach|GT - Big Key Room Left"
                         ]
                     }
                 ],
@@ -581,13 +581,13 @@
             {
                 "name": "Big Key Room Right",
                 "access_rules": [
-                    "^$can_reach|gt_bottom_big_key_room"
+                    "^$CanReach|gt_bottom_big_key_room"
                 ],
                 "sections": [
                     {
                         "name": "Big Key Room Right",
                         "access_rules": [
-                            "^$can_reach|GT - Big Key Room Right"
+                            "^$CanReach|GT - Big Key Room Right"
                         ]
                     }
                 ],
@@ -603,13 +603,13 @@
             {
                 "name": "Big Key Chest",
                 "access_rules": [
-                    "^$can_reach|gt_bottom_big_key_room"
+                    "^$CanReach|gt_bottom_big_key_room"
                 ],
                 "sections": [
                     {
                         "name": "Big Key Chest",
                         "access_rules": [
-                            "^$can_reach|GT - Big Key Chest"
+                            "^$CanReach|GT - Big Key Chest"
                         ]
                     }
                 ],
@@ -630,20 +630,20 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$can_reach|gt_top_entrance"
+            "^$CanReach|gt_top_entrance"
         ],
         "children": [
             {
                 "name": "Mini Helmasaur Key Drop",
                 "visibility_rules": ["key_drop_shuffle"],
                 "access_rules": [
-                    "^$can_reach|gt_top_mini_helmasaur_room"
+                    "^$CanReach|gt_top_mini_helmasaur_room"
                 ],
                 "sections": [
                     {
                         "name": "Mini Helmasaur Key Drop",
                         "access_rules": [
-                            "^$can_reach|GT - Mini Helmasaur Key Drop"
+                            "^$CanReach|GT - Mini Helmasaur Key Drop"
                         ]
                     }
                 ],
@@ -659,13 +659,13 @@
             {
                 "name": "Mini Helmasaur Room Left",
                 "access_rules": [
-                    "^$can_reach|gt_top_mini_helmasaur_room"
+                    "^$CanReach|gt_top_mini_helmasaur_room"
                 ],
                 "sections": [
                     {
                         "name": "Mini Helmasaur Room Left",
                         "access_rules": [
-                            "^$can_reach|GT - Mini Helmasaur Left"
+                            "^$CanReach|GT - Mini Helmasaur Left"
                         ]
                     }
                 ],
@@ -681,13 +681,13 @@
             {
                 "name": "Mini Helmasaur Room Right",
                 "access_rules": [
-                    "^$can_reach|gt_top_mini_helmasaur_room"
+                    "^$CanReach|gt_top_mini_helmasaur_room"
                 ],
                 "sections": [
                     {
                         "name": "Mini Helmasaur Room Right",
                         "access_rules": [
-                            "^$can_reach|GT - Mini Helmasaur Right"
+                            "^$CanReach|GT - Mini Helmasaur Right"
                         ]
                     }
                 ],
@@ -703,13 +703,13 @@
             {
                 "name": "Pre-Moldorm Chest",
                 "access_rules": [
-                    "^$can_reach|gt_top_pre_moldorm_room"
+                    "^$CanReach|gt_top_pre_moldorm_room"
                 ],
                 "sections": [
                     {
                         "name": "Pre-Moldorm Chest",
                         "access_rules": [
-                            "^$can_reach|GT - Pre Moldorm Chest"
+                            "^$CanReach|GT - Pre Moldorm Chest"
                         ]
                     }
                 ],
@@ -725,13 +725,13 @@
             {
                 "name": "Validation Chest",
                 "access_rules": [
-                    "^$can_reach|gt_top_validation"
+                    "^$CanReach|gt_top_validation"
                 ],
                 "sections": [
                     {
                         "name": "Validation Chest",
                         "access_rules": [
-                            "^$can_reach|GT - Validation Chest"
+                            "^$CanReach|GT - Validation Chest"
                         ]
                     }
                 ],
@@ -747,13 +747,13 @@
             {
                 "name": "Agahnim 2",
                 "access_rules": [
-                    "^$can_reach|gt_top_aga2"
+                    "^$CanReach|gt_top_aga2"
                 ],
                 "sections": [
                     {
                         "name": "Agahnim 2",
                         "access_rules": [
-                            "^$can_reach|GT - Aga2"
+                            "^$CanReach|GT - Aga2"
                         ],
                         "hosted_item": "aga2"
                     }

@@ -4,15 +4,15 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$can_reach|dp_main_entrance",
-            "^$can_reach|dp_left_entrance",
-            "^$can_reach|dp_right_entrance"
+            "^$CanReach|dp_main_entrance",
+            "^$CanReach|dp_left_entrance",
+            "^$CanReach|dp_right_entrance"
         ],
         "children": [
             {
                 "name": "Torch",
                 "access_rules": [
-                    "^$can_reach|DP - Torch"
+                    "^$CanReach|DP - Torch"
                 ],
                 "sections": [
                     {
@@ -32,7 +32,7 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "^$can_reach|DP - Big Chest"
+                    "^$CanReach|DP - Big Chest"
                 ],
                 "sections": [
                     {
@@ -51,7 +51,7 @@
             {
                 "name": "Map Chest",
                 "access_rules": [
-                    "^$can_reach|DP - Map Chest"
+                    "^$CanReach|DP - Map Chest"
                 ],
                 "sections": [
                     {
@@ -70,7 +70,7 @@
             {
                 "name": "Big Key Chest",
                 "access_rules": [
-                    "^$can_reach|dp_compass_room, ^$can_reach|DP - Big Key Chest"
+                    "^$CanReach|dp_compass_room, ^$CanReach|DP - Big Key Chest"
                 ],
                 "sections": [
                     {
@@ -89,7 +89,7 @@
             {
                 "name": "Compass Chest",
                 "access_rules": [
-                    "^$can_reach|dp_compass_room, ^$can_reach|DP - Compass Chest"
+                    "^$CanReach|dp_compass_room, ^$CanReach|DP - Compass Chest"
                 ],
                 "sections": [
                     {
@@ -112,19 +112,19 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/chest_opened_img.png",
         "access_rules": [
-            "^$can_reach|dp_back_entrance"
+            "^$CanReach|dp_back_entrance"
         ],
         "children": [
             {
                 "name": "Boss",
                 "access_rules": [
-                    "^$can_reach|dp_back_torch_room"
+                    "^$CanReach|dp_back_torch_room"
                 ],
                 "sections": [
                     {
                         "name": "Boss Item",
                         "access_rules": [
-                            "^$can_reach|dp_back_boss_room, ^$can_reach|DP - Boss"
+                            "^$CanReach|dp_back_boss_room, ^$CanReach|DP - Boss"
                         ],
                         "item_count": 1,
                         "hosted_item": "dp_boss, desertpalace"
@@ -142,7 +142,7 @@
             {
                 "name": "Desert Tiles 1 Pot Key",
                 "access_rules": [
-                    "^$can_reach|dp_back_tile1_room, ^$can_reach|DP - Tile 1 Key Drop"
+                    "^$CanReach|dp_back_tile1_room, ^$CanReach|DP - Tile 1 Key Drop"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
@@ -162,7 +162,7 @@
             {
                 "name": "Beamos Hall Pot Key",
                 "access_rules": [
-                    "^$can_reach|dp_back_beamos_hallway, ^$can_reach|DP - Beamos Hallway Key Drop"
+                    "^$CanReach|dp_back_beamos_hallway, ^$CanReach|DP - Beamos Hallway Key Drop"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
@@ -182,7 +182,7 @@
             {
                 "name": "Desert Tiles 2 Pot Key",
                 "access_rules": [
-                    "^$can_reach|dp_back_tiles2_room, ^$can_reach|DP - Tile 2 Key Drop"
+                    "^$CanReach|dp_back_tiles2_room, ^$CanReach|DP - Tile 2 Key Drop"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [

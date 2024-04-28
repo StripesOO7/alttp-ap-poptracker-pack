@@ -108,7 +108,7 @@ function owDungeonChecks(...)
     sequence_breakable= 0
     for _, location in ipairs(locations) do
        
-        -- access_check =  can_reach(location) 
+        -- access_check =  CanReach(location) 
         access_check = Tracker:FindObjectForCode(location).AccessibilityLevel
         -- print(location, access_check)
         if access_check == 5 then
@@ -408,8 +408,8 @@ end
 function tt_boss_check()
     if Tracker:FindObjectForCode("tt_boss").CurrentStage == 7 then 
         return all(
-            can_reach("tt_attic"),
-            can_reach("TT - Blind's Cell"),
+            CanReach("tt_attic"),
+            CanReach("TT - Blind's Cell"),
             has("bombs")
         )
     else

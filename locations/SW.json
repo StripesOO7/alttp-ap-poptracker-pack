@@ -4,25 +4,25 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$can_reach|sw_bottom_left_drop",
-            "^$can_reach|sw_pinball_drop",
-            "^$can_reach|sw_pot_circle_drop",
-            "^$can_reach|sw_big_chest_entrance",
-            "^$can_reach|sw_gibdo_entrance",
-            "^$can_reach|sw_west_lobby_entrance",
-            "^$can_reach|sw_north_drop"
+            "^$CanReach|sw_bottom_left_drop",
+            "^$CanReach|sw_pinball_drop",
+            "^$CanReach|sw_pot_circle_drop",
+            "^$CanReach|sw_big_chest_entrance",
+            "^$CanReach|sw_gibdo_entrance",
+            "^$CanReach|sw_west_lobby_entrance",
+            "^$CanReach|sw_north_drop"
         ],
         "children": [
             {
                 "name": "Pot Prison",
                 "access_rules": [
-                    "^$can_reach|sw_pot_prison"
+                    "^$CanReach|sw_pot_prison"
                 ],
                 "sections": [
                     {
                         "name": "Pot Prison",
                         "access_rules": [
-                            "^$can_reach|SW - Pot Prison"
+                            "^$CanReach|SW - Pot Prison"
                         ]
                     }
                 ],
@@ -38,13 +38,13 @@
             {
                 "name": "Compass Chest",
                 "access_rules": [
-                    "^$can_reach|sw_compass_room"
+                    "^$CanReach|sw_compass_room"
                 ],
                 "sections": [
                     {
                         "name": "Compass Chest",
                         "access_rules": [
-                            "^$can_reach|SW - Compass Chest"
+                            "^$CanReach|SW - Compass Chest"
                         ]
                     }
                 ],
@@ -60,13 +60,13 @@
             {
                 "name": "Pinball Room",
                 "access_rules": [
-                    "^$can_reach|sw_pinball_room"
+                    "^$CanReach|sw_pinball_room"
                 ],
                 "sections": [
                     {
                         "name": "Pinball Room",
                         "access_rules": [
-                            "^$can_reach|SW - Pinball Chest"
+                            "^$CanReach|SW - Pinball Chest"
                         ]
                     }
                 ],
@@ -82,13 +82,13 @@
             {
                 "name": "Map Chest",
                 "access_rules": [
-                    "^$can_reach|sw_map_room"
+                    "^$CanReach|sw_map_room"
                 ],
                 "sections": [
                     {
                         "name": "Map Chest",
                         "access_rules": [
-                            "^$can_reach|SW - Map Chest"
+                            "^$CanReach|SW - Map Chest"
                         ]
                     }
                 ],
@@ -104,13 +104,13 @@
             {
                 "name": "Big Key Chest",
                 "access_rules": [
-                    "^$can_reach|sw_big_key_room"
+                    "^$CanReach|sw_big_key_room"
                 ],
                 "sections": [
                     {
                         "name": "Big Key Chest",
                         "access_rules": [
-                            "^$can_reach|SW - Big Key Chest"
+                            "^$CanReach|SW - Big Key Chest"
                         ]
                     }
                 ],
@@ -126,14 +126,14 @@
             {
                 "name": "West Lobby Pot Key",
                 "access_rules": [
-                    "^$can_reach|sw_west_lobby_entrance"
+                    "^$CanReach|sw_west_lobby_entrance"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {
                         "name": "West Lobby Pot Key",
                         "access_rules": [
-                            "^$can_reach|SW - West Lobby Key Drop"
+                            "^$CanReach|SW - West Lobby Key Drop"
                         ]
                     }
                 ],
@@ -149,13 +149,13 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "^$can_reach|sw_big_chest_entrance"
+                    "^$CanReach|sw_big_chest_entrance"
                 ],
                 "sections": [
                     {
                         "name": "Big Chest",
                         "access_rules": [
-                            "^$can_reach|SW - Big Chest"
+                            "^$CanReach|SW - Big Chest"
                         ]
                     }
                 ],
@@ -175,19 +175,19 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$can_reach|sw_back_entrance"
+            "^$CanReach|sw_back_entrance"
         ],
         "children": [
             {
                 "name": "Bridge Room",
                 "access_rules": [
-                    "^$can_reach|sw_back_bottom_hallway"
+                    "^$CanReach|sw_back_bottom_hallway"
                 ],
                 "sections": [
                     {
                         "name": "Bridge Room",
                         "access_rules": [
-                            "^$can_reach|SW - Bridge Chest"
+                            "^$CanReach|SW - Bridge Chest"
                         ]
                     }
                 ],
@@ -203,14 +203,14 @@
             {
                 "name": "Spike Corner Key Drop",
                 "access_rules": [
-                    "^$can_reach|sw_back_spike_corner_room"
+                    "^$CanReach|sw_back_spike_corner_room"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {
                         "name": "Spike Corner Key Drop",
                         "access_rules": [
-                            "^$can_reach|SW - Spike Corner Key Drop"
+                            "^$CanReach|SW - Spike Corner Key Drop"
                         ]
                     }
                 ],
@@ -226,13 +226,13 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "^$can_reach|sw_back_boss_room"
+                    "^$CanReach|sw_back_boss_room"
                 ],
                 "sections": [
                     {
                         "name": "Boss Item",
                         "access_rules": [
-                            "^$can_reach|SW - Boss"
+                            "^$CanReach|SW - Boss"
                         ],
                         "item_count": 1,
                         "hosted_item": "sw_boss, skullwoods"

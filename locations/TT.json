@@ -5,19 +5,19 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "parent": "TT",
         "access_rules": [
-            "^$can_reach|tt_entrance"
+            "^$CanReach|tt_entrance"
         ],
         "children": [
             {
                 "name": "Map Chest",
                 "access_rules": [
-                    "^$can_reach|tt_front_bottom_left"
+                    "^$CanReach|tt_front_bottom_left"
                 ],
                 "sections": [
                     {
                         "name": "Map Chest",
                         "access_rules": [
-                            "^$can_reach|TT - Map Chest"
+                            "^$CanReach|TT - Map Chest"
                         ]
                         
                     }
@@ -34,13 +34,13 @@
             {
                 "name": "Ambush Chest",
                 "access_rules": [
-                    "^$can_reach|tt_front_top_left"
+                    "^$CanReach|tt_front_top_left"
                 ],
                 "sections": [
                     {
                         "name": "Ambush Chest",
                         "access_rules": [
-                            "^$can_reach|TT - Ambush Chest"
+                            "^$CanReach|TT - Ambush Chest"
                         ]
                     }
                 ],
@@ -56,13 +56,13 @@
             {
                 "name": "Compass Chest",
                 "access_rules": [
-                    "^$can_reach|tt_front_bottom_right"
+                    "^$CanReach|tt_front_bottom_right"
                 ],
                 "sections": [
                     {
                         "name": "Compass Chest",
                         "access_rules": [
-                            "^$can_reach|TT - Compass Chest"
+                            "^$CanReach|TT - Compass Chest"
                         ]
                     }
                 ],
@@ -78,13 +78,13 @@
             {
                 "name": "Big Key Chest",
                 "access_rules": [
-                    "^$can_reach|tt_front_bottom_right"
+                    "^$CanReach|tt_front_bottom_right"
                 ],
                 "sections": [
                     {
                         "name": "Big Key Chest",
                         "access_rules": [
-                            "^$can_reach|TT - Big Key Chest"
+                            "^$CanReach|TT - Big Key Chest"
                         ]
                     }
                 ],
@@ -104,7 +104,7 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$can_reach|tt_back_hallway"
+            "^$CanReach|tt_back_hallway"
         ],
         "parent": "TT",
         "children": [
@@ -112,13 +112,13 @@
                 "name": "Hallway Pot Key",
                 "visibility_rules": ["key_drop_shuffle"],
                 "access_rules": [
-                    "^$can_reach|tt_back_hallway"
+                    "^$CanReach|tt_back_hallway"
                 ],
                 "sections": [
                     {
                         "name": "Hallway Pot Key",
                         "access_rules": [
-                            "^$can_reach|TT - Hallway Pot Key"
+                            "^$CanReach|TT - Hallway Pot Key"
                         ]
                     }
                 ],
@@ -134,14 +134,14 @@
             {
                 "name": "Spike Switch Pot Key",
                 "access_rules": [
-                    "^$can_reach|tt_crystal_switch_room"
+                    "^$CanReach|tt_crystal_switch_room"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {
                         "name": "Spike Switch Pot Key",
                         "access_rules": [
-                            "^$can_reach|TT - Spike Switch Pot Key"
+                            "^$CanReach|TT - Spike Switch Pot Key"
                         ]
                     }
                 ],
@@ -157,13 +157,13 @@
             {
                 "name": "Blind's Cell",
                 "access_rules": [
-                    "^$can_reach|tt_basement_cell"
+                    "^$CanReach|tt_basement_cell"
                 ],
                 "sections": [
                     {
                         "name": "Blind's Cell",
                         "access_rules": [
-                            "^$can_reach|TT - Blind's Cell"
+                            "^$CanReach|TT - Blind's Cell"
                         ]
                     }
                 ],
@@ -179,13 +179,13 @@
             {
                 "name": "Attic",
                 "access_rules": [
-                    "^$can_reach|tt_attic"
+                    "^$CanReach|tt_attic"
                 ],
                 "sections": [
                     {
                         "name": "Attic",
                         "access_rules": [
-                            "^$can_reach|TT - Attic"
+                            "^$CanReach|TT - Attic"
                         ]
                     }
                 ],
@@ -201,13 +201,13 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "^$can_reach|tt_big_chest_room"
+                    "^$CanReach|tt_big_chest_room"
                 ],
                 "sections": [
                     {
                         "name": "Big Chest",
                         "access_rules": [
-                            "^$can_reach|TT - Big Chest"
+                            "^$CanReach|TT - Big Chest"
                         ]
                     }
                 ],
@@ -223,13 +223,13 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "^$can_reach|tt_boss_room"
+                    "^$CanReach|tt_boss_room"
                 ],
                 "sections": [
                     {
                         "name": "Boss Item",
                         "access_rules": [
-                            "^$can_reach|TT - Boss"
+                            "^$CanReach|TT - Boss"
                         ],
                         "item_count": 1,
                         "hosted_item": "tt_boss, thievestown"

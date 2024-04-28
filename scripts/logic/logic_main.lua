@@ -6,7 +6,7 @@ ScriptHost:AddWatchForCode("boss handler", "boss_shuffle", bossShuffle)
 alttp_location = {}
 alttp_location.__index = alttp_location
 
-accessLVL= {
+local accessLVL= {
     [0] = "none",
     [1] = "partial",
     [3] = "inspect",
@@ -26,7 +26,7 @@ local indirectConnections = {}
 
 
 -- 
-function can_reach(name)
+function CanReach(name)
     local location
     if stale then
         stale = false
@@ -164,7 +164,7 @@ function alttp_location:discover(accessibility, keys)
     if accessibility > self:accessibility() then
         self.keys = math.huge -- resets keys used up to this point
         accessibilityCache[self] = accessibility
-        accessibilityCacheComplete = false -- forces can_reach tu run again/further
+        accessibilityCacheComplete = false -- forces CanReach tu run again/further
     end
     if keys < self.keys then
         self.keys = keys -- sets current amout of keys used

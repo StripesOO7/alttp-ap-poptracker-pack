@@ -5,13 +5,13 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         // "access_rules": [
-        //     "^$can_reach|"
+        //     "^$CanReach|"
         // ],
         "children": [
             {
                 "name": "Cannonball Chest",
                 "access_rules": [
-                    "^$can_reach|EP - Cannonball Chest"
+                    "^$CanReach|EP - Cannonball Chest"
                 ],
                 "sections": [
                     {
@@ -30,7 +30,7 @@
             {
                 "name": "Map Chest",
                 "access_rules": [
-                    "^$can_reach|EP - Map Chest"
+                    "^$CanReach|EP - Map Chest"
                 ],
                 "sections": [
                     {
@@ -49,7 +49,7 @@
             {
                 "name": "Compass Chest",
                 "access_rules": [
-                    "^$can_reach|EP - Compass Chest"
+                    "^$CanReach|EP - Compass Chest"
                 ],
                 "sections": [
                     {
@@ -68,7 +68,7 @@
             {
                 "name": "Big Key Chest",
                 "access_rules": [
-                    "^$can_reach|EP - Big Key Chest"
+                    "^$CanReach|EP - Big Key Chest"
                 ],
                 "sections": [
                     {
@@ -87,7 +87,7 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "^$can_reach|EP - Big Chest"
+                    "^$CanReach|EP - Big Chest"
                 ],
                 "sections": [
                     {
@@ -107,7 +107,7 @@
                 "name": "Dark Square Pot Key",
                 "visibility_rules": ["key_drop_shuffle"],
                 "access_rules": [
-                    "^$can_reach|EP - Dark Square Key Drop"
+                    "^$CanReach|EP - Dark Square Key Drop"
                 ],
                 "sections": [
                     {
@@ -127,7 +127,7 @@
                 "name": "Dark Eyegore Key Drop",
                 "visibility_rules": ["key_drop_shuffle"],
                 "access_rules": [
-                    "^$can_reach|EP - Dark Eyegore Key Drop"
+                    "^$CanReach|EP - Dark Eyegore Key Drop"
                 ],
                 "sections": [
                     {
@@ -146,13 +146,13 @@
             {
                 "name": "Boss",
                 // "access_rules": [
-                //     "^$can_reach|EP - Boss"
+                //     "^$CanReach|EP - Boss"
                 // ],
                 "sections": [
                     {
                         "name": "Boss Item",
                         "access_rules": [
-                            "^$can_reach|EP - Boss, ^$can_reach|ep_boss_room"
+                            "^$CanReach|EP - Boss, ^$CanReach|ep_boss_room"
                         ],
                         "item_count": 1,
                         "hosted_item": "ep_boss, easternpalace"

@@ -4,19 +4,19 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$can_reach|toh_entrance"
+            "^$CanReach|toh_entrance"
         ],
         "children": [
             {
                 "name": "Basement Cage",
                 "access_rules": [
-                    "^$can_reach|toh_basement_cage"
+                    "^$CanReach|toh_basement_cage"
                 ],
                 "sections": [
                     {
                         "name": "Basement Cage",
                         "access_rules": [
-                            "^$can_reach|ToH - Basement Cage"
+                            "^$CanReach|ToH - Basement Cage"
                         ]
                     }
                 ],
@@ -32,13 +32,13 @@
             {
                 "name": "Big Key Chest",
                 "access_rules": [
-                    "^$can_reach|toh_big_key_chest"
+                    "^$CanReach|toh_big_key_chest"
                 ],
                 "sections": [
                     {
                         "name": "Big Key Chest",
                         "access_rules": [
-                            "^$can_reach|ToH - Big Key Chest"
+                            "^$CanReach|ToH - Big Key Chest"
                         ]
                     }
                 ],
@@ -54,13 +54,13 @@
             {
                 "name": "Map Chest",
                 "access_rules": [
-                    "^$can_reach|toh_entrance"
+                    "^$CanReach|toh_entrance"
                 ],
                 "sections": [
                     {
                         "name": "Map Chest",
                         "access_rules": [
-                            "^$can_reach|ToH - Map Chest"
+                            "^$CanReach|ToH - Map Chest"
                         ]
                     }
                 ],
@@ -76,13 +76,13 @@
             {
                 "name": "Compass Chest",
                 "access_rules": [
-                    "^$can_reach|toh_big_chest_room"
+                    "^$CanReach|toh_big_chest_room"
                 ],
                 "sections": [
                     {
                         "name": "Compass Chest",
                         "access_rules": [
-                            "^$can_reach|ToH - Compass Chest"
+                            "^$CanReach|ToH - Compass Chest"
                         ]
                     }
                 ],
@@ -98,13 +98,13 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "^$can_reach|toh_big_chest_room"
+                    "^$CanReach|toh_big_chest_room"
                 ],
                 "sections": [
                     {
                         "name": "Big Chest",
                         "access_rules": [
-                            "^$can_reach|ToH - Big Chest"
+                            "^$CanReach|ToH - Big Chest"
                         ]
                     }
                 ],
@@ -120,13 +120,13 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "^$can_reach|toh_above_big_chest"
+                    "^$CanReach|toh_above_big_chest"
                 ],
                 "sections": [
                     {
                         "name": "Boss Item",
                         "access_rules": [
-                            "^$can_reach|toh_boss_room, ^$can_reach|ToH - Boss"
+                            "^$CanReach|toh_boss_room, ^$CanReach|ToH - Boss"
                         ],
                         "item_count": 1,
                         "hosted_item": "toh_boss, towerofhera"

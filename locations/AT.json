@@ -4,19 +4,19 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$can_reach|at_entrance"
+            "^$CanReach|at_entrance"
         ],
         "children": [
             {
                 "name": "Front",
                 "access_rules": [
-                    "^$can_reach|at_first_chest"
+                    "^$CanReach|at_first_chest"
                 ],
                 "sections": [
                     {
                         "name": "Front",
                         "access_rules": [
-                            "^$can_reach|AT - First Chest"
+                            "^$CanReach|AT - First Chest"
                         ]
                     }
                 ],
@@ -32,14 +32,14 @@
             {
                 "name": "Dark Archer Key Drop",
                 "access_rules": [
-                    "^$can_reach|at_dark_archer_key_drop"
+                    "^$CanReach|at_dark_archer_key_drop"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {
                         "name": "Dark Archer Key Drop",
                         "access_rules": [
-                            "^$can_reach|AT - Dark Archer Key Drop"
+                            "^$CanReach|AT - Dark Archer Key Drop"
                         ]
                     }
                 ],
@@ -55,13 +55,13 @@
             {
                 "name": "Maze Chest",
                 "access_rules": [
-                    "^$can_reach|at_dark_maze"
+                    "^$CanReach|at_dark_maze"
                 ],
                 "sections": [
                     {
                         "name": "Maze Chest",
                         "access_rules": [
-                            "^$can_reach|AT - Maze Chest"
+                            "^$CanReach|AT - Maze Chest"
                         ]
                     }
                 ],
@@ -77,14 +77,14 @@
             {
                 "name": "Circle of Pots Key Drop",
                 "access_rules": [
-                    "^$can_reach|at_circle_of_pots"
+                    "^$CanReach|at_circle_of_pots"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {
                         "name": "Circle of Pots Key Drop",
                         "access_rules": [
-                            "^$can_reach|AT - Circle of Pots Key Drop"
+                            "^$CanReach|AT - Circle of Pots Key Drop"
                         ]
                     }
                 ],
@@ -100,13 +100,13 @@
             {
                 "name": "Agahnim 1",
                 "access_rules": [
-                    "^$can_reach|at_aga1, ^$can_reach|AT - Aga1"
+                    "^$CanReach|at_aga1, ^$CanReach|AT - Aga1"
                 ],
                 "sections": [
                     {
                         "name": "Agahnim 1",
                         "access_rules": [
-                            "^$can_reach|at_aga1, ^$can_reach|AT - Aga1"
+                            "^$CanReach|at_aga1, ^$CanReach|AT - Aga1"
                         ],
                         "hosted_item": "aga1"
                     }

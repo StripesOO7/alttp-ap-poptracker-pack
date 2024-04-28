@@ -4,21 +4,21 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$can_reach|hc_main_entrance",
-            "^$can_reach|hc_left_entrance",
-            "^$can_reach|hc_right_entrance"
+            "^$CanReach|hc_main_entrance",
+            "^$CanReach|hc_left_entrance",
+            "^$CanReach|hc_right_entrance"
         ],
         "children": [
             {
                 "name": "Map Chest",
                 "access_rules": [
-                    "^$can_reach|hc_map_chest_room"
+                    "^$CanReach|hc_map_chest_room"
                 ],
                 "sections": [
                     {
                         "name": "Map Chest",
                         "access_rules": [
-                            "^$can_reach|HC - Map Chest"
+                            "^$CanReach|HC - Map Chest"
                         ]
                     }
                 ],
@@ -34,13 +34,13 @@
             {
                 "name": "Boomerang Chest",
                 "access_rules": [
-                    "^$can_reach|hc_boomerang_chest_room"
+                    "^$CanReach|hc_boomerang_chest_room"
                 ],
                 "sections": [
                     {
                         "name": "Boomerang Chest",
                         "access_rules": [
-                            "^$can_reach|HC - Boomerang Chest"
+                            "^$CanReach|HC - Boomerang Chest"
                         ]
                     }
                 ],
@@ -56,13 +56,13 @@
             {
                 "name": "Zelda's Chest",
                 "access_rules": [
-                    "^$can_reach|hc_zeldas_cell, ^$can_reach|hc_ball_guard_room"
+                    "^$CanReach|hc_zeldas_cell, ^$CanReach|hc_ball_guard_room"
                 ],
                 "sections": [
                     {
                         "name": "Zelda's Chest",
                         "access_rules": [
-                            "^$can_reach|HC - Zelda's Chest"
+                            "^$CanReach|HC - Zelda's Chest"
                         ]
                     }
                 ],
@@ -78,14 +78,14 @@
             {
                 "name": "Map Guard Key Drop",
                 "access_rules": [
-                    "^$can_reach|hc_map_chest_room"
+                    "^$CanReach|hc_map_chest_room"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {
                         "name": "Map Guard Key Drop",
                         "access_rules": [
-                            "^$can_reach|HC - Map Guard Key Drop"
+                            "^$CanReach|HC - Map Guard Key Drop"
                         ]
                     }
                 ],
@@ -101,14 +101,14 @@
             {
                 "name": "Boomerang Guard Key Drop",
                 "access_rules": [
-                    "^$can_reach|hc_boomerang_chest_room"
+                    "^$CanReach|hc_boomerang_chest_room"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {
                         "name": "Boomerang Guard Key Drop",
                         "access_rules": [
-                            "^$can_reach|HC - Booomerang Guard Key Drop"
+                            "^$CanReach|HC - Booomerang Guard Key Drop"
                         ]
                     }
                 ],
@@ -124,14 +124,14 @@
             {
                 "name": "Big Key Drop",
                 "access_rules": [
-                    "^$can_reach|hc_ball_guard_room"
+                    "^$CanReach|hc_ball_guard_room"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {
                         "name": "Big Key Drop",
                         "access_rules": [
-                            "^$can_reach|HC - Big Key"
+                            "^$CanReach|HC - Big Key"
                         ]
                     }
                 ],
@@ -151,20 +151,20 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$can_reach|ce_entrance",
-            "^$can_reach|ce_dropdown_entrance"
+            "^$CanReach|ce_entrance",
+            "^$CanReach|ce_dropdown_entrance"
         ],
         "children": [
             {
                 "name": "Dark Cross",
                 "access_rules": [
-                    "^$can_reach|ce_dark_cross"
+                    "^$CanReach|ce_dark_cross"
                 ],
                 "sections": [
                     {
                         "name": "Dark Cross",
                         "access_rules": [
-                            "^$can_reach|CE - Dark Cross"
+                            "^$CanReach|CE - Dark Cross"
                         ]
                     }
                 ],
@@ -180,13 +180,13 @@
             {
                 "name": "Secret Passage Left",
                 "access_rules": [
-                    "^$can_reach|ce_secret_room"
+                    "^$CanReach|ce_secret_room"
                 ],
                 "sections": [
                     {
                         "name": "Secret Passage Left",
                         "access_rules": [
-                            "^$can_reach|CE - Secret Room Left"
+                            "^$CanReach|CE - Secret Room Left"
                         ]
                     }
                 ],
@@ -202,13 +202,13 @@
             {
                 "name": "Secret Passage Middle",
                 "access_rules": [
-                    "^$can_reach|ce_secret_room"
+                    "^$CanReach|ce_secret_room"
                 ],
                 "sections": [
                     {
                         "name": "Secret Passage Middle",
                         "access_rules": [
-                            "^$can_reach|CE - Secret Room Center"
+                            "^$CanReach|CE - Secret Room Center"
                         ]
                     }
                 ],
@@ -224,13 +224,13 @@
             {
                 "name": "Secret Passage Right",
                 "access_rules": [
-                    "^$can_reach|ce_secret_room"
+                    "^$CanReach|ce_secret_room"
                 ],
                 "sections": [
                     {
                         "name": "Secret Passage Right",
                         "access_rules": [
-                            "^$can_reach|CE - Secret Room Right"
+                            "^$CanReach|CE - Secret Room Right"
                         ]
                     }
                 ],
@@ -247,13 +247,13 @@
                 "name": "Key Rat Key Drop",
                 "visibility_rules": ["key_drop_shuffle"],
                 "access_rules": [
-                    "^$can_reach|ce_rat_key_room"
+                    "^$CanReach|ce_rat_key_room"
                 ],
                 "sections": [
                     {
                         "name": "Key Rat Key Drop",
                         "access_rules": [
-                            "^$can_reach|CE - Rat Key Drop"
+                            "^$CanReach|CE - Rat Key Drop"
                         ]
                     }
                 ],
@@ -273,19 +273,19 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$can_reach|sanctuary"
+            "^$CanReach|sanctuary"
         ],
         "children": [
             {
                 "name": "Sanctuary Chest",
                 "access_rules": [
-                    "^$can_reach|sanctuary"
+                    "^$CanReach|sanctuary"
                 ],
                 "sections": [
                     {
                         "name": "Sanctuary Chest",
                         "access_rules": [
-                            "^$can_reach|Sanctuary Chest"
+                            "^$CanReach|Sanctuary Chest"
                         ]
                     }
                 ],

@@ -4,20 +4,20 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$can_reach|ip_entrance"
+            "^$CanReach|ip_entrance"
         ],
         "children": [
             {
                 "name": "Jelly Key Drop",
                 "access_rules": [
-                    "^$can_reach|ip_jelly_room"
+                    "^$CanReach|ip_jelly_room"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {
                         "name": "Jelly Key Drop",
                         "access_rules": [
-                            "^$can_reach|IP - Jelly Key Drop"
+                            "^$CanReach|IP - Jelly Key Drop"
                         ]
                     }
                 ],
@@ -33,14 +33,14 @@
             {
                 "name": "Conveyor Key Drop",
                 "access_rules": [
-                    "^$can_reach|ip_conveyor_room"
+                    "^$CanReach|ip_conveyor_room"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {
                         "name": "Conveyor Key Drop",
                         "access_rules": [
-                            "^$can_reach|IP - Conveyor Key Drop"
+                            "^$CanReach|IP - Conveyor Key Drop"
                         ]
                     }
                 ],
@@ -56,14 +56,14 @@
             {
                 "name": "Hammer Block Key Drop",
                 "access_rules": [
-                    "^$can_reach|ip_map_room"
+                    "^$CanReach|ip_map_room"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {
                         "name": "Hammer Block Key Drop",
                         "access_rules": [
-                            "^$can_reach|IP - Hammer Block Key Drop"
+                            "^$CanReach|IP - Hammer Block Key Drop"
                         ]
                     }
                 ],
@@ -79,14 +79,14 @@
             {
                 "name": "Many Pots Pot Key",
                 "access_rules": [
-                    "^$can_reach|ip_many_pots_room"
+                    "^$CanReach|ip_many_pots_room"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
                     {
                         "name": "Many Pots Pot Key",
                         "access_rules": [
-                            "^$can_reach|IP - Many Pots Key Drop"
+                            "^$CanReach|IP - Many Pots Key Drop"
                         ]
                     }
                 ],
@@ -102,13 +102,13 @@
             {
                 "name": "Compass Chest",
                 "access_rules": [
-                    "^$can_reach|ip_compass_room"
+                    "^$CanReach|ip_compass_room"
                 ],
                 "sections": [
                     {
                         "name": "Compass Chest",
                         "access_rules": [
-                            "^$can_reach|IP - Compass Chest"
+                            "^$CanReach|IP - Compass Chest"
                         ]
                     }
                 ],
@@ -124,13 +124,13 @@
             {
                 "name": "Freezor Chest",
                 "access_rules": [
-                    "^$can_reach|ip_freezor_room"
+                    "^$CanReach|ip_freezor_room"
                 ],
                 "sections": [
                     {
                         "name": "Freezor Chest",
                         "access_rules": [
-                            "^$can_reach|IP - Freezor Chest"
+                            "^$CanReach|IP - Freezor Chest"
                         ]
                     }
                 ],
@@ -146,13 +146,13 @@
             {
                 "name": "Spike Room",
                 "access_rules": [
-                    "^$can_reach|ip_spike_room"
+                    "^$CanReach|ip_spike_room"
                 ],
                 "sections": [
                     {
                         "name": "Spike Room",
                         "access_rules": [
-                            "^$can_reach|IP - Spike Chest"
+                            "^$CanReach|IP - Spike Chest"
                         ]
                     }
                 ],
@@ -168,13 +168,13 @@
             {
                 "name": "Map Chest",
                 "access_rules": [
-                    "^$can_reach|ip_map_room"
+                    "^$CanReach|ip_map_room"
                 ],
                 "sections": [
                     {
                         "name": "Map Chest",
                         "access_rules": [
-                            "^$can_reach|IP - Map Chest"
+                            "^$CanReach|IP - Map Chest"
                         ]
                     }
                 ],
@@ -190,13 +190,13 @@
             {
                 "name": "Iced T Room",
                 "access_rules": [
-                    "^$can_reach|ip_iced_t_room"
+                    "^$CanReach|ip_iced_t_room"
                 ],
                 "sections": [
                     {
                         "name": "Iced T Room",
                         "access_rules": [
-                            "^$can_reach|IP - Iced T Chest"
+                            "^$CanReach|IP - Iced T Chest"
                         ]
                     }
                 ],
@@ -212,13 +212,13 @@
             {
                 "name": "Big Key Chest",
                 "access_rules": [
-                    "^$can_reach|ip_big_key_room"
+                    "^$CanReach|ip_big_key_room"
                 ],
                 "sections": [
                     {
                         "name": "Big Key Chest",
                         "access_rules": [
-                            "^$can_reach|IP - Big Key Chest"
+                            "^$CanReach|IP - Big Key Chest"
                         ]
                     }
                 ],
@@ -234,13 +234,13 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "^$can_reach|ip_big_chest_room"
+                    "^$CanReach|ip_big_chest_room"
                 ],
                 "sections": [
                     {
                         "name": "Big Chest",
                         "access_rules": [
-                            "^$can_reach|IP - Big Chest"
+                            "^$CanReach|IP - Big Chest"
                         ]
                     }
                 ],
@@ -256,13 +256,13 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "^$can_reach|ip_boss_room"
+                    "^$CanReach|ip_boss_room"
                 ],
                 "sections": [
                     {
                         "name": "Boss Item",
                         "access_rules": [
-                            "^$can_reach|IP - Boss"
+                            "^$CanReach|IP - Boss"
                         ],
                         "item_count": 1,
                         "hosted_item": "ip_boss, icepalace"
