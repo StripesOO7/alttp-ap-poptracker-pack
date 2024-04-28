@@ -146,4 +146,6 @@ ITEM_MAPPING = {
 -- [14]   =   {{"Bee"}, ""},
 -- [66]   =   {{"Small Heart"}, ""},
 [74]   =   {{"flute"}, "progressive"},
+[76] = {{"bombs"}, "consumable"}, -- +50 Bombs capacity upgrade
+[77] = {{"bow"}, "consumable"} -- +70 Arrows capacity upgrade
 }
