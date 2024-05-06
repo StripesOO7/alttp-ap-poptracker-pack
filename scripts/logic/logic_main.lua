@@ -119,6 +119,7 @@ function alttp_location:connect_one_way_entrance(name, exit, rule)
     if rule == nil then
         rule = always
     end
+    -- print(name, "wann wird das aufgerufen?", exit.name)
     self.exits[#self.exits + 1] = { exit, rule }
 end
 
@@ -224,6 +225,9 @@ entry_point:connect_one_way(darkworld_spawns, function() return inverted() end)
 -- 
 function stateChanged()
     stale = true
+    -- ScriptHost:LoadScript("scripts/logic/logic_helpers.lua")
+    -- ScriptHost:LoadScript("scripts/logic/logic_main.lua")
+    -- ScriptHost:LoadScript("scripts/logic_import.lua")
 end
 
 ScriptHost:AddWatchForCode("stateChanged", "*", stateChanged)

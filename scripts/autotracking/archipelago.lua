@@ -139,9 +139,7 @@ function onItem(index, item_id, item_name, player_number)
                 end
             elseif item[2] == "consumable" then
                 -- print("consumable")
-                if item_id == 82 or item_id == 84 then -- +10 capacity upgrades
-                    item_obj.AcquiredCount = item_obj.AcquiredCount + (2*item_obj.Increment)
-                elseif item_id == 76 or item_id == 77 then -- +50/70 capacity upgrades
+                if item_id == 76 or item_id == 77 then -- +50/70 capacity upgrades
                     item_obj.AcquiredCount = item_obj.MaxCount
                 else
                     item_obj.AcquiredCount = item_obj.AcquiredCount + item_obj.Increment
