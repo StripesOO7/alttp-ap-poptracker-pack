@@ -773,7 +773,10 @@ eastern_palace_area:connect_two_ways_entrance("Eastern Palace Entrance", ep_entr
 sahasralahs_hut:connect_one_way("Sahasrahla", function() return has("greenpendant") end)
 sahasralahs_hut:connect_two_ways(sahasralahs_hut_back, function() 
     return all(
-        has("bombs"), 
+        any(
+            has("bombs"),
+            has("boots")
+        ),
         can_interact("light",1 )
     ) 
 end)
