@@ -110,14 +110,14 @@
                 ],
                 "sections": [
                     {
-                        "name": "Rescue Dwarf"
+                        "name": "Rescue Dwarf",
                         // "access_rules": [
                         //     "$openOrStandard, titans",
                         //     "inverted, @Lightworld, mirror"
                         // ]
-                        // "access_rules":[
-                        //     "^$CanReach|Rescue Dwarf"
-                        // ]
+                        "access_rules":[
+                            "^$CanReach|Rescue Dwarf"
+                        ]
                     }
                 ],
                 "map_locations": [
