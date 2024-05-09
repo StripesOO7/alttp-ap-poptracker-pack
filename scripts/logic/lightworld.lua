@@ -1125,11 +1125,14 @@ paradox_cave_bottom:connect_one_way(paradox_cave_bottom_back)
 paradox_cave_bottom:connect_two_ways(paradox_cave_top)
 
 paradox_cave_bottom_back:connect_one_way(light_death_mountain_shop)
-paradox_cave_bottom_back:connect_two_ways_entrance_door_stuck("Paradox Cave Top Back", paradox_cave_top_back, function() return true end, function() 
-    return any(
-        has("bombs"),
-        has("boomerang"),
-        has("somaria")
+paradox_cave_bottom_back:connect_two_ways_entrance_door_stuck("Paradox Cave Top Back", paradox_cave_top_back, function() 
+    return all(
+        any(
+            has("bombs"),
+            has("boomerang"),
+            has("somaria")
+        ),
+        can_interact("light",1 )
     )
 end)
 light_death_mountain_shop:connect_two_ways(paradox_cave_bottom_back, function() return has("mirror") end) --block delete with mirror
