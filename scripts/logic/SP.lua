@@ -62,11 +62,11 @@ sp_main_room:connect_one_way("SP - Big Chest", function() return has("sp_bigkey"
 sp_second_trench:connect_two_ways(sp_hallway_after_second_trench, function(keys) 
     return any(
         all(
-            has("sp_smallkey", keys, 1, keys + 1, 3),
+            has("sp_smallkey", keys, 1, keys + 1, 4),
             checkGlitches(1)
         ),
         all(
-            has("sp_smallkey", keys, 1, keys + 1, 4)
+            has("sp_smallkey", keys, 1, keys + 1, 5)
         )
     ), KDSreturn(keys, keys + 1)
 end)
