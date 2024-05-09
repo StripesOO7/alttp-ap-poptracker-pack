@@ -1124,7 +1124,7 @@
                     {
                         "name": "Lower",
                         "access_rules": [
-                            "^$CanReach|paradox_cave_bottom_back"
+                            "^$CanReach|paradox_cave_top_back"
                         ],
                         "clear_as_group": false,
                         "item_count": 5
@@ -1132,7 +1132,7 @@
                     {
                         "name": "Upper",
                         "access_rules": [
-                            "^$CanReach|paradox_cave_top_back"
+                            "^$CanReach|paradox_cave_bottom_back"
                         ],
                         "clear_as_group": false,
                         "item_count": 2
