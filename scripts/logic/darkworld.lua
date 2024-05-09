@@ -530,7 +530,7 @@ dark_potion_shop:connect_one_way(dark_chapel_area, function()
 end)
 dark_potion_shop:connect_one_way(catfish_area, function()
     return all(
-        has("titans"),
+        has("glove"),
         can_interact("dark",1 )
     )
 end)
