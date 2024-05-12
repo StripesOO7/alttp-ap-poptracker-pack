@@ -515,6 +515,12 @@ dp_left_entrance:connect_two_ways_entrance("Deser Palace Left Entrance", desert_
 dp_right_entrance:connect_one_way(desert_area)
 
 desert_area:connect_two_ways(bombos_tablet_ledge, function() return inverted() end)
+desert_area:connect_one_way(mire_area, function()
+    return all(
+        inverted(),
+        canChangeWorldWithMirror()
+    )
+end)
 
 bombos_tablet_ledge:connect_one_way(desert_area)
 bombos_tablet_ledge:connect_one_way(bombos_tablet)
