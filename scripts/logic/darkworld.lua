@@ -43,7 +43,7 @@ teleporter_at_village_of_the_outcast:connect_one_way(teleporter_at_kakariko_vill
 end)
 
 
-teleporter_at_dark_turtle_rock:connect_one_way(teleporter_at_light_turtle_rock, function() return inverted() end)
+teleporter_at_dark_turtle_rock:connect_one_way(teleporter_at_light_turtle_rock, function() return all(inverted(), has("titans")) end)
 
 teleporter_at_dark_death_mountain_left_bottom:connect_one_way(teleporter_at_light_death_mountain_left_bottom, function() return inverted() end)
 
@@ -788,7 +788,6 @@ tr_eye_bridge_entrance:connect_two_ways_entrance("Light Eyebridge Connector", li
     ) 
 end)
 dark_death_mountain_right_top:connect_one_way(tr_eye_bridge_entrance, function() return inverted() end)
-dark_death_mountain_right_top:connect_one_way(mimic_cave_ledge, function() return inverted() end)
 
 
 -- dark_death_mountain_left_bottom
