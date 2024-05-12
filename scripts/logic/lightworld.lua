@@ -674,6 +674,13 @@ hobo:connect_one_way("Hobo Item")
 
 icerod_cave:connect_one_way("Icerod Chest", function() return can_interact("light",1 ) end)
 
+light_lake_hylia:connect_two_ways(lake_hylia_island, function()
+    return all(
+        inverted(),
+        canSwim()
+    )
+end)
+
 lake_hylia_island:connect_one_way("Lake Hylia Item")
 
 
@@ -1130,7 +1137,11 @@ paradox_cave_bottom_back:connect_two_ways_entrance_door_stuck("Paradox Cave Top 
         any(
             has("bombs"),
             has("boomerang"),
-            has("somaria")
+            has("somaria"),
+            has("mastersword"),
+            has("icerod"),
+            has("firerod"),
+            has("bow")
         ),
         can_interact("light",1 )
     )
