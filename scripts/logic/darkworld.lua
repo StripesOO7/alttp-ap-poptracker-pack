@@ -460,8 +460,8 @@ red_shield_shop:connect_one_way("Red Shield Shop Right")
 
 dark_lumpberjacks:connect_two_ways_entrance("Dark Lumberjacks Shop", dark_lumpberjacks_shop)
 dark_lumpberjacks:connect_two_ways_entrance("Red Shield Shop", red_shield_shop)
-dark_lumpberjacks:connect_two_ways_entrance("Bumper Cave", dark_bumper_cave, function() return all(has("glove"), can_interact("dark",1 )) end)
-dark_bumper_cave:connect_one_way_entrance("Normal Bumpercave", dark_bumper_cave_ledge,function() return all(has("cape"), can_interact("dark",1 )) end)
+dark_lumpberjacks:connect_two_ways_entrance("Bumper Cave", dark_bumper_cave, function() return all(openOrStandard(), has("glove"), can_interact("dark",1 )) end)
+dark_bumper_cave:connect_one_way_entrance("Normal Bumpercave", dark_bumper_cave_ledge,function() return all(openOrStandard(), has("cape"), can_interact("dark",1 )) end)
 dark_bumper_cave_ledge:connect_one_way_entrance("Reverse Bumpercave", dark_bumper_cave, function() 
     return all(
         any(
@@ -726,9 +726,8 @@ end)
 -- dark_death_mountain_right_top:connect_one_way()
 dark_death_mountain_right_top:connect_one_way(teleporter_at_dark_turtle_rock, function() 
     return all(
-        inverted(),
-        has("titans")
-    ) 
+        inverted()
+    )
 end)
 teleporter_at_dark_turtle_rock:connect_one_way(dark_death_mountain_right_top)
 
@@ -789,6 +788,7 @@ tr_eye_bridge_entrance:connect_two_ways_entrance("Light Eyebridge Connector", li
     ) 
 end)
 dark_death_mountain_right_top:connect_one_way(tr_eye_bridge_entrance, function() return inverted() end)
+dark_death_mountain_right_top:connect_one_way(mimic_cave_ledge, function() return inverted() end)
 
 
 -- dark_death_mountain_left_bottom

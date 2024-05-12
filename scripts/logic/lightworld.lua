@@ -124,7 +124,12 @@ kakariko_village:connect_two_ways_entrance("Kakariko Frontside Pub", kakariko_fr
 kakariko_village:connect_two_ways_entrance("Kakariko Shop", kakariko_shop)
 kakariko_village:connect_two_ways_entrance("Kakariko Magic Bat Cave", magic_bat_cave)
 kakariko_village:connect_two_ways_entrance("Kakariko Dwarf Smiths", darf_smiths)
-
+kakariko_village:connect_one_way(purple_chest_pickup, function()
+    return all(
+        inverted(),
+        canChangeWorldWithMirror()
+    )
+end)
 
 
 kakariko_well_hole:connect_one_way(kakariko_well_item)
@@ -590,7 +595,7 @@ light_bumper_cave_ledge:connect_one_way(dark_bumper_cave_ledge, function()
     return all(
         canChangeWorldWithMirror(),
         inverted()
-    ) 
+    )
 end)
 
 
