@@ -1,6 +1,24 @@
 {
 	"versions": [
 		{
+			"package_version": "0.2.5",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.2.5/alttp-ap-tracker-v0.2.5.zip",
+			"sha256": "ccf90f707eec45939446d139c2d36ec78b805955919dd9325fe3cebd9274fc25",
+			"changelog": [
+				"- fixed locations behind sequencebreaks being shown as normally accessible",
+				"- adds single capacity upgrade introduced in 0.4.5 that got missed",
+				"- fixed connection issue from pod area to big bomb shop area",
+				"- fixed some inverted connetors missing such as desert->mire area or dark DM stairs",
+				"- removed duplicate medallio mapping",
+				"- fixed misspelling of AP in the pack name",
+				"- internal functions overhaul of some sort....neds to be done further",
+				"- fixed catfish needing titans instead of power gloves",
+				"- fixed paradox cave nameing and rules",
+				"- fixes SP key requirements for after second trench",
+				"- added new rules system to rescue dwarf"
+			]
+		},
+		{
 			"package_version": "0.2.4",
 			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.2.4/alttp-ap-tracker-v0.2.4.zip",
 			"sha256": "c70d57f7d768daae144b3281a8ad31ef47f367e6cb9336783b10b8ffc706ea23",
