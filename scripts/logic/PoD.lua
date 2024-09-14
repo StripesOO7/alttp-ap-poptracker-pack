@@ -68,6 +68,7 @@ pod_switch_room_top:connect_one_way("PoD - Arena Ledge", function() return has("
 pod_switch_room_bottom:connect_two_ways(pod_boss_room, function(keys) 
     return all(
         has("bow"),
+        has("hammer"),
         darkRooms(),
         has("pod_bigkey"),
         any(
@@ -113,6 +114,7 @@ pod_collapsin_bridge:connect_two_ways(pod_dark_maze, function(keys)
     return all(
         pod_compass_room:accessibility(),
         darkRooms(),
+        has("lamp"),
         has("pod_smallkey", keys + 1, 6, keys + 1, 6)
     ), KDSreturn(keys + 1, keys + 1)
 end)
