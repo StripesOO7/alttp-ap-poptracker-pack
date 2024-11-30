@@ -397,6 +397,12 @@ south_of_village_of_the_outcast:connect_one_way(dark_flute_map, function()
 end)
 south_of_village_of_the_outcast:connect_two_ways_entrance("Dark Archery", dark_archery_minigame)
 south_of_village_of_the_outcast:connect_one_way("Digging Game", function () return can_interact("dark",1 ) end)
+south_of_village_of_the_outcast:connect_one_way(twin_house_left, function() 
+    return all(
+        openOrStandard(),
+        canChangeWorldWithMirror()
+    )
+end)
 
 -- south_of_village_of_the_outcast:connect_one_way(mire_area) -- glitches
 
