@@ -1118,7 +1118,9 @@
             {
                 "name": "Paradox Cave",
                 "access_rules": [
-                    "^$CanReach|paradox_cave_top"
+                    "^$CanReach|paradox_cave_top_entrace",
+                    "^$CanReach|paradox_cave_bottom_entrace",
+                    "^$CanReach|paradox_cave_bottom_shop_entrance"
                 ],
                 "sections": [
                     {
@@ -1132,7 +1134,7 @@
                     {
                         "name": "Upper",
                         "access_rules": [
-                            "^$CanReach|paradox_cave_bottom_back"
+                            "^$CanReach|Paradox Cave Bottom Left"
                         ],
                         "clear_as_group": false,
                         "item_count": 2

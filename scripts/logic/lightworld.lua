@@ -1088,12 +1088,12 @@ teleporter_at_dark_death_mountain_right_bottom:connect_one_way(light_death_mount
 -- light_death_mountain_right_bottom:connect_one_way()
 
 light_death_mountain_right_bottom:connect_two_ways_entrance("Spiral Cave Bottom Entrance", spiral_cave_bottom)
-light_death_mountain_right_bottom:connect_two_ways_entrance("Light Death Mountain Shop", light_death_mountain_shop)
-light_death_mountain_right_bottom:connect_two_ways_entrance("Paradox Cave Bottom Entrance", paradox_cave_bottom)
+light_death_mountain_right_bottom:connect_two_ways_entrance("Paradox Cave Bottom Entrance", paradox_cave_bottom_entrance)
 -- light_death_mountain_right_bottom:connect_two_ways_entrance("useless cave1")
 -- light_death_mountain_right_bottom:connect_two_ways_entrance("useless cave2")
 
-paradox_cave_bottom:connect_one_way(paradox_cave_top)
+-- paradox_cave_bottom:connect_one_way(paradox_cave_top)
+-- paradox_cave_bottom:connect_two_ways_entrance("Light Death Mountain Shop", light_death_mountain_shop, function() return has("bombs") end)
 
 
 
@@ -1124,7 +1124,7 @@ light_death_mountain_right_top:connect_one_way(light_death_mountain_left_top, fu
 -- light_death_mountain_right_top:connect_one_way()
 -- light_death_mountain_right_top:connect_one_way()
 
-light_death_mountain_right_top:connect_two_ways_entrance("Paradox Cave Top Entrance", paradox_cave_top)
+light_death_mountain_right_top:connect_two_ways_entrance("Paradox Cave Top Entrance", paradox_cave_top_entrance)
 light_death_mountain_right_top:connect_two_ways_entrance("Spiral Cave Top Entrance", spiral_cave_top)
 light_death_mountain_right_top:connect_one_way(mimic_cave_ledge, function() return inverted() end)
 
@@ -1146,15 +1146,15 @@ mimic_cave:connect_one_way("Mimic Cave Chest", function()
     ) 
 end)
 
-paradox_cave_bottom:connect_one_way(paradox_cave_bottom_back)
-paradox_cave_bottom:connect_two_ways(paradox_cave_top)
+paradox_cave_bottom_entrance:connect_one_way(paradox_cave_bottom_back) -- fall down
+paradox_cave_bottom_entrance:connect_two_ways(paradox_cave_top_entrance) -- stairs up left
 
-paradox_cave_bottom_back:connect_one_way(light_death_mountain_shop)
+paradox_cave_bottom_back:connect_one_way(paradox_cave_bottom_shop_entrance) --push block down
 paradox_cave_bottom_back:connect_two_ways_entrance_door_stuck("Paradox Cave Top Back", paradox_cave_top_back, function() 
     return all(
         any(
             has("bombs"),
-            has("boomerang"),
+            has("boomerangs"),
             has("somaria"),
             has("mastersword"),
             has("icerod"),
@@ -1163,8 +1163,11 @@ paradox_cave_bottom_back:connect_two_ways_entrance_door_stuck("Paradox Cave Top 
         ),
         can_interact("light",1 )
     )
-end)
-light_death_mountain_shop:connect_two_ways(paradox_cave_bottom_back, function() return has("mirror") end) --block delete with mirror
+end) -- go upstairs from 2x to the 5 chests
+
+paradox_cave_bottom_shop_entrance:connect_two_ways(paradox_cave_bottom_back, function() return has("mirror") end) --block delete with mirror
+paradox_cave_bottom_shop_entrance:connect_one_way(light_death_mountain_shop, function() return has("bombs") end) -- go to shop and bomb it open
+
 light_death_mountain_right_top:connect_one_way(dark_death_mountain_right_top, function() 
     return all(
         canChangeWorldWithMirror(), 
