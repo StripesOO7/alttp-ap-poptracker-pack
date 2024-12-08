@@ -322,7 +322,12 @@ sanctuary_area:connect_two_ways(graveyard_ledge, function() return inverted() en
 graveyard_ledge:connect_two_ways(graveyard_ledge_inside)
 graveyard_ledge:connect_one_way(sanctuary_area, function() return openOrStandard() end)
 
-graveyard_ledge_inside:connect_one_way("Graveyard Ledge", function() return can_interact("light",1 ) end)
+graveyard_ledge_inside:connect_one_way("Graveyard Ledge", function() 
+    return all(
+    can_interact("light",1 ),
+    has("bombs")
+    )
+end)
 
 
 -- castle_escape_dropdown_room
