@@ -432,7 +432,8 @@
             {
                 "name": "Desert Ledge",
                 "access_rules": [
-                    "^$CanReach|desert_ledge"
+                    "^$CanReach|desert_ledge",
+                    "^$CanReach|desert_area"
                 ],
                 "sections": [
                     {
@@ -1118,8 +1119,8 @@
             {
                 "name": "Paradox Cave",
                 "access_rules": [
-                    "^$CanReach|paradox_cave_top_entrace",
-                    "^$CanReach|paradox_cave_bottom_entrace",
+                    "^$CanReach|paradox_cave_top_entrance",
+                    "^$CanReach|paradox_cave_bottom_entrance",
                     "^$CanReach|paradox_cave_bottom_shop_entrance"
                 ],
                 "sections": [

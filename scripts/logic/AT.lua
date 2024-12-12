@@ -5,6 +5,7 @@ local at_dark_maze = alttp_location.new("at_dark_maze")
 local at_dark_archer_key_drop = alttp_location.new("at_dark_archer_key_drop")
 local at_circle_of_pots = alttp_location.new("at_circle_of_pots")
 local at_aga1 = alttp_location.new("at_aga1")
+local at_pre_curtain = alttp_location.new("at_pre_curtain")
 
 at_entrance:connect_one_way(at_golden_guards, function() return all(can_interact("light", 1), openOrStandard()) end)
 at_entrance:connect_one_way(at_golden_guards, function() return all(can_interact("dark", 1), inverted()) end)
@@ -31,14 +32,14 @@ at_dark_archer_key_drop:connect_two_ways(at_circle_of_pots, function(keys)
 end)
 at_dark_archer_key_drop:connect_one_way("AT - Dark Archer Key Drop", function() return dealDamage() end)
 
-at_circle_of_pots:connect_two_ways(at_aga1, function(keys) 
+at_circle_of_pots:connect_two_ways(at_pre_curtain, function(keys) 
+    print(canRemoveCurtains())
     return all(
-        has("at_smallkey", keys, 2, keys + 1, 4),
-        canRemoveCurtains()
+        has("at_smallkey", keys, 2, keys + 1, 4)
     ), KDSreturn(keys, keys + 1)
 end)
-at_circle_of_pots:connect_one_way("AT - Circle of Pots Key Drop")
-
+at_circle_of_pots:connect_one_way("AT - Circle of Pots Key Drop") --functoin() return can_interact(" light",1) end)
+at_pre_curtain:connect_one_way(at_aga1, function() print(canRemoveCurtains()) return canRemoveCurtains() end)
 at_aga1:connect_one_way("AT - Aga1", function() 
     return any(
         has("sword"),

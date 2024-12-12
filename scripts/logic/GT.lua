@@ -53,7 +53,7 @@ gt_bottom_bonk_pit_room:connect_two_ways(gt_bottom_map_room, function(keys)
     return all(
         has("hookshot"),
         has("gt_smallkey", keys, 3, keys + 1, 5)
-    ), KDSreturn(keys, keys + 1) 
+    ), KDSreturn(keys, keys + 1)
 end)
 gt_bottom_bonk_pit_room:connect_two_ways(gt_bottom_double_switch_room, function() return has("hookshot") end)
 

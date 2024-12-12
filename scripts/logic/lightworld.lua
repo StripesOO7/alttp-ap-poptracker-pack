@@ -503,16 +503,10 @@ end)
 checkerboard_cave:connect_one_way("Checkerboard Cave Item")
 
 
-desert_ledge:connect_one_way("Desert Ledge Item", function() 
-    return any(
-        CanReach(desert_ledge),
-        all(
-            CanReach(desert_area),
-            AccessibilityLevel.Inspect
-        )
-    )
-end)
+desert_ledge:connect_one_way("Desert Ledge Item")
 desert_ledge:connect_one_way(desert_area)
+
+desert_area:connect_one_way("Desert Ledge Item", function() return AccessibilityLevel.Inspect end)
 
 dp_back_entrance:connect_two_ways_entrance("Deser Palace Back Entrance", desert_ledge, function() 
     return all(
