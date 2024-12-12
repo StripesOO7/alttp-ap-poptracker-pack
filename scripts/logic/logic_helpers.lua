@@ -106,12 +106,17 @@ function owDungeonChecks(...)
     availale = 0
     local sequence_breakable 
     sequence_breakable= 0
+    local inspect
+    inspect = 0
+    
     for _, location in ipairs(locations) do
        
         -- access_check =  CanReach(location) 
         access_check = Tracker:FindObjectForCode(location).AccessibilityLevel
+        if access_check == 3 then
+            inspect = inspect + 1
         -- print(location, access_check)
-        if access_check == 5 then
+        elseif access_check == 5 then
             sequence_breakable = sequence_breakable+1
         elseif access_check == 6 then
             availale = availale + 1
@@ -121,6 +126,8 @@ function owDungeonChecks(...)
         return AccessibilityLevel.Normal
     elseif sequence_breakable > 0 then
         return AccessibilityLevel.SequenceBreak
+    elseif inspect > 0 then
+        return AccessibilityLevel.Inspect
     else
         return AccessibilityLevel.None
     end
@@ -185,9 +192,9 @@ end
 
 function checkSwordless()
     if Tracker:ProviderCountForCode("swordless") > 0 then
-        return 1
+        return true
     else
-        return Tracker:ProviderCountForCode("sword")
+        return Tracker:FindObjectForCode("sword").Active
     end
 end
 
@@ -209,14 +216,18 @@ end
 
 function canClearAgaTowerBarrier()
     -- With cape, we can always get through
-    if Tracker:ProviderCountForCode("cape") > 0 then
-        return 1
+    if Tracker:FindObjectForCode("cape").Active then
+        return true
     end
     -- Otherwise we need master sword or a hammer depending on the mode
     if Tracker:ProviderCountForCode("swordless") > 0 then
-        return Tracker:ProviderCountForCode("hammer")
+        return Tracker:FindObjectForCode("hammer").Active
     else
-        return Tracker:ProviderCountForCode("mastersword")
+        if Tracker:ProviderCountForCode("mastersword") > 0 then
+            return true
+        else
+            return false
+        end
     end    
 end
 
@@ -234,7 +245,7 @@ function canSwim(itemNeeded) --fake flippers
     elseif Tracker:FindObjectForCode("glitches").CurrentStage > 0 and itemNeeded == nil then 
         return true
     else
-        return Tracker:ProviderCountForCode("flippers")
+        return Tracker:FindObjectForCode("flippers").Active
     end
 end
 
@@ -275,9 +286,9 @@ function checkRequirements(reference, check_count)
     local count = Tracker:ProviderCountForCode(check_count)
 
     if count >= reqCount then
-        return 1
+        return true
     else
-        return 0
+        return false
     end
 end
 

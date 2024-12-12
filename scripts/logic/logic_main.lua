@@ -193,6 +193,8 @@ function alttp_location:discover(accessibility, keys)
                 -- print(access)
                 if access == 5 then
                     access = AccessibilityLevel.SequenceBreak
+                elseif access == 3 then
+                    access = AccessibilityLevel.Inspect
                 elseif access == true then
                     access = AccessibilityLevel.Normal
                 elseif access == false then
