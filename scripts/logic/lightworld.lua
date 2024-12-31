@@ -586,10 +586,6 @@ end)
  -- rescue old man
 
 inverted_bumper_cave:connect_one_way(light_bumper_cave_ledge, function() 
-    print(inverted())
-    print(has("cape"))
-    print(can_interact("light",1 )) 
-    print(all(inverted(), has("cape"), can_interact("light",1 )))
     return all(inverted(), has("cape"), can_interact("light",1 )) end)
 light_bumper_cave_ledge:connect_one_way(lumberjacks_area)
 

@@ -32,14 +32,13 @@ at_dark_archer_key_drop:connect_two_ways(at_circle_of_pots, function(keys)
 end)
 at_dark_archer_key_drop:connect_one_way("AT - Dark Archer Key Drop", function() return dealDamage() end)
 
-at_circle_of_pots:connect_two_ways(at_pre_curtain, function(keys) 
-    print(canRemoveCurtains())
+at_circle_of_pots:connect_two_ways(at_pre_curtain, function(keys)
     return all(
         has("at_smallkey", keys, 2, keys + 1, 4)
     ), KDSreturn(keys, keys + 1)
 end)
 at_circle_of_pots:connect_one_way("AT - Circle of Pots Key Drop") --functoin() return can_interact(" light",1) end)
-at_pre_curtain:connect_one_way(at_aga1, function() print(canRemoveCurtains()) return canRemoveCurtains() end)
+at_pre_curtain:connect_one_way(at_aga1, function()return canRemoveCurtains() end)
 at_aga1:connect_one_way("AT - Aga1", function() 
     return any(
         has("sword"),
