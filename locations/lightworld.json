@@ -902,7 +902,7 @@
             {
                 "name": "Bumper Cave",
                 "access_rules": [
-                    "^$CanReach|light_bumper_cave_ledge"
+                    // "^$CanReach|light_bumper_cave_ledge"
                 ],
                 "visibility_rules": ["inverted"],
                 "sections": [
@@ -916,10 +916,16 @@
                 ],
                 "map_locations": [
                     {
-                        "map": "Lightworld",
-                        "x": 713,
-                        "y": 352,
+                        "map": "Darkworld",
+                        "x": 670,
+                        "y": 295,
                         "size": 32
+                    // },
+                    // {
+                    //     "map": "Lightworld",
+                    //     "x": 705,
+                    //     "y": 345,
+                    //     "size": 32
                     }
                 ]
             },

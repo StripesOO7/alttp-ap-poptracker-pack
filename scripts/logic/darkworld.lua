@@ -467,6 +467,17 @@ red_shield_shop:connect_one_way("Red Shield Shop Right")
 dark_lumpberjacks:connect_two_ways_entrance("Dark Lumberjacks Shop", dark_lumpberjacks_shop)
 dark_lumpberjacks:connect_two_ways_entrance("Red Shield Shop", red_shield_shop)
 dark_lumpberjacks:connect_two_ways_entrance("Bumper Cave", dark_bumper_cave, function() return all(openOrStandard(), has("glove"), can_interact("dark",1 )) end)
+dark_lumpberjacks:connect_one_way("Bumper Cave Item", function() return AccessibilityLevel.Inspect end)
+dark_lumpberjacks:connect_one_way(dark_death_mountain_ascent_ledge, function() 
+    return all(
+        inverted(),
+        has("glove")
+    )
+end)
+dark_death_mountain_ascent_ledge:connect_one_way(dark_lumpberjacks)
+dark_death_mountain_ascent_ledge:connect_one_way(dark_death_mountain_ascent, function() return darkRooms() end)
+dark_death_mountain_ascent:connect_two_ways_entrance("Upper Dark Death Mountain Ascent", dark_death_mountain_left_bottom, function() return darkRooms() end)
+
 dark_bumper_cave:connect_one_way_entrance("Normal Bumpercave", dark_bumper_cave_ledge,function() return all(openOrStandard(), has("cape"), can_interact("dark",1 )) end)
 dark_bumper_cave_ledge:connect_one_way_entrance("Reverse Bumpercave", dark_bumper_cave, function() 
     return all(
@@ -793,7 +804,8 @@ tr_eye_bridge_entrance:connect_two_ways_entrance("Light Eyebridge Connector", li
         canChangeWorldWithMirror()
     ) 
 end)
-dark_death_mountain_right_top:connect_one_way(tr_eye_bridge_entrance, function() return inverted() end)
+-- dark_death_mountain_lonely_ledge:connect_one_way(tr_eye_bridge_entrance, function() return inverted() end)
+dark_death_mountain_right_top:connect_one_way(dark_death_mountain_right_bottom)
 
 
 -- dark_death_mountain_left_bottom

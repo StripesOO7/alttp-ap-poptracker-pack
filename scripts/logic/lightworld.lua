@@ -576,7 +576,7 @@ lumberjacks_hole:connect_one_way(lumberjacks_item)
 lumberjacks_item:connect_one_way(lumberjacks_cave)
 lumberjacks_item:connect_one_way("Lumberjacks Item")
 
-lumberjacks_area:connect_two_ways_entrance("Lower Light Death Mountain Ascent Ledge", death_mountain_ascent_ledge, function() 
+lumberjacks_area:connect_two_ways_entrance("Lower Light Death Mountain Ascent Ledge", light_death_mountain_ascent_ledge, function() 
     return all(
         has("glove"), 
         can_interact("light",1 )
@@ -585,11 +585,15 @@ end)
 
  -- rescue old man
 
-lumberjacks_area:connect_two_ways(light_bumper_cave_ledge, function() return inverted() end)
-
+inverted_bumper_cave:connect_one_way(light_bumper_cave_ledge, function() 
+    print(inverted())
+    print(has("cape"))
+    print(can_interact("light",1 )) 
+    print(all(inverted(), has("cape"), can_interact("light",1 )))
+    return all(inverted(), has("cape"), can_interact("light",1 )) end)
 light_bumper_cave_ledge:connect_one_way(lumberjacks_area)
 
-light_bumper_cave_ledge:connect_two_ways_entrance("Light Bumper Cave", light_bumper_cave)
+-- light_bumper_cave_ledge:connect_one_way_entrance("Light Bumper Cave", inverted_bumper_cave, function() return inverted() end)
 light_bumper_cave_ledge:connect_one_way(dark_bumper_cave_ledge, function() 
     return all(
         canChangeWorldWithMirror(),
@@ -687,7 +691,8 @@ icerod_cave:connect_one_way("Icerod Chest", function() return can_interact("ligh
 light_lake_hylia:connect_two_ways(lake_hylia_island, function()
     return all(
         inverted(),
-        canSwim()
+        canSwim(),
+        has("pearl")
     )
 end)
 
@@ -970,7 +975,17 @@ light_death_mountain_left_bottom:connect_one_way(light_flute_map, function()
     ) 
 end)
 -- light_death_mountain_left_bottom:connect_one_way()
-death_mountain_ascent_ledge:connect_one_way(light_death_mountain_ascent, function() return darkRooms() end)
+light_death_mountain_ascent_ledge:connect_one_way(light_death_mountain_ascent, function() 
+    return all(
+        darkRooms(), 
+        openOrStandard()
+    )
+end)
+light_death_mountain_ascent_ledge:connect_one_way(inverted_bumper_cave, function() 
+    return all(
+        inverted()
+    )
+end)
 light_death_mountain_ascent:connect_two_ways_entrance("Upper Light Death Mountain Ascent", light_death_mountain_left_bottom, function() return darkRooms() end)
 
 light_death_mountain_left_bottom:connect_two_ways_entrance("Old Man Cave Entrance", old_man_cave)
@@ -1121,6 +1136,7 @@ light_death_mountain_right_top:connect_one_way(light_death_mountain_left_top, fu
 light_death_mountain_right_top:connect_two_ways_entrance("Paradox Cave Top Entrance", paradox_cave_top_entrance)
 light_death_mountain_right_top:connect_two_ways_entrance("Spiral Cave Top Entrance", spiral_cave_top)
 light_death_mountain_right_top:connect_one_way(mimic_cave_ledge, function() return inverted() end)
+light_death_mountain_right_top:connect_one_way(light_eyebridge_fairy, function() return inverted() end)
 
 tr_eye_bridge_entrance:connect_one_way_entrance("Light Eyebridge Fairy", light_eyebridge_fairy, function() 
     return all(
@@ -1128,9 +1144,15 @@ tr_eye_bridge_entrance:connect_one_way_entrance("Light Eyebridge Fairy", light_e
         openOrStandard()
     ) 
 end)
+light_eyebridge_fairy:connect_one_way(tr_eye_bridge_entrance, function() 
+    return all(
+        inverted(), 
+        canChangeWorldWithMirror()
+    )
+end)
 
 spiral_cave_top:connect_one_way(spiral_cave_bottom)
-spiral_cave_top:connect_one_way("Spiral Cave Item")
+spiral_cave_top:connect_one_way("Spiral Cave Item", function() return can_interact("light",1 ) end)
 
 mimic_cave_ledge:connect_two_ways_entrance("Mimic Cave Entrance", mimic_cave)
 mimic_cave:connect_one_way("Mimic Cave Chest", function() 
