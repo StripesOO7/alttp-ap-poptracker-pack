@@ -511,13 +511,13 @@
             {
                 "name": "Mire Shed",
                 "access_rules": [ 
-                    "^$CanReach|mire_shed_left"
+                    "^$CanReach|Mire Shed_Left"
                 ],
                 "sections": [
                     {
                         "name": "Shed",
                         "access_rules":[
-                            "^$CanReach|mire_shed_left"
+                            "^$CanReach|Mire Shed_Left"
                         ],
                         "clear_as_group": false,
                         "item_count": 2
