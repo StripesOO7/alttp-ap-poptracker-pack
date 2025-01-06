@@ -224,7 +224,12 @@ end)
 
 -- dark_lake_hylia
 -- dark_lake_hylia:connect_one_way(big_bomb_shop_area)
-dark_lake_hylia:connect_one_way(ice_palace)
+-- dark_lake_hylia:connect_one_way(ice_palace, function()
+--     return all(
+--         has("flippers"),
+--         can_interact("dark",1)
+--     )
+-- end)
 dark_lake_hylia:connect_one_way(dark_flute_map, function() 
     return all(
         has("flute"),
@@ -248,12 +253,14 @@ dark_lake_hylia:connect_one_way(pod_area, function()
     )
 end)
 dark_lake_hylia:connect_one_way(lake_hylia_island, function() 
+    print("1")
     return all(
         canChangeWorldWithMirror(),
         canSwim(),
         openOrStandard(),
         can_interact("dark",1 )
-) end)
+    )
+end)
 
 dark_lake_shop:connect_one_way("Dark Lake Shop Left")
 dark_lake_shop:connect_one_way("Dark Lake Shop Center")
@@ -261,6 +268,7 @@ dark_lake_shop:connect_one_way("Dark Lake Shop Right")
 
 dark_lake_hylia:connect_two_ways_entrance("Dark Lake Shop", dark_lake_shop)
 dark_lake_hylia:connect_one_way(lake_hylia_island, function() 
+    print("2")
     return all(
         has("flippers"),
         openOrStandard(),
@@ -290,12 +298,29 @@ ice_palace_island:connect_two_ways_entrance("Ice Palace", ip_entrance)
 
 
 -- dark_icerod_area
-dark_icerod_area:connect_one_way(dark_lake_hylia, function()
+dark_icerod_area:connect_one_way(ice_palace_island, function()
     return all(
         has("flippers"),
         can_interact("dark",1 )
     )
 end)
+
+dark_icerod_area:connect_one_way(pod_area, function()
+    return all(
+        has("flippers"),
+        can_interact("dark",1 )
+    )
+end)
+
+dark_icerod_area:connect_one_way(lake_hylia_island, function() 
+    return all(
+        canChangeWorldWithMirror(),
+        canSwim(),
+        openOrStandard(),
+        can_interact("dark",1 )
+    )
+end)
+
 dark_icerod_area:connect_one_way(dark_flute_map, function() 
     return all(
         has("flute"),
@@ -664,12 +689,16 @@ pod_area:connect_one_way(dark_potion_shop,function()
     )
 end)
 
-pod_area:connect_one_way(dark_lake_hylia, function()
+pod_area:connect_one_way(ice_palace_island, function()
     return all(
-        any(
-            has("hammer"),
-            has("flippers")
-        ),
+        has("flippers"),
+        can_interact("dark",1),
+        inverted()
+    )
+end)
+pod_area:connect_one_way(dark_icerod_area, function()
+    return all(
+        has("flippers"),
         can_interact("dark",1)
     )
 end)
