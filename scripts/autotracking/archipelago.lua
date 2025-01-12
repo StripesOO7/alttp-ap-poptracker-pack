@@ -3,6 +3,7 @@ ScriptHost:LoadScript("scripts/autotracking/location_mapping.lua")
 
 CUR_INDEX = -1
 SLOT_DATA = nil
+SKIP_BOSSSHUFFLE = false
 
 local SECONDSTAGE = { 
     [5] = 5, --red shield
@@ -102,7 +103,9 @@ function onClear(slot_data)
     if Tracker:FindObjectForCode("autofill_settings").Active == true then
         autoFill(slot_data)
     end
-    bossShuffle()
+    if SKIP_BOSSSHUFFLE == false then
+        bossShuffle()
+    end
 end
 
 function onItem(index, item_id, item_name, player_number)
@@ -249,6 +252,46 @@ function autoFill()
     -- mapBomblessStart = {[0]=false, [1]=true} -- false, true
     -- mapRetroBow = {[0]=false, [1]=true} -- false, true
     -- mapRetroCave = {[0]=false, [1]=true} -- false, true
+    mapDungeon = {
+        ["Eastern Palace"] = {"ep_boss", "ep"},
+        ["Desert Palace"] = {"dp_boss", "dp"},
+        ["Tower of Hera"] = {"toh_boss", "toh"},
+        ["Palace of Darkness"] = {"pod_boss", "pod"},
+        ["Swamp Palace"] = {"sp_boss", "sp"},
+        ["Skull Woods"] = {"sw_boss", "sw"},
+        ["Thieves Town"] = {"tt_boss", "tt"},
+        ["Thieves\' Town"] = {"tt_boss", "tt"},
+        ["Ice Palace"] = {"ip_boss", "ip"},
+        ["Misery Mire"] = {"mm_boss", "mm"},
+        ["Turtle Rock"] = {"tr_boss", "tr"},
+        ["Ganons Tower - top"] = {"gt_boss",},
+        ["Ganons Tower - bottom"] = {"gt_ice",},
+        ["Ganons Tower - middle"] = {"gt_lanmo"},
+    }
+    mapBoss = {
+        ["Armos Knights"] = 1,
+        ["Lanmola"] = 2,
+        ["Moldorm"] = 3,
+        ["Helmasaur King"] = 4,
+        ["Arrghus"] = 5,
+        ["Mothula"] = 6,
+        ["Blind"] = 7,
+        ["Kholdstare"] = 8,
+        ["Vitreous"] = 9,
+        ["Trinexx"] = 10
+    }
+    mapRewards = {
+        ["Crystal 1"] = 1,
+        ["Crystal 2"] = 1,
+        ["Crystal 3"] = 1,
+        ["Crystal 4"] = 1,
+        ["Crystal 5"] = 2,
+        ["Crystal 6"] = 2,
+        ["Crystal 7"] = 1,
+        ["Green Pendant"] = 4,
+        ["Blue Pendant"] = 3,
+        ["Red Pendant"] = 3,
+    }
 
     mapStages = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=6, [7]=7, [8]=8, ["open"]=1,["inverted"]=2,["standard"]=0}
     mapToggle = {[0]=false, [1]=true, [2]=true,[3]=true,[4]=true,[6]=true} -- false, true
@@ -268,7 +311,7 @@ function autoFill()
         small_key_shuffle = {code="small_keys", mapping=mapDungeonItem}, 
         compass_shuffle = {code="compass", mapping=mapDungeonItem}, 
         map_shuffle = {code="map", mapping=mapDungeonItem},
-        boss_shuffle = {code="boss_shuffle", mapping=mapBosses}, 
+        boss_shuffle = {code="boss_shuffle", mapping=mapBosses},
         -- progressive = {code="progressive_items", mapping=mapStages}, 
 
 
@@ -298,6 +341,19 @@ function autoFill()
     -- print(Tracker:FindObjectForCode("autofill_settings").Active)
     if Tracker:FindObjectForCode("autofill_settings").Active == true then
         for settings_name , settings_value in pairs(SLOT_DATA) do
+            if type(settings_value) == "table" then
+                if settings_name == "bosses" then
+                    SKIP_BOSSSHUFFLE = true
+                    for dungeon, boss in pairs(settings_value) do
+                        Tracker:FindObjectForCode(mapDungeon[dungeon][1]).CurrentStage = mapBoss[boss]
+                    end
+                elseif settings_name == "prizes" then
+                    for dungeon, reward in pairs(settings_value) do
+                        Tracker:FindObjectForCode(mapDungeon[dungeon][2]).CurrentStage = mapRewards[reward]
+                    end
+                    
+                end
+                
             -- print(k, v)
             -- if settings_name == "crystals_needed_for_gt" 
             -- or settings_name == "crystals_needed_for_ganon" 
@@ -311,26 +367,28 @@ function autoFill()
             --     elseif settings_value == "none" then
             --         item.Active = false
             --     end
-            if settings_name == "shop_item_slots" then
-                if settings_value > 0 then
-                    Tracker:FindObjectForCode("shop_sanity").Active = true
-                    Tracker:FindObjectForCode("shop_sanity").AcquiredCount = settings_value
-                else
-                    Tracker:FindObjectForCode("shop_sanity").Active = false
-                    Tracker:FindObjectForCode("shop_sanity").AcquiredCount = settings_value 
-                end
-            elseif slotCodes[settings_name] then
-                item = Tracker:FindObjectForCode(slotCodes[settings_name].code)
-                if item.Type == "toggle" then
-                    -- print("toggle", settings_name, settings_value)
-                    item.Active = slotCodes[settings_name].mapping[settings_value]
-                elseif slotCodes[settings_name].mapping == nil then
-                    -- print("toggle", settings_name, settings_value)
-                    item.AcquiredCount = settings_value
-                else 
-                    -- print("else", settings_name, settings_value)
-                    -- print(k,v,Tracker:FindObjectForCode(slotCodes[k].code).CurrentStage, slotCodes[k].mapping[v])
-                    item.CurrentStage = slotCodes[settings_name].mapping[settings_value]
+            else
+                if settings_name == "shop_item_slots" then
+                    if settings_value > 0 then
+                        Tracker:FindObjectForCode("shop_sanity").Active = true
+                        Tracker:FindObjectForCode("shop_sanity").AcquiredCount = settings_value
+                    else
+                        Tracker:FindObjectForCode("shop_sanity").Active = false
+                        Tracker:FindObjectForCode("shop_sanity").AcquiredCount = settings_value 
+                    end
+                elseif slotCodes[settings_name] then
+                    item = Tracker:FindObjectForCode(slotCodes[settings_name].code)
+                    if item.Type == "toggle" then
+                        -- print("toggle", settings_name, settings_value)
+                        item.Active = slotCodes[settings_name].mapping[settings_value]
+                    elseif slotCodes[settings_name].mapping == nil then
+                        -- print("toggle", settings_name, settings_value)
+                        item.AcquiredCount = settings_value
+                    else 
+                        -- print("else", settings_name, settings_value)
+                        -- print(k,v,Tracker:FindObjectForCode(slotCodes[k].code).CurrentStage, slotCodes[k].mapping[v])
+                        item.CurrentStage = slotCodes[settings_name].mapping[settings_value]
+                    end
                 end
             end
         end
