@@ -643,7 +643,10 @@
                 "access_rules": [
                     "^$CanReach|upgrade_fairy"
                 ],
-                "visibility_rules": ["shop_sanity, shop_shuffle_capacity"],
+                "visibility_rules": [
+                    // "shop_sanity", 
+                    "shop_shuffle_capacity"
+                ],
                 "sections": [
                     {
                         "name": "Shop Item",
