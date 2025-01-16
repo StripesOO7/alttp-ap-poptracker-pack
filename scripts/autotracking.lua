@@ -17,21 +17,21 @@ end
 print("---------------------------------------------------------------------")
 print("")
 
-require("scripts/autotracking/settings.lua")
+ScriptHost:LoadScript("scripts/autotracking/settings.lua")
 -- loads the AP autotracking code
 if  Tracker.ActiveVariantUID == "Map Tracker - AP" or 
     Tracker.ActiveVariantUID == "Map Tracker /w detailed ow-Dungeons - AP" or 
     Tracker.ActiveVariantUID == "Entrance Randomizer Tracker - AP" or 
     Tracker.ActiveVariantUID == "Entrance Randomizer Tracker /w Pot-shuffle - AP" then
-    require("scripts/autotracking/archipelago.lua")
-    require("scripts/autotracking/SNESautotrackin_functions.lua")
+    ScriptHost:LoadScript("scripts/autotracking/archipelago.lua")
+    ScriptHost:LoadScript("scripts/autotracking/SNESautotrackin_functions.lua")
 end
 -- loads the SNES autotrecking codes
 if  Tracker.ActiveVariantUID == "Map Tracker - SNES" or 
 Tracker.ActiveVariantUID == "Map Tracker /w detailed ow-Dungeons - SNES" or 
 Tracker.ActiveVariantUID == "Entrance Randomizer Tracker - SNES" or 
 Tracker.ActiveVariantUID == "Entrance Randomizer Tracker /w Pot-shuffle - SNES" then
-    require("scripts/autotracking/SNESautotrackin_functions.lua")
-    require("scripts/autotracking/SNESautotracking_ROMdata.lua")
+    ScriptHost:LoadScript("scripts/autotracking/SNESautotrackin_functions.lua")
+    ScriptHost:LoadScript("scripts/autotracking/SNESautotracking_ROMdata.lua")
 end
 
