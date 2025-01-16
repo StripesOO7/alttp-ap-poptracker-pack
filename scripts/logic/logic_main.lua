@@ -227,9 +227,9 @@ entry_point:connect_one_way(darkworld_spawns, function() return inverted() end)
 -- 
 function stateChanged()
     stale = true
-    -- ScriptHost:LoadScript("scripts/logic/logic_helpers.lua")
-    -- ScriptHost:LoadScript("scripts/logic/logic_main.lua")
-    -- ScriptHost:LoadScript("scripts/logic_import.lua")
+    -- require("scripts/logic/logic_helpers")
+    -- require("scripts/logic/logic_main")
+    -- require("scripts/logic_import")
 end
 
 ScriptHost:AddWatchForCode("stateChanged", "*", stateChanged)
