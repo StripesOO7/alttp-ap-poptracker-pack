@@ -252,13 +252,12 @@ dark_lake_hylia:connect_one_way(pod_area, function()
         can_interact("dark",1)
     )
 end)
-dark_lake_hylia:connect_one_way(lake_hylia_island, function() 
-    print("1")
+dark_lake_hylia:connect_one_way(lake_hylia_island, function()
     return all(
         canChangeWorldWithMirror(),
-        canSwim(),
+        canSwim("flippers"),
         openOrStandard(),
-        can_interact("dark",1 )
+        can_interact("dark", 1)
     )
 end)
 
@@ -267,13 +266,12 @@ dark_lake_shop:connect_one_way("Dark Lake Shop Center")
 dark_lake_shop:connect_one_way("Dark Lake Shop Right")
 
 dark_lake_hylia:connect_two_ways_entrance("Dark Lake Shop", dark_lake_shop)
-dark_lake_hylia:connect_one_way(lake_hylia_island, function() 
-    print("2")
+dark_lake_hylia:connect_one_way(lake_hylia_island, function()
     return all(
         has("flippers"),
         openOrStandard(),
         canChangeWorldWithMirror(),
-        can_interact("dark",1 )
+        can_interact("dark", 1)
     ) 
 end)
 dark_lake_hylia:connect_two_ways(ice_palace_island, function() 
@@ -567,7 +565,7 @@ dark_chapel_area:connect_two_ways_entrance("Dark Chapel", dark_chapel)
 dark_potion_shop:connect_one_way(dark_chapel_area, function()
     return all(
         has("hookshot"),
-        can_interact("dark",1 )
+        can_interact("dark",5)
     )
 end)
 dark_potion_shop:connect_one_way(catfish_area, function()
@@ -685,37 +683,37 @@ pod_area:connect_one_way(dark_potion_shop,function()
             has("hammer"),
             has("glove")
         ),
-        can_interact("dark",1 )
+        can_interact("dark",5)
     )
 end)
 
 pod_area:connect_one_way(ice_palace_island, function()
     return all(
         has("flippers"),
-        can_interact("dark",1),
+        can_interact("dark",5),
         inverted()
     )
 end)
 pod_area:connect_one_way(dark_icerod_area, function()
     return all(
         has("flippers"),
-        can_interact("dark",1)
+        can_interact("dark",5)
     )
 end)
 
 pod_area:connect_one_way(big_bomb_shop_area, function()
     return all(
         has("hammer"),
-        can_interact("dark", 1)
+        can_interact("dark", 5)
     )
 end)
 
 pod_area:connect_two_ways_entrance("Kiki Cave", kiki_cave)
-pod_area:connect_two_ways_entrance("Palace of Darkness", palace_of_darkness, function() return can_interact("dark",1 ) end)
+pod_area:connect_two_ways_entrance("Palace of Darkness", palace_of_darkness, function() return can_interact("dark",4) end)
 pod_area:connect_two_ways_entrance("Dark PoD Fairy", pod_fairy_cave)
 pod_area:connect_two_ways_entrance("PoD Teleporter Cave", pod_teleport_cave)
 
-pod_area:connect_two_ways_entrance("Palace of Darkness Entrance", pod_entrance)
+pod_area:connect_two_ways_entrance("Palace of Darkness Entrance", pod_entrance, function() return can_interact("dark",4) end)
 
 
 
@@ -788,13 +786,20 @@ teleporter_at_dark_turtle_rock:connect_two_ways_entrance("Turtle Rock Main Entra
         can_interact("dark",1 )
     ) 
 end)
-dark_death_mountain_right_top:connect_two_ways_entrance("Hookshot Cave", hookshot_cave, function() return has("glove") end)
+dark_death_mountain_right_top:connect_two_ways_entrance("Hookshot Cave", hookshot_cave, function() 
+    return any(
+        all(
+            has("glove"),
+            can_interact("dark",5)
+        )
+    )
+end)
 hookshot_cave:connect_two_ways(floating_island, function() 
     return all(
         has("bombs"),
         canChangeWorldWithMirror(),
         openOrStandard(),
-        can_interact("dark",1 )
+        can_interact("dark",5)
     ) 
 end)
 
@@ -804,25 +809,25 @@ hookshot_cave:connect_one_way("Hookshot Cave Item Bottom Right", function()
             has("hookshot"),
             has("boots")
         ),
-        can_interact("dark",1 )
+        can_interact("dark",5)
     )
 end)
 hookshot_cave:connect_one_way("Hookshot Cave Item Top Right", function() 
     return all(
         has("hookshot"), 
-        can_interact("dark",1 )
+        can_interact("dark",5)
     ) 
 end)
 hookshot_cave:connect_one_way("Hookshot Cave Item Top Left", function() 
     return all(
         has("hookshot"), 
-        can_interact("dark",1 )
+        can_interact("dark",5)
     ) 
 end)
 hookshot_cave:connect_one_way("Hookshot Cave Item Bottom Left", function() 
     return all(
         has("hookshot"), 
-        can_interact("dark",1 )
+        can_interact("dark",5)
     ) 
 end)
 
@@ -861,7 +866,7 @@ spike_cave:connect_one_way("Spike Cave Chest", function()
     return all(
         has("hammer"),
         has("glove"),
-        can_interact("dark",1 ) --,
+        can_interact("dark",5) --,
         -- has("heartpieces", )
     )
 end)

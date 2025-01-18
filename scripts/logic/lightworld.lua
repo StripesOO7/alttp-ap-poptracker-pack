@@ -1043,7 +1043,14 @@ light_death_mountain_left_top:connect_one_way(light_flute_map, function()
         CanReach(light_activate_flute)
     ) 
 end)
-light_death_mountain_left_top:connect_one_way(light_death_mountain_right_top, function() return has("hammer") end)
+light_death_mountain_left_top:connect_one_way(light_death_mountain_right_top, function() 
+    return any(
+        all(
+            has("hammer"),
+            can_interact("light", 1)
+        )
+    )
+end)
 light_death_mountain_left_top:connect_one_way("Ether Tablet", function() 
     return any(
         all(
@@ -1125,7 +1132,14 @@ light_death_mountain_right_top:connect_one_way(light_flute_map, function()
         CanReach(light_activate_flute)
     ) 
 end)
-light_death_mountain_right_top:connect_one_way(light_death_mountain_left_top, function() return has("hammer") end)
+light_death_mountain_right_top:connect_one_way(light_death_mountain_left_top, function() 
+    return any(
+        all(
+            has("hammer"),
+            can_interact("light", 1)
+        )
+    )
+end)
 -- light_death_mountain_right_top:connect_one_way()
 -- light_death_mountain_right_top:connect_one_way()
 
