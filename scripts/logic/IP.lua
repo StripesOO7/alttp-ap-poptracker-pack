@@ -74,7 +74,7 @@ ip_big_chest_room:connect_one_way("IP - Big Chest", function()
 end)
 ip_above_boss_dropdown:connect_one_way(ip_boss_dropdown, function(keys) 
     return all(
-        has("ip_smallkey", keys + 1, 3, keys + 1, 4),
+        has("ip_smallkey", keys + 1, 2, keys + 1, 4),
         has("ip_bigkey")
     ), KDSreturn(keys + 1, keys + 1) 
 end)
@@ -121,11 +121,11 @@ end)
 ip_big_key_room:connect_one_way(ip_sliding_switch_room)
 ip_big_key_room:connect_one_way("IP - Big Key Chest")
 -- ip_sliding_switch_room:connect_two_ways(ip_big_key_room) --icebreaker
-ip_boss_dropdown:connect_one_way(ip_boss_room)
-ip_boss_dropdown:connect_one_way(ip_above_boss_dropdown, function() 
+ip_boss_dropdown:connect_one_way(ip_boss_room, function() 
     return all(
         has("hammer"),
         has("glove")
     ) 
 end)
+ip_boss_dropdown:connect_one_way(ip_above_boss_dropdown)
 ip_boss_room:connect_one_way("IP - Boss", function() return getBossRef("ip_boss") end)
