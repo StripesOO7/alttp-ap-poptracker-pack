@@ -17,6 +17,9 @@
                 "sections": [
                     {
                         "name": "Torch",
+                        "access_rules": [
+                            "^$CanReach|DP - Torch"
+                        ],
                         "capture_item": true
                     }
                 ],

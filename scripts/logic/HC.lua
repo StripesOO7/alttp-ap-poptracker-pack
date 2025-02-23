@@ -3,6 +3,7 @@
 -- hc_right_entrance =alttp_location.new("")
 local hc_back_hall = alttp_location.new("hc_back_hall")
 local hc_map_chest_room = alttp_location.new("hc_map_chest_room")
+local hc_before_boomerang_chest_room = alttp_location.new("hc_before_boomerang_chest_room")
 local hc_boomerang_chest_room = alttp_location.new("hc_boomerang_chest_room")
 local hc_ball_guard_room = alttp_location.new("hc_ball_guard_room")
 local hc_zeldas_cell = alttp_location.new("hc_zeldas_cell")
@@ -28,11 +29,17 @@ hc_map_chest_room:connect_one_way("HC - Map Guard Key Drop", function()
     ) 
 end)
 
-hc_map_chest_room:connect_two_ways(hc_boomerang_chest_room, function(keys) 
+hc_map_chest_room:connect_two_ways(hc_before_boomerang_chest_room, function(keys) 
     return any(
         has("standard"),
         has("hc_smallkey", keys, 0, keys + 1, 3)
     ), KDSreturn(keys, keys + 1)
+end)
+hc_before_boomerang_chest_room:connect_two_ways(hc_boomerang_chest_room, function() 
+    return any(
+        dealDamage(), 
+        has("standard")
+    ) 
 end)
 hc_boomerang_chest_room:connect_one_way("HC - Boomerang Chest")
 hc_boomerang_chest_room:connect_one_way("HC - Booomerang Guard Key Drop", function() 
@@ -42,7 +49,7 @@ hc_boomerang_chest_room:connect_one_way("HC - Booomerang Guard Key Drop", functi
     ) 
 end)
 
-hc_map_chest_room:connect_two_ways(hc_ball_guard_room, function(keys) 
+hc_before_boomerang_chest_room:connect_two_ways(hc_ball_guard_room, function(keys) 
     return any(
         has("standard"),
         has("hc_smallkey", keys, 0, keys + 1, 4)
@@ -106,7 +113,7 @@ ce_rat_key_room:connect_one_way("CE - Rat Key Drop", function(keys)
     return any(
         all(
             darkRooms(),
-            has("hc_smallkey", keys, 1, keys, 4),
+            has("hc_smallkey", keys, 1, keys, 3),
             dealDamage()
         ),
         has("standard")

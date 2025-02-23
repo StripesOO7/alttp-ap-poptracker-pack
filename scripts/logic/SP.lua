@@ -60,15 +60,27 @@ sp_main_room:connect_one_way("SP - Hookshot Pot Key", function() return has("hoo
 sp_main_room:connect_one_way("SP - Big Chest", function() return has("sp_bigkey") end)
 
 sp_second_trench:connect_two_ways(sp_hallway_after_second_trench, function(keys) 
-    return any(
-        all(
-            has("sp_smallkey", keys, 1, keys + 1, 4),
-            checkGlitches(1)
-        ),
-        all(
-            has("sp_smallkey", keys, 1, keys + 1, 5)
-        )
-    ), KDSreturn(keys, keys + 1)
+    if Tracker:FindObjectForCode("hookshot").Active then
+        return any(
+            all(
+                has("sp_smallkey", keys, 1, keys + 1, 5),
+                checkGlitches(1)
+            ),
+            all(
+                has("sp_smallkey", keys, 1, keys + 1, 6)
+            )
+        ), KDSreturn(keys, keys + 1)
+    else
+        return any(
+            all(
+                has("sp_smallkey", keys, 1, keys + 1, 3),
+                checkGlitches(1)
+            ),
+            all(
+                has("sp_smallkey", keys, 1, keys + 1, 4)
+            )
+        ), KDSreturn(keys, keys + 1)
+    end
 end)
 sp_second_trench:connect_one_way("SP - Trench 2 Pot Key")
 

@@ -44,7 +44,7 @@ teleporter_at_desert:connect_one_way(teleporter_at_mire)
 
 teleporter_at_dam:connect_one_way(teleporter_at_swamp, function() return has("glove") end)
 
-teleporter_at_upgrade_fairy:connect_one_way(teleporter_at_ice_palace)
+teleporter_at_upgrade_fairy:connect_one_way(teleporter_at_ice_palace, function() return all(has("titans"),openOrStandard())  end)
 
 
 -- 

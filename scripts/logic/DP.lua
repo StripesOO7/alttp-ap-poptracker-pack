@@ -27,7 +27,14 @@ dp_main_room:connect_two_ways(dp_map_chest_room)
 dp_map_chest_room:connect_one_way("DP - Map Chest")
 
 dp_main_room:connect_one_way(dp_compass_room, function(keys) 
-    return has("dp_smallkey", keys + 1, 1, keys + 1, 4), KDSreturn(keys + 1, keys + 1) 
+    if Tracker:FindObjectForCode("key_drop_shuffle").Active then
+        return has("dp_smallkey", keys + 1, 1, keys + 1, 4), KDSreturn(keys + 1, keys + 1)
+    else
+        return all(
+            has("dp_smallkey", keys + 1, 1, keys + 1, 4),
+            has("boots")
+        ), KDSreturn(keys + 1, keys + 1)
+    end
 end)
 dp_compass_room:connect_one_way("DP - Compass Chest")
 
@@ -54,11 +61,20 @@ dp_back_tiles2_room:connect_one_way("DP - Tile 2 Key Drop")
 
 
 dp_back_torch_room:connect_one_way(dp_back_boss_room, function(keys) 
-    return all(
-        has("firesource"), 
-        has("dp_bigkey"),
-        has("dp_smallkey", keys, 1, keys+2, 4)
-    ),KDSreturn(keys, keys)
+    if Tracker:FindObjectForCode("key_drop_shuffle").Active then
+        return all(
+            has("firesource"),
+            has("dp_bigkey"),
+            has("dp_smallkey", keys, 1, keys, 4)
+        ),KDSreturn(keys, keys)
+    else
+        return all(
+            has("firesource"),
+            has("dp_bigkey"),
+            has("boots"),
+            has("dp_smallkey", keys, 1, keys, 4)
+        ),KDSreturn(keys, keys)
+    end
 end)
 
 dp_back_boss_room:connect_one_way("DP - Boss", function() return getBossRef("dp_boss") end)

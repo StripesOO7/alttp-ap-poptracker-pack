@@ -26,14 +26,14 @@ tr_main_entrance:connect_two_ways(tr_square_travel_room, function() return has("
 tr_square_travel_room:connect_two_ways(tr_compass_room, function() return has("somaria") end)
 tr_square_travel_room:connect_two_ways(tr_torch_puzzle, function() 
     return all(
-        has("somaria"), 
+        has("somaria"),
         has("firerod")
     ) 
 end)
 tr_square_travel_room:connect_two_ways(tr_poke_1_room, function(keys) 
     return all(
         has("somaria"),
-        has("tr_smallkey", keys + 1, 3, keys + 1, 4)
+        has("tr_smallkey", keys + 1, 3, keys + 1, 5)
     ), KDSreturn(keys + 1, keys + 1) 
 end)
 
@@ -89,7 +89,7 @@ tr_big_chest_entrance:connect_one_way("TR - Big Chest", function()
 end)
 
 tr_big_key_door_room:connect_one_way(tr_crystalroller_room, function() return has("tr_bigkey") end)
-tr_crystalroller_room:connect_one_way(tr_big_key_door_room, function(keys) return has("tr_smallkey", keys + 1, 4, keys + 1, 6), KDSreturn(keys + 1, keys + 1) end)
+tr_crystalroller_room:connect_one_way(tr_big_key_door_room, function(keys) return has("tr_smallkey", keys + 1, 3, keys + 1, 5), KDSreturn(keys + 1, keys + 1) end)
 
 tr_crystalroller_room:connect_one_way(tr_travel_maze, function(keys) return has("tr_smallkey", keys + 1, 3, keys + 1, 5), KDSreturn(keys + 1, keys + 1) end)
 tr_travel_maze:connect_one_way(tr_crystalroller_room, function(keys) 
@@ -108,7 +108,7 @@ tr_travel_maze:connect_two_ways(tr_eye_hallway, function()
 end)
 
 tr_eye_hallway:connect_two_ways(tr_eye_bridge_entrance)
-tr_eye_hallway:connect_two_ways(tr_switch_puzzle, function(keys) return has("tr_smallkey", keys + 1, 3, keys + 1, 5), KDSreturn(keys + 1, keys + 1) end)
+tr_eye_hallway:connect_two_ways(tr_switch_puzzle, function(keys) return has("tr_smallkey", keys + 1, 4, keys + 1, 6), KDSreturn(keys + 1, keys + 1) end)
 
 tr_eye_bridge_entrance:connect_one_way("TR - Eyebridge Top Right")
 tr_eye_bridge_entrance:connect_one_way("TR - Eyebridge Top Left")

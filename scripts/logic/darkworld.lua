@@ -298,6 +298,7 @@ ice_palace_island:connect_two_ways_entrance("Ice Palace", ip_entrance)
 -- dark_icerod_area
 dark_icerod_area:connect_one_way(ice_palace_island, function()
     return all(
+        inverted(),
         has("flippers"),
         can_interact("dark",1 )
     )

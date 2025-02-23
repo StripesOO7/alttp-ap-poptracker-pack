@@ -31,7 +31,13 @@ ep_main_room_bottom:connect_two_ways(ep_dark_eyegore_room, function()
 end)
 ep_main_room_bottom:connect_one_way("EP - Big Chest", function() return has("ep_bigkey") end)
 
-ep_dark_square_room:connect_two_ways(ep_big_key_chest_room, function(keys) return has("ep_smallkey", keys, 0, keys + 1, 2), KDSreturn(keys, keys + 1) end)
+ep_dark_square_room:connect_two_ways(ep_big_key_chest_room, function(keys) 
+    if has("ep_bigkey") == 6 then
+        return has("ep_smallkey", keys, 0, keys + 1, 2), KDSreturn(keys, keys + 1)
+    else
+        return has("ep_smallkey", keys, 0, keys + 1, 1), KDSreturn(keys, keys + 1)
+    end
+end)
 ep_dark_square_room:connect_one_way("EP - Dark Square Key Drop")
 
 ep_big_key_chest_room:connect_one_way(ep_main_room_bottom)
