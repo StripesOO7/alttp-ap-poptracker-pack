@@ -10,7 +10,7 @@
         "rows": [
             [ "" , "" , "", "hc_map", "", "hc_smallkey" , "hc_bigkey" ],
             [ "" , "" , "", "", "", "at_smallkey", "" ],
-            [ "easternpalace", "ep_boss" , "" , "ep_map", "ep_compass", "ep_smallkey", "ep_bigkey" ],
+            [ "easternpalace", "ep_boss" , "" , "ep_map", "ep_compass", "", "ep_bigkey" ],
             [ "desertpalace", "dp_boss" , "", "dp_map", "dp_compass", "dp_smallkey", "dp_bigkey" ],
             [ "towerofhera", "toh_boss" , "", "toh_map", "toh_compass", "toh_smallkey", "toh_bigkey" ],
             [ "palaceofdarkness", "pod_boss" , "", "pod_map", "pod_compass", "pod_smallkey", "pod_bigkey" ],
@@ -112,7 +112,7 @@
           [
             "hc_smallkey" ,
             "at_smallkey",
-            "ep_smallkey",
+            "",
             "dp_smallkey",
             "toh_smallkey",
             "pod_smallkey",
