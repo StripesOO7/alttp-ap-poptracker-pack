@@ -150,6 +150,20 @@ function dealDamage()
     )
 end
 
+function hitRanged()
+    return any(
+        has("masterword"),
+        has("bombs"),
+        has("somaria"),
+        has("bow"),
+        has("hookshot"),
+        has("firerod"),
+        has("icerod"),
+        has("blueboomerang"),
+        has("redboomerang")
+    )
+end
+
 function getBossRef(nameRef)
     local bosses = {
         [0] = "@Bosses/Unknown",
@@ -450,6 +464,14 @@ function bossShuffle()
     end
 end
 
+function countDoneDeadends(inital_keys_needed, ...)
+    local locations = { ... }
+    local keys_needed = inital_keys_needed
+    for _, location in pairs(locations) do
+        keys_needed = keys_needed + (Tracker:FindObjectForCode(location).AccessibilityLevel//7)
+    end
+    return keys_needed
+end
 
 -- function owDungeonDetails()
 --     local dungeon_details = Tracker:FindObjectForCode("ow_dungeon_details")
