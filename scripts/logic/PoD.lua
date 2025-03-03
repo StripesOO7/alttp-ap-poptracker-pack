@@ -73,7 +73,7 @@ pod_switch_room_bottom:connect_two_ways(pod_boss_room, function(keys)
         has("pod_bigkey"),
         any(
             all(
-                has("pod_smallkey", keys + 1, 5, keys + 1, 5),
+                has("pod_smallkey", keys + 1, 4, keys + 1, 4),
                 pod_switch_room_top:accessibility(),
                 has("hammer")
             ),
