@@ -232,4 +232,10 @@ function stateChanged()
     -- require("scripts/logic_import")
 end
 
+function forceUpdate()
+    local update = Tracker:FindObjectForCode("AP_item")
+    update.Active = not update.Active
+end
+
 ScriptHost:AddWatchForCode("stateChanged", "*", stateChanged)
+ScriptHost:AddOnLocationSectionChangedHandler("location/section_change_handler", forceUpdate)
