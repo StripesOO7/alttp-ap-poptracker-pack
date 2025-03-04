@@ -644,7 +644,14 @@ pyramid:connect_one_way_entrance("Fat Fairy", pyramid_fairy_cave, function()
     return all(
         has("crystal56", 2, 2, 2, 2), 
         big_bomb_shop:accessibility(),
-        can_interact("dark",1 )
+        can_interact("dark",1 ),
+        any(
+            all(
+                has("mirror"),
+                inverted()
+            ),
+            openOrStandard()
+        )
     )
 end)
 
