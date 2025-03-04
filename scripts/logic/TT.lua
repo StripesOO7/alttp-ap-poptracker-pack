@@ -36,14 +36,14 @@ tt_back_hallway:connect_one_way("TT - Hallway Pot Key")
 
 tt_crystal_switch_room:connect_two_ways(tt_basement)
 tt_crystal_switch_room:connect_two_ways(tt_attic, function(keys) 
-    return has("tt_smallkey", keys, 0, keys + 1, 3), KDSreturn(keys, keys + 1)
+    return has("tt_smallkey", keys + countDoneDeadends(0, "@Thieves Town Back/Big Chest/Big Chest"), 0, keys + countDoneDeadends(1, "@Thieves Town Back/Big Chest/Big Chest"), 3), KDSreturn(keys, keys + 1)
 end)
 tt_crystal_switch_room:connect_one_way("TT - Spike Switch Pot Key")
 
 tt_attic:connect_one_way("TT - Attic")
 
 tt_basement:connect_two_ways(tt_big_chest_room, function(keys) 
-    return has("tt_smallkey", keys + 1, 1, keys + 1, 3), KDSreturn(keys + 1, keys + 1)
+    return has("tt_smallkey", keys + countDoneDeadends(1, "@Thieves Town Back/Attic/Attic"), 1, keys + countDoneDeadends(1, "@Thieves Town Back/Attic/Attic"), 3), KDSreturn(keys + 1, keys + 1)
 end)
 tt_basement:connect_two_ways(tt_basement_cell)
 
