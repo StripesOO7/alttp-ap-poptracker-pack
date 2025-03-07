@@ -1,6 +1,28 @@
 {
 	"versions": [
 		{
+			"package_version": "0.2.7",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.2.7/alttp-ap-tracker-v0.2.7.zip",
+			"sha256": "df04c2be9b2babb325f513a012382417524274b510fa124203c6fca38da6189a",
+			"changelog": [
+				"- fixed typo in setting \"include witchhut\"",
+				"- fixed a wrong connection causing a possible way from pod-area/dark icerod area big bombshop etc with only flippers",
+				"- capacity fairy now is not tied to \"shopsanity\" but \"shop_shuffle_capacity\"",
+				"- made dungeon key logic somewhat live-adjusting. to more accurately show whats currently in logic and what not. (TR currently only vanilla routing implemented inverted and glitched coming from the other entrances comes next)",
+				"- manually updating/clicking off locations now instantly forces a logic update without needing to toggle an item. ",
+				"- fixed pyramid fairy inverted logic missing the mirror as requirement.",
+				"- fixed GT right only considering hookshot as way to logically pass the room but boots work too. ",
+				"- changed dungeon tab ordering to be inline with order down in the key/map/compass section",
+				"to-do:",
+				"- change shop to only show the number of actual randomized slots for each shop",
+				"- fix more inverted stuff probably",
+				"- add more logic options",
+				"sometime later",
+				"- add ER",
+				"- autotrack entrances"
+			]
+		},
+		{
 			"package_version": "0.2.6",
 			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.2.6/alttp-ap-tracker-v0.2.6.zip",
 			"sha256": "00ce774826cbda7b5f8997abbd4f103b561e4438170cda14dc1e16a0dc19310b",
