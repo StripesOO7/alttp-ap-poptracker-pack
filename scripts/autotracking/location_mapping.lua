@@ -1,4 +1,4 @@
--- Dublicated every line referencing a dungeon chest/check to track them seperatly in the overworld and in the in-dungeon maps
+-- Duplicated every line referencing a dungeon chest/check to track them seperatly in the overworld and in the in-dungeon maps
 
 LOCATION_MAPPING = {
     [1572883]   =   {"@Lightworld/Lost Woods/Mushroom"},
