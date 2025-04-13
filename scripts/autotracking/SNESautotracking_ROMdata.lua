@@ -1,6 +1,6 @@
 function updateNPCItemFlagsFromMemorySegment(segment)
     sleep(0.015)
-
+    
     if not isInGame() then
         return false
     end
@@ -45,7 +45,7 @@ function updateOverworldEventsFromMemorySegment(segment)
 
     InvalidateReadCaches()
 
-    updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Light Death Mountain Left Bottom/Spectacle Rock/Top Item",3)    
+    updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Light Death Mountain Left Bottom/Spectacle Rock Top/Top Item",3)    
     updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Light Death Mountain Right/Floating Island/Item on Floating Island",5)    
     updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Lightworld/Race/Race",40)    
     updateSectionChestCountFromOverworldIndexAndFlag(segment, "@Lightworld/Flute Spot/Flute Spot",42, updateShovelIndicatorStatus)    
@@ -62,6 +62,7 @@ end
 
 function updateRoomsFromMemorySegment(segment)
     sleep(0.015)
+
     if not isInGame() then
         return false
     end
@@ -99,11 +100,11 @@ function updateRoomsFromMemorySegment(segment)
     updateSectionChestCountFromRoomSlotList(segment, {"@Lightworld/Kakariko Well/Well Items"}, { { 47, 5 }, { 47, 6 }, { 47, 7 }, { 47, 8 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Lightworld/Kakariko Well/Back Chest"}, { { 47, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Dark Death Mountain Right/Hookshot Cave/Bottom Right Chest"}, { { 60, 7 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@Dark Death Mountain Right/Hookshot Cave/remaining Chests"}, { { 60, 4 }, { 60, 5 }, { 60, 6 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Dark Death Mountain Right/Hookshot Cave/remaining Hookshot Chests"}, { { 60, 4 }, { 60, 5 }, { 60, 6 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Lightworld/Secret Passage/Secret Passage Chest"}, { { 85, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Lightworld/Lost Woods - Hideout/Hideout"}, { { 225, 9 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Lightworld/Lumberjacks/Tree"}, { { 226, 9 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@Light Death Mountain Left Bottom/Spectacle Rock/Item inside"}, { { 234, 10 } })        
+    updateSectionChestCountFromRoomSlotList(segment, {"@Light Death Mountain Left Bottom/Spectacle Rock inside/Item inside"}, { { 234, 10 } })        
     updateSectionChestCountFromRoomSlotList(segment, {"@Light Death Mountain Right/Paradox Cave/Lower"}, { { 239, 4 }, { 239, 5 }, { 239, 6 }, { 239, 7 }, { 239, 8 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Dark Death Mountain Right/Superbunny Cave/Superbunny Chest"}, { { 248, 4 }, { 248, 5 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Light Death Mountain Right/Spiral Cave/Spiral Cave Item"}, { { 254, 4 } })
@@ -183,7 +184,7 @@ function updateRoomsFromMemorySegment(segment)
     updateSectionChestCountFromRoomSlotList(segment, {"@EP/Eastern Palace/Boss Item", "@Eastern Palace/Boss/Boss Item"}, { { 200, 11 } })
 
     --Desert Palace
-    updateSectionChestCountFromRoomSlotList(segment, {"@DP/Desert Palace/Dungeon Chest"}, { { 133, 4 },{ 115, 4 },{ 115, 5 },{ 116, 4 },{ 117, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@DP/Desert Palace/Dungeon Chest"}, { { 133, 4 },{ 115, 4 },{ 115, 10 },{ 116, 4 },{ 117, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@DP Back/Desert Palace Back/Key Drops"}, { { 67, 10 }, { 83, 10 }, { 99, 10 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Desert Palace Back/Desert Tiles 2 Pot Key/Desert Tiles 2 Pot Key"}, { { 67, 10 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Desert Palace Back/Beamos Hall Pot Key/Beamos Hall Pot Key"}, { { 83, 10 } })
@@ -191,7 +192,7 @@ function updateRoomsFromMemorySegment(segment)
 
     updateSectionChestCountFromRoomSlotList(segment, {"@Desert Palace/Compass Chest/Compass Chest"}, { { 133, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Desert Palace/Big Chest/Big Chest"}, { { 115, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@Desert Palace/Torch/Torch"}, { { 115, 5 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Desert Palace/Torch/Torch"}, { { 115, 10 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Desert Palace/Map Chest/Map Chest"}, { { 116, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Desert Palace/Big Key Chest/Big Key Chest"}, { { 117, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@DP Back/Desert Palace Back/Boss Item","@Desert Palace Back/Boss/Boss Item"}, { { 51, 11 } })
@@ -363,11 +364,11 @@ function updateRoomsFromMemorySegment(segment)
         { 138, 10 }, { 155, 10 }, { 61, 10 }, { 123, 10 }
     })
     updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Leftside"}, {
-        { 140, 4 }, { 125, 4 }, { 124, 4 }, { 124, 5 }, { 124, 6 }, { 124, 7 }, 
+        { 140, 10 }, { 125, 4 }, { 124, 4 }, { 124, 5 }, { 124, 6 }, { 124, 7 }, 
         { 123, 4 }, { 123, 5 }, { 123, 6 }, { 123, 7 }, { 139, 4 }
     })
     updateSectionChestCountFromRoomSlotList(segment, {"@GT-inverted/Ganon's Tower/Leftside"}, {
-        { 140, 4 }, { 125, 4 }, { 124, 4 }, { 124, 5 }, { 124, 6 }, { 124, 7 }, 
+        { 140, 10 }, { 125, 4 }, { 124, 4 }, { 124, 5 }, { 124, 6 }, { 124, 7 }, 
         { 123, 4 }, { 123, 5 }, { 123, 6 }, { 123, 7 }, { 139, 4 }
     })
     updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Rightside"}, {
@@ -377,10 +378,10 @@ function updateRoomsFromMemorySegment(segment)
        { 140, 5 }, { 140, 6 }, { 141, 4 }, { 157, 4 }, { 157, 5 }, { 157, 6 }, { 157, 7 }
     })
     updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Big Chest + Ice refight"}, {
-       { 140, 7 }, { 140, 8 }, { 28, 4 }, { 28, 5 }, { 28, 6 }
+       { 140, 7 }, { 140, 4 }, { 28, 4 }, { 28, 5 }, { 28, 6 }
     })
     updateSectionChestCountFromRoomSlotList(segment, {"@GT-inverted/Ganon's Tower/Big Chest + Ice refight"}, {
-       { 140, 7 }, { 140, 8 }, { 28, 4 }, { 28, 5 }, { 28, 6 }
+       { 140, 7 }, { 140, 4 }, { 28, 4 }, { 28, 5 }, { 28, 6 }
     })
     updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/GT Top + Lanmo refight"}, { { 61, 4 }, { 61, 5 }, { 61, 6 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@GT-inverted/Ganon's Tower/GT Top + Lanmo refight"}, { { 61, 4 }, { 61, 5 }, { 61, 6 } })
@@ -392,7 +393,7 @@ function updateRoomsFromMemorySegment(segment)
     updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Top/Mini Helmasaur Key Drop/Mini Helmasaur Key Drop"}, {{ 61, 10 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key"}, {{ 123, 10 } })
 
-    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Bob's Torch/Bob's Torch", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 140, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Bob's Torch/Bob's Torch", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 140, 10 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 125, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Randomizer Room Top Left/Randomizer Room Top Left", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 124, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 124, 5 } })
@@ -413,7 +414,7 @@ function updateRoomsFromMemorySegment(segment)
     updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Right/Compass Room Bottom Right/Compass Room Bottom Right", "@GT-inverted/Ganon's Tower/Rightside"}, { { 157, 7 } })
     
     updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Refight/Bob's Chest/Bob's Chest", "@GT-inverted/Ganon's Tower/Big Chest + Ice refight"}, {{ 140, 7 }})
-    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Refight/Big Chest/Big Chest", "@GT-inverted/Ganon's Tower/Big Chest + Ice refight"}, {{ 140, 8 }})
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Refight/Big Chest/Big Chest", "@GT-inverted/Ganon's Tower/Big Chest + Ice refight"}, {{ 140, 4 }})
     updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Refight/Big Key Chest/Big Key Chest", "@GT-inverted/Ganon's Tower/Big Chest + Ice refight"}, {{ 28, 4 }})
     updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Refight/Big Key Room Left/Big Key Room Left", "@GT-inverted/Ganon's Tower/Big Chest + Ice refight"}, {{ 28, 5 }})
     updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Refight/Big Key Room Right/Big Key Room Right", "@GT-inverted/Ganon's Tower/Big Chest + Ice refight"}, {{ 28, 6 }})
@@ -635,3 +636,14 @@ function updateHeartContainersFromMemorySegment(segment)
         end
     end
 end
+
+ScriptHost:AddMemoryWatch("LTTP Overworld Event Data", 0x7ef280, 0x82, updateOverworldEventsFromMemorySegment)
+ScriptHost:AddMemoryWatch("LTTP NPC Item Data", 0x7ef410, 2, updateNPCItemFlagsFromMemorySegment)
+ScriptHost:AddMemoryWatch("LTTP Heart Piece Data", 0x7ef448, 1, updateHeartPiecesFromMemorySegment)
+ScriptHost:AddMemoryWatch("LTTP Heart Container Data", 0x7ef36c, 1, updateHeartContainersFromMemorySegment)
+ScriptHost:AddMemoryWatch("LTTP Item Data", 0x7ef340, 0x90, updateItemsFromMemorySegment)
+ScriptHost:AddMemoryWatch("LTTP Room Data", 0x7ef000, 0x250, updateRoomsFromMemorySegment)
+ScriptHost:AddMemoryWatch("LTTP Chest Key Data", 0x7ef4e0, 32, updateChestKeysFromMemorySegment)
+ScriptHost:AddMemoryWatch("LTTP Keydrop Data", 0x7ef37c, 32, updateChestKeysFromMemorySegment)
+ScriptHost:AddMemoryWatch("LTTP Room Keydrop Data", 0x7ef000, 0x250, updateChestKeysFromMemorySegment)
+ScriptHost:AddMemoryWatch("LTTP Upgrade updater", 0x7ef370, 2, updateBowAndBombUpgrade)
