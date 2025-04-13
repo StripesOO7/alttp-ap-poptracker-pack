@@ -689,7 +689,8 @@ pod_area:connect_one_way(dark_potion_shop,function()
     return all(
         any(
             has("hammer"),
-            has("glove")
+            has("glove"),
+            has("flippers")
         ),
         can_interact("dark",5)
     )
