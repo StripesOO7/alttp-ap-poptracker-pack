@@ -1,6 +1,20 @@
 {
 	"versions": [
 		{
+			"package_version": "0.2.8",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.2.8/alttp-ap-tracker-v0.2.8.zip",
+			"sha256": "aa443f9065071c397134a8ed69e9c75d4c1943e713e861ee3807d47aba9e03b2",
+			"changelog": [
+				"- SNES offline tracking issues:",
+				"  - Desert Palace Torch was not tracked correct via memory-address",
+				"  - GT Torch was not tracked correct via memory-address",
+				"  - GT Big Chest was not tracked correct via memory-address",
+				"- Location names got changed in a previous update but he SNES only variant was not updated. thats now fixed:",
+				"  - Spec Rock outside and inside",
+				"  - Hookshot Cave the 3 true hoohshot-only chests "
+			]
+		},
+		{
 			"package_version": "0.2.7",
 			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.2.7/alttp-ap-tracker-v0.2.7.zip",
 			"sha256": "ca143a0e5ac001890f0f0ed3bfa1f251f8be221dd40d1c584b81301aef2796b0",
