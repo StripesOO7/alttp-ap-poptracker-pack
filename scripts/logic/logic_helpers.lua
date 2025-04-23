@@ -213,7 +213,7 @@ function checkSwordless()
 end
 
 function canCheckWithBook()
-    if Tracker:FindObjectForCode("Book") then
+    if Tracker:FindObjectForCode("Book").Active then
         return AccessibilityLevel.Inspect
     else
         return AccessibilityLevel.None
@@ -223,7 +223,7 @@ end
 function canUseMedallions()
     return all(
         checkSwordless(),
-        has("mastersword")
+        has("sword")
     )
 end
 

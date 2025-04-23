@@ -535,10 +535,7 @@ bombos_tablet:connect_one_way("Bombos Tablet", function() return
                 has("book"), 
                 canActivateTablets()
             ), 
-            all(
-                has("book"),
-                AccessibilityLevel.Inspect
-            )
+            canCheckWithBook()
         ),
         can_interact("light",1 )
     )
