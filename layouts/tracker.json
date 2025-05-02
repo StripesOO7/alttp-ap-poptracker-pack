@@ -29,14 +29,26 @@
                                 "key": "setting_grid"
                             }
                         },
+                        // {
+                        //     "type": "group",
+                        //     "header": "Pinned Locations",
+                        //     "content": {
+                        //         "style": "wrap",
+                        //         "type": "recentpins",
+                        //         "orientation": "vertical",
+                        //         "compact": true
+                        //     }
+                        // }
                         {
                             "type": "group",
-                            "header": "Pinned Locations",
+                            "header": "Entrace Tracking",
+                            "dock": "left",
+                            "margin": "0,0,3,0",
                             "content": {
-                                "style": "wrap",
-                                "type": "recentpins",
-                                "orientation": "vertical",
-                                "compact": true
+                                "type": "layout",
+                                "h_alignment": "center",
+                                "v_alignment": "center",
+                                "key": "ER_tracking"
                             }
                         }
                     ]
@@ -86,14 +98,26 @@
                                 "key": "setting_grid"
                             }
                         },
+                        // {
+                        //     "type": "group",
+                        //     "header": "Pinned Locations",
+                        //     "content": {
+                        //         "style": "wrap",
+                        //         "type": "recentpins",
+                        //         "orientation": "horizontal",
+                        //         "compact": true
+                        //     }
+                        // }
                         {
                             "type": "group",
-                            "header": "Pinned Locations",
+                            "header": "Entrace Tracking",
+                            "dock": "left",
+                            "margin": "0,0,3,0",
                             "content": {
-                                "style": "wrap",
-                                "type": "recentpins",
-                                "orientation": "horizontal",
-                                "compact": true
+                                "type": "layout",
+                                "h_alignment": "center",
+                                "v_alignment": "center",
+                                "key": "ER_tracking"
                             }
                         }
                     ]
