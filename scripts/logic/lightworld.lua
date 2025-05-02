@@ -52,7 +52,7 @@ lightworld_spawns:connect_one_way(light_spawn_sanctuary)
 lightworld_spawns:connect_one_way(light_spawn_links_house_area)
 lightworld_spawns:connect_one_way(light_spawn_old_man, function() return CanReach(light_death_mountain_ascent) end) --rescued old man
 
-light_spawn_sanctuary:connect_one_way(sanctuary, function() return openOrStandard() end)
+light_spawn_sanctuary:connect_one_way(sanctuary_entrance, function() return openOrStandard() end)
 light_spawn_links_house_area:connect_one_way(links_house, function() return openOrStandard() end)
 light_spawn_old_man:connect_one_way(old_man_cave, function() return openOrStandard() end)
 
@@ -332,8 +332,8 @@ end)
 
 -- castle_escape_dropdown_room
 
-sanctuary:connect_two_ways(sanctuary_area)
-sanctuary:connect_one_way("Sanctuary Chest", function() return can_interact("light",1 ) end)
+sanctuary_entrance:connect_two_ways(sanctuary_area)
+sanctuary_entrance:connect_one_way("Sanctuary Chest", function() return can_interact("light",1 ) end)
 
 sanctuary_area:connect_one_way_entrance("Castel Escape Dropdown", ce_dropdown_entrance, function() 
     return all(
@@ -852,7 +852,7 @@ waterfall_fairy_inside:connect_one_way("Waterfall Fairy - Right", function() ret
 
 -- hyrule_castle_area
 hyrule_castle_area:connect_one_way(links_house_area)
-hyrule_castle_area:connect_two_ways(hyrule_castle_top_outside)
+-- hyrule_castle_area:connect_two_ways(hyrule_castle_top_outside)
 hyrule_castle_area:connect_one_way(eastern_palace_area)
 hyrule_castle_area:connect_one_way(lumberjacks_area)
 hyrule_castle_area:connect_one_way(light_flute_map, function() 

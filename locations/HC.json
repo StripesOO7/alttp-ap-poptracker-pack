@@ -151,7 +151,8 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$CanReach|ce_entrance",
+            "^$CanReach|ce_stairs",
+            "^$CanReach|sanctuary_entrance",
             "^$CanReach|ce_dropdown_entrance"
         ],
         "children": [
@@ -273,13 +274,13 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$CanReach|sanctuary"
+            "^$CanReach|sanctuary_entrance"
         ],
         "children": [
             {
                 "name": "Sanctuary Chest",
                 "access_rules": [
-                    "^$CanReach|sanctuary"
+                    "^$CanReach|sanctuary_entrance"
                 ],
                 "sections": [
                     {

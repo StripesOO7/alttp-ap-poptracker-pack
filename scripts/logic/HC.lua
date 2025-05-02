@@ -7,7 +7,7 @@ local hc_before_boomerang_chest_room = alttp_location.new("hc_before_boomerang_c
 local hc_boomerang_chest_room = alttp_location.new("hc_boomerang_chest_room")
 local hc_ball_guard_room = alttp_location.new("hc_ball_guard_room")
 local hc_zeldas_cell = alttp_location.new("hc_zeldas_cell")
--- ce_entrance =alttp_location.new("")
+-- ce_stairs =alttp_location.new("")
 -- ce_dropdown_entrance =alttp_location.new("")
 local ce_dark_cross = alttp_location.new("ce_dark_cross")
 local ce_rat_key_room = alttp_location.new("ce_rat_key_room")
@@ -15,7 +15,8 @@ local ce_secret_room = alttp_location.new("ce_secret_room")
 
 hc_main_entrance:connect_two_ways(hyrule_castle_top_left)
 hc_main_entrance:connect_two_ways(hyrule_castle_top_right)
-hc_main_entrance:connect_one_way(ce_entrance, function() return can_interact("light", 1) end)
+hc_main_entrance:connect_two_ways(hc_back_hall)
+hc_main_entrance:connect_one_way(ce_stairs, function() return can_interact("light", 1) end)
 
 hc_left_entrance:connect_two_ways(hc_back_hall, function() return can_interact("light", 1) end)
 hc_right_entrance:connect_two_ways(hc_back_hall, function() return can_interact("light", 1) end)
@@ -65,7 +66,7 @@ end)
 hc_ball_guard_room:connect_two_ways(hc_zeldas_cell, function() return has("hc_bigkey") end)
 hc_zeldas_cell:connect_one_way("HC - Zelda's Chest")
 
-ce_entrance:connect_two_ways(ce_dark_cross, function(keys) 
+ce_stairs:connect_two_ways(ce_dark_cross, function(keys) 
     return any(
         darkRooms(),
         has("standard")
@@ -130,4 +131,4 @@ ce_secret_room:connect_one_way("CE - Secret Room Left")
 ce_secret_room:connect_one_way("CE - Secret Room Center")
 ce_secret_room:connect_one_way("CE - Secret Room Right")
 
-ce_dropdown_entrance:connect_one_way(sanctuary)
+ce_dropdown_entrance:connect_one_way(sanctuary_entrance)

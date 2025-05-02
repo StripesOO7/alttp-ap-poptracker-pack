@@ -1471,9 +1471,9 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules": [
-            "^$CanReach|ce_entrance",
+            "^$CanReach|ce_stairs",
             "^$CanReach|ce_dropdown_entrance",
-            "^$CanReach|sanctuary"
+            "^$CanReach|sanctuary_entrance"
         ],
         "children": [
             {
@@ -1516,7 +1516,7 @@
                 "name": "Sanctuary",
                 "item_count": 1,
                 "access_rules": [
-                    "^$CanReach|sanctuary"
+                    "^$CanReach|sanctuary_entrance"
                 ],
                 "sections": [
                     {
