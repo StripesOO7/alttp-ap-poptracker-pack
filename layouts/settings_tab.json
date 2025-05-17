@@ -1,0 +1,91 @@
+﻿{
+    "settings_tab": {
+        "type": "array",
+        "orientation": "horizontal",
+        // "margin": "10,10,10,10",
+        "content": [
+            {
+                "type": "itemgrid",
+                "item_size": "125",
+                // "orientation": "vertical",
+                "h_alignment": "center",
+                "item_h_alignment": "center",
+                "item_v_alignment": "center",
+                "rows": [
+                    [
+                        "autofill_settings"
+                    ],
+                    [
+                        "ui_hint"
+                    ],
+                    [
+                        "goal"
+                    ],
+                    [
+                        "retro_caves"
+                    ]
+                ]
+            },
+            {
+                "type": "itemgrid",
+                "item_size": "125",
+                // "orientation": "vertical",
+                "h_alignment": "center",
+                "item_h_alignment": "center",
+                "item_v_alignment": "center",
+                "rows": [
+                    [
+                        "enemizer"
+                    ],
+                    [
+                        "start_option"
+                    ],
+                    [
+                        "glitches"
+                    ],
+                    [
+                        "dark_mode"
+                    ]
+                ]
+            },
+            {
+                "type": "itemgrid",
+                "item_size": "125",
+                // "orientation": "vertical",
+                "h_alignment": "center",
+                "item_h_alignment": "center",
+                "item_v_alignment": "center",
+                "rows": [
+                    [
+                        "boss_shuffle"
+                    ],
+                    [
+                        "key_drop_shuffle"
+                    ],
+                    [
+                        "bombless"
+                    ]
+                ]
+            },
+            {
+                "type": "itemgrid",
+                "item_size": "125",
+                // "orientation": "vertical",
+                "h_alignment": "center",
+                "item_h_alignment": "center",
+                "item_v_alignment": "center",
+                "rows": [
+                    [
+                        "shop_sanity"
+                    ],
+                    [
+                        "shop_include_witchhut"
+                    ],
+                    [
+                        "shop_shuffle_capacity"
+                    ]
+                ]
+            }
+        ]
+    }
+}
