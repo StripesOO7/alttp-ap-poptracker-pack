@@ -4,13 +4,13 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$CanReach|sw_bottom_left_drop",
-            "^$CanReach|sw_pinball_drop",
-            "^$CanReach|sw_pot_circle_drop",
-            "^$CanReach|sw_big_chest_entrance",
-            "^$CanReach|sw_gibdo_entrance",
-            "^$CanReach|sw_west_lobby_entrance",
-            "^$CanReach|sw_north_drop"
+            "^$CanReach|sw_bottom_left_drop_inside",
+            "^$CanReach|sw_pinball_drop_inside",
+            "^$CanReach|sw_pot_circle_drop_inside",
+            "^$CanReach|sw_big_chest_entrance_inside",
+            "^$CanReach|sw_gibdo_entrance_inside",
+            "^$CanReach|sw_west_lobby_entrance_inside",
+            "^$CanReach|sw_north_drop_inside"
         ],
         "children": [
             {
@@ -126,7 +126,7 @@
             {
                 "name": "West Lobby Pot Key",
                 "access_rules": [
-                    "^$CanReach|sw_west_lobby_entrance"
+                    "^$CanReach|sw_west_lobby_entrance_inside"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
@@ -149,7 +149,7 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "^$CanReach|sw_big_chest_entrance"
+                    "^$CanReach|sw_big_chest_entrance_inside"
                 ],
                 "sections": [
                     {
@@ -175,7 +175,7 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$CanReach|sw_back_entrance"
+            "^$CanReach|sw_back_entrance_inside"
         ],
         "children": [
             {

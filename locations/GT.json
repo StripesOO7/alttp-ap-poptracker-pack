@@ -4,7 +4,7 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$CanReach|gt_entrance"
+            "^$CanReach|gt_entrance_inside"
         ],
         "children": [
             {
@@ -315,7 +315,7 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$CanReach|gt_entrance"
+            "^$CanReach|gt_entrance_inside"
         ],
         "children": [
             {

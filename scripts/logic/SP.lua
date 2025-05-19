@@ -11,7 +11,7 @@ local sp_waterfall_room = alttp_location.new("sp_waterfall_room")
 local sp_after_waterfall_room = alttp_location.new("sp_after_waterfall_room")
 local sp_boss_room = alttp_location.new("sp_boss_room")
 
-sp_entrance:connect_two_ways(sp_first_room, function() 
+sp_entrance_inside:connect_two_ways(sp_first_room, function() 
     return all(
         can_interact("dark", 1),
         has("flippers")

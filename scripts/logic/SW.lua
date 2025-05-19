@@ -21,46 +21,46 @@ local sw_back_spike_corner_room = alttp_location.new("sw_back_spike_corner_room"
 local sw_back_boss_room = alttp_location.new("sw_back_boss_room")
 
 
-sw_bottom_left_drop:connect_one_way(sw_bottom_left_room)
+sw_bottom_left_drop_inside:connect_one_way(sw_bottom_left_room)
 sw_bottom_left_room:connect_two_ways(sw_compass_room)
 
 sw_compass_room:connect_two_ways(sw_pot_prison)
 sw_compass_room:connect_one_way(sw_pinball_room)
 sw_compass_room:connect_one_way("SW - Compass Chest")
 
-sw_pot_prison:connect_two_ways(sw_big_chest_entrance, function(keys) return has("sw_smallkey", keys + 1, 1, keys + 1, 1), KDSreturn(keys + 1, keys + 1) end)
+sw_pot_prison:connect_two_ways(sw_big_chest_entrance_inside, function(keys) return has("sw_smallkey", keys + 1, 1, keys + 1, 1), KDSreturn(keys + 1, keys + 1) end)
 sw_pot_prison:connect_one_way("SW - Pot Prison")
 
-sw_pinball_drop:connect_one_way(sw_pinball_room)
+sw_pinball_drop_inside:connect_one_way(sw_pinball_room)
 
 sw_pinball_room:connect_two_ways(sw_map_room, function(keys) return has("sw_smallkey", keys + 1, 1, keys + 1, 1), KDSreturn(keys + 1, keys + 1) end)
 sw_pinball_room:connect_one_way("SW - Pinball Chest")
 
-sw_pot_circle_drop:connect_one_way(sw_pot_circle)
+sw_pot_circle_drop_inside:connect_one_way(sw_pot_circle)
 sw_pot_circle:connect_one_way(sw_map_room)
-sw_pot_circle:connect_two_ways(sw_big_chest_entrance)
+sw_pot_circle:connect_two_ways(sw_big_chest_entrance_inside)
 
-sw_map_room:connect_two_ways(sw_big_chest_entrance)
+sw_map_room:connect_two_ways(sw_big_chest_entrance_inside)
 sw_map_room:connect_one_way("SW - Map Chest")
 
-sw_big_chest_entrance:connect_one_way("SW - Big Chest", function() 
+sw_big_chest_entrance_inside:connect_one_way("SW - Big Chest", function() 
     return all(
         has("sw_bigkey"), 
         has("bombs")
     ) 
 end)
 
-sw_gibdo_entrance:connect_two_ways(sw_big_key_room)
-sw_gibdo_entrance:connect_two_ways(sw_west_lobby_entrance)
+sw_gibdo_entrance_inside:connect_two_ways(sw_big_key_room)
+sw_gibdo_entrance_inside:connect_two_ways(sw_west_lobby_entrance_inside)
 
 sw_big_key_room:connect_one_way("SW - Big Key Chest")
 
-sw_north_drop:connect_one_way(sw_gibdo_entrance)
+sw_north_drop_inside:connect_one_way(sw_gibdo_entrance_inside)
 
-sw_west_lobby_entrance:connect_one_way("SW - West Lobby Key Drop")
+sw_west_lobby_entrance_inside:connect_one_way("SW - West Lobby Key Drop")
 
-sw_back_entrance:connect_two_ways(sw_back_bridge)
-sw_back_entrance:connect_two_ways(sw_back_bottom_hallway)
+sw_back_entrance_inside:connect_two_ways(sw_back_bridge)
+sw_back_entrance_inside:connect_two_ways(sw_back_bottom_hallway)
 
 sw_back_bottom_hallway:connect_one_way("SW - Bridge Chest")
 

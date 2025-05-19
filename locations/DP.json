@@ -4,9 +4,9 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$CanReach|dp_main_entrance",
-            "^$CanReach|dp_left_entrance",
-            "^$CanReach|dp_right_entrance"
+            "^$CanReach|dp_main_entrance_inside",
+            "^$CanReach|dp_left_entrance_inside",
+            "^$CanReach|dp_right_entrance_inside"
         ],
         "children": [
             {
@@ -115,7 +115,7 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/chest_opened_img.png",
         "access_rules": [
-            "^$CanReach|dp_back_entrance"
+            "^$CanReach|dp_back_entrance_inside"
         ],
         "children": [
             {

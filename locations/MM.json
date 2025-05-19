@@ -4,7 +4,7 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$CanReach|mm_entrance"
+            "^$CanReach|mm_entrance_inside"
         ],
         "children": [
             {
@@ -189,7 +189,7 @@
             {
                 "name": "Map Chest",
                 "access_rules": [
-                    "^$CanReach|mm_map_room_top"//, ^$CanReach|mm_conveyor_crystal_room"
+                    "^$CanReach|mm_map_room_top"
                 ],
                 "sections": [
                     {

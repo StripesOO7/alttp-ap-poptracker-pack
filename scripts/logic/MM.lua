@@ -18,7 +18,7 @@ local mm_hourlgas_room = alttp_location.new("mm_hourlgas_room")
 local mm_teleporter_room = alttp_location.new("mm_teleporter_room")
 local mm_boss_room = alttp_location.new("mm_boss_room")
 
-mm_entrance:connect_two_ways(mm_main_room, function() 
+mm_entrance_inside:connect_two_ways(mm_main_room, function() 
     return all(
         any(
             has("hookshot"),

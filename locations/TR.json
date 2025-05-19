@@ -4,9 +4,9 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$CanReach|tr_main_entrance",
-            "^$CanReach|tr_big_chest_entrance", //$any|hookshot|somaria|boots",
-            "^$CanReach|tr_laser_entrance"
+            "^$CanReach|tr_main_entrance_inside",
+            "^$CanReach|tr_big_chest_entrance_inside",
+            "^$CanReach|tr_laser_entrance_inside"
         ],
         "children": [
             {
@@ -201,13 +201,13 @@
             {
                 "name": "Eye Bridge Accessible",
                 "access_rules": [
-                    "^$CanReach|tr_eye_bridge_entrance"
+                    "^$CanReach|tr_eye_bridge_entrance_inside"
                 ]
             },
             {
                 "name": "Eye Bridge Top Left",
                 "access_rules": [
-                    "^$CanReach|tr_eye_bridge_entrance"
+                    "^$CanReach|tr_eye_bridge_entrance_inside"
                 ],
                 "sections": [
                     {
@@ -229,7 +229,7 @@
             {
                 "name": "Eye Bridge Bottom Left",
                 "access_rules": [
-                    "^$CanReach|tr_eye_bridge_entrance"
+                    "^$CanReach|tr_eye_bridge_entrance_inside"
                 ],
                 "sections": [
                     {
@@ -251,7 +251,7 @@
             {
                 "name": "Eye Bridge Top Right",
                 "access_rules": [
-                    "^$CanReach|tr_eye_bridge_entrance"
+                    "^$CanReach|tr_eye_bridge_entrance_inside"
                 ],
                 "sections": [
                     {
@@ -273,7 +273,7 @@
             {
                 "name": "Eye Bridge Bottom Right",
                 "access_rules": [
-                    "^$CanReach|tr_eye_bridge_entrance"
+                    "^$CanReach|tr_eye_bridge_entrance_inside"
                 ],
                 "sections": [
                     {
@@ -295,7 +295,7 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "^$CanReach|tr_big_chest_entrance"
+                    "^$CanReach|tr_big_chest_entrance_inside"
                 ],
                 "sections": [
                     {

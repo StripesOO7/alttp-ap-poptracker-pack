@@ -4,7 +4,7 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$CanReach|toh_entrance"
+            "^$CanReach|toh_entrance_inside"
         ],
         "children": [
             {
@@ -54,7 +54,7 @@
             {
                 "name": "Map Chest",
                 "access_rules": [
-                    "^$CanReach|toh_entrance"
+                    "^$CanReach|toh_entrance_inside"
                 ],
                 "sections": [
                     {

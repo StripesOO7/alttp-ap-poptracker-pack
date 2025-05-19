@@ -7,10 +7,10 @@ local at_circle_of_pots = alttp_location.new("at_circle_of_pots")
 local at_aga1 = alttp_location.new("at_aga1")
 local at_pre_curtain = alttp_location.new("at_pre_curtain")
 
-at_entrance:connect_one_way(at_golden_guards, function() return all(can_interact("light", 1), openOrStandard()) end)
-at_entrance:connect_one_way(at_golden_guards, function() return all(can_interact("dark", 1), inverted()) end)
+at_entrance_inside:connect_one_way(at_golden_guards, function() return all(can_interact("light", 1), openOrStandard()) end)
+at_entrance_inside:connect_one_way(at_golden_guards, function() return all(can_interact("dark", 1), inverted()) end)
 
-at_golden_guards:connect_one_way(at_entrance)
+at_golden_guards:connect_one_way(at_entrance_inside)
 at_golden_guards:connect_two_ways(at_first_chest, function() return dealDamage() end)
 
 at_first_chest:connect_one_way("AT - First Chest", function() return dealDamage() end)

@@ -22,7 +22,7 @@ local tr_eye_hallway = alttp_location.new("tr_eye_hallway")
 local tr_switch_puzzle = alttp_location.new("tr_switch_puzzle")
 local tr_boss_room = alttp_location.new("tr_boss_room")
 
-tr_main_entrance:connect_two_ways(tr_square_travel_room, function() return has("somaria") end)
+tr_main_entrance_inside:connect_two_ways(tr_square_travel_room, function() return has("somaria") end)
 tr_square_travel_room:connect_two_ways(tr_compass_room, function() return has("somaria") end)
 tr_square_travel_room:connect_two_ways(tr_torch_puzzle, function() 
     return all(
@@ -73,16 +73,16 @@ tr_big_key_room_bottom_right:connect_two_ways(tr_big_key_chest_island)
 tr_big_key_chest_island:connect_one_way("TR - Big Key Chest")
 
 tr_shooter_after_big_key:connect_two_ways(tr_big_key_door_room)
-tr_shooter_after_big_key:connect_two_ways(tr_laser_entrance)
+tr_shooter_after_big_key:connect_two_ways(tr_laser_entrance_inside)
 
-tr_big_chest_entrance:connect_one_way(tr_big_key_door_room, function() 
+tr_big_chest_entrance_inside:connect_one_way(tr_big_key_door_room, function() 
     return any(
         has("boots"),
         has("hookshot"),
         has("somaria")
     ) 
 end)
-tr_big_chest_entrance:connect_one_way("TR - Big Chest", function() 
+tr_big_chest_entrance_inside:connect_one_way("TR - Big Chest", function() 
     return all(
         has("tr_bigkey"),
         any(
@@ -113,14 +113,14 @@ tr_travel_maze:connect_two_ways(tr_eye_hallway, function()
     ) 
 end)
 
-tr_eye_hallway:connect_two_ways(tr_eye_bridge_entrance)
+tr_eye_hallway:connect_two_ways(tr_eye_bridge_entrance_inside)
 tr_eye_hallway:connect_two_ways(tr_switch_puzzle, function(keys) return has("tr_smallkey", keys + countDoneDeadends(1, "@Turtle Rock Front/Big Key Chest/Big Key Chest"), 4, keys + countDoneDeadends(1, "@Turtle Rock Front/Big Key Chest/Big Key Chest"), 6), KDSreturn(keys + 1, keys + 1) end)
 -- tr_eye_hallway:connect_two_ways(tr_switch_puzzle, function(keys) return has("tr_smallkey", keys + 1, 3, keys + 1, 5), KDSreturn(keys + 1, keys + 1) end)
 
-tr_eye_bridge_entrance:connect_one_way("TR - Eyebridge Top Right")
-tr_eye_bridge_entrance:connect_one_way("TR - Eyebridge Top Left")
-tr_eye_bridge_entrance:connect_one_way("TR - Eyebridge Bottom Right")
-tr_eye_bridge_entrance:connect_one_way("TR - Eyebridge Bottom Left")
+tr_eye_bridge_entrance_inside:connect_one_way("TR - Eyebridge Top Right")
+tr_eye_bridge_entrance_inside:connect_one_way("TR - Eyebridge Top Left")
+tr_eye_bridge_entrance_inside:connect_one_way("TR - Eyebridge Bottom Right")
+tr_eye_bridge_entrance_inside:connect_one_way("TR - Eyebridge Bottom Left")
 
 tr_switch_puzzle:connect_two_ways(tr_boss_room, function() return has("somaria") end)
 

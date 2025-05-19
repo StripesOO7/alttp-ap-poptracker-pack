@@ -7,7 +7,7 @@ local toh_boss_room = alttp_location.new("toh_boss_room")
 local toh_above_big_chest = alttp_location.new("toh_above_big_chest")
 
 
-toh_entrance:connect_two_ways(toh_main_room, function() 
+toh_entrance_inside:connect_two_ways(toh_main_room, function() 
     return all(
         can_interact("light", 1),
         any(
