@@ -25,6 +25,7 @@ if  Tracker.ActiveVariantUID == "Map Tracker - AP" or
     Tracker.ActiveVariantUID == "Entrance Randomizer Tracker /w Pot-shuffle - AP" then
     require("scripts/autotracking/archipelago")
     require("scripts/autotracking/SNESautotrackin_functions")
+
 end
 -- loads the SNES autotrecking codes
 if  Tracker.ActiveVariantUID == "Map Tracker - SNES" or 
@@ -35,3 +36,5 @@ Tracker.ActiveVariantUID == "Entrance Randomizer Tracker /w Pot-shuffle - SNES" 
     require("scripts/autotracking/SNESautotracking_ROMdata")
 end
 
+require("scripts/autotracking/luaitems")
+require("scripts/autotracking/doors")

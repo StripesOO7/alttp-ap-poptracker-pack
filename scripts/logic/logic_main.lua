@@ -72,7 +72,7 @@ end
 
 -- creates a lua object for the given name. it acts as a representation of a overworld reagion or indoor locatoin and
 -- tracks its connected objects wvia the exit-table
-function alttp_location.new(name)
+function alttp_location.new(name, outside)
     local self = setmetatable({}, alttp_location)
     if name then
         named_locations[name] = self
@@ -83,6 +83,11 @@ function alttp_location.new(name)
     
     self.exits = {}
     self.keys = math.huge
+    if outside == true then
+        self.inside = true
+    else
+        self.inside = false
+    end
     return self
 end
 
@@ -109,6 +114,7 @@ end
 
 -- markes a 2-way connection between 2 locations. acts as a shortcut for 2 connect_one_way-calls 
 function alttp_location:connect_two_ways(exit, rule)
+    -- print(exit.name, self.name)
     self:connect_one_way(exit, rule)
     exit:connect_one_way(self, rule)
 end
@@ -173,7 +179,52 @@ function alttp_location:discover(accessibility, keys)
 
     if accessibility > 0 then -- if parent-location was accessible
         for _, exit in pairs(self.exits) do -- iterate over current watched locations exits
-            local location = exit[1] -- exit name
+            local location
+            -- print("name:", exit[1].name)
+            -- print("self:", self.name)
+            -- print(string.sub(exit[1].name, -7,-1), string.sub(exit[1].name, -8,-1))
+            if string.sub(exit[1].name, -7,-1) == "_inside" and string.sub(self.name, -8,-1) == "_outside" then
+                print("name:", exit[1].name)
+                print("self:", self.name)
+                -- print("Item: ", Tracker:FindObjectForCode(exit[1].name))
+                -- print("stage: ", Tracker:FindObjectForCode(exit[1].name).CurrentStage)
+                -- print("DOOR INDEX result: ",INDOORS_INDEX[Tracker:FindObjectForCode(exit[1].name).CurrentStage])
+                -- print("DOOR INDEX result name: ",INDOORS_INDEX[Tracker:FindObjectForCode(exit[1].name).CurrentStage].name)
+                location = INDOORS_INDEX[Tracker:FindObjectForCode(exit[1].name).CurrentStage]
+                -- OUTDOORS_INDEX[exit[1].name] = self
+                -- print("exit[1].name: ", exit[1].name)
+                -- print("self.name: ", self.name)
+                -- print("OUTDOORS_INDEX[exit[1].name]: ", OUTDOORS_INDEX[exit[1].name])
+                -- print("OUTDOORS_INDEX[self]: ", OUTDOORS_INDEX[self])
+                -- print("INDOORS_INDEX[Tracker:FindObjectForCode(exit[1].name).CurrentStage]: ", INDOORS_INDEX[Tracker:FindObjectForCode(exit[1].name).CurrentStage])
+                -- print("INDOORS_INDEX[Tracker:FindObjectForCode(self.name).CurrentStage]: ", INDOORS_INDEX[Tracker:FindObjectForCode(self.name).CurrentStage])
+                -- for index, lookup_exit in pairs(location.exits) do
+                --     -- print(index, lookup_exit[1].name)
+                --     if string.sub(lookup_exit[1].name, -9,-1) == "_entrance" then
+                --         location.exits[index] = self
+                --     end
+                -- end-- exit name
+            elseif string.sub(self.name, -7,-1) == "_inside" and string.sub(exit[1].name, -8,-1) == "_outside" then
+                print("name:", exit[1].name)
+                print("self:", self.name)
+            --     print("Item: ", Tracker:FindObjectForCode(self.name))
+            --     print("stage: ", Tracker:FindObjectForCode(self.name).CurrentStage)
+            --     print("DOOR INDEX result: ",INDOORS_INDEX[Tracker:FindObjectForCode(self.name).CurrentStage])
+            --     print("DOOR INDEX result name: ",INDOORS_INDEX[Tracker:FindObjectForCode(self.name).CurrentStage].name)
+                location = INDOORS_INDEX[Tracker:FindObjectForCode(self.name).CurrentStage]
+                -- OUTDOORS_INDEX[self.name] = exit[1]
+                -- print("exit[1].name: ", exit[1].name)
+                -- print("self.name: ", self.name)
+                -- print("OUTDOORS_INDEX[exit[1].name]: ", OUTDOORS_INDEX[exit[1].name])
+                -- print("OUTDOORS_INDEX[self]: ", OUTDOORS_INDEX[self])
+                -- -- print("INDOORS_INDEX[Tracker:FindObjectForCode(exit[1].name).CurrentStage]: ", INDOORS_INDEX[Tracker:FindObjectForCode(exit[1].name).CurrentStage])
+                -- print("INDOORS_INDEX[Tracker:FindObjectForCode(self.name).CurrentStage]: ", INDOORS_INDEX[Tracker:FindObjectForCode(self.name).CurrentStage])
+            elseif string.sub(exit[1].name, -8,-1) == "_outside" then
+                location = OUTDOORS_INDEX[self.name]
+            else
+                location = exit[1] -- exit name
+            end
+            print(location)
             local oldAccess = location:accessibility() -- get most recent accessibilty level for exit
             local oldKey = location.keys or 0
             if oldAccess < accessibility then -- if new accessibility from above is higher then currently stored one, so is more accessible then before
@@ -208,8 +259,8 @@ function alttp_location:discover(accessibility, keys)
                     key = keys
                 end
                 if access > oldAccess or (access == oldAccess and key < oldKey) then -- not sure about the <
-                    -- print(self.name) 
-                    -- print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access])
+                    print(self.name) 
+                    print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access])
                     location:discover(access, key)
                 end
             end
