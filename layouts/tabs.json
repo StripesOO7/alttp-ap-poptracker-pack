@@ -59,8 +59,23 @@
             {
                 "title": "Dungeons",
                 "content": {
-                    "type": "layout",
-                    "key": "Dungeons"
+                    "type": "tabbed",
+                    "tabs": [
+                        {
+                            "title": "Lightworld Dungeons",
+                            "content": {
+                                "type": "layout",
+                                "key": "Light_World_Dungeons"
+                            }
+                        },
+                        {
+                            "title": "Darkworld Dungeons",
+                            "content": {
+                                "type": "layout",
+                                "key": "Dark_World_Dungeons"
+                            }
+                        }
+                    ]
                 }
             },
             {

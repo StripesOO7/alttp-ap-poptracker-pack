@@ -88,56 +88,74 @@
                     "type": "tabbed",
                     "tabs": [
                         {
-                            "title": "Hyrule Castle",
+                            "title": "Lost Woods",
                             "content": {
                                 "type": "map",
                                 "maps": [
-                                    "HC"
+                                    "lost_woods_caves"
                                 ]
                             }
                         },
                         {
-                            "title": "Castle Escape",
+                            "title": "Light Death Mountain",
                             "content": {
                                 "type": "map",
                                 "maps": [
-                                    "CE"
+                                    "light_death_mountain_caves"
                                 ]
                             }
                         },
                         {
-                            "title": "Agahnim's Tower",
+                            "title": "Kakariko",
                             "content": {
                                 "type": "map",
                                 "maps": [
-                                    "AT"
+                                    "kakariko_village_caves"
                                 ]
                             }
                         },
                         {
-                            "title": "Eastern Palace",
+                            "title": "Central Hyrule",
                             "content": {
                                 "type": "map",
                                 "maps": [
-                                    "EP"
+                                    "central_hyrule_caves"
                                 ]
                             }
                         },
                         {
-                            "title": "Desert Palace",
+                            "title": "Eastern Area",
                             "content": {
                                 "type": "map",
                                 "maps": [
-                                    "DP"
+                                    "eastern_area_caves"
                                 ]
                             }
                         },
                         {
-                            "title": "Tower of Hera",
+                            "title": "Desert",
                             "content": {
                                 "type": "map",
                                 "maps": [
-                                    "ToH"
+                                    "desert_caves"
+                                ]
+                            }
+                        },
+                        {
+                            "title": "Dam",
+                            "content": {
+                                "type": "map",
+                                "maps": [
+                                    "dam_caves"
+                                ]
+                            }
+                        },
+                        {
+                            "title": "Lake Hylia",
+                            "content": {
+                                "type": "map",
+                                "maps": [
+                                    "lake_hylia_caves"
                                 ]
                             }
                         }
@@ -230,47 +248,47 @@
                     "type": "tabbed",
                     "tabs": [
                         {
-                            "title": "Palace of Darkness",
-                            "content": {
-                                "type": "map",
-                                "maps": [
-                                    "PoD"
-                                ]
-                            }
-                        },
-                        {
-                            "title": "Swamp Palace",
-                            "content": {
-                                "type": "map",
-                                "maps": [
-                                    "SP"
-                                ]
-                            }
-                        },
-                        {
                             "title": "Skull Woods",
                             "content": {
                                 "type": "map",
                                 "maps": [
-                                    "SW"
+                                    "skull_woods_caves"
                                 ]
                             }
                         },
                         {
-                            "title": "Thieves Town",
+                            "title": "Dark Death Mountain",
                             "content": {
                                 "type": "map",
                                 "maps": [
-                                    "TT"
+                                    "dark_death_mountain_caves"
                                 ]
                             }
                         },
                         {
-                            "title": "Ice Palace",
+                            "title": "Village of the Outcast",
                             "content": {
                                 "type": "map",
                                 "maps": [
-                                    "IP"
+                                    "outcast_village_caves"
+                                ]
+                            }
+                        },
+                        {
+                            "title": "Pyramid",
+                            "content": {
+                                "type": "map",
+                                "maps": [
+                                    "dark_central_hyrule_caves"
+                                ]
+                            }
+                        },
+                        {
+                            "title": "PoD Area",
+                            "content": {
+                                "type": "map",
+                                "maps": [
+                                    "pod_area_caves"
                                 ]
                             }
                         },
@@ -279,34 +297,25 @@
                             "content": {
                                 "type": "map",
                                 "maps": [
-                                    "MM"
+                                    "misery_mire_caves"
                                 ]
                             }
                         },
                         {
-                            "title": "Turtle Rock",
+                            "title": "Swamp",
                             "content": {
                                 "type": "map",
                                 "maps": [
-                                    "TR"
+                                    "swamp_caves"
                                 ]
                             }
                         },
                         {
-                            "title": "Ganon's Tower - Bottom",
+                            "title": "Dark Lake Hylia",
                             "content": {
                                 "type": "map",
                                 "maps": [
-                                    "GT_Bottom"
-                                ]
-                            }
-                        },
-                        {
-                            "title": "Ganon's Tower - Top",
-                            "content": {
-                                "type": "map",
-                                "maps": [
-                                    "GT_Top"
+                                    "dark_lake_hylia_caves"
                                 ]
                             }
                         }
