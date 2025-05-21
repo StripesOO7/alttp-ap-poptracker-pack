@@ -123,7 +123,7 @@ kakariko_village:connect_two_ways(kakariko_backside_pub)
 kakariko_village:connect_two_ways(kakariko_frontside_pub_outside)
 kakariko_village:connect_two_ways(kakariko_shop_outside)
 kakariko_village:connect_two_ways(magic_bat_cave_outside)
-kakariko_village:connect_two_ways(darf_smiths_outside)
+kakariko_village:connect_two_ways(dwarf_smiths_outside)
 kakariko_village:connect_one_way(purple_chest_pickup, function()
     return all(
         inverted(),
@@ -152,7 +152,7 @@ kakariko_bombhut_outside:connect_two_ways_entrance("Kakariko Bombhut", kakariko_
 kakariko_frontside_pub_outside:connect_two_ways_entrance("Kakariko Frontside Pub", kakariko_frontside_pub_inside)
 kakariko_shop_outside:connect_two_ways_entrance("Kakariko Shop", kakariko_shop_inside)
 magic_bat_cave_outside:connect_two_ways_entrance("Kakariko Magic Bat Cave", magic_bat_cave_inside)
-darf_smiths_outside:connect_two_ways_entrance("Kakariko Dwarf Smiths", darf_smiths_inside)
+dwarf_smiths_outside:connect_two_ways_entrance("Kakariko Dwarf Smiths", dwarf_smiths_inside)
 -- kakariko_village:connect_one_way(purple_chest_pickup, function()
 --     return all(
 --         inverted(),
@@ -209,7 +209,7 @@ kakariko_backside_pub:connect_one_way("Backside Pub", function() return can_inte
 
 
 
-darf_smiths_inside:connect_one_way("Rescue Dwarf")
+dwarf_smiths_inside:connect_one_way("Rescue Dwarf")
 
 
 -- kakariko_village:connect_one_way(magic_bat_hole, function() 
