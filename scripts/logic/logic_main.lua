@@ -16,7 +16,7 @@ local accessLVL= {
 }
 
 -- Table to store named locations
-named_locations = {}
+NAMED_LOCATIONS = {}
 local stale = true
 local accessibilityCache = {}
 local accessibilityCacheComplete = false
@@ -53,9 +53,9 @@ function CanReach(name)
     -- else
     if type(name) == "table" then
         -- print(name.name)
-        location = named_locations[name.name]
+        location = NAMED_LOCATIONS[name.name]
     else 
-        location = named_locations[name]
+        location = NAMED_LOCATIONS[name]
     end
     -- print(location, name)
     -- end
@@ -72,21 +72,31 @@ end
 
 -- creates a lua object for the given name. it acts as a representation of a overworld reagion or indoor locatoin and
 -- tracks its connected objects wvia the exit-table
-function alttp_location.new(name, outside)
+function alttp_location.new(name, shortname, outside)
+    if shortname == nil then
+        shortname = name
+    end
+    if outside == nil then
+        outside = true
+    end
     local self = setmetatable({}, alttp_location)
     if name then
-        named_locations[name] = self
+        NAMED_LOCATIONS[name] = self
         self.name = name
+        self.shortname = shortname
     else
         self.name = self
+        self.shortname = shortname
     end
     
     self.exits = {}
     self.keys = math.huge
-    if outside == true then
-        self.inside = true
-    else
-        self.inside = false
+    if outside ~= nil then
+        if outside then
+            self.side = true --outside
+        else
+            self.side = true --inside
+        end
     end
     return self
 end
@@ -98,7 +108,7 @@ end
 -- markes a 1-way connections between 2 "locations/regions" in the source "locations" exit-table with rules if provided
 function alttp_location:connect_one_way(exit, rule)
     if type(exit) == "string" then
-        local existing = named_locations[exit]
+        local existing = NAMED_LOCATIONS[exit]
         if existing then
             print("Warning: " .. exit .. " defined multiple times")  -- not sure if it's worth fixing in data or simply allowing this
             exit = existing
@@ -183,48 +193,24 @@ function alttp_location:discover(accessibility, keys)
             -- print("name:", exit[1].name)
             -- print("self:", self.name)
             -- print(string.sub(exit[1].name, -7,-1), string.sub(exit[1].name, -8,-1))
-            if string.sub(exit[1].name, -7,-1) == "_inside" and string.sub(self.name, -8,-1) == "_outside" then
-                print("name:", exit[1].name)
-                print("self:", self.name)
-                -- print("Item: ", Tracker:FindObjectForCode(exit[1].name))
-                -- print("stage: ", Tracker:FindObjectForCode(exit[1].name).CurrentStage)
-                -- print("DOOR INDEX result: ",INDOORS_INDEX[Tracker:FindObjectForCode(exit[1].name).CurrentStage])
-                -- print("DOOR INDEX result name: ",INDOORS_INDEX[Tracker:FindObjectForCode(exit[1].name).CurrentStage].name)
-                location = INDOORS_INDEX[Tracker:FindObjectForCode(exit[1].name).CurrentStage]
-                -- OUTDOORS_INDEX[exit[1].name] = self
-                -- print("exit[1].name: ", exit[1].name)
-                -- print("self.name: ", self.name)
-                -- print("OUTDOORS_INDEX[exit[1].name]: ", OUTDOORS_INDEX[exit[1].name])
-                -- print("OUTDOORS_INDEX[self]: ", OUTDOORS_INDEX[self])
-                -- print("INDOORS_INDEX[Tracker:FindObjectForCode(exit[1].name).CurrentStage]: ", INDOORS_INDEX[Tracker:FindObjectForCode(exit[1].name).CurrentStage])
-                -- print("INDOORS_INDEX[Tracker:FindObjectForCode(self.name).CurrentStage]: ", INDOORS_INDEX[Tracker:FindObjectForCode(self.name).CurrentStage])
-                -- for index, lookup_exit in pairs(location.exits) do
-                --     -- print(index, lookup_exit[1].name)
-                --     if string.sub(lookup_exit[1].name, -9,-1) == "_entrance" then
-                --         location.exits[index] = self
-                --     end
-                -- end-- exit name
-            elseif string.sub(self.name, -7,-1) == "_inside" and string.sub(exit[1].name, -8,-1) == "_outside" then
-                print("name:", exit[1].name)
-                print("self:", self.name)
-            --     print("Item: ", Tracker:FindObjectForCode(self.name))
-            --     print("stage: ", Tracker:FindObjectForCode(self.name).CurrentStage)
-            --     print("DOOR INDEX result: ",INDOORS_INDEX[Tracker:FindObjectForCode(self.name).CurrentStage])
-            --     print("DOOR INDEX result name: ",INDOORS_INDEX[Tracker:FindObjectForCode(self.name).CurrentStage].name)
-                location = INDOORS_INDEX[Tracker:FindObjectForCode(self.name).CurrentStage]
-                -- OUTDOORS_INDEX[self.name] = exit[1]
-                -- print("exit[1].name: ", exit[1].name)
-                -- print("self.name: ", self.name)
-                -- print("OUTDOORS_INDEX[exit[1].name]: ", OUTDOORS_INDEX[exit[1].name])
-                -- print("OUTDOORS_INDEX[self]: ", OUTDOORS_INDEX[self])
-                -- -- print("INDOORS_INDEX[Tracker:FindObjectForCode(exit[1].name).CurrentStage]: ", INDOORS_INDEX[Tracker:FindObjectForCode(exit[1].name).CurrentStage])
-                -- print("INDOORS_INDEX[Tracker:FindObjectForCode(self.name).CurrentStage]: ", INDOORS_INDEX[Tracker:FindObjectForCode(self.name).CurrentStage])
-            elseif string.sub(exit[1].name, -8,-1) == "_outside" then
-                location = OUTDOORS_INDEX[self.name]
+            if (string.sub(exit[1].name, -7,-1) == "_inside" and string.sub(self.name, -8,-1) == "_outside") or (string.sub(self.name, -7,-1) == "_inside" and string.sub(exit[1].name, -8,-1) == "_outside") then
+                -- print("name:", exit[1].name)
+                -- print("self:", self.name)
+                local temp = Tracker:FindObjectForCode(self.name)
+                if temp ~= nil then
+                    location = NAMED_LOCATIONS[temp.ItemState.Target]
+                else
+                    print("exit connection is fucket")
+                    return
+                end
             else
                 location = exit[1] -- exit name
             end
-            print(location)
+            if location == nil then
+                print("location retrieval is fucked")
+                return
+            end
+            -- print(location)
             local oldAccess = location:accessibility() -- get most recent accessibilty level for exit
             local oldKey = location.keys or 0
             if oldAccess < accessibility then -- if new accessibility from above is higher then currently stored one, so is more accessible then before

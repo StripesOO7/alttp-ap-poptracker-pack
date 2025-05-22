@@ -182,16 +182,24 @@ OUTDOORS_INDEX = {
 
 
 function CreateDoorsLuaitems()
-    for _, location in pairs(named_locations) do
-        print(location.name)
+    for _, location in pairs(NAMED_LOCATIONS) do
+        -- print(location.name)
         if string.sub(location.name, -7,-1) == "_inside" then
-            CreateLuaLocationItems(location.name, "inside")
+            CreateLuaLocationItems(location.name, location.shortname, "inside")
             
         elseif string.sub(location.name, -8,-1) == "_outside" then
-            CreateLuaLocationItems(location.name, "outside")
+            CreateLuaLocationItems(location.name, location.shortname, "outside")
         end
+        if string.sub(location.name, -7,-1) == "_inside"  or string.sub(location.name, -8,-1) == "_outside" then
+            -- print(Tracker:FindObjectForCode(location.name).Active)
+            -- local test = Tracker:FindObjectForCode(location.name)
+            -- test.Active = true--Set("Active", false)
+            -- print(Tracker:FindObjectForCode(location.name).Active)
+        end
+        -- print(Tracker:FindObjectForCode(location.name).Active)
     end
     return 1
 end
-
+Tracker.BulkUpdate = true
 CreateDoorsLuaitems()
+Tracker.BulkUpdate = false

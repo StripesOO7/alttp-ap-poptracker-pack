@@ -1,5 +1,29 @@
 ENTRANCE_SELECTED = nil
 
+local function _SetLocationOptions(source, target)
+    source.Icon = ImageReference:FromPackRelativePath("images/AP-item.png")
+    source.BadgeText = "to ".. target.ItemState.Shortname
+    source.BadgeTextColor = "#abcdef"
+    source:SetOverlayFontSize(10)
+    source:SetOverlayAlign("left")
+
+    target.Icon = ImageReference:FromPackRelativePath("images/AP-img.png")
+    target.BadgeText = "from".. source.ItemState.Shortname
+    target.BadgeTextColor = "#abcdef"
+    target:SetOverlayFontSize(10)
+    target:SetOverlayAlign("left")
+
+end
+
+local function _UnsetLocationOptions(source)
+    source.ItemState.Target = nil
+    source.Icon = ImageReference:FromPackRelativePath("images/door_closed.png")
+    source.BadgeText = ""
+    source.BadgeTextColor = ""
+    source:SetOverlayFontSize(10)
+    source:SetOverlayAlign("left")
+end
+
 local function OnLeftClickFunc(self)
     -- if self.ItemState.Stage ~= nil then
     --     self.ItemState.Stage = self.ItemState.Stage + 1
@@ -16,86 +40,123 @@ local function OnLeftClickFunc(self)
     --     self.BadgeTextColor = ""
     --     self.BadgeText = ""
     -- end
-    if ENTRANCE_SELECTED == nil then
+    local target_entrance
+
+-- target + ENTRANCE_SELECTED == nil
+-- taget == nil + ENTRANCE_SELECTED == value
+-- target == value + ENTRANCE_SELECTED == nil
+-- target == value + ENTRANCE_SELECTED == value
+
+    if ENTRANCE_SELECTED == nil and self.ItemState.Target == nil then -- fully new connection
         ENTRANCE_SELECTED = self.Name
-        print("outside selected", ENTRANCE_SELECTED, self.Name)
-        
-    else
-        print("connect to inside")
-        local location = named_locations[self.Name]
-        for _, exit in pairs(location.exits) do
-            print(exit[1].name)
+    elseif ENTRANCE_SELECTED ~= nil and self.ItemState.Target == nil then -- second step of normal new connection
+        target_entrance = Tracker:FindObjectForCode(ENTRANCE_SELECTED)
+        if target_entrance ~= nil then
+            target_entrance.ItemState.Target = self.Name
+            self.ItemState.Target = target_entrance.Name
+            if self.ItemState.Side == "inside" then
+                _SetLocationOptions(self, target_entrance)
+                -- self.Icon = ImageReference:FromPackRelativePath("images/inside/" .. INDOORS_INDEX[self.Name] .. ".png")
+            else
+                _SetLocationOptions(target_entrance, self)
+                --  self.Icon = ImageReference:FromPackRelativePath("images/outside/" .. OUTDOORS_INDEX[self.Name] .. ".png")
+            end
         end
-        INDOORS_INDEX[self.Name] = ENTRANCE_SELECTED
-        OUTDOORS_INDEX[ENTRANCE_SELECTED] = self.Name
-        print("INDOORS_INDEX[self.Name]",  INDOORS_INDEX[self.Name])
-        print("OUTDOORS_INDEX[ENTRANCE_SELECTED]", OUTDOORS_INDEX[ENTRANCE_SELECTED])
         ENTRANCE_SELECTED = nil
+    elseif ENTRANCE_SELECTED == nil and self.ItemState.Target ~= nil then -- retarget a connection to new target location
+        ENTRANCE_SELECTED = self.Name
+        target_entrance = Tracker:FindObjectForCode(self.ItemState.Target)
+        if target_entrance ~= nil then
+            _UnsetLocationOptions(target_entrance)
+            _UnsetLocationOptions(self)
+        end
+
+
+    elseif ENTRANCE_SELECTED ~= nil and self.ItemState.Target ~= nil then -- attempt of new connection to already existing connection (how to handle that?)
+        target_entrance = Tracker:FindObjectForCode(self.ItemState.Target)
+        if target_entrance ~= nil then
+            _UnsetLocationOptions(target_entrance)
+            _UnsetLocationOptions(self)
+        end
+        target_entrance = Tracker:FindObjectForCode(ENTRANCE_SELECTED)
+        if target_entrance ~= nil then
+            target_entrance.ItemState.Target = self.Name
+            self.ItemState.Target = target_entrance.Name
+            if self.ItemState.Side == "inside" then
+                _SetLocationOptions(self, target_entrance)
+                -- self.Icon = ImageReference:FromPackRelativePath("images/inside/" .. INDOORS_INDEX[self.Name] .. ".png")
+            else
+                _SetLocationOptions(target_entrance, self)
+                --  self.Icon = ImageReference:FromPackRelativePath("images/outside/" .. OUTDOORS_INDEX[self.Name] .. ".png")
+            end
+        end
+        ENTRANCE_SELECTED = nil
+
+    else
+        print("################### SOMETHING IS REAAAALY FUCKED #########################")
     end
-    print("ENTRANCE_SELECTED", ENTRANCE_SELECTED)
 end
 
 local function OnRightClickFunc(self)
     if ENTRANCE_SELECTED ~= nil then
         print("set back to nil")
         ENTRANCE_SELECTED = nil
+    else
+        if self.ItemState.Target ~= nil then
+            local target = Tracker:FindObjectForCode(self.ItemState.Target)
+            if target ~= nil then
+                _UnsetLocationOptions(target)
+                _UnsetLocationOptions(self)
+                print("diconnected" .. self.Name .. " from " .. target.Name)
+                forceUpdate()
+            end
+        end
     end
-    -- if self.ItemState.Stage ~= nil then
-    --     if self.ItemState.Stage == 0 then
-    --         print("OnRightClickFunc at 0")
-    --         self:SetOverlayBackground("")
-    --         self.BadgeTextColor = ""
-    --         self.BadgeText = ""
-    --     else
-    --         self.ItemState.Stage = self.ItemState.Stage - 1
-    --         print("OnRightClickFunc to stage"..tostring(self.ItemState.Stage))
-    --         self:SetOverlayBackground("#333333")
-    --         self.BadgeTextColor = "#AAAAAA"
-    --         self.BadgeText = self.Name..tostring(self.ItemState.Stage)
-    --     end
-    -- else
-    --     self.ItemState.Stage = 0
-    -- end
-    -- if self.ItemState.Stage == 0 then
-    --     print("OnRightClickFunc at 0")
-    --     self:SetOverlayBackground("")
-    --     self.BadgeTextColor = ""
-    --     self.BadgeText = ""
-    -- end
-    print("INDOORS_INDEX")
-    print(dump_table(INDOORS_INDEX))
-    print("OUTDOORS_INDEX")
-    print(dump_table(OUTDOORS_INDEX))
+
+    print("from", self.Name, "to", self.ItemState.Target)
 end
 local function OnMiddleClickFunc(self)
-    print("INDOORS_INDEX")
-    print(dump_table(INDOORS_INDEX))
-    print("OUTDOORS_INDEX")
-    print(dump_table(OUTDOORS_INDEX))
-    print("OnMiddleClickFunc")
 end
 local function CanProvideCodeFunc(self, code)
     -- print("inside CanProvideCodeFunc. self:", self.Name, " and Code:", code)
     return code == self.Name
 end
 local function ProvidesCodeFunc(self, code)
-    if self.Name == code then
-        return 1
-    else
-        return 0
+    if CanProvideCodeFunc(self, code) then 
+        -- print("ProvidesCodeFunc with", code)
+        if self.ItemState.Target ~= nil then
+            return 1
+        end
     end
+    return 0
 end
 -- local function AdvanceToCodeFunc()
 --     print("AdvanceToCodeFunc")
 -- end
 local function SaveFunc(self)
-    print("SaveFunc")
+    return { 
+        Stage = self.ItemState.Stage,
+        Active = self.ItemState.Active,
+        Side = self.ItemState.Side,
+        Target = self.ItemState.Target,
+        Name = self.Name,
+        Shortname = self.ItemState.Shortname
+    }
+    -- print("SaveFunc")
 end
 local function LoadFunc(self, data)
-    print("LoadFunc")
+    -- print("loading data from:", data)
+    -- print(dump_table(data))
+    if data ~= nil and self.Name == data.Name then
+        if data.Side == "inside" and data.Target ~= nil then
+            self.ItemState.Target = data.Target
+        end
+    end
+
+    -- print("LoadFunc")
 end
 local function PropertyChangedFunc()
-    print("PropertyChangedFunc")
+    -- print("PropertyChangedFunc")
 end
 local function ItemState()
 end
@@ -109,15 +170,21 @@ end
 -- LuaLocationItems = {}
 -- LuaLocationItems.__index = LuaLocationItems
 
-function CreateLuaLocationItems(code, side)
+function CreateLuaLocationItems(code, shortname, side)
     local self = ScriptHost:CreateLuaItem()
     -- self.Type = "custom"
     self.Name = code
-    self.Icon = ImageReference:FromPackRelativePath("images/entrances/" .. code .. ".png")
+    self.Icon = ImageReference:FromPackRelativePath("images/door_closed.png")
     self.ItemState = {
-        Stage = 0
+        Stage = 0,
+        Active = true,
+        Side = nil,
+        Target = nil,
+        Shortname = shortname
     }
-    self.ItemState.side = side
+    -- self.Active = false
+    self.ItemState.Side = side
+    -- self.Active = false
     
     self.CanProvideCodeFunc = CanProvideCodeFunc
     self.OnLeftClickFunc = OnLeftClickFunc
