@@ -803,5 +803,7 @@ end
 -- ScriptHost:AddMemoryWatch("LTTP In-Game Rooms", 0x7e0010, 0x90,  updateInGameRoomsFromMemorySegment, 250)
 ScriptHost:AddMemoryWatch("LTTP In-Game status", 0x7e0010, 0x250, updateInGameStatusFromMemorySegment, 250)
 ScriptHost:AddMemoryWatch("LTTP In-Game status 2", 0x7e0400, 0x250, test, 250)
-
+if Tracker.ActiveVariantUID == "Map Tracker - AP" then
+    ScriptHost:AddMemoryWatch("LTTP Item Data", 0x7ef340, 0x90, updateAga1)
+end
 -- ScriptHost:AddMemoryWatch("LTTP Settings", 0x180000, 250, autofillSettings)
