@@ -230,16 +230,55 @@ room_lookuptable = {
     [260] = {"Overworld", "Lightworld",},
 }
 
+dungeon_entrance_IDS = {
+    [0] = {Pyramid Drop},
+    [16] = {Pyramid Exit},
+    [12] = {gt_entrance_inside},
+    [14] = {ip_entrance_inside},
+    [18] = {sanctuary_entrance_inside},
+    [35] = {tr_laser_entrance_inside},
+    [36] = {tr_big_chest_entrance_inside},
+    [40] = {sp_entrance_inside},
+    [74] = {pod_entrance_inside},
+    [85] = {secret_passage_hole_inside, secret_passage_stairs_inside},
+    [86] = {sw_west_lobby_entrance_inside, sw_north_drop_inside},
+    [87] = {sw_gibdo_entrance_inside},
+    [88] = {sw_big_chest_entrance_inside, sw_pot_circle_drop_inside},
+    [89] = {sw_back_entrance_inside},
+    [96] = {hc_left_entrance_inside},
+    [97] = {hc_main_entrance_inside},
+    [98] = {hc_right_entrance_inside},
+    [99] = {dp_back_entrance_inside},
+    [103] = {sw_bottom_left_drop_inside},
+    [104] = {sw_pinball_drop_inside},
+    [119] = {toh_entrance_inside},
+    [131] = {dp_left_entrance_inside},
+    [132] = {dp_main_entrance_inside},
+    [133] = {dp_right_entrance_inside},
+    [152] = {mm_entrance_inside},
+    [201] = {ep_entrance_inside},
+    [213] = {tr_eye_bridge_entrance_inside},
+    [214] = {tr_main_entrance_inside},
+    [219] = {tt_entrance_inside},
+    [224] = {at_entrance_inside},
+}
+
 function updateUI(segment, mainModuleIdx)
     if mainModuleIdx > 0x05 then
         new_ow_room = segment:ReadUInt16(0x7e008a)
-        -- last_seen_room = segment:ReadUInt16(0x7e00a2)
-        -- last_seen_room = segment:ReadUInt8(0x7e00a9)
-        -- last_seen_room = segment:ReadUInt8(0x7e00aA)
-        -- print("left/right qudrant:", segment:ReadUInt8(0x7e00a9))
-        -- print("upper/lower qudrant:", segment:ReadUInt8(0x7e00aa))
-        -- print("y cord :", segment:ReadUInt16(0x7e0020))
-        -- print("x cord :", segment:ReadUInt16(0x7e0022))
+        last_seen_room1 = segment:ReadUInt16(0x7e00a2)
+        print("Room Memory for Address: 0x7e00a2")
+        print(last_seen_room1)
+        last_seen_room2 = segment:ReadUInt8(0x7e00a9)
+        print("Room Memory for Address: 0x7e00a9")
+        print(last_seen_room2)
+        last_seen_room3 = segment:ReadUInt8(0x7e00aA)
+        print("Room Memory for Address: 0x7e00aA")
+        print(last_seen_room3)        
+        print("left/right qudrant:", segment:ReadUInt8(0x7e00a9))
+        print("upper/lower qudrant:", segment:ReadUInt8(0x7e00aa))
+        print("y cord :", segment:ReadUInt16(0x7e0020))
+        print("x cord :", segment:ReadUInt16(0x7e0022))
         if new_ow_room == 0 then
             ow_room = 0
             new_dungeon_room = segment:ReadUInt16(0x7e00a0)
