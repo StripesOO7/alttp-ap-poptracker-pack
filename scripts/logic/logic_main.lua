@@ -193,22 +193,46 @@ function alttp_location:discover(accessibility, keys)
             -- print("name:", exit[1].name)
             -- print("self:", self.name)
             -- print(string.sub(exit[1].name, -7,-1), string.sub(exit[1].name, -8,-1))
+            -- print("er_tracking", Tracker:FindObjectForCode("er_tracking"),
+            -- local er_setting_stage
+            -- er_setting_stage = Tracker:FindObjectForCode("er_tracking").CurrentStage
+            local er_check = {
+                    [0] = function() return false end,
+                    [1] = function() print("simple ER", ER_SIMPLE[self.name] ~= nil) return ER_SIMPLE[self.name] ~= nil end,
+                    [2] = function() print("full ER", NAMED_ENTRANCES[self.name] ~= nil) return NAMED_ENTRANCES[self.name] ~= nil end,
+                    [3] = function() print("!!!!!!!!!!!!!!!!!! YOU ABSOLUTELY SHOUlD NOT BE ABLE TO SEE THIS!!!!!!!!!!!!!!!!")return INSANITY_ENTRANCES[self.name] ~= nil end
+                }
+
+
+
             if (string.sub(exit[1].name, -7,-1) == "_inside" and string.sub(self.name, -8,-1) == "_outside") or (string.sub(self.name, -7,-1) == "_inside" and string.sub(exit[1].name, -8,-1) == "_outside") then
-                -- print("name:", exit[1].name)
-                -- print("self:", self.name)
-                local temp = Tracker:FindObjectForCode(self.name)
-                if temp ~= nil then
-                    location = NAMED_LOCATIONS[temp.ItemState.Target]
-                else
-                    print("exit connection is fucket")
-                    return
+                local temp
+                local er_setting_stage
+                er_setting_stage = Tracker:FindObjectForCode("er_tracking").CurrentStage
+                if er_check[er_setting_stage]() then -- simple ER
+                    temp = Tracker:FindObjectForCode(self.name)
+                    print(self.name, "to er_simple[self.name]: -->", ER_SIMPLE[self.name])
+                    -- print("############ entering simple ER ############")
+                    -- print(NAMED_LOCATIONS[temp.ItemState.Target])
+                    if temp ~= nil then
+                        location = NAMED_LOCATIONS[temp.ItemState.Target]
+                    else
+                        print("exit connection is fucket")
+                        return
+                    end
                 end
-            else
+                if location == nil and er_check[er_setting_stage]() then
+                    location = empty_location
+                end
+            end
+
+            if location == nil then
                 location = exit[1] -- exit name
             end
             if location == nil then
                 print("location retrieval is fucked")
-                return
+                location = empty_location
+                -- return
             end
             -- print(location)
             local oldAccess = location:accessibility() -- get most recent accessibilty level for exit
@@ -274,5 +298,32 @@ function forceUpdate()
     update.Active = not update.Active
 end
 
+function emptyLocationTargets()
+    local er_tracking = Tracker:FindObjectForCode("er_tracking")
+    print(er_tracking.CurrentStage)
+    if er_tracking.CurrentStage == 0 then
+        print("run discorver")
+        entry_point:discover(AccessibilityLevel.Normal, 0)
+        print("finshed discover")
+    elseif er_tracking.CurrentStage == 1 then
+        print("simple er")
+        for name, _ in pairs(ER_SIMPLE) do
+            -- print(name)
+            -- print(Tracker:FindObjectForCode(name).ItemState.Target)
+            Tracker:FindObjectForCode(name).ItemState.Target = nil
+        end
+    elseif er_tracking.CurrentStage == 2 then
+        print("full er")
+        for name, _ in pairs(NAMED_ENTRANCES) do
+            -- print(name)
+            -- print(Tracker:FindObjectForCode(name).ItemState.Target)
+            Tracker:FindObjectForCode(name).ItemState.Target = nil
+        end
+    else
+        print("insanity ER is not supported you troll")
+    end
+end
+
 ScriptHost:AddWatchForCode("stateChanged", "*", stateChanged)
+ScriptHost:AddWatchForCode("ER_Setting_Changed", "er_tracking", emptyLocationTargets)
 ScriptHost:AddOnLocationSectionChangedHandler("location/section_change_handler", forceUpdate)

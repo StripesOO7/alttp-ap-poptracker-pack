@@ -231,8 +231,8 @@ room_lookuptable = {
 }
 
 dungeon_entrance_IDS = {
-    [0] = {Pyramid Drop},
-    [16] = {Pyramid Exit},
+    [0] = {Pyramid_Drop},
+    [16] = {Pyramid_Exit},
     [12] = {gt_entrance_inside},
     [14] = {ip_entrance_inside},
     [18] = {sanctuary_entrance_inside},

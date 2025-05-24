@@ -274,7 +274,7 @@
             {
                 "name": "Master Sword Pedestal",
                 "access_rules": [
-                    "^$CanReach|lost_woods_pedestal"
+                    "^$CanReach|mastersword_meadow_inside"
                 ],
                 "sections": [
                     {
@@ -843,7 +843,7 @@
                     {
                         "name": "Graveyard Ledge",
                         "access_rules": [
-                            "^$CanReach|Graveyard Ledge"
+                            "^$CanReach|Graveyard Ledge Item"
                         ]
                     }
                 ],
@@ -935,7 +935,7 @@
             {
                 "name": "Rescue Old Man",
                 "access_rules": [
-                    "^$CanReach|light_death_mountain_ascent"
+                    "^$CanReach|old_man_cave"
                 ],
                 "visibility_rules": ["$openOrStandard"],
                 "sections": [
@@ -990,7 +990,7 @@
                     {
                         "name": "Item inside",
                         "access_rules": [
-                            "^$CanReach|Spec Rock Item"
+                            "^$CanReach|Spec Rock Inside Item"
                         ]
                     }
                 ],

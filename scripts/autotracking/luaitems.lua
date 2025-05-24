@@ -93,7 +93,7 @@ local function OnLeftClickFunc(self)
         ENTRANCE_SELECTED = nil
 
     else
-        print("################### SOMETHING IS REAAAALY FUCKED #########################")
+        print("################### SOMETHING IS REEEEEAAAALY FUCKED #########################")
     end
 end
 
@@ -122,17 +122,19 @@ local function CanProvideCodeFunc(self, code)
     return code == self.Name
 end
 local function ProvidesCodeFunc(self, code)
+--     return 1
+-- end
     if CanProvideCodeFunc(self, code) then 
         -- print("ProvidesCodeFunc with", code)
-        if self.ItemState.Target ~= nil then
+        if self.ItemState.Target ~= nil then  --and Tracker:FindObjectForCode("er_tracking").CurrentStage > 0 then
             return 1
         end
     end
     return 0
 end
--- local function AdvanceToCodeFunc()
---     print("AdvanceToCodeFunc")
--- end
+local function AdvanceToCodeFunc()
+    print("AdvanceToCodeFunc")
+end
 local function SaveFunc(self)
     return { 
         Stage = self.ItemState.Stage,
@@ -185,6 +187,12 @@ function CreateLuaLocationItems(code, shortname, side)
     -- self.Active = false
     self.ItemState.Side = side
     -- self.Active = false
+
+    -- if self.ItemState.Side == "inside" then
+    --     self.ItemState.Target = string.gsub(self.Name, "_inside", "_outside")
+    -- else
+    --     self.ItemState.Target = string.gsub(self.Name, "_outside", "_inside")
+    -- end
     
     self.CanProvideCodeFunc = CanProvideCodeFunc
     self.OnLeftClickFunc = OnLeftClickFunc
@@ -198,27 +206,3 @@ function CreateLuaLocationItems(code, shortname, side)
     -- self.ItemState = ItemState
     return self
 end
-
--- CreateLuaLocationItems("hc_main_entrance_inside", "inside")
--- CreateLuaLocationItems("hc_left_entrance_inside", "inside")
--- CreateLuaLocationItems("hc_right_entrance_inside", "inside")
--- CreateLuaLocationItems("sanctuary_entrance_inside", "inside")
--- CreateLuaLocationItems("ce_dropdown_entrance_inside", "inside")
--- CreateLuaLocationItems("at_entrance_inside", "inside")
--- CreateLuaLocationItems("ep_entrance_inside", "inside")
--- CreateLuaLocationItems("dp_main_entrance_inside", "inside")
--- CreateLuaLocationItems("dp_left_entrance_inside", "inside")
--- CreateLuaLocationItems("dp_right_entrance_inside", "inside")
--- CreateLuaLocationItems("dp_back_entrance_inside", "inside")
--- CreateLuaLocationItems("lost_woods_hideout_cave_inside", "inside")
-
--- print(Test.Name)
--- print(Test.Type)
--- print(Test.Icon)
--- print(Test.ItemState)
--- print(Test.CanProvideCodeFunc)
--- print(Tracker:FindObjectForCode("lost_woods_hideout_cave_inside").Name)
--- print(Tracker:FindObjectForCode("lost_woods_hideout_cave_inside").Type)
--- print(Tracker:FindObjectForCode("lost_woods_hideout_cave_inside").Icon)
--- print(Tracker:FindObjectForCode("lost_woods_hideout_cave_inside").ItemState)
--- print(Test)

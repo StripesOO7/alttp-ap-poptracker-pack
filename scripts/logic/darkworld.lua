@@ -569,6 +569,7 @@ dark_bumper_cave_top_ledge:connect_two_ways(dark_death_mountain_fairy_outside, f
 
 
 dark_bumper_cave_top_ledge:connect_one_way(dark_lumpberjacks)
+dark_bumper_cave_top_ledge:connect_one_way("Bumper Cave Item")
 
 -- dark_death_mountain_ascent:connect_two_ways_entrance("Upper Dark Death Mountain Ascent", dark_death_mountain_left_bottom, function() return darkRooms() end)
 

@@ -664,8 +664,8 @@ light_death_mountain_return_left_outside:connect_two_ways_entrance("Light Death 
  -- rescue old man
 ---------------- HARD TO DO -------------
 
-light_death_mountain_return_ledge:connect_two_ways(bumpercave_top_outside, function() return inverted() end)
-old_man_cave_left_ledge:connect_two_ways(bumpercave_bottom_outside, function() return inverted() end)
+light_death_mountain_return_ledge:connect_two_ways(dark_bumper_cave_top_outside, function() return inverted() end)
+old_man_cave_left_ledge:connect_two_ways(dark_bumper_cave_bottom_outside, function() return inverted() end)
 
 -- light_bumper_cave_ledge:connect_one_way_entrance("Light Bumper Cave", inverted_bumper_cave, function() return inverted() end)
 light_death_mountain_return_ledge:connect_one_way(dark_bumper_cave_top_ledge, function() 

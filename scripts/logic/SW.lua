@@ -37,7 +37,7 @@ sw_pinball_room:connect_two_ways(sw_map_room, function(keys) return has("sw_smal
 sw_pinball_room:connect_one_way("SW - Pinball Chest")
 
 sw_pot_circle_drop_inside:connect_one_way(sw_pot_circle)
-sw_pot_circle:connect_one_way(sw_map_room)
+sw_pot_circle:connect_one_way(sw_map_room, function() return can_interact("dark", 1) end)
 sw_pot_circle:connect_two_ways(sw_big_chest_entrance_inside)
 
 sw_map_room:connect_two_ways(sw_big_chest_entrance_inside)
@@ -73,7 +73,7 @@ sw_back_troch_puzzle:connect_one_way(sw_back_spike_corner_room, function()
     ) 
 end)
 
-sw_back_spike_corner_room:connect_two_ways(sw_back_boss_room, function(keys) return has("sw_smallkey", keys + 1, 4, keys + 1, 4), KDSreturn(keys + 1, keys + 1) end)
+sw_back_spike_corner_room:connect_two_ways(sw_back_boss_room, function(keys) return has("sw_smallkey", keys, 3, keys + 1, 4), KDSreturn(keys, keys + 1) end)
 sw_back_spike_corner_room:connect_one_way("SW - Spike Corner Key Drop")
 
 sw_back_boss_room:connect_one_way("SW - Boss")

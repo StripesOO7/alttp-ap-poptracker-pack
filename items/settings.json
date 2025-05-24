@@ -420,6 +420,38 @@
         "type": "toggle",
         "img": "/images/settings/auto_mapswitching.png",
         "codes": "ui_hint"
+    },
+    {
+        "name": "Enable Entrance Ranomdizer Tracking",
+        "type": "progressive",
+        "allow_disabled":false,
+        "stages":
+            [
+                {
+                    "img": "/images/settings/er_off.png",
+                    "inherit_codes": false, 
+                    "name": "Vanilla Entrances",
+                    "codes": "er_tracking, er_off"
+                },
+                {
+                    "img": "/images/settings/er_simple.png",
+                    "inherit_codes": false, 
+                    "name": "Simple Entrance Shuffle",
+                    "codes": "er_tracking, er_simple"
+                },
+                {
+                    "img": "/images/settings/er_full.png",
+                    "inherit_codes": false, 
+                    "name": "Full Entrance Shuffle",
+                    "codes": "er_tracking, er_full"
+                },
+                {
+                    "img": "/images/settings/er_insanity.png",
+                    "inherit_codes": false, 
+                    "name": "Insanity Entrance Shuffle",
+                    "codes": "er_tracking, er_insanity"
+                }
+            ]
     }
 
 ]
