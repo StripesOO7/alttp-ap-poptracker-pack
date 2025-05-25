@@ -413,7 +413,7 @@ mastersword_meadow_outside:connect_two_ways_entrance("Mastersword Meador (Pedast
 
 lost_woods_hideout_hole_inside:connect_one_way("Lost Woods Hideout")
 lost_woods_hideout_hole_inside:connect_one_way(lost_woods_hideout_cave_inside)
-
+lost_woods_hideout_cave_inside:connect_one_way("Lost Woods Hideout", function() return AccessibilityLevel.Inspect end)
 
 
 mastersword_meadow_inside:connect_one_way("Pedestal", function() 
@@ -646,6 +646,8 @@ lumberjacks_hole_inside:connect_one_way(lumberjacks_item)
 lumberjacks_item:connect_one_way(lumberjacks_cave_inside)
 lumberjacks_item:connect_one_way("Lumberjacks Item")
 
+lumberjacks_cave_inside:connect_one_way("Lumberjacks Item", function() return AccessibilityLevel.Inspect end)
+
 lumberjacks_area:connect_two_ways(old_man_cave_left_ledge, function() 
     return all(
         has("glove"), 
@@ -793,6 +795,7 @@ light_lake_hylia:connect_two_ways(lake_hylia_island, function()
         has("pearl")
     )
 end)
+light_lake_hylia:connect_one_way("Lake Hylia Item", function() return AccessibilityLevel.Inspect end)
 
 lake_hylia_island:connect_one_way("Lake Hylia Item")
 
@@ -977,7 +980,7 @@ hyrule_castle_area:connect_two_ways(secret_passage_stairs_outside)
 
 
 
-hyrule_castle_top_outside:connect_two_ways(at_entrance_outside, function() 
+hyrule_castle_top:connect_two_ways(at_entrance_outside, function() 
     return all(
         any(
             all(
@@ -990,15 +993,15 @@ hyrule_castle_top_outside:connect_two_ways(at_entrance_outside, function()
         openOrStandard()
     )
 end)
-hyrule_castle_top_outside:connect_two_ways(gt_entrance_outside, function() 
+hyrule_castle_top:connect_two_ways(gt_entrance_outside, function() 
     return all(
         gtCrystalCount(),
         inverted()
     ) 
 end)
-hyrule_castle_top_outside:connect_two_ways(hc_left_entrance_outside)
-hyrule_castle_top_outside:connect_two_ways(hc_right_entrance_outside)
-hyrule_castle_top_outside:connect_one_way(hyrule_castle_area)
+hyrule_castle_top:connect_two_ways(hc_left_entrance_outside)
+hyrule_castle_top:connect_two_ways(hc_right_entrance_outside)
+hyrule_castle_top:connect_one_way(hyrule_castle_area)
 
 at_entrance_outside:connect_two_ways_entrance("Castle Tower", at_entrance_inside, function() 
     return all(
@@ -1165,6 +1168,7 @@ spec_rock_ledge_entrance_inside:connect_two_ways(spectacle_rock_inside_bottom)
 spec_rock_ledge_exit_inside:connect_two_ways(spectacle_rock_cave)
 
 spectacle_rock_top_drop:connect_one_way(spectacle_rock_cave)
+spectacle_rock_top_drop:connect_one_way("Spec Rock Inside Item", function() return AccessibilityLevel.Inspect end)
 spectacle_rock_inside_bottom:connect_one_way(spectacle_rock_top_drop)
 spectacle_rock_inside_bottom:connect_one_way("Spec Rock Inside Item", function() 
     return any(
@@ -1220,7 +1224,7 @@ light_death_mountain_left_top:connect_one_way("Ether Tablet", function()
 end)
 light_death_mountain_left_top:connect_one_way(spectacle_rock_top, function() return inverted() end)
 spectacle_rock_top:connect_one_way("Spec Rock Top Item")
-
+light_death_mountain_left_bottom:connect_one_way("Spec Rock Top Item", function() return AccessibilityLevel.Inspect end)
 
 toh_entrance_outside:connect_two_ways_entrance("Tower of Hera Entrance", toh_entrance_inside)
 
@@ -1395,3 +1399,4 @@ light_death_mountain_right_top:connect_two_ways(floating_island, function() retu
 floating_island:connect_one_way(light_death_mountain_right_top)
 
 floating_island:connect_one_way("Floating Island Item")
+light_death_mountain_right_top:connect_one_way("Floating Island Item", function() return AccessibilityLevel.Inspect end)

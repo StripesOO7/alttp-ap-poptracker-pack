@@ -252,7 +252,8 @@
             {
                 "name": "Lost Woods - Hideout",
                 "access_rules": [
-                    "^$CanReach|lost_woods_hideout_hole_inside"
+                    "^$CanReach|lost_woods_hideout_hole_inside",
+                    "^$CanReach|lost_woods_hideout_cave_inside"
                 ],
                 "sections": [
                     {
@@ -297,7 +298,8 @@
             {
                 "name": "Lumberjacks",
                 "access_rules": [
-                    "^$CanReach|lumberjacks_area"
+                    "^$CanReach|lumberjacks_item",
+                    "^$CanReach|lumberjacks_cave_inside"
                 ],
                 "sections": [
                     {
@@ -619,7 +621,7 @@
             {
                 "name": "Lake Hylia",
                 "access_rules": [
-                    "^$CanReach|lake_hylia_island"
+                    "^$CanReach|light_lake_hylia"
                 ],
                 "sections": [
                     {
@@ -964,11 +966,14 @@
             {
                 "name": "Spectacle Rock Top",
                 "access_rules": [
-                    "^$CanReach|Spec Rock Top Item"
+                    "^$CanReach|light_death_mountain_left_bottom"
                 ],
                 "sections": [
                     {
                         "name": "Top Item",
+                        "access_rules": [
+                            "^$CanReach|Spec Rock Top Item"
+                        ],
                         "capture_item": true
                     }
                 ],
@@ -984,6 +989,7 @@
             {
                 "name": "Spectacle Rock inside",
                 "access_rules": [
+                    "^$CanReach|spectacle_rock_top_drop",
                     "^$CanReach|spectacle_rock_inside_bottom"
                 ],
                 "sections": [
@@ -1041,6 +1047,9 @@
         "children": [
             {
                 "name": "Floating Island",
+                "access_rules": [
+                    "^$CanReach|light_death_mountain_right_top"
+                ],
                 "sections": [
                     {
                         "name": "Item on Floating Island",
