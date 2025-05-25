@@ -339,7 +339,7 @@ function autoFill()
         -- randomize_shop_inventories = {code="", mapping=mapToggle}, 
         -- shuffle_shop_inventories = {code="", mapping=mapToggle}, 
         shuffle_capacity_upgrades = {code="shop_shuffle_capacity", mapping=mapToggle},
-        entrance_shuffle = {code="entrance_shuffle", mapping=mapEntranceShuffle}, 
+        entrance_shuffle = {code="er_tracking", mapping=mapEntranceShuffle}, 
         goal = {code="goal", mapping=mapGoal}, 
         mode = {code="start_option", mapping=mapStages},
         enemy_shuffle = {code="enemizer", mapping=mapToggle}, 

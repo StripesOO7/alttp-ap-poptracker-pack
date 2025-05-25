@@ -103,13 +103,13 @@ local function OnRightClickFunc(self)
             if target ~= nil then
                 _UnsetLocationOptions(target)
                 _UnsetLocationOptions(self)
-                print("diconnected" .. self.Name .. " from " .. target.Name)
+                -- print("diconnected" .. self.Name .. " from " .. target.Name)
                 forceUpdate()
             end
         end
     end
 
-    print("from", self.Name, "to", self.ItemState.Target)
+    -- print("from", self.Name, "to", self.ItemState.Target)
 end
 local function OnMiddleClickFunc(self)
 end
@@ -162,7 +162,7 @@ local function LoadFunc(self, data)
             self:SetOverlayAlign("left")
         end
     else
-        print("skipped laoding")
+        -- print("skipped laoding")
     end
 
     -- print("LoadFunc")
