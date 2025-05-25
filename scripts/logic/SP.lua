@@ -14,7 +14,12 @@ local sp_boss_room = alttp_location.new("sp_boss_room")
 sp_entrance_inside:connect_two_ways(sp_first_room, function() 
     return all(
         can_interact("dark", 1),
-        has("flippers")
+        has("flippers"),
+        CanReach(dam_inside),
+        any(
+            canChangeWorldWithMirror(),
+            Tracker:FindObjectForCode("er_tracking").CurrentStage > 0
+        )
     )
 end)
 
