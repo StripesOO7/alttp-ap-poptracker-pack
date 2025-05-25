@@ -299,6 +299,7 @@ function stateChanged()
     -- require("scripts/logic/logic_helpers")
     -- require("scripts/logic/logic_main")
     -- require("scripts/logic_import")
+    -- canFinish()
 end
 
 function forceUpdate()
@@ -336,6 +337,10 @@ function emptyLocationTargets()
     end
 end
 
+
+
+
 ScriptHost:AddWatchForCode("stateChanged", "*", stateChanged)
 ScriptHost:AddWatchForCode("ER_Setting_Changed", "er_tracking", emptyLocationTargets)
+
 ScriptHost:AddOnLocationSectionChangedHandler("location/section_change_handler", forceUpdate)

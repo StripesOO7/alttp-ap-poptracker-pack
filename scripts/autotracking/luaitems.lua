@@ -216,3 +216,13 @@ function CreateLuaLocationItems(code, shortname, side)
     -- self.ItemState = ItemState
     return self
 end
+
+function Reset_ER_setings() 
+    for name, _ in pairs(NAMED_ENTRANCES) do
+        -- print(name)
+        -- print(Tracker:FindObjectForCode(name).ItemState.Target)
+        _UnsetLocationOptions(Tracker:FindObjectForCode(name))
+    end
+    Tracker:FindObjectForCode("reset_er").Active = false
+end
+ScriptHost:AddWatchForCode("ER_Setting_Changed", "reset_er", Reset_ER_setings)
