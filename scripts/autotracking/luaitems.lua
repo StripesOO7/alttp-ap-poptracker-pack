@@ -1,17 +1,18 @@
 ENTRANCE_SELECTED = nil
 
-local function _SetLocationOptions(source, target)
-    source.Icon = ImageReference:FromPackRelativePath("images/AP-item.png")
+local function _SetLocationOptions(source, target) -- source == inside, target == outside
+
+    source.Icon = ImageReference:FromPackRelativePath("images/entrances/".. target.ItemState.Side .."/".. string.gsub(target.Name, "_"..target.ItemState.Side, "") ..".png")
     source.BadgeText = "to ".. target.ItemState.Shortname
     source.BadgeTextColor = "#abcdef"
     source:SetOverlayFontSize(10)
     source:SetOverlayAlign("left")
 
-    target.Icon = ImageReference:FromPackRelativePath("images/AP-img.png")
-    target.BadgeText = "from".. source.ItemState.Shortname
-    target.BadgeTextColor = "#abcdef"
-    target:SetOverlayFontSize(10)
-    target:SetOverlayAlign("left")
+    -- target.Icon = ImageReference:FromPackRelativePath("images/entrances/inside/".. string.gsub(source.Name, "_inside", "") ..".png")
+    -- target.BadgeText = "from".. source.ItemState.Shortname
+    -- target.BadgeTextColor = "#abcdef"
+    -- target:SetOverlayFontSize(10)
+    -- target:SetOverlayAlign("left")
 
 end
 
@@ -54,13 +55,11 @@ local function OnLeftClickFunc(self)
         if target_entrance ~= nil then
             target_entrance.ItemState.Target = self.Name
             self.ItemState.Target = target_entrance.Name
-            if self.ItemState.Side == "inside" then
-                _SetLocationOptions(self, target_entrance)
+
+            _SetLocationOptions(self, target_entrance)
                 -- self.Icon = ImageReference:FromPackRelativePath("images/inside/" .. INDOORS_INDEX[self.Name] .. ".png")
-            else
-                _SetLocationOptions(target_entrance, self)
+            _SetLocationOptions(target_entrance, self)
                 --  self.Icon = ImageReference:FromPackRelativePath("images/outside/" .. OUTDOORS_INDEX[self.Name] .. ".png")
-            end
         end
         ENTRANCE_SELECTED = nil
     elseif ENTRANCE_SELECTED == nil and self.ItemState.Target ~= nil then -- retarget a connection to new target location
@@ -82,13 +81,10 @@ local function OnLeftClickFunc(self)
         if target_entrance ~= nil then
             target_entrance.ItemState.Target = self.Name
             self.ItemState.Target = target_entrance.Name
-            if self.ItemState.Side == "inside" then
-                _SetLocationOptions(self, target_entrance)
+            _SetLocationOptions(self, target_entrance)
                 -- self.Icon = ImageReference:FromPackRelativePath("images/inside/" .. INDOORS_INDEX[self.Name] .. ".png")
-            else
-                _SetLocationOptions(target_entrance, self)
-                --  self.Icon = ImageReference:FromPackRelativePath("images/outside/" .. OUTDOORS_INDEX[self.Name] .. ".png")
-            end
+            _SetLocationOptions(target_entrance, self)
+                -- self.Icon = ImageReference:FromPackRelativePath("images/outside/" .. OUTDOORS_INDEX[self.Name] .. ".png")
         end
         ENTRANCE_SELECTED = nil
 
@@ -142,17 +138,31 @@ local function SaveFunc(self)
         Side = self.ItemState.Side,
         Target = self.ItemState.Target,
         Name = self.Name,
-        Shortname = self.ItemState.Shortname
+        Shortname = self.ItemState.Shortname,
+        Icon = self.Icon,
+        BadgeText = self.BadgeText
     }
     -- print("SaveFunc")
 end
 local function LoadFunc(self, data)
+    print(self.Name, data.Name)
     -- print("loading data from:", data)
     -- print(dump_table(data))
     if data ~= nil and self.Name == data.Name then
-        if data.Side == "inside" and data.Target ~= nil then
-            self.ItemState.Target = data.Target
+        -- print("assigning saved data for ", data.Name)
+        -- print(dump_table(data))
+        self.ItemState.Target = data.Target
+        self.ItemState.Side = data.Side
+        self.ItemState.Shortname = data.Shortname
+        self.Icon = ImageReference:FromPackRelativePath(data.Icon)
+        if data.BadgeText ~= nil then
+            self.BadgeText = data.BadgeText
+            self.BadgeTextColor = "#abcdef"
+            self:SetOverlayFontSize(10)
+            self:SetOverlayAlign("left")
         end
+    else
+        print("skipped laoding")
     end
 
     -- print("LoadFunc")

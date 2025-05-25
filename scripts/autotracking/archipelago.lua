@@ -223,19 +223,19 @@ function autoFill()
     print(dump_table(SLOT_DATA))
 
     -- mapGlitcheMode = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4} -- noGlitches, minor, overworld, hybrid_major, no_logic
-    mapDarkRoomLogic = {[0]=0, [1]=1, [2]=2, ["none"]=2,["lamp"]=0,["troches"]=1} --lamp, torches, none
-    mapGoal = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=6, [7]=5, [8]=6, ["crystals"]=1,["ganon"]=0,["bosses"]=2,["pedestal"]=3,["ganonpedestal"]=4,["triforcehunt"]=5,["ganontriforcehunt"]=6,["localtriforcehunt"]=5,["localganontriforcehunt"]=6} --slow, fast, AD, ped, ped+ganon, tfh, local_tfh, tfh+ganon, local tfh+ganon
+    local mapDarkRoomLogic = {[0]=0, [1]=1, [2]=2, ["none"]=2,["lamp"]=0,["troches"]=1} --lamp, torches, none
+    local mapGoal = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=6, [7]=5, [8]=6, ["crystals"]=1,["ganon"]=0,["bosses"]=2,["pedestal"]=3,["ganonpedestal"]=4,["triforcehunt"]=5,["ganontriforcehunt"]=6,["localtriforcehunt"]=5,["localganontriforcehunt"]=6} --slow, fast, AD, ped, ped+ganon, tfh, local_tfh, tfh+ganon, local tfh+ganon
     -- mapEntranceRandomizer = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=6, [7]=7, [8]=8} --vanilla, dungeon simple, dungeon full, dungeon crossed, simple, restriced, full, crossed, insanity
     -- mapTriforcePiecesAvailable = {} --range 1-90
     -- mapTriforcePiecesRequiered = {} --range 1-90
-    mapDungeonItem = {[0]=0, [1]=1, [2]=1, [3]=1, [4]=1, [5]=2, [6]=0} --og dungeon, own dungeons,
+    local mapDungeonItem = {[0]=0, [1]=1, [2]=1, [3]=1, [4]=1, [5]=2, [6]=0} --og dungeon, own dungeons,
     -- mapStartMode = {[0]=0, [1]=1, [2]=2} --standard, open, inverted
     -- mapItemPool = {[0]=0, [1]=1, [2]=2, [3]=3} --easy, normal. hard, expert
     -- mapItemFunctionality = {[0]=0, [1]=1, [2]=2, [3]=3} --easy, normal. hard, expert
     -- mapEnemyHealth = {[0]=0, [1]=1, [2]=2, [3]=3} --easy, normal. hard, expert
     -- mapEnemyDmg = {[0]=0, [1]=1, [2]=2} --default, shuffled, chaos
     -- mapMedallions = {[0]="ether", [1]="bombos", [2]="quake"} -- ether, bombos, quake
-    mapMedallions = {[0]="ether", [1]="bombos", [2]="quake", ["Ether"]="ether", ["Bombos"]="bombos", ["Quake"]="quake"} -- ether, bombos, quake
+    local mapMedallions = {[0]="ether", [1]="bombos", [2]="quake", ["Ether"]="ether", ["Bombos"]="bombos", ["Quake"]="quake"} -- ether, bombos, quake
     -- mapCrystalGanon = {} -- range 0-7
     -- mapGTCrystals = {} -- range 0-7
     -- mapRandomizeShopInventory = {} -- range 0-30
@@ -245,14 +245,14 @@ function autoFill()
     -- mapIncludeWitchhut = {[0]=false, [1]=true} -- false, true
     -- mapShopPriceModifier = {} -- range 0-400
     -- mapShuffleCapacityUpgrades = {[0]=0, [1]=1, [2]=2} -- off, on, combined into one
-    mapBosses = {[0]=0, [1]=1, [2]=1, [3]=1, [4]=2} -- vanilla, basic, full, chaos, singularity
+    local mapBosses = {[0]=0, [1]=1, [2]=1, [3]=1, [4]=2} -- vanilla, basic, full, chaos, singularity
     -- mapEnemizer = {[0]=false, [1]=true} -- false, true
     -- mapProgressive = {[0]=0, [1]=1, [2]=2} -- off, grouped,_random, on
     -- mapSwordless = {[0]=false, [1]=true} -- false, true
     -- mapBomblessStart = {[0]=false, [1]=true} -- false, true
     -- mapRetroBow = {[0]=false, [1]=true} -- false, true
     -- mapRetroCave = {[0]=false, [1]=true} -- false, true
-    mapDungeon = {
+    local mapDungeon = {
         ["Eastern Palace"] = {"ep_boss", "ep"},
         ["Desert Palace"] = {"dp_boss", "dp"},
         ["Tower of Hera"] = {"toh_boss", "toh"},
@@ -268,7 +268,7 @@ function autoFill()
         ["Ganons Tower - bottom"] = {"gt_ice",},
         ["Ganons Tower - middle"] = {"gt_lanmo"},
     }
-    mapBoss = {
+    local mapBoss = {
         ["Armos Knights"] = 1,
         ["Lanmola"] = 2,
         ["Moldorm"] = 3,
@@ -280,7 +280,7 @@ function autoFill()
         ["Vitreous"] = 9,
         ["Trinexx"] = 10
     }
-    mapRewards = {
+    local mapRewards = {
         ["Crystal 1"] = 1,
         ["Crystal 2"] = 1,
         ["Crystal 3"] = 1,
@@ -291,6 +291,17 @@ function autoFill()
         ["Green Pendant"] = 4,
         ["Blue Pendant"] = 3,
         ["Red Pendant"] = 3,
+    }
+    local mapEntranceShuffle = {
+        [0] = 0,
+        [1] = 1,
+        [2] = 1,
+        [3] = 1,
+        [4] = 1,
+        [5] = 2,
+        [6] = 2,
+        [7] = 2,
+        [8] = 3
     }
 
     mapStages = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=6, [7]=7, [8]=8, ["open"]=1,["inverted"]=2,["standard"]=0}
@@ -328,9 +339,7 @@ function autoFill()
         -- randomize_shop_inventories = {code="", mapping=mapToggle}, 
         -- shuffle_shop_inventories = {code="", mapping=mapToggle}, 
         shuffle_capacity_upgrades = {code="shop_shuffle_capacity", mapping=mapToggle},
-        -- entrance_shuffle = {code="entrance_shuffle", mapping=}, 
-
-
+        entrance_shuffle = {code="entrance_shuffle", mapping=mapEntranceShuffle}, 
         goal = {code="goal", mapping=mapGoal}, 
         mode = {code="start_option", mapping=mapStages},
         enemy_shuffle = {code="enemizer", mapping=mapToggle}, 

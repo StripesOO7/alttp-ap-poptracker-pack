@@ -17,6 +17,7 @@ local accessLVL= {
 
 -- Table to store named locations
 NAMED_LOCATIONS = {}
+NAMED_LOCATIONS_KEYS = {}
 local stale = true
 local accessibilityCache = {}
 local accessibilityCacheComplete = false
@@ -82,11 +83,14 @@ function alttp_location.new(name, shortname, outside)
     local self = setmetatable({}, alttp_location)
     if name then
         NAMED_LOCATIONS[name] = self
+        table.insert(NAMED_LOCATIONS_KEYS, name)
         self.name = name
         self.shortname = shortname
     else
+        NAMED_LOCATIONS[name] = self
         self.name = self
         self.shortname = shortname
+        table.insert(NAMED_LOCATIONS_KEYS, self.name)
     end
     
     self.exits = {}
@@ -197,10 +201,14 @@ function alttp_location:discover(accessibility, keys)
             -- local er_setting_stage
             -- er_setting_stage = Tracker:FindObjectForCode("er_tracking").CurrentStage
             local er_check = {
-                    [0] = function() return false end,
-                    [1] = function() print("simple ER", ER_SIMPLE[self.name] ~= nil) return ER_SIMPLE[self.name] ~= nil end,
-                    [2] = function() print("full ER", NAMED_ENTRANCES[self.name] ~= nil) return NAMED_ENTRANCES[self.name] ~= nil end,
-                    [3] = function() print("!!!!!!!!!!!!!!!!!! YOU ABSOLUTELY SHOUlD NOT BE ABLE TO SEE THIS!!!!!!!!!!!!!!!!")return INSANITY_ENTRANCES[self.name] ~= nil end
+                    [0] = function() 
+                        return false end,
+                    [1] = function() --print("simple ER", ER_SIMPLE[self.name] ~= nil) 
+                        return ER_SIMPLE[self.name] ~= nil end,
+                    [2] = function() --print("full ER", NAMED_ENTRANCES[self.name] ~= nil) 
+                        return NAMED_ENTRANCES[self.name] ~= nil end,
+                    [3] = function() print("!!!!!!!!!!!!!!!!!! YOU ABSOLUTELY SHOUlD NOT BE ABLE TO SEE THIS!!!!!!!!!!!!!!!!")
+                        return INSANITY_ENTRANCES[self.name] ~= nil end
                 }
 
 
@@ -211,7 +219,7 @@ function alttp_location:discover(accessibility, keys)
                 er_setting_stage = Tracker:FindObjectForCode("er_tracking").CurrentStage
                 if er_check[er_setting_stage]() then -- simple ER
                     temp = Tracker:FindObjectForCode(self.name)
-                    print(self.name, "to er_simple[self.name]: -->", ER_SIMPLE[self.name])
+                    -- print(self.name, "to er_simple[self.name]: -->", ER_SIMPLE[self.name])
                     -- print("############ entering simple ER ############")
                     -- print(NAMED_LOCATIONS[temp.ItemState.Target])
                     if temp ~= nil then
@@ -269,8 +277,8 @@ function alttp_location:discover(accessibility, keys)
                     key = keys
                 end
                 if access > oldAccess or (access == oldAccess and key < oldKey) then -- not sure about the <
-                    print(self.name) 
-                    print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access])
+                    -- print(self.name) 
+                    -- print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access])
                     location:discover(access, key)
                 end
             end
@@ -299,28 +307,32 @@ function forceUpdate()
 end
 
 function emptyLocationTargets()
-    local er_tracking = Tracker:FindObjectForCode("er_tracking")
-    print(er_tracking.CurrentStage)
-    if er_tracking.CurrentStage == 0 then
-        print("run discorver")
-        entry_point:discover(AccessibilityLevel.Normal, 0)
-        print("finshed discover")
-    elseif er_tracking.CurrentStage == 1 then
-        print("simple er")
-        for name, _ in pairs(ER_SIMPLE) do
-            -- print(name)
-            -- print(Tracker:FindObjectForCode(name).ItemState.Target)
-            Tracker:FindObjectForCode(name).ItemState.Target = nil
-        end
-    elseif er_tracking.CurrentStage == 2 then
-        print("full er")
-        for name, _ in pairs(NAMED_ENTRANCES) do
-            -- print(name)
-            -- print(Tracker:FindObjectForCode(name).ItemState.Target)
-            Tracker:FindObjectForCode(name).ItemState.Target = nil
+    if not Tracker.BulkUpdate then
+        local er_tracking = Tracker:FindObjectForCode("er_tracking")
+        print(er_tracking.CurrentStage)
+        if er_tracking.CurrentStage == 0 then
+            print("run discorver")
+            entry_point:discover(AccessibilityLevel.Normal, 0)
+            print("finshed discover")
+        elseif er_tracking.CurrentStage == 1 then
+            print("simple er")
+            for name, _ in pairs(ER_SIMPLE) do
+                -- print(name)
+                -- print(Tracker:FindObjectForCode(name).ItemState.Target)
+                Tracker:FindObjectForCode(name).ItemState.Target = nil
+            end
+        elseif er_tracking.CurrentStage == 2 then
+            print("full er")
+            for name, _ in pairs(NAMED_ENTRANCES) do
+                -- print(name)
+                -- print(Tracker:FindObjectForCode(name).ItemState.Target)
+                Tracker:FindObjectForCode(name).ItemState.Target = nil
+            end
+        else
+            print("insanity ER is not supported you troll")
         end
     else
-        print("insanity ER is not supported you troll")
+        print("skipped ER reset")
     end
 end
 

@@ -533,15 +533,16 @@ INSANITY_ENTRANCES = {}
 
 
 function CreateDoorsLuaitems()
-    for _, location in pairs(NAMED_LOCATIONS) do
+    table.sort(NAMED_LOCATIONS_KEYS)
+    for _, location in pairs(NAMED_LOCATIONS_KEYS) do
         -- print(location.name)
-        if string.sub(location.name, -7,-1) == "_inside" then
-            CreateLuaLocationItems(location.name, location.shortname, "inside")
+        if string.sub(NAMED_LOCATIONS[location].name, -7,-1) == "_inside" then
+            CreateLuaLocationItems(NAMED_LOCATIONS[location].name, NAMED_LOCATIONS[location].shortname, "inside")
             
-        elseif string.sub(location.name, -8,-1) == "_outside" then
-            CreateLuaLocationItems(location.name, location.shortname, "outside")
+        elseif string.sub(NAMED_LOCATIONS[location].name, -8,-1) == "_outside" then
+            CreateLuaLocationItems(NAMED_LOCATIONS[location].name, NAMED_LOCATIONS[location].shortname, "outside")
         end
-        if string.sub(location.name, -7,-1) == "_inside"  or string.sub(location.name, -8,-1) == "_outside" then
+        if string.sub(NAMED_LOCATIONS[location].name, -7,-1) == "_inside"  or string.sub(NAMED_LOCATIONS[location].name, -8,-1) == "_outside" then
             -- print(Tracker:FindObjectForCode(location.name).Active)
             -- local test = Tracker:FindObjectForCode(location.name)
             -- test.Active = true--Set("Active", false)
