@@ -7,6 +7,9 @@
                 "sections": [
                     {
                         "name": "Master Sword Meadow",
+                        "access_rules": [
+                            "$CanReach|mastersword_meadow_inside"
+                        ],
                         "hosted_item": "mastersword_meadow_inside"
                     }
                 ],
@@ -32,6 +35,9 @@
                 "sections": [
                     {
                         "name": "Lost Woods Gamble",
+                        "access_rules": [
+                            "$CanReach|lost_woods_gamble_inside"
+                        ],
                         "hosted_item": "lost_woods_gamble_inside"
                     }
                 ],
@@ -57,6 +63,9 @@
                 "sections": [
                     {
                         "name": "Lost Woods Hideout Drop",
+                        "access_rules": [
+                            "$CanReach|lost_woods_hideout_hole_inside"
+                        ],
                         "hosted_item": "lost_woods_hideout_hole_inside"
                     }
                 ],
@@ -82,6 +91,9 @@
                 "sections": [
                     {
                         "name": "Lost Woods Hideout Stump",
+                        "access_rules": [
+                            "$CanReach|lost_woods_hideout_cave_inside"
+                        ],
                         "hosted_item": "lost_woods_hideout_cave_inside"
                     }
                 ],
@@ -107,6 +119,9 @@
                 "sections": [
                     {
                         "name": "Lumberjack House",
+                        "access_rules": [
+                            "$CanReach|lumberjacks_house_inside"
+                        ],
                         "hosted_item": "lumberjacks_house_inside"
                     }
                 ],
@@ -132,6 +147,9 @@
                 "sections": [
                     {
                         "name": "Lumberjack Tree Tree",
+                        "access_rules": [
+                            "$CanReach|lumberjacks_hole_inside"
+                        ],
                         "hosted_item": "lumberjacks_hole_inside"
                     }
                 ],
@@ -157,6 +175,9 @@
                 "sections": [
                     {
                         "name": "Lumberjack Tree Cave",
+                        "access_rules": [
+                            "$CanReach|lumberjacks_cave_inside"
+                        ],
                         "hosted_item": "lumberjacks_cave_inside"
                     }
                 ],
@@ -182,6 +203,9 @@
                 "sections": [
                     {
                         "name": "Old Man Cave Exit (West)",
+                        "access_rules": [
+                            "$CanReach|old_man_cave_left_inside"
+                        ],
                         "hosted_item": "old_man_cave_left_inside"
                     }
                 ],
@@ -207,6 +231,9 @@
                 "sections": [
                     {
                         "name": "Death Mountain Return Cave Exit (West)",
+                        "access_rules": [
+                            "$CanReach|light_death_mountain_return_left_inside"
+                        ],
                         "hosted_item": "light_death_mountain_return_left_inside"
                     }
                 ],
@@ -237,6 +264,9 @@
                 "sections": [
                     {
                         "name": "Death Mountain Return Cave (East)",
+                        "access_rules": [
+                            "$CanReach|light_death_mountain_return_right_inside"
+                        ],
                         "hosted_item": "light_death_mountain_return_right_inside"
                     }
                 ],
@@ -262,6 +292,9 @@
                 "sections": [
                     {
                         "name": "Old Man Cave (East)",
+                        "access_rules": [
+                            "$CanReach|old_man_cave_right_inside"
+                        ],
                         "hosted_item": "old_man_cave_right_inside"
                     }
                 ],
@@ -287,6 +320,9 @@
                 "sections": [
                     {
                         "name": "Old Man House (Top)",
+                        "access_rules": [
+                            "$CanReach|old_man_home_top_inside"
+                        ],
                         "hosted_item": "old_man_home_top_inside"
                     }
                 ],
@@ -312,6 +348,9 @@
                 "sections": [
                     {
                         "name": "Old Man House (Bottom)",
+                        "access_rules": [
+                            "$CanReach|old_man_home_bottom_inside"
+                        ],
                         "hosted_item": "old_man_home_bottom_inside"
                     }
                 ],
@@ -337,6 +376,9 @@
                 "sections": [
                     {
                         "name": "Spectacle Rock Cave Peak",
+                        "access_rules": [
+                            "$CanReach|spec_rock_top_entrance_inside"
+                        ],
                         "hosted_item": "spec_rock_top_entrance_inside"
                     }
                 ],
@@ -362,6 +404,9 @@
                 "sections": [
                     {
                         "name": "Spectacle Rock Cave (Bottom)",
+                        "access_rules": [
+                            "$CanReach|spec_rock_ledge_entrance_inside"
+                        ],
                         "hosted_item": "spec_rock_ledge_entrance_inside"
                     }
                 ],
@@ -387,6 +432,9 @@
                 "sections": [
                     {
                         "name": "Spectacle Rock Cave Exit",
+                        "access_rules": [
+                            "$CanReach|spec_rock_ledge_exit_inside"
+                        ],
                         "hosted_item": "spec_rock_ledge_exit_inside"
                     }
                 ],
@@ -412,6 +460,9 @@
                 "sections": [
                     {
                         "name": "Tower of Hera",
+                        "access_rules": [
+                            "$CanReach|toh_entrance_inside"
+                        ],
                         "hosted_item": "toh_entrance_inside"
                     }
                 ],
@@ -437,6 +488,9 @@
                 "sections": [
                     {
                         "name": "Paradox Cave (Bottom)",
+                        "access_rules": [
+                            "$CanReach|paradox_cave_bottom_entrance_inside"
+                        ],
                         "hosted_item": "paradox_cave_bottom_entrance_inside"
                     }
                 ],
@@ -462,6 +516,9 @@
                 "sections": [
                     {
                         "name": "Paradox Cave (Top)",
+                        "access_rules": [
+                            "$CanReach|paradox_cave_top_entrance_inside"
+                        ],
                         "hosted_item": "paradox_cave_top_entrance_inside"
                     }
                 ],
@@ -487,6 +544,9 @@
                 "sections": [
                     {
                         "name": "Paradox Cave (Middle)",
+                        "access_rules": [
+                            "$CanReach|paradox_cave_middle_entrance_inside"
+                        ],
                         "hosted_item": "paradox_cave_middle_entrance_inside"
                     }
                 ],
@@ -512,6 +572,9 @@
                 "sections": [
                     {
                         "name": "Spiral Cave",
+                        "access_rules": [
+                            "$CanReach|spiral_cave_top_inside"
+                        ],
                         "hosted_item": "spiral_cave_top_inside"
                     }
                 ],
@@ -537,6 +600,9 @@
                 "sections": [
                     {
                         "name": "Spiral Cave (Bottom)",
+                        "access_rules": [
+                            "$CanReach|spiral_cave_bottom_inside"
+                        ],
                         "hosted_item": "spiral_cave_bottom_inside"
                     }
                 ],
@@ -562,6 +628,9 @@
                 "sections": [
                     {
                         "name": "Mimic Cave",
+                        "access_rules": [
+                            "$CanReach|mimic_cave_inside"
+                        ],
                         "hosted_item": "mimic_cave_inside"
                     }
                 ],
@@ -587,6 +656,9 @@
                 "sections": [
                     {
                         "name": "Hookshot Fairy",
+                        "access_rules": [
+                            "$CanReach|hookshot_fairy_inside"
+                        ],
                         "hosted_item": "hookshot_fairy_inside"
                     }
                 ],
@@ -612,6 +684,9 @@
                 "sections": [
                     {
                         "name": "Fairy Ascension Cave (Bottom)",
+                        "access_rules": [
+                            "$CanReach|fairy_ascension_cave_bottom_inside"
+                        ],
                         "hosted_item": "fairy_ascension_cave_bottom_inside"
                     }
                 ],
@@ -637,6 +712,9 @@
                 "sections": [
                     {
                         "name": "Fairy Ascension Cave (Top)",
+                        "access_rules": [
+                            "$CanReach|light_eyebridge_fairy_inside"
+                        ],
                         "hosted_item": "light_eyebridge_fairy_inside"
                     }
                 ],
@@ -662,6 +740,9 @@
                 "sections": [
                     {
                         "name": "Waterfall of Wishing",
+                        "access_rules": [
+                            "$CanReach|waterfall_fairy_inside"
+                        ],
                         "hosted_item": "waterfall_fairy_inside"
                     }
                 ],
@@ -692,6 +773,9 @@
                 "sections": [
                     {
                         "name": "Bat Cave Drop",
+                        "access_rules": [
+                            "$CanReach|magic_bat_hole_inside"
+                        ],
                         "hosted_item": "magic_bat_hole_inside"
                     }
                 ],
@@ -717,6 +801,9 @@
                 "sections": [
                     {
                         "name": "Bat Cave Exit",
+                        "access_rules": [
+                            "$CanReach|magic_bat_cave_inside"
+                        ],
                         "hosted_item": "magic_bat_cave_inside"
                     }
                 ],
@@ -742,6 +829,9 @@
                 "sections": [
                     {
                         "name": "Sick Kids House",
+                        "access_rules": [
+                            "$CanReach|kakariko_sick_kid_inside"
+                        ],
                         "hosted_item": "kakariko_sick_kid_inside"
                     }
                 ],
@@ -767,6 +857,9 @@
                 "sections": [
                     {
                         "name": "Elder House (East)",
+                        "access_rules": [
+                            "$CanReach|kakariko_elder_house_right_inside"
+                        ],
                         "hosted_item": "kakariko_elder_house_right_inside"
                     }
                 ],
@@ -792,6 +885,9 @@
                 "sections": [
                     {
                         "name": "Elder House (West)",
+                        "access_rules": [
+                            "$CanReach|kakariko_elder_house_left_inside"
+                        ],
                         "hosted_item": "kakariko_elder_house_left_inside"
                     }
                 ],
@@ -817,6 +913,9 @@
                 "sections": [
                     {
                         "name": "Fortune Teller (Light)",
+                        "access_rules": [
+                            "$CanReach|kakariko_furtune_teller_inside"
+                        ],
                         "hosted_item": "kakariko_furtune_teller_inside"
                     }
                 ],
@@ -842,6 +941,9 @@
                 "sections": [
                     {
                         "name": "Snitch Lady (East)",
+                        "access_rules": [
+                            "$CanReach|kakariko_snitch_house_right_inside"
+                        ],
                         "hosted_item": "kakariko_snitch_house_right_inside"
                     }
                 ],
@@ -867,6 +969,9 @@
                 "sections": [
                     {
                         "name": "Snitch Lady (West)",
+                        "access_rules": [
+                            "$CanReach|kakariko_snitch_house_left_inside"
+                        ],
                         "hosted_item": "kakariko_snitch_house_left_inside"
                     }
                 ],
@@ -892,6 +997,9 @@
                 "sections": [
                     {
                         "name": "Bush Covered House",
+                        "access_rules": [
+                            "$CanReach|kakariko_overgrown_house_inside"
+                        ],
                         "hosted_item": "kakariko_overgrown_house_inside"
                     }
                 ],
@@ -917,6 +1025,9 @@
                 "sections": [
                     {
                         "name": "Tavern (Front)",
+                        "access_rules": [
+                            "$CanReach|kakariko_frontside_pub_inside"
+                        ],
                         "hosted_item": "kakariko_frontside_pub_inside"
                     }
                 ],
@@ -942,6 +1053,9 @@
                 "sections": [
                     {
                         "name": "Tavern (Back)",
+                        "access_rules": [
+                            "$CanReach|kakariko_backside_pub_inside"
+                        ],
                         "hosted_item": "kakariko_backside_pub_inside"
                     }
                 ],
@@ -967,6 +1081,9 @@
                 "sections": [
                     {
                         "name": "Light World Bomb Hut",
+                        "access_rules": [
+                            "$CanReach|kakariko_bombhut_inside"
+                        ],
                         "hosted_item": "kakariko_bombhut_inside"
                     }
                 ],
@@ -992,6 +1109,9 @@
                 "sections": [
                     {
                         "name": "Kakariko Shop",
+                        "access_rules": [
+                            "$CanReach|kakariko_shop_inside"
+                        ],
                         "hosted_item": "kakariko_shop_inside"
                     }
                 ],
@@ -1017,6 +1137,9 @@
                 "sections": [
                     {
                         "name": "Kakariko Well Drop",
+                        "access_rules": [
+                            "$CanReach|kakariko_well_hole_inside"
+                        ],
                         "hosted_item": "kakariko_well_hole_inside"
                     }
                 ],
@@ -1042,6 +1165,9 @@
                 "sections": [
                     {
                         "name": "Kakariko Well Exit",
+                        "access_rules": [
+                            "$CanReach|kakariko_well_cave_inside"
+                        ],
                         "hosted_item": "kakariko_well_cave_inside"
                     }
                 ],
@@ -1067,6 +1193,9 @@
                 "sections": [
                     {
                         "name": "Chicken House",
+                        "access_rules": [
+                            "$CanReach|kakariko_chickenhut_inside"
+                        ],
                         "hosted_item": "kakariko_chickenhut_inside"
                     }
                 ],
@@ -1092,6 +1221,9 @@
                 "sections": [
                     {
                         "name": "Blinds Hideout",
+                        "access_rules": [
+                            "$CanReach|kakariko_blinds_hideout_inside"
+                        ],
                         "hosted_item": "kakariko_blinds_hideout_inside"
                     }
                 ],
@@ -1117,6 +1249,9 @@
                 "sections": [
                     {
                         "name": "Blacksmiths Hut",
+                        "access_rules": [
+                            "$CanReach|dwarf_smiths_inside"
+                        ],
                         "hosted_item": "dwarf_smiths_inside"
                     }
                 ],
@@ -1142,6 +1277,9 @@
                 "sections": [
                     {
                         "name": "Two Brothers House (East)",
+                        "access_rules": [
+                            "$CanReach|twin_house_right_inside"
+                        ],
                         "hosted_item": "twin_house_right_inside"
                     }
                 ],
@@ -1167,6 +1305,9 @@
                 "sections": [
                     {
                         "name": "Two Brothers House (West)",
+                        "access_rules": [
+                            "$CanReach|twin_house_left_inside"
+                        ],
                         "hosted_item": "twin_house_left_inside"
                     }
                 ],
@@ -1192,6 +1333,9 @@
                 "sections": [
                     {
                         "name": "Library",
+                        "access_rules": [
+                            "$CanReach|library_inside"
+                        ],
                         "hosted_item": "library_inside"
                     }
                 ],
@@ -1217,6 +1361,9 @@
                 "sections": [
                     {
                         "name": "Kakariko Gamble Game",
+                        "access_rules": [
+                            "$CanReach|kakariko_chest_minigame_inside"
+                        ],
                         "hosted_item": "kakariko_chest_minigame_inside"
                     }
                 ],
@@ -1247,6 +1394,9 @@
                 "sections": [
                     {
                         "name": "Hyrule Castle Secret Entrance Drop",
+                        "access_rules": [
+                            "$CanReach|secret_passage_hole_inside"
+                        ],
                         "hosted_item": "secret_passage_hole_inside"
                     }
                 ],
@@ -1272,6 +1422,9 @@
                 "sections": [
                     {
                         "name": "Hyrule Castle Secret Entrance Stairs",
+                        "access_rules": [
+                            "$CanReach|secret_passage_stairs_inside"
+                        ],
                         "hosted_item": "secret_passage_stairs_inside"
                     }
                 ],
@@ -1297,6 +1450,9 @@
                 "sections": [
                     {
                         "name": "Kings Grave",
+                        "access_rules": [
+                            "$CanReach|kings_tomb_inside"
+                        ],
                         "hosted_item": "kings_tomb_inside"
                     }
                 ],
@@ -1322,6 +1478,9 @@
                 "sections": [
                     {
                         "name": "Graveyard Cave",
+                        "access_rules": [
+                            "$CanReach|graveyard_ledge_inside"
+                        ],
                         "hosted_item": "graveyard_ledge_inside"
                     }
                 ],
@@ -1347,6 +1506,9 @@
                 "sections": [
                     {
                         "name": "Bonk Rock Cave",
+                        "access_rules": [
+                            "$CanReach|sanctuary_bonk_pile_cave_inside"
+                        ],
                         "hosted_item": "sanctuary_bonk_pile_cave_inside"
                     }
                 ],
@@ -1372,6 +1534,9 @@
                 "sections": [
                     {
                         "name": "Sanctuary",
+                        "access_rules": [
+                            "$CanReach|sanctuary_entrance_inside"
+                        ],
                         "hosted_item": "sanctuary_entrance_inside"
                     }
                 ],
@@ -1397,6 +1562,9 @@
                 "sections": [
                     {
                         "name": "Sanctuary Grave",
+                        "access_rules": [
+                            "$CanReach|ce_dropdown_entrance_inside"
+                        ],
                         "hosted_item": "ce_dropdown_entrance_inside"
                     }
                 ],
@@ -1422,6 +1590,9 @@
                 "sections": [
                     {
                         "name": "North Fairy Cave Drop",
+                        "access_rules": [
+                            "$CanReach|north_fairy_drop_inside"
+                        ],
                         "hosted_item": "north_fairy_drop_inside"
                     }
                 ],
@@ -1447,6 +1618,9 @@
                 "sections": [
                     {
                         "name": "North Fairy Cave Exit",
+                        "access_rules": [
+                            "$CanReach|north_fairy_cave_inside"
+                        ],
                         "hosted_item": "north_fairy_cave_inside"
                     }
                 ],
@@ -1472,6 +1646,9 @@
                 "sections": [
                     {
                         "name": "Hyrule Castle Entrance (South)",
+                        "access_rules": [
+                            "$CanReach|hc_main_entrance_inside"
+                        ],
                         "hosted_item": "hc_main_entrance_inside"
                     }
                 ],
@@ -1497,6 +1674,9 @@
                 "sections": [
                     {
                         "name": "Hyrule Castle Entrance (West)",
+                        "access_rules": [
+                            "$CanReach|hc_left_entrance_inside"
+                        ],
                         "hosted_item": "hc_left_entrance_inside"
                     }
                 ],
@@ -1522,6 +1702,9 @@
                 "sections": [
                     {
                         "name": "Hyrule Castle Entrance (East)",
+                        "access_rules": [
+                            "$CanReach|hc_right_entrance_inside"
+                        ],
                         "hosted_item": "hc_right_entrance_inside"
                     }
                 ],
@@ -1547,6 +1730,9 @@
                 "sections": [
                     {
                         "name": "Agahnims Tower",
+                        "access_rules": [
+                            "$CanReach|at_entrance_inside"
+                        ],
                         "hosted_item": "at_entrance_inside"
                     }
                 ],
@@ -1577,6 +1763,9 @@
                 "sections": [
                     {
                         "name": "Eastern Palace",
+                        "access_rules": [
+                            "$CanReach|ep_entrance_inside"
+                        ],
                         "hosted_item": "ep_entrance_inside"
                     }
                 ],
@@ -1602,6 +1791,9 @@
                 "sections": [
                     {
                         "name": "Sahasrahlas Hut",
+                        "access_rules": [
+                            "$CanReach|sahasralahs_hut_inside"
+                        ],
                         "hosted_item": "sahasralahs_hut_inside"
                     }
                 ],
@@ -1627,6 +1819,9 @@
                 "sections": [
                     {
                         "name": "Long Fairy Cave",
+                        "access_rules": [
+                            "$CanReach|eastern_long_fairy_cave_inside"
+                        ],
                         "hosted_item": "eastern_long_fairy_cave_inside"
                     }
                 ],
@@ -1652,6 +1847,9 @@
                 "sections": [
                     {
                         "name": "Trees Fairy Cave",
+                        "access_rules": [
+                            "$CanReach|eastern_tree_fairy_cave_inside"
+                        ],
                         "hosted_item": "eastern_tree_fairy_cave_inside"
                     }
                 ],
@@ -1677,6 +1875,9 @@
                 "sections": [
                     {
                         "name": "Potion Shop",
+                        "access_rules": [
+                            "$CanReach|light_potion_shop_outside"
+                        ],
                         "hosted_item": "light_potion_shop_outside"
                     }
                 ],
@@ -1707,6 +1908,9 @@
                 "sections": [
                     {
                         "name": "Aginahs Cave",
+                        "access_rules": [
+                            "$CanReach|aginah_cave_inside"
+                        ],
                         "hosted_item": "aginah_cave_inside"
                     }
                 ],
@@ -1732,6 +1936,9 @@
                 "sections": [
                     {
                         "name": "50 Rupee Cave",
+                        "access_rules": [
+                            "$CanReach|fifty_rupee_thief_inside"
+                        ],
                         "hosted_item": "fifty_rupee_thief_inside"
                     }
                 ],
@@ -1757,6 +1964,9 @@
                 "sections": [
                     {
                         "name": "Desert Palace Entrance (South)",
+                        "access_rules": [
+                            "$CanReach|dp_main_entrance_inside"
+                        ],
                         "hosted_item": "dp_main_entrance_inside"
                     }
                 ],
@@ -1782,6 +1992,9 @@
                 "sections": [
                     {
                         "name": "Desert Palace Entrance (West)",
+                        "access_rules": [
+                            "$CanReach|dp_left_entrance_inside"
+                        ],
                         "hosted_item": "dp_left_entrance_inside"
                     }
                 ],
@@ -1807,6 +2020,9 @@
                 "sections": [
                     {
                         "name": "Desert Palace Entrance (North)",
+                        "access_rules": [
+                            "$CanReach|dp_back_entrance_inside"
+                        ],
                         "hosted_item": "dp_back_entrance_inside"
                     }
                 ],
@@ -1832,6 +2048,9 @@
                 "sections": [
                     {
                         "name": "Desert Palace Entrance (East)",
+                        "access_rules": [
+                            "$CanReach|dp_right_entrance_inside"
+                        ],
                         "hosted_item": "dp_right_entrance_inside"
                     }
                 ],
@@ -1857,6 +2076,9 @@
                 "sections": [
                     {
                         "name": "Checkerboard Cave",
+                        "access_rules": [
+                            "$CanReach|checkerboard_cave_inside"
+                        ],
                         "hosted_item": "checkerboard_cave_inside"
                     }
                 ],
@@ -1882,6 +2104,9 @@
                 "sections": [
                     {
                         "name": "Desert Fairy Cave",
+                        "access_rules": [
+                            "$CanReach|dam_desert_fairy_inside"
+                        ],
                         "hosted_item": "dam_desert_fairy_inside"
                     }
                 ],
@@ -1907,6 +2132,9 @@
                 "sections": [
                     {
                         "name": "Cave 45",
+                        "access_rules": [
+                            "$CanReach|cave45_inside"
+                        ],
                         "hosted_item": "cave45_inside"
                     }
                 ],
@@ -1937,6 +2165,9 @@
                 "sections": [
                     {
                         "name": "Light Hype Fairy",
+                        "access_rules": [
+                            "$CanReach|light_hype_fairy_inside"
+                        ],
                         "hosted_item": "light_hype_fairy_inside"
                     }
                 ],
@@ -1962,6 +2193,9 @@
                 "sections": [
                     {
                         "name": "Bonk Fairy (Light)",
+                        "access_rules": [
+                            "$CanReach|links_fairy_fountain_inside"
+                        ],
                         "hosted_item": "links_fairy_fountain_inside"
                     }
                 ],
@@ -1987,6 +2221,9 @@
                 "sections": [
                     {
                         "name": "Dam",
+                        "access_rules": [
+                            "$CanReach|dam_inside"
+                        ],
                         "hosted_item": "dam_inside"
                     }
                 ],
@@ -2012,6 +2249,9 @@
                 "sections": [
                     {
                         "name": "Links House",
+                        "access_rules": [
+                            "$CanReach|links_house_inside"
+                        ],
                         "hosted_item": "links_house_inside"
                     }
                 ],
@@ -2042,6 +2282,9 @@
                 "sections": [
                     {
                         "name": "20 Rupee Cave",
+                        "access_rules": [
+                            "$CanReach|twenty_rupee_thief_inside"
+                        ],
                         "hosted_item": "twenty_rupee_thief_inside"
                     }
                 ],
@@ -2067,6 +2310,9 @@
                 "sections": [
                     {
                         "name": "Lake Hylia Fortune Teller",
+                        "access_rules": [
+                            "$CanReach|light_lake_fortune_inside"
+                        ],
                         "hosted_item": "light_lake_fortune_inside"
                     }
                 ],
@@ -2092,6 +2338,9 @@
                 "sections": [
                     {
                         "name": "Cave Shop (Lake Hylia)",
+                        "access_rules": [
+                            "$CanReach|light_lake_shop_inside"
+                        ],
                         "hosted_item": "light_lake_shop_inside"
                     }
                 ],
@@ -2117,6 +2366,9 @@
                 "sections": [
                     {
                         "name": "Mini Moldorm Cave",
+                        "access_rules": [
+                            "$CanReach|mini_moldorm_cave_inside"
+                        ],
                         "hosted_item": "mini_moldorm_cave_inside"
                     }
                 ],
@@ -2142,6 +2394,9 @@
                 "sections": [
                     {
                         "name": "Upgrade Faiy Cave",
+                        "access_rules": [
+                            "$CanReach|upgrade_fairy_inside"
+                        ],
                         "hosted_item": "upgrade_fairy_inside"
                     }
                 ],
@@ -2167,6 +2422,9 @@
                 "sections": [
                     {
                         "name": "Ice Rod Cave",
+                        "access_rules": [
+                            "$CanReach|icerod_cave_inside"
+                        ],
                         "hosted_item": "icerod_cave_inside"
                     }
                 ],
@@ -2192,6 +2450,9 @@
                 "sections": [
                     {
                         "name": "Good Bee Cave",
+                        "access_rules": [
+                            "$CanReach|good_bee_cave_inside"
+                        ],
                         "hosted_item": "good_bee_cave_inside"
                     }
                 ],

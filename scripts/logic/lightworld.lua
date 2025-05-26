@@ -288,7 +288,7 @@ end)
 twin_house_right_inside:connect_two_ways(twin_house_left_inside, function() 
     return all(
         any(
-            has("bombs"), 
+            has("bombs"),
             has("boots")
         ),
         can_interact("light",1 )

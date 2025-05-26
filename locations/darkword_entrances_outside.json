@@ -7,6 +7,9 @@
                 "sections": [
                     {
                         "name": "Bumper Cave (Bottom)",
+                        "access_rules": [
+                            "$CanReach|dark_bumper_cave_bottom_outside"
+                        ],
                         "hosted_item": "dark_bumper_cave_bottom_outside"
                     }
                 ],
@@ -32,6 +35,9 @@
                 "sections": [
                     {
                         "name": "Bumper Cave (Top)",
+                        "access_rules": [
+                            "$CanReach|dark_bumper_cave_top_outside"
+                        ],
                         "hosted_item": "dark_bumper_cave_top_outside"
                     }
                 ],
@@ -57,6 +63,9 @@
                 "sections": [
                     {
                         "name": "Dark World Lumberjack Shop",
+                        "access_rules": [
+                            "$CanReach|dark_lumpberjacks_shop_outside"
+                        ],
                         "hosted_item": "dark_lumpberjacks_shop_outside"
                     }
                 ],
@@ -82,6 +91,9 @@
                 "sections": [
                     {
                         "name": "Skull Woods Back Entrance",
+                        "access_rules": [
+                            "$CanReach|sw_back_entrance_outside"
+                        ],
                         "hosted_item": "sw_back_entrance_outside"
                     }
                 ],
@@ -107,6 +119,9 @@
                 "sections": [
                     {
                         "name": "Skull Woods West Lobby",
+                        "access_rules": [
+                            "$CanReach|sw_west_lobby_entrance_outside"
+                        ],
                         "hosted_item": "sw_west_lobby_entrance_outside"
                     }
                 ],
@@ -132,6 +147,9 @@
                 "sections": [
                     {
                         "name": "Skull Woods Back Hole",
+                        "access_rules": [
+                            "$CanReach|sw_north_drop_outside"
+                        ],
                         "hosted_item": "sw_north_drop_outside"
                     }
                 ],
@@ -157,6 +175,9 @@
                 "sections": [
                     {
                         "name": "Skull Woods Circle Pot Drop",
+                        "access_rules": [
+                            "$CanReach|sw_pot_circle_drop_outside"
+                        ],
                         "hosted_item": "sw_pot_circle_drop_outside"
                     }
                 ],
@@ -182,6 +203,9 @@
                 "sections": [
                     {
                         "name": "Skull Woods Pinball Drop",
+                        "access_rules": [
+                            "$CanReach|sw_pinball_drop_outside"
+                        ],
                         "hosted_item": "sw_pinball_drop_outside"
                     }
                 ],
@@ -207,6 +231,9 @@
                 "sections": [
                     {
                         "name": "Skull Woods Bottom Left Drop",
+                        "access_rules": [
+                            "$CanReach|sw_bottom_left_drop_outside"
+                        ],
                         "hosted_item": "sw_bottom_left_drop_outside"
                     }
                 ],
@@ -232,6 +259,9 @@
                 "sections": [
                     {
                         "name": "Skull Woods Big Chest Entrance",
+                        "access_rules": [
+                            "$CanReach|sw_big_chest_entrance_outside"
+                        ],
                         "hosted_item": "sw_big_chest_entrance_outside"
                     }
                 ],
@@ -257,6 +287,9 @@
                 "sections": [
                     {
                         "name": "Skull Woods Gibdo Entrance",
+                        "access_rules": [
+                            "$CanReach|sw_gibdo_entrance_outside"
+                        ],
                         "hosted_item": "sw_gibdo_entrance_outside"
                     }
                 ],
@@ -287,6 +320,9 @@
                 "sections": [
                     {
                         "name": "Ganons Tower",
+                        "access_rules": [
+                            "$CanReach|gt_entrance_outside"
+                        ],
                         "hosted_item": "gt_entrance_outside"
                     }
                 ],
@@ -312,6 +348,9 @@
                 "sections": [
                     {
                         "name": "Turtle Rock",
+                        "access_rules": [
+                            "$CanReach|tr_main_entrance_outside"
+                        ],
                         "hosted_item": "tr_main_entrance_outside"
                     }
                 ],
@@ -337,6 +376,9 @@
                 "sections": [
                     {
                         "name": "Turtle Rock Ledge Exit (West)",
+                        "access_rules": [
+                            "$CanReach|tr_laser_entrance_outside"
+                        ],
                         "hosted_item": "tr_laser_entrance_outside"
                     }
                 ],
@@ -362,6 +404,9 @@
                 "sections": [
                     {
                         "name": "Turtle Rock Ledge Exit (East)",
+                        "access_rules": [
+                            "$CanReach|tr_big_chest_entrance_outside"
+                        ],
                         "hosted_item": "tr_big_chest_entrance_outside"
                     }
                 ],
@@ -387,6 +432,9 @@
                 "sections": [
                     {
                         "name": "Turtle Rock Isolated Ledge Exit",
+                        "access_rules": [
+                            "$CanReach|tr_eye_bridge_entrance_outside"
+                        ],
                         "hosted_item": "tr_eye_bridge_entrance_outside"
                     }
                 ],
@@ -412,6 +460,9 @@
                 "sections": [
                     {
                         "name": "Hookshot Cave",
+                        "access_rules": [
+                            "$CanReach|hookshot_cave_outside"
+                        ],
                         "hosted_item": "hookshot_cave_outside"
                     }
                 ],
@@ -437,6 +488,9 @@
                 "sections": [
                     {
                         "name": "Dark Floating Island",
+                        "access_rules": [
+                            "$CanReach|dark_floating_island_outside"
+                        ],
                         "hosted_item": "dark_floating_island_outside"
                     }
                 ],
@@ -462,6 +516,9 @@
                 "sections": [
                     {
                         "name": "Superbunny Cave (Top)",
+                        "access_rules": [
+                            "$CanReach|superbunny_cave_top_outside"
+                        ],
                         "hosted_item": "superbunny_cave_top_outside"
                     }
                 ],
@@ -487,6 +544,9 @@
                 "sections": [
                     {
                         "name": "Superbunny Cave (Bottom)",
+                        "access_rules": [
+                            "$CanReach|superbunny_cave_bottom_outside"
+                        ],
                         "hosted_item": "superbunny_cave_bottom_outside"
                     }
                 ],
@@ -512,6 +572,9 @@
                 "sections": [
                     {
                         "name": "Cave Shop (Dark Death Mountain)",
+                        "access_rules": [
+                            "$CanReach|dark_death_mountain_shop_outside"
+                        ],
                         "hosted_item": "dark_death_mountain_shop_outside"
                     }
                 ],
@@ -537,6 +600,9 @@
                 "sections": [
                     {
                         "name": "Spike Cave",
+                        "access_rules": [
+                            "$CanReach|spike_cave_outside"
+                        ],
                         "hosted_item": "spike_cave_outside"
                     }
                 ],
@@ -562,6 +628,9 @@
                 "sections": [
                     {
                         "name": "Dark Death Mountain Fairy",
+                        "access_rules": [
+                            "$CanReach|dark_death_mountain_fairy_outside"
+                        ],
                         "hosted_item": "dark_death_mountain_fairy_outside"
                     }
                 ],
@@ -592,6 +661,9 @@
                 "sections": [
                     {
                         "name": "C-Shaped House",
+                        "access_rules": [
+                            "$CanReach|c_shaped_house_outside"
+                        ],
                         "hosted_item": "c_shaped_house_outside"
                     }
                 ],
@@ -617,6 +689,9 @@
                 "sections": [
                     {
                         "name": "Chest Game",
+                        "access_rules": [
+                            "$CanReach|chest_game_outside"
+                        ],
                         "hosted_item": "chest_game_outside"
                     }
                 ],
@@ -642,6 +717,9 @@
                 "sections": [
                     {
                         "name": "Brewery",
+                        "access_rules": [
+                            "$CanReach|brewery_outside"
+                        ],
                         "hosted_item": "brewery_outside"
                     }
                 ],
@@ -667,6 +745,9 @@
                 "sections": [
                     {
                         "name": "Hammer Peg Cave",
+                        "access_rules": [
+                            "$CanReach|peg_cave_outside"
+                        ],
                         "hosted_item": "peg_cave_outside"
                     }
                 ],
@@ -692,6 +773,9 @@
                 "sections": [
                     {
                         "name": "Red Shield Shop",
+                        "access_rules": [
+                            "$CanReach|red_shield_shop_outside"
+                        ],
                         "hosted_item": "red_shield_shop_outside"
                     }
                 ],
@@ -717,6 +801,9 @@
                 "sections": [
                     {
                         "name": "Fortune Teller (Dark)",
+                        "access_rules": [
+                            "$CanReach|dark_village_fortune_teller_outside"
+                        ],
                         "hosted_item": "dark_village_fortune_teller_outside"
                     }
                 ],
@@ -742,6 +829,9 @@
                 "sections": [
                     {
                         "name": "Village of Outcasts Shop",
+                        "access_rules": [
+                            "$CanReach|dark_village_shop_outside"
+                        ],
                         "hosted_item": "dark_village_shop_outside"
                     }
                 ],
@@ -767,6 +857,9 @@
                 "sections": [
                     {
                         "name": "Thieves Town",
+                        "access_rules": [
+                            "$CanReach|tt_entrance_outside"
+                        ],
                         "hosted_item": "tt_entrance_outside"
                     }
                 ],
@@ -792,6 +885,9 @@
                 "sections": [
                     {
                         "name": "Archery Game",
+                        "access_rules": [
+                            "$CanReach|dark_archery_minigame_outside"
+                        ],
                         "hosted_item": "dark_archery_minigame_outside"
                     }
                 ],
@@ -822,6 +918,9 @@
                 "sections": [
                     {
                         "name": "Pyramid Hole",
+                        "access_rules": [
+                            "$CanReach|pyramid_hole_outside"
+                        ],
                         "hosted_item": "pyramid_hole_outside"
                     }
                 ],
@@ -847,6 +946,9 @@
                 "sections": [
                     {
                         "name": "Pyramid Exit",
+                        "access_rules": [
+                            "$CanReach|pyramid_exit_outside"
+                        ],
                         "hosted_item": "pyramid_exit_outside"
                     }
                 ],
@@ -872,6 +974,9 @@
                 "sections": [
                     {
                         "name": "Pyramid Fairy",
+                        "access_rules": [
+                            "$CanReach|pyramid_fairy_cave_outside"
+                        ],
                         "hosted_item": "pyramid_fairy_cave_outside"
                     }
                 ],
@@ -897,6 +1002,9 @@
                 "sections": [
                     {
                         "name": "Dark Sanctuary Hint",
+                        "access_rules": [
+                            "$CanReach|dark_chapel_outside"
+                        ],
                         "hosted_item": "dark_chapel_outside"
                     }
                 ],
@@ -927,6 +1035,9 @@
                 "sections": [
                     {
                         "name": "Palace of Darkness",
+                        "access_rules": [
+                            "$CanReach|pod_entrance_outside"
+                        ],
                         "hosted_item": "pod_entrance_outside"
                     }
                 ],
@@ -952,6 +1063,9 @@
                 "sections": [
                     {
                         "name": "Palace of Darkness Hint",
+                        "access_rules": [
+                            "$CanReach|pod_hint_house_outside"
+                        ],
                         "hosted_item": "pod_hint_house_outside"
                     }
                 ],
@@ -977,6 +1091,9 @@
                 "sections": [
                     {
                         "name": "East Dark World Hint",
+                        "access_rules": [
+                            "$CanReach|pod_east_darkworld_hint_outside"
+                        ],
                         "hosted_item": "pod_east_darkworld_hint_outside"
                     }
                 ],
@@ -1002,6 +1119,9 @@
                 "sections": [
                     {
                         "name": "Dark World Potion Shop",
+                        "access_rules": [
+                            "$CanReach|dark_potion_shop_outside"
+                        ],
                         "hosted_item": "dark_potion_shop_outside"
                     }
                 ],
@@ -1027,6 +1147,9 @@
                 "sections": [
                     {
                         "name": "Dark Lake Hylia Fairy",
+                        "access_rules": [
+                            "$CanReach|dark_lake_hylia_fairy_outside"
+                        ],
                         "hosted_item": "dark_lake_hylia_fairy_outside"
                     }
                 ],
@@ -1057,6 +1180,9 @@
                 "sections": [
                     {
                         "name": "Misery Mire",
+                        "access_rules": [
+                            "$CanReach|mm_entrance_outside"
+                        ],
                         "hosted_item": "mm_entrance_outside"
                     }
                 ],
@@ -1082,6 +1208,9 @@
                 "sections": [
                     {
                         "name": "Mire Shed",
+                        "access_rules": [
+                            "$CanReach|mire_shed_outside"
+                        ],
                         "hosted_item": "mire_shed_outside"
                     }
                 ],
@@ -1107,6 +1236,9 @@
                 "sections": [
                     {
                         "name": "Dark Desert Hint",
+                        "access_rules": [
+                            "$CanReach|dark_desert_hint_outside"
+                        ],
                         "hosted_item": "dark_desert_hint_outside"
                     }
                 ],
@@ -1132,6 +1264,9 @@
                 "sections": [
                     {
                         "name": "Dark Desert Fairy",
+                        "access_rules": [
+                            "$CanReach|dark_desert_fairy_cave_outside"
+                        ],
                         "hosted_item": "dark_desert_fairy_cave_outside"
                     }
                 ],
@@ -1162,6 +1297,9 @@
                 "sections": [
                     {
                         "name": "Big Bomb Shop",
+                        "access_rules": [
+                            "$CanReach|big_bomb_shop_outside"
+                        ],
                         "hosted_item": "big_bomb_shop_outside"
                     }
                 ],
@@ -1187,6 +1325,9 @@
                 "sections": [
                     {
                         "name": "Bonk Fairy (Dark)",
+                        "access_rules": [
+                            "$CanReach|big_bomb_shop_fairy_cave_outside"
+                        ],
                         "hosted_item": "big_bomb_shop_fairy_cave_outside"
                     }
                 ],
@@ -1212,6 +1353,9 @@
                 "sections": [
                     {
                         "name": "Hype Cave",
+                        "access_rules": [
+                            "$CanReach|hype_cave_outside"
+                        ],
                         "hosted_item": "hype_cave_outside"
                     }
                 ],
@@ -1237,6 +1381,9 @@
                 "sections": [
                     {
                         "name": "Swamp Palace",
+                        "access_rules": [
+                            "$CanReach|sp_entrance_outside"
+                        ],
                         "hosted_item": "sp_entrance_outside"
                     }
                 ],
@@ -1267,6 +1414,9 @@
                 "sections": [
                     {
                         "name": "Dark Lake Hylia Shop",
+                        "access_rules": [
+                            "$CanReach|dark_lake_shop_outside"
+                        ],
                         "hosted_item": "dark_lake_shop_outside"
                     }
                 ],
@@ -1292,6 +1442,9 @@
                 "sections": [
                     {
                         "name": "Dark Lake Hylia Ledge Fairy",
+                        "access_rules": [
+                            "$CanReach|dark_lake_hylia_ledge_fairy_outside"
+                        ],
                         "hosted_item": "dark_lake_hylia_ledge_fairy_outside"
                     }
                 ],
@@ -1317,6 +1470,9 @@
                 "sections": [
                     {
                         "name": "Dark Lake Hylia Ledge Spike Cave",
+                        "access_rules": [
+                            "$CanReach|dark_lake_hylia_ledge_spike_hint_outside"
+                        ],
                         "hosted_item": "dark_lake_hylia_ledge_spike_hint_outside"
                     }
                 ],
@@ -1342,6 +1498,9 @@
                 "sections": [
                     {
                         "name": "Dark Lake Hylia Ledge Hint",
+                        "access_rules": [
+                            "$CanReach|dark_lake_hylia_ledge_hint_outside"
+                        ],
                         "hosted_item": "dark_lake_hylia_ledge_hint_outside"
                     }
                 ],
@@ -1367,6 +1526,9 @@
                 "sections": [
                     {
                         "name": "Ice Palace",
+                        "access_rules": [
+                            "$CanReach|ip_entrance_outside"
+                        ],
                         "hosted_item": "ip_entrance_outside"
                     }
                 ],
