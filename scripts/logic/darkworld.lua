@@ -103,7 +103,7 @@ big_bomb_shop_area:connect_one_way(south_of_village_of_the_outcast)
 links_house_outside:connect_two_ways_entrance("Inverted Spawn", links_house_inside)
 big_bomb_shop_outside:connect_two_ways_entrance("Big Bomb Shop", big_bomb_shop_inside)
 
-big_bomb_shop_area:connect_two_ways(big_bomb_shop_fairy_cave_outside, function() return has("boots") end)
+big_bomb_shop_area:connect_two_ways(big_bomb_shop_fairy_cave_outside, function() return all(has("boots"), can_interact("dark", 1)) end)
 big_bomb_shop_fairy_cave_outside:connect_two_ways_entrance("Big Bomb Shop Fairy Cave", big_bomb_shop_fairy_cave_inside)
 
 big_bomb_shop_area:connect_one_way(cave45_ledge, function() 
@@ -119,13 +119,15 @@ big_bomb_shop_inside:connect_one_way("Buy Big Bomb", function() return all(has("
 swamp_area:connect_one_way(teleporter_at_swamp, function() 
     return all(
         inverted(),
-        has("hammer")
+        has("hammer"), 
+        can_interact("dark", 1)
     )
 end)
 teleporter_at_swamp:connect_one_way(swamp_area, function() 
     return all(
         has("pearl"), 
-        has("hammer")
+        has("hammer"), 
+        can_interact("dark", 1)
     ) 
 end)
 
@@ -438,7 +440,10 @@ village_of_the_outcast:connect_two_ways(helpless_frog, function() return all(has
 
 -- south_of_village_of_the_outcast
 south_of_village_of_the_outcast:connect_one_way(village_of_the_outcast, function()
-    return has("titans")
+    return all(
+        has("titans"),
+        can_interact("dark", 1)
+    )
 end)
 south_of_village_of_the_outcast:connect_one_way(big_bomb_shop_area)
 south_of_village_of_the_outcast:connect_one_way(dark_flute_map, function() 
@@ -450,7 +455,7 @@ south_of_village_of_the_outcast:connect_one_way(dark_flute_map, function()
 end)
 south_of_village_of_the_outcast:connect_two_ways(dark_archery_minigame_outside)
 dark_archery_minigame_outside:connect_two_ways_entrance("Dark Archery", dark_archery_minigame_inside)
-south_of_village_of_the_outcast:connect_one_way("Digging Game", function () return can_interact("dark",1 ) end)
+south_of_village_of_the_outcast:connect_one_way("Digging Game", function() return can_interact("dark",1 ) end)
 south_of_village_of_the_outcast:connect_one_way(race_ledge, function() 
     return all(
         openOrStandard(),
@@ -460,7 +465,7 @@ end)
 
 -- south_of_village_of_the_outcast:connect_one_way(mire_area) -- glitches
 
-big_bomb_shop_area:connect_two_ways(stumpy)
+big_bomb_shop_area:connect_two_ways(stumpy, function() return can_interact("dark", 1) end)
 big_bomb_shop_area:connect_two_ways(cave45_ledge, function() 
     return all(
         openOrStandard(), 
@@ -638,7 +643,7 @@ dark_chapel_outside:connect_two_ways_entrance("Dark Chapel", dark_chapel_inside)
 dark_potion_shop_area:connect_one_way(dark_chapel_area, function()
     return all(
         has("hookshot"),
-        can_interact("dark",5)
+        can_interact("dark",1)
     )
 end)
 dark_potion_shop_area:connect_one_way(catfish_area, function()
@@ -740,8 +745,8 @@ pyramid_hole_inside:connect_one_way(pyramid_exit_inside)
 
 pyramid_fairy_cave_outside:connect_one_way_entrance("Fat Fairy", pyramid_fairy_cave_inside)
 
-pyramid_fairy_cave_inside:connect_one_way("Pyramid Fairy Left")
-pyramid_fairy_cave_inside:connect_one_way("Pyramid Fairy Right")
+pyramid_fairy_cave_inside:connect_one_way("Pyramid Fairy Left", function() return can_interact("dark",1 ) end)
+pyramid_fairy_cave_inside:connect_one_way("Pyramid Fairy Right", function() return can_interact("dark",1 ) end)
 
 
 
@@ -803,7 +808,7 @@ pod_area:connect_one_way(big_bomb_shop_area, function()
 end)
 
 pod_area:connect_two_ways(pod_hint_house_outside)
-pod_area:connect_two_ways(pod_entrance_outside, function() return can_interact("dark",4) end)
+pod_area:connect_two_ways(pod_entrance_outside, function() return can_interact("dark",1) end)
 pod_area:connect_two_ways(dark_lake_hylia_fairy_outside)
 pod_area:connect_two_ways(pod_east_darkworld_hint_outside)
 -- pod_area:connect_two_ways(pod_entrance_outside, function() return can_interact("dark",4) end)

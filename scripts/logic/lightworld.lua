@@ -134,7 +134,7 @@ end)
 kakariko_village:connect_two_ways(magic_bat_cave_outside)
 kakariko_village:connect_two_ways(kakariko_furtune_teller_outside)
 
-kakariko_village:connect_two_ways(light_activate_flute, function() return has("flute") end)
+kakariko_village:connect_two_ways(light_activate_flute, function() return all(has("flute"), can_interact("light", 1)) end)
 
 
 kakariko_village:connect_one_way("Bottle Merchant")
@@ -183,7 +183,7 @@ kakariko_well_item:connect_one_way("Kakariko Well - Bottom") -- can interact as 
 
 
 
-kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Back", function() return has("bombs") end)
+kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Back", function() return all(has("bombs"), can_interact("light", 1)) end)
 kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Far Left", function() return can_interact("light",1 ) end)
 kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Left", function() return can_interact("light",1 ) end)
 kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Right", function() return can_interact("light",1 ) end)
@@ -510,7 +510,7 @@ dam_area:connect_one_way("Purple Chest Return", function() return purple_chest_p
 -- desert_area
 
 teleporter_at_desert_ledge:connect_one_way(desert_area)
-teleporter_at_desert_ledge:connect_one_way(teleporter_at_desert, function() return has("titans") end)
+teleporter_at_desert_ledge:connect_one_way(teleporter_at_desert, function() return all(has("titans"), can_interact("light", 1)) end)
 teleporter_at_desert:connect_one_way(teleporter_at_desert_ledge)
 
 desert_area:connect_one_way(dam_area)
@@ -525,12 +525,7 @@ end)
 -- desert_area:connect_one_way_entrance("desert_palace_front_entrance", desert_palace_front, function() return has("book") end)
 -- desert_area:connect_one_way(desert_palace_front, function() return has("book") end)
 desert_area:connect_two_ways(aginah_cave_outside)
-desert_area:connect_one_way(dp_main_entrance_outside, function() 
-    return all(
-        has("book"), 
-        can_interact("light",1 )
-    ) 
-end)
+desert_area:connect_one_way(dp_main_entrance_outside, function() return has("book") end)
 
 checkerboard_lege:connect_one_way(desert_area)
 aginah_cave_outside:connect_two_ways_entrance("Aginah Cave", aginah_cave_inside)
@@ -658,7 +653,7 @@ light_death_mountain_return_ledge:connect_one_way(lumberjacks_area)
 light_death_mountain_return_ledge:connect_two_ways(light_death_mountain_return_left_outside, function() return openOrStandard() end)
 
 old_man_cave_left_ledge:connect_two_ways(old_man_cave_left_outside, function() return openOrStandard() end)
-old_man_cave_left_outside:connect_two_ways_entrance("Old Mac Cave Left", old_man_cave_left_inside, function() return darkRooms() end)
+old_man_cave_left_outside:connect_two_ways_entrance("Old Man Cave Left", old_man_cave_left_inside, function() return darkRooms() end)
 old_man_cave_left_inside:connect_one_way(old_man_cave, function() return darkRooms() end)
 
 
@@ -739,12 +734,7 @@ end)
 
 light_lake_fortune_outside:connect_two_ways_entrance("Light Lake Forune", light_lake_fortune_inside)
 light_lake_shop_outside:connect_two_ways_entrance("Light Lake Shop", light_lake_shop_inside)
-icerod_cave_outside:connect_two_ways_entrance("Icerod Cave", icerod_cave_inside, function() 
-    return all(
-        has("bombs"), 
-        can_interact("light",1 )
-    ) 
-end)
+icerod_cave_outside:connect_two_ways_entrance("Icerod Cave", icerod_cave_inside)
 good_bee_cave_outside:connect_two_ways_entrance("Good Bee Cave", good_bee_cave_inside)
 twenty_rupee_thief_outside:connect_two_ways_entrance("Twenty Rupee Cave", twenty_rupee_thief_inside, function() 
     return all(
@@ -849,7 +839,7 @@ links_house_area:connect_one_way("Flute Spot", function()
     ) 
 end)
 
-links_house_area:connect_one_way(pyramid, function() return has("aga1") end)
+links_house_area:connect_one_way(pyramid, function() return all(has("aga1"), openOrStandard()) end)
 
 
 
@@ -976,7 +966,7 @@ end)
 
 hyrule_castle_area:connect_two_ways(hc_main_entrance_outside)
 hyrule_castle_area:connect_two_ways(secret_passage_hole_outside, function() return can_interact("light",1 ) end)
-hyrule_castle_area:connect_two_ways(secret_passage_stairs_outside)
+hyrule_castle_area:connect_two_ways(secret_passage_stairs_outside, function() return can_interact("light",1 ) end)
 
 
 
@@ -990,7 +980,8 @@ hyrule_castle_top:connect_two_ways(at_entrance_outside, function()
             ),
             canClearAgaTowerBarrier()
         ),
-        openOrStandard()
+        openOrStandard(),
+        can_interact("light", 1)
     )
 end)
 hyrule_castle_top:connect_two_ways(gt_entrance_outside, function() 
@@ -1003,25 +994,8 @@ hyrule_castle_top:connect_two_ways(hc_left_entrance_outside)
 hyrule_castle_top:connect_two_ways(hc_right_entrance_outside)
 hyrule_castle_top:connect_one_way(hyrule_castle_area)
 
-at_entrance_outside:connect_two_ways_entrance("Castle Tower", at_entrance_inside, function() 
-    return all(
-        any(
-            all(
-                checkGlitches(2),
-                has("boots"),
-                CanReach(sanctuary_area)
-            ),
-            canClearAgaTowerBarrier()
-        ),
-        openOrStandard()
-    ) 
-end)
-gt_entrance_outside:connect_two_ways_entrance("Inverted Ganons Tower", gt_entrance_inside, function() 
-    return all(
-        gtCrystalCount(),
-        inverted()
-    ) 
-end)
+at_entrance_outside:connect_two_ways_entrance("Castle Tower", at_entrance_inside)
+gt_entrance_outside:connect_two_ways_entrance("Inverted Ganons Tower", gt_entrance_inside)
 hc_left_entrance_outside:connect_two_ways_entrance("Hyrule Castle Top Left", hc_left_entrance_inside)
 hc_right_entrance_outside:connect_two_ways_entrance("Hyrule Castle Top Right", hc_right_entrance_inside)
 
@@ -1264,7 +1238,7 @@ teleporter_at_dark_death_mountain_right_bottom:connect_one_way(light_death_mount
 light_death_mountain_right_bottom:connect_two_ways(spiral_cave_bottom_outside)
 light_death_mountain_right_bottom:connect_two_ways(paradox_cave_bottom_entrance_outside)
 light_death_mountain_right_bottom:connect_two_ways(paradox_cave_middle_entrance_outside)
-light_death_mountain_right_bottom:connect_two_ways(fairy_ascension_cave_bottom_outside)
+light_death_mountain_right_bottom:connect_two_ways(fairy_ascension_cave_bottom_outside, function() return can_interact("light",1 ) end)
 light_death_mountain_right_bottom:connect_two_ways(hookshot_fairy_outside)
 
 spiral_cave_bottom_outside:connect_two_ways_entrance("Spiral Cave Bottom Entrance", spiral_cave_bottom_inside)
@@ -1282,7 +1256,8 @@ hookshot_fairy_outside:connect_two_ways_entrance("Hookshot Fairy Cave", hookshot
 light_death_mountain_right_top:connect_one_way(teleporter_at_light_turtle_rock, function() 
     return all(
         has("hammer"),
-        has("titans")
+        has("titans"),
+        can_interact("light", 1)
     ) 
 end)
 teleporter_at_light_turtle_rock:connect_one_way(light_death_mountain_right_top, function() 
@@ -1375,8 +1350,8 @@ end) -- go upstairs from 2x to the 5 chests
 
 paradox_cave_bottom_entrance_inside:connect_two_ways(paradox_cave_bottom_front)
 
-paradox_cave_bottom_front:connect_two_ways(paradox_cave_bottom_shop_entrance, function() return has("bombs") end)
-paradox_cave_bottom_front:connect_two_ways(paradox_cave_bottom_back, function() return has("mirror") end) --block delete with mirror
+paradox_cave_bottom_front:connect_two_ways(paradox_cave_bottom_shop_entrance, function() return all(has("bombs"), can_interact("light", 1)) end)
+paradox_cave_bottom_front:connect_two_ways(paradox_cave_bottom_back, function() return all(has("mirror"), can_interact("light", 1)) end) --block delete with mirror
 paradox_cave_bottom_shop_entrance:connect_two_ways(light_death_mountain_shop_inside) -- go to shop and bomb it open
 
 light_death_mountain_right_top:connect_one_way(dark_death_mountain_right_top, function() 
@@ -1385,8 +1360,8 @@ light_death_mountain_right_top:connect_one_way(dark_death_mountain_right_top, fu
         inverted()
     ) 
 end)
-paradox_cave_bottom_back:connect_one_way("Paradox Cave Bottom Left")
-paradox_cave_bottom_back:connect_one_way("Paradox Cave Bottom Right")
+paradox_cave_bottom_back:connect_one_way("Paradox Cave Bottom Left", function() return can_interact("light",1 ) end)
+paradox_cave_bottom_back:connect_one_way("Paradox Cave Bottom Right", function() return can_interact("light",1 ) end)
 paradox_cave_top_back:connect_one_way("Paradox Cave Top Far Left", function() return can_interact("light",1 ) end)
 paradox_cave_top_back:connect_one_way("Paradox Cave Top Left", function() return can_interact("light",1 ) end)
 paradox_cave_top_back:connect_one_way("Paradox Cave Top Middle", function() return can_interact("light",1 ) end)

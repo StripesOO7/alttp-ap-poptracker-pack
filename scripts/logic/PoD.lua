@@ -40,7 +40,7 @@ end)
 pod_three_way_room_right:connect_two_ways(pod_teleporter_room)
 pod_big_key_chest_room:connect_one_way(pod_basement_ledge, function() return has("bombs") end)
 pod_big_key_chest_room:connect_one_way(pod_basement_floor)
-pod_shooter_room:connect_one_way("PoD - Shooter Room")
+pod_shooter_room:connect_one_way("PoD - Shooter Room", function() return can_interact("dark",1 ) end)
 
 pod_basement_ledge:connect_one_way(pod_basement_floor)
 pod_basement_ledge:connect_two_ways(pod_big_key_chest_ledge, function(keys) 
@@ -54,10 +54,13 @@ pod_basement_floor:connect_one_way(pod_teleporter_room)
 pod_basement_floor:connect_one_way("PoD - Stalfos Basement")
 
 pod_teleporter_room:connect_two_ways(pod_mimic_room, function() 
-    return any(
-        has("boots"),
-        has("bombs")
-    ) 
+    return all(
+        any(
+            has("boots"),
+            has("bombs")
+        ),
+        can_interact("dark",1 )
+    )
 end)
 
 pod_mimic_room:connect_two_ways(pod_switch_room_top, function(keys) return enemizerCheck("bow"), KDSreturn(keys + 1, keys + 1) end)

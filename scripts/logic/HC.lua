@@ -33,18 +33,22 @@ hc_back_hall:connect_one_way(ce_stairs_inside, function() return can_interact("l
 -- hc_right_entrance:connect_two_ways(hc_back_hall, function() return can_interact("light", 1) end)
 
 hc_back_wing:connect_two_ways(hc_map_chest_room)
-hc_map_chest_room:connect_one_way("HC - Map Chest")
+hc_map_chest_room:connect_one_way("HC - Map Chest", function() return can_interact("light",1 ) end)
 hc_map_chest_room:connect_one_way("HC - Map Guard Key Drop", function() 
     return any(
         dealDamage(), 
-        has("standard")
+        has("standard"),
+        can_interact("light", 1)
     ) 
 end)
 
 hc_map_chest_room:connect_two_ways(hc_before_boomerang_chest_room, function(keys) 
-    return any(
-        has("standard"),
-        has("hc_smallkey", keys, 0, keys + 1, 3)
+    return all(
+        any(
+            has("standard"),
+            has("hc_smallkey", keys, 0, keys + 1, 3)
+        ),
+        can_interact("light", 1)
     ), KDSreturn(keys, keys + 1)
 end)
 hc_before_boomerang_chest_room:connect_two_ways(hc_boomerang_chest_room, function() 
@@ -98,7 +102,7 @@ ce_dark_cross:connect_two_ways(ce_rat_key_room, function(keys)
         has("standard")
     ), KDSreturn(keys + 1, keys + 1) 
 end)
-ce_dark_cross:connect_one_way("CE - Dark Cross")
+ce_dark_cross:connect_one_way("CE - Dark Cross", function() return can_interact("light",1 ) end)
 
 -- ce_rat_key_room:connect_two_ways(ce_dropdown_entrance) 
 ce_rat_key_room:connect_two_ways(ce_dropdown_entrance_inside, function(keys) 
@@ -133,13 +137,16 @@ ce_rat_key_room:connect_one_way("CE - Rat Key Drop", function(keys)
 end)
 
 ce_dropdown_entrance_inside:connect_two_ways(ce_secret_room, function() 
-    return any(
-        has("boots"), 
-        has("bombs")
+    return all(
+        any(
+            has("boots"),
+            has("bombs")
+        ),
+        can_interact("light", 1)
     )
 end)
-ce_secret_room:connect_one_way("CE - Secret Room Left")
-ce_secret_room:connect_one_way("CE - Secret Room Center")
-ce_secret_room:connect_one_way("CE - Secret Room Right")
+ce_secret_room:connect_one_way("CE - Secret Room Left", function() return can_interact("light",1 ) end)
+ce_secret_room:connect_one_way("CE - Secret Room Center", function() return can_interact("light",1 ) end)
+ce_secret_room:connect_one_way("CE - Secret Room Right", function() return can_interact("light",1 ) end)
 
-ce_dropdown_entrance_inside:connect_one_way(sanctuary_entrance_inside)
+ce_dropdown_entrance_inside:connect_one_way(sanctuary_entrance_inside, function() return can_interact("light",1 ) end)

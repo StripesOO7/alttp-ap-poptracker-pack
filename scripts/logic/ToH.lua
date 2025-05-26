@@ -18,20 +18,23 @@ toh_entrance_inside:connect_two_ways(toh_main_room, function()
         )
     )
 end)
-toh_main_room:connect_two_ways(toh_basement_cage)
-toh_main_room:connect_two_ways(toh_big_key_chest, function(keys) return has("toh_smallkey", keys + 1, 1, keys + 1, 1), KDSreturn(keys + 1, keys + 1) end)
+toh_main_room:connect_two_ways(toh_basement_cage, function() return can_interact("light",1 ) end)
+toh_main_room:connect_two_ways(toh_big_key_chest, function(keys) return all(has("toh_smallkey", keys + 1, 1, keys + 1, 1), can_interact("light",1 )), KDSreturn(keys + 1, keys + 1) end)
 toh_main_room:connect_two_ways(toh_big_chest_room, function() 
-    return any(
-        has("toh_bigkey"),
-        all(
-            checkGlitches(2),
-            has("hookshot")
-        )
+    return all(
+        any(
+            has("toh_bigkey"),
+            all(
+                checkGlitches(2),
+                has("hookshot")
+            )
+        ),
+        can_interact("light",1 )
     )
 end)
-toh_main_room:connect_one_way("ToH - Map Chest")
+toh_main_room:connect_one_way("ToH - Map Chest", function() return can_interact("light",1 ) end)
 
-toh_basement_cage:connect_one_way("ToH - Basement Cage")
+toh_basement_cage:connect_one_way("ToH - Basement Cage", function() return can_interact("light",1 ) end)
 toh_big_key_chest:connect_one_way("ToH - Big Key Chest", function() return has("firesource") end)
 
 toh_big_chest_room:connect_two_ways(toh_above_big_chest)
