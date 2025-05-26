@@ -277,8 +277,8 @@ function alttp_location:discover(accessibility, keys)
                     key = keys
                 end
                 if access > oldAccess or (access == oldAccess and key < oldKey) then -- not sure about the <
-                    print(self.name) 
-                    print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access])
+                    -- print(self.name) 
+                    -- print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access])
                     location:discover(access, key)
                 end
             end
