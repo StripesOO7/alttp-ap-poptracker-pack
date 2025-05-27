@@ -413,12 +413,17 @@ end
 
 
 function bombless()
-    bombs = Tracker:FindObjectForCode("bombs")
-    if Tracker:FindObjectForCode("bombless").Active == false then
+    local bombs = Tracker:FindObjectForCode("bombs")
+
+    local bombless_setting = Tracker:FindObjectForCode("bombless")
+    if bombless_setting.Active == false then
         bombs.AcquiredCount = bombs.AcquiredCount + 10
     else
+
         if bombs.AcquiredCount > 9 then
             bombs.AcquiredCount = bombs.AcquiredCount - 10
+        else
+            bombs.AcquiredCount = bombs.MinCount
         end
     end
 end
