@@ -35,11 +35,13 @@ hc_back_hall:connect_one_way(ce_stairs_inside, function() return can_interact("l
 hc_back_wing:connect_two_ways(hc_map_chest_room)
 hc_map_chest_room:connect_one_way("HC - Map Chest", function() return can_interact("light",1 ) end)
 hc_map_chest_room:connect_one_way("HC - Map Guard Key Drop", function() 
-    return any(
-        dealDamage(), 
-        has("standard"),
+    return all(
+        any(
+            dealDamage(), 
+            has("standard")
+        ),
         can_interact("light", 1)
-    ) 
+    )
 end)
 
 hc_map_chest_room:connect_two_ways(hc_before_boomerang_chest_room, function(keys) 
