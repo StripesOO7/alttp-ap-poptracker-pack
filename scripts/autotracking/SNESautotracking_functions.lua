@@ -350,7 +350,7 @@ end
 function ReadU8(segment, address)
     if U8_READ_CACHE_ADDRESS ~= address then
         U8_READ_CACHE = segment:ReadUInt8(address)
-        U8_READ_CACHE_ADDRESS = address        
+        U8_READ_CACHE_ADDRESS = nil        
     end
 
     return U8_READ_CACHE
