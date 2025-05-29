@@ -73,12 +73,9 @@ end
 
 -- creates a lua object for the given name. it acts as a representation of a overworld reagion or indoor locatoin and
 -- tracks its connected objects wvia the exit-table
-function alttp_location.new(name, shortname, outside)
+function alttp_location.new(name, shortname, room, x, y)
     if shortname == nil then
         shortname = name
-    end
-    if outside == nil then
-        outside = true
     end
     local self = setmetatable({}, alttp_location)
     if name then
@@ -92,16 +89,15 @@ function alttp_location.new(name, shortname, outside)
         self.shortname = shortname
         table.insert(NAMED_LOCATIONS_KEYS, self.name)
     end
-    
+    if room and x and y then
+        self.room = room
+        self.x = x
+        self.y = y
+        -- 20 pixel tolerance
+    end
     self.exits = {}
     self.keys = math.huge
-    if outside ~= nil then
-        if outside then
-            self.side = true --outside
-        else
-            self.side = true --inside
-        end
-    end
+
     return self
 end
 
@@ -304,12 +300,18 @@ end
 
 function forceUpdate()
     local update = Tracker:FindObjectForCode("AP_item")
+    if update == nil then
+        return
+    end
     update.Active = not update.Active
 end
 
 function emptyLocationTargets()
     if not Tracker.BulkUpdate then
         local er_tracking = Tracker:FindObjectForCode("er_tracking")
+        if er_tracking == nil then
+            return
+        end
         print(er_tracking.CurrentStage)
         if er_tracking.CurrentStage == 0 then
             print("run discorver")

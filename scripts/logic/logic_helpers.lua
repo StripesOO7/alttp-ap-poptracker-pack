@@ -221,10 +221,7 @@ function canCheckWithBook()
 end
 
 function canUseMedallions()
-    return all(
-        checkSwordless(),
-        has("sword")
-    )
+    return checkSwordless()
 end
 
 function canRemoveCurtains()
