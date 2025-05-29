@@ -161,7 +161,7 @@ swamp_area:connect_two_ways(hype_cave_outside, function()
         can_interact("dark",1 )
     )
 end)
-swamp_area:connect_two_ways(sp_entrance_outside, function() return CanReach(dam_inside) end)
+swamp_area:connect_two_ways(sp_entrance_outside, function() return all(CanReach(dam_inside), can_interact("light",1)) end)
 
 hype_cave_outside:connect_two_ways_entrance("Hype Cave", hype_cave_inside)
 sp_entrance_outside:connect_two_ways_entrance("Swamp Palace", sp_entrance_inside)
