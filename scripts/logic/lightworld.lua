@@ -95,9 +95,9 @@ kakariko_village:connect_one_way(kakariko_well_hole_outside)
 kakariko_village:connect_two_ways(kakariko_well_cave_outside)
 kakariko_village:connect_two_ways(kakariko_blinds_hideout_outside)
 kakariko_village:connect_two_ways(kakariko_elder_house_left_outside)
-kakariko_village:connect_two_ways(kakariko_elder_house_right_inside)
+kakariko_village:connect_two_ways(kakariko_elder_house_right_outside)
 kakariko_village:connect_two_ways(kakariko_snitch_house_left_outside)
-kakariko_village:connect_two_ways(kakariko_snitch_house_right_inside)
+kakariko_village:connect_two_ways(kakariko_snitch_house_right_outside)
 kakariko_village:connect_two_ways(kakariko_chickenhut_outside)
 kakariko_village:connect_two_ways(kakariko_sick_kid_outside)
 kakariko_village:connect_two_ways(kakariko_overgrown_house_outside, function() return can_interact("light", 1) end)
@@ -109,7 +109,7 @@ kakariko_village:connect_two_ways(kakariko_bombhut_outside, function()
 end)
 kakariko_village:connect_two_ways(kakariko_shop_outside)
 kakariko_village:connect_two_ways(kakariko_frontside_pub_outside)
-kakariko_village:connect_two_ways(kakariko_backside_pub)
+kakariko_village:connect_two_ways(kakariko_backside_pub_outside)
 
 kakariko_village:connect_two_ways(dwarf_smiths_outside)
 kakariko_village:connect_one_way(purple_chest_pickup, function()
@@ -207,7 +207,7 @@ kakariko_shop_inside:connect_one_way("Kakariko Shop Center")
 kakariko_shop_inside:connect_one_way("Kakariko Shop Right")
 
 
-kakariko_backside_pub:connect_one_way("Backside Pub", function() return can_interact("light",1 ) end)
+kakariko_backside_pub_inside:connect_one_way("Backside Pub", function() return can_interact("light",1 ) end)
 
 
 
