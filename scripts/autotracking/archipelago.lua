@@ -18,6 +18,13 @@ local THIRDSTAGE = {
     [35] = 35 --red mail
 }
 
+local highlight_lvl= {
+    [0] = Highlight.Unspecified,
+    [10] = Highlight.NoPriority,
+    [20] = Highlight.Avoid,
+    [30] = Highlight.Priority,
+    [40] = Highlight.None,
+}
 -- SLOT_DATA = {}
 
 function has_value (t, val)
@@ -105,6 +112,12 @@ function onClear(slot_data)
     end
     if SKIP_BOSSSHUFFLE == false then
         bossShuffle()
+    end
+    if Archipelago.PlayerNumber > -1 then
+
+        HINTS_ID = "_read_hints_"..TEAM_NUMBER.."_"..PLAYER_ID
+        Archipelago:SetNotify({HINTS_ID})
+        Archipelago:Get({HINTS_ID})
     end
 end
 
@@ -445,9 +458,60 @@ function goal_check()
     end
 end
 
+
+function onNotify(key, value, old_value)
+
+    if value ~= old_value and key == HINTS_ID then
+        Tracker.BulkUpdate = true
+        for _, hint in ipairs(value) do
+            if hint.finding_player == Archipelago.PlayerNumber then
+                if not hint.found then
+                    updateHints(hint.location, hint.status)
+                elseif hint.found then
+                    updateHints(hint.location, hint.status)
+                end
+            end
+        end
+        Tracker.BulkUpdate = false
+    end
+end
+
+function onNotifyLaunch(key, value)
+    if key == HINTS_ID then
+        Tracker.BulkUpdate = true
+        for _, hint in ipairs(value) do
+            if hint.finding_player == Archipelago.PlayerNumber then
+                if not hint.found then
+                    updateHints(hint.location, hint.status)
+                else if hint.found then
+                    updateHints(hint.location, hint.status)
+                end end
+            end
+        end
+        Tracker.BulkUpdate = false
+    end
+end
+ 
+function updateHints(locationID, status)
+    print(locationID, status)
+    local location_table = LOCATION_MAPPING[locationID]
+    for _, location in ipairs(location_table) do
+        local obj = Tracker:FindObjectForCode(location)
+        if obj then
+            obj.Highlight = highlight_lvl[status]
+        else
+            print(string.format("No object found for code: %s", location))
+        end
+    end
+end
+
+
 ScriptHost:AddWatchForCode("bombless start handler", "bombless", bombless)
 ScriptHost:AddWatchForCode("goal handler", "goal", goal_check)
 ScriptHost:AddWatchForCode("settings autofill handler", "autofill_settings", autoFill)
 Archipelago:AddClearHandler("clear handler", onClear)
 Archipelago:AddItemHandler("item handler", onItem)
 Archipelago:AddLocationHandler("location handler", onLocation)
+
+Archipelago:AddSetReplyHandler("notify handler", onNotify)
+Archipelago:AddRetrievedHandler("notify launch handler", onNotifyLaunch)
