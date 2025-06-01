@@ -17,14 +17,15 @@ local THIRDSTAGE = {
     [6] = 6, --mirror shield
     [35] = 35 --red mail
 }
-
-local highlight_lvl= {
-    [0] = Highlight.Unspecified,
-    [10] = Highlight.NoPriority,
-    [20] = Highlight.Avoid,
-    [30] = Highlight.Priority,
-    [40] = Highlight.None,
-}
+if PopVersion > "0.31.0" then
+    local highlight_lvl= {
+        [0] = Highlight.Unspecified,
+        [10] = Highlight.NoPriority,
+        [20] = Highlight.Avoid,
+        [30] = Highlight.Priority,
+        [40] = Highlight.None,
+    }
+end
 -- SLOT_DATA = {}
 
 function has_value (t, val)
@@ -493,14 +494,16 @@ function onNotifyLaunch(key, value)
 end
  
 function updateHints(locationID, status)
-    print(locationID, status)
-    local location_table = LOCATION_MAPPING[locationID]
-    for _, location in ipairs(location_table) do
-        local obj = Tracker:FindObjectForCode(location)
-        if obj then
-            obj.Highlight = highlight_lvl[status]
-        else
-            print(string.format("No object found for code: %s", location))
+    if PopVersion > "0.31.0" then
+        print(locationID, status)
+        local location_table = LOCATION_MAPPING[locationID]
+        for _, location in ipairs(location_table) do
+            local obj = Tracker:FindObjectForCode(location)
+            if obj then
+                obj.Highlight = highlight_lvl[status]
+            else
+                print(string.format("No object found for code: %s", location))
+            end
         end
     end
 end
