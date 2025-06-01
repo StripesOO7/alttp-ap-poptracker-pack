@@ -1942,10 +1942,10 @@
                     {
                         "name": "Potion Shop",
                         "access_rules": [
-                            "$CanReach|witchhut_outside"
+                            "$CanReach|light_potion_shop_outside"
                         ],
                         // "hosted_item": "from_witchhut_outside, to_witchhut_outside"
-                        "hosted_item": "witchhut_outside"
+                        "hosted_item": "light_potion_shop_outside"
                     }
                 ],
                 "map_locations": [
