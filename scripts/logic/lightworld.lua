@@ -1302,7 +1302,7 @@ light_eyebridge_fairy_ledge:connect_two_ways(light_eyebridge_fairy_outside)
 --         openOrStandard()
 --     ) 
 -- end)
-light_eyebridge_fairy_outside:connect_one_way(tr_eye_bridge_entrance_outside, function() 
+light_eyebridge_fairy_outside:connect_one_way(tr_eye_bridge_entrance_ledge, function() 
     return all(
         inverted(), 
         canChangeWorldWithMirror()

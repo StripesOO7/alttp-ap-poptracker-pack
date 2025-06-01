@@ -952,7 +952,7 @@ hookshot_cave_inside:connect_one_way("Hookshot Cave Item Bottom Left", function(
 end)
 
 tr_eye_bridge_entrance_outside:connect_two_ways(tr_eye_bridge_entrance_ledge)
-tr_eye_bridge_entrance_ledge:connect_two_ways(light_eyebridge_fairy_ledge, function() 
+tr_eye_bridge_entrance_ledge:connect_one_way(light_eyebridge_fairy_ledge, function() 
     return all(
         openOrStandard(), 
         canChangeWorldWithMirror()
@@ -1033,6 +1033,7 @@ end)
 
 tr_big_chest_entrance_outside:connect_two_ways_entrance("Turtle Rock Big Chest Entrance", tr_big_chest_entrance_inside)
 tr_laser_entrance_outside:connect_two_ways_entrance("Turtle Rock Laser Entrance", tr_laser_entrance_inside)
+tr_eye_bridge_entrance_outside:connect_two_ways_entrance("Turtle Eye Bridge Entrance", tr_eye_bridge_entrance_inside)
 -- tr_laser_entrance:connect_two_ways_entrance("Light Death Mountain Fairy", light_death_mountain_cave1, function() return has("mirror") end)
 
 dark_death_mountain_right_bottom:connect_two_ways(dark_death_mountain_shop_outside)
