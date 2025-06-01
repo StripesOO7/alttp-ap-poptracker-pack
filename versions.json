@@ -1,6 +1,30 @@
 {
 	"versions": [
 		{
+			"package_version": "0.3.1",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.3.1/alttp-ap-tracker-v0.3.1.zip",
+			"sha256": "cc5144369b3196ff263eb1ba8ecf10efc33eabe20fcecd668d20bc29313293cb",
+			"changelog": [
+				"More or less a hotfix for various bugs in 0.3.0",
+				"",
+				"fixed:",
+				"- fix auto tabbing not working because of restructure of map layouts",
+				"- fix aga1 not being tracked properly via SNEs memory watch",
+				"- hopefully fully fix bombless start issue with bombcounts (probably not fully fixed)",
+				"- fixed logic/pathing for paradox cave",
+				"- fix HC first key guard being available without a means to kill him in inverted",
+				"- fixed swamp palace being available without being able to pull the lever in dam in inverted",
+				"- fixed switched up rooms in Mire caves map (fairy and hint where swapped in the caves map)",
+				"- fixed TR eye bridge access and showing checks available accordingly for inverted",
+				"",
+				"added:",
+				"- added more checks for intractability in light and dark world. use mainly for ER ",
+				"- dynamically mark entrances as green (reachable) or red (unreachable) basend an your current available wolrd-graph",
+				"- added preparations for auto ER tracking based in ingame coords and room numbers",
+				"- added mirror logic from pyramid <-> HC top access for their respective use cases "
+			]
+		},
+		{
 			"package_version": "0.3.0",
 			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.3.0/alttp-ap-tracker-v0.3.0.zip",
 			"sha256": "500e9356bbc3088d6adb8324b9697bdb153eaf4d7ffdf37f748a72fc5aee8286",
