@@ -264,9 +264,27 @@ dungeon_entrance_IDS = {
 }
 
 function updateUI(segment, mainModuleIdx)
+    local ow_room_reset
+    local dungeon_room_reset
+    local ow_door
+    local dungeon_door
+    local pre_change_coords_x
+    local pre_change_coords_y
+    local post_change_coords_x
+    local post_change_coords_y
+    local current_coords_x
+    local current_coords_y
+    local current_ow_door
+    local current_dungeon_door
+    local last_seen_ow_door
+    local last_seen_dungeon_door
+    ow_room_reset = false
+    dungeon_room_reset = false
     if mainModuleIdx > 0x05 then
+        print("-------------------------------------------------")
         new_ow_room = segment:ReadUInt16(0x7e008a)
-        -- last_seen_room1 = segment:ReadUInt16(0x7e00a2)
+        new_dungeon_room = segment:ReadUInt16(0x7e00a0)
+        last_seen_room1 = segment:ReadUInt16(0x7e00a2)
         -- print("Room Memory for Address: 0x7e00a2")
         -- print(last_seen_room1)
         -- last_seen_room2 = segment:ReadUInt8(0x7e00a9)
@@ -278,14 +296,83 @@ function updateUI(segment, mainModuleIdx)
         -- print("left/right qudrant:", segment:ReadUInt8(0x7e00a9))
         -- print("upper/lower qudrant:", segment:ReadUInt8(0x7e00aa))
         -- print("y cord :", segment:ReadUInt16(0x7e0020))
+        current_coords_y = segment:ReadUInt16(0x7e0020)
         -- print("x cord :", segment:ReadUInt16(0x7e0022))
+        current_coords_x = segment:ReadUInt16(0x7e0022)
+        -- print("-------------------------------------------------")
+        -- print("Current Room Index: ", new_dungeon_room)
+        -- print("Current OW   Index: ", new_ow_room)
+
+
+
+        -- print("------------------------------------------")
+        -- print(dump_table(OVERWORLD_MAPPING[current_coords_x][current_coords_y][new_ow_room]))
+        -- print(dump_table(CAVES_MAPPING[current_coords_x][current_coords_y][new_dungeon_room]))
+        -- print("------------------------------------------")
+        -- if OVERWORLD_MAPPING[current_coords_x][current_coords_y][new_ow_room] ~= nil then
+        --     if type(current_ow_door) == "table" then
+        --         for index, name in ipairs(OVERWORLD_MAPPING[current_coords_x][current_coords_y][new_ow_room]) do
+        --             print(index, name)
+        --             current_ow_door = Tracker:FindObjectForCode(name)
+        --         end
+        --     else
+        --         -- current_ow_door = OVERWORLD_MAPPING[current_coords_x][current_coords_y][new_ow_room]
+        --     end
+        -- end
+        -- if CAVES_MAPPING[current_coords_x][current_coords_y][new_dungeon_room] ~= nil then
+        --     if type(current_ow_door) == "table" then
+        --         for index, name in ipairs(CAVES_MAPPING[current_coords_x][current_coords_y][new_dungeon_room]) do
+        --             print(index, name)
+        --             current_dungeon_door = Tracker:FindObjectForCode(name)
+        --         end
+        --     else
+        --         -- current_dungeon_door = Tracker:FindObjectForCode(CAVES_MAPPING[current_coords_x][current_coords_y][new_dungeon_room])
+        --     end
+        -- end
+        print(type(current_ow_door))
+        print(type(current_dungeon_door))
+
+        -- if type(current_ow_door) == "string" then
+        --     last_seen_ow_door = current_ow_door
+        -- end
+        -- if type(current_dungeon_door) == "string" then
+        --     last_seen_dungeon_door = current_dungeon_door
+        -- end
+        -- print("last_seen_ow_door" ,last_seen_ow_door)
+        -- print("last_seen_dungeon_door" ,last_seen_dungeon_door)
+        -- if last_seen_ow_door ~= nil and current_dungeon_door ~= nil then
+        --     last_seen_ow_door.ItemState.Target = current_dungeon_door.Name
+        --     _SetLocationOptions(last_seen_ow_door, current_dungeon_door)
+        --     last_seen_ow_door = nil
+        --     current_dungeon_door = nil
+
+        -- elseif current_ow_door ~= nil and last_seen_dungeon_door ~= nil then
+        --     last_seen_dungeon_door.ItemState.Target = current_ow_door.Name
+        --     _SetLocationOptions(last_seen_dungeon_door, current_ow_door)
+        --     current_ow_door = nil
+        --     last_seen_dungeon_door = nil
+        -- end
+        -- if ow_room == 0 and ow_room ~= new_ow_room then
+        --     -- dungeon_door = Tracker:FindObjectForCode(CAVES_MAPPING[])
+        -- end
+        -- if dungeon_room == 0 and dungeon_room ~= new_dungeon_room then
+        --     -- ow_door = Tracker:FindObjectForCode(OVERWORLD_MAPPING[])
+        -- end
+        -- if ow_room > 0 and new_ow_room  == 0 then
+        --     --transition from ow to dungeon
+        -- end
+        -- if new_ow_room > 0 and ow_room  == 0 then
+        --     --transition from dungeon to ow
+        --     -- Tracker:FindObjectForCode()
+        -- end
         if new_ow_room == 0 then
-            ow_room = 0
             new_dungeon_room = segment:ReadUInt16(0x7e00a0)
-            dungeon_room_quadrant_lr = segment:ReadUInt8(0x7e00a9) -- 0 or 1 / left or rigth
-            dungeon_room_quadrant_ud = segment:ReadUInt8(0x7e00aa) -- 0 or 2 / upper or lower
+            ow_room_reset = true
+            --dungeon_room_quadrant_lr = segment:ReadUInt8(0x7e00a9) -- 0 or 1 / left or rigth
+            --dungeon_room_quadrant_ud = segment:ReadUInt8(0x7e00aa) -- 0 or 2 / upper or lower
         else
-            dungeon_room = 0
+            transition_to_dungeon = true
+            dungeon_room_reset = true
             new_dungeon_room = 0
         end
         if new_ow_room > 0 then -- and ow_room ~= new_ow_room then
@@ -306,9 +393,14 @@ function updateUI(segment, mainModuleIdx)
                 end
             end
         end
-        -- print("Current Room Index: ", new_dungeon_room)
-        -- print("Current OW   Index: ", new_ow_room)
+        
         -- print(room_lookuptable[dungeon_room])
+    end
+    if ow_room_reset then
+        ow_room = 0
+    end
+    if dungeon_room_reset then
+        dungeon_room = 0
     end
 end
 

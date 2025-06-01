@@ -1,9 +1,10 @@
 ENTRANCE_SELECTED = nil
 
-local function _SetLocationOptions(source, target) -- source == inside, target == outside
+function _SetLocationOptions(source, target) -- source == inside, target == outside
 
     source.Icon = ImageReference:FromPackRelativePath("images/entrances/".. target.ItemState.Side .."/".. string.gsub(target.Name, "_"..target.ItemState.Side, "") ..".png")
-    source.BadgeText = "to ".. target.ItemState.Shortname
+    source.BadgeText = "to " .. target.ItemState.Shortname
+    -- source.BadgeText = target.ItemState.Direction .. target.ItemState.Shortname
     source.BadgeTextColor = "#abcdef"
     source:SetOverlayFontSize(10)
     source:SetOverlayAlign("left")
@@ -16,7 +17,7 @@ local function _SetLocationOptions(source, target) -- source == inside, target =
 
 end
 
-local function _UnsetLocationOptions(source)
+function _UnsetLocationOptions(source)
     source.ItemState.Target = nil
     source.Icon = ImageReference:FromPackRelativePath("images/door_closed.png")
     source.BadgeText = ""
@@ -140,12 +141,13 @@ local function SaveFunc(self)
         Name = self.Name,
         Shortname = self.ItemState.Shortname,
         Icon = self.Icon,
-        BadgeText = self.BadgeText
+        BadgeText = self.BadgeText,
+        Direction = self.Direction
     }
     -- print("SaveFunc")
 end
 local function LoadFunc(self, data)
-    print(self.Name, data.Name)
+    -- print(self.Name, data.Name)
     -- print("loading data from:", data)
     -- print(dump_table(data))
     if data ~= nil and self.Name == data.Name then
@@ -154,6 +156,7 @@ local function LoadFunc(self, data)
         self.ItemState.Target = data.Target
         self.ItemState.Side = data.Side
         self.ItemState.Shortname = data.Shortname
+        self.Direction = data.Direction
         self.Icon = ImageReference:FromPackRelativePath(data.Icon)
         if data.BadgeText ~= nil then
             self.BadgeText = data.BadgeText
@@ -182,17 +185,18 @@ end
 -- LuaLocationItems = {}
 -- LuaLocationItems.__index = LuaLocationItems
 
-function CreateLuaLocationItems(code, shortname, side)
+function CreateLuaLocationItems(direction, code, shortname, side)
     local self = ScriptHost:CreateLuaItem()
     -- self.Type = "custom"
-    self.Name = code
+    self.Name = code -- direction .. code
     self.Icon = ImageReference:FromPackRelativePath("images/door_closed.png")
     self.ItemState = {
         Stage = 0,
         Active = true,
         Side = nil,
         Target = nil,
-        Shortname = shortname
+        Shortname = shortname,
+        Direction = direction
     }
     -- self.Active = false
     self.ItemState.Side = side

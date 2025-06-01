@@ -18,6 +18,8 @@ local accessLVL= {
 -- Table to store named locations
 NAMED_LOCATIONS = {}
 NAMED_LOCATIONS_KEYS = {}
+OVERWORLD_MAPPING = {}
+CAVES_MAPPING = {}
 local stale = true
 local accessibilityCache = {}
 local accessibilityCacheComplete = false
@@ -25,6 +27,12 @@ local currentParent = nil
 local currentLocation = nil
 local indirectConnections = {}
 
+-- function table_insert_at(er_table, key, value)
+--     if er_table[key] == nil then
+--         er_table[key] = {}
+--     end
+--     table.insert(er_table[key], value)
+-- end
 
 -- 
 function CanReach(name)
@@ -73,7 +81,7 @@ end
 
 -- creates a lua object for the given name. it acts as a representation of a overworld reagion or indoor locatoin and
 -- tracks its connected objects wvia the exit-table
-function alttp_location.new(name, shortname, room, x, y)
+function alttp_location.new(name, shortname, cave, room, y, x)
     if shortname == nil then
         shortname = name
     end
@@ -85,16 +93,37 @@ function alttp_location.new(name, shortname, room, x, y)
         self.shortname = shortname
     else
         NAMED_LOCATIONS[name] = self
-        self.name = self
+        self.name = tostring(self)
         self.shortname = shortname
         table.insert(NAMED_LOCATIONS_KEYS, self.name)
     end
-    if room and x and y then
-        self.room = room
-        self.x = x
-        self.y = y
-        -- 20 pixel tolerance
-    end
+    -- if room ~= nil then
+    --     self.room = room
+    --     self.x = x
+    --     self.y = y
+    --     self.cave = cave -- boolean
+    --     -- 20 pixel tolerance
+
+    --     for x_range = x-20, x+20 do
+    --         for y_range = y-20, y+20 do
+    --             table_insert_at(OVERWORLD_MAPPING, x_range, {})
+    --             table_insert_at(OVERWORLD_MAPPING[x_range], y_range, {})
+    --             table_insert_at(OVERWORLD_MAPPING[x_range][y_range], self.room, nil)
+    --             table_insert_at(CAVES_MAPPING, x_range, {})
+    --             table_insert_at(CAVES_MAPPING[x_range], y_range, {})
+    --             table_insert_at(CAVES_MAPPING[x_range][y_range], self.room, nil)
+    --             if cave == true then
+                    
+    --                 table.insert(CAVES_MAPPING[x_range][y_range][self.room], self.name)
+    --                 -- table.insert(OVERWORLD_MAPPING[x_range][y_range][self.room], "")
+    --             else
+                    
+    --                 table.insert(OVERWORLD_MAPPING[x_range][y_range][self.room], self.name)
+    --                 -- table.insert(CAVES_MAPPING[x_range][y_range][self.room], "")
+    --             end
+    --         end
+    --     end
+    -- end
     self.exits = {}
     self.keys = math.huge
 
