@@ -271,12 +271,12 @@ kakariko_chest_minigame_outside:connect_two_ways_entrance("Light Chest Minigame"
 twin_house_right_outside:connect_two_ways_entrance("Twin House Right", twin_house_right_inside)
 
 library_inside:connect_one_way("Library Item", function() 
-    return all(
-        any(
+    return any(
+        all(
             has("boots"),
-            AccessibilityLevel.Inspect
+            can_interact("light",1 )
         ),
-        can_interact("light",1 )
+        AccessibilityLevel.Inspect
     )
 end)
 
@@ -968,7 +968,12 @@ hyrule_castle_area:connect_two_ways(hc_main_entrance_outside)
 hyrule_castle_area:connect_two_ways(secret_passage_hole_outside, function() return can_interact("light",1 ) end)
 hyrule_castle_area:connect_two_ways(secret_passage_stairs_outside, function() return can_interact("light",1 ) end)
 
-
+hyrule_castle_top:connect_one_way(pyramid, function() 
+    return all(
+        inverted(),
+        canChangeWorldWithMirror()
+    )
+end)
 
 hyrule_castle_top:connect_two_ways(at_entrance_outside, function() 
     return all(

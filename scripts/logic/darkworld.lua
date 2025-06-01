@@ -748,7 +748,12 @@ pyramid_fairy_cave_outside:connect_one_way_entrance("Fat Fairy", pyramid_fairy_c
 pyramid_fairy_cave_inside:connect_one_way("Pyramid Fairy Left", function() return can_interact("dark",1 ) end)
 pyramid_fairy_cave_inside:connect_one_way("Pyramid Fairy Right", function() return can_interact("dark",1 ) end)
 
-
+pyramid:connect_one_way(hyrule_castle_top, function() 
+    return all(
+        openOrStandard(),
+        canChangeWorldWithMirror()
+    )
+end)
 
 
 
