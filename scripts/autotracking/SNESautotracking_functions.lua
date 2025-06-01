@@ -262,29 +262,23 @@ dungeon_entrance_IDS = {
     [219] = {tt_entrance_inside},
     [224] = {at_entrance_inside},
 }
+Selected_entrance = nil
+Selected_exit = nil
 
-function updateUI(segment, mainModuleIdx)
-    local ow_room_reset
-    local dungeon_room_reset
-    local ow_door
-    local dungeon_door
-    local pre_change_coords_x
-    local pre_change_coords_y
-    local post_change_coords_x
-    local post_change_coords_y
-    local current_coords_x
+function updateEntrances(segment, mainModuleIdx)
+    
+    local current_room
+    local new_ow_room
+    local new_dungeon_room
     local current_coords_y
-    local current_ow_door
-    local current_dungeon_door
-    local last_seen_ow_door
-    local last_seen_dungeon_door
-    ow_room_reset = false
-    dungeon_room_reset = false
+    local current_coords_x
+    current_coords_y = segment:ReadUInt16(0x7e0020)
+    current_coords_x = segment:ReadUInt16(0x7e0022)
+
     if mainModuleIdx > 0x05 then
         print("-------------------------------------------------")
         new_ow_room = segment:ReadUInt16(0x7e008a)
         new_dungeon_room = segment:ReadUInt16(0x7e00a0)
-        last_seen_room1 = segment:ReadUInt16(0x7e00a2)
         -- print("Room Memory for Address: 0x7e00a2")
         -- print(last_seen_room1)
         -- last_seen_room2 = segment:ReadUInt8(0x7e00a9)
@@ -309,62 +303,76 @@ function updateUI(segment, mainModuleIdx)
         -- print(dump_table(OVERWORLD_MAPPING[current_coords_x][current_coords_y][new_ow_room]))
         -- print(dump_table(CAVES_MAPPING[current_coords_x][current_coords_y][new_dungeon_room]))
         -- print("------------------------------------------")
-        -- if OVERWORLD_MAPPING[current_coords_x][current_coords_y][new_ow_room] ~= nil then
-        --     if type(current_ow_door) == "table" then
-        --         for index, name in ipairs(OVERWORLD_MAPPING[current_coords_x][current_coords_y][new_ow_room]) do
-        --             print(index, name)
-        --             current_ow_door = Tracker:FindObjectForCode(name)
-        --         end
-        --     else
-        --         -- current_ow_door = OVERWORLD_MAPPING[current_coords_x][current_coords_y][new_ow_room]
-        --     end
-        -- end
-        -- if CAVES_MAPPING[current_coords_x][current_coords_y][new_dungeon_room] ~= nil then
-        --     if type(current_ow_door) == "table" then
-        --         for index, name in ipairs(CAVES_MAPPING[current_coords_x][current_coords_y][new_dungeon_room]) do
-        --             print(index, name)
-        --             current_dungeon_door = Tracker:FindObjectForCode(name)
-        --         end
-        --     else
-        --         -- current_dungeon_door = Tracker:FindObjectForCode(CAVES_MAPPING[current_coords_x][current_coords_y][new_dungeon_room])
-        --     end
-        -- end
-        print(type(current_ow_door))
-        print(type(current_dungeon_door))
+        
 
-        -- if type(current_ow_door) == "string" then
-        --     last_seen_ow_door = current_ow_door
-        -- end
-        -- if type(current_dungeon_door) == "string" then
-        --     last_seen_dungeon_door = current_dungeon_door
-        -- end
-        -- print("last_seen_ow_door" ,last_seen_ow_door)
-        -- print("last_seen_dungeon_door" ,last_seen_dungeon_door)
-        -- if last_seen_ow_door ~= nil and current_dungeon_door ~= nil then
-        --     last_seen_ow_door.ItemState.Target = current_dungeon_door.Name
-        --     _SetLocationOptions(last_seen_ow_door, current_dungeon_door)
-        --     last_seen_ow_door = nil
-        --     current_dungeon_door = nil
+        if new_ow_room == 0 then
+            current_room = new_dungeon_room
+        else
+            current_room = new_ow_room
+        end
+        if ENTRANCE_MAPPING[current_room] ~= nil and ENTRANCE_MAPPING[current_room][current_coords_x] ~= nil and ENTRANCE_MAPPING[current_room][current_coords_x][current_coords_y] ~= nil then
+            local current_door = ENTRANCE_MAPPING[current_room][current_coords_x][current_coords_y]
+            if current_door ~= nil and type(current_door) == "table" then
+                if Selected_entrance == nil or Selected_entrance.ItemState.Room == current_room then
+                    Selected_entrance = Tracker:FindObjectForCode("from_"..current_door[1])
+                    -- print("Selected_entrance", Selected_entrance.Name)
+                else
+                    if string.gsub(Selected_entrance.Name, "from_", "") ~= current_door[1] then
+                        Selected_exit = Tracker:FindObjectForCode("to_"..current_door[1])
+                        -- print("Selected_exit", Selected_exit.Name)
+                    end
 
-        -- elseif current_ow_door ~= nil and last_seen_dungeon_door ~= nil then
-        --     last_seen_dungeon_door.ItemState.Target = current_ow_door.Name
-        --     _SetLocationOptions(last_seen_dungeon_door, current_ow_door)
-        --     current_ow_door = nil
-        --     last_seen_dungeon_door = nil
-        -- end
-        -- if ow_room == 0 and ow_room ~= new_ow_room then
-        --     -- dungeon_door = Tracker:FindObjectForCode(CAVES_MAPPING[])
-        -- end
-        -- if dungeon_room == 0 and dungeon_room ~= new_dungeon_room then
-        --     -- ow_door = Tracker:FindObjectForCode(OVERWORLD_MAPPING[])
-        -- end
-        -- if ow_room > 0 and new_ow_room  == 0 then
-        --     --transition from ow to dungeon
-        -- end
-        -- if new_ow_room > 0 and ow_room  == 0 then
-        --     --transition from dungeon to ow
-        --     -- Tracker:FindObjectForCode()
-        -- end
+                end
+                
+
+                if Selected_entrance ~= nil and Selected_exit ~= nil then
+                    -- print("inside entrance connection part")
+                    -- print("selected_entrance", selected_entrance.Name)
+                    -- print("selected_exit", selected_exit.Name)
+                    -- print(Tracker:FindObjectForCode("er_tracking").CurrentStage)
+                    _SetLocationOptions(Selected_entrance, Selected_exit)
+                    _SetLocationOptions(Selected_exit, Selected_entrance)
+                    Selected_entrance = nil
+                    Selected_exit = nil
+                end
+            else
+                Selected_entrance = nil
+            end
+        else
+            -- Selected_entrance = nil
+        end
+    end
+end
+
+function updateUI(segment, mainModuleIdx)
+    local ow_room_reset
+    local dungeon_room_reset
+    
+    
+    ow_room_reset = false
+    dungeon_room_reset = false
+    if mainModuleIdx > 0x05 then
+        -- print("-------------------------------------------------")
+        new_ow_room = segment:ReadUInt16(0x7e008a)
+        new_dungeon_room = segment:ReadUInt16(0x7e00a0)
+        last_seen_room1 = segment:ReadUInt16(0x7e00a2)
+        -- print("Room Memory for Address: 0x7e00a2")
+        -- print(last_seen_room1)
+        -- last_seen_room2 = segment:ReadUInt8(0x7e00a9)
+        -- print("Room Memory for Address: 0x7e00a9")
+        -- print(last_seen_room2)
+        -- last_seen_room3 = segment:ReadUInt8(0x7e00aA)
+        -- print("Room Memory for Address: 0x7e00aA")
+        -- print(last_seen_room3)        
+        -- print("left/right qudrant:", segment:ReadUInt8(0x7e00a9))
+        -- print("upper/lower qudrant:", segment:ReadUInt8(0x7e00aa))
+        -- print("y cord :", segment:ReadUInt16(0x7e0020))
+        -- current_coords_y = segment:ReadUInt16(0x7e0020)
+        -- print("x cord :", segment:ReadUInt16(0x7e0022))
+        -- current_coords_x = segment:ReadUInt16(0x7e0022)
+        -- print("-------------------------------------------------")
+        -- print("Current Room Index: ", new_dungeon_room)
+        -- print("Current OW   Index: ", new_ow_room)
         if new_ow_room == 0 then
             new_dungeon_room = segment:ReadUInt16(0x7e00a0)
             ow_room_reset = true
@@ -387,9 +395,13 @@ function updateUI(segment, mainModuleIdx)
                 dungeon_room = new_dungeon_room
                 -- print(room_lookuptable[dungeon_room][1])
                 -- print(dump_table(room_lookuptable[dungeon_room]))
-                for _, ui_name in pairs(room_lookuptable[dungeon_room]) do
-                    print(_, ui_name)
-                    changeTab(ui_name)
+                if room_lookuptable[dungeon_room] ~= nil then
+                    for _, ui_name in pairs(room_lookuptable[dungeon_room]) do
+                        -- print(_, ui_name)
+                        changeTab(ui_name)
+                    end
+                else
+                    print("room_lookuptable[dungeon_room] returned nil for dungeon room:".. dungeon_room)
                 end
             end
         end
@@ -490,6 +502,9 @@ function updateInGameStatusFromMemorySegment(segment)
     end
     if Tracker:FindObjectForCode("ui_hint").Active then
         updateUI(segment, mainModuleIdx)
+    end
+    if Tracker:FindObjectForCode("er_tracking").CurrentStage > 0 then
+        updateEntrances(segment, mainModuleIdx)
     end
 
     return true

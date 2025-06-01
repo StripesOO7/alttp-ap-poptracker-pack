@@ -18,8 +18,7 @@ local accessLVL= {
 -- Table to store named locations
 NAMED_LOCATIONS = {}
 NAMED_LOCATIONS_KEYS = {}
-OVERWORLD_MAPPING = {}
-CAVES_MAPPING = {}
+ENTRANCE_MAPPING = {} -- structure --> ENTRANCE_MAPPING[<roomnumber>][<x-coord>][<y-coord>] = location name
 local stale = true
 local accessibilityCache = {}
 local accessibilityCacheComplete = false
@@ -27,12 +26,12 @@ local currentParent = nil
 local currentLocation = nil
 local indirectConnections = {}
 
--- function table_insert_at(er_table, key, value)
---     if er_table[key] == nil then
---         er_table[key] = {}
---     end
---     table.insert(er_table[key], value)
--- end
+function table_insert_at(er_table, key, value)
+    if er_table[key] == nil then
+        er_table[key] = {}
+    end
+    table.insert(er_table[key], value)
+end
 
 -- 
 function CanReach(name)
@@ -97,33 +96,22 @@ function alttp_location.new(name, shortname, cave, room, y, x)
         self.shortname = shortname
         table.insert(NAMED_LOCATIONS_KEYS, self.name)
     end
-    -- if room ~= nil then
-    --     self.room = room
-    --     self.x = x
-    --     self.y = y
-    --     self.cave = cave -- boolean
-    --     -- 20 pixel tolerance
+    if room ~= nil then
+        self.room = room
+        self.x = x
+        self.y = y
+        self.cave = cave -- boolean
+        -- 20 pixel tolerance
+        table_insert_at(ENTRANCE_MAPPING, room, {})
+        for x_range = x-20, x+20 do
+            for y_range = y-20, y+20 do
+                table_insert_at(ENTRANCE_MAPPING[room], x_range, {})
+                table_insert_at(ENTRANCE_MAPPING[room][x_range], y_range, nil)
 
-    --     for x_range = x-20, x+20 do
-    --         for y_range = y-20, y+20 do
-    --             table_insert_at(OVERWORLD_MAPPING, x_range, {})
-    --             table_insert_at(OVERWORLD_MAPPING[x_range], y_range, {})
-    --             table_insert_at(OVERWORLD_MAPPING[x_range][y_range], self.room, nil)
-    --             table_insert_at(CAVES_MAPPING, x_range, {})
-    --             table_insert_at(CAVES_MAPPING[x_range], y_range, {})
-    --             table_insert_at(CAVES_MAPPING[x_range][y_range], self.room, nil)
-    --             if cave == true then
-                    
-    --                 table.insert(CAVES_MAPPING[x_range][y_range][self.room], self.name)
-    --                 -- table.insert(OVERWORLD_MAPPING[x_range][y_range][self.room], "")
-    --             else
-                    
-    --                 table.insert(OVERWORLD_MAPPING[x_range][y_range][self.room], self.name)
-    --                 -- table.insert(CAVES_MAPPING[x_range][y_range][self.room], "")
-    --             end
-    --         end
-    --     end
-    -- end
+                table.insert(ENTRANCE_MAPPING[room][x_range][y_range], self.name)
+            end
+        end
+    end
     self.exits = {}
     self.keys = math.huge
 
@@ -367,7 +355,6 @@ function emptyLocationTargets()
         print("skipped ER reset")
     end
 end
-
 
 
 

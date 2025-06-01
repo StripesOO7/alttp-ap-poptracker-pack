@@ -6,12 +6,20 @@
                 "name": "Master Sword Meadow",
                 "sections": [
                     {
-                        "name": "Master Sword Meadow",
+                        "name": "From Master Sword Meadow",
                         "access_rules": [
                             "$CanReach|mastersword_meadow_outside"
                         ],
-                        // "hosted_item": "from_mastersword_meadow_outside, to_mastersword_meadow_outside"
-                        "hosted_item": "mastersword_meadow_outside"
+                        "hosted_item": "from_mastersword_meadow_outside"
+                        // "hosted_item": "mastersword_meadow_outside"
+                    },
+                    {
+                        "name": "To Master Sword Meadow",
+                        "access_rules": [
+                            "$CanReach|mastersword_meadow_outside"
+                        ],
+                        "hosted_item": "to_mastersword_meadow_outside"
+                        // "hosted_item": "mastersword_meadow_outside"
                     }
                 ],
                 "map_locations": [
@@ -35,12 +43,20 @@
                 "name": "Lost Woods Gamble",
                 "sections": [
                     {
-                        "name": "Lost Woods Gamble",
+                        "name": "From Lost Woods Gamble",
                         "access_rules": [
                             "$CanReach|lost_woods_gamble_outside"
                         ],
-                        // "hosted_item": "from_lost_woods_gamble_outside, to_lost_woods_gamble_outside"
-                        "hosted_item": "lost_woods_gamble_outside"
+                        "hosted_item": "from_lost_woods_gamble_outside"
+                        // "hosted_item": "lost_woods_gamble_outside"
+                    },
+                    {
+                        "name": "To Lost Woods Gamble",
+                        "access_rules": [
+                            "$CanReach|lost_woods_gamble_outside"
+                        ],
+                        "hosted_item": "to_lost_woods_gamble_outside"
+                        // "hosted_item": "lost_woods_gamble_outside"
                     }
                 ],
                 "map_locations": [
@@ -64,12 +80,20 @@
                 "name": "Lost Woods Hideout Drop",
                 "sections": [
                     {
-                        "name": "Lost Woods Hideout Drop",
+                        "name": "From Lost Woods Hideout Drop",
                         "access_rules": [
                             "$CanReach|lost_woods_hideout_hole_outside"
                         ],
-                        // "hosted_item": "from_lost_woods_hideout_hole_outside, to_lost_woods_hideout_hole_outside"
-                        "hosted_item": "lost_woods_hideout_hole_outside"
+                        "hosted_item": "from_lost_woods_hideout_hole_outside"
+                        // "hosted_item": "lost_woods_hideout_hole_outside"
+                    },
+                    {
+                        "name": "To Lost Woods Hideout Drop",
+                        "access_rules": [
+                            "$CanReach|lost_woods_hideout_hole_outside"
+                        ],
+                        "hosted_item": "to_lost_woods_hideout_hole_outside"
+                        // "hosted_item": "lost_woods_hideout_hole_outside"
                     }
                 ],
                 "map_locations": [
@@ -93,12 +117,20 @@
                 "name": "Lost Woods Hideout Stump",
                 "sections": [
                     {
-                        "name": "Lost Woods Hideout Stump",
+                        "name": "From Lost Woods Hideout Stump",
                         "access_rules": [
                             "$CanReach|lost_woods_hideout_cave_outside"
                         ],
-                        // "hosted_item": "from_lost_woods_hideout_cave_outside, to_lost_woods_hideout_cave_outside"
-                        "hosted_item": "lost_woods_hideout_cave_outside"
+                        "hosted_item": "from_lost_woods_hideout_cave_outside"
+                        // "hosted_item": "lost_woods_hideout_cave_outside"
+                    },
+                    {
+                        "name": "To Lost Woods Hideout Stump",
+                        "access_rules": [
+                            "$CanReach|lost_woods_hideout_cave_outside"
+                        ],
+                        "hosted_item": "to_lost_woods_hideout_cave_outside"
+                        // "hosted_item": "lost_woods_hideout_cave_outside"
                     }
                 ],
                 "map_locations": [
@@ -122,12 +154,20 @@
                 "name": "Lumberjack House",
                 "sections": [
                     {
-                        "name": "Lumberjack House",
+                        "name": "From Lumberjack House",
                         "access_rules": [
                             "$CanReach|lumberjacks_house_outside"
                         ],
-                        // "hosted_item": "from_lumberjacks_house_outside, to_lumberjacks_house_outside"
-                        "hosted_item": "lumberjacks_house_outside"
+                        "hosted_item": "from_lumberjacks_house_outside"
+                        // "hosted_item": "lumberjacks_house_outside"
+                    },
+                    {
+                        "name": "To Lumberjack House",
+                        "access_rules": [
+                            "$CanReach|lumberjacks_house_outside"
+                        ],
+                        "hosted_item": "to_lumberjacks_house_outside"
+                        // "hosted_item": "lumberjacks_house_outside"
                     }
                 ],
                 "map_locations": [
@@ -151,12 +191,20 @@
                 "name": "Lumberjack Tree Tree",
                 "sections": [
                     {
-                        "name": "Lumberjack Tree Tree",
+                        "name": "From Lumberjack Tree Tree",
                         "access_rules": [
                             "$CanReach|lumberjacks_hole_outside"
                         ],
-                        // "hosted_item": "from_lumberjacks_hole_outside, to_lumberjacks_hole_outside"
-                        "hosted_item": "lumberjacks_hole_outside"
+                        "hosted_item": "from_lumberjacks_hole_outside"
+                        // "hosted_item": "lumberjacks_hole_outside"
+                    },
+                    {
+                        "name": "To Lumberjack Tree Tree",
+                        "access_rules": [
+                            "$CanReach|lumberjacks_hole_outside"
+                        ],
+                        "hosted_item": "to_lumberjacks_hole_outside"
+                        // "hosted_item": "lumberjacks_hole_outside"
                     }
                 ],
                 "map_locations": [
@@ -180,12 +228,20 @@
                 "name": "Lumberjack Tree Cave",
                 "sections": [
                     {
-                        "name": "Lumberjack Tree Cave",
+                        "name": "From Lumberjack Tree Cave",
                         "access_rules": [
                             "$CanReach|lumberjacks_cave_outside"
                         ],
-                        // "hosted_item": "from_lumberjacks_cave_outside, to_lumberjacks_cave_outside"
-                        "hosted_item": "lumberjacks_cave_outside"
+                        "hosted_item": "from_lumberjacks_cave_outside"
+                        // "hosted_item": "lumberjacks_cave_outside"
+                    },
+                    {
+                        "name": "To Lumberjack Tree Cave",
+                        "access_rules": [
+                            "$CanReach|lumberjacks_cave_outside"
+                        ],
+                        "hosted_item": "to_lumberjacks_cave_outside"
+                        // "hosted_item": "lumberjacks_cave_outside"
                     }
                 ],
                 "map_locations": [
@@ -209,12 +265,20 @@
                 "name": "Old Man Cave Exit (West)",
                 "sections": [
                     {
-                        "name": "Old Man Cave Exit (West)",
+                        "name": "From Old Man Cave Exit (West)",
                         "access_rules": [
                             "$CanReach|old_man_cave_left_outside"
                         ],
-                        // "hosted_item": "from_old_man_cave_left_outside, to_old_man_cave_left_outside"
-                        "hosted_item": "old_man_cave_left_outside"
+                        "hosted_item": "from_old_man_cave_left_outside"
+                        // "hosted_item": "old_man_cave_left_outside"
+                    },
+                    {
+                        "name": "To Old Man Cave Exit (West)",
+                        "access_rules": [
+                            "$CanReach|old_man_cave_left_outside"
+                        ],
+                        "hosted_item": "to_old_man_cave_left_outside"
+                        // "hosted_item": "old_man_cave_left_outside"
                     }
                 ],
                 "map_locations": [
@@ -238,12 +302,20 @@
                 "name": "Death Mountain Return Cave Exit (West)",
                 "sections": [
                     {
-                        "name": "Death Mountain Return Cave Exit (West)",
+                        "name": "From Death Mountain Return Cave Exit (West)",
                         "access_rules": [
                             "$CanReach|light_death_mountain_return_left_outside"
                         ],
-                        // "hosted_item": "from_light_death_mountain_return_left_outside, to_light_death_mountain_return_left_outside"
-                        "hosted_item": "light_death_mountain_return_left_outside"
+                        "hosted_item": "from_light_death_mountain_return_left_outside"
+                        // "hosted_item": "light_death_mountain_return_left_outside"
+                    },
+                    {
+                        "name": "To Death Mountain Return Cave Exit (West)",
+                        "access_rules": [
+                            "$CanReach|light_death_mountain_return_left_outside"
+                        ],
+                        "hosted_item": "to_light_death_mountain_return_left_outside"
+                        // "hosted_item": "light_death_mountain_return_left_outside"
                     }
                 ],
                 "map_locations": [
@@ -272,12 +344,20 @@
                 "name": "Death Mountain Return Cave (East)",
                 "sections": [
                     {
-                        "name": "Death Mountain Return Cave (East)",
+                        "name": "From Death Mountain Return Cave (East)",
                         "access_rules": [
                             "$CanReach|light_death_mountain_return_right_outside"
                         ],
-                        // "hosted_item": "from_light_death_mountain_return_right_outside, to_light_death_mountain_return_right_outside"
-                        "hosted_item": "light_death_mountain_return_right_outside"
+                        "hosted_item": "from_light_death_mountain_return_right_outside"
+                        // "hosted_item": "light_death_mountain_return_right_outside"
+                    },
+                    {
+                        "name": "To Death Mountain Return Cave (East)",
+                        "access_rules": [
+                            "$CanReach|light_death_mountain_return_right_outside"
+                        ],
+                        "hosted_item": "to_light_death_mountain_return_right_outside"
+                        // "hosted_item": "light_death_mountain_return_right_outside"
                     }
                 ],
                 "map_locations": [
@@ -301,12 +381,20 @@
                 "name": "Old Man Cave (East)",
                 "sections": [
                     {
-                        "name": "Old Man Cave (East)",
+                        "name": "From Old Man Cave (East)",
                         "access_rules": [
                             "$CanReach|old_man_cave_right_outside"
                         ],
-                        // "hosted_item": "from_old_man_cave_right_outside, to_old_man_cave_right_outside"
-                        "hosted_item": "old_man_cave_right_outside"
+                        "hosted_item": "from_old_man_cave_right_outside"
+                        // "hosted_item": "old_man_cave_right_outside"
+                    },
+                    {
+                        "name": "To Old Man Cave (East)",
+                        "access_rules": [
+                            "$CanReach|old_man_cave_right_outside"
+                        ],
+                        "hosted_item": "to_old_man_cave_right_outside"
+                        // "hosted_item": "old_man_cave_right_outside"
                     }
                 ],
                 "map_locations": [
@@ -330,12 +418,20 @@
                 "name": "Old Man House (Top)",
                 "sections": [
                     {
-                        "name": "Old Man House (Top)",
+                        "name": "From Old Man House (Top)",
                         "access_rules": [
                             "$CanReach|old_man_home_top_outside"
                         ],
-                        // "hosted_item": "from_old_man_home_top_outside, to_old_man_home_top_outside"
-                        "hosted_item": "old_man_home_top_outside"
+                        "hosted_item": "from_old_man_home_top_outside"
+                        // "hosted_item": "old_man_home_top_outside"
+                    },
+                    {
+                        "name": "To Old Man House (Top)",
+                        "access_rules": [
+                            "$CanReach|old_man_home_top_outside"
+                        ],
+                        "hosted_item": "to_old_man_home_top_outside"
+                        // "hosted_item": "old_man_home_top_outside"
                     }
                 ],
                 "map_locations": [
@@ -359,12 +455,20 @@
                 "name": "Old Man House (Bottom)",
                 "sections": [
                     {
-                        "name": "Old Man House (Bottom)",
+                        "name": "From Old Man House (Bottom)",
                         "access_rules": [
                             "$CanReach|old_man_home_bottom_outside"
                         ],
-                        // "hosted_item": "from_old_man_home_bottom_outside, to_old_man_home_bottom_outside"
-                        "hosted_item": "old_man_home_bottom_outside"
+                        "hosted_item": "from_old_man_home_bottom_outside"
+                        // "hosted_item": "old_man_home_bottom_outside"
+                    },
+                    {
+                        "name": "To Old Man House (Bottom)",
+                        "access_rules": [
+                            "$CanReach|old_man_home_bottom_outside"
+                        ],
+                        "hosted_item": "to_old_man_home_bottom_outside"
+                        // "hosted_item": "old_man_home_bottom_outside"
                     }
                 ],
                 "map_locations": [
@@ -388,12 +492,20 @@
                 "name": "Spectacle Rock Cave Peak",
                 "sections": [
                     {
-                        "name": "Spectacle Rock Cave Peak",
+                        "name": "From Spectacle Rock Cave Peak",
                         "access_rules": [
                             "$CanReach|spec_rock_top_entrance_outside"
                         ],
-                        // "hosted_item": "from_spec_rock_top_entrance_outside, to_spec_rock_top_entrance_outside"
-                        "hosted_item": "spec_rock_top_entrance_outside"
+                        "hosted_item": "from_spec_rock_top_entrance_outside"
+                        // "hosted_item": "spec_rock_top_entrance_outside"
+                    },
+                    {
+                        "name": "To Spectacle Rock Cave Peak",
+                        "access_rules": [
+                            "$CanReach|spec_rock_top_entrance_outside"
+                        ],
+                        "hosted_item": "to_spec_rock_top_entrance_outside"
+                        // "hosted_item": "spec_rock_top_entrance_outside"
                     }
                 ],
                 "map_locations": [
@@ -417,12 +529,20 @@
                 "name": "Spectacle Rock Cave (Bottom)",
                 "sections": [
                     {
-                        "name": "Spectacle Rock Cave (Bottom)",
+                        "name": "From Spectacle Rock Cave (Bottom)",
                         "access_rules": [
                             "$CanReach|spec_rock_ledge_entrance_outside"
                         ],
-                        // "hosted_item": "from_spec_rock_ledge_entrance_outside, to_spec_rock_ledge_entrance_outside"
-                        "hosted_item": "spec_rock_ledge_entrance_outside"
+                        "hosted_item": "from_spec_rock_ledge_entrance_outside"
+                        // "hosted_item": "spec_rock_ledge_entrance_outside"
+                    },
+                    {
+                        "name": "To Spectacle Rock Cave (Bottom)",
+                        "access_rules": [
+                            "$CanReach|spec_rock_ledge_entrance_outside"
+                        ],
+                        "hosted_item": "to_spec_rock_ledge_entrance_outside"
+                        // "hosted_item": "spec_rock_ledge_entrance_outside"
                     }
                 ],
                 "map_locations": [
@@ -446,12 +566,20 @@
                 "name": "Spectacle Rock Cave Exit",
                 "sections": [
                     {
-                        "name": "Spectacle Rock Cave Exit",
+                        "name": "From Spectacle Rock Cave Exit",
                         "access_rules": [
                             "$CanReach|spec_rock_ledge_exit_outside"
                         ],
-                        // "hosted_item": "from_spec_rock_ledge_exit_outside, to_spec_rock_ledge_exit_outside"
-                        "hosted_item": "spec_rock_ledge_exit_outside"
+                        "hosted_item": "from_spec_rock_ledge_exit_outside"
+                        // "hosted_item": "spec_rock_ledge_exit_outside"
+                    },
+                    {
+                        "name": "To Spectacle Rock Cave Exit",
+                        "access_rules": [
+                            "$CanReach|spec_rock_ledge_exit_outside"
+                        ],
+                        "hosted_item": "to_spec_rock_ledge_exit_outside"
+                        // "hosted_item": "spec_rock_ledge_exit_outside"
                     }
                 ],
                 "map_locations": [
@@ -475,12 +603,20 @@
                 "name": "Tower of Hera",
                 "sections": [
                     {
-                        "name": "Tower of Hera",
+                        "name": "From Tower of Hera",
                         "access_rules": [
                             "$CanReach|toh_entrance_outside"
                         ],
-                        // "hosted_item": "from_toh_entrance_outside, to_toh_entrance_outside"
-                        "hosted_item": "toh_entrance_outside"
+                        "hosted_item": "from_toh_entrance_outside"
+                        // "hosted_item": "toh_entrance_outside"
+                    },
+                    {
+                        "name": "To Tower of Hera",
+                        "access_rules": [
+                            "$CanReach|toh_entrance_outside"
+                        ],
+                        "hosted_item": "to_toh_entrance_outside"
+                        // "hosted_item": "toh_entrance_outside"
                     }
                 ],
                 "map_locations": [
@@ -504,12 +640,20 @@
                 "name": "Paradox Cave (Bottom)",
                 "sections": [
                     {
-                        "name": "Paradox Cave (Bottom)",
+                        "name": "From Paradox Cave (Bottom)",
                         "access_rules": [
                             "$CanReach|paradox_cave_bottom_entrance_outside"
                         ],
-                        // "hosted_item": "from_paradox_cave_bottom_entrance_outside, to_paradox_cave_bottom_entrance_outside"
-                        "hosted_item": "paradox_cave_bottom_entrance_outside"
+                        "hosted_item": "from_paradox_cave_bottom_entrance_outside"
+                        // "hosted_item": "paradox_cave_bottom_entrance_outside"
+                    },
+                    {
+                        "name": "To Paradox Cave (Bottom)",
+                        "access_rules": [
+                            "$CanReach|paradox_cave_bottom_entrance_outside"
+                        ],
+                        "hosted_item": "to_paradox_cave_bottom_entrance_outside"
+                        // "hosted_item": "paradox_cave_bottom_entrance_outside"
                     }
                 ],
                 "map_locations": [
@@ -533,12 +677,20 @@
                 "name": "Paradox Cave (Top)",
                 "sections": [
                     {
-                        "name": "Paradox Cave (Top)",
+                        "name": "From Paradox Cave (Top)",
                         "access_rules": [
                             "$CanReach|paradox_cave_top_entrance_outside"
                         ],
-                        // "hosted_item": "from_paradox_cave_top_entrance_outside, to_paradox_cave_top_entrance_outside"
-                        "hosted_item": "paradox_cave_top_entrance_outside"
+                        "hosted_item": "from_paradox_cave_top_entrance_outside"
+                        // "hosted_item": "paradox_cave_top_entrance_outside"
+                    },
+                    {
+                        "name": "To Paradox Cave (Top)",
+                        "access_rules": [
+                            "$CanReach|paradox_cave_top_entrance_outside"
+                        ],
+                        "hosted_item": "to_paradox_cave_top_entrance_outside"
+                        // "hosted_item": "paradox_cave_top_entrance_outside"
                     }
                 ],
                 "map_locations": [
@@ -562,12 +714,20 @@
                 "name": "Paradox Cave (Middle)",
                 "sections": [
                     {
-                        "name": "Paradox Cave (Middle)",
+                        "name": "From Paradox Cave (Middle)",
                         "access_rules": [
                             "$CanReach|paradox_cave_middle_entrance_outside"
                         ],
-                        // "hosted_item": "from_paradox_cave_middle_entrance_outside, to_paradox_cave_middle_entrance_outside"
-                        "hosted_item": "paradox_cave_middle_entrance_outside"
+                        "hosted_item": "from_paradox_cave_middle_entrance_outside"
+                        // "hosted_item": "paradox_cave_middle_entrance_outside"
+                    },
+                    {
+                        "name": "To Paradox Cave (Middle)",
+                        "access_rules": [
+                            "$CanReach|paradox_cave_middle_entrance_outside"
+                        ],
+                        "hosted_item": "to_paradox_cave_middle_entrance_outside"
+                        // "hosted_item": "paradox_cave_middle_entrance_outside"
                     }
                 ],
                 "map_locations": [
@@ -591,12 +751,20 @@
                 "name": "Spiral Cave",
                 "sections": [
                     {
-                        "name": "Spiral Cave",
+                        "name": "From Spiral Cave",
                         "access_rules": [
                             "$CanReach|spiral_cave_top_outside"
                         ],
-                        // "hosted_item": "from_spiral_cave_top_outside, to_spiral_cave_top_outside"
-                        "hosted_item": "spiral_cave_top_outside"
+                        "hosted_item": "from_spiral_cave_top_outside"
+                        // "hosted_item": "spiral_cave_top_outside"
+                    },
+                    {
+                        "name": "To Spiral Cave",
+                        "access_rules": [
+                            "$CanReach|spiral_cave_top_outside"
+                        ],
+                        "hosted_item": "to_spiral_cave_top_outside"
+                        // "hosted_item": "spiral_cave_top_outside"
                     }
                 ],
                 "map_locations": [
@@ -620,12 +788,20 @@
                 "name": "Spiral Cave (Bottom)",
                 "sections": [
                     {
-                        "name": "Spiral Cave (Bottom)",
+                        "name": "From Spiral Cave (Bottom)",
                         "access_rules": [
                             "$CanReach|spiral_cave_bottom_outside"
                         ],
-                        // "hosted_item": "from_spiral_cave_bottom_outside, to_spiral_cave_bottom_outside"
-                        "hosted_item": "spiral_cave_bottom_outside"
+                        "hosted_item": "from_spiral_cave_bottom_outside"
+                        // "hosted_item": "spiral_cave_bottom_outside"
+                    },
+                    {
+                        "name": "To Spiral Cave (Bottom)",
+                        "access_rules": [
+                            "$CanReach|spiral_cave_bottom_outside"
+                        ],
+                        "hosted_item": "to_spiral_cave_bottom_outside"
+                        // "hosted_item": "spiral_cave_bottom_outside"
                     }
                 ],
                 "map_locations": [
@@ -649,12 +825,20 @@
                 "name": "Mimic Cave",
                 "sections": [
                     {
-                        "name": "Mimic Cave",
+                        "name": "From Mimic Cave",
                         "access_rules": [
                             "$CanReach|mimic_cave_outside"
                         ],
-                        // "hosted_item": "from_mimic_cave_outside, to_mimic_cave_outside"
-                        "hosted_item": "mimic_cave_outside"
+                        "hosted_item": "from_mimic_cave_outside"
+                        // "hosted_item": "mimic_cave_outside"
+                    },
+                    {
+                        "name": "To Mimic Cave",
+                        "access_rules": [
+                            "$CanReach|mimic_cave_outside"
+                        ],
+                        "hosted_item": "to_mimic_cave_outside"
+                        // "hosted_item": "mimic_cave_outside"
                     }
                 ],
                 "map_locations": [
@@ -678,12 +862,20 @@
                 "name": "Hookshot Fairy",
                 "sections": [
                     {
-                        "name": "Hookshot Fairy",
+                        "name": "From Hookshot Fairy",
                         "access_rules": [
                             "$CanReach|hookshot_fairy_outside"
                         ],
-                        // "hosted_item": "from_hookshot_fairy_outside, to_hookshot_fairy_outside"
-                        "hosted_item": "hookshot_fairy_outside"
+                        "hosted_item": "from_hookshot_fairy_outside"
+                        // "hosted_item": "hookshot_fairy_outside"
+                    },
+                    {
+                        "name": "To Hookshot Fairy",
+                        "access_rules": [
+                            "$CanReach|hookshot_fairy_outside"
+                        ],
+                        "hosted_item": "to_hookshot_fairy_outside"
+                        // "hosted_item": "hookshot_fairy_outside"
                     }
                 ],
                 "map_locations": [
@@ -707,12 +899,20 @@
                 "name": "Fairy Ascension Cave (Bottom)",
                 "sections": [
                     {
-                        "name": "Fairy Ascension Cave (Bottom)",
+                        "name": "From Fairy Ascension Cave (Bottom)",
                         "access_rules": [
                             "$CanReach|fairy_ascension_cave_bottom_outside"
                         ],
-                        // "hosted_item": "from_fairy_ascension_cave_bottom_outside, to_fairy_ascension_cave_bottom_outside"
-                        "hosted_item": "fairy_ascension_cave_bottom_outside"
+                        "hosted_item": "from_fairy_ascension_cave_bottom_outside"
+                        // "hosted_item": "fairy_ascension_cave_bottom_outside"
+                    },
+                    {
+                        "name": "To Fairy Ascension Cave (Bottom)",
+                        "access_rules": [
+                            "$CanReach|fairy_ascension_cave_bottom_outside"
+                        ],
+                        "hosted_item": "to_fairy_ascension_cave_bottom_outside"
+                        // "hosted_item": "fairy_ascension_cave_bottom_outside"
                     }
                 ],
                 "map_locations": [
@@ -736,12 +936,20 @@
                 "name": "Fairy Ascension Cave (Top)",
                 "sections": [
                     {
-                        "name": "Fairy Ascension Cave (Top)",
+                        "name": "From Fairy Ascension Cave (Top)",
                         "access_rules": [
                             "$CanReach|light_eyebridge_fairy_outside"
                         ],
-                        // "hosted_item": "from_light_eyebridge_fairy_outside, to_light_eyebridge_fairy_outside"
-                        "hosted_item": "light_eyebridge_fairy_outside"
+                        "hosted_item": "from_light_eyebridge_fairy_outside"
+                        // "hosted_item": "light_eyebridge_fairy_outside"
+                    },
+                    {
+                        "name": "To Fairy Ascension Cave (Top)",
+                        "access_rules": [
+                            "$CanReach|light_eyebridge_fairy_outside"
+                        ],
+                        "hosted_item": "to_light_eyebridge_fairy_outside"
+                        // "hosted_item": "light_eyebridge_fairy_outside"
                     }
                 ],
                 "map_locations": [
@@ -765,12 +973,20 @@
                 "name": "Waterfall of Wishing",
                 "sections": [
                     {
-                        "name": "Waterfall of Wishing",
+                        "name": "From Waterfall of Wishing",
                         "access_rules": [
                             "$CanReach|waterfall_fairy_outside"
                         ],
-                        // "hosted_item": "from_waterfall_fairy_outside, to_waterfall_fairy_outside"
-                        "hosted_item": "waterfall_fairy_outside"
+                        "hosted_item": "from_waterfall_fairy_outside"
+                        // "hosted_item": "waterfall_fairy_outside"
+                    },
+                    {
+                        "name": "To Waterfall of Wishing",
+                        "access_rules": [
+                            "$CanReach|waterfall_fairy_outside"
+                        ],
+                        "hosted_item": "to_waterfall_fairy_outside"
+                        // "hosted_item": "waterfall_fairy_outside"
                     }
                 ],
                 "map_locations": [
@@ -799,12 +1015,20 @@
                 "name": "Bat Cave Drop",
                 "sections": [
                     {
-                        "name": "Bat Cave Drop",
+                        "name": "From Bat Cave Drop",
                         "access_rules": [
                             "$CanReach|magic_bat_hole_outside"
                         ],
-                        // "hosted_item": "from_magic_bat_hole_outside, to_magic_bat_hole_outside"
-                        "hosted_item": "magic_bat_hole_outside"
+                        "hosted_item": "from_magic_bat_hole_outside"
+                        // "hosted_item": "magic_bat_hole_outside"
+                    },
+                    {
+                        "name": "To Bat Cave Drop",
+                        "access_rules": [
+                            "$CanReach|magic_bat_hole_outside"
+                        ],
+                        "hosted_item": "to_magic_bat_hole_outside"
+                        // "hosted_item": "magic_bat_hole_outside"
                     }
                 ],
                 "map_locations": [
@@ -828,12 +1052,20 @@
                 "name": "Bat Cave Exit",
                 "sections": [
                     {
-                        "name": "Bat Cave Exit",
+                        "name": "From Bat Cave Exit",
                         "access_rules": [
                             "$CanReach|magic_bat_cave_outside"
                         ],
-                        // "hosted_item": "from_magic_bat_cave_outside, to_magic_bat_cave_outside"
-                        "hosted_item": "magic_bat_cave_outside"
+                        "hosted_item": "from_magic_bat_cave_outside"
+                        // "hosted_item": "magic_bat_cave_outside"
+                    },
+                    {
+                        "name": "To Bat Cave Exit",
+                        "access_rules": [
+                            "$CanReach|magic_bat_cave_outside"
+                        ],
+                        "hosted_item": "to_magic_bat_cave_outside"
+                        // "hosted_item": "magic_bat_cave_outside"
                     }
                 ],
                 "map_locations": [
@@ -857,12 +1089,20 @@
                 "name": "Sick Kids House",
                 "sections": [
                     {
-                        "name": "Sick Kids House",
+                        "name": "From Sick Kids House",
                         "access_rules": [
                             "$CanReach|kakariko_sick_kid_outside"
                         ],
-                        // "hosted_item": "from_kakariko_sick_kid_outside, to_kakariko_sick_kid_outside"
-                        "hosted_item": "kakariko_sick_kid_outside"
+                        "hosted_item": "from_kakariko_sick_kid_outside"
+                        // "hosted_item": "kakariko_sick_kid_outside"
+                    },
+                    {
+                        "name": "To Sick Kids House",
+                        "access_rules": [
+                            "$CanReach|kakariko_sick_kid_outside"
+                        ],
+                        "hosted_item": "to_kakariko_sick_kid_outside"
+                        // "hosted_item": "kakariko_sick_kid_outside"
                     }
                 ],
                 "map_locations": [
@@ -886,12 +1126,20 @@
                 "name": "Elder House (East)",
                 "sections": [
                     {
-                        "name": "Elder House (East)",
+                        "name": "From Elder House (East)",
                         "access_rules": [
                             "$CanReach|kakariko_elder_house_right_outside"
                         ],
-                        // "hosted_item": "from_kakariko_elder_house_right_outside, to_kakariko_elder_house_right_outside"
-                        "hosted_item": "kakariko_elder_house_right_outside"
+                        "hosted_item": "from_kakariko_elder_house_right_outside"
+                        // "hosted_item": "kakariko_elder_house_right_outside"
+                    },
+                    {
+                        "name": "To Elder House (East)",
+                        "access_rules": [
+                            "$CanReach|kakariko_elder_house_right_outside"
+                        ],
+                        "hosted_item": "to_kakariko_elder_house_right_outside"
+                        // "hosted_item": "kakariko_elder_house_right_outside"
                     }
                 ],
                 "map_locations": [
@@ -915,12 +1163,20 @@
                 "name": "Elder House (West)",
                 "sections": [
                     {
-                        "name": "Elder House (West)",
+                        "name": "From Elder House (West)",
                         "access_rules": [
                             "$CanReach|kakariko_elder_house_left_outside"
                         ],
-                        // "hosted_item": "from_kakariko_elder_house_left_outside, to_kakariko_elder_house_left_outside"
-                        "hosted_item": "kakariko_elder_house_left_outside"
+                        "hosted_item": "from_kakariko_elder_house_left_outside"
+                        // "hosted_item": "kakariko_elder_house_left_outside"
+                    },
+                    {
+                        "name": "To Elder House (West)",
+                        "access_rules": [
+                            "$CanReach|kakariko_elder_house_left_outside"
+                        ],
+                        "hosted_item": "to_kakariko_elder_house_left_outside"
+                        // "hosted_item": "kakariko_elder_house_left_outside"
                     }
                 ],
                 "map_locations": [
@@ -944,12 +1200,20 @@
                 "name": "Fortune Teller (Light)",
                 "sections": [
                     {
-                        "name": "Fortune Teller (Light)",
+                        "name": "From Fortune Teller (Light)",
                         "access_rules": [
                             "$CanReach|kakariko_furtune_teller_outside"
                         ],
-                        // "hosted_item": "from_kakariko_furtune_teller_outside, to_kakariko_furtune_teller_outside"
-                        "hosted_item": "kakariko_furtune_teller_outside"
+                        "hosted_item": "from_kakariko_furtune_teller_outside"
+                        // "hosted_item": "kakariko_furtune_teller_outside"
+                    },
+                    {
+                        "name": "To Fortune Teller (Light)",
+                        "access_rules": [
+                            "$CanReach|kakariko_furtune_teller_outside"
+                        ],
+                        "hosted_item": "to_kakariko_furtune_teller_outside"
+                        // "hosted_item": "kakariko_furtune_teller_outside"
                     }
                 ],
                 "map_locations": [
@@ -973,12 +1237,20 @@
                 "name": "Snitch Lady (East)",
                 "sections": [
                     {
-                        "name": "Snitch Lady (East)",
+                        "name": "From Snitch Lady (East)",
                         "access_rules": [
                             "$CanReach|kakariko_snitch_house_right_outside"
                         ],
-                        // "hosted_item": "from_kakariko_snitch_house_right_outside, to_kakariko_snitch_house_right_outside"
-                        "hosted_item": "kakariko_snitch_house_right_outside"
+                        "hosted_item": "from_kakariko_snitch_house_right_outside"
+                        // "hosted_item": "kakariko_snitch_house_right_outside"
+                    },
+                    {
+                        "name": "To Snitch Lady (East)",
+                        "access_rules": [
+                            "$CanReach|kakariko_snitch_house_right_outside"
+                        ],
+                        "hosted_item": "to_kakariko_snitch_house_right_outside"
+                        // "hosted_item": "kakariko_snitch_house_right_outside"
                     }
                 ],
                 "map_locations": [
@@ -1002,12 +1274,20 @@
                 "name": "Snitch Lady (West)",
                 "sections": [
                     {
-                        "name": "Snitch Lady (West)",
+                        "name": "From Snitch Lady (West)",
                         "access_rules": [
                             "$CanReach|kakariko_snitch_house_left_outside"
                         ],
-                        // "hosted_item": "from_kakariko_snitch_house_left_outside, to_kakariko_snitch_house_left_outside"
-                        "hosted_item": "kakariko_snitch_house_left_outside"
+                        "hosted_item": "from_kakariko_snitch_house_left_outside"
+                        // "hosted_item": "kakariko_snitch_house_left_outside"
+                    },
+                    {
+                        "name": "To Snitch Lady (West)",
+                        "access_rules": [
+                            "$CanReach|kakariko_snitch_house_left_outside"
+                        ],
+                        "hosted_item": "to_kakariko_snitch_house_left_outside"
+                        // "hosted_item": "kakariko_snitch_house_left_outside"
                     }
                 ],
                 "map_locations": [
@@ -1031,12 +1311,20 @@
                 "name": "Bush Covered House",
                 "sections": [
                     {
-                        "name": "Bush Covered House",
+                        "name": "From Bush Covered House",
                         "access_rules": [
                             "$CanReach|kakariko_overgrown_house_outside"
                         ],
-                        // "hosted_item": "from_kakariko_overgrown_house_outside, to_kakariko_overgrown_house_outside"
-                        "hosted_item": "kakariko_overgrown_house_outside"
+                        "hosted_item": "from_kakariko_overgrown_house_outside"
+                        // "hosted_item": "kakariko_overgrown_house_outside"
+                    },
+                    {
+                        "name": "To Bush Covered House",
+                        "access_rules": [
+                            "$CanReach|kakariko_overgrown_house_outside"
+                        ],
+                        "hosted_item": "to_kakariko_overgrown_house_outside"
+                        // "hosted_item": "kakariko_overgrown_house_outside"
                     }
                 ],
                 "map_locations": [
@@ -1060,12 +1348,20 @@
                 "name": "Tavern (Front)",
                 "sections": [
                     {
-                        "name": "Tavern (Front)",
+                        "name": "From Tavern (Front)",
                         "access_rules": [
                             "$CanReach|kakariko_frontside_pub_outside"
                         ],
-                        // "hosted_item": "from_kakariko_frontside_pub_outside, to_kakariko_frontside_pub_outside"
-                        "hosted_item": "kakariko_frontside_pub_outside"
+                        "hosted_item": "from_kakariko_frontside_pub_outside"
+                        // "hosted_item": "kakariko_frontside_pub_outside"
+                    },
+                    {
+                        "name": "To Tavern (Front)",
+                        "access_rules": [
+                            "$CanReach|kakariko_frontside_pub_outside"
+                        ],
+                        "hosted_item": "to_kakariko_frontside_pub_outside"
+                        // "hosted_item": "kakariko_frontside_pub_outside"
                     }
                 ],
                 "map_locations": [
@@ -1089,12 +1385,20 @@
                 "name": "Tavern (Back)",
                 "sections": [
                     {
-                        "name": "Tavern (Back)",
+                        "name": "From Tavern (Back)",
                         "access_rules": [
                             "$CanReach|kakariko_backside_pub_outside"
                         ],
-                        // "hosted_item": "from_kakariko_backside_pub_outside, to_kakariko_backside_pub_outside"
-                        "hosted_item": "kakariko_backside_pub_outside"
+                        "hosted_item": "from_kakariko_backside_pub_outside"
+                        // "hosted_item": "kakariko_backside_pub_outside"
+                    },
+                    {
+                        "name": "To Tavern (Back)",
+                        "access_rules": [
+                            "$CanReach|kakariko_backside_pub_outside"
+                        ],
+                        "hosted_item": "to_kakariko_backside_pub_outside"
+                        // "hosted_item": "kakariko_backside_pub_outside"
                     }
                 ],
                 "map_locations": [
@@ -1118,12 +1422,20 @@
                 "name": "Light World Bomb Hut",
                 "sections": [
                     {
-                        "name": "Light World Bomb Hut",
+                        "name": "From Light World Bomb Hut",
                         "access_rules": [
                             "$CanReach|kakariko_bombhut_outside"
                         ],
-                        // "hosted_item": "from_kakariko_bombhut_outside, to_kakariko_bombhut_outside"
-                        "hosted_item": "kakariko_bombhut_outside"
+                        "hosted_item": "from_kakariko_bombhut_outside"
+                        // "hosted_item": "kakariko_bombhut_outside"
+                    },
+                    {
+                        "name": "To Light World Bomb Hut",
+                        "access_rules": [
+                            "$CanReach|kakariko_bombhut_outside"
+                        ],
+                        "hosted_item": "to_kakariko_bombhut_outside"
+                        // "hosted_item": "kakariko_bombhut_outside"
                     }
                 ],
                 "map_locations": [
@@ -1147,12 +1459,20 @@
                 "name": "Kakariko Shop",
                 "sections": [
                     {
-                        "name": "Kakariko Shop",
+                        "name": "From Kakariko Shop",
                         "access_rules": [
                             "$CanReach|kakariko_shop_outside"
                         ],
-                        // "hosted_item": "from_kakariko_shop_outside, to_kakariko_shop_outside"
-                        "hosted_item": "kakariko_shop_outside"
+                        "hosted_item": "from_kakariko_shop_outside"
+                        // "hosted_item": "kakariko_shop_outside"
+                    },
+                    {
+                        "name": "To Kakariko Shop",
+                        "access_rules": [
+                            "$CanReach|kakariko_shop_outside"
+                        ],
+                        "hosted_item": "to_kakariko_shop_outside"
+                        // "hosted_item": "kakariko_shop_outside"
                     }
                 ],
                 "map_locations": [
@@ -1176,12 +1496,20 @@
                 "name": "Kakariko Well Drop",
                 "sections": [
                     {
-                        "name": "Kakariko Well Drop",
+                        "name": "From Kakariko Well Drop",
                         "access_rules": [
                             "$CanReach|kakariko_well_hole_outside"
                         ],
-                        // "hosted_item": "from_kakariko_well_hole_outside, to_kakariko_well_hole_outside"
-                        "hosted_item": "kakariko_well_hole_outside"
+                        "hosted_item": "from_kakariko_well_hole_outside"
+                        // "hosted_item": "kakariko_well_hole_outside"
+                    },
+                    {
+                        "name": "To Kakariko Well Drop",
+                        "access_rules": [
+                            "$CanReach|kakariko_well_hole_outside"
+                        ],
+                        "hosted_item": "to_kakariko_well_hole_outside"
+                        // "hosted_item": "kakariko_well_hole_outside"
                     }
                 ],
                 "map_locations": [
@@ -1205,12 +1533,20 @@
                 "name": "Kakariko Well Exit",
                 "sections": [
                     {
-                        "name": "Kakariko Well Exit",
+                        "name": "From Kakariko Well Exit",
                         "access_rules": [
                             "$CanReach|kakariko_well_cave_outside"
                         ],
-                        // "hosted_item": "from_kakariko_well_cave_outside, to_kakariko_well_cave_outside"
-                        "hosted_item": "kakariko_well_cave_outside"
+                        "hosted_item": "from_kakariko_well_cave_outside"
+                        // "hosted_item": "kakariko_well_cave_outside"
+                    },
+                    {
+                        "name": "To Kakariko Well Exit",
+                        "access_rules": [
+                            "$CanReach|kakariko_well_cave_outside"
+                        ],
+                        "hosted_item": "to_kakariko_well_cave_outside"
+                        // "hosted_item": "kakariko_well_cave_outside"
                     }
                 ],
                 "map_locations": [
@@ -1234,12 +1570,20 @@
                 "name": "Chicken House",
                 "sections": [
                     {
-                        "name": "Chicken House",
+                        "name": "From Chicken House",
                         "access_rules": [
                             "$CanReach|kakariko_chickenhut_outside"
                         ],
-                        // "hosted_item": "from_kakariko_chickenhut_outside, to_kakariko_chickenhut_outside"
-                        "hosted_item": "kakariko_chickenhut_outside"
+                        "hosted_item": "from_kakariko_chickenhut_outside"
+                        // "hosted_item": "kakariko_chickenhut_outside"
+                    },
+                    {
+                        "name": "To Chicken House",
+                        "access_rules": [
+                            "$CanReach|kakariko_chickenhut_outside"
+                        ],
+                        "hosted_item": "to_kakariko_chickenhut_outside"
+                        // "hosted_item": "kakariko_chickenhut_outside"
                     }
                 ],
                 "map_locations": [
@@ -1263,12 +1607,20 @@
                 "name": "Blinds Hideout",
                 "sections": [
                     {
-                        "name": "Blinds Hideout",
+                        "name": "From Blinds Hideout",
                         "access_rules": [
                             "$CanReach|kakariko_blinds_hideout_outside"
                         ],
-                        // "hosted_item": "from_kakariko_blinds_hideout_outside, to_kakariko_blinds_hideout_outside"
-                        "hosted_item": "kakariko_blinds_hideout_outside"
+                        "hosted_item": "from_kakariko_blinds_hideout_outside"
+                        // "hosted_item": "kakariko_blinds_hideout_outside"
+                    },
+                    {
+                        "name": "To Blinds Hideout",
+                        "access_rules": [
+                            "$CanReach|kakariko_blinds_hideout_outside"
+                        ],
+                        "hosted_item": "to_kakariko_blinds_hideout_outside"
+                        // "hosted_item": "kakariko_blinds_hideout_outside"
                     }
                 ],
                 "map_locations": [
@@ -1292,12 +1644,20 @@
                 "name": "Blacksmiths Hut",
                 "sections": [
                     {
-                        "name": "Blacksmiths Hut",
+                        "name": "From Blacksmiths Hut",
                         "access_rules": [
                             "$CanReach|dwarf_smiths_outside"
                         ],
-                        // "hosted_item": "from_dwarf_smiths_outside, to_dwarf_smiths_outside"
-                        "hosted_item": "dwarf_smiths_outside"
+                        "hosted_item": "from_dwarf_smiths_outside"
+                        // "hosted_item": "dwarf_smiths_outside"
+                    },
+                    {
+                        "name": "To Blacksmiths Hut",
+                        "access_rules": [
+                            "$CanReach|dwarf_smiths_outside"
+                        ],
+                        "hosted_item": "to_dwarf_smiths_outside"
+                        // "hosted_item": "dwarf_smiths_outside"
                     }
                 ],
                 "map_locations": [
@@ -1321,12 +1681,20 @@
                 "name": "Two Brothers House (East)",
                 "sections": [
                     {
-                        "name": "Two Brothers House (East)",
+                        "name": "From Two Brothers House (East)",
                         "access_rules": [
                             "$CanReach|twin_house_right_outside"
                         ],
-                        // "hosted_item": "from_twin_house_right_outside, to_twin_house_right_outside"
-                        "hosted_item": "twin_house_right_outside"
+                        "hosted_item": "from_twin_house_right_outside"
+                        // "hosted_item": "twin_house_right_outside"
+                    },
+                    {
+                        "name": "To Two Brothers House (East)",
+                        "access_rules": [
+                            "$CanReach|twin_house_right_outside"
+                        ],
+                        "hosted_item": "to_twin_house_right_outside"
+                        // "hosted_item": "twin_house_right_outside"
                     }
                 ],
                 "map_locations": [
@@ -1350,12 +1718,20 @@
                 "name": "Two Brothers House (West)",
                 "sections": [
                     {
-                        "name": "Two Brothers House (West)",
+                        "name": "From Two Brothers House (West)",
                         "access_rules": [
                             "$CanReach|twin_house_left_outside"
                         ],
-                        // "hosted_item": "from_twin_house_left_outside, to_twin_house_left_outside"
-                        "hosted_item": "twin_house_left_outside"
+                        "hosted_item": "from_twin_house_left_outside"
+                        // "hosted_item": "twin_house_left_outside"
+                    },
+                    {
+                        "name": "To Two Brothers House (West)",
+                        "access_rules": [
+                            "$CanReach|twin_house_left_outside"
+                        ],
+                        "hosted_item": "to_twin_house_left_outside"
+                        // "hosted_item": "twin_house_left_outside"
                     }
                 ],
                 "map_locations": [
@@ -1379,12 +1755,20 @@
                 "name": "Library",
                 "sections": [
                     {
-                        "name": "Library",
+                        "name": "From Library",
                         "access_rules": [
                             "$CanReach|library_outside"
                         ],
-                        // "hosted_item": "from_library_outside, to_library_outside"
-                        "hosted_item": "library_outside"
+                        "hosted_item": "from_library_outside"
+                        // "hosted_item": "library_outside"
+                    },
+                    {
+                        "name": "To Library",
+                        "access_rules": [
+                            "$CanReach|library_outside"
+                        ],
+                        "hosted_item": "to_library_outside"
+                        // "hosted_item": "library_outside"
                     }
                 ],
                 "map_locations": [
@@ -1408,12 +1792,20 @@
                 "name": "Kakariko Gamble Game",
                 "sections": [
                     {
-                        "name": "Kakariko Gamble Game",
+                        "name": "From Kakariko Gamble Game",
                         "access_rules": [
                             "$CanReach|kakariko_chest_minigame_outside"
                         ],
-                        // "hosted_item": "from_kakariko_chest_minigame_outside, to_kakariko_chest_minigame_outside"
-                        "hosted_item": "kakariko_chest_minigame_outside"
+                        "hosted_item": "from_kakariko_chest_minigame_outside"
+                        // "hosted_item": "kakariko_chest_minigame_outside"
+                    },
+                    {
+                        "name": "To Kakariko Gamble Game",
+                        "access_rules": [
+                            "$CanReach|kakariko_chest_minigame_outside"
+                        ],
+                        "hosted_item": "to_kakariko_chest_minigame_outside"
+                        // "hosted_item": "kakariko_chest_minigame_outside"
                     }
                 ],
                 "map_locations": [
@@ -1442,12 +1834,20 @@
                 "name": "Hyrule Castle Secret Entrance Drop",
                 "sections": [
                     {
-                        "name": "Hyrule Castle Secret Entrance Drop",
+                        "name": "From Hyrule Castle Secret Entrance Drop",
                         "access_rules": [
                             "$CanReach|secret_passage_hole_outside"
                         ],
-                        // "hosted_item": "from_secret_passage_hole_outside, to_secret_passage_hole_outside"
-                        "hosted_item": "secret_passage_hole_outside"
+                        "hosted_item": "from_secret_passage_hole_outside"
+                        // "hosted_item": "secret_passage_hole_outside"
+                    },
+                    {
+                        "name": "To Hyrule Castle Secret Entrance Drop",
+                        "access_rules": [
+                            "$CanReach|secret_passage_hole_outside"
+                        ],
+                        "hosted_item": "to_secret_passage_hole_outside"
+                        // "hosted_item": "secret_passage_hole_outside"
                     }
                 ],
                 "map_locations": [
@@ -1471,12 +1871,20 @@
                 "name": "Hyrule Castle Secret Entrance Stairs",
                 "sections": [
                     {
-                        "name": "Hyrule Castle Secret Entrance Stairs",
+                        "name": "From Hyrule Castle Secret Entrance Stairs",
                         "access_rules": [
                             "$CanReach|secret_passage_stairs_outside"
                         ],
-                        // "hosted_item": "from_secret_passage_stairs_outside, to_secret_passage_stairs_outside"
-                        "hosted_item": "secret_passage_stairs_outside"
+                        "hosted_item": "from_secret_passage_stairs_outside"
+                        // "hosted_item": "secret_passage_stairs_outside"
+                    },
+                    {
+                        "name": "To Hyrule Castle Secret Entrance Stairs",
+                        "access_rules": [
+                            "$CanReach|secret_passage_stairs_outside"
+                        ],
+                        "hosted_item": "to_secret_passage_stairs_outside"
+                        // "hosted_item": "secret_passage_stairs_outside"
                     }
                 ],
                 "map_locations": [
@@ -1500,12 +1908,20 @@
                 "name": "Kings Grave",
                 "sections": [
                     {
-                        "name": "Kings Grave",
+                        "name": "From Kings Grave",
                         "access_rules": [
                             "$CanReach|kings_tomb_outside"
                         ],
-                        // "hosted_item": "from_kings_tomb_outside, to_kings_tomb_outside"
-                        "hosted_item": "kings_tomb_outside"
+                        "hosted_item": "from_kings_tomb_outside"
+                        // "hosted_item": "kings_tomb_outside"
+                    },
+                    {
+                        "name": "To Kings Grave",
+                        "access_rules": [
+                            "$CanReach|kings_tomb_outside"
+                        ],
+                        "hosted_item": "to_kings_tomb_outside"
+                        // "hosted_item": "kings_tomb_outside"
                     }
                 ],
                 "map_locations": [
@@ -1529,12 +1945,20 @@
                 "name": "Graveyard Cave",
                 "sections": [
                     {
-                        "name": "Graveyard Cave",
+                        "name": "From Graveyard Cave",
                         "access_rules": [
                             "$CanReach|graveyard_ledge_outside"
                         ],
-                        // "hosted_item": "from_graveyard_ledge_outside, to_graveyard_ledge_outside"
-                        "hosted_item": "graveyard_ledge_outside"
+                        "hosted_item": "from_graveyard_ledge_outside"
+                        // "hosted_item": "graveyard_ledge_outside"
+                    },
+                    {
+                        "name": "To Graveyard Cave",
+                        "access_rules": [
+                            "$CanReach|graveyard_ledge_outside"
+                        ],
+                        "hosted_item": "to_graveyard_ledge_outside"
+                        // "hosted_item": "graveyard_ledge_outside"
                     }
                 ],
                 "map_locations": [
@@ -1558,12 +1982,20 @@
                 "name": "Bonk Rock Cave",
                 "sections": [
                     {
-                        "name": "Bonk Rock Cave",
+                        "name": "From Bonk Rock Cave",
                         "access_rules": [
                             "$CanReach|sanctuary_bonk_pile_cave_outside"
                         ],
-                        // "hosted_item": "from_sanctuary_bonk_pile_cave_outside, to_sanctuary_bonk_pile_cave_outside"
-                        "hosted_item": "sanctuary_bonk_pile_cave_outside"
+                        "hosted_item": "from_sanctuary_bonk_pile_cave_outside"
+                        // "hosted_item": "sanctuary_bonk_pile_cave_outside"
+                    },
+                    {
+                        "name": "To Bonk Rock Cave",
+                        "access_rules": [
+                            "$CanReach|sanctuary_bonk_pile_cave_outside"
+                        ],
+                        "hosted_item": "to_sanctuary_bonk_pile_cave_outside"
+                        // "hosted_item": "sanctuary_bonk_pile_cave_outside"
                     }
                 ],
                 "map_locations": [
@@ -1587,12 +2019,20 @@
                 "name": "Sanctuary",
                 "sections": [
                     {
-                        "name": "Sanctuary",
+                        "name": "From Sanctuary",
                         "access_rules": [
                             "$CanReach|sanctuary_entrance_outside"
                         ],
-                        // "hosted_item": "from_sanctuary_entrance_outside, to_sanctuary_entrance_outside"
-                        "hosted_item": "sanctuary_entrance_outside"
+                        "hosted_item": "from_sanctuary_entrance_outside"
+                        // "hosted_item": "sanctuary_entrance_outside"
+                    },
+                    {
+                        "name": "To Sanctuary",
+                        "access_rules": [
+                            "$CanReach|sanctuary_entrance_outside"
+                        ],
+                        "hosted_item": "to_sanctuary_entrance_outside"
+                        // "hosted_item": "sanctuary_entrance_outside"
                     }
                 ],
                 "map_locations": [
@@ -1616,12 +2056,20 @@
                 "name": "Sanctuary Grave",
                 "sections": [
                     {
-                        "name": "Sanctuary Grave",
+                        "name": "From Sanctuary Grave",
                         "access_rules": [
                             "$CanReach|ce_dropdown_entrance_outside"
                         ],
-                        // "hosted_item": "from_ce_dropdown_entrance_outside, to_ce_dropdown_entrance_outside"
-                        "hosted_item": "ce_dropdown_entrance_outside"
+                        "hosted_item": "from_ce_dropdown_entrance_outside"
+                        // "hosted_item": "ce_dropdown_entrance_outside"
+                    },
+                    {
+                        "name": "To Sanctuary Grave",
+                        "access_rules": [
+                            "$CanReach|ce_dropdown_entrance_outside"
+                        ],
+                        "hosted_item": "to_ce_dropdown_entrance_outside"
+                        // "hosted_item": "ce_dropdown_entrance_outside"
                     }
                 ],
                 "map_locations": [
@@ -1645,12 +2093,20 @@
                 "name": "North Fairy Cave Drop",
                 "sections": [
                     {
-                        "name": "North Fairy Cave Drop",
+                        "name": "From North Fairy Cave Drop",
                         "access_rules": [
                             "$CanReach|north_fairy_drop_outside"
                         ],
-                        // "hosted_item": "from_north_fairy_drop_outside, to_north_fairy_drop_outside"
-                        "hosted_item": "north_fairy_drop_outside"
+                        "hosted_item": "from_north_fairy_drop_outside"
+                        // "hosted_item": "north_fairy_drop_outside"
+                    },
+                    {
+                        "name": "To North Fairy Cave Drop",
+                        "access_rules": [
+                            "$CanReach|north_fairy_drop_outside"
+                        ],
+                        "hosted_item": "to_north_fairy_drop_outside"
+                        // "hosted_item": "north_fairy_drop_outside"
                     }
                 ],
                 "map_locations": [
@@ -1674,12 +2130,20 @@
                 "name": "North Fairy Cave Exit",
                 "sections": [
                     {
-                        "name": "North Fairy Cave Exit",
+                        "name": "From North Fairy Cave Exit",
                         "access_rules": [
                             "$CanReach|north_fairy_cave_outside"
                         ],
-                        // "hosted_item": "from_north_fairy_cave_outside, to_north_fairy_cave_outside"
-                        "hosted_item": "north_fairy_cave_outside"
+                        "hosted_item": "from_north_fairy_cave_outside"
+                        // "hosted_item": "north_fairy_cave_outside"
+                    },
+                    {
+                        "name": "To North Fairy Cave Exit",
+                        "access_rules": [
+                            "$CanReach|north_fairy_cave_outside"
+                        ],
+                        "hosted_item": "to_north_fairy_cave_outside"
+                        // "hosted_item": "north_fairy_cave_outside"
                     }
                 ],
                 "map_locations": [
@@ -1703,12 +2167,20 @@
                 "name": "Hyrule Castle Entrance (South)",
                 "sections": [
                     {
-                        "name": "Hyrule Castle Entrance (South)",
+                        "name": "From Hyrule Castle Entrance (South)",
                         "access_rules": [
                             "$CanReach|hc_main_entrance_outside"
                         ],
-                        // "hosted_item": "from_hc_main_entrance_outside, to_hc_main_entrance_outside"
-                        "hosted_item": "hc_main_entrance_outside"
+                        "hosted_item": "from_hc_main_entrance_outside"
+                        // "hosted_item": "hc_main_entrance_outside"
+                    },
+                    {
+                        "name": "To Hyrule Castle Entrance (South)",
+                        "access_rules": [
+                            "$CanReach|hc_main_entrance_outside"
+                        ],
+                        "hosted_item": "to_hc_main_entrance_outside"
+                        // "hosted_item": "hc_main_entrance_outside"
                     }
                 ],
                 "map_locations": [
@@ -1732,12 +2204,20 @@
                 "name": "Hyrule Castle Entrance (West)",
                 "sections": [
                     {
-                        "name": "Hyrule Castle Entrance (West)",
+                        "name": "From Hyrule Castle Entrance (West)",
                         "access_rules": [
                             "$CanReach|hc_left_entrance_outside"
                         ],
-                        // "hosted_item": "from_hc_left_entrance_outside, to_hc_left_entrance_outside"
-                        "hosted_item": "hc_left_entrance_outside"
+                        "hosted_item": "from_hc_left_entrance_outside"
+                        // "hosted_item": "hc_left_entrance_outside"
+                    },
+                    {
+                        "name": "To Hyrule Castle Entrance (West)",
+                        "access_rules": [
+                            "$CanReach|hc_left_entrance_outside"
+                        ],
+                        "hosted_item": "to_hc_left_entrance_outside"
+                        // "hosted_item": "hc_left_entrance_outside"
                     }
                 ],
                 "map_locations": [
@@ -1761,12 +2241,20 @@
                 "name": "Hyrule Castle Entrance (East)",
                 "sections": [
                     {
-                        "name": "Hyrule Castle Entrance (East)",
+                        "name": "From Hyrule Castle Entrance (East)",
                         "access_rules": [
                             "$CanReach|hc_right_entrance_outside"
                         ],
-                        // "hosted_item": "from_hc_right_entrance_outside, to_hc_right_entrance_outside"
-                        "hosted_item": "hc_right_entrance_outside"
+                        "hosted_item": "from_hc_right_entrance_outside"
+                        // "hosted_item": "hc_right_entrance_outside"
+                    },
+                    {
+                        "name": "To Hyrule Castle Entrance (East)",
+                        "access_rules": [
+                            "$CanReach|hc_right_entrance_outside"
+                        ],
+                        "hosted_item": "to_hc_right_entrance_outside"
+                        // "hosted_item": "hc_right_entrance_outside"
                     }
                 ],
                 "map_locations": [
@@ -1790,12 +2278,20 @@
                 "name": "Agahnims Tower",
                 "sections": [
                     {
-                        "name": "Agahnims Tower",
+                        "name": "From Agahnims Tower",
                         "access_rules": [
                             "$CanReach|at_entrance_outside"
                         ],
-                        // "hosted_item": "from_at_entrance_outside, to_at_entrance_outside"
-                        "hosted_item": "at_entrance_outside"
+                        "hosted_item": "from_at_entrance_outside"
+                        // "hosted_item": "at_entrance_outside"
+                    },
+                    {
+                        "name": "To Agahnims Tower",
+                        "access_rules": [
+                            "$CanReach|at_entrance_outside"
+                        ],
+                        "hosted_item": "to_at_entrance_outside"
+                        // "hosted_item": "at_entrance_outside"
                     }
                 ],
                 "map_locations": [
@@ -1824,12 +2320,20 @@
                 "name": "Eastern Palace",
                 "sections": [
                     {
-                        "name": "Eastern Palace",
+                        "name": "From Eastern Palace",
                         "access_rules": [
                             "$CanReach|ep_entrance_outside"
                         ],
-                        // "hosted_item": "from_ep_entrance_outside, to_ep_entrance_outside"
-                        "hosted_item": "ep_entrance_outside"
+                        "hosted_item": "from_ep_entrance_outside"
+                        // "hosted_item": "ep_entrance_outside"
+                    },
+                    {
+                        "name": "To Eastern Palace",
+                        "access_rules": [
+                            "$CanReach|ep_entrance_outside"
+                        ],
+                        "hosted_item": "to_ep_entrance_outside"
+                        // "hosted_item": "ep_entrance_outside"
                     }
                 ],
                 "map_locations": [
@@ -1853,12 +2357,20 @@
                 "name": "Sahasrahlas Hut",
                 "sections": [
                     {
-                        "name": "Sahasrahlas Hut",
+                        "name": "From Sahasrahlas Hut",
                         "access_rules": [
                             "$CanReach|sahasralahs_hut_outside"
                         ],
-                        // "hosted_item": "from_sahasralahs_hut_outside, to_sahasralahs_hut_outside"
-                        "hosted_item": "sahasralahs_hut_outside"
+                        "hosted_item": "from_sahasralahs_hut_outside"
+                        // "hosted_item": "sahasralahs_hut_outside"
+                    },
+                    {
+                        "name": "To Sahasrahlas Hut",
+                        "access_rules": [
+                            "$CanReach|sahasralahs_hut_outside"
+                        ],
+                        "hosted_item": "to_sahasralahs_hut_outside"
+                        // "hosted_item": "sahasralahs_hut_outside"
                     }
                 ],
                 "map_locations": [
@@ -1882,12 +2394,20 @@
                 "name": "Long Fairy Cave",
                 "sections": [
                     {
-                        "name": "Long Fairy Cave",
+                        "name": "From Long Fairy Cave",
                         "access_rules": [
                             "$CanReach|eastern_long_fairy_cave_outside"
                         ],
-                        // "hosted_item": "from_eastern_long_fairy_cave_outside, to_eastern_long_fairy_cave_outside"
-                        "hosted_item": "eastern_long_fairy_cave_outside"
+                        "hosted_item": "from_eastern_long_fairy_cave_outside"
+                        // "hosted_item": "eastern_long_fairy_cave_outside"
+                    },
+                    {
+                        "name": "To Long Fairy Cave",
+                        "access_rules": [
+                            "$CanReach|eastern_long_fairy_cave_outside"
+                        ],
+                        "hosted_item": "to_eastern_long_fairy_cave_outside"
+                        // "hosted_item": "eastern_long_fairy_cave_outside"
                     }
                 ],
                 "map_locations": [
@@ -1911,12 +2431,20 @@
                 "name": "Trees Fairy Cave",
                 "sections": [
                     {
-                        "name": "Trees Fairy Cave",
+                        "name": "From Trees Fairy Cave",
                         "access_rules": [
                             "$CanReach|eastern_tree_fairy_cave_outside"
                         ],
-                        // "hosted_item": "from_eastern_tree_fairy_cave_outside, to_eastern_tree_fairy_cave_outside"
-                        "hosted_item": "eastern_tree_fairy_cave_outside"
+                        "hosted_item": "from_eastern_tree_fairy_cave_outside"
+                        // "hosted_item": "eastern_tree_fairy_cave_outside"
+                    },
+                    {
+                        "name": "To Trees Fairy Cave",
+                        "access_rules": [
+                            "$CanReach|eastern_tree_fairy_cave_outside"
+                        ],
+                        "hosted_item": "to_eastern_tree_fairy_cave_outside"
+                        // "hosted_item": "eastern_tree_fairy_cave_outside"
                     }
                 ],
                 "map_locations": [
@@ -1940,12 +2468,20 @@
                 "name": "Potion Shop",
                 "sections": [
                     {
-                        "name": "Potion Shop",
+                        "name": "From Potion Shop",
                         "access_rules": [
                             "$CanReach|light_potion_shop_outside"
                         ],
-                        // "hosted_item": "from_witchhut_outside, to_witchhut_outside"
-                        "hosted_item": "light_potion_shop_outside"
+                        "hosted_item": "from_light_potion_shop_outside"
+                        // "hosted_item": "light_potion_shop_outside"
+                    },
+                    {
+                        "name": "To Potion Shop",
+                        "access_rules": [
+                            "$CanReach|light_potion_shop_outside"
+                        ],
+                        "hosted_item": "to_light_potion_shop_outside"
+                        // "hosted_item": "light_potion_shop_outside"
                     }
                 ],
                 "map_locations": [
@@ -1974,12 +2510,20 @@
                 "name": "Aginahs Cave",
                 "sections": [
                     {
-                        "name": "Aginahs Cave",
+                        "name": "From Aginahs Cave",
                         "access_rules": [
                             "$CanReach|aginah_cave_outside"
                         ],
-                        // "hosted_item": "from_aginah_cave_outside, to_aginah_cave_outside"
-                        "hosted_item": "aginah_cave_outside"
+                        "hosted_item": "from_aginah_cave_outside"
+                        // "hosted_item": "aginah_cave_outside"
+                    },
+                    {
+                        "name": "To Aginahs Cave",
+                        "access_rules": [
+                            "$CanReach|aginah_cave_outside"
+                        ],
+                        "hosted_item": "to_aginah_cave_outside"
+                        // "hosted_item": "aginah_cave_outside"
                     }
                 ],
                 "map_locations": [
@@ -2003,12 +2547,20 @@
                 "name": "50 Rupee Cave",
                 "sections": [
                     {
-                        "name": "50 Rupee Cave",
+                        "name": "From 50 Rupee Cave",
                         "access_rules": [
                             "$CanReach|fifty_rupee_thief_outside"
                         ],
-                        // "hosted_item": "from_fifty_rupee_thief_outside, to_fifty_rupee_thief_outside"
-                        "hosted_item": "fifty_rupee_thief_outside"
+                        "hosted_item": "from_fifty_rupee_thief_outside"
+                        // "hosted_item": "fifty_rupee_thief_outside"
+                    },
+                    {
+                        "name": "To 50 Rupee Cave",
+                        "access_rules": [
+                            "$CanReach|fifty_rupee_thief_outside"
+                        ],
+                        "hosted_item": "to_fifty_rupee_thief_outside"
+                        // "hosted_item": "fifty_rupee_thief_outside"
                     }
                 ],
                 "map_locations": [
@@ -2032,12 +2584,20 @@
                 "name": "Desert Palace Entrance (South)",
                 "sections": [
                     {
-                        "name": "Desert Palace Entrance (South)",
+                        "name": "From Desert Palace Entrance (South)",
                         "access_rules": [
                             "$CanReach|dp_main_entrance_outside"
                         ],
-                        // "hosted_item": "from_dp_main_entrance_outside, to_dp_main_entrance_outside"
-                        "hosted_item": "dp_main_entrance_outside"
+                        "hosted_item": "from_dp_main_entrance_outside"
+                        // "hosted_item": "dp_main_entrance_outside"
+                    },
+                    {
+                        "name": "To Desert Palace Entrance (South)",
+                        "access_rules": [
+                            "$CanReach|dp_main_entrance_outside"
+                        ],
+                        "hosted_item": "to_dp_main_entrance_outside"
+                        // "hosted_item": "dp_main_entrance_outside"
                     }
                 ],
                 "map_locations": [
@@ -2061,12 +2621,20 @@
                 "name": "Desert Palace Entrance (West)",
                 "sections": [
                     {
-                        "name": "Desert Palace Entrance (West)",
+                        "name": "From Desert Palace Entrance (West)",
                         "access_rules": [
                             "$CanReach|dp_left_entrance_outside"
                         ],
-                        // "hosted_item": "from_dp_left_entrance_outside, to_dp_left_entrance_outside"
-                        "hosted_item": "dp_left_entrance_outside"
+                        "hosted_item": "from_dp_left_entrance_outside"
+                        // "hosted_item": "dp_left_entrance_outside"
+                    },
+                    {
+                        "name": "To Desert Palace Entrance (West)",
+                        "access_rules": [
+                            "$CanReach|dp_left_entrance_outside"
+                        ],
+                        "hosted_item": "to_dp_left_entrance_outside"
+                        // "hosted_item": "dp_left_entrance_outside"
                     }
                 ],
                 "map_locations": [
@@ -2090,12 +2658,20 @@
                 "name": "Desert Palace Entrance (North)",
                 "sections": [
                     {
-                        "name": "Desert Palace Entrance (North)",
+                        "name": "From Desert Palace Entrance (North)",
                         "access_rules": [
                             "$CanReach|dp_back_entrance_outside"
                         ],
-                        // "hosted_item": "from_dp_back_entrance_outside, to_dp_back_entrance_outside"
-                        "hosted_item": "dp_back_entrance_outside"
+                        "hosted_item": "from_dp_back_entrance_outside"
+                        // "hosted_item": "dp_back_entrance_outside"
+                    },
+                    {
+                        "name": "To Desert Palace Entrance (North)",
+                        "access_rules": [
+                            "$CanReach|dp_back_entrance_outside"
+                        ],
+                        "hosted_item": "to_dp_back_entrance_outside"
+                        // "hosted_item": "dp_back_entrance_outside"
                     }
                 ],
                 "map_locations": [
@@ -2119,12 +2695,20 @@
                 "name": "Desert Palace Entrance (East)",
                 "sections": [
                     {
-                        "name": "Desert Palace Entrance (East)",
+                        "name": "From Desert Palace Entrance (East)",
                         "access_rules": [
                             "$CanReach|dp_right_entrance_outside"
                         ],
-                        // "hosted_item": "from_dp_right_entrance_outside, to_dp_right_entrance_outside"
-                        "hosted_item": "dp_right_entrance_outside"
+                        "hosted_item": "from_dp_right_entrance_outside"
+                        // "hosted_item": "dp_right_entrance_outside"
+                    },
+                    {
+                        "name": "To Desert Palace Entrance (East)",
+                        "access_rules": [
+                            "$CanReach|dp_right_entrance_outside"
+                        ],
+                        "hosted_item": "to_dp_right_entrance_outside"
+                        // "hosted_item": "dp_right_entrance_outside"
                     }
                 ],
                 "map_locations": [
@@ -2148,12 +2732,20 @@
                 "name": "Checkerboard Cave",
                 "sections": [
                     {
-                        "name": "Checkerboard Cave",
+                        "name": "From Checkerboard Cave",
                         "access_rules": [
                             "$CanReach|checkerboard_cave_outside"
                         ],
-                        // "hosted_item": "from_checkerboard_cave_outside, to_checkerboard_cave_outside"
-                        "hosted_item": "checkerboard_cave_outside"
+                        "hosted_item": "from_checkerboard_cave_outside"
+                        // "hosted_item": "checkerboard_cave_outside"
+                    },
+                    {
+                        "name": "To Checkerboard Cave",
+                        "access_rules": [
+                            "$CanReach|checkerboard_cave_outside"
+                        ],
+                        "hosted_item": "to_checkerboard_cave_outside"
+                        // "hosted_item": "checkerboard_cave_outside"
                     }
                 ],
                 "map_locations": [
@@ -2177,12 +2769,20 @@
                 "name": "Desert Fairy Cave",
                 "sections": [
                     {
-                        "name": "Desert Fairy Cave",
+                        "name": "From Desert Fairy Cave",
                         "access_rules": [
                             "$CanReach|dam_desert_fairy_outside"
                         ],
-                        // "hosted_item": "from_dam_desert_fairy_outside, to_dam_desert_fairy_outside"
-                        "hosted_item": "dam_desert_fairy_outside"
+                        "hosted_item": "from_dam_desert_fairy_outside"
+                        // "hosted_item": "dam_desert_fairy_outside"
+                    },
+                    {
+                        "name": "To Desert Fairy Cave",
+                        "access_rules": [
+                            "$CanReach|dam_desert_fairy_outside"
+                        ],
+                        "hosted_item": "to_dam_desert_fairy_outside"
+                        // "hosted_item": "dam_desert_fairy_outside"
                     }
                 ],
                 "map_locations": [
@@ -2206,12 +2806,20 @@
                 "name": "Cave 45",
                 "sections": [
                     {
-                        "name": "Cave 45",
+                        "name": "From Cave 45",
                         "access_rules": [
                             "$CanReach|cave45_outside"
                         ],
-                        // "hosted_item": "from_cave45_outside, to_cave45_outside"
-                        "hosted_item": "cave45_outside"
+                        "hosted_item": "from_cave45_outside"
+                        // "hosted_item": "cave45_outside"
+                    },
+                    {
+                        "name": "To Cave 45",
+                        "access_rules": [
+                            "$CanReach|cave45_outside"
+                        ],
+                        "hosted_item": "to_cave45_outside"
+                        // "hosted_item": "cave45_outside"
                     }
                 ],
                 "map_locations": [
@@ -2240,12 +2848,20 @@
                 "name": "Light Hype Fairy",
                 "sections": [
                     {
-                        "name": "Light Hype Fairy",
+                        "name": "From Light Hype Fairy",
                         "access_rules": [
                             "$CanReach|light_hype_fairy_outside"
                         ],
-                        // "hosted_item": "from_light_hype_fairy_outside, to_light_hype_fairy_outside"
-                        "hosted_item": "light_hype_fairy_outside"
+                        "hosted_item": "from_light_hype_fairy_outside"
+                        // "hosted_item": "light_hype_fairy_outside"
+                    },
+                    {
+                        "name": "To Light Hype Fairy",
+                        "access_rules": [
+                            "$CanReach|light_hype_fairy_outside"
+                        ],
+                        "hosted_item": "to_light_hype_fairy_outside"
+                        // "hosted_item": "light_hype_fairy_outside"
                     }
                 ],
                 "map_locations": [
@@ -2269,12 +2885,20 @@
                 "name": "Bonk Fairy (Light)",
                 "sections": [
                     {
-                        "name": "Bonk Fairy (Light)",
+                        "name": "From Bonk Fairy (Light)",
                         "access_rules": [
                             "$CanReach|links_fairy_fountain_outside"
                         ],
-                        // "hosted_item": "from_links_fairy_fountain_outside, to_links_fairy_fountain_outside"
-                        "hosted_item": "links_fairy_fountain_outside"
+                        "hosted_item": "from_links_fairy_fountain_outside"
+                        // "hosted_item": "links_fairy_fountain_outside"
+                    },
+                    {
+                        "name": "To Bonk Fairy (Light)",
+                        "access_rules": [
+                            "$CanReach|links_fairy_fountain_outside"
+                        ],
+                        "hosted_item": "to_links_fairy_fountain_outside"
+                        // "hosted_item": "links_fairy_fountain_outside"
                     }
                 ],
                 "map_locations": [
@@ -2298,12 +2922,20 @@
                 "name": "Dam",
                 "sections": [
                     {
-                        "name": "Dam",
+                        "name": "From Dam",
                         "access_rules": [
                             "$CanReach|dam_outside"
                         ],
-                        // "hosted_item": "from_dam_outside, to_dam_outside"
-                        "hosted_item": "dam_outside"
+                        "hosted_item": "from_dam_outside"
+                        // "hosted_item": "dam_outside"
+                    },
+                    {
+                        "name": "To Dam",
+                        "access_rules": [
+                            "$CanReach|dam_outside"
+                        ],
+                        "hosted_item": "to_dam_outside"
+                        // "hosted_item": "dam_outside"
                     }
                 ],
                 "map_locations": [
@@ -2327,12 +2959,20 @@
                 "name": "Links House",
                 "sections": [
                     {
-                        "name": "Links House",
+                        "name": "From Links House",
                         "access_rules": [
                             "$CanReach|links_house_outside"
                         ],
-                        // "hosted_item": "from_links_house_outside, to_links_house_outside"
-                        "hosted_item": "links_house_outside"
+                        "hosted_item": "from_links_house_outside"
+                        // "hosted_item": "links_house_outside"
+                    },
+                    {
+                        "name": "To Links House",
+                        "access_rules": [
+                            "$CanReach|links_house_outside"
+                        ],
+                        "hosted_item": "to_links_house_outside"
+                        // "hosted_item": "links_house_outside"
                     }
                 ],
                 "map_locations": [
@@ -2361,12 +3001,20 @@
                 "name": "20 Rupee Cave",
                 "sections": [
                     {
-                        "name": "20 Rupee Cave",
+                        "name": "From 20 Rupee Cave",
                         "access_rules": [
                             "$CanReach|twenty_rupee_thief_outside"
                         ],
-                        // "hosted_item": "from_twenty_rupee_thief_outside, to_twenty_rupee_thief_outside"
-                        "hosted_item": "twenty_rupee_thief_outside"
+                        "hosted_item": "from_twenty_rupee_thief_outside"
+                        // "hosted_item": "twenty_rupee_thief_outside"
+                    },
+                    {
+                        "name": "To 20 Rupee Cave",
+                        "access_rules": [
+                            "$CanReach|twenty_rupee_thief_outside"
+                        ],
+                        "hosted_item": "to_twenty_rupee_thief_outside"
+                        // "hosted_item": "twenty_rupee_thief_outside"
                     }
                 ],
                 "map_locations": [
@@ -2390,12 +3038,20 @@
                 "name": "Lake Hylia Fortune Teller",
                 "sections": [
                     {
-                        "name": "Lake Hylia Fortune Teller",
+                        "name": "From Lake Hylia Fortune Teller",
                         "access_rules": [
                             "$CanReach|light_lake_fortune_outside"
                         ],
-                        // "hosted_item": "from_light_lake_fortune_outside, to_light_lake_fortune_outside"
-                        "hosted_item": "light_lake_fortune_outside"
+                        "hosted_item": "from_light_lake_fortune_outside"
+                        // "hosted_item": "light_lake_fortune_outside"
+                    },
+                    {
+                        "name": "To Lake Hylia Fortune Teller",
+                        "access_rules": [
+                            "$CanReach|light_lake_fortune_outside"
+                        ],
+                        "hosted_item": "to_light_lake_fortune_outside"
+                        // "hosted_item": "light_lake_fortune_outside"
                     }
                 ],
                 "map_locations": [
@@ -2419,12 +3075,20 @@
                 "name": "Cave Shop (Lake Hylia)",
                 "sections": [
                     {
-                        "name": "Cave Shop (Lake Hylia)",
+                        "name": "From Cave Shop (Lake Hylia)",
                         "access_rules": [
                             "$CanReach|light_lake_shop_outside"
                         ],
-                        // "hosted_item": "from_light_lake_shop_outside, to_light_lake_shop_outside"
-                        "hosted_item": "light_lake_shop_outside"
+                        "hosted_item": "from_light_lake_shop_outside"
+                        // "hosted_item": "light_lake_shop_outside"
+                    },
+                    {
+                        "name": "To Cave Shop (Lake Hylia)",
+                        "access_rules": [
+                            "$CanReach|light_lake_shop_outside"
+                        ],
+                        "hosted_item": "to_light_lake_shop_outside"
+                        // "hosted_item": "light_lake_shop_outside"
                     }
                 ],
                 "map_locations": [
@@ -2448,12 +3112,20 @@
                 "name": "Mini Moldorm Cave",
                 "sections": [
                     {
-                        "name": "Mini Moldorm Cave",
+                        "name": "From Mini Moldorm Cave",
                         "access_rules": [
                             "$CanReach|mini_moldorm_cave_outside"
                         ],
-                        // "hosted_item": "from_mini_moldorm_cave_outside, to_mini_moldorm_cave_outside"
-                        "hosted_item": "mini_moldorm_cave_outside"
+                        "hosted_item": "from_mini_moldorm_cave_outside"
+                        // "hosted_item": "mini_moldorm_cave_outside"
+                    },
+                    {
+                        "name": "To Mini Moldorm Cave",
+                        "access_rules": [
+                            "$CanReach|mini_moldorm_cave_outside"
+                        ],
+                        "hosted_item": "to_mini_moldorm_cave_outside"
+                        // "hosted_item": "mini_moldorm_cave_outside"
                     }
                 ],
                 "map_locations": [
@@ -2477,12 +3149,20 @@
                 "name": "Upgrade Faiy Cave",
                 "sections": [
                     {
-                        "name": "Upgrade Faiy Cave",
+                        "name": "From Upgrade Faiy Cave",
                         "access_rules": [
                             "$CanReach|upgrade_fairy_outside"
                         ],
-                        // "hosted_item": "from_upgrade_fairy_outside, to_upgrade_fairy_outside"
-                        "hosted_item": "upgrade_fairy_outside"
+                        "hosted_item": "from_upgrade_fairy_outside"
+                        // "hosted_item": "upgrade_fairy_outside"
+                    },
+                    {
+                        "name": "To Upgrade Faiy Cave",
+                        "access_rules": [
+                            "$CanReach|upgrade_fairy_outside"
+                        ],
+                        "hosted_item": "to_upgrade_fairy_outside"
+                        // "hosted_item": "upgrade_fairy_outside"
                     }
                 ],
                 "map_locations": [
@@ -2506,12 +3186,20 @@
                 "name": "Ice Rod Cave",
                 "sections": [
                     {
-                        "name": "Ice Rod Cave",
+                        "name": "From Ice Rod Cave",
                         "access_rules": [
                             "$CanReach|icerod_cave_outside"
                         ],
-                        // "hosted_item": "from_icerod_cave_outside, to_icerod_cave_outside"
-                        "hosted_item": "icerod_cave_outside"
+                        "hosted_item": "from_icerod_cave_outside"
+                        // "hosted_item": "icerod_cave_outside"
+                    },
+                    {
+                        "name": "To Ice Rod Cave",
+                        "access_rules": [
+                            "$CanReach|icerod_cave_outside"
+                        ],
+                        "hosted_item": "to_icerod_cave_outside"
+                        // "hosted_item": "icerod_cave_outside"
                     }
                 ],
                 "map_locations": [
@@ -2535,12 +3223,20 @@
                 "name": "Good Bee Cave",
                 "sections": [
                     {
-                        "name": "Good Bee Cave",
+                        "name": "From Good Bee Cave",
                         "access_rules": [
                             "$CanReach|good_bee_cave_outside"
                         ],
-                        // "hosted_item": "from_good_bee_cave_outside, to_good_bee_cave_outside"
-                        "hosted_item": "good_bee_cave_outside"
+                        "hosted_item": "from_good_bee_cave_outside"
+                        // "hosted_item": "good_bee_cave_outside"
+                    },
+                    {
+                        "name": "To Good Bee Cave",
+                        "access_rules": [
+                            "$CanReach|good_bee_cave_outside"
+                        ],
+                        "hosted_item": "to_good_bee_cave_outside"
+                        // "hosted_item": "good_bee_cave_outside"
                     }
                 ],
                 "map_locations": [
