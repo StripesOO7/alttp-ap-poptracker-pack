@@ -264,7 +264,7 @@ dungeon_entrance_IDS = {
 }
 Selected_entrance = nil
 Selected_exit = nil
-
+er_target_counter = 0
 function updateEntrances(segment, mainModuleIdx)
     
     local current_room
@@ -276,7 +276,7 @@ function updateEntrances(segment, mainModuleIdx)
     current_coords_x = segment:ReadUInt16(0x7e0022)
 
     if mainModuleIdx > 0x05 then
-        print("-------------------------------------------------")
+        -- print("-------------------------------------------------")
         new_ow_room = segment:ReadUInt16(0x7e008a)
         new_dungeon_room = segment:ReadUInt16(0x7e00a0)
         -- print("Room Memory for Address: 0x7e00a2")
@@ -308,18 +308,20 @@ function updateEntrances(segment, mainModuleIdx)
         if new_ow_room == 0 then
             current_room = new_dungeon_room
         else
-            current_room = new_ow_room
+            if current_room ~= new_ow_room then
+                current_room = new_ow_room
+            end
         end
         if ENTRANCE_MAPPING[current_room] ~= nil and ENTRANCE_MAPPING[current_room][current_coords_x] ~= nil and ENTRANCE_MAPPING[current_room][current_coords_x][current_coords_y] ~= nil then
             local current_door = ENTRANCE_MAPPING[current_room][current_coords_x][current_coords_y]
             if current_door ~= nil and type(current_door) == "table" then
-                if Selected_entrance == nil or Selected_entrance.ItemState.Room == current_room then
+                if Selected_entrance == nil then
                     Selected_entrance = Tracker:FindObjectForCode("from_"..current_door[1])
-                    -- print("Selected_entrance", Selected_entrance.Name)
+                    print("Selected_entrance", Selected_entrance.Name)
                 else
                     if string.gsub(Selected_entrance.Name, "from_", "") ~= current_door[1] then
                         Selected_exit = Tracker:FindObjectForCode("to_"..current_door[1])
-                        -- print("Selected_exit", Selected_exit.Name)
+                        print("Selected_exit", Selected_exit.Name)
                     end
 
                 end
@@ -339,7 +341,13 @@ function updateEntrances(segment, mainModuleIdx)
                 Selected_entrance = nil
             end
         else
+            er_target_counter = er_target_counter + 1
             -- Selected_entrance = nil
+        end
+        if er_target_counter > 10 then
+            -- print("reset selected entrance", Selected_entrance)
+            Selected_entrance = nil
+            er_target_counter = 0
         end
     end
 end

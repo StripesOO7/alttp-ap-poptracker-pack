@@ -1,7 +1,7 @@
 ENTRANCE_SELECTED = nil
 
 function _SetLocationOptions(source, target) -- source == inside, target == outside
-
+    source.ItemState.Target = target.Name
     source.Icon = ImageReference:FromPackRelativePath("images/entrances/".. target.ItemState.Side .."/".. string.gsub(string.gsub(target.Name, "_"..target.ItemState.Side, ""), target.ItemState.Direction, "") ..".png")
     -- source.BadgeText = "to " .. target.ItemState.Shortname
     source.BadgeText = string.gsub(target.ItemState.Direction, "_", " ") .. target.ItemState.Shortname
@@ -80,8 +80,8 @@ local function OnLeftClickFunc(self)
         end
         target_entrance = Tracker:FindObjectForCode(ENTRANCE_SELECTED)
         if target_entrance ~= nil then
-            target_entrance.ItemState.Target = self.Name
-            self.ItemState.Target = target_entrance.Name
+            -- target_entrance.ItemState.Target = self.Name
+            -- self.ItemState.Target = target_entrance.Name
             _SetLocationOptions(self, target_entrance)
                 -- self.Icon = ImageReference:FromPackRelativePath("images/inside/" .. INDOORS_INDEX[self.Name] .. ".png")
             _SetLocationOptions(target_entrance, self)
@@ -232,4 +232,4 @@ function Reset_ER_setings()
     end
     Tracker:FindObjectForCode("reset_er").Active = false
 end
-ScriptHost:AddWatchForCode("ER_Setting_Changed", "reset_er", Reset_ER_setings)
+ScriptHost:AddWatchForCode("ER_reset_triggered", "reset_er", Reset_ER_setings)

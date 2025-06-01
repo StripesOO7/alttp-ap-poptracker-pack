@@ -97,6 +97,8 @@ function alttp_location.new(name, shortname, cave, room, y, x)
         table.insert(NAMED_LOCATIONS_KEYS, self.name)
     end
     if room ~= nil then
+        -- NAMED_LOCATIONS["from_"..name] = self
+        -- NAMED_LOCATIONS["to_"..name] = self
         self.room = room
         self.x = x
         self.y = y
@@ -111,6 +113,19 @@ function alttp_location.new(name, shortname, cave, room, y, x)
                 table.insert(ENTRANCE_MAPPING[room][x_range][y_range], self.name)
             end
         end
+    -- else
+    --     if name then
+    --         NAMED_LOCATIONS[name] = self
+    --         table.insert(NAMED_LOCATIONS_KEYS, name)
+    --         self.name = name
+    --         self.shortname = shortname
+    --     else
+    --         NAMED_LOCATIONS[name] = self
+    --         self.name = tostring(self)
+    --         self.shortname = shortname
+    --         table.insert(NAMED_LOCATIONS_KEYS, self.name)
+    --     end
+        
     end
     self.exits = {}
     self.keys = math.huge
@@ -217,9 +232,20 @@ function alttp_location:discover(accessibility, keys)
                     [0] = function() 
                         return false end,
                     [1] = function() --print("simple ER", ER_SIMPLE[self.name] ~= nil) 
-                        return ER_SIMPLE[self.name] ~= nil end,
+                        -- if self.cave == true then
+                           return ER_SIMPLE["from_" .. self.name] ~= nil
+                        -- else
+                        --     return ER_SIMPLE["to_" .. self.name] ~= nil
+                        -- end
+
+                        end,
                     [2] = function() --print("full ER", NAMED_ENTRANCES[self.name] ~= nil) 
-                        return NAMED_ENTRANCES[self.name] ~= nil end,
+                        -- if self.cave == true then
+                           return NAMED_ENTRANCES["from_" .. self.name] ~= nil
+                        -- else
+                        --     return NAMED_ENTRANCES["to_" .. self.name] ~= nil
+                        --  end
+                        end,
                     [3] = function() print("!!!!!!!!!!!!!!!!!! YOU ABSOLUTELY SHOUlD NOT BE ABLE TO SEE THIS!!!!!!!!!!!!!!!!")
                         return INSANITY_ENTRANCES[self.name] ~= nil end
                 }
@@ -231,12 +257,29 @@ function alttp_location:discover(accessibility, keys)
                 local er_setting_stage
                 er_setting_stage = Tracker:FindObjectForCode("er_tracking").CurrentStage
                 if er_check[er_setting_stage]() then -- simple ER
-                    temp = Tracker:FindObjectForCode(self.name)
+                    -- print("from_" .. self.name) 
+                    temp = Tracker:FindObjectForCode("from_" .. self.name)
+                    -- temp = Tracker:FindObjectForCode(self.name)
                     -- print(self.name, "to er_simple[self.name]: -->", ER_SIMPLE[self.name])
-                    -- print("############ entering simple ER ############")
-                    -- print(NAMED_LOCATIONS[temp.ItemState.Target])
+                    
                     if temp ~= nil then
-                        location = NAMED_LOCATIONS[temp.ItemState.Target]
+                        -- print("############ entering simple ER ############")
+                        -- print("temp.Name", temp.Name)
+                        -- print("temp.ItemState.Target", temp.ItemState.Target)
+
+                        
+                        if temp.ItemState.Target ~= nil then
+                            -- print(NAMED_LOCATIONS[string.gsub(temp.ItemState.Target, "to_", "")])
+                            local stripped_target_name = string.gsub(temp.ItemState.Target, "to_", "")
+                            -- print("stripped_target_name", stripped_target_name)
+                            -- local stripped_target_name = temp.ItemState.Target
+                            if self.cave then
+                                print(stripped_target_name)
+                                location = NAMED_LOCATIONS[stripped_target_name]
+                            else
+                                location = NAMED_LOCATIONS[stripped_target_name]
+                            end
+                        end
                     else
                         print("exit connection is fucket")
                         return
@@ -290,8 +333,8 @@ function alttp_location:discover(accessibility, keys)
                     key = keys
                 end
                 if access > oldAccess or (access == oldAccess and key < oldKey) then -- not sure about the <
-                    -- print(self.name) 
-                    -- print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access])
+                    print(self.name) 
+                    print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access])
                     location:discover(access, key)
                 end
             end
@@ -324,9 +367,10 @@ function forceUpdate()
 end
 
 function emptyLocationTargets()
-    if not Tracker.BulkUpdate then
+    if not (Tracker.BulkUpdate == true) then
         local er_tracking = Tracker:FindObjectForCode("er_tracking")
         if er_tracking == nil then
+            print("item with code 'er_tracking' not found")
             return
         end
         print(er_tracking.CurrentStage)
@@ -341,6 +385,7 @@ function emptyLocationTargets()
                 -- print(Tracker:FindObjectForCode(name).ItemState.Target)
                 Tracker:FindObjectForCode(name).ItemState.Target = nil
             end
+            
         elseif er_tracking.CurrentStage == 2 then
             print("full er")
             for name, _ in pairs(NAMED_ENTRANCES) do
@@ -348,6 +393,7 @@ function emptyLocationTargets()
                 -- print(Tracker:FindObjectForCode(name).ItemState.Target)
                 Tracker:FindObjectForCode(name).ItemState.Target = nil
             end
+            Tracker:UiHint("ActivateTab", "Entrances")
         else
             print("insanity ER is not supported you troll")
         end
@@ -357,8 +403,8 @@ function emptyLocationTargets()
 end
 
 
-
+ScriptHost:AddWatchForCode("ER_Setting_Changed", "er_full", emptyLocationTargets)
 ScriptHost:AddWatchForCode("stateChanged", "*", stateChanged)
-ScriptHost:AddWatchForCode("ER_Setting_Changed", "er_tracking", emptyLocationTargets)
+
 
 ScriptHost:AddOnLocationSectionChangedHandler("location/section_change_handler", forceUpdate)
