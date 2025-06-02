@@ -264,7 +264,7 @@ dungeon_entrance_IDS = {
 }
 Selected_entrance = nil
 Selected_exit = nil
-er_target_counter = 0
+local er_target_counter = 0
 function updateEntrances(segment, mainModuleIdx)
     
     local current_room

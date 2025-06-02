@@ -30,9 +30,9 @@ end
 
 function has_value (t, val)
     for i, v in ipairs(t) do
-        if v == val then return 1 end
+        if v == val then return true end
     end
-    return 0
+    return false
 end
 
 function dump_table(o, depth)

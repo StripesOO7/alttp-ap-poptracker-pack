@@ -300,9 +300,9 @@ function checkRequirements(reference, check_count)
     local count = Tracker:ProviderCountForCode(check_count)
 
     if count >= reqCount then
-        return 1
+        return true
     else
-        return 0
+        return false
     end
 end
 
