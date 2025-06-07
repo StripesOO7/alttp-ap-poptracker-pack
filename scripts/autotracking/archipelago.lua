@@ -17,7 +17,7 @@ local THIRDSTAGE = {
     [6] = 6, --mirror shield
     [35] = 35 --red mail
 }
-if PopVersion > "0.31.0" then
+if Highlight then
     local highlight_lvl= {
         [0] = Highlight.Unspecified,
         [10] = Highlight.NoPriority,
@@ -494,7 +494,7 @@ function onNotifyLaunch(key, value)
 end
  
 function updateHints(locationID, status)
-    if PopVersion > "0.31.0" then
+    if Highlight then
         print(locationID, status)
         local location_table = LOCATION_MAPPING[locationID]
         for _, location in ipairs(location_table) do
