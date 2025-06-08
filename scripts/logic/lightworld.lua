@@ -1326,8 +1326,13 @@ mimic_cave_inside:connect_one_way("Mimic Cave Chest", function()
     ) 
 end)
 
-paradox_cave_middle_entrance_inside:connect_one_way(paradox_cave_inside_bottom) -- drop down
-paradox_cave_middle_entrance_inside:connect_two_ways(paradox_cave_top_entrance_inside)
+paradox_cave_top_entrance_inside:connect_two_ways(paradox_cave_top_front)
+paradox_cave_top_front:connect_two_ways(paradox_cave_middle_front)
+paradox_cave_middle_entrance_inside:connect_two_ways(paradox_cave_middle_front)
+
+paradox_cave_middle_front:connect_one_way(paradox_cave_inside_bottom) --drop down from front
+paradox_cave_inside_middle:connect_one_way(paradox_cave_inside_bottom) -- drop down from back ledge
+paradox_cave_inside_middle:connect_two_ways(paradox_cave_inside_top)
 
 paradox_cave_inside_bottom:connect_one_way(paradox_cave_bottom_back, function() 
     return all(
@@ -1336,12 +1341,11 @@ paradox_cave_inside_bottom:connect_one_way(paradox_cave_bottom_back, function()
     ) 
 end) -- fbomb wall
 -- paradox_cave_inside_bottom:connect_two_ways(paradox_cave_top_back) -- stairs up left
-
 paradox_cave_inside_bottom:connect_one_way(paradox_cave_bottom_front, function() return can_interact("light", 1) end) --just push block down but not up
 paradox_cave_inside_bottom:connect_two_ways(paradox_cave_inside_middle) -- go upstairs to middle
 paradox_cave_inside_middle:connect_two_ways(paradox_cave_inside_top) -- go upstairs to top
 paradox_cave_inside_middle:connect_one_way(paradox_cave_inside_bottom) -- drop down to bottom floor
-paradox_cave_inside_middle:connect_one_way(paradox_cave_middle_entrance_inside, function() return all(has("bombs"), can_interact("light", 2)) end) -- bombjump to middle entrance
+paradox_cave_inside_middle:connect_one_way(paradox_cave_middle_front, function() return all(has("bombs"), can_interact("light", 2)) end) -- bombjump to middle entrance
 
 paradox_cave_inside_top:connect_two_ways_entrance_door_stuck("Paradox Cave Top Back", paradox_cave_top_back, function() 
     return all(
