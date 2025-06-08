@@ -265,6 +265,10 @@ dungeon_entrance_IDS = {
 Selected_entrance = nil
 Selected_exit = nil
 local er_target_counter = 0
+LIGHT_SHOPS_FOUND = 0
+FORTUNE_FOUND = 0
+FAIRYS_FOUND = 0
+
 function updateEntrances(segment, mainModuleIdx)
     
     local current_room
@@ -314,26 +318,49 @@ function updateEntrances(segment, mainModuleIdx)
         end
         if ENTRANCE_MAPPING[current_room] ~= nil and ENTRANCE_MAPPING[current_room][current_coords_x] ~= nil and ENTRANCE_MAPPING[current_room][current_coords_x][current_coords_y] ~= nil then
             local current_door = ENTRANCE_MAPPING[current_room][current_coords_x][current_coords_y]
+            print(current_door[1])
             if current_door ~= nil and type(current_door) == "table" then
                 if Selected_entrance == nil then
                     Selected_entrance = Tracker:FindObjectForCode("from_"..current_door[1])
                     print("Selected_entrance", Selected_entrance.Name)
                 else
                     if string.gsub(Selected_entrance.Name, "from_", "") ~= current_door[1] then
-                        Selected_exit = Tracker:FindObjectForCode("to_"..current_door[1])
+                        
+                        if string.match(current_door[1], "kakariko_shop") then
+                            LIGHT_SHOPS_FOUND = LIGHT_SHOPS_FOUND + 1
+                            Selected_exit = Tracker:FindObjectForCode("to_"..current_door[LIGHT_SHOPS_FOUND])
+                        elseif string.match(current_door[1], "kakariko_fortune") then
+                            FORTUNE_FOUND = FORTUNE_FOUND + 1
+                            Selected_exit = Tracker:FindObjectForCode("to_"..current_door[FORTUNE_FOUND])
+                        elseif string.match(current_door[1], "dam_desert_fairy_") then
+                        FAIRYS_FOUND = FAIRYS_FOUND + 1
+                        Selected_exit = Tracker:FindObjectForCode("to_"..current_door[FAIRYS_FOUND])
+                        else
+                            Selected_exit = Tracker:FindObjectForCode("to_"..current_door[1])
+                        end
                         print("Selected_exit", Selected_exit.Name)
                     end
 
                 end
                 
-
+                local er_stage = Tracker:FindObjectForCode("er_tracking").CurrentStage
                 if Selected_entrance ~= nil and Selected_exit ~= nil then
                     -- print("inside entrance connection part")
                     -- print("selected_entrance", selected_entrance.Name)
                     -- print("selected_exit", selected_exit.Name)
                     -- print(Tracker:FindObjectForCode("er_tracking").CurrentStage)
-                    _SetLocationOptions(Selected_entrance, Selected_exit)
-                    _SetLocationOptions(Selected_exit, Selected_entrance)
+                    if er_stage == 3 then -- separated doors
+                    
+                        _SetLocationOptions(Selected_entrance, Selected_exit)
+                        _SetLocationOptions(Selected_exit, Selected_entrance)
+                    else --trackes both sides simlutaniously
+                        _SetLocationOptions(Selected_entrance, Selected_exit)
+                        _SetLocationOptions(Selected_exit, Selected_entrance)
+                        Selected_entrance = Tracker:FindObjectForCode(string.gsub(Selected_entrance.Name, "from_", "to_"))
+                        Selected_exit = Tracker:FindObjectForCode(string.gsub(Selected_exit.Name, "to_", "from_"))
+                        _SetLocationOptions(Selected_entrance, Selected_exit)
+                        _SetLocationOptions(Selected_exit, Selected_entrance)
+                    end
                     Selected_entrance = nil
                     Selected_exit = nil
                 end
@@ -344,11 +371,20 @@ function updateEntrances(segment, mainModuleIdx)
             er_target_counter = er_target_counter + 1
             -- Selected_entrance = nil
         end
-        if er_target_counter > 10 then
+        if er_target_counter > 5 then
             -- print("reset selected entrance", Selected_entrance)
             Selected_entrance = nil
             er_target_counter = 0
         end
+    end
+    if LIGHT_SHOPS_FOUND == 5 then
+        LIGHT_SHOPS_FOUND = 0
+    end
+    if FAIRYS_FOUND == 7 then
+        FAIRYS_FOUND = 0
+    end
+    if FORTUNE_FOUND == 2 then
+        FORTUNE_FOUND = 0
     end
 end
 
