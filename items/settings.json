@@ -28,45 +28,40 @@
         "allow_disabled": false,
         "stages": [
             {
-                "img": "/images/settings/goal_slow.png",
+                "img": "/images/settings/goal_slow_ganon.png",
                 "inherit_codes": false,
                 "codes": "goal, slow"
             },
             {
-                "img": "/images/settings/goal_fast.png",
+                "img": "/images/settings/goal_fast_ganon.png",
                 "inherit_codes": false,
                 "codes": "goal, fast"
             },
             {
-                "img": "/images/settings/all_dungeons.png",
+                "img": "/images/settings/goal_all_dungeons.png",
                 "inherit_codes": false,
                 "codes": "goal, all_dungeons"
             },
             {
-                "img": "/images/settings/pedestal.png",
+                "img": "/images/settings/goal_pedestal.png",
                 "inherit_codes": false,
                 "codes": "goal, ped"
             },
             {
-                "img": "/images/settings/pedestal+ganon.png",
+                "img": "/images/settings/goal_ped_+_ganon.png",
                 "inherit_codes": false,
                 "codes": "goal, ped+ganon"
             },
             {
-                "img": "/images/settings/goal_triforce.png",
+                "img": "/images/settings/goal_triforcehunt.png",
 
                 "inherit_codes": false,
                 "codes": "goal, triforce"
             },
             {
-                "img": "/images/settings/goal_triforce+ganon.png",
+                "img": "/images/settings/goal_tfh_+_ganon.png",
                 "inherit_codes": false,
                 "codes": "goal, triforce+ganon"
-            },
-            {
-                "img": "/images/settings/goal_icerod.png",
-                "inherit_codes": false,
-                "codes": "goal, icerod_hunt"
             }
         ]
     },
@@ -77,17 +72,17 @@
         "initial_stage_idx": 1,
         "stages": [
             {
-                "img": "/images/settings/gm_standard.png",
+                "img": "/images/settings/mode_standard.png",
                 "inherit_codes": false,
                 "codes": "start_option, standard"
             },
             {
-                "img": "/images/settings/gm_open.png",
+                "img": "/images/settings/mode_open.png",
                 "inherit_codes": false,
                 "codes": "start_option, open"
             },
             {
-                "img": "/images/settings/gm_inverted.png",
+                "img": "/images/settings/mode_inverted.png",
                 "inherit_codes": false,
                 "codes": "start_option, inverted"
             }
@@ -96,25 +91,27 @@
     {
         "name": "Enemizer",
         "type": "toggle",
-        "img": "/images/settings/enemizer.png",
+        "img": "/images/settings/enemizer_on.png",
+        "disabled_img": "/images/settings/enemizer_off.png",
         "codes": "enemizer"
     },
     {
         "name": "include Witchhut (Shop Sanity)",
         "type": "toggle",
-        "img": "/images/settings/shop_include_witchhut.png",
+        "img": "/images/settings/include_witchhut.png",
         "codes": "shop_include_witchhut"
     },
     {
         "name": "Shuffle Capacity Upgrades",
         "type": "toggle",
-        "img": "/images/settings/shop_shuffle_capacity.png",
+        "img": "/images/settings/shuffle_capacity_upgrades.png",
         "codes": "shop_shuffle_capacity"
     },
     {
         "name": "Shop Sanity",
         "type": "toggle",
-        "img": "/images/settings/shop_sanity.png",
+        "img": "/images/settings/shopsanity_on.png",
+        "disabled_img": "/images/settings/shopsanity_off.png",
         "codes": "shop_sanity"
     },
     // {
@@ -130,15 +127,15 @@
         "allow_disabled": false,
         "stages": [
             {
-                "img": "/images/settings/boss_vanilla.png",
+                "img": "/images/settings/bosses_vanilla.png",
                 "codes": "boss_shuffle, vanilla"
             },
             {
-                "img": "/images/settings/boss_random.png",
+                "img": "/images/settings/bosses_random.png",
                 "codes": "boss_shuffle, random"
             },
             {
-                "img": "/images/settings/boss_singularity.png",
+                "img": "/images/settings/bosses_singularity.png",
                 "codes": "boss_shuffle, singularity"
             }
         ]
@@ -151,15 +148,15 @@
         "initial_stage_idx": 0,
         "stages": [
             {
-                "img": "/images/settings/darkroom_lamp.png",
+                "img": "/images/settings/lamp_required.png",
                 "codes": "dark_mode, lamp_req"
             },
             {
-                "img": "/images/settings/darkroom_firerod.png",
+                "img": "/images/settings/firerod_required.png",
                 "codes": "dark_mode, firerod_req"
             },
             {
-                "img": "/images/settings/darkroom_logic.png",
+                "img": "/images/settings/dark_rooms.png",
                 "codes": "dark_mode, dark_rooms"
             }
         ]
@@ -186,19 +183,19 @@
                 "codes": "glitches, minor"
             },
             {
-                "img": "/images/settings/glitches_ow.png",
+                "img": "/images/settings/glitches_overworld.png",
                 "inherit_codes": false,
                 "codes": "glitches, ow"
             },
             {
-                "img": "/images/settings/glitches_hmg.png",
+                "img": "/images/settings/glitches_hybrid_major.png",
                 "inherit_codes": false,
                 "codes": "glitches, hybrid_major"
             },
             {
                 "img": "/images/settings/glitches_no_logic.png",
                 "inherit_codes": false,
-                "codes": "glitches, no+logic"
+                "codes": "glitches, no_logic"
             }
         ],
         "img": "/images/settings/items/Pegasus_Boots.png"
@@ -208,6 +205,13 @@
         "type": "toggle",
         "img": "/images/settings/swordless.png",
         "codes": "swordless"
+    },
+    {
+        "name": "Swordless",
+        "type": "toggle",
+        "img": "/images/settings/swordless_on.png",
+        "disabled_img": "/images/settings/swordless_off.png",
+        "codes": "swordless_setting"
     },
     // {
     //     "name": "Progressive Items",
@@ -291,25 +295,25 @@
         "stages":
             [
                 {
-                    "img": "/images/settings/items/item_mode_easy.png",
+                    "img": "/images/settings/items/item_functionallity_easy.png",
                     "inherit_codes": false, 
                     "name": "Itemmode Easy",
                     "codes": "item_mode, item_mode_easy"
                 },
                 {
-                    "img": "/images/settings/items/item_mode_normal.png",
+                    "img": "/images/settings/items/item_functionallity_normal.png",
                     "inherit_codes": false, 
                     "name": "Itemmode Normal",
                     "codes": "item_mode, item_mode_normal"
                 },
                 {
-                    "img": "/images/settings/items/item_mode_hard.png",
+                    "img": "/images/settings/items/item_functionallity_hard.png",
                     "inherit_codes": false, 
                     "name": "Itemmode Hard",
                     "codes": "item_mode, item_mode_hard"
                 },
                 {
-                    "img": "/images/settings/items/item_mode_expert.png",
+                    "img": "/images/settings/items/item_functionallity_expert.png",
                     "inherit_codes": false, 
                     "name": "Itemmode Expert",
                     "codes": "item_mode, item_mode_expert"
@@ -342,6 +346,184 @@
         "img": "/images/settings/lttp_small_key.png"
     },
     {
+        "name": "Smallkey-sanity",
+        "type": "progressive",
+        "allow_disabled":false,
+        "stages": [
+            {
+                "img": "/images/settings/smallkey-sanity_vanilla.png",
+                "inherit_codes": false, 
+                "name": "Small Keysanity",
+                "codes": "smallkeys_setting, smallkeys_vanilla"
+            },
+            {
+                "img": "/images/settings/smallkey-sanity_own_dungeons.png",
+                "inherit_codes": false, 
+                "name": "Small Keysanity",
+                "codes": "smallkeys_setting, smallkeys_own_dungeons"
+            },
+            {
+                "img": "/images/settings/smallkey-sanity_own_world.png",
+                "inherit_codes": false, 
+                "name": "Small Keysanity",
+                "codes": "smallkeys_setting, smallkeys_own_world"
+            },
+            {
+                "img": "/images/settings/smallkey-sanity_different_world.png",
+                "inherit_codes": false, 
+                "name": "Small Keysanity",
+                "codes": "smallkeys_setting, smallkeys_other_worlds"
+            },
+            {
+                "img": "/images/settings/smallkey-sanity_anywhere.png",
+                "inherit_codes": false,
+                "name": "Universal Small Keys",
+                "codes": "smallkeys_setting, smallkeys_anywhere"
+            },
+            {
+                "img": "/images/settings/smallkey-sanity_start_with.png",
+                "inherit_codes": false,
+                "name": "Smallkeys Keyring",
+                "codes": "smallkeys_setting, smallkeys_start_with"
+            },
+            {
+                "img": "/images/settings/smallkey-sanity_universal.png",
+                "inherit_codes": false,
+                "name": "Smallkeys Keyring",
+                "codes": "smallkeys_setting, smallkeys_universal"
+            }
+        ]
+    },
+    {
+        "name": "Bigkey-sanity",
+        "type": "progressive",
+        "allow_disabled":false,
+        "stages": [
+            {
+                "img": "/images/settings/bigkey-sanity_vanilla.png",
+                "inherit_codes": false, 
+                "name": "Small Keysanity",
+                "codes": "bigkeys_setting, bigkeys_vanilla"
+            },
+            {
+                "img": "/images/settings/bigkey-sanity_own_dungeons.png",
+                "inherit_codes": false, 
+                "name": "Small Keysanity",
+                "codes": "bigkeys_setting, bigkeys_own_dungeons"
+            },
+            {
+                "img": "/images/settings/bigkey-sanity_own_world.png",
+                "inherit_codes": false, 
+                "name": "Small Keysanity",
+                "codes": "bigkeys_setting, bigkeys_own_world"
+            },
+            {
+                "img": "/images/settings/bigkey-sanity_different_world.png",
+                "inherit_codes": false, 
+                "name": "Small Keysanity",
+                "codes": "bigkeys_setting, bigkeys_other_worlds"
+            },
+            {
+                "img": "/images/settings/bigkey-sanity_anywhere.png",
+                "inherit_codes": false, 
+                "name": "Small Keysanity",
+                "codes": "bigkeys_setting, bigkeys_anywhere"
+            },
+            {
+                "img": "/images/settings/bigkey-sanity_start_with.png",
+                "inherit_codes": false,
+                "name": "Universal Small Keys",
+                "codes": "bigkeys_setting, bigkeys_start_with"
+            }
+        ]
+    },
+    {
+        "name": "Map Shuffle",
+        "type": "progressive",
+        "allow_disabled":false,
+        "stages": [
+            {
+                "img": "/images/settings/map_shuffle_vanilla.png",
+                "inherit_codes": false, 
+                "name": "Small Keysanity",
+                "codes": "maps_setting, maps_vanilla"
+            },
+            {
+                "img": "/images/settings/map_shuffle_own_dungeons.png",
+                "inherit_codes": false, 
+                "name": "Small Keysanity",
+                "codes": "maps_setting, maps_own_dungeons"
+            },
+            {
+                "img": "/images/settings/map_shuffle_own_world.png",
+                "inherit_codes": false, 
+                "name": "Small Keysanity",
+                "codes": "maps_setting, maps_own_world"
+            },
+            {
+                "img": "/images/settings/map_shuffle_different_world.png",
+                "inherit_codes": false, 
+                "name": "Small Keysanity",
+                "codes": "maps_setting, maps_other_worlds"
+            },
+            {
+                "img": "/images/settings/map_shuffle_anywhere.png",
+                "inherit_codes": false,
+                "name": "Universal Small Keys",
+                "codes": "maps_setting, maps_anywhere"
+            },
+            {
+                "img": "/images/settings/map_shuffle_start_with.png",
+                "inherit_codes": false,
+                "name": "Smallkeys Keyring",
+                "codes": "maps_setting, maps_start_with"
+            }
+        ]
+    },
+    {
+        "name": "Compass Shuffle",
+        "type": "progressive",
+        "allow_disabled":false,
+        "stages": [
+            {
+                "img": "/images/settings/compass_shuffle_vanilla.png",
+                "inherit_codes": false, 
+                "name": "Small Keysanity",
+                "codes": "compass_setting, compass_vanilla"
+            },
+            {
+                "img": "/images/settings/compass_shuffle_own_dungeons.png",
+                "inherit_codes": false, 
+                "name": "Small Keysanity",
+                "codes": "compass_setting, compass_own_dungeons"
+            },
+            {
+                "img": "/images/settings/compass_shuffle_own_world.png",
+                "inherit_codes": false, 
+                "name": "Small Keysanity",
+                "codes": "compass_setting, compass_own_world"
+            },
+            {
+                "img": "/images/settings/compass_shuffle_different_world.png",
+                "inherit_codes": false, 
+                "name": "Small Keysanity",
+                "codes": "compass_setting, compass_other_worlds"
+            },
+            {
+                "img": "/images/settings/compass_shuffle_anywhere.png",
+                "inherit_codes": false,
+                "name": "Universal Small Keys",
+                "codes": "compass_setting, compass_anywhere"
+            },
+            {
+                "img": "/images/settings/compass_shuffle_start_with.png",
+                "inherit_codes": false,
+                "name": "Smallkeys Keyring",
+                "codes": "compass_setting, compass_start_with"
+            }
+        ]
+    },
+    {
         "name": "Big Key Shuffle",
         "type": "toggle",
         "img": "/images/settings/lttp_big_key.png",
@@ -360,9 +542,25 @@
         "codes": "compass"
     },
     {
+        "name": "Shuffle Shop Item Slots",
+        "type": "consumable",
+        "max_quantity": 30,
+        "min_quantity": 0,
+        "overlay_background": "#000000",
+        "img": "/images/settings/shuffle_item_slots.png",
+        "codes": "shuffle_item_slots"
+    },
+    {
+        "name": "Shuffle Shop Cost Type",
+        "type": "toggle",
+        "img": "/images/settings/shuffle_cost_type.png",
+        "codes": "shuffle_cost_type"
+    },
+    {
         "name": "Key Drop Shuffle",
         "type": "toggle",
-        "img": "/images/settings/key_drop_shuffle.png",
+        "img": "/images/settings/keydrop_shuffle_on.png",
+        "disabled_img": "/images/settings/keydrop_shuffle_off.png",
         "codes": "key_drop_shuffle"
     },
     {
@@ -389,36 +587,83 @@
     },
 // external settings toggles
     {
-        "name": "Autofill Settings", ///used as tooltip within the settings popup. available on 0.25.3+ 
+        "name": "Autofill ALL Settings", ///used as tooltip within the settings popup. available on 0.25.3+ 
         "type": "toggle",
-        "img": "/images/settings/autofill_enabled.png",
-        "disabled_img": "/images/settings/autofill_disabled.png",
-        "codes": "autofill_settings"
+        "img": "/images/settings/autofill_all.png",
+        "codes": "autofill_all_settings"
+    },
+    {
+        "name": "Autofill Dungeon Settings", ///used as tooltip within the settings popup. available on 0.25.3+ 
+        "type": "toggle",
+        "img": "/images/settings/autofill_dungeons.png",
+        "codes": "autofill_dungeon_settings"
+    },
+    {
+        "name": "Autofill Goal Reqs", ///used as tooltip within the settings popup. available on 0.25.3+ 
+        "type": "toggle",
+        "img": "/images/settings/autofill_goal_requirements.png",
+        "codes": "autofill_goal_reqs"
+    },
+    {
+        "name": "Autofill Medallions", ///used as tooltip within the settings popup. available on 0.25.3+ 
+        "type": "toggle",
+        "img": "/images/settings/autofill_medallions.png",
+        "codes": "autofill_medallions"
+    },
+    {
+        "name": "Autofill Modes", ///used as tooltip within the settings popup. available on 0.25.3+ 
+        "type": "toggle",
+        "img": "/images/settings/autofill_modes.png",
+        "codes": "autofill_modes"
+    },
+    {
+        "name": "Autofill Misc", ///used as tooltip within the settings popup. available on 0.25.3+ 
+        "type": "toggle",
+        "img": "/images/settings/autofill_misc.png",
+        "codes": "autofill_misc"
+    },
+    {
+        "name": "Autofill Sanities", ///used as tooltip within the settings popup. available on 0.25.3+ 
+        "type": "toggle",
+        "img": "/images/settings/autofill_sanities.png",
+        "codes": ""
     },
     {
         "name": "Retro Caves",
         "type": "toggle",
-        "img": "/images/settings/retro_caves.png",
+        "img": "/images/settings/retro_caves_on.png",
+        "disabled_img": "/images/settings/retro_caves_off.png",
         "codes": "retro_caves"
     },
     {
         "name": "Bombless start",
         "type": "toggle",
         "initial_active_state": true, 
-        "img": "/images/settings/bombless.png",
+        "img": "/images/settings/bombless_start_on.png",
+        "disabled_img": "/images/settings/bombless_start_off.png",
         "codes": "bombless"
     },
     {
         "name": "UI-Hints (auto tab switching)",
         "type": "toggle",
-        "img": "/images/settings/auto_mapswitching.png",
+        "img": "/images/settings/map_switching_on.png",
+        "disabled_img": "/images/settings/map_switching_off.png",
         "codes": "ui_hint"
     },
     {
         "name": "Reset set Entrances",
         "type": "toggle",
-        "img": "/images/settings/reset_er.png",
+        "img": "/images/settings/reset_er-locations.png",
         "codes": "reset_er"
+    },
+    {
+        "name": "Manual or automatic ER Tracking",
+        "type": "toggle",
+        "img": "/images/settings/er_tracking_automatic.png",
+        "disabled_img": "/images/settings/er_tracking_manual.png",
+        // "disabled_img_mods": "overlay|/images/settings/er_tracking_manual.png",
+        "disabled_img_mods": "",
+        "codes": "er_tracking_method"
     },
     {
         "name": "Enable Entrance Randomizer Tracking",
@@ -427,25 +672,25 @@
         "stages":
             [
                 {
-                    "img": "/images/settings/er_off.png",
+                    "img": "/images/settings/entrance_rando_off.png",
                     "inherit_codes": false, 
                     "name": "Vanilla Entrances",
                     "codes": "er_tracking, er_off"
                 },
                 {
-                    "img": "/images/settings/er_simple.png",
+                    "img": "/images/settings/entrance_rando_simple.png",
                     "inherit_codes": false, 
                     "name": "Simple Entrance Shuffle",
                     "codes": "er_tracking, er_simple"
                 },
                 {
-                    "img": "/images/settings/er_full.png",
+                    "img": "/images/settings/entrance_rando_full.png",
                     "inherit_codes": false, 
                     "name": "Full Entrance Shuffle",
                     "codes": "er_tracking, er_full"
                 },
                 {
-                    "img": "/images/settings/er_insanity.png",
+                    "img": "/images/settings/entrance_rando_insanity.png",
                     "inherit_codes": false, 
                     "name": "Insanity Entrance Shuffle",
                     "codes": "er_tracking, er_insanity"

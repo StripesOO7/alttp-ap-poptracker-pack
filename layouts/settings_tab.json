@@ -5,92 +5,361 @@
         // "margin": "10,10,10,10",
         "content": [
             {
-                "type": "itemgrid",
-                "item_size": "125",
-                // "orientation": "vertical",
-                "h_alignment": "center",
-                "item_h_alignment": "center",
-                "item_v_alignment": "center",
-                "rows": [
-                    [
-                        "autofill_settings"
-                    ],
-                    [
-                        "ui_hint"
-                    ],
-                    [
-                        "goal"
-                    ],
-                    [
-                        "retro_caves"
-                    ]
-                ]
+              "type": "group",
+              "header": "Autofill Settings",
+              "description": "Enable/Disable the automatic fill of the settings pannel from for connected Slot_Data",
+              "header_background": "#3e4b57",
+              "content": [
+                {
+                  "type": "item",
+                  "max_width": "260",
+                  "item": "autofill_all_settings"
+                },
+                {
+                  "type": "item",
+                  "max_width": "260",
+                  "item": "autofill_dungeon_settings"
+                },
+                {
+                  "type": "item",
+                  "max_width": "260",
+                  "item": "autofill_goal_reqs"
+                },
+                {
+                  "type": "item",
+                  "max_width": "260",
+                  "item": "autofill_medallions"
+                },
+                {
+                  "type": "item",
+                  "max_width": "260",
+                  "item": "autofill_modes"
+                },
+                {
+                  "type": "item",
+                  "max_width": "260",
+                  "item": "autofill_misc"
+                },
+                {
+                  "type": "item",
+                  "max_width": "260",
+                  "item": "autofill_sanities"
+                }
+              ]
             },
             {
-                "type": "itemgrid",
-                "item_size": "125",
-                // "orientation": "vertical",
-                "h_alignment": "center",
-                "item_h_alignment": "center",
-                "item_v_alignment": "center",
-                "rows": [
-                    [
-                        "enemizer"
-                    ],
-                    [
-                        "start_option"
-                    ],
-                    [
-                        "glitches"
-                    ],
-                    [
-                        "dark_mode"
-                    ]
-                ]
+              "type": "group",
+              "header": "Mode Settings",
+              "description": "Enable/Disable the automatic fill of the settings pannel from for connected Slot_Data",
+              "header_background": "#3e4b57",
+              "content": [
+                {
+                  "type": "item",
+                  "max_width": "260",
+                  "item": "start_option"
+                },
+                {
+                  "type": "item",
+                  "max_width": "260",
+                  "item": "dark_mode"
+                },
+                {
+                  "type": "item",
+                  "max_width": "260",
+                  "item": "enemizer"
+                },
+                {
+                  "type": "item",
+                  "max_width": "260",
+                  "item": "swordless_setting"
+                },
+                {
+                  "type": "item",
+                  "max_width": "260",
+                  "item": "bombless"
+                }
+              ]
             },
             {
-                "type": "itemgrid",
-                "item_size": "125",
-                // "orientation": "vertical",
-                "h_alignment": "center",
-                "item_h_alignment": "center",
-                "item_v_alignment": "center",
-                "rows": [
-                    [
-                        "boss_shuffle"
-                    ],
-                    [
-                        "key_drop_shuffle"
-                    ],
-                    [
-                        "bombless"
-                    ],
-                    [
-                        "reset_er"
-                    ]
+                "type": "group",
+                "header": "Goal & Logic Settings",
+                "description": "Enable/Disable the automatic fill of the settings pannel from for connected Slot_Data",
+                "header_background": "#3e4b57",
+                "content": [
+                    {
+                    "type": "item",
+                    "max_width": "260",
+                    "item": "goal"
+                    },
+                    {
+                    "type": "item",
+                    "max_width": "260",
+                    "item": "glitches"
+                    },
+                    {
+                    "type": "item",
+                    "max_width": "260",
+                    "item": ""
+                    }
                 ]
             },
+            // {
+            //     "type": "array",
+            //     "orientation": "vertical",
+            //     "content": [
+            //         {
+            //             "type": "group",
+            //             "header": "Logic Settings",
+            //             "description": "Enable/Disable the automatic fill of the settings pannel from for connected Slot_Data",
+            //             "header_background": "#3e4b57",
+            //             "content": [
+            //                 {
+            //                 "type": "item",
+            //                 "max_width": "260",
+            //                 "item": "goal"
+            //                 },
+            //                 {
+            //                 "type": "item",
+            //                 "max_width": "260",
+            //                 "item": "glitches"
+            //                 },
+            //                 {
+            //                 "type": "item",
+            //                 "max_width": "260",
+            //                 "item": ""
+            //                 }
+            //             ]
+            //         },
+            //         {
+            //             "type": "group",
+            //             "header": "Logic Settings",
+            //             "description": "Enable/Disable the automatic fill of the settings pannel from for connected Slot_Data",
+            //             "header_background": "#3e4b57",
+            //             "content": [
+            //                 {
+            //                 "type": "item",
+            //                 "max_width": "260",
+            //                 "item": "goal"
+            //                 },
+            //                 {
+            //                 "type": "item",
+            //                 "max_width": "260",
+            //                 "item": "glitches"
+            //                 },
+            //                 {
+            //                 "type": "item",
+            //                 "max_width": "260",
+            //                 "item": ""
+            //                 }
+            //             ]
+            //         },
+            //     ]
+            // },
             {
-                "type": "itemgrid",
-                "item_size": "125",
-                // "orientation": "vertical",
-                "h_alignment": "center",
-                "item_h_alignment": "center",
-                "item_v_alignment": "center",
-                "rows": [
-                    [
-                        "shop_sanity"
-                    ],
-                    [
-                        "shop_include_witchhut"
-                    ],
-                    [
-                        "shop_shuffle_capacity"
-                    ],
-                    [
-                        "er_tracking"
-                    ]
-                ]
+              "type": "group",
+              "header": "Shop Settings",
+              "description": "Enable/Disable the automatic fill of the settings pannel from for connected Slot_Data",
+              "header_background": "#3e4b57",
+              "content": [
+                {
+                  "type": "item",
+                  "max_width": "260",
+                  "item": "shop_include_witchhut"
+                },
+                {
+                  "type": "item",
+                  "max_width": "260",
+                  "item": "shop_shuffle_capacity"
+                },
+                {
+                  "type": "item",
+                  "max_width": "260",
+                  "item": "shop_sanity"
+                },
+                {
+                  "type": "item",
+                  "max_width": "260",
+                  "item": "shuffle_item_slots"
+                },
+                {
+                  "type": "item",
+                  "max_width": "260",
+                  "item": "shuffle_cost_type"
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "header": "Dungeon Settings",
+              "description": "Enable/Disable the automatic fill of the settings pannel from for connected Slot_Data",
+              "header_background": "#3e4b57",
+              "content": [
+                {
+                  "type": "item",
+                  "max_width": "260",
+                  "item": "smallkeys_setting"
+                },
+                {
+                  "type": "item",
+                  "max_width": "260",
+                  "item": "bigkeys_setting"
+                },
+                {
+                  "type": "item",
+                  "max_width": "260",
+                  "item": "maps_setting"
+                },
+                {
+                  "type": "item",
+                  "max_width": "260",
+                  "item": "compass_setting"
+                },
+                {
+                  "type": "item",
+                  "max_width": "260",
+                  "item": "boss_shuffle"
+                },
+                {
+                  "type": "item",
+                  "max_width": "260",
+                  "item": "key_drop_shuffle"
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "header": "ER Settings",
+              "description": "Enable/Disable the automatic fill of the settings pannel from for connected Slot_Data",
+              "header_background": "#3e4b57",
+              "content": [
+                {
+                  "type": "item",
+                  "max_width": "260",
+                  "item": "reset_er"
+                },
+                {
+                  "type": "item",
+                  "max_width": "260",
+                  "item": "er_tracking"
+                },
+                {
+                  "type": "item",
+                  "max_width": "260",
+                  "item": "er_tracking_method"
+                },
+                {
+                  "type": "item",
+                  "max_width": "260",
+                  "item": "ui_hint"
+                },
+                {
+                  "type": "item",
+                  "max_width": "260",
+                  "item": ""
+                },
+                {
+                  "type": "item",
+                  "max_width": "260",
+                  "item": ""
+                },
+                {
+                  "type": "item",
+                  "max_width": "260",
+                  "item": "retro_caves"
+                }
+              ]
+            // },
+            // {
+            //     "type": "itemgrid",
+            //     // "item_size": "125",
+            //     // "item_size": "260",
+            //     // "orientation": "vertical",
+            //     "h_alignment": "center",
+            //     "item_h_alignment": "center",
+            //     "item_v_alignment": "center",
+            //     "rows": [
+            //         [
+            //             "autofill_settings"
+            //         ],
+            //         [
+            //             "ui_hint"
+            //         ],
+            //         [
+            //             "goal"
+            //         ],
+            //         [
+            //             "retro_caves"
+            //         ]
+            //     ]
+            // },
+            // {
+            //     "type": "itemgrid",
+            //     // "item_size": "125",
+            //     // "item_size": "260",
+            //     // "orientation": "vertical",
+            //     "h_alignment": "center",
+            //     "item_h_alignment": "center",
+            //     "item_v_alignment": "center",
+            //     "rows": [
+            //         [
+            //             "enemizer"
+            //         ],
+            //         [
+            //             "start_option"
+            //         ],
+            //         [
+            //             "glitches"
+            //         ],
+            //         [
+            //             "dark_mode"
+            //         ]
+            //     ]
+            // },
+            // {
+            //     "type": "itemgrid",
+            //     // "item_size": "125",
+            //     // "item_size": "260",
+            //     // "orientation": "vertical",
+            //     "h_alignment": "center",
+            //     "item_h_alignment": "center",
+            //     "item_v_alignment": "center",
+            //     "rows": [
+            //         [
+            //             "boss_shuffle"
+            //         ],
+            //         [
+            //             "key_drop_shuffle"
+            //         ],
+            //         [
+            //             "bombless"
+            //         ],
+            //         [
+            //             "reset_er"
+            //         ]
+            //     ]
+            // },
+            // {
+            //     "type": "itemgrid",
+            //     // "item_size": "125",
+            //     // "item_size": "260",
+            //     // "orientation": "vertical",
+            //     "h_alignment": "center",
+            //     "item_h_alignment": "center",
+            //     "item_v_alignment": "center",
+            //     "rows": [
+            //         [
+            //             "shop_sanity"
+            //         ],
+            //         [
+            //             "shop_include_witchhut"
+            //         ],
+            //         [
+            //             "shop_shuffle_capacity"
+            //         ],
+            //         [
+            //             "er_tracking"
+            //         ]
+            //     ]
             }
         ]
     }
