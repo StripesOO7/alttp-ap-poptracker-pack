@@ -882,30 +882,44 @@ NAMED_ENTRANCES = {
 
 INSANITY_ENTRANCES = {}
 
-
-function CreateDoorsLuaitems()
-    table.sort(NAMED_LOCATIONS_KEYS)
-    for _, location in pairs(NAMED_LOCATIONS_KEYS) do
-        -- print(location.name)
-        if string.sub(NAMED_LOCATIONS[location].name, -7,-1) == "_inside" then
-            CreateLuaLocationItems("from_", NAMED_LOCATIONS[location].name, NAMED_LOCATIONS[location].shortname, "inside", NAMED_LOCATIONS[location].room)
-            CreateLuaLocationItems("to_", NAMED_LOCATIONS[location].name, NAMED_LOCATIONS[location].shortname, "inside", NAMED_LOCATIONS[location].room)
-            -- CreateLuaLocationItems(nil, NAMED_LOCATIONS[location].name, NAMED_LOCATIONS[location].shortname, "inside")
-            
-        elseif string.sub(NAMED_LOCATIONS[location].name, -8,-1) == "_outside" then
-            CreateLuaLocationItems("from_", NAMED_LOCATIONS[location].name, NAMED_LOCATIONS[location].shortname, "outside", NAMED_LOCATIONS[location].room)
-            CreateLuaLocationItems("to_", NAMED_LOCATIONS[location].name, NAMED_LOCATIONS[location].shortname, "outside", NAMED_LOCATIONS[location].room)
-            -- CreateLuaLocationItems(nil, NAMED_LOCATIONS[location].name, NAMED_LOCATIONS[location].shortname, "outside")
+if PopVersion < "0.32.0" then
+    --0.31.0
+    function CreateDoorsLuaitems()
+        table.sort(NAMED_LOCATIONS_KEYS)
+        for _, location in pairs(NAMED_LOCATIONS_KEYS) do
+            -- print(location.name)
+            if string.sub(NAMED_LOCATIONS[location].name, -7,-1) == "_inside" then
+                CreateLuaLocationItems("from_", NAMED_LOCATIONS[location].name, NAMED_LOCATIONS[location].shortname, "inside", NAMED_LOCATIONS[location].room)
+                CreateLuaLocationItems("to_", NAMED_LOCATIONS[location].name, NAMED_LOCATIONS[location].shortname, "inside", NAMED_LOCATIONS[location].room)
+                
+            elseif string.sub(NAMED_LOCATIONS[location].name, -8,-1) == "_outside" then
+                CreateLuaLocationItems("from_", NAMED_LOCATIONS[location].name, NAMED_LOCATIONS[location].shortname, "outside", NAMED_LOCATIONS[location].room)
+                CreateLuaLocationItems("to_", NAMED_LOCATIONS[location].name, NAMED_LOCATIONS[location].shortname, "outside", NAMED_LOCATIONS[location].room)
+            end
         end
-        if string.sub(NAMED_LOCATIONS[location].name, -7,-1) == "_inside"  or string.sub(NAMED_LOCATIONS[location].name, -8,-1) == "_outside" then
-            -- print(Tracker:FindObjectForCode(location.name).Active)
-            -- local test = Tracker:FindObjectForCode(location.name)
-            -- test.Active = true--Set("Active", false)
-            -- print(Tracker:FindObjectForCode(location.name).Active)
-        end
-        -- print(Tracker:FindObjectForCode(location.name).Active)
+        return 1
     end
-    return 1
+    
+else
+
+    --0.32.0
+    function CreateDoorsLuaitems()
+        -- print("CREATE LUA ITEMS _____________________________")
+        -- table.sort(NAMED_LOCATIONS_KEYS)
+        for _, location in pairs(NAMED_LOCATIONS) do
+            if string.sub(location.name, -7,-1) == "_inside" then
+            -- print(location.name)
+                CreateLuaLocationItems("from_", location.name, location.shortname, "inside", location.room)
+                CreateLuaLocationItems("to_", location.name, location.shortname, "inside", location.room)
+                
+            elseif string.sub(location.name, -8,-1) == "_outside" then
+            -- print(location.name)
+                CreateLuaLocationItems("from_", location.name, location.shortname, "outside", location.room)
+                CreateLuaLocationItems("to_", location.name, location.shortname, "outside", location.room)
+            end
+        end
+        return 1
+    end
 end
 Tracker.BulkUpdate = true
 CreateDoorsLuaitems()
