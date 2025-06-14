@@ -369,16 +369,16 @@
                 "codes": "smallkeys_setting, smallkeys_own_world"
             },
             {
-                "img": "/images/settings/smallkey-sanity_different_world.png",
-                "inherit_codes": false, 
-                "name": "Small Keysanity",
-                "codes": "smallkeys_setting, smallkeys_other_worlds"
-            },
-            {
                 "img": "/images/settings/smallkey-sanity_anywhere.png",
                 "inherit_codes": false,
                 "name": "Universal Small Keys",
                 "codes": "smallkeys_setting, smallkeys_anywhere"
+            },
+            {
+                "img": "/images/settings/smallkey-sanity_different_world.png",
+                "inherit_codes": false, 
+                "name": "Small Keysanity",
+                "codes": "smallkeys_setting, smallkeys_other_worlds"
             },
             {
                 "img": "/images/settings/smallkey-sanity_start_with.png",
@@ -408,31 +408,31 @@
             {
                 "img": "/images/settings/bigkey-sanity_own_dungeons.png",
                 "inherit_codes": false, 
-                "name": "Small Keysanity",
+                "name": "Bigkey-sanity",
                 "codes": "bigkeys_setting, bigkeys_own_dungeons"
             },
             {
                 "img": "/images/settings/bigkey-sanity_own_world.png",
                 "inherit_codes": false, 
-                "name": "Small Keysanity",
+                "name": "Bigkey-sanity",
                 "codes": "bigkeys_setting, bigkeys_own_world"
-            },
-            {
-                "img": "/images/settings/bigkey-sanity_different_world.png",
-                "inherit_codes": false, 
-                "name": "Small Keysanity",
-                "codes": "bigkeys_setting, bigkeys_other_worlds"
             },
             {
                 "img": "/images/settings/bigkey-sanity_anywhere.png",
                 "inherit_codes": false, 
-                "name": "Small Keysanity",
+                "name": "Bigkey-sanity",
                 "codes": "bigkeys_setting, bigkeys_anywhere"
+            },
+            {
+                "img": "/images/settings/bigkey-sanity_different_world.png",
+                "inherit_codes": false, 
+                "name": "Bigkey-sanity",
+                "codes": "bigkeys_setting, bigkeys_other_worlds"
             },
             {
                 "img": "/images/settings/bigkey-sanity_start_with.png",
                 "inherit_codes": false,
-                "name": "Universal Small Keys",
+                "name": "Bigkey-sanity",
                 "codes": "bigkeys_setting, bigkeys_start_with"
             }
         ]
@@ -445,20 +445,26 @@
             {
                 "img": "/images/settings/map_shuffle_vanilla.png",
                 "inherit_codes": false, 
-                "name": "Small Keysanity",
+                "name": "Map Shuffle",
                 "codes": "maps_setting, maps_vanilla"
             },
             {
                 "img": "/images/settings/map_shuffle_own_dungeons.png",
                 "inherit_codes": false, 
-                "name": "Small Keysanity",
+                "name": "Map Shuffle",
                 "codes": "maps_setting, maps_own_dungeons"
             },
             {
                 "img": "/images/settings/map_shuffle_own_world.png",
                 "inherit_codes": false, 
-                "name": "Small Keysanity",
+                "name": "Map Shuffle",
                 "codes": "maps_setting, maps_own_world"
+            },
+            {
+                "img": "/images/settings/map_shuffle_anywhere.png",
+                "inherit_codes": false,
+                "name": "Map Shuffle",
+                "codes": "maps_setting, maps_anywhere"
             },
             {
                 "img": "/images/settings/map_shuffle_different_world.png",
@@ -467,15 +473,9 @@
                 "codes": "maps_setting, maps_other_worlds"
             },
             {
-                "img": "/images/settings/map_shuffle_anywhere.png",
-                "inherit_codes": false,
-                "name": "Universal Small Keys",
-                "codes": "maps_setting, maps_anywhere"
-            },
-            {
                 "img": "/images/settings/map_shuffle_start_with.png",
                 "inherit_codes": false,
-                "name": "Smallkeys Keyring",
+                "name": "Map Shuffle",
                 "codes": "maps_setting, maps_start_with"
             }
         ]
@@ -488,37 +488,37 @@
             {
                 "img": "/images/settings/compass_shuffle_vanilla.png",
                 "inherit_codes": false, 
-                "name": "Small Keysanity",
+                "name": "Compass Shuffle",
                 "codes": "compass_setting, compass_vanilla"
             },
             {
                 "img": "/images/settings/compass_shuffle_own_dungeons.png",
                 "inherit_codes": false, 
-                "name": "Small Keysanity",
+                "name": "Compass Shuffle",
                 "codes": "compass_setting, compass_own_dungeons"
             },
             {
                 "img": "/images/settings/compass_shuffle_own_world.png",
                 "inherit_codes": false, 
-                "name": "Small Keysanity",
+                "name": "Compass Shuffle",
                 "codes": "compass_setting, compass_own_world"
-            },
-            {
-                "img": "/images/settings/compass_shuffle_different_world.png",
-                "inherit_codes": false, 
-                "name": "Small Keysanity",
-                "codes": "compass_setting, compass_other_worlds"
             },
             {
                 "img": "/images/settings/compass_shuffle_anywhere.png",
                 "inherit_codes": false,
-                "name": "Universal Small Keys",
+                "name": "Compass Shuffle",
                 "codes": "compass_setting, compass_anywhere"
+            },
+            {
+                "img": "/images/settings/compass_shuffle_different_world.png",
+                "inherit_codes": false, 
+                "name": "Compass Shuffle",
+                "codes": "compass_setting, compass_other_worlds"
             },
             {
                 "img": "/images/settings/compass_shuffle_start_with.png",
                 "inherit_codes": false,
-                "name": "Smallkeys Keyring",
+                "name": "Compass Shuffle",
                 "codes": "compass_setting, compass_start_with"
             }
         ]
@@ -626,7 +626,7 @@
         "name": "Autofill Sanities", ///used as tooltip within the settings popup. available on 0.25.3+ 
         "type": "toggle",
         "img": "/images/settings/autofill_sanities.png",
-        "codes": ""
+        "codes": "autofill_sanities"
     },
     {
         "name": "Retro Caves",
