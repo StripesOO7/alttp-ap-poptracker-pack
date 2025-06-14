@@ -108,9 +108,8 @@ function onClear(slot_data)
     PLAYER_ID = Archipelago.PlayerNumber or -1
 	TEAM_NUMBER = Archipelago.TeamNumber or 0
     SLOT_DATA = slot_data
-    if Tracker:FindObjectForCode("autofill_settings").Active == true then
-        autoFill(slot_data)
-    end
+
+    autoFill(slot_data)
     if SKIP_BOSSSHUFFLE == false then
         bossShuffle()
     end
@@ -230,6 +229,7 @@ function onEventsLaunch(key, value)
 end
 
 function autoFill()
+
     if SLOT_DATA == nil  then
         print("its fucked")
         return
@@ -243,6 +243,7 @@ function autoFill()
     -- mapTriforcePiecesAvailable = {} --range 1-90
     -- mapTriforcePiecesRequiered = {} --range 1-90
     local mapDungeonItem = {[0]=0, [1]=1, [2]=1, [3]=1, [4]=1, [5]=2, [6]=0} --og dungeon, own dungeons,
+    local mapDungeonItemSetting = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=6, [6]=5} --og dungeon, own dungeons,
     -- mapStartMode = {[0]=0, [1]=1, [2]=2} --standard, open, inverted
     -- mapItemPool = {[0]=0, [1]=1, [2]=2, [3]=3} --easy, normal. hard, expert
     -- mapItemFunctionality = {[0]=0, [1]=1, [2]=2, [3]=3} --easy, normal. hard, expert
@@ -322,107 +323,113 @@ function autoFill()
     mapToggle = {[0]=false, [1]=true, [2]=true,[3]=true,[4]=true,[6]=true} -- false, true
 
     slotCodes = {
-        crystals_needed_for_gt = {code="gt_access", mapping=nil}, 
-        crystals_needed_for_ganon = {code="ganon_killable", mapping=nil}, 
-        triforce_pieces_required = {code="triforce_pieces_needed", mapping=nil},
-        -- open_pyramid = {code="", mapping=},
-        -- triforce_pieces_mode = {code="", mapping=}, 
-        -- triforce_pieces_percentage = {code="", mapping=}, 
-        -- triforce_pieces_available = {code="triforce_pieces_needed", mapping=}, 
-        -- triforce_pieces_extra = {code="", mapping=}
+        crystals_needed_for_gt = {codes={"gt_access"}, mappings={nil}, autofill="autofill_goal_reqs",}, 
+        crystals_needed_for_ganon = {codes={"ganon_killable"}, mappings={nil}, autofill="autofill_goal_reqs",}, 
+        triforce_pieces_required = {codes={"triforce_pieces_needed"}, mappings={nil}, autofill="autofill_goal_reqs",},
+        -- open_pyramid = {codes={""}, mapping, autofill="",=},
+        -- triforce_pieces_mode = {codes={""}, mapping, autofill="",=}, 
+        -- triforce_pieces_percentage = {codes={""}, mapping, autofill="",=}, 
+        -- triforce_pieces_available = {codes={"triforce_pieces_needed", mapping, autofill="",=}, 
+        -- triforce_pieces_extra = {codes={""}, mapping, autofill="",=}
+        big_key_shuffle = {codes={"big_keys", "bigkeys_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings",}, 
+        small_key_shuffle = {codes={"small_keys", "smallkeys_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings",}, 
+        compass_shuffle = {codes={"compass", "compass_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings",}, 
+        map_shuffle = {codes={"map", "maps_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings",},
+        boss_shuffle = {codes={"boss_shuffle"}, mappings={mapBosses}, autofill="autofill_dungeon_settings",},
+        -- progressive = {codes={"progressive_items"}, mappings={mapStages}, autofill="",}, 
 
 
-        big_key_shuffle = {code="big_keys", mapping=mapDungeonItem}, 
-        small_key_shuffle = {code="small_keys", mapping=mapDungeonItem}, 
-        compass_shuffle = {code="compass", mapping=mapDungeonItem}, 
-        map_shuffle = {code="map", mapping=mapDungeonItem},
-        boss_shuffle = {code="boss_shuffle", mapping=mapBosses},
-        -- progressive = {code="progressive_items", mapping=mapStages}, 
+        -- retro_bow = {codes={""}, mapping, autofill="",=}, 
+        retro_caves = {codes={"retro_caves"}, mappings={mapToggle}, autofill="autofill_modes",}, 
 
 
-        -- retro_bow = {code="", mapping=}, 
-        retro_caves = {code="retro_caves", mapping=mapToggle}, 
-
-
-        -- pot_shuffle = {code="pot_shuffle", mapping=}, 
-        key_drop_shuffle = {code="key_drop_shuffle", mapping=mapToggle},
-        bombless_start = {code="bombless", mapping=mapToggle},
-        dark_room_logic = {code="dark_mode", mapping=mapDarkRoomLogic},
-        swordless = {code="swordless", mapping=mapToggle}, 
-        shop_item_slots = {code="shop_sanity", mapping=nil},
-        -- randomize_shop_inventories = {code="", mapping=mapToggle}, 
-        -- shuffle_shop_inventories = {code="", mapping=mapToggle}, 
-        shuffle_capacity_upgrades = {code="shop_shuffle_capacity", mapping=mapToggle},
-        entrance_shuffle = {code="er_tracking", mapping=mapEntranceShuffle}, 
-        goal = {code="goal", mapping=mapGoal}, 
-        mode = {code="start_option", mapping=mapStages},
-        enemy_shuffle = {code="enemizer", mapping=mapToggle}, 
+        -- pot_shuffle = {codes={"pot_shuffle"}, mapping, autofill="",=}, 
+        key_drop_shuffle = {codes={"key_drop_shuffle"}, mappings={mapToggle}, autofill="autofill_dungeon_settings",},
+        bombless_start = {codes={"bombless"}, mappings={mapToggle}, autofill="autofill_modes",},
+        dark_room_logic = {codes={"dark_mode"}, mappings={mapDarkRoomLogic}, autofill="autofill_modes",},
+        swordless = {codes={"swordless"}, mappings={mapToggle}, autofill="autofill_modes",}, 
+        shop_item_slots = {codes={"shop_sanity"}, mappings={nil}, autofill="autofill_sanities",},
+        -- randomize_shop_inventories = {codes={""}, mappings={mapToggle}, autofill="autofill_sanities",}, 
+        -- shuffle_shop_inventories = {codes={""}, mappings={mapToggle}, autofill="autofill_sanities",}, 
+        shuffle_capacity_upgrades = {codes={"shop_shuffle_capacity"}, mappings={mapToggle}, autofill="autofill_misc",},
+        entrance_shuffle = {codes={"er_tracking"}, mappings={mapEntranceShuffle}, autofill="autofill_misc",}, 
+        goal = {codes={"goal"}, mappings={mapGoal}, autofill="autofill_goal_reqs",}, 
+        mode = {codes={"start_option"}, mappings={mapStages}, autofill="autofill_modes",},
+        enemy_shuffle = {codes={"enemizer"}, mappings={mapToggle}, autofill="autofill_misc",}, 
     }
-
 
     -- print(dump_table(SLOT_DATA))
     -- print(Tracker:FindObjectForCode("autofill_settings").Active)
-    if Tracker:FindObjectForCode("autofill_settings").Active == true then
-        for settings_name , settings_value in pairs(SLOT_DATA) do
-            if type(settings_value) == "table" then
-                if settings_name == "bosses" then
+    for settings_name , settings_value in pairs(SLOT_DATA) do
+        if type(settings_value) == "table" then
+            if settings_name == "bosses" then
+                if Tracker:FindObjectForCode("autofill_dungeon_settings").Active then
                     SKIP_BOSSSHUFFLE = true
                     for dungeon, boss in pairs(settings_value) do
                         Tracker:FindObjectForCode(mapDungeon[dungeon][1]).CurrentStage = mapBoss[boss]
                     end
-                elseif settings_name == "prizes" then
-                    for dungeon, reward in pairs(settings_value) do
-                        Tracker:FindObjectForCode(mapDungeon[dungeon][2]).CurrentStage = mapRewards[reward]
-                    end
-                    
+                end
+            elseif settings_name == "prizes" then
+                for dungeon, reward in pairs(settings_value) do
+                    Tracker:FindObjectForCode(mapDungeon[dungeon][2]).CurrentStage = mapRewards[reward]
                 end
                 
-            -- print(k, v)
-            -- if settings_name == "crystals_needed_for_gt" 
-            -- or settings_name == "crystals_needed_for_ganon" 
-            -- or settings_name == "triforce_pieces_required" then
-            --     Tracker:FindObjectForCode(slotCodes[settings_name].code).AcquiredCount = settings_value
+            end
+            
+        -- print(k, v)
+        -- if settings_name == "crystals_needed_for_gt" 
+        -- or settings_name == "crystals_needed_for_ganon" 
+        -- or settings_name == "triforce_pieces_required" then
+        --     Tracker:FindObjectForCode(slotCodes[settings_name].code).AcquiredCount = settings_value
 
-            -- elseif settings_name == "shop_shuffle" then
-            --     item = Tracker:FindObjectForCode(slotCodes[settings_name].code)
-            --     if settings_value ~= "none" then
-            --         item.Active = true
-            --     elseif settings_value == "none" then
-            --         item.Active = false
-            --     end
-            else
-                if settings_name == "shop_item_slots" then
-                    if settings_value > 0 then
-                        Tracker:FindObjectForCode("shop_sanity").Active = true
-                        Tracker:FindObjectForCode("shop_sanity").AcquiredCount = settings_value
-                    else
-                        Tracker:FindObjectForCode("shop_sanity").Active = false
-                        Tracker:FindObjectForCode("shop_sanity").AcquiredCount = settings_value 
-                    end
-                elseif slotCodes[settings_name] then
-                    item = Tracker:FindObjectForCode(slotCodes[settings_name].code)
-                    if item.Type == "toggle" then
-                        -- print("toggle", settings_name, settings_value)
-                        item.Active = slotCodes[settings_name].mapping[settings_value]
-                    elseif slotCodes[settings_name].mapping == nil then
-                        -- print("toggle", settings_name, settings_value)
-                        item.AcquiredCount = settings_value
-                    else 
-                        -- print("else", settings_name, settings_value)
-                        -- print(k,v,Tracker:FindObjectForCode(slotCodes[k].code).CurrentStage, slotCodes[k].mapping[v])
-                        item.CurrentStage = slotCodes[settings_name].mapping[settings_value]
+        -- elseif settings_name == "shop_shuffle" then
+        --     item = Tracker:FindObjectForCode(slotCodes[settings_name].code)
+        --     if settings_value ~= "none" then
+        --         item.Active = true
+        --     elseif settings_value == "none" then
+        --         item.Active = false
+        --     end
+        else
+            if settings_name == "shop_item_slots" and Tracker:FindObjectForCode(slotCodes[settings_name].autofill).Active then
+                Tracker:FindObjectForCode("shop_sanity").Active = (settings_value > 0)
+                Tracker:FindObjectForCode("shuffle_item_slots").BadgeText = settings_value
+            elseif slotCodes[settings_name] then
+                for index, _ in ipairs(slotCodes[settings_name].codes) do
+                    
+                    -- print("settings_name", settings_name)
+                    -- print("slotCodes[settings_name]", slotCodes[settings_name])
+                    -- print("slotCodes[settings_name].code", slotCodes[settings_name].code)
+                    -- print("slotCodes[settings_name].code", slotCodes[settings_name].code[1])
+                    -- print("slotCodes[settings_name].autoFill", slotCodes[settings_name].autofill)
+                    print("<--------------------------------->")
+                    if Tracker:FindObjectForCode(slotCodes[settings_name].autofill).Active then
+                        print("settings_name", settings_name)
+                        local item = Tracker:FindObjectForCode((slotCodes[settings_name].codes)[index])
+                        if item.Type == "toggle" then
+                            -- print("toggle", settings_name, settings_value)
+                            item.Active = (slotCodes[settings_name].mappings[index])[settings_value]
+                        elseif slotCodes[settings_name].mappings[index] == nil then
+                            -- print("toggle", settings_name, settings_value)
+                            item.AcquiredCount = settings_value
+                        else 
+                            -- print("else", settings_name, settings_value)
+                            -- print(k,v,Tracker:FindObjectForCode(slotCodes[k].code).CurrentStage, slotCodes[k].mapping[v])
+                            item.CurrentStage = (slotCodes[settings_name].mappings[index])[settings_value]
+                        end
                     end
                 end
             end
         end
+    end
+    if Tracker:FindObjectForCode("autofill_medallions").Active then
         if SLOT_DATA["mm_medalion"] == SLOT_DATA["tr_medalion"] then
             Tracker:FindObjectForCode(mapMedallions[SLOT_DATA["mm_medalion"]]).CurrentStage = 3
         else
             Tracker:FindObjectForCode(mapMedallions[SLOT_DATA["mm_medalion"]]).CurrentStage = 2
             Tracker:FindObjectForCode(mapMedallions[SLOT_DATA["tr_medalion"]]).CurrentStage = 1
         end
-        goal_check()
     end
+    goal_check()
 end
 
 
@@ -443,7 +450,7 @@ function bombless()
 end
 
 function goal_check()
-    if SLOT_DATA ~= nil then
+    if SLOT_DATA ~= nil  and Tracker:FindObjectForCode("autofill_goal_reqs").Active then
         local goal = Tracker:FindObjectForCode("goal")
         local ganon = Tracker:FindObjectForCode("ganon_killable")
         local triforce = Tracker:FindObjectForCode("triforce_pieces_needed")
@@ -508,10 +515,25 @@ function updateHints(locationID, status)
     end
 end
 
+function setAllAutofill()
+    local set_all = Tracker:FindObjectForCode("autofill_all_settings").Active
+    Tracker:FindObjectForCode("autofill_dungeon_settings").Active = set_all
+    Tracker:FindObjectForCode("autofill_goal_reqs").Active = set_all
+    Tracker:FindObjectForCode("autofill_medallions").Active = set_all
+    Tracker:FindObjectForCode("autofill_modes").Active = set_all
+    Tracker:FindObjectForCode("autofill_misc").Active = set_all
+    Tracker:FindObjectForCode("autofill_sanities").Active = set_all
+end
 
 ScriptHost:AddWatchForCode("bombless start handler", "bombless", bombless)
 ScriptHost:AddWatchForCode("goal handler", "goal", goal_check)
-ScriptHost:AddWatchForCode("settings autofill handler", "autofill_settings", autoFill)
+ScriptHost:AddWatchForCode("settings autofill_dungeon_settings", "autofill_dungeon_settings", autoFill)
+ScriptHost:AddWatchForCode("settings autofill_goal_reqs", "autofill_goal_reqs", autoFill)
+ScriptHost:AddWatchForCode("settings autofill_medallions", "autofill_medallions", autoFill)
+ScriptHost:AddWatchForCode("settings autofill_modes", "autofill_modes", autoFill)
+ScriptHost:AddWatchForCode("settings autofill_misc", "autofill_misc", autoFill)
+ScriptHost:AddWatchForCode("settings autofill_sanities", "autofill_sanities", autoFill)
+ScriptHost:AddWatchForCode("set all autofill", "autofill_all_settings", setAllAutofill)
 Archipelago:AddClearHandler("clear handler", onClear)
 Archipelago:AddItemHandler("item handler", onItem)
 Archipelago:AddLocationHandler("location handler", onLocation)
