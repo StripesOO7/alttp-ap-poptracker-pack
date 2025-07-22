@@ -1,6 +1,25 @@
 {
 	"versions": [
 		{
+			"package_version": "0.3.2",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.3.2/alttp-ap-tracker-v0.3.2.zip",
+			"sha256": "346bc438be7e6fe950ffe0cfe646f4d9bd324abda6ba0c43d365fb8428af302c",
+			"changelog": [
+				"bugfixes for ER and some other logic issues",
+				"",
+				"fixed:",
+				"- paradox cave pathing got more granular to fix some pathing issues to some exits and within",
+				"- some locations where missplaced",
+				"- updated the settings pop-up",
+				"- made auto fill settings moire granular. explanaitions will be added later",
+				"- made vanilla bosses also reflect on the icons in the bottom instead of showing just the ?",
+				"",
+				"added:",
+				"- hint glowing on locations. Locations get a slight glow around them when the have a hint associated with them and remove it when hint is collected.",
+				"- full auto ER tracking (if entrances are too close to each other they might cause issues with which entrances is linked to which exit)",
+			]
+		},
+		{
 			"package_version": "0.3.1",
 			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.3.1/alttp-ap-tracker-v0.3.1.zip",
 			"sha256": "cc5144369b3196ff263eb1ba8ecf10efc33eabe20fcecd668d20bc29313293cb",
