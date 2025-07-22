@@ -74,7 +74,7 @@ ip_big_chest_room:connect_one_way("IP - Big Chest", function()
 end)
 ip_above_boss_dropdown:connect_one_way(ip_boss_dropdown, function(keys) 
     return all(
-        has("ip_smallkey", keys + 1, 2, keys + 1, 4),
+        has("ip_smallkey", keys + 1, 2, keys + 1, 5),
         has("ip_bigkey")
     ), KDSreturn(keys + 1, keys + 1) 
 end)
