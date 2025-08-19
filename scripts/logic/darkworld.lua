@@ -297,7 +297,6 @@ end)
 dark_lake_hylia:connect_two_ways(ice_palace_island, function() 
     return all(
         canSwim(), 
-        inverted(),
         can_interact("dark",1 )
     ) 
 end)
@@ -319,7 +318,6 @@ ip_entrance_outside:connect_two_ways_entrance("Ice Palace", ip_entrance_inside)
 -- dark_icerod_area
 dark_icerod_area:connect_one_way(ice_palace_island, function()
     return all(
-        inverted(),
         has("flippers"),
         can_interact("dark",1 )
     )
@@ -794,8 +792,7 @@ end)
 pod_area:connect_one_way(ice_palace_island, function()
     return all(
         has("flippers"),
-        can_interact("dark",5),
-        inverted()
+        can_interact("dark",5)
     )
 end)
 pod_area:connect_one_way(dark_icerod_area, function()
