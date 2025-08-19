@@ -1117,7 +1117,7 @@ light_death_mountain_left_bottom:connect_two_ways(spec_rock_top_entrance_outside
 light_death_mountain_left_bottom:connect_two_ways(old_man_home_top_outside)
 light_death_mountain_left_bottom:connect_one_way(spec_rock_ledge_entrance)
 light_death_mountain_left_bottom:connect_one_way(spec_rock_ledge_exit)
-light_death_mountain_left_bottom:connect_one_way("Old Man Item", function() return CanReach(old_man_cave_left_inside) end)
+light_death_mountain_left_bottom:connect_one_way("Old Man Item", function() return CanReach(old_man_cave) end)
 light_death_mountain_left_bottom:connect_one_way(spectacle_rock_top, function() 
     return all(
         openOrStandard(), 
