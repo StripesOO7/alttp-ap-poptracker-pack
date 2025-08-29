@@ -335,10 +335,14 @@ function enemizerCheck(item)
     end
 end
 
-function can_interact(world, glitch_lvl)
-    if (world == "light" and openOrStandard()) or (world == "dark" and inverted()) then
+function can_interact(worldstate, glitch_lvl)
+    -- print("worldstate:", worldstate)
+    -- print("pearl:", Tracker:FindObjectForCode("pearl").Active)
+    -- print("openOrStandard:", openOrStandard())
+    -- print("inverted:", inverted())
+    if (worldstate == "light" and openOrStandard()) or (worldstate == "dark" and inverted()) then
         return true
-    elseif (world == "light" and inverted()) or (world == "dark" and openOrStandard()) then
+    elseif (worldstate == "light" and inverted()) or (worldstate == "dark" and openOrStandard()) then
         if Tracker:FindObjectForCode("pearl").Active then
             return true
         end

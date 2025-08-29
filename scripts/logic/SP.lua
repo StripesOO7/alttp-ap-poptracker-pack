@@ -13,7 +13,7 @@ local sp_boss_room = alttp_location.new("sp_boss_room")
 
 sp_entrance_inside:connect_two_ways(sp_first_room, function() 
     return all(
-        can_interact("dark", 1),
+        can_interact(sp_entrance_inside.worldstate, 1),
         has("flippers"),
         CanReach(dam_inside),
         any(
@@ -24,7 +24,7 @@ sp_entrance_inside:connect_two_ways(sp_first_room, function()
 end)
 
 sp_first_room:connect_two_ways(sp_hallway_before_first_trench, function(keys) return has("sp_smallkey", keys + 1, 1, keys + 1, 1), KDSreturn(keys + 1, keys + 1) end)
-sp_first_room:connect_one_way("SP - Entrance Chest", function() return all(dealDamage(), can_interact("dark",1 )) end)
+sp_first_room:connect_one_way("SP - Entrance Chest", function() return all(dealDamage(), can_interact(sp_first_room.worldstate, 1)) end)
 
 sp_hallway_before_first_trench:connect_two_ways(sp_first_trench, function(keys) return has("sp_smallkey", keys, 1, keys + 1, 2), KDSreturn(keys, keys + 1) end)
 sp_hallway_before_first_trench:connect_one_way("SP - Pot Row Key")

@@ -30,8 +30,8 @@ local gt_top_desert_refight = alttp_location.new("gt_top_desert_refight")
 local gt_top_validation = alttp_location.new("gt_top_validation")
 local gt_top_aga2 = alttp_location.new("gt_top_aga2")
 
-gt_entrance_inside:connect_two_ways(gt_bottom_main_room, function() return all(can_interact("dark", 1), openOrStandard()) end)
-gt_entrance_inside:connect_two_ways(gt_bottom_main_room, function() return all(can_interact("light", 1), inverted()) end)
+gt_entrance_inside:connect_two_ways(gt_bottom_main_room, function() return all(can_interact(gt_entrance_inside.worldstate, 1), openOrStandard()) end)
+gt_entrance_inside:connect_two_ways(gt_bottom_main_room, function() return all(can_interact(gt_entrance_inside.worldstate, 1), inverted()) end)
 gt_bottom_main_room:connect_two_ways(gt_bottom_bobs_torch)
 gt_bottom_main_room:connect_two_ways(gt_bottom_hope_room)
 gt_bottom_main_room:connect_two_ways(gt_top_entrance)
@@ -43,7 +43,7 @@ gt_bottom_bobs_torch:connect_one_way("GT - Bob's Torch", function()
     return any(
         all(
             has("boots"),
-            can_interact("dark",1 )
+            can_interact(gt_bottom_bobs_torch.worldstate, 1)
         ),
         AccessibilityLevel.Inspect
     ) 
@@ -88,7 +88,7 @@ gt_bottom_double_switch_room:connect_one_way("GT - Double Switch Pot Key")--, fu
 gt_bottom_firesnake_room:connect_two_ways(gt_bottom_teleporter_puzzle_room, function(keys) return has("gt_smallkey", keys + countDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 4, keys + countDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 8), KDSreturn(keys + 1, keys + 1) end)
 gt_bottom_firesnake_room:connect_one_way("GT - Firesnake Room")
 
-gt_bottom_teleporter_puzzle_room:connect_two_ways(gt_bottom_randomizer_room, function() return all(has("bombs"), can_interact("dark", 1)) end)
+gt_bottom_teleporter_puzzle_room:connect_two_ways(gt_bottom_randomizer_room, function() return all(has("bombs"), can_interact(gt_bottom_teleporter_puzzle_room.worldstate, 1)) end)
 gt_bottom_teleporter_puzzle_room:connect_one_way(gt_bottom_invisibile_bonk_room)
 
 gt_bottom_randomizer_room:connect_one_way("GT - Randomizer Room Top Left")
@@ -96,9 +96,9 @@ gt_bottom_randomizer_room:connect_one_way("GT - Randomizer Room Top Right")
 gt_bottom_randomizer_room:connect_one_way("GT - Randomizer Room Bottom Left")
 gt_bottom_randomizer_room:connect_one_way("GT - Randomizer Room Bottom Right")
 
-gt_bottom_hope_room:connect_two_ways(gt_bottom_tile_room, function() return all(has("somaria"),can_interact("dark",1 )) end)
-gt_bottom_hope_room:connect_one_way("GT - Hope Room Left", function() return can_interact("dark",1 ) end)
-gt_bottom_hope_room:connect_one_way("GT - Hope Room Right", function() return can_interact("dark",1 ) end)
+gt_bottom_hope_room:connect_two_ways(gt_bottom_tile_room, function() return all(has("somaria"),can_interact(gt_bottom_hope_room.worldstate, 1)) end)
+gt_bottom_hope_room:connect_one_way("GT - Hope Room Left", function() return can_interact(gt_bottom_hope_room.worldstate, 1) end)
+gt_bottom_hope_room:connect_one_way("GT - Hope Room Right", function() return can_interact(gt_bottom_hope_room.worldstate, 1) end)
 
 gt_bottom_tile_room:connect_two_ways(gt_bottom_torch_puzzle, function(keys) return has("gt_smallkey", keys + countDoneDeadends(1, "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 3, keys + countDoneDeadends(1, "@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room", "@Ganon's Tower Bottom Left/Map Chest/Map Chest", "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 7), KDSreturn(keys + 1, keys + 1) end)
 gt_bottom_tile_room:connect_one_way("GT - Tile Room Chest")
@@ -141,7 +141,7 @@ gt_top_entrance:connect_two_ways(gt_top_gauntlet, function()
     return all(
         has("gt_bigkey"), 
         enemizerCheck("bow"),
-        can_interact("dark",1 )
+        can_interact(gt_top_entrance.worldstate, 1)
     ) 
 end)
 gt_top_gauntlet:connect_two_ways(gt_top_desert_refight, function() return getBossRef("gt_lanmo") end)

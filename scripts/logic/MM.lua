@@ -24,7 +24,7 @@ mm_entrance_inside:connect_two_ways(mm_main_room, function()
             has("hookshot"),
             has("boots")
         ),
-        can_interact("dark", 1)
+        can_interact(mm_entrance_inside.worldstate, 1)
     )
 end)
 mm_main_room:connect_two_ways(mm_map_room_bottom)

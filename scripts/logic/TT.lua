@@ -15,17 +15,17 @@ local tt_boss_room = alttp_location.new("tt_boss_room")
 
 tt_entrance_inside:connect_two_ways(tt_front_bottom_left)
 tt_front_bottom_left:connect_two_ways(tt_front_top_left)
-tt_front_bottom_left:connect_one_way("TT - Map Chest", function() return can_interact("dark", 1) end)
+tt_front_bottom_left:connect_one_way("TT - Map Chest", function() return can_interact(tt_front_bottom_left.worldstate, 1) end)
 
 tt_front_top_left:connect_two_ways(tt_front_top_right)
-tt_front_top_left:connect_one_way("TT - Ambush Chest", function() return can_interact("dark", 1) end)
+tt_front_top_left:connect_one_way("TT - Ambush Chest", function() return can_interact(tt_front_top_left.worldstate, 1) end)
 
 tt_front_top_right:connect_two_ways(tt_front_bottom_right)
-tt_front_top_right:connect_two_ways(tt_back_hallway, function() return all(has("tt_bigkey"), can_interact("dark", 1)) end)
+tt_front_top_right:connect_two_ways(tt_back_hallway, function() return all(has("tt_bigkey"), can_interact(tt_front_top_right.worldstate, 1)) end)
 
 tt_front_bottom_right:connect_one_way(tt_front_bottom_left)
-tt_front_bottom_right:connect_one_way("TT - Compass Chest", function() return can_interact("dark", 1) end)
-tt_front_bottom_right:connect_one_way("TT - Big Key Chest", function() return can_interact("dark", 1) end)
+tt_front_bottom_right:connect_one_way("TT - Compass Chest", function() return can_interact(tt_front_bottom_right.worldstate, 1) end)
+tt_front_bottom_right:connect_one_way("TT - Big Key Chest", function() return can_interact(tt_front_bottom_right.worldstate, 1) end)
 
 
 

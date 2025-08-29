@@ -144,6 +144,7 @@ local function SaveFunc(self)
         BadgeText = self.BadgeText,
         Direction = self.ItemState.Direction,
         Room = self.ItemState.Room,
+        Worldstate = self.ItemState.Worldstate,
     }
     -- print("SaveFunc")
 end
@@ -159,6 +160,7 @@ local function LoadFunc(self, data)
         self.ItemState.Shortname = data.Shortname
         self.ItemState.Direction = data.Direction
         self.ItemState.Room = data.Room
+        self.ItemState.Worldstate = data.Worldstate
         self.Icon = ImageReference:FromPackRelativePath(data.Icon)
         if data.BadgeText ~= nil then
             self.BadgeText = data.BadgeText
@@ -187,7 +189,7 @@ end
 -- LuaLocationItems = {}
 -- LuaLocationItems.__index = LuaLocationItems
 
-function CreateLuaLocationItems(direction, code, shortname, side, room)
+function CreateLuaLocationItems(direction, location_obj, shortname, side, room, worldstate)
     local self = ScriptHost:CreateLuaItem()
     -- self.Type = "custom"
     self.Name = direction .. location_obj.name --code -- 
@@ -199,7 +201,8 @@ function CreateLuaLocationItems(direction, code, shortname, side, room)
         Target = nil,
         Shortname = location_obj.shortname,
         Direction = direction,
-        Room = room,
+        Room = location_obj.room,
+        Worldstate = location_obj.worldstate
     }
     -- self.Active = false
     self.ItemState.Side = side
