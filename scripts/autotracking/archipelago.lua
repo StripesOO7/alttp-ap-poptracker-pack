@@ -17,6 +17,11 @@ local THIRDSTAGE = {
     [6] = 6, --mirror shield
     [35] = 35 --red mail
 }
+local MEDALLIONS = {
+    [15] = "bombos",
+    [16] = "ether",
+    [17] = "quake"
+}
 if Highlight then
     highlight_lvl= {
         [0] = Highlight.Unspecified,
@@ -27,7 +32,71 @@ if Highlight then
     }
 end
 -- SLOT_DATA = {}
+local set_item_type = {
+    ["toggle"] = function(item_id, item_obj)
+        item_obj.Active = true
+        if (SECONDSTAGE[item_id] ~= nil and item_obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
+            item_obj.CurrentStage = 2
+        elseif (THIRDSTAGE[item_id] ~= nil and item_obj.CurrentStage < 3 ) then -- tempered sword, red mail, mirror shield
+            item_obj.CurrentStage = 3
+        elseif (item_id == 3  and item_obj.CurrentStage < 4) then --golden sword
+            item_obj.CurrentStage = 4
+        end
+    end,
+    ["progressive_toggle"] = function(item_id, item_obj)
+        if (item_id == 88 and item_obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
+            item_obj.CurrentStage = 2
+        elseif (item_id == 59 and item_obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
+            item_obj.Active = true
+            item_obj.CurrentStage = 2
+        elseif item_obj.Active == true then
+            item_obj.CurrentStage = item_obj.CurrentStage + 1
+        else
+            item_obj.Active = true
+        end
+    end,
+    ["consumable"] = function(item_id, item_obj)
+        if item_id == 76 or item_id == 77 then -- +50/70 capacity upgrades
+            item_obj.AcquiredCount = item_obj.MaxCount
+        else
+            item_obj.AcquiredCount = item_obj.AcquiredCount + item_obj.Increment
+        end
+    end,
+    ["progressive"] = function(item_id, item_obj)
+        if item_obj.Active == true then
+            item_obj.CurrentStage = item_obj.CurrentStage + 1
+        else
+            item_obj.Active = true
+        end
+    end
+}
 
+local clear_item_type = {
+    ["toggle"] = function(item_obj, item_code)
+        if MEDALLIONS[item_code] ~= nil then
+            item_obj.CurrentStage = 0
+        end
+        item_obj.Active = false
+        if item_obj == "shop_shuffle" then
+            item_obj.AcquiredCount = 0
+        end
+    end,
+    ["progressive"] = function(item_obj, item_code)
+        item_obj.CurrentStage = 0
+        item_obj.Active = false
+    end,
+    ["consumable"] = function(item_obj, item_code)
+        if item_obj.MinCount then
+            item_obj.AcquiredCount = item_obj.MinCount
+        else
+            item_obj.AcquiredCount = 0
+        end
+    end,
+    ["progressive_toggle"] = function(item_obj, item_code)
+        item_obj.CurrentStage = 0
+        item_obj.Active = false
+    end
+}
 function has_value (t, val)
     for i, v in ipairs(t) do
         if v == val then return true end
@@ -80,27 +149,28 @@ function onClear(slot_data)
             if item_code and item[2] then
                 local item_obj = Tracker:FindObjectForCode(item_code)
                 if item_obj then
-                    if item[2] == "toggle" then
-                        if item_code == "bombos" or item_code == "ether" or item_code == "quake" then
-                            item_obj.CurrentStage = 0
-                        end
-                        item_obj.Active = false
-                        if item_obj == "shop_shuffle" then
-                            item_obj.AcquiredCount = 0
-                        end
-                    elseif item[2] == "progressive" then
-                        item_obj.CurrentStage = 0
-                        item_obj.Active = false
-                    elseif item[2] == "consumable" then
-                        if item_obj.MinCount then
-                            item_obj.AcquiredCount = item_obj.MinCount
-                        else
-                            item_obj.AcquiredCount = 0
-                        end
-                    elseif item[2] == "progressive_toggle" then
-                        item_obj.CurrentStage = 0
-                        item_obj.Active = false
-                    end
+                    clear_item_type[item[2]](item_obj, item_code)
+                    -- if item[2] == "toggle" then
+                    --     if MEDALLIONS[item_code] ~= nil then
+                    --         item_obj.CurrentStage = 0
+                    --     end
+                    --     item_obj.Active = false
+                    --     if item_obj == "shop_shuffle" then
+                    --         item_obj.AcquiredCount = 0
+                    --     end
+                    -- elseif item[2] == "progressive" then
+                    --     item_obj.CurrentStage = 0
+                    --     item_obj.Active = false
+                    -- elseif item[2] == "consumable" then
+                    --     if item_obj.MinCount then
+                    --         item_obj.AcquiredCount = item_obj.MinCount
+                    --     else
+                    --         item_obj.AcquiredCount = 0
+                    --     end
+                    -- elseif item[2] == "progressive_toggle" then
+                    --     item_obj.CurrentStage = 0
+                    --     item_obj.Active = false
+                    -- end
                 end
             end
         end
@@ -110,6 +180,7 @@ function onClear(slot_data)
     SLOT_DATA = slot_data
 
     autoFill(slot_data)
+    bombless()
     if SKIP_BOSSSHUFFLE == false then
         bossShuffle()
     end
@@ -136,43 +207,44 @@ function onItem(index, item_id, item_name, player_number)
         -- print(item[1], item[2])
         local item_obj = Tracker:FindObjectForCode(item_code)
         if item_obj then
-            if item[2] == "toggle" then
-                -- print("toggle")
-                item_obj.Active = true
-                if (SECONDSTAGE[item_id] == item_id and item_obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
-                    item_obj.CurrentStage = 2
-                elseif (THIRDSTAGE[item_id] == item_id and item_obj.CurrentStage < 3 ) then -- tempered sword, red mail, mirror shield
-                    item_obj.CurrentStage = 3
-                elseif (item_id == 3  and item_obj.CurrentStage < 4) then --golden sword
-                    item_obj.CurrentStage = 4
-                end
-            elseif item[2] == "progressive" then
-                -- print("progressive")
-                if item_obj.Active == true then
-                    item_obj.CurrentStage = item_obj.CurrentStage + 1
-                else
-                    item_obj.Active = true
-                end
-            elseif item[2] == "consumable" then
-                -- print("consumable")
-                if item_id == 76 or item_id == 77 then -- +50/70 capacity upgrades
-                    item_obj.AcquiredCount = item_obj.MaxCount
-                else
-                    item_obj.AcquiredCount = item_obj.AcquiredCount + item_obj.Increment
-                end
-            elseif item[2] == "progressive_toggle" then
-                -- print("progressive_toggle")
-                if (item_id == 88 and item_obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
-                    item_obj.CurrentStage = 2
-                elseif (item_id == 59 and item_obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
-                    item_obj.Active = true
-                    item_obj.CurrentStage = 2
-                elseif item_obj.Active == true then
-                    item_obj.CurrentStage = item_obj.CurrentStage + 1
-                else
-                    item_obj.Active = true
-                end
-            end
+            set_item_type[item[2]](item_id, item_obj)
+            -- if item[2] == "toggle" then
+            --     -- print("toggle")
+            --     item_obj.Active = true
+            --     if (SECONDSTAGE[item_id] ~= nil and item_obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
+            --         item_obj.CurrentStage = 2
+            --     elseif (THIRDSTAGE[item_id] ~= nil and item_obj.CurrentStage < 3 ) then -- tempered sword, red mail, mirror shield
+            --         item_obj.CurrentStage = 3
+            --     elseif (item_id == 3  and item_obj.CurrentStage < 4) then --golden sword
+            --         item_obj.CurrentStage = 4
+            --     end
+            -- elseif item[2] == "progressive" then
+            --     -- print("progressive")
+            --     if item_obj.Active == true then
+            --         item_obj.CurrentStage = item_obj.CurrentStage + 1
+            --     else
+            --         item_obj.Active = true
+            --     end
+            -- elseif item[2] == "consumable" then
+            --     -- print("consumable")
+            --     if item_id == 76 or item_id == 77 then -- +50/70 capacity upgrades
+            --         item_obj.AcquiredCount = item_obj.MaxCount
+            --     else
+            --         item_obj.AcquiredCount = item_obj.AcquiredCount + item_obj.Increment
+            --     end
+            -- elseif item[2] == "progressive_toggle" then
+            --     -- print("progressive_toggle")
+            --     if (item_id == 88 and item_obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
+            --         item_obj.CurrentStage = 2
+            --     elseif (item_id == 59 and item_obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
+            --         item_obj.Active = true
+            --         item_obj.CurrentStage = 2
+            --     elseif item_obj.Active == true then
+            --         item_obj.CurrentStage = item_obj.CurrentStage + 1
+            --     else
+            --         item_obj.Active = true
+            --     end
+            -- end
         else
             print(string.format("onItem: could not find object for code %s", item_code[1]))
         end
@@ -454,9 +526,10 @@ function goal_check()
         local goal = Tracker:FindObjectForCode("goal")
         local ganon = Tracker:FindObjectForCode("ganon_killable")
         local triforce = Tracker:FindObjectForCode("triforce_pieces_needed")
-        if goal.CurrentStage == 3 or 
-        goal.CurrentStage == 5 or 
-        goal.CurrentStage == 6 then
+        local goal_stage = goal.CurrentStage
+        if goal_stage == 3 or 
+        goal_stage == 5 or 
+        goal_stage == 6 then
             ganon.AcquiredCount=0
             triforce.AcquiredCount=SLOT_DATA["triforce_pieces_required"]
         else
