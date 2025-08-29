@@ -1,4 +1,7 @@
-require("scripts/logic/location_definition")
+require("scripts.logic.location_definition_light")
+require("scripts.logic.location_definition_dark")
+require("scripts.logic.location_definition_dungeons")
+require("scripts.logic.location_definition_teleporters")
 require("scripts/logic/darkworld")
 require("scripts/logic/lightworld")
 require("scripts/logic/HC")
