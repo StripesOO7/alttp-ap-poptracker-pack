@@ -887,14 +887,15 @@ if PopVersion < "0.32.0" then
     function CreateDoorsLuaitems()
         table.sort(NAMED_LOCATIONS_KEYS)
         for _, location in pairs(NAMED_LOCATIONS_KEYS) do
+            local location_obj = NAMED_LOCATIONS[location]
             -- print(location.name)
-            if string.sub(NAMED_LOCATIONS[location].name, -7,-1) == "_inside" then
-                CreateLuaLocationItems("from_", NAMED_LOCATIONS[location].name, NAMED_LOCATIONS[location].shortname, "inside", NAMED_LOCATIONS[location].room)
-                CreateLuaLocationItems("to_", NAMED_LOCATIONS[location].name, NAMED_LOCATIONS[location].shortname, "inside", NAMED_LOCATIONS[location].room)
+            if string.sub(location_obj.name, -7,-1) == "_inside" then
+                CreateLuaLocationItems("from_", location_obj, "inside")
+                CreateLuaLocationItems("to_", location_obj, "inside")
                 
-            elseif string.sub(NAMED_LOCATIONS[location].name, -8,-1) == "_outside" then
-                CreateLuaLocationItems("from_", NAMED_LOCATIONS[location].name, NAMED_LOCATIONS[location].shortname, "outside", NAMED_LOCATIONS[location].room)
-                CreateLuaLocationItems("to_", NAMED_LOCATIONS[location].name, NAMED_LOCATIONS[location].shortname, "outside", NAMED_LOCATIONS[location].room)
+            elseif string.sub(location_obj.name, -8,-1) == "_outside" then
+                CreateLuaLocationItems("from_", location_obj, "outside")
+                CreateLuaLocationItems("to_", location_obj, "outside")
             end
         end
         return 1
@@ -909,13 +910,13 @@ else
         for _, location in pairs(NAMED_LOCATIONS) do
             if string.sub(location.name, -7,-1) == "_inside" then
             -- print(location.name)
-                CreateLuaLocationItems("from_", location.name, location.shortname, "inside", location.room)
-                CreateLuaLocationItems("to_", location.name, location.shortname, "inside", location.room)
+                CreateLuaLocationItems("from_", location, "inside")
+                CreateLuaLocationItems("to_", location, "inside")
                 
             elseif string.sub(location.name, -8,-1) == "_outside" then
             -- print(location.name)
-                CreateLuaLocationItems("from_", location.name, location.shortname, "outside", location.room)
-                CreateLuaLocationItems("to_", location.name, location.shortname, "outside", location.room)
+                CreateLuaLocationItems("from_", location, "outside")
+                CreateLuaLocationItems("to_", location, "outside")
             end
         end
         return 1

@@ -12,7 +12,9 @@ local accessLVL= {
     [3] = "inspect",
     [5] = "sequence break",
     [6] = "normal",
-    [7] = "cleared"
+    [7] = "cleared",
+    [false] = "none",
+    [true] = "normal",
 }
 
 -- Table to store named locations

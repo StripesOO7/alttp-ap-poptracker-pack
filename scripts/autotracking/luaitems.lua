@@ -190,14 +190,14 @@ end
 function CreateLuaLocationItems(direction, code, shortname, side, room)
     local self = ScriptHost:CreateLuaItem()
     -- self.Type = "custom"
-    self.Name = direction .. code --code -- 
+    self.Name = direction .. location_obj.name --code -- 
     self.Icon = ImageReference:FromPackRelativePath("images/door_closed.png")
     self.ItemState = {
         Stage = 0,
         Active = true,
         Side = nil,
         Target = nil,
-        Shortname = shortname,
+        Shortname = location_obj.shortname,
         Direction = direction,
         Room = room,
     }
