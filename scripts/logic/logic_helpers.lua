@@ -246,11 +246,11 @@ function canClearAgaTowerBarrier()
 end
 
 function gtCrystalCount()
-    return checkRequirements("gt_access", "crystal")
+    return checkRequirements("gt_access", "crystal") > 0
 end
 
 function ganonCrystalCount()
-    return checkRequirements("ganon_killable", "crystal")
+    return checkRequirements("ganon_killable", "crystal") > 0
 end
 
 function canSwim(itemNeeded) --fake flippers
@@ -300,9 +300,9 @@ function checkRequirements(reference, check_count)
     local count = Tracker:ProviderCountForCode(check_count)
 
     if count >= reqCount then
-        return true
+        return 1 --true
     else
-        return false
+        return 0 --false
     end
 end
 
