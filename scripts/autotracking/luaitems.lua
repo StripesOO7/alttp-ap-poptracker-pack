@@ -189,7 +189,7 @@ end
 -- LuaLocationItems = {}
 -- LuaLocationItems.__index = LuaLocationItems
 
-function CreateLuaLocationItems(direction, location_obj, shortname, side, room, worldstate)
+function CreateLuaLocationItems(direction, location_obj, side)
     local self = ScriptHost:CreateLuaItem()
     -- self.Type = "custom"
     self.Name = direction .. location_obj.name --code -- 
@@ -197,7 +197,7 @@ function CreateLuaLocationItems(direction, location_obj, shortname, side, room, 
     self.ItemState = {
         Stage = 0,
         Active = true,
-        Side = nil,
+        Side = side,
         Target = nil,
         Shortname = location_obj.shortname,
         Direction = direction,
