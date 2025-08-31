@@ -1149,15 +1149,7 @@ spec_rock_ledge_exit_inside:connect_two_ways(spectacle_rock_cave)
 spectacle_rock_top_drop:connect_one_way(spectacle_rock_cave)
 spectacle_rock_top_drop:connect_one_way("Spec Rock Inside Item", function() return AccessibilityLevel.Inspect end)
 spectacle_rock_inside_bottom:connect_one_way(spectacle_rock_top_drop)
-spectacle_rock_inside_bottom:connect_one_way("Spec Rock Inside Item", function() 
-    return any(
-        openOrStandard(), 
-        all(
-            has("pearl"), 
-            inverted()
-        )
-    ) 
-end)
+spectacle_rock_inside_bottom:connect_one_way("Spec Rock Inside Item")
 
 spec_rock_ledge_entrance:connect_one_way(light_death_mountain_left_bottom)
 spec_rock_ledge_exit:connect_one_way(light_death_mountain_left_bottom)
