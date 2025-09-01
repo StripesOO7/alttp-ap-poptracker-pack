@@ -1236,13 +1236,19 @@ teleporter_at_dark_death_mountain_right_bottom:connect_one_way(light_death_mount
 light_death_mountain_right_bottom:connect_two_ways(spiral_cave_bottom_outside)
 light_death_mountain_right_bottom:connect_two_ways(paradox_cave_bottom_entrance_outside)
 light_death_mountain_right_bottom:connect_two_ways(paradox_cave_middle_entrance_outside)
-light_death_mountain_right_bottom:connect_two_ways(fairy_ascension_cave_bottom_outside, function() return can_interact(light_death_mountain_right_bottom.worldstate, 1) end)
+light_death_mountain_right_bottom:connect_one_way(fairy_ascension_cave_bottom_outside, function() 
+    return all(
+        can_interact(light_death_mountain_right_bottom.worldstate, 1),
+        has("gloves")
+    )
+end) --coming from dm
 light_death_mountain_right_bottom:connect_two_ways(hookshot_fairy_outside)
 
 spiral_cave_bottom_outside:connect_two_ways_entrance("Spiral Cave Bottom Entrance", spiral_cave_bottom_inside)
 paradox_cave_bottom_entrance_outside:connect_two_ways_entrance("Paradox Cave Bottom Entrance", paradox_cave_bottom_entrance_inside)
 paradox_cave_middle_entrance_outside:connect_two_ways_entrance("Paradox Cave Middle Entrance", paradox_cave_middle_entrance_inside)
 fairy_ascension_cave_bottom_outside:connect_two_ways_entrance("Fairy Ascension Cave Bottom", fairy_ascension_cave_bottom_inside)
+fairy_ascension_cave_bottom_outside:connect_one_way(light_death_mountain_right_bottom) --back to dm
 hookshot_fairy_outside:connect_two_ways_entrance("Hookshot Fairy Cave", hookshot_fairy_inside)
 
 -- paradox_cave_bottom:connect_one_way(paradox_cave_top)
