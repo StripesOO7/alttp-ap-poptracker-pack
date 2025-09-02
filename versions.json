@@ -1,6 +1,30 @@
 {
 	"versions": [
 		{
+			"package_version": "0.3.3",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.3.3/alttp-ap-tracker-v0.3.3.zip",
+			"sha256": "044be6ba85b9b2aab4ed30935039c684e1f35f26824698ed710ebd1ab161cad1",
+			"changelog": [
+				"bugfixes for ER and some other logic issues",
+				"",
+				"fixed ER stuff:",
+				"- backside pub reachablility",
+				"- Old man house (dm spawn outside) was not connected and thus reachable",
+				"- fixed typo in potionshop inside",
+				"- changed coords for autotracking mostly for drop downs anf stairs so they track properly",
+				"- fairy ascection bottom entrance did not check for gloves",
+				"",
+				"fixed logic:",
+				"- spec rock inside chekcing for pearl in inverted was removed",
+				"- connected item logic for old man to access to the proper region. the cave itself and not the ledge you enter from vanilla",
+				"- lighting up the goal item never really worked, that should be fixed now",
+				"- maybe  bomb tracking combines with bombless start being on or off is finally fixed?????",
+				"",
+				"added:",
+				"- in a crossed scenario checks from the other world should now properly keep your current state in mind so that checks properly show as in-/accessible with considering bunny state"
+			]
+		},
+		{
 			"package_version": "0.3.2",
 			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.3.2/alttp-ap-tracker-v0.3.2.zip",
 			"sha256": "346bc438be7e6fe950ffe0cfe646f4d9bd324abda6ba0c43d365fb8428af302c",
@@ -418,3 +442,4 @@
 		}
 	]
 }
+
