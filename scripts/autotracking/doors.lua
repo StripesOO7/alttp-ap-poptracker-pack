@@ -293,6 +293,59 @@ ER_SIMPLE = {
     ["to_tt_entrance_outside"] = true,
     ["from_tt_entrance_inside"] = true,
     ["to_tt_entrance_inside"] = true,
+    ["from_kakariko_well_cave_inside"] = true,
+    
+    ["to_kakariko_well_cave_inside"] = true,
+    ["from_kakariko_well_cave_outside"] = true,
+    ["to_kakariko_well_cave_outside"] = true,
+    ["from_kakariko_well_hole_inside"] = true,
+    ["to_kakariko_well_hole_inside"] = true,
+    ["from_kakariko_well_hole_outside"] = true,
+    ["to_kakariko_well_hole_outside"] = true,
+    ["from_lost_woods_hideout_cave_inside"] = true,
+    ["to_lost_woods_hideout_cave_inside"] = true,
+    ["from_lost_woods_hideout_cave_outside"] = true,
+    ["to_lost_woods_hideout_cave_outside"] = true,
+    ["from_lost_woods_hideout_hole_inside"] = true,
+    ["to_lost_woods_hideout_hole_inside"] = true,
+    ["from_lost_woods_hideout_hole_outside"] = true,
+    ["to_lost_woods_hideout_hole_outside"] = true,
+    ["from_lumberjacks_cave_inside"] = true,
+    ["to_lumberjacks_cave_inside"] = true,
+    ["from_lumberjacks_cave_outside"] = true,
+    ["to_lumberjacks_cave_outside"] = true,
+    ["from_lumberjacks_hole_inside"] = true,
+    ["to_lumberjacks_hole_inside"] = true,
+    ["from_lumberjacks_hole_outside"] = true,
+    ["to_lumberjacks_hole_outside"] = true,
+    ["from_magic_bat_cave_inside"] = true,
+    ["to_magic_bat_cave_inside"] = true,
+    ["from_magic_bat_cave_outside"] = true,
+    ["to_magic_bat_cave_outside"] = true,
+    ["from_magic_bat_hole_inside"] = true,
+    ["to_magic_bat_hole_inside"] = true,
+    ["from_magic_bat_hole_outside"] = true,
+    ["to_magic_bat_hole_outside"] = true,
+    ["from_north_fairy_cave_inside"] = true,
+    ["to_north_fairy_cave_inside"] = true,
+    ["from_north_fairy_cave_outside"] = true,
+    ["to_north_fairy_cave_outside"] = true,
+    ["from_north_fairy_drop_inside"] = true,
+    ["to_north_fairy_drop_inside"] = true,
+    ["from_north_fairy_drop_outside"] = true,
+    ["to_north_fairy_drop_outside"] = true,
+    ["from_pyramid_exit_inside"] = true,
+    ["to_pyramid_exit_inside"] = true,
+    ["from_pyramid_exit_outside"] = true,
+    ["to_pyramid_exit_outside"] = true,
+    ["from_pyramid_hole_inside"] = true,
+    ["to_pyramid_hole_inside"] = true,
+    ["from_pyramid_hole_outside"] = true,
+    ["to_pyramid_hole_outside"] = true,
+    ["from_sanctuary_entrance_inside"] = true,
+    ["to_sanctuary_entrance_inside"] = true,
+    ["from_sanctuary_entrance_outside"] = true,
+    ["to_sanctuary_entrance_outside"] = true,
 }
 
 NAMED_ENTRANCES = {
@@ -900,7 +953,6 @@ if PopVersion < "0.32.0" then
         end
         return 1
     end
-    
 else
 
     --0.32.0
