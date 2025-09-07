@@ -72,7 +72,8 @@
                 ],
                 "sections": [
                     {
-                        "name": "Get Scammed (100 Rupees)"
+                        "name": "Bottle Merchant Item"
+                        // "name": "Get Scammed (100 Rupees)"
                     }
                 ],
                 "map_locations": [
@@ -340,7 +341,7 @@
                 ],
                 "sections": [
                     {
-                        "name": "Library",
+                        "name": "Library Item",
                         "access_rules": [
                             "^$CanReach|Library Item"
                         ],
@@ -358,9 +359,9 @@
             },
             {
                 "name": "Race",
-                "access_rules": [
-                    "^$CanReach|race_ledge"
-                ],
+                // "access_rules": [
+                //     "^$CanReach|race_ledge"
+                // ],
                 "sections": [
                     {
                         "name": "Race",
@@ -368,6 +369,13 @@
                             "^$CanReach|Race Minigame"
                         ],
                         "capture_item": true
+                    // },
+                    // {
+                    //     "name": "Race Item (hosted)",
+                    //     "access_rules": [
+                    //         "^$CanReach|Race Minigame"
+                    //     ],
+                    //     "hosted_item": "flippers Hosted"
                     }
                 ],
                 "map_locations": [

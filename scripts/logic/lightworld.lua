@@ -301,6 +301,7 @@ twin_house_left_outside:connect_two_ways(race_ledge)
 race_ledge:connect_one_way(south_of_village)
 race_ledge:connect_two_ways(race_ledge_finish, function() return can_interact(race_ledge.worldstate, 1) end)
 race_ledge_finish:connect_one_way("Race Minigame")
+south_of_village:connect_one_way("Race Minigame", function() return AccessibilityLevel.Inspect end)
 south_of_village:connect_two_ways(race_ledge, function() 
     return all(
         checkGlitches(2),
@@ -404,7 +405,12 @@ lost_woods:connect_two_ways(lost_woods_hideout_cave_outside)
 lost_woods:connect_two_ways(lost_woods_gamble_outside)
 lost_woods:connect_two_ways(mastersword_meadow_outside)
 -- lost_woods:connect_two_ways(lost_woods_pedestal)
-lost_woods:connect_one_way("Lost Woods Mushroom", function() return can_interact(lost_woods.worldstate, 1) end)
+lost_woods:connect_one_way("Lost Woods Mushroom", function() 
+    return any(
+        can_interact(lost_woods.worldstate, 1),
+        AccessibilityLevel.Inspect
+    )
+end)
 
 lost_woods_hideout_hole_outside:connect_one_way_entrance("Lost Woods Hideout Hole", lost_woods_hideout_hole_inside)
 lost_woods_hideout_cave_outside:connect_two_ways_entrance("Lost Woods Hideout Cave", lost_woods_hideout_cave_inside)

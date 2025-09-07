@@ -19,7 +19,7 @@ function updateNPCItemFlagsFromMemorySegment(segment)
     updateSectionChestCountFromByteAndFlag(segment, "@Lightworld/Sahasrahla's Hut/Sahasrahla's Item", 0x7ef410, 0x10)
     updateSectionChestCountFromByteAndFlag(segment, "@Darkworld Right/Catfish/Catfish Item", 0x7ef410, 0x20)
     -- 0x40 is unused
-    updateSectionChestCountFromByteAndFlag(segment, "@Lightworld/Library/Library", 0x7ef410, 0x80)
+    updateSectionChestCountFromByteAndFlag(segment, "@Lightworld/Library/Library Item", 0x7ef410, 0x80)
 
     updateSectionChestCountFromByteAndFlag(segment, "@Light Death Mountain Left Top/Ether Tablet/Ether Tablet", 0x7ef411, 0x01)
     updateSectionChestCountFromByteAndFlag(segment, "@Lightworld/Bombos Tablet/Bombos Tablet", 0x7ef411, 0x02)
@@ -528,7 +528,7 @@ function updateItemsFromMemorySegment(segment)
     --  which makes it more efficient to update them here.
     updateSectionChestCountFromByteAndFlag(segment, "@Lightworld/Secret Passage/Link's Uncle", 0x7ef3c6, 0x01)    
     updateSectionChestCountFromByteAndFlag(segment, "@Lightworld/Hobo/Hobo", 0x7ef3c9, 0x01)
-    updateSectionChestCountFromByteAndFlag(segment, "@Lightworld/Bottle Merchant/Get Scammed (100 Rupees)", 0x7ef3c9, 0x02)
+    updateSectionChestCountFromByteAndFlag(segment, "@Lightworld/Bottle Merchant/Bottle Merchant Item", 0x7ef3c9, 0x02)
     updateSectionChestCountFromByteAndFlag(segment, "@Darkworld Bottom/Purple Chest Return/Purple Chest Return", 0x7ef3c9, 0x10)
 
 end

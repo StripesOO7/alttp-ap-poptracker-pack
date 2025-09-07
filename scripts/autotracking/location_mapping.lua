@@ -2,7 +2,7 @@
 
 LOCATION_MAPPING = {
     [1572883]   =   {"@Lightworld/Lost Woods/Mushroom"},
-    [191256]    =   {"@Lightworld/Bottle Merchant/Get Scammed (100 Rupees)"},
+    [191256]    =   {"@Lightworld/Bottle Merchant/Bottle Merchant Item"},
     [1573194]   =   {"@Lightworld/Flute Spot/Flute Spot","shovel"},
     [1573189]   =   {"@Lightworld/Dam/Sunken Treasure"},
     [212328]    =   {"@Darkworld Bottom/Purple Chest Return/Purple Chest Return"},
@@ -48,7 +48,7 @@ LOCATION_MAPPING = {
     [1572880]   =   {"@Lightworld/Mini Moldorm Cave/Mini Moldorm Chest"},
     [60238]     =   {"@Lightworld/Ice Rod Cave/Ice Rod Chest"},
     [60223]     =   {"@Lightworld/Bonk Pile/Bonk Pile Chest"},
-    [1572882]   =   {"@Lightworld/Library/Library"},
+    [1572882]   =   {"@Lightworld/Library/Library Item"},
     [1572884]   =   {"@Lightworld/Potion Shop (Witch Hut)/Deliver Mushroom (Brew Drugs)","mushroom_delivered"},
     [1573188]   =   {"@Lightworld/Lake Hylia/Lake Island"},
     [1573186]   =   {"@Lightworld/Race/Race"},
