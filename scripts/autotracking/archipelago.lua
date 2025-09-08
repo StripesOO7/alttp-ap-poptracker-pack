@@ -4,6 +4,7 @@ require("scripts/autotracking/location_mapping")
 CUR_INDEX = -1
 SLOT_DATA = nil
 SKIP_BOSSSHUFFLE = false
+ALL_LOCATIONS = {}
 
 local SECONDSTAGE = { 
     [5] = 5, --red shield
@@ -185,7 +186,17 @@ function onClear(slot_data)
         bossShuffle()
     end
     if Archipelago.PlayerNumber > -1 then
+        if #ALL_LOCATIONS > 0 then
+            ALL_LOCATIONS = {}
+        end
+        for _, value in pairs(Archipelago.MissingLocations) do
+            table.insert(ALL_LOCATIONS, #ALL_LOCATIONS + 1, value)
+        end
 
+        for _, value in pairs(Archipelago.CheckedLocations) do
+            table.insert(ALL_LOCATIONS, #ALL_LOCATIONS + 1, value)
+        end
+        CheckShops(ALL_LOCATIONS)
         HINTS_ID = "_read_hints_"..TEAM_NUMBER.."_"..PLAYER_ID
         Archipelago:SetNotify({HINTS_ID})
         Archipelago:Get({HINTS_ID})
@@ -585,6 +596,26 @@ function updateHints(locationID, status)
                 print(string.format("No object found for code: %s", location))
             end
         end
+    end
+end
+
+
+function ShopSlotHelper(shop_slot, number)
+    if Archipelago.PlayerNumber > 0 then
+        for index, value in pairs(ALL_LOCATIONS) do
+            if type(value) == "number" then
+                if tonumber(shop_slot) == value then
+                    return true
+                end
+            end
+        end
+        return false
+    else
+        -- if tonumber(number) <= Tracker:FindObjectForCode("shop_slots").AcquiredCount then
+            return true
+        -- else
+            -- return false
+        -- end
     end
 end
 

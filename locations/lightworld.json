@@ -136,12 +136,34 @@
                 "visibility_rules": ["shop_sanity"],
                 "sections": [
                     {
-                        "name": "Shop Item",
+                        "name": "Shop Left Item",
                         "access_rules": [
                             "^$CanReach|kakariko_shop_inside"
                         ],
-                        "clear_as_group": false,
-                        "item_count": 3
+                        "visibility_rules": [
+                            "^$ShopSlotHelper|4194325|1"
+                        ],
+                        "clear_as_group": false
+                    },
+                    {
+                        "name": "Shop Center Item",
+                        "access_rules": [
+                            "^$CanReach|kakariko_shop_inside"
+                        ],
+                        "visibility_rules": [
+                            "^$ShopSlotHelper|4194326|2"
+                        ],
+                        "clear_as_group": false
+                    },
+                    {
+                        "name": "Shop Right Item",
+                        "access_rules": [
+                            "^$CanReach|kakariko_shop_inside"
+                        ],
+                        "visibility_rules": [
+                            "^$ShopSlotHelper|4194327|3"
+                        ],
+                        "clear_as_group": false
                     }
                 ],
                 "map_locations": [
@@ -604,9 +626,25 @@
                 "visibility_rules": ["shop_sanity"],
                 "sections": [
                     {
-                        "name": "Shop Item",
+                        "name": "Shop Left Item",
                         "clear_as_group": false,
-                        "item_count": 3
+                        "visibility_rules": [
+                            "^$ShopSlotHelper|4194328|1"
+                        ]
+                    },
+                    {
+                        "name": "Shop Center Item",
+                        "clear_as_group": false,
+                        "visibility_rules": [
+                            "^$ShopSlotHelper|4194329|2"
+                        ]
+                    },
+                    {
+                        "name": "Shop Right Item",
+                        "clear_as_group": false,
+                        "visibility_rules": [
+                            "^$ShopSlotHelper|4194330|3"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -651,9 +689,25 @@
                 ],
                 "sections": [
                     {
-                        "name": "Shop Item",
+                        "name": "Shop Left Item",
                         "clear_as_group": false,
-                        "item_count": 2
+                        "visibility_rules": [
+                            "^$ShopSlotHelper|4194334|1"
+                        ]
+                    },
+                    {
+                        "name": "Shop Center Item",
+                        "clear_as_group": false,
+                        "visibility_rules": [
+                            "^$ShopSlotHelper|4194335|2"
+                        ]
+                    },
+                    {
+                        "name": "Shop Right Item",
+                        "clear_as_group": false,
+                        "visibility_rules": [
+                            "^$ShopSlotHelper|4194336|3"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -727,10 +781,19 @@
                 ],
                 "sections": [
                     {
-                        "name": "shop",
-                        "visibility_rules": ["shop_sanity, shop_include_witchhut"],
-                        "clear_as_group": false,
-                        "item_count": 3
+                        "name": "Shop Left Item",
+                        "visibility_rules": ["shop_sanity, shop_include_witchhut, ^$ShopSlotHelper|4194331|1"],
+                        "clear_as_group": false
+                    },
+                    {
+                        "name": "Shop Center Item",
+                        "visibility_rules": ["shop_sanity, shop_include_witchhut, ^$ShopSlotHelper|4194332|2"],
+                        "clear_as_group": false
+                    },
+                    {
+                        "name": "Shop Right Item",
+                        "visibility_rules": ["shop_sanity, shop_include_witchhut, ^$ShopSlotHelper|4194333|3"],
+                        "clear_as_group": false
                     },
                     {
                         "name": "Deliver Mushroom (Brew Drugs)",
@@ -1077,9 +1140,25 @@
                 "item_count": 3,
                 "sections": [
                     {
-                        "name": "Shop Item",
+                        "name": "Shop Left Item",
                         "clear_as_group": false,
-                        "item_count": 3
+                        "visibility_rules": [
+                            "^$ShopSlotHelper|4194321|1"
+                        ]
+                    },
+                    {
+                        "name": "Shop Center Item",
+                        "clear_as_group": false,
+                        "visibility_rules": [
+                            "^$ShopSlotHelper|4194322|2"
+                        ]
+                    },
+                    {
+                        "name": "Shop Right Item",
+                        "clear_as_group": false,
+                        "visibility_rules": [
+                            "^$ShopSlotHelper|4194323|3"
+                        ]
                     }
                 ],
                 "map_locations": [

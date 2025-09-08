@@ -12,9 +12,25 @@
                 "visibility_rules": ["shop_sanity"],
                 "sections": [
                     {
-                        "name": "Shop Item",
+                        "name": "Shop Left Item",
                         "clear_as_group": false,
-                        "item_count": 3
+                        "visibility_rules": [
+                            "^$ShopSlotHelper|4194313|1"
+                        ]
+                    },
+                    {
+                        "name": "Shop Center Item",
+                        "clear_as_group": false,
+                        "visibility_rules": [
+                            "^$ShopSlotHelper|4194314|2"
+                        ]
+                    },
+                    {
+                        "name": "Shop Right Item",
+                        "clear_as_group": false,
+                        "visibility_rules": [
+                            "^$ShopSlotHelper|4194315|3"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -57,9 +73,25 @@
                 "visibility_rules": ["shop_sanity"],
                 "sections": [
                     {
-                        "name": "Shop Item",
+                        "name": "Shop Left Item",
                         "clear_as_group": false,
-                        "item_count": 3
+                        "visibility_rules": [
+                            "^$ShopSlotHelper|4194307|1"
+                        ]
+                    },
+                    {
+                        "name": "Shop Center Item",
+                        "clear_as_group": false,
+                        "visibility_rules": [
+                            "^$ShopSlotHelper|4194308|2"
+                        ]
+                    },
+                    {
+                        "name": "Shop Right Item",
+                        "clear_as_group": false,
+                        "visibility_rules": [
+                            "^$ShopSlotHelper|4194309|3"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -129,9 +161,25 @@
                 ],
                 "sections": [
                     {
-                        "name": "Shop Item",
+                        "name": "Shop Left Item",
                         "clear_as_group": false,
-                        "item_count": 3
+                        "visibility_rules": [
+                            "^$ShopSlotHelper|4194316|1"
+                        ]
+                    },
+                    {
+                        "name": "Shop Center Item",
+                        "clear_as_group": false,
+                        "visibility_rules": [
+                            "^$ShopSlotHelper|4194317|2"
+                        ]
+                    },
+                    {
+                        "name": "Shop Right Item",
+                        "clear_as_group": false,
+                        "visibility_rules": [
+                            "^$ShopSlotHelper|4194318|3"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -362,9 +410,25 @@
                 "visibility_rules": ["shop_sanity"],
                 "sections": [
                     {
-                        "name": "Shop Item",
+                        "name": "Shop Left Item",
                         "clear_as_group": false,
-                        "item_count": 3
+                        "visibility_rules": [
+                            "^$ShopSlotHelper|4194310|1"
+                        ]
+                    },
+                    {
+                        "name": "Shop Center Item",
+                        "clear_as_group": false,
+                        "visibility_rules": [
+                            "^$ShopSlotHelper|4194311|2"
+                        ]
+                    },
+                    {
+                        "name": "Shop Right Item",
+                        "clear_as_group": false,
+                        "visibility_rules": [
+                            "^$ShopSlotHelper|4194312|3"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -438,9 +502,25 @@
                 "visibility_rules": ["shop_sanity"],
                 "sections": [
                     {
-                        "name": "Shop Item",
+                        "name": "Shop Left Item",
                         "clear_as_group": false,
-                        "item_count": 3
+                        "visibility_rules": [
+                            "^$ShopSlotHelper|4194319|1"
+                        ]
+                    },
+                    {
+                        "name": "Shop Center Item",
+                        "clear_as_group": false,
+                        "visibility_rules": [
+                            "^$ShopSlotHelper|4194320|2"
+                        ]
+                    },
+                    {
+                        "name": "Shop Right Item",
+                        "clear_as_group": false,
+                        "visibility_rules": [
+                            "^$ShopSlotHelper|4194321|3"
+                        ]
                     }
                 ],
                 "map_locations": [
@@ -581,9 +661,25 @@
                 "visibility_rules": ["shop_sanity"],
                 "sections": [
                     {
-                        "name": "Shop Item",
+                        "name": "Shop Left Item",
                         "clear_as_group": false,
-                        "item_count": 3
+                        "visibility_rules": [
+                            "^$ShopSlotHelper|4194304|1"
+                        ]
+                    },
+                    {
+                        "name": "Shop Center Item",
+                        "clear_as_group": false,
+                        "visibility_rules": [
+                            "^$ShopSlotHelper|4194305|2"
+                        ]
+                    },
+                    {
+                        "name": "Shop Right Item",
+                        "clear_as_group": false,
+                        "visibility_rules": [
+                            "^$ShopSlotHelper|4194306|3"
+                        ]
                     }
                 ],
                 "map_locations": [
