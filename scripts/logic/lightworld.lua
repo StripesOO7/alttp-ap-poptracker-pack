@@ -659,24 +659,28 @@ light_death_mountain_return_ledge:connect_one_way(lumberjacks_area)
 light_death_mountain_return_ledge:connect_two_ways(light_death_mountain_return_left_outside, function() return openOrStandard() end)
 
 old_man_cave_left_ledge:connect_two_ways(old_man_cave_left_outside, function() return openOrStandard() end)
-old_man_cave_left_outside:connect_two_ways_entrance("Old Man Cave Left", old_man_cave_left_inside, function() return darkRooms() end)
-old_man_cave_left_inside:connect_one_way(old_man_cave, function() return darkRooms() end)
+
+old_man_cave_left_outside:connect_two_ways_entrance("Old Man Cave Left", old_man_cave_left_inside, function() return openOrStandard() end)
+old_man_cave_left_outside:connect_two_ways_entrance("Bumper Cave Bottom", dark_bumper_cave_bottom_inside, function() return inverted() end)
+
+old_man_cave_left_inside:connect_one_way(old_man_cave, function() return darkRooms(false) end)
 
 
-light_death_mountain_return_left_outside:connect_two_ways_entrance("Light Death Mountain Return Left", light_death_mountain_return_left_inside)
+light_death_mountain_return_left_outside:connect_two_ways_entrance("Light Death Mountain Return Left", light_death_mountain_return_left_inside, function() return openOrStandard() end)
+light_death_mountain_return_left_outside:connect_two_ways_entrance("Bumper Cave Top", dark_bumper_cave_top_inside, function() return inverted() end)
  -- rescue old man
 ---------------- HARD TO DO -------------
 
-light_death_mountain_return_ledge:connect_two_ways(dark_bumper_cave_top_outside, function() return inverted() end)
-old_man_cave_left_ledge:connect_two_ways(dark_bumper_cave_bottom_outside, function() return inverted() end)
+-- light_death_mountain_return_ledge:connect_two_ways(dark_bumper_cave_top_outside, function() return inverted() end)
+-- old_man_cave_left_ledge:connect_two_ways(dark_bumper_cave_bottom_outside, function() return inverted() end)
 
 -- light_bumper_cave_ledge:connect_one_way_entrance("Light Bumper Cave", inverted_bumper_cave, function() return inverted() end)
-light_death_mountain_return_ledge:connect_one_way(dark_bumper_cave_top_ledge, function() 
-    return all(
-        canChangeWorldWithMirror(),
-        inverted()
-    )
-end)
+-- light_death_mountain_return_ledge:connect_one_way(dark_bumper_cave_top_ledge, function() 
+--     return all(
+--         canChangeWorldWithMirror(),
+--         inverted()
+--     )
+-- end)
 ---------------- HARD TO DO -------------
 
 
@@ -818,8 +822,8 @@ links_house_area:connect_one_way(light_flute_map, function()
     ) 
 end)
 
-links_house_area:connect_two_ways(links_house_outside, function() return openOrStandard() end)
-links_house_area:connect_two_ways(big_bomb_shop_outside, function() return inverted() end)
+links_house_area:connect_two_ways(links_house_outside)--, function() return openOrStandard() end)
+-- links_house_area:connect_two_ways(big_bomb_shop_outside, function() return inverted() end)
 links_house_area:connect_two_ways(links_fairy_fountain_outside, function() 
     return all(
         has("boots"), 
@@ -827,7 +831,8 @@ links_house_area:connect_two_ways(links_fairy_fountain_outside, function()
     ) 
 end)
 
-links_house_outside:connect_two_ways_entrance("Link's House", links_house_inside)
+links_house_outside:connect_two_ways_entrance("Link's House", links_house_inside, function() return openOrStandard() end)
+links_house_outside:connect_two_ways_entrance("Link's House", big_bomb_shop_inside, function() return inverted() end)
 links_fairy_fountain_outside:connect_two_ways_entrance("Links Fairy", links_fairy_fountain_inside)
 
 links_house_inside:connect_one_way("Link's House Chest")
@@ -995,7 +1000,7 @@ hyrule_castle_top:connect_two_ways(at_entrance_outside, function()
         can_interact(hyrule_castle_top.worldstate, 1)
     )
 end)
-hyrule_castle_top:connect_two_ways(gt_entrance_outside, function() 
+hyrule_castle_top:connect_two_ways(at_entrance_outside, function() 
     return all(
         gtCrystalCount(),
         inverted()
@@ -1005,8 +1010,8 @@ hyrule_castle_top:connect_two_ways(hc_left_entrance_outside)
 hyrule_castle_top:connect_two_ways(hc_right_entrance_outside)
 hyrule_castle_top:connect_one_way(hyrule_castle_area)
 
-at_entrance_outside:connect_two_ways_entrance("Castle Tower", at_entrance_inside)
-gt_entrance_outside:connect_two_ways_entrance("Inverted Ganons Tower", gt_entrance_inside)
+at_entrance_outside:connect_two_ways_entrance("Castle Tower", at_entrance_inside, function() return openOrStandard() end)
+at_entrance_outside:connect_two_ways_entrance("Inverted Ganons Tower", gt_entrance_inside, function() return inverted() end)
 hc_left_entrance_outside:connect_two_ways_entrance("Hyrule Castle Top Left", hc_left_entrance_inside)
 hc_right_entrance_outside:connect_two_ways_entrance("Hyrule Castle Top Right", hc_right_entrance_inside)
 
@@ -1092,11 +1097,13 @@ light_death_mountain_left_bottom:connect_one_way(light_flute_map, function()
     ) 
 end)
 -- light_death_mountain_left_bottom:connect_one_way()
-old_man_cave_right_outside:connect_one_way_entrance("Old Man Cave Right Inside",old_man_cave_right_inside)
-light_death_mountain_return_right_outside:connect_one_way_entrance("Light Death Mountain Return Right",light_death_mountain_return_right_inside)
+old_man_cave_right_outside:connect_one_way_entrance("Old Man Cave Right Inside",old_man_cave_right_inside, function() return openOrStandard() end)
+old_man_cave_right_outside:connect_one_way_entrance("Inverted Light Death Mountain Return Left",light_death_mountain_return_left_inside, function() return inverted() end)
 
-light_death_mountain_return_right_inside:connect_two_ways(light_death_mountain_return_left_inside, function() return darkRooms() end)
-old_man_cave_right_inside:connect_two_ways(old_man_cave, function() return darkRooms() end)
+light_death_mountain_return_right_outside:connect_two_ways_entrance("Light Death Mountain Return Right",light_death_mountain_return_right_inside)
+
+light_death_mountain_return_right_inside:connect_two_ways(light_death_mountain_return_left_inside, function() return darkRooms(false) end)
+old_man_cave_right_inside:connect_two_ways(old_man_cave, function() return darkRooms(false) end)
 
 -- light_death_mountain_ascent_ledge:connect_one_way(light_death_mountain_ascent, function() 
 --     return all(
@@ -1113,8 +1120,8 @@ old_man_cave_right_inside:connect_two_ways(old_man_cave, function() return darkR
 ---------------- HARD TO DO -------------
 -- light_death_mountain_ascent:connect_two_ways_entrance("Upper Light Death Mountain Ascent", light_death_mountain_left_bottom, function() return darkRooms() end)
 
-light_death_mountain_left_bottom:connect_two_ways(old_man_cave_right_outside, function() return openOrStandard() end)
-light_death_mountain_left_bottom:connect_two_ways(light_death_mountain_return_left_outside, function() return inverted() end)
+-- light_death_mountain_left_bottom:connect_two_ways(old_man_cave_right_outside, function() return openOrStandard() end)
+-- light_death_mountain_left_bottom:connect_two_ways(light_death_mountain_return_left_outside, function() return inverted() end)
 
 
 light_death_mountain_left_bottom:connect_two_ways(old_man_cave_right_outside)
@@ -1163,7 +1170,7 @@ spec_rock_ledge_exit:connect_one_way(light_death_mountain_left_bottom)
 
 -- cave mide left lightg DM bottom
 
-old_man_home_bottom_inside:connect_two_ways(old_man_home_top_inside, function() return darkRooms() end)
+old_man_home_bottom_inside:connect_two_ways(old_man_home_top_inside, function() return darkRooms(false) end)
 
 
 -- light_death_mountain_left_top

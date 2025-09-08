@@ -105,7 +105,7 @@ tr_crystalroller_room:connect_one_way(tr_travel_maze, function(keys) return has(
 tr_travel_maze:connect_one_way(tr_crystalroller_room, function(keys) 
     return all(
         has("tr_smallkey", keys, 3, keys, 5),
-        darkRooms(),
+        darkRooms(false),
         has("somaria"),
         can_interact(tr_travel_maze.worldstate, 1)
     ), KDSreturn(keys, keys + 1) 
@@ -115,7 +115,7 @@ tr_crystalroller_room:connect_one_way("TR - Crystalroller Chest")
 tr_travel_maze:connect_two_ways(tr_eye_hallway, function() 
     return all(
         has("somaria"),
-        darkRooms()
+        darkRooms(false)
     ) 
 end)
 

@@ -22,10 +22,10 @@ ep_map_chest_room:connect_one_way("EP - Map Chest")
 ep_compass_chest_room:connect_two_ways(ep_main_room_bottom)
 ep_compass_chest_room:connect_one_way("EP - Compass Chest")
 
-ep_main_room_bottom:connect_two_ways(ep_dark_square_room, function() return darkRooms() end)
+ep_main_room_bottom:connect_two_ways(ep_dark_square_room, function() return darkRooms(false) end)
 ep_main_room_bottom:connect_two_ways(ep_dark_eyegore_room, function() 
     return all(
-        darkRooms(), 
+        darkRooms(true), 
         has("ep_bigkey")
     ) 
 end)

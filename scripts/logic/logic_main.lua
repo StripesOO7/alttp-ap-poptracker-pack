@@ -428,6 +428,7 @@ end
 
 function emptyLocationTargets()
     if not (Tracker.BulkUpdate == true) then
+        ScriptHost:RemoveOnLocationSectionChangedHandler("location/section_change_handler")
         local er_tracking = Tracker:FindObjectForCode("er_tracking")
         if er_tracking == nil then
             print("item with code 'er_tracking' not found")
@@ -440,9 +441,26 @@ function emptyLocationTargets()
             print("finshed discover")
         elseif er_tracking.CurrentStage == 1 then
             print("simple er")
+            for name, _ in pairs(NAMED_ENTRANCES) do
+                local source = Tracker:FindObjectForCode(name)
+                local target = Tracker:FindObjectForCode(name)
+                _SetLocationOptions(source, target)
+                _SetLocationOptions(source, target)
+                -- print(name)
+                -- print(Tracker:FindObjectForCode(name).ItemState.Target)
+                if string.sub(name, -7,-1) == "_inside" then
+                    _SetLocationOptions(Tracker:FindObjectForCode(name), Tracker:FindObjectForCode(string.gsub(name, "_inside", "_outside")))
+                    _SetLocationOptions(Tracker:FindObjectForCode(string.gsub(name, "_inside", "_outside")), Tracker:FindObjectForCode(name))
+                else
+                    _SetLocationOptions(Tracker:FindObjectForCode(name), Tracker:FindObjectForCode(string.gsub(name, "_outside", "_inside")))
+                    _SetLocationOptions(Tracker:FindObjectForCode(string.gsub(name, "_outside", "_inside")), Tracker:FindObjectForCode(name))
+                end
+                -- Tracker:FindObjectForCode(name).worldstate = nil
+            end
             for name, _ in pairs(ER_SIMPLE) do
                 -- print(name)
                 -- print(Tracker:FindObjectForCode(name).ItemState.Target)
+                _UnsetLocationOptions(Tracker:FindObjectForCode(name))
                 Tracker:FindObjectForCode(name).ItemState.Target = nil
                 -- Tracker:FindObjectForCode(name).worldstate = nil
             end
@@ -452,6 +470,7 @@ function emptyLocationTargets()
             for name, _ in pairs(NAMED_ENTRANCES) do
                 -- print(name)
                 -- print(Tracker:FindObjectForCode(name).ItemState.Target)
+                _UnsetLocationOptions(Tracker:FindObjectForCode(name))
                 Tracker:FindObjectForCode(name).ItemState.Target = nil
                 -- Tracker:FindObjectForCode(name).worldstate = nil
             end
@@ -459,6 +478,7 @@ function emptyLocationTargets()
         else
             print("insanity ER is not supported you troll")
         end
+        ScriptHost:AddOnLocationSectionChangedHandler("location/section_change_handler", forceUpdate)
     else
         print("skipped ER reset")
     end
@@ -466,7 +486,7 @@ end
 
 
 ScriptHost:AddWatchForCode("ER_Setting_Changed", "er_full", emptyLocationTargets)
-ScriptHost:AddWatchForCode("stateChanged", "*", stateChanged)
+-- ScriptHost:AddWatchForCode("stateChanged", "*", stateChanged)
 
 
 ScriptHost:AddOnLocationSectionChangedHandler("location/section_change_handler", forceUpdate)

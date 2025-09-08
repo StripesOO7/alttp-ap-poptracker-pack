@@ -19,12 +19,12 @@ at_first_chest:connect_two_ways(at_dark_maze, function(keys)
 end)
 at_dark_maze:connect_two_ways(at_dark_archer_key_drop, function(keys) 
     return all(
-        darkRooms(),
+        darkRooms(true),
         has("at_smallkey", keys + 1, 2, keys + 1, 2)
     ), KDSreturn(keys + 1, keys + 1)
 end)
 at_dark_maze:connect_one_way("AT - Maze Chest", function() 
-    return darkRooms()
+    return darkRooms(true)
 end)
 
 at_dark_archer_key_drop:connect_two_ways(at_circle_of_pots, function(keys) 

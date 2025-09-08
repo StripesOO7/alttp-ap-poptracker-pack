@@ -85,7 +85,7 @@ hc_zeldas_cell:connect_one_way("HC - Zelda's Chest")
 
 ce_stairs_inside:connect_two_ways(ce_dark_cross, function(keys) 
     return any(
-        darkRooms(),
+        darkRooms(true),
         has("standard")
     )
 end)
@@ -93,11 +93,11 @@ end)
 ce_dark_cross:connect_two_ways(ce_rat_key_room, function(keys) 
     return any(
         all(
-            darkRooms(),
+            darkRooms(true),
             smallKeys("hc_smallkey", keys + 1, 1, keys + 1, 3)
         ),
         all(
-            darkRooms(),
+            darkRooms(true),
             smallKeys("hc_smallkey", keys + 1, 1, keys + 1, 3),
             has("glove")
         ),
@@ -110,7 +110,7 @@ ce_dark_cross:connect_one_way("CE - Dark Cross", function() return can_interact(
 ce_rat_key_room:connect_two_ways(ce_dropdown_entrance_inside, function(keys) 
     return any(
         all(
-            darkRooms(),
+            darkRooms(true),
             has("hc_smallkey", keys, 1, keys + 1, 4)
         ),
         -- all(
@@ -121,7 +121,7 @@ ce_rat_key_room:connect_two_ways(ce_dropdown_entrance_inside, function(keys)
         -- ),
         all(
             openOrStandard(),
-            darkRooms(),
+            darkRooms(true),
             has("hc_smallkey", keys, 1, keys + 1, 4)
         ),
         has("standard")
@@ -130,7 +130,7 @@ end)
 ce_rat_key_room:connect_one_way("CE - Rat Key Drop", function(keys) 
     return any(
         all(
-            darkRooms(),
+            darkRooms(true),
             has("hc_smallkey", keys, 1, keys, 3),
             dealDamage()
         ),

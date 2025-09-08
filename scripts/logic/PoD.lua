@@ -73,7 +73,7 @@ pod_switch_room_bottom:connect_two_ways(pod_boss_room, function(keys)
     return all(
         has("bow"),
         has("hammer"),
-        darkRooms(),
+        darkRooms(false),
         has("pod_bigkey"),
         has("pod_smallkey", keys + countDoneDeadends(1, "@Palace of Darkness/Big Key Chest/Big Key Chest", "@Palace of Darkness/Dark Maze Top/Dark Maze Top", "@Palace of Darkness/Harmless Hellway/Harmless Hellway"), 6, keys + countDoneDeadends(1, "@Palace of Darkness/Big Key Chest/Big Key Chest", "@Palace of Darkness/Dark Maze Top/Dark Maze Top", "@Palace of Darkness/Harmless Hellway/Harmless Hellway"), 6)
     ), KDSreturn(keys + 1, keys + 1)
@@ -94,7 +94,7 @@ pod_arena:connect_one_way("PoD - Arena Bridge")
 pod_collapsin_bridge:connect_two_ways(pod_dark_maze, function(keys) 
     return all(
         pod_compass_room:accessibility(),
-        darkRooms(),
+        darkRooms(false),
         has("lamp"),
         has("pod_smallkey", keys + countDoneDeadends(1, "@Palace of Darkness/Harmless Hellway/Harmless Hellway", "@Palace of Darkness/Boss/Boss Item", "@Palace of Darkness/Big Key Chest/Big Key Chest"), 6, keys + countDoneDeadends(1, "@Palace of Darkness/Harmless Hellway/Harmless Hellway", "@Palace of Darkness/Boss/Boss Item", "@Palace of Darkness/Big Key Chest/Big Key Chest"), 6)
     ), KDSreturn(keys + 1, keys + 1)
@@ -110,7 +110,7 @@ pod_dark_maze:connect_one_way("PoD - Big Chest", function()
     ) 
 end)
 
-pod_compass_room:connect_two_ways(pod_dark_basement, function() return darkRooms() end)
+pod_compass_room:connect_two_ways(pod_dark_basement, function() return darkRooms(true) end)
 pod_compass_room:connect_two_ways(pod_harmless_hellway, function(keys) 
     return has("pod_smallkey", keys + countDoneDeadends(1, "@Palace of Darkness/Big Key Chest/Big Key Chest", "@Palace of Darkness/Dark Maze Top/Dark Maze Top", "@Palace of Darkness/Boss/Boss Item"), 6, keys + countDoneDeadends(1, "@Palace of Darkness/Big Key Chest/Big Key Chest", "@Palace of Darkness/Dark Maze Top/Dark Maze Top", "@Palace of Darkness/Boss/Boss Item"), 6), KDSreturn(keys + 1, keys + 1) 
 end)
