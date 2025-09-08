@@ -148,7 +148,7 @@ kakariko_elder_house_left_outside:connect_two_ways_entrance("Kakariko Elder Hous
 kakariko_elder_house_right_outside:connect_two_ways_entrance("Kakariko Elder House Right", kakariko_elder_house_right_inside)
 kakariko_snitch_house_left_outside:connect_two_ways_entrance("Kakariko Snitch House Left", kakariko_snitch_house_left_inside)
 kakariko_snitch_house_right_outside:connect_two_ways_entrance("Kakariko Snitch House Right", kakariko_snitch_house_right_inside)
-kakariko_overgrown_house_outside:connect_two_ways_entrance("Kakariko Overgrown House", kakariko_overgrown_house_outside)
+kakariko_overgrown_house_outside:connect_two_ways_entrance("Kakariko Overgrown House", kakariko_overgrown_house_inside)
 kakariko_sick_kid_outside:connect_two_ways_entrance("Kakariko Sick Kid", kakariko_sick_kid_inside)
 kakariko_chickenhut_outside:connect_two_ways_entrance("Kakariko Chickenhut", kakariko_chickenhut_inside)
 kakariko_bombhut_outside:connect_two_ways_entrance("Kakariko Bombhut", kakariko_bombhut_inside)
@@ -414,7 +414,7 @@ end)
 
 lost_woods_hideout_hole_outside:connect_one_way_entrance("Lost Woods Hideout Hole", lost_woods_hideout_hole_inside)
 lost_woods_hideout_cave_outside:connect_two_ways_entrance("Lost Woods Hideout Cave", lost_woods_hideout_cave_inside)
-lost_woods_gamble_outside:connect_two_ways_entrance("Lost Woods Gamble", lost_woods_gamble_outside)
+lost_woods_gamble_outside:connect_two_ways_entrance("Lost Woods Gamble", lost_woods_gamble_inside)
 mastersword_meadow_outside:connect_two_ways_entrance("Mastersword Meador (Pedastal)", mastersword_meadow_inside)
 
 lost_woods_hideout_hole_inside:connect_one_way("Lost Woods Hideout")
@@ -1249,10 +1249,10 @@ teleporter_at_dark_death_mountain_right_bottom:connect_one_way(light_death_mount
 light_death_mountain_right_bottom:connect_two_ways(spiral_cave_bottom_outside)
 light_death_mountain_right_bottom:connect_two_ways(paradox_cave_bottom_entrance_outside)
 light_death_mountain_right_bottom:connect_two_ways(paradox_cave_middle_entrance_outside)
-light_death_mountain_right_bottom:connect_one_way(fairy_ascension_cave_bottom_outside, function() 
+light_death_mountain_right_bottom:connect_one_way(fairy_ascension_cave_bottom_outside, function()
     return all(
         can_interact(light_death_mountain_right_bottom.worldstate, 1),
-        has("gloves")
+        has("glove")
     )
 end) --coming from dm
 light_death_mountain_right_bottom:connect_two_ways(hookshot_fairy_outside)
@@ -1307,24 +1307,28 @@ end)
 light_death_mountain_right_top:connect_two_ways(paradox_cave_top_entrance_outside)
 light_death_mountain_right_top:connect_two_ways(spiral_cave_top_outside)
 light_death_mountain_right_top:connect_one_way(mimic_cave_ledge, function() return inverted() end)
-light_death_mountain_right_top:connect_one_way(light_eyebridge_fairy_ledge, function() return inverted() end)
+light_death_mountain_right_top:connect_one_way(light_eyebridge_fairy_ledge)--, function() return inverted() end)
 
 paradox_cave_top_entrance_outside:connect_two_ways_entrance("Paradox Cave Top Entrance", paradox_cave_top_entrance_inside)
 spiral_cave_top_outside:connect_two_ways_entrance("Spiral Cave Top Entrance", spiral_cave_top_inside)
 
-light_eyebridge_fairy_ledge:connect_two_ways(light_eyebridge_fairy_outside)
+light_eyebridge_fairy_ledge:connect_two_ways(fairy_ascension_cave_top_outside)
+light_eyebridge_fairy_ledge:connect_one_way(light_death_mountain_right_bottom)
 -- tr_eye_bridge_entrance_outside:connect_one_way_entrance("Light Eyebridge Fairy", light_eyebridge_fairy_outside, function() 
 --     return all(
 --         canChangeWorldWithMirror(), 
 --         openOrStandard()
 --     ) 
 -- end)
-light_eyebridge_fairy_outside:connect_one_way(tr_eye_bridge_entrance_ledge, function() 
+light_eyebridge_fairy_ledge:connect_one_way(tr_eye_bridge_entrance_ledge, function() 
     return all(
         inverted(), 
         canChangeWorldWithMirror()
     )
 end)
+
+fairy_ascension_cave_top_outside:connect_two_ways_entrance("Fairy Ascention Top Entrance", fairy_ascension_cave_top_inside)
+fairy_ascension_cave_top_outside:connect_two_ways(fairy_ascension_cave_bottom_inside)
 
 spiral_cave_top_inside:connect_one_way(spiral_cave_bottom_inside)
 spiral_cave_top_inside:connect_one_way("Spiral Cave Item", function() return can_interact(spiral_cave_top_inside.worldstate, 1) end)
