@@ -16,6 +16,7 @@ sp_entrance_inside:connect_two_ways(sp_first_room, function()
         can_interact(sp_entrance_inside.worldstate, 1),
         has("flippers"),
         CanReach(dam_inside),
+        can_interact(dam_inside.worldstate, 1),
         any(
             canChangeWorldWithMirror(),
             Tracker:FindObjectForCode("er_tracking").CurrentStage > 0
