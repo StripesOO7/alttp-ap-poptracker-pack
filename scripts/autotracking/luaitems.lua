@@ -22,6 +22,7 @@ function _UnsetLocationOptions(source)
     source.Icon = ImageReference:FromPackRelativePath("images/door_closed.png")
     source.BadgeText = ""
     source.BadgeTextColor = ""
+    source.ItemState.Worldstate = source.ItemState.BaseWorldstate
     source:SetOverlayFontSize(10)
     source:SetOverlayAlign("left")
 end
@@ -132,8 +133,8 @@ end
 local function AdvanceToCodeFunc()
     print("AdvanceToCodeFunc")
 end
-local function SaveFunc(self)
-    return { 
+local function SaveLocationFunc(self)
+    return {
         Stage = self.ItemState.Stage,
         Active = self.ItemState.Active,
         Side = self.ItemState.Side,
@@ -145,10 +146,23 @@ local function SaveFunc(self)
         Direction = self.ItemState.Direction,
         Room = self.ItemState.Room,
         Worldstate = self.ItemState.Worldstate,
+        BaseWorldstate = self.ItemState.BaseWorldstate,
     }
     -- print("SaveFunc")
 end
-local function LoadFunc(self, data)
+
+local function SaveCaptureFunc(self)
+    return {
+        Active = self.ItemState.Active,
+        Target = self.ItemState.Target,
+        Name = self.Name,
+        Shortname = self.ItemState.Shortname,
+        Icon = self.Icon
+    }
+    -- print("SaveFunc")
+end
+
+local function LoadLocationFunc(self, data)
     -- print(self.Name, data.Name)
     -- print("loading data from:", data)
     -- print(dump_table(data))
@@ -161,6 +175,7 @@ local function LoadFunc(self, data)
         self.ItemState.Direction = data.Direction
         self.ItemState.Room = data.Room
         self.ItemState.Worldstate = data.Worldstate
+        self.ItemState.BaseWorldstate = data.BaseWorldstate
         self.Icon = ImageReference:FromPackRelativePath(data.Icon)
         if data.BadgeText ~= nil then
             self.BadgeText = data.BadgeText
@@ -168,6 +183,23 @@ local function LoadFunc(self, data)
             self:SetOverlayFontSize(10)
             self:SetOverlayAlign("left")
         end
+    else
+        -- print("skipped laoding")
+    end
+
+    -- print("LoadFunc")
+end
+
+local function LoadCaptureFunc(self, data)
+    -- print(self.Name, data.Name)
+    -- print("loading data from:", data)
+    -- print(dump_table(data))
+    if data ~= nil and self.Name == data.Name then
+        -- print("assigning saved data for ", data.Name)
+        -- print(dump_table(data))
+        self.ItemState.Target = data.Target
+        self.ItemState.Shortname = data.Shortname
+        self.Icon = ImageReference:FromPackRelativePath(data.Icon)
     else
         -- print("skipped laoding")
     end
@@ -202,7 +234,8 @@ function CreateLuaLocationItems(direction, location_obj, side)
         Shortname = location_obj.shortname,
         Direction = direction,
         Room = location_obj.room,
-        Worldstate = location_obj.worldstate
+        Worldstate = location_obj.worldstate,
+        BaseWorldstate = location_obj.worldstate
     }
     -- self.Active = false
     self.ItemState.Side = side
@@ -220,8 +253,32 @@ function CreateLuaLocationItems(direction, location_obj, side)
     self.OnMiddleClickFunc = OnMiddleClickFunc
     self.ProvidesCodeFunc = ProvidesCodeFunc
     -- self.AdvanceToCodeFunc = AdvanceToCodeFunc
-    self.SaveFunc = SaveFunc
-    self.LoadFunc = LoadFunc
+    self.SaveFunc = SaveLocationFunc
+    self.LoadFunc = LoadLocationFunc
+    self.PropertyChangedFunc = PropertyChangedFunc
+    -- self.ItemState = ItemState
+    return self
+end
+
+function CreateLuaCaptureItems(name, shortname)
+    local self = ScriptHost:CreateLuaItem()
+    -- self.Type = "custom"
+    self.Name = name --code -- 
+    self.Icon = ImageReference:FromPackRelativePath("images/AP-item.png")
+    self.ItemState = {
+        Active = true,
+        Target = nil,
+        Shortname = shortname
+    }
+    
+    self.CanProvideCodeFunc = CanProvideCodeFunc
+    self.OnLeftClickFunc = OnLeftClickFunc
+    self.OnRightClickFunc = OnRightClickFunc
+    self.OnMiddleClickFunc = OnMiddleClickFunc
+    self.ProvidesCodeFunc = ProvidesCodeFunc
+    -- self.AdvanceToCodeFunc = AdvanceToCodeFunc
+    self.SaveFunc = SaveCaptureFunc
+    self.LoadFunc = LoadCaptureFunc
     self.PropertyChangedFunc = PropertyChangedFunc
     -- self.ItemState = ItemState
     return self

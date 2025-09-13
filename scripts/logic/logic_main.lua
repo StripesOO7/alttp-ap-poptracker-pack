@@ -1,7 +1,7 @@
 ScriptHost:AddWatchForCode("keydropshuffle handler", "key_drop_shuffle", keyDropLayoutChange)
 ScriptHost:AddWatchForCode("boss handler", "boss_shuffle", bossShuffle)
+ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", forceUpdate)
 -- ScriptHost:AddWatchForCode("ow_dungeon details handler", "ow_dungeon_details", owDungeonDetails)
-
 
 alttp_location = {}
 alttp_location.__index = alttp_location
@@ -318,7 +318,7 @@ function alttp_location:discover(accessibility, keys, worldstate)
                             --     print(stripped_target_name)
                             --     location = NAMED_LOCATIONS[stripped_target_name]
                             -- else
-                                location = NAMED_LOCATIONS[stripped_target_name]
+                            location = NAMED_LOCATIONS[stripped_target_name]
                             -- end
                         end
                     else
@@ -346,8 +346,8 @@ function alttp_location:discover(accessibility, keys, worldstate)
             if worldstate == nil then
                 worldstate = self.worldstate
             end
-            if self.worldstate == nil then
-                self.worldstate = worldstate
+            if self.worldstate == location.worldstate and worldstate ~= self.worldstate then
+                worldstate = self.worldstate
             end
             if location.worldstate == nil then
                 location.worldstate = worldstate
@@ -395,6 +395,8 @@ function alttp_location:discover(accessibility, keys, worldstate)
                 if access > oldAccess or (access == oldAccess and key < oldKey) then -- not sure about the <
                     -- print(self.name) 
                     -- print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access], "with worldstate:", worldstate)
+                    -- print("lower:", self.worldstate, worldstate, location.worldstate)
+                    -- print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access])--, "with worldstate:", worldstate)
                     location:discover(access, key, worldstate)
                 end
             end
@@ -428,7 +430,7 @@ end
 
 function emptyLocationTargets()
     if not (Tracker.BulkUpdate == true) then
-        ScriptHost:RemoveOnLocationSectionChangedHandler("location/section_change_handler")
+        -- ScriptHost:RemoveOnLocationSectionChangedHandler("location_section_change_handler")
         local er_tracking = Tracker:FindObjectForCode("er_tracking")
         if er_tracking == nil then
             print("item with code 'er_tracking' not found")
@@ -478,15 +480,12 @@ function emptyLocationTargets()
         else
             print("insanity ER is not supported you troll")
         end
-        ScriptHost:AddOnLocationSectionChangedHandler("location/section_change_handler", forceUpdate)
+        -- ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", forceUpdate)
+        -- forceUpdate()
     else
         print("skipped ER reset")
     end
 end
 
-
 ScriptHost:AddWatchForCode("ER_Setting_Changed", "er_full", emptyLocationTargets)
 -- ScriptHost:AddWatchForCode("stateChanged", "*", stateChanged)
-
-
-ScriptHost:AddOnLocationSectionChangedHandler("location/section_change_handler", forceUpdate)
