@@ -1,6 +1,6 @@
 ScriptHost:AddWatchForCode("keydropshuffle handler", "key_drop_shuffle", keyDropLayoutChange)
 ScriptHost:AddWatchForCode("boss handler", "boss_shuffle", bossShuffle)
-ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", forceUpdate)
+-- ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", forceUpdate)
 -- ScriptHost:AddWatchForCode("ow_dungeon details handler", "ow_dungeon_details", owDungeonDetails)
 
 alttp_location = {}
@@ -420,8 +420,8 @@ function stateChanged()
     -- canFinish()
 end
 
-function forceUpdate()
-    local update = Tracker:FindObjectForCode("AP_item")
+function forceUpdate(...)
+    local update = Tracker:FindObjectForCode("update")
     if update == nil then
         return
     end
@@ -488,4 +488,5 @@ function emptyLocationTargets()
 end
 
 ScriptHost:AddWatchForCode("ER_Setting_Changed", "er_full", emptyLocationTargets)
+ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", forceUpdate)
 -- ScriptHost:AddWatchForCode("stateChanged", "*", stateChanged)
