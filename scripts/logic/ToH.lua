@@ -12,9 +12,9 @@ toh_entrance_inside:connect_two_ways(toh_main_room, function()
         can_interact(toh_entrance_inside.worldstate, 1),
         any(
             dealDamage(),
-            has("redboomerang"),
-            has("blueboomerang"),
-            has("icerod")
+            "redboomerang",
+            "blueboomerang",
+            "icerod"
         )
     )
 end)
@@ -23,10 +23,10 @@ toh_main_room:connect_two_ways(toh_big_key_chest, function(keys) return all(has(
 toh_main_room:connect_two_ways(toh_big_chest_room, function() 
     return all(
         any(
-            has("toh_bigkey"),
+            "toh_bigkey",
             all(
                 checkGlitches(2),
-                has("hookshot")
+                "hookshot"
             )
         ),
         can_interact(toh_main_room.worldstate, 1)

@@ -26,7 +26,7 @@ ep_main_room_bottom:connect_two_ways(ep_dark_square_room, function() return dark
 ep_main_room_bottom:connect_two_ways(ep_dark_eyegore_room, function() 
     return all(
         darkRooms(true), 
-        has("ep_bigkey")
+        "ep_bigkey"
     ) 
 end)
 ep_main_room_bottom:connect_one_way("EP - Big Chest", function() return has("ep_bigkey") end)

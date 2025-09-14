@@ -21,8 +21,8 @@ local mm_boss_room = alttp_location.new("mm_boss_room")
 mm_entrance_inside:connect_two_ways(mm_main_room, function() 
     return all(
         any(
-            has("hookshot"),
-            has("boots")
+            "hookshot",
+            "boots"
         ),
         can_interact(mm_entrance_inside.worldstate, 1)
     )
@@ -116,11 +116,11 @@ mm_big_key_door_room:connect_two_ways(mm_fishbone_room)
 mm_big_key_door_room:connect_two_ways(mm_bridge_middle, function() return has("mm_bigkey") end) 
 mm_bridge_middle:connect_two_ways(mm_boss_room, function(keys) 
     return all(
-        has("somaria"), 
-        has("bombs"),
+        "somaria", 
+        "bombs",
         darkRooms(false),
         has("mm_smallkey", keys + countDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest")+(mm_map_room_top:accessibility()//7), 3, keys + countDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key")+(mm_map_room_top:accessibility()//7), 6),
-        has("mm_bigkey")
+        "mm_bigkey"
     ), KDSreturn(keys + 1, keys + 1) -- + 1) 
 end) 
 

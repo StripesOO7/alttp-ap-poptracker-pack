@@ -14,7 +14,7 @@ local sp_boss_room = alttp_location.new("sp_boss_room")
 sp_entrance_inside:connect_two_ways(sp_first_room, function() 
     return all(
         can_interact(sp_entrance_inside.worldstate, 1),
-        has("flippers"),
+        "flippers",
         CanReach(dam_inside),
         can_interact(dam_inside.worldstate, 1),
         any(
@@ -36,11 +36,11 @@ sp_first_trench:connect_two_ways(sp_main_room, function(keys)
         all(
             has("sp_smallkey", keys, 1, keys, 2),
             checkGlitches(1),
-            has("bombs"),
-            has("hookshot")
+            "bombs",
+            "hookshot"
         ),
         all(
-            has("hammer"),
+            "hammer",
             has("sp_smallkey", keys, 1, keys + 1, 3)
         )
     ), KDSreturn(keys, keys + 1)
@@ -54,11 +54,11 @@ sp_main_room:connect_two_ways(sp_flooded_room, function(keys)
         all(
             has("sp_smallkey", keys, 1, keys + countDoneDeadends(1, "@Swamp Palace/Big Key Chest/Big Key Chest"), 4),
             checkGlitches(1),
-            has("hookshot")
+            "hookshot"
         ),
         all(
             has("sp_smallkey", keys, 1, keys + countDoneDeadends(1, "@Swamp Palace/Big Key Chest/Big Key Chest"), 5),
-            has("hookshot")
+            "hookshot"
         )
     ), KDSreturn(keys, keys + 1)
 end)

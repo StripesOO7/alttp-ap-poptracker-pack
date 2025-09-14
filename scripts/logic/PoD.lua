@@ -56,8 +56,8 @@ pod_basement_floor:connect_one_way("PoD - Stalfos Basement")
 pod_teleporter_room:connect_two_ways(pod_mimic_room, function() 
     return all(
         any(
-            has("boots"),
-            has("bombs")
+            "boots",
+            "bombs"
         ),
         can_interact(pod_teleporter_room.worldstate, 1)
     )
@@ -71,10 +71,10 @@ pod_switch_room_top:connect_one_way("PoD - Arena Ledge", function() return has("
 
 pod_switch_room_bottom:connect_two_ways(pod_boss_room, function(keys) 
     return all(
-        has("bow"),
-        has("hammer"),
+        "bow",
+        "hammer",
         darkRooms(false),
-        has("pod_bigkey"),
+        "pod_bigkey",
         has("pod_smallkey", keys + countDoneDeadends(1, "@Palace of Darkness/Big Key Chest/Big Key Chest", "@Palace of Darkness/Dark Maze Top/Dark Maze Top", "@Palace of Darkness/Harmless Hellway/Harmless Hellway"), 6, keys + countDoneDeadends(1, "@Palace of Darkness/Big Key Chest/Big Key Chest", "@Palace of Darkness/Dark Maze Top/Dark Maze Top", "@Palace of Darkness/Harmless Hellway/Harmless Hellway"), 6)
     ), KDSreturn(keys + 1, keys + 1)
 end)
@@ -105,8 +105,8 @@ pod_dark_maze:connect_one_way("PoD - Dark Maze Top")
 pod_dark_maze:connect_one_way("PoD - Dark Maze Bottom")
 pod_dark_maze:connect_one_way("PoD - Big Chest", function() 
     return all(
-        has("pod_bigkey"), 
-        has("bombs")
+        "pod_bigkey", 
+        "bombs"
     ) 
 end)
 

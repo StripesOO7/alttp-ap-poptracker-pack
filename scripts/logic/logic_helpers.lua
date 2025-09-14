@@ -10,6 +10,11 @@ function all(...)
     local args = { ... }
     local min = AccessibilityLevel.Normal
     for _, v in ipairs(args) do
+        if type(v) == "function" then
+            v = v()
+        elseif type(v) == "string" then
+            v = has(v)
+        end
         if type(v) == "boolean" then
             v = A(v)
         end
@@ -28,14 +33,19 @@ function any(...)
     local args = { ... }
     local max = AccessibilityLevel.None
     for _, v in ipairs(args) do
+        if type(v) == "function" then
+            v = v()
+        elseif type(v) == "string" then
+            v = has(v)
+        end
         if type(v) == "boolean" then
             v = A(v)
         end
-        if tonumber(v) > tonumber(max) then
-            if tonumber(v) == AccessibilityLevel.Normal then
+        if v > max then
+            if v == AccessibilityLevel.Normal then
                 return AccessibilityLevel.Normal
             else
-                max = tonumber(v)
+                max = v
             end
         end
     end
@@ -136,31 +146,31 @@ end
 
 function dealDamage()
     return any(
-        has("sword"),
-        has("bombs"),
-        has("byrna"),
-        has("somaria"),
-        -- has("bombos"),
+        "sword",
+        "bombs",
+        "byrna",
+        "somaria",
+        -- "bombos",
         -- has("ether"),
         -- has("quake"),
-        has("bow"),
-        has("hookshot"),
-        has("firerod"),
-        has("hammer")
+        "bow",
+        "hookshot",
+        "firerod",
+        "hammer"
     )
 end
 
 function hitRanged()
     return any(
-        has("masterword"),
-        has("bombs"),
-        has("somaria"),
-        has("bow"),
-        has("hookshot"),
-        has("firerod"),
-        has("icerod"),
-        has("blueboomerang"),
-        has("redboomerang")
+        "masterword",
+        "bombs",
+        "somaria",
+        "bow",
+        "hookshot",
+        "firerod",
+        "icerod",
+        "blueboomerang",
+        "redboomerang"
     )
 end
 
@@ -443,7 +453,7 @@ function tt_boss_check()
         return all(
             CanReach("tt_attic"),
             CanReach("TT - Blind's Cell"),
-            has("bombs")
+            "bombs"
         )
     else
         return true

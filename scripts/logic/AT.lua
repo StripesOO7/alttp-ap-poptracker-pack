@@ -41,14 +41,14 @@ at_circle_of_pots:connect_one_way("AT - Circle of Pots Key Drop") --functoin() r
 at_pre_curtain:connect_one_way(at_aga1, function()return canRemoveCurtains() end)
 at_aga1:connect_one_way("AT - Aga1", function() 
     return any(
-        has("sword"),
-        has("hammer"),
-        has("bug_net")
+        "sword",
+        "hammer",
+        "bug_net"
     ) 
 end)
 
-at_aga1:connect_one_way(pyramid, function() return all(openOrStandard(), has("aga1")) end)
-at_aga1:connect_one_way(hyrule_castle_area, function() return all(inverted(), has("aga1")) end)
+at_aga1:connect_one_way(pyramid, function() return all(openOrStandard(), "aga1") end)
+at_aga1:connect_one_way(hyrule_castle_area, function() return all(inverted(), "aga1") end)
 -- at_aga1:connect_one_way("Kakariko Well - Left", function() return inverted() end)
 -- at_aga1:connect_one_way("Kakariko Well - Middle", function() return inverted() end)
 -- at_aga1:connect_one_way("Kakariko Well - Right", function() return inverted() end)

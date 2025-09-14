@@ -18,13 +18,13 @@ local dp_back_boss_room = alttp_location.new("dp_back_boss_room")
 dp_left_entrance_inside:connect_two_ways(dp_right_entrance_inside)
 dp_main_entrance_inside:connect_two_ways(dp_main_room, function() return can_interact(dp_main_entrance_inside.worldstate, 1) end)
 dp_left_entrance_inside:connect_two_ways(dp_big_chest_room)
-dp_big_chest_room:connect_one_way("DP - Big Chest", function() return all(has("dp_bigkey"), can_interact(dp_big_chest_room.worldstate, 1)) end)
+dp_big_chest_room:connect_one_way("DP - Big Chest", function() return all("dp_bigkey", can_interact(dp_big_chest_room.worldstate, 1)) end)
 
 dp_left_entrance_inside:connect_two_ways(dp_torch_room)
 dp_torch_room:connect_one_way("DP - Torch", function() 
     return any(
         all(
-        has("boots"),
+        "boots",
         can_interact(dp_torch_room.worldstate, 1)
     ), 
     AccessibilityLevel.Inspect)
@@ -37,7 +37,7 @@ dp_main_room:connect_one_way(dp_compass_room, function(keys)
     if not Tracker:FindObjectForCode("key_drop_shuffle").Active then
         return all(
             has("dp_smallkey", keys + countDoneDeadends(0, "@Desert Palace Back/Boss/Boss Item"), 1, keys + countDoneDeadends(1, "@Desert Palace Back/Boss/Boss Item", "@Desert Palace Back/Beamos Hall Pot Key/Beamos Hall Pot Key", "@Desert Palace Back/Desert Tiles 2 Pot Key/Desert Tiles 2 Pot Key"), 4), KDSreturn(keys + 1, keys + 1),
-            has("boots"),
+            "boots",
             can_interact("light", 1)
         ), KDSreturn(keys + 1, keys + 1)
     else
@@ -74,14 +74,14 @@ dp_back_tiles2_room:connect_one_way("DP - Tile 2 Key Drop")
 dp_back_torch_room:connect_one_way(dp_back_boss_room, function(keys) 
     if Tracker:FindObjectForCode("key_drop_shuffle").Active then
         return all(
-            has("firesource"),
-            has("dp_bigkey")
+            "firesource",
+            "dp_bigkey"
         ),KDSreturn(keys, keys)
     else
         return all(
-            has("firesource"),
-            has("dp_bigkey"),
-            has("boots")
+            "firesource",
+            "dp_bigkey",
+            "boots"
         ),KDSreturn(keys, keys)
     end
 end)

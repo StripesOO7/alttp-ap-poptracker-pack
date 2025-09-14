@@ -38,7 +38,7 @@ hc_map_chest_room:connect_one_way("HC - Map Guard Key Drop", function()
     return all(
         any(
             dealDamage(), 
-            has("standard")
+            "standard"
         ),
         can_interact(hc_map_chest_room.worldstate, 1)
     )
@@ -47,7 +47,7 @@ end)
 hc_map_chest_room:connect_two_ways(hc_before_boomerang_chest_room, function(keys) 
     return all(
         any(
-            has("standard"),
+            "standard",
             has("hc_smallkey", keys, 0, keys + 1, 3)
         ),
         can_interact(hc_map_chest_room.worldstate, 1)
@@ -56,27 +56,27 @@ end)
 hc_before_boomerang_chest_room:connect_two_ways(hc_boomerang_chest_room, function() 
     return any(
         dealDamage(), 
-        has("standard")
+        "standard"
     ) 
 end)
 hc_boomerang_chest_room:connect_one_way("HC - Boomerang Chest")
 hc_boomerang_chest_room:connect_one_way("HC - Booomerang Guard Key Drop", function() 
     return any(
         dealDamage(), 
-        has("standard")
+        "standard"
     ) 
 end)
 
 hc_before_boomerang_chest_room:connect_two_ways(hc_ball_guard_room, function(keys) 
     return any(
-        has("standard"),
+        "standard",
         has("hc_smallkey", keys, 0, keys + 1, 4)
     ), KDSreturn(keys, keys + 1)
 end)
 hc_ball_guard_room:connect_one_way("HC - Big Key", function() 
     return any(
         dealDamage(), 
-        has("standard")
+        "standard"
     ) 
 end)
 
@@ -86,7 +86,7 @@ hc_zeldas_cell:connect_one_way("HC - Zelda's Chest")
 ce_stairs_inside:connect_two_ways(ce_dark_cross, function(keys) 
     return any(
         darkRooms(true),
-        has("standard")
+        "standard"
     )
 end)
 
@@ -99,9 +99,9 @@ ce_dark_cross:connect_two_ways(ce_rat_key_room, function(keys)
         all(
             darkRooms(true),
             smallKeys("hc_smallkey", keys + 1, 1, keys + 1, 3),
-            has("glove")
+            "glove"
         ),
-        has("standard")
+        "standard"
     ), KDSreturn(keys + 1, keys + 1) 
 end)
 ce_dark_cross:connect_one_way("CE - Dark Cross", function() return can_interact(ce_dark_cross.worldstate, 1) end)
@@ -124,7 +124,7 @@ ce_rat_key_room:connect_two_ways(ce_dropdown_entrance_inside, function(keys)
             darkRooms(true),
             has("hc_smallkey", keys, 1, keys + 1, 4)
         ),
-        has("standard")
+        "standard"
     ), KDSreturn(keys, keys + 1) 
 end)
 ce_rat_key_room:connect_one_way("CE - Rat Key Drop", function(keys) 
@@ -134,15 +134,15 @@ ce_rat_key_room:connect_one_way("CE - Rat Key Drop", function(keys)
             has("hc_smallkey", keys, 1, keys, 3),
             dealDamage()
         ),
-        has("standard")
+        "standard"
     ), KDSreturn(keys, keys)
 end)
 
 ce_dropdown_entrance_inside:connect_two_ways(ce_secret_room, function() 
     return all(
         any(
-            has("boots"),
-            has("bombs")
+            "boots",
+            "bombs"
         ),
         can_interact("light", 1)
     )

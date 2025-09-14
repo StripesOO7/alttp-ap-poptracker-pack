@@ -21,7 +21,7 @@ tt_front_top_left:connect_two_ways(tt_front_top_right)
 tt_front_top_left:connect_one_way("TT - Ambush Chest", function() return can_interact(tt_front_top_left.worldstate, 1) end)
 
 tt_front_top_right:connect_two_ways(tt_front_bottom_right)
-tt_front_top_right:connect_two_ways(tt_back_hallway, function() return all(has("tt_bigkey"), can_interact(tt_front_top_right.worldstate, 1)) end)
+tt_front_top_right:connect_two_ways(tt_back_hallway, function() return all("tt_bigkey", can_interact(tt_front_top_right.worldstate, 1)) end)
 
 tt_front_bottom_right:connect_one_way(tt_front_bottom_left)
 tt_front_bottom_right:connect_one_way("TT - Compass Chest", function() return can_interact(tt_front_bottom_right.worldstate, 1) end)
@@ -50,8 +50,8 @@ tt_basement:connect_two_ways(tt_basement_cell)
 tt_basement_cell:connect_one_way("TT - Blind's Cell")
 tt_big_chest_room:connect_one_way("TT - Big Chest", function() 
     return all(
-        has("hammer"),
-        has("tt_bigkey")
+        "hammer",
+        "tt_bigkey"
     ) 
 end)
 tt_back_hallway:connect_two_ways(tt_boss_room)
