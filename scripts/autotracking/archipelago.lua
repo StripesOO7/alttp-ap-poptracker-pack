@@ -588,11 +588,14 @@ function updateHints(locationID, status)
         print(locationID, status)
         local location_table = LOCATION_MAPPING[locationID]
         for _, location in ipairs(location_table) do
-            local obj = Tracker:FindObjectForCode(location)
-            if obj then
-                obj.Highlight = highlight_lvl[status]
-            else
-                print(string.format("No object found for code: %s", location))
+            if location:sub(1, 1) == "@" then
+                local obj = Tracker:FindObjectForCode(location)
+
+                if obj then
+                    obj.Highlight = highlight_lvl[status]
+                else
+                    print(string.format("No object found for code: %s", location))
+                end
             end
         end
     end
