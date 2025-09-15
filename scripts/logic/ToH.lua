@@ -8,39 +8,39 @@ local toh_above_big_chest = alttp_location.new("toh_above_big_chest")
 
 
 toh_entrance_inside:connect_two_ways(toh_main_room, function() 
-    return all(
-        can_interact(toh_entrance_inside.worldstate, 1),
-        any(
-            dealDamage(),
+    return ALL(
+        Can_interact(toh_entrance_inside.worldstate, 1),
+        ANY(
+            DealDamage(),
             "redboomerang",
             "blueboomerang",
             "icerod"
         )
     )
 end)
-toh_main_room:connect_two_ways(toh_basement_cage, function() return can_interact(toh_main_room.worldstate, 1) end)
-toh_main_room:connect_two_ways(toh_big_key_chest, function(keys) return all(has("toh_smallkey", keys + 1, 1, keys + 1, 1), can_interact(toh_main_room.worldstate, 1)), KDSreturn(keys + 1, keys + 1) end)
+toh_main_room:connect_two_ways(toh_basement_cage, function() return Can_interact(toh_main_room.worldstate, 1) end)
+toh_main_room:connect_two_ways(toh_big_key_chest, function(keys) return ALL(Has("toh_smallkey", keys + 1, 1, keys + 1, 1), Can_interact(toh_main_room.worldstate, 1)), KDSreturn(keys + 1, keys + 1) end)
 toh_main_room:connect_two_ways(toh_big_chest_room, function() 
-    return all(
-        any(
+    return ALL(
+        ANY(
             "toh_bigkey",
-            all(
-                checkGlitches(2),
+            ALL(
+                CheckGlitches(2),
                 "hookshot"
             )
         ),
-        can_interact(toh_main_room.worldstate, 1)
+        Can_interact(toh_main_room.worldstate, 1)
     )
 end)
-toh_main_room:connect_one_way("ToH - Map Chest", function() return can_interact(toh_main_room.worldstate, 1) end)
+toh_main_room:connect_one_way("ToH - Map Chest", function() return Can_interact(toh_main_room.worldstate, 1) end)
 
-toh_basement_cage:connect_one_way("ToH - Basement Cage", function() return can_interact(toh_basement_cage.worldstate, 1) end)
-toh_big_key_chest:connect_one_way("ToH - Big Key Chest", function() return has("firesource") end)
+toh_basement_cage:connect_one_way("ToH - Basement Cage", function() return Can_interact(toh_basement_cage.worldstate, 1) end)
+toh_big_key_chest:connect_one_way("ToH - Big Key Chest", function() return Has("firesource") end)
 
 toh_big_chest_room:connect_two_ways(toh_above_big_chest)
 toh_big_chest_room:connect_one_way("ToH - Compass Chest")
 
 toh_above_big_chest:connect_two_ways(toh_boss_room)
-toh_above_big_chest:connect_one_way("ToH - Big Chest", function() return has("toh_bigkey") end)
+toh_above_big_chest:connect_one_way("ToH - Big Chest", function() return Has("toh_bigkey") end)
 
-toh_boss_room:connect_one_way("ToH - Boss", function() return getBossRef("toh_boss") end)
+toh_boss_room:connect_one_way("ToH - Boss", function() return GetBossRef("toh_boss") end)

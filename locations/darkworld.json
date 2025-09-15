@@ -46,7 +46,7 @@
                 "name": "Bumper Cave",
                 "access_rules": [
                 ],
-                "visibility_rules": ["$openOrStandard"],
+                "visibility_rules": ["$OpenOrStandard"],
                 "sections": [
                     {
                         "name": "Bumper Cave Item",
@@ -213,9 +213,9 @@
             {
                 "name": "Activate Flute",
                 "access_rules":[
-                    "^$CanReach|inverted_activate_flute"
+                    "^$CanReach|Inverted_activate_flute"
                 ],
-                "visibility_rules": ["flute, inverted"],
+                "visibility_rules": ["flute, Inverted"],
                 "sections": [
                     {
                         "name": "Hyrule Hymn o7",
@@ -257,7 +257,7 @@
                 "name": "Peg Cave",
                 "access_rules": [
                     "hammer, titans",
-                    "inverted, @Lightworld, hammer, mirror"
+                    "Inverted, @Lightworld, hammer, mirror"
                 ],
                 "sections": [
                     {
@@ -288,7 +288,7 @@
                 "access_rules": [
                     "^$CanReach|dark_spawn_links_house"
                 ],
-                "visibility_rules": ["inverted"],
+                "visibility_rules": ["Inverted"],
                 "sections": [
                     {
                         "name": "Chest",
@@ -622,7 +622,7 @@
                 "access_rules": [
                     "^$CanReach|Old Man Item"
                 ],
-                "visibility_rules": ["inverted"],
+                "visibility_rules": ["Inverted"],
                 "sections": [
                     {
                         "name": "Rescue Old Man",
@@ -771,7 +771,7 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": [
-                            "^$owDungeonChecks|@Palace of Darkness/Shooter Room/Shooter Room|@Palace of Darkness/The Arena Bridge/Bridge|@Palace of Darkness/Stalfos Basement/Stalfos Basement|@Palace of Darkness/Big Key Chest/Big Key Chest|@Palace of Darkness/The Arena Ledge/Ledge|@Palace of Darkness/Map Chest/Map Chest|@Palace of Darkness/Compass Chest/Compass Chest|@Palace of Darkness/Dark Basement Left/Dark Basement Left|@Palace of Darkness/Dark Basement Right/Dark Basement Right|@Palace of Darkness/Dark Maze Top/Dark Maze Top|@Palace of Darkness/Dark Maze Bottom/Dark Maze Bottom|@Palace of Darkness/Big Chest/Big Chest|@Palace of Darkness/Harmless Hellway/Harmless Hellway"
+                            "^$OWDungeonChecks|@Palace of Darkness/Shooter Room/Shooter Room|@Palace of Darkness/The Arena Bridge/Bridge|@Palace of Darkness/Stalfos Basement/Stalfos Basement|@Palace of Darkness/Big Key Chest/Big Key Chest|@Palace of Darkness/The Arena Ledge/Ledge|@Palace of Darkness/Map Chest/Map Chest|@Palace of Darkness/Compass Chest/Compass Chest|@Palace of Darkness/Dark Basement Left/Dark Basement Left|@Palace of Darkness/Dark Basement Right/Dark Basement Right|@Palace of Darkness/Dark Maze Top/Dark Maze Top|@Palace of Darkness/Dark Maze Bottom/Dark Maze Bottom|@Palace of Darkness/Big Chest/Big Chest|@Palace of Darkness/Harmless Hellway/Harmless Hellway"
                         ],
                         "clear_as_group": false,
                         "item_count": 13
@@ -780,7 +780,7 @@
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$owDungeonChecks|@Palace of Darkness/Boss/Boss Item"
+                            "^$OWDungeonChecks|@Palace of Darkness/Boss/Boss Item"
                         ],
                         "item_count": 1,
                         "hosted_item": "pod_boss, palaceofdarkness"
@@ -814,7 +814,7 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": [
-                            "^$owDungeonChecks|@Turtle Rock Front/Compass Chest/Compass Chest|@Turtle Rock Front/Map Chest/Map Chest|@Turtle Rock Front/Roller Room Right/Roller Room Right|@Turtle Rock Front/Chain Chomps/Chain Chomps|@Turtle Rock Front/Big Key Chest/Big Key Chest"
+                            "^$OWDungeonChecks|@Turtle Rock Front/Compass Chest/Compass Chest|@Turtle Rock Front/Map Chest/Map Chest|@Turtle Rock Front/Roller Room Right/Roller Room Right|@Turtle Rock Front/Chain Chomps/Chain Chomps|@Turtle Rock Front/Big Key Chest/Big Key Chest"
                         ],
                         "clear_as_group": false,
                         "item_count": 5
@@ -824,7 +824,7 @@
                         "item_count": 2,
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$owDungeonChecks|@Turtle Rock Front/Pokey 1 Key Drop/Pokey 1 Key Drop|@Turtle Rock Front/Pokey 2 Key Drop/Pokey 2 Key Drop"
+                            "^$OWDungeonChecks|@Turtle Rock Front/Pokey 1 Key Drop/Pokey 1 Key Drop|@Turtle Rock Front/Pokey 2 Key Drop/Pokey 2 Key Drop"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     }
@@ -855,7 +855,7 @@
                     {
                         "name": "Dungeon Chest",
                         "access_rules": [
-                            "^$owDungeonChecks|@Turtle Rock Back/Big Chest/Big Chest|@Turtle Rock Back/Crystalroller Room/Crystalroller Room|@Turtle Rock Back/Eye Bridge Bottom Left/Eye Bridge Bottom Left|@Turtle Rock Back/Eye Bridge Bottom Right/Eye Bridge Bottom Right|@Turtle Rock Back/Eye Bridge Top Left/Eye Bridge Top Left|@Turtle Rock Back/Eye Bridge Top Right/Eye Bridge Top Right"
+                            "^$OWDungeonChecks|@Turtle Rock Back/Big Chest/Big Chest|@Turtle Rock Back/Crystalroller Room/Crystalroller Room|@Turtle Rock Back/Eye Bridge Bottom Left/Eye Bridge Bottom Left|@Turtle Rock Back/Eye Bridge Bottom Right/Eye Bridge Bottom Right|@Turtle Rock Back/Eye Bridge Top Left/Eye Bridge Top Left|@Turtle Rock Back/Eye Bridge Top Right/Eye Bridge Top Right"
                         ],
                         "clear_as_group": false,
                         "item_count": 6
@@ -864,7 +864,7 @@
                         "name": "Boss Item",
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$owDungeonChecks|@Turtle Rock Back/Boss/Boss Item"
+                            "^$OWDungeonChecks|@Turtle Rock Back/Boss/Boss Item"
                         ],
                         "item_count": 1
                     }
@@ -883,7 +883,7 @@
                 "access_rules": [
                     "^$CanReach|tr_eye_bridge_entrance_inside"
                 ],
-                "visibility_rules": ["inverted"],
+                "visibility_rules": ["Inverted"],
                 "item_count": 1,
                 "sections": [
                     {}
@@ -921,7 +921,7 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": [
-                            "^$owDungeonChecks|@Skull Woods Front/Compass Chest/Compass Chest|@Skull Woods Front/Map Chest/Map Chest|@Skull Woods Front/Big Chest/Big Chest|@Skull Woods Front/Pot Prison/Pot Prison|@Skull Woods Front/Pinball Room/Pinball Room|@Skull Woods Front/Big Key Chest/Big Key Chest"
+                            "^$OWDungeonChecks|@Skull Woods Front/Compass Chest/Compass Chest|@Skull Woods Front/Map Chest/Map Chest|@Skull Woods Front/Big Chest/Big Chest|@Skull Woods Front/Pot Prison/Pot Prison|@Skull Woods Front/Pinball Room/Pinball Room|@Skull Woods Front/Big Key Chest/Big Key Chest"
                         ],
                         "clear_as_group": false,
                         "item_count": 6
@@ -929,7 +929,7 @@
                     {
                         "name": "Key Drops",
                         "access_rules": [
-                            "^$owDungeonChecks|@Skull Woods Front/West Lobby Pot Key/West Lobby Pot Key"
+                            "^$OWDungeonChecks|@Skull Woods Front/West Lobby Pot Key/West Lobby Pot Key"
                         ],
                         "item_count": 1,
                         "clear_as_group": false,
@@ -955,7 +955,7 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": [
-                            "^$owDungeonChecks|@Skull Woods Back/Bridge Room/Bridge Room"
+                            "^$OWDungeonChecks|@Skull Woods Back/Bridge Room/Bridge Room"
                         ],
                         "clear_as_group": false,
                         "item_count": 1
@@ -965,7 +965,7 @@
                         "item_count": 1,
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$owDungeonChecks|@Skull Woods Back/Spike Corner Key Drop/Spike Corner Key Drop"
+                            "^$OWDungeonChecks|@Skull Woods Back/Spike Corner Key Drop/Spike Corner Key Drop"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     },
@@ -973,7 +973,7 @@
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$owDungeonChecks|@Skull Woods Back/Boss/Boss Item"
+                            "^$OWDungeonChecks|@Skull Woods Back/Boss/Boss Item"
                         ],
                         "item_count": 1,
                         "hosted_item": "sw_boss, skullwoods"
@@ -1006,7 +1006,7 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": [
-                            "^$owDungeonChecks|@Misery Mire/Big Chest/Big Chest|@Misery Mire/Map Chest/Map Chest|@Misery Mire/Main Lobby/Main Lobby|@Misery Mire/Bridge Chest/Bridge Chest|@Misery Mire/Spike Chest/Spike Chest|@Misery Mire/Compass Chest/Compass Chest|@Misery Mire/Big Key Chest/Big Key Chest"
+                            "^$OWDungeonChecks|@Misery Mire/Big Chest/Big Chest|@Misery Mire/Map Chest/Map Chest|@Misery Mire/Main Lobby/Main Lobby|@Misery Mire/Bridge Chest/Bridge Chest|@Misery Mire/Spike Chest/Spike Chest|@Misery Mire/Compass Chest/Compass Chest|@Misery Mire/Big Key Chest/Big Key Chest"
                         ],
                         "clear_as_group": false,
                         "item_count": 7
@@ -1016,7 +1016,7 @@
                         "item_count": 3,
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$owDungeonChecks|@Misery Mire/Spikes Pot Key/Spikes Pot Key|@Misery Mire/Fishbone Pot Key/Fishbone Pot Key|@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop"
+                            "^$OWDungeonChecks|@Misery Mire/Spikes Pot Key/Spikes Pot Key|@Misery Mire/Fishbone Pot Key/Fishbone Pot Key|@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     },
@@ -1024,7 +1024,7 @@
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$owDungeonChecks|@Misery Mire/Boss/Boss Item"
+                            "^$OWDungeonChecks|@Misery Mire/Boss/Boss Item"
                         ],
                         "item_count": 1,
                         "hosted_item": "mm_boss, miserymire"
@@ -1060,7 +1060,7 @@
                     {
                         "name": "Dungeon Chest",
                         "access_rules": [
-                            "^$owDungeonChecks|@Swamp Palace/Entrance/Entrance|@Swamp Palace/Map Chest/Map Chest|@Swamp Palace/Big Chest/Big Chest|@Swamp Palace/Compass Chest/Compass Chest|@Swamp Palace/Big Key Chest/Big Key Chest|@Swamp Palace/West Chest/West Chest|@Swamp Palace/Flooded Room Left/Flooded Room Left|@Swamp Palace/Flooded Room Right/Flooded Room Right|@Swamp Palace/Waterfall Room/Waterfall Room"
+                            "^$OWDungeonChecks|@Swamp Palace/Entrance/Entrance|@Swamp Palace/Map Chest/Map Chest|@Swamp Palace/Big Chest/Big Chest|@Swamp Palace/Compass Chest/Compass Chest|@Swamp Palace/Big Key Chest/Big Key Chest|@Swamp Palace/West Chest/West Chest|@Swamp Palace/Flooded Room Left/Flooded Room Left|@Swamp Palace/Flooded Room Right/Flooded Room Right|@Swamp Palace/Waterfall Room/Waterfall Room"
                         ],
                         "clear_as_group": false,
                         "item_count": 9
@@ -1070,7 +1070,7 @@
                         "item_count": 5,
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$owDungeonChecks|@Swamp Palace/Pot Row Pot Key/Pot Row Pot Key|@Swamp Palace/Trench 1 Pot Key/Trench 1 Pot Key|@Swamp Palace/Hookshot Pot Key/Hookshot Pot Key|@Swamp Palace/Trench 2 Pot Key/Trench 2 Pot Key|@Swamp Palace/Waterway Pot Key/Waterway Pot Key"
+                            "^$OWDungeonChecks|@Swamp Palace/Pot Row Pot Key/Pot Row Pot Key|@Swamp Palace/Trench 1 Pot Key/Trench 1 Pot Key|@Swamp Palace/Hookshot Pot Key/Hookshot Pot Key|@Swamp Palace/Trench 2 Pot Key/Trench 2 Pot Key|@Swamp Palace/Waterway Pot Key/Waterway Pot Key"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     },
@@ -1078,7 +1078,7 @@
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$owDungeonChecks|@Swamp Palace/Boss/Boss Item"
+                            "^$OWDungeonChecks|@Swamp Palace/Boss/Boss Item"
                         ],
                         "item_count": 1,
                         "hosted_item": "sp_boss, swamppalace"
@@ -1111,7 +1111,7 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": [
-                            "^$owDungeonChecks|@Ice Palace/Compass Chest/Compass Chest|@Ice Palace/Freezor Chest/Freezor Chest|@Ice Palace/Big Chest/Big Chest|@Ice Palace/Iced T Room/Iced T Room|@Ice Palace/Spike Room/Spike Room|@Ice Palace/Big Key Chest/Big Key Chest|@Ice Palace/Map Chest/Map Chest"
+                            "^$OWDungeonChecks|@Ice Palace/Compass Chest/Compass Chest|@Ice Palace/Freezor Chest/Freezor Chest|@Ice Palace/Big Chest/Big Chest|@Ice Palace/Iced T Room/Iced T Room|@Ice Palace/Spike Room/Spike Room|@Ice Palace/Big Key Chest/Big Key Chest|@Ice Palace/Map Chest/Map Chest"
                         ],
                         "clear_as_group": false,
                         "item_count": 7
@@ -1121,7 +1121,7 @@
                         "item_count": 4,
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$owDungeonChecks|@Ice Palace/Jelly Key Drop/Jelly Key Drop|@Ice Palace/Conveyor Key Drop/Conveyor Key Drop|@Ice Palace/Hammer Block Key Drop/Hammer Block Key Drop|@Ice Palace/Many Pots Pot Key/Many Pots Pot Key"
+                            "^$OWDungeonChecks|@Ice Palace/Jelly Key Drop/Jelly Key Drop|@Ice Palace/Conveyor Key Drop/Conveyor Key Drop|@Ice Palace/Hammer Block Key Drop/Hammer Block Key Drop|@Ice Palace/Many Pots Pot Key/Many Pots Pot Key"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     },
@@ -1129,7 +1129,7 @@
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$owDungeonChecks|@Ice Palace/Boss/Boss Item"
+                            "^$OWDungeonChecks|@Ice Palace/Boss/Boss Item"
                         ],
                         "item_count": 1,
                         "hosted_item": "ip_boss, icepalace"
@@ -1162,7 +1162,7 @@
                     { 
                         "name": "Front",
                         "access_rules": [
-                            "^$owDungeonChecks|@Thieves Town Front/Big Key Chest/Big Key Chest|@Thieves Town Front/Map Chest/Map Chest|@Thieves Town Front/Compass Chest/Compass Chest|@Thieves Town Front/Ambush Chest/Ambush Chest"
+                            "^$OWDungeonChecks|@Thieves Town Front/Big Key Chest/Big Key Chest|@Thieves Town Front/Map Chest/Map Chest|@Thieves Town Front/Compass Chest/Compass Chest|@Thieves Town Front/Ambush Chest/Ambush Chest"
                         ],
                         "clear_as_group": false,
                         "item_count": 4
@@ -1170,7 +1170,7 @@
                     {
                         "name": "Back",
                         "access_rules": [
-                            "^$owDungeonChecks|@Thieves Town Back/Attic/Attic|@Thieves Town Back/Big Chest/Big Chest|@Thieves Town Back/Blind's Cell/Blind's Cell"
+                            "^$OWDungeonChecks|@Thieves Town Back/Attic/Attic|@Thieves Town Back/Big Chest/Big Chest|@Thieves Town Back/Blind's Cell/Blind's Cell"
                         ],
                         "clear_as_group": false,
                         "item_count": 3
@@ -1180,7 +1180,7 @@
                         "item_count": 2,
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$owDungeonChecks|@Thieves Town Back/Hallway Pot Key/Hallway Pot Key|@Thieves Town Back/Spike Switch Pot Key/Spike Switch Pot Key"
+                            "^$OWDungeonChecks|@Thieves Town Back/Hallway Pot Key/Hallway Pot Key|@Thieves Town Back/Spike Switch Pot Key/Spike Switch Pot Key"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     },
@@ -1188,7 +1188,7 @@
                         "name": "Boss Item",
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$owDungeonChecks|@Thieves Town Back/Boss/Boss Item"
+                            "^$OWDungeonChecks|@Thieves Town Back/Boss/Boss Item"
                         ],
                         "item_count": 1,
                         "hosted_item": "tt_boss, thievestown"
@@ -1196,7 +1196,7 @@
                     {
                         "name": "Hyrule Hymn o7",
                         "hosted_item": "flute_active",
-                        "visibility_rules": ["flute, inverted"]
+                        "visibility_rules": ["flute, Inverted"]
                     }
                 ],
                 "map_locations": [
@@ -1218,7 +1218,7 @@
         "access_rules": [
             "^$CanReach|gt_entrance_inside"
         ],
-        "visibility_rules": ["$openOrStandard"],
+        "visibility_rules": ["$OpenOrStandard"],
         "children": [
             {
                 "name": "Ganon's Tower",
@@ -1227,14 +1227,14 @@
                         "name": "Leftside",
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$owDungeonChecks|@Ganon's Tower Bottom Left/Bob's Torch/Bob's Torch|@Ganon's Tower Bottom Left/DMs Room Top Left/DMs Room Top Left|@Ganon's Tower Bottom Left/DMs Room Top Right/DMs Room Top Right|@Ganon's Tower Bottom Left/DMs Room Bottom Left/DMs Room Bottom Left|@Ganon's Tower Bottom Left/DMs Room Bottom Right/DMs Room Bottom Right|@Ganon's Tower Bottom Left/Map Chest/Map Chest|@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room|@Ganon's Tower Bottom Left/Randomizer Room Top Left/Randomizer Room Top Left|@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right|@Ganon's Tower Bottom Left/Randomizer Room Bottom Left/Randomizer Room Bottom Left|@Ganon's Tower Bottom Left/Randomizer Room Bottom Right/Randomizer Room Bottom Right"
+                            "^$OWDungeonChecks|@Ganon's Tower Bottom Left/Bob's Torch/Bob's Torch|@Ganon's Tower Bottom Left/DMs Room Top Left/DMs Room Top Left|@Ganon's Tower Bottom Left/DMs Room Top Right/DMs Room Top Right|@Ganon's Tower Bottom Left/DMs Room Bottom Left/DMs Room Bottom Left|@Ganon's Tower Bottom Left/DMs Room Bottom Right/DMs Room Bottom Right|@Ganon's Tower Bottom Left/Map Chest/Map Chest|@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room|@Ganon's Tower Bottom Left/Randomizer Room Top Left/Randomizer Room Top Left|@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right|@Ganon's Tower Bottom Left/Randomizer Room Bottom Left/Randomizer Room Bottom Left|@Ganon's Tower Bottom Left/Randomizer Room Bottom Right/Randomizer Room Bottom Right"
                         ],
                         "item_count": 11
                     },
                     {
                         "name": "Rightside",
                         "access_rules": [
-                            "^$owDungeonChecks|@Ganon's Tower Bottom Right/Hope Room Left/Hope Room Left|@Ganon's Tower Bottom Right/Hope Room Right/Hope Room Right|@Ganon's Tower Bottom Right/Tile Room/Tile Room|@Ganon's Tower Bottom Right/Compass Chest/Compass Chest|@Ganon's Tower Bottom Right/Compass Room Top Right/Compass Room Top Right|@Ganon's Tower Bottom Right/Compass Room Bottom Left/Compass Room Bottom Left|@Ganon's Tower Bottom Right/Compass Room Bottom Right/Compass Room Bottom Right"
+                            "^$OWDungeonChecks|@Ganon's Tower Bottom Right/Hope Room Left/Hope Room Left|@Ganon's Tower Bottom Right/Hope Room Right/Hope Room Right|@Ganon's Tower Bottom Right/Tile Room/Tile Room|@Ganon's Tower Bottom Right/Compass Chest/Compass Chest|@Ganon's Tower Bottom Right/Compass Room Top Right/Compass Room Top Right|@Ganon's Tower Bottom Right/Compass Room Bottom Left/Compass Room Bottom Left|@Ganon's Tower Bottom Right/Compass Room Bottom Right/Compass Room Bottom Right"
                         ],
                         "clear_as_group": false,
                         "item_count": 7
@@ -1243,7 +1243,7 @@
                         "name": "Big Chest + Ice refight",
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$owDungeonChecks|@Ganon's Tower Bottom Refight/Bob's Chest/Bob's Chest|@Ganon's Tower Bottom Refight/Big Chest/Big Chest|@Ganon's Tower Bottom Refight/Big Key Room Left/Big Key Room Left|@Ganon's Tower Bottom Refight/Big Key Room Right/Big Key Room Right|@Ganon's Tower Bottom Refight/Big Key Chest/Big Key Chest"
+                            "^$OWDungeonChecks|@Ganon's Tower Bottom Refight/Bob's Chest/Bob's Chest|@Ganon's Tower Bottom Refight/Big Chest/Big Chest|@Ganon's Tower Bottom Refight/Big Key Room Left/Big Key Room Left|@Ganon's Tower Bottom Refight/Big Key Room Right/Big Key Room Right|@Ganon's Tower Bottom Refight/Big Key Chest/Big Key Chest"
                         ],
                         "item_count": 5,
                         "hosted_item": "gt_ice"
@@ -1251,7 +1251,7 @@
                     {
                         "name": "GT Top + Lanmo refight",
                         "access_rules": [
-                            "^$owDungeonChecks|@Ganon's Tower Top/Mini Helmasaur Room Left/Mini Helmasaur Room Left|@Ganon's Tower Top/Mini Helmasaur Room Right/Mini Helmasaur Room Right|@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest"
+                            "^$OWDungeonChecks|@Ganon's Tower Top/Mini Helmasaur Room Left/Mini Helmasaur Room Left|@Ganon's Tower Top/Mini Helmasaur Room Right/Mini Helmasaur Room Right|@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest"
                         ],
                         "clear_as_group": false,
                         "item_count": 3,
@@ -1260,7 +1260,7 @@
                     {
                         "name": "GT Top Moldorm refight",
                         "access_rules": [
-                            "^$owDungeonChecks|@Ganon's Tower Top/Validation Chest/Validation Chest"
+                            "^$OWDungeonChecks|@Ganon's Tower Top/Validation Chest/Validation Chest"
                         ],
                         "clear_as_group": false,
                         "item_count": 1,
@@ -1271,14 +1271,14 @@
                         "item_count": 4,
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$owDungeonChecks|@Ganon's Tower Bottom Left/Conveyor Cross Pot Key/Conveyor Cross Pot Key|@Ganon's Tower Bottom Left/Double Switch Pot Key/Double Switch Pot Key|@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key|@Ganon's Tower Top/Mini Helmasaur Key Drop/Mini Helmasaur Key Drop"
+                            "^$OWDungeonChecks|@Ganon's Tower Bottom Left/Conveyor Cross Pot Key/Conveyor Cross Pot Key|@Ganon's Tower Bottom Left/Double Switch Pot Key/Double Switch Pot Key|@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key|@Ganon's Tower Top/Mini Helmasaur Key Drop/Mini Helmasaur Key Drop"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     },
                     {
                         "name": "GT Top Agahnim 2",
                         "access_rules": [
-                            "^$owDungeonChecks|@Ganon's Tower Top/Agahnim 2/Agahnim 2"
+                            "^$OWDungeonChecks|@Ganon's Tower Top/Agahnim 2/Agahnim 2"
                         ],
                         "clear_as_group": false,
                         "hosted_item": "aga2"
@@ -1296,14 +1296,14 @@
         ]
     },
     {
-        "name": "AT-inverted",
+        "name": "AT-Inverted",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules": [
             "^$CanReach|at_entrance_inside"
         ],
-        "visibility_rules": ["inverted"],
+        "visibility_rules": ["Inverted"],
         "children": [
             {
                 "name": "Agahnim's Tower",
@@ -1312,13 +1312,13 @@
                     {
                         "name": "Front",
                         "access_rules": [
-                            "^$owDungeonChecks|@Agahnim's Tower/Front/Front"
+                            "^$OWDungeonChecks|@Agahnim's Tower/Front/Front"
                         ]
                     },
                     {
                         "name": "Maze Chest",
                         "access_rules": [
-                            "^$owDungeonChecks|@Agahnim's Tower/Maze Chest/Maze Chest"
+                            "^$OWDungeonChecks|@Agahnim's Tower/Maze Chest/Maze Chest"
                         ]
                     },
                     {
@@ -1326,14 +1326,14 @@
                         "item_count": 2,
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$owDungeonChecks|@Agahnim's Tower/Dark Archer Key Drop/Dark Archer Key Drop|@Agahnim's Tower/Circle of Pots Key Drop/Circle of Pots Key Drop"
+                            "^$OWDungeonChecks|@Agahnim's Tower/Dark Archer Key Drop/Dark Archer Key Drop|@Agahnim's Tower/Circle of Pots Key Drop/Circle of Pots Key Drop"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
                     },
                     {
                         "name": "Agahnim 1",
                         "access_rules": [
-                            "^$owDungeonChecks|@Agahnim's Tower/Agahnim 1/Agahnim 1"
+                            "^$OWDungeonChecks|@Agahnim's Tower/Agahnim 1/Agahnim 1"
                         ],
                         "hosted_item": "aga1"
                     }

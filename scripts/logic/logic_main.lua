@@ -1,6 +1,6 @@
-ScriptHost:AddWatchForCode("keydropshuffle handler", "key_drop_shuffle", keyDropLayoutChange)
-ScriptHost:AddWatchForCode("boss handler", "boss_shuffle", bossShuffle)
--- ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", forceUpdate)
+ScriptHost:AddWatchForCode("keydropshuffle handler", "key_drop_shuffle", KeyDropLayoutChange)
+ScriptHost:AddWatchForCode("boss handler", "boss_shuffle", BossShuffle)
+-- ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", ForceUpdate)
 -- ScriptHost:AddWatchForCode("ow_dungeon details handler", "ow_dungeon_details", owDungeonDetails)
 
 alttp_location = {}
@@ -28,7 +28,7 @@ local currentParent = nil
 local currentLocation = nil
 local indirectConnections = {}
 
-function table_insert_at(er_table, key, value)
+function Table_insert_at(er_table, key, value)
     if er_table[key] == nil then
         er_table[key] = {}
     end
@@ -113,11 +113,11 @@ function alttp_location.new(name, shortname, origin, room, y, x)
         self.y = y
         -- self.cave = cave -- boolean
         -- 20 pixel tolerance
-        table_insert_at(ENTRANCE_MAPPING, room, {})
+        Table_insert_at(ENTRANCE_MAPPING, room, {})
         for x_range = x-20, x+20 do
             for y_range = y-20, y+20 do
-                table_insert_at(ENTRANCE_MAPPING[room], x_range, {})
-                table_insert_at(ENTRANCE_MAPPING[room][x_range], y_range, nil)
+                Table_insert_at(ENTRANCE_MAPPING[room], x_range, {})
+                Table_insert_at(ENTRANCE_MAPPING[room][x_range], y_range, nil)
 
                 table.insert(ENTRANCE_MAPPING[room][x_range][y_range], self.name)
             end
@@ -369,6 +369,7 @@ function alttp_location:discover(accessibility, keys, worldstate)
                 if type(access) == "boolean" then --
                     access = A(access)
                 end
+                -- print(self.name, type(access), type(parent_access), location.name)
                 if access > parent_access then
                     access = parent_access
                 end
@@ -408,19 +409,19 @@ entry_point = alttp_location.new("entry_point")
 lightworld_spawns = alttp_location.new("lightworld_spawns", nil, "light")
 darkworld_spawns = alttp_location.new("darkworld_spawns", nil, "dark")
 
-entry_point:connect_one_way(lightworld_spawns, function() return openOrStandard() end)
-entry_point:connect_one_way(darkworld_spawns, function() return inverted() end)
+entry_point:connect_one_way(lightworld_spawns, function() return OpenOrStandard() end)
+entry_point:connect_one_way(darkworld_spawns, function() return Inverted() end)
 
 -- 
-function stateChanged()
+function StateChanged()
     stale = true
     -- require("scripts/logic/logic_helpers")
     -- require("scripts/logic/logic_main")
     -- require("scripts/logic_import")
-    -- canFinish()
+    -- CanFinish()
 end
 
-function forceUpdate(...)
+function ForceUpdate(...)
     local update = Tracker:FindObjectForCode("update")
     if update == nil then
         return
@@ -428,7 +429,7 @@ function forceUpdate(...)
     update.Active = not update.Active
 end
 
-function emptyLocationTargets()
+function EmptyLocationTargets()
     if not (Tracker.BulkUpdate == true) then
         -- ScriptHost:RemoveOnLocationSectionChangedHandler("location_section_change_handler")
         local er_tracking = Tracker:FindObjectForCode("er_tracking")
@@ -480,13 +481,13 @@ function emptyLocationTargets()
         else
             print("insanity ER is not supported you troll")
         end
-        -- ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", forceUpdate)
-        -- forceUpdate()
+        -- ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", ForceUpdate)
+        -- ForceUpdate()
     else
         print("skipped ER reset")
     end
 end
 
-ScriptHost:AddWatchForCode("ER_Setting_Changed", "er_full", emptyLocationTargets)
-ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", forceUpdate)
--- ScriptHost:AddWatchForCode("stateChanged", "*", stateChanged)
+ScriptHost:AddWatchForCode("ER_Setting_Changed", "er_full", EmptyLocationTargets)
+ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", ForceUpdate)
+-- ScriptHost:AddWatchForCode("StateChanged", "*", StateChanged)

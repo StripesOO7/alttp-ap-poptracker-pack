@@ -284,7 +284,7 @@ LIGHT_SHOPS_FOUND = 0
 FORTUNE_FOUND = 0
 FAIRYS_FOUND = 0
 
-function updateEntrances(segment, mainModuleIdx)
+function UpdateEntrances(segment, mainModuleIdx)
     
     local current_room
     local new_ow_room
@@ -358,7 +358,7 @@ function updateEntrances(segment, mainModuleIdx)
                         if multi_purpose_room_call == nil then
                             multi_purpose_room_call = function() return 1 end
                         end
-                        Selected_exit = Tracker:FindObjectForCode("to_"..current_door[multi_purpose_room_call()])
+                        Selected_exit = Tracker:FindObjectForCode("to_"..current_door[multi_purpose_room_cALL()])
                         -- if string.match(current_door[1], "kakariko_shop") then
                         --     LIGHT_SHOPS_FOUND = LIGHT_SHOPS_FOUND + 1
                         --     Selected_exit = Tracker:FindObjectForCode("to_"..current_door[LIGHT_SHOPS_FOUND])
@@ -421,7 +421,7 @@ function updateEntrances(segment, mainModuleIdx)
     end
 end
 
-function updateUI(segment, mainModuleIdx)
+function UpdateUI(segment, mainModuleIdx)
     local ow_room_reset
     local dungeon_room_reset
     
@@ -463,11 +463,11 @@ function updateUI(segment, mainModuleIdx)
         if new_ow_room > 0 then -- and ow_room ~= new_ow_room then
             if  ow_room ~= new_ow_room then
                 ow_room = new_ow_room
-                changeTab("Overworld")
+                ChangeTab("Overworld")
             end
         elseif new_dungeon_room > 0 and dungeon_room ~= new_dungeon_room then
             if (segment:ReadUInt16(0x7e0020) < 1050 and segment:ReadUInt16(0x7e0022) < 1050) then
-                changeTab("Overworld")
+                ChangeTab("Overworld")
             else
                 dungeon_room = new_dungeon_room
                 -- print(room_lookuptable[dungeon_room][1])
@@ -475,7 +475,7 @@ function updateUI(segment, mainModuleIdx)
                 if room_lookuptable[dungeon_room] ~= nil then
                     for _, ui_name in pairs(room_lookuptable[dungeon_room]) do
                         -- print(_, ui_name)
-                        changeTab(ui_name)
+                        ChangeTab(ui_name)
                     end
                 else
                     print("room_lookuptable[dungeon_room] returned nil for dungeon room:".. dungeon_room)
@@ -493,7 +493,7 @@ function updateUI(segment, mainModuleIdx)
     end
 end
 
--- function updateUI(segment, mainModuleIdx)
+-- function UpdateUI(segment, mainModuleIdx)
 --     if mainModuleIdx > 0x05 then
 --         new_ow_room = segment:ReadUInt16(0x7e008a)
 --         if new_ow_room == 0 then
@@ -505,10 +505,10 @@ end
 
 --         if new_ow_room > 0 then -- and ow_room ~= new_ow_room then
 --             ow_room = new_ow_room
---             changeTab("Overworld")
+--             ChangeTab("Overworld")
 --         elseif new_dungeon_room > 0 and dungeon_room ~= new_dungeon_room then
 --             dungeon_room = new_dungeon_room
---             changeTab(room_lookuptable[dungeon_room])
+--             ChangeTab(room_lookuptable[dungeon_room])
 --         end
 --         -- print("Current Room Index: ", new_dungeon_room)
 --         -- print("Current OW   Index: ", new_ow_room)
@@ -516,7 +516,7 @@ end
 --     end
 -- end
 
-function changeTab(target_tab)
+function ChangeTab(target_tab)
     if Tracker:FindObjectForCode("ui_hint").Active and target_tab ~= nil then
         -- print(ow_room, dungeon_room, Tracker:FindObjectForCode("ui_hint").Active, target_tab)
         Tracker:UiHint("ActivateTab", target_tab)
@@ -578,10 +578,10 @@ function updateInGameStatusFromMemorySegment(segment)
         return false
     end
     if Tracker:FindObjectForCode("ui_hint").Active then
-        updateUI(segment, mainModuleIdx)
+        UpdateUI(segment, mainModuleIdx)
     end
     if Tracker:FindObjectForCode("er_tracking").CurrentStage > 0 then
-        updateEntrances(segment, mainModuleIdx)
+        UpdateEntrances(segment, mainModuleIdx)
     end
 
     return true

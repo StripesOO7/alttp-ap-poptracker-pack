@@ -6,14 +6,14 @@ function A(result)
     end
 end
 
-function all(...)
+function ALL(...)
     local args = { ... }
     local min = AccessibilityLevel.Normal
     for _, v in ipairs(args) do
         if type(v) == "function" then
             v = v()
         elseif type(v) == "string" then
-            v = has(v)
+            v = Has(v)
         end
         if type(v) == "boolean" then
             v = A(v)
@@ -29,14 +29,14 @@ function all(...)
     return min
 end
 
-function any(...)
+function ANY(...)
     local args = { ... }
     local max = AccessibilityLevel.None
     for _, v in ipairs(args) do
         if type(v) == "function" then
             v = v()
         elseif type(v) == "string" then
-            v = has(v)
+            v = Has(v)
         end
         if type(v) == "boolean" then
             v = A(v)
@@ -52,7 +52,7 @@ function any(...)
     return max
 end
 
-function has(item, noKDS_amount, noKDS_amountInLogic, KDS_amount, KDS_amountInLogic)
+function Has(item, noKDS_amount, noKDS_amountInLogic, KDS_amount, KDS_amountInLogic)
     local count
     local amount
     local amountInLogic
@@ -109,7 +109,7 @@ function KDSreturn( noKDS, KDS)
     end
 end
 
-function owDungeonChecks(...)
+function OWDungeonChecks(...)
     local locations = { ... }
     local availale 
     local access_check
@@ -144,15 +144,15 @@ function owDungeonChecks(...)
 end
 
 
-function dealDamage()
-    return any(
+function DealDamage()
+    return ANY(
         "sword",
         "bombs",
         "byrna",
         "somaria",
         -- "bombos",
-        -- has("ether"),
-        -- has("quake"),
+        -- "ether",
+        -- "quake",
         "bow",
         "hookshot",
         "firerod",
@@ -161,7 +161,7 @@ function dealDamage()
 end
 
 function hitRanged()
-    return any(
+    return ANY(
         "masterword",
         "bombs",
         "somaria",
@@ -174,7 +174,7 @@ function hitRanged()
     )
 end
 
-function getBossRef(nameRef)
+function GetBossRef(nameRef)
     local bosses = {
         [0] = "@Bosses/Unknown",
         [1] = "@Bosses/Armos Knights",
@@ -195,7 +195,7 @@ function getBossRef(nameRef)
     return access_lvl
 end
 
-function canActivateTablets()
+function CanActivateTablets()
     if Tracker:FindObjectForCode("swordless").Active then
         return Tracker:FindObjectForCode("hammer").Active
     else
@@ -203,7 +203,7 @@ function canActivateTablets()
     end
 end
 
-function getShuffle(item, type)
+function GetShuffle(item, type)
     -- print(item, type)
     if Tracker:ProviderCountForCode(item) > 0 and type == "shuffle" then
         return true
@@ -214,7 +214,7 @@ function getShuffle(item, type)
     end
 end
 
-function checkSwordless()
+function CheckSwordless()
     if Tracker:ProviderCountForCode("swordless") > 0 then
         return true
     else
@@ -222,7 +222,7 @@ function checkSwordless()
     end
 end
 
-function canCheckWithBook()
+function CanCheckWithBook()
     if Tracker:FindObjectForCode("Book").Active then
         return AccessibilityLevel.Inspect
     else
@@ -230,15 +230,15 @@ function canCheckWithBook()
     end
 end
 
-function canUseMedallions()
-    return checkSwordless()
+function CanUseMedallions()
+    return CheckSwordless()
 end
 
 function canRemoveCurtains()
-    return checkSwordless()
+    return CheckSwordless()
 end
 
-function canClearAgaTowerBarrier()
+function CanClearAgaTowerBarrier()
     -- With cape, we can always get through
     if Tracker:FindObjectForCode("cape").Active then
         return true
@@ -255,15 +255,15 @@ function canClearAgaTowerBarrier()
     end    
 end
 
-function gtCrystalCount()
-    return checkRequirements("gt_access", "crystal") > 0
+function GTCrystalCount()
+    return CheckRequirements("gt_access", "crystal") > 0
 end
 
-function ganonCrystalCount()
-    return checkRequirements("ganon_killable", "crystal") > 0
+function GanonCrystalCount()
+    return CheckRequirements("ganon_killable", "crystal") > 0
 end
 
-function canSwim(itemNeeded) --fake flippers
+function CanSwim(itemNeeded) --fake flippers
     if Tracker:FindObjectForCode("glitches").CurrentStage > 0 and itemNeeded ~= nil then
         return Tracker:FindObjectForCode(itemNeeded).Active
     elseif Tracker:FindObjectForCode("glitches").CurrentStage > 0 and itemNeeded == nil then 
@@ -276,7 +276,7 @@ end
 function smallKeys(dungeon, count, count_in_logic, keydrop_count, keydrop_count_in_logic)
     -- if Tracker:FindObjectForCode("small_keys").CurrentStage == 1 then
     --     if Tracker:FindObjectForCode("key_drop_shuffle").Active == true then
-    --         -- has(dungeon.."_drop", tonumber(keydrop_count), tonumber(keydrop_count_in_logic))
+    --         -- Has(dungeon.."_drop", tonumber(keydrop_count), tonumber(keydrop_count_in_logic))
     --         if Tracker:FindObjectForCode(dungeon.."_drop").AcquiredCount >= tonumber(keydrop_count) then
     --             return true
     --         else
@@ -288,14 +288,14 @@ function smallKeys(dungeon, count, count_in_logic, keydrop_count, keydrop_count_
     --         return false
     --     end
     --     -- else
-    --     --     -- has(dungeon, tonumber(count), tonumber(count_in_logic))
+    --     --     -- Has(dungeon, tonumber(count), tonumber(count_in_logic))
     --     -- end
     -- else
     --     return true
     -- end
 end
 
-function bigKeys(dungeon)
+function BigKeys(dungeon)
     if Tracker:FindObjectForCode("big_keys").Active == true then
         return Tracker:FindObjectForCode(dungeon).Active
     -- elseif Tracker:FindObjectForCode("big_keys").Active == false and key == "sw_bigkey" and Tracker:FindObjectForCode("firerod").Active == false then
@@ -305,7 +305,7 @@ function bigKeys(dungeon)
     end
 end
 
-function checkRequirements(reference, check_count)
+function CheckRequirements(reference, check_count)
     local reqCount = Tracker:ProviderCountForCode(reference)
     local count = Tracker:ProviderCountForCode(check_count)
 
@@ -316,7 +316,7 @@ function checkRequirements(reference, check_count)
     end
 end
 
-function darkRooms(torches_abailable)
+function DarkRooms(torches_abailable)
     local dark_mode = Tracker:FindObjectForCode("dark_mode").CurrentStage
     if dark_mode == 2 then --none
         return true
@@ -333,12 +333,12 @@ function darkRooms(torches_abailable)
     end
 end
 
-function calcHeartpieces()
+function CalcHeartpieces()
     local pieces = Tracker:FindObjectForCode("heartpieces")
     pieces.CurrentStage = (Tracker:FindObjectForCode("heartpieces").AcquiredCount % 4)
 end
 
-function enemizerCheck(item)
+function EnemizerCheck(item)
     if Tracker:FindObjectForCode("enemizer").Active == true then
         return true
     end
@@ -349,14 +349,14 @@ function enemizerCheck(item)
     end
 end
 
-function can_interact(worldstate, glitch_lvl)
+function Can_interact(worldstate, glitch_lvl)
     -- print("worldstate:", worldstate)
     -- print("pearl:", Tracker:FindObjectForCode("pearl").Active)
-    -- print("openOrStandard:", openOrStandard())
-    -- print("inverted:", inverted())
-    if (worldstate == "light" and openOrStandard()) or (worldstate == "dark" and inverted()) then
+    -- print("OpenOrStandard:", OpenOrStandard())
+    -- print("Inverted:", Inverted())
+    if (worldstate == "light" and OpenOrStandard()) or (worldstate == "dark" and Inverted()) then
         return true
-    elseif (worldstate == "light" and inverted()) or (worldstate == "dark" and openOrStandard()) then
+    elseif (worldstate == "light" and Inverted()) or (worldstate == "dark" and OpenOrStandard()) then
         if Tracker:FindObjectForCode("pearl").Active then
             return true
         end
@@ -368,15 +368,15 @@ function can_interact(worldstate, glitch_lvl)
     return false
 end
 
-function canFinish() 
+function CanFinish() 
     local reqs = {
-        [1] = {checkRequirements("ganon_killable", "crystal")},
+        [1] = {CheckRequirements("ganon_killable", "crystal")},
         [2] = {Tracker:ProviderCountForCode("aga1")},
         [3] = {Tracker:ProviderCountForCode("aga2")},
         [4] = {Tracker:ProviderCountForCode("green_pendant")},
         [5] = {Tracker:ProviderCountForCode("blue_pendant")},
         [6] = {Tracker:ProviderCountForCode("red_pendant")},
-        [7] = {checkRequirements("triforce_pieces_needed", "triforcepieces")},
+        [7] = {CheckRequirements("triforce_pieces_needed", "triforcepieces")},
         [8] = {Tracker:ProviderCountForCode("icerod")}
     }
     local goals = {
@@ -405,14 +405,14 @@ function canFinish()
     end
 end
 
-function canChangeWorldWithMirror()
+function CanChangeWorldWithMirror()
     if Tracker:FindObjectForCode("mirror").Active then
         return true
     end
     return false
 end
 
-function openOrStandard(item)
+function OpenOrStandard(item)
     if Tracker:FindObjectForCode("start_option").CurrentStage ~= 2 then
         if item then
             return Tracker:FindObjectForCode(item).Active
@@ -422,7 +422,7 @@ function openOrStandard(item)
     return false
 end
 
-function inverted(item)
+function Inverted(item)
     if Tracker:FindObjectForCode("start_option").CurrentStage == 2 then
         if item then
             return Tracker:FindObjectForCode(item).Active
@@ -432,14 +432,14 @@ function inverted(item)
     return false
 end
 
-function checkGlitches(stage)
+function CheckGlitches(stage)
     if Tracker:FindObjectForCode("glitches").CurrentStage >= tonumber(stage) then
         return true
     end
     return false
 end
 
-function keyDropLayoutChange()
+function KeyDropLayoutChange()
     local key_drop = Tracker:FindObjectForCode("key_drop_shuffle")
     if key_drop.Active then
         Tracker:AddLayouts("layouts/dungeon_items_keydrop.json")
@@ -448,9 +448,9 @@ function keyDropLayoutChange()
     end
 end
 
-function tt_boss_check()
+function TT_boss_check()
     if Tracker:FindObjectForCode("tt_boss").CurrentStage == 7 then 
-        return all(
+        return ALL(
             CanReach("tt_attic"),
             CanReach("TT - Blind's Cell"),
             "bombs"
@@ -460,7 +460,7 @@ function tt_boss_check()
     end
 end
 
-function bossShuffle()
+function BossShuffle()
     local dungeon_list = {"ep","dp","toh","pod","sp","sw","tt","ip","mm","tr"}
     if Tracker:FindObjectForCode("boss_shuffle").CurrentStage == 0 then
         for index, dungeon in pairs(dungeon_list) do
@@ -479,7 +479,7 @@ function bossShuffle()
     end
 end
 
-function countDoneDeadends(inital_keys_needed, ...)
+function CountDoneDeadends(inital_keys_needed, ...)
     local locations = { ... }
     local keys_needed = inital_keys_needed
     for _, location in pairs(locations) do

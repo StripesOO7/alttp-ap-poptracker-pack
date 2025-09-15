@@ -106,7 +106,7 @@ local function OnRightClickFunc(self)
                 _UnsetLocationOptions(target)
                 _UnsetLocationOptions(self)
                 -- print("diconnected" .. self.Name .. " from " .. target.Name)
-                forceUpdate()
+                ForceUpdate()
             end
         end
     end
