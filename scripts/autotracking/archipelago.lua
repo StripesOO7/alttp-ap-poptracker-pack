@@ -628,6 +628,46 @@ function setAllAutofill()
     Tracker:FindObjectForCode("autofill_sanities").Active = set_all
 end
 
+local dungeons_prefixes = {
+        "hc",
+        "ep",
+        "dp",
+        "toh",
+        "pod",
+        "sp",
+        "sw",
+        "tt",
+        "ip",
+        "mm",
+        "tr",
+        "gt"
+    }
+
+function GiveAll(setting)
+    local setting_stage = Tracker:FindObjectForCode(setting).CurrentStage
+    local mapping = {
+        ["maps_setting"] = "_map",
+        ["compass_setting"] = "_compass",
+        ["BigKeys_setting"] = "_bigkey",
+        ["smallkeys_setting"] = "_smallkey"
+    }
+    local on_off_mapping = {
+        -- [0] = false,
+        -- [1] = false,
+        -- [2] = false,
+        -- [3] = false,
+        -- [4] = false,
+        [5] = true,
+        [6] = true,
+    }
+    -- if Archipelago.PlayerNumber < 0 then
+        for _, dungeon_prefix in ipairs(dungeons_prefixes) do
+            Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting]).Active = on_off_mapping[setting_stage]
+        end
+    -- end
+end
+
+
 ScriptHost:AddWatchForCode("bombless start handler", "bombless", bombless)
 ScriptHost:AddWatchForCode("goal handler", "goal", goal_check)
 ScriptHost:AddWatchForCode("settings autofill_dungeon_settings", "autofill_dungeon_settings", autoFill)
@@ -640,6 +680,11 @@ ScriptHost:AddWatchForCode("set all autofill", "autofill_all_settings", setAllAu
 Archipelago:AddClearHandler("clear handler", onClear)
 Archipelago:AddItemHandler("item handler", onItem)
 Archipelago:AddLocationHandler("location handler", onLocation)
+
+ScriptHost:AddWatchForCode("settings maps_setting", "maps_setting", GiveAll)
+ScriptHost:AddWatchForCode("settings compass_shuffle", "compass_setting", GiveAll)
+ScriptHost:AddWatchForCode("settings smallkeys_setting", "smallkeys_setting", GiveAll)
+ScriptHost:AddWatchForCode("settings BigKeys_setting", "BigKeys_setting", GiveAll)
 
 Archipelago:AddSetReplyHandler("notify handler", onNotify)
 Archipelago:AddRetrievedHandler("notify launch handler", onNotifyLaunch)
