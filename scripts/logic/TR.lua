@@ -127,10 +127,46 @@ tr_eye_hallway:connect_two_ways(tr_switch_puzzle, function(keys)
     ), KDSreturn(keys + 1, keys + 1) end)
 -- tr_eye_hallway:connect_two_ways(tr_switch_puzzle, function(keys) return Has("tr_smallkey", keys + 1, 3, keys + 1, 5), KDSreturn(keys + 1, keys + 1) end)
 
-tr_eye_bridge_entrance_inside:connect_one_way("TR - Eyebridge Top Right", function() return Can_interact(tr_eye_bridge_entrance_inside.worldstate, 1) end)
-tr_eye_bridge_entrance_inside:connect_one_way("TR - Eyebridge Top Left", function() return Can_interact(tr_eye_bridge_entrance_inside.worldstate, 1) end)
-tr_eye_bridge_entrance_inside:connect_one_way("TR - Eyebridge Bottom Right", function() return Can_interact(tr_eye_bridge_entrance_inside.worldstate, 1) end)
-tr_eye_bridge_entrance_inside:connect_one_way("TR - Eyebridge Bottom Left", function() return Can_interact(tr_eye_bridge_entrance_inside.worldstate, 1) end)
+tr_eye_bridge_entrance_inside:connect_one_way("TR - Eyebridge Top Right", function() 
+    return ALL(
+        Can_interact(tr_eye_bridge_entrance_inside.worldstate, 1),
+        ANY(
+            "byrna",
+            "cape",
+            "mirrorshield"
+        )
+    )
+end)
+tr_eye_bridge_entrance_inside:connect_one_way("TR - Eyebridge Top Left", function() 
+    return ALL(
+        Can_interact(tr_eye_bridge_entrance_inside.worldstate, 1),
+        ANY(
+            "byrna",
+            "cape",
+            "mirrorshield"
+        )
+    )
+end)
+tr_eye_bridge_entrance_inside:connect_one_way("TR - Eyebridge Bottom Right", function() 
+    return ALL(
+        Can_interact(tr_eye_bridge_entrance_inside.worldstate, 1),
+        ANY(
+            "byrna",
+            "cape",
+            "mirrorshield"
+        )
+    )
+end)
+tr_eye_bridge_entrance_inside:connect_one_way("TR - Eyebridge Bottom Left", function() 
+    return ALL(
+    Can_interact(tr_eye_bridge_entrance_inside.worldstate, 1),
+    ANY(
+            "byrna",
+            "cape",
+            "mirrorshield"
+        )
+    )
+end)
 
 tr_switch_puzzle:connect_two_ways(tr_boss_room, function() return ALL("somaria","tr_bigkey") end)
 
