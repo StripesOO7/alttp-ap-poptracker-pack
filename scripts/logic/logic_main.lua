@@ -119,7 +119,7 @@ function alttp_location.new(name, shortname, origin, room, y, x)
                 Table_insert_at(ENTRANCE_MAPPING[room], x_range, {})
                 Table_insert_at(ENTRANCE_MAPPING[room][x_range], y_range, nil)
 
-                table.insert(ENTRANCE_MAPPING[room][x_range][y_range], self.name)
+                table.insert(ENTRANCE_MAPPING[room][x_range][y_range], {self.name, origin})
             end
         end
     -- else

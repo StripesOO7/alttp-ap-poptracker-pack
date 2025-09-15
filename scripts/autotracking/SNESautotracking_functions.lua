@@ -279,6 +279,8 @@ local multi_purpose_room = {
 }
 Selected_entrance = nil
 Selected_exit = nil
+Selected_entrance_origin = nil
+Selected_exit_origin = nil
 local er_target_counter = 0
 LIGHT_SHOPS_FOUND = 0
 FORTUNE_FOUND = 0
@@ -335,21 +337,28 @@ function UpdateEntrances(segment, mainModuleIdx)
         local temp_room = ENTRANCE_MAPPING[current_room]
         local temp_room_x
         local temp_room_y
+        local entrance_name
+        local entrance_origin
         if temp_room then
             temp_room_x = temp_room[current_coords_x]
             if temp_room_x then
                 temp_room_y = temp_room_x[current_coords_y]
+                if temp_room_y then
+                    entrance_name = temp_room_y[1]
+                    entrance_origin = temp_room_y[2]
+                end
             end
         end
 
-        if temp_room ~= nil and temp_room_x ~= nil and temp_room_y ~= nil then
+        if temp_room_y ~= nil then
             -- local current_door = ENTRANCE_MAPPING[current_room][current_coords_x][current_coords_y]
-            local current_door = temp_room_y
+            local current_door = entrance_name
             local door_name = current_door[1]
             -- print(door_name)
             if current_door ~= nil and type(current_door) == "table" then
                 if Selected_entrance == nil then
                     Selected_entrance = Tracker:FindObjectForCode("from_"..door_name)
+                    Selected_entrance_origin = entrance_origin
                     -- print("Selected_entrance", Selected_entrance.Name)
                 else
                     if string.gsub(Selected_entrance.Name, "from_", "") ~= door_name then
@@ -358,7 +367,8 @@ function UpdateEntrances(segment, mainModuleIdx)
                         if multi_purpose_room_call == nil then
                             multi_purpose_room_call = function() return 1 end
                         end
-                        Selected_exit = Tracker:FindObjectForCode("to_"..current_door[multi_purpose_room_cALL()])
+                        Selected_exit = Tracker:FindObjectForCode("to_"..current_door[multi_purpose_room_call()])
+                        Selected_exit_origin = entrance_origin
                         -- if string.match(current_door[1], "kakariko_shop") then
                         --     LIGHT_SHOPS_FOUND = LIGHT_SHOPS_FOUND + 1
                         --     Selected_exit = Tracker:FindObjectForCode("to_"..current_door[LIGHT_SHOPS_FOUND])
@@ -377,7 +387,7 @@ function UpdateEntrances(segment, mainModuleIdx)
                 end
                 
                 local er_stage = Tracker:FindObjectForCode("er_tracking").CurrentStage
-                if Selected_entrance ~= nil and Selected_exit ~= nil then
+                if Selected_entrance ~= nil and Selected_exit ~= nil and Selected_entrance_origin ~= Selected_exit_origin then
                     -- print("inside entrance connection part")
                     -- print("selected_entrance", selected_entrance.Name)
                     -- print("selected_exit", selected_exit.Name)
@@ -396,6 +406,8 @@ function UpdateEntrances(segment, mainModuleIdx)
                     end
                     Selected_entrance = nil
                     Selected_exit = nil
+                    Selected_entrance_origin = nil
+                    Selected_exit_origin = nil
                 end
             else
                 Selected_entrance = nil
@@ -404,7 +416,7 @@ function UpdateEntrances(segment, mainModuleIdx)
             er_target_counter = er_target_counter + 1
             -- Selected_entrance = nil
         end
-        if er_target_counter > 6 then
+        if er_target_counter > 10 then
             -- print("reset selected entrance", Selected_entrance)
             Selected_entrance = nil
             er_target_counter = 0
