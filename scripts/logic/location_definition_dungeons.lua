@@ -69,8 +69,8 @@ tr_big_chest_entrance_outside = alttp_location.new("tr_big_chest_entrance_outsid
 tr_big_chest_entrance_inside = alttp_location.new("tr_big_chest_entrance_inside", "TR Big Chest", nil, 36, 1496, 2424)
 tr_eye_bridge_entrance_outside = alttp_location.new("tr_eye_bridge_entrance_outside", "TR Eye-Bridge", "dark", 69, 459, 3352)
 tr_eye_bridge_entrance_inside = alttp_location.new("tr_eye_bridge_entrance_inside", "TR Eye-Bridge", nil, 213, 7128, 2680)
-tr_laser_entrance_outside = alttp_location.new("tr_laser_entrance_outside", "TR Laser-Exit", nil, 35, 1496, 1912)
-tr_laser_entrance_inside = alttp_location.new("tr_laser_entrance_inside", "TR Laser-Exit", "dark", 69, 362, 3256)
+tr_laser_entrance_outside = alttp_location.new("tr_laser_entrance_outside", "TR Laser-Exit", "dark", 69, 362, 3256)
+tr_laser_entrance_inside = alttp_location.new("tr_laser_entrance_inside", "TR Laser-Exit", nil, 35, 1496, 1912)
 tr_main_entrance_outside = alttp_location.new("tr_main_entrance_outside", "TR Main", "dark", 71, 314, 3848)
 tr_main_entrance_inside = alttp_location.new("tr_main_entrance_inside", "TR Main", nil, 214, 7128, 3448)
 
