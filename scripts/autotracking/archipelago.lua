@@ -633,6 +633,7 @@ local dungeons_prefixes = {
         "ep",
         "dp",
         "toh",
+        "at",
         "pod",
         "sp",
         "sw",
@@ -642,7 +643,7 @@ local dungeons_prefixes = {
         "tr",
         "gt"
     }
-
+-- not sure howto handle reset. i should probably keep a record of some sort of all already gotten items.
 function GiveAll(setting)
     local setting_stage = Tracker:FindObjectForCode(setting).CurrentStage
     local mapping = {
@@ -651,18 +652,34 @@ function GiveAll(setting)
         ["BigKeys_setting"] = "_bigkey",
         ["smallkeys_setting"] = "_smallkey"
     }
-    local on_off_mapping = {
-        -- [0] = false,
-        -- [1] = false,
-        -- [2] = false,
-        -- [3] = false,
-        -- [4] = false,
-        [5] = true,
-        [6] = true,
-    }
     -- if Archipelago.PlayerNumber < 0 then
         for _, dungeon_prefix in ipairs(dungeons_prefixes) do
-            Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting]).Active = on_off_mapping[setting_stage]
+            -- print(dungeon_prefix .. mapping[setting], Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting]).Active)
+            -- print(dungeon_prefix .. mapping[setting] .. "_copy", Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting] .. "_copy").Active)
+            local item = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting])
+            local copy = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting] .. "_copy")
+            if setting_stage == 5 or setting_stage == 6 then
+                
+                if setting == "smallkeys_setting" then
+                    if Tracker:FindObjectForCode("key_drop_shuffle").Active then
+                        item = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting].. "_drop")
+                        copy = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting] .. "_drop_copy")
+                    end
+                    item.AcquiredCount = item.MaxCount
+                else
+                    item.Active = true
+                end
+            else
+                if setting == "smallkeys_setting" then
+                    if Tracker:FindObjectForCode("key_drop_shuffle").Active then
+                        item = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting].. "_drop")
+                        copy = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting] .. "_drop_copy")
+                    end
+                    item.AcquiredCount = copy.AcquiredCount
+                else
+                    item.Active = copy.Active
+                end
+            end
         end
     -- end
 end
