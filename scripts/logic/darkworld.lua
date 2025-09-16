@@ -91,7 +91,7 @@ big_bomb_shop_area:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted(),
-        CanReach(Inverted_activate_flute)
+        CanReach(inverted_activate_flute)
     ) 
 end)
 big_bomb_shop_area:connect_one_way(dark_lake_hylia)
@@ -138,7 +138,7 @@ swamp_area:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted(),
-        CanReach(Inverted_activate_flute)
+        CanReach(inverted_activate_flute)
     ) 
 end)
 -- swamp_area:connect_one_way(desert_area, function() return(ALL("mirror", CanActivateTablets())) end)
@@ -195,7 +195,7 @@ mire_area:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted(),
-        CanReach(Inverted_activate_flute)
+        CanReach(inverted_activate_flute)
     ) 
 end)
 
@@ -253,7 +253,7 @@ dark_lake_hylia:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted(),
-        CanReach(Inverted_activate_flute)
+        CanReach(inverted_activate_flute)
     ) 
 end)
 dark_lake_hylia:connect_one_way(dark_icerod_area, function()
@@ -346,7 +346,7 @@ dark_icerod_area:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted(),
-        CanReach(Inverted_activate_flute)
+        CanReach(inverted_activate_flute)
     ) 
 end)
 
@@ -384,7 +384,7 @@ teleporter_at_village_of_the_outcast:connect_one_way(village_of_the_outcast, fun
     ) 
 end)
 
-village_of_the_outcast:connect_two_ways(Inverted_activate_flute, function() 
+village_of_the_outcast:connect_two_ways(inverted_activate_flute, function() 
     return ALL(
         "flute",
         Inverted()
@@ -395,11 +395,11 @@ village_of_the_outcast:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted(),
-        CanReach(Inverted_activate_flute)
+        CanReach(inverted_activate_flute)
     ) 
 end)
 village_of_the_outcast:connect_one_way(south_of_village_of_the_outcast)
-village_of_the_outcast:connect_two_ways(Inverted_activate_flute, function() 
+village_of_the_outcast:connect_two_ways(inverted_activate_flute, function() 
     return ALL(
         "flute",
         Inverted()
@@ -451,7 +451,7 @@ south_of_village_of_the_outcast:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted(),
-        CanReach(Inverted_activate_flute)
+        CanReach(inverted_activate_flute)
     ) 
 end)
 south_of_village_of_the_outcast:connect_two_ways(dark_archery_minigame_outside)
@@ -521,7 +521,7 @@ dark_lumpberjacks:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted(),
-        CanReach(Inverted_activate_flute)
+        CanReach(inverted_activate_flute)
     ) 
 end)
 dark_lumpberjacks:connect_two_ways(dark_lumpberjacks_shop_outside)
@@ -611,7 +611,7 @@ dark_chapel_area:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted(),
-        CanReach(Inverted_activate_flute)
+        CanReach(inverted_activate_flute)
     ) 
 end)
 dark_chapel_area:connect_one_way(dark_potion_shop_area, function()
@@ -667,7 +667,7 @@ dark_potion_shop_area:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted(),
-        CanReach(Inverted_activate_flute)
+        CanReach(inverted_activate_flute)
     ) 
 end)
 
@@ -698,7 +698,7 @@ catfish_area:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted(),
-        CanReach(Inverted_activate_flute)
+        CanReach(inverted_activate_flute)
     ) 
 end)
 catfish_area:connect_one_way("Catfish Item", function() return Can_interact(catfish_area.worldstate, 1) end)
