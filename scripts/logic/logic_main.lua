@@ -446,14 +446,14 @@ function EmptyLocationTargets()
             print("finshed discover")
         elseif er_tracking.CurrentStage == 1 then
             print("simple er")
-            for name, _ in pairs(NAMED_ENTRANCES) do
+            for name, inside in pairs(NAMED_ENTRANCES) do
                 local source = Tracker:FindObjectForCode(name)
                 local target = Tracker:FindObjectForCode(name)
                 _SetLocationOptions(source, target)
                 _SetLocationOptions(source, target)
                 -- print(name)
                 -- print(Tracker:FindObjectForCode(name).ItemState.Target)
-                if string.sub(name, -7,-1) == "_inside" then
+                if inside then
                     _SetLocationOptions(Tracker:FindObjectForCode(name), Tracker:FindObjectForCode(string.gsub(name, "_inside", "_outside")))
                     _SetLocationOptions(Tracker:FindObjectForCode(string.gsub(name, "_inside", "_outside")), Tracker:FindObjectForCode(name))
                 else
