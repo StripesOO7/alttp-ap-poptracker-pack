@@ -658,7 +658,7 @@ end)
 light_death_mountain_return_ledge:connect_one_way(lumberjacks_area)
 light_death_mountain_return_ledge:connect_two_ways(light_death_mountain_return_left_outside, function() return OpenOrStandard() end)
 
-old_man_cave_left_ledge:connect_two_ways(old_man_cave_left_outside, function() return OpenOrStandard() end)
+old_man_cave_left_ledge:connect_two_ways(old_man_cave_left_outside)
 
 old_man_cave_left_outside:connect_two_ways_entrance("Old Man Cave Left", old_man_cave_left_inside, function() return OpenOrStandard() end)
 old_man_cave_left_outside:connect_two_ways_entrance("Bumper Cave Bottom", dark_bumper_cave_bottom_inside, function() return Inverted() end)
