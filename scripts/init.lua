@@ -30,4 +30,11 @@ require("scripts/locations_import")
 if PopVersion and PopVersion >= "0.18.0" then
     require("scripts/autotracking")
 end
-ScriptHost:AddWatchForCode("StateChanged", "*", StateChanged)
+
+function OnFrameHandler()
+    ScriptHost:RemoveOnFrameHandler("load handler")
+    -- stuff
+    ScriptHost:AddWatchForCode("StateChanged", "*", StateChanged)
+    ForceUpdate()
+end
+ScriptHost:AddOnFrameHandler("load handler", OnFrameHandler)
