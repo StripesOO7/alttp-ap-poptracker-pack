@@ -23,15 +23,15 @@ ep_compass_chest_room:connect_two_ways(ep_main_room_bottom)
 ep_compass_chest_room:connect_one_way("EP - Compass Chest")
 
 ep_main_room_bottom:connect_two_ways(ep_dark_square_room, function() return DarkRooms(false) end)
-ep_main_room_bottom:connect_two_ways(ep_dark_eyegore_room, function() 
+ep_main_room_bottom:connect_two_ways(ep_dark_eyegore_room, function()
     return ALL(
-        DarkRooms(true), 
+        DarkRooms(true),
         "ep_bigkey"
-    ) 
+    )
 end)
 ep_main_room_bottom:connect_one_way("EP - Big Chest", function() return Has("ep_bigkey") end)
 
-ep_dark_square_room:connect_two_ways(ep_big_key_chest_room, function(keys) 
+ep_dark_square_room:connect_two_ways(ep_big_key_chest_room, function(keys)
     if Has("ep_bigkey") == 6 then
         return Has("ep_smallkey", keys, 0, keys + 1, 2), KDSreturn(keys, keys + 1)
     else
@@ -43,11 +43,11 @@ ep_dark_square_room:connect_one_way("EP - Dark Square Key Drop")
 ep_big_key_chest_room:connect_one_way(ep_main_room_bottom)
 ep_big_key_chest_room:connect_one_way("EP - Big Key Chest")
 
-ep_dark_eyegore_room:connect_two_ways(ep_boss_room, function(keys) 
+ep_dark_eyegore_room:connect_two_ways(ep_boss_room, function(keys)
     return ALL(
-        Has("ep_smallkey", keys, 0, keys + 1, 2), 
+        Has("ep_smallkey", keys, 0, keys + 1, 2),
         EnemizerCheck("bow")
-    ), KDSreturn(keys, keys + 1) 
+    ), KDSreturn(keys, keys + 1)
 end)
 ep_dark_eyegore_room:connect_one_way("EP - Dark Eyegore Key Drop")
 

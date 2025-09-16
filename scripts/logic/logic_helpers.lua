@@ -111,17 +111,17 @@ end
 
 function OWDungeonChecks(...)
     local locations = { ... }
-    local availale 
+    local availale
     local access_check
     availale = 0
-    local sequence_breakable 
+    local sequence_breakable
     sequence_breakable= 0
     local inspect
     inspect = 0
-    
+   
     for _, location in ipairs(locations) do
-       
-        -- access_check =  CanReach(location) 
+      
+        -- access_check =  CanReach(location)
         access_check = Tracker:FindObjectForCode(location).AccessibilityLevel
         if access_check == 3 then
             inspect = inspect + 1
@@ -190,7 +190,7 @@ function GetBossRef(nameRef)
     }
     local stage = Tracker:FindObjectForCode(nameRef).CurrentStage
     local access_lvl = 0
-    
+   
     access_lvl = Tracker:FindObjectForCode(bosses[stage]).AccessibilityLevel
     return access_lvl
 end
@@ -209,7 +209,7 @@ function GetShuffle(item, type)
         return true
     elseif Tracker:ProviderCountForCode(item) == 0 and type == "vanilla" then
         return true
-    else 
+    else
         return false
     end
 end
@@ -252,7 +252,7 @@ function CanClearAgaTowerBarrier()
         else
             return false
         end
-    end    
+    end
 end
 
 function GTCrystalCount()
@@ -266,7 +266,7 @@ end
 function CanSwim(itemNeeded) --fake flippers
     if Tracker:FindObjectForCode("glitches").CurrentStage > 0 and itemNeeded ~= nil then
         return Tracker:FindObjectForCode(itemNeeded).Active
-    elseif Tracker:FindObjectForCode("glitches").CurrentStage > 0 and itemNeeded == nil then 
+    elseif Tracker:FindObjectForCode("glitches").CurrentStage > 0 and itemNeeded == nil then
         return true
     else
         return Tracker:FindObjectForCode("flippers").Active
@@ -282,7 +282,7 @@ function smallKeys(dungeon, count, count_in_logic, keydrop_count, keydrop_count_
     --         else
     --             return false
     --         end
-    --     elseif Tracker:FindObjectForCode(dungeon).AcquiredCount >= tonumber(count) then  
+    --     elseif Tracker:FindObjectForCode(dungeon).AcquiredCount >= tonumber(count) then
     --         return true
     --     else
     --         return false
@@ -368,7 +368,7 @@ function Can_interact(worldstate, glitch_lvl)
     return false
 end
 
-function CanFinish() 
+function CanFinish()
     local reqs = {
         [1] = {CheckRequirements("ganon_killable", "crystal")},
         [2] = {Tracker:ProviderCountForCode("aga1")},
@@ -449,7 +449,7 @@ function KeyDropLayoutChange()
 end
 
 function TT_boss_check()
-    if Tracker:FindObjectForCode("tt_boss").CurrentStage == 7 then 
+    if Tracker:FindObjectForCode("tt_boss").CurrentStage == 7 then
         return ALL(
             CanReach("tt_attic"),
             CanReach("TT - Blind's Cell"),

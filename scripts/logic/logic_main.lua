@@ -35,7 +35,7 @@ function Table_insert_at(er_table, key, value)
     table.insert(er_table[key], value)
 end
 
--- 
+--
 function CanReach(name)
     if type(name) == "table" then
         -- print("-----------")
@@ -70,7 +70,7 @@ function CanReach(name)
     if type(name) == "table" then
         -- print(name.name)
         location = NAMED_LOCATIONS[name.name]
-    else 
+    else
         location = NAMED_LOCATIONS[name]
     end
     -- print(location, name)
@@ -114,8 +114,8 @@ function alttp_location.new(name, shortname, origin, room, y, x)
         -- self.cave = cave -- boolean
         -- 20 pixel tolerance
         Table_insert_at(ENTRANCE_MAPPING, room, {})
-        for x_range = x-20, x+20 do
-            for y_range = y-20, y+20 do
+        for x_range = x-30, x+30 do
+            for y_range = y-30, y+30 do
                 Table_insert_at(ENTRANCE_MAPPING[room], x_range, {})
                 Table_insert_at(ENTRANCE_MAPPING[room][x_range], y_range, nil)
                 -- print(self.name, origin == nil)
@@ -135,7 +135,7 @@ function alttp_location.new(name, shortname, origin, room, y, x)
     --         self.shortname = shortname
     --         table.insert(NAMED_LOCATIONS_KEYS, self.name)
     --     end
-        
+       
     end
     -- print("------")
     -- print(origin)
@@ -172,7 +172,7 @@ function alttp_location:connect_one_way(exit, rule)
     self.exits[#self.exits + 1] = { exit, rule }
 end
 
--- markes a 2-way connection between 2 locations. acts as a shortcut for 2 connect_one_way-calls 
+-- markes a 2-way connection between 2 locations. acts as a shortcut for 2 connect_one_way-calls
 function alttp_location:connect_two_ways(exit, rule)
     -- print(exit.name, self.name)
     self:connect_one_way(exit, rule)
@@ -227,11 +227,11 @@ function alttp_location:accessibility()
     return res
 end
 
--- 
+--
 local er_check = {
-    [0] = function(location_name) 
+    [0] = function(location_name)
         return false end,
-    [1] = function(location_name) --print("simple ER", ER_SIMPLE[self.name] ~= nil) 
+    [1] = function(location_name) --print("simple ER", ER_SIMPLE[self.name] ~= nil)
         -- if self.cave == true then
             return ER_SIMPLE["from_" .. location_name] ~= nil
         -- else
@@ -239,7 +239,7 @@ local er_check = {
         -- end
 
         end,
-    [2] = function(location_name) --print("full ER", NAMED_ENTRANCES[self.name] ~= nil) 
+    [2] = function(location_name) --print("full ER", NAMED_ENTRANCES[self.name] ~= nil)
         -- if self.cave == true then
             return NAMED_ENTRANCES["from_" .. location_name] ~= nil
         -- else
@@ -271,9 +271,9 @@ function alttp_location:discover(accessibility, keys, worldstate)
             -- local er_setting_stage
             -- er_setting_stage = Tracker:FindObjectForCode("er_tracking").CurrentStage
             -- local er_check = {
-            --         [0] = function() 
+            --         [0] = function()
             --             return false end,
-            --         [1] = function() --print("simple ER", ER_SIMPLE[self.name] ~= nil) 
+            --         [1] = function() --print("simple ER", ER_SIMPLE[self.name] ~= nil)
             --             -- if self.cave == true then
             --                return ER_SIMPLE["from_" .. self.name] ~= nil
             --             -- else
@@ -281,7 +281,7 @@ function alttp_location:discover(accessibility, keys, worldstate)
             --             -- end
 
             --             end,
-            --         [2] = function() --print("full ER", NAMED_ENTRANCES[self.name] ~= nil) 
+            --         [2] = function() --print("full ER", NAMED_ENTRANCES[self.name] ~= nil)
             --             -- if self.cave == true then
             --                return NAMED_ENTRANCES["from_" .. self.name] ~= nil
             --             -- else
@@ -299,17 +299,17 @@ function alttp_location:discover(accessibility, keys, worldstate)
                 local er_setting_stage
                 er_setting_stage = Tracker:FindObjectForCode("er_tracking").CurrentStage
                 if er_check[er_setting_stage](location_name) then -- simple ER
-                    -- print("from_" .. self.name) 
+                    -- print("from_" .. self.name)
                     temp = Tracker:FindObjectForCode("from_" .. location_name)
                     -- temp = Tracker:FindObjectForCode(self.name)
                     -- print(self.name, "to er_simple[self.name]: -->", ER_SIMPLE[self.name])
-                    
+                   
                     if temp ~= nil then
                         -- print("############ entering simple ER ############")
                         -- print("temp.Name", temp.Name)
                         -- print("temp.ItemState.Target", temp.ItemState.Target)
 
-                        
+                       
                         if temp.ItemState.Target ~= nil then
                             -- print(NAMED_LOCATIONS[string.gsub(temp.ItemState.Target, "to_", "")])
                             local stripped_target_name = string.gsub(temp.ItemState.Target, "to_", "")
@@ -353,7 +353,7 @@ function alttp_location:discover(accessibility, keys, worldstate)
             if location.worldstate == nil then
                 location.worldstate = worldstate
             end
-            
+           
             -- print("------ after")
             -- print("name:",self.name, location.name)
             -- print("lower:", self.worldstate, worldstate, location.worldstate)
@@ -386,7 +386,7 @@ function alttp_location:discover(accessibility, keys, worldstate)
                 elseif access == false then
                     access = AccessibilityLevel.None
                 end
-                
+               
                 if access == nil then
                     print("Warning: " .. self.name .. " -> " .. location.name .. " rule returned nil")
                     access = AccessibilityLevel.None
@@ -395,7 +395,7 @@ function alttp_location:discover(accessibility, keys, worldstate)
                     key = keys
                 end
                 if access > oldAccess or (access == oldAccess and key < oldKey) then -- not sure about the <
-                    -- print(self.name) 
+                    -- print(self.name)
                     -- print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access], "with worldstate:", worldstate)
                     -- print("lower:", self.worldstate, worldstate, location.worldstate)
                     -- print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access])--, "with worldstate:", worldstate)
@@ -413,7 +413,7 @@ darkworld_spawns = alttp_location.new("darkworld_spawns", nil, "dark")
 entry_point:connect_one_way(lightworld_spawns, function() return OpenOrStandard() end)
 entry_point:connect_one_way(darkworld_spawns, function() return Inverted() end)
 
--- 
+--
 function StateChanged()
     stale = true
     -- require("scripts/logic/logic_helpers")
@@ -468,7 +468,7 @@ function EmptyLocationTargets()
                 Tracker:FindObjectForCode(name).ItemState.Target = nil
                 -- Tracker:FindObjectForCode(name).worldstate = nil
             end
-            
+           
         elseif er_tracking.CurrentStage == 2 then
             print("full er")
             for name, _ in pairs(NAMED_ENTRANCES) do

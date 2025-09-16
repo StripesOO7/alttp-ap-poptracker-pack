@@ -420,7 +420,7 @@
                         "access_rules": [
                             "^$CanReach|Cave 45"
                         ]
-                        
+                       
                     }
                 ],
                 "map_locations": [
@@ -1264,7 +1264,7 @@
                 "sections": [
                     {
                         "name": "Dungeon Chest" ,
-                        "access_rules":[ 
+                        "access_rules":[
                             "^$OWDungeonChecks|@Desert Palace/Big Chest/Big Chest|@Desert Palace/Torch/Torch|@Desert Palace/Compass Chest/Compass Chest|@Desert Palace/Map Chest/Map Chest|@Desert Palace/Big Key Chest/Big Key Chest"
                         ],
                         "clear_as_group": false,
@@ -1297,7 +1297,7 @@
                 "sections": [
                     {
                         "name": "Key Drops",
-                        "access_rules":[ 
+                        "access_rules":[
                             "^$OWDungeonChecks|@Desert Palace Back/Desert Tiles 1 Pot Key/Desert Tiles 1 Pot Key|@Desert Palace Back/Beamos Hall Pot Key/Beamos Hall Pot Key|@Desert Palace Back/Desert Tiles 2 Pot Key/Desert Tiles 2 Pot Key"
                         ],
                         "item_count": 3,

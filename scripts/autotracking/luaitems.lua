@@ -122,7 +122,7 @@ end
 local function ProvidesCodeFunc(self, code)
 --     return 1
 -- end
-    if CanProvideCodeFunc(self, code) then 
+    if CanProvideCodeFunc(self, code) then
         -- print("ProvidesCodeFunc with", code)
         if self.ItemState.Target ~= nil then  --and Tracker:FindObjectForCode("er_tracking").CurrentStage > 0 then
             return 1
@@ -224,7 +224,7 @@ end
 function CreateLuaLocationItems(direction, location_obj, side)
     local self = ScriptHost:CreateLuaItem()
     -- self.Type = "custom"
-    self.Name = direction .. location_obj.name --code -- 
+    self.Name = direction .. location_obj.name --code --
     self.Icon = ImageReference:FromPackRelativePath("images/door_closed.png")
     self.ItemState = {
         Stage = 0,
@@ -246,7 +246,7 @@ function CreateLuaLocationItems(direction, location_obj, side)
     -- else
     --     self.ItemState.Target = string.gsub(self.Name, "_outside", "_inside")
     -- end
-    
+   
     self.CanProvideCodeFunc = CanProvideCodeFunc
     self.OnLeftClickFunc = OnLeftClickFunc
     self.OnRightClickFunc = OnRightClickFunc
@@ -263,14 +263,14 @@ end
 function CreateLuaCaptureItems(name, shortname)
     local self = ScriptHost:CreateLuaItem()
     -- self.Type = "custom"
-    self.Name = name --code -- 
+    self.Name = name --code --
     self.Icon = ImageReference:FromPackRelativePath("images/AP-item.png")
     self.ItemState = {
         Active = true,
         Target = nil,
         Shortname = shortname
     }
-    
+   
     self.CanProvideCodeFunc = CanProvideCodeFunc
     self.OnLeftClickFunc = OnLeftClickFunc
     self.OnRightClickFunc = OnRightClickFunc
@@ -284,7 +284,7 @@ function CreateLuaCaptureItems(name, shortname)
     return self
 end
 
-function Reset_ER_setings() 
+function Reset_ER_setings()
     for name, _ in pairs(NAMED_ENTRANCES) do
         -- print(name)
         -- print(Tracker:FindObjectForCode(name).ItemState.Target)

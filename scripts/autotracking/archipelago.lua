@@ -6,14 +6,14 @@ SLOT_DATA = nil
 SKIP_BOSSSHUFFLE = false
 ALL_LOCATIONS = {}
 
-local SECONDSTAGE = { 
+local SECONDSTAGE = {
     [5] = 5, --red shield
     [34] = 34, --blue mail
     [28] = 28, --titans mitts
     [80] = 80, --master sword
     [59] = 59 --silver bow
 }
-local THIRDSTAGE = { 
+local THIRDSTAGE = {
     [2] = 2, --tempered sword
     [6] = 6, --mirror shield
     [35] = 35 --red mail
@@ -283,7 +283,7 @@ function onLocation(location_id, location_name)
             end
             -- if location:sub(-9, -1) == "Key Drops" then
             --     smallkey = Tracker:FindObjectForCode(location:sub(2, 3).."_smallkey")
-            --     smallkey.AcquiredCount = smallkey.AcquiredCount + 1 
+            --     smallkey.AcquiredCount = smallkey.AcquiredCount + 1
             -- end
             -- x,_ = string.find(location, "universal")
             -- if x > 0 and Tracker:FindObjectForCode("small_keys").CurrentStage == 2 then
@@ -405,39 +405,39 @@ function autoFill()
     mapToggle = {[0]=false, [1]=true, [2]=true,[3]=true,[4]=true,[6]=true} -- false, true
 
     slotCodes = {
-        crystals_needed_for_gt = {codes={"gt_access"}, mappings={nil}, autofill="autofill_goal_reqs",}, 
-        crystals_needed_for_ganon = {codes={"ganon_killable"}, mappings={nil}, autofill="autofill_goal_reqs",}, 
+        crystals_needed_for_gt = {codes={"gt_access"}, mappings={nil}, autofill="autofill_goal_reqs",},
+        crystals_needed_for_ganon = {codes={"ganon_killable"}, mappings={nil}, autofill="autofill_goal_reqs",},
         triforce_pieces_required = {codes={"triforce_pieces_needed"}, mappings={nil}, autofill="autofill_goal_reqs",},
         -- open_pyramid = {codes={""}, mapping, autofill="",=},
-        -- triforce_pieces_mode = {codes={""}, mapping, autofill="",=}, 
-        -- triforce_pieces_percentage = {codes={""}, mapping, autofill="",=}, 
-        -- triforce_pieces_available = {codes={"triforce_pieces_needed", mapping, autofill="",=}, 
+        -- triforce_pieces_mode = {codes={""}, mapping, autofill="",=},
+        -- triforce_pieces_percentage = {codes={""}, mapping, autofill="",=},
+        -- triforce_pieces_available = {codes={"triforce_pieces_needed", mapping, autofill="",=},
         -- triforce_pieces_extra = {codes={""}, mapping, autofill="",=}
-        big_key_shuffle = {codes={"big_keys", "bigkeys_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings",}, 
-        small_key_shuffle = {codes={"small_keys", "smallkeys_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings",}, 
-        compass_shuffle = {codes={"compass", "compass_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings",}, 
+        big_key_shuffle = {codes={"big_keys", "bigkeys_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings",},
+        small_key_shuffle = {codes={"small_keys", "smallkeys_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings",},
+        compass_shuffle = {codes={"compass", "compass_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings",},
         map_shuffle = {codes={"map", "maps_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings",},
         boss_shuffle = {codes={"boss_shuffle"}, mappings={mapBosses}, autofill="autofill_dungeon_settings",},
-        -- progressive = {codes={"progressive_items"}, mappings={mapStages}, autofill="",}, 
+        -- progressive = {codes={"progressive_items"}, mappings={mapStages}, autofill="",},
 
 
-        -- retro_bow = {codes={""}, mapping, autofill="",=}, 
-        retro_caves = {codes={"retro_caves"}, mappings={mapToggle}, autofill="autofill_modes",}, 
+        -- retro_bow = {codes={""}, mapping, autofill="",=},
+        retro_caves = {codes={"retro_caves"}, mappings={mapToggle}, autofill="autofill_modes",},
 
 
-        -- pot_shuffle = {codes={"pot_shuffle"}, mapping, autofill="",=}, 
+        -- pot_shuffle = {codes={"pot_shuffle"}, mapping, autofill="",=},
         key_drop_shuffle = {codes={"key_drop_shuffle"}, mappings={mapToggle}, autofill="autofill_dungeon_settings",},
         bombless_start = {codes={"bombless"}, mappings={mapToggle}, autofill="autofill_modes",},
         dark_room_logic = {codes={"dark_mode"}, mappings={mapDarkRoomLogic}, autofill="autofill_modes",},
-        swordless = {codes={"swordless"}, mappings={mapToggle}, autofill="autofill_modes",}, 
+        swordless = {codes={"swordless"}, mappings={mapToggle}, autofill="autofill_modes",},
         shop_item_slots = {codes={"shop_sanity"}, mappings={nil}, autofill="autofill_sanities",},
-        -- randomize_shop_inventories = {codes={""}, mappings={mapToggle}, autofill="autofill_sanities",}, 
-        -- shuffle_shop_inventories = {codes={""}, mappings={mapToggle}, autofill="autofill_sanities",}, 
+        -- randomize_shop_inventories = {codes={""}, mappings={mapToggle}, autofill="autofill_sanities",},
+        -- shuffle_shop_inventories = {codes={""}, mappings={mapToggle}, autofill="autofill_sanities",},
         shuffle_capacity_upgrades = {codes={"shop_shuffle_capacity"}, mappings={mapToggle}, autofill="autofill_misc",},
-        entrance_shuffle = {codes={"er_tracking"}, mappings={mapEntranceShuffle}, autofill="autofill_misc",}, 
-        goal = {codes={"goal"}, mappings={mapGoal}, autofill="autofill_goal_reqs",}, 
+        entrance_shuffle = {codes={"er_tracking"}, mappings={mapEntranceShuffle}, autofill="autofill_misc",},
+        goal = {codes={"goal"}, mappings={mapGoal}, autofill="autofill_goal_reqs",},
         mode = {codes={"start_option"}, mappings={mapStages}, autofill="autofill_modes",},
-        enemy_shuffle = {codes={"enemizer"}, mappings={mapToggle}, autofill="autofill_misc",}, 
+        enemy_shuffle = {codes={"enemizer"}, mappings={mapToggle}, autofill="autofill_misc",},
     }
 
     -- print(dump_table(SLOT_DATA))
@@ -455,12 +455,12 @@ function autoFill()
                 for dungeon, reward in pairs(settings_value) do
                     Tracker:FindObjectForCode(mapDungeon[dungeon][2]).CurrentStage = mapRewards[reward]
                 end
-                
+               
             end
-            
+           
         -- print(k, v)
-        -- if settings_name == "crystals_needed_for_gt" 
-        -- or settings_name == "crystals_needed_for_ganon" 
+        -- if settings_name == "crystals_needed_for_gt"
+        -- or settings_name == "crystals_needed_for_ganon"
         -- or settings_name == "triforce_pieces_required" then
         --     Tracker:FindObjectForCode(slotCodes[settings_name].code).AcquiredCount = settings_value
 
@@ -477,7 +477,7 @@ function autoFill()
                 Tracker:FindObjectForCode("shuffle_item_slots").BadgeText = settings_value
             elseif slotCodes[settings_name] then
                 for index, _ in ipairs(slotCodes[settings_name].codes) do
-                    
+                   
                     -- print("settings_name", settings_name)
                     -- print("slotCodes[settings_name]", slotCodes[settings_name])
                     -- print("slotCodes[settings_name].code", slotCodes[settings_name].code)
@@ -493,7 +493,7 @@ function autoFill()
                         elseif slotCodes[settings_name].mappings[index] == nil then
                             -- print("toggle", settings_name, settings_value)
                             item.AcquiredCount = settings_value
-                        else 
+                        else
                             -- print("else", settings_name, settings_value)
                             -- print(k,v,Tracker:FindObjectForCode(slotCodes[k].code).CurrentStage, slotCodes[k].mapping[v])
                             item.CurrentStage = (slotCodes[settings_name].mappings[index])[settings_value]
@@ -537,8 +537,8 @@ function goal_check()
         local ganon = Tracker:FindObjectForCode("ganon_killable")
         local triforce = Tracker:FindObjectForCode("triforce_pieces_needed")
         local goal_stage = goal.CurrentStage
-        if goal_stage == 3 or 
-        goal_stage == 5 or 
+        if goal_stage == 3 or
+        goal_stage == 5 or
         goal_stage == 6 then
             ganon.AcquiredCount=0
             triforce.AcquiredCount=SLOT_DATA["triforce_pieces_required"]
@@ -582,7 +582,7 @@ function onNotifyLaunch(key, value)
         Tracker.BulkUpdate = false
     end
 end
- 
+
 function updateHints(locationID, status)
     if Highlight then
         print(locationID, status)
@@ -662,7 +662,7 @@ function GiveAll(setting)
             local item = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting])
             local copy = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting] .. "_copy")
             if setting_stage == 5 or setting_stage == 6 then
-                
+               
                 if setting == "smallkeys_setting" then
                     if Tracker:FindObjectForCode("key_drop_shuffle").Active then
                         item = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting].. "_drop")

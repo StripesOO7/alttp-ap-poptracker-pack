@@ -11,7 +11,7 @@ local sp_waterfall_room = alttp_location.new("sp_waterfall_room")
 local sp_after_waterfall_room = alttp_location.new("sp_after_waterfall_room")
 local sp_boss_room = alttp_location.new("sp_boss_room")
 
-sp_entrance_inside:connect_two_ways(sp_first_room, function() 
+sp_entrance_inside:connect_two_ways(sp_first_room, function()
     return ALL(
         Can_interact(sp_entrance_inside.worldstate, 1),
         "flippers",
@@ -31,7 +31,7 @@ sp_hallway_before_first_trench:connect_two_ways(sp_first_trench, function(keys) 
 sp_hallway_before_first_trench:connect_one_way("SP - Pot Row Key")
 sp_hallway_before_first_trench:connect_one_way("SP - Map chest", function() return Has("bombs") end)
 
-sp_first_trench:connect_two_ways(sp_main_room, function(keys) 
+sp_first_trench:connect_two_ways(sp_main_room, function(keys)
     return ANY(
         ALL(
             Has("sp_smallkey", keys, 1, keys, 2),
@@ -49,7 +49,7 @@ sp_first_trench:connect_one_way("SP - Tench 1 Pot Key")
 
 sp_main_room:connect_two_ways(sp_roundabout)
 sp_main_room:connect_two_ways(sp_second_trench)
-sp_main_room:connect_two_ways(sp_flooded_room, function(keys) 
+sp_main_room:connect_two_ways(sp_flooded_room, function(keys)
     return ANY(
         ALL(
             Has("sp_smallkey", keys, 1, keys + CountDoneDeadends(1, "@Swamp Palace/Big Key Chest/Big Key Chest"), 4),
@@ -65,7 +65,7 @@ end)
 sp_main_room:connect_one_way("SP - Hookshot Pot Key", function() return Has("hookshot") end)
 sp_main_room:connect_one_way("SP - Big Chest", function() return Has("sp_bigkey") end)
 
-sp_second_trench:connect_two_ways(sp_hallway_after_second_trench, function(keys) 
+sp_second_trench:connect_two_ways(sp_hallway_after_second_trench, function(keys)
     return ANY(
         ALL(
             Has("sp_smallkey", keys, 1, keys + CountDoneDeadends(1, "@Swamp Palace/Boss/Boss Item", "@Swamp Palace/Waterfall Room/Waterfall Room"), 5),
@@ -90,7 +90,7 @@ sp_flooded_room:connect_one_way("SP - Flooded Room Right")
 sp_waterfall_room:connect_two_ways(sp_after_waterfall_room)
 sp_waterfall_room:connect_one_way("SP - Waterfall Room")
 
-sp_after_waterfall_room:connect_two_ways(sp_boss_room, function(keys) 
+sp_after_waterfall_room:connect_two_ways(sp_boss_room, function(keys)
     return ANY(
         ALL(
             Has("sp_smallkey", keys, 1, keys + CountDoneDeadends(1, "@Swamp Palace/Big Key Chest/Big Key Chest"), 5),

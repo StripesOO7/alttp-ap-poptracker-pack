@@ -29,33 +29,33 @@ tt_front_bottom_right:connect_one_way("TT - Big Key Chest", function() return Ca
 
 
 
-tt_back_hallway:connect_two_ways(tt_crystal_switch_room, function(keys) 
+tt_back_hallway:connect_two_ways(tt_crystal_switch_room, function(keys)
     return Has("tt_smallkey", keys, 0, keys + 1, 1), KDSreturn(keys, keys + 1)
 end)
 tt_back_hallway:connect_one_way("TT - Hallway Pot Key")
 
 tt_crystal_switch_room:connect_two_ways(tt_basement)
-tt_crystal_switch_room:connect_two_ways(tt_attic, function(keys) 
+tt_crystal_switch_room:connect_two_ways(tt_attic, function(keys)
     return Has("tt_smallkey", keys + CountDoneDeadends(0, "@Thieves Town Back/Big Chest/Big Chest"), 0, keys + CountDoneDeadends(1, "@Thieves Town Back/Big Chest/Big Chest"), 3), KDSreturn(keys, keys + 1)
 end)
 tt_crystal_switch_room:connect_one_way("TT - Spike Switch Pot Key")
 
 tt_attic:connect_one_way("TT - Attic")
 
-tt_basement:connect_two_ways(tt_big_chest_room, function(keys) 
+tt_basement:connect_two_ways(tt_big_chest_room, function(keys)
     return Has("tt_smallkey", keys + CountDoneDeadends(1, "@Thieves Town Back/Attic/Attic"), 1, keys + CountDoneDeadends(1, "@Thieves Town Back/Attic/Attic"), 3), KDSreturn(keys + 1, keys + 1)
 end)
 tt_basement:connect_two_ways(tt_basement_cell)
 
 tt_basement_cell:connect_one_way("TT - Blind's Cell")
-tt_big_chest_room:connect_one_way("TT - Big Chest", function() 
+tt_big_chest_room:connect_one_way("TT - Big Chest", function()
     return ALL(
         "hammer",
         "tt_bigkey"
-    ) 
+    )
 end)
 tt_back_hallway:connect_two_ways(tt_boss_room)
-tt_boss_room:connect_one_way("TT - Boss", function() 
+tt_boss_room:connect_one_way("TT - Boss", function()
     return ALL(
         GetBossRef("tt_boss"),
         TT_boss_check()

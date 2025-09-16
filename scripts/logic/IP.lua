@@ -25,14 +25,14 @@ local ip_boss_dropdown = alttp_location.new("ip_boss_dropdown")
 local ip_boss_room = alttp_location.new("ip_boss_room")
 
 ip_entrance_inside:connect_two_ways(ip_freezor_entrance, function() return Can_interact(ip_entrance_inside.worldstate, 1) end)
-ip_freezor_entrance:connect_two_ways(ip_jelly_room, function() 
+ip_freezor_entrance:connect_two_ways(ip_jelly_room, function()
     return ANY(
-        "firerod", 
+        "firerod",
         ALL(
             "bombos",
             CanUseMedallions()
         )
-    ) 
+    )
 end)
 ip_jelly_room:connect_two_ways(ip_push_cross, function(keys) return Has("ip_smallkey", keys, 0, keys + 1, 1), KDSreturn(keys, keys + 1) end)
 ip_jelly_room:connect_one_way("IP - Jelly Key Drop", function() return DealDamage() end)
@@ -53,17 +53,17 @@ ip_sliding_firebar:connect_two_ways(ip_freezor_room)
 ip_falling_floor:connect_one_way(ip_ice_hallway)
 
 ip_freezor_room:connect_one_way(ip_big_chest_room)
-ip_freezor_room:connect_one_way("IP - Freezor Chest", function() 
+ip_freezor_room:connect_one_way("IP - Freezor Chest", function()
     return ANY(
-        "firerod", 
+        "firerod",
         ALL(
             "bombos",
             CanUseMedallions()
         )
-    ) 
+    )
 end)
 ip_big_chest_room:connect_two_ways(ip_above_boss_dropdown)
-ip_big_chest_room:connect_one_way("IP - Big Chest", function() 
+ip_big_chest_room:connect_one_way("IP - Big Chest", function()
     return ALL(
         "ip_bigkey",
         ANY(
@@ -72,11 +72,11 @@ ip_big_chest_room:connect_one_way("IP - Big Chest", function()
         )
     )
 end)
-ip_above_boss_dropdown:connect_one_way(ip_boss_dropdown, function(keys) 
+ip_above_boss_dropdown:connect_one_way(ip_boss_dropdown, function(keys)
     return ALL(
         Has("ip_smallkey", keys + 1, 2, keys + 1, 5),
         "ip_bigkey"
-    ), KDSreturn(keys + 1, keys + 1) 
+    ), KDSreturn(keys + 1, keys + 1)
 end)
 ip_above_boss_dropdown:connect_two_ways(ip_many_pots_room)
 
@@ -92,40 +92,40 @@ ip_big_spikeballs:connect_two_ways(ip_spike_room)
 
 ip_spike_room:connect_two_ways(ip_map_room)
 ip_spike_room:connect_one_way("IP - Spike Chest")
-ip_map_room:connect_two_ways(ip_big_key_room, function() 
+ip_map_room:connect_two_ways(ip_big_key_room, function()
     return ALL(
-        "hammer", 
+        "hammer",
         "glove"
-    ) 
+    )
 end)
-ip_map_room:connect_one_way("IP - Map Chest", function() 
+ip_map_room:connect_one_way("IP - Map Chest", function()
     return ALL(
-        "hammer", 
+        "hammer",
         "glove"
-    ) 
+    )
 end)
-ip_map_room:connect_one_way("IP - Hammer Block Key Drop", function() 
+ip_map_room:connect_one_way("IP - Hammer Block Key Drop", function()
     return ALL(
-        "hammer", 
+        "hammer",
         "glove"
-    ) 
+    )
 end)
 
-ip_sliding_switch_room:connect_two_ways(ip_big_key_room, function() 
+ip_sliding_switch_room:connect_two_ways(ip_big_key_room, function()
     return ALL(
         "somaria",
         CheckGlitches(2)
-    ) 
+    )
 end)
 -- ip_big_key_room:connect_one_way(ip_big_key_room)
 ip_big_key_room:connect_one_way(ip_sliding_switch_room)
 ip_big_key_room:connect_one_way("IP - Big Key Chest")
 -- ip_sliding_switch_room:connect_two_ways(ip_big_key_room) --icebreaker
-ip_boss_dropdown:connect_one_way(ip_boss_room, function() 
+ip_boss_dropdown:connect_one_way(ip_boss_room, function()
     return ALL(
         "hammer",
         "glove"
-    ) 
+    )
 end)
 ip_boss_dropdown:connect_one_way(ip_above_boss_dropdown)
 ip_boss_room:connect_one_way("IP - Boss", function() return GetBossRef("ip_boss") end)

@@ -264,11 +264,11 @@ dungeon_entrance_IDS = {
 }
 
 local multi_purpose_room = {
-    ["kakariko_shop"] = function() 
+    ["kakariko_shop"] = function()
                             LIGHT_SHOPS_FOUND = LIGHT_SHOPS_FOUND + 1
                             return LIGHT_SHOPS_FOUND
                             end,
-    ["kakariko_fortune"] = function() 
+    ["kakariko_fortune"] = function()
                             FORTUNE_FOUND = FORTUNE_FOUND + 1
                             return FORTUNE_FOUND
                             end,
@@ -287,7 +287,7 @@ FORTUNE_FOUND = 0
 FAIRYS_FOUND = 0
 
 function UpdateEntrances(segment, mainModuleIdx)
-    
+   
     local current_room
     local new_ow_room
     local new_dungeon_room
@@ -307,7 +307,7 @@ function UpdateEntrances(segment, mainModuleIdx)
         -- print(last_seen_room2)
         -- last_seen_room3 = segment:ReadUInt8(0x7e00aA)
         -- print("Room Memory for Address: 0x7e00aA")
-        -- print(last_seen_room3)        
+        -- print(last_seen_room3)
         -- print("left/right qudrant:", segment:ReadUInt8(0x7e00a9))
         -- print("upper/lower qudrant:", segment:ReadUInt8(0x7e00aa))
         -- print("y cord :", segment:ReadUInt16(0x7e0020))
@@ -324,7 +324,7 @@ function UpdateEntrances(segment, mainModuleIdx)
         -- print(dump_table(OVERWORLD_MAPPING[current_coords_x][current_coords_y][new_ow_room]))
         -- print(dump_table(CAVES_MAPPING[current_coords_x][current_coords_y][new_dungeon_room]))
         -- print("------------------------------------------")
-        
+       
 
         if new_ow_room == 0 then
             current_room = new_dungeon_room
@@ -385,7 +385,7 @@ function UpdateEntrances(segment, mainModuleIdx)
                     end
 
                 end
-                
+               
                 local er_stage = Tracker:FindObjectForCode("er_tracking").CurrentStage
                 if Selected_entrance ~= nil and Selected_exit ~= nil and Selected_entrance_origin ~= Selected_exit_origin then
                     -- print("inside entrance connection part")
@@ -393,7 +393,7 @@ function UpdateEntrances(segment, mainModuleIdx)
                     -- print("selected_exit", selected_exit.Name)
                     -- print(Tracker:FindObjectForCode("er_tracking").CurrentStage)
                     if er_stage == 3 then -- separated doors
-                    
+                   
                         _SetLocationOptions(Selected_entrance, Selected_exit)
                         _SetLocationOptions(Selected_exit, Selected_entrance)
                     else --trackes both sides simlutaniously
@@ -436,8 +436,8 @@ end
 function UpdateUI(segment, mainModuleIdx)
     local ow_room_reset
     local dungeon_room_reset
-    
-    
+   
+   
     ow_room_reset = false
     dungeon_room_reset = false
     if mainModuleIdx > 0x05 then
@@ -452,7 +452,7 @@ function UpdateUI(segment, mainModuleIdx)
         -- print(last_seen_room2)
         -- last_seen_room3 = segment:ReadUInt8(0x7e00aA)
         -- print("Room Memory for Address: 0x7e00aA")
-        -- print(last_seen_room3)        
+        -- print(last_seen_room3)
         -- print("left/right qudrant:", segment:ReadUInt8(0x7e00a9))
         -- print("upper/lower qudrant:", segment:ReadUInt8(0x7e00aa))
         -- print("y cord :", segment:ReadUInt16(0x7e0020))
@@ -494,7 +494,7 @@ function UpdateUI(segment, mainModuleIdx)
                 end
             end
         end
-        
+       
         -- print(room_lookuptable[dungeon_room])
     end
     if ow_room_reset then
@@ -543,7 +543,7 @@ end
 function ReadU8(segment, address)
     if U8_READ_CACHE_ADDRESS ~= address then
         U8_READ_CACHE = segment:ReadUInt8(address)
-        U8_READ_CACHE_ADDRESS = nil        
+        U8_READ_CACHE_ADDRESS = nil
     end
 
     return U8_READ_CACHE
@@ -552,7 +552,7 @@ end
 function ReadU16(segment, address)
     if U16_READ_CACHE_ADDRESS ~= address then
         U16_READ_CACHE = segment:ReadUInt16(address)
-        U16_READ_CACHE_ADDRESS = address        
+        U16_READ_CACHE_ADDRESS = address
     end
 
     return U16_READ_CACHE
@@ -627,7 +627,7 @@ function testFlag(segment, address, flag)
         return true
     else
         return false
-    end    
+    end
 end
 
 function updateProgressiveBow(segment)
@@ -649,7 +649,7 @@ end
 
 function updateBottles(segment)
     sleep(0.015)
-    local item = Tracker:FindObjectForCode("bottle")    
+    local item = Tracker:FindObjectForCode("bottle")
     local count = 0
     for i = 0, 3, 1 do
         if ReadU8(segment, 0x7ef35c + i) > 0 then
@@ -710,7 +710,7 @@ function updateToggleFromRoomSlot(segment, code, slot)
     end
     if item then
         local roomData = ReadU16(segment, 0x7ef000 + (slot[1] * 2))
-        
+       
         if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
             print(roomData)
         end
@@ -753,7 +753,7 @@ function updateConsumableItemFromByte(segment, code, address, roomSlots)
                 if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
                     print(roomData, 1 << slot[2], roomData & (1 << slot[2]), item.AcquiredCount)
                 end
-                    
+                   
                 if (roomData & (1 << slot[2])) ~= 0 then
                     keyDropCount = keyDropCount + 1
                 end
@@ -781,7 +781,7 @@ function updateConsumableItemFromTwoByteSum(segment, code, address, address2, ro
                 if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
                     print(roomData, 1 << slot[2], roomData & (1 << slot[2]), item.AcquiredCount)
                 end
-                    
+                   
                 if (roomData & (1 << slot[2])) ~= 0 then
                     keyDropCount = keyDropCount + 1
                 end
@@ -816,7 +816,7 @@ function updatePseudoProgressiveItemFromByteAndFlag(segment, code, address, flag
             item.CurrentStage = math.max(1, item.CurrentStage)
         else
             item.CurrentStage = 0
-        end    
+        end
     end
 end
 
@@ -830,7 +830,7 @@ function updateSectionChestCountFromByteAndFlag(segment, locationRef, address, f
         end
 
         local value = ReadU8(segment, address)
-        
+       
         if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
             print(locationRef, value)
         end
@@ -878,7 +878,7 @@ function updateSectionChestCountFromRoomSlotList(segment, locationRefList, roomS
                 if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
                     print(locationRef, roomData, 1 << slot[2], roomData & (1 << slot[2]), location.AvailableChestCount)
                 end
-                    
+                   
                 if (roomData & (1 << slot[2])) ~= 0 then
                     clearedCount = clearedCount + 1
                 end

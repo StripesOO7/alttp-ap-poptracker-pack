@@ -11,10 +11,10 @@ require("scripts/logic_import")
 
 -- Maps
 if Tracker.ActiveVariantUID == "maps-u" then
-    Tracker:AddMaps("maps/maps-u.json")  
+    Tracker:AddMaps("maps/maps-u.json")
 else
-    Tracker:AddMaps("maps/maps.json")  
-end  
+    Tracker:AddMaps("maps/maps.json")
+end
 
 if PopVersion and PopVersion >= "0.23.0" then
     Tracker:AddLocations("locations/dungeons.json")

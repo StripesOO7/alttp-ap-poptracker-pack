@@ -19,18 +19,18 @@ print("")
 
 require("scripts/autotracking/settings")
 -- loads the AP autotracking code
-if  Tracker.ActiveVariantUID == "Map Tracker - AP" or 
-    Tracker.ActiveVariantUID == "Map Tracker /w detailed ow-Dungeons - AP" or 
-    Tracker.ActiveVariantUID == "Entrance Randomizer Tracker - AP" or 
+if  Tracker.ActiveVariantUID == "Map Tracker - AP" or
+    Tracker.ActiveVariantUID == "Map Tracker /w detailed ow-Dungeons - AP" or
+    Tracker.ActiveVariantUID == "Entrance Randomizer Tracker - AP" or
     Tracker.ActiveVariantUID == "Entrance Randomizer Tracker /w Pot-shuffle - AP" then
     require("scripts/autotracking/archipelago")
     require("scripts/autotracking/SNESautotracking_functions")
 
 end
 -- loads the SNES autotrecking codes
-if  Tracker.ActiveVariantUID == "Map Tracker - SNES" or 
-Tracker.ActiveVariantUID == "Map Tracker /w detailed ow-Dungeons - SNES" or 
-Tracker.ActiveVariantUID == "Entrance Randomizer Tracker - SNES" or 
+if  Tracker.ActiveVariantUID == "Map Tracker - SNES" or
+Tracker.ActiveVariantUID == "Map Tracker /w detailed ow-Dungeons - SNES" or
+Tracker.ActiveVariantUID == "Entrance Randomizer Tracker - SNES" or
 Tracker.ActiveVariantUID == "Entrance Randomizer Tracker /w Pot-shuffle - SNES" then
     require("scripts/autotracking/SNESautotracking_functions")
     require("scripts/autotracking/SNESautotracking_ROMdata")

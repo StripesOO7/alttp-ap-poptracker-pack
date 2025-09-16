@@ -43,11 +43,11 @@ sw_pot_circle:connect_two_ways(sw_big_chest_entrance_inside)
 sw_map_room:connect_two_ways(sw_big_chest_entrance_inside)
 sw_map_room:connect_one_way("SW - Map Chest")
 
-sw_big_chest_entrance_inside:connect_one_way("SW - Big Chest", function() 
+sw_big_chest_entrance_inside:connect_one_way("SW - Big Chest", function()
     return ALL(
-        "sw_bigkey", 
+        "sw_bigkey",
         "bombs"
-    ) 
+    )
 end)
 
 sw_gibdo_entrance_inside:connect_two_ways(sw_big_key_room)
@@ -66,11 +66,11 @@ sw_back_bottom_hallway:connect_one_way("SW - Bridge Chest")
 
 sw_back_bridge:connect_two_ways(sw_back_troch_puzzle, function(keys) return Has("sw_smallkey", keys + 1, 3, keys + 1, 3), KDSreturn(keys + 1, keys + 1) end)
 
-sw_back_troch_puzzle:connect_one_way(sw_back_spike_corner_room, function() 
+sw_back_troch_puzzle:connect_one_way(sw_back_spike_corner_room, function()
     return ALL(
-        "firerod", 
+        "firerod",
         canRemoveCurtains()
-    ) 
+    )
 end)
 
 sw_back_spike_corner_room:connect_two_ways(sw_back_boss_room, function(keys) return Has("sw_smallkey", keys, 3, keys + 1, 4), KDSreturn(keys, keys + 1) end)

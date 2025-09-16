@@ -34,17 +34,17 @@ hc_back_hall:connect_one_way(ce_stairs_inside, function() return Can_interact(hc
 
 hc_back_wing:connect_two_ways(hc_map_chest_room)
 hc_map_chest_room:connect_one_way("HC - Map Chest", function() return Can_interact(hc_map_chest_room.worldstate, 1) end)
-hc_map_chest_room:connect_one_way("HC - Map Guard Key Drop", function() 
+hc_map_chest_room:connect_one_way("HC - Map Guard Key Drop", function()
     return ALL(
         ANY(
-            DealDamage(), 
+            DealDamage(),
             "standard"
         ),
         Can_interact(hc_map_chest_room.worldstate, 1)
     )
 end)
 
-hc_map_chest_room:connect_two_ways(hc_before_boomerang_chest_room, function(keys) 
+hc_map_chest_room:connect_two_ways(hc_before_boomerang_chest_room, function(keys)
     return ALL(
         ANY(
             "standard",
@@ -53,44 +53,44 @@ hc_map_chest_room:connect_two_ways(hc_before_boomerang_chest_room, function(keys
         Can_interact(hc_map_chest_room.worldstate, 1)
     ), KDSreturn(keys, keys + 1)
 end)
-hc_before_boomerang_chest_room:connect_two_ways(hc_boomerang_chest_room, function() 
+hc_before_boomerang_chest_room:connect_two_ways(hc_boomerang_chest_room, function()
     return ANY(
-        DealDamage(), 
+        DealDamage(),
         "standard"
-    ) 
+    )
 end)
 hc_boomerang_chest_room:connect_one_way("HC - Boomerang Chest")
-hc_boomerang_chest_room:connect_one_way("HC - Booomerang Guard Key Drop", function() 
+hc_boomerang_chest_room:connect_one_way("HC - Booomerang Guard Key Drop", function()
     return ANY(
-        DealDamage(), 
+        DealDamage(),
         "standard"
-    ) 
+    )
 end)
 
-hc_before_boomerang_chest_room:connect_two_ways(hc_ball_guard_room, function(keys) 
+hc_before_boomerang_chest_room:connect_two_ways(hc_ball_guard_room, function(keys)
     return ANY(
         "standard",
         Has("hc_smallkey", keys, 0, keys + 1, 4)
     ), KDSreturn(keys, keys + 1)
 end)
-hc_ball_guard_room:connect_one_way("HC - Big Key", function() 
+hc_ball_guard_room:connect_one_way("HC - Big Key", function()
     return ANY(
-        DealDamage(), 
+        DealDamage(),
         "standard"
-    ) 
+    )
 end)
 
 hc_ball_guard_room:connect_two_ways(hc_zeldas_cell, function() return Has("hc_bigkey") end)
 hc_zeldas_cell:connect_one_way("HC - Zelda's Chest")
 
-ce_stairs_inside:connect_two_ways(ce_dark_cross, function(keys) 
+ce_stairs_inside:connect_two_ways(ce_dark_cross, function(keys)
     return ANY(
         DarkRooms(true),
         "standard"
     )
 end)
 
-ce_dark_cross:connect_two_ways(ce_rat_key_room, function(keys) 
+ce_dark_cross:connect_two_ways(ce_rat_key_room, function(keys)
     return ANY(
         ALL(
             DarkRooms(true),
@@ -102,12 +102,12 @@ ce_dark_cross:connect_two_ways(ce_rat_key_room, function(keys)
             "glove"
         ),
         "standard"
-    ), KDSreturn(keys + 1, keys + 1) 
+    ), KDSreturn(keys + 1, keys + 1)
 end)
 ce_dark_cross:connect_one_way("CE - Dark Cross", function() return Can_interact(ce_dark_cross.worldstate, 1) end)
 
--- ce_rat_key_room:connect_two_ways(ce_dropdown_entrance) 
-ce_rat_key_room:connect_two_ways(ce_dropdown_entrance_inside, function(keys) 
+-- ce_rat_key_room:connect_two_ways(ce_dropdown_entrance)
+ce_rat_key_room:connect_two_ways(ce_dropdown_entrance_inside, function(keys)
     return ANY(
         ALL(
             DarkRooms(true),
@@ -125,9 +125,9 @@ ce_rat_key_room:connect_two_ways(ce_dropdown_entrance_inside, function(keys)
             Has("hc_smallkey", keys, 1, keys + 1, 4)
         ),
         "standard"
-    ), KDSreturn(keys, keys + 1) 
+    ), KDSreturn(keys, keys + 1)
 end)
-ce_rat_key_room:connect_one_way("CE - Rat Key Drop", function(keys) 
+ce_rat_key_room:connect_one_way("CE - Rat Key Drop", function(keys)
     return ANY(
         ALL(
             DarkRooms(true),
@@ -138,7 +138,7 @@ ce_rat_key_room:connect_one_way("CE - Rat Key Drop", function(keys)
     ), KDSreturn(keys, keys)
 end)
 
-ce_dropdown_entrance_inside:connect_two_ways(ce_secret_room, function() 
+ce_dropdown_entrance_inside:connect_two_ways(ce_secret_room, function()
     return ALL(
         ANY(
             "boots",

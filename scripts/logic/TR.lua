@@ -24,18 +24,18 @@ local tr_boss_room = alttp_location.new("tr_boss_room")
 
 tr_main_entrance_inside:connect_two_ways(tr_square_travel_room, function() return ALL("somaria", Can_interact(tr_main_entrance_inside.worldstate, 1)) end)
 tr_square_travel_room:connect_two_ways(tr_compass_room, function() return Has("somaria") end)
-tr_square_travel_room:connect_two_ways(tr_torch_puzzle, function() 
+tr_square_travel_room:connect_two_ways(tr_torch_puzzle, function()
     return ALL(
-        "somaria", 
+        "somaria",
         "firerod"
-    ) 
+    )
 end)
-tr_square_travel_room:connect_two_ways(tr_poke_1_room, function(keys) 
+tr_square_travel_room:connect_two_ways(tr_poke_1_room, function(keys)
     return ALL(
         "somaria",
         Has("tr_smallkey", keys + 1, 1, keys + 1, 1)
         -- Has("tr_smallkey", keys + 1, 3, keys + 1, 4)
-    ), KDSreturn(keys + 1, keys + 1) 
+    ), KDSreturn(keys + 1, keys + 1)
 end)
 
 tr_compass_room:connect_one_way("TR - Compass Chest")
@@ -75,7 +75,7 @@ tr_big_key_chest_island:connect_one_way("TR - Big Key Chest")
 tr_shooter_after_big_key:connect_two_ways(tr_big_key_door_room)
 tr_shooter_after_big_key:connect_two_ways(tr_laser_entrance_inside, function() return ALL("bombs", Can_interact(tr_shooter_after_big_key.worldstate, 1)) end)
 
-tr_big_chest_entrance_inside:connect_one_way(tr_big_key_door_room, function() 
+tr_big_chest_entrance_inside:connect_one_way(tr_big_key_door_room, function()
     return ALL(
         ANY(
             "boots",
@@ -85,7 +85,7 @@ tr_big_chest_entrance_inside:connect_one_way(tr_big_key_door_room, function()
         Can_interact(tr_big_chest_entrance_inside.worldstate, 1)
     )
 end)
-tr_big_chest_entrance_inside:connect_one_way("TR - Big Chest", function() 
+tr_big_chest_entrance_inside:connect_one_way("TR - Big Chest", function()
     return ALL(
         "tr_bigkey",
         ANY(
@@ -93,7 +93,7 @@ tr_big_chest_entrance_inside:connect_one_way("TR - Big Chest", function()
             "hookshot"
         ),
         Can_interact(tr_big_chest_entrance_inside.worldstate, 1)
-    ) 
+    )
 end)
 
 tr_big_key_door_room:connect_one_way(tr_crystalroller_room, function() return Has("tr_bigkey") end)
@@ -102,32 +102,32 @@ tr_crystalroller_room:connect_one_way(tr_big_key_door_room, function(keys) retur
 
 tr_crystalroller_room:connect_one_way(tr_travel_maze, function(keys) return Has("tr_smallkey", keys + CountDoneDeadends(1, "@Turtle Rock Front/Big Key Chest/Big Key Chest"), 3, keys + CountDoneDeadends(1, "@Turtle Rock Front/Big Key Chest/Big Key Chest"), 5), KDSreturn(keys + 1, keys + 1) end)
 -- tr_crystalroller_room:connect_one_way(tr_travel_maze, function(keys) return Has("tr_smallkey", keys + 1, 3, keys + 1, 5), KDSreturn(keys + 1, keys + 1) end)
-tr_travel_maze:connect_one_way(tr_crystalroller_room, function(keys) 
+tr_travel_maze:connect_one_way(tr_crystalroller_room, function(keys)
     return ALL(
         Has("tr_smallkey", keys, 3, keys, 5),
         DarkRooms(false),
         "somaria",
         Can_interact(tr_travel_maze.worldstate, 1)
-    ), KDSreturn(keys, keys + 1) 
+    ), KDSreturn(keys, keys + 1)
 end)
 tr_crystalroller_room:connect_one_way("TR - Crystalroller Chest")
 
-tr_travel_maze:connect_two_ways(tr_eye_hallway, function() 
+tr_travel_maze:connect_two_ways(tr_eye_hallway, function()
     return ALL(
         "somaria",
         DarkRooms(false)
-    ) 
+    )
 end)
 
 tr_eye_hallway:connect_two_ways(tr_eye_bridge_entrance_inside)
-tr_eye_hallway:connect_two_ways(tr_switch_puzzle, function(keys) 
+tr_eye_hallway:connect_two_ways(tr_switch_puzzle, function(keys)
     return ALL(
         Has("tr_smallkey", keys + CountDoneDeadends(1, "@Turtle Rock Front/Big Key Chest/Big Key Chest"), 4, keys + CountDoneDeadends(1, "@Turtle Rock Front/Big Key Chest/Big Key Chest"), 6),
         Can_interact(tr_eye_hallway.worldstate, 1)
     ), KDSreturn(keys + 1, keys + 1) end)
 -- tr_eye_hallway:connect_two_ways(tr_switch_puzzle, function(keys) return Has("tr_smallkey", keys + 1, 3, keys + 1, 5), KDSreturn(keys + 1, keys + 1) end)
 
-tr_eye_bridge_entrance_inside:connect_one_way("TR - Eyebridge Top Right", function() 
+tr_eye_bridge_entrance_inside:connect_one_way("TR - Eyebridge Top Right", function()
     return ALL(
         Can_interact(tr_eye_bridge_entrance_inside.worldstate, 1),
         ANY(
@@ -137,7 +137,7 @@ tr_eye_bridge_entrance_inside:connect_one_way("TR - Eyebridge Top Right", functi
         )
     )
 end)
-tr_eye_bridge_entrance_inside:connect_one_way("TR - Eyebridge Top Left", function() 
+tr_eye_bridge_entrance_inside:connect_one_way("TR - Eyebridge Top Left", function()
     return ALL(
         Can_interact(tr_eye_bridge_entrance_inside.worldstate, 1),
         ANY(
@@ -147,7 +147,7 @@ tr_eye_bridge_entrance_inside:connect_one_way("TR - Eyebridge Top Left", functio
         )
     )
 end)
-tr_eye_bridge_entrance_inside:connect_one_way("TR - Eyebridge Bottom Right", function() 
+tr_eye_bridge_entrance_inside:connect_one_way("TR - Eyebridge Bottom Right", function()
     return ALL(
         Can_interact(tr_eye_bridge_entrance_inside.worldstate, 1),
         ANY(
@@ -157,7 +157,7 @@ tr_eye_bridge_entrance_inside:connect_one_way("TR - Eyebridge Bottom Right", fun
         )
     )
 end)
-tr_eye_bridge_entrance_inside:connect_one_way("TR - Eyebridge Bottom Left", function() 
+tr_eye_bridge_entrance_inside:connect_one_way("TR - Eyebridge Bottom Left", function()
     return ALL(
     Can_interact(tr_eye_bridge_entrance_inside.worldstate, 1),
     ANY(

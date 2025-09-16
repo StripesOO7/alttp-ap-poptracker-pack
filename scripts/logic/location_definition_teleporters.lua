@@ -2,8 +2,8 @@
 
 teleporter_at_kakariko_village = alttp_location.new("teleporter_at_kakariko_village", nil, "light")
 teleporter_at_village_of_the_outcast = alttp_location.new("teleporter_at_village_of_the_outcast", nil, "dark")
-teleporter_at_light_turtle_rock = alttp_location.new("teleporter_at_light_turtle_rock", nil, "light") 
-teleporter_at_dark_turtle_rock = alttp_location.new("teleporter_at_dark_turtle_rock", nil, "dark") 
+teleporter_at_light_turtle_rock = alttp_location.new("teleporter_at_light_turtle_rock", nil, "light")
+teleporter_at_dark_turtle_rock = alttp_location.new("teleporter_at_dark_turtle_rock", nil, "dark")
 teleporter_at_light_death_mountain_right_bottom = alttp_location.new("teleporter_at_light_death_mountain_right_bottom", nil, "light")
 teleporter_at_light_death_mountain_left_bottom = alttp_location.new("teleporter_at_light_death_mountain_left_bottom", nil, "light")
 teleporter_at_dark_death_mountain_left_bottom = alttp_location.new("teleporter_at_dark_death_mountain_left_bottom", nil, "dark")

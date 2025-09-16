@@ -294,7 +294,7 @@ ER_SIMPLE = {
     ["from_tt_entrance_inside"] = true,
     ["to_tt_entrance_inside"] = true,
     ["from_kakariko_well_cave_inside"] = true,
-    
+   
     ["to_kakariko_well_cave_inside"] = true,
     ["from_kakariko_well_cave_outside"] = true,
     ["to_kakariko_well_cave_outside"] = true,
@@ -949,7 +949,7 @@ if PopVersion < "0.32.0" then
             if string.sub(location_obj.name, -7,-1) == "_inside" then
                 CreateLuaLocationItems("from_", location_obj, "inside")
                 CreateLuaLocationItems("to_", location_obj, "inside")
-                
+               
             elseif string.sub(location_obj.name, -8,-1) == "_outside" then
                 CreateLuaLocationItems("from_", location_obj, "outside")
                 CreateLuaLocationItems("to_", location_obj, "outside")
@@ -968,7 +968,7 @@ else
             -- print(location.name)
                 CreateLuaLocationItems("from_", location, "inside")
                 CreateLuaLocationItems("to_", location, "inside")
-                
+               
             elseif string.sub(location.name, -8,-1) == "_outside" then
             -- print(location.name)
                 CreateLuaLocationItems("from_", location, "outside")
