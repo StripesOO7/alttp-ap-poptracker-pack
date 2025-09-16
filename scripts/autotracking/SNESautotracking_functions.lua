@@ -592,7 +592,7 @@ function updateInGameStatusFromMemorySegment(segment)
     if Tracker:FindObjectForCode("ui_hint").Active then
         UpdateUI(segment, mainModuleIdx)
     end
-    if Tracker:FindObjectForCode("er_tracking").CurrentStage > 0 then
+    if Tracker:FindObjectForCode("er_tracking_method").Active then
         UpdateEntrances(segment, mainModuleIdx)
     end
 
