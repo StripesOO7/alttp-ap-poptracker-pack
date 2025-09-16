@@ -213,9 +213,9 @@
             {
                 "name": "Activate Flute",
                 "access_rules":[
-                    "^$CanReach|Inverted_activate_flute"
+                    "^$CanReach|inverted_activate_flute"
                 ],
-                "visibility_rules": ["flute, Inverted"],
+                "visibility_rules": ["flute, inverted"],
                 "sections": [
                     {
                         "name": "Hyrule Hymn o7",
@@ -257,7 +257,7 @@
                 "name": "Peg Cave",
                 "access_rules": [
                     "hammer, titans",
-                    "Inverted, @Lightworld, hammer, mirror"
+                    "inverted, @Lightworld, hammer, mirror"
                 ],
                 "sections": [
                     {
@@ -288,7 +288,7 @@
                 "access_rules": [
                     "^$CanReach|dark_spawn_links_house"
                 ],
-                "visibility_rules": ["Inverted"],
+                "visibility_rules": ["inverted"],
                 "sections": [
                     {
                         "name": "Chest",
@@ -622,7 +622,7 @@
                 "access_rules": [
                     "^$CanReach|Old Man Item"
                 ],
-                "visibility_rules": ["Inverted"],
+                "visibility_rules": ["inverted"],
                 "sections": [
                     {
                         "name": "Rescue Old Man",
@@ -883,7 +883,7 @@
                 "access_rules": [
                     "^$CanReach|tr_eye_bridge_entrance_inside"
                 ],
-                "visibility_rules": ["Inverted"],
+                "visibility_rules": ["inverted"],
                 "item_count": 1,
                 "sections": [
                     {}
@@ -1196,7 +1196,7 @@
                     {
                         "name": "Hyrule Hymn o7",
                         "hosted_item": "flute_active",
-                        "visibility_rules": ["flute, Inverted"]
+                        "visibility_rules": ["flute, inverted"]
                     }
                 ],
                 "map_locations": [
@@ -1296,14 +1296,14 @@
         ]
     },
     {
-        "name": "AT-Inverted",
+        "name": "AT-inverted",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules": [
             "^$CanReach|at_entrance_inside"
         ],
-        "visibility_rules": ["Inverted"],
+        "visibility_rules": ["inverted"],
         "children": [
             {
                 "name": "Agahnim's Tower",

@@ -3,7 +3,7 @@ require("scripts/autotracking/location_mapping")
 
 CUR_INDEX = -1
 SLOT_DATA = nil
-SKIP_BossShuffle = false
+SKIP_BOSSSHUFFLE = false
 ALL_LOCATIONS = {}
 
 local SECONDSTAGE = { 
@@ -182,7 +182,7 @@ function onClear(slot_data)
 
     autoFill(slot_data)
     bombless()
-    if SKIP_BossShuffle == false then
+    if SKIP_BOSSSHUFFLE == false then
         BossShuffle()
     end
     if Archipelago.PlayerNumber > -1 then
@@ -401,7 +401,7 @@ function autoFill()
         [8] = 3
     }
 
-    mapStages = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=6, [7]=7, [8]=8, ["open"]=1,["Inverted"]=2,["standard"]=0}
+    mapStages = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=6, [7]=7, [8]=8, ["open"]=1,["inverted"]=2,["standard"]=0}
     mapToggle = {[0]=false, [1]=true, [2]=true,[3]=true,[4]=true,[6]=true} -- false, true
 
     slotCodes = {
@@ -413,7 +413,7 @@ function autoFill()
         -- triforce_pieces_percentage = {codes={""}, mapping, autofill="",=}, 
         -- triforce_pieces_available = {codes={"triforce_pieces_needed", mapping, autofill="",=}, 
         -- triforce_pieces_extra = {codes={""}, mapping, autofill="",=}
-        big_key_shuffle = {codes={"big_keys", "BigKeys_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings",}, 
+        big_key_shuffle = {codes={"big_keys", "bigkeys_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings",}, 
         small_key_shuffle = {codes={"small_keys", "smallkeys_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings",}, 
         compass_shuffle = {codes={"compass", "compass_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings",}, 
         map_shuffle = {codes={"map", "maps_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings",},
@@ -446,7 +446,7 @@ function autoFill()
         if type(settings_value) == "table" then
             if settings_name == "bosses" then
                 if Tracker:FindObjectForCode("autofill_dungeon_settings").Active then
-                    SKIP_BossShuffle = true
+                    SKIP_BOSSSHUFFLE = true
                     for dungeon, boss in pairs(settings_value) do
                         Tracker:FindObjectForCode(mapDungeon[dungeon][1]).CurrentStage = mapBoss[boss]
                     end
@@ -652,7 +652,7 @@ function GiveAll(setting)
     local mapping = {
         ["maps_setting"] = "_map",
         ["compass_setting"] = "_compass",
-        ["BigKeys_setting"] = "_bigkey",
+        ["bigkeys_setting"] = "_bigkey",
         ["smallkeys_setting"] = "_smallkey"
     }
     -- if Archipelago.PlayerNumber < 0 then
@@ -704,7 +704,7 @@ Archipelago:AddLocationHandler("location handler", onLocation)
 ScriptHost:AddWatchForCode("settings maps_setting", "maps_setting", GiveAll)
 ScriptHost:AddWatchForCode("settings compass_shuffle", "compass_setting", GiveAll)
 ScriptHost:AddWatchForCode("settings smallkeys_setting", "smallkeys_setting", GiveAll)
-ScriptHost:AddWatchForCode("settings BigKeys_setting", "BigKeys_setting", GiveAll)
+ScriptHost:AddWatchForCode("settings bigkeys_setting", "bigkeys_setting", GiveAll)
 
 Archipelago:AddSetReplyHandler("notify handler", onNotify)
 Archipelago:AddRetrievedHandler("notify launch handler", onNotifyLaunch)

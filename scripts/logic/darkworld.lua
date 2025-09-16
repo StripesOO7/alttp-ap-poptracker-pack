@@ -715,7 +715,7 @@ pyramid:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted(),
-        CanReach(Inverted_activate_flute)
+        CanReach(inverted_activate_flute)
     ) 
 end)
 
@@ -779,7 +779,7 @@ pod_area:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted(),
-        CanReach(Inverted_activate_flute)
+        CanReach(inverted_activate_flute)
     ) 
 end)
 pod_area:connect_one_way(dark_potion_shop_area,function()
@@ -849,7 +849,7 @@ dark_death_mountain_left_top:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted(),
-        CanReach(Inverted_activate_flute)
+        CanReach(inverted_activate_flute)
     ) 
 end)
 -- dark_death_mountain_left_top:connect_one_way()
@@ -882,7 +882,7 @@ dark_death_mountain_right_top:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted(),
-        CanReach(Inverted_activate_flute)
+        CanReach(inverted_activate_flute)
     ) 
 end)
 -- dark_death_mountain_right_top:connect_one_way()
@@ -977,7 +977,7 @@ dark_death_mountain_left_bottom:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted(),
-        CanReach(Inverted_activate_flute)
+        CanReach(inverted_activate_flute)
     ) 
 end)
 -- dark_death_mountain_left_bottom:connect_one_way()
@@ -1017,7 +1017,7 @@ dark_death_mountain_right_bottom:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted(),
-        CanReach(Inverted_activate_flute)
+        CanReach(inverted_activate_flute)
     ) 
 end)
 -- dark_death_mountain_right_bottom:connect_one_way()

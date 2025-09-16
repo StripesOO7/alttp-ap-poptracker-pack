@@ -159,14 +159,14 @@ function updateRoomsFromMemorySegment(segment)
     updateSectionChestCountFromRoomSlotList(segment, {"@CE/Sanctuary/Sanctuary Chest","@Sanctuary/Sanctuary Chest/Sanctuary Chest"}, { { 18, 4 } })
 
     -- Agahni's Tower
-    updateSectionChestCountFromRoomSlotList(segment, {"@AT/Agahnim's Tower/Key Drops", "@AT-Inverted/Agahnim's Tower/Key Drops"}, { { 176, 10 }, { 208, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@AT/Agahnim's Tower/Key Drops", "@AT-inverted/Agahnim's Tower/Key Drops"}, { { 176, 10 }, { 208, 10 } })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@AT/Agahnim's Tower/Maze Chest"}, { { 208, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@AT/Agahnim's Tower/Front","@Agahnim's Tower/Front/Front", "@AT-Inverted/Agahnim's Tower/Front"}, { { 224, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@AT/Agahnim's Tower/Maze Chest","@Agahnim's Tower/Maze Chest/Maze Chest", "@AT-Inverted/Agahnim's Tower/Maze Chest"}, { { 208, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@AT/Agahnim's Tower/Front","@Agahnim's Tower/Front/Front", "@AT-inverted/Agahnim's Tower/Front"}, { { 224, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@AT/Agahnim's Tower/Maze Chest","@Agahnim's Tower/Maze Chest/Maze Chest", "@AT-inverted/Agahnim's Tower/Maze Chest"}, { { 208, 4 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Agahnim's Tower/Circle of Pots Key Drop/Circle of Pots Key Drop"}, { { 176, 10 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Agahnim's Tower/Dark Archer Key Drop/Dark Archer Key Drop"}, { { 208, 10 } })
-    -- updateSectionChestCountFromRoomSlotList(segment, {"@AT-Inverted/Agahnim's Tower/Room 03"}, { { 224, 4 } })
-    -- updateSectionChestCountFromRoomSlotList(segment, {"@AT-Inverted/Agahnim's Tower/Maze Chest"}, { { 208, 4 } })
+    -- updateSectionChestCountFromRoomSlotList(segment, {"@AT-inverted/Agahnim's Tower/Room 03"}, { { 224, 4 } })
+    -- updateSectionChestCountFromRoomSlotList(segment, {"@AT-inverted/Agahnim's Tower/Maze Chest"}, { { 208, 4 } })
     
     
 
@@ -360,70 +360,70 @@ function updateRoomsFromMemorySegment(segment)
     
     -- @todo: split GT into right/left side
     -- Ganon's Tower
-    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Key Drops", "@GT-Inverted/Ganon's Tower/Key Drops"}, {
+    updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Key Drops", "@GT-inverted/Ganon's Tower/Key Drops"}, {
         { 138, 10 }, { 155, 10 }, { 61, 10 }, { 123, 10 }
     })
     updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Leftside"}, {
         { 140, 10 }, { 125, 4 }, { 124, 4 }, { 124, 5 }, { 124, 6 }, { 124, 7 }, 
         { 123, 4 }, { 123, 5 }, { 123, 6 }, { 123, 7 }, { 139, 4 }
     })
-    updateSectionChestCountFromRoomSlotList(segment, {"@GT-Inverted/Ganon's Tower/Leftside"}, {
+    updateSectionChestCountFromRoomSlotList(segment, {"@GT-inverted/Ganon's Tower/Leftside"}, {
         { 140, 10 }, { 125, 4 }, { 124, 4 }, { 124, 5 }, { 124, 6 }, { 124, 7 }, 
         { 123, 4 }, { 123, 5 }, { 123, 6 }, { 123, 7 }, { 139, 4 }
     })
     updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Rightside"}, {
        { 140, 5 }, { 140, 6 }, { 141, 4 }, { 157, 4 }, { 157, 5 }, { 157, 6 }, { 157, 7 }
     })
-    updateSectionChestCountFromRoomSlotList(segment, {"@GT-Inverted/Ganon's Tower/Rightside"}, {
+    updateSectionChestCountFromRoomSlotList(segment, {"@GT-inverted/Ganon's Tower/Rightside"}, {
        { 140, 5 }, { 140, 6 }, { 141, 4 }, { 157, 4 }, { 157, 5 }, { 157, 6 }, { 157, 7 }
     })
     updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/Big Chest + Ice refight"}, {
        { 140, 7 }, { 140, 4 }, { 28, 4 }, { 28, 5 }, { 28, 6 }
     })
-    updateSectionChestCountFromRoomSlotList(segment, {"@GT-Inverted/Ganon's Tower/Big Chest + Ice refight"}, {
+    updateSectionChestCountFromRoomSlotList(segment, {"@GT-inverted/Ganon's Tower/Big Chest + Ice refight"}, {
        { 140, 7 }, { 140, 4 }, { 28, 4 }, { 28, 5 }, { 28, 6 }
     })
     updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/GT Top + Lanmo refight"}, { { 61, 4 }, { 61, 5 }, { 61, 6 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@GT-Inverted/Ganon's Tower/GT Top + Lanmo refight"}, { { 61, 4 }, { 61, 5 }, { 61, 6 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@GT-inverted/Ganon's Tower/GT Top + Lanmo refight"}, { { 61, 4 }, { 61, 5 }, { 61, 6 } })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@GT/Ganon's Tower/GT Top Moldorm refight"}, { { 77, 4 }  })
-    -- updateSectionChestCountFromRoomSlotList(segment, {"@GT-Inverted/Ganon's Tower/GT Top Moldorm refight"}, { { 77, 4 }  })
+    -- updateSectionChestCountFromRoomSlotList(segment, {"@GT-inverted/Ganon's Tower/GT Top Moldorm refight"}, { { 77, 4 }  })
 
     updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Conveyor Cross Pot Key/Conveyor Cross Pot Key"}, {{ 138, 10 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Double Switch Pot Key/Double Switch Pot Key"}, {{ 155, 10 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Top/Mini Helmasaur Key Drop/Mini Helmasaur Key Drop"}, {{ 61, 10 } })
     updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key"}, {{ 123, 10 } })
 
-    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Bob's Torch/Bob's Torch", "@GT-Inverted/Ganon's Tower/Leftside"}, {{ 140, 10 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room", "@GT-Inverted/Ganon's Tower/Leftside"}, {{ 125, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Randomizer Room Top Left/Randomizer Room Top Left", "@GT-Inverted/Ganon's Tower/Leftside"}, {{ 124, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@GT-Inverted/Ganon's Tower/Leftside"}, {{ 124, 5 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Randomizer Room Bottom Left/Randomizer Room Bottom Left", "@GT-Inverted/Ganon's Tower/Leftside"}, {{ 124, 6 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Randomizer Room Bottom Right/Randomizer Room Bottom Right", "@GT-Inverted/Ganon's Tower/Leftside"}, {{ 124, 7 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/DMs Room Top Left/DMs Room Top Left", "@GT-Inverted/Ganon's Tower/Leftside"}, {{ 123, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/DMs Room Top Right/DMs Room Top Right", "@GT-Inverted/Ganon's Tower/Leftside"}, {{ 123, 5 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/DMs Room Bottom Left/DMs Room Bottom Left", "@GT-Inverted/Ganon's Tower/Leftside"}, {{ 123, 6 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/DMs Room Bottom Right/DMs Room Bottom Right", "@GT-Inverted/Ganon's Tower/Leftside"}, {{ 123, 7 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Map Chest/Map Chest", "@GT-Inverted/Ganon's Tower/Leftside"}, {{ 139, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Bob's Torch/Bob's Torch", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 140, 10 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 125, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Randomizer Room Top Left/Randomizer Room Top Left", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 124, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 124, 5 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Randomizer Room Bottom Left/Randomizer Room Bottom Left", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 124, 6 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Randomizer Room Bottom Right/Randomizer Room Bottom Right", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 124, 7 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/DMs Room Top Left/DMs Room Top Left", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 123, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/DMs Room Top Right/DMs Room Top Right", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 123, 5 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/DMs Room Bottom Left/DMs Room Bottom Left", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 123, 6 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/DMs Room Bottom Right/DMs Room Bottom Right", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 123, 7 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Left/Map Chest/Map Chest", "@GT-inverted/Ganon's Tower/Leftside"}, {{ 139, 4 } })
     
-    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Right/Hope Room Left/Hope Room Left", "@GT-Inverted/Ganon's Tower/Rightside"}, {{ 140, 5 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Right/Hope Room Right/Hope Room Right", "@GT-Inverted/Ganon's Tower/Rightside"}, {{ 140, 6 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Right/Tile Room/Tile Room", "@GT-Inverted/Ganon's Tower/Rightside"}, {{ 141, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@GT-Inverted/Ganon's Tower/Rightside"}, {{ 157, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Right/Compass Room Top Right/Compass Room Top Right", "@GT-Inverted/Ganon's Tower/Rightside"}, {{ 157, 5 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Right/Compass Room Bottom Left/Compass Room Bottom Left", "@GT-Inverted/Ganon's Tower/Rightside"}, {{ 157, 6 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Right/Compass Room Bottom Right/Compass Room Bottom Right", "@GT-Inverted/Ganon's Tower/Rightside"}, { { 157, 7 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Right/Hope Room Left/Hope Room Left", "@GT-inverted/Ganon's Tower/Rightside"}, {{ 140, 5 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Right/Hope Room Right/Hope Room Right", "@GT-inverted/Ganon's Tower/Rightside"}, {{ 140, 6 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Right/Tile Room/Tile Room", "@GT-inverted/Ganon's Tower/Rightside"}, {{ 141, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@GT-inverted/Ganon's Tower/Rightside"}, {{ 157, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Right/Compass Room Top Right/Compass Room Top Right", "@GT-inverted/Ganon's Tower/Rightside"}, {{ 157, 5 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Right/Compass Room Bottom Left/Compass Room Bottom Left", "@GT-inverted/Ganon's Tower/Rightside"}, {{ 157, 6 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Right/Compass Room Bottom Right/Compass Room Bottom Right", "@GT-inverted/Ganon's Tower/Rightside"}, { { 157, 7 } })
     
-    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Refight/Bob's Chest/Bob's Chest", "@GT-Inverted/Ganon's Tower/Big Chest + Ice refight"}, {{ 140, 7 }})
-    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Refight/Big Chest/Big Chest", "@GT-Inverted/Ganon's Tower/Big Chest + Ice refight"}, {{ 140, 4 }})
-    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Refight/Big Key Chest/Big Key Chest", "@GT-Inverted/Ganon's Tower/Big Chest + Ice refight"}, {{ 28, 4 }})
-    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Refight/Big Key Room Left/Big Key Room Left", "@GT-Inverted/Ganon's Tower/Big Chest + Ice refight"}, {{ 28, 5 }})
-    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Refight/Big Key Room Right/Big Key Room Right", "@GT-Inverted/Ganon's Tower/Big Chest + Ice refight"}, {{ 28, 6 }})
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Refight/Bob's Chest/Bob's Chest", "@GT-inverted/Ganon's Tower/Big Chest + Ice refight"}, {{ 140, 7 }})
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Refight/Big Chest/Big Chest", "@GT-inverted/Ganon's Tower/Big Chest + Ice refight"}, {{ 140, 4 }})
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Refight/Big Key Chest/Big Key Chest", "@GT-inverted/Ganon's Tower/Big Chest + Ice refight"}, {{ 28, 4 }})
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Refight/Big Key Room Left/Big Key Room Left", "@GT-inverted/Ganon's Tower/Big Chest + Ice refight"}, {{ 28, 5 }})
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Bottom Refight/Big Key Room Right/Big Key Room Right", "@GT-inverted/Ganon's Tower/Big Chest + Ice refight"}, {{ 28, 6 }})
     
-    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@GT-Inverted/Ganon's Tower/GT Top + Lanmo refight"}, { { 61, 4 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Top/Mini Helmasaur Room Left/Mini Helmasaur Room Left", "@GT-Inverted/Ganon's Tower/GT Top + Lanmo refight"}, { { 61, 5 } })
-    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Top/Mini Helmasaur Room Right/Mini Helmasaur Room Right", "@GT-Inverted/Ganon's Tower/GT Top + Lanmo refight"}, { { 61, 6 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@GT-inverted/Ganon's Tower/GT Top + Lanmo refight"}, { { 61, 4 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Top/Mini Helmasaur Room Left/Mini Helmasaur Room Left", "@GT-inverted/Ganon's Tower/GT Top + Lanmo refight"}, { { 61, 5 } })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Top/Mini Helmasaur Room Right/Mini Helmasaur Room Right", "@GT-inverted/Ganon's Tower/GT Top + Lanmo refight"}, { { 61, 6 } })
     
-    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Top/Validation Chest/Validation Chest", "@GT-Inverted/Ganon's Tower/GT Top Moldorm refight"}, { { 77, 4 }  })
+    updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower Top/Validation Chest/Validation Chest", "@GT-inverted/Ganon's Tower/GT Top Moldorm refight"}, { { 77, 4 }  })
     
     -- updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower/Ice Boss"}, { { 295, 10 } })
     -- updateSectionChestCountFromRoomSlotList(segment, {"@Ganon's Tower/Lanmo Refight"}, { { 295, 10 } })

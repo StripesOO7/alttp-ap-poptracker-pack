@@ -970,7 +970,7 @@
                 "name": "Bumper Cave",
                 "access_rules": [
                 ],
-                "visibility_rules": ["Inverted"],
+                "visibility_rules": ["inverted"],
                 "sections": [
                     {
                         "name": "Bumper Cave Item",
@@ -1608,14 +1608,14 @@
         ]
     },
     {
-        "name": "GT-Inverted",
+        "name": "GT-inverted",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules": [
             "^$CanReach|gt_entrance_inside"
         ],
-        "visibility_rules": ["Inverted"],
+        "visibility_rules": ["inverted"],
         "children": [
             {
                 "name": "Ganon's Tower",
