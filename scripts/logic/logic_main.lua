@@ -432,7 +432,8 @@ end
 
 function EmptyLocationTargets()
     if not (Tracker.BulkUpdate == true) then
-        -- ScriptHost:RemoveOnLocationSectionChangedHandler("location_section_change_handler")
+        ScriptHost:RemoveWatchForCode("StateChanged")
+        ScriptHost:RemoveOnLocationSectionHandler("location_section_change_handler")
         local er_tracking = Tracker:FindObjectForCode("er_tracking")
         if er_tracking == nil then
             print("item with code 'er_tracking' not found")
@@ -482,8 +483,9 @@ function EmptyLocationTargets()
         else
             print("insanity ER is not supported you troll")
         end
-        -- ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", ForceUpdate)
-        -- ForceUpdate()
+        ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", ForceUpdate)
+        ScriptHost:AddWatchForCode("StateChanged", "*", StateChanged)
+        ForceUpdate()
     else
         print("skipped ER reset")
     end
