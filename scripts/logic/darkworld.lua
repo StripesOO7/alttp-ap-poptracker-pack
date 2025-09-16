@@ -871,6 +871,7 @@ end)
 -- dark_death_mountain_left_top:connect_two_ways(at_entrance_outside, function() return Inverted() end)
 
 dark_death_mountain_left_top:connect_two_ways(dark_death_mountain_right_top)
+dark_death_mountain_left_top:connect_one_way(dark_death_mountain_left_bottom)
 
 gt_entrance_outside:connect_two_ways_entrance("Ganons Tower", gt_entrance_inside, function() return OpenOrStandard() end)
 gt_entrance_outside:connect_two_ways_entrance("Aga Tower", at_entrance_inside, function() return Inverted() end)
