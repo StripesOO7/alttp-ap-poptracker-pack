@@ -24,7 +24,7 @@ local MEDALLIONS = {
     [17] = "quake"
 }
 if Highlight then
-    highlight_lvl= {
+    HIGHTLIGHT_LEVEL= {
         [0] = Highlight.Unspecified,
         [10] = Highlight.NoPriority,
         [20] = Highlight.Avoid,
@@ -592,7 +592,7 @@ function updateHints(locationID, status)
                 local obj = Tracker:FindObjectForCode(location)
 
                 if obj then
-                    obj.Highlight = highlight_lvl[status]
+                    obj.Highlight = HIGHTLIGHT_LEVEL[status]
                 else
                     print(string.format("No object found for code: %s", location))
                 end
