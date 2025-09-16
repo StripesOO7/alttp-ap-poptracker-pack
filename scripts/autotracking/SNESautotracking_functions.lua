@@ -352,8 +352,8 @@ function UpdateEntrances(segment, mainModuleIdx)
 
         if temp_room_y ~= nil then
             -- local current_door = ENTRANCE_MAPPING[current_room][current_coords_x][current_coords_y]
-            local current_door = entrance_name
-            local door_name = current_door[1]
+            local current_door = temp_room_y
+            local door_name = entrance_name
             -- print(door_name)
             if current_door ~= nil and type(current_door) == "table" then
                 if Selected_entrance == nil then
