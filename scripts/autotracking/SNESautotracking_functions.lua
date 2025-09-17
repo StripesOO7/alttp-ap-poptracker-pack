@@ -333,93 +333,95 @@ function UpdateEntrances(segment, mainModuleIdx)
                 current_room = new_ow_room
             end
         end
-
-        local temp_room = ENTRANCE_MAPPING[current_room]
-        local temp_room_x
-        local temp_room_y
-        local entrance_name
-        local entrance_origin
-        if temp_room then
-            temp_room_x = temp_room[current_coords_x]
-            if temp_room_x then
-                temp_room_y = temp_room_x[current_coords_y]
-                if temp_room_y then
-                    entrance_name = temp_room_y[1]
-                    entrance_origin = temp_room_y[2]
+        if mainModuleIdx == 0x0F or mainModuleIdx == 0x11 or Selected_entrance ~= nil then
+            local temp_room = ENTRANCE_MAPPING[current_room]
+            local temp_room_x
+            local temp_room_y
+            local entrance_name
+            local entrance_origin
+            if temp_room then
+                temp_room_x = temp_room[current_coords_x]
+                if temp_room_x then
+                    temp_room_y = temp_room_x[current_coords_y]
+                    if temp_room_y then
+                        entrance_name = temp_room_y[1]
+                        entrance_origin = temp_room_y[2]
+                    end
                 end
             end
-        end
+            -- print(temp_room_y)
 
-        if temp_room_y ~= nil then
-            -- local current_door = ENTRANCE_MAPPING[current_room][current_coords_x][current_coords_y]
-            local current_door = temp_room_y
-            local door_name = entrance_name
-            -- print(door_name)
-            if current_door ~= nil and type(current_door) == "table" then
-                if Selected_entrance == nil then
-                    Selected_entrance = Tracker:FindObjectForCode("from_"..door_name)
-                    Selected_entrance_origin = entrance_origin
-                    -- print("Selected_entrance", Selected_entrance.Name)
-                else
-                    if string.gsub(Selected_entrance.Name, "from_", "") ~= door_name then
-                        -- if multi_purpose_room[door_name] then
-                        local multi_purpose_room_call = multi_purpose_room[door_name]
-                        if multi_purpose_room_call == nil then
-                            multi_purpose_room_call = function() return 1 end
+            if temp_room_y ~= nil then
+                -- local current_door = ENTRANCE_MAPPING[current_room][current_coords_x][current_coords_y]
+                local current_door = temp_room_y
+                local door_name = entrance_name
+                -- print(door_name)
+                if current_door ~= nil and type(current_door) == "table" then
+                    if Selected_entrance == nil then
+                        Selected_entrance = Tracker:FindObjectForCode("from_"..door_name)
+                        Selected_entrance_origin = entrance_origin
+                        -- print("Selected_entrance", Selected_entrance.Name)
+                    else
+                        if string.gsub(Selected_entrance.Name, "from_", "") ~= door_name then
+                            -- if multi_purpose_room[door_name] then
+                            local multi_purpose_room_call = multi_purpose_room[door_name]
+                            if multi_purpose_room_call == nil then
+                                multi_purpose_room_call = function() return 1 end
+                            end
+                            Selected_exit = Tracker:FindObjectForCode("to_"..current_door[multi_purpose_room_call()])
+                            Selected_exit_origin = entrance_origin
+                            -- if string.match(current_door[1], "kakariko_shop") then
+                            --     LIGHT_SHOPS_FOUND = LIGHT_SHOPS_FOUND + 1
+                            --     Selected_exit = Tracker:FindObjectForCode("to_"..current_door[LIGHT_SHOPS_FOUND])
+                            -- elseif string.match(current_door[1], "kakariko_fortune") then
+                            --     FORTUNE_FOUND = FORTUNE_FOUND + 1
+                            --     Selected_exit = Tracker:FindObjectForCode("to_"..current_door[FORTUNE_FOUND])
+                            -- elseif string.match(current_door[1], "dam_desert_fairy_") then
+                            --     FAIRYS_FOUND = FAIRYS_FOUND + 1
+                            --     Selected_exit = Tracker:FindObjectForCode("to_"..current_door[FAIRYS_FOUND])
+                            -- else
+                            --     Selected_exit = Tracker:FindObjectForCode("to_"..current_door[1])
+                            -- end
+                --            print("Selected_exit", Selected_exit.Name)
                         end
-                        Selected_exit = Tracker:FindObjectForCode("to_"..current_door[multi_purpose_room_call()])
-                        Selected_exit_origin = entrance_origin
-                        -- if string.match(current_door[1], "kakariko_shop") then
-                        --     LIGHT_SHOPS_FOUND = LIGHT_SHOPS_FOUND + 1
-                        --     Selected_exit = Tracker:FindObjectForCode("to_"..current_door[LIGHT_SHOPS_FOUND])
-                        -- elseif string.match(current_door[1], "kakariko_fortune") then
-                        --     FORTUNE_FOUND = FORTUNE_FOUND + 1
-                        --     Selected_exit = Tracker:FindObjectForCode("to_"..current_door[FORTUNE_FOUND])
-                        -- elseif string.match(current_door[1], "dam_desert_fairy_") then
-                        --     FAIRYS_FOUND = FAIRYS_FOUND + 1
-                        --     Selected_exit = Tracker:FindObjectForCode("to_"..current_door[FAIRYS_FOUND])
-                        -- else
-                        --     Selected_exit = Tracker:FindObjectForCode("to_"..current_door[1])
-                        -- end
-            --            print("Selected_exit", Selected_exit.Name)
-                    end
 
-                end
-               
-                local er_stage = Tracker:FindObjectForCode("er_tracking").CurrentStage
-                if Selected_entrance ~= nil and Selected_exit ~= nil and Selected_entrance_origin ~= Selected_exit_origin then
-                    -- print("inside entrance connection part")
-                    -- print("selected_entrance", selected_entrance.Name)
-                    -- print("selected_exit", selected_exit.Name)
-                    -- print(Tracker:FindObjectForCode("er_tracking").CurrentStage)
-                    if er_stage == 3 then -- separated doors
-                   
-                        _SetLocationOptions(Selected_entrance, Selected_exit)
-                        _SetLocationOptions(Selected_exit, Selected_entrance)
-                    else --trackes both sides simlutaniously
-                        _SetLocationOptions(Selected_entrance, Selected_exit)
-                        _SetLocationOptions(Selected_exit, Selected_entrance)
-                        Selected_entrance = Tracker:FindObjectForCode(string.gsub(Selected_entrance.Name, "from_", "to_"))
-                        Selected_exit = Tracker:FindObjectForCode(string.gsub(Selected_exit.Name, "to_", "from_"))
-                        _SetLocationOptions(Selected_entrance, Selected_exit)
-                        _SetLocationOptions(Selected_exit, Selected_entrance)
                     end
+                
+                    local er_stage = Tracker:FindObjectForCode("er_tracking").CurrentStage
+                    if Selected_entrance ~= nil and Selected_exit ~= nil and Selected_entrance_origin ~= Selected_exit_origin then
+                        -- print("inside entrance connection part")
+                        -- print("selected_entrance", selected_entrance.Name)
+                        -- print("selected_exit", selected_exit.Name)
+                        -- print(Tracker:FindObjectForCode("er_tracking").CurrentStage)
+                        if er_stage == 3 then -- separated doors
+                    
+                            _SetLocationOptions(Selected_entrance, Selected_exit)
+                            _SetLocationOptions(Selected_exit, Selected_entrance)
+                        else --trackes both sides simlutaniously
+                            _SetLocationOptions(Selected_entrance, Selected_exit)
+                            _SetLocationOptions(Selected_exit, Selected_entrance)
+                            Selected_entrance = Tracker:FindObjectForCode(string.gsub(Selected_entrance.Name, "from_", "to_"))
+                            Selected_exit = Tracker:FindObjectForCode(string.gsub(Selected_exit.Name, "to_", "from_"))
+                            _SetLocationOptions(Selected_entrance, Selected_exit)
+                            _SetLocationOptions(Selected_exit, Selected_entrance)
+                        end
+                        Selected_entrance = nil
+                        Selected_exit = nil
+                        Selected_entrance_origin = nil
+                        Selected_exit_origin = nil
+                    end
+                else
                     Selected_entrance = nil
-                    Selected_exit = nil
-                    Selected_entrance_origin = nil
-                    Selected_exit_origin = nil
                 end
             else
-                Selected_entrance = nil
+                er_target_counter = er_target_counter + 1
+                -- Selected_entrance = nil
             end
-        else
-            er_target_counter = er_target_counter + 1
-            -- Selected_entrance = nil
-        end
-        if er_target_counter > 10 then
-            -- print("reset selected entrance", Selected_entrance)
-            Selected_entrance = nil
-            er_target_counter = 0
+            if er_target_counter > 6 then
+                -- print("reset selected entrance", Selected_entrance)
+                Selected_entrance = nil
+                er_target_counter = 0
+            end
         end
     end
     if LIGHT_SHOPS_FOUND == 5 then
@@ -970,6 +972,7 @@ function read32BitTimer(segment, baseAddress)
 end
 
 function updateStatisticsFromMemorySegment(segment)
+    -- print(AutoTracker:ReadU8(0x7e0010, 0))
 
     if not isInGame() then
         return false
