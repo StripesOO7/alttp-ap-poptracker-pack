@@ -3,8 +3,8 @@
 at_entrance_outside = alttp_location.new("at_entrance_outside", "Aga Tower", "light", 27, 1635, 2040)
 at_entrance_inside = alttp_location.new("at_entrance_inside", "Aga Tower", nil, 224, 7640, 120)
 
-ce_dropdown_entrance_outside = alttp_location.new("ce_dropdown_entrance_outside", "Castle Escape Drop", "light", 17, 794, 915)
-ce_dropdown_entrance_inside = alttp_location.new("ce_dropdown_entrance_inside", "Castle Escape Drop", nil, 20, 1194, 2120)
+ce_dropdown_entrance_outside = alttp_location.new("ce_dropdown_entrance_outside", "Castle Escape Drop", "light", 20, 1194, 2120)
+ce_dropdown_entrance_inside = alttp_location.new("ce_dropdown_entrance_inside", "Castle Escape Drop", nil, 17, 794, 915)
 ce_stairs_outside = alttp_location.new("ce_stairs_outside", "Castle Escape Stairs")
 ce_stairs_inside = alttp_location.new("ce_stairs_insidetrue", "Castle Escape Stairs")
 
