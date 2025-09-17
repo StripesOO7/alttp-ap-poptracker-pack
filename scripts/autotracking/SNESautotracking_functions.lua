@@ -287,7 +287,7 @@ FORTUNE_FOUND = 0
 FAIRYS_FOUND = 0
 
 function UpdateEntrances(segment, mainModuleIdx)
-   
+    -- print(AutoTracker:ReadU8(0x7e0010, 0))
     local current_room
     local new_ow_room
     local new_dungeon_room
@@ -327,7 +327,11 @@ function UpdateEntrances(segment, mainModuleIdx)
        
 
         if new_ow_room == 0 then
-            current_room = new_dungeon_room
+            if current_coords_x < 1000 and current_coords_y  < 1000 then
+                current_room = new_ow_room
+            else
+                current_room = new_dungeon_room
+            end
         else
             if current_room ~= new_ow_room then
                 current_room = new_ow_room
