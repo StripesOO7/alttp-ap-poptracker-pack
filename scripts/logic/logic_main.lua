@@ -114,8 +114,8 @@ function alttp_location.new(name, shortname, origin, room, y, x)
         -- self.cave = cave -- boolean
         -- 20 pixel tolerance
         Table_insert_at(ENTRANCE_MAPPING, room, {})
-        for x_range = x-30, x+30 do
-            for y_range = y-30, y+30 do
+        for x_range = x-20, x+20 do
+            for y_range = y-20, y+20 do
                 Table_insert_at(ENTRANCE_MAPPING[room], x_range, {})
                 Table_insert_at(ENTRANCE_MAPPING[room][x_range], y_range, nil)
                 -- print(self.name, origin == nil)
