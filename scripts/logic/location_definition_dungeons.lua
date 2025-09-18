@@ -27,8 +27,8 @@ hc_main_entrance_inside = alttp_location.new("hc_main_entrance_inside", "HC Main
 hc_right_entrance_outside = alttp_location.new("hc_right_entrance_outside", "HC Right", "light", 27, 2248, 1540, 1575)
 hc_right_entrance_inside = alttp_location.new("hc_right_entrance_inside", "HC Right", nil, 98, 1144, 3544, 3572)
 
-toh_entrance_outside = alttp_location.new("toh_entrance_outside", "ToH Main", "light", 3, 2288, 123)
-toh_entrance_inside = alttp_location.new("toh_entrance_inside", "ToH Main", nil, 119, 3832, 4032)
+toh_entrance_outside = alttp_location.new("toh_entrance_outside", "ToH Main", "light", 3, 2288, 104, 119)
+toh_entrance_inside = alttp_location.new("toh_entrance_inside", "ToH Main", nil, 119, 3832, 4032, 4084)
 
 
 --darkworld
