@@ -337,7 +337,7 @@ function UpdateEntrances(segment, mainModuleIdx)
                 current_room = new_ow_room
             end
         end
-        if mainModuleIdx == 0x0F or mainModuleIdx == 0x11 or Selected_entrance ~= nil then
+        if mainModuleIdx == 0x0F or mainModuleIdx == 0x08 or mainModuleIdx == 0x06 or mainModuleIdx == 0x11 then
             local temp_room = ENTRANCE_MAPPING[current_room]
             local temp_room_x
             local temp_room_y
@@ -386,7 +386,7 @@ function UpdateEntrances(segment, mainModuleIdx)
                             -- else
                             --     Selected_exit = Tracker:FindObjectForCode("to_"..current_door[1])
                             -- end
-                --            print("Selected_exit", Selected_exit.Name)
+                            -- print("Selected_exit", Selected_exit.Name)
                         end
 
                     end
@@ -417,15 +417,12 @@ function UpdateEntrances(segment, mainModuleIdx)
                 else
                     Selected_entrance = nil
                 end
-            else
-                er_target_counter = er_target_counter + 1
-                -- Selected_entrance = nil
             end
-            if er_target_counter > 6 then
-                -- print("reset selected entrance", Selected_entrance)
-                Selected_entrance = nil
-                er_target_counter = 0
-            end
+        else
+            Selected_entrance = nil
+            Selected_exit = nil
+            Selected_entrance_origin = nil
+            Selected_exit_origin = nil
         end
     end
     if LIGHT_SHOPS_FOUND == 5 then
@@ -1002,7 +999,7 @@ function updateStatisticsFromMemorySegment(segment)
 end
 
 function test(segment)
-    print("detailed Current OW   Index: ", segment:ReadUInt16(0x7e040a))
+    --print("detailed Current OW   Index: ", segment:ReadUInt16(0x7e040a))
 end
 -- Run the in-game status check more frequently (every 250ms) to catch save/quit scenarios more effectively
 
