@@ -338,6 +338,8 @@ function UpdateEntrances(segment, mainModuleIdx)
             end
         end
         if mainModuleIdx == 0x0F or mainModuleIdx == 0x08 or mainModuleIdx == 0x06 or mainModuleIdx == 0x11 then
+            print("Room:", current_room, " X:", current_coords_x, " Y:", current_coords_y)
+
             local temp_room = ENTRANCE_MAPPING[current_room]
             local temp_room_x
             local temp_room_y
@@ -353,7 +355,8 @@ function UpdateEntrances(segment, mainModuleIdx)
                     end
                 end
             end
-            -- print(temp_room_y)
+
+            print("Room Name:", entrance_name)
 
             if temp_room_y ~= nil then
                 -- local current_door = ENTRANCE_MAPPING[current_room][current_coords_x][current_coords_y]

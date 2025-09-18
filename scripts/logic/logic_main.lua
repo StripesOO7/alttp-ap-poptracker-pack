@@ -92,9 +92,6 @@ function alttp_location.new(name, shortname, origin, room, x, yMin, yMax)
     if shortname == nil then
         shortname = name
     end
-    if yMax == nil then
-        yMax = yMin
-    end
     local self = setmetatable({}, alttp_location)
     if name then
         NAMED_LOCATIONS[name] = self
@@ -117,8 +114,14 @@ function alttp_location.new(name, shortname, origin, room, x, yMin, yMax)
         -- self.cave = cave -- boolean
         -- 20 pixel tolerance
         Table_insert_at(ENTRANCE_MAPPING, room, {})
-        for x_range = x-20, x+20 do
-            for y_range = yMin-30, yMax+30 do
+        for x_range = x-2, x+2 do
+            local y_min_range = yMin-30
+            local y_max_range = yMin+30
+            if yMax ~= nil then
+                y_min_range = yMin-2
+                y_max_range = yMax+2
+            end
+            for y_range = y_min_range, y_max_range do
                 Table_insert_at(ENTRANCE_MAPPING[room], x_range, {})
                 Table_insert_at(ENTRANCE_MAPPING[room][x_range], y_range, nil)
                 -- print(self.name, origin == nil)
