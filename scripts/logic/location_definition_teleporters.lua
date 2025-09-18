@@ -18,15 +18,15 @@ teleporter_at_upgrade_fairy = alttp_location.new("teleporter_at_upgrade_fairy", 
 teleporter_at_ice_palace = alttp_location.new("teleporter_at_ice_palace", nil, "dark")
 
 
-old_man_cave_left_outside = alttp_location.new("old_man_cave_left_outside", "Old Man Cave Left", "light", 10, 715, 1448)
-old_man_cave_left_inside = alttp_location.new("old_man_cave_left_inside", "Old Man Cave Left", nil, 240, 8152, 120)
-old_man_cave_right_outside = alttp_location.new("old_man_cave_right_outside", "Old Man Cave Right", "light", 3, 763, 1656)
-old_man_cave_right_inside = alttp_location.new("old_man_cave_right_inside", "Old Man Cave Right", nil, 241, 8128, 888)
+old_man_cave_left_outside = alttp_location.new("old_man_cave_left_outside", "Old Man Cave Left", "light", 10, 1448, 715)
+old_man_cave_left_inside = alttp_location.new("old_man_cave_left_inside", "Old Man Cave Left", nil, 240, 120, 8152)
+old_man_cave_right_outside = alttp_location.new("old_man_cave_right_outside", "Old Man Cave Right", "light", 3, 1656, 763)
+old_man_cave_right_inside = alttp_location.new("old_man_cave_right_inside", "Old Man Cave Right", nil, 241, 888, 8128)
 
-light_death_mountain_return_left_outside = alttp_location.new("light_death_mountain_return_left_outside", "DM Return Left", "light", 10, 619, 1464)
-light_death_mountain_return_left_inside = alttp_location.new("light_death_mountain_return_left_inside", "DM Return Left", nil, 230, 7616, 3192)
-light_death_mountain_return_right_outside = alttp_location.new("light_death_mountain_return_right_outside", "DM Return Right", "light", 3, 555, 1608)
-light_death_mountain_return_right_inside = alttp_location.new("light_death_mountain_return_right_inside", "DM Return Right", nil, 231, 7616, 3960)
+light_death_mountain_return_left_outside = alttp_location.new("light_death_mountain_return_left_outside", "DM Return Left", "light", 10, 1464, 619)
+light_death_mountain_return_left_inside = alttp_location.new("light_death_mountain_return_left_inside", "DM Return Left", nil, 230, 3192, 7616)
+light_death_mountain_return_right_outside = alttp_location.new("light_death_mountain_return_right_outside", "DM Return Right", "light", 3, 1608, 555)
+light_death_mountain_return_right_inside = alttp_location.new("light_death_mountain_return_right_inside", "DM Return Right", nil, 231, 3960, 7616)
 
 bumpercave_bottom_outside = alttp_location.new("bumpercave_bottom_outside", "Bumpercave Bottom", "dark")
 bumpercave_bottom_inside = alttp_location.new("bumpercave_bottom_inside", "Bumpercave Bottom", nil)

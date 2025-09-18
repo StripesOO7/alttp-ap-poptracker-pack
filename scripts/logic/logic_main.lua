@@ -88,9 +88,12 @@ end
 
 -- creates a lua object for the given name. it acts as a representation of a overworld reagion or indoor locatoin and
 -- tracks its connected objects wvia the exit-table
-function alttp_location.new(name, shortname, origin, room, y, x)
+function alttp_location.new(name, shortname, origin, room, x, yMin, yMax)
     if shortname == nil then
         shortname = name
+    end
+    if yMax == nil then
+        yMax = yMin
     end
     local self = setmetatable({}, alttp_location)
     if name then
@@ -110,12 +113,12 @@ function alttp_location.new(name, shortname, origin, room, y, x)
         -- NAMED_LOCATIONS["to_"..name] = self
         self.room = room
         self.x = x
-        self.y = y
+        self.y = yMin
         -- self.cave = cave -- boolean
         -- 20 pixel tolerance
         Table_insert_at(ENTRANCE_MAPPING, room, {})
         for x_range = x-20, x+20 do
-            for y_range = y-20, y+20 do
+            for y_range = yMin-30, yMax+30 do
                 Table_insert_at(ENTRANCE_MAPPING[room], x_range, {})
                 Table_insert_at(ENTRANCE_MAPPING[room][x_range], y_range, nil)
                 -- print(self.name, origin == nil)
