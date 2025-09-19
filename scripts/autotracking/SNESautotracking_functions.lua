@@ -418,8 +418,10 @@ function UpdateEntrances(segment, mainModuleIdx)
                     Selected_entrance = nil
                 end
             else
-                print("No entrance found for room:", current_room, "x:", current_coords_x, "y:", current_coords_y)
-                print("If this is a dropdown it's probably fine. If not, the mapping needs to be expanded.")
+                if (current_room ~= 149 and current_room ~= 150) then
+                    print("No entrance found for room:", current_room, "x:", current_coords_x, "y:", current_coords_y)
+                    print("If this is a dropdown it's probably fine. If not, the mapping needs to be expanded.")
+                end
             end
         else
             Selected_entrance = nil
