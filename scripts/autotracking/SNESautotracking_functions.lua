@@ -327,7 +327,7 @@ function UpdateEntrances(segment, mainModuleIdx)
        
 
         if new_ow_room == 0 then
-            if current_coords_x < 1000 and current_coords_y  < 1000 then
+            if current_coords_x > 740 and current_coords_x < 780 and current_coords_y > 0 and current_coords_y < 610 then
                 current_room = new_ow_room
             else
                 current_room = new_dungeon_room
@@ -338,6 +338,7 @@ function UpdateEntrances(segment, mainModuleIdx)
             end
         end
         if mainModuleIdx == 0x0F or mainModuleIdx == 0x08 or mainModuleIdx == 0x06 or mainModuleIdx == 0x11 then
+
             local temp_room = ENTRANCE_MAPPING[current_room]
             local temp_room_x
             local temp_room_y
@@ -353,7 +354,6 @@ function UpdateEntrances(segment, mainModuleIdx)
                     end
                 end
             end
-            -- print(temp_room_y)
 
             if temp_room_y ~= nil then
                 -- local current_door = ENTRANCE_MAPPING[current_room][current_coords_x][current_coords_y]
@@ -416,6 +416,11 @@ function UpdateEntrances(segment, mainModuleIdx)
                     end
                 else
                     Selected_entrance = nil
+                end
+            else
+                if (current_room ~= 149 and current_room ~= 150) then
+                    print("No entrance found for room:", current_room, "x:", current_coords_x, "y:", current_coords_y)
+                    print("If this is a dropdown it's probably fine. If not, the mapping needs to be expanded.")
                 end
             end
         else

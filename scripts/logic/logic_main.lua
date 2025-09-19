@@ -88,7 +88,7 @@ end
 
 -- creates a lua object for the given name. it acts as a representation of a overworld reagion or indoor locatoin and
 -- tracks its connected objects wvia the exit-table
-function alttp_location.new(name, shortname, origin, room, y, x)
+function alttp_location.new(name, shortname, origin, room, x, yMin, yMax, xMax)
     if shortname == nil then
         shortname = name
     end
@@ -110,12 +110,23 @@ function alttp_location.new(name, shortname, origin, room, y, x)
         -- NAMED_LOCATIONS["to_"..name] = self
         self.room = room
         self.x = x
-        self.y = y
+        self.y = yMin
         -- self.cave = cave -- boolean
         -- 20 pixel tolerance
         Table_insert_at(ENTRANCE_MAPPING, room, {})
-        for x_range = x-20, x+20 do
-            for y_range = y-20, y+20 do
+        local x_min = x
+        local x_max = x
+        if xMax ~= nil then
+            x_max = xMax -- As far as I can tell this is only ever used for the ganon dropdown
+        end
+        for x_range = x_min-2, x_max+2 do
+            local y_min_range = yMin-30
+            local y_max_range = yMin+30
+            if yMax ~= nil then
+                y_min_range = yMin-2
+                y_max_range = yMax+2
+            end
+            for y_range = y_min_range, y_max_range do
                 Table_insert_at(ENTRANCE_MAPPING[room], x_range, {})
                 Table_insert_at(ENTRANCE_MAPPING[room][x_range], y_range, nil)
                 -- print(self.name, origin == nil)
