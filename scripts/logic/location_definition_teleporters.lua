@@ -23,7 +23,7 @@ old_man_cave_left_inside = alttp_location.new("old_man_cave_left_inside", "Old M
 old_man_cave_right_outside = alttp_location.new("old_man_cave_right_outside", "Old Man Cave Right", "light", 3, 1656, 744, 757)
 old_man_cave_right_inside = alttp_location.new("old_man_cave_right_inside", "Old Man Cave Right", nil, 241, 888, 8128, 8181)
 
-light_death_mountain_return_left_outside = alttp_location.new("light_death_mountain_return_left_outside", "DM Return Left", "light", 10, 1464, 5999, 615)
+light_death_mountain_return_left_outside = alttp_location.new("light_death_mountain_return_left_outside", "DM Return Left", "light", 10, 1464, 599, 615)
 light_death_mountain_return_left_inside = alttp_location.new("light_death_mountain_return_left_inside", "DM Return Left", nil, 230, 3192, 7616, 7668)
 light_death_mountain_return_right_outside = alttp_location.new("light_death_mountain_return_right_outside", "DM Return Right", "light", 3, 1608, 536, 550)
 light_death_mountain_return_right_inside = alttp_location.new("light_death_mountain_return_right_inside", "DM Return Right", nil, 231, 3960, 7616, 7668)

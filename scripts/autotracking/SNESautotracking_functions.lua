@@ -338,7 +338,6 @@ function UpdateEntrances(segment, mainModuleIdx)
             end
         end
         if mainModuleIdx == 0x0F or mainModuleIdx == 0x08 or mainModuleIdx == 0x06 or mainModuleIdx == 0x11 then
-            print("Room:", current_room, " X:", current_coords_x, " Y:", current_coords_y)
 
             local temp_room = ENTRANCE_MAPPING[current_room]
             local temp_room_x
@@ -355,8 +354,6 @@ function UpdateEntrances(segment, mainModuleIdx)
                     end
                 end
             end
-
-            print("Room Name:", entrance_name)
 
             if temp_room_y ~= nil then
                 -- local current_door = ENTRANCE_MAPPING[current_room][current_coords_x][current_coords_y]
@@ -420,6 +417,9 @@ function UpdateEntrances(segment, mainModuleIdx)
                 else
                     Selected_entrance = nil
                 end
+            else
+                print("No entrance found for room:", current_room, "x:", current_coords_x, "y:", current_coords_y)
+                print("If this is a dropdown it's probably fine. If not, the mapping needs to be expanded.")
             end
         else
             Selected_entrance = nil
