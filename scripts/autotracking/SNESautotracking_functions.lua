@@ -327,7 +327,7 @@ function UpdateEntrances(segment, mainModuleIdx)
        
 
         if new_ow_room == 0 then
-            if current_coords_x < 1000 and current_coords_y  < 1000 then
+            if current_coords_x > 740 and current_coords_x < 780 and current_coords_y > 0 and current_coords_y < 610 then
                 current_room = new_ow_room
             else
                 current_room = new_dungeon_room
