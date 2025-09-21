@@ -627,7 +627,7 @@ dark_chapel_area:connect_one_way(graveyard_ledge, function()
         CanChangeWorldWithMirror()
     )
 end)
-dark_chapel_area:connect_one_way(kings_tomb_outside, function()
+dark_chapel_area:connect_one_way(kings_tomb_area, function()
     return ALL(
         OpenOrStandard(),
         CanChangeWorldWithMirror(),
@@ -933,6 +933,8 @@ dark_floating_island:connect_two_ways(floating_island, function()
         OpenOrStandard()
     )
 end)
+dark_floating_island:connect_one_way(dark_death_mountain_right_top)
+
 
 hookshot_cave_inside:connect_one_way("Hookshot Cave Item Bottom Right", function()
     return ALL(

@@ -328,7 +328,7 @@ sanctuary_area:connect_one_way(light_lake_hylia, function()
     return Has("flippers")
 end) --teleport
 
-sanctuary_area:connect_two_ways(kings_tomb_outside, function()
+sanctuary_area:connect_two_ways(kings_tomb_area, function()
     return ALL(
         "titans",
         Can_interact(sanctuary_area.worldstate, 1)
@@ -344,13 +344,14 @@ sanctuary_area:connect_two_ways(graveyard_ledge, function() return Inverted() en
 sanctuary_area:connect_two_ways(north_fairy_drop_outside, function() return Can_interact(sanctuary_area.worldstate, 1) end)
 sanctuary_area:connect_two_ways(north_fairy_cave_outside)
 
-
-kings_tomb_outside:connect_two_ways_entrance("King's_Tomb_Entrance", kings_tomb_inside, function()
+kings_tomb_area:connect_two_ways_entrance("King's_Tomb_Entrance", kings_tomb_outside, function()
     return ALL(
         "boots",
-        Can_interact(kings_tomb_outside.worldstate, 1)
+        Can_interact(kings_tomb_area.worldstate, 1)
     )
 end)
+
+kings_tomb_outside:connect_two_ways_entrance("King's_Tomb_Entrance", kings_tomb_inside)
 kings_tomb_inside:connect_one_way("King's Tomb", function() return Can_interact(kings_tomb_inside.worldstate, 1) end)
 
 

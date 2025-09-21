@@ -160,6 +160,7 @@ kakariko_well_hole_outside = alttp_location.new("kakariko_well_hole_outside", "K
 kakariko_well_item = alttp_location.new("kakariko_well_item", nil, nil)
 kings_tomb_inside = alttp_location.new("kings_tomb_inside", "Kings Tomb", nil, 275, 1656, 9176, 9205)
 kings_tomb_outside = alttp_location.new("kings_tomb_outside", "Kings Tomb", "light", 20, 2456, 1191, 1207)
+kings_tomb_area = alttp_location.new("kings_tomb_area", "Kings Tomb Area", "light")
 lake_hylia_island = alttp_location.new("lake_hylia_island", nil, "light")
 library_inside = alttp_location.new("library_inside", "Library", nil, 263, 3704, 8664, 8693)
 library_outside = alttp_location.new("library_outside", "Library", "light", 41, 632, 2663, 2679)
