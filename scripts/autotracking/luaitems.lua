@@ -1,25 +1,19 @@
 ENTRANCE_SELECTED = nil
-
+BASE_IMG_PATH = ImageReference:FromPackRelativePath("images/door_closed.png")
 function _SetLocationOptions(source, target) -- source == inside, target == outside
     source.ItemState.Target = target.Name
-    source.Icon = ImageReference:FromPackRelativePath("images/entrances/".. target.ItemState.Side .."/".. string.gsub(string.gsub(target.Name, "_"..target.ItemState.Side, ""), target.ItemState.Direction, "") ..".png")
-    -- source.BadgeText = "to " .. target.ItemState.Shortname
-    source.BadgeText = string.gsub(target.ItemState.Direction, "_", " ") .. target.ItemState.Shortname
+    -- source.Icon = ImageReference:FromPackRelativePath("images/entrances/".. target.ItemState.Side .."/".. string.gsub(string.gsub(target.Name, "_"..target.ItemState.Side, ""), target.ItemState.Direction, "") ..".png")
+    source.Icon = target.ItemState.ImgPath
+    -- source.BadgeText = string.gsub(target.ItemState.Direction, "_", " ") .. target.ItemState.Shortname
+    source.BadgeText = target.ItemState.BadgeTextDirection
     source.BadgeTextColor = "#abcdef"
     source:SetOverlayFontSize(10)
     source:SetOverlayAlign("left")
-
-    -- target.Icon = ImageReference:FromPackRelativePath("images/entrances/inside/".. string.gsub(source.Name, "_inside", "") ..".png")
-    -- target.BadgeText = "from".. source.ItemState.Shortname
-    -- target.BadgeTextColor = "#abcdef"
-    -- target:SetOverlayFontSize(10)
-    -- target:SetOverlayAlign("left")
-
 end
 
 function _UnsetLocationOptions(source)
     source.ItemState.Target = nil
-    source.Icon = ImageReference:FromPackRelativePath("images/door_closed.png")
+    source.Icon = source.ItemState.BaseImg
     source.BadgeText = ""
     source.BadgeTextColor = ""
     source.ItemState.Worldstate = source.ItemState.BaseWorldstate
@@ -135,18 +129,21 @@ local function AdvanceToCodeFunc()
 end
 local function SaveLocationFunc(self)
     return {
-        Stage = self.ItemState.Stage,
-        Active = self.ItemState.Active,
-        Side = self.ItemState.Side,
-        Target = self.ItemState.Target,
-        Name = self.Name,
-        Shortname = self.ItemState.Shortname,
-        Icon = self.Icon,
-        BadgeText = self.BadgeText,
-        Direction = self.ItemState.Direction,
-        Room = self.ItemState.Room,
+        Stage = self.ItemState.Stage, --unused
+        Active = self.ItemState.Active, --true/false
+        Side = self.ItemState.Side, --
+        Target = self.ItemState.Target, --location.Name
+        Name = self.Name, --str
+        Shortname = self.ItemState.Shortname, --str
+        Icon = self.Icon, --icurretn set img path
+        BadgeText = self.BadgeText, --curretn badge text
+        Direction = self.ItemState.Direction, --from/to
+        Room = self.ItemState.Room, --room number
         Worldstate = self.ItemState.Worldstate,
         BaseWorldstate = self.ItemState.BaseWorldstate,
+        ImgPath = self.ItemState.ImgPath,
+        BaseImg = self.ItemState.BaseImg,
+        BadgeTextDirection = self.ItemState.BadgeTextDirection --from/to
     }
     -- print("SaveFunc")
 end
@@ -177,6 +174,9 @@ local function LoadLocationFunc(self, data)
         self.ItemState.Worldstate = data.Worldstate
         self.ItemState.BaseWorldstate = data.BaseWorldstate
         self.Icon = ImageReference:FromPackRelativePath(data.Icon)
+        self.ItemState.ImgPath = data.ImgPath
+        self.ItemState.BaseImg = data.BaseImg
+        self.ItemState.BadgeTextDirection = data.BadgeTextDirection
         if data.BadgeText ~= nil then
             self.BadgeText = data.BadgeText
             self.BadgeTextColor = "#abcdef"
@@ -227,6 +227,8 @@ function CreateLuaLocationItems(direction, location_obj, side)
     self.Name = direction .. location_obj.name --code --
     self.Icon = ImageReference:FromPackRelativePath("images/door_closed.png")
     self.ItemState = {
+        ImgPath = ImageReference:FromPackRelativePath("images/entrances/".. side .."/" .. string.gsub(location_obj.name, "_"..side, "") .. ".png"),
+        BaseImg = BASE_IMG_PATH,
         Stage = 0,
         Active = true,
         Side = side,
@@ -235,7 +237,8 @@ function CreateLuaLocationItems(direction, location_obj, side)
         Direction = direction,
         Room = location_obj.room,
         Worldstate = location_obj.worldstate,
-        BaseWorldstate = location_obj.worldstate
+        BaseWorldstate = location_obj.worldstate,
+        BadgeTextDirection = direction .. location_obj.shortname
     }
     -- self.Active = false
     self.ItemState.Side = side

@@ -459,19 +459,22 @@ function EmptyLocationTargets()
             print("simple er")
             for name, inside in pairs(NAMED_ENTRANCES) do
                 local source = Tracker:FindObjectForCode(name)
-                local target = Tracker:FindObjectForCode(name)
-                _SetLocationOptions(source, target)
-                _SetLocationOptions(source, target)
-                -- print(name)
-                -- print(Tracker:FindObjectForCode(name).ItemState.Target)
-                if inside then
-                    _SetLocationOptions(Tracker:FindObjectForCode(name), Tracker:FindObjectForCode(string.gsub(name, "_inside", "_outside")))
-                    _SetLocationOptions(Tracker:FindObjectForCode(string.gsub(name, "_inside", "_outside")), Tracker:FindObjectForCode(name))
+                local target_outside = Tracker:FindObjectForCode(string.gsub(name, "_inside", "_outside"))
+                local target_inside = Tracker:FindObjectForCode(string.gsub(name, "_outside", "_inside"))
+                if ER_SIMPLE[name] == nil then
+                    --location is NOT in SIMPLE ER so preset targets
+                    if inside then
+                        _SetLocationOptions(source, target_outside)
+                        _SetLocationOptions(target_outside, source)
+                    else
+                        _SetLocationOptions(source, target_inside)
+                        _SetLocationOptions(target_inside, source)
+                    end
                 else
-                    _SetLocationOptions(Tracker:FindObjectForCode(name), Tracker:FindObjectForCode(string.gsub(name, "_outside", "_inside")))
-                    _SetLocationOptions(Tracker:FindObjectForCode(string.gsub(name, "_outside", "_inside")), Tracker:FindObjectForCode(name))
+                    -- location is in SIMPLE ER
+                    _UnsetLocationOptions(Tracker:FindObjectForCode(name))
+                    Tracker:FindObjectForCode(name).ItemState.Target = nil
                 end
-                -- Tracker:FindObjectForCode(name).worldstate = nil
             end
             for name, _ in pairs(ER_SIMPLE) do
                 -- print(name)
@@ -486,8 +489,11 @@ function EmptyLocationTargets()
             for name, _ in pairs(NAMED_ENTRANCES) do
                 -- print(name)
                 -- print(Tracker:FindObjectForCode(name).ItemState.Target)
-                _UnsetLocationOptions(Tracker:FindObjectForCode(name))
-                Tracker:FindObjectForCode(name).ItemState.Target = nil
+                local location_reset = Tracker:FindObjectForCode(name)
+                if location_reset then
+                    _UnsetLocationOptions(location_reset)
+                    location_reset.ItemState.Target = nil
+                end
                 -- Tracker:FindObjectForCode(name).worldstate = nil
             end
             Tracker:UiHint("ActivateTab", "Entrances")
