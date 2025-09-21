@@ -6,43 +6,23 @@ function _SetLocationOptions(source, target) -- source == inside, target == outs
     source.Icon = target.ItemState.ImgPath
     -- source.BadgeText = string.gsub(target.ItemState.Direction, "_", " ") .. target.ItemState.Shortname
     source.BadgeText = target.ItemState.BadgeTextDirection
-    source.BadgeTextColor = "#abcdef"
-    source:SetOverlayFontSize(10)
-    source:SetOverlayAlign("left")
+    -- source.BadgeTextColor = "#abcdef"
+    -- source:SetOverlayFontSize(10)
+    -- source:SetOverlayAlign("left")
 end
 
 function _UnsetLocationOptions(source)
     source.ItemState.Target = nil
     source.Icon = source.ItemState.BaseImg
     source.BadgeText = ""
-    source.BadgeTextColor = ""
+    -- source.BadgeTextColor = ""
     source.ItemState.Worldstate = source.ItemState.BaseWorldstate
-    source:SetOverlayFontSize(10)
-    source:SetOverlayAlign("left")
+    -- source:SetOverlayFontSize(10)
+    -- source:SetOverlayAlign("left")
 end
 
 local function OnLeftClickFunc(self)
-    -- if self.ItemState.Stage ~= nil then
-    --     self.ItemState.Stage = self.ItemState.Stage + 1
-    --     print("OnLeftClickFunc to stage" .. tostring(self.ItemState.Stage))
-    --     self:SetOverlayBackground("#333333")
-    --     self.BadgeTextColor = "#AAAAAA"
-    --     self.BadgeText = self.Name..tostring(self.ItemState.Stage)
-    -- else
-    --     self.ItemState.Stage = 0
-    -- end
-    -- if self.ItemState.Stage == 0 then
-    --     print("OnLeftClickFunc at 0")
-    --     self:SetOverlayBackground("")
-    --     self.BadgeTextColor = ""
-    --     self.BadgeText = ""
-    -- end
     local target_entrance
-
--- target + ENTRANCE_SELECTED == nil
--- taget == nil + ENTRANCE_SELECTED == value
--- target == value + ENTRANCE_SELECTED == nil
--- target == value + ENTRANCE_SELECTED == value
 
     if ENTRANCE_SELECTED == nil and self.ItemState.Target == nil then -- fully new connection
         ENTRANCE_SELECTED = self.Name
@@ -53,9 +33,7 @@ local function OnLeftClickFunc(self)
             self.ItemState.Target = target_entrance.Name
 
             _SetLocationOptions(self, target_entrance)
-                -- self.Icon = ImageReference:FromPackRelativePath("images/inside/" .. INDOORS_INDEX[self.Name] .. ".png")
             _SetLocationOptions(target_entrance, self)
-                --  self.Icon = ImageReference:FromPackRelativePath("images/outside/" .. OUTDOORS_INDEX[self.Name] .. ".png")
         end
         ENTRANCE_SELECTED = nil
     elseif ENTRANCE_SELECTED == nil and self.ItemState.Target ~= nil then -- retarget a connection to new target location
@@ -78,9 +56,7 @@ local function OnLeftClickFunc(self)
             -- target_entrance.ItemState.Target = self.Name
             -- self.ItemState.Target = target_entrance.Name
             _SetLocationOptions(self, target_entrance)
-                -- self.Icon = ImageReference:FromPackRelativePath("images/inside/" .. INDOORS_INDEX[self.Name] .. ".png")
             _SetLocationOptions(target_entrance, self)
-                -- self.Icon = ImageReference:FromPackRelativePath("images/outside/" .. OUTDOORS_INDEX[self.Name] .. ".png")
         end
         ENTRANCE_SELECTED = nil
 
@@ -240,15 +216,11 @@ function CreateLuaLocationItems(direction, location_obj, side)
         BaseWorldstate = location_obj.worldstate,
         BadgeTextDirection = direction .. location_obj.shortname
     }
-    -- self.Active = false
+    self.BadgeTextColor = "#abcdef"
+    self:SetOverlayFontSize(10)
+    self:SetOverlayAlign("left")
+    
     self.ItemState.Side = side
-    -- self.Active = false
-
-    -- if self.ItemState.Side == "inside" then
-    --     self.ItemState.Target = string.gsub(self.Name, "_inside", "_outside")
-    -- else
-    --     self.ItemState.Target = string.gsub(self.Name, "_outside", "_inside")
-    -- end
    
     self.CanProvideCodeFunc = CanProvideCodeFunc
     self.OnLeftClickFunc = OnLeftClickFunc

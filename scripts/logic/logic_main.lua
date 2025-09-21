@@ -275,33 +275,6 @@ function alttp_location:discover(accessibility, keys, worldstate)
     if accessibility > 0 then -- if parent-location was accessible
         for _, exit in pairs(self.exits) do -- iterate over current watched locations exits
             local location
-            -- print("name:", exit[1].name)
-            -- print("self:", self.name)
-            -- print(string.sub(exit[1].name, -7,-1), string.sub(exit[1].name, -8,-1))
-            -- print("er_tracking", Tracker:FindObjectForCode("er_tracking"),
-            -- local er_setting_stage
-            -- er_setting_stage = Tracker:FindObjectForCode("er_tracking").CurrentStage
-            -- local er_check = {
-            --         [0] = function()
-            --             return false end,
-            --         [1] = function() --print("simple ER", ER_SIMPLE[self.name] ~= nil)
-            --             -- if self.cave == true then
-            --                return ER_SIMPLE["from_" .. self.name] ~= nil
-            --             -- else
-            --             --     return ER_SIMPLE["to_" .. self.name] ~= nil
-            --             -- end
-
-            --             end,
-            --         [2] = function() --print("full ER", NAMED_ENTRANCES[self.name] ~= nil)
-            --             -- if self.cave == true then
-            --                return NAMED_ENTRANCES["from_" .. self.name] ~= nil
-            --             -- else
-            --             --     return NAMED_ENTRANCES["to_" .. self.name] ~= nil
-            --             --  end
-            --             end,
-            --         [3] = function() print("!!!!!!!!!!!!!!!!!! YOU ABSOLUTELY SHOUlD NOT BE ABLE TO SEE THIS!!!!!!!!!!!!!!!!")
-            --             return INSANITY_ENTRANCES[self.name] ~= nil end
-            --     }
 
             local exit_name = exit[1].name
             local location_name = self.name
@@ -427,10 +400,6 @@ entry_point:connect_one_way(darkworld_spawns, function() return Inverted() end)
 --
 function StateChanged()
     stale = true
-    -- require("scripts/logic/logic_helpers")
-    -- require("scripts/logic/logic_main")
-    -- require("scripts/logic_import")
-    -- CanFinish()
 end
 
 function ForceUpdate(...)
@@ -481,7 +450,6 @@ function EmptyLocationTargets()
                 -- print(Tracker:FindObjectForCode(name).ItemState.Target)
                 _UnsetLocationOptions(Tracker:FindObjectForCode(name))
                 Tracker:FindObjectForCode(name).ItemState.Target = nil
-                -- Tracker:FindObjectForCode(name).worldstate = nil
             end
            
         elseif er_tracking.CurrentStage == 2 then
