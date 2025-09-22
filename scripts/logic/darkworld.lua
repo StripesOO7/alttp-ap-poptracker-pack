@@ -859,7 +859,7 @@ dark_death_mountain_left_top:connect_one_way(light_death_mountain_left_top, func
         CanChangeWorldWithMirror()
     )
 end)
-dark_death_mountain_left_top:connect_two_ways(gt_entrance_outside, function()
+dark_death_mountain_left_top:connect_one_way(gt_entrance_outside, function()
     return ANY(
         ALL(
             GTCrystalCount(),
@@ -868,6 +868,7 @@ dark_death_mountain_left_top:connect_two_ways(gt_entrance_outside, function()
         Inverted()
     )
 end)
+gt_entrance_outside:connect_one_way(dark_death_mountain_left_top)
 -- dark_death_mountain_left_top:connect_two_ways(at_entrance_outside, function() return Inverted() end)
 
 dark_death_mountain_left_top:connect_two_ways(dark_death_mountain_right_top)
