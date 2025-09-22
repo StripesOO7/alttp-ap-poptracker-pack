@@ -8,7 +8,7 @@ PopTracker v0.23.0 or higher is recommended.
 First version of an Archipelago compatible alttp-Tracker pack
 
 current working settings:
-    - "open", "inverted" and "standard" starting-optoins are supported
+    - "open", "Inverted" and "standard" starting-optoins are supported
     - tracking of Dungonbosses and if they are beatable
     - every check should get tracked
     - shop-sanity
@@ -17,15 +17,15 @@ current working settings:
 
 
 
-not working: 
+not working:
     - any glitched setting beyond overworld glitches
-    - "glitch-mode" as setting is not autotracked atm 
+    - "glitch-mode" as setting is not autotracked atm
 
 
 in planning for future features:
     - "major glitches"-logic
     - entrance Randomizer logic
-    - maybe even Doors as day far in the future 
+    - maybe even Doors as day far in the future
     - "no logic"-logic
 
 
