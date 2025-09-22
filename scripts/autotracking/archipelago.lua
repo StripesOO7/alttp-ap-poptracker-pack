@@ -664,20 +664,26 @@ function GiveAll(setting)
             if setting_stage == 5 or setting_stage == 6 then
                
                 if setting == "smallkeys_setting" then
-                    if Tracker:FindObjectForCode("key_drop_shuffle").Active then
-                        item = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting].. "_drop")
-                        copy = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting] .. "_drop_copy")
-                    end
+                    item.AcquiredCount = item.MaxCount
+
+
+                    -- if Tracker:FindObjectForCode("key_drop_shuffle").Active then
+                    item = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting].. "_drop")
+                    copy = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting] .. "_drop_copy")
+                    -- end
                     item.AcquiredCount = item.MaxCount
                 else
                     item.Active = true
                 end
             else
                 if setting == "smallkeys_setting" then
-                    if Tracker:FindObjectForCode("key_drop_shuffle").Active then
-                        item = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting].. "_drop")
-                        copy = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting] .. "_drop_copy")
-                    end
+                    item.AcquiredCount = copy.AcquiredCount
+
+
+                    -- if Tracker:FindObjectForCode("key_drop_shuffle").Active then
+                    item = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting].. "_drop")
+                    copy = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting] .. "_drop_copy")
+                    -- end
                     item.AcquiredCount = copy.AcquiredCount
                 else
                     item.Active = copy.Active
