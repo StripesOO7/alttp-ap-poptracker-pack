@@ -1,6 +1,38 @@
 {
 	"versions": [
 		{
+			"package_version": "0.3.4",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.3.4/alttp-ap-tracker-v0.3.4.zip",
+			"sha256": "f932ed276564a3a6d4e9c0a4f0bb2b4f7499bd6b025c7442ec0a554b506e978b",
+			"changelog": [
+				"bugfixes for ER and some other logic issues",
+				"",
+				"# fixed ER stuff:",
+				"- big thanks to @Sirheavens for help with our combined work in changing how the auto ER tracking works and re-getting all the coords for all entrances",
+				"- fixed reachability of Kings Tomb entrance. ",
+				"- fixed logic for exiting GT falsely checking for the crystal setting",
+				"- more drop downs are now included in the simple ER setting because depending on soime settings these can be random to for the Ganon and Castle escape drop downs. ",
+				"- fix SP entrance not showing accessible if it should",
+				"- TR Laser room (not bridge) outside and inside where switched in ER autotracking",
+				"- lost woods entrances now also should get tracked properly",
+				"",
+				"# fixed logic:",
+				"",
+				"- fixed how dark rooms are evaluated in terms of what tools are needed to traverse. ",
+				"- shops are now 3 locations instead of 1 combined. this makes it possible to show only the randomized slots instead of all-or-nothing",
+				"- Major fix to the worlds state attribute that mainly caused problems with ER but also in non ER modes",
+				"- Massively reduced the amount of function calls for each frame. This was WAY too high and thus caused the UI to freeze and no longer update. thanks to @OmegaZeron :tm: for helping and discussing every little possibility to save stuff here.",
+				"- TR Eye-bridge Checks apparently require invincibility so logic got updated there.",
+				"- Auto-Fill options got updated popup text to hopefully better describe whats updated with them active",
+				"- dungeon items get properly set when set to "start with" or "universal"for small keys",
+				"- fixed hints breaking the tracker when they are on locations that have item codes alongside them because i forgor thats a possibility that needs extra handling",
+				"- ER-tracking Manual/Automatic actually does something now. ",
+				"",
+				"added:",
+				"- in a crossed scenario checks from the other world should now properly keep your current state in mind so that checks properly show as in-/accessible with considering bunny state"
+			]
+		},
+		{
 			"package_version": "0.3.3",
 			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.3.3/alttp-ap-tracker-v0.3.3.zip",
 			"sha256": "044be6ba85b9b2aab4ed30935039c684e1f35f26824698ed710ebd1ab161cad1",
@@ -442,4 +474,5 @@
 		}
 	]
 }
+
 
