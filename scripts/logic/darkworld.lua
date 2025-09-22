@@ -199,7 +199,7 @@ mire_area:connect_one_way(dark_flute_map, function()
     )
 end)
 
-mire_area:connect_two_ways(mm_entrance_outside, function()
+mire_area:connect_one_way(mm_entrance_outside, function()
     return ALL(
         ANY(
             "mm_medallion",
@@ -213,6 +213,7 @@ mire_area:connect_two_ways(mire_shed_outside)
 mire_area:connect_two_ways(dark_desert_hint_outside)
 mire_area:connect_two_ways(dark_desert_fairy_cave_outside)
 
+mm_entrance_outside:connect_one_way(mire_area)
 mm_entrance_outside:connect_two_ways_entrance("Misery Mire", mm_entrance_inside)
 mire_shed_outside:connect_two_ways_entrance("Mire Shed Left", mire_shed_inside)
 dark_desert_hint_outside:connect_two_ways_entrance("Dark Desert Hint", dark_desert_hint_inside)
@@ -494,13 +495,14 @@ skull_woods_area:connect_two_ways(sw_west_lobby_entrance_outside)
 skull_woods_area:connect_two_ways(sw_gibdo_entrance_outside)
 
 skull_woods_area:connect_two_ways(sw_north_drop_outside, function() return CanReach(sw_west_lobby_entrance_outside) end)
-skull_woods_area:connect_two_ways(sw_back_entrance_outside, function()
+skull_woods_area:connect_one_way(sw_back_entrance_outside, function()
     return ALL(
         CanReach(sw_west_lobby_entrance_outside),
         "firerod",
         Can_interact(skull_woods_area.worldstate, 1)
     )
 end)
+sw_back_entrance_outside:connect_one_way(skull_woods_area)
 
 sw_pinball_drop_outside:connect_one_way_entrance("Skull Woods Pinball Drop", sw_pinball_drop_inside)
 sw_pot_circle_drop_outside:connect_one_way_entrance("Skull Woods Pot Circle Drop", sw_pot_circle_drop_inside)
@@ -896,7 +898,7 @@ end)
 teleporter_at_dark_turtle_rock:connect_one_way(dark_death_mountain_right_top)
 
 
-teleporter_at_dark_turtle_rock:connect_two_ways(tr_main_entrance_outside, function()
+teleporter_at_dark_turtle_rock:connect_one_way(tr_main_entrance_outside, function()
     return ALL(
         ANY(
             "tr_medallion",
@@ -906,6 +908,8 @@ teleporter_at_dark_turtle_rock:connect_two_ways(tr_main_entrance_outside, functi
         Can_interact(teleporter_at_dark_turtle_rock.worldstate, 1)
     )
 end)
+tr_main_entrance_outside:connect_one_way(teleporter_at_dark_turtle_rock)
+
 dark_death_mountain_right_top:connect_two_ways(hookshot_cave_outside, function()
     return ANY(
         ALL(
