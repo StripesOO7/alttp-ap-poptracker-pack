@@ -31,6 +31,7 @@ dark_death_mountain_right_bottom = alttp_location.new("dark_death_mountain_right
 dark_death_mountain_right_top = alttp_location.new("dark_death_mountain_right_top", nil, "dark")
 dark_death_mountain_shop_inside = alttp_location.new("dark_death_mountain_shop_inside", "Dark DM Shop", nil, 274, 1400, 9176, 9204)
 dark_death_mountain_shop_outside = alttp_location.new("dark_death_mountain_shop_outside", "Dark DM Shop", "dark", 69, 3498, 566, 582)
+dark_death_mountain_tr_medallion_spot = alttp_location.new("dark_death_mountain_tr_medallion_spot", "TR Medallion Spot", "dark")
 dark_desert_fairy_cave_inside = alttp_location.new("dark_desert_fairy_cave_inside", "Dark Desert Fairy", nil, 277, 2936, 9176, 9204)
 dark_desert_fairy_cave_outside = alttp_location.new("dark_desert_fairy_cave_outside", "Dark Desert Fairy", "dark", 112, 808, 3352, 3368)
 dark_desert_hint_inside = alttp_location.new("dark_desert_hint_inside", "Dark Desert hint", nil, 276, 2424, 9176, 9204)

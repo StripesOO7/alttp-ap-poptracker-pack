@@ -316,14 +316,14 @@ function CheckRequirements(reference, check_count)
     end
 end
 
-function DarkRooms(torches_abailable)
+function DarkRooms(torches_available)
     local dark_mode = Tracker:FindObjectForCode("dark_mode").CurrentStage
     if dark_mode == 2 then --none
         return true
     elseif dark_mode == 0 and Tracker:ProviderCountForCode("lamp") > 0 then -- lamp
         return true
     elseif dark_mode == 1 then
-        if torches_abailable then
+        if torches_available then
             return (Tracker:ProviderCountForCode("firerod") > 0 or Tracker:ProviderCountForCode("lamp") > 0)
         else
             return Tracker:ProviderCountForCode("lamp") > 0

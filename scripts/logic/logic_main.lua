@@ -220,6 +220,14 @@ function alttp_location:connect_two_ways_entrance_door_stuck(name, exit, rule1, 
     exit:connect_one_way_entrance(name, self, rule2)
 end
 
+-- technically redundant but well
+-- creates a connection between 2 locations that is traversable in both ways but each connection follow different rules.
+-- acts as a shortcut for 2 connect_one_way-calls
+function alttp_location:connect_two_ways_stuck(exit, rule1, rule2)
+    self:connect_one_way(exit, rule1)
+    exit:connect_one_way(self, rule2)
+end
+
 -- checks for the accessibility of a regino/location given its own exit requirements
 function alttp_location:accessibility()
     -- only executed when run from a rules within a connection
@@ -380,7 +388,7 @@ function alttp_location:discover(accessibility, keys, worldstate)
                 end
                 if access > oldAccess or (access == oldAccess and key < oldKey) then -- not sure about the <
                     -- print(self.name)
-                    -- print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access], "with worldstate:", worldstate)
+                    print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access], "with worldstate:", worldstate)
                     -- print("lower:", self.worldstate, worldstate, location.worldstate)
                     -- print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access])--, "with worldstate:", worldstate)
                     location:discover(access, key, worldstate)

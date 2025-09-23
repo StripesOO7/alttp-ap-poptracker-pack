@@ -101,7 +101,7 @@ kakariko_village:connect_two_ways(kakariko_snitch_house_right_outside)
 kakariko_village:connect_two_ways(kakariko_chickenhut_outside)
 kakariko_village:connect_two_ways(kakariko_sick_kid_outside)
 kakariko_village:connect_two_ways(kakariko_overgrown_house_outside, function() return Can_interact(kakariko_village.worldstate, 1) end)
-kakariko_village:connect_two_ways(kakariko_bombhut_outside, function()
+kakariko_village:connect_two_ways_stuck(kakariko_bombhut_outside, function()
     return ALL(
         "bombs",
         Can_interact(kakariko_village.worldstate, 1)
@@ -334,7 +334,7 @@ sanctuary_area:connect_two_ways(kings_tomb_area, function()
         Can_interact(sanctuary_area.worldstate, 1)
     )
 end)
-sanctuary_area:connect_two_ways(sanctuary_bonk_pile_cave_outside, function()
+sanctuary_area:connect_two_ways_stuck(sanctuary_bonk_pile_cave_outside, function()
     return ALL(
         "boots",
         Can_interact(sanctuary_area.worldstate, 1)
@@ -344,7 +344,7 @@ sanctuary_area:connect_two_ways(graveyard_ledge, function() return Inverted() en
 sanctuary_area:connect_two_ways(north_fairy_drop_outside, function() return Can_interact(sanctuary_area.worldstate, 1) end)
 sanctuary_area:connect_two_ways(north_fairy_cave_outside)
 
-kings_tomb_area:connect_two_ways_entrance("King's_Tomb_Entrance", kings_tomb_outside, function()
+kings_tomb_area:connect_two_ways_stuck(kings_tomb_outside, function()
     return ALL(
         "boots",
         Can_interact(kings_tomb_area.worldstate, 1)
@@ -462,20 +462,20 @@ dam_area:connect_one_way(light_lake_hylia, function()
 end) --teleport
 
 dam_area:connect_two_ways(dam_outside)
-dam_area:connect_two_ways(light_hype_fairy_outside, function()
+dam_area:connect_two_ways_stuck(light_hype_fairy_outside, function()
     return ALL(
         "bombs",
         Can_interact(dam_area.worldstate, 1)
     )
 end)
 dam_area:connect_two_ways(dam_desert_fairy_outside)
-dam_area:connect_two_ways(fifty_rupee_thief_outside, function()
+dam_area:connect_two_ways_stuck(fifty_rupee_thief_outside, function()
     return ALL(
         "glove",
         Can_interact(dam_area.worldstate, 1)
     )
 end)
-dam_area:connect_two_ways(mini_moldorm_cave_outside, function()
+dam_area:connect_two_ways_stuck(mini_moldorm_cave_outside, function()
     return ALL(
         "bombs",
         Can_interact(dam_area.worldstate, 1)
@@ -548,7 +548,7 @@ aginah_cave_inside:connect_one_way("Aginah Item", function()
     )
 end)
 
-checkerboard_lege:connect_two_ways(checkerboard_cave_outside, function()
+checkerboard_lege:connect_two_ways_stuck(checkerboard_cave_outside, function()
     return ALL(
         "glove",
         Can_interact(checkerboard_lege.worldstate, 1)
@@ -723,14 +723,14 @@ end) --teleport
 
 light_lake_hylia:connect_two_ways(light_lake_fortune_outside)
 light_lake_hylia:connect_two_ways(light_lake_shop_outside)
-light_lake_hylia:connect_two_ways(icerod_cave_outside, function()
+light_lake_hylia:connect_two_ways_stuck(icerod_cave_outside, function()
     return ALL(
         "bombs",
         Can_interact(light_lake_hylia.worldstate, 1)
     )
 end)
 light_lake_hylia:connect_two_ways(good_bee_cave_outside)
-light_lake_hylia:connect_two_ways(twenty_rupee_thief_outside, function()
+light_lake_hylia:connect_two_ways_stuck(twenty_rupee_thief_outside, function()
     return ALL(
         "glove",
         Can_interact(light_lake_hylia.worldstate, 1)
@@ -825,7 +825,7 @@ end)
 
 links_house_area:connect_two_ways(links_house_outside)--, function() return OpenOrStandard() end)
 -- links_house_area:connect_two_ways(big_bomb_shop_outside, function() return Inverted() end)
-links_house_area:connect_two_ways(links_fairy_fountain_outside, function()
+links_house_area:connect_two_ways_stuck(links_fairy_fountain_outside, function()
     return ALL(
         "boots",
         Can_interact(links_house_area.worldstate, 1)
@@ -987,7 +987,7 @@ hyrule_castle_top:connect_one_way(pyramid, function()
     )
 end)
 
-hyrule_castle_top:connect_two_ways(at_entrance_outside, function()
+hyrule_castle_top:connect_two_ways_stuck(at_entrance_outside, function()
     return ALL(
         ANY(
             ALL(
@@ -1001,7 +1001,7 @@ hyrule_castle_top:connect_two_ways(at_entrance_outside, function()
         Can_interact(hyrule_castle_top.worldstate, 1)
     )
 end)
-hyrule_castle_top:connect_two_ways(at_entrance_outside, function()
+hyrule_castle_top:connect_two_ways_stuck(at_entrance_outside, function()
     return ALL(
         GTCrystalCount(),
         Inverted()
