@@ -746,8 +746,8 @@ pyramid:connect_two_ways_stuck(pyramid_fairy_cave_outside, function()
     )
 end)
 
-pyramid:connect_two_ways(pyramid_hole_outside)
-pyramid_exit_outside:connect_two_ways(pyramid_exit_ledge)
+pyramid:connect_two_ways(pyramid_hole_outside, function() return ALL(CheckPyramidState(), OpenOrStandard()) end)
+pyramid_exit_outside:connect_two_ways(pyramid_exit_ledge, function() return OpenOrStandard() end)
 
 pyramid_exit_ledge:connect_one_way(pyramid)
 

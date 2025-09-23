@@ -666,6 +666,15 @@
         "codes": "er_tracking_method"
     },
     {
+        "name": "Pyramid state",
+        "type": "toggle",
+        "img": "/images/settings/Pyramid_open.png",
+        "disabled_img": "/images/settings/pyramid_closed.png",
+        "disabled_img_mods": "",
+        "initial_active_state": "true",
+        "codes": "pyramid_state"
+    },
+    {
         "name": "Enable Entrance Randomizer Tracking",
         "type": "progressive",
         "allow_disabled":false,

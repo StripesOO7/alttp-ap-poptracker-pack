@@ -980,6 +980,8 @@ hyrule_castle_area:connect_two_ways(hc_main_entrance_outside)
 hyrule_castle_area:connect_two_ways(secret_passage_hole_outside, function() return Can_interact(hyrule_castle_area.worldstate, 1) end)
 hyrule_castle_area:connect_two_ways(secret_passage_stairs_outside, function() return Can_interact(hyrule_castle_area.worldstate, 1) end)
 
+hyrule_castle_area:connect_two_ways(pyramid_exit_ledge, function() return Inverted() end)
+
 hyrule_castle_top:connect_one_way(pyramid, function()
     return ALL(
         Inverted(),
@@ -1007,6 +1009,14 @@ hyrule_castle_top:connect_two_ways_stuck(at_entrance_outside, function()
         Inverted()
     )
 end)
+hyrule_castle_top:connect_two_ways(pyramid_hole_outside, function() 
+    return ALL(
+        Inverted(),
+        CheckPyramidState()
+    )
+end)
+
+
 hyrule_castle_top:connect_two_ways(hc_left_entrance_outside)
 hyrule_castle_top:connect_two_ways(hc_right_entrance_outside)
 hyrule_castle_top:connect_one_way(hyrule_castle_area)

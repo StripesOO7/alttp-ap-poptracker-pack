@@ -2153,6 +2153,78 @@
                 ]
             },
             {
+                "name": "Pyramid Hole",
+                "visibility_rules": ["^$Inverted"],
+                "sections": [
+                    {
+                        "name": "From Pyramid Hole",
+                        "access_rules": [
+                            "$CanReach|pyramid_hole_outside"
+                        ],
+                        "hosted_item": "from_pyramid_hole_outside"
+                    },
+                    {
+                        "name": "To Pyramid Hole",
+                        "access_rules": [
+                            "$CanReach|pyramid_hole_outside"
+                        ],
+                        "hosted_item": "to_pyramid_hole_outside"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "central_hyrule",
+                        "x":285,
+                        "y":322,
+                        "size":16,
+                        "shape": "diamond"
+                    },
+                    {
+                        "map": "lightworld_er",
+                        "x":1004,
+                        "y":828,
+                        "size":32,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "Pyramid Exit",
+                "visibility_rules": ["^$Inverted"],
+                "sections": [
+                    {
+                        "name": "From Pyramid Exit",
+                        "access_rules": [
+                            "$CanReach|pyramid_exit_outside"
+                        ],
+                        "hosted_item": "from_pyramid_exit_outside"
+                    },
+                    {
+                        "name": "To Pyramid Exit",
+                        "access_rules": [
+                            "$CanReach|pyramid_exit_outside"
+                        ],
+                        "hosted_item": "to_pyramid_exit_outside"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "central_hyrule",
+                        "x":285,
+                        "y":322,
+                        "size":16,
+                        "shape": "diamond"
+                    },
+                    {
+                        "map": "lightworld_er",
+                        "x":902,
+                        "y":866,
+                        "size":32,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
                 "name": "Agahnims Tower",
                 "sections": [
                     {

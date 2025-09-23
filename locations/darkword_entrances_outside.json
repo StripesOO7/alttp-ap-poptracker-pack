@@ -1139,6 +1139,7 @@
         "children": [
             {
                 "name": "Pyramid Hole",
+                "visibility_rules": ["^$OpenOrStandard"],
                 "sections": [
                     {
                         "name": "From Pyramid Hole",
@@ -1174,6 +1175,7 @@
             },
             {
                 "name": "Pyramid Exit",
+                "visibility_rules": ["^$OpenOrStandard"],
                 "sections": [
                     {
                         "name": "From Pyramid Exit",

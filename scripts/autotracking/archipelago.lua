@@ -408,7 +408,7 @@ function autoFill()
         crystals_needed_for_gt = {codes={"gt_access"}, mappings={nil}, autofill="autofill_goal_reqs",},
         crystals_needed_for_ganon = {codes={"ganon_killable"}, mappings={nil}, autofill="autofill_goal_reqs",},
         triforce_pieces_required = {codes={"triforce_pieces_needed"}, mappings={nil}, autofill="autofill_goal_reqs",},
-        -- open_pyramid = {codes={""}, mapping, autofill="",=},
+        open_pyramid = {codes={"pyramid_state"}, mappings={mapToggle}, autofill="autofill_goal_reqs",},
         -- triforce_pieces_mode = {codes={""}, mapping, autofill="",=},
         -- triforce_pieces_percentage = {codes={""}, mapping, autofill="",=},
         -- triforce_pieces_available = {codes={"triforce_pieces_needed", mapping, autofill="",=},

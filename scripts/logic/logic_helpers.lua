@@ -488,6 +488,18 @@ function CountDoneDeadends(inital_keys_needed, ...)
     return keys_needed
 end
 
+function CheckPyramidState()
+    local pyramid_open = Tracker:FindObjectForCode("pyramid_state").Active
+    if not pyramid_open then
+        if Tracker:FindObjectForCode("aga2").Active then
+            return true
+        else
+            return false
+        end
+    end
+    return true
+end
+
 -- function owDungeonDetails()
 --     local dungeon_details = Tracker:FindObjectForCode("ow_dungeon_details")
 --     if dungeon_details.Active then
