@@ -21,7 +21,7 @@ ep_entrance_outside = alttp_location.new("ep_entrance_outside", "EP Main", "ligh
 ep_entrance_inside = alttp_location.new("ep_entrance_inside", "EP Main", nil, 201, 4856, 6616, 6645)
 
 hc_left_entrance_outside = alttp_location.new("hc_left_entrance_outside", "HC Left", "light", 27, 1832, 1540, 1575)
-hc_left_entrance_inside = alttp_location.new("hc_left_entrance_inside", "HC Left", nil, 96, 376, 3544, 3572)
+hc_left_entrance_inside = alttp_location.new("hc_left_entrance_inside", "HC Left", nil, 96, 376, 3544, 3575)
 hc_main_entrance_outside = alttp_location.new("hc_main_entrance_outside", "HC Main", "light", 27, 2040, 1740, 1782)
 hc_main_entrance_inside = alttp_location.new("hc_main_entrance_inside", "HC Main", nil, 97, 760, 3520, 3573)
 hc_right_entrance_outside = alttp_location.new("hc_right_entrance_outside", "HC Right", "light", 27, 2248, 1540, 1575)
@@ -48,11 +48,11 @@ pod_entrance_inside = alttp_location.new("pod_entrance_inside", "PoD Main", nil,
 sp_entrance_outside = alttp_location.new("sp_entrance_outside", "SP Main", "dark", 123, 1912, 3800, 3816)
 sp_entrance_inside = alttp_location.new("sp_entrance_inside", "SP Main", nil, 40, 4344, 1496, 1525)
 
-sw_back_entrance_outside = alttp_location.new("sw_back_entrance_outside", "SW Back", "dark", 64, 152, 184, 199)
+sw_back_entrance_outside = alttp_location.new("sw_back_entrance_outside", "SW Back", "dark", 64, 152, 184, 248)
 sw_back_entrance_inside = alttp_location.new("sw_back_entrance_inside", "SW Back", nil, 89, 4728, 3032, 3060)
 sw_big_chest_entrance_outside = alttp_location.new("sw_big_chest_entrance_outside", "SW Big Chest", "dark", 64, 744, 584, 599)
 sw_big_chest_entrance_inside = alttp_location.new("sw_big_chest_entrance_inside", "SW Big Chest", nil, 88, 4216, 3032, 3060)
-sw_bottom_left_drop_outside = alttp_location.new("sw_bottom_left_drop_outside", "SW Front Left Drop", "dark", 64, 632, 590, 590)
+sw_bottom_left_drop_outside = alttp_location.new("sw_bottom_left_drop_outside", "SW Front Left Drop", "dark", 64, 632, 590, 594)
 sw_bottom_left_drop_inside = alttp_location.new("sw_bottom_left_drop_inside", "SW Front Left Drop", nil, 103, 3712, 3056, 3056)
 sw_gibdo_entrance_outside = alttp_location.new("sw_gibdo_entrance_outside", "SW Gibdo", "dark", 64, 584, 568, 584)
 sw_gibdo_entrance_inside = alttp_location.new("sw_gibdo_entrance_inside", "SW Gibdo", nil, 87, 3704, 3032, 3060)
