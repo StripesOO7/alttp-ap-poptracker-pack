@@ -914,7 +914,7 @@ dark_death_mountain_right_top:connect_two_ways_stuck(tr_main_entrance_outside, f
             Has("medallion", 3, 3, 3, 3)
         ),
         CanUseMedallions(),
-        Can_interact(dark_death_mountain_tr_medallion_spot.worldstate, 1)
+        CanReach(dark_death_mountain_tr_medallion_spot)
     )
 end)
 
