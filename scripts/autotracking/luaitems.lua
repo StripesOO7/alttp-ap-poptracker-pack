@@ -260,11 +260,13 @@ function CreateLuaCaptureItems(name, shortname)
 end
 
 function Reset_ER_setings()
+    ScriptHost:RemoveMemoryWatch("StateChanged")
     for name, _ in pairs(NAMED_ENTRANCES) do
         -- print(name)
         -- print(Tracker:FindObjectForCode(name).ItemState.Target)
         _UnsetLocationOptions(Tracker:FindObjectForCode(name))
     end
+    ScriptHost:AddWatchForCode("StateChanged", "*", StateChanged)
     Tracker:FindObjectForCode("reset_er").Active = false
 end
 ScriptHost:AddWatchForCode("ER_reset_triggered", "reset_er", Reset_ER_setings)

@@ -500,6 +500,110 @@ function CheckPyramidState()
     return true
 end
 
+function ShopSlotHelper(shop_slot, number)
+    if Archipelago.PlayerNumber > 0 then
+        for index, value in pairs(ALL_LOCATIONS) do
+            if type(value) == "number" then
+                if tonumber(shop_slot) == value then
+                    return true
+                end
+            end
+        end
+        return false
+    else
+        -- if tonumber(number) <= Tracker:FindObjectForCode("shop_slots").AcquiredCount then
+            return true
+        -- else
+            -- return false
+        -- end
+    end
+end
+
+local dungeons_prefixes = {
+        "hc",
+        "ep",
+        "dp",
+        "toh",
+        "at",
+        "pod",
+        "sp",
+        "sw",
+        "tt",
+        "ip",
+        "mm",
+        "tr",
+        "gt"
+    }
+-- not sure howto handle reset. i should probably keep a record of some sort of all already gotten items.
+function GiveAll(setting)
+    local setting_stage = Tracker:FindObjectForCode(setting).CurrentStage
+    local mapping = {
+        ["maps_setting"] = "_map",
+        ["compass_setting"] = "_compass",
+        ["bigkeys_setting"] = "_bigkey",
+        ["smallkeys_setting"] = "_smallkey"
+    }
+    -- if Archipelago.PlayerNumber < 0 then
+        for _, dungeon_prefix in ipairs(dungeons_prefixes) do
+            -- print(dungeon_prefix .. mapping[setting], Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting]).Active)
+            -- print(dungeon_prefix .. mapping[setting] .. "_copy", Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting] .. "_copy").Active)
+            local item = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting])
+            local copy = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting] .. "_copy")
+            if setting_stage == 5 or setting_stage == 6 then
+               
+                if setting == "smallkeys_setting" then
+                    item.AcquiredCount = item.MaxCount
+
+
+                    -- if Tracker:FindObjectForCode("key_drop_shuffle").Active then
+                    item = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting].. "_drop")
+                    copy = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting] .. "_drop_copy")
+                    -- end
+                    item.AcquiredCount = item.MaxCount
+                else
+                    item.Active = true
+                end
+            else
+                if setting == "smallkeys_setting" then
+                    item.AcquiredCount = copy.AcquiredCount
+
+
+                    -- if Tracker:FindObjectForCode("key_drop_shuffle").Active then
+                    item = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting].. "_drop")
+                    copy = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting] .. "_drop_copy")
+                    -- end
+                    item.AcquiredCount = copy.AcquiredCount
+                else
+                    item.Active = copy.Active
+                end
+            end
+        end
+    -- end
+end
+
+function setAllAutofill()
+    local set_all = Tracker:FindObjectForCode("autofill_all_settings").Active
+    Tracker:FindObjectForCode("autofill_dungeon_settings").Active = set_all
+    Tracker:FindObjectForCode("autofill_goal_reqs").Active = set_all
+    Tracker:FindObjectForCode("autofill_medallions").Active = set_all
+    Tracker:FindObjectForCode("autofill_modes").Active = set_all
+    Tracker:FindObjectForCode("autofill_misc").Active = set_all
+    Tracker:FindObjectForCode("autofill_sanities").Active = set_all
+end
+
+
+ScriptHost:AddWatchForCode("settings maps_setting", "maps_setting", GiveAll)
+ScriptHost:AddWatchForCode("settings compass_shuffle", "compass_setting", GiveAll)
+ScriptHost:AddWatchForCode("settings smallkeys_setting", "smallkeys_setting", GiveAll)
+ScriptHost:AddWatchForCode("settings bigkeys_setting", "bigkeys_setting", GiveAll)
+
+ScriptHost:AddWatchForCode("settings autofill_dungeon_settings", "autofill_dungeon_settings", autoFill)
+ScriptHost:AddWatchForCode("settings autofill_goal_reqs", "autofill_goal_reqs", autoFill)
+ScriptHost:AddWatchForCode("settings autofill_medallions", "autofill_medallions", autoFill)
+ScriptHost:AddWatchForCode("settings autofill_modes", "autofill_modes", autoFill)
+ScriptHost:AddWatchForCode("settings autofill_misc", "autofill_misc", autoFill)
+ScriptHost:AddWatchForCode("settings autofill_sanities", "autofill_sanities", autoFill)
+ScriptHost:AddWatchForCode("set all autofill", "autofill_all_settings", setAllAutofill)
 -- function owDungeonDetails()
 --     local dungeon_details = Tracker:FindObjectForCode("ow_dungeon_details")
 --     if dungeon_details.Active then
