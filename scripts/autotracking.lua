@@ -34,6 +34,7 @@ Tracker.ActiveVariantUID == "Entrance Randomizer Tracker - SNES" or
 Tracker.ActiveVariantUID == "Entrance Randomizer Tracker /w Pot-shuffle - SNES" then
     require("scripts/autotracking/SNESautotracking_functions")
     require("scripts/autotracking/SNESautotracking_ROMdata")
+    Tracker.AllowDeferredLogicUpdate = true
 end
 
 require("scripts/autotracking/luaitems")

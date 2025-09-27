@@ -1,5 +1,5 @@
 function updateNPCItemFlagsFromMemorySegment(segment)
-    sleep(0.015)
+    print("updateNPCItemFlagsFromMemorySegment")
    
     if not isInGame() then
         return false
@@ -34,7 +34,7 @@ function updateNPCItemFlagsFromMemorySegment(segment)
 end
 
 function updateOverworldEventsFromMemorySegment(segment)
-    sleep(0.015)
+    print("updateOverworldEventsFromMemorySegment")
     if not isInGame() then
         return false
     end
@@ -61,7 +61,7 @@ function updateOverworldEventsFromMemorySegment(segment)
 end
 
 function updateRoomsFromMemorySegment(segment)
-    sleep(0.015)
+    print("updateRoomsFromMemorySegment")
 
     if not isInGame() then
         return false
@@ -433,7 +433,7 @@ function updateRoomsFromMemorySegment(segment)
 end
 
 function updateItemsFromMemorySegment(segment)
-    sleep(0.015)
+    print("updateItemsFromMemorySegment")
     if not isInGame() then
         return false
     end
@@ -534,7 +534,7 @@ function updateItemsFromMemorySegment(segment)
 end
 
 function updateChestKeysFromMemorySegment(segment)
-    sleep(0.015)
+    print("updateChestKeysFromMemorySegment")
     if not isInGame() then
         return false
     end
@@ -592,7 +592,7 @@ function updateChestKeysFromMemorySegment(segment)
 end
 
 function updateHeartPiecesFromMemorySegment(segment)
-    sleep(0.015)
+    print("updateHeartPiecesFromMemorySegment")
     if not isInGame() then
         return false
     end
@@ -610,7 +610,7 @@ function updateHeartPiecesFromMemorySegment(segment)
 end
 
 function updateHeartContainersFromMemorySegment(segment)
-    sleep(0.015)
+    print("updateHeartContainersFromMemorySegment")
     if not isInGame() then
         return false
     end

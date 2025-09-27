@@ -571,7 +571,6 @@ function isInGame()
 end
 
 function updateInGameStatusFromMemorySegment(segment)
-    sleep(0.015)
 
     local mainModuleIdx = segment:ReadUInt8(0x7e0010)
 
@@ -608,7 +607,6 @@ function updateInGameStatusFromMemorySegment(segment)
 end
 
 function updateProgressiveItemFromByte(segment, code, address, offset)
-    sleep(0.015)
     local item = Tracker:FindObjectForCode(code)
     if item then
         local value = ReadU8(segment, address)
@@ -617,7 +615,6 @@ function updateProgressiveItemFromByte(segment, code, address, offset)
 end
 
 function updateAga1(segment)
-    sleep(0.015)
     local item = Tracker:FindObjectForCode("aga1")
     local value = ReadU8(segment, 0x7ef3c5)
     if value >= 3 then
@@ -639,7 +636,6 @@ function testFlag(segment, address, flag)
 end
 
 function updateProgressiveBow(segment)
-    sleep(0.015)
     local item = Tracker:FindObjectForCode("bow")
 
     if testFlag(segment, 0x7ef38e, 0x80) and ReadU8(segment, 0x7ef340) > 0 then
@@ -656,7 +652,6 @@ function updateProgressiveBow(segment)
 end
 
 function updateBottles(segment)
-    sleep(0.015)
     local item = Tracker:FindObjectForCode("bottle")
     local count = 0
     for i = 0, 3, 1 do
@@ -668,7 +663,6 @@ function updateBottles(segment)
 end
 
 function updateBowAndBombUpgrade(segment)
-    sleep(0.015)
     local value = segment:ReadU8(0x7ef370)
     Tracker:FindObjectForCode("bombs").AcquiredCount = 10 + value
     local value = segment:ReadU8(0x7ef371)
@@ -676,7 +670,6 @@ function updateBowAndBombUpgrade(segment)
 end
 
 function updateToggleItemFromByte(segment, code, address)
-    sleep(0.015)
     local item = Tracker:FindObjectForCode(code)
     if item then
         local value = ReadU8(segment, address)
@@ -689,7 +682,6 @@ function updateToggleItemFromByte(segment, code, address)
 end
 
 function updateToggleItemFromByteAndFlag(segment, code, address, flag)
-    sleep(0.015)
     local item = Tracker:FindObjectForCode(code)
     if item then
         local value = ReadU8(segment, address)
@@ -708,7 +700,6 @@ function updateToggleItemFromByteAndFlag(segment, code, address, flag)
 end
 
 function updateToggleFromRoomSlot(segment, code, slot)
-    sleep(0.015)
     local item = Tracker:FindObjectForCode(code)
     local item_boss
     if code == "gt_ice" or code == "gt_lanmo" then
@@ -729,7 +720,6 @@ function updateToggleFromRoomSlot(segment, code, slot)
 end
 
 function updateFlute(segment)
-    sleep(0.015)
     local item = Tracker:FindObjectForCode("flute")
     local value = ReadU8(segment, 0x7ef38c)
 
@@ -748,7 +738,6 @@ function updateFlute(segment)
 end
 
 function updateConsumableItemFromByte(segment, code, address, roomSlots)
-    sleep(0.015)
     local item = Tracker:FindObjectForCode(code)
     if item then
         local value = ReadU8(segment, address)
@@ -775,7 +764,6 @@ function updateConsumableItemFromByte(segment, code, address, roomSlots)
 end
 
 function updateConsumableItemFromTwoByteSum(segment, code, address, address2, roomSlots)
-    sleep(0.015)
     local item = Tracker:FindObjectForCode(code)
     if item then
         local value = ReadU8(segment, address)
@@ -802,7 +790,6 @@ function updateConsumableItemFromTwoByteSum(segment, code, address, address2, ro
 end
 
 function updatePseudoProgressiveItemFromByteAndFlag(segment, code, address, flag, locationCode)
-    sleep(0.015)
     local item = Tracker:FindObjectForCode(code)
     if item then
         local value = ReadU8(segment, address)
@@ -829,7 +816,6 @@ function updatePseudoProgressiveItemFromByteAndFlag(segment, code, address, flag
 end
 
 function updateSectionChestCountFromByteAndFlag(segment, locationRef, address, flag, callback)
-    sleep(0.015)
     local location = Tracker:FindObjectForCode(locationRef)
     if location then
         -- Do not auto-track this the user has manually modified it
@@ -863,14 +849,13 @@ function updateSectionChestCountFromOverworldIndexAndFlag(segment, locationRef, 
     updateSectionChestCountFromByteAndFlag(segment, locationRef, 0x7ef280 + index, 0x40, callback)
 end
 
-local clock = os.clock
-function sleep(n)-- seconds
-local t0 = clock()
-while clock() - t0 <= n do end
-end
+-- local clock = os.clock
+-- function sleep(n)-- seconds
+-- local t0 = clock()
+-- while clock() - t0 <= n do end
+-- end
 
 function updateSectionChestCountFromRoomSlotList(segment, locationRefList, roomSlots, callback)
-    sleep(0.015)
     for h,locationRef in pairs(locationRefList) do
         local location = Tracker:FindObjectForCode(locationRef)
         if location then
@@ -902,7 +887,6 @@ function updateSectionChestCountFromRoomSlotList(segment, locationRefList, roomS
 end
 
 function updateBombIndicatorStatus(status)
-    sleep(0.015)
     local item = Tracker:FindObjectForCode("big_bomb")
     if item then
         if status then
@@ -914,7 +898,6 @@ function updateBombIndicatorStatus(status)
 end
 
 function updateBatIndicatorStatus(status)
-    sleep(0.015)
     local item = Tracker:FindObjectForCode("powder")
     if item then
         if status then
@@ -926,7 +909,6 @@ function updateBatIndicatorStatus(status)
 end
 
 function updateShovelIndicatorStatus(status)
-    sleep(0.015)
     local item = Tracker:FindObjectForCode("shovel")
     if item then
         if status then
@@ -938,7 +920,6 @@ function updateShovelIndicatorStatus(status)
 end
 
 function updateMushroomStatus(status)
-    sleep(0.015)
     local item = Tracker:FindObjectForCode("mushroom")
     if item then
         if status then
@@ -1011,7 +992,7 @@ end
 
 -- ScriptHost:AddMemoryWatch("LTTP In-Game Rooms", 0x7e0010, 0x90,  updateInGameRoomsFromMemorySegment, 250)
 ScriptHost:AddMemoryWatch("LTTP In-Game status", 0x7e0010, 0x250, updateInGameStatusFromMemorySegment, 250)
-ScriptHost:AddMemoryWatch("LTTP In-Game status 2", 0x7e0400, 0x250, test, 250)
+-- ScriptHost:AddMemoryWatch("LTTP In-Game status 2", 0x7e0400, 0x250, test, 250)
 if Tracker.ActiveVariantUID == "Map Tracker - AP" then
     ScriptHost:AddMemoryWatch("LTTP Item Data", 0x7ef340, 0x90, updateAga1)
 end
