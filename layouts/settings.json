@@ -10,36 +10,95 @@
                 "margin": "0,0",
                 "content": [
                     {
-                        "type": "array",
-                        "orientation": "horizontal",
-                        "margin": "0,0",
-                        "content": [
-                            {
-                                "type": "itemgrid",
-                                "item_margin": "2, 2",
-                                "item_size": "45, 45",
-                                "h_alignment": "left",
-                                "item_h_alignment": "center",
-                                "item_v_alignment": "center",
-                                "rows": [
-                                    [
-                                        "gt_access", //gt crystal  count
-                                        "small_keys"
-                                    ],
-                                    [
-                                        "ganon_killable", //ganon crystal count
-                                        "big_keys"
-                                    ],
-                                    [
-                                        "triforce_pieces_needed",
-                                        "map"
-                                    ],
-                                    [
-                                        "swordless",
-                                        "compass"
-                                    ]
-                                ]
-                            }
+                        "type": "itemgrid",
+                        "item_margin": "2, 2",
+                        "item_size": "45, 45",
+                        "h_alignment": "left",
+                        "item_h_alignment": "center",
+                        "item_v_alignment": "center",
+                        "rows": [
+                            [
+                                "gt_access", //gt crystal  count
+                                "small_keys"
+                            ],
+                            [
+                                "ganon_killable", //ganon crystal count
+                                "big_keys"
+                            ],
+                            [
+                                "triforce_pieces_needed",
+                                "map"
+                            ],
+                            [
+                                "swordless",
+                                "compass"
+                            ]
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "pulltree_drops": {
+        "type": "array",
+        "orientation": "horizontal",
+        "margin": "0,0",
+        "content": [
+            {
+                "type": "array",
+                "orientation": "vertical",
+                "margin": "0,0",
+                "content": [
+                    {
+                        "type": "itemgrid",
+                        "item_margin": "2, 2",
+                        "item_size": "45, 45",
+                        "h_alignment": "left",
+                        "item_h_alignment": "center",
+                        "item_v_alignment": "center",
+                        "rows": [
+                            [
+                                "tree_label_1", "tree_pull_1"
+                            ],
+                            [
+                                "tree_label_2", "tree_pull_2"
+                            ],
+                            [
+                                "tree_label_3", "tree_pull_3"
+                            ]
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "hoarder_drops": {
+        "type": "array",
+        "orientation": "horizontal",
+        "margin": "0,0",
+        "content": [
+            {
+                "type": "array",
+                "orientation": "vertical",
+                "margin": "0,0",
+                "content": [
+                    {
+                        "type": "itemgrid",
+                        "item_margin": "2, 2",
+                        "item_size": "45, 45",
+                        "h_alignment": "left",
+                        "item_h_alignment": "center",
+                        "item_v_alignment": "center",
+                        "rows": [
+                            [
+                                "crab_label_1", "crab_pull_1"
+                            ],
+                            [
+                                "crab_label_2", "crab_pull_2"
+                            ],
+                            [
+                                "stun_label", "stunprice"
+                            ]
                         ]
                     }
                 ]

@@ -610,3 +610,10 @@ Archipelago:AddLocationHandler("location handler", onLocation)
 
 Archipelago:AddSetReplyHandler("notify handler", onNotify)
 Archipelago:AddRetrievedHandler("notify launch handler", onNotifyLaunch)
+
+ScriptHost:AddWatchForCode("settings autofill_dungeon_settings", "autofill_dungeon_settings", autoFill)
+ScriptHost:AddWatchForCode("settings autofill_goal_reqs", "autofill_goal_reqs", autoFill)
+ScriptHost:AddWatchForCode("settings autofill_medallions", "autofill_medallions", autoFill)
+ScriptHost:AddWatchForCode("settings autofill_modes", "autofill_modes", autoFill)
+ScriptHost:AddWatchForCode("settings autofill_misc", "autofill_misc", autoFill)
+ScriptHost:AddWatchForCode("settings autofill_sanities", "autofill_sanities", autoFill)

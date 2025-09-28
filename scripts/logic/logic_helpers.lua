@@ -501,6 +501,7 @@ function CheckPyramidState()
 end
 
 function ShopSlotHelper(shop_slot, number)
+    
     if Archipelago.PlayerNumber > 0 then
         for index, value in pairs(ALL_LOCATIONS) do
             if type(value) == "number" then
@@ -511,11 +512,20 @@ function ShopSlotHelper(shop_slot, number)
         end
         return false
     else
-        -- if tonumber(number) <= Tracker:FindObjectForCode("shop_slots").AcquiredCount then
+        local mod
+        local ghost
+        if Tracker:FindObjectForCode("shop_include_witchhut").Active then
+            mod = 10
+            ghost = 9
+        else
+            mod = 9
+            ghost = 8
+        end
+        if tonumber(number) > ((Tracker:FindObjectForCode("shuffle_item_slots").AcquiredCount + ghost) // mod) then
+            return false
+        else
             return true
-        -- else
-            -- return false
-        -- end
+        end
     end
 end
 
@@ -581,6 +591,91 @@ function GiveAll(setting)
     -- end
 end
 
+local shop_default_mapping = {
+    [1] = 4,
+    [2] = 9,
+    [3] = 2,
+    [4] = 9,
+    [5] = 10,
+    [6] = 1,
+    [7] = 4,
+    [8] = 9,
+    [9] = 2,
+    [10] = 4,
+    [11] = 9,
+    [12] = 2,
+    [13] = 4,
+    [14] = 9,
+    [15] = 2,
+    [16] = 4,
+    [17] = 3,
+    [18] = 2,
+    [19] = 4,
+    [20] = 3,
+    [21] = 2,
+    [22] = 4,
+    [23] = 3,
+    [24] = 2,
+    [25] = 4,
+    [26] = 3,
+    [27] = 2,
+    [28] = 4,
+    [29] = 3,
+    [30] = 2,
+    [31] = 4,
+    [32] = 5,
+    [33] = 6
+}
+
+function SetCostType()
+    local active = Tracker:FindObjectForCode("shuffle_cost_type").Active
+    for i,_ in pairs(shop_default_mapping) do
+        local item = Tracker:FindObjectForCode("default_shop_price_"..i)
+        if active then
+            item.CurrentStage = 0
+        else
+            item.CurrentStage = 1
+        end
+    end
+end
+function SetShopInventory()
+    local active = Tracker:FindObjectForCode("shop_sanity").Active
+    local witch = Tracker:FindObjectForCode("shop_include_witchhut").Active
+    for i,v in pairs(shop_default_mapping) do
+        local item = Tracker:FindObjectForCode("default_shop_item_"..i)
+        if active then
+            if i>30 and not witch then
+                item.CurrentStage = v
+            else
+                item.CurrentStage = 0
+            end
+        else
+            item.CurrentStage = v
+        end
+    end
+end
+
+
+local prize_table = {
+    ["crab_pull_1"] = 2,
+    ["crab_pull_2"] = 3,
+    ["stunprice"] = 6,
+    ["tree_pull_1"] = 1,
+    ["tree_pull_2"] = 2,
+    ["tree_pull_3"] = 3
+}
+function SetPrizeShuffle()
+    if Tracker:FindObjectForCode("prize_shuffle").Active then
+        for code, stage in pairs(prize_table) do
+            Tracker:FindObjectForCode(code).CurrentStage = 0
+        end
+    else
+        for code, stage in pairs(prize_table) do
+            Tracker:FindObjectForCode(code).CurrentStage = stage
+        end
+    end
+end
+
 function setAllAutofill()
     local set_all = Tracker:FindObjectForCode("autofill_all_settings").Active
     Tracker:FindObjectForCode("autofill_dungeon_settings").Active = set_all
@@ -597,12 +692,12 @@ ScriptHost:AddWatchForCode("settings compass_shuffle", "compass_setting", GiveAl
 ScriptHost:AddWatchForCode("settings smallkeys_setting", "smallkeys_setting", GiveAll)
 ScriptHost:AddWatchForCode("settings bigkeys_setting", "bigkeys_setting", GiveAll)
 
-ScriptHost:AddWatchForCode("settings autofill_dungeon_settings", "autofill_dungeon_settings", autoFill)
-ScriptHost:AddWatchForCode("settings autofill_goal_reqs", "autofill_goal_reqs", autoFill)
-ScriptHost:AddWatchForCode("settings autofill_medallions", "autofill_medallions", autoFill)
-ScriptHost:AddWatchForCode("settings autofill_modes", "autofill_modes", autoFill)
-ScriptHost:AddWatchForCode("settings autofill_misc", "autofill_misc", autoFill)
-ScriptHost:AddWatchForCode("settings autofill_sanities", "autofill_sanities", autoFill)
+
+ScriptHost:AddWatchForCode("set shop cost-type", "shuffle_cost_type", SetCostType)
+ScriptHost:AddWatchForCode("set shop default inventory", "shop_sanity", SetShopInventory)
+ScriptHost:AddWatchForCode("set prize shuffles", "prize_shuffle", SetPrizeShuffle)
+
+
 ScriptHost:AddWatchForCode("set all autofill", "autofill_all_settings", setAllAutofill)
 -- function owDungeonDetails()
 --     local dungeon_details = Tracker:FindObjectForCode("ow_dungeon_details")

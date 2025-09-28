@@ -9,7 +9,7 @@
                 "access_rules":[
                     "^$CanReach|dark_lumpberjacks_shop_inside"
                 ],
-                "visibility_rules": ["shop_sanity"],
+                // "visibility_rules": ["shop_sanity"],
                 "sections": [
                     {
                         "name": "Shop Left Item",
@@ -31,6 +31,22 @@
                         "visibility_rules": [
                             "^$ShopSlotHelper|4194315|3"
                         ]
+                    },
+                    {
+                        "name": "Shop Default-Inventory",
+                        "hosted_item": "default_shop_item_1, default_shop_item_2, default_shop_item_3",
+                        "clear_as_group": false
+                        // "visibility_rules": [
+                        //     "shop_sanity"
+                        // ]
+                    },
+                    {
+                        "name": "Shop Cost-Type",
+                        "hosted_item": "default_shop_price_1, default_shop_price_2, default_shop_price_3",
+                        "clear_as_group": false
+                        // "visibility_rules": [
+                        //     "shop_sanity"
+                        // ]
                     }
                 ],
                 "map_locations": [
@@ -70,7 +86,7 @@
                 "access_rules":[
                     "^$CanReach|red_shield_shop_inside"
                 ],
-                "visibility_rules": ["shop_sanity"],
+                // "visibility_rules": ["shop_sanity"],
                 "sections": [
                     {
                         "name": "Shop Left Item",
@@ -92,6 +108,22 @@
                         "visibility_rules": [
                             "^$ShopSlotHelper|4194309|3"
                         ]
+                    },
+                    {
+                        "name": "Shop Default-Inventory",
+                        "hosted_item": "default_shop_item_4, default_shop_item_5, default_shop_item_6",
+                        "clear_as_group": false
+                        // "visibility_rules": [
+                        //     "shop_sanity"
+                        // ]
+                    },
+                    {
+                        "name": "Shop Cost-Type",
+                        "hosted_item": "default_shop_price_4, default_shop_price_5, default_shop_price_6",
+                        "clear_as_group": false
+                        // "visibility_rules": [
+                        //     "shop_sanity"
+                        // ]
                     }
                 ],
                 "map_locations": [
@@ -155,7 +187,7 @@
             },
             {
                 "name": "Dark Kakariko Shop",
-                "visibility_rules": ["shop_sanity"],
+                // "visibility_rules": ["shop_sanity"],
                 "access_rules": [
                     "^$CanReach|dark_village_shop_inside"
                 ],
@@ -180,6 +212,22 @@
                         "visibility_rules": [
                             "^$ShopSlotHelper|4194318|3"
                         ]
+                    },
+                    {
+                        "name": "Shop Default-Inventory",
+                        "hosted_item": "default_shop_item_7, default_shop_item_8, default_shop_item_9",
+                        "clear_as_group": false
+                        // "visibility_rules": [
+                        //     "shop_sanity"
+                        // ]
+                    },
+                    {
+                        "name": "Shop Cost-Type",
+                        "hosted_item": "default_shop_price_7, default_shop_price_8, default_shop_price_9",
+                        "clear_as_group": false
+                        // "visibility_rules": [
+                        //     "shop_sanity"
+                        // ]
                     }
                 ],
                 "map_locations": [
@@ -407,7 +455,7 @@
                 "access_rules":[
                     "^$CanReach|dark_lake_shop_inside"
                 ],
-                "visibility_rules": ["shop_sanity"],
+                // "visibility_rules": ["shop_sanity"],
                 "sections": [
                     {
                         "name": "Shop Left Item",
@@ -429,6 +477,22 @@
                         "visibility_rules": [
                             "^$ShopSlotHelper|4194312|3"
                         ]
+                    },
+                    {
+                        "name": "Shop Default-Inventory",
+                        "hosted_item": "default_shop_item_10, default_shop_item_11, default_shop_item_12",
+                        "clear_as_group": false
+                        // "visibility_rules": [
+                        //     "shop_sanity"
+                        // ]
+                    },
+                    {
+                        "name": "Shop Cost-Type",
+                        "hosted_item": "default_shop_price_10, default_shop_price_11, default_shop_price_12",
+                        "clear_as_group": false
+                        // "visibility_rules": [
+                        //     "shop_sanity"
+                        // ]
                     }
                 ],
                 "map_locations": [
@@ -499,7 +563,7 @@
                 "access_rules": [
                     "^$CanReach|dark_potion_shop_inside"
                 ],
-                "visibility_rules": ["shop_sanity"],
+                // "visibility_rules": ["shop_sanity"],
                 "sections": [
                     {
                         "name": "Shop Left Item",
@@ -521,6 +585,22 @@
                         "visibility_rules": [
                             "^$ShopSlotHelper|4194321|3"
                         ]
+                    },
+                    {
+                        "name": "Shop Default-Inventory",
+                        "hosted_item": "default_shop_item_13, default_shop_item_14, default_shop_item_15",
+                        "clear_as_group": false
+                        // "visibility_rules": [
+                        //     "shop_sanity"
+                        // ]
+                    },
+                    {
+                        "name": "Shop Cost-Type",
+                        "hosted_item": "default_shop_price_13, default_shop_price_14, default_shop_price_15",
+                        "clear_as_group": false
+                        // "visibility_rules": [
+                        //     "shop_sanity"
+                        // ]
                     }
                 ],
                 "map_locations": [
@@ -658,7 +738,7 @@
                 "access_rules":[
                     "^$CanReach|dark_death_mountain_shop_inside"
                 ],
-                "visibility_rules": ["shop_sanity"],
+                // "visibility_rules": ["shop_sanity"],
                 "sections": [
                     {
                         "name": "Shop Left Item",
@@ -680,6 +760,22 @@
                         "visibility_rules": [
                             "^$ShopSlotHelper|4194306|3"
                         ]
+                    },
+                    {
+                        "name": "Shop Default-Inventory",
+                        "hosted_item": "default_shop_item_16, default_shop_item_17, default_shop_item_18",
+                        "clear_as_group": false
+                        // "visibility_rules": [
+                        //     "shop_sanity"
+                        // ]
+                    },
+                    {
+                        "name": "Shop Cost-Type",
+                        "hosted_item": "default_shop_price_16, default_shop_price_17, default_shop_price_18",
+                        "clear_as_group": false
+                        // "visibility_rules": [
+                        //     "shop_sanity"
+                        // ]
                     }
                 ],
                 "map_locations": [

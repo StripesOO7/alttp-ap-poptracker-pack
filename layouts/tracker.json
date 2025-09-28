@@ -1,7 +1,7 @@
 ﻿    {
     "tracker_default": {
         "type": "container",
-        "background": "#00000000",
+        // "background": "#00000000",
         "content": {
             "type": "dock",
             "dropshadow": true,
@@ -27,6 +27,24 @@
                             "content": {
                                 "type": "layout",
                                 "key": "setting_grid"
+                            }
+                        },
+                        {
+                            "type": "group",
+                            "header": "Pulltree Drops",
+                            "dock": "top",
+                            "content": {
+                                "type": "layout",
+                                "key": "pulltree_drops"
+                            }
+                        },
+                        {
+                            "type": "group",
+                            "header": "Hoarder + Stun Drops",
+                            "dock": "top",
+                            "content": {
+                                "type": "layout",
+                                "key": "hoarder_drops"
                             }
                         }
                         // },
@@ -97,6 +115,24 @@
                                 "h_alignment": "center",
                                 "v_alignment": "center",
                                 "key": "setting_grid"
+                            }
+                        },
+                        {
+                            "type": "group",
+                            "header": "Pulltree Drops",
+                            "dock": "left",
+                            "content": {
+                                "type": "layout",
+                                "key": "pulltree_drops"
+                            }
+                        },
+                        {
+                            "type": "group",
+                            "header": "Hoarder + Stun Drops",
+                            "dock": "left",
+                            "content": {
+                                "type": "layout",
+                                "key": "hoarder_drops"
                             }
                         }
                         // },

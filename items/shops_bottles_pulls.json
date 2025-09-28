@@ -1,0 +1,3886 @@
+[
+    {
+        "name": "Fairy Bottle 1",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "fairy_bottle1, green_potion",
+                "disabled_img": "/images/items/Bottle.png"
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "fairy_bottle1, red_potion"
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "fairy_bottle1, blue_potion"
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "fairy_bottle1, fairy_bottle"
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "fairy_bottle1, bee_bottle"
+            }
+        ]
+    },
+    {
+        "name": "Fairy Bottle 2",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "fairy_bottle2, green_potion",
+                "disabled_img": "/images/items/Bottle.png"
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "fairy_bottle2, red_potion"
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "fairy_bottle2, blue_potion"
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "fairy_bottle2, fairy_bottle"
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "fairy_bottle2, bee_bottle"
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 1",
+        "type": "progressive",
+        "initial_stage_idx": 4,
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_1, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_1, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_1, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_1, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_1, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_1, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_1, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_1, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_1, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_1, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_1, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 2",
+        "type": "progressive",
+        "initial_stage_idx": 9,
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_2, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_2, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_2, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_2, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_2, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_2, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_2, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_2, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_2, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_2, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_2, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 3",
+        "type": "progressive",
+        "initial_stage_idx": 2,
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_3, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_3, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_3, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_3, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_3, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_3, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_3, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_3, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_3, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_3, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_3, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 4",
+        "type": "progressive",
+        "initial_stage_idx": 9,
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_4, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_4, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_4, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_4, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_4, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_4, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_4, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_4, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_4, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_4, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_4, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 5",
+        "type": "progressive",
+        "initial_stage_idx": 10,
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_5, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_5, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_5, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_5, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_5, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_5, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_5, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_5, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_5, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_5, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_5, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 6",
+        "type": "progressive",
+        "initial_stage_idx": 1,
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_6, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_6, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_6, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_6, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_6, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_6, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_6, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_6, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_6, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_6, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_6, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 7",
+        "type": "progressive",
+        "initial_stage_idx": 4,
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_7, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_7, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_7, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_7, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_7, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_7, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_7, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_7, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_7, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_7, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_7, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 8",
+        "type": "progressive",
+        "initial_stage_idx": 9,
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_8, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_8, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_8, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_8, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_8, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_8, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_8, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_8, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_8, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_8, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_8, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 9",
+        "type": "progressive",
+        "initial_stage_idx": 2,
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_9, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_9, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_9, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_9, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_9, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_9, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_9, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_9, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_9, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_9, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_9, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 10",
+        "type": "progressive",
+        "initial_stage_idx": 4,
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_10, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_10, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_10, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_10, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_10, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_10, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_10, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_10, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_10, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_10, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_10, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 11",
+        "type": "progressive",
+        "initial_stage_idx": 9,
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_11, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_11, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_11, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_11, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_11, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_11, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_11, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_11, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_11, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_11, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_11, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 12",
+        "type": "progressive",
+        "initial_stage_idx": 2,
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_12, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_12, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_12, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_12, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_12, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_12, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_12, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_12, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_12, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_12, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_12, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 13",
+        "type": "progressive",
+        "initial_stage_idx": 4,
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_13, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_13, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_13, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_13, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_13, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_13, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_13, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_13, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_13, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_13, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_13, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 14",
+        "type": "progressive",
+        "initial_stage_idx": 9,
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_14, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_14, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_14, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_14, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_14, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_14, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_14, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_14, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_14, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_14, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_14, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 15",
+        "type": "progressive",
+        "initial_stage_idx": 2,
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_15, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_15, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_15, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_15, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_15, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_15, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_15, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_15, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_15, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_15, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_15, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 16",
+        "type": "progressive",
+        "initial_stage_idx": 4,
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_16, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_16, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_16, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_16, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_16, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_16, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_16, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_16, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_16, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_16, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_16, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 17",
+        "type": "progressive",
+        "initial_stage_idx": 3,
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_17, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_17, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_17, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_17, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_17, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_17, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_17, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_17, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_17, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_17, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_17, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 18",
+        "type": "progressive",
+        "initial_stage_idx": 2,
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_18, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_18, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_18, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_18, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_18, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_18, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_18, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_18, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_18, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_18, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_18, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 19",
+        "type": "progressive",
+        "initial_stage_idx": 4,
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_19, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_19, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_19, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_19, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_19, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_19, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_19, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_19, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_19, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_19, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_19, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 20",
+        "type": "progressive",
+        "initial_stage_idx": 3,
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_20, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_20, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_20, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_20, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_20, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_20, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_20, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_20, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_20, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_20, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_20, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 21",
+        "type": "progressive",
+        "initial_stage_idx": 2,
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_21, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_21, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_21, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_21, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_21, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_21, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_21, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_21, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_21, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_21, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_21, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 22",
+        "type": "progressive",
+        "initial_stage_idx": 4,
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_22, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_22, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_22, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_22, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_22, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_22, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_22, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_22, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_22, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_22, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_22, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 23",
+        "type": "progressive",
+        "initial_stage_idx": 3,
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_23, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_23, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_23, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_23, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_23, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_23, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_23, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_23, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_23, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_23, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_23, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 24",
+        "type": "progressive",
+        "initial_stage_idx": 2,
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_24, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_24, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_24, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_24, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_24, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_24, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_24, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_24, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_24, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_24, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_24, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 25",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_25, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_25, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_25, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_25, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_25, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_25, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_25, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_25, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_25, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_25, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_25, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 26",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_26, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_26, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_26, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_26, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_26, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_26, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_26, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_26, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_26, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_26, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_26, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 27",
+        "type": "progressive",
+        // "initial_stage_idx": 4,
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_27, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_27, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_27, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_27, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_27, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_27, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_27, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_27, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_27, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_27, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_27, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 28",
+        "type": "progressive",
+        "initial_stage_idx": 4,
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_28, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_28, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_28, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_28, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_28, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_28, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_28, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_28, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_28, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_28, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_28, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 29",
+        "type": "progressive",
+        "initial_stage_idx": 3,
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_29, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_29, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_29, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_29, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_29, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_29, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_29, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_29, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_29, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_29, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_29, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 30",
+        "type": "progressive",
+        "initial_stage_idx": 2,
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_30, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_30, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_30, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_30, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_30, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_30, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_30, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_30, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_30, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_30, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_30, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 31",
+        "type": "progressive",
+        "initial_stage_idx": 4,
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_31, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_31, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_31, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_31, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_31, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_31, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_31, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_31, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_31, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_31, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_31, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 32",
+        "type": "progressive",
+        "initial_stage_idx": 5,
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_32, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_32, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_32, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_32, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_32, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_32, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_32, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_32, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_32, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_32, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_32, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Item 33",
+        "type": "progressive",
+        "allow_disabled": false,
+        "initial_stage_idx": 6,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_item_33, buy_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_item_33, buy_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_item_33, buy_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_item_33, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/red_potion.png",
+                "codes": "default_shop_item_33, buy_green_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/green_potion.png",
+                "codes": "default_shop_item_33, buy_red_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/blue_potion.png",
+                "codes": "default_shop_item_33, buy_blue_potion",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/fairy_bottle.png",
+                "codes": "default_shop_item_33, buy_fairy_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/bee_bottle.png",
+                "codes": "default_shop_item_33, buy_bee_bottle",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/shields_shop.png",
+                "codes": "default_shop_item_33, buy_shield",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bee-2.png",
+                "codes": "default_shop_item_33, buy_bee",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 1",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_1, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_1, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_1, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_1, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_1, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_1, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 2",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_2, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_2, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_2, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_2, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_2, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_2, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 3",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_3, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_3, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_3, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_3, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_3, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_3, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 4",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_4, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_4, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_4, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_4, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_4, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_4, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 5",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_5, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_5, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_5, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_5, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_5, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_5, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 6",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_6, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_6, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_6, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_6, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_6, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_6, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 7",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_7, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_7, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_7, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_7, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_7, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_7, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 8",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_8, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_8, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_8, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_8, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_8, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_8, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 9",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_9, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_9, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_9, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_9, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_9, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_9, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 10",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_10, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_10, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_10, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_10, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_10, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_10, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 11",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_11, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_11, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_11, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_11, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_11, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_11, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 12",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_12, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_12, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_12, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_12, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_12, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_12, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 13",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_13, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_13, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_13, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_13, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_13, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_13, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 14",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_14, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_14, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_14, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_14, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_14, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_14, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 15",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_15, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_15, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_15, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_15, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_15, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_15, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 16",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_16, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_16, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_16, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_16, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_16, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_16, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 17",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_17, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_17, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_17, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_17, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_17, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_17, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 18",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_18, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_18, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_18, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_18, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_18, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_18, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 19",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_19, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_19, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_19, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_19, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_19, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_19, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 20",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_20, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_20, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_20, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_20, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_20, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_20, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 21",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_21, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_21, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_21, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_21, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_21, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_21, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 22",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_22, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_22, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_22, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_22, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_22, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_22, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 23",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_23, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_23, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_23, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_23, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_23, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_23, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 24",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_24, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_24, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_24, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_24, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_24, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_24, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 25",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_25, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_25, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_25, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_25, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_25, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_25, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 26",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_26, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_26, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_26, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_26, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_26, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_26, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 27",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_27, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_27, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_27, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_27, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_27, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_27, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 28",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_28, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_28, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_28, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_28, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_28, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_28, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 29",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_29, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_29, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_29, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_29, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_29, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_29, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 30",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_30, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_30, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_30, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_30, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_30, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_30, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 31",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_31, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_31, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_31, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_31, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_31, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_31, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 32",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_32, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_32, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_32, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_32, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_32, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_32, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Shop Price 33",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "initial_stage_idx": 1,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "default_shop_price_33, price_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/ALL_Rupees-ALttP.png",
+                "codes": "default_shop_price_33, price_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "default_shop_price_33, price_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "default_shop_price_33, price_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "default_shop_price_33, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_33, price_magic",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Tree Pull 1",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "tree_pull_1, pull_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Green-Rupee-ALttP.png",
+                "codes": "tree_pull_1, pull_green_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Blue-Rupee-ALttP.png",
+                "codes": "tree_pull_1, pull_blue_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Red-Rupee-ALttP.png",
+                "codes": "tree_pull_1, pull_red_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "tree_pull_1, pull_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "tree_pull_1, pull_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "tree_pull_1, pull_health"
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "tree_pull_1, pull_small_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "tree_pull_1, pull_big_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Fairy-Sprite.png",
+                "codes": "tree_pull_1, pull_fairy",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Tree Pull 2",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "tree_pull_2, pull_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Green-Rupee-ALttP.png",
+                "codes": "tree_pull_2, pull_green_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Blue-Rupee-ALttP.png",
+                "codes": "tree_pull_2, pull_blue_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Red-Rupee-ALttP.png",
+                "codes": "tree_pull_2, pull_red_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "tree_pull_2, pull_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "tree_pull_2, pull_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "tree_pull_2, pull_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "tree_pull_2, pull_small_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "tree_pull_2, pull_big_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Fairy-Sprite.png",
+                "codes": "tree_pull_2, pull_fairy",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Tree Pull 3",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "tree_pull_3, pull_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Green-Rupee-ALttP.png",
+                "codes": "tree_pull_3, pull_green_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Blue-Rupee-ALttP.png",
+                "codes": "tree_pull_3, pull_blue_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Red-Rupee-ALttP.png",
+                "codes": "tree_pull_3, pull_red_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "tree_pull_3, pull_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "tree_pull_3, pull_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "tree_pull_3, pull_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "tree_pull_3, pull_small_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "tree_pull_3, pull_big_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Fairy-Sprite.png",
+                "codes": "tree_pull_3, pull_fairy",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Stunprice",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "stunprice, stun_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Green-Rupee-ALttP.png",
+                "codes": "stunprice, stun_green_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Blue-Rupee-ALttP.png",
+                "codes": "stunprice, stun_blue_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Red-Rupee-ALttP.png",
+                "codes": "stunprice, stun_red_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "stunprice, stun_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "stunprice, stun_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "stunprice, stun_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "stunprice, stun_small_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "stunprice, stun_big_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Fairy-Sprite.png",
+                "codes": "stunprice, stun_fairy",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Crab Drop 1",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "crab_pull_1, carb_drop_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Green-Rupee-ALttP.png",
+                "codes": "crab_pull_1, carb_drop_green_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Blue-Rupee-ALttP.png",
+                "codes": "crab_pull_1, carb_drop_blue_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Red-Rupee-ALttP.png",
+                "codes": "crab_pull_1, carb_drop_red_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "crab_pull_1, carb_drop_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "crab_pull_1, carb_drop_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "crab_pull_1, carb_drop_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "crab_pull_1, carb_drop_small_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "crab_pull_1, carb_drop_big_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Fairy-Sprite.png",
+                "codes": "crab_pull_1, carb_drop_fairy",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Crab Drop 2",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": false,
+        "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "crab_pull_2, carb_drop_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Green-Rupee-ALttP.png",
+                "codes": "crab_pull_2, carb_drop_green_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Blue-Rupee-ALttP.png",
+                "codes": "crab_pull_2, carb_drop_blue_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Red-Rupee-ALttP.png",
+                "codes": "crab_pull_2, carb_drop_red_rupee",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/arrows.png",
+                "codes": "crab_pull_2, carb_drop_arrows",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bomb.png",
+                "codes": "crab_pull_2, carb_drop_bombs",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Recovery-Heart-Sprite.png",
+                "codes": "crab_pull_2, carb_drop_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "crab_pull_2, carb_drop_small_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "crab_pull_2, carb_drop_big_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Fairy-Sprite.png",
+                "codes": "crab_pull_2, carb_drop_fairy",
+                "inherit_codes": false
+            }
+        ]
+    },
+    {
+        "name": "Bottlemerchant Fish-Drop 1",
+        "type": "consumable",
+        "img": "/images/items/Magic-Jar-Large.png",
+        "codes": "bottlemerchant_fish_drop_1",
+        "min_quantity": 1,
+        "max_quantity": 1,
+        "initial_quantity": 1
+    },
+    {
+        "name": "Bottlemerchant Fish-Drop 2",
+        "type": "consumable",
+        "img": "/images/items/Bomb.png",
+        "codes": "bottlemerchant_fish_drop_2",
+        "min_quantity": 8,
+        "max_quantity": 8,
+        "initial_quantity": 8
+    },
+    {
+        "name": "Bottlemerchant Fish-Drop 3",
+        "type": "consumable",
+        "img": "/images/items/Green-Rupee-ALttP.png",
+        "codes": "bottlemerchant_fish_drop_3",
+        "min_quantity": 21,
+        "max_quantity": 21,
+        "initial_quantity": 21
+    },
+    {
+        "name": "Bottlemerchant Fish-Drop 4",
+        "type": "static",
+        "img": "/images/items/arrows.png",
+        "codes": "bottlemerchant_fish_drop_4",
+        "min_quantity": 10,
+        "max_quantity": 10,
+        "initial_quantity": 10
+    },
+    {
+        "name": "Bottlemerchant Gold-Bee Drop 1",
+        "type": "consumable",
+        "img": "/images/items/Green-Rupee-ALttP.png",
+        "codes": "bottlemerchant_gold_bee_drop_1",
+        "min_quantity": 100,
+        "max_quantity": 100,
+        "initial_quantity": 100
+    },
+    {
+        "name": "Tree Label 1-3 Kills",
+        "type": "static",
+        "img": "/images/settings/pull1.png",
+        "codes": "tree_label_1"
+    },
+    {
+        "name": "Tree Label 4 Kills",
+        "type": "static",
+        "img": "/images/settings/pull2.png",
+        "codes": "tree_label_2"
+    },
+    {
+        "name": "Tree Label 4 Kills no Hit",
+        "type": "static",
+        "img": "/images/settings/pull3.png",
+        "codes": "tree_label_3"
+    },
+    {
+        "name": "Hoarder Label",
+        "type": "static",
+        "img": "/images/settings/crab1.png",
+        "codes": "crab_label_1"
+    },
+    {
+        "name": "Hoarder Label Last",
+        "type": "static",
+        "img": "/images/settings/crab2.png",
+        "codes": "crab_label_2"
+    },
+    {
+        "name": "Stun Price",
+        "type": "static",
+        "img": "/images/settings/stun.png",
+        "codes": "stun_label"
+    }
+    
+]
