@@ -675,6 +675,14 @@
         "codes": "pyramid_state"
     },
     {
+        "name": "Randomize Prizes (Pull, Bonk, Crabs)",
+        "type": "toggle",
+        "img": "/images/settings/prize_shuffle_on.png",
+        "disabled_img": "/images/settings/prize_shuffle_off.png",
+        "disabled_img_mods": "",
+        "codes": "prize_shuffle"
+    },
+    {
         "name": "Enable Entrance Randomizer Tracking",
         "type": "progressive",
         "allow_disabled":false,
