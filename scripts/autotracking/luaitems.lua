@@ -269,4 +269,4 @@ function Reset_ER_setings()
     ScriptHost:AddWatchForCode("StateChanged", "*", StateChanged)
     Tracker:FindObjectForCode("reset_er").Active = false
 end
-ScriptHost:AddWatchForCode("ER_reset_triggered", "reset_er", Reset_ER_setings)
+-- ScriptHost:AddWatchForCode("ER_reset_triggered", "reset_er", Reset_ER_setings)

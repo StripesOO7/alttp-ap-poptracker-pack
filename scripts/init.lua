@@ -37,4 +37,5 @@ function OnFrameHandler()
     ScriptHost:AddWatchForCode("StateChanged", "*", StateChanged)
     ForceUpdate()
 end
+require("scripts/watches")
 ScriptHost:AddOnFrameHandler("load handler", OnFrameHandler)

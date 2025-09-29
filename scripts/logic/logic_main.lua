@@ -1,5 +1,5 @@
-ScriptHost:AddWatchForCode("keydropshuffle handler", "key_drop_shuffle", KeyDropLayoutChange)
-ScriptHost:AddWatchForCode("boss handler", "boss_shuffle", BossShuffle)
+-- ScriptHost:AddWatchForCode("keydropshuffle handler", "key_drop_shuffle", KeyDropLayoutChange)
+-- ScriptHost:AddWatchForCode("boss handler", "boss_shuffle", BossShuffle)
 -- ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", ForceUpdate)
 -- ScriptHost:AddWatchForCode("ow_dungeon details handler", "ow_dungeon_details", owDungeonDetails)
 
@@ -388,7 +388,7 @@ function alttp_location:discover(accessibility, keys, worldstate)
                 end
                 if access > oldAccess or (access == oldAccess and key < oldKey) then -- not sure about the <
                     -- print(self.name)
-                    print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access], "with worldstate:", worldstate)
+                    -- print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access], "with worldstate:", worldstate)
                     -- print("lower:", self.worldstate, worldstate, location.worldstate)
                     -- print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access])--, "with worldstate:", worldstate)
                     location:discover(access, key, worldstate)
@@ -484,6 +484,6 @@ function EmptyLocationTargets()
     end
 end
 
-ScriptHost:AddWatchForCode("ER_Setting_Changed", "er_full", EmptyLocationTargets)
-ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", ForceUpdate)
+-- ScriptHost:AddWatchForCode("ER_Setting_Changed", "er_full", EmptyLocationTargets)
+-- ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", ForceUpdate)
 -- ScriptHost:AddWatchForCode("StateChanged", "*", StateChanged)
