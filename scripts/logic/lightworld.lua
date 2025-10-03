@@ -1316,7 +1316,7 @@ end)
 -- light_death_mountain_right_top:connect_one_way()
 
 light_death_mountain_right_top:connect_two_ways(paradox_cave_top_entrance_outside)
-light_death_mountain_right_top:connect_two_ways(spiral_cave_top_outside)
+light_death_mountain_right_top:connect_one_way(spiral_cave_top_outside)
 light_death_mountain_right_top:connect_one_way(mimic_cave_ledge, function() return Inverted() end)
 light_death_mountain_right_top:connect_one_way(light_eyebridge_fairy_ledge)--, function() return Inverted() end)
 
