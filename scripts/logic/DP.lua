@@ -36,7 +36,7 @@ dp_map_chest_room:connect_one_way("DP - Map Chest", function() return Can_intera
 dp_main_room:connect_one_way(dp_compass_room, function(keys)
     if not Tracker:FindObjectForCode("key_drop_shuffle").Active then
         return ALL(
-            Has("dp_smallkey", keys + CountDoneDeadends(0, "@Desert Palace Back/Boss/Boss Item"), 1, keys + CountDoneDeadends(1, "@Desert Palace Back/Boss/Boss Item", "@Desert Palace Back/Beamos Hall Pot Key/Beamos Hall Pot Key", "@Desert Palace Back/Desert Tiles 2 Pot Key/Desert Tiles 2 Pot Key"), 4), KDSreturn(keys + 1, keys + 1),
+            Has("dp_smallkey", keys + CountDoneDeadends(0, "@Desert Palace Back/Boss/Boss Item"), 1, keys + CountDoneDeadends(1, "@Desert Palace Back/Boss/Boss Item", "@Desert Palace Back/Beamos Hall Pot Key/Beamos Hall Pot Key", "@Desert Palace Back/Desert Tiles 2 Pot Key/Desert Tiles 2 Pot Key"), 4),
             "boots",
             Can_interact("light", 1)
         ), KDSreturn(keys + 1, keys + 1)
