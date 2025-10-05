@@ -205,13 +205,7 @@ end
 
 function GetShuffle(item, type)
     -- print(item, type)
-    if Tracker:ProviderCountForCode(item) > 0 and type == "shuffle" then
-        return true
-    elseif Tracker:ProviderCountForCode(item) == 0 and type == "vanilla" then
-        return true
-    else
-        return false
-    end
+    return (Tracker:ProviderCountForCode(item) > 0 and type == "shuffle") or (Tracker:ProviderCountForCode(item) == 0 and type == "vanilla")
 end
 
 function CheckSwordless()
@@ -247,11 +241,7 @@ function CanClearAgaTowerBarrier()
     if Tracker:ProviderCountForCode("swordless") > 0 then
         return Tracker:FindObjectForCode("hammer").Active
     else
-        if Tracker:ProviderCountForCode("mastersword") > 0 then
-            return true
-        else
-            return false
-        end
+        return Tracker:ProviderCountForCode("mastersword") > 0
     end
 end
 
@@ -296,7 +286,7 @@ function smallKeys(dungeon, count, count_in_logic, keydrop_count, keydrop_count_
 end
 
 function BigKeys(dungeon)
-    if Tracker:FindObjectForCode("big_keys").Active == true then
+    if Tracker:FindObjectForCode("big_keys").Active then
         return Tracker:FindObjectForCode(dungeon).Active
     -- elseif Tracker:FindObjectForCode("big_keys").Active == false and key == "sw_bigkey" and Tracker:FindObjectForCode("firerod").Active == false then
     --     return false
@@ -339,33 +329,57 @@ function CalcHeartpieces()
 end
 
 function EnemizerCheck(item)
-    if Tracker:FindObjectForCode("enemizer").Active == true then
-        return true
+    return Tracker:FindObjectForCode("enemizer").Active or Tracker:FindObjectForCode(item).Active
+end
+
+CAN_INTERACT = {
+    [1] = false,
+    [2] = false,
+    [3] = false,
+    [4] = false,
+    [5] = false,
+    [6] = false,
+    ["light"] = {},
+    ["dark"] = {}
+}
+
+function PrecalcCanInteract()
+    for i=1,6 do
+        CAN_INTERACT["light"][i] = CAN_INTERACT[i] or OpenOrStandard()
+        CAN_INTERACT["dark"][i] = CAN_INTERACT[i] or Inverted()
     end
-    if Tracker:FindObjectForCode(item).Active == true then
-        return true
-    else
-        return false
+    
+end
+
+function UpdateCanInteract()
+    local moonpearl = Tracker:FindObjectForCode("pearl").Active
+    local glitch_lvl = Tracker:FindObjectForCode("glitches").CurrentStage
+    for i=1,6 do
+        CAN_INTERACT[i] = moonpearl or (glitch_lvl >= i)
     end
+    PrecalcCanInteract()
 end
 
 function Can_interact(worldstate, glitch_lvl)
+    return CAN_INTERACT[worldstate][glitch_lvl]
     -- print("worldstate:", worldstate)
     -- print("pearl:", Tracker:FindObjectForCode("pearl").Active)
     -- print("OpenOrStandard:", OpenOrStandard())
     -- print("Inverted:", Inverted())
-    if (worldstate == "light" and OpenOrStandard()) or (worldstate == "dark" and Inverted()) then
-        return true
-    elseif (worldstate == "light" and Inverted()) or (worldstate == "dark" and OpenOrStandard()) then
-        if Tracker:FindObjectForCode("pearl").Active then
-            return true
-        end
-        if Tracker:FindObjectForCode("glitches").CurrentStage >= glitch_lvl then
-            return true
-        end
-        return false
-    end
-    return false
+    -- local glitchstage = Tracker:FindObjectForCode("glitches").CurrentStage
+
+    -- if (worldstate == "light" and OpenOrStandard()) or (worldstate == "dark" and Inverted()) then
+    --     return true
+    -- elseif (worldstate == "light" and Inverted()) or (worldstate == "dark" and OpenOrStandard()) then
+    --     if Tracker:FindObjectForCode("pearl").Active then
+    --         return true
+    --     end
+    --     if Tracker:FindObjectForCode("glitches").CurrentStage >= glitch_lvl then
+    --         return true
+    --     end
+    --     return false
+    -- end
+    -- return false
 end
 
 function CanFinish()
@@ -406,37 +420,19 @@ function CanFinish()
 end
 
 function CanChangeWorldWithMirror()
-    if Tracker:FindObjectForCode("mirror").Active then
-        return true
-    end
-    return false
+    return Tracker:FindObjectForCode("mirror").Active
 end
 
-function OpenOrStandard(item)
-    if Tracker:FindObjectForCode("start_option").CurrentStage ~= 2 then
-        if item then
-            return Tracker:FindObjectForCode(item).Active
-        end
-        return true
-    end
-    return false
+function OpenOrStandard()
+    return Tracker:FindObjectForCode("start_option").CurrentStage ~= 2
 end
 
-function Inverted(item)
-    if Tracker:FindObjectForCode("start_option").CurrentStage == 2 then
-        if item then
-            return Tracker:FindObjectForCode(item).Active
-        end
-        return true
-    end
-    return false
+function Inverted()
+    return Tracker:FindObjectForCode("start_option").CurrentStage == 2
 end
 
 function CheckGlitches(stage)
-    if Tracker:FindObjectForCode("glitches").CurrentStage >= tonumber(stage) then
-        return true
-    end
-    return false
+    return Tracker:FindObjectForCode("glitches").CurrentStage >= tonumber(stage)
 end
 
 function KeyDropLayoutChange()
@@ -491,11 +487,7 @@ end
 function CheckPyramidState()
     local pyramid_open = Tracker:FindObjectForCode("pyramid_state").Active
     if not pyramid_open then
-        if Tracker:FindObjectForCode("aga2").Active then
-            return true
-        else
-            return false
-        end
+        return Tracker:FindObjectForCode("aga2").Active
     end
     return true
 end
