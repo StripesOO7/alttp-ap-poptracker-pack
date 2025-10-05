@@ -127,6 +127,8 @@ end
 
 
 function onClear(slot_data)
+    ScriptHost:RemoveWatchForCode("StateChanged")
+    ScriptHost:RemoveOnLocationSectionHandler("location_section_change_handler")
     --SLOT_DATA = slot_data
     CUR_INDEX = -1
     -- reset locations
@@ -200,6 +202,7 @@ function onClear(slot_data)
         Archipelago:SetNotify({HINTS_ID})
         Archipelago:Get({HINTS_ID})
     end
+    ScriptHost:AddOnFrameHandler("load handler", OnFrameHandler)
 end
 
 function onItem(index, item_id, item_name, player_number)
@@ -311,7 +314,6 @@ function onEventsLaunch(key, value)
 end
 
 function autoFill()
-
     if SLOT_DATA == nil  then
         print("its fucked")
         return
