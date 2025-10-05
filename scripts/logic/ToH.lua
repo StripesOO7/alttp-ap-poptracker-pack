@@ -11,7 +11,7 @@ toh_entrance_inside:connect_two_ways(toh_main_room, function()
     return ALL(
         Can_interact(toh_entrance_inside.worldstate, 1),
         ANY(
-            DealDamage(),
+            DealDamage,
             "redboomerang",
             "blueboomerang",
             "icerod"

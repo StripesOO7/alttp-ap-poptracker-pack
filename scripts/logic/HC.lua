@@ -37,7 +37,7 @@ hc_map_chest_room:connect_one_way("HC - Map Chest", function() return Can_intera
 hc_map_chest_room:connect_one_way("HC - Map Guard Key Drop", function()
     return ALL(
         ANY(
-            DealDamage(),
+            DealDamage,
             "standard"
         ),
         Can_interact(hc_map_chest_room.worldstate, 1)
@@ -55,14 +55,14 @@ hc_map_chest_room:connect_two_ways(hc_before_boomerang_chest_room, function(keys
 end)
 hc_before_boomerang_chest_room:connect_two_ways(hc_boomerang_chest_room, function()
     return ANY(
-        DealDamage(),
+        DealDamage,
         "standard"
     )
 end)
 hc_boomerang_chest_room:connect_one_way("HC - Boomerang Chest")
 hc_boomerang_chest_room:connect_one_way("HC - Booomerang Guard Key Drop", function()
     return ANY(
-        DealDamage(),
+        DealDamage,
         "standard"
     )
 end)
@@ -75,7 +75,7 @@ hc_before_boomerang_chest_room:connect_two_ways(hc_ball_guard_room, function(key
 end)
 hc_ball_guard_room:connect_one_way("HC - Big Key", function()
     return ANY(
-        DealDamage(),
+        DealDamage,
         "standard"
     )
 end)
@@ -132,7 +132,7 @@ ce_rat_key_room:connect_one_way("CE - Rat Key Drop", function(keys)
         ALL(
             DarkRooms(true),
             Has("hc_smallkey", keys, 1, keys, 3),
-            DealDamage()
+            DealDamage
         ),
         "standard"
     ), KDSreturn(keys, keys)

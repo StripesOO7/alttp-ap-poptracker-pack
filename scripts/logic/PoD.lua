@@ -78,7 +78,7 @@ pod_switch_room_bottom:connect_two_ways(pod_boss_room, function(keys)
         Has("pod_smallkey", keys + CountDoneDeadends(1, "@Palace of Darkness/Big Key Chest/Big Key Chest", "@Palace of Darkness/Dark Maze Top/Dark Maze Top", "@Palace of Darkness/Harmless Hellway/Harmless Hellway"), 6, keys + CountDoneDeadends(1, "@Palace of Darkness/Big Key Chest/Big Key Chest", "@Palace of Darkness/Dark Maze Top/Dark Maze Top", "@Palace of Darkness/Harmless Hellway/Harmless Hellway"), 6)
     ), KDSreturn(keys + 1, keys + 1)
 end)
-pod_switch_room_bottom:connect_two_ways(pod_arena, function() return hitRanged() end)
+pod_switch_room_bottom:connect_two_ways(pod_arena, hitRanged)
 
 pod_big_key_chest_room:connect_two_ways(pod_arena)
 

@@ -30,21 +30,21 @@ ip_freezor_entrance:connect_two_ways(ip_jelly_room, function()
         "firerod",
         ALL(
             "bombos",
-            CanUseMedallions()
+            CanUseMedallions
         )
     )
 end)
 ip_jelly_room:connect_two_ways(ip_push_cross, function(keys) return Has("ip_smallkey", keys, 0, keys + 1, 1), KDSreturn(keys, keys + 1) end)
-ip_jelly_room:connect_one_way("IP - Jelly Key Drop", function() return DealDamage() end)
+ip_jelly_room:connect_one_way("IP - Jelly Key Drop", DealDamage)
 ip_push_cross:connect_two_ways(ip_bomb_dropdown)
 ip_push_cross:connect_two_ways(ip_sliding_switch_room)
 ip_push_cross:connect_two_ways(ip_compass_room)
-ip_compass_room:connect_one_way("IP - Compass Chest", function() return DealDamage() end)
+ip_compass_room:connect_one_way("IP - Compass Chest", DealDamage)
 ip_bomb_dropdown:connect_one_way(ip_conveyor_room, function() return Has("bombs") end)
 
 ip_conveyor_room:connect_two_ways(ip_sliding_penguins, function(keys) return Has("ip_smallkey", keys, 0, keys + 1, 2), KDSreturn(keys, keys + 1) end)
-ip_conveyor_room:connect_one_way("IP - Conveyor Key Drop", function() return DealDamage() end)
-ip_sliding_penguins:connect_two_ways(ip_cross, function() return DealDamage() end)
+ip_conveyor_room:connect_one_way("IP - Conveyor Key Drop", DealDamage)
+ip_sliding_penguins:connect_two_ways(ip_cross, DealDamage)
 ip_cross:connect_two_ways(ip_falling_floor)
 ip_cross:connect_two_ways(ip_spike_room, function(keys)
     if Tracker:FindObjectForCode("hookshot").Active then
@@ -64,7 +64,7 @@ ip_freezor_room:connect_one_way("IP - Freezor Chest", function()
         "firerod",
         ALL(
             "bombos",
-            CanUseMedallions()
+            CanUseMedallions
         )
     )
 end)

@@ -69,7 +69,7 @@ sw_back_bridge:connect_two_ways(sw_back_troch_puzzle, function(keys) return Has(
 sw_back_troch_puzzle:connect_one_way(sw_back_spike_corner_room, function()
     return ALL(
         "firerod",
-        canRemoveCurtains()
+        canRemoveCurtains
     )
 end)
 

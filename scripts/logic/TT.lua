@@ -58,6 +58,6 @@ tt_back_hallway:connect_two_ways(tt_boss_room)
 tt_boss_room:connect_one_way("TT - Boss", function()
     return ALL(
         GetBossRef("tt_boss"),
-        TT_boss_check()
+        TT_boss_check
     )
 end)
