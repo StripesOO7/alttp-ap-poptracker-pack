@@ -504,6 +504,9 @@ function autoFill()
         end
     end
     if Tracker:FindObjectForCode("autofill_medallions").Active then
+        for _, medallion in pairs({"bombos", "ether", "quake"}) do
+            Tracker:FindObjectForCode(medallion).CurrentStage = 0
+        end
         if SLOT_DATA["mm_medalion"] == SLOT_DATA["tr_medalion"] then
             Tracker:FindObjectForCode(mapMedallions[SLOT_DATA["mm_medalion"]]).CurrentStage = 3
         else
