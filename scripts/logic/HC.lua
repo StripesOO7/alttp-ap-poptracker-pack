@@ -115,12 +115,12 @@ ce_rat_key_room:connect_two_ways(ce_dropdown_entrance_inside, function(keys)
         ),
         -- ALL(
         --     Has("golve"),
-        --     OpenOrStandard(),
+        --     OpenOrStandard,
         --     DarkRooms(),
         --     Has("hc_smallkey", keys, 1, keys + 1, 1)
         -- ),
         ALL(
-            OpenOrStandard(),
+            OpenOrStandard,
             DarkRooms(true),
             Has("hc_smallkey", keys, 1, keys + 1, 4)
         ),

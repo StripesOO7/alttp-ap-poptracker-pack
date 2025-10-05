@@ -38,12 +38,12 @@ dark_flute_map:connect_one_way(dark_icerod_area)
 teleporter_at_village_of_the_outcast:connect_one_way(teleporter_at_kakariko_village, function()
     return ALL(
         "glove",
-        Inverted()
+        Inverted
     )
 end)
 
 
-teleporter_at_dark_turtle_rock:connect_one_way(teleporter_at_light_turtle_rock, function() return ALL(Inverted(), "titans") end)
+teleporter_at_dark_turtle_rock:connect_one_way(teleporter_at_light_turtle_rock, function() return ALL(Inverted, "titans") end)
 
 teleporter_at_dark_death_mountain_left_bottom:connect_one_way(teleporter_at_light_death_mountain_left_bottom, function() return Inverted() end)
 
@@ -52,21 +52,21 @@ teleporter_at_dark_death_mountain_right_bottom:connect_one_way(teleporter_at_lig
 teleporter_at_pod:connect_one_way(teleporter_at_eastern, function()
     return ALL(
         "glove",
-        Inverted()
+        Inverted
     )
 end)
 
 teleporter_at_mire:connect_one_way(teleporter_at_desert, function()
     return ALL(
         "titans",
-        Inverted()
+        Inverted
     )
 end)
 
 teleporter_at_swamp:connect_one_way(teleporter_at_dam, function()
     return ALL(
         "glove",
-        Inverted()
+        Inverted
     )
 end)
 
@@ -90,7 +90,7 @@ big_bomb_shop_area:connect_one_way(swamp_area)
 big_bomb_shop_area:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
-        Inverted(),
+        Inverted,
         CanReach(inverted_activate_flute)
     )
 end)
@@ -114,8 +114,8 @@ big_bomb_shop_fairy_cave_outside:connect_two_ways_entrance("Big Bomb Shop Fairy 
 
 big_bomb_shop_area:connect_one_way(cave45_ledge, function()
     return ALL(
-        CanChangeWorldWithMirror(),
-        OpenOrStandard()
+        CanChangeWorldWithMirror,
+        OpenOrStandard
     )
 end)
 
@@ -124,7 +124,7 @@ big_bomb_shop_inside:connect_one_way("Buy Big Bomb", function() return ALL(Has("
 -- swamp_area
 swamp_area:connect_one_way(teleporter_at_swamp, function()
     return ALL(
-        Inverted(),
+        Inverted,
         "hammer",
         Can_interact(swamp_area.worldstate, 1)
     )
@@ -142,7 +142,7 @@ swamp_area:connect_one_way(dark_lake_hylia)
 swamp_area:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
-        Inverted(),
+        Inverted,
         CanReach(inverted_activate_flute)
     )
 end)
@@ -150,13 +150,13 @@ end)
 swamp_area:connect_two_ways(bombos_tablet_ledge, function()
     return ANY(
         ALL(
-            CanChangeWorldWithMirror(),
-            OpenOrStandard()
+            CanChangeWorldWithMirror,
+            OpenOrStandard
         ),
         ALL(
             CheckGlitches(2),
             "boots",
-            CanChangeWorldWithMirror()
+            CanChangeWorldWithMirror
         )
     )
 end)
@@ -195,7 +195,7 @@ hype_cave_back:connect_one_way("Hype Cave Bottom")
 mire_ledge:connect_one_way(mire_area)
 mire_ledge:connect_one_way(teleporter_at_mire, function()
     return ALL(
-        Inverted(),
+        Inverted,
         "titans"
     )
 end)
@@ -204,7 +204,7 @@ teleporter_at_mire:connect_one_way(mire_ledge)
 mire_area:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
-        Inverted(),
+        Inverted,
         CanReach(inverted_activate_flute)
     )
 end)
@@ -215,7 +215,7 @@ mire_area:connect_two_ways_stuck(mm_entrance_outside, function()
             "mm_medallion",
             Has("medallion", 3, 3, 3, 3)
         ),
-        CanUseMedallions(),
+        CanUseMedallions,
         Can_interact(mire_area.worldstate, 1)
     )
 end)
@@ -235,15 +235,15 @@ mire_shed_inside:connect_one_way("Mire Shed Right", function() return Can_intera
 
 mire_area:connect_one_way(desert_ledge, function()
     return ALL(
-        CanChangeWorldWithMirror(),
-        OpenOrStandard()
+        CanChangeWorldWithMirror,
+        OpenOrStandard
     )
 end)
 
 mire_area:connect_one_way(checkerboard_lege, function()
     return ALL(
-        OpenOrStandard(),
-        CanChangeWorldWithMirror()
+        OpenOrStandard,
+        CanChangeWorldWithMirror
     )
 end)
 -- mire_area:connect_one_way(teleper, function() return "mirror" end)
@@ -263,7 +263,7 @@ end)
 dark_lake_hylia:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
-        Inverted(),
+        Inverted,
         CanReach(inverted_activate_flute)
     )
 end)
@@ -284,9 +284,9 @@ dark_lake_hylia:connect_one_way(pod_area, function()
 end)
 dark_lake_hylia:connect_one_way(lake_hylia_island, function()
     return ALL(
-        CanChangeWorldWithMirror(),
+        CanChangeWorldWithMirror,
         CanSwim("flippers"),
-        OpenOrStandard(),
+        OpenOrStandard,
         Can_interact(dark_lake_hylia.worldstate, 1)
     )
 end)
@@ -301,22 +301,22 @@ dark_lake_shop_outside:connect_two_ways_entrance("Dark Lake Shop", dark_lake_sho
 dark_lake_hylia:connect_one_way(lake_hylia_island, function()
     return ALL(
         "flippers",
-        OpenOrStandard(),
-        CanChangeWorldWithMirror(),
+        OpenOrStandard,
+        CanChangeWorldWithMirror,
         Can_interact(dark_lake_hylia.worldstate, 1)
     )
 end)
 dark_lake_hylia:connect_two_ways(ice_palace_island, function()
     return ALL(
         CanSwim(),
-        Inverted(),
+        Inverted,
         Can_interact(dark_lake_hylia.worldstate, 1)
     )
 end)
 
 ice_palace_island:connect_one_way(teleporter_at_ice_palace, function()
     return ALL(
-        Inverted(),
+        Inverted,
         "titans"
     )
 end)
@@ -331,7 +331,7 @@ ip_entrance_outside:connect_two_ways_entrance("Ice Palace", ip_entrance_inside)
 -- dark_icerod_area
 dark_icerod_area:connect_one_way(ice_palace_island, function()
     return ALL(
-        Inverted(),
+        Inverted,
         "flippers",
         Can_interact(dark_icerod_area.worldstate, 1)
     )
@@ -346,9 +346,9 @@ end)
 
 dark_icerod_area:connect_one_way(lake_hylia_island, function()
     return ALL(
-        CanChangeWorldWithMirror(),
-        CanSwim(),
-        OpenOrStandard(),
+        CanChangeWorldWithMirror,
+        CanSwim,
+        OpenOrStandard,
         Can_interact(dark_icerod_area.worldstate, 1)
     )
 end)
@@ -356,7 +356,7 @@ end)
 dark_icerod_area:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
-        Inverted(),
+        Inverted,
         CanReach(inverted_activate_flute)
     )
 end)
@@ -378,7 +378,7 @@ dark_lake_hylia_ledge_spike_hint_outside:connect_two_ways_entrance("Dark Lake Hy
 -- village_of_the_outcast
 village_of_the_outcast:connect_one_way(teleporter_at_village_of_the_outcast, function()
     return ALL(
-        Inverted(),
+        Inverted,
         ANY(
             "hammer",
             "titans"
@@ -398,14 +398,14 @@ end)
 village_of_the_outcast:connect_two_ways(inverted_activate_flute, function()
     return ALL(
         "flute",
-        Inverted()
+        Inverted
     )
 end)
 village_of_the_outcast:connect_one_way(skull_woods_area)
 village_of_the_outcast:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
-        Inverted(),
+        Inverted,
         CanReach(inverted_activate_flute)
     )
 end)
@@ -413,7 +413,7 @@ village_of_the_outcast:connect_one_way(south_of_village_of_the_outcast)
 village_of_the_outcast:connect_two_ways(inverted_activate_flute, function()
     return ALL(
         "flute",
-        Inverted()
+        Inverted
     )
 end)
 
@@ -461,7 +461,7 @@ south_of_village_of_the_outcast:connect_one_way(big_bomb_shop_area)
 south_of_village_of_the_outcast:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
-        Inverted(),
+        Inverted,
         CanReach(inverted_activate_flute)
     )
 end)
@@ -470,8 +470,8 @@ dark_archery_minigame_outside:connect_two_ways_entrance("Dark Archery", dark_arc
 south_of_village_of_the_outcast:connect_one_way("Digging Game", function() return Can_interact(south_of_village_of_the_outcast.worldstate, 1) end)
 south_of_village_of_the_outcast:connect_one_way(race_ledge, function()
     return ALL(
-        OpenOrStandard(),
-        CanChangeWorldWithMirror()
+        OpenOrStandard,
+        CanChangeWorldWithMirror
     )
 end)
 
@@ -480,8 +480,8 @@ end)
 big_bomb_shop_area:connect_two_ways(stumpy, function() return Can_interact("dark", 1) end)
 big_bomb_shop_area:connect_two_ways(cave45_ledge, function()
     return ALL(
-        OpenOrStandard(),
-        CanChangeWorldWithMirror()
+        OpenOrStandard,
+        CanChangeWorldWithMirror
     )
 end)
 stumpy:connect_one_way("Stumpy")
@@ -531,7 +531,7 @@ dark_lumpberjacks:connect_one_way(dark_chapel_area)
 dark_lumpberjacks:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
-        Inverted(),
+        Inverted,
         CanReach(inverted_activate_flute)
     )
 end)
@@ -560,7 +560,7 @@ dark_lumpberjacks_shop_outside:connect_two_ways_entrance("Dark Lumberjacks Shop"
 red_shield_shop_outside:connect_two_ways_entrance("Red Shield Shop", red_shield_shop_inside)
 
 
--- dark_bumper_cave_outside:connect_two_ways_entrance("Bumper Cave", dark_bumper_cave_inside, function() return ALL(OpenOrStandard(), "glove", Can_interact("dark",1 )) end)
+-- dark_bumper_cave_outside:connect_two_ways_entrance("Bumper Cave", dark_bumper_cave_inside, function() return ALL(OpenOrStandard, "glove", Can_interact("dark",1 )) end)
 
 
 dark_bumper_cave_bottom_ledge:connect_one_way(dark_lumpberjacks)
@@ -609,7 +609,7 @@ dark_bumper_cave_top_ledge:connect_one_way("Bumper Cave Item")
 -- end)
 -- dark_bumper_cave_ledge:connect_one_way(light_bumper_cave_ledge, function()
 --     return ALL(
---         CanChangeWorldWithMirror(),
+--         CanChangeWorldWithMirror,
 --         OpenOrStandard()
 --     )
 -- end)
@@ -621,7 +621,7 @@ dark_chapel_area:connect_one_way(dark_lumpberjacks)
 dark_chapel_area:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
-        Inverted(),
+        Inverted,
         CanReach(inverted_activate_flute)
     )
 end)
@@ -634,14 +634,14 @@ end)
 
 dark_chapel_area:connect_one_way(graveyard_ledge, function()
     return ALL(
-        OpenOrStandard(),
-        CanChangeWorldWithMirror()
+        OpenOrStandard,
+        CanChangeWorldWithMirror
     )
 end)
 dark_chapel_area:connect_one_way(kings_tomb_area, function()
     return ALL(
-        OpenOrStandard(),
-        CanChangeWorldWithMirror(),
+        OpenOrStandard,
+        CanChangeWorldWithMirror,
         "pearl"
     )
 end)
@@ -677,7 +677,7 @@ end)
 dark_potion_shop_area:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
-        Inverted(),
+        Inverted,
         CanReach(inverted_activate_flute)
     )
 end)
@@ -708,7 +708,7 @@ end)
 catfish_area:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
-        Inverted(),
+        Inverted,
         CanReach(inverted_activate_flute)
     )
 end)
@@ -725,7 +725,7 @@ pyramid:connect_one_way(pod_area)
 pyramid:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
-        Inverted(),
+        Inverted,
         CanReach(inverted_activate_flute)
     )
 end)
@@ -739,14 +739,14 @@ pyramid:connect_two_ways_stuck(pyramid_fairy_cave_outside, function()
         ANY(
             ALL(
                 "mirror",
-                Inverted()
+                Inverted
             ),
-            OpenOrStandard()
+            OpenOrStandard
         )
     )
 end)
 
-pyramid:connect_two_ways(pyramid_hole_outside, function() return ALL(CheckPyramidState(), OpenOrStandard()) end)
+pyramid:connect_two_ways(pyramid_hole_outside, function() return ALL(CheckPyramidState, OpenOrStandard) end)
 pyramid_exit_outside:connect_two_ways(pyramid_exit_ledge, function() return OpenOrStandard() end)
 
 pyramid_exit_ledge:connect_one_way(pyramid)
@@ -763,8 +763,8 @@ pyramid_fairy_cave_inside:connect_one_way("Pyramid Fairy Right", function() retu
 
 pyramid:connect_one_way(hyrule_castle_top, function()
     return ALL(
-        OpenOrStandard(),
-        CanChangeWorldWithMirror()
+        OpenOrStandard,
+        CanChangeWorldWithMirror
     )
 end)
 
@@ -774,7 +774,7 @@ end)
 -- pod_area
 pod_area:connect_one_way(teleporter_at_pod, function()
     return ALL(
-        Inverted(),
+        Inverted,
         "hammer"
     )
 end)
@@ -789,7 +789,7 @@ pod_area:connect_one_way(pyramid)
 pod_area:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
-        Inverted(),
+        Inverted,
         CanReach(inverted_activate_flute)
     )
 end)
@@ -808,7 +808,7 @@ pod_area:connect_one_way(ice_palace_island, function()
     return ALL(
         "flippers",
         Can_interact(pod_area.worldstate, 5),
-        Inverted()
+        Inverted
     )
 end)
 pod_area:connect_one_way(dark_icerod_area, function()
@@ -859,24 +859,24 @@ pod_east_darkworld_hint_outside:connect_two_ways_entrance("PoD Teleporter Cave",
 dark_death_mountain_left_top:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
-        Inverted(),
+        Inverted,
         CanReach(inverted_activate_flute)
     )
 end)
 -- dark_death_mountain_left_top:connect_one_way()
 dark_death_mountain_left_top:connect_one_way(light_death_mountain_left_top, function()
     return ALL(
-        OpenOrStandard(),
-        CanChangeWorldWithMirror()
+        OpenOrStandard,
+        CanChangeWorldWithMirror
     )
 end)
 dark_death_mountain_left_top:connect_two_ways_stuck(gt_entrance_outside, function()
     return ANY(
         ALL(
-            GTCrystalCount(),
-            OpenOrStandard()
+            GTCrystalCount,
+            OpenOrStandard
         ),
-        Inverted()
+        Inverted
     )
 end)
 -- dark_death_mountain_left_top:connect_two_ways(at_entrance_outside, function() return Inverted() end)
@@ -893,14 +893,14 @@ gt_entrance_outside:connect_two_ways_entrance("Aga Tower", at_entrance_inside, f
 dark_death_mountain_right_top:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
-        Inverted(),
+        Inverted,
         CanReach(inverted_activate_flute)
     )
 end)
 -- dark_death_mountain_right_top:connect_one_way()
 dark_death_mountain_right_top:connect_one_way(teleporter_at_dark_turtle_rock, function()
     return ALL(
-        Inverted()
+        Inverted
     )
 end)
 teleporter_at_dark_turtle_rock:connect_one_way(dark_death_mountain_right_top)
@@ -913,7 +913,7 @@ dark_death_mountain_right_top:connect_two_ways_stuck(tr_main_entrance_outside, f
             "tr_medallion",
             Has("medallion", 3, 3, 3, 3)
         ),
-        CanUseMedallions(),
+        CanUseMedallions,
         CanReach(dark_death_mountain_tr_medallion_spot)
     )
 end)
@@ -942,7 +942,7 @@ dark_floating_island_inside:connect_two_ways_entrance("Dark Floating Island", da
 dark_floating_island_outside:connect_two_ways(dark_floating_island)
 -- dark_floating_island:connect_two_ways(floating_island, function()
 --     return ALL(
---         CanChangeWorldWithMirror(),
+--         CanChangeWorldWithMirror,
 --         OpenOrStandard()
 --     )
 -- end)
@@ -983,8 +983,8 @@ end)
 tr_eye_bridge_entrance_outside:connect_two_ways(tr_eye_bridge_entrance_ledge)
 tr_eye_bridge_entrance_ledge:connect_one_way(light_eyebridge_fairy_ledge, function()
     return ALL(
-        OpenOrStandard(),
-        CanChangeWorldWithMirror()
+        OpenOrStandard,
+        CanChangeWorldWithMirror
     )
 end)
 -- dark_death_mountain_lonely_ledge:connect_one_way(tr_eye_bridge_entrance, function() return Inverted() end)
@@ -995,7 +995,7 @@ dark_death_mountain_right_top:connect_one_way(dark_death_mountain_right_bottom)
 dark_death_mountain_left_bottom:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
-        Inverted(),
+        Inverted,
         CanReach(inverted_activate_flute)
     )
 end)
@@ -1010,8 +1010,8 @@ spike_cave_outside:connect_two_ways_entrance("Spike Cave", spike_cave_inside)
 
 dark_death_mountain_left_bottom:connect_one_way(light_death_mountain_left_top, function()
     return ALL(
-        CanChangeWorldWithMirror(),
-        OpenOrStandard()
+        CanChangeWorldWithMirror,
+        OpenOrStandard
     )
 end)
 spike_cave_inside:connect_one_way("Spike Cave Chest", function()
@@ -1035,14 +1035,14 @@ dark_death_mountain_fairy_outside:connect_two_ways_entrance("Old Man Cave Right 
 dark_death_mountain_right_bottom:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
-        Inverted(),
+        Inverted,
         CanReach(inverted_activate_flute)
     )
 end)
 -- dark_death_mountain_right_bottom:connect_one_way()
 dark_death_mountain_right_bottom:connect_one_way(teleporter_at_dark_death_mountain_right_bottom, function()
     return ALL(
-        Inverted(),
+        Inverted,
         "titans"
     )
 end)
@@ -1057,8 +1057,8 @@ turtle_rock_ledge:connect_two_ways(tr_laser_entrance_outside, function()
 end)
 turtle_rock_ledge:connect_one_way(mimic_cave_ledge, function()
     return ALL(
-        CanChangeWorldWithMirror(),
-        OpenOrStandard()
+        CanChangeWorldWithMirror,
+        OpenOrStandard
     )
 end)
 

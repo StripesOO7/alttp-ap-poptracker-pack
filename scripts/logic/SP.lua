@@ -18,7 +18,7 @@ sp_entrance_inside:connect_two_ways(sp_first_room, function()
         CanReach(dam_inside),
         Can_interact(dam_inside.worldstate, 1),
         ANY(
-            CanChangeWorldWithMirror(),
+            CanChangeWorldWithMirror,
             Tracker:FindObjectForCode("er_tracking").CurrentStage > 0
         )
     )

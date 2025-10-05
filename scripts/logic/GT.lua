@@ -30,8 +30,18 @@ local gt_top_desert_refight = alttp_location.new("gt_top_desert_refight")
 local gt_top_validation = alttp_location.new("gt_top_validation")
 local gt_top_aga2 = alttp_location.new("gt_top_aga2")
 
-gt_entrance_inside:connect_two_ways(gt_bottom_main_room, function() return ALL(Can_interact(gt_entrance_inside.worldstate, 1), OpenOrStandard()) end)
-gt_entrance_inside:connect_two_ways(gt_bottom_main_room, function() return ALL(Can_interact(gt_entrance_inside.worldstate, 1), Inverted()) end)
+gt_entrance_inside:connect_two_ways(gt_bottom_main_room, function() 
+    return ALL(
+        Can_interact(gt_entrance_inside.worldstate, 1), 
+        OpenOrStandard
+    )
+end)
+gt_entrance_inside:connect_two_ways(gt_bottom_main_room, function() 
+    return ALL(
+        Can_interact(gt_entrance_inside.worldstate, 1), 
+        Inverted
+    )
+end)
 gt_bottom_main_room:connect_two_ways(gt_bottom_bobs_torch)
 gt_bottom_main_room:connect_two_ways(gt_bottom_hope_room)
 gt_bottom_main_room:connect_two_ways(gt_top_entrance)
