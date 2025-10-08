@@ -38,7 +38,7 @@ at_circle_of_pots:connect_two_ways(at_pre_curtain, function(keys)
     ), KDSreturn(keys, keys + 1)
 end)
 at_circle_of_pots:connect_one_way("AT - Circle of Pots Key Drop") --functoin() return Can_interact(" light",1) end)
-at_pre_curtain:connect_one_way(at_aga1, canRemoveCurtains)
+at_pre_curtain:connect_one_way(at_aga1, CanRemoveCurtains)
 at_aga1:connect_one_way("AT - Aga1", function()
     return ANY(
         "sword",

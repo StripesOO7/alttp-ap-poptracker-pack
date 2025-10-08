@@ -46,7 +46,8 @@ sw_map_room:connect_one_way("SW - Map Chest")
 sw_big_chest_entrance_inside:connect_one_way("SW - Big Chest", function()
     return ALL(
         "sw_bigkey",
-        "bombs"
+        "bombs",
+        Can_interact(sw_big_chest_entrance_inside.worldstate, 1)
     )
 end)
 
@@ -69,7 +70,7 @@ sw_back_bridge:connect_two_ways(sw_back_troch_puzzle, function(keys) return Has(
 sw_back_troch_puzzle:connect_one_way(sw_back_spike_corner_room, function()
     return ALL(
         "firerod",
-        canRemoveCurtains
+        CanRemoveCurtains
     )
 end)
 

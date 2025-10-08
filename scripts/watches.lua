@@ -3,6 +3,7 @@ ScriptHost:AddWatchForCode("ER_Setting_Changed", "er_full", EmptyLocationTargets
 -- ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", ForceUpdate)
 ScriptHost:AddWatchForCode("keydropshuffle handler", "key_drop_shuffle", KeyDropLayoutChange)
 ScriptHost:AddWatchForCode("boss handler", "boss_shuffle", BossShuffle)
+ScriptHost:AddWatchForCode("set smallkey stage global", "small_keys", SetSmallKeyGlobal)
 
 -- SNES_ROMdata
 -- ScriptHost:AddMemoryWatch("LTTP Overworld Event Data", 0x7ef280, 0x82, updateOverworldEventsFromMemorySegment)

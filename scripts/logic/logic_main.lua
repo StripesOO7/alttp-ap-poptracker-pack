@@ -409,7 +409,7 @@ function StateChanged()
 end
 
 function ForceUpdate(...)
-    UpdateCanInteract()
+    -- UpdateCanInteract()
     local update = Tracker:FindObjectForCode("update")
     if update == nil then
         return

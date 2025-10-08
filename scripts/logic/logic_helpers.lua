@@ -1,3 +1,6 @@
+KEY_DROP_SHUFFLE_STATE = false
+SMALL_KEY_STAGE = 0
+
 function A(result)
     if result then
         return AccessibilityLevel.Normal
@@ -52,14 +55,18 @@ function ANY(...)
     return max
 end
 
+function SetSmallKeyGlobal()
+    SMALL_KEY_STAGE = Tracker:FindObjectForCode("small_keys").CurrentStage
+end
+
 function Has(item, noKDS_amount, noKDS_amountInLogic, KDS_amount, KDS_amountInLogic)
     local count
     local amount
     local amountInLogic
-    if (Tracker:FindObjectForCode("small_keys").CurrentStage == 2) and item:sub(-8,-1) == "smallkey" then -- universal keys
+    if (SMALL_KEY_STAGE == 2) and item:sub(-8,-1) == "smallkey" then -- universal keys
         return true
     end
-    if Tracker:FindObjectForCode("key_drop_shuffle").Active then
+    if KEY_DROP_SHUFFLE_STATE then
         -- print(KDS_amount, KDS_amountInLogic)
         amount = KDS_amount
         amountInLogic = KDS_amountInLogic
@@ -91,7 +98,7 @@ function Has(item, noKDS_amount, noKDS_amountInLogic, KDS_amount, KDS_amountInLo
             return AccessibilityLevel.None
         end
     else
-        amount = tonumber(amount)
+        -- amount = tonumber(amount)
         if count >= amount then
             return AccessibilityLevel.SequenceBreak
         else
@@ -102,7 +109,7 @@ end
 
 function KDSreturn( noKDS, KDS)
     -- print(noKDS, KDS)
-    if Tracker:FindObjectForCode("key_drop_shuffle").Active then
+    if KEY_DROP_SHUFFLE_STATE then
         return KDS
     else
         return noKDS
@@ -111,25 +118,21 @@ end
 
 function OWDungeonChecks(...)
     local locations = { ... }
-    local availale
-    local access_check
-    availale = 0
-    local sequence_breakable
-    sequence_breakable= 0
-    local inspect
-    inspect = 0
+    local availale = 0
+    local access_check = 0
+    local sequence_breakable = 0
+    local inspect = 0
    
     for _, location in ipairs(locations) do
-      
         -- access_check =  CanReach(location)
         access_check = Tracker:FindObjectForCode(location).AccessibilityLevel
-        if access_check == 3 then
-            inspect = inspect + 1
-        -- print(location, access_check)
-        elseif access_check == 5 then
-            sequence_breakable = sequence_breakable+1
-        elseif access_check == 6 then
+        if access_check == 6 then
             availale = availale + 1
+        -- print(location, access_check)
+        elseif access_check == 3 then
+            inspect = inspect + 1
+        elseif access_check == 5 then
+            sequence_breakable = sequence_breakable + 1
         end
     end
     if availale > 0 then
@@ -228,7 +231,7 @@ function CanUseMedallions()
     return CheckSwordless()
 end
 
-function canRemoveCurtains()
+function CanRemoveCurtains()
     return CheckSwordless()
 end
 
@@ -254,10 +257,12 @@ function GanonCrystalCount()
 end
 
 function CanSwim(itemNeeded) --fake flippers
-    if Tracker:FindObjectForCode("glitches").CurrentStage > 0 and itemNeeded ~= nil then
-        return Tracker:FindObjectForCode(itemNeeded).Active
-    elseif Tracker:FindObjectForCode("glitches").CurrentStage > 0 and itemNeeded == nil then
-        return true
+    local glitches_state = Tracker:FindObjectForCode("glitches").CurrentStage
+    if glitches_state > 0 then -- and itemNeeded ~= nil then
+        return itemNeeded ~= nil and Tracker:FindObjectForCode(itemNeeded).Active
+    --     return Tracker:FindObjectForCode(itemNeeded).Active
+    -- elseif glitches_state > 0 and itemNeeded == nil then
+    --     return true
     else
         return Tracker:FindObjectForCode("flippers").Active
     end
@@ -307,7 +312,7 @@ function CheckRequirements(reference, check_count)
 end
 
 function DarkRooms(torches_available)
-    local dark_mode = Tracker:FindObjectForCode("dark_mode").CurrentStage
+    local dark_mode = Tracker:FindObjectForCode("dark_mode").CurrentStage    
     if dark_mode == 2 then --none
         return true
     elseif dark_mode == 0 and Tracker:ProviderCountForCode("lamp") > 0 then -- lamp
@@ -436,8 +441,8 @@ function CheckGlitches(stage)
 end
 
 function KeyDropLayoutChange()
-    local key_drop = Tracker:FindObjectForCode("key_drop_shuffle")
-    if key_drop.Active then
+    KEY_DROP_SHUFFLE_STATE = Tracker:FindObjectForCode("key_drop_shuffle").Active
+    if KEY_DROP_SHUFFLE_STATE then
         Tracker:AddLayouts("layouts/dungeon_items_keydrop.json")
     else
         Tracker:AddLayouts("layouts/dungeon_items.json")
