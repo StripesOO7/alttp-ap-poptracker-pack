@@ -372,7 +372,7 @@ end)
 
 north_fairy_drop_outside:connect_one_way_entrance("North Fairy Drop", north_fairy_drop_inside)
 north_fairy_cave_outside:connect_two_ways_entrance("North Fairy Cave", north_fairy_cave_inside)
-north_fairy_drop_inside:connect_two_ways(north_fairy_cave_inside)
+north_fairy_drop_inside:connect_one_way(north_fairy_cave_inside)
 
 -- castle_escape_dropdown_room
 
@@ -1035,7 +1035,7 @@ hc_main_entrance_outside:connect_two_ways_entrance("Hyrule Castle Main Entrance"
 secret_passage_hole_outside:connect_one_way_entrance("Secret Passage Hole", secret_passage_hole_inside)
 secret_passage_stairs_outside:connect_two_ways_entrance("Secret Passage Stairs", secret_passage_stairs_inside)
 
-secret_passage_hole_inside:connect_two_ways(secret_passage)
+secret_passage_hole_inside:connect_one_way(secret_passage)
 secret_passage_stairs_inside:connect_two_ways(secret_passage)
 
 secret_passage:connect_one_way("Secret Passage", function() return Can_interact(secret_passage.worldstate, 1) end)

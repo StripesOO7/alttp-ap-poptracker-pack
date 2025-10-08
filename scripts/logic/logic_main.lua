@@ -476,6 +476,18 @@ function EmptyLocationTargets()
         else
             print("insanity ER is not supported you troll")
         end
+        for name, inside in pairs(PERMANENT_CONNECTIONS) do
+            local source = Tracker:FindObjectForCode(name)
+            local target_outside = Tracker:FindObjectForCode(string.gsub(name, "_inside", "_outside"))
+            local target_inside = Tracker:FindObjectForCode(string.gsub(name, "_outside", "_inside"))
+            if inside then
+                _SetLocationOptions(source, target_outside)
+                _SetLocationOptions(target_outside, source)
+            else
+                _SetLocationOptions(source, target_inside)
+                _SetLocationOptions(target_inside, source)
+            end
+        end
         ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", ForceUpdate)
         ScriptHost:AddWatchForCode("StateChanged", "*", StateChanged)
         ForceUpdate()

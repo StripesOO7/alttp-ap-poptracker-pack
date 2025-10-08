@@ -172,6 +172,17 @@
 --     [170] = tr_main_entrance_inside,
 --     [171] = tt_entrance_inside
 -- }
+PERMANENT_CONNECTIONS = {
+    ["from_kakariko_backside_pub_inside"] = true,
+    ["to_kakariko_backside_pub_inside"] = true,
+    ["from_kakariko_backside_pub_outside"] = false,
+    ["to_kakariko_backside_pub_outside"] = false,
+    ["from_mastersword_meadow_inside"] = true,
+    ["to_mastersword_meadow_inside"] = true,
+    ["from_mastersword_meadow_outside"] = false,
+    ["to_mastersword_meadow_outside"] = false
+}
+
 ER_SIMPLE = {
     ["from_at_entrance_outside"] = false,
     ["to_at_entrance_outside"] = false,
@@ -571,10 +582,10 @@ NAMED_ENTRANCES = {
     ["to_ip_entrance_inside"] = true,
     ["from_ip_entrance_outside"] = false,
     ["to_ip_entrance_outside"] = false,
-    ["from_kakariko_backside_pub_inside"] = true,
-    ["to_kakariko_backside_pub_inside"] = true,
-    ["from_kakariko_backside_pub_outside"] = false,
-    ["to_kakariko_backside_pub_outside"] = false,
+    -- ["from_kakariko_backside_pub_inside"] = true,
+    -- ["to_kakariko_backside_pub_inside"] = true,
+    -- ["from_kakariko_backside_pub_outside"] = false,
+    -- ["to_kakariko_backside_pub_outside"] = false,
     ["from_kakariko_blinds_hideout_inside"] = true,
     ["to_kakariko_blinds_hideout_inside"] = true,
     ["from_kakariko_blinds_hideout_outside"] = false,
@@ -715,10 +726,10 @@ NAMED_ENTRANCES = {
     ["to_magic_bat_hole_inside"] = true,
     ["from_magic_bat_hole_outside"] = false,
     ["to_magic_bat_hole_outside"] = false,
-    ["from_mastersword_meadow_inside"] = true,
-    ["to_mastersword_meadow_inside"] = true,
-    ["from_mastersword_meadow_outside"] = false,
-    ["to_mastersword_meadow_outside"] = false,
+    -- ["from_mastersword_meadow_inside"] = true,
+    -- ["to_mastersword_meadow_inside"] = true,
+    -- ["from_mastersword_meadow_outside"] = false,
+    -- ["to_mastersword_meadow_outside"] = false,
     ["from_mimic_cave_inside"] = true,
     ["to_mimic_cave_inside"] = true,
     ["from_mimic_cave_outside"] = false,

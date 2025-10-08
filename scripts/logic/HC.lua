@@ -16,6 +16,7 @@ local hc_zeldas_cell = alttp_location.new("hc_zeldas_cell")
 local ce_dark_cross = alttp_location.new("ce_dark_cross")
 local ce_rat_key_room = alttp_location.new("ce_rat_key_room")
 local ce_secret_room = alttp_location.new("ce_secret_room")
+local ce_dropdown_room = alttp_location.new("ce_dropdown_room")
 
 hc_main_entrance_inside:connect_two_ways(hc_main_hall)
 
@@ -107,7 +108,7 @@ end)
 ce_dark_cross:connect_one_way("CE - Dark Cross", function() return Can_interact(ce_dark_cross.worldstate, 1) end)
 
 -- ce_rat_key_room:connect_two_ways(ce_dropdown_entrance)
-ce_rat_key_room:connect_two_ways(ce_dropdown_entrance_inside, function(keys)
+ce_rat_key_room:connect_two_ways(ce_dropdown_room, function(keys)
     return ANY(
         ALL(
             DarkRooms(true),
@@ -137,8 +138,8 @@ ce_rat_key_room:connect_one_way("CE - Rat Key Drop", function(keys)
         "standard"
     ), KDSreturn(keys, keys)
 end)
-
-ce_dropdown_entrance_inside:connect_two_ways(ce_secret_room, function()
+ce_dropdown_entrance_inside:connect_one_way(ce_dropdown_room)
+ce_dropdown_room:connect_two_ways(ce_secret_room, function()
     return ALL(
         ANY(
             "boots",
@@ -151,4 +152,4 @@ ce_secret_room:connect_one_way("CE - Secret Room Left", function() return Can_in
 ce_secret_room:connect_one_way("CE - Secret Room Center", function() return Can_interact(ce_secret_room.worldstate, 1) end)
 ce_secret_room:connect_one_way("CE - Secret Room Right", function() return Can_interact(ce_secret_room.worldstate, 1) end)
 
-ce_dropdown_entrance_inside:connect_one_way(sanctuary_entrance_inside, function() return Can_interact(ce_dropdown_entrance_inside.worldstate, 1) end)
+ce_dropdown_room:connect_one_way(sanctuary_entrance_inside, function() return Can_interact(ce_dropdown_entrance_inside.worldstate, 1) end)
