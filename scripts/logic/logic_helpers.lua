@@ -1,6 +1,11 @@
 KEY_DROP_SHUFFLE_STATE = false
 SMALL_KEY_STAGE = 0
 
+local bool_to_accesslvl = {
+    [true] = AccessibilityLevel.Normal,
+    [false] = AccessibilityLevel.None
+}
+
 function A(result)
     if result then
         return AccessibilityLevel.Normal
@@ -19,7 +24,8 @@ function ALL(...)
             v = Has(v)
         end
         if type(v) == "boolean" then
-            v = A(v)
+            v = bool_to_accesslvl[v]
+            -- v = A(v)
         end
         if v < min then
             if v == AccessibilityLevel.None then
@@ -42,7 +48,8 @@ function ANY(...)
             v = Has(v)
         end
         if type(v) == "boolean" then
-            v = A(v)
+            v = bool_to_accesslvl[v]
+            -- v = A(v)
         end
         if v > max then
             if v == AccessibilityLevel.Normal then
@@ -312,16 +319,17 @@ function CheckRequirements(reference, check_count)
 end
 
 function DarkRooms(torches_available)
-    local dark_mode = Tracker:FindObjectForCode("dark_mode").CurrentStage    
+    local dark_mode = Tracker:FindObjectForCode("dark_mode").CurrentStage
+    local has_lamp = Tracker:ProviderCountForCode("lamp")
     if dark_mode == 2 then --none
         return true
-    elseif dark_mode == 0 and Tracker:ProviderCountForCode("lamp") > 0 then -- lamp
+    elseif dark_mode == 0 and has_lamp > 0 then -- lamp
         return true
     elseif dark_mode == 1 then
         if torches_available then
-            return (Tracker:ProviderCountForCode("firerod") > 0 or Tracker:ProviderCountForCode("lamp") > 0)
+            return (has_lamp > 0 or has_lamp > 0)
         else
-            return Tracker:ProviderCountForCode("lamp") > 0
+            return has_lamp > 0
         end -- scornes/firerod
     else
         return false
