@@ -103,7 +103,7 @@ ce_dark_cross:connect_two_ways(ce_rat_key_room, function(keys)
             "glove"
         ),
         "standard"
-    ), KDSreturn(keys + 1, keys + 1)
+    ), keys + 1
 end)
 ce_dark_cross:connect_one_way("CE - Dark Cross", function() return Can_interact(ce_dark_cross.worldstate, 1) end)
 
@@ -136,7 +136,7 @@ ce_rat_key_room:connect_one_way("CE - Rat Key Drop", function(keys)
             DealDamage
         ),
         "standard"
-    ), KDSreturn(keys, keys)
+    ), keys
 end)
 ce_dropdown_entrance_inside:connect_one_way(ce_dropdown_room)
 ce_dropdown_room:connect_two_ways(ce_secret_room, function()

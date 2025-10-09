@@ -76,7 +76,7 @@ teleporter_at_ice_palace:connect_one_way(teleporter_at_upgrade_fairy, Inverted)
 
 darkworld_spawns:connect_one_way(dark_spawn_links_house)
 darkworld_spawns:connect_one_way(dark_spawn_dark_chapel)
-darkworld_spawns:connect_one_way(dark_spawn_old_man, function() return CanReach(old_man_cave_right_inside) end) --has rescued old man
+darkworld_spawns:connect_one_way(dark_spawn_old_man, function() return CanReach("old_man_cave_right_inside") end) --has rescued old man
 
 dark_spawn_links_house:connect_one_way(links_house_inside, Inverted)
 -- dark_spawn_links_house:connect_two_ways_entrance("Big Bomb Shop", big_bomb_shop, OpenOrStandard)
@@ -91,7 +91,7 @@ big_bomb_shop_area:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted,
-        CanReach(inverted_activate_flute)
+        CanReach("inverted_activate_flute")
     )
 end)
 big_bomb_shop_area:connect_one_way(dark_lake_hylia)
@@ -143,7 +143,7 @@ swamp_area:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted,
-        CanReach(inverted_activate_flute)
+        CanReach("inverted_activate_flute")
     )
 end)
 -- swamp_area:connect_one_way(desert_area, function() return(ALL("mirror", CanActivateTablets())) end)
@@ -185,7 +185,7 @@ hype_cave_back:connect_one_way("Hype Cave Middle Left")
 hype_cave_back:connect_one_way("Hype Cave Middle Right")
 hype_cave_back:connect_one_way("Hype Cave Bottom")
 
--- swamp_area:connect_one_way("Purple Chest Return", function() return CanReach(purple_chest_pickup) end)
+-- swamp_area:connect_one_way("Purple Chest Return", function() return CanReach("purple_chest_pickup")) end)
 
 
 
@@ -205,7 +205,7 @@ mire_area:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted,
-        CanReach(inverted_activate_flute)
+        CanReach("inverted_activate_flute")
     )
 end)
 
@@ -264,7 +264,7 @@ dark_lake_hylia:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted,
-        CanReach(inverted_activate_flute)
+        CanReach("inverted_activate_flute")
     )
 end)
 dark_lake_hylia:connect_one_way(dark_icerod_area, function()
@@ -357,7 +357,7 @@ dark_icerod_area:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted,
-        CanReach(inverted_activate_flute)
+        CanReach("inverted_activate_flute")
     )
 end)
 
@@ -406,7 +406,7 @@ village_of_the_outcast:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted,
-        CanReach(inverted_activate_flute)
+        CanReach("inverted_activate_flute")
     )
 end)
 village_of_the_outcast:connect_one_way(south_of_village_of_the_outcast)
@@ -462,7 +462,7 @@ south_of_village_of_the_outcast:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted,
-        CanReach(inverted_activate_flute)
+        CanReach("inverted_activate_flute")
     )
 end)
 south_of_village_of_the_outcast:connect_two_ways(dark_archery_minigame_outside)
@@ -504,10 +504,10 @@ skull_woods_area:connect_two_ways(sw_big_chest_entrance_outside)
 skull_woods_area:connect_two_ways(sw_west_lobby_entrance_outside)
 skull_woods_area:connect_two_ways(sw_gibdo_entrance_outside)
 
-skull_woods_area:connect_two_ways(sw_north_drop_outside, function() return CanReach(sw_west_lobby_entrance_outside) end)
+skull_woods_area:connect_two_ways(sw_north_drop_outside, function() return CanReach("sw_west_lobby_entrance_outside") end)
 skull_woods_area:connect_two_ways_stuck(sw_back_entrance_outside, function()
     return ALL(
-        CanReach(sw_west_lobby_entrance_outside),
+        CanReach("sw_west_lobby_entrance_outside"),
         "firerod",
         Can_interact(skull_woods_area.worldstate, 1)
     )
@@ -532,12 +532,12 @@ dark_lumpberjacks:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted,
-        CanReach(inverted_activate_flute)
+        CanReach("inverted_activate_flute")
     )
 end)
 dark_lumpberjacks:connect_two_ways(dark_lumpberjacks_shop_outside)
 dark_lumpberjacks:connect_two_ways(red_shield_shop_outside)
-dark_lumpberjacks:connect_one_way("Bumper Cave Item", function() return AccessibilityLevel.Inspect end)
+dark_lumpberjacks:connect_one_way("Bumper Cave Item", function() return ACCESS_INSPECT end)
 
 dark_lumpberjacks:connect_two_ways(dark_bumper_cave_bottom_ledge, function()
     return ALL(
@@ -604,7 +604,7 @@ dark_bumper_cave_top_ledge:connect_one_way("Bumper Cave Item")
 -- dark_bumper_cave_ledge:connect_one_way("Bumper Cave Item", function()
 --     return ANY(
 --         dark_bumper_cave_ledge:accessibility(),
---         AccessibilityLevel.Inspect
+--         ACCESS_INSPECT
 --     )
 -- end)
 -- dark_bumper_cave_ledge:connect_one_way(light_bumper_cave_ledge, function()
@@ -622,7 +622,7 @@ dark_chapel_area:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted,
-        CanReach(inverted_activate_flute)
+        CanReach("inverted_activate_flute")
     )
 end)
 dark_chapel_area:connect_one_way(dark_potion_shop_area, function()
@@ -678,7 +678,7 @@ dark_potion_shop_area:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted,
-        CanReach(inverted_activate_flute)
+        CanReach("inverted_activate_flute")
     )
 end)
 
@@ -709,7 +709,7 @@ catfish_area:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted,
-        CanReach(inverted_activate_flute)
+        CanReach("inverted_activate_flute")
     )
 end)
 catfish_area:connect_one_way("Catfish Item", function() return Can_interact(catfish_area.worldstate, 1) end)
@@ -726,7 +726,7 @@ pyramid:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted,
-        CanReach(inverted_activate_flute)
+        CanReach("inverted_activate_flute")
     )
 end)
 
@@ -790,7 +790,7 @@ pod_area:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted,
-        CanReach(inverted_activate_flute)
+        CanReach("inverted_activate_flute")
     )
 end)
 pod_area:connect_one_way(dark_potion_shop_area,function()
@@ -860,7 +860,7 @@ dark_death_mountain_left_top:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted,
-        CanReach(inverted_activate_flute)
+        CanReach("inverted_activate_flute")
     )
 end)
 -- dark_death_mountain_left_top:connect_one_way()
@@ -894,7 +894,7 @@ dark_death_mountain_right_top:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted,
-        CanReach(inverted_activate_flute)
+        CanReach("inverted_activate_flute")
     )
 end)
 -- dark_death_mountain_right_top:connect_one_way()
@@ -914,7 +914,7 @@ dark_death_mountain_right_top:connect_two_ways_stuck(tr_main_entrance_outside, f
             Has("medallion", 3, 3, 3, 3)
         ),
         CanUseMedallions,
-        CanReach(dark_death_mountain_tr_medallion_spot)
+        CanReach("dark_death_mountain_tr_medallion_spot")
     )
 end)
 
@@ -996,7 +996,7 @@ dark_death_mountain_left_bottom:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted,
-        CanReach(inverted_activate_flute)
+        CanReach("inverted_activate_flute")
     )
 end)
 -- dark_death_mountain_left_bottom:connect_one_way()
@@ -1036,7 +1036,7 @@ dark_death_mountain_right_bottom:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted,
-        CanReach(inverted_activate_flute)
+        CanReach("inverted_activate_flute")
     )
 end)
 -- dark_death_mountain_right_bottom:connect_one_way()

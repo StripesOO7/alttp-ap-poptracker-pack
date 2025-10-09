@@ -27,7 +27,7 @@ dp_torch_room:connect_one_way("DP - Torch", function()
         "boots",
         Can_interact(dp_torch_room.worldstate, 1)
     ),
-    AccessibilityLevel.Inspect)
+    ACCESS_INSPECT)
 end)
 
 dp_left_entrance_inside:connect_two_ways(dp_map_chest_room)
@@ -39,12 +39,12 @@ dp_main_room:connect_one_way(dp_compass_room, function(keys)
             Has("dp_smallkey", keys + CountDoneDeadends(0, "@Desert Palace Back/Boss/Boss Item"), 1, keys + CountDoneDeadends(1, "@Desert Palace Back/Boss/Boss Item", "@Desert Palace Back/Beamos Hall Pot Key/Beamos Hall Pot Key", "@Desert Palace Back/Desert Tiles 2 Pot Key/Desert Tiles 2 Pot Key"), 4),
             "boots",
             Can_interact("light", 1)
-        ), KDSreturn(keys + 1, keys + 1)
+        ), keys + 1
     else
         return ALL(
             Has("dp_smallkey", keys + CountDoneDeadends(0, "@Desert Palace Back/Boss/Boss Item"), 1, keys + CountDoneDeadends(1, "@Desert Palace Back/Boss/Boss Item", "@Desert Palace Back/Beamos Hall Pot Key/Beamos Hall Pot Key", "@Desert Palace Back/Desert Tiles 2 Pot Key/Desert Tiles 2 Pot Key"), 4),
             Can_interact("light", 1)
-        ), KDSreturn(keys + 1, keys + 1)
+        ), keys + 1
     end
 end)
 dp_compass_room:connect_one_way("DP - Compass Chest", function() return Can_interact(dp_compass_room.worldstate,1 ) end)
@@ -76,13 +76,13 @@ dp_back_torch_room:connect_one_way(dp_back_boss_room, function(keys)
         return ALL(
             "firesource",
             "dp_bigkey"
-        ),KDSreturn(keys, keys)
+        ),keys
     else
         return ALL(
             "firesource",
             "dp_bigkey",
             "boots"
-        ),KDSreturn(keys, keys)
+        ),keys
     end
 end)
 

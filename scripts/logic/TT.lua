@@ -43,7 +43,7 @@ tt_crystal_switch_room:connect_one_way("TT - Spike Switch Pot Key")
 tt_attic:connect_one_way("TT - Attic")
 
 tt_basement:connect_two_ways(tt_big_chest_room, function(keys)
-    return Has("tt_smallkey", keys + CountDoneDeadends(1, "@Thieves Town Back/Attic/Attic"), 1, keys + CountDoneDeadends(1, "@Thieves Town Back/Attic/Attic"), 3), KDSreturn(keys + 1, keys + 1)
+    return Has("tt_smallkey", keys + CountDoneDeadends(1, "@Thieves Town Back/Attic/Attic"), 1, keys + CountDoneDeadends(1, "@Thieves Town Back/Attic/Attic"), 3), keys + 1
 end)
 tt_basement:connect_two_ways(tt_basement_cell)
 

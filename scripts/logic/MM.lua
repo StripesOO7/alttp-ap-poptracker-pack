@@ -37,9 +37,9 @@ mm_main_room:connect_two_ways(mm_conveyor_crystal_room,function(keys)
 end)
 mm_main_room:connect_two_ways(mm_map_room_top, function(keys)
     if mm_conveyor_crystal_room:accessibility() > 5 then
-        return Has("mm_smallkey", keys + CountDoneDeadends(0, "@Misery Mire/Compass Chest/Compass Chest"), 2, keys + CountDoneDeadends(0, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key"), 5), KDSreturn(keys, keys)
+        return Has("mm_smallkey", keys + CountDoneDeadends(0, "@Misery Mire/Compass Chest/Compass Chest"), 2, keys + CountDoneDeadends(0, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key"), 5), keys
     else
-        return Has("mm_smallkey", keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest"), 2, keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key"), 4), KDSreturn(keys + 1, keys + 1)
+        return Has("mm_smallkey", keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest"), 2, keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key"), 4), keys + 1
     end
 end)
 mm_main_room:connect_two_ways(mm_block_push)
@@ -62,7 +62,7 @@ mm_bridge_right:connect_one_way("MM - Bridge Chest")
 
 mm_spike_room:connect_two_ways(mm_big_key_door_room, function(keys)
     if Tracker:FindObjectForCode("mm_bigkey").Active then
-        return Has("mm_smallkey", keys + CountDoneDeadends(0, "@Misery Mire/Compass Chest/Compass Chest")+(mm_map_room_top:accessibility()//7), 2, keys + CountDoneDeadends(0, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key")+(mm_map_room_top:accessibility()//7), 4), KDSreturn(keys, keys)
+        return Has("mm_smallkey", keys + CountDoneDeadends(0, "@Misery Mire/Compass Chest/Compass Chest")+(mm_map_room_top:accessibility()//7), 2, keys + CountDoneDeadends(0, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key")+(mm_map_room_top:accessibility()//7), 4), keys
     else
         return Has("mm_smallkey", keys + CountDoneDeadends(0, "@Misery Mire/Compass Chest/Compass Chest")+(mm_map_room_top:accessibility()//7), 2, keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key")+(mm_map_room_top:accessibility()//7), 4), KDSreturn(keys, keys + 1)
     end
@@ -121,7 +121,7 @@ mm_bridge_middle:connect_two_ways(mm_boss_room, function(keys)
         DarkRooms(false),
         Has("mm_smallkey", keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest")+(mm_map_room_top:accessibility()//7), 3, keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key")+(mm_map_room_top:accessibility()//7), 6),
         "mm_bigkey"
-    ), KDSreturn(keys + 1, keys + 1) -- + 1)
+    ), keys + 1 -- + 1)
 end)
 
 mm_boss_room:connect_one_way("MM - Boss", function() return GetBossRef("mm_boss") end)

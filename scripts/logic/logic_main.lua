@@ -38,12 +38,12 @@ end
 
 --
 function CanReach(name)
-    if type(name) == "table" then
-        -- print("-----------")
-        -- print("start CanREach for", name.name)
-    -- else
-        -- print("start CanREach for", name)
-    end
+    -- if type(name) == "table" then
+    --     -- print("-----------")
+    --     -- print("start CanREach for", name.name)
+    -- -- else
+    --     -- print("start CanREach for", name)
+    -- end
     local location
     if stale then
         stale = false
@@ -52,9 +52,9 @@ function CanReach(name)
         indirectConnections = {}
         while not accessibilityCacheComplete do
             accessibilityCacheComplete = true
-            entry_point:discover(AccessibilityLevel.Normal, 0, nil)
+            entry_point:discover(ACCESS_NORMAL, 0, nil)
             for dst, parents in pairs(indirectConnections) do
-                if dst:accessibility() < AccessibilityLevel.Normal then
+                if dst:accessibility() < ACCESS_NORMAL then
                     for parent, src in pairs(parents) do
                         -- print("Checking indirect " .. src.name .. " for " .. parent.name .. " -> " .. dst.name)
                         parent:discover(parent:accessibility(), parent.keys, parent.worldstate)
@@ -62,27 +62,28 @@ function CanReach(name)
                 end
             end
         end
-        --entry_point:discover(AccessibilityLevel.Normal, 0) -- since there is no code to track indirect connections, we run it twice here
-        --entry_point:discover(AccessibilityLevel.Normal, 0)
+        --entry_point:discover(ACCESS_NORMAL, 0) -- since there is no code to track indirect connections, we run it twice here
+        --entry_point:discover(ACCESS_NORMAL, 0)
     end
     -- if type(region_name) == "function" then
     --     location = self
     -- else
-    if type(name) == "table" then
-        -- print(name.name)
-        location = NAMED_LOCATIONS[name.name]
-    else
-        location = NAMED_LOCATIONS[name]
-    end
+    -- print(type(name))
+    -- if type(name) == "table" then
+    --     print(name.name)
+    --     -- location = NAMED_LOCATIONS[name.name]
+    --     name = name.name
+    -- end
+    location = NAMED_LOCATIONS[name]
     -- print(location, name)
     -- end
     if location == nil then
         -- print(location, name)
-        if type(name) == "table" then
-        else
-            print("Unknown location : " .. tostring(name))
-        end
-        return AccessibilityLevel.None
+        -- if type(name) == "table" then
+        -- else
+        --     print("Unknown location : " .. tostring(name))
+        -- end
+        return ACCESS_NONE
     end
     return location:accessibility()
 end
@@ -169,7 +170,7 @@ function alttp_location.new(name, shortname, origin, room, x, yMin, yMax, xMax)
 end
 
 local function always()
-    return AccessibilityLevel.Normal
+    return ACCESS_NORMAL
 end
 
 -- markes a 1-way connections between 2 "locations/regions" in the source "locations" exit-table with rules if provided
@@ -249,7 +250,7 @@ function alttp_location:accessibility()
     -- up to here
     local res = accessibilityCache[self] -- get accessibilty lvl set in discover for a given location
     if res == nil then
-        res = AccessibilityLevel.None
+        res = ACCESS_NONE
         accessibilityCache[self] = res
     end
     return res
@@ -300,34 +301,30 @@ function alttp_location:discover(accessibility, keys, worldstate)
             -- if (string.sub(exit_name, -7,-1) == "_inside" and string.sub(location_name, -8,-1) == "_outside") or (string.sub(location_name, -7,-1) == "_inside" and string.sub(exit_name, -8,-1) == "_outside") then
             if ER_STATE and (exit[1].side == "inside" and self.side == "outside") or (self.side == "inside" and exit[1].side == "outside") then
                 local temp
-                local er_setting_stage
-                er_setting_stage = Tracker:FindObjectForCode("er_tracking").CurrentStage
-                if er_check[er_setting_stage](location_name) then -- simple ER
+                local er_setting_stage = Tracker:FindObjectForCode("er_tracking").CurrentStage
+                local er_check_result = er_check[er_setting_stage](location_name)
+                if er_check_result then -- simple ER
                     -- print("from_" .. self.name)
                     temp = Tracker:FindObjectForCode("from_" .. location_name)
                     -- temp = Tracker:FindObjectForCode(self.name)
                     -- print(self.name, "to er_simple[self.name]: -->", ER_SIMPLE[self.name])
                    
-                    if temp ~= nil then
-                       
-                        if temp.ItemState.Target ~= nil then
-                            -- print(NAMED_LOCATIONS[string.gsub(temp.ItemState.Target, "to_", "")])
-                            local stripped_target_name = string.gsub(temp.ItemState.Target, "to_", "")
-                            -- print("stripped_target_name", stripped_target_name)
-                            -- local stripped_target_name = temp.ItemState.Target
-                            -- if self.worldstate then
-                            --     print(stripped_target_name)
-                            --     location = NAMED_LOCATIONS[stripped_target_name]
-                            -- else
-                            location = NAMED_LOCATIONS[stripped_target_name]
-                            -- end
-                        end
+                    if temp ~= nil and temp.ItemState.Target ~= nil then
+                        -- print(NAMED_LOCATIONS[string.gsub(temp.ItemState.Target, "to_", "")])
+                        -- local stripped_target_name = string.gsub(temp.ItemState.Target, "to_", "")
+                        -- print("stripped_target_name", stripped_target_name)
+                        -- local stripped_target_name = temp.ItemState.Target
+                        -- if self.worldstate then
+                        --     print(stripped_target_name)
+                        --     location = NAMED_LOCATIONS[stripped_target_name]
+                        -- else
+                        location = NAMED_LOCATIONS[temp.ItemState.TargetBaseName]
                     else
                         print("exit connection is fucket")
                         return
                     end
                 end
-                if location == nil and er_check[er_setting_stage](location_name) then
+                if location == nil and er_check_result then
                     location = empty_location
                 end
             end
@@ -364,20 +361,20 @@ function alttp_location:discover(accessibility, keys, worldstate)
 
                 if access == nil then
                     print("Warning: " .. self.name .. " -> " .. location.name .. " rule returned nil")
-                    access = AccessibilityLevel.None
+                    access = ACCESS_NONE
                 end
                 -- print(access, self.name)
                 -- print(access, true, access == true, 0 == true)
-                if access == 5 then
-                    access = AccessibilityLevel.SequenceBreak
-                elseif access == 3 then
-                    access = AccessibilityLevel.Inspect
-                end
+                            -- if access == 5 then
+                            --     access = ACCESS_SEQUENCEBREAK
+                            -- elseif access == 3 then
+                            --     access = ACCESS_INSPECT
+                            -- end
                 
                 -- elseif access == true then
-                --     access = AccessibilityLevel.Normal
+                --     access = ACCESS_NORMAL
                 -- elseif access == false then
-                --     access = AccessibilityLevel.None
+                --     access = ACCESS_NONE
                 -- end
                
                 if key == nil then
@@ -430,7 +427,7 @@ function EmptyLocationTargets()
         print(er_tracking.CurrentStage)
         if er_tracking.CurrentStage == 0 then
             print("run discorver")
-            entry_point:discover(AccessibilityLevel.Normal, 0)
+            entry_point:discover(ACCESS_NORMAL, 0)
             print("finshed discover")
         elseif er_tracking.CurrentStage == 1 then
             print("simple er")

@@ -48,9 +48,9 @@ ip_sliding_penguins:connect_two_ways(ip_cross, DealDamage)
 ip_cross:connect_two_ways(ip_falling_floor)
 ip_cross:connect_two_ways(ip_spike_room, function(keys)
     if Tracker:FindObjectForCode("hookshot").Active then
-        return Has("ip_smallkey", keys + 1, 2, keys + 1, 4), KDSreturn(keys + 1, keys + 1)
+        return Has("ip_smallkey", keys + 1, 2, keys + 1, 4), keys + 1
     else
-        return Has("ip_smallkey", keys + 1, 2, keys + 1, 6), KDSreturn(keys + 1, keys + 1)
+        return Has("ip_smallkey", keys + 1, 2, keys + 1, 6), keys + 1
     end
 end)
 ip_cross:connect_two_ways(ip_sliding_firebar)
@@ -83,12 +83,12 @@ ip_above_boss_dropdown:connect_one_way(ip_boss_dropdown, function(keys)
         return ALL(
             Has("ip_smallkey", keys + 1, 2, keys + 1, 5),
             "ip_bigkey"
-        ), KDSreturn(keys + 1, keys + 1)
+        ), keys + 1
     else
         return ALL(
             Has("ip_smallkey", keys + 1, 2, keys + 1, 6),
             "ip_bigkey"
-        ), KDSreturn(keys + 1, keys + 1)
+        ), keys + 1
     end
 end)
 ip_above_boss_dropdown:connect_two_ways(ip_many_pots_room)
@@ -97,9 +97,9 @@ ip_many_pots_room:connect_two_ways(ip_iced_t_room)
 ip_many_pots_room:connect_one_way("IP - Many Pots Key Drop")
 ip_iced_t_room:connect_two_ways(ip_ice_hallway, function(keys)
     if Tracker:FindObjectForCode("hookshot").Active then
-        return Has("ip_smallkey", keys + 1, 2, keys + 1, 4), KDSreturn(keys + 1, keys + 1)
+        return Has("ip_smallkey", keys + 1, 2, keys + 1, 4), keys + 1
     else
-        return Has("ip_smallkey", keys + 1, 2, keys + 1, 6), KDSreturn(keys + 1, keys + 1)
+        return Has("ip_smallkey", keys + 1, 2, keys + 1, 6), keys + 1
     end
 end)
 ip_iced_t_room:connect_one_way("IP - Iced T Chest")
@@ -146,13 +146,13 @@ ip_boss_dropdown:connect_one_way(ip_boss_room, function(keys)
             "hammer",
             "glove",
             Has("ip_smallkey", keys + 1, 2, keys + 1, 5)
-        ), KDSreturn(keys + 1, keys + 1)
+        ), keys + 1
     else
         return ALL(
             "hammer",
             "glove",
             Has("ip_smallkey", keys + 1, 2, keys + 1, 6)
-        ), KDSreturn(keys + 1, keys + 1)
+        ), keys + 1
     end
 end)
 ip_boss_dropdown:connect_one_way(ip_above_boss_dropdown)

@@ -15,20 +15,20 @@ at_golden_guards:connect_two_ways(at_first_chest, DealDamage)
 
 at_first_chest:connect_one_way("AT - First Chest", DealDamage)
 at_first_chest:connect_two_ways(at_dark_maze, function(keys)
-    return Has("at_smallkey", keys + 1, 1, keys + 1, 1), KDSreturn(keys + 1, keys + 1)
+    return Has("at_smallkey", keys + 1, 1, keys + 1, 1), keys + 1
 end)
 at_dark_maze:connect_two_ways(at_dark_archer_key_drop, function(keys)
     return ALL(
         DarkRooms(true),
         Has("at_smallkey", keys + 1, 2, keys + 1, 2)
-    ), KDSreturn(keys + 1, keys + 1)
+    ), keys + 1
 end)
 at_dark_maze:connect_one_way("AT - Maze Chest", function()
     return DarkRooms(true)
 end)
 
 at_dark_archer_key_drop:connect_two_ways(at_circle_of_pots, function(keys)
-    return Has("at_smallkey", keys, 2, keys + 1, 3), KDSreturn(keys, keys + 1)
+    return Has("at_smallkey", keys, 2, keys + 1, 3), KDSreturn( keys, keys + 1)
 end)
 at_dark_archer_key_drop:connect_one_way("AT - Dark Archer Key Drop", DealDamage)
 

@@ -15,7 +15,7 @@ sp_entrance_inside:connect_two_ways(sp_first_room, function()
     return ALL(
         Can_interact(sp_entrance_inside.worldstate, 1),
         "flippers",
-        CanReach(dam_inside),
+        CanReach("dam_inside"),
         Can_interact(dam_inside.worldstate, 1),
         ANY(
             CanChangeWorldWithMirror,
@@ -24,7 +24,7 @@ sp_entrance_inside:connect_two_ways(sp_first_room, function()
     )
 end)
 
-sp_first_room:connect_two_ways(sp_hallway_before_first_trench, function(keys) return Has("sp_smallkey", keys + 1, 1, keys + 1, 1), KDSreturn(keys + 1, keys + 1) end)
+sp_first_room:connect_two_ways(sp_hallway_before_first_trench, function(keys) return Has("sp_smallkey", keys + 1, 1, keys + 1, 1), keys + 1 end)
 sp_first_room:connect_one_way("SP - Entrance Chest", function() return ALL(DealDamage, Can_interact(sp_first_room.worldstate, 1)) end)
 
 sp_hallway_before_first_trench:connect_two_ways(sp_first_trench, function(keys) return Has("sp_smallkey", keys, 1, keys + 1, 2), KDSreturn(keys, keys + 1) end)

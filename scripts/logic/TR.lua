@@ -35,7 +35,7 @@ tr_square_travel_room:connect_two_ways(tr_poke_1_room, function(keys)
         "somaria",
         Has("tr_smallkey", keys + 1, 1, keys + 1, 1)
         -- Has("tr_smallkey", keys + 1, 3, keys + 1, 4)
-    ), KDSreturn(keys + 1, keys + 1)
+    ), keys + 1
 end)
 
 tr_compass_room:connect_one_way("TR - Compass Chest")
@@ -49,8 +49,8 @@ tr_poke_1_room:connect_two_ways(tr_chain_chomps_room, function(keys) return Has(
 -- tr_poke_1_room:connect_two_ways(tr_chain_chomps_room, function(keys) return Has("tr_smallkey", keys, 3, keys + 1, 5), KDSreturn(keys, keys + 1) end)
 tr_poke_1_room:connect_one_way("TR - Poke 1 Key Drop")
 
-tr_chain_chomps_room:connect_two_ways(tr_big_key_room_top_right, function(keys) return Has("tr_smallkey", keys + 1, 2, keys + 1, 3), KDSreturn(keys + 1, keys + 1) end)
--- tr_chain_chomps_room:connect_two_ways(tr_big_key_room_top_right, function(keys) return Has("tr_smallkey", keys + 1, 3, keys + 1, 5), KDSreturn(keys + 1, keys + 1) end)
+tr_chain_chomps_room:connect_two_ways(tr_big_key_room_top_right, function(keys) return Has("tr_smallkey", keys + 1, 2, keys + 1, 3), keys + 1 end)
+-- tr_chain_chomps_room:connect_two_ways(tr_big_key_room_top_right, function(keys) return Has("tr_smallkey", keys + 1, 3, keys + 1, 5), keys + 1 end)
 -- tr_big_key_room_top_right:connect_one_way(tr_chain_chomps_room, function(keys) return Has("tr_smallkey", keys, 3, keys, 5), KDSreturn(keys, keys + 1) end)
 tr_chain_chomps_room:connect_one_way("TR - Chain Chomp Chest")
 
@@ -97,11 +97,11 @@ tr_big_chest_entrance_inside:connect_one_way("TR - Big Chest", function()
 end)
 
 tr_big_key_door_room:connect_one_way(tr_crystalroller_room, function() return Has("tr_bigkey") end)
-tr_crystalroller_room:connect_one_way(tr_big_key_door_room, function(keys) return Has("tr_smallkey", keys + 1, 3, keys + 1, 4), KDSreturn(keys + 1, keys + 1) end)
--- tr_crystalroller_room:connect_one_way(tr_big_key_door_room, function(keys) return Has("tr_smallkey", keys + 1, 4, keys + 1, 6), KDSreturn(keys + 1, keys + 1) end)
+tr_crystalroller_room:connect_one_way(tr_big_key_door_room, function(keys) return Has("tr_smallkey", keys + 1, 3, keys + 1, 4), keys + 1 end)
+-- tr_crystalroller_room:connect_one_way(tr_big_key_door_room, function(keys) return Has("tr_smallkey", keys + 1, 4, keys + 1, 6), keys + 1 end)
 
-tr_crystalroller_room:connect_one_way(tr_travel_maze, function(keys) return Has("tr_smallkey", keys + CountDoneDeadends(1, "@Turtle Rock Front/Big Key Chest/Big Key Chest"), 3, keys + CountDoneDeadends(1, "@Turtle Rock Front/Big Key Chest/Big Key Chest"), 5), KDSreturn(keys + 1, keys + 1) end)
--- tr_crystalroller_room:connect_one_way(tr_travel_maze, function(keys) return Has("tr_smallkey", keys + 1, 3, keys + 1, 5), KDSreturn(keys + 1, keys + 1) end)
+tr_crystalroller_room:connect_one_way(tr_travel_maze, function(keys) return Has("tr_smallkey", keys + CountDoneDeadends(1, "@Turtle Rock Front/Big Key Chest/Big Key Chest"), 3, keys + CountDoneDeadends(1, "@Turtle Rock Front/Big Key Chest/Big Key Chest"), 5), keys + 1 end)
+-- tr_crystalroller_room:connect_one_way(tr_travel_maze, function(keys) return Has("tr_smallkey", keys + 1, 3, keys + 1, 5), keys + 1 end)
 tr_travel_maze:connect_one_way(tr_crystalroller_room, function(keys)
     return ALL(
         Has("tr_smallkey", keys, 3, keys, 5),
@@ -124,8 +124,8 @@ tr_eye_hallway:connect_two_ways(tr_switch_puzzle, function(keys)
     return ALL(
         Has("tr_smallkey", keys + CountDoneDeadends(1, "@Turtle Rock Front/Big Key Chest/Big Key Chest"), 4, keys + CountDoneDeadends(1, "@Turtle Rock Front/Big Key Chest/Big Key Chest"), 6),
         Can_interact(tr_eye_hallway.worldstate, 1)
-    ), KDSreturn(keys + 1, keys + 1) end)
--- tr_eye_hallway:connect_two_ways(tr_switch_puzzle, function(keys) return Has("tr_smallkey", keys + 1, 3, keys + 1, 5), KDSreturn(keys + 1, keys + 1) end)
+    ), keys + 1 end)
+-- tr_eye_hallway:connect_two_ways(tr_switch_puzzle, function(keys) return Has("tr_smallkey", keys + 1, 3, keys + 1, 5), keys + 1 end)
 
 tr_eye_bridge_entrance_inside:connect_one_way("TR - Eyebridge Top Right", function()
     return ALL(

@@ -2,6 +2,7 @@ ENTRANCE_SELECTED = nil
 BASE_IMG_PATH = ImageReference:FromPackRelativePath("images/door_closed.png")
 function _SetLocationOptions(source, target) -- source == inside, target == outside
     source.ItemState.Target = target.Name
+    source.ItemState.TargetBaseName = target.ItemState.BaseName
     -- source.Icon = ImageReference:FromPackRelativePath("images/entrances/".. target.ItemState.Side .."/".. string.gsub(string.gsub(target.Name, "_"..target.ItemState.Side, ""), target.ItemState.Direction, "") ..".png")
     source.Icon = target.ItemState.ImgPath
     -- source.BadgeText = string.gsub(target.ItemState.Direction, "_", " ") .. target.ItemState.Shortname
@@ -13,6 +14,7 @@ end
 
 function _UnsetLocationOptions(source)
     source.ItemState.Target = nil
+    source.ItemState.TargetBaseName = nil
     source.Icon = source.ItemState.BaseImg
     source.BadgeText = ""
     -- source.BadgeTextColor = ""
@@ -109,6 +111,8 @@ local function SaveLocationFunc(self)
         Active = self.ItemState.Active, --true/false
         Side = self.ItemState.Side, --
         Target = self.ItemState.Target, --location.Name
+        TargetBaseName = self.ItemState.TargetBaseName, --location.Name
+        Basename = self.ItemState.Basename, --location.Name
         Name = self.Name, --str
         Shortname = self.ItemState.Shortname, --str
         Icon = self.Icon, --icurretn set img path
@@ -143,6 +147,8 @@ local function LoadLocationFunc(self, data)
         -- print("assigning saved data for ", data.Name)
         -- print(dump_table(data))
         self.ItemState.Target = data.Target
+        self.ItemState.TargetBaseName = data.TargetBaseName
+        self.ItemState.Basename = data.Basename
         self.ItemState.Side = data.Side
         self.ItemState.Shortname = data.Shortname
         self.ItemState.Direction = data.Direction
@@ -203,12 +209,14 @@ function CreateLuaLocationItems(direction, location_obj, side)
     self.Name = direction .. location_obj.name --code --
     self.Icon = ImageReference:FromPackRelativePath("images/door_closed.png")
     self.ItemState = {
+        Basename = location_obj.name,
         ImgPath = ImageReference:FromPackRelativePath("images/entrances/".. side .."/" .. string.gsub(location_obj.name, "_"..side, "") .. ".png"),
         BaseImg = BASE_IMG_PATH,
         Stage = 0,
         Active = true,
         Side = side,
         Target = nil,
+        TargetBaseName = nil,
         Shortname = location_obj.shortname,
         Direction = direction,
         Room = location_obj.room,

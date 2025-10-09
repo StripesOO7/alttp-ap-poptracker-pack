@@ -14,9 +14,9 @@
 
 -- AccessibilityLevel.None
 -- AccessibilityLevel.Partial
--- AccessibilityLevel.Inspect
--- AccessibilityLevel.SequenceBreak
--- AccessibilityLevel.Normal
+-- ACCESS_INSPECT
+-- ACCESS_SEQUENCEBREAK
+-- ACCESS_NORMAL
 -- AccessibilityLevel.Cleared
 
 
@@ -50,7 +50,7 @@ teleporter_at_upgrade_fairy:connect_one_way(teleporter_at_ice_palace, function()
 --
 lightworld_spawns:connect_one_way(light_spawn_sanctuary)
 lightworld_spawns:connect_one_way(light_spawn_links_house_area)
-lightworld_spawns:connect_one_way(light_spawn_old_man, function() return CanReach(old_man_cave_right_inside) end) --rescued old man
+lightworld_spawns:connect_one_way(light_spawn_old_man, function() return CanReach("old_man_cave_right_inside") end) --rescued old man
 
 light_spawn_sanctuary:connect_one_way(sanctuary_entrance_inside, OpenOrStandard)
 light_spawn_links_house_area:connect_one_way(links_house_inside, OpenOrStandard)
@@ -63,7 +63,7 @@ kakariko_village:connect_one_way(light_flute_map, function()
     return ALL(
         "flute",
         OpenOrStandard,
-        CanReach(light_activate_flute)
+        CanReach("light_activate_flute")
     )
 end)
 
@@ -124,7 +124,7 @@ kakariko_village:connect_one_way(magic_bat_hole_outside, function()
             "hammer",
             ALL(
                 CanChangeWorldWithMirror,
-                CanReach(purple_chest_pickup),
+                CanReach("purple_chest_pickup"),
                 OpenOrStandard
             )
         ),
@@ -219,7 +219,7 @@ dwarf_smiths_inside:connect_one_way("Rescue Dwarf")
 --     return ANY(
 --         "hammer",
 --         ALL(
---             CanReach(purple_chest_pickup),
+--             CanReach("purple_chest_pickup")),
 --             "mirror"
 --         )
 --     )
@@ -276,7 +276,7 @@ library_inside:connect_one_way("Library Item", function()
             "boots",
             Can_interact(library_inside.worldstate, 1)
         ),
-        AccessibilityLevel.Inspect
+        ACCESS_INSPECT
     )
 end)
 
@@ -301,7 +301,7 @@ twin_house_left_outside:connect_two_ways(race_ledge)
 race_ledge:connect_one_way(south_of_village)
 race_ledge:connect_two_ways(race_ledge_finish, function() return Can_interact(race_ledge.worldstate, 1) end)
 race_ledge_finish:connect_one_way("Race Minigame")
-south_of_village:connect_one_way("Race Minigame", function() return AccessibilityLevel.Inspect end)
+south_of_village:connect_one_way("Race Minigame", function() return ACCESS_INSPECT end)
 south_of_village:connect_two_ways(race_ledge, function()
     return ALL(
         CheckGlitches(2),
@@ -321,7 +321,7 @@ sanctuary_area:connect_one_way(light_flute_map, function()
     return ALL(
         "flute",
         OpenOrStandard,
-        CanReach(light_activate_flute)
+        CanReach("light_activate_flute")
     )
 end)
 sanctuary_area:connect_one_way(light_lake_hylia, function()
@@ -397,7 +397,7 @@ lost_woods:connect_one_way(light_flute_map, function()
     return ALL(
         "flute",
         OpenOrStandard,
-        CanReach(light_activate_flute)
+        CanReach("light_activate_flute")
     )
 end)
 
@@ -409,7 +409,7 @@ lost_woods:connect_two_ways(mastersword_meadow_outside)
 lost_woods:connect_one_way("Lost Woods Mushroom", function()
     return ANY(
         Can_interact(lost_woods.worldstate, 1),
-        AccessibilityLevel.Inspect
+        ACCESS_INSPECT
     )
 end)
 
@@ -420,7 +420,7 @@ mastersword_meadow_outside:connect_two_ways_entrance("Mastersword Meador (Pedast
 
 lost_woods_hideout_hole_inside:connect_one_way("Lost Woods Hideout")
 lost_woods_hideout_hole_inside:connect_one_way(lost_woods_hideout_cave_inside)
-lost_woods_hideout_cave_inside:connect_one_way("Lost Woods Hideout", function() return AccessibilityLevel.Inspect end)
+lost_woods_hideout_cave_inside:connect_one_way("Lost Woods Hideout", function() return ACCESS_INSPECT end)
 
 
 mastersword_meadow_inside:connect_one_way("Pedestal", function()
@@ -453,7 +453,7 @@ dam_area:connect_one_way(light_flute_map, function()
     return ALL(
         "flute",
         OpenOrStandard,
-        CanReach(light_activate_flute)
+        CanReach("light_activate_flute")
     )
 end)
 dam_area:connect_one_way(links_house_area)
@@ -567,7 +567,7 @@ checkerboard_cave_inside:connect_one_way("Checkerboard Cave Item")
 desert_ledge:connect_one_way("Desert Ledge Item")
 desert_ledge:connect_one_way(desert_area)
 
-desert_area:connect_one_way("Desert Ledge Item", function() return AccessibilityLevel.Inspect end)
+desert_area:connect_one_way("Desert Ledge Item", function() return ACCESS_INSPECT end)
 
 dp_back_entrance_outside:connect_two_ways_entrance("Desert Palace Back Entrance", dp_back_entrance_inside)
 dp_back_entrance_outside:connect_two_ways(desert_ledge, function()
@@ -613,7 +613,7 @@ lumberjacks_area:connect_one_way(light_flute_map, function()
     return ALL(
         "flute",
         OpenOrStandard,
-        CanReach(light_activate_flute)
+        CanReach("light_activate_flute")
     )
 end)
 lumberjacks_area:connect_one_way(sanctuary_area)
@@ -648,7 +648,7 @@ lumberjacks_hole_inside:connect_one_way(lumberjacks_item)
 lumberjacks_item:connect_one_way(lumberjacks_cave_inside)
 lumberjacks_item:connect_one_way("Lumberjacks Item")
 
-lumberjacks_cave_inside:connect_one_way("Lumberjacks Item", function() return AccessibilityLevel.Inspect end)
+lumberjacks_cave_inside:connect_one_way("Lumberjacks Item", function() return ACCESS_INSPECT end)
 
 lumberjacks_area:connect_two_ways(old_man_cave_left_ledge, function()
     return ALL(
@@ -696,7 +696,7 @@ light_lake_hylia:connect_one_way(light_flute_map, function()
     return ALL(
         "flute",
         OpenOrStandard,
-        CanReach(light_activate_flute)
+        CanReach("light_activate_flute")
     )
 end)
 light_lake_hylia:connect_one_way(eastern_palace_area)
@@ -796,7 +796,7 @@ light_lake_hylia:connect_two_ways(lake_hylia_island, function()
         "pearl"
     )
 end)
-light_lake_hylia:connect_one_way("Lake Hylia Item", function() return AccessibilityLevel.Inspect end)
+light_lake_hylia:connect_one_way("Lake Hylia Item", function() return ACCESS_INSPECT end)
 
 lake_hylia_island:connect_one_way("Lake Hylia Item")
 
@@ -819,7 +819,7 @@ links_house_area:connect_one_way(light_flute_map, function()
     return ALL(
         "flute",
         OpenOrStandard,
-        CanReach(light_activate_flute)
+        CanReach("light_activate_flute")
     )
 end)
 
@@ -886,7 +886,7 @@ eastern_palace_area:connect_one_way(light_flute_map, function()
     return ALL(
         "flute",
         OpenOrStandard,
-        CanReach(light_activate_flute)
+        CanReach("light_activate_flute")
     )
 end)
 
@@ -943,7 +943,7 @@ zora_river:connect_one_way("Zora Ledge", function()
             CheckGlitches(2),
             "boots"
         ),
-        AccessibilityLevel.Inspect
+        ACCESS_INSPECT
     )
 end)
 
@@ -977,7 +977,7 @@ hyrule_castle_area:connect_one_way(light_flute_map, function()
     return ALL(
         "flute",
         OpenOrStandard,
-        CanReach(light_activate_flute)
+        CanReach("light_activate_flute")
     )
 end)
 
@@ -1000,7 +1000,7 @@ hyrule_castle_top:connect_two_ways_stuck(at_entrance_outside, function()
             ALL(
                 CheckGlitches(2),
                 "boots",
-                CanReach(sanctuary_area)
+                CanReach("sanctuary_area")
             ),
             CanClearAgaTowerBarrier
         ),
@@ -1049,7 +1049,7 @@ witchhut:connect_one_way(light_flute_map, function()
     return ALL(
         "flute",
         OpenOrStandard,
-        CanReach(light_activate_flute)
+        CanReach("light_activate_flute")
     )
 end)
 witchhut:connect_one_way(zora_river, function()
@@ -1066,7 +1066,7 @@ light_potion_shop_outside:connect_two_ways_entrance("Witchhut Shop", light_potio
 light_potion_shop_inside:connect_one_way("Deliver Mushroom", function()
     return ALL(
         "mushroom",
-        CanReach(light_potion_shop_outside)
+        CanReach("light_potion_shop_outside")
     )
 end)
 light_potion_shop_inside:connect_one_way("Potion Shop - Left")
@@ -1109,7 +1109,7 @@ light_death_mountain_left_bottom:connect_one_way(light_flute_map, function()
     return ALL(
         "flute",
         OpenOrStandard,
-        CanReach(light_activate_flute)
+        CanReach("light_activate_flute")
     )
 end)
 -- light_death_mountain_left_bottom:connect_one_way()
@@ -1147,7 +1147,7 @@ light_death_mountain_left_bottom:connect_two_ways(old_man_home_top_outside)
 light_death_mountain_left_bottom:connect_two_ways(old_man_home_bottom_outside)
 light_death_mountain_left_bottom:connect_one_way(spec_rock_ledge_entrance)
 light_death_mountain_left_bottom:connect_one_way(spec_rock_ledge_exit)
-light_death_mountain_left_bottom:connect_one_way("Old Man Item", function() return CanReach(old_man_cave) end)
+light_death_mountain_left_bottom:connect_one_way("Old Man Item", function() return CanReach("old_man_cave") end)
 light_death_mountain_left_bottom:connect_one_way(spectacle_rock_top, function()
     return ALL(
         OpenOrStandard,
@@ -1177,7 +1177,7 @@ spec_rock_ledge_entrance_inside:connect_two_ways(spectacle_rock_inside_bottom)
 spec_rock_ledge_exit_inside:connect_two_ways(spectacle_rock_cave)
 
 spectacle_rock_top_drop:connect_one_way(spectacle_rock_cave)
-spectacle_rock_top_drop:connect_one_way("Spec Rock Inside Item", function() return AccessibilityLevel.Inspect end)
+spectacle_rock_top_drop:connect_one_way("Spec Rock Inside Item", function() return ACCESS_INSPECT end)
 spectacle_rock_inside_bottom:connect_one_way(spectacle_rock_top_drop)
 spectacle_rock_inside_bottom:connect_one_way("Spec Rock Inside Item")
 
@@ -1203,7 +1203,7 @@ light_death_mountain_left_top:connect_one_way(light_flute_map, function()
     return ALL(
         "flute",
         OpenOrStandard,
-        CanReach(light_activate_flute)
+        CanReach("light_activate_flute")
     )
 end)
 light_death_mountain_left_top:connect_one_way(light_death_mountain_right_top, function()
@@ -1225,7 +1225,7 @@ light_death_mountain_left_top:connect_one_way("Ether Tablet", function()
 end)
 light_death_mountain_left_top:connect_one_way(spectacle_rock_top, Inverted)
 spectacle_rock_top:connect_one_way("Spec Rock Top Item")
-light_death_mountain_left_bottom:connect_one_way("Spec Rock Top Item", function() return AccessibilityLevel.Inspect end)
+light_death_mountain_left_bottom:connect_one_way("Spec Rock Top Item", function() return ACCESS_INSPECT end)
 
 toh_entrance_outside:connect_two_ways_entrance("Tower of Hera Entrance", toh_entrance_inside)
 
@@ -1253,7 +1253,7 @@ light_death_mountain_right_bottom:connect_one_way(light_flute_map, function()
     return ALL(
         "flute",
         OpenOrStandard,
-        CanReach(light_activate_flute)
+        CanReach("light_activate_flute")
     )
 end)
 light_death_mountain_right_bottom:connect_one_way(teleporter_at_dark_death_mountain_right_bottom, function() return Has("titans") end)
@@ -1306,7 +1306,7 @@ light_death_mountain_right_top:connect_one_way(light_flute_map, function()
     return ALL(
         "flute",
         OpenOrStandard,
-        CanReach(light_activate_flute)
+        CanReach("light_activate_flute")
     )
 end)
 light_death_mountain_right_top:connect_one_way(light_death_mountain_left_top, function()
@@ -1422,4 +1422,4 @@ light_death_mountain_right_top:connect_two_ways(floating_island, Inverted)
 floating_island:connect_one_way(light_death_mountain_right_top)
 
 floating_island:connect_one_way("Floating Island Item")
-light_death_mountain_right_top:connect_one_way("Floating Island Item", function() return AccessibilityLevel.Inspect end)
+light_death_mountain_right_top:connect_one_way("Floating Island Item", function() return ACCESS_INSPECT end)

@@ -1,22 +1,29 @@
 KEY_DROP_SHUFFLE_STATE = false
 SMALL_KEY_STAGE = 0
 
+
+ACCESS_NONE = AccessibilityLevel.None
+ACCESS_PARTIAL = AccessibilityLevel.Partial
+ACCESS_INSPECT = AccessibilityLevel.Inspect
+ACCESS_SEQUENCEBREAK = AccessibilityLevel.SequenceBreak
+ACCESS_NORMAL = AccessibilityLevel.Normal
+ACCESS_CLEARED = AccessibilityLevel.Cleared
+
 local bool_to_accesslvl = {
-    [true] = AccessibilityLevel.Normal,
-    [false] = AccessibilityLevel.None
+    [true] = ACCESS_NORMAL,
+    [false] = ACCESS_NONE
 }
 
 function A(result)
     if result then
-        return AccessibilityLevel.Normal
-    else
-        return AccessibilityLevel.None
+        return ACCESS_NORMAL
     end
+    return ACCESS_NONE
 end
 
 function ALL(...)
     local args = { ... }
-    local min = AccessibilityLevel.Normal
+    local min = ACCESS_NORMAL
     for _, v in ipairs(args) do
         if type(v) == "function" then
             v = v()
@@ -25,14 +32,12 @@ function ALL(...)
         end
         if type(v) == "boolean" then
             v = bool_to_accesslvl[v]
-            -- v = A(v)
         end
         if v < min then
-            if v == AccessibilityLevel.None then
-                return AccessibilityLevel.None
-            else
-                min = v
+            if v == ACCESS_NONE then
+                return ACCESS_NONE
             end
+            min = v
         end
     end
     return min
@@ -40,7 +45,7 @@ end
 
 function ANY(...)
     local args = { ... }
-    local max = AccessibilityLevel.None
+    local max = ACCESS_NONE
     for _, v in ipairs(args) do
         if type(v) == "function" then
             v = v()
@@ -52,11 +57,10 @@ function ANY(...)
             -- v = A(v)
         end
         if v > max then
-            if v == AccessibilityLevel.Normal then
-                return AccessibilityLevel.Normal
-            else
-                max = v
+            if v == ACCESS_NORMAL then
+                return ACCESS_NORMAL
             end
+            max = v
         end
     end
     return max
@@ -71,56 +75,48 @@ function Has(item, noKDS_amount, noKDS_amountInLogic, KDS_amount, KDS_amountInLo
     local amount
     local amountInLogic
     if (SMALL_KEY_STAGE == 2) and item:sub(-8,-1) == "smallkey" then -- universal keys
-        return true
+        return ACCESS_NORMAL
     end
     if KEY_DROP_SHUFFLE_STATE then
-        -- print(KDS_amount, KDS_amountInLogic)
         amount = KDS_amount
         amountInLogic = KDS_amountInLogic
         if item:sub(-8,-1) == "smallkey" then
-            count = Tracker:ProviderCountForCode(item.."_drop")
-        else
-            count = Tracker:ProviderCountForCode(item)
+            item = item.."_drop"
         end
     else
-        count = Tracker:ProviderCountForCode(item)
         amount = noKDS_amount
         amountInLogic = noKDS_amountInLogic
     end
+    count = Tracker:ProviderCountForCode(item)
 
     -- print(item, count, amount, amountInLogic)
     if amountInLogic then
         if count >= amountInLogic then
-            return AccessibilityLevel.Normal
+            return ACCESS_NORMAL
         elseif count >= amount then
-            return AccessibilityLevel.SequenceBreak
-        else
-            return AccessibilityLevel.None
+            return ACCESS_SEQUENCEBREAK
         end
+        return ACCESS_NONE
     end
     if not amount then
         if count > 0 then
-            return AccessibilityLevel.Normal
-        else
-            return AccessibilityLevel.None
+            return ACCESS_NORMAL
         end
+        return ACCESS_NONE
     else
-        -- amount = tonumber(amount)
         if count >= amount then
-            return AccessibilityLevel.SequenceBreak
-        else
-            return AccessibilityLevel.None
+            return ACCESS_SEQUENCEBREAK
         end
+        return ACCESS_NONE
     end
 end
 
 function KDSreturn( noKDS, KDS)
-    -- print(noKDS, KDS)
-    if KEY_DROP_SHUFFLE_STATE then
-        return KDS
-    else
-        return noKDS
-    end
+    return KEY_DROP_SHUFFLE_STATE and KDS or noKDS
+    -- if KEY_DROP_SHUFFLE_STATE then
+    --     return KDS
+    -- end
+    -- return noKDS
 end
 
 function OWDungeonChecks(...)
@@ -131,26 +127,22 @@ function OWDungeonChecks(...)
     local inspect = 0
    
     for _, location in ipairs(locations) do
-        -- access_check =  CanReach(location)
         access_check = Tracker:FindObjectForCode(location).AccessibilityLevel
         if access_check == 6 then
-            availale = availale + 1
-        -- print(location, access_check)
-        elseif access_check == 3 then
+            availale = availale + 1        elseif access_check == 3 then
             inspect = inspect + 1
         elseif access_check == 5 then
             sequence_breakable = sequence_breakable + 1
         end
     end
     if availale > 0 then
-        return AccessibilityLevel.Normal
+        return ACCESS_NORMAL
     elseif sequence_breakable > 0 then
-        return AccessibilityLevel.SequenceBreak
+        return ACCESS_SEQUENCEBREAK
     elseif inspect > 0 then
-        return AccessibilityLevel.Inspect
-    else
-        return AccessibilityLevel.None
+        return ACCESS_INSPECT
     end
+    return ACCESS_NONE
 end
 
 
@@ -199,18 +191,18 @@ function GetBossRef(nameRef)
         [10] = "@Bosses/Trinexx"
     }
     local stage = Tracker:FindObjectForCode(nameRef).CurrentStage
-    local access_lvl = 0
+    -- local access_lvl = 0
    
-    access_lvl = Tracker:FindObjectForCode(bosses[stage]).AccessibilityLevel
-    return access_lvl
+    -- access_lvl = Tracker:FindObjectForCode(bosses[stage]).AccessibilityLevel
+    return Tracker:FindObjectForCode(bosses[stage]).AccessibilityLevel
+    -- return access_lvl
 end
 
 function CanActivateTablets()
     if Tracker:FindObjectForCode("swordless").Active then
         return Tracker:FindObjectForCode("hammer").Active
-    else
-        return (Tracker:FindObjectForCode("sword").CurrentStage > 1)
     end
+    return (Tracker:FindObjectForCode("sword").CurrentStage > 1)
 end
 
 function GetShuffle(item, type)
@@ -221,17 +213,15 @@ end
 function CheckSwordless()
     if Tracker:ProviderCountForCode("swordless") > 0 then
         return true
-    else
-        return Tracker:FindObjectForCode("sword").Active
     end
+    return Tracker:FindObjectForCode("sword").Active
 end
 
 function CanCheckWithBook()
     if Tracker:FindObjectForCode("Book").Active then
-        return AccessibilityLevel.Inspect
-    else
-        return AccessibilityLevel.None
+        return ACCESS_INSPECT
     end
+    return ACCESS_NONE
 end
 
 function CanUseMedallions()
@@ -250,9 +240,8 @@ function CanClearAgaTowerBarrier()
     -- Otherwise we need master sword or a hammer depending on the mode
     if Tracker:ProviderCountForCode("swordless") > 0 then
         return Tracker:FindObjectForCode("hammer").Active
-    else
-        return Tracker:ProviderCountForCode("mastersword") > 0
     end
+    return Tracker:ProviderCountForCode("mastersword") > 0
 end
 
 function GTCrystalCount()
@@ -270,9 +259,8 @@ function CanSwim(itemNeeded) --fake flippers
     --     return Tracker:FindObjectForCode(itemNeeded).Active
     -- elseif glitches_state > 0 and itemNeeded == nil then
     --     return true
-    else
-        return Tracker:FindObjectForCode("flippers").Active
     end
+    return Tracker:FindObjectForCode("flippers").Active
 end
 
 function smallKeys(dungeon, count, count_in_logic, keydrop_count, keydrop_count_in_logic)
@@ -302,9 +290,8 @@ function BigKeys(dungeon)
         return Tracker:FindObjectForCode(dungeon).Active
     -- elseif Tracker:FindObjectForCode("big_keys").Active == false and key == "sw_bigkey" and Tracker:FindObjectForCode("firerod").Active == false then
     --     return false
-    else
-        return true
     end
+    return true
 end
 
 function CheckRequirements(reference, check_count)
@@ -313,27 +300,24 @@ function CheckRequirements(reference, check_count)
 
     if count >= reqCount then
         return 1 --true
-    else
-        return 0 --false
     end
+    return 0 --false
 end
 
 function DarkRooms(torches_available)
     local dark_mode = Tracker:FindObjectForCode("dark_mode").CurrentStage
     local has_lamp = Tracker:ProviderCountForCode("lamp")
     if dark_mode == 2 then --none
-        return true
+        return ACCESS_NORMAL
     elseif dark_mode == 0 and has_lamp > 0 then -- lamp
-        return true
+        return ACCESS_NORMAL
     elseif dark_mode == 1 then
         if torches_available then
             return (has_lamp > 0 or has_lamp > 0)
-        else
-            return has_lamp > 0
-        end -- scornes/firerod
-    else
-        return false
+        end
+        return (has_lamp > 0) -- scornes/firerod
     end
+    return ACCESS_NONE
 end
 
 function CalcHeartpieces()
@@ -375,10 +359,6 @@ end
 
 function Can_interact(worldstate, glitch_lvl)
     return CAN_INTERACT[worldstate][glitch_lvl]
-    -- print("worldstate:", worldstate)
-    -- print("pearl:", Tracker:FindObjectForCode("pearl").Active)
-    -- print("OpenOrStandard:", OpenOrStandard())
-    -- print("Inverted:", Inverted())
     -- local glitchstage = Tracker:FindObjectForCode("glitches").CurrentStage
 
     -- if (worldstate == "light" and OpenOrStandard()) or (worldstate == "dark" and Inverted()) then
@@ -426,10 +406,9 @@ function CanFinish()
     if beatable >= table_length then
         obj.Active = true
         return true
-    else
-        obj.Active = false
-        return false
     end
+    obj.Active = false
+    return false
 end
 
 function CanChangeWorldWithMirror()
@@ -464,9 +443,8 @@ function TT_boss_check()
             CanReach("TT - Blind's Cell"),
             "bombs"
         )
-    else
-        return true
     end
+    return true
 end
 
 function BossShuffle()
@@ -517,20 +495,16 @@ function ShopSlotHelper(shop_slot, number)
         end
         return false
     else
-        local mod
-        local ghost
+        local mod = 9
+        local ghost = 8
         if Tracker:FindObjectForCode("shop_include_witchhut").Active then
             mod = 10
             ghost = 9
-        else
-            mod = 9
-            ghost = 8
         end
         if tonumber(number) > ((Tracker:FindObjectForCode("shuffle_item_slots").AcquiredCount + ghost) // mod) then
             return false
-        else
-            return true
         end
+        return true
     end
 end
 
@@ -560,20 +534,14 @@ function GiveAll(setting)
     }
     -- if Archipelago.PlayerNumber < 0 then
         for _, dungeon_prefix in ipairs(dungeons_prefixes) do
-            -- print(dungeon_prefix .. mapping[setting], Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting]).Active)
-            -- print(dungeon_prefix .. mapping[setting] .. "_copy", Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting] .. "_copy").Active)
             local item = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting])
             local copy = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting] .. "_copy")
             if setting_stage == 5 or setting_stage == 6 then
                
                 if setting == "smallkeys_setting" then
                     item.AcquiredCount = item.MaxCount
-
-
-                    -- if Tracker:FindObjectForCode("key_drop_shuffle").Active then
                     item = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting].. "_drop")
                     copy = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting] .. "_drop_copy")
-                    -- end
                     item.AcquiredCount = item.MaxCount
                 else
                     item.Active = true
@@ -581,12 +549,8 @@ function GiveAll(setting)
             else
                 if setting == "smallkeys_setting" then
                     item.AcquiredCount = copy.AcquiredCount
-
-
-                    -- if Tracker:FindObjectForCode("key_drop_shuffle").Active then
                     item = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting].. "_drop")
                     copy = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting] .. "_drop_copy")
-                    -- end
                     item.AcquiredCount = copy.AcquiredCount
                 else
                     item.Active = copy.Active
