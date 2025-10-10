@@ -260,11 +260,11 @@ end
 local er_check = {
     [0] = function(location_name)
         return false end,
-    [1] = function(location_name) --print("simple ER", ER_SIMPLE[self.name] ~= nil)
+    [1] = function(location_name) --print("dungeons ER", ER_DUNGEONS[self.name] ~= nil)
         -- if self.cave == true then
-            return ER_SIMPLE["from_" .. location_name] ~= nil
+            return ER_DUNGEONS["from_" .. location_name] ~= nil
         -- else
-        --     return ER_SIMPLE["to_" .. self.name] ~= nil
+        --     return ER_DUNGEONS["to_" .. self.name] ~= nil
         -- end
 
         end,
@@ -303,11 +303,11 @@ function alttp_location:discover(accessibility, keys, worldstate)
                 local temp
                 local er_setting_stage = Tracker:FindObjectForCode("er_tracking").CurrentStage
                 local er_check_result = er_check[er_setting_stage](location_name)
-                if er_check_result then -- simple ER
+                if er_check_result then -- dungeons ER
                     -- print("from_" .. self.name)
                     temp = Tracker:FindObjectForCode("from_" .. location_name)
                     -- temp = Tracker:FindObjectForCode(self.name)
-                    -- print(self.name, "to er_simple[self.name]: -->", ER_SIMPLE[self.name])
+                    -- print(self.name, "to er_dungeons[self.name]: -->", ER_DUNGEONS[self.name])
                    
                     if temp ~= nil and temp.ItemState.Target ~= nil then
                         -- -- print(NAMED_LOCATIONS[string.gsub(temp.ItemState.Target, "to_", "")])
@@ -322,7 +322,7 @@ function alttp_location:discover(accessibility, keys, worldstate)
                         -- print("temp.ItemState.TargetBaseName", temp.ItemState.TargetBaseName)
                         location = NAMED_LOCATIONS[temp.ItemState.TargetBaseName]
                     else
-                        print("exit connection is fucket")
+                        print("exit connection is fucked")
                         return
                     end
                 end
@@ -432,13 +432,13 @@ function EmptyLocationTargets()
             entry_point:discover(ACCESS_NORMAL, 0)
             print("finshed discover")
         elseif er_tracking.CurrentStage == 1 then
-            print("simple er")
+            print("dungeons er")
             for name, inside in pairs(NAMED_ENTRANCES) do
                 local source = Tracker:FindObjectForCode(name)
                 local target_outside = Tracker:FindObjectForCode(string.gsub(name, "_inside", "_outside"))
                 local target_inside = Tracker:FindObjectForCode(string.gsub(name, "_outside", "_inside"))
-                if ER_SIMPLE[name] == nil then
-                    --location is NOT in SIMPLE ER so preset targets
+                if ER_DUNGEONS[name] == nil then
+                    --location is NOT in DUNGEONS ER so preset targets
                     if inside then
                         _SetLocationOptions(source, target_outside)
                         _SetLocationOptions(target_outside, source)
@@ -447,12 +447,12 @@ function EmptyLocationTargets()
                         _SetLocationOptions(target_inside, source)
                     end
                 else
-                    -- location is in SIMPLE ER
+                    -- location is in DUNGEONS ER
                     _UnsetLocationOptions(Tracker:FindObjectForCode(name))
                     Tracker:FindObjectForCode(name).ItemState.Target = nil
                 end
             end
-            for name, _ in pairs(ER_SIMPLE) do
+            for name, _ in pairs(ER_DUNGEONS) do
                 -- print(name)
                 -- print(Tracker:FindObjectForCode(name).ItemState.Target)
                 _UnsetLocationOptions(Tracker:FindObjectForCode(name))

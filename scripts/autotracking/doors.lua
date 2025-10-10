@@ -183,7 +183,7 @@ PERMANENT_CONNECTIONS = {
     ["to_mastersword_meadow_outside"] = false
 }
 
-ER_SIMPLE = {
+ER_DUNGEONS = {
     ["from_at_entrance_outside"] = false,
     ["to_at_entrance_outside"] = false,
     ["from_at_entrance_inside"] = true,
