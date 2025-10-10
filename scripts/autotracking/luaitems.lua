@@ -93,6 +93,11 @@ local function OnLeftClickFunc(self)
         local target_entrance
         if ENTRANCE_SELECTED then -- ENTRANCE_SELECTED ~= nil
             -- print("ENTRANCE_SELECTED ~= nil")
+            if string.find(ENTRANCE_SELECTED, "from_") then
+                self = Tracker:FindObjectForCode("to_" .. self.ItemState.BaseName)
+            else
+                self = Tracker:FindObjectForCode("from_" .. self.ItemState.BaseName)
+            end
             if self.ItemState.Target then -- attempt of new connection to already existing connection (how to handle that?)
                 target_entrance = Tracker:FindObjectForCode(self.ItemState.Target)
                 if target_entrance ~= nil then
