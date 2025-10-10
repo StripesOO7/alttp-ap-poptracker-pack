@@ -422,6 +422,7 @@ end
 function EmptyLocationTargets()
     local er_tracking = Tracker:FindObjectForCode("er_tracking")
     ER_STAGE = er_tracking.CurrentStage
+    ER_STATE = er_tracking.CurrentStage > 0
     if not (Tracker.BulkUpdate == true) then
         ScriptHost:RemoveWatchForCode("StateChanged")
         ScriptHost:RemoveOnLocationSectionHandler("location_section_change_handler")
