@@ -112,7 +112,7 @@ local function SaveLocationFunc(self)
         Side = self.ItemState.Side, --
         Target = self.ItemState.Target, --location.Name
         TargetBaseName = self.ItemState.TargetBaseName, --location.Name
-        Basename = self.ItemState.Basename, --location.Name
+        BaseName = self.ItemState.BaseName, --location.Name
         Name = self.Name, --str
         Shortname = self.ItemState.Shortname, --str
         Icon = self.Icon, --icurretn set img path
@@ -148,7 +148,7 @@ local function LoadLocationFunc(self, data)
         -- print(dump_table(data))
         self.ItemState.Target = data.Target
         self.ItemState.TargetBaseName = data.TargetBaseName
-        self.ItemState.Basename = data.Basename
+        self.ItemState.BaseName = data.BaseName
         self.ItemState.Side = data.Side
         self.ItemState.Shortname = data.Shortname
         self.ItemState.Direction = data.Direction
@@ -209,7 +209,7 @@ function CreateLuaLocationItems(direction, location_obj, side)
     self.Name = direction .. location_obj.name --code --
     self.Icon = ImageReference:FromPackRelativePath("images/door_closed.png")
     self.ItemState = {
-        Basename = location_obj.name,
+        BaseName = location_obj.name,
         ImgPath = ImageReference:FromPackRelativePath("images/entrances/".. side .."/" .. string.gsub(location_obj.name, "_"..side, "") .. ".png"),
         BaseImg = BASE_IMG_PATH,
         Stage = 0,

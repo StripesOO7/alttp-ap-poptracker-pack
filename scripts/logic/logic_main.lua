@@ -310,14 +310,16 @@ function alttp_location:discover(accessibility, keys, worldstate)
                     -- print(self.name, "to er_simple[self.name]: -->", ER_SIMPLE[self.name])
                    
                     if temp ~= nil and temp.ItemState.Target ~= nil then
-                        -- print(NAMED_LOCATIONS[string.gsub(temp.ItemState.Target, "to_", "")])
+                        -- -- print(NAMED_LOCATIONS[string.gsub(temp.ItemState.Target, "to_", "")])
                         -- local stripped_target_name = string.gsub(temp.ItemState.Target, "to_", "")
+                        -- -- print("stripped_target_name", stripped_target_name)
+                        -- -- local stripped_target_name = temp.ItemState.Target
+                        -- -- if self.worldstate then
+                        -- --     print(stripped_target_name)
+                        -- --     location = NAMED_LOCATIONS[stripped_target_name]
+                        -- -- else
                         -- print("stripped_target_name", stripped_target_name)
-                        -- local stripped_target_name = temp.ItemState.Target
-                        -- if self.worldstate then
-                        --     print(stripped_target_name)
-                        --     location = NAMED_LOCATIONS[stripped_target_name]
-                        -- else
+                        -- print("temp.ItemState.TargetBaseName", temp.ItemState.TargetBaseName)
                         location = NAMED_LOCATIONS[temp.ItemState.TargetBaseName]
                     else
                         print("exit connection is fucket")
