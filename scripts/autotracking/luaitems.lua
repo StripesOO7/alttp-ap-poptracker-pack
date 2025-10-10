@@ -3,7 +3,8 @@ BASE_IMG_PATH = ImageReference:FromPackRelativePath("images/door_closed.png")
 function _SetLocationOptions(source, target) -- source == inside, target == outside
     source.ItemState.Target = target.Name
     source.ItemState.TargetBaseName = target.ItemState.BaseName
-    -- source.Icon = ImageReference:FromPackRelativePath("images/entrances/".. target.ItemState.Side .."/".. string.gsub(string.gsub(target.Name, "_"..target.ItemState.Side, ""), target.ItemState.Direction, "") ..".png")
+    -- source.Icon = ImageReference:FromPackRelativePath("images/entrances/" .. target.ItemState.Side .. "/" ..
+    -- string.gsub(string.gsub(target.Name, "_" .. target.ItemState.Side, ""), target.ItemState.Direction, "") .. ".png")
     source.Icon = target.ItemState.ImgPath
     -- source.BadgeText = string.gsub(target.ItemState.Direction, "_", " ") .. target.ItemState.Shortname
     source.BadgeText = target.ItemState.BadgeTextDirection
@@ -24,62 +25,178 @@ function _UnsetLocationOptions(source)
 end
 
 local function OnLeftClickFunc(self)
-    local target_entrance
+    -- print(ER_STAGE)
+    if ER_STAGE < 3 then --off, dungeons, full
+        -- print("off, dungeons, full")
+        local target_entrance_from
+        local target_entrance_to
+        local source_entrance_from
+        local source_entrance_to
+        if ENTRANCE_SELECTED then -- ENTRANCE_SELECTED ~= nil
+            -- print("ENTRANCE_SELECTED ~= nil")
+            if self.ItemState.Target then -- attempt of new connection to already existing connection (how to handle that?)
+                -- print("self.ItemState.Target ~= nil")
+                target_entrance_from = Tracker:FindObjectForCode("from_" .. self.ItemState.TargetBaseName)
+                target_entrance_to = Tracker:FindObjectForCode("to_" .. self.ItemState.TargetBaseName)
+                source_entrance_from = Tracker:FindObjectForCode("from_" .. ENTRANCE_SELECTED)
+                source_entrance_to = Tracker:FindObjectForCode("to_" .. ENTRANCE_SELECTED)
+                if target_entrance_from ~= nil then
+                    _UnsetLocationOptions(target_entrance_from)
+                end
+                if target_entrance_to ~= nil then
+                    _UnsetLocationOptions(target_entrance_to)
+                end
+                _UnsetLocationOptions(source_entrance_to)
+                _UnsetLocationOptions(source_entrance_from)
+            end
 
-    if ENTRANCE_SELECTED == nil and self.ItemState.Target == nil then -- fully new connection
-        ENTRANCE_SELECTED = self.Name
-    elseif ENTRANCE_SELECTED ~= nil and self.ItemState.Target == nil then -- second step of normal new connection
-        target_entrance = Tracker:FindObjectForCode(ENTRANCE_SELECTED)
-        if target_entrance ~= nil then
-            target_entrance.ItemState.Target = self.Name
-            self.ItemState.Target = target_entrance.Name
+            -- second step of normal new connection
+            target_entrance_from = Tracker:FindObjectForCode("from_" .. ENTRANCE_SELECTED)
+            target_entrance_to = Tracker:FindObjectForCode("to_" .. ENTRANCE_SELECTED)
+            source_entrance_from = Tracker:FindObjectForCode("from_" .. self.ItemState.BaseName)
+            source_entrance_to = Tracker:FindObjectForCode("to_" .. self.ItemState.BaseName)
+            if target_entrance_from ~= nil then
+                -- target_entrance.ItemState.Target = self.Name
+                -- self.ItemState.Target = target_entrance.Name
+                _SetLocationOptions(source_entrance_from, target_entrance_to) -- enter source exit target
+                _SetLocationOptions(target_entrance_to, source_entrance_from)
+            end
+            if target_entrance_to ~= nil then 
+                _SetLocationOptions(target_entrance_from, source_entrance_to) -- enter target exit source
+                _SetLocationOptions(source_entrance_to, target_entrance_from)
+            end
+            ENTRANCE_SELECTED = nil
+        else -- ENTRANCE_SELECTED == nil
+            -- print("ENTRANCE_SELECTED == nil")
+            ENTRANCE_SELECTED = self.ItemState.BaseName
+            -- print("ENTRANCE_SELECTED", ENTRANCE_SELECTED)
+            if self.ItemState.Target then -- retarget a connection to new target location
+                -- print("self.ItemState.Target ~= nil")
+                -- target_entrance = Tracker:FindObjectForCode(self.ItemState.Target)
 
-            _SetLocationOptions(self, target_entrance)
-            _SetLocationOptions(target_entrance, self)
+                target_entrance_from = Tracker:FindObjectForCode("from_" .. self.ItemState.TargetBaseName)
+                target_entrance_to = Tracker:FindObjectForCode("to_" .. self.ItemState.TargetBaseName)
+                source_entrance_from = Tracker:FindObjectForCode("from_" .. ENTRANCE_SELECTED)
+                source_entrance_to = Tracker:FindObjectForCode("to_" .. ENTRANCE_SELECTED)
+                if target_entrance_from ~= nil then
+                    _UnsetLocationOptions(target_entrance_from)
+                end
+                if target_entrance_to ~= nil then
+                    _UnsetLocationOptions(target_entrance_to)
+                end
+                _UnsetLocationOptions(source_entrance_to)
+                _UnsetLocationOptions(source_entrance_from)
+            end
         end
-        ENTRANCE_SELECTED = nil
-    elseif ENTRANCE_SELECTED == nil and self.ItemState.Target ~= nil then -- retarget a connection to new target location
-        ENTRANCE_SELECTED = self.Name
-        target_entrance = Tracker:FindObjectForCode(self.ItemState.Target)
-        if target_entrance ~= nil then
-            _UnsetLocationOptions(target_entrance)
-            _UnsetLocationOptions(self)
-        end
+    else -- insanity
+        -- print("insanity")
+        local target_entrance
+        if ENTRANCE_SELECTED then -- ENTRANCE_SELECTED ~= nil
+            -- print("ENTRANCE_SELECTED ~= nil")
+            if self.ItemState.Target then -- attempt of new connection to already existing connection (how to handle that?)
+                target_entrance = Tracker:FindObjectForCode(self.ItemState.Target)
+                if target_entrance ~= nil then
+                    _UnsetLocationOptions(target_entrance)
+                    _UnsetLocationOptions(self)
+                end
+            end
 
-
-    elseif ENTRANCE_SELECTED ~= nil and self.ItemState.Target ~= nil then -- attempt of new connection to already existing connection (how to handle that?)
-        target_entrance = Tracker:FindObjectForCode(self.ItemState.Target)
-        if target_entrance ~= nil then
-            _UnsetLocationOptions(target_entrance)
-            _UnsetLocationOptions(self)
+            -- second step of normal new connection
+            target_entrance = Tracker:FindObjectForCode(ENTRANCE_SELECTED)
+            if target_entrance ~= nil then
+                -- target_entrance.ItemState.Target = self.Name
+                -- self.ItemState.Target = target_entrance.Name
+                _SetLocationOptions(self, target_entrance)
+                _SetLocationOptions(target_entrance, self)
+            end
+            ENTRANCE_SELECTED = nil
+        else -- ENTRANCE_SELECTED == nil
+            -- print("ENTRANCE_SELECTED == nil")
+            ENTRANCE_SELECTED = self.Name
+            if self.ItemState.Target then -- retarget a connection to new target location
+                target_entrance = Tracker:FindObjectForCode(self.ItemState.Target)
+                if target_entrance ~= nil then
+                    _UnsetLocationOptions(target_entrance)
+                    _UnsetLocationOptions(self)
+                end
+            end
         end
-        target_entrance = Tracker:FindObjectForCode(ENTRANCE_SELECTED)
-        if target_entrance ~= nil then
-            -- target_entrance.ItemState.Target = self.Name
-            -- self.ItemState.Target = target_entrance.Name
-            _SetLocationOptions(self, target_entrance)
-            _SetLocationOptions(target_entrance, self)
-        end
-        ENTRANCE_SELECTED = nil
-
-    else
-        print("################### SOMETHING IS REEEEEAAAALY FUCKED #########################")
     end
+        -- if ENTRANCE_SELECTED == nil and self.ItemState.Target == nil then -- fully new connection
+        --     ENTRANCE_SELECTED = self.Name
+        -- elseif ENTRANCE_SELECTED ~= nil and self.ItemState.Target == nil then -- second step of normal new connection
+        --     target_entrance = Tracker:FindObjectForCode(ENTRANCE_SELECTED)
+        --     if target_entrance ~= nil then
+        --         target_entrance.ItemState.Target = self.Name
+        --         self.ItemState.Target = target_entrance.Name
+
+        --         _SetLocationOptions(self, target_entrance)
+        --         _SetLocationOptions(target_entrance, self)
+        --     end
+        --     ENTRANCE_SELECTED = nil
+        -- elseif ENTRANCE_SELECTED == nil and self.ItemState.Target ~= nil then -- retarget a connection to new target location
+        --     ENTRANCE_SELECTED = self.Name
+        --     target_entrance = Tracker:FindObjectForCode(self.ItemState.Target)
+        --     if target_entrance ~= nil then
+        --         _UnsetLocationOptions(target_entrance)
+        --         _UnsetLocationOptions(self)
+        --     end
+
+
+        -- elseif ENTRANCE_SELECTED ~= nil and self.ItemState.Target ~= nil then -- attempt of new connection to already existing connection (how to handle that?)
+        --     target_entrance = Tracker:FindObjectForCode(self.ItemState.Target)
+        --     if target_entrance ~= nil then
+        --         _UnsetLocationOptions(target_entrance)
+        --         _UnsetLocationOptions(self)
+        --     end
+        --     target_entrance = Tracker:FindObjectForCode(ENTRANCE_SELECTED)
+        --     if target_entrance ~= nil then
+        --         -- target_entrance.ItemState.Target = self.Name
+        --         -- self.ItemState.Target = target_entrance.Name
+        --         _SetLocationOptions(self, target_entrance)
+        --         _SetLocationOptions(target_entrance, self)
+        --     end
+        --     ENTRANCE_SELECTED = nil
+
+        -- else
+        --     print("################### SOMETHING IS REEEEEAAAALY FUCKED #########################")
+        -- end
+    -- else
+    -- end
 end
 
 local function OnRightClickFunc(self)
     if ENTRANCE_SELECTED ~= nil then
         print("set back to nil")
         ENTRANCE_SELECTED = nil
-    else
+    end
+    if ER_STAGE < 3 then -- off, dungeons, full
+        if self.ItemState.Target ~= nil then
+            local target_from = Tracker:FindObjectForCode("from_" .. self.ItemState.TargetBaseName)
+            local target_to = Tracker:FindObjectForCode("to_" .. self.ItemState.TargetBaseName)
+            local source_from = Tracker:FindObjectForCode("from_" .. self.ItemState.BaseName)
+            local source_to = Tracker:FindObjectForCode("to_" .. self.ItemState.BaseName)
+            if target_from ~= nil then
+                _UnsetLocationOptions(target_from)
+                _UnsetLocationOptions(source_to)
+                -- print("diconnected" .. self.Name .. " from " .. target.Name)
+            end
+            if target_to ~= nil then
+                _UnsetLocationOptions(target_to)
+                _UnsetLocationOptions(source_from)
+                -- print("diconnected" .. self.Name .. " from " .. target.Name)
+            end
+            ForceUpdate()
+        end
+    else -- insanity
         if self.ItemState.Target ~= nil then
             local target = Tracker:FindObjectForCode(self.ItemState.Target)
             if target ~= nil then
                 _UnsetLocationOptions(target)
                 _UnsetLocationOptions(self)
                 -- print("diconnected" .. self.Name .. " from " .. target.Name)
-                ForceUpdate()
             end
+            ForceUpdate()
         end
     end
 
@@ -210,7 +327,7 @@ function CreateLuaLocationItems(direction, location_obj, side)
     self.Icon = ImageReference:FromPackRelativePath("images/door_closed.png")
     self.ItemState = {
         BaseName = location_obj.name,
-        ImgPath = ImageReference:FromPackRelativePath("images/entrances/".. side .."/" .. string.gsub(location_obj.name, "_"..side, "") .. ".png"),
+        ImgPath = ImageReference:FromPackRelativePath("images/entrances/" .. side .. "/" .. string.gsub(location_obj.name, "_" .. side, "") .. ".png"),
         BaseImg = BASE_IMG_PATH,
         Stage = 0,
         Active = true,

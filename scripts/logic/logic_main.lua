@@ -19,6 +19,7 @@ local accessLVL= {
 
 -- Table to store named locations
 local ER_STATE = false
+ER_STAGE = 0
 NAMED_LOCATIONS = {}
 NAMED_LOCATIONS_KEYS = {}
 ENTRANCE_MAPPING = {} -- structure --> ENTRANCE_MAPPING[<roomnumber>][<x-coord>][<y-coord>] = location name
@@ -275,8 +276,10 @@ local er_check = {
         --     return NAMED_ENTRANCES["to_" .. self.name] ~= nil
         --  end
         end,
-    [3] = function(location_name) print("!!!!!!!!!!!!!!!!!! YOU ABSOLUTELY SHOUlD NOT BE ABLE TO SEE THIS!!!!!!!!!!!!!!!!")
-        return INSANITY_ENTRANCES[location_name] ~= nil end
+    [3] = function(location_name) --print("!!!!!!!!!!!!!!!!!! YOU ABSOLUTELY SHOUlD NOT BE ABLE TO SEE THIS!!!!!!!!!!!!!!!!")
+        -- print(location_name)
+        -- print(NAMED_ENTRANCES["from_" .. location_name])
+        return NAMED_ENTRANCES["from_" .. location_name] ~= nil end
 }
 
 function alttp_location:discover(accessibility, keys, worldstate)
@@ -417,10 +420,12 @@ function ForceUpdate(...)
 end
 
 function EmptyLocationTargets()
+    local er_tracking = Tracker:FindObjectForCode("er_tracking")
+    ER_STAGE = er_tracking.CurrentStage
     if not (Tracker.BulkUpdate == true) then
         ScriptHost:RemoveWatchForCode("StateChanged")
         ScriptHost:RemoveOnLocationSectionHandler("location_section_change_handler")
-        local er_tracking = Tracker:FindObjectForCode("er_tracking")
+        -- local er_tracking = Tracker:FindObjectForCode("er_tracking")
         if er_tracking == nil then
             print("item with code 'er_tracking' not found")
             return
@@ -459,8 +464,8 @@ function EmptyLocationTargets()
                 Tracker:FindObjectForCode(name).ItemState.Target = nil
             end
            
-        elseif er_tracking.CurrentStage == 2 then
-            print("full er")
+        elseif er_tracking.CurrentStage > 1 then
+            print("full or insanity er")
             for name, _ in pairs(NAMED_ENTRANCES) do
                 -- print(name)
                 -- print(Tracker:FindObjectForCode(name).ItemState.Target)
@@ -472,8 +477,8 @@ function EmptyLocationTargets()
                 -- Tracker:FindObjectForCode(name).worldstate = nil
             end
             Tracker:UiHint("ActivateTab", "Entrances")
-        else
-            print("insanity ER is not supported you troll")
+        -- else
+        --     print("insanity ER is not supported you troll")
         end
         for name, inside in pairs(PERMANENT_CONNECTIONS) do
             local source = Tracker:FindObjectForCode(name)
