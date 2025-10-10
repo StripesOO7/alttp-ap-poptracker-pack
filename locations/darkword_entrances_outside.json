@@ -7,6 +7,7 @@
                 "sections": [
                     {
                         "name": "From Bumper Cave (Bottom)",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_bumper_cave_bottom_outside"
                         ],
@@ -14,10 +15,19 @@
                     },
                     {
                         "name": "To Bumper Cave (Bottom)",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_bumper_cave_bottom_outside"
                         ],
                         "hosted_item": "to_dark_bumper_cave_bottom_outside"
+                    },
+                    {
+                        "name": "Bumper Cave (Bottom)",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|dark_bumper_cave_bottom_outside"
+                        ],
+                        "hosted_item": "from_dark_bumper_cave_bottom_outside"
                     }
                 ],
                 "map_locations": [
@@ -42,6 +52,7 @@
                 "sections": [
                     {
                         "name": "From Bumper Cave (Top)",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_bumper_cave_top_outside"
                         ],
@@ -49,10 +60,19 @@
                     },
                     {
                         "name": "To Bumper Cave (Top)",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_bumper_cave_top_outside"
                         ],
                         "hosted_item": "to_dark_bumper_cave_top_outside"
+                    },
+                    {
+                        "name": "Bumper Cave (Top)",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|dark_bumper_cave_top_outside"
+                        ],
+                        "hosted_item": "from_dark_bumper_cave_top_outside"
                     }
                 ],
                 "map_locations": [
@@ -77,6 +97,7 @@
                 "sections": [
                     {
                         "name": "From Dark World Lumberjack Shop",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_lumpberjacks_shop_outside"
                         ],
@@ -84,10 +105,19 @@
                     },
                     {
                         "name": "To Dark World Lumberjack Shop",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_lumpberjacks_shop_outside"
                         ],
                         "hosted_item": "to_dark_lumpberjacks_shop_outside"
+                    },
+                    {
+                        "name": "Dark World Lumberjack Shop",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|dark_lumpberjacks_shop_outside"
+                        ],
+                        "hosted_item": "from_dark_lumpberjacks_shop_outside"
                     }
                 ],
                 "map_locations": [
@@ -112,6 +142,7 @@
                 "sections": [
                     {
                         "name": "From Skull Woods Back Entrance",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|sw_back_entrance_outside"
                         ],
@@ -119,10 +150,19 @@
                     },
                     {
                         "name": "To Skull Woods Back Entrance",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|sw_back_entrance_outside"
                         ],
                         "hosted_item": "to_sw_back_entrance_outside"
+                    },
+                    {
+                        "name": "Skull Woods Back Entrance",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|sw_back_entrance_outside"
+                        ],
+                        "hosted_item": "from_sw_back_entrance_outside"
                     }
                 ],
                 "map_locations": [
@@ -147,6 +187,7 @@
                 "sections": [
                     {
                         "name": "From Skull Woods West Lobby",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|sw_west_lobby_entrance_outside"
                         ],
@@ -154,10 +195,19 @@
                     },
                     {
                         "name": "To Skull Woods West Lobby",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|sw_west_lobby_entrance_outside"
                         ],
                         "hosted_item": "to_sw_west_lobby_entrance_outside"
+                    },
+                    {
+                        "name": "Skull Woods West Lobby",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|sw_west_lobby_entrance_outside"
+                        ],
+                        "hosted_item": "from_sw_west_lobby_entrance_outside"
                     }
                 ],
                 "map_locations": [
@@ -182,6 +232,7 @@
                 "sections": [
                     {
                         "name": "From Skull Woods Back Hole",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|sw_north_drop_outside"
                         ],
@@ -189,10 +240,19 @@
                     // },
                     // {
                     //     "name": "To Skull Woods Back Hole",
+                    // "visibility_rules": ["er_insanity"],
                     //     "access_rules": [
                     //         "$CanReach|sw_north_drop_outside"
                     //     ],
                     //     "hosted_item": "to_sw_north_drop_outside"
+                    },
+                    {
+                        "name": "Skull Woods Back Hole",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|sw_north_drop_outside"
+                        ],
+                        "hosted_item":"from_sw_north_drop_outside"
                     }
                 ],
                 "map_locations": [
@@ -217,6 +277,7 @@
                 "sections": [
                     {
                         "name": "From Skull Woods Circle Pot Drop",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|sw_pot_circle_drop_outside"
                         ],
@@ -224,10 +285,19 @@
                     // },
                     // {
                     //     "name": "To Skull Woods Circle Pot Drop",
+                    // "visibility_rules": ["er_insanity"],
                     //     "access_rules": [
                     //         "$CanReach|sw_pot_circle_drop_outside"
                     //     ],
                     //     "hosted_item": "to_sw_pot_circle_drop_outside"
+                    },
+                    {
+                        "name": "Skull Woods Circle Pot Drop",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|sw_pot_circle_drop_outside"
+                        ],
+                        "hosted_item": "from_sw_pot_circle_drop_outside"
                     }
                 ],
                 "map_locations": [
@@ -252,6 +322,7 @@
                 "sections": [
                     {
                         "name": "From Skull Woods Pinball Drop",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|sw_pinball_drop_outside"
                         ],
@@ -259,10 +330,19 @@
                     // },
                     // {
                     //     "name": "To Skull Woods Pinball Drop",
+                    // "visibility_rules": ["er_insanity"],
                     //     "access_rules": [
                     //         "$CanReach|sw_pinball_drop_outside"
                     //     ],
                     //     "hosted_item": "to_sw_pinball_drop_outside"
+                    },
+                    {
+                        "name": "Skull Woods Pinball Drop",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|sw_pinball_drop_outside"
+                        ],
+                        "hosted_item": "from_sw_pinball_drop_outside"
                     }
                 ],
                 "map_locations": [
@@ -287,6 +367,7 @@
                 "sections": [
                     {
                         "name": "From Skull Woods Bottom Left Drop",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|sw_bottom_left_drop_outside"
                         ],
@@ -294,10 +375,19 @@
                     // },
                     // {
                     //     "name": "To Skull Woods Bottom Left Drop",
+                    // "visibility_rules": ["er_insanity"],
                     //     "access_rules": [
                     //         "$CanReach|sw_bottom_left_drop_outside"
                     //     ],
                     //     "hosted_item": "to_sw_bottom_left_drop_outside"
+                    },
+                    {
+                        "name": "Skull Woods Bottom Left Drop",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|sw_bottom_left_drop_outside"
+                        ],
+                        "hosted_item": "from_sw_bottom_left_drop_outside"
                     }
                 ],
                 "map_locations": [
@@ -322,6 +412,7 @@
                 "sections": [
                     {
                         "name": "From Skull Woods Big Chest Entrance",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|sw_big_chest_entrance_outside"
                         ],
@@ -329,10 +420,19 @@
                     },
                     {
                         "name": "To Skull Woods Big Chest Entrance",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|sw_big_chest_entrance_outside"
                         ],
                         "hosted_item": "to_sw_big_chest_entrance_outside"
+                    },
+                    {
+                        "name": "Skull Woods Big Chest Entrance",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|sw_big_chest_entrance_outside"
+                        ],
+                        "hosted_item": "from_sw_big_chest_entrance_outside"
                     }
                 ],
                 "map_locations": [
@@ -357,6 +457,7 @@
                 "sections": [
                     {
                         "name": "From Skull Woods Gibdo Entrance",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|sw_gibdo_entrance_outside"
                         ],
@@ -364,10 +465,19 @@
                     },
                     {
                         "name": "To Skull Woods Gibdo Entrance",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|sw_gibdo_entrance_outside"
                         ],
                         "hosted_item": "to_sw_gibdo_entrance_outside"
+                    },
+                    {
+                        "name": "Skull Woods Gibdo Entrance",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|sw_gibdo_entrance_outside"
+                        ],
+                        "hosted_item": "from_sw_gibdo_entrance_outside"
                     }
                 ],
                 "map_locations": [
@@ -397,6 +507,7 @@
                 "sections": [
                     {
                         "name": "From Ganons Tower",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|gt_entrance_outside"
                         ],
@@ -404,10 +515,19 @@
                     },
                     {
                         "name": "To Ganons Tower",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|gt_entrance_outside"
                         ],
                         "hosted_item": "to_gt_entrance_outside"
+                    },
+                    {
+                        "name": "Ganons Tower",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|gt_entrance_outside"
+                        ],
+                        "hosted_item": "from_gt_entrance_outside"
                     }
                 ],
                 "map_locations": [
@@ -432,6 +552,7 @@
                 "sections": [
                     {
                         "name": "From Turtle Rock",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|tr_main_entrance_outside"
                         ],
@@ -439,10 +560,19 @@
                     },
                     {
                         "name": "To Turtle Rock",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|tr_main_entrance_outside"
                         ],
                         "hosted_item": "to_tr_main_entrance_outside"
+                    },
+                    {
+                        "name": "Turtle Rock",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|tr_main_entrance_outside"
+                        ],
+                        "hosted_item": "from_tr_main_entrance_outside"
                     }
                 ],
                 "map_locations": [
@@ -467,6 +597,7 @@
                 "sections": [
                     {
                         "name": "From Turtle Rock Ledge Exit (West)",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|tr_laser_entrance_outside"
                         ],
@@ -474,10 +605,19 @@
                     },
                     {
                         "name": "To Turtle Rock Ledge Exit (West)",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|tr_laser_entrance_outside"
                         ],
                         "hosted_item": "to_tr_laser_entrance_outside"
+                    },
+                    {
+                        "name": "Turtle Rock Ledge Exit (West)",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|tr_laser_entrance_outside"
+                        ],
+                        "hosted_item": "from_tr_laser_entrance_outside"
                     }
                 ],
                 "map_locations": [
@@ -502,6 +642,7 @@
                 "sections": [
                     {
                         "name": "From Turtle Rock Ledge Exit (East)",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|tr_big_chest_entrance_outside"
                         ],
@@ -509,10 +650,19 @@
                     },
                     {
                         "name": "To Turtle Rock Ledge Exit (East)",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|tr_big_chest_entrance_outside"
                         ],
                         "hosted_item": "to_tr_big_chest_entrance_outside"
+                    },
+                    {
+                        "name": "Turtle Rock Ledge Exit (East)",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|tr_big_chest_entrance_outside"
+                        ],
+                        "hosted_item": "from_tr_big_chest_entrance_outside"
                     }
                 ],
                 "map_locations": [
@@ -537,6 +687,7 @@
                 "sections": [
                     {
                         "name": "From Turtle Rock Isolated Ledge Exit",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|tr_eye_bridge_entrance_outside"
                         ],
@@ -544,10 +695,19 @@
                     },
                     {
                         "name": "To Turtle Rock Isolated Ledge Exit",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|tr_eye_bridge_entrance_outside"
                         ],
                         "hosted_item": "to_tr_eye_bridge_entrance_outside"
+                    },
+                    {
+                        "name": "Turtle Rock Isolated Ledge Exit",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|tr_eye_bridge_entrance_outside"
+                        ],
+                        "hosted_item": "from_tr_eye_bridge_entrance_outside"
                     }
                 ],
                 "map_locations": [
@@ -572,6 +732,7 @@
                 "sections": [
                     {
                         "name": "From Hookshot Cave",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|hookshot_cave_outside"
                         ],
@@ -579,10 +740,19 @@
                     },
                     {
                         "name": "To Hookshot Cave",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|hookshot_cave_outside"
                         ],
                         "hosted_item": "to_hookshot_cave_outside"
+                    },
+                    {
+                        "name": "Hookshot Cave",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|hookshot_cave_outside"
+                        ],
+                        "hosted_item": "from_hookshot_cave_outside"
                     }
                 ],
                 "map_locations": [
@@ -607,6 +777,7 @@
                 "sections": [
                     {
                         "name": "From Dark Floating Island",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_floating_island_outside"
                         ],
@@ -614,10 +785,19 @@
                     },
                     {
                         "name": "To Dark Floating Island",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_floating_island_outside"
                         ],
                         "hosted_item": "to_dark_floating_island_outside"
+                    },
+                    {
+                        "name": "Dark Floating Island",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|dark_floating_island_outside"
+                        ],
+                        "hosted_item": "from_dark_floating_island_outside"
                     }
                 ],
                 "map_locations": [
@@ -642,6 +822,7 @@
                 "sections": [
                     {
                         "name": "From Superbunny Cave (Top)",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|superbunny_cave_top_outside"
                         ],
@@ -649,10 +830,19 @@
                     },
                     {
                         "name": "To Superbunny Cave (Top)",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|superbunny_cave_top_outside"
                         ],
                         "hosted_item": "to_superbunny_cave_top_outside"
+                    },
+                    {
+                        "name": "Superbunny Cave (Top)",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|superbunny_cave_top_outside"
+                        ],
+                        "hosted_item": "from_superbunny_cave_top_outside"
                     }
                 ],
                 "map_locations": [
@@ -677,6 +867,7 @@
                 "sections": [
                     {
                         "name": "From Superbunny Cave (Bottom)",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|superbunny_cave_bottom_outside"
                         ],
@@ -684,10 +875,19 @@
                     },
                     {
                         "name": "To Superbunny Cave (Bottom)",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|superbunny_cave_bottom_outside"
                         ],
                         "hosted_item": "to_superbunny_cave_bottom_outside"
+                    },
+                    {
+                        "name": "Superbunny Cave (Bottom)",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|superbunny_cave_bottom_outside"
+                        ],
+                        "hosted_item": "from_superbunny_cave_bottom_outside"
                     }
                 ],
                 "map_locations": [
@@ -712,6 +912,7 @@
                 "sections": [
                     {
                         "name": "From Cave Shop (Dark Death Mountain)",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_death_mountain_shop_outside"
                         ],
@@ -719,10 +920,19 @@
                     },
                     {
                         "name": "To Cave Shop (Dark Death Mountain)",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_death_mountain_shop_outside"
                         ],
                         "hosted_item": "to_dark_death_mountain_shop_outside"
+                    },
+                    {
+                        "name": "Cave Shop (Dark Death Mountain)",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|dark_death_mountain_shop_outside"
+                        ],
+                        "hosted_item": "from_dark_death_mountain_shop_outside"
                     }
                 ],
                 "map_locations": [
@@ -747,6 +957,7 @@
                 "sections": [
                     {
                         "name": "From Spike Cave",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|spike_cave_outside"
                         ],
@@ -754,10 +965,19 @@
                     },
                     {
                         "name": "To Spike Cave",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|spike_cave_outside"
                         ],
                         "hosted_item": "to_spike_cave_outside"
+                    },
+                    {
+                        "name": "Spike Cave",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|spike_cave_outside"
+                        ],
+                        "hosted_item": "from_spike_cave_outside"
                     }
                 ],
                 "map_locations": [
@@ -782,6 +1002,7 @@
                 "sections": [
                     {
                         "name": "From Dark Death Mountain Fairy",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_death_mountain_fairy_outside"
                         ],
@@ -789,10 +1010,19 @@
                     },
                     {
                         "name": "To Dark Death Mountain Fairy",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_death_mountain_fairy_outside"
                         ],
                         "hosted_item": "to_dark_death_mountain_fairy_outside"
+                    },
+                    {
+                        "name": "Dark Death Mountain Fairy",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|dark_death_mountain_fairy_outside"
+                        ],
+                        "hosted_item": "from_dark_death_mountain_fairy_outside"
                     }
                 ],
                 "map_locations": [
@@ -822,6 +1052,7 @@
                 "sections": [
                     {
                         "name": "From C-Shaped House",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|c_shaped_house_outside"
                         ],
@@ -829,10 +1060,19 @@
                     },
                     {
                         "name": "To C-Shaped House",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|c_shaped_house_outside"
                         ],
                         "hosted_item": "to_c_shaped_house_outside"
+                    },
+                    {
+                        "name": "C-Shaped House",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|c_shaped_house_outside"
+                        ],
+                        "hosted_item": "from_c_shaped_house_outside"
                     }
                 ],
                 "map_locations": [
@@ -857,6 +1097,7 @@
                 "sections": [
                     {
                         "name": "From Chest Game",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|chest_game_outside"
                         ],
@@ -864,10 +1105,19 @@
                     },
                     {
                         "name": "To Chest Game",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|chest_game_outside"
                         ],
                         "hosted_item": "to_chest_game_outside"
+                    },
+                    {
+                        "name": "Chest Game",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|chest_game_outside"
+                        ],
+                        "hosted_item": "from_chest_game_outside"
                     }
                 ],
                 "map_locations": [
@@ -892,6 +1142,7 @@
                 "sections": [
                     {
                         "name": "From Brewery",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|brewery_outside"
                         ],
@@ -899,10 +1150,19 @@
                     },
                     {
                         "name": "To Brewery",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|brewery_outside"
                         ],
                         "hosted_item": "to_brewery_outside"
+                    },
+                    {
+                        "name": "Brewery",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|brewery_outside"
+                        ],
+                        "hosted_item": "from_brewery_outside"
                     }
                 ],
                 "map_locations": [
@@ -927,6 +1187,7 @@
                 "sections": [
                     {
                         "name": "From Hammer Peg Cave",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|peg_cave_outside"
                         ],
@@ -934,10 +1195,19 @@
                     },
                     {
                         "name": "To Hammer Peg Cave",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|peg_cave_outside"
                         ],
                         "hosted_item": "to_peg_cave_outside"
+                    },
+                    {
+                        "name": "Hammer Peg Cave",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|peg_cave_outside"
+                        ],
+                        "hosted_item": "from_peg_cave_outside"
                     }
                 ],
                 "map_locations": [
@@ -962,6 +1232,7 @@
                 "sections": [
                     {
                         "name": "From Red Shield Shop",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|red_shield_shop_outside"
                         ],
@@ -969,10 +1240,19 @@
                     },
                     {
                         "name": "To Red Shield Shop",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|red_shield_shop_outside"
                         ],
                         "hosted_item": "to_red_shield_shop_outside"
+                    },
+                    {
+                        "name": "Red Shield Shop",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|red_shield_shop_outside"
+                        ],
+                        "hosted_item": "from_red_shield_shop_outside"
                     }
                 ],
                 "map_locations": [
@@ -997,6 +1277,7 @@
                 "sections": [
                     {
                         "name": "From Fortune Teller (Dark)",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_village_fortune_teller_outside"
                         ],
@@ -1004,10 +1285,19 @@
                     },
                     {
                         "name": "To Fortune Teller (Dark)",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_village_fortune_teller_outside"
                         ],
                         "hosted_item": "to_dark_village_fortune_teller_outside"
+                    },
+                    {
+                        "name": "Fortune Teller (Dark)",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|dark_village_fortune_teller_outside"
+                        ],
+                        "hosted_item": "from_dark_village_fortune_teller_outside"
                     }
                 ],
                 "map_locations": [
@@ -1032,6 +1322,7 @@
                 "sections": [
                     {
                         "name": "From Village of Outcasts Shop",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_village_shop_outside"
                         ],
@@ -1039,10 +1330,19 @@
                     },
                     {
                         "name": "To Village of Outcasts Shop",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_village_shop_outside"
                         ],
                         "hosted_item": "to_dark_village_shop_outside"
+                    },
+                    {
+                        "name": "Village of Outcasts Shop",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|dark_village_shop_outside"
+                        ],
+                        "hosted_item": "from_dark_village_shop_outside"
                     }
                 ],
                 "map_locations": [
@@ -1067,6 +1367,7 @@
                 "sections": [
                     {
                         "name": "From Thieves Town",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|tt_entrance_outside"
                         ],
@@ -1074,10 +1375,19 @@
                     },
                     {
                         "name": "To Thieves Town",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|tt_entrance_outside"
                         ],
                         "hosted_item": "to_tt_entrance_outside"
+                    },
+                    {
+                        "name": "Thieves Town",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|tt_entrance_outside"
+                        ],
+                        "hosted_item": "from_tt_entrance_outside"
                     }
                 ],
                 "map_locations": [
@@ -1102,6 +1412,7 @@
                 "sections": [
                     {
                         "name": "From Archery Game",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_archery_minigame_outside"
                         ],
@@ -1109,10 +1420,19 @@
                     },
                     {
                         "name": "To Archery Game",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_archery_minigame_outside"
                         ],
                         "hosted_item": "to_dark_archery_minigame_outside"
+                    },
+                    {
+                        "name": "Archery Game",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|dark_archery_minigame_outside"
+                        ],
+                        "hosted_item": "from_dark_archery_minigame_outside"
                     }
                 ],
                 "map_locations": [
@@ -1143,6 +1463,7 @@
                 "sections": [
                     {
                         "name": "From Pyramid Hole",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|pyramid_hole_outside"
                         ],
@@ -1150,10 +1471,19 @@
                     // },
                     // {
                     //     "name": "To Pyramid Hole",
+                    // "visibility_rules": ["er_insanity"],
                     //     "access_rules": [
                     //         "$CanReach|pyramid_hole_outside"
                     //     ],
                     //     "hosted_item": "to_pyramid_hole_outside"
+                    },
+                    {
+                        "name": "Pyramid Hole",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|pyramid_hole_outside"
+                        ],
+                        "hosted_item": "from_pyramid_hole_outside"
                     }
                 ],
                 "map_locations": [
@@ -1179,6 +1509,7 @@
                 "sections": [
                     {
                         "name": "From Pyramid Exit",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|pyramid_exit_outside"
                         ],
@@ -1186,10 +1517,19 @@
                     },
                     {
                         "name": "To Pyramid Exit",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|pyramid_exit_outside"
                         ],
                         "hosted_item": "to_pyramid_exit_outside"
+                    },
+                    {
+                        "name": "Pyramid Exit",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|pyramid_exit_outside"
+                        ],
+                        "hosted_item": "from_pyramid_exit_outside"
                     }
                 ],
                 "map_locations": [
@@ -1214,6 +1554,7 @@
                 "sections": [
                     {
                         "name": "From Pyramid Fairy",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|pyramid_fairy_cave_outside"
                         ],
@@ -1221,10 +1562,19 @@
                     },
                     {
                         "name": "To Pyramid Fairy",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|pyramid_fairy_cave_outside"
                         ],
                         "hosted_item": "to_pyramid_fairy_cave_outside"
+                    },
+                    {
+                        "name": "Pyramid Fairy",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|pyramid_fairy_cave_outside"
+                        ],
+                        "hosted_item": "from_pyramid_fairy_cave_outside"
                     }
                 ],
                 "map_locations": [
@@ -1249,6 +1599,7 @@
                 "sections": [
                     {
                         "name": "From Dark Sanctuary Hint",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_chapel_outside"
                         ],
@@ -1256,10 +1607,19 @@
                     },
                     {
                         "name": "To Dark Sanctuary Hint",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_chapel_outside"
                         ],
                         "hosted_item": "to_dark_chapel_outside"
+                    },
+                    {
+                        "name": "Dark Sanctuary Hint",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|dark_chapel_outside"
+                        ],
+                        "hosted_item": "from_dark_chapel_outside"
                     }
                 ],
                 "map_locations": [
@@ -1289,6 +1649,7 @@
                 "sections": [
                     {
                         "name": "From Palace of Darkness",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|pod_entrance_outside"
                         ],
@@ -1296,10 +1657,19 @@
                     },
                     {
                         "name": "To Palace of Darkness",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|pod_entrance_outside"
                         ],
                         "hosted_item": "to_pod_entrance_outside"
+                    },
+                    {
+                        "name": "Palace of Darkness",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|pod_entrance_outside"
+                        ],
+                        "hosted_item": "from_pod_entrance_outside"
                     }
                 ],
                 "map_locations": [
@@ -1324,6 +1694,7 @@
                 "sections": [
                     {
                         "name": "From Palace of Darkness Hint",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|pod_hint_house_outside"
                         ],
@@ -1331,10 +1702,19 @@
                     },
                     {
                         "name": "To Palace of Darkness Hint",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|pod_hint_house_outside"
                         ],
                         "hosted_item": "to_pod_hint_house_outside"
+                    },
+                    {
+                        "name": "Palace of Darkness Hint",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|pod_hint_house_outside"
+                        ],
+                        "hosted_item": "from_pod_hint_house_outside"
                     }
                 ],
                 "map_locations": [
@@ -1359,6 +1739,7 @@
                 "sections": [
                     {
                         "name": "From East Dark World Hint",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|pod_east_darkworld_hint_outside"
                         ],
@@ -1366,10 +1747,19 @@
                     },
                     {
                         "name": "To East Dark World Hint",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|pod_east_darkworld_hint_outside"
                         ],
                         "hosted_item": "to_pod_east_darkworld_hint_outside"
+                    },
+                    {
+                        "name": "East Dark World Hint",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|pod_east_darkworld_hint_outside"
+                        ],
+                        "hosted_item": "from_pod_east_darkworld_hint_outside"
                     }
                 ],
                 "map_locations": [
@@ -1394,6 +1784,7 @@
                 "sections": [
                     {
                         "name": "From Dark World Potion Shop",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_potion_shop_outside"
                         ],
@@ -1401,10 +1792,19 @@
                     },
                     {
                         "name": "To Dark World Potion Shop",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_potion_shop_outside"
                         ],
                         "hosted_item": "to_dark_potion_shop_outside"
+                    },
+                    {
+                        "name": "Dark World Potion Shop",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|dark_potion_shop_outside"
+                        ],
+                        "hosted_item": "from_dark_potion_shop_outside"
                     }
                 ],
                 "map_locations": [
@@ -1429,6 +1829,7 @@
                 "sections": [
                     {
                         "name": "From Dark Lake Hylia Fairy",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_lake_hylia_fairy_outside"
                         ],
@@ -1436,10 +1837,19 @@
                     },
                     {
                         "name": "To Dark Lake Hylia Fairy",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_lake_hylia_fairy_outside"
                         ],
                         "hosted_item": "to_dark_lake_hylia_fairy_outside"
+                    },
+                    {
+                        "name": "Dark Lake Hylia Fairy",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|dark_lake_hylia_fairy_outside"
+                        ],
+                        "hosted_item": "from_dark_lake_hylia_fairy_outside"
                     }
                 ],
                 "map_locations": [
@@ -1469,6 +1879,7 @@
                 "sections": [
                     {
                         "name": "From Misery Mire",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|mm_entrance_outside"
                         ],
@@ -1476,10 +1887,19 @@
                     },
                     {
                         "name": "To Misery Mire",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|mm_entrance_outside"
                         ],
                         "hosted_item": "to_mm_entrance_outside"
+                    },
+                    {
+                        "name": "Misery Mire",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|mm_entrance_outside"
+                        ],
+                        "hosted_item": "from_mm_entrance_outside"
                     }
                 ],
                 "map_locations": [
@@ -1504,6 +1924,7 @@
                 "sections": [
                     {
                         "name": "From Mire Shed",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|mire_shed_outside"
                         ],
@@ -1511,10 +1932,19 @@
                     },
                     {
                         "name": "To Mire Shed",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|mire_shed_outside"
                         ],
                         "hosted_item": "to_mire_shed_outside"
+                    },
+                    {
+                        "name": "Mire Shed",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|mire_shed_outside"
+                        ],
+                        "hosted_item": "from_mire_shed_outside"
                     }
                 ],
                 "map_locations": [
@@ -1539,6 +1969,7 @@
                 "sections": [
                     {
                         "name": "From Dark Desert Hint",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_desert_hint_outside"
                         ],
@@ -1546,10 +1977,19 @@
                     },
                     {
                         "name": "To Dark Desert Hint",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_desert_hint_outside"
                         ],
                         "hosted_item": "to_dark_desert_hint_outside"
+                    },
+                    {
+                        "name": "Dark Desert Hint",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|dark_desert_hint_outside"
+                        ],
+                        "hosted_item": "from_dark_desert_hint_outside"
                     }
                 ],
                 "map_locations": [
@@ -1574,6 +2014,7 @@
                 "sections": [
                     {
                         "name": "From Dark Desert Fairy",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_desert_fairy_cave_outside"
                         ],
@@ -1581,10 +2022,19 @@
                     },
                     {
                         "name": "To Dark Desert Fairy",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_desert_fairy_cave_outside"
                         ],
                         "hosted_item": "to_dark_desert_fairy_cave_outside"
+                    },
+                    {
+                        "name": "Dark Desert Fairy",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|dark_desert_fairy_cave_outside"
+                        ],
+                        "hosted_item": "from_dark_desert_fairy_cave_outside"
                     }
                 ],
                 "map_locations": [
@@ -1614,6 +2064,7 @@
                 "sections": [
                     {
                         "name": "From Big Bomb Shop",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|big_bomb_shop_outside"
                         ],
@@ -1621,10 +2072,19 @@
                     },
                     {
                         "name": "To Big Bomb Shop",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|big_bomb_shop_outside"
                         ],
                         "hosted_item": "to_big_bomb_shop_outside"
+                    },
+                    {
+                        "name": "Big Bomb Shop",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|big_bomb_shop_outside"
+                        ],
+                        "hosted_item": "from_big_bomb_shop_outside"
                     }
                 ],
                 "map_locations": [
@@ -1649,6 +2109,7 @@
                 "sections": [
                     {
                         "name": "From Bonk Fairy (Dark)",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|big_bomb_shop_fairy_cave_outside"
                         ],
@@ -1656,10 +2117,19 @@
                     },
                     {
                         "name": "To Bonk Fairy (Dark)",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|big_bomb_shop_fairy_cave_outside"
                         ],
                         "hosted_item": "to_big_bomb_shop_fairy_cave_outside"
+                    },
+                    {
+                        "name": "Bonk Fairy (Dark)",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|big_bomb_shop_fairy_cave_outside"
+                        ],
+                        "hosted_item": "from_big_bomb_shop_fairy_cave_outside"
                     }
                 ],
                 "map_locations": [
@@ -1684,6 +2154,7 @@
                 "sections": [
                     {
                         "name": "From Hype Cave",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|hype_cave_outside"
                         ],
@@ -1691,10 +2162,19 @@
                     },
                     {
                         "name": "To Hype Cave",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|hype_cave_outside"
                         ],
                         "hosted_item": "to_hype_cave_outside"
+                    },
+                    {
+                        "name": "Hype Cave",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|hype_cave_outside"
+                        ],
+                        "hosted_item": "from_hype_cave_outside"
                     }
                 ],
                 "map_locations": [
@@ -1719,6 +2199,7 @@
                 "sections": [
                     {
                         "name": "From Swamp Palace",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|sp_entrance_outside"
                         ],
@@ -1726,10 +2207,19 @@
                     },
                     {
                         "name": "To Swamp Palace",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|sp_entrance_outside"
                         ],
                         "hosted_item": "to_sp_entrance_outside"
+                    },
+                    {
+                        "name": "Swamp Palace",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|sp_entrance_outside"
+                        ],
+                        "hosted_item": "from_sp_entrance_outside"
                     }
                 ],
                 "map_locations": [
@@ -1759,6 +2249,7 @@
                 "sections": [
                     {
                         "name": "From Dark Lake Hylia Shop",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_lake_shop_outside"
                         ],
@@ -1766,10 +2257,19 @@
                     },
                     {
                         "name": "To Dark Lake Hylia Shop",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_lake_shop_outside"
                         ],
                         "hosted_item": "to_dark_lake_shop_outside"
+                    },
+                    {
+                        "name": "Dark Lake Hylia Shop",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|dark_lake_shop_outside"
+                        ],
+                        "hosted_item": "from_dark_lake_shop_outside"
                     }
                 ],
                 "map_locations": [
@@ -1794,6 +2294,7 @@
                 "sections": [
                     {
                         "name": "From Dark Lake Hylia Ledge Fairy",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_lake_hylia_ledge_fairy_outside"
                         ],
@@ -1801,10 +2302,19 @@
                     },
                     {
                         "name": "To Dark Lake Hylia Ledge Fairy",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_lake_hylia_ledge_fairy_outside"
                         ],
                         "hosted_item": "to_dark_lake_hylia_ledge_fairy_outside"
+                    },
+                    {
+                        "name": "Dark Lake Hylia Ledge Fairy",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|dark_lake_hylia_ledge_fairy_outside"
+                        ],
+                        "hosted_item": "from_dark_lake_hylia_ledge_fairy_outside"
                     }
                 ],
                 "map_locations": [
@@ -1829,6 +2339,7 @@
                 "sections": [
                     {
                         "name": "From Dark Lake Hylia Ledge Spike Cave",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_lake_hylia_ledge_spike_hint_outside"
                         ],
@@ -1836,10 +2347,19 @@
                     },
                     {
                         "name": "To Dark Lake Hylia Ledge Spike Cave",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_lake_hylia_ledge_spike_hint_outside"
                         ],
                         "hosted_item": "to_dark_lake_hylia_ledge_spike_hint_outside"
+                    },
+                    {
+                        "name": "Dark Lake Hylia Ledge Spike Cave",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|dark_lake_hylia_ledge_spike_hint_outside"
+                        ],
+                        "hosted_item": "from_dark_lake_hylia_ledge_spike_hint_outside"
                     }
                 ],
                 "map_locations": [
@@ -1864,6 +2384,7 @@
                 "sections": [
                     {
                         "name": "From Dark Lake Hylia Ledge Hint",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_lake_hylia_ledge_hint_outside"
                         ],
@@ -1871,10 +2392,19 @@
                     },
                     {
                         "name": "To Dark Lake Hylia Ledge Hint",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|dark_lake_hylia_ledge_hint_outside"
                         ],
                         "hosted_item": "to_dark_lake_hylia_ledge_hint_outside"
+                    },
+                    {
+                        "name": "Dark Lake Hylia Ledge Hint",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|dark_lake_hylia_ledge_hint_outside"
+                        ],
+                        "hosted_item": "from_dark_lake_hylia_ledge_hint_outside"
                     }
                 ],
                 "map_locations": [
@@ -1899,6 +2429,7 @@
                 "sections": [
                     {
                         "name": "From Ice Palace",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|ip_entrance_outside"
                         ],
@@ -1906,10 +2437,19 @@
                     },
                     {
                         "name": "To Ice Palace",
+                        "visibility_rules": ["er_insanity"],
                         "access_rules": [
                             "$CanReach|ip_entrance_outside"
                         ],
                         "hosted_item": "to_ip_entrance_outside"
+                    },
+                    {
+                        "name": "Ice Palace",
+                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "access_rules": [
+                            "$CanReach|ip_entrance_outside"
+                        ],
+                        "hosted_item": "from_ip_entrance_outside"
                     }
                 ],
                 "map_locations": [
