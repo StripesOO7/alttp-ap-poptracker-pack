@@ -1,6 +1,36 @@
 {
 	"versions": [
 		{
+			"package_version": "0.3.5",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.3.5/alttp-ap-tracker-v0.3.5.zip",
+			"sha256": "928ec61f790778524a89dbdfa5dad790a0a975fc5efef7421ccd028aed107750",
+			"changelog": [
+				"bugfixes for ER and some other logic issues",
+				"",
+				"# fixed ER stuff:",
+				"- fixed accessibility for all the entrances where you can be stuck after leaving them. before it assumed you can go both ways",
+				"- autofill master sword meadow and backside pub connections",
+				"- rename ER Simple to ER dungeons to better reflect what is being tracked and what not",
+				"- makes non-insanity easier to mark by removing the second door and handle that internally",
+				"- insanity ER will respect the first entrance type (entrance/exit) you select and connect it to the opposite one automatically regardless of whats being clicked on",
+				"- more location updates for autotracking entrances thanks to @Sirheavens",
+				"",
+				"# fixed logic:",
+				"",
+				"- general cleanup of some function",
+				"- fixed logic evaluation exceeding poptrackers set limits",
+				"- fix IP boss key requirements. set to 6 small keys now",
+				"- properly reset medallions when connecting to a new slot",
+				"- speed up connecting by not calling an updated after each change",
+				"",
+				"added:",
+				"- enabled insanity ER",
+				"- shops now show their default inventory OR you can set the shuffled inventory and prices",
+				"- thanks to Dessyreqt for letting me use their images for pull tree, hoarder crab and stun prices",
+				"- setting 'open pyramid' should now be available and should mark the availability of pyramid hole depending on the goal"
+			]
+		},
+		{
 			"package_version": "0.3.4",
 			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.3.4/alttp-ap-tracker-v0.3.4.zip",
 			"sha256": "f932ed276564a3a6d4e9c0a4f0bb2b4f7499bd6b025c7442ec0a554b506e978b",
@@ -474,6 +504,7 @@
 		}
 	]
 }
+
 
 
 
