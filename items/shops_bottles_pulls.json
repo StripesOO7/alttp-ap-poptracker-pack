@@ -60,7 +60,7 @@
     {
         "name": "Shop Item 1",
         "type": "progressive",
-        "initial_stage_idx": 4,
+        "initial_stage_idx": 6,
         "allow_disabled": false,
         "loop": false,
         "stages": [
@@ -82,6 +82,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_item_1, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_1, buy_small_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_1, buy_large_magic",
                 "inherit_codes": false
             },
             {
@@ -124,7 +134,7 @@
     {
         "name": "Shop Item 2",
         "type": "progressive",
-        "initial_stage_idx": 9,
+        "initial_stage_idx": 11,
         "allow_disabled": false,
         "loop": false,
         "stages": [
@@ -146,6 +156,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_item_2, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_2, buy_small_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_2, buy_large_magic",
                 "inherit_codes": false
             },
             {
@@ -213,6 +233,16 @@
                 "inherit_codes": false
             },
             {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_3, buy_small_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_3, buy_large_magic",
+                "inherit_codes": false
+            },
+            {
                 "img": "/images/items/red_potion.png",
                 "codes": "default_shop_item_3, buy_green_potion",
                 "inherit_codes": false
@@ -252,7 +282,7 @@
     {
         "name": "Shop Item 4",
         "type": "progressive",
-        "initial_stage_idx": 9,
+        "initial_stage_idx": 11,
         "allow_disabled": false,
         "loop": false,
         "stages": [
@@ -274,6 +304,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_item_4, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_4, buy_small_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_4, buy_large_magic",
                 "inherit_codes": false
             },
             {
@@ -316,7 +356,7 @@
     {
         "name": "Shop Item 5",
         "type": "progressive",
-        "initial_stage_idx": 10,
+        "initial_stage_idx": 12,
         "allow_disabled": false,
         "loop": false,
         "stages": [
@@ -338,6 +378,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_item_5, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_5, buy_small_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_5, buy_large_magic",
                 "inherit_codes": false
             },
             {
@@ -405,6 +455,16 @@
                 "inherit_codes": false
             },
             {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_6, buy_small_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_6, buy_large_magic",
+                "inherit_codes": false
+            },
+            {
                 "img": "/images/items/red_potion.png",
                 "codes": "default_shop_item_6, buy_green_potion",
                 "inherit_codes": false
@@ -444,7 +504,7 @@
     {
         "name": "Shop Item 7",
         "type": "progressive",
-        "initial_stage_idx": 4,
+        "initial_stage_idx": 6,
         "allow_disabled": false,
         "loop": false,
         "stages": [
@@ -466,6 +526,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_item_7, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_7, buy_small_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_7, buy_large_magic",
                 "inherit_codes": false
             },
             {
@@ -508,7 +578,7 @@
     {
         "name": "Shop Item 8",
         "type": "progressive",
-        "initial_stage_idx": 9,
+        "initial_stage_idx": 11,
         "allow_disabled": false,
         "loop": false,
         "stages": [
@@ -530,6 +600,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_item_8, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_8, buy_small_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_8, buy_large_magic",
                 "inherit_codes": false
             },
             {
@@ -597,6 +677,16 @@
                 "inherit_codes": false
             },
             {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_9, buy_small_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_9, buy_large_magic",
+                "inherit_codes": false
+            },
+            {
                 "img": "/images/items/red_potion.png",
                 "codes": "default_shop_item_9, buy_green_potion",
                 "inherit_codes": false
@@ -636,7 +726,7 @@
     {
         "name": "Shop Item 10",
         "type": "progressive",
-        "initial_stage_idx": 4,
+        "initial_stage_idx": 6,
         "allow_disabled": false,
         "loop": false,
         "stages": [
@@ -658,6 +748,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_item_10, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_10, buysmall_magich",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_10, buy_large_magic",
                 "inherit_codes": false
             },
             {
@@ -700,7 +800,7 @@
     {
         "name": "Shop Item 11",
         "type": "progressive",
-        "initial_stage_idx": 9,
+        "initial_stage_idx": 11,
         "allow_disabled": false,
         "loop": false,
         "stages": [
@@ -722,6 +822,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_item_11, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_11, buysmall_magich",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_11, buy_large_magic",
                 "inherit_codes": false
             },
             {
@@ -789,6 +899,16 @@
                 "inherit_codes": false
             },
             {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_12, buysmall_magich",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_12, buy_large_magic",
+                "inherit_codes": false
+            },
+            {
                 "img": "/images/items/red_potion.png",
                 "codes": "default_shop_item_12, buy_green_potion",
                 "inherit_codes": false
@@ -828,7 +948,7 @@
     {
         "name": "Shop Item 13",
         "type": "progressive",
-        "initial_stage_idx": 4,
+        "initial_stage_idx": 6,
         "allow_disabled": false,
         "loop": false,
         "stages": [
@@ -850,6 +970,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_item_13, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_13, buysmall_magich",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_13, buy_large_magic",
                 "inherit_codes": false
             },
             {
@@ -892,7 +1022,7 @@
     {
         "name": "Shop Item 14",
         "type": "progressive",
-        "initial_stage_idx": 9,
+        "initial_stage_idx": 11,
         "allow_disabled": false,
         "loop": false,
         "stages": [
@@ -914,6 +1044,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_item_14, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_14, buysmall_magich",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_14, buy_large_magic",
                 "inherit_codes": false
             },
             {
@@ -981,6 +1121,16 @@
                 "inherit_codes": false
             },
             {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_15, buysmall_magich",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_15, buy_large_magic",
+                "inherit_codes": false
+            },
+            {
                 "img": "/images/items/red_potion.png",
                 "codes": "default_shop_item_15, buy_green_potion",
                 "inherit_codes": false
@@ -1020,7 +1170,7 @@
     {
         "name": "Shop Item 16",
         "type": "progressive",
-        "initial_stage_idx": 4,
+        "initial_stage_idx": 6,
         "allow_disabled": false,
         "loop": false,
         "stages": [
@@ -1042,6 +1192,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_item_16, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_16, buysmall_magich",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_16, buy_large_magic",
                 "inherit_codes": false
             },
             {
@@ -1109,6 +1269,16 @@
                 "inherit_codes": false
             },
             {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_17, buysmall_magich",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_17, buy_large_magic",
+                "inherit_codes": false
+            },
+            {
                 "img": "/images/items/red_potion.png",
                 "codes": "default_shop_item_17, buy_green_potion",
                 "inherit_codes": false
@@ -1173,6 +1343,16 @@
                 "inherit_codes": false
             },
             {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_18, buysmall_magich",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_18, buy_large_magic",
+                "inherit_codes": false
+            },
+            {
                 "img": "/images/items/red_potion.png",
                 "codes": "default_shop_item_18, buy_green_potion",
                 "inherit_codes": false
@@ -1212,7 +1392,7 @@
     {
         "name": "Shop Item 19",
         "type": "progressive",
-        "initial_stage_idx": 4,
+        "initial_stage_idx": 6,
         "allow_disabled": false,
         "loop": false,
         "stages": [
@@ -1234,6 +1414,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_item_19, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_19, buysmall_magich",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_19, buy_large_magic",
                 "inherit_codes": false
             },
             {
@@ -1301,6 +1491,16 @@
                 "inherit_codes": false
             },
             {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_20, buysmall_magich",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_20, buy_large_magic",
+                "inherit_codes": false
+            },
+            {
                 "img": "/images/items/red_potion.png",
                 "codes": "default_shop_item_20, buy_green_potion",
                 "inherit_codes": false
@@ -1365,6 +1565,16 @@
                 "inherit_codes": false
             },
             {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_21, buysmall_magich",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_21, buy_large_magic",
+                "inherit_codes": false
+            },
+            {
                 "img": "/images/items/red_potion.png",
                 "codes": "default_shop_item_21, buy_green_potion",
                 "inherit_codes": false
@@ -1404,7 +1614,7 @@
     {
         "name": "Shop Item 22",
         "type": "progressive",
-        "initial_stage_idx": 4,
+        "initial_stage_idx": 6,
         "allow_disabled": false,
         "loop": false,
         "stages": [
@@ -1426,6 +1636,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_item_22, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_22, buysmall_magich",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_22, buy_large_magic",
                 "inherit_codes": false
             },
             {
@@ -1493,6 +1713,16 @@
                 "inherit_codes": false
             },
             {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_23, buysmall_magich",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_23, buy_large_magic",
+                "inherit_codes": false
+            },
+            {
                 "img": "/images/items/red_potion.png",
                 "codes": "default_shop_item_23, buy_green_potion",
                 "inherit_codes": false
@@ -1554,6 +1784,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_item_24, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_24, buysmall_magich",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_24, buy_large_magic",
                 "inherit_codes": false
             },
             {
@@ -1620,6 +1860,16 @@
                 "inherit_codes": false
             },
             {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_25, buysmall_magich",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_25, buy_large_magic",
+                "inherit_codes": false
+            },
+            {
                 "img": "/images/items/red_potion.png",
                 "codes": "default_shop_item_25, buy_green_potion",
                 "inherit_codes": false
@@ -1683,6 +1933,16 @@
                 "inherit_codes": false
             },
             {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_26, buysmall_magich",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_26, buy_large_magic",
+                "inherit_codes": false
+            },
+            {
                 "img": "/images/items/red_potion.png",
                 "codes": "default_shop_item_26, buy_green_potion",
                 "inherit_codes": false
@@ -1722,7 +1982,7 @@
     {
         "name": "Shop Item 27",
         "type": "progressive",
-        // "initial_stage_idx": 4,
+        // "initial_stage_idx": 6,
         "allow_disabled": false,
         "loop": false,
         "stages": [
@@ -1744,6 +2004,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_item_27, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_27, buysmall_magich",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_27, buy_large_magic",
                 "inherit_codes": false
             },
             {
@@ -1786,7 +2056,7 @@
     {
         "name": "Shop Item 28",
         "type": "progressive",
-        "initial_stage_idx": 4,
+        "initial_stage_idx": 6,
         "allow_disabled": false,
         "loop": false,
         "stages": [
@@ -1808,6 +2078,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_item_28, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_28, buysmall_magich",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_28, buy_large_magic",
                 "inherit_codes": false
             },
             {
@@ -1875,6 +2155,16 @@
                 "inherit_codes": false
             },
             {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_29, buysmall_magich",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_29, buy_large_magic",
+                "inherit_codes": false
+            },
+            {
                 "img": "/images/items/red_potion.png",
                 "codes": "default_shop_item_29, buy_green_potion",
                 "inherit_codes": false
@@ -1939,6 +2229,16 @@
                 "inherit_codes": false
             },
             {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_30, buysmall_magich",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_30, buy_large_magic",
+                "inherit_codes": false
+            },
+            {
                 "img": "/images/items/red_potion.png",
                 "codes": "default_shop_item_30, buy_green_potion",
                 "inherit_codes": false
@@ -1978,7 +2278,7 @@
     {
         "name": "Shop Item 31",
         "type": "progressive",
-        "initial_stage_idx": 4,
+        "initial_stage_idx": 6,
         "allow_disabled": false,
         "loop": false,
         "stages": [
@@ -2000,6 +2300,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_item_31, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_31, buysmall_magich",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_31, buy_large_magic",
                 "inherit_codes": false
             },
             {
@@ -2042,7 +2352,7 @@
     {
         "name": "Shop Item 32",
         "type": "progressive",
-        "initial_stage_idx": 5,
+        "initial_stage_idx": 7,
         "allow_disabled": false,
         "loop": false,
         "stages": [
@@ -2064,6 +2374,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_item_32, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_32, buysmall_magich",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_32, buy_large_magic",
                 "inherit_codes": false
             },
             {
@@ -2107,7 +2427,7 @@
         "name": "Shop Item 33",
         "type": "progressive",
         "allow_disabled": false,
-        "initial_stage_idx": 6,
+        "initial_stage_idx": 8,
         "loop": false,
         "stages": [
             {
@@ -2128,6 +2448,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_item_33, buy_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_item_33, buysmall_magich",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_item_33, buy_large_magic",
                 "inherit_codes": false
             },
             {
@@ -2201,6 +2531,16 @@
             },
             {
                 "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_1, prismall_magiclth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_1, price_large_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
                 "codes": "default_shop_price_1, price_magic",
                 "inherit_codes": false
             }
@@ -2236,6 +2576,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_price_2, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_2, prismall_magiclth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_2, price_large_magic",
                 "inherit_codes": false
             },
             {
@@ -2279,6 +2629,16 @@
             },
             {
                 "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_3, prismall_magiclth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_3, price_large_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
                 "codes": "default_shop_price_3, price_magic",
                 "inherit_codes": false
             }
@@ -2314,6 +2674,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_price_4, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_4, prismall_magiclth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_4, price_large_magic",
                 "inherit_codes": false
             },
             {
@@ -2357,6 +2727,16 @@
             },
             {
                 "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_5, prismall_magiclth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_5, price_large_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
                 "codes": "default_shop_price_5, price_magic",
                 "inherit_codes": false
             }
@@ -2392,6 +2772,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_price_6, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_6, prismall_magiclth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_6, price_large_magic",
                 "inherit_codes": false
             },
             {
@@ -2435,6 +2825,16 @@
             },
             {
                 "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_7, prismall_magiclth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_7, price_large_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
                 "codes": "default_shop_price_7, price_magic",
                 "inherit_codes": false
             }
@@ -2470,6 +2870,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_price_8, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_8, prismall_magiclth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_8, price_large_magic",
                 "inherit_codes": false
             },
             {
@@ -2513,6 +2923,16 @@
             },
             {
                 "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_9, prismall_magiclth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_9, price_large_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
                 "codes": "default_shop_price_9, price_magic",
                 "inherit_codes": false
             }
@@ -2548,6 +2968,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_price_10, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_10, prsmall_magicalth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_10, price_large_magic",
                 "inherit_codes": false
             },
             {
@@ -2591,6 +3021,16 @@
             },
             {
                 "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_11, prsmall_magicalth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_11, price_large_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
                 "codes": "default_shop_price_11, price_magic",
                 "inherit_codes": false
             }
@@ -2626,6 +3066,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_price_12, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_12, prsmall_magicalth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_12, price_large_magic",
                 "inherit_codes": false
             },
             {
@@ -2669,6 +3119,16 @@
             },
             {
                 "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_13, prsmall_magicalth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_13, price_large_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
                 "codes": "default_shop_price_13, price_magic",
                 "inherit_codes": false
             }
@@ -2704,6 +3164,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_price_14, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_14, prsmall_magicalth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_14, price_large_magic",
                 "inherit_codes": false
             },
             {
@@ -2747,6 +3217,16 @@
             },
             {
                 "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_15, prsmall_magicalth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_15, price_large_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
                 "codes": "default_shop_price_15, price_magic",
                 "inherit_codes": false
             }
@@ -2782,6 +3262,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_price_16, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_16, prsmall_magicalth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_16, price_large_magic",
                 "inherit_codes": false
             },
             {
@@ -2825,6 +3315,16 @@
             },
             {
                 "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_17, prsmall_magicalth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_17, price_large_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
                 "codes": "default_shop_price_17, price_magic",
                 "inherit_codes": false
             }
@@ -2860,6 +3360,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_price_18, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_18, prsmall_magicalth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_18, price_large_magic",
                 "inherit_codes": false
             },
             {
@@ -2903,6 +3413,16 @@
             },
             {
                 "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_19, prsmall_magicalth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_19, price_large_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
                 "codes": "default_shop_price_19, price_magic",
                 "inherit_codes": false
             }
@@ -2938,6 +3458,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_price_20, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_20, prsmall_magicalth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_20, price_large_magic",
                 "inherit_codes": false
             },
             {
@@ -2981,6 +3511,16 @@
             },
             {
                 "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_21, prsmall_magicalth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_21, price_large_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
                 "codes": "default_shop_price_21, price_magic",
                 "inherit_codes": false
             }
@@ -3016,6 +3556,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_price_22, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_22, prsmall_magicalth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_22, price_large_magic",
                 "inherit_codes": false
             },
             {
@@ -3059,6 +3609,16 @@
             },
             {
                 "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_23, prsmall_magicalth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_23, price_large_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
                 "codes": "default_shop_price_23, price_magic",
                 "inherit_codes": false
             }
@@ -3094,6 +3654,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_price_24, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_24, prsmall_magicalth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_24, price_large_magic",
                 "inherit_codes": false
             },
             {
@@ -3137,6 +3707,16 @@
             },
             {
                 "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_25, prsmall_magicalth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_25, price_large_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
                 "codes": "default_shop_price_25, price_magic",
                 "inherit_codes": false
             }
@@ -3172,6 +3752,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_price_26, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_26, prsmall_magicalth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_26, price_large_magic",
                 "inherit_codes": false
             },
             {
@@ -3215,6 +3805,16 @@
             },
             {
                 "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_27, prsmall_magicalth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_27, price_large_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
                 "codes": "default_shop_price_27, price_magic",
                 "inherit_codes": false
             }
@@ -3250,6 +3850,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_price_28, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_28, prsmall_magicalth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_28, price_large_magic",
                 "inherit_codes": false
             },
             {
@@ -3293,6 +3903,16 @@
             },
             {
                 "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_29, prsmall_magicalth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_29, price_large_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
                 "codes": "default_shop_price_29, price_magic",
                 "inherit_codes": false
             }
@@ -3328,6 +3948,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_price_30, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_30, prsmall_magicalth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_30, price_large_magic",
                 "inherit_codes": false
             },
             {
@@ -3371,6 +4001,16 @@
             },
             {
                 "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_31, prsmall_magicalth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_31, price_large_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
                 "codes": "default_shop_price_31, price_magic",
                 "inherit_codes": false
             }
@@ -3410,6 +4050,16 @@
             },
             {
                 "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_32, prsmall_magicalth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_32, price_large_magic",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
                 "codes": "default_shop_price_32, price_magic",
                 "inherit_codes": false
             }
@@ -3445,6 +4095,16 @@
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
                 "codes": "default_shop_price_33, price_health",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/MagicJarSmall.png",
+                "codes": "default_shop_price_33, prsmall_magicalth",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Magic-Jar-Large.png",
+                "codes": "default_shop_price_33, price_large_magic",
                 "inherit_codes": false
             },
             {
@@ -3492,7 +4152,8 @@
             },
             {
                 "img": "/images/items/Recovery-Heart-Sprite.png",
-                "codes": "tree_pull_1, pull_health"
+                "codes": "tree_pull_1, pull_health",
+                "inherit_codes": false
             },
             {
                 "img": "/images/items/MagicJarSmall.png",
