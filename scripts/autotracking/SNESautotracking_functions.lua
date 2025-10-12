@@ -356,47 +356,26 @@ function UpdateEntrances(segment, mainModuleIdx)
             end
 
             if temp_room_y ~= nil then
-                -- local current_door = ENTRANCE_MAPPING[current_room][current_coords_x][current_coords_y]
                 local current_door = temp_room_y
                 local door_name = entrance_name
-                -- print(door_name)
                 if current_door ~= nil and type(current_door) == "table" then
                     if Selected_entrance == nil then
                         Selected_entrance = Tracker:FindObjectForCode("from_"..door_name)
                         Selected_entrance_origin = entrance_origin
-                        -- print("Selected_entrance", Selected_entrance.Name)
                     else
                         if string.gsub(Selected_entrance.Name, "from_", "") ~= door_name then
-                            -- if multi_purpose_room[door_name] then
                             local multi_purpose_room_call = multi_purpose_room[door_name]
                             if multi_purpose_room_call == nil then
                                 multi_purpose_room_call = function() return 1 end
                             end
                             Selected_exit = Tracker:FindObjectForCode("to_"..current_door[multi_purpose_room_call()])
                             Selected_exit_origin = entrance_origin
-                            -- if string.match(current_door[1], "kakariko_shop") then
-                            --     LIGHT_SHOPS_FOUND = LIGHT_SHOPS_FOUND + 1
-                            --     Selected_exit = Tracker:FindObjectForCode("to_"..current_door[LIGHT_SHOPS_FOUND])
-                            -- elseif string.match(current_door[1], "kakariko_fortune") then
-                            --     FORTUNE_FOUND = FORTUNE_FOUND + 1
-                            --     Selected_exit = Tracker:FindObjectForCode("to_"..current_door[FORTUNE_FOUND])
-                            -- elseif string.match(current_door[1], "dam_desert_fairy_") then
-                            --     FAIRYS_FOUND = FAIRYS_FOUND + 1
-                            --     Selected_exit = Tracker:FindObjectForCode("to_"..current_door[FAIRYS_FOUND])
-                            -- else
-                            --     Selected_exit = Tracker:FindObjectForCode("to_"..current_door[1])
-                            -- end
-                            -- print("Selected_exit", Selected_exit.Name)
                         end
 
                     end
                 
                     local er_stage = Tracker:FindObjectForCode("er_tracking").CurrentStage
                     if Selected_entrance ~= nil and Selected_exit ~= nil and Selected_entrance_origin ~= Selected_exit_origin then
-                        -- print("inside entrance connection part")
-                        -- print("selected_entrance", selected_entrance.Name)
-                        -- print("selected_exit", selected_exit.Name)
-                        -- print(Tracker:FindObjectForCode("er_tracking").CurrentStage)
                         if er_stage == 3 then -- separated doors
                     
                             _SetLocationOptions(Selected_entrance, Selected_exit)
@@ -512,29 +491,6 @@ function UpdateUI(segment, mainModuleIdx)
         dungeon_room = 0
     end
 end
-
--- function UpdateUI(segment, mainModuleIdx)
---     if mainModuleIdx > 0x05 then
---         new_ow_room = segment:ReadUInt16(0x7e008a)
---         if new_ow_room == 0 then
---             new_dungeon_room = segment:ReadUInt16(0x7e00a0)
---         else
---             dungeon_room = 0
---             new_dungeon_room = 0
---         end
-
---         if new_ow_room > 0 then -- and ow_room ~= new_ow_room then
---             ow_room = new_ow_room
---             ChangeTab("Overworld")
---         elseif new_dungeon_room > 0 and dungeon_room ~= new_dungeon_room then
---             dungeon_room = new_dungeon_room
---             ChangeTab(room_lookuptable[dungeon_room])
---         end
---         -- print("Current Room Index: ", new_dungeon_room)
---         -- print("Current OW   Index: ", new_ow_room)
---         -- print(room_lookuptable[dungeon_room])
---     end
--- end
 
 function ChangeTab(target_tab)
     if Tracker:FindObjectForCode("ui_hint").Active and target_tab ~= nil then

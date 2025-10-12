@@ -3,14 +3,8 @@ BASE_IMG_PATH = ImageReference:FromPackRelativePath("images/door_closed.png")
 function _SetLocationOptions(source, target) -- source == inside, target == outside
     source.ItemState.Target = target.Name
     source.ItemState.TargetBaseName = target.ItemState.BaseName
-    -- source.Icon = ImageReference:FromPackRelativePath("images/entrances/" .. target.ItemState.Side .. "/" ..
-    -- string.gsub(string.gsub(target.Name, "_" .. target.ItemState.Side, ""), target.ItemState.Direction, "") .. ".png")
     source.Icon = target.ItemState.ImgPath
-    -- source.BadgeText = string.gsub(target.ItemState.Direction, "_", " ") .. target.ItemState.Shortname
     source.BadgeText = target.ItemState.BadgeTextDirection
-    -- source.BadgeTextColor = "#abcdef"
-    -- source:SetOverlayFontSize(10)
-    -- source:SetOverlayAlign("left")
 end
 
 function _UnsetLocationOptions(source)
@@ -18,24 +12,17 @@ function _UnsetLocationOptions(source)
     source.ItemState.TargetBaseName = nil
     source.Icon = source.ItemState.BaseImg
     source.BadgeText = ""
-    -- source.BadgeTextColor = ""
     source.ItemState.Worldstate = source.ItemState.BaseWorldstate
-    -- source:SetOverlayFontSize(10)
-    -- source:SetOverlayAlign("left")
 end
 
 local function OnLeftClickFunc(self)
-    -- print(ER_STAGE)
     if ER_STAGE < 3 then --off, dungeons, full
-        -- print("off, dungeons, full")
         local target_entrance_from
         local target_entrance_to
         local source_entrance_from
         local source_entrance_to
         if ENTRANCE_SELECTED then -- ENTRANCE_SELECTED ~= nil
-            -- print("ENTRANCE_SELECTED ~= nil")
             if self.ItemState.Target then -- attempt of new connection to already existing connection (how to handle that?)
-                -- print("self.ItemState.Target ~= nil")
                 target_entrance_from = Tracker:FindObjectForCode("from_" .. self.ItemState.TargetBaseName)
                 target_entrance_to = Tracker:FindObjectForCode("to_" .. self.ItemState.TargetBaseName)
                 source_entrance_from = Tracker:FindObjectForCode("from_" .. ENTRANCE_SELECTED)
@@ -56,8 +43,6 @@ local function OnLeftClickFunc(self)
             source_entrance_from = Tracker:FindObjectForCode("from_" .. self.ItemState.BaseName)
             source_entrance_to = Tracker:FindObjectForCode("to_" .. self.ItemState.BaseName)
             if target_entrance_from ~= nil then
-                -- target_entrance.ItemState.Target = self.Name
-                -- self.ItemState.Target = target_entrance.Name
                 _SetLocationOptions(source_entrance_from, target_entrance_to) -- enter source exit target
                 _SetLocationOptions(target_entrance_to, source_entrance_from)
             end
@@ -67,12 +52,8 @@ local function OnLeftClickFunc(self)
             end
             ENTRANCE_SELECTED = nil
         else -- ENTRANCE_SELECTED == nil
-            -- print("ENTRANCE_SELECTED == nil")
             ENTRANCE_SELECTED = self.ItemState.BaseName
-            -- print("ENTRANCE_SELECTED", ENTRANCE_SELECTED)
             if self.ItemState.Target then -- retarget a connection to new target location
-                -- print("self.ItemState.Target ~= nil")
-                -- target_entrance = Tracker:FindObjectForCode(self.ItemState.Target)
 
                 target_entrance_from = Tracker:FindObjectForCode("from_" .. self.ItemState.TargetBaseName)
                 target_entrance_to = Tracker:FindObjectForCode("to_" .. self.ItemState.TargetBaseName)
@@ -89,10 +70,8 @@ local function OnLeftClickFunc(self)
             end
         end
     else -- insanity
-        -- print("insanity")
         local target_entrance
         if ENTRANCE_SELECTED then -- ENTRANCE_SELECTED ~= nil
-            -- print("ENTRANCE_SELECTED ~= nil")
             if string.find(ENTRANCE_SELECTED, "from_") then
                 self = Tracker:FindObjectForCode("to_" .. self.ItemState.BaseName)
             else
@@ -109,14 +88,11 @@ local function OnLeftClickFunc(self)
             -- second step of normal new connection
             target_entrance = Tracker:FindObjectForCode(ENTRANCE_SELECTED)
             if target_entrance ~= nil then
-                -- target_entrance.ItemState.Target = self.Name
-                -- self.ItemState.Target = target_entrance.Name
                 _SetLocationOptions(self, target_entrance)
                 _SetLocationOptions(target_entrance, self)
             end
             ENTRANCE_SELECTED = nil
         else -- ENTRANCE_SELECTED == nil
-            -- print("ENTRANCE_SELECTED == nil")
             ENTRANCE_SELECTED = self.Name
             if self.ItemState.Target then -- retarget a connection to new target location
                 target_entrance = Tracker:FindObjectForCode(self.ItemState.Target)
@@ -127,47 +103,6 @@ local function OnLeftClickFunc(self)
             end
         end
     end
-        -- if ENTRANCE_SELECTED == nil and self.ItemState.Target == nil then -- fully new connection
-        --     ENTRANCE_SELECTED = self.Name
-        -- elseif ENTRANCE_SELECTED ~= nil and self.ItemState.Target == nil then -- second step of normal new connection
-        --     target_entrance = Tracker:FindObjectForCode(ENTRANCE_SELECTED)
-        --     if target_entrance ~= nil then
-        --         target_entrance.ItemState.Target = self.Name
-        --         self.ItemState.Target = target_entrance.Name
-
-        --         _SetLocationOptions(self, target_entrance)
-        --         _SetLocationOptions(target_entrance, self)
-        --     end
-        --     ENTRANCE_SELECTED = nil
-        -- elseif ENTRANCE_SELECTED == nil and self.ItemState.Target ~= nil then -- retarget a connection to new target location
-        --     ENTRANCE_SELECTED = self.Name
-        --     target_entrance = Tracker:FindObjectForCode(self.ItemState.Target)
-        --     if target_entrance ~= nil then
-        --         _UnsetLocationOptions(target_entrance)
-        --         _UnsetLocationOptions(self)
-        --     end
-
-
-        -- elseif ENTRANCE_SELECTED ~= nil and self.ItemState.Target ~= nil then -- attempt of new connection to already existing connection (how to handle that?)
-        --     target_entrance = Tracker:FindObjectForCode(self.ItemState.Target)
-        --     if target_entrance ~= nil then
-        --         _UnsetLocationOptions(target_entrance)
-        --         _UnsetLocationOptions(self)
-        --     end
-        --     target_entrance = Tracker:FindObjectForCode(ENTRANCE_SELECTED)
-        --     if target_entrance ~= nil then
-        --         -- target_entrance.ItemState.Target = self.Name
-        --         -- self.ItemState.Target = target_entrance.Name
-        --         _SetLocationOptions(self, target_entrance)
-        --         _SetLocationOptions(target_entrance, self)
-        --     end
-        --     ENTRANCE_SELECTED = nil
-
-        -- else
-        --     print("################### SOMETHING IS REEEEEAAAALY FUCKED #########################")
-        -- end
-    -- else
-    -- end
 end
 
 local function OnRightClickFunc(self)
@@ -184,12 +119,10 @@ local function OnRightClickFunc(self)
             if target_from ~= nil then
                 _UnsetLocationOptions(target_from)
                 _UnsetLocationOptions(source_to)
-                -- print("diconnected" .. self.Name .. " from " .. target.Name)
             end
             if target_to ~= nil then
                 _UnsetLocationOptions(target_to)
                 _UnsetLocationOptions(source_from)
-                -- print("diconnected" .. self.Name .. " from " .. target.Name)
             end
             ForceUpdate()
         end
@@ -199,25 +132,20 @@ local function OnRightClickFunc(self)
             if target ~= nil then
                 _UnsetLocationOptions(target)
                 _UnsetLocationOptions(self)
-                -- print("diconnected" .. self.Name .. " from " .. target.Name)
             end
             ForceUpdate()
         end
     end
-
-    -- print("from", self.Name, "to", self.ItemState.Target)
 end
 local function OnMiddleClickFunc(self)
 end
 local function CanProvideCodeFunc(self, code)
-    -- print("inside CanProvideCodeFunc. self:", self.Name, " and Code:", code)
     return code == self.Name
 end
 local function ProvidesCodeFunc(self, code)
 --     return 1
 -- end
     if CanProvideCodeFunc(self, code) then
-        -- print("ProvidesCodeFunc with", code)
         if self.ItemState.Target ~= nil then  --and Tracker:FindObjectForCode("er_tracking").CurrentStage > 0 then
             return 1
         end
@@ -262,12 +190,7 @@ local function SaveCaptureFunc(self)
 end
 
 local function LoadLocationFunc(self, data)
-    -- print(self.Name, data.Name)
-    -- print("loading data from:", data)
-    -- print(dump_table(data))
     if data ~= nil and self.Name == data.Name then
-        -- print("assigning saved data for ", data.Name)
-        -- print(dump_table(data))
         self.ItemState.Target = data.Target
         self.ItemState.TargetBaseName = data.TargetBaseName
         self.ItemState.BaseName = data.BaseName
@@ -392,8 +315,6 @@ end
 function Reset_ER_setings()
     ScriptHost:RemoveMemoryWatch("StateChanged")
     for name, _ in pairs(NAMED_ENTRANCES) do
-        -- print(name)
-        -- print(Tracker:FindObjectForCode(name).ItemState.Target)
         _UnsetLocationOptions(Tracker:FindObjectForCode(name))
     end
     ScriptHost:AddWatchForCode("StateChanged", "*", StateChanged)
