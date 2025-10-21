@@ -247,7 +247,7 @@ mire_area:connect_one_way(checkerboard_lege, function()
     )
 end)
 -- mire_area:connect_one_way(teleper, function() return "mirror" end)
-
+mire_area:connect_one_way(dp_entrance_stairs, function() return ALL("mirror", OpenOrStandard) end)
 
 
 

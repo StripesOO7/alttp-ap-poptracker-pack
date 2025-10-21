@@ -96,6 +96,7 @@ dam_desert_fairy_outside = alttp_location.new("dam_desert_fairy_outside", "Deser
 dam_inside = alttp_location.new("dam_inside", "Dam", nil, 267, 5880, 8664, 8693)
 dam_outside = alttp_location.new("dam_outside", "Dam", "light", 59, 1912, 3799, 3816)
 desert_area = alttp_location.new("desert_area", nil, "light")
+dp_entrance_stairs = alttp_location.new("dp_entrance_stairs", nil, "light")
 desert_ledge = alttp_location.new("desert_ledge", nil, "light")
 dwarf_smiths_inside = alttp_location.new("dwarf_smiths_inside", "Dwarfs", nil, 289, 632, 9688, 9717)
 dwarf_smiths_outside = alttp_location.new("dwarf_smiths_outside", "Dwarfs", "light", 34, 1240, 2152, 2168)
