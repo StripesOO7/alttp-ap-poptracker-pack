@@ -501,15 +501,15 @@ skull_woods_area:connect_two_ways(sw_pot_circle_drop_outside, function() return 
 skull_woods_area:connect_two_ways(sw_bottom_left_drop_outside)
 
 skull_woods_area:connect_two_ways(sw_big_chest_entrance_outside)
-skull_woods_area:connect_two_ways(sw_west_lobby_entrance_outside)
+skull_woods_area_back:connect_two_ways(sw_west_lobby_entrance_outside)
 skull_woods_area:connect_two_ways(sw_gibdo_entrance_outside)
 
-skull_woods_area:connect_two_ways(sw_north_drop_outside, function() return CanReach("sw_west_lobby_entrance_outside") end)
-skull_woods_area:connect_two_ways_stuck(sw_back_entrance_outside, function()
+skull_woods_area_back:connect_two_ways(sw_north_drop_outside, function() return CanReach("sw_west_lobby_entrance_outside") end)
+skull_woods_area_back:connect_two_ways_stuck(sw_back_entrance_outside, function()
     return ALL(
         CanReach("sw_west_lobby_entrance_outside"),
         "firerod",
-        Can_interact(skull_woods_area.worldstate, 1)
+        Can_interact(skull_woods_area_back.worldstate, 1)
     )
 end)
 

@@ -98,6 +98,7 @@ pyramid_hole_outside = alttp_location.new("pyramid_hole_outside", "Pyramid Hole"
 red_shield_shop_inside = alttp_location.new("red_shield_shop_inside", "Red Shield Shop", nil, 272, 120, 9176, 9204)
 red_shield_shop_outside = alttp_location.new("red_shield_shop_outside", "Red Shield Shop", "dark", 90, 1352, 1848, 1864)
 skull_woods_area = alttp_location.new("skull_woods_area", nil, "dark")
+skull_woods_area_back = alttp_location.new("skull_woods_area_back", nil, "dark")
 south_of_village_of_the_outcast = alttp_location.new("south_of_village_of_the_outcast", nil, "dark")
 spike_cave_inside = alttp_location.new("spike_cave_inside", "Spike Cave", nil, 279, 3960, 9176, 9204)
 spike_cave_outside = alttp_location.new("spike_cave_outside", "Spike Cave", "dark", 67, 2344, 566, 581)
