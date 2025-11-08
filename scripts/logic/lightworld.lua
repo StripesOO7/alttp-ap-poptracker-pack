@@ -355,6 +355,12 @@ end)
 sanctuary_area:connect_two_ways(graveyard_ledge, Inverted)
 sanctuary_area:connect_two_ways(north_fairy_drop_outside, function() return Can_interact(sanctuary_area.worldstate, 1) end)
 sanctuary_area:connect_two_ways(north_fairy_cave_outside)
+sanctuary_area:connect_one_way(dark_chapel_area, function()
+    return ALL(
+        Inverted,
+        CanChangeWorldWithMirror
+    )
+end)
 
 kings_tomb_area:connect_two_ways_stuck(kings_tomb_outside, function()
     return ALL(
@@ -425,8 +431,8 @@ lost_woods:connect_one_way("Lost Woods Mushroom", function()
     )
 end)
 lost_woods:connect_one_way(skull_woods_area_back, function() 
-    return All(
-        inverted, 
+    return ALL(
+        Inverted, 
         CanChangeWorldWithMirror
     )
 end)

@@ -118,6 +118,12 @@ big_bomb_shop_area:connect_one_way(cave45_ledge, function()
         OpenOrStandard
     )
 end)
+big_bomb_shop_area:connect_one_way(links_house_area, function()
+    return ALL(
+        Inverted,
+        "aga1"
+    )
+end)
 
 big_bomb_shop_inside:connect_one_way("Buy Big Bomb", function() return ALL(Has("crystal56",2, 2, 2, 2), Can_interact(big_bomb_shop_inside.worldstate, 1)) end)
 
@@ -252,7 +258,12 @@ mire_area:connect_one_way(checkerboard_lege, function()
     )
 end)
 -- mire_area:connect_one_way(teleper, function() return "mirror" end)
-mire_area:connect_one_way(dp_entrance_stairs, function() return ALL("mirror", OpenOrStandard) end)
+mire_area:connect_one_way(dp_entrance_stairs, function()
+    return ALL(
+        CanChangeWorldWithMirror, 
+        OpenOrStandard
+    )
+end)
 
 
 
@@ -667,7 +678,12 @@ end)
 dark_chapel_area:connect_two_ways(dark_chapel_outside)
 dark_chapel_outside:connect_two_ways_entrance("Dark Chapel", dark_chapel_inside)
 
-
+dark_chapel_area:connect_one_way(sanctuary_area, function()
+    return ALL(
+        OpenOrStandard,
+        CanChangeWorldWithMirror
+    )
+end)
 
 -- dark_potion_shop
 dark_potion_shop_area:connect_one_way(dark_chapel_area, function()
