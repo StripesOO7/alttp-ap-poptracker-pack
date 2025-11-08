@@ -164,7 +164,12 @@ kakariko_furtune_teller_outside:connect_two_ways_entrance("Kakariko Fortune Tell
 --         CanChangeWorldWithMirror()
 --     )
 -- end)
-
+kakariko_overgrown_house_outside:connect_one_way(dark_village_shop_outside, function() 
+    return ALL(
+        Inverted, 
+        CanChangeWorldWithMirror
+    )
+end)
 
 kakariko_well_hole_inside:connect_one_way(kakariko_well_item)
 kakariko_well_hole_inside:connect_one_way(kakariko_well_cave_inside)
@@ -264,6 +269,13 @@ end)
 south_of_village:connect_two_ways(library_outside)
 south_of_village:connect_two_ways(kakariko_chest_minigame_outside)
 south_of_village:connect_two_ways(twin_house_right_outside)
+
+south_of_village:connect_one_way(helpless_frog, function() 
+    return ALL(
+        Inverted, 
+        CanChangeWorldWithMirror
+    )
+end)
 -- south_of_village:connect_two_ways_entrance()
 
 library_outside:connect_two_ways_entrance("Library", library_inside)
@@ -410,6 +422,12 @@ lost_woods:connect_one_way("Lost Woods Mushroom", function()
     return ANY(
         Can_interact(lost_woods.worldstate, 1),
         ACCESS_INSPECT
+    )
+end)
+lost_woods:connect_one_way(skull_woods_area_back, function() 
+    return All(
+        inverted, 
+        CanChangeWorldWithMirror
     )
 end)
 
@@ -743,6 +761,14 @@ light_lake_hylia:connect_two_ways(upgrade_fairy_island, function()
         Can_interact(light_lake_hylia.worldstate, 1)
     )
 end)
+
+light_lake_hylia:connect_one_way(dark_icerod_area, function() 
+    return ALL(
+        Inverted, 
+        CanChangeWorldWithMirror
+    )
+end)
+
 
 light_lake_fortune_outside:connect_two_ways_entrance("Light Lake Forune", light_lake_fortune_inside)
 light_lake_shop_outside:connect_two_ways_entrance("Light Lake Shop", light_lake_shop_inside)

@@ -239,7 +239,12 @@ mire_area:connect_one_way(desert_ledge, function()
         OpenOrStandard
     )
 end)
-
+mire_area:connect_one_way(dp_back_entrance_outside, function()
+    return ALL(
+        CanChangeWorldWithMirror,
+        OpenOrStandard
+    )
+end)
 mire_area:connect_one_way(checkerboard_lege, function()
     return ALL(
         OpenOrStandard,
@@ -428,6 +433,12 @@ c_shaped_house_outside:connect_two_ways_entrance("C-Shaped House", c_shaped_hous
 chest_game_outside:connect_two_ways_entrance("Chest Game Entrance", chest_game_inside)
 tt_entrance_outside:connect_two_ways_entrance("Thieves Town Entrance", tt_entrance_inside)
 dark_village_shop_outside:connect_two_ways_entrance("Dark Village Shop", dark_village_shop_inside)
+dark_village_shop_outside:connect_one_way(kakariko_overgrown_house_outside, function() 
+    return ALL(
+        OpenOrStandard, 
+        CanChangeWorldWithMirror
+    )
+end)
 brewery_outside:connect_two_ways_entrance("Brewery", brewery_inside)
 dark_village_fortune_teller_outside:connect_two_ways_entrance("Dark Village Fortune Teller", dark_village_fortune_teller_inside)
 
@@ -444,6 +455,12 @@ brewery_inside:connect_one_way("Brewery Chest", function() return Can_interact(b
 
 village_of_the_outcast:connect_two_ways(purple_chest_pickup, function() return ALL("titans", Can_interact(village_of_the_outcast.worldstate, 1)) end)
 purple_chest_pickup:connect_two_ways_stuck(peg_cave_outside, function() return ALL("hammer", Can_interact(purple_chest_pickup.worldstate, 1)) end)
+purple_chest_pickup:connect_one_way(magic_bat_cave_outside, function()
+    return ALL(
+        OpenOrStandard,
+        CanChangeWorldWithMirror
+    )
+end)
 peg_cave_outside:connect_two_ways_entrance("Peg Cave", peg_cave_inside)
 
 peg_cave_inside:connect_one_way("Peg-Cave Item")
@@ -642,7 +659,7 @@ dark_chapel_area:connect_one_way(kings_tomb_area, function()
     return ALL(
         OpenOrStandard,
         CanChangeWorldWithMirror,
-        "pearl"
+        Can_interact(dark_chapel_area.worldstate, 1)
     )
 end)
 
