@@ -425,19 +425,17 @@ end
 
 function ChangeLocationColor(locationname)
     if not Tracker.BulkUpdate then
-    print(locationname)
+    -- print(locationname)
     local location_obj = Tracker:FindObjectForCode(locationname)
     -- if location_obj == nil then
     --     return 0
     -- end
         if location_obj then
-            print("location found")
             if location_obj.ItemState.Target then
                 local target_obj = Tracker:FindObjectForCode(location_obj.ItemState.Target)
                 -- print(dump_table(target_obj.ItemState))
                 -- local from_target_obj = Tracker:FindObjectForCode("from_"..location_obj.ItemState.target)
                 if target_obj then
-                    print("target valid")
                     if location_obj.ItemState.IsDeadEnd or target_obj.ItemState.IsDeadEnd then
                         -- print("target ACCESS_CLEARED")
                         -- return ACCESS_NONE
@@ -450,29 +448,13 @@ function ChangeLocationColor(locationname)
                         return ACCESS_SEQUENCEBREAK
                     end
                     -- return ACCESS_NORMAL
-                else
-                    -- print("error getting target_obj: ".. tostring(location_obj.ItemState.Target) )
-                    print("return CanReach", locationname, CanReach(locationname))
-                    -- return CanReach(locationname)
                 end
-                -- return CanReach(locationname)
-                -- return ACCESS_SEQUENCEBREAK
-            else
-                -- print(locationname)
-                print("did not have target defined")
-                print("return CanReach", locationname, CanReach(locationname))
-                -- return CanReach(locationname)
             end
-        else
-            -- print(locationname, location_obj)
-            print("no location found")
-            print("return CanReach", locationname, CanReach(locationname))
-            -- return CanReach(locationname)
         end
-        print(location_obj.ItemState.BaseName)
+        -- print(location_obj.ItemState.BaseName)
         return CanReach(location_obj.ItemState.BaseName)
     end
-    print("afer bulkupdate check")
+    -- print("afer bulkupdate check")
     -- local base_locationname = string.gsub(string.gsub(locationname, "from_", "", 1), "to_", "", 1)
     -- print("return CanReach", locationname, base_locationname, CanReach(base_locationname))
     return ACCESS_NONE
