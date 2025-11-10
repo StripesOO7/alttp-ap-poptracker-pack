@@ -958,12 +958,12 @@ if PopVersion < "0.32.0" then
             local location_obj = NAMED_LOCATIONS[location]
             -- print(location.name)
             if string.sub(location_obj.name, -7,-1) == "_inside" then
-                CreateLuaLocationItems("from_", location_obj, "inside")
-                CreateLuaLocationItems("to_", location_obj, "inside")
+                CreateLuaLocationItems("From", location_obj, "inside")
+                CreateLuaLocationItems("To", location_obj, "inside")
                
             elseif string.sub(location_obj.name, -8,-1) == "_outside" then
-                CreateLuaLocationItems("from_", location_obj, "outside")
-                CreateLuaLocationItems("to_", location_obj, "outside")
+                CreateLuaLocationItems("From", location_obj, "outside")
+                CreateLuaLocationItems("To", location_obj, "outside")
             end
         end
         return 1
@@ -977,13 +977,13 @@ else
         for _, location in pairs(NAMED_LOCATIONS) do
             if string.sub(location.name, -7,-1) == "_inside" then
             -- print(location.name)
-                CreateLuaLocationItems("from_", location, "inside")
-                CreateLuaLocationItems("to_", location, "inside")
+                CreateLuaLocationItems("From", location, "inside")
+                CreateLuaLocationItems("To", location, "inside")
                
             elseif string.sub(location.name, -8,-1) == "_outside" then
             -- print(location.name)
-                CreateLuaLocationItems("from_", location, "outside")
-                CreateLuaLocationItems("to_", location, "outside")
+                CreateLuaLocationItems("From", location, "outside")
+                CreateLuaLocationItems("To", location, "outside")
             end
         end
         return 1

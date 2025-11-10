@@ -1,6 +1,6 @@
 local variant = Tracker.ActiveVariantUID
 IS_UNLABELLED = variant:find("maps-u")
-
+require("os")
 -- Items
 require("scripts/items_import")
 

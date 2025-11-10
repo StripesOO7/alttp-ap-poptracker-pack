@@ -91,7 +91,7 @@ end
 
 -- creates a lua object for the given name. it acts as a representation of a overworld reagion or indoor locatoin and
 -- tracks its connected objects wvia the exit-table
-function alttp_location.new(name, shortname, origin, room, x, yMin, yMax, xMax)
+function alttp_location.new(name, shortname, origin, room, x, yMin, yMax, xMax, LocationSection, deadEndOrDungeonOrConnector)
     if shortname == nil then
         shortname = name
     end
@@ -107,6 +107,8 @@ function alttp_location.new(name, shortname, origin, room, x, yMin, yMax, xMax)
         self.shortname = shortname
         table.insert(NAMED_LOCATIONS_KEYS, self.name)
     end
+    self.locationsection = LocationSection
+    self.deadEndOrDungeonOrConnector = deadEndOrDungeonOrConnector or false
     if string.find(self.name, "_inside") then
         self.side = "inside"
     elseif string.find(self.name, "_outside") then

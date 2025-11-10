@@ -18,20 +18,20 @@ teleporter_at_upgrade_fairy = alttp_location.new("teleporter_at_upgrade_fairy", 
 teleporter_at_ice_palace = alttp_location.new("teleporter_at_ice_palace", nil, "dark")
 
 
-old_man_cave_left_outside = alttp_location.new("old_man_cave_left_outside", "Old Man Cave Left", "light", 10, 1448, 696, 711)
-old_man_cave_left_inside = alttp_location.new("old_man_cave_left_inside", "Old Man Cave Left", nil, 240, 120, 8152, 8180)
-old_man_cave_right_outside = alttp_location.new("old_man_cave_right_outside", "Old Man Cave Right", "light", 3, 1656, 744, 757)
-old_man_cave_right_inside = alttp_location.new("old_man_cave_right_inside", "Old Man Cave Right", nil, 241, 888, 8128, 8181)
+old_man_cave_left_outside = alttp_location.new("old_man_cave_left_outside", "Old Man Cave Left", "light", 10, 1448, 696, 711, nil, {"Lost Woods - Entrances", "Old Man Cave Exit (West)", "Old Man Cave Exit (West)"})
+old_man_cave_left_inside = alttp_location.new("old_man_cave_left_inside", "Old Man Cave Left", nil, 240, 120, 8152, 8180, nil, {"Lost Woods - Insides", "Old Man Cave Exit (West)", "Old Man Cave Exit (West)"}, "connector")
+old_man_cave_right_outside = alttp_location.new("old_man_cave_right_outside", "Old Man Cave Right", "light", 3, 1656, 744, 757, nil, {"Light Death Mountain - Entrances", "Old Man Cave (East)","Old Man Cave (East)"})
+old_man_cave_right_inside = alttp_location.new("old_man_cave_right_inside", "Old Man Cave Right", nil, 241, 888, 8128, 8181, nil, {"Light Death Mountain - Insides", "Old Man Cave (East)","Old Man Cave (East)"}, "connector")
 
-light_death_mountain_return_left_outside = alttp_location.new("light_death_mountain_return_left_outside", "DM Return Left", "light", 10, 1464, 599, 615)
-light_death_mountain_return_left_inside = alttp_location.new("light_death_mountain_return_left_inside", "DM Return Left", nil, 230, 3192, 7616, 7668)
-light_death_mountain_return_right_outside = alttp_location.new("light_death_mountain_return_right_outside", "DM Return Right", "light", 3, 1608, 536, 550)
-light_death_mountain_return_right_inside = alttp_location.new("light_death_mountain_return_right_inside", "DM Return Right", nil, 231, 3960, 7616, 7668)
+light_death_mountain_return_left_outside = alttp_location.new("light_death_mountain_return_left_outside", "DM Return Left", "light", 10, 1464, 599, 615, nil, {"Lost Woods - Entrances", "Death Mountain Return Cave Exit (West)", "Death Mountain Return Cave Exit (West)"})
+light_death_mountain_return_left_inside = alttp_location.new("light_death_mountain_return_left_inside", "DM Return Left", nil, 230, 3192, 7616, 7668, nil, {"Lost Woods - Insides", "Death Mountain Return Cave Exit (West)", "Death Mountain Return Cave Exit (West)"}, "connector")
+light_death_mountain_return_right_outside = alttp_location.new("light_death_mountain_return_right_outside", "DM Return Right", "light", 3, 1608, 536, 550, nil, {"Light Death Mountain - Entrances", "Death Mountain Return Cave (East)", "Death Mountain Return Cave (East)"})
+light_death_mountain_return_right_inside = alttp_location.new("light_death_mountain_return_right_inside", "DM Return Right", nil, 231, 3960, 7616, 7668, nil, {"Light Death Mountain - Insides", "Death Mountain Return Cave (East)", "Death Mountain Return Cave (East)"}, "connector")
 
-bumpercave_bottom_outside = alttp_location.new("bumpercave_bottom_outside", "Bumpercave Bottom", "dark")
-bumpercave_bottom_inside = alttp_location.new("bumpercave_bottom_inside", "Bumpercave Bottom", nil)
-bumpercave_top_outside = alttp_location.new("bumpercave_top_outside", "Bumpercave Top", "dark")
-bumpercave_top_inside = alttp_location.new("bumpercave_top_inside", "Bumpercave Top", nil)
+bumpercave_bottom_outside = alttp_location.new("bumpercave_bottom_outside", "Bumpercave Bottom", "dark", nil, nil, nil, nil, nil, {"Skull Woods - Entrances", "Bumper Cave (Bottom)", "Bumper Cave (Bottom)"})
+bumpercave_bottom_inside = alttp_location.new("bumpercave_bottom_inside", "Bumpercave Bottom", nil, nil, nil, nil, nil, nil, {"Skull Woods - Insides", "Bumper Cave (Bottom)", "Bumper Cave (Bottom)"}, "connector")
+bumpercave_top_outside = alttp_location.new("bumpercave_top_outside", "Bumpercave Top", "dark", nil, nil, nil, nil, nil, {"Skull Woods - Entrances", "Bumper Cave (Top)", "Bumper Cave (Top)"})
+bumpercave_top_inside = alttp_location.new("bumpercave_top_inside", "Bumpercave Top", nil, nil, nil, nil, nil, nil, {"Skull Woods - Insides", "Bumper Cave (Top)", "Bumper Cave (Top)"}, "connector")
 bumpercave_top_back = alttp_location.new("bumpercave_top_back", nil, "dark")
 bumpercave_top_front = alttp_location.new("bumpercave_top_front", nil, "dark")
 

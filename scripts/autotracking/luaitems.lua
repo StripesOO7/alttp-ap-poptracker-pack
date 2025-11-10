@@ -1,7 +1,13 @@
 ENTRANCE_SELECTED = nil
 BASE_IMG_PATH = ImageReference:FromPackRelativePath("images/door_closed.png")
+
+HIGHLIGHT_SOURCE = nil
+HIGHLIGHT_TARGET = nil
+HIGHLIGHT_LAST_ACTIVATED = 0
+
 function _SetLocationOptions(source, target) -- source == inside, target == outside
     source.ItemState.Target = target.Name
+    source.ItemState.TargetCorrespondingLocationSection = target.ItemState.CorrespondingLocationSection
     source.ItemState.TargetBaseName = target.ItemState.BaseName
     source.Icon = target.ItemState.ImgPath
     source.BadgeText = target.ItemState.BadgeTextDirection
@@ -9,6 +15,7 @@ end
 
 function _UnsetLocationOptions(source)
     source.ItemState.Target = nil
+    source.ItemState.TargetCorrespondingLocationSection = nil
     source.ItemState.TargetBaseName = nil
     source.Icon = source.ItemState.BaseImg
     source.BadgeText = ""
@@ -137,24 +144,83 @@ local function OnRightClickFunc(self)
         end
     end
 end
+
 local function OnMiddleClickFunc(self)
+    HIGHLIGHT_LAST_ACTIVATED = os.clock()
+    ScriptHost:AddOnFrameHandler("temporary highlight handler", RemoveTempHighlight)
+    if HIGHLIGHT_SOURCE then
+        HIGHLIGHT_SOURCE.Highlight = Highlight.None
+    end
+    if HIGHLIGHT_TARGET then
+        HIGHLIGHT_TARGET.Highlight = Highlight.None
+    end
+    -- print(dump_table(self.ItemState))
+    local source_location = nil
+    local target_location = nil
+    local target = Tracker:FindObjectForCode(self.ItemState.Target)
+    if Tracker:FindObjectForCode("er_tracking").CurrentStage == 3 then
+        source_location = "@"..self.ItemState.CorrespondingLocationSection[1].."/"..self.ItemState.CorrespondingLocationSection[2].."/"..target.ItemState.Direction.." "..self.ItemState.CorrespondingLocationSection[3]
+        target_location = "@"..target.ItemState.CorrespondingLocationSection[1].."/"..target.ItemState.CorrespondingLocationSection[2].."/"..self.ItemState.Direction.." "..target.ItemState.CorrespondingLocationSection[3]
+    else
+        source_location = "@"..table.concat(self.ItemState.CorrespondingLocationSection, "/")
+        target_location = "@"..table.concat(target.ItemState.CorrespondingLocationSection, "/")
+    end
+    HIGHLIGHT_SOURCE = Tracker:FindObjectForCode(source_location) --location/section
+    HIGHLIGHT_SOURCE.Highlight = Highlight.Avoid
+    HIGHLIGHT_TARGET = Tracker:FindObjectForCode(target_location) --location/section
+    HIGHLIGHT_TARGET.Highlight = Highlight.Avoid
+    Tracker:UiHint("ActivateTab", "Entrances")
+    if self.ItemState.BaseWorldstate ~= nil then --outside
+        if self.ItemState.BaseWorldstate == "light" then
+            Tracker:UiHint("ActivateTab", "Lightworld OW")
+        else
+            Tracker:UiHint("ActivateTab", "Darkworld OW")
+        end
+    -- else
+    --     if self.ItemState.BaseWorldstate == "light" then --inside
+    --         Tracker:UiHint("ActivateTab", "Lightworld Caves")
+    --     else
+    --         Tracker:UiHint("ActivateTab", "Darkworld Caves")
+    --     end
+    end
+    local target = Tracker:FindObjectForCode(self.ItemState.Target)
+    if target.ItemState.BaseWorldstate  ~= nil then --outside
+        if target.ItemState.BaseWorldstate == "light" then
+            Tracker:UiHint("ActivateTab", "Lightworld OW")
+        else
+            Tracker:UiHint("ActivateTab", "Darkworld OW")
+        end
+    -- else
+    --     if target.ItemState.BaseWorldstate == "light" then --inside
+    --         Tracker:UiHint("ActivateTab", "Lightworld Caves")
+    --     else
+    --         Tracker:UiHint("ActivateTab", "Darkworld Caves")
+    --     end
+    end
 end
+
 local function CanProvideCodeFunc(self, code)
     return code == self.Name
 end
+
 local function ProvidesCodeFunc(self, code)
 --     return 1
 -- end
     if CanProvideCodeFunc(self, code) then
+        -- print(self.Name)
         if self.ItemState.Target ~= nil then  --and Tracker:FindObjectForCode("er_tracking").CurrentStage > 0 then
-            return 1
+            if self.ItemState.IsDeadEnd or Tracker:FindObjectForCode(self.ItemState.Target).ItemState.IsDeadEnd then
+                return 1
+            end
         end
     end
     return 0
 end
+
 local function AdvanceToCodeFunc()
     print("AdvanceToCodeFunc")
 end
+
 local function SaveLocationFunc(self)
     return {
         Stage = self.ItemState.Stage, --unused
@@ -173,7 +239,12 @@ local function SaveLocationFunc(self)
         BaseWorldstate = self.ItemState.BaseWorldstate,
         ImgPath = self.ItemState.ImgPath,
         BaseImg = self.ItemState.BaseImg,
-        BadgeTextDirection = self.ItemState.BadgeTextDirection --from/to
+        BadgeTextDirection = self.ItemState.BadgeTextDirection, --from/to
+        CorrespondingLocationSection = self.ItemState.CorrespondingLocationSection,
+        TargetCorrespondingLocationSection = self.ItemState.TargetCorrespondingLocationSection,
+        IsDeadEnd = self.ItemState.IsDeadEnd,
+        IsDungeon = self.ItemState.IsDungeon,
+        IsConnector = self.ItemState.IsConnector
     }
     -- print("SaveFunc")
 end
@@ -204,6 +275,11 @@ local function LoadLocationFunc(self, data)
         self.ItemState.ImgPath = data.ImgPath
         self.ItemState.BaseImg = data.BaseImg
         self.ItemState.BadgeTextDirection = data.BadgeTextDirection
+        self.ItemState.CorrespondingLocationSection = data.CorrespondingLocationSection
+        self.ItemState.TargetCorrespondingLocationSection = data.TargetCorrespondingLocationSection
+        self.ItemState.IsDeadEnd = data.IsDeadEnd
+        self.ItemState.IsDungeon = data.IsDungeon
+        self.ItemState.IsConnector = data.IsConnector
         if data.BadgeText ~= nil then
             self.BadgeText = data.BadgeText
             self.BadgeTextColor = "#abcdef"
@@ -251,7 +327,7 @@ end
 function CreateLuaLocationItems(direction, location_obj, side)
     local self = ScriptHost:CreateLuaItem()
     -- self.Type = "custom"
-    self.Name = direction .. location_obj.name --code --
+    self.Name = string.lower(direction) .. "_" .. location_obj.name --code --
     self.Icon = ImageReference:FromPackRelativePath("images/door_closed.png")
     self.ItemState = {
         BaseName = location_obj.name,
@@ -267,8 +343,20 @@ function CreateLuaLocationItems(direction, location_obj, side)
         Room = location_obj.room,
         Worldstate = location_obj.worldstate,
         BaseWorldstate = location_obj.worldstate,
-        BadgeTextDirection = direction .. location_obj.shortname
+        BadgeTextDirection = direction .. " " .. location_obj.shortname,
+        CorrespondingLocationSection = location_obj.locationsection,
+        TargetCorrespondingLocationSection = nil,
+        IsDeadEnd = false,
+        IsDungeon = false,
+        IsConnector = false
     }
+    if location_obj.deadEndOrDungeonOrConnector == "deadend" then
+        self.ItemState.IsDeadEnd = true
+    elseif location_obj.deadEndOrDungeonOrConnector == "dungeon" then
+        self.ItemState.IsDungeon = true
+    elseif location_obj.deadEndOrDungeonOrConnector == "connector" then
+        self.ItemState.IsConnector = true
+    end
     self.BadgeTextColor = "#abcdef"
     self:SetOverlayFontSize(10)
     self:SetOverlayAlign("left")
@@ -278,6 +366,7 @@ function CreateLuaLocationItems(direction, location_obj, side)
     self.CanProvideCodeFunc = CanProvideCodeFunc
     self.OnLeftClickFunc = OnLeftClickFunc
     self.OnRightClickFunc = OnRightClickFunc
+    -- self.OnRightClickFunc = OnMiddleClickFunc
     self.OnMiddleClickFunc = OnMiddleClickFunc
     self.ProvidesCodeFunc = ProvidesCodeFunc
     -- self.AdvanceToCodeFunc = AdvanceToCodeFunc
@@ -321,3 +410,70 @@ function Reset_ER_setings()
     Tracker:FindObjectForCode("reset_er").Active = false
 end
 -- ScriptHost:AddWatchForCode("ER_reset_triggered", "reset_er", Reset_ER_setings)
+
+function RemoveTempHighlight()
+    local current_time = os.clock()
+    if current_time - HIGHLIGHT_LAST_ACTIVATED > 10 then
+        ScriptHost:RemoveOnFrameHandler("temporary highlight handler")
+        HIGHLIGHT_LAST_ACTIVATED = 0
+        HIGHLIGHT_SOURCE.Highlight = Highlight.None
+        HIGHLIGHT_SOURCE = nil
+        HIGHLIGHT_TARGET.Highlight = Highlight.None
+        HIGHLIGHT_TARGET = nil
+    end
+end
+
+function ChangeLocationColor(locationname)
+    if not Tracker.BulkUpdate then
+    print(locationname)
+    local location_obj = Tracker:FindObjectForCode(locationname)
+    -- if location_obj == nil then
+    --     return 0
+    -- end
+        if location_obj then
+            print("location found")
+            if location_obj.ItemState.Target then
+                local target_obj = Tracker:FindObjectForCode(location_obj.ItemState.Target)
+                -- print(dump_table(target_obj.ItemState))
+                -- local from_target_obj = Tracker:FindObjectForCode("from_"..location_obj.ItemState.target)
+                if target_obj then
+                    print("target valid")
+                    if location_obj.ItemState.IsDeadEnd or target_obj.ItemState.IsDeadEnd then
+                        -- print("target ACCESS_CLEARED")
+                        -- return ACCESS_NONE
+                        -- return ACCESS_NONE
+                    elseif location_obj.ItemState.IsConnector or target_obj.ItemState.IsConnector then
+                        -- print("target ACCESS_INSPECT")
+                        return ACCESS_INSPECT
+                    elseif location_obj.ItemState.IsDungeon or target_obj.ItemState.IsDungeon then
+                        -- print("target ACCESS_SEQUENCEBREAK")
+                        return ACCESS_SEQUENCEBREAK
+                    end
+                    -- return ACCESS_NORMAL
+                else
+                    -- print("error getting target_obj: ".. tostring(location_obj.ItemState.Target) )
+                    print("return CanReach", locationname, CanReach(locationname))
+                    -- return CanReach(locationname)
+                end
+                -- return CanReach(locationname)
+                -- return ACCESS_SEQUENCEBREAK
+            else
+                -- print(locationname)
+                print("did not have target defined")
+                print("return CanReach", locationname, CanReach(locationname))
+                -- return CanReach(locationname)
+            end
+        else
+            -- print(locationname, location_obj)
+            print("no location found")
+            print("return CanReach", locationname, CanReach(locationname))
+            -- return CanReach(locationname)
+        end
+        print(location_obj.ItemState.BaseName)
+        return CanReach(location_obj.ItemState.BaseName)
+    end
+    print("afer bulkupdate check")
+    -- local base_locationname = string.gsub(string.gsub(locationname, "from_", "", 1), "to_", "", 1)
+    -- print("return CanReach", locationname, base_locationname, CanReach(base_locationname))
+    return ACCESS_NONE
+end

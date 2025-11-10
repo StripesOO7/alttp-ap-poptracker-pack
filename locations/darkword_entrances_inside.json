@@ -8,24 +8,27 @@
                     {
                         "name": "From Bumper Cave (Bottom)",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_bumper_cave_bottom_inside"
+                            "^$ChangeLocationColor|from_dark_bumper_cave_bottom_inside"
                         ],
                         "hosted_item": "from_dark_bumper_cave_bottom_inside"
                     },
                     {
                         "name": "To Bumper Cave (Bottom)",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_bumper_cave_bottom_inside"
+                            "^$ChangeLocationColor|to_dark_bumper_cave_bottom_inside"
                         ],
                         "hosted_item": "to_dark_bumper_cave_bottom_inside"
                     },
                     {
                         "name": "Bumper Cave (Bottom)",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_bumper_cave_bottom_inside"
+                            "^$ChangeLocationColor|from_dark_bumper_cave_bottom_inside"
                         ],
                         "hosted_item": "from_dark_bumper_cave_bottom_inside"
                     }
@@ -53,24 +56,27 @@
                     {
                         "name": "From Bumper Cave (Top)",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_bumper_cave_top_inside"
+                            "^$ChangeLocationColor|from_dark_bumper_cave_top_inside"
                         ],
                         "hosted_item": "from_dark_bumper_cave_top_inside"
                     },
                     {
                         "name": "To Bumper Cave (Top)",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_bumper_cave_top_inside"
+                            "^$ChangeLocationColor|to_dark_bumper_cave_top_inside"
                         ],
                         "hosted_item": "to_dark_bumper_cave_top_inside"
                     },
                     {
                         "name": "Bumper Cave (Top)",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_bumper_cave_top_inside"
+                            "^$ChangeLocationColor|from_dark_bumper_cave_top_inside"
                         ],
                         "hosted_item": "from_dark_bumper_cave_top_inside"
                     }
@@ -98,24 +104,27 @@
                     {
                         "name": "From Dark World Lumberjack Shop",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_lumpberjacks_shop_inside"
+                            "^$ChangeLocationColor|from_dark_lumpberjacks_shop_inside"
                         ],
                         "hosted_item": "from_dark_lumpberjacks_shop_inside"
                     },
                     {
                         "name": "To Dark World Lumberjack Shop",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_lumpberjacks_shop_inside"
+                            "^$ChangeLocationColor|to_dark_lumpberjacks_shop_inside"
                         ],
                         "hosted_item": "to_dark_lumpberjacks_shop_inside"
                     },
                     {
                         "name": "Dark World Lumberjack Shop",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_lumpberjacks_shop_inside"
+                            "^$ChangeLocationColor|from_dark_lumpberjacks_shop_inside"
                         ],
                         "hosted_item": "from_dark_lumpberjacks_shop_inside"
                     }
@@ -143,24 +152,27 @@
                     {
                         "name": "From Skull Woods Back Entrance",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|sw_back_entrance_inside"
+                            "^$ChangeLocationColor|from_sw_back_entrance_inside"
                         ],
                         "hosted_item": "from_sw_back_entrance_inside"
                     },
                     {
                         "name": "To Skull Woods Back Entrance",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|sw_back_entrance_inside"
+                            "^$ChangeLocationColor|to_sw_back_entrance_inside"
                         ],
                         "hosted_item": "to_sw_back_entrance_inside"
                     },
                     {
                         "name": "Skull Woods Back Entrance",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|sw_back_entrance_inside"
+                            "^$ChangeLocationColor|from_sw_back_entrance_inside"
                         ],
                         "hosted_item": "from_sw_back_entrance_inside"
                     }
@@ -188,24 +200,27 @@
                     {
                         "name": "From Skull Woods West Lobby",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|sw_west_lobby_entrance_inside"
+                            "^$ChangeLocationColor|from_sw_west_lobby_entrance_inside"
                         ],
                         "hosted_item": "from_sw_west_lobby_entrance_inside"
                     },
                     {
                         "name": "To Skull Woods West Lobby",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|sw_west_lobby_entrance_inside"
+                            "^$ChangeLocationColor|to_sw_west_lobby_entrance_inside"
                         ],
                         "hosted_item": "to_sw_west_lobby_entrance_inside"
                     },
                     {
                         "name": "Skull Woods West Lobby",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|sw_west_lobby_entrance_inside"
+                            "^$ChangeLocationColor|from_sw_west_lobby_entrance_inside"
                         ],
                         "hosted_item": "from_sw_west_lobby_entrance_inside"
                     }
@@ -233,24 +248,27 @@
                     // {
                     //     "name": "From Skull Woods Back Hole",
                     // "visibility_rules": ["er_insanity"],
+                    // "clear_as_group":false,
                     //     "access_rules": [
-                    //         "$CanReach|sw_north_drop_inside"
+                    //         "^$ChangeLocationColor|from_sw_north_drop_inside"
                     //     ],
                     //     "hosted_item": "from_sw_north_drop_inside"
                     // },
                     {
                         "name": "To Skull Woods Back Hole",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|sw_north_drop_inside"
+                            "^$ChangeLocationColor|to_sw_north_drop_inside"
                         ],
                         "hosted_item": "to_sw_north_drop_inside"
                     },
                     {
                         "name": "Skull Woods Back Hole",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|sw_north_drop_inside"
+                            "^$ChangeLocationColor|from_sw_north_drop_inside"
                         ],
                         "hosted_item": "from_sw_north_drop_inside"
                     }
@@ -278,24 +296,27 @@
                     // {
                     //     "name": "From Skull Woods Circle Pot Drop",
                     // "visibility_rules": ["er_insanity"],
+                    // "clear_as_group":false,
                     //     "access_rules": [
-                    //         "$CanReach|sw_pot_circle_drop_inside"
+                    //         "^$ChangeLocationColor|from_sw_pot_circle_drop_inside"
                     //     ],
                     //     "hosted_item": "from_sw_pot_circle_drop_inside"
                     // },
                     {
                         "name": "To Skull Woods Circle Pot Drop",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|sw_pot_circle_drop_inside"
+                            "^$ChangeLocationColor|to_sw_pot_circle_drop_inside"
                         ],
                         "hosted_item": "to_sw_pot_circle_drop_inside"
                     },
                     {
                         "name": "Skull Woods Circle Pot Drop",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|sw_pot_circle_drop_inside"
+                            "^$ChangeLocationColor|from_sw_pot_circle_drop_inside"
                         ],
                         "hosted_item": "from_sw_pot_circle_drop_inside"
                     }
@@ -323,24 +344,27 @@
                     // {
                     //     "name": "From Skull Woods Pinball Drop",
                     // "visibility_rules": ["er_insanity"],
+                    // "clear_as_group":false,
                     //     "access_rules": [
-                    //         "$CanReach|sw_pinball_drop_inside"
+                    //         "^$ChangeLocationColor|from_sw_pinball_drop_inside"
                     //     ],
                     //     "hosted_item": "from_sw_pinball_drop_inside"
                     // },
                     {
                         "name": "To Skull Woods Pinball Drop",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|sw_pinball_drop_inside"
+                            "^$ChangeLocationColor|to_sw_pinball_drop_inside"
                         ],
                         "hosted_item": "to_sw_pinball_drop_inside"
                     },
                     {
                         "name": "Skull Woods Pinball Drop",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|sw_pinball_drop_inside"
+                            "^$ChangeLocationColor|from_sw_pinball_drop_inside"
                         ],
                         "hosted_item": "from_sw_pinball_drop_inside"
                     }
@@ -368,24 +392,27 @@
                     // {
                     //     "name": "From Skull Woods Bottom Left Drop",
                     // "visibility_rules": ["er_insanity"],
+                    // "clear_as_group":false,
                     //     "access_rules": [
-                    //         "$CanReach|sw_bottom_left_drop_inside"
+                    //         "^$ChangeLocationColor|from_sw_bottom_left_drop_inside"
                     //     ],
                     //     "hosted_item": "from_sw_bottom_left_drop_inside"
                     // },
                     {
                         "name": "To Skull Woods Bottom Left Drop",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|sw_bottom_left_drop_inside"
+                            "^$ChangeLocationColor|to_sw_bottom_left_drop_inside"
                         ],
                         "hosted_item": "to_sw_bottom_left_drop_inside"
                     },
                     {
                         "name": "Skull Woods Bottom Left Drop",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|sw_bottom_left_drop_inside"
+                            "^$ChangeLocationColor|from_sw_bottom_left_drop_inside"
                         ],
                         "hosted_item": "from_sw_bottom_left_drop_inside"
                     }
@@ -413,24 +440,27 @@
                     {
                         "name": "From Skull Woods Big Chest Entrance",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|sw_big_chest_entrance_inside"
+                            "^$ChangeLocationColor|from_sw_big_chest_entrance_inside"
                         ],
                         "hosted_item": "from_sw_big_chest_entrance_inside"
                     },
                     {
                         "name": "To Skull Woods Big Chest Entrance",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|sw_big_chest_entrance_inside"
+                            "^$ChangeLocationColor|to_sw_big_chest_entrance_inside"
                         ],
                         "hosted_item": "to_sw_big_chest_entrance_inside"
                     },
                     {
                         "name": "Skull Woods Big Chest Entrance",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|sw_big_chest_entrance_inside"
+                            "^$ChangeLocationColor|from_sw_big_chest_entrance_inside"
                         ],
                         "hosted_item": "from_sw_big_chest_entrance_inside"
                     }
@@ -458,24 +488,27 @@
                     {
                         "name": "From Skull Woods Gibdo Entrance",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|sw_gibdo_entrance_inside"
+                            "^$ChangeLocationColor|from_sw_gibdo_entrance_inside"
                         ],
                         "hosted_item": "from_sw_gibdo_entrance_inside"
                     },
                     {
                         "name": "To Skull Woods Gibdo Entrance",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|sw_gibdo_entrance_inside"
+                            "^$ChangeLocationColor|to_sw_gibdo_entrance_inside"
                         ],
                         "hosted_item": "to_sw_gibdo_entrance_inside"
                     },
                     {
                         "name": "Skull Woods Gibdo Entrance",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|sw_gibdo_entrance_inside"
+                            "^$ChangeLocationColor|from_sw_gibdo_entrance_inside"
                         ],
                         "hosted_item": "from_sw_gibdo_entrance_inside"
                     }
@@ -500,7 +533,7 @@
         ]
     },
     {
-        "name": "Dark Death Mountain  - Insides",
+        "name": "Dark Death Mountain - Insides",
         "children": [
             {
                 "name": "Ganons Tower",
@@ -508,24 +541,27 @@
                     {
                         "name": "From Ganons Tower",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|gt_entrance_inside"
+                            "^$ChangeLocationColor|from_gt_entrance_inside"
                         ],
                         "hosted_item": "from_gt_entrance_inside"
                     },
                     {
                         "name": "To Ganons Tower",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|gt_entrance_inside"
+                            "^$ChangeLocationColor|to_gt_entrance_inside"
                         ],
                         "hosted_item": "to_gt_entrance_inside"
                     },
                     {
                         "name": "Ganons Tower",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|gt_entrance_inside"
+                            "^$ChangeLocationColor|from_gt_entrance_inside"
                         ],
                         "hosted_item": "from_gt_entrance_inside"
                     }
@@ -553,24 +589,27 @@
                     {
                         "name": "From Turtle Rock",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|tr_main_entrance_inside"
+                            "^$ChangeLocationColor|from_tr_main_entrance_inside"
                         ],
                         "hosted_item": "from_tr_main_entrance_inside"
                     },
                     {
                         "name": "To Turtle Rock",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|tr_main_entrance_inside"
+                            "^$ChangeLocationColor|to_tr_main_entrance_inside"
                         ],
                         "hosted_item": "to_tr_main_entrance_inside"
                     },
                     {
                         "name": "Turtle Rock",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|tr_main_entrance_inside"
+                            "^$ChangeLocationColor|from_tr_main_entrance_inside"
                         ],
                         "hosted_item": "from_tr_main_entrance_inside"
                     }
@@ -598,24 +637,27 @@
                     {
                         "name": "From Turtle Rock Ledge Exit (West)",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|tr_laser_entrance_inside"
+                            "^$ChangeLocationColor|from_tr_laser_entrance_inside"
                         ],
                         "hosted_item": "from_tr_laser_entrance_inside"
                     },
                     {
                         "name": "To Turtle Rock Ledge Exit (West)",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|tr_laser_entrance_inside"
+                            "^$ChangeLocationColor|to_tr_laser_entrance_inside"
                         ],
                         "hosted_item": "to_tr_laser_entrance_inside"
                     },
                     {
                         "name": "Turtle Rock Ledge Exit (West)",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|tr_laser_entrance_inside"
+                            "^$ChangeLocationColor|from_tr_laser_entrance_inside"
                         ],
                         "hosted_item": "from_tr_laser_entrance_inside"
                     }
@@ -643,24 +685,27 @@
                     {
                         "name": "From Turtle Rock Ledge Exit (East)",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|tr_big_chest_entrance_inside"
+                            "^$ChangeLocationColor|from_tr_big_chest_entrance_inside"
                         ],
                         "hosted_item": "from_tr_big_chest_entrance_inside"
                     },
                     {
                         "name": "To Turtle Rock Ledge Exit (East)",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|tr_big_chest_entrance_inside"
+                            "^$ChangeLocationColor|to_tr_big_chest_entrance_inside"
                         ],
                         "hosted_item": "to_tr_big_chest_entrance_inside"
                     },
                     {
                         "name": "Turtle Rock Ledge Exit (East)",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|tr_big_chest_entrance_inside"
+                            "^$ChangeLocationColor|from_tr_big_chest_entrance_inside"
                         ],
                         "hosted_item": "from_tr_big_chest_entrance_inside"
                     }
@@ -688,24 +733,27 @@
                     {
                         "name": "From Turtle Rock Isolated Ledge Exit",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|tr_eye_bridge_entrance_inside"
+                            "^$ChangeLocationColor|from_tr_eye_bridge_entrance_inside"
                         ],
                         "hosted_item": "from_tr_eye_bridge_entrance_inside"
                     },
                     {
                         "name": "To Turtle Rock Isolated Ledge Exit",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|tr_eye_bridge_entrance_inside"
+                            "^$ChangeLocationColor|to_tr_eye_bridge_entrance_inside"
                         ],
                         "hosted_item": "to_tr_eye_bridge_entrance_inside"
                     },
                     {
                         "name": "Turtle Rock Isolated Ledge Exit",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|tr_eye_bridge_entrance_inside"
+                            "^$ChangeLocationColor|from_tr_eye_bridge_entrance_inside"
                         ],
                         "hosted_item": "from_tr_eye_bridge_entrance_inside"
                     }
@@ -733,24 +781,27 @@
                     {
                         "name": "From Hookshot Cave",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|hookshot_cave_inside"
+                            "^$ChangeLocationColor|from_hookshot_cave_inside"
                         ],
                         "hosted_item": "from_hookshot_cave_inside"
                     },
                     {
                         "name": "To Hookshot Cave",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|hookshot_cave_inside"
+                            "^$ChangeLocationColor|to_hookshot_cave_inside"
                         ],
                         "hosted_item": "to_hookshot_cave_inside"
                     },
                     {
                         "name": "Hookshot Cave",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|hookshot_cave_inside"
+                            "^$ChangeLocationColor|from_hookshot_cave_inside"
                         ],
                         "hosted_item": "from_hookshot_cave_inside"
                     }
@@ -778,24 +829,27 @@
                     {
                         "name": "From Dark Floating Island",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_floating_island_inside"
+                            "^$ChangeLocationColor|from_dark_floating_island_inside"
                         ],
                         "hosted_item": "from_dark_floating_island_inside"
                     },
                     {
                         "name": "To Dark Floating Island",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_floating_island_inside"
+                            "^$ChangeLocationColor|to_dark_floating_island_inside"
                         ],
                         "hosted_item": "to_dark_floating_island_inside"
                     },
                     {
                         "name": "Dark Floating Island",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_floating_island_inside"
+                            "^$ChangeLocationColor|from_dark_floating_island_inside"
                         ],
                         "hosted_item": "from_dark_floating_island_inside"
                     }
@@ -823,24 +877,27 @@
                     {
                         "name": "From Superbunny Cave (Top)",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|superbunny_cave_top_inside"
+                            "^$ChangeLocationColor|from_superbunny_cave_top_inside"
                         ],
                         "hosted_item": "from_superbunny_cave_top_inside"
                     },
                     {
                         "name": "To Superbunny Cave (Top)",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|superbunny_cave_top_inside"
+                            "^$ChangeLocationColor|to_superbunny_cave_top_inside"
                         ],
                         "hosted_item": "to_superbunny_cave_top_inside"
                     },
                     {
                         "name": "Superbunny Cave (Top)",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|superbunny_cave_top_inside"
+                            "^$ChangeLocationColor|from_superbunny_cave_top_inside"
                         ],
                         "hosted_item": "from_superbunny_cave_top_inside"
                     }
@@ -868,24 +925,27 @@
                     {
                         "name": "From Superbunny Cave (Bottom)",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|superbunny_cave_bottom_inside"
+                            "^$ChangeLocationColor|from_superbunny_cave_bottom_inside"
                         ],
                         "hosted_item": "from_superbunny_cave_bottom_inside"
                     },
                     {
                         "name": "To Superbunny Cave (Bottom)",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|superbunny_cave_bottom_inside"
+                            "^$ChangeLocationColor|to_superbunny_cave_bottom_inside"
                         ],
                         "hosted_item": "to_superbunny_cave_bottom_inside"
                     },
                     {
                         "name": "Superbunny Cave (Bottom)",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|superbunny_cave_bottom_inside"
+                            "^$ChangeLocationColor|from_superbunny_cave_bottom_inside"
                         ],
                         "hosted_item": "from_superbunny_cave_bottom_inside"
                     }
@@ -913,24 +973,27 @@
                     {
                         "name": "From Cave Shop (Dark Death Mountain)",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_death_mountain_shop_inside"
+                            "^$ChangeLocationColor|from_dark_death_mountain_shop_inside"
                         ],
                         "hosted_item": "from_dark_death_mountain_shop_inside"
                     },
                     {
                         "name": "To Cave Shop (Dark Death Mountain)",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_death_mountain_shop_inside"
+                            "^$ChangeLocationColor|to_dark_death_mountain_shop_inside"
                         ],
                         "hosted_item": "to_dark_death_mountain_shop_inside"
                     },
                     {
                         "name": "Cave Shop (Dark Death Mountain)",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_death_mountain_shop_inside"
+                            "^$ChangeLocationColor|from_dark_death_mountain_shop_inside"
                         ],
                         "hosted_item": "from_dark_death_mountain_shop_inside"
                     }
@@ -958,24 +1021,27 @@
                     {
                         "name": "From Spike Cave",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|spike_cave_inside"
+                            "^$ChangeLocationColor|from_spike_cave_inside"
                         ],
                         "hosted_item": "from_spike_cave_inside"
                     },
                     {
                         "name": "To Spike Cave",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|spike_cave_inside"
+                            "^$ChangeLocationColor|to_spike_cave_inside"
                         ],
                         "hosted_item": "to_spike_cave_inside"
                     },
                     {
                         "name": "Spike Cave",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|spike_cave_inside"
+                            "^$ChangeLocationColor|from_spike_cave_inside"
                         ],
                         "hosted_item": "from_spike_cave_inside"
                     }
@@ -1003,24 +1069,27 @@
                     {
                         "name": "From Dark Death Mountain Fairy",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_death_mountain_fairy_inside"
+                            "^$ChangeLocationColor|from_dark_death_mountain_fairy_inside"
                         ],
                         "hosted_item": "from_dark_death_mountain_fairy_inside"
                     },
                     {
                         "name": "To Dark Death Mountain Fairy",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_death_mountain_fairy_inside"
+                            "^$ChangeLocationColor|to_dark_death_mountain_fairy_inside"
                         ],
                         "hosted_item": "to_dark_death_mountain_fairy_inside"
                     },
                     {
                         "name": "Dark Death Mountain Fairy",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_death_mountain_fairy_inside"
+                            "^$ChangeLocationColor|from_dark_death_mountain_fairy_inside"
                         ],
                         "hosted_item": "from_dark_death_mountain_fairy_inside"
                     }
@@ -1053,24 +1122,27 @@
                     {
                         "name": "From C-Shaped House",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|c_shaped_house_inside"
+                            "^$ChangeLocationColor|from_c_shaped_house_inside"
                         ],
                         "hosted_item": "from_c_shaped_house_inside"
                     },
                     {
                         "name": "To C-Shaped House",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|c_shaped_house_inside"
+                            "^$ChangeLocationColor|to_c_shaped_house_inside"
                         ],
                         "hosted_item": "to_c_shaped_house_inside"
                     },
                     {
                         "name": "C-Shaped House",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|c_shaped_house_inside"
+                            "^$ChangeLocationColor|from_c_shaped_house_inside"
                         ],
                         "hosted_item": "from_c_shaped_house_inside"
                     }
@@ -1098,24 +1170,27 @@
                     {
                         "name": "From Chest Game",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|chest_game_inside"
+                            "^$ChangeLocationColor|from_chest_game_inside"
                         ],
                         "hosted_item": "from_chest_game_inside"
                     },
                     {
                         "name": "To Chest Game",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|chest_game_inside"
+                            "^$ChangeLocationColor|to_chest_game_inside"
                         ],
                         "hosted_item": "to_chest_game_inside"
                     },
                     {
                         "name": "Chest Game",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|chest_game_inside"
+                            "^$ChangeLocationColor|from_chest_game_inside"
                         ],
                         "hosted_item": "from_chest_game_inside"
                     }
@@ -1143,24 +1218,27 @@
                     {
                         "name": "From Brewery",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|brewery_inside"
+                            "^$ChangeLocationColor|from_brewery_inside"
                         ],
                         "hosted_item": "from_brewery_inside"
                     },
                     {
                         "name": "To Brewery",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|brewery_inside"
+                            "^$ChangeLocationColor|to_brewery_inside"
                         ],
                         "hosted_item": "to_brewery_inside"
                     },
                     {
                         "name": "Brewery",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|brewery_inside"
+                            "^$ChangeLocationColor|from_brewery_inside"
                         ],
                         "hosted_item": "from_brewery_inside"
                     }
@@ -1188,24 +1266,27 @@
                     {
                         "name": "From Hammer Peg Cave",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|peg_cave_inside"
+                            "^$ChangeLocationColor|from_peg_cave_inside"
                         ],
                         "hosted_item": "from_peg_cave_inside"
                     },
                     {
                         "name": "To Hammer Peg Cave",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|peg_cave_inside"
+                            "^$ChangeLocationColor|to_peg_cave_inside"
                         ],
                         "hosted_item": "to_peg_cave_inside"
                     },
                     {
                         "name": "Hammer Peg Cave",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|peg_cave_inside"
+                            "^$ChangeLocationColor|from_peg_cave_inside"
                         ],
                         "hosted_item": "from_peg_cave_inside"
                     }
@@ -1233,24 +1314,27 @@
                     {
                         "name": "From Red Shield Shop",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|red_shield_shop_inside"
+                            "^$ChangeLocationColor|from_red_shield_shop_inside"
                         ],
                         "hosted_item": "from_red_shield_shop_inside"
                     },
                     {
                         "name": "To Red Shield Shop",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|red_shield_shop_inside"
+                            "^$ChangeLocationColor|to_red_shield_shop_inside"
                         ],
                         "hosted_item": "to_red_shield_shop_inside"
                     },
                     {
                         "name": "Red Shield Shop",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|red_shield_shop_inside"
+                            "^$ChangeLocationColor|from_red_shield_shop_inside"
                         ],
                         "hosted_item": "from_red_shield_shop_inside"
                     }
@@ -1278,24 +1362,27 @@
                     {
                         "name": "From Fortune Teller (Dark)",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_village_fortune_teller_inside"
+                            "^$ChangeLocationColor|from_dark_village_fortune_teller_inside"
                         ],
                         "hosted_item": "from_dark_village_fortune_teller_inside"
                     },
                     {
                         "name": "To Fortune Teller (Dark)",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_village_fortune_teller_inside"
+                            "^$ChangeLocationColor|to_dark_village_fortune_teller_inside"
                         ],
                         "hosted_item": "to_dark_village_fortune_teller_inside"
                     },
                     {
                         "name": "Fortune Teller (Dark)",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_village_fortune_teller_inside"
+                            "^$ChangeLocationColor|from_dark_village_fortune_teller_inside"
                         ],
                         "hosted_item": "from_dark_village_fortune_teller_inside"
                     }
@@ -1323,24 +1410,27 @@
                     {
                         "name": "From Village of Outcasts Shop",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_village_shop_inside"
+                            "^$ChangeLocationColor|from_dark_village_shop_inside"
                         ],
                         "hosted_item": "from_dark_village_shop_inside"
                     },
                     {
                         "name": "To Village of Outcasts Shop",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_village_shop_inside"
+                            "^$ChangeLocationColor|to_dark_village_shop_inside"
                         ],
                         "hosted_item": "to_dark_village_shop_inside"
                     },
                     {
                         "name": "Village of Outcasts Shop",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_village_shop_inside"
+                            "^$ChangeLocationColor|from_dark_village_shop_inside"
                         ],
                         "hosted_item": "from_dark_village_shop_inside"
                     }
@@ -1368,24 +1458,27 @@
                     {
                         "name": "From Thieves Town",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|tt_entrance_inside"
+                            "^$ChangeLocationColor|from_tt_entrance_inside"
                         ],
                         "hosted_item": "from_tt_entrance_inside"
                     },
                     {
                         "name": "To Thieves Town",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|tt_entrance_inside"
+                            "^$ChangeLocationColor|to_tt_entrance_inside"
                         ],
                         "hosted_item": "to_tt_entrance_inside"
                     },
                     {
                         "name": "Thieves Town",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|tt_entrance_inside"
+                            "^$ChangeLocationColor|from_tt_entrance_inside"
                         ],
                         "hosted_item": "from_tt_entrance_inside"
                     }
@@ -1413,24 +1506,27 @@
                     {
                         "name": "From Archery Game",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_archery_minigame_inside"
+                            "^$ChangeLocationColor|from_dark_archery_minigame_inside"
                         ],
                         "hosted_item": "from_dark_archery_minigame_inside"
                     },
                     {
                         "name": "To Archery Game",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_archery_minigame_inside"
+                            "^$ChangeLocationColor|to_dark_archery_minigame_inside"
                         ],
                         "hosted_item": "to_dark_archery_minigame_inside"
                     },
                     {
                         "name": "Archery Game",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_archery_minigame_inside"
+                            "^$ChangeLocationColor|from_dark_archery_minigame_inside"
                         ],
                         "hosted_item": "from_dark_archery_minigame_inside"
                     }
@@ -1463,24 +1559,27 @@
                     // {
                     //     "name": "From Pyramid Hole",
                     // "visibility_rules": ["er_insanity"],
+                    // "clear_as_group":false,
                     //     "access_rules": [
-                    //         "$CanReach|pyramid_hole_inside"
+                    //         "^$ChangeLocationColor|from_pyramid_hole_inside"
                     //     ],
                     //     "hosted_item": "from_pyramid_hole_inside"
                     // },
                     {
                         "name": "To Pyramid Hole",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|pyramid_hole_inside"
+                            "^$ChangeLocationColor|to_pyramid_hole_inside"
                         ],
                         "hosted_item": "to_pyramid_hole_inside"
                     },
                     {
                         "name": "Pyramid Hole",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|pyramid_hole_inside"
+                            "^$ChangeLocationColor|from_pyramid_hole_inside"
                         ],
                         "hosted_item": "from_pyramid_hole_inside"
                     }
@@ -1508,24 +1607,27 @@
                     {
                         "name": "From Pyramid Exit",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|pyramid_exit_inside"
+                            "^$ChangeLocationColor|from_pyramid_exit_inside"
                         ],
                         "hosted_item": "from_pyramid_exit_inside"
                     },
                     {
                         "name": "To Pyramid Exit",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|pyramid_exit_inside"
+                            "^$ChangeLocationColor|to_pyramid_exit_inside"
                         ],
                         "hosted_item": "to_pyramid_exit_inside"
                     },
                     {
                         "name": "Pyramid Exit",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|pyramid_exit_inside"
+                            "^$ChangeLocationColor|from_pyramid_exit_inside"
                         ],
                         "hosted_item": "from_pyramid_exit_inside"
                     }
@@ -1553,24 +1655,27 @@
                     {
                         "name": "From Pyramid Fairy",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|pyramid_fairy_cave_inside"
+                            "^$ChangeLocationColor|from_pyramid_fairy_cave_inside"
                         ],
                         "hosted_item": "from_pyramid_fairy_cave_inside"
                     },
                     {
                         "name": "To Pyramid Fairy",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|pyramid_fairy_cave_inside"
+                            "^$ChangeLocationColor|to_pyramid_fairy_cave_inside"
                         ],
                         "hosted_item": "to_pyramid_fairy_cave_inside"
                     },
                     {
                         "name": "Pyramid Fairy",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|pyramid_fairy_cave_inside"
+                            "^$ChangeLocationColor|from_pyramid_fairy_cave_inside"
                         ],
                         "hosted_item": "from_pyramid_fairy_cave_inside"
                     }
@@ -1598,24 +1703,27 @@
                     {
                         "name": "From Dark Sanctuary Hint",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_chapel_inside"
+                            "^$ChangeLocationColor|from_dark_chapel_inside"
                         ],
                         "hosted_item": "from_dark_chapel_inside"
                     },
                     {
                         "name": "To Dark Sanctuary Hint",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_chapel_inside"
+                            "^$ChangeLocationColor|to_dark_chapel_inside"
                         ],
                         "hosted_item": "to_dark_chapel_inside"
                     },
                     {
                         "name": "Dark Sanctuary Hint",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_chapel_inside"
+                            "^$ChangeLocationColor|from_dark_chapel_inside"
                         ],
                         "hosted_item": "from_dark_chapel_inside"
                     }
@@ -1648,24 +1756,27 @@
                     {
                         "name": "From Palace of Darkness",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|pod_entrance_inside"
+                            "^$ChangeLocationColor|from_pod_entrance_inside"
                         ],
                         "hosted_item": "from_pod_entrance_inside"
                     },
                     {
                         "name": "To Palace of Darkness",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|pod_entrance_inside"
+                            "^$ChangeLocationColor|to_pod_entrance_inside"
                         ],
                         "hosted_item": "to_pod_entrance_inside"
                     },
                     {
                         "name": "Palace of Darkness",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|pod_entrance_inside"
+                            "^$ChangeLocationColor|from_pod_entrance_inside"
                         ],
                         "hosted_item": "from_pod_entrance_inside"
                     }
@@ -1693,24 +1804,27 @@
                     {
                         "name": "From Palace of Darkness Hint",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|pod_hint_house_inside"
+                            "^$ChangeLocationColor|from_pod_hint_house_inside"
                         ],
                         "hosted_item": "from_pod_hint_house_inside"
                     },
                     {
                         "name": "To Palace of Darkness Hint",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|pod_hint_house_inside"
+                            "^$ChangeLocationColor|to_pod_hint_house_inside"
                         ],
                         "hosted_item": "to_pod_hint_house_inside"
                     },
                     {
                         "name": "Palace of Darkness Hint",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|pod_hint_house_inside"
+                            "^$ChangeLocationColor|from_pod_hint_house_inside"
                         ],
                         "hosted_item": "from_pod_hint_house_inside"
                     }
@@ -1738,24 +1852,27 @@
                     {
                         "name": "From East Dark World Hint",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|pod_east_darkworld_hint_inside"
+                            "^$ChangeLocationColor|from_pod_east_darkworld_hint_inside"
                         ],
                         "hosted_item": "from_pod_east_darkworld_hint_inside"
                     },
                     {
                         "name": "To East Dark World Hint",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|pod_east_darkworld_hint_inside"
+                            "^$ChangeLocationColor|to_pod_east_darkworld_hint_inside"
                         ],
                         "hosted_item": "to_pod_east_darkworld_hint_inside"
                     },
                     {
                         "name": "East Dark World Hint",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|pod_east_darkworld_hint_inside"
+                            "^$ChangeLocationColor|from_pod_east_darkworld_hint_inside"
                         ],
                         "hosted_item": "from_pod_east_darkworld_hint_inside"
                     }
@@ -1783,24 +1900,27 @@
                     {
                         "name": "From Dark World Potion Shop",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_potion_shop_inside"
+                            "^$ChangeLocationColor|from_dark_potion_shop_inside"
                         ],
                         "hosted_item": "from_dark_potion_shop_inside"
                     },
                     {
                         "name": "To Dark World Potion Shop",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_potion_shop_inside"
+                            "^$ChangeLocationColor|to_dark_potion_shop_inside"
                         ],
                         "hosted_item": "to_dark_potion_shop_inside"
                     },
                     {
                         "name": "Dark World Potion Shop",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_potion_shop_inside"
+                            "^$ChangeLocationColor|from_dark_potion_shop_inside"
                         ],
                         "hosted_item": "from_dark_potion_shop_inside"
                     }
@@ -1828,24 +1948,27 @@
                     {
                         "name": "From Dark Lake Hylia Fairy",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_lake_hylia_fairy_inside"
+                            "^$ChangeLocationColor|from_dark_lake_hylia_fairy_inside"
                         ],
                         "hosted_item": "from_dark_lake_hylia_fairy_inside"
                     },
                     {
                         "name": "To Dark Lake Hylia Fairy",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_lake_hylia_fairy_inside"
+                            "^$ChangeLocationColor|to_dark_lake_hylia_fairy_inside"
                         ],
                         "hosted_item": "to_dark_lake_hylia_fairy_inside"
                     },
                     {
                         "name": "Dark Lake Hylia Fairy",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_lake_hylia_fairy_inside"
+                            "^$ChangeLocationColor|from_dark_lake_hylia_fairy_inside"
                         ],
                         "hosted_item": "from_dark_lake_hylia_fairy_inside"
                     }
@@ -1878,24 +2001,27 @@
                     {
                         "name": "From Misery Mire",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|mm_entrance_inside"
+                            "^$ChangeLocationColor|from_mm_entrance_inside"
                         ],
                         "hosted_item": "from_mm_entrance_inside"
                     },
                     {
                         "name": "To Misery Mire",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|mm_entrance_inside"
+                            "^$ChangeLocationColor|to_mm_entrance_inside"
                         ],
                         "hosted_item": "to_mm_entrance_inside"
                     },
                     {
                         "name": "Misery Mire",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|mm_entrance_inside"
+                            "^$ChangeLocationColor|from_mm_entrance_inside"
                         ],
                         "hosted_item": "from_mm_entrance_inside"
                     }
@@ -1923,24 +2049,27 @@
                     {
                         "name": "From Mire Shed",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|mire_shed_inside"
+                            "^$ChangeLocationColor|from_mire_shed_inside"
                         ],
                         "hosted_item": "from_mire_shed_inside"
                     },
                     {
                         "name": "To Mire Shed",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|mire_shed_inside"
+                            "^$ChangeLocationColor|to_mire_shed_inside"
                         ],
                         "hosted_item": "to_mire_shed_inside"
                     },
                     {
                         "name": "Mire Shed",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|mire_shed_inside"
+                            "^$ChangeLocationColor|from_mire_shed_inside"
                         ],
                         "hosted_item": "from_mire_shed_inside"
                     }
@@ -1968,24 +2097,27 @@
                     {
                         "name": "From Dark Desert Hint",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_desert_hint_inside"
+                            "^$ChangeLocationColor|from_dark_desert_hint_inside"
                         ],
                         "hosted_item": "from_dark_desert_hint_inside"
                     },
                     {
                         "name": "To Dark Desert Hint",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_desert_hint_inside"
+                            "^$ChangeLocationColor|to_dark_desert_hint_inside"
                         ],
                         "hosted_item": "to_dark_desert_hint_inside"
                     },
                     {
                         "name": "Dark Desert Hint",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_desert_hint_inside"
+                            "^$ChangeLocationColor|from_dark_desert_hint_inside"
                         ],
                         "hosted_item": "from_dark_desert_hint_inside"
                     }
@@ -2013,24 +2145,27 @@
                     {
                         "name": "From Dark Desert Fairy",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_desert_fairy_cave_inside"
+                            "^$ChangeLocationColor|from_dark_desert_fairy_cave_inside"
                         ],
                         "hosted_item": "from_dark_desert_fairy_cave_inside"
                     },
                     {
                         "name": "To Dark Desert Fairy",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_desert_fairy_cave_inside"
+                            "^$ChangeLocationColor|to_dark_desert_fairy_cave_inside"
                         ],
                         "hosted_item": "to_dark_desert_fairy_cave_inside"
                     },
                     {
                         "name": "Dark Desert Fairy",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_desert_fairy_cave_inside"
+                            "^$ChangeLocationColor|from_dark_desert_fairy_cave_inside"
                         ],
                         "hosted_item": "from_dark_desert_fairy_cave_inside"
                     }
@@ -2063,24 +2198,27 @@
                     {
                         "name": "From Big Bomb Shop",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|big_bomb_shop_inside"
+                            "^$ChangeLocationColor|from_big_bomb_shop_inside"
                         ],
                         "hosted_item": "from_big_bomb_shop_inside"
                     },
                     {
                         "name": "To Big Bomb Shop",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|big_bomb_shop_inside"
+                            "^$ChangeLocationColor|to_big_bomb_shop_inside"
                         ],
                         "hosted_item": "to_big_bomb_shop_inside"
                     },
                     {
                         "name": "Big Bomb Shop",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|big_bomb_shop_inside"
+                            "^$ChangeLocationColor|from_big_bomb_shop_inside"
                         ],
                         "hosted_item": "from_big_bomb_shop_inside"
                     }
@@ -2108,24 +2246,27 @@
                     {
                         "name": "From Bonk Fairy (Dark)",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|big_bomb_shop_fairy_cave_inside"
+                            "^$ChangeLocationColor|from_big_bomb_shop_fairy_cave_inside"
                         ],
                         "hosted_item": "from_big_bomb_shop_fairy_cave_inside"
                     },
                     {
                         "name": "To Bonk Fairy (Dark)",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|big_bomb_shop_fairy_cave_inside"
+                            "^$ChangeLocationColor|to_big_bomb_shop_fairy_cave_inside"
                         ],
                         "hosted_item": "to_big_bomb_shop_fairy_cave_inside"
                     },
                     {
                         "name": "Bonk Fairy (Dark)",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|big_bomb_shop_fairy_cave_inside"
+                            "^$ChangeLocationColor|from_big_bomb_shop_fairy_cave_inside"
                         ],
                         "hosted_item": "from_big_bomb_shop_fairy_cave_inside"
                     }
@@ -2153,24 +2294,27 @@
                     {
                         "name": "From Hype Cave",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|hype_cave_inside"
+                            "^$ChangeLocationColor|from_hype_cave_inside"
                         ],
                         "hosted_item": "from_hype_cave_inside"
                     },
                     {
                         "name": "To Hype Cave",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|hype_cave_inside"
+                            "^$ChangeLocationColor|to_hype_cave_inside"
                         ],
                         "hosted_item": "to_hype_cave_inside"
                     },
                     {
                         "name": "Hype Cave",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|hype_cave_inside"
+                            "^$ChangeLocationColor|from_hype_cave_inside"
                         ],
                         "hosted_item": "from_hype_cave_inside"
                     }
@@ -2198,24 +2342,27 @@
                     {
                         "name": "From Swamp Palace",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|sp_entrance_inside"
+                            "^$ChangeLocationColor|from_sp_entrance_inside"
                         ],
                         "hosted_item": "from_sp_entrance_inside"
                     },
                     {
                         "name": "To Swamp Palace",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|sp_entrance_inside"
+                            "^$ChangeLocationColor|to_sp_entrance_inside"
                         ],
                         "hosted_item": "to_sp_entrance_inside"
                     },
                     {
                         "name": "Swamp Palace",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|sp_entrance_inside"
+                            "^$ChangeLocationColor|from_sp_entrance_inside"
                         ],
                         "hosted_item": "from_sp_entrance_inside"
                     }
@@ -2248,24 +2395,27 @@
                     {
                         "name": "From Dark Lake Hylia Shop",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_lake_shop_inside"
+                            "^$ChangeLocationColor|from_dark_lake_shop_inside"
                         ],
                         "hosted_item": "from_dark_lake_shop_inside"
                     },
                     {
                         "name": "To Dark Lake Hylia Shop",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_lake_shop_inside"
+                            "^$ChangeLocationColor|to_dark_lake_shop_inside"
                         ],
                         "hosted_item": "to_dark_lake_shop_inside"
                     },
                     {
                         "name": "Dark Lake Hylia Shop",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_lake_shop_inside"
+                            "^$ChangeLocationColor|from_dark_lake_shop_inside"
                         ],
                         "hosted_item": "from_dark_lake_shop_inside"
                     }
@@ -2293,24 +2443,27 @@
                     {
                         "name": "From Dark Lake Hylia Ledge Fairy",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_lake_hylia_ledge_fairy_inside"
+                            "^$ChangeLocationColor|from_dark_lake_hylia_ledge_fairy_inside"
                         ],
                         "hosted_item": "from_dark_lake_hylia_ledge_fairy_inside"
                     },
                     {
                         "name": "To Dark Lake Hylia Ledge Fairy",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_lake_hylia_ledge_fairy_inside"
+                            "^$ChangeLocationColor|to_dark_lake_hylia_ledge_fairy_inside"
                         ],
                         "hosted_item": "to_dark_lake_hylia_ledge_fairy_inside"
                     },
                     {
                         "name": "Dark Lake Hylia Ledge Fairy",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_lake_hylia_ledge_fairy_inside"
+                            "^$ChangeLocationColor|from_dark_lake_hylia_ledge_fairy_inside"
                         ],
                         "hosted_item": "from_dark_lake_hylia_ledge_fairy_inside"
                     }
@@ -2338,24 +2491,27 @@
                     {
                         "name": "From Dark Lake Hylia Ledge Spike Cave",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_lake_hylia_ledge_spike_hint_inside"
+                            "^$ChangeLocationColor|from_dark_lake_hylia_ledge_spike_hint_inside"
                         ],
                         "hosted_item": "from_dark_lake_hylia_ledge_spike_hint_inside"
                     },
                     {
                         "name": "To Dark Lake Hylia Ledge Spike Cave",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_lake_hylia_ledge_spike_hint_inside"
+                            "^$ChangeLocationColor|to_dark_lake_hylia_ledge_spike_hint_inside"
                         ],
                         "hosted_item": "to_dark_lake_hylia_ledge_spike_hint_inside"
                     },
                     {
                         "name": "Dark Lake Hylia Ledge Spike Cave",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_lake_hylia_ledge_spike_hint_inside"
+                            "^$ChangeLocationColor|from_dark_lake_hylia_ledge_spike_hint_inside"
                         ],
                         "hosted_item": "from_dark_lake_hylia_ledge_spike_hint_inside"
                     }
@@ -2383,24 +2539,27 @@
                     {
                         "name": "From Dark Lake Hylia Ledge Hint",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_lake_hylia_ledge_hint_inside"
+                            "^$ChangeLocationColor|from_dark_lake_hylia_ledge_hint_inside"
                         ],
                         "hosted_item": "from_dark_lake_hylia_ledge_hint_inside"
                     },
                     {
                         "name": "To Dark Lake Hylia Ledge Hint",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_lake_hylia_ledge_hint_inside"
+                            "^$ChangeLocationColor|to_dark_lake_hylia_ledge_hint_inside"
                         ],
                         "hosted_item": "to_dark_lake_hylia_ledge_hint_inside"
                     },
                     {
                         "name": "Dark Lake Hylia Ledge Hint",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|dark_lake_hylia_ledge_hint_inside"
+                            "^$ChangeLocationColor|from_dark_lake_hylia_ledge_hint_inside"
                         ],
                         "hosted_item": "from_dark_lake_hylia_ledge_hint_inside"
                     }
@@ -2428,24 +2587,27 @@
                     {
                         "name": "From Ice Palace",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|ip_entrance_inside"
+                            "^$ChangeLocationColor|from_ip_entrance_inside"
                         ],
                         "hosted_item": "from_ip_entrance_inside"
                     },
                     {
                         "name": "To Ice Palace",
                         "visibility_rules": ["er_insanity"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|ip_entrance_inside"
+                            "^$ChangeLocationColor|to_ip_entrance_inside"
                         ],
                         "hosted_item": "to_ip_entrance_inside"
                     },
                     {
                         "name": "Ice Palace",
                         "visibility_rules": ["er_dungeons", "er_full"],
+                        "clear_as_group":false,
                         "access_rules": [
-                            "$CanReach|ip_entrance_inside"
+                            "^$ChangeLocationColor|from_ip_entrance_inside"
                         ],
                         "hosted_item": "from_ip_entrance_inside"
                     }
