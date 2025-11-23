@@ -1,5 +1,100 @@
 [
     {
+        "name": "Legend",
+        "children": [
+            {
+                "name": "Not connected but reachable",
+                "sections": [
+                    {
+                        "name": "Not connected but reachable",
+                        "access_rules": []
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "er_legend",
+                        "x": 16,
+                        "y": 16,
+                        "size": 32,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "Not connected and not reachable",
+                "sections": [
+                    {
+                        "name": "Not connected and not reachable",
+                        "access_rules": ["a"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "er_legend",
+                        "x": 16,
+                        "y": 66,
+                        "size": 32,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "Connected and its a Connector",
+                "sections": [
+                    {
+                        "name": "Connected and its a Connector",
+                        "access_rules": ["{}"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "er_legend",
+                        "x": 16,
+                        "y": 216,
+                        "size": 32,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "Connected and its a Deadend",
+                "sections": [
+                    {
+                        "name": "Connected and its a Deadend",
+                        "ref": "Kakariko Village - Insides/Tavern (Back)/Tavern (Back)"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "er_legend",
+                        "x": 16,
+                        "y": 166,
+                        "size": 32,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "Connected and its a Dungeon",
+                "sections": [
+                    {
+                        "name": "Connected and its a Dungeon",
+                        "access_rules": ["[]"]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "er_legend",
+                        "x": 16,
+                        "y": 116,
+                        "size": 32,
+                        "shape": "diamond"
+                    }
+                ]
+            }
+        ]
+    },
+    {
         "name": "Lost Woods - Insides",
         "children": [
             {
