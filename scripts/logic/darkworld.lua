@@ -787,7 +787,15 @@ pyramid_exit_ledge:connect_one_way(pyramid)
 pyramid_hole_outside:connect_one_way(pyramid_hole_inside)
 pyramid_exit_outside:connect_two_ways(pyramid_exit_inside)
 
-pyramid_hole_inside:connect_one_way(pyramid_exit_inside)
+pyramid_hole_inside:connect_one_way(pyramid_exit_inside, function() 
+    return ANY(
+        "mastersword",
+        ALL(
+            "swordless",
+            "hammer"
+        )
+    )
+end)
 
 pyramid_fairy_cave_outside:connect_one_way_entrance("Fat Fairy", pyramid_fairy_cave_inside)
 
