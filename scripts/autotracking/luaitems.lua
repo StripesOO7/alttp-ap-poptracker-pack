@@ -249,17 +249,6 @@ local function SaveLocationFunc(self)
     -- print("SaveFunc")
 end
 
-local function SaveCaptureFunc(self)
-    return {
-        Active = self.ItemState.Active,
-        Target = self.ItemState.Target,
-        Name = self.Name,
-        Shortname = self.ItemState.Shortname,
-        Icon = self.Icon
-    }
-    -- print("SaveFunc")
-end
-
 local function LoadLocationFunc(self, data)
     if data ~= nil and self.Name == data.Name then
         self.ItemState.Target = data.Target
@@ -293,22 +282,7 @@ local function LoadLocationFunc(self, data)
     -- print("LoadFunc")
 end
 
-local function LoadCaptureFunc(self, data)
-    -- print(self.Name, data.Name)
-    -- print("loading data from:", data)
-    -- print(dump_table(data))
-    if data ~= nil and self.Name == data.Name then
-        -- print("assigning saved data for ", data.Name)
-        -- print(dump_table(data))
-        self.ItemState.Target = data.Target
-        self.ItemState.Shortname = data.Shortname
-        self.Icon = ImageReference:FromPackRelativePath(data.Icon)
-    else
-        -- print("skipped laoding")
-    end
 
-    -- print("LoadFunc")
-end
 local function PropertyChangedFunc()
     -- print("PropertyChangedFunc")
 end
@@ -377,15 +351,44 @@ function CreateLuaLocationItems(direction, location_obj, side)
     return self
 end
 
-function CreateLuaCaptureItems(name, shortname)
+local function SaveManualLocationStorageFunc(self)
+    return {
+        MANUAL_LOCATIONS = self.ItemState.MANUAL_LOCATIONS,
+        MANUAL_LOCATIONS_ORDER = self.ItemState.MANUAL_LOCATIONS_ORDER,
+        Target = self.ItemState.Target,
+        Name = self.Name,
+        Icon = self.Icon
+    }
+    -- print("SaveFunc")
+end
+
+local function LoadManualLocationStorageFunc(self, data)
+    -- print(self.Name, data.Name)
+    -- print("loading data from:", data)
+    -- print(dump_table(data))
+    if data ~= nil and self.Name == data.Name then
+        -- print("assigning saved data for ", data.Name)
+        -- print(dump_table(data))
+        self.ItemState.MANUAL_LOCATIONS = data.MANUAL_LOCATIONS
+        self.ItemState.MANUAL_LOCATIONS_ORDER = data.MANUAL_LOCATIONS_ORDER
+        self.Icon = ImageReference:FromPackRelativePath(data.Icon)
+    else
+        -- print("skipped laoding")
+    end
+
+    -- print("LoadFunc")
+end
+
+function CreateLuaManualLocationStorage(name)
     local self = ScriptHost:CreateLuaItem()
     -- self.Type = "custom"
     self.Name = name --code --
     self.Icon = ImageReference:FromPackRelativePath("images/AP-item.png")
     self.ItemState = {
-        Active = true,
-        Target = nil,
-        Shortname = shortname
+        MANUAL_LOCATIONS = {
+            ["default"] = {}
+        },
+        MANUAL_LOCATIONS_ORDER = {}
     }
    
     self.CanProvideCodeFunc = CanProvideCodeFunc
@@ -394,8 +397,8 @@ function CreateLuaCaptureItems(name, shortname)
     self.OnMiddleClickFunc = OnMiddleClickFunc
     self.ProvidesCodeFunc = ProvidesCodeFunc
     -- self.AdvanceToCodeFunc = AdvanceToCodeFunc
-    self.SaveFunc = SaveCaptureFunc
-    self.LoadFunc = LoadCaptureFunc
+    self.SaveFunc = SaveManualLocationStorageFunc
+    self.LoadFunc = LoadManualLocationStorageFunc
     self.PropertyChangedFunc = PropertyChangedFunc
     -- self.ItemState = ItemState
     return self

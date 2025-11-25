@@ -1,6 +1,6 @@
 -- ScriptHost:AddWatchForCode("keydropshuffle handler", "key_drop_shuffle", KeyDropLayoutChange)
 -- ScriptHost:AddWatchForCode("boss handler", "boss_shuffle", BossShuffle)
--- ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", ForceUpdate)
+-- ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", LocationHandler)
 -- ScriptHost:AddWatchForCode("ow_dungeon details handler", "ow_dungeon_details", owDungeonDetails)
 
 alttp_location = {}
@@ -411,6 +411,32 @@ function StateChanged()
     UpdateCanInteract()
     stale = true
 end
+function LocationHandler(location)
+    if MANUAL_CHECKED then
+        local storage_item = Tracker:FindObjectForCode("manual_location_storage")
+        if Archipelago.PlayerNumber == -1 then -- not connected
+            if ROOM_SEED ~= "default" then -- seed is from previous connection
+                ROOM_SEED = "default"
+                storage_item.ItemState.MANUAL_LOCATIONS["default"] = {}
+            else -- seed is default
+            end
+        end
+        local full_path = location.FullID
+        if storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][full_path] then --not in list for curretn seed
+            if location.AvailableChestCount < location.ChestCount then --add to list
+                storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][full_path] = location.AvailableChestCount
+            else --remove from list of set back to max chestcount
+                storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][full_path] = nil
+            end
+        elseif location.AvailableChestCount < location.ChestCount then -- not in list and not set back to its max chest count
+            storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][full_path] = location.AvailableChestCount
+        else
+        end
+    end
+    local storage_item = Tracker:FindObjectForCode("manual_location_storage")
+    print(dump_table(storage_item.ItemState.MANUAL_LOCATIONS))
+    ForceUpdate()
+end
 
 function ForceUpdate(...)
     -- UpdateCanInteract()
@@ -495,7 +521,7 @@ function EmptyLocationTargets()
                 _SetLocationOptions(target_inside, source)
             end
         end
-        ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", ForceUpdate)
+        ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", LocationHandler)
         ScriptHost:AddWatchForCode("StateChanged", "*", StateChanged)
         ForceUpdate()
     else
@@ -504,5 +530,5 @@ function EmptyLocationTargets()
 end
 
 -- ScriptHost:AddWatchForCode("ER_Setting_Changed", "er_full", EmptyLocationTargets)
--- ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", ForceUpdate)
+-- ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", LocationHandler)
 -- ScriptHost:AddWatchForCode("StateChanged", "*", StateChanged)

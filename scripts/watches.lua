@@ -1,6 +1,6 @@
 --logic main
 ScriptHost:AddWatchForCode("ER_Setting_Changed", "er_full", EmptyLocationTargets)
--- ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", ForceUpdate)
+-- ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", LocationHandler)
 ScriptHost:AddWatchForCode("keydropshuffle handler", "key_drop_shuffle", KeyDropLayoutChange)
 ScriptHost:AddWatchForCode("boss handler", "boss_shuffle", BossShuffle)
 ScriptHost:AddWatchForCode("set smallkey stage global", "small_keys", SetSmallKeyGlobal)

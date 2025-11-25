@@ -35,7 +35,7 @@ function OnFrameHandler()
     ScriptHost:RemoveOnFrameHandler("load handler")
     -- stuff
     ScriptHost:AddWatchForCode("StateChanged", "*", StateChanged)
-    ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", ForceUpdate)
+    ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", LocationHandler)
     ForceUpdate()
 end
 require("scripts/watches")

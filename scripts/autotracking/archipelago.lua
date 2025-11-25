@@ -6,6 +6,9 @@ SLOT_DATA = nil
 SKIP_BOSSSHUFFLE = false
 ALL_LOCATIONS = {}
 
+MANUAL_CHECKED = true
+ROOM_SEED = "default"
+
 local SECONDSTAGE = {
     [5] = 5, --red shield
     [34] = 34, --blue mail
@@ -53,8 +56,60 @@ function dump_table(o, depth)
     end
 end
 
+function preOnClear()
+    PLAYER_ID = Archipelago.PlayerNumber or -1
+	TEAM_NUMBER = Archipelago.TeamNumber or 0
+    if Archipelago.PlayerNumber > -1 then
+        if #ALL_LOCATIONS > 0 then
+            ALL_LOCATIONS = {}
+        end
+        for _, value in pairs(Archipelago.MissingLocations) do
+            table.insert(ALL_LOCATIONS, #ALL_LOCATIONS + 1, value)
+        end
+
+        for _, value in pairs(Archipelago.CheckedLocations) do
+            table.insert(ALL_LOCATIONS, #ALL_LOCATIONS + 1, value)
+        end
+        HINTS_ID = "_read_hints_"..TEAM_NUMBER.."_"..PLAYER_ID
+        Archipelago:SetNotify({HINTS_ID})
+        Archipelago:Get({HINTS_ID})
+    end
+
+
+    -- local temp_seed = tostring(#ALL_LOCATIONS).."_"..tostring(Archipelago.TeamNumber).."_"..tostring(Archipelago.PlayerNumber)
+    print(Archipelago.Seed)
+    local storage_item = Tracker:FindObjectForCode("manual_location_storage")
+    -- local storage_location = storage_item.ItemState.MANUAL_LOCATIONS
+    -- local storage_location_order = storage_item.ItemState.MANUAL_LOCATIONS_ORDER
+    if ROOM_SEED == "default" or ROOM_SEED ~= Archipelago.Seed.."_"..Archipelago.PlayerNumber then -- seed is default or from previous connection
+        if PopVersion and PopVersion >= "0.33.0" then
+            ROOM_SEED = Archipelago.Seed.."_"..Archipelago.PlayerNumber --something like 2345_0_12
+        else
+            ROOM_SEED = #ALL_LOCATIONS.."_"..Archipelago.TeamNumber.."_"..Archipelago.PlayerNumber
+        end
+        if #storage_item.ItemState.MANUAL_LOCATIONS > 10 then
+            storage_item.ItemState.MANUAL_LOCATIONS[storage_item.ItemState.MANUAL_LOCATIONS_ORDER[1]] = nil
+            table.remove(storage_item.ItemState.MANUAL_LOCATIONS_ORDER, 1)
+        else
+            if storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED] == nil then
+                storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED] = {}
+                table.insert(storage_item.ItemState.MANUAL_LOCATIONS_ORDER, ROOM_SEED)
+            end
+        end
+    else -- seed is from previous connection
+        -- do nothing
+    end
+end
 
 function onClear(slot_data)
+    MANUAL_CHECKED = false
+    local storage_item = Tracker:FindObjectForCode("manual_location_storage")
+    if storage_item == nil then
+        CreateLuaManualLocationStorage("manual_location_storage")
+        storage_item = Tracker:FindObjectForCode("manual_location_storage")
+    end
+    preOnClear()
+    
     ScriptHost:RemoveWatchForCode("StateChanged")
     ScriptHost:RemoveOnLocationSectionHandler("location_section_change_handler")
     --SLOT_DATA = slot_data
@@ -66,7 +121,11 @@ function onClear(slot_data)
                 local location_obj = Tracker:FindObjectForCode(location)
                 if location_obj then
                     if location:sub(1, 1) == "@" then
-                        location_obj.AvailableChestCount = location_obj.ChestCount
+                        if storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][location_obj.FullID] then
+                            location_obj.AvailableChestCount = storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][location_obj.FullID]
+                        else
+                            location_obj.AvailableChestCount = location_obj.ChestCount
+                        end
                     else
                         location_obj.Active = false
                     end
@@ -106,8 +165,6 @@ function onClear(slot_data)
             end
         end
     end
-    PLAYER_ID = Archipelago.PlayerNumber or -1
-	TEAM_NUMBER = Archipelago.TeamNumber or 0
     SLOT_DATA = slot_data
 
     autoFill(slot_data)
@@ -115,22 +172,8 @@ function onClear(slot_data)
     if SKIP_BOSSSHUFFLE == false then
         BossShuffle()
     end
-    if Archipelago.PlayerNumber > -1 then
-        if #ALL_LOCATIONS > 0 then
-            ALL_LOCATIONS = {}
-        end
-        for _, value in pairs(Archipelago.MissingLocations) do
-            table.insert(ALL_LOCATIONS, #ALL_LOCATIONS + 1, value)
-        end
-
-        for _, value in pairs(Archipelago.CheckedLocations) do
-            table.insert(ALL_LOCATIONS, #ALL_LOCATIONS + 1, value)
-        end
-        HINTS_ID = "_read_hints_"..TEAM_NUMBER.."_"..PLAYER_ID
-        Archipelago:SetNotify({HINTS_ID})
-        Archipelago:Get({HINTS_ID})
-    end
     ScriptHost:AddOnFrameHandler("load handler", OnFrameHandler)
+    MANUAL_CHECKED = true
 end
 
 function onItem(index, item_id, item_name, player_number)
@@ -196,6 +239,7 @@ end
 
 --called when a location gets cleared
 function onLocation(location_id, location_name)
+    MANUAL_CHECKED = false
     local location_array = LOCATION_MAPPING[location_id]
     if not location_array or not location_array[1] then
         print(string.format("onLocation: could not find location mapping for id %s", location_id))
@@ -231,6 +275,7 @@ function onLocation(location_id, location_name)
     end
     CanFinish()
     CalcHeartpieces()
+    MANUAL_CHECKED = true
 end
 
 function onEvent(key, value, old_value)
