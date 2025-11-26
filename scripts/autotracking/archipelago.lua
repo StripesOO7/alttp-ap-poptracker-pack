@@ -77,14 +77,14 @@ function preOnClear()
 
 
     -- local temp_seed = tostring(#ALL_LOCATIONS).."_"..tostring(Archipelago.TeamNumber).."_"..tostring(Archipelago.PlayerNumber)
-    print(Archipelago.Seed)
+    -- print(Archipelago.Seed)
     local storage_item = Tracker:FindObjectForCode("manual_location_storage")
     -- local storage_location = storage_item.ItemState.MANUAL_LOCATIONS
     -- local storage_location_order = storage_item.ItemState.MANUAL_LOCATIONS_ORDER
-    local SEED_BASE = (Archipelago.Seed or tostring(#ALL_LOCATIONS)).."_"..Archipelago.TeamNumber.."_"..Archipelago.PlayerNumber
-    if ROOM_SEED == "default" or ROOM_SEED ~= SEED_BASE then -- seed is default or from previous connection
+    local seed_base = (Archipelago.Seed or tostring(#ALL_LOCATIONS)).."_"..Archipelago.TeamNumber.."_"..Archipelago.PlayerNumber
+    if ROOM_SEED == "default" or ROOM_SEED ~= seed_base then -- seed is default or from previous connection
 
-        ROOM_SEED = SEED_BASE --something like 2345_0_12
+        ROOM_SEED = seed_base --something like 2345_0_12
         if #storage_item.ItemState.MANUAL_LOCATIONS > 10 then
             storage_item.ItemState.MANUAL_LOCATIONS[storage_item.ItemState.MANUAL_LOCATIONS_ORDER[1]] = nil
             table.remove(storage_item.ItemState.MANUAL_LOCATIONS_ORDER, 1)
