@@ -990,6 +990,7 @@ else
     end
 end
 Tracker.BulkUpdate = true
-CreateDoorsLuaitems()
 CreateLuaManualLocationStorage("manual_location_storage")
+CreateLuaManualLocationStorage("manual_er_storage")
+CreateDoorsLuaitems()
 Tracker.BulkUpdate = false

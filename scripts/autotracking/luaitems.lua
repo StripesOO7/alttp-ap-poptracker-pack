@@ -6,6 +6,10 @@ HIGHLIGHT_TARGET = nil
 HIGHLIGHT_LAST_ACTIVATED = 0
 
 function _SetLocationOptions(source, target) -- source == inside, target == outside
+    if MANUAL_CHECKED then
+        local er_storage_item = Tracker:FindObjectForCode("manual_er_storage")
+        er_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][source.Name] = target.Name
+    end
     source.ItemState.Target = target.Name
     source.ItemState.TargetCorrespondingLocationSection = target.ItemState.CorrespondingLocationSection
     source.ItemState.TargetBaseName = target.ItemState.BaseName
@@ -14,6 +18,10 @@ function _SetLocationOptions(source, target) -- source == inside, target == outs
 end
 
 function _UnsetLocationOptions(source)
+    if MANUAL_CHECKED then
+        local er_storage_item = Tracker:FindObjectForCode("manual_er_storage")
+        er_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][source.Name] = nil
+    end
     source.ItemState.Target = nil
     source.ItemState.TargetCorrespondingLocationSection = nil
     source.ItemState.TargetBaseName = nil
@@ -355,7 +363,6 @@ local function SaveManualLocationStorageFunc(self)
     return {
         MANUAL_LOCATIONS = self.ItemState.MANUAL_LOCATIONS,
         MANUAL_LOCATIONS_ORDER = self.ItemState.MANUAL_LOCATIONS_ORDER,
-        Target = self.ItemState.Target,
         Name = self.Name,
         Icon = self.Icon
     }

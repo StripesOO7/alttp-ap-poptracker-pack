@@ -411,6 +411,7 @@ function StateChanged()
     UpdateCanInteract()
     stale = true
 end
+
 function LocationHandler(location)
     if MANUAL_CHECKED then
         local storage_item = Tracker:FindObjectForCode("manual_location_storage")
@@ -422,7 +423,7 @@ function LocationHandler(location)
             end
         end
         local full_path = location.FullID
-        if storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][full_path] then --not in list for curretn seed
+        if storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][full_path] then -- already in list for curretn seed
             if location.AvailableChestCount < location.ChestCount then --add to list
                 storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][full_path] = location.AvailableChestCount
             else --remove from list of set back to max chestcount
@@ -433,8 +434,8 @@ function LocationHandler(location)
         else
         end
     end
-    local storage_item = Tracker:FindObjectForCode("manual_location_storage")
-    print(dump_table(storage_item.ItemState.MANUAL_LOCATIONS))
+    -- local storage_item = Tracker:FindObjectForCode("manual_location_storage")
+    -- print(dump_table(storage_item.ItemState.MANUAL_LOCATIONS))
     ForceUpdate()
 end
 
@@ -448,9 +449,18 @@ function ForceUpdate(...)
 end
 
 function EmptyLocationTargets()
+    MANUAL_CHECKED = false
     local er_tracking = Tracker:FindObjectForCode("er_tracking")
+    local er_storage_item = Tracker:FindObjectForCode("manual_er_storage")
     ER_STAGE = er_tracking.CurrentStage
     ER_STATE = er_tracking.CurrentStage > 0
+    if Archipelago.PlayerNumber == -1 then -- not connected
+        if ROOM_SEED ~= "default" then -- seed is from previous connection
+            ROOM_SEED = "default"
+            er_storage_item.ItemState.MANUAL_LOCATIONS["default"] = {}
+        else -- seed is default
+        end
+    end
     if not (Tracker.BulkUpdate == true) then
         ScriptHost:RemoveWatchForCode("StateChanged")
         ScriptHost:RemoveOnLocationSectionHandler("location_section_change_handler")
@@ -527,6 +537,7 @@ function EmptyLocationTargets()
     else
         print("skipped ER reset")
     end
+    MANUAL_CHECKED = true
 end
 
 -- ScriptHost:AddWatchForCode("ER_Setting_Changed", "er_full", EmptyLocationTargets)
