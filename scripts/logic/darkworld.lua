@@ -435,7 +435,7 @@ end)
 
 village_of_the_outcast:connect_two_ways(c_shaped_house_outside)
 village_of_the_outcast:connect_two_ways(chest_game_outside)
-village_of_the_outcast:connect_two_ways(tt_entrance_outside) -- maybe perl????
+village_of_the_outcast:connect_two_ways(tt_entrance_outside, function() return Can_interact(village_of_the_outcast.worldstate, 1) end) -- maybe perl????
 village_of_the_outcast:connect_two_ways(dark_village_shop_outside, function() return ALL("hammer", Can_interact(village_of_the_outcast.worldstate, 1)) end)
 village_of_the_outcast:connect_two_ways_stuck(brewery_outside, function() return ALL("bombs", Can_interact(village_of_the_outcast.worldstate, 1)) end)
 village_of_the_outcast:connect_two_ways(dark_village_fortune_teller_outside)
@@ -532,7 +532,7 @@ skull_woods_area:connect_two_ways(sw_big_chest_entrance_outside)
 skull_woods_area_back:connect_two_ways(sw_west_lobby_entrance_outside)
 skull_woods_area:connect_two_ways(sw_gibdo_entrance_outside)
 
-skull_woods_area_back:connect_two_ways(sw_north_drop_outside, function() return CanReach("sw_west_lobby_entrance_outside") end)
+skull_woods_area_back:connect_two_ways(sw_north_drop_outside, function() return ALL(CanReach("sw_west_lobby_entrance_outside"), Can_interact(skull_woods_area_back.worldstate, 1)) end)
 skull_woods_area_back:connect_two_ways_stuck(sw_back_entrance_outside, function()
     return ALL(
         CanReach("sw_west_lobby_entrance_outside"),
@@ -663,7 +663,8 @@ end)
 dark_chapel_area:connect_one_way(graveyard_ledge, function()
     return ALL(
         OpenOrStandard,
-        CanChangeWorldWithMirror
+        CanChangeWorldWithMirror,
+        Can_interact(dark_chapel_area.worldstate, 1)
     )
 end)
 dark_chapel_area:connect_one_way(kings_tomb_area, function()
