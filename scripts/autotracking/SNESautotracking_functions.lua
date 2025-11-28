@@ -462,11 +462,19 @@ function UpdateUI(segment, mainModuleIdx)
         if new_ow_room > 0 then -- and ow_room ~= new_ow_room then
             if  ow_room ~= new_ow_room then
                 ow_room = new_ow_room
-                ChangeTab("Overworld")
+                if Tracker:FindObjectForCode("er_tracking").CurrentStage > 0 then
+                    ChangeTab("Entrances")
+                else
+                    ChangeTab("Overworld")
+                end
             end
         elseif new_dungeon_room > 0 and dungeon_room ~= new_dungeon_room then
             if (segment:ReadUInt16(0x7e0020) < 1050 and segment:ReadUInt16(0x7e0022) < 1050) then
-                ChangeTab("Overworld")
+                if Tracker:FindObjectForCode("er_tracking").CurrentStage > 0 then
+                    ChangeTab("Entrances")
+                else
+                    ChangeTab("Overworld")
+                end
             else
                 dungeon_room = new_dungeon_room
                 -- print(room_lookuptable[dungeon_room][1])
