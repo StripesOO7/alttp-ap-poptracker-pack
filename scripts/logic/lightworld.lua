@@ -297,7 +297,7 @@ end)
 --
 
 
-twin_house_right_inside:connect_two_ways(twin_house_left_inside, function()
+twin_house_right_inside:connect_one_way(twin_house_left_inside, function()
     return ALL(
         ANY(
             "bombs",
@@ -306,6 +306,16 @@ twin_house_right_inside:connect_two_ways(twin_house_left_inside, function()
         Can_interact(twin_house_right_inside.worldstate, 1)
     )
 end)
+twin_house_left_inside:connect_one_way(twin_house_right_inside, function()
+    return ALL(
+        ANY(
+            "bombs",
+            "boots"
+        ),
+        Can_interact(twin_house_left_inside.worldstate, 1)
+    )
+end)
+
 twin_house_left_outside:connect_two_ways_entrance("Twin House Left", twin_house_left_inside)
 
 twin_house_left_outside:connect_two_ways(race_ledge)
