@@ -6,6 +6,7 @@ local gt_bottom_above_ice_fight = alttp_location.new("gt_bottom_above_ice_fight"
 local gt_bottom_big_key_room = alttp_location.new("gt_bottom_big_key_room")
 local gt_bottom_conveyor_cross_room = alttp_location.new("gt_bottom_conveyor_cross_room")
 local gt_bottom_bonk_pit_room = alttp_location.new("gt_bottom_bonk_pit_room")
+local gt_bottom_bonk_pit_room_bottom = alttp_location.new("gt_bottom_bonk_pit_room_bottom")
 local gt_bottom_dm_room = alttp_location.new("gt_bottom_dm_room")
 local gt_bottom_map_room = alttp_location.new("gt_bottom_map_room")
 local gt_bottom_double_switch_room = alttp_location.new("gt_bottom_double_switch_room")
@@ -63,17 +64,19 @@ gt_bottom_conveyor_cross_room:connect_two_ways(gt_bottom_bonk_pit_room, function
 gt_bottom_conveyor_cross_room:connect_one_way("GT - Conveyor Cross Key Drop")
 
 gt_bottom_bonk_pit_room:connect_two_ways(gt_bottom_dm_room, function() return Has("hookshot") end)
-gt_bottom_bonk_pit_room:connect_two_ways(gt_bottom_map_room, function(keys)
-    return ALL(
-        "hookshot",
-        Has("gt_smallkey", keys + CountDoneDeadends(0, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 4, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 8)
-    ), KDSreturn(keys, keys + 1)
-end)
-gt_bottom_bonk_pit_room:connect_two_ways(gt_bottom_double_switch_room, function()
+
+gt_bottom_bonk_pit_room:connect_two_ways(gt_bottom_bonk_pit_room_bottom, function()
     return ANY(
         "hookshot",
         "boots"
     )
+end)
+
+gt_bottom_bonk_pit_room_bottom:connect_two_ways(gt_bottom_double_switch_room, function() return DealDamage end)
+gt_bottom_bonk_pit_room_bottom:connect_two_ways(gt_bottom_map_room, function(keys)
+    return ALL(
+        Has("gt_smallkey", keys + CountDoneDeadends(0, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 4, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 8)
+    ), KDSreturn(keys, keys + 1)
 end)
 
 gt_bottom_dm_room:connect_one_way("GT - DM Room Top Left")
@@ -85,7 +88,17 @@ gt_bottom_map_room:connect_one_way("GT - Map Chest")
 
 gt_bottom_double_switch_room:connect_two_ways(gt_bottom_firesnake_room, function(keys)
     return ALL(
-        "hookshot",
+        ANY(
+            "bombs",
+            "somaria",
+            ALL(
+                "boomerangs",
+                ANY(
+                    "boots",
+                    "hookshot"
+                )
+            )
+        ),
         Has("gt_smallkey", keys + CountDoneDeadends(0, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 3, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 5)
     ), KDSreturn(keys, keys + 1) end)
 gt_bottom_double_switch_room:connect_one_way("GT - Double Switch Pot Key")--, function() ret
