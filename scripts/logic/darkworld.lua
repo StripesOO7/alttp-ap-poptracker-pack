@@ -506,7 +506,7 @@ end)
 -- south_of_village_of_the_outcast:connect_one_way(mire_area) -- glitches
 
 big_bomb_shop_area:connect_two_ways(stumpy, function() return Can_interact("dark", 1) end)
-big_bomb_shop_area:connect_two_ways(cave45_ledge, function()
+big_bomb_shop_area:connect_one_way(cave45_ledge, function()
     return ALL(
         OpenOrStandard,
         CanChangeWorldWithMirror
