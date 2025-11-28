@@ -1,6 +1,32 @@
 {
 	"versions": [
 		{
+			"package_version": "0.4.0",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.4.0/alttp-ap-tracker-v0.4.0.zip",
+			"sha256": "594ff4007f97c511669bc5622db7db06efcf7e8524cbe5f53ab66375ea695ce0",
+			"changelog": [
+				"bugfixes for ER and some other logic issues",
+				"",
+				"# fixed ER stuff:",
+				"- added some internal connections to beter reflect game state. i.e the stairs leading into DP where you can also mirror to from MM",
+				"- fix drop missing on the ER map when not in insanity ER",
+				"",
+				"# fixed logic:",
+				"- fixed GT bottom right access rules for map room/firesnake room/double switch room area",
+				"- fixed Cave45 outside ledge being connected back to the dark would when it was intended as a 1way connection in open/standard mode",
+				"",
+				"",
+				"# added:",
+				"- upon suggestion i added a color coded legend for entrances and color them accordingly so that the entrances are more easily distinguishable",
+				"- also added all normal location checks into the ER map so that one does not need to switch between them anymore",
+				"- auto tab switching now goes back to Entrances tab when ER is active instead of going to the normal overworld map",
+				"",
+				"# new features that other packs may also implement in the future:",
+				"- persistent manual markings for locations AND entrances",
+				"  -  prior to this upon reconnecting or connecting to another seed/room ER data and manually marked locations (shops, seen but wont collect, hinted as useless) would get reset. new there is a storage build in that recovers that data on reconnect for up to 10 seeds. If that limit gets reach the oldest added one gets erased from memory",
+			]
+		},
+		{
 			"package_version": "0.3.5",
 			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.3.5/alttp-ap-tracker-v0.3.5.zip",
 			"sha256": "dd02b5a73e558145e222a6667a07d7e231f0a452dabb16e8e302830239f31ba7",
@@ -504,6 +530,7 @@
 		}
 	]
 }
+
 
 
 
