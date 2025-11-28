@@ -358,7 +358,11 @@ function UpdateCanInteract()
 end
 
 function Can_interact(worldstate, glitch_lvl)
-    return CAN_INTERACT[worldstate][glitch_lvl]
+    if worldstate then
+        return CAN_INTERACT[worldstate][glitch_lvl]
+    else
+        return false
+    end
     -- local glitchstage = Tracker:FindObjectForCode("glitches").CurrentStage
 
     -- if (worldstate == "light" and OpenOrStandard()) or (worldstate == "dark" and Inverted()) then
