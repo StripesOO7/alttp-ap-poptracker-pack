@@ -414,28 +414,31 @@ end
 
 function LocationHandler(location)
     if MANUAL_CHECKED then
-        local storage_item = Tracker:FindObjectForCode("manual_location_storage")
+        local custom_storage_item = Tracker:FindObjectForCode("manual_location_storage")
+        if not custom_storage_item then
+            return
+        end
         if Archipelago.PlayerNumber == -1 then -- not connected
             if ROOM_SEED ~= "default" then -- seed is from previous connection
                 ROOM_SEED = "default"
-                storage_item.ItemState.MANUAL_LOCATIONS["default"] = {}
+                custom_storage_item.ItemState.MANUAL_LOCATIONS["default"] = {}
             else -- seed is default
             end
         end
         local full_path = location.FullID
-        if storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][full_path] then -- already in list for curretn seed
+        if custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][full_path] then -- already in list for curretn seed
             if location.AvailableChestCount < location.ChestCount then --add to list
-                storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][full_path] = location.AvailableChestCount
+                custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][full_path] = location.AvailableChestCount
             else --remove from list of set back to max chestcount
-                storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][full_path] = nil
+                custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][full_path] = nil
             end
         elseif location.AvailableChestCount < location.ChestCount then -- not in list and not set back to its max chest count
-            storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][full_path] = location.AvailableChestCount
+            custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][full_path] = location.AvailableChestCount
         else
         end
     end
-    -- local storage_item = Tracker:FindObjectForCode("manual_location_storage")
-    -- print(dump_table(storage_item.ItemState.MANUAL_LOCATIONS))
+    -- local custom_storage_item = Tracker:FindObjectForCode("manual_location_storage")
+    -- print(dump_table(custom_storage_item.ItemState.MANUAL_LOCATIONS))
     ForceUpdate()
 end
 
@@ -451,13 +454,13 @@ end
 function EmptyLocationTargets()
     MANUAL_CHECKED = false
     local er_tracking = Tracker:FindObjectForCode("er_tracking")
-    local er_storage_item = Tracker:FindObjectForCode("manual_er_storage")
+    local er_custom_storage_item = Tracker:FindObjectForCode("manual_er_storage")
     ER_STAGE = er_tracking.CurrentStage
     ER_STATE = er_tracking.CurrentStage > 0
     if Archipelago.PlayerNumber == -1 then -- not connected
         if ROOM_SEED ~= "default" then -- seed is from previous connection
             ROOM_SEED = "default"
-            er_storage_item.ItemState.MANUAL_LOCATIONS["default"] = {}
+            er_custom_storage_item.ItemState.MANUAL_LOCATIONS["default"] = {}
         else -- seed is default
         end
     end

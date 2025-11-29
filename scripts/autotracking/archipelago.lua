@@ -78,30 +78,30 @@ function preOnClear()
 
     -- local temp_seed = tostring(#ALL_LOCATIONS).."_"..tostring(Archipelago.TeamNumber).."_"..tostring(Archipelago.PlayerNumber)
     -- print(Archipelago.Seed)
-    local storage_item = Tracker:FindObjectForCode("manual_location_storage")
-    local er_storage_item = Tracker:FindObjectForCode("manual_er_storage")
-    -- local storage_location = storage_item.ItemState.MANUAL_LOCATIONS
-    -- local storage_location_order = storage_item.ItemState.MANUAL_LOCATIONS_ORDER
+    local custom_storage_item = Tracker:FindObjectForCode("manual_location_storage")
+    local er_custom_storage_item = Tracker:FindObjectForCode("manual_er_storage")
+    -- local storage_location = custom_storage_item.ItemState.MANUAL_LOCATIONS
+    -- local storage_location_order = custom_storage_item.ItemState.MANUAL_LOCATIONS_ORDER
     local seed_base = (Archipelago.Seed or tostring(#ALL_LOCATIONS)).."_"..Archipelago.TeamNumber.."_"..Archipelago.PlayerNumber
     if ROOM_SEED == "default" or ROOM_SEED ~= seed_base then -- seed is default or from previous connection
 
         ROOM_SEED = seed_base --something like 2345_0_12
-        if #storage_item.ItemState.MANUAL_LOCATIONS > 10 then
-            storage_item.ItemState.MANUAL_LOCATIONS[storage_item.ItemState.MANUAL_LOCATIONS_ORDER[1]] = nil
-            table.remove(storage_item.ItemState.MANUAL_LOCATIONS_ORDER, 1)
+        if #custom_storage_item.ItemState.MANUAL_LOCATIONS > 10 then
+            custom_storage_item.ItemState.MANUAL_LOCATIONS[custom_storage_item.ItemState.MANUAL_LOCATIONS_ORDER[1]] = nil
+            table.remove(custom_storage_item.ItemState.MANUAL_LOCATIONS_ORDER, 1)
         end
-        if storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED] == nil then
-            storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED] = {}
-            table.insert(storage_item.ItemState.MANUAL_LOCATIONS_ORDER, ROOM_SEED)
+        if custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED] == nil then
+            custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED] = {}
+            table.insert(custom_storage_item.ItemState.MANUAL_LOCATIONS_ORDER, ROOM_SEED)
         end
         
-        if #er_storage_item.ItemState.MANUAL_LOCATIONS > 10 then
-            er_storage_item.ItemState.MANUAL_LOCATIONS[er_storage_item.ItemState.MANUAL_LOCATIONS_ORDER[1]] = nil
-            table.remove(er_storage_item.ItemState.MANUAL_LOCATIONS_ORDER, 1)
+        if #er_custom_storage_item.ItemState.MANUAL_LOCATIONS > 10 then
+            er_custom_storage_item.ItemState.MANUAL_LOCATIONS[er_custom_storage_item.ItemState.MANUAL_LOCATIONS_ORDER[1]] = nil
+            table.remove(er_custom_storage_item.ItemState.MANUAL_LOCATIONS_ORDER, 1)
         end
-        if er_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED] == nil then
-            er_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED] = {}
-            table.insert(er_storage_item.ItemState.MANUAL_LOCATIONS_ORDER, ROOM_SEED)
+        if er_custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED] == nil then
+            er_custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED] = {}
+            table.insert(er_custom_storage_item.ItemState.MANUAL_LOCATIONS_ORDER, ROOM_SEED)
         end
     else -- seed is from previous connection
         -- do nothing
@@ -110,15 +110,15 @@ end
 
 function onClear(slot_data)
     MANUAL_CHECKED = false
-    local storage_item = Tracker:FindObjectForCode("manual_location_storage")
-    if storage_item == nil then
+    local custom_storage_item = Tracker:FindObjectForCode("manual_location_storage")
+    if custom_storage_item == nil then
         CreateLuaManualLocationStorage("manual_location_storage")
-        storage_item = Tracker:FindObjectForCode("manual_location_storage")
+        custom_storage_item = Tracker:FindObjectForCode("manual_location_storage")
     end
-    local er_storage_item = Tracker:FindObjectForCode("manual_er_storage")
-    if er_storage_item == nil then
+    local er_custom_storage_item = Tracker:FindObjectForCode("manual_er_storage")
+    if er_custom_storage_item == nil then
         CreateLuaManualLocationStorage("manual_er_storage")
-        er_storage_item = Tracker:FindObjectForCode("manual_er_storage")
+        er_custom_storage_item = Tracker:FindObjectForCode("manual_er_storage")
     end
     preOnClear()
     
@@ -133,8 +133,8 @@ function onClear(slot_data)
                 local location_obj = Tracker:FindObjectForCode(location)
                 if location_obj then
                     if location:sub(1, 1) == "@" then
-                        if storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][location_obj.FullID] then
-                            location_obj.AvailableChestCount = storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][location_obj.FullID]
+                        if custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][location_obj.FullID] then
+                            location_obj.AvailableChestCount = custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][location_obj.FullID]
                         else
                             location_obj.AvailableChestCount = location_obj.ChestCount
                         end
@@ -194,9 +194,9 @@ function onClear(slot_data)
         end
         -- Tracker:FindObjectForCode(name).worldstate = nil
     end
-    -- print(dump_table(er_storage_item.ItemState.MANUAL_LOCATIONS))
-    -- print(dump_table(er_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED]))
-    for source_name, targe_name in pairs(er_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED]) do -- redo location based on savestate for seed
+    -- print(dump_table(er_custom_storage_item.ItemState.MANUAL_LOCATIONS))
+    -- print(dump_table(er_custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED]))
+    for source_name, targe_name in pairs(er_custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED]) do -- redo location based on savestate for seed
         local source = Tracker:FindObjectForCode(source_name)
         local target = Tracker:FindObjectForCode(targe_name)
         _SetLocationOptions(source,target)
