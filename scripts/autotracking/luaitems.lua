@@ -46,10 +46,10 @@ local function _LeftClickUnmarkHelper(taget, source)
 end
 
 local function _LeftClickMarkHelper(taget, source)
-    target_entrance_from = Tracker:FindObjectForCode("from_" .. taget)
-    target_entrance_to = Tracker:FindObjectForCode("to_" .. taget)
-    source_entrance_from = Tracker:FindObjectForCode("from_" .. source)
-    source_entrance_to = Tracker:FindObjectForCode("to_" .. source)
+    local target_entrance_from = Tracker:FindObjectForCode("from_" .. taget)
+    local target_entrance_to = Tracker:FindObjectForCode("to_" .. taget)
+    local source_entrance_from = Tracker:FindObjectForCode("from_" .. source)
+    local source_entrance_to = Tracker:FindObjectForCode("to_" .. source)
     if target_entrance_from ~= nil then
         _SetLocationOptions(source_entrance_from, target_entrance_to) -- enter source exit target
         _SetLocationOptions(target_entrance_to, source_entrance_from)
