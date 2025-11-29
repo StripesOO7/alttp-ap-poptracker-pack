@@ -30,58 +30,49 @@ function _UnsetLocationOptions(source)
     source.ItemState.Worldstate = source.ItemState.BaseWorldstate
 end
 
+local function _LeftClickUnmarkHelper(taget, source)
+    local target_entrance_from = Tracker:FindObjectForCode("from_" .. taget)
+    local target_entrance_to = Tracker:FindObjectForCode("to_" .. taget)
+    local source_entrance_from = Tracker:FindObjectForCode("from_" .. source)
+    local source_entrance_to = Tracker:FindObjectForCode("to_" .. source)
+    if target_entrance_from ~= nil then
+        _UnsetLocationOptions(target_entrance_from)
+    end
+    if target_entrance_to ~= nil then
+        _UnsetLocationOptions(target_entrance_to)
+    end
+    _UnsetLocationOptions(source_entrance_to)
+    _UnsetLocationOptions(source_entrance_from)
+end
+
+local function _LeftClickMarkHelper(taget, source)
+    target_entrance_from = Tracker:FindObjectForCode("from_" .. taget)
+    target_entrance_to = Tracker:FindObjectForCode("to_" .. taget)
+    source_entrance_from = Tracker:FindObjectForCode("from_" .. source)
+    source_entrance_to = Tracker:FindObjectForCode("to_" .. source)
+    if target_entrance_from ~= nil then
+        _SetLocationOptions(source_entrance_from, target_entrance_to) -- enter source exit target
+        _SetLocationOptions(target_entrance_to, source_entrance_from)
+    end
+    if target_entrance_to ~= nil then 
+        _SetLocationOptions(target_entrance_from, source_entrance_to) -- enter target exit source
+        _SetLocationOptions(source_entrance_to, target_entrance_from)
+    end
+end
+
 local function OnLeftClickFunc(self)
     if ER_STAGE < 3 then --off, dungeons, full
-        local target_entrance_from
-        local target_entrance_to
-        local source_entrance_from
-        local source_entrance_to
         if ENTRANCE_SELECTED then -- ENTRANCE_SELECTED ~= nil
             if self.ItemState.Target then -- attempt of new connection to already existing connection (how to handle that?)
-                target_entrance_from = Tracker:FindObjectForCode("from_" .. self.ItemState.TargetBaseName)
-                target_entrance_to = Tracker:FindObjectForCode("to_" .. self.ItemState.TargetBaseName)
-                source_entrance_from = Tracker:FindObjectForCode("from_" .. ENTRANCE_SELECTED)
-                source_entrance_to = Tracker:FindObjectForCode("to_" .. ENTRANCE_SELECTED)
-                if target_entrance_from ~= nil then
-                    _UnsetLocationOptions(target_entrance_from)
-                end
-                if target_entrance_to ~= nil then
-                    _UnsetLocationOptions(target_entrance_to)
-                end
-                _UnsetLocationOptions(source_entrance_to)
-                _UnsetLocationOptions(source_entrance_from)
+                _LeftClickUnmarkHelper(self.ItemState.TargetBaseName, ENTRANCE_SELECTED)
             end
-
             -- second step of normal new connection
-            target_entrance_from = Tracker:FindObjectForCode("from_" .. ENTRANCE_SELECTED)
-            target_entrance_to = Tracker:FindObjectForCode("to_" .. ENTRANCE_SELECTED)
-            source_entrance_from = Tracker:FindObjectForCode("from_" .. self.ItemState.BaseName)
-            source_entrance_to = Tracker:FindObjectForCode("to_" .. self.ItemState.BaseName)
-            if target_entrance_from ~= nil then
-                _SetLocationOptions(source_entrance_from, target_entrance_to) -- enter source exit target
-                _SetLocationOptions(target_entrance_to, source_entrance_from)
-            end
-            if target_entrance_to ~= nil then 
-                _SetLocationOptions(target_entrance_from, source_entrance_to) -- enter target exit source
-                _SetLocationOptions(source_entrance_to, target_entrance_from)
-            end
+            _LeftClickMarkHelper(ENTRANCE_SELECTED, self.ItemState.BaseName)
             ENTRANCE_SELECTED = nil
         else -- ENTRANCE_SELECTED == nil
             ENTRANCE_SELECTED = self.ItemState.BaseName
             if self.ItemState.Target then -- retarget a connection to new target location
-
-                target_entrance_from = Tracker:FindObjectForCode("from_" .. self.ItemState.TargetBaseName)
-                target_entrance_to = Tracker:FindObjectForCode("to_" .. self.ItemState.TargetBaseName)
-                source_entrance_from = Tracker:FindObjectForCode("from_" .. ENTRANCE_SELECTED)
-                source_entrance_to = Tracker:FindObjectForCode("to_" .. ENTRANCE_SELECTED)
-                if target_entrance_from ~= nil then
-                    _UnsetLocationOptions(target_entrance_from)
-                end
-                if target_entrance_to ~= nil then
-                    _UnsetLocationOptions(target_entrance_to)
-                end
-                _UnsetLocationOptions(source_entrance_to)
-                _UnsetLocationOptions(source_entrance_from)
+                _LeftClickUnmarkHelper(self.ItemState.TargetBaseName, ENTRANCE_SELECTED)
             end
         end
     else -- insanity
