@@ -253,37 +253,13 @@ function GanonCrystalCount()
 end
 
 function CanSwim(itemNeeded) --fake flippers
-    local glitches_state = Tracker:FindObjectForCode("glitches").CurrentStage
-    if glitches_state > 0 then -- and itemNeeded ~= nil then
-        return itemNeeded ~= nil and Tracker:FindObjectForCode(itemNeeded).Active
-    --     return Tracker:FindObjectForCode(itemNeeded).Active
-    -- elseif glitches_state > 0 and itemNeeded == nil then
-    --     return true
+    if itemNeeded then
+        return Tracker:FindObjectForCode(itemNeeded).Active
+    else
+        return Tracker:FindObjectForCode("glitches").CurrentStage > 0
     end
-    return Tracker:FindObjectForCode("flippers").Active
 end
 
-function smallKeys(dungeon, count, count_in_logic, keydrop_count, keydrop_count_in_logic)
-    -- if Tracker:FindObjectForCode("small_keys").CurrentStage == 1 then
-    --     if Tracker:FindObjectForCode("key_drop_shuffle").Active == true then
-    --         -- Has(dungeon.."_drop", tonumber(keydrop_count), tonumber(keydrop_count_in_logic))
-    --         if Tracker:FindObjectForCode(dungeon.."_drop").AcquiredCount >= tonumber(keydrop_count) then
-    --             return true
-    --         else
-    --             return false
-    --         end
-    --     elseif Tracker:FindObjectForCode(dungeon).AcquiredCount >= tonumber(count) then
-    --         return true
-    --     else
-    --         return false
-    --     end
-    --     -- else
-    --     --     -- Has(dungeon, tonumber(count), tonumber(count_in_logic))
-    --     -- end
-    -- else
-    --     return true
-    -- end
-end
 
 function BigKeys(dungeon)
     if Tracker:FindObjectForCode("big_keys").Active then
@@ -330,53 +306,58 @@ function EnemizerCheck(item)
 end
 
 CAN_INTERACT = {
+    [0] = true,
     [1] = false,
     [2] = false,
     [3] = false,
     [4] = false,
-    [5] = false,
-    [6] = false,
-    ["light"] = {},
-    ["dark"] = {}
+    -- [5] = false,
+    -- [6] = false,
+    ["light"] = {
+        [0] = false,
+        [1] = false,
+        [2] = false,
+        [3] = false,
+        [4] = false,
+    },
+    ["dark"] = {
+        [0] = false,
+        [1] = false,
+        [2] = false,
+        [3] = false,
+        [4] = false,
+    }
 }
 
 function PrecalcCanInteract()
-    for i=1,6 do
-        CAN_INTERACT["light"][i] = CAN_INTERACT[i] or OpenOrStandard()
-        CAN_INTERACT["dark"][i] = CAN_INTERACT[i] or Inverted()
+    -- print("---------PrecalcCanInteract---------")
+    local moonpearl = Tracker:FindObjectForCode("pearl").Active
+    for i=0,4 do
+        CAN_INTERACT["light"][i] = CAN_INTERACT[i] and (OpenOrStandard() or moonpearl)
+        CAN_INTERACT["dark"][i] = CAN_INTERACT[i] and (Inverted() or moonpearl)
     end
     
 end
 
 function UpdateCanInteract()
-    local moonpearl = Tracker:FindObjectForCode("pearl").Active
+    -- print("---------UpdateCanInteract---------")
+    -- local moonpearl = Tracker:FindObjectForCode("pearl").Active
     local glitch_lvl = Tracker:FindObjectForCode("glitches").CurrentStage
-    for i=1,6 do
-        CAN_INTERACT[i] = moonpearl or (glitch_lvl >= i)
+    -- print("glitch_lvl", glitch_lvl)
+    for i=0,4 do
+        CAN_INTERACT[i] = (glitch_lvl >= i)
     end
     PrecalcCanInteract()
 end
 
-function Can_interact(worldstate, glitch_lvl)
+function CanInteract(worldstate, glitch_lvl)
+    -- print("---------Can_interact---------")
+    -- print("worldstate", worldstate, "glitch_lvl", glitch_lvl)
     if worldstate then
         return CAN_INTERACT[worldstate][glitch_lvl]
     else
         return false
     end
-    -- local glitchstage = Tracker:FindObjectForCode("glitches").CurrentStage
-
-    -- if (worldstate == "light" and OpenOrStandard()) or (worldstate == "dark" and Inverted()) then
-    --     return true
-    -- elseif (worldstate == "light" and Inverted()) or (worldstate == "dark" and OpenOrStandard()) then
-    --     if Tracker:FindObjectForCode("pearl").Active then
-    --         return true
-    --     end
-    --     if Tracker:FindObjectForCode("glitches").CurrentStage >= glitch_lvl then
-    --         return true
-    --     end
-    --     return false
-    -- end
-    -- return false
 end
 
 function CanFinish()

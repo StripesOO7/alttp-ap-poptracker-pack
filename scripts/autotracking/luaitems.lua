@@ -20,7 +20,9 @@ end
 function _UnsetLocationOptions(source)
     if MANUAL_CHECKED then
         local er_storage_item = Tracker:FindObjectForCode("manual_er_storage")
-        er_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][source.Name] = nil
+        if er_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][source.Name] then
+            er_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][source.Name] = nil
+        end
     end
     source.ItemState.Target = nil
     source.ItemState.TargetCorrespondingLocationSection = nil

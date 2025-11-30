@@ -196,11 +196,15 @@ function onClear(slot_data)
     end
     -- print(dump_table(er_custom_storage_item.ItemState.MANUAL_LOCATIONS))
     -- print(dump_table(er_custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED]))
-    for source_name, targe_name in pairs(er_custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED]) do -- redo location based on savestate for seed
-        local source = Tracker:FindObjectForCode(source_name)
-        local target = Tracker:FindObjectForCode(targe_name)
-        _SetLocationOptions(source,target)
-        _SetLocationOptions(target,source)
+    if er_custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED] then
+        for source_name, targe_name in pairs(er_custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED]) do -- redo location based on savestate for seed
+            local source = Tracker:FindObjectForCode(source_name)
+            local target = Tracker:FindObjectForCode(targe_name)
+            _SetLocationOptions(source,target)
+            _SetLocationOptions(target,source)
+        end
+    else
+        er_custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED] = {}
     end
     ScriptHost:AddOnFrameHandler("load handler", OnFrameHandler)
     MANUAL_CHECKED = true

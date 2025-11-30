@@ -327,7 +327,7 @@ function alttp_location:discover(accessibility, keys, worldstate)
                         -- print("temp.ItemState.TargetBaseName", temp.ItemState.TargetBaseName)
                         location = NAMED_LOCATIONS[temp.ItemState.TargetBaseName]
                     else
-                        print("exit connection is fucked")
+                        -- print("exit connection is fucked")
                         -- return
                     end
                 end
@@ -408,7 +408,7 @@ entry_point:connect_one_way(darkworld_spawns, Inverted)
 
 --
 function StateChanged()
-    UpdateCanInteract()
+    PrecalcCanInteract()
     stale = true
 end
 
@@ -426,15 +426,15 @@ function LocationHandler(location)
             end
         end
         local full_path = location.FullID
-        if custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][full_path] then -- already in list for curretn seed
-            if location.AvailableChestCount < location.ChestCount then --add to list
-                custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][full_path] = location.AvailableChestCount
-            else --remove from list of set back to max chestcount
-                custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][full_path] = nil
-            end
-        elseif location.AvailableChestCount < location.ChestCount then -- not in list and not set back to its max chest count
+        if not custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED] then
+            custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED] = {}
+        end
+        if location.AvailableChestCount < location.ChestCount then --add to list
+            -- print("add to list")
             custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][full_path] = location.AvailableChestCount
-        else
+        else --remove from list of set back to max chestcount
+            -- print("remove from list")
+            custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][full_path] = nil
         end
     end
     -- local custom_storage_item = Tracker:FindObjectForCode("manual_location_storage")
@@ -449,6 +449,7 @@ function ForceUpdate(...)
         return
     end
     update.Active = not update.Active
+    -- print(dump_table(CAN_INTERACT))
 end
 
 function EmptyLocationTargets()
