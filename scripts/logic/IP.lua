@@ -24,7 +24,7 @@ local ip_above_boss_dropdown = alttp_location.new("ip_above_boss_dropdown")
 local ip_boss_dropdown = alttp_location.new("ip_boss_dropdown")
 local ip_boss_room = alttp_location.new("ip_boss_room")
 
-ip_entrance_inside:connect_two_ways(ip_freezor_entrance, function() return Can_interact(ip_entrance_inside.worldstate, 1) end)
+ip_entrance_inside:connect_two_ways(ip_freezor_entrance, function() return CanInteract(ip_entrance_inside.worldstate, 0) end)
 ip_freezor_entrance:connect_two_ways(ip_jelly_room, function()
     return ANY(
         "firerod",

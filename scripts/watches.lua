@@ -42,3 +42,4 @@ ScriptHost:AddWatchForCode("settings autofill_medallions", "autofill_medallions"
 ScriptHost:AddWatchForCode("settings autofill_modes", "autofill_modes", autoFill)
 ScriptHost:AddWatchForCode("settings autofill_misc", "autofill_misc", autoFill)
 ScriptHost:AddWatchForCode("settings autofill_sanities", "autofill_sanities", autoFill)
+ScriptHost:AddWatchForCode("glitches changed", "glitches", UpdateCanInteract)

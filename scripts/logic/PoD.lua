@@ -20,9 +20,9 @@ local pod_dark_basement = alttp_location.new("pod_dark_basement")
 local pod_harmless_hellway = alttp_location.new("pod_harmless_hellway")
 local pod_boss_room = alttp_location.new("pod_boss_room")
 
-pod_entrance_inside:connect_two_ways(pod_three_way_room_left, function() return Can_interact(pod_entrance_inside.worldstate, 1) end)
-pod_entrance_inside:connect_two_ways(pod_three_way_room_middle, function() return Can_interact(pod_entrance_inside.worldstate, 1) end)
-pod_entrance_inside:connect_two_ways(pod_three_way_room_right, function() return Can_interact(pod_entrance_inside.worldstate, 1) end)
+pod_entrance_inside:connect_two_ways(pod_three_way_room_left, function() return CanInteract(pod_entrance_inside.worldstate, 0) end)
+pod_entrance_inside:connect_two_ways(pod_three_way_room_middle, function() return CanInteract(pod_entrance_inside.worldstate, 0) end)
+pod_entrance_inside:connect_two_ways(pod_three_way_room_right, function() return CanInteract(pod_entrance_inside.worldstate, 0) end)
 pod_three_way_room_middle:connect_two_ways(pod_three_way_room_right)
 
 pod_three_way_room_left:connect_two_ways(pod_shooter_room)
@@ -40,7 +40,7 @@ end)
 pod_three_way_room_right:connect_two_ways(pod_teleporter_room)
 pod_big_key_chest_room:connect_one_way(pod_basement_ledge, function() return Has("bombs") end)
 pod_big_key_chest_room:connect_one_way(pod_basement_floor)
-pod_shooter_room:connect_one_way("PoD - Shooter Room", function() return Can_interact(pod_shooter_room.worldstate, 1) end)
+pod_shooter_room:connect_one_way("PoD - Shooter Room", function() return CanInteract(pod_shooter_room.worldstate, 0) end)
 
 pod_basement_ledge:connect_one_way(pod_basement_floor)
 pod_basement_ledge:connect_two_ways(pod_big_key_chest_ledge, function(keys)
@@ -59,7 +59,7 @@ pod_teleporter_room:connect_two_ways(pod_mimic_room, function()
             "boots",
             "bombs"
         ),
-        Can_interact(pod_teleporter_room.worldstate, 1)
+        CanInteract(pod_teleporter_room.worldstate, 0)
     )
 end)
 

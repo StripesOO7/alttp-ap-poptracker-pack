@@ -7,8 +7,16 @@ local at_circle_of_pots = alttp_location.new("at_circle_of_pots")
 local at_aga1 = alttp_location.new("at_aga1")
 local at_pre_curtain = alttp_location.new("at_pre_curtain")
 
-at_entrance_inside:connect_one_way(at_golden_guards, function() return ALL(Can_interact(at_entrance_inside.worldstate, 1), OpenOrStandard) end)
-at_entrance_inside:connect_one_way(at_golden_guards, function() return ALL(Can_interact(at_entrance_inside.worldstate, 1), Inverted) end)
+at_entrance_inside:connect_one_way(at_golden_guards, function() 
+    return ANY(
+        ALL(
+            CanInteract(at_entrance_inside.worldstate, 0),
+            OpenOrStandard
+        ),
+        CanInteract(at_entrance_inside.worldstate, 1)
+    )
+end)
+
 
 at_golden_guards:connect_one_way(at_entrance_inside)
 at_golden_guards:connect_two_ways(at_first_chest, DealDamage)
@@ -37,7 +45,7 @@ at_circle_of_pots:connect_two_ways(at_pre_curtain, function(keys)
         Has("at_smallkey", keys, 2, keys + 1, 4)
     ), KDSreturn(keys, keys + 1)
 end)
-at_circle_of_pots:connect_one_way("AT - Circle of Pots Key Drop") --functoin() return Can_interact(" light",1) end)
+at_circle_of_pots:connect_one_way("AT - Circle of Pots Key Drop") --functoin() return CanInteract(" light",1) end)
 at_pre_curtain:connect_one_way(at_aga1, CanRemoveCurtains)
 at_aga1:connect_one_way("AT - Aga1", function()
     return ANY(

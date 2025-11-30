@@ -16,44 +16,44 @@ local dp_back_boss_room = alttp_location.new("dp_back_boss_room")
 
 
 dp_left_entrance_inside:connect_two_ways(dp_right_entrance_inside)
-dp_main_entrance_inside:connect_two_ways(dp_main_room, function() return Can_interact(dp_main_entrance_inside.worldstate, 1) end)
+dp_main_entrance_inside:connect_two_ways(dp_main_room, function() return CanInteract(dp_main_entrance_inside.worldstate, 0) end)
 dp_left_entrance_inside:connect_two_ways(dp_big_chest_room)
-dp_big_chest_room:connect_one_way("DP - Big Chest", function() return ALL("dp_bigkey", Can_interact(dp_big_chest_room.worldstate, 1)) end)
+dp_big_chest_room:connect_one_way("DP - Big Chest", function() return ALL("dp_bigkey", CanInteract(dp_big_chest_room.worldstate, 0)) end)
 
 dp_left_entrance_inside:connect_two_ways(dp_torch_room)
 dp_torch_room:connect_one_way("DP - Torch", function()
     return ANY(
         ALL(
         "boots",
-        Can_interact(dp_torch_room.worldstate, 1)
+        CanInteract(dp_torch_room.worldstate, 0)
     ),
     ACCESS_INSPECT)
 end)
 
 dp_left_entrance_inside:connect_two_ways(dp_map_chest_room)
-dp_map_chest_room:connect_one_way("DP - Map Chest", function() return Can_interact(dp_map_chest_room.worldstate,1 ) end)
+dp_map_chest_room:connect_one_way("DP - Map Chest", function() return CanInteract(dp_map_chest_room.worldstate,1 ) end)
 
 dp_main_room:connect_one_way(dp_compass_room, function(keys)
     if not Tracker:FindObjectForCode("key_drop_shuffle").Active then
         return ALL(
             Has("dp_smallkey", keys + CountDoneDeadends(0, "@Desert Palace Back/Boss/Boss Item"), 1, keys + CountDoneDeadends(1, "@Desert Palace Back/Boss/Boss Item", "@Desert Palace Back/Beamos Hall Pot Key/Beamos Hall Pot Key", "@Desert Palace Back/Desert Tiles 2 Pot Key/Desert Tiles 2 Pot Key"), 4),
             "boots",
-            Can_interact("light", 1)
+            CanInteract("light", 1)
         ), keys + 1
     else
         return ALL(
             Has("dp_smallkey", keys + CountDoneDeadends(0, "@Desert Palace Back/Boss/Boss Item"), 1, keys + CountDoneDeadends(1, "@Desert Palace Back/Boss/Boss Item", "@Desert Palace Back/Beamos Hall Pot Key/Beamos Hall Pot Key", "@Desert Palace Back/Desert Tiles 2 Pot Key/Desert Tiles 2 Pot Key"), 4),
-            Can_interact("light", 1)
+            CanInteract("light", 1)
         ), keys + 1
     end
 end)
-dp_compass_room:connect_one_way("DP - Compass Chest", function() return Can_interact(dp_compass_room.worldstate,1 ) end)
+dp_compass_room:connect_one_way("DP - Compass Chest", function() return CanInteract(dp_compass_room.worldstate,1 ) end)
 
-dp_compass_room:connect_one_way(dp_big_key_chest_room, function() return Can_interact(dp_compass_room.worldstate,1 ) end)
+dp_compass_room:connect_one_way(dp_big_key_chest_room, function() return CanInteract(dp_compass_room.worldstate,1 ) end)
 dp_big_key_chest_room:connect_one_way("DP - Big Key Chest", DealDamage)
-dp_main_room:connect_two_ways(dp_right_entrance_inside, function() return Can_interact(dp_main_room.worldstate, 1) end)
-dp_main_room:connect_two_ways(dp_left_entrance_inside, function() return Can_interact(dp_main_room.worldstate, 1) end)
-dp_back_entrance_inside:connect_two_ways(dp_back_tile1_room, function() return Can_interact(dp_back_entrance_inside.worldstate, 1) end)
+dp_main_room:connect_two_ways(dp_right_entrance_inside, function() return CanInteract(dp_main_room.worldstate, 0) end)
+dp_main_room:connect_two_ways(dp_left_entrance_inside, function() return CanInteract(dp_main_room.worldstate, 0) end)
+dp_back_entrance_inside:connect_two_ways(dp_back_tile1_room, function() return CanInteract(dp_back_entrance_inside.worldstate, 0) end)
 
 dp_back_tile1_room:connect_one_way(dp_back_beamos_hallway, function(keys)
     return Has("dp_smallkey", keys + CountDoneDeadends(0, "@Desert Palace/Compass Chest/Compass Chest"), 1, keys + CountDoneDeadends(1, "@Desert Palace/Compass Chest/Compass Chest"), 2), KDSreturn(keys, keys + 1)

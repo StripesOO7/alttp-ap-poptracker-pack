@@ -28,20 +28,20 @@ hc_left_wing:connect_two_ways(hc_left_entrance_inside)
 hc_left_wing:connect_two_ways(hc_back_wing)
 hc_right_wing:connect_two_ways(hc_right_entrance_inside)
 hc_right_wing:connect_two_ways(hc_back_wing)
-hc_back_hall:connect_one_way(ce_stairs_inside, function() return Can_interact(hc_back_hall.worldstate, 1) end)
+hc_back_hall:connect_one_way(ce_stairs_inside, function() return CanInteract(hc_back_hall.worldstate, 0) end)
 
--- hc_left_entrance:connect_two_ways(hc_back_hall, function() return Can_interact("light", 1) end)
--- hc_right_entrance:connect_two_ways(hc_back_hall, function() return Can_interact("light", 1) end)
+-- hc_left_entrance:connect_two_ways(hc_back_hall, function() return CanInteract("light", 1) end)
+-- hc_right_entrance:connect_two_ways(hc_back_hall, function() return CanInteract("light", 1) end)
 
 hc_back_wing:connect_two_ways(hc_map_chest_room)
-hc_map_chest_room:connect_one_way("HC - Map Chest", function() return Can_interact(hc_map_chest_room.worldstate, 1) end)
+hc_map_chest_room:connect_one_way("HC - Map Chest", function() return CanInteract(hc_map_chest_room.worldstate, 0) end)
 hc_map_chest_room:connect_one_way("HC - Map Guard Key Drop", function()
     return ALL(
         ANY(
             DealDamage,
             "standard"
         ),
-        Can_interact(hc_map_chest_room.worldstate, 1)
+        CanInteract(hc_map_chest_room.worldstate, 0)
     )
 end)
 
@@ -51,7 +51,7 @@ hc_map_chest_room:connect_two_ways(hc_before_boomerang_chest_room, function(keys
             "standard",
             Has("hc_smallkey", keys, 0, keys + 1, 3)
         ),
-        Can_interact(hc_map_chest_room.worldstate, 1)
+        CanInteract(hc_map_chest_room.worldstate, 0)
     ), KDSreturn(keys, keys + 1)
 end)
 hc_before_boomerang_chest_room:connect_two_ways(hc_boomerang_chest_room, function()
@@ -95,17 +95,17 @@ ce_dark_cross:connect_two_ways(ce_rat_key_room, function(keys)
     return ANY(
         ALL(
             DarkRooms(true),
-            smallKeys("hc_smallkey", keys + 1, 1, keys + 1, 3)
+            Has("hc_smallkey", keys + 1, 1, keys + 1, 3)
         ),
         ALL(
             DarkRooms(true),
-            smallKeys("hc_smallkey", keys + 1, 1, keys + 1, 3),
+            Has("hc_smallkey", keys + 1, 1, keys + 1, 3),
             "glove"
         ),
         "standard"
     ), keys + 1
 end)
-ce_dark_cross:connect_one_way("CE - Dark Cross", function() return Can_interact(ce_dark_cross.worldstate, 1) end)
+ce_dark_cross:connect_one_way("CE - Dark Cross", function() return CanInteract(ce_dark_cross.worldstate, 0) end)
 
 -- ce_rat_key_room:connect_two_ways(ce_dropdown_entrance)
 ce_rat_key_room:connect_two_ways(ce_dropdown_room, function(keys)
@@ -145,11 +145,11 @@ ce_dropdown_room:connect_two_ways(ce_secret_room, function()
             "boots",
             "bombs"
         ),
-        Can_interact("light", 1)
+        CanInteract("light", 1)
     )
 end)
-ce_secret_room:connect_one_way("CE - Secret Room Left", function() return Can_interact(ce_secret_room.worldstate, 1) end)
-ce_secret_room:connect_one_way("CE - Secret Room Center", function() return Can_interact(ce_secret_room.worldstate, 1) end)
-ce_secret_room:connect_one_way("CE - Secret Room Right", function() return Can_interact(ce_secret_room.worldstate, 1) end)
+ce_secret_room:connect_one_way("CE - Secret Room Left", function() return CanInteract(ce_secret_room.worldstate, 0) end)
+ce_secret_room:connect_one_way("CE - Secret Room Center", function() return CanInteract(ce_secret_room.worldstate, 0) end)
+ce_secret_room:connect_one_way("CE - Secret Room Right", function() return CanInteract(ce_secret_room.worldstate, 0) end)
 
-ce_dropdown_room:connect_one_way(sanctuary_entrance_inside, function() return Can_interact(ce_dropdown_entrance_inside.worldstate, 1) end)
+ce_dropdown_room:connect_one_way(sanctuary_entrance_inside, function() return CanInteract(ce_dropdown_entrance_inside.worldstate, 0) end)
