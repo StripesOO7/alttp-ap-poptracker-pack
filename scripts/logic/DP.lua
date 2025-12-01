@@ -50,7 +50,7 @@ end)
 dp_compass_room:connect_one_way("DP - Compass Chest", function() return CanInteract(dp_compass_room.worldstate,1 ) end)
 
 dp_compass_room:connect_one_way(dp_big_key_chest_room, function() return CanInteract(dp_compass_room.worldstate,1 ) end)
-dp_big_key_chest_room:connect_one_way("DP - Big Key Chest", DealDamage)
+dp_big_key_chest_room:connect_one_way("DP - Big Key Chest", function() return DealDamage() end)
 dp_main_room:connect_two_ways(dp_right_entrance_inside, function() return CanInteract(dp_main_room.worldstate, 0) end)
 dp_main_room:connect_two_ways(dp_left_entrance_inside, function() return CanInteract(dp_main_room.worldstate, 0) end)
 dp_back_entrance_inside:connect_two_ways(dp_back_tile1_room, function() return CanInteract(dp_back_entrance_inside.worldstate, 0) end)

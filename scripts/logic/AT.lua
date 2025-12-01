@@ -19,9 +19,9 @@ end)
 
 
 at_golden_guards:connect_one_way(at_entrance_inside)
-at_golden_guards:connect_two_ways(at_first_chest, DealDamage)
+at_golden_guards:connect_two_ways(at_first_chest, function() return DealDamage() end)
 
-at_first_chest:connect_one_way("AT - First Chest", DealDamage)
+at_first_chest:connect_one_way("AT - First Chest", function() return DealDamage() end)
 at_first_chest:connect_two_ways(at_dark_maze, function(keys)
     return Has("at_smallkey", keys + 1, 1, keys + 1, 1), keys + 1
 end)
@@ -38,7 +38,7 @@ end)
 at_dark_archer_key_drop:connect_two_ways(at_circle_of_pots, function(keys)
     return Has("at_smallkey", keys, 2, keys + 1, 3), KDSreturn( keys, keys + 1)
 end)
-at_dark_archer_key_drop:connect_one_way("AT - Dark Archer Key Drop", DealDamage)
+at_dark_archer_key_drop:connect_one_way("AT - Dark Archer Key Drop", function() return DealDamage() end)
 
 at_circle_of_pots:connect_two_ways(at_pre_curtain, function(keys)
     return ALL(
@@ -46,7 +46,7 @@ at_circle_of_pots:connect_two_ways(at_pre_curtain, function(keys)
     ), KDSreturn(keys, keys + 1)
 end)
 at_circle_of_pots:connect_one_way("AT - Circle of Pots Key Drop") --functoin() return CanInteract(" light",1) end)
-at_pre_curtain:connect_one_way(at_aga1, CanRemoveCurtains)
+at_pre_curtain:connect_one_way(at_aga1, function() return CanRemoveCurtains() end)
 at_aga1:connect_one_way("AT - Aga1", function()
     return ANY(
         "sword",

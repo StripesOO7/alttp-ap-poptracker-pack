@@ -72,7 +72,7 @@ gt_bottom_bonk_pit_room:connect_two_ways(gt_bottom_bonk_pit_room_bottom, functio
     )
 end)
 
-gt_bottom_bonk_pit_room_bottom:connect_two_ways(gt_bottom_double_switch_room, function() return DealDamage end)
+gt_bottom_bonk_pit_room_bottom:connect_two_ways(gt_bottom_double_switch_room, function() return DealDamage() end)
 gt_bottom_bonk_pit_room_bottom:connect_two_ways(gt_bottom_map_room, function(keys)
     return ALL(
         Has("gt_smallkey", keys + CountDoneDeadends(0, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 4, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 8)
