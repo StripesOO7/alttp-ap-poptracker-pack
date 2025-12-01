@@ -412,7 +412,7 @@ sanctuary_entrance_outside:connect_two_ways(sanctuary_area)
 sanctuary_area:connect_two_ways(ce_dropdown_entrance_outside, function()
     return ALL(
         "glove",
-        CanInteract("light",1 )
+        CanInteract(sanctuary_area.worldstate, 0)
     )
 end)
 ce_dropdown_entrance_outside:connect_one_way_entrance("Castle Escape secret Grave Drop", ce_dropdown_entrance_inside)
@@ -923,7 +923,7 @@ end)
 eastern_palace_area:connect_one_way(light_lake_hylia)
 eastern_palace_area:connect_one_way(links_house_area)
 eastern_palace_area:connect_one_way(light_lake_hylia)
-eastern_palace_area:connect_one_way(witchhut, function() return CanInteract(eastern_palace_area.worldstate,1 ) end)
+eastern_palace_area:connect_one_way(witchhut, function() return CanInteract(eastern_palace_area.worldstate, 0) end)
 eastern_palace_area:connect_one_way(links_house_area)
 eastern_palace_area:connect_one_way(light_flute_map, function()
     return ALL(
@@ -1289,7 +1289,7 @@ end)
 light_death_mountain_right_bottom:connect_one_way(light_death_mountain_left_bottom, function()
     return ALL(
         "hookshot",
-        CanInteract(light_death_mountain_right_bottom.worldstate,1 )
+        CanInteract(light_death_mountain_right_bottom.worldstate, 0)
     )
 end)
 light_death_mountain_right_bottom:connect_one_way(light_flute_map, function()

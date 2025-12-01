@@ -868,7 +868,7 @@ pod_area:connect_one_way(big_bomb_shop_area, function()
 end)
 
 pod_area:connect_two_ways(pod_hint_house_outside)
-pod_area:connect_two_ways_stuck(pod_entrance_outside, function() return CanInteract(pod_area.worldstate,1) end)
+pod_area:connect_two_ways_stuck(pod_entrance_outside, function() return CanInteract(pod_area.worldstate, 0) end)
 pod_area:connect_two_ways(dark_lake_hylia_fairy_outside)
 pod_area:connect_two_ways(pod_east_darkworld_hint_outside)
 -- pod_area:connect_two_ways(pod_entrance_outside, function() return CanInteract("dark",4) end)
