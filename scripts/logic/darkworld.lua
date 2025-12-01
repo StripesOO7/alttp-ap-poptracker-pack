@@ -45,9 +45,9 @@ end)
 
 teleporter_at_dark_turtle_rock:connect_one_way(teleporter_at_light_turtle_rock, function() return ALL(Inverted, "titans") end)
 
-teleporter_at_dark_death_mountain_left_bottom:connect_one_way(teleporter_at_light_death_mountain_left_bottom, Inverted)
+teleporter_at_dark_death_mountain_left_bottom:connect_one_way(teleporter_at_light_death_mountain_left_bottom, function() return Inverted() end)
 
-teleporter_at_dark_death_mountain_right_bottom:connect_one_way(teleporter_at_light_death_mountain_right_bottom, Inverted)
+teleporter_at_dark_death_mountain_right_bottom:connect_one_way(teleporter_at_light_death_mountain_right_bottom, function() return Inverted() end)
 
 teleporter_at_pod:connect_one_way(teleporter_at_eastern, function()
     return ALL(
@@ -70,7 +70,7 @@ teleporter_at_swamp:connect_one_way(teleporter_at_dam, function()
     )
 end)
 
-teleporter_at_ice_palace:connect_one_way(teleporter_at_upgrade_fairy, Inverted)
+teleporter_at_ice_palace:connect_one_way(teleporter_at_upgrade_fairy, function() return Inverted() end)
 
 
 
@@ -78,10 +78,10 @@ darkworld_spawns:connect_one_way(dark_spawn_links_house)
 darkworld_spawns:connect_one_way(dark_spawn_dark_chapel)
 darkworld_spawns:connect_one_way(dark_spawn_old_man, function() return CanReach("old_man_cave_right_inside") end) --has rescued old man
 
-dark_spawn_links_house:connect_one_way(links_house_inside, Inverted)
+dark_spawn_links_house:connect_one_way(links_house_inside, function() return Inverted() end)
 -- dark_spawn_links_house:connect_two_ways_entrance("Big Bomb Shop", big_bomb_shop, OpenOrStandard)
-dark_spawn_dark_chapel:connect_one_way(dark_chapel_inside, Inverted)
-dark_spawn_old_man:connect_one_way(old_man_home_bottom_inside, Inverted)
+dark_spawn_dark_chapel:connect_one_way(dark_chapel_inside, function() return Inverted() end)
+dark_spawn_old_man:connect_one_way(old_man_home_bottom_inside, function() return Inverted() end)
 
 -- big_bomb_shop_area
 -- links_house_outside:connect_two_ways(big_bomb_shop_area, Inverted) --probably dupes
@@ -101,8 +101,8 @@ big_bomb_shop_area:connect_one_way(south_of_village_of_the_outcast)
 -- end)
 
 -- links_house_outside:connect_two_ways_entrance("Inverted Spawn", links_house_inside)
-big_bomb_shop_outside:connect_two_ways_entrance("Big Bomb Shop", big_bomb_shop_inside, OpenOrStandard)
-big_bomb_shop_outside:connect_two_ways_entrance("Big Bomb Shop", links_house_inside, Inverted)
+big_bomb_shop_outside:connect_two_ways_entrance("Big Bomb Shop", big_bomb_shop_inside, function() return OpenOrStandard() end)
+big_bomb_shop_outside:connect_two_ways_entrance("Big Bomb Shop", links_house_inside, function() return Inverted() end)
 
 big_bomb_shop_area:connect_two_ways_stuck(big_bomb_shop_fairy_cave_outside, function()
     return ALL(
@@ -595,8 +595,8 @@ dark_bumper_cave_bottom_ledge:connect_one_way(dark_lumpberjacks)
 dark_bumper_cave_bottom_ledge:connect_two_ways(dark_bumper_cave_bottom_outside)
 
 -- dark_bumper_cave_bottom_ledge:connect_one_way(dark_death_mountain_ascent, function() return DarkRooms() end)
-dark_bumper_cave_bottom_outside:connect_two_ways_entrance("Bumper Cave Bottom", dark_bumper_cave_bottom_inside, OpenOrStandard)
-dark_bumper_cave_bottom_outside:connect_two_ways_entrance("Old Man Cave Left", old_man_cave_left_inside, Inverted)
+dark_bumper_cave_bottom_outside:connect_two_ways_entrance("Bumper Cave Bottom", dark_bumper_cave_bottom_inside, function() return OpenOrStandard() end)
+dark_bumper_cave_bottom_outside:connect_two_ways_entrance("Old Man Cave Left", old_man_cave_left_inside, function() return Inverted() end)
 
 dark_bumper_cave_bottom_inside:connect_two_ways(bumpercave_top_back)
 bumpercave_top_back:connect_two_ways(bumpercave_top_front, function()
@@ -607,8 +607,8 @@ bumpercave_top_back:connect_two_ways(bumpercave_top_front, function()
 end)
 bumpercave_top_front:connect_two_ways(dark_bumper_cave_top_inside)
 
-dark_bumper_cave_top_outside:connect_two_ways_entrance("Bumper Cave Top", dark_bumper_cave_top_inside, OpenOrStandard)
-dark_bumper_cave_top_outside:connect_two_ways_entrance("Dark Death Mountain Fairy Inside", dark_death_mountain_fairy_inside, Inverted)
+dark_bumper_cave_top_outside:connect_two_ways_entrance("Bumper Cave Top", dark_bumper_cave_top_inside, function() return OpenOrStandard() end)
+dark_bumper_cave_top_outside:connect_two_ways_entrance("Dark Death Mountain Fairy Inside", dark_death_mountain_fairy_inside, function() return Inverted() end)
 
 dark_bumper_cave_top_ledge:connect_two_ways(dark_bumper_cave_top_outside)
 -- dark_bumper_cave_top_ledge:connect_two_ways(dark_death_mountain_fairy_outside, Inverted)
@@ -781,7 +781,7 @@ pyramid:connect_two_ways_stuck(pyramid_fairy_cave_outside, function()
 end)
 
 pyramid:connect_two_ways(pyramid_hole_outside, function() return ALL(CheckPyramidState, OpenOrStandard) end)
-pyramid_exit_outside:connect_two_ways(pyramid_exit_ledge, OpenOrStandard)
+pyramid_exit_outside:connect_two_ways(pyramid_exit_ledge, function() return OpenOrStandard() end)
 
 pyramid_exit_ledge:connect_one_way(pyramid)
 
@@ -926,8 +926,8 @@ end)
 dark_death_mountain_left_top:connect_two_ways(dark_death_mountain_right_top)
 dark_death_mountain_left_top:connect_one_way(dark_death_mountain_left_bottom)
 
-gt_entrance_outside:connect_two_ways_entrance("Ganons Tower", gt_entrance_inside, OpenOrStandard)
-gt_entrance_outside:connect_two_ways_entrance("Aga Tower", at_entrance_inside, Inverted)
+gt_entrance_outside:connect_two_ways_entrance("Ganons Tower", gt_entrance_inside, function() return OpenOrStandard() end)
+gt_entrance_outside:connect_two_ways_entrance("Aga Tower", at_entrance_inside, function() return Inverted() end)
 
 
 
@@ -1042,7 +1042,7 @@ dark_death_mountain_left_bottom:connect_one_way(dark_flute_map, function()
     )
 end)
 -- dark_death_mountain_left_bottom:connect_one_way()
-dark_death_mountain_left_bottom:connect_one_way(teleporter_at_dark_death_mountain_left_bottom, Inverted)
+dark_death_mountain_left_bottom:connect_one_way(teleporter_at_dark_death_mountain_left_bottom, function() return Inverted() end)
 -- teleporter_at_dark_death_mountain_left_bottom:connect_one_way(dark_death_mountain_left_bottom, function() return "pearl" end)
 teleporter_at_dark_death_mountain_left_bottom:connect_one_way(dark_death_mountain_left_bottom)
 
@@ -1064,13 +1064,13 @@ spike_cave_inside:connect_one_way("Spike Cave Chest", function()
         -- Has("heartpieces", )
     )
 end)
-dark_death_mountain_left_bottom:connect_one_way(dark_death_mountain_left_top, Inverted)
+dark_death_mountain_left_bottom:connect_one_way(dark_death_mountain_left_top, function() return Inverted() end)
 
 dark_death_mountain_left_bottom:connect_two_ways(dark_death_mountain_fairy_outside)
 
-dark_death_mountain_fairy_outside:connect_two_ways_entrance("Dark Death Mountain Fairy", dark_death_mountain_fairy_inside, OpenOrStandard)
+dark_death_mountain_fairy_outside:connect_two_ways_entrance("Dark Death Mountain Fairy", dark_death_mountain_fairy_inside, function() return OpenOrStandard() end)
 
-dark_death_mountain_fairy_outside:connect_two_ways_entrance("Old Man Cave Right Inside", old_man_cave_right_inside, Inverted)
+dark_death_mountain_fairy_outside:connect_two_ways_entrance("Old Man Cave Right Inside", old_man_cave_right_inside, function() return Inverted() end)
 
 
 -- dark_death_mountain_right_bottom
