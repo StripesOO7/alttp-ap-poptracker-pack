@@ -683,19 +683,19 @@
             {
                 "name": "Dam",
                 "access_rules": [
-                    "^$CanReach|dam_area"
+                    // "^$CanReach|dam_area"
                 ],
                 "sections": [
                     {
                         "name": "Sunken Treasure",
                         "access_rules": [
-                            "^$CanReach|Sunken Treasure"
+                            "^$CanReach|dam_area, ^$CanReach|Sunken Treasure"
                         ]
                     },
                     {
                         "name": "Dam Chest",
                         "access_rules": [
-                            "^$CanReach|Floodgate Chest"
+                            "^$CanReach|dam_inside, ^$CanReach|Floodgate Chest"
                         ]
                     }
                 ],

@@ -364,8 +364,8 @@
             {
                 "name": "Peg Cave",
                 "access_rules": [
-                    "hammer, titans",
-                    "inverted, @Lightworld, hammer, mirror"
+                    // "hammer, titans",
+                    // "inverted, @Lightworld, hammer, mirror"
                 ],
                 "sections": [
                     {
@@ -773,7 +773,7 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$CanReach|mire_area"
+            // "^$CanReach|mire_area"
         ],
         "children": [
             {
