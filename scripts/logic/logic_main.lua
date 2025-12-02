@@ -91,7 +91,7 @@ end
 
 -- creates a lua object for the given name. it acts as a representation of a overworld reagion or indoor locatoin and
 -- tracks its connected objects wvia the exit-table
-function alttp_location.new(name, shortname, origin, room, x, yMin, yMax, xMax, LocationSection, deadEndOrDungeonOrConnector)
+function alttp_location.new(name, shortname, origin, inside_dungeon, room, x, yMin, yMax, xMax, LocationSection, deadEndOrDungeonOrConnector)
     if shortname == nil then
         shortname = name
     end
@@ -117,6 +117,11 @@ function alttp_location.new(name, shortname, origin, room, x, yMin, yMax, xMax, 
         self.side = nil
     end
     self.interactable = false
+    if inside_dungeon then
+        self.inside_dungeon = true
+    else
+        self.inside_dungeon = false
+    end
     if room ~= nil then
         -- print(name)
         -- NAMED_LOCATIONS["from_"..name] = self
@@ -388,8 +393,8 @@ function alttp_location:discover(accessibility, keys, worldstate)
                     key = keys
                 end
                 if access > oldAccess or (access == oldAccess and key < oldKey) then -- not sure about the <
-                    -- print(self.name, "to", location.name)
-                    -- print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access], "with worldstate:", worldstate)
+                    print(self.name, "to", location.name)
+                    print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access], "with worldstate:", worldstate)
                     -- print("lower:", self.worldstate, worldstate, location.worldstate)
                     -- print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access])--, "with worldstate:", worldstate)
                     location:discover(access, key, worldstate)

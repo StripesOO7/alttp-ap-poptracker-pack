@@ -162,7 +162,7 @@ function DealDamage()
     )
 end
 
-function hitRanged()
+function HitRanged()
     return ANY(
         "masterword",
         "bombs",
@@ -203,6 +203,16 @@ function CanActivateTablets()
         return Tracker:FindObjectForCode("hammer").Active
     end
     return (Tracker:FindObjectForCode("sword").CurrentStage > 1)
+end
+
+function CanTurnSuperbunnyAt(location)
+    local mirror = Tracker:FindObjectForCode("mirror").Active
+    return mirror and CanInteract(location.worldstate, 1)
+    -- return mirror and CanInteract(location.worldstate, 1)
+end
+
+function DungeonBunnyRevival(location)
+    return CanInteract(location.worldstate, 1)
 end
 
 function GetShuffle(item, type)
@@ -350,11 +360,83 @@ function UpdateCanInteract()
     PrecalcCanInteract()
 end
 
-function CanInteract(worldstate, glitch_lvl)
+local invalid_bunny_revival_dungeons = {
+    -- ["at_entrance_inside"] = true,
+    -- ["ce_dropdown_entrance_inside"] = true,
+    -- ["dp_back_entrance_inside"] = true,
+    -- ["dp_left_entrance_inside"] = true,
+    -- ["dp_main_entrance_inside"] = true,
+    -- ["dp_right_entrance_inside"] = true,
+    -- ["ep_entrance_inside"] = true,
+    -- ["gt_entrance_inside"] = true,
+    -- ["hc_left_entrance_inside"] = true,
+    -- ["hc_main_entrance_inside"] = true,
+    -- ["hc_right_entrance_inside"] = true,
+    -- ["ip_entrance_inside"] = true,
+    -- ["mm_entrance_inside"] = true,
+    -- ["pod_entrance_inside"] = true,
+    -- ["sw_back_entrance_inside"] = true,
+    -- ["sw_big_chest_entrance_inside"] = true,
+    -- ["sw_bottom_left_drop_inside"] = true,
+    -- ["sw_gibdo_entrance_inside"] = true,
+    -- ["sw_north_drop_inside"] = true,
+    -- ["sw_pinball_drop_inside"] = true,
+    -- ["sw_pot_circle_drop_inside"] = true,
+    -- ["sw_west_lobby_entrance_inside"] = true,
+    -- ["tr_big_chest_entrance_inside"] = true,
+    -- ["tr_eye_bridge_entrance_inside"] = true,
+    -- ["tr_laser_entrance_inside"] = true,
+    -- ["tt_entrance_inside"] = true,
+    ["tr_main_entrance_inside"] = true,
+    ["sanctuary_entrance_inside"] = true,
+    ["sp_entrance_inside"] = true,
+    ["toh_entrance_inside"] = true,
+}
+
+-- bunny_impassable_caves = ['Bumper Cave', 'Two Brothers House', 'Hookshot Cave', 'Skull Woods First Section (Right)',
+--                               'Skull Woods First Section (Left)', 'Skull Woods First Section (Top)', 'Turtle Rock (Entrance)', 'Turtle Rock (Second Section)',
+--                               'Turtle Rock (Big Chest)', 'Skull Woods Second Section (Drop)', 'Turtle Rock (Eye Bridge)', 'Sewers', 'Pyramid',
+--                               'Spiral Cave (Top)', 'Desert Palace Main (Inner)', 'Fairy Ascension Cave (Drop)']
+
+--     bunny_accessible_locations = ['Link\'s Uncle', 'Sahasrahla', 'Sick Kid', 'Lost Woods Hideout', 'Lumberjack Tree',
+--                                   'Checkerboard Cave', 'Potion Shop', 'Spectacle Rock Cave', 'Pyramid',
+--                                   'Hype Cave - Generous Guy', 'Peg Cave', 'Bumper Cave Ledge', 'Dark Blacksmith Ruins',
+--                                   'Spectacle Rock', 'Bombos Tablet', 'Ether Tablet', 'Purple Chest', 'Blacksmith',
+--                                   'Missing Smith', 'Master Sword Pedestal', 'Bottle Merchant', 'Sunken Treasure',
+--                                   'Desert Ledge']
+function CanInteract(location, glitch_lvl)
     -- print("---------Can_interact---------")
     -- print("worldstate", worldstate, "glitch_lvl", glitch_lvl)
-    if worldstate then
-        return CAN_INTERACT[worldstate][glitch_lvl]
+    if location.worldstate then
+        print(location.name, location.worldstate)
+        print("1", CAN_INTERACT[location.worldstate][glitch_lvl])
+        print("2", Tracker:FindObjectForCode("mirror").Active and location.deadEndOrDungeonOrConnector == "deadend")
+        print("3", location.inside_dungeon and not invalid_bunny_revival_dungeons[location.name])
+        print("result" ,CAN_INTERACT[location.worldstate][glitch_lvl] or ((Tracker:FindObjectForCode("mirror").Active and (location.side ~= nil))) or (location.inside_dungeon and not invalid_bunny_revival_dungeons[location.name]))
+        if CAN_INTERACT[location.worldstate][glitch_lvl] then
+            print("1", CAN_INTERACT[location.worldstate][glitch_lvl])
+            return true
+        end
+        if Tracker:FindObjectForCode("mirror").Active and location.deadEndOrDungeonOrConnector == "deadend" then
+            print("2", Tracker:FindObjectForCode("mirror").Active and (location.deadEndOrDungeonOrConnector == "deadend"))
+            return true
+        end
+        if location.inside_dungeon then
+            print("3", location.inside_dungeon and not invalid_bunny_revival_dungeons[location.name])
+            if invalid_bunny_revival_dungeons[location.name] then
+                return false
+            end
+            return true
+        end
+        return false
+        -- return CAN_INTERACT[location.worldstate][glitch_lvl] or
+        --     (
+        --         (Tracker:FindObjectForCode("mirror").Active and
+        --         (location.side ~= nil)
+        --     ) or
+        --     (bunny_revival_dungeons[location.name] or false)
+        -- )
+        -- normal access OR mirror bunny OR dungeon bunny revival
     else
         return false
     end
@@ -608,7 +690,6 @@ function SetShopInventory()
         end
     end
 end
-
 
 local prize_table = {
     ["crab_pull_1"] = 2,

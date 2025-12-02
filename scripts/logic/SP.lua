@@ -1,22 +1,22 @@
--- sp_entrance = alttp_location.new("")
-local sp_first_room = alttp_location.new("sp_first_room")
-local sp_hallway_before_first_trench = alttp_location.new("sp_hallway_before_first_trench")
-local sp_first_trench = alttp_location.new("sp_first_trench")
-local sp_main_room = alttp_location.new("sp_main_room")
-local sp_roundabout = alttp_location.new("sp_roundabout")
-local sp_second_trench = alttp_location.new("sp_second_trench")
-local sp_hallway_after_second_trench = alttp_location.new("sp_hallway_after_second_trench")
-local sp_flooded_room = alttp_location.new("sp_flooded_room")
-local sp_waterfall_room = alttp_location.new("sp_waterfall_room")
-local sp_after_waterfall_room = alttp_location.new("sp_after_waterfall_room")
-local sp_boss_room = alttp_location.new("sp_boss_room")
+-- sp_entrance = alttp_location.new("", nil, nil, true)
+local sp_first_room = alttp_location.new("sp_first_room", nil, nil, true)
+local sp_hallway_before_first_trench = alttp_location.new("sp_hallway_before_first_trench", nil, nil, true)
+local sp_first_trench = alttp_location.new("sp_first_trench", nil, nil, true)
+local sp_main_room = alttp_location.new("sp_main_room", nil, nil, true)
+local sp_roundabout = alttp_location.new("sp_roundabout", nil, nil, true)
+local sp_second_trench = alttp_location.new("sp_second_trench", nil, nil, true)
+local sp_hallway_after_second_trench = alttp_location.new("sp_hallway_after_second_trench", nil, nil, true)
+local sp_flooded_room = alttp_location.new("sp_flooded_room", nil, nil, true)
+local sp_waterfall_room = alttp_location.new("sp_waterfall_room", nil, nil, true)
+local sp_after_waterfall_room = alttp_location.new("sp_after_waterfall_room", nil, nil, true)
+local sp_boss_room = alttp_location.new("sp_boss_room", nil, nil, true)
 
 sp_entrance_inside:connect_two_ways(sp_first_room, function()
     return ALL(
-        CanInteract(sp_entrance_inside.worldstate, 0),
+        CanInteract(sp_entrance_inside, 0),
         "flippers",
         CanReach("dam_inside"),
-        CanInteract(dam_inside.worldstate, 0),
+        CanInteract(dam_inside, 0),
         ANY(
             CanChangeWorldWithMirror,
             Tracker:FindObjectForCode("er_tracking").CurrentStage > 0
@@ -25,7 +25,7 @@ sp_entrance_inside:connect_two_ways(sp_first_room, function()
 end)
 
 sp_first_room:connect_two_ways(sp_hallway_before_first_trench, function(keys) return Has("sp_smallkey", keys + 1, 1, keys + 1, 1), keys + 1 end)
-sp_first_room:connect_one_way("SP - Entrance Chest", function() return ALL(DealDamage, CanInteract(sp_first_room.worldstate, 0)) end)
+sp_first_room:connect_one_way("SP - Entrance Chest", function() return ALL(DealDamage, CanInteract(sp_first_room, 0)) end)
 
 sp_hallway_before_first_trench:connect_two_ways(sp_first_trench, function(keys) return Has("sp_smallkey", keys, 1, keys + 1, 2), KDSreturn(keys, keys + 1) end)
 sp_hallway_before_first_trench:connect_one_way("SP - Pot Row Key")
