@@ -408,11 +408,11 @@ function CanInteract(location, glitch_lvl)
     -- print("---------Can_interact---------")
     -- print("worldstate", worldstate, "glitch_lvl", glitch_lvl)
     if location.worldstate then
-        print(location.name, location.worldstate)
-        print("1", CAN_INTERACT[location.worldstate][glitch_lvl])
-        print("2", Tracker:FindObjectForCode("mirror").Active and location.deadEndOrDungeonOrConnector == "deadend")
-        print("3", location.inside_dungeon and not invalid_bunny_revival_dungeons[location.name])
-        print("result" ,CAN_INTERACT[location.worldstate][glitch_lvl] or ((Tracker:FindObjectForCode("mirror").Active and (location.side ~= nil))) or (location.inside_dungeon and not invalid_bunny_revival_dungeons[location.name]))
+        -- print(location.name, location.worldstate)
+        -- print("1", CAN_INTERACT[location.worldstate][glitch_lvl])
+        -- print("2", Tracker:FindObjectForCode("mirror").Active and location.deadEndOrDungeonOrConnector == "deadend")
+        -- print("3", location.inside_dungeon and not invalid_bunny_revival_dungeons[location.name])
+        -- print("result" ,CAN_INTERACT[location.worldstate][glitch_lvl] or ((Tracker:FindObjectForCode("mirror").Active and (location.side ~= nil))) or (location.inside_dungeon and not invalid_bunny_revival_dungeons[location.name]))
         if CAN_INTERACT[location.worldstate][glitch_lvl] then
             print("1", CAN_INTERACT[location.worldstate][glitch_lvl])
             return true
@@ -426,7 +426,10 @@ function CanInteract(location, glitch_lvl)
             if invalid_bunny_revival_dungeons[location.name] then
                 return false
             end
-            return true
+            if Tracker:FindObjectForCode("glitches").CurrentStage > 0 then
+                return true
+            end
+            return false
         end
         return false
         -- return CAN_INTERACT[location.worldstate][glitch_lvl] or
