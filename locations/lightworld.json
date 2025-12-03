@@ -50,7 +50,10 @@
                     {
                         "name": "Hideout",
                         "access_rules": [
-                            "^$CanReach|kakariko_blinds_hideout_inside"
+                            "^$CanReach|Blind's Hideout - Far Left",
+                            "^$CanReach|Blind's Hideout - Left",
+                            "^$CanReach|Blind's Hideout - Right",
+                            "^$CanReach|Blind's Hideout - Far Right"
                         ],
                         "clear_as_group": false,
                         "item_count": 4
