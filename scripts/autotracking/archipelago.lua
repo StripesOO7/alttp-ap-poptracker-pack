@@ -186,14 +186,7 @@ function onClear(slot_data)
     end
 
     print("reset er connections")
-    for name, _ in pairs(NAMED_ENTRANCES) do --reset er-connections
-        local location_reset = Tracker:FindObjectForCode(name)
-        if location_reset then
-            _UnsetLocationOptions(location_reset)
-            location_reset.ItemState.Target = nil
-        end
-        -- Tracker:FindObjectForCode(name).worldstate = nil
-    end
+    EmptyLocationTargets()
     -- print(dump_table(er_custom_storage_item.ItemState.MANUAL_LOCATIONS))
     -- print(dump_table(er_custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED]))
     if er_custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED] then
