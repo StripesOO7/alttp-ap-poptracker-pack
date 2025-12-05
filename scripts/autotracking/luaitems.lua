@@ -379,7 +379,7 @@ local function LoadManualLocationStorageFunc(self, data)
     -- print("LoadFunc")
 end
 
-function CreateLuaManualLocationStorage(name)
+function CreateLuaManualStorageItem(name)
     local self = ScriptHost:CreateLuaItem()
     -- self.Type = "custom"
     self.Name = name --code --

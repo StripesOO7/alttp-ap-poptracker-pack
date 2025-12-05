@@ -78,47 +78,48 @@ function preOnClear()
 
     -- local temp_seed = tostring(#ALL_LOCATIONS).."_"..tostring(Archipelago.TeamNumber).."_"..tostring(Archipelago.PlayerNumber)
     -- print(Archipelago.Seed)
-    local custom_storage_item = Tracker:FindObjectForCode("manual_location_storage")
-    local er_custom_storage_item = Tracker:FindObjectForCode("manual_er_storage")
     -- local storage_location = custom_storage_item.ItemState.MANUAL_LOCATIONS
     -- local storage_location_order = custom_storage_item.ItemState.MANUAL_LOCATIONS_ORDER
     local seed_base = (Archipelago.Seed or tostring(#ALL_LOCATIONS)).."_"..Archipelago.TeamNumber.."_"..Archipelago.PlayerNumber
     if ROOM_SEED == "default" or ROOM_SEED ~= seed_base then -- seed is default or from previous connection
 
         ROOM_SEED = seed_base --something like 2345_0_12
-        if #custom_storage_item.ItemState.MANUAL_LOCATIONS > 10 then
-            custom_storage_item.ItemState.MANUAL_LOCATIONS[custom_storage_item.ItemState.MANUAL_LOCATIONS_ORDER[1]] = nil
-            table.remove(custom_storage_item.ItemState.MANUAL_LOCATIONS_ORDER, 1)
-        end
-        if custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED] == nil then
-            custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED] = {}
-            table.insert(custom_storage_item.ItemState.MANUAL_LOCATIONS_ORDER, ROOM_SEED)
-        end
-        
-        if #er_custom_storage_item.ItemState.MANUAL_LOCATIONS > 10 then
-            er_custom_storage_item.ItemState.MANUAL_LOCATIONS[er_custom_storage_item.ItemState.MANUAL_LOCATIONS_ORDER[1]] = nil
-            table.remove(er_custom_storage_item.ItemState.MANUAL_LOCATIONS_ORDER, 1)
-        end
-        if er_custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED] == nil then
-            er_custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED] = {}
-            table.insert(er_custom_storage_item.ItemState.MANUAL_LOCATIONS_ORDER, ROOM_SEED)
+        for _, custom_item_code in pairs({"manual_location_storage",  "manual_er_storage", "manual_dungeon_reward_storage"}) do
+            local custom_storage_item = Tracker:FindObjectForCode(custom_item_code)
+            if custom_storage_item then
+                if #custom_storage_item.ItemState.MANUAL_LOCATIONS > 10 then
+                custom_storage_item.ItemState.MANUAL_LOCATIONS[custom_storage_item.ItemState.MANUAL_LOCATIONS_ORDER[1]] = nil
+                table.remove(custom_storage_item.ItemState.MANUAL_LOCATIONS_ORDER, 1)
+                end
+                if custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED] == nil then
+                    custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED] = {}
+                    table.insert(custom_storage_item.ItemState.MANUAL_LOCATIONS_ORDER, ROOM_SEED)
+                end
+            end
         end
     else -- seed is from previous connection
         -- do nothing
     end
 end
 
+
 function onClear(slot_data)
     MANUAL_CHECKED = false
     local custom_storage_item = Tracker:FindObjectForCode("manual_location_storage")
     if custom_storage_item == nil then
-        CreateLuaManualLocationStorage("manual_location_storage")
+        CreateLuaManualStorageItem("manual_location_storage")
         custom_storage_item = Tracker:FindObjectForCode("manual_location_storage")
     end
     local er_custom_storage_item = Tracker:FindObjectForCode("manual_er_storage")
     if er_custom_storage_item == nil then
-        CreateLuaManualLocationStorage("manual_er_storage")
+        CreateLuaManualStorageItem("manual_er_storage")
         er_custom_storage_item = Tracker:FindObjectForCode("manual_er_storage")
+    end
+
+    local manual_dungeon_reward_storage = Tracker:FindObjectForCode("manual_dungeon_reward_storage")
+     if manual_dungeon_reward_storage == nil then
+        CreateLuaManualStorageItem("manual_er_storage")
+        manual_dungeon_reward_storage = Tracker:FindObjectForCode("manual_dungeon_reward_storage")
     end
     preOnClear()
     
@@ -187,6 +188,9 @@ function onClear(slot_data)
 
     print("reset er connections")
     EmptyLocationTargets()
+    
+    ScriptHost:RemoveWatchForCode("StateChanged")
+    ScriptHost:RemoveOnLocationSectionHandler("location_section_change_handler")
     -- print(dump_table(er_custom_storage_item.ItemState.MANUAL_LOCATIONS))
     -- print(dump_table(er_custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED]))
     if er_custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED] then
@@ -199,6 +203,15 @@ function onClear(slot_data)
     else
         er_custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED] = {}
     end
+
+    if manual_dungeon_reward_storage.ItemState.MANUAL_LOCATIONS[ROOM_SEED] then
+        for dungeon_code, item_state in pairs(manual_dungeon_reward_storage.ItemState.MANUAL_LOCATIONS[ROOM_SEED]) do -- redo location based on savestate for seed
+            Tracker:FindObjectForCode(dungeon_code).CurrentStage = item_state
+        end
+    else
+        manual_dungeon_reward_storage.ItemState.MANUAL_LOCATIONS[ROOM_SEED] = {}
+    end
+    
     ScriptHost:AddOnFrameHandler("load handler", OnFrameHandler)
     MANUAL_CHECKED = true
 end

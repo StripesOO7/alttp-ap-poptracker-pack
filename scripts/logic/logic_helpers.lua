@@ -360,6 +360,15 @@ function UpdateCanInteract()
     PrecalcCanInteract()
 end
 
+function AddManualDungenRewardStorage(code)
+    if Tracker.BulkUpdate ~= true then
+        local item = Tracker:FindObjectForCode(code)
+        local manual_dungeon_reward_storage = Tracker:FindObjectForCode("manual_dungeon_reward_storage")
+        manual_dungeon_reward_storage.ItemState.MANUAL_LOCATIONS[ROOM_SEED][code] = item.CurrentStage
+    end
+
+end
+
 local invalid_bunny_revival_dungeons = {
     -- ["at_entrance_inside"] = true,
     -- ["ce_dropdown_entrance_inside"] = true,
@@ -414,15 +423,15 @@ function CanInteract(location, glitch_lvl)
         -- print("3", location.inside_dungeon and not invalid_bunny_revival_dungeons[location.name])
         -- print("result" ,CAN_INTERACT[location.worldstate][glitch_lvl] or ((Tracker:FindObjectForCode("mirror").Active and (location.side ~= nil))) or (location.inside_dungeon and not invalid_bunny_revival_dungeons[location.name]))
         if CAN_INTERACT[location.worldstate][glitch_lvl] then
-            print("1", CAN_INTERACT[location.worldstate][glitch_lvl])
+            -- print("1", CAN_INTERACT[location.worldstate][glitch_lvl])
             return true
         end
         if Tracker:FindObjectForCode("mirror").Active and location.deadEndOrDungeonOrConnector == "deadend" then
-            print("2", Tracker:FindObjectForCode("mirror").Active and (location.deadEndOrDungeonOrConnector == "deadend"))
+            -- print("2", Tracker:FindObjectForCode("mirror").Active and (location.deadEndOrDungeonOrConnector == "deadend"))
             return true
         end
         if location.inside_dungeon then
-            print("3", location.inside_dungeon and not invalid_bunny_revival_dungeons[location.name])
+            -- print("3", location.inside_dungeon and not invalid_bunny_revival_dungeons[location.name])
             if invalid_bunny_revival_dungeons[location.name] then
                 return false
             end
