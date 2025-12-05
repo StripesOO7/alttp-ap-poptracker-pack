@@ -393,8 +393,8 @@ function alttp_location:discover(accessibility, keys, worldstate)
                     key = keys
                 end
                 if access > oldAccess or (access == oldAccess and key < oldKey) then -- not sure about the <
-                    print(self.name, "to", location.name)
-                    print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access], "with worldstate:", worldstate)
+                    -- print(self.name, "to", location.name)
+                    -- print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access], "with worldstate:", worldstate)
                     -- print("lower:", self.worldstate, worldstate, location.worldstate)
                     -- print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access])--, "with worldstate:", worldstate)
                     location:discover(access, key, worldstate)
@@ -442,8 +442,8 @@ function LocationHandler(location)
             custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][full_path] = nil
         end
     end
-    -- local custom_storage_item = Tracker:FindObjectForCode("manual_location_storage")
-    -- print(dump_table(custom_storage_item.ItemState.MANUAL_LOCATIONS))
+-- local custom_storage_item = Tracker:FindObjectForCode("manual_location_storage")
+-- print(dump_table(custom_storage_item.ItemState.MANUAL_LOCATIONS))
     ForceUpdate()
 end
 
