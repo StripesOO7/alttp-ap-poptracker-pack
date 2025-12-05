@@ -84,7 +84,7 @@ function preOnClear()
     if ROOM_SEED == "default" or ROOM_SEED ~= seed_base then -- seed is default or from previous connection
 
         ROOM_SEED = seed_base --something like 2345_0_12
-        for _, custom_item_code in pairs({"manual_location_storage",  "manual_er_storage", "manual_dungeon_reward_storage"}) do
+        for _, custom_item_code in pairs({"manual_location_storage",  "manual_er_storage", "manual_dungeon_reward_storage", "manual_shop_items_prizes_storage"}) do
             local custom_storage_item = Tracker:FindObjectForCode(custom_item_code)
             if custom_storage_item then
                 if #custom_storage_item.ItemState.MANUAL_LOCATIONS > 10 then
@@ -117,9 +117,15 @@ function onClear(slot_data)
     end
 
     local manual_dungeon_reward_storage = Tracker:FindObjectForCode("manual_dungeon_reward_storage")
-     if manual_dungeon_reward_storage == nil then
-        CreateLuaManualStorageItem("manual_er_storage")
+    if manual_dungeon_reward_storage == nil then
+        CreateLuaManualStorageItem("manual_dungeon_reward_storage")
         manual_dungeon_reward_storage = Tracker:FindObjectForCode("manual_dungeon_reward_storage")
+    end
+
+    local manual_dungeon_reward_storage = Tracker:FindObjectForCode("manual_shop_items_prizes_storage")
+    if manual_dungeon_reward_storage == nil then
+        CreateLuaManualStorageItem("manual_shop_items_prizes_storage")
+        manual_dungeon_reward_storage = Tracker:FindObjectForCode("manual_shop_items_prizes_storage")
     end
     preOnClear()
     

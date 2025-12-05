@@ -360,13 +360,110 @@ function UpdateCanInteract()
     PrecalcCanInteract()
 end
 
-function AddManualDungenRewardStorage(code)
-    if Tracker.BulkUpdate ~= true then
-        local item = Tracker:FindObjectForCode(code)
-        local manual_dungeon_reward_storage = Tracker:FindObjectForCode("manual_dungeon_reward_storage")
-        manual_dungeon_reward_storage.ItemState.MANUAL_LOCATIONS[ROOM_SEED][code] = item.CurrentStage
-    end
+DUNGEON_REWARDS_BOSSES = {
+    "easternpalace",
+    "desertpalace",
+    "towerofhera",
+    "palaceofdarkness",
+    "swamppalace",
+    "skullwoods",
+    "thievestown",
+    "icepalace",
+    "miserymire",
+    "turtlerock",
+    "ep_boss",
+    "dp_boss",
+    "toh_boss",
+    "pod_boss",
+    "sp_boss",
+    "sw_boss",
+    "tt_boss",
+    "ip_boss",
+    "mm_boss",
+    "tr_boss",
+    "gt_lanmo",
+    "gt_ice",
+    "gt_boss"
+}
+SHOP_ITEMS_PRIZES = {
+    "default_shop_item_1",
+    "default_shop_item_2",
+    "default_shop_item_3",
+    "default_shop_item_4",
+    "default_shop_item_5",
+    "default_shop_item_6",
+    "default_shop_item_7",
+    "default_shop_item_8",
+    "default_shop_item_9",
+    "default_shop_item_10",
+    "default_shop_item_11",
+    "default_shop_item_12",
+    "default_shop_item_13",
+    "default_shop_item_14",
+    "default_shop_item_15",
+    "default_shop_item_16",
+    "default_shop_item_17",
+    "default_shop_item_18",
+    "default_shop_item_19",
+    "default_shop_item_20",
+    "default_shop_item_21",
+    "default_shop_item_22",
+    "default_shop_item_23",
+    "default_shop_item_24",
+    "default_shop_item_25",
+    "default_shop_item_26",
+    "default_shop_item_27",
+    "default_shop_item_28",
+    "default_shop_item_29",
+    "default_shop_item_30",
+    "default_shop_item_31",
+    "default_shop_item_32",
+    "default_shop_item_33",
+    "default_shop_prizes_1",
+    "default_shop_prizes_2",
+    "default_shop_prizes_3",
+    "default_shop_prizes_4",
+    "default_shop_prizes_5",
+    "default_shop_prizes_6",
+    "default_shop_prizes_7",
+    "default_shop_prizes_8",
+    "default_shop_prizes_9",
+    "default_shop_prizes_10",
+    "default_shop_prizes_11",
+    "default_shop_prizes_12",
+    "default_shop_prizes_13",
+    "default_shop_prizes_14",
+    "default_shop_prizes_15",
+    "default_shop_prizes_16",
+    "default_shop_prizes_17",
+    "default_shop_prizes_18",
+    "default_shop_prizes_19",
+    "default_shop_prizes_20",
+    "default_shop_prizes_21",
+    "default_shop_prizes_22",
+    "default_shop_prizes_23",
+    "default_shop_prizes_24",
+    "default_shop_prizes_25",
+    "default_shop_prizes_26",
+    "default_shop_prizes_27",
+    "default_shop_prizes_28",
+    "default_shop_prizes_29",
+    "default_shop_prizes_30",
+    "default_shop_prizes_31",
+    "default_shop_prizes_32",
+    "default_shop_prizes_33"
+}
 
+function AddDUNGEON_REWARDS_BOSSESManualItemStorage(code)
+        local item = Tracker:FindObjectForCode(code)
+        local manual_storage_item = Tracker:FindObjectForCode("manual_dungeon_reward_storage")
+        manual_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][code] = item.CurrentStage
+end
+
+function AddSHOP_ITEMS_PRIZESManualItemStorage(code)
+        local item = Tracker:FindObjectForCode(code)
+        local manual_storage_item = Tracker:FindObjectForCode("manual_shop_items_prizes_storage")
+        manual_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][code] = item.CurrentStage
 end
 
 local invalid_bunny_revival_dungeons = {

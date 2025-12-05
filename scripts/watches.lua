@@ -41,6 +41,9 @@ for _, code in pairs({"autofill_dungeon_settings", "autofill_goal_reqs", "autofi
 end
 ScriptHost:AddWatchForCode("glitches changed", "glitches", UpdateCanInteract)
 
-for _, code in pairs({"easternpalace", "desertpalace", "towerofhera", "palaceofdarkness", "swamppalace", "skullwoods", "thievestown", "icepalace", "miserymire", "turtlerock", "ep_boss", "dp_boss", "toh_boss", "pod_boss", "sp_boss", "sw_boss", "tt_boss", "ip_boss", "mm_boss", "tr_boss", "gt_lanmo", "gt_ice","gt_boss", }) do
-    ScriptHost:AddWatchForCode("manual storage watch for " .. code, code, AddManualDungenRewardStorage)
+for _, code in pairs(DUNGEON_REWARDS_BOSSES) do
+    ScriptHost:AddWatchForCode("manual storage watch for " .. code, code, AddDUNGEON_REWARDS_BOSSESManualItemStorage)
+end
+for _, code in pairs(SHOP_ITEMS_PRIZES) do
+    ScriptHost:AddWatchForCode("manual storage watch for " .. code, code, AddSHOP_ITEMS_PRIZESManualItemStorage)
 end
