@@ -461,7 +461,6 @@ function AddDUNGEON_REWARDS_BOSSESManualItemStorage(code)
         local item = Tracker:FindObjectForCode(code)
         local manual_storage_item = Tracker:FindObjectForCode("manual_dungeon_reward_storage")
         manual_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][code] = item.CurrentStage
-        print(dump_table(manual_storage_item.ItemState))
     end
 end
 
@@ -470,7 +469,6 @@ function AddSHOP_ITEMS_PRIZESManualItemStorage(code)
         local item = Tracker:FindObjectForCode(code)
         local manual_storage_item = Tracker:FindObjectForCode("manual_shop_items_prizes_storage")
         manual_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][code] = item.CurrentStage
-        print(dump_table(manual_storage_item.ItemState))
     end
 end
 

@@ -194,7 +194,6 @@ function onClear(slot_data)
 
     if manual_dungeon_reward_storage.ItemState.MANUAL_LOCATIONS[ROOM_SEED] then
         for dungeon_code, item_state in pairs(manual_dungeon_reward_storage.ItemState.MANUAL_LOCATIONS[ROOM_SEED]) do -- redo location based on savestate for seed
-            print(dungeon_code, item_state)
             Tracker:FindObjectForCode(dungeon_code).CurrentStage = item_state
         end
     else
@@ -202,7 +201,6 @@ function onClear(slot_data)
     end
     if manual_shop_items_prizes_storage.ItemState.MANUAL_LOCATIONS[ROOM_SEED] then
         for shop_slot, prize in pairs(manual_shop_items_prizes_storage.ItemState.MANUAL_LOCATIONS[ROOM_SEED]) do -- redo location based on savestate for seed
-            print(shop_slot, prize)
             Tracker:FindObjectForCode(shop_slot).CurrentStage = prize
         end
     else
