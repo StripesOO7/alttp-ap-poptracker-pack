@@ -360,7 +360,7 @@ function UpdateCanInteract()
     PrecalcCanInteract()
 end
 
-DUNGEON_REWARDS_BOSSES = {
+MISC_MANUAL_ITEMS = {
     "easternpalace",
     "desertpalace",
     "towerofhera",
@@ -385,9 +385,7 @@ DUNGEON_REWARDS_BOSSES = {
     "gt_ice",
     "gt_boss",
     "aga1",
-    "aga2"
-}
-SHOP_ITEMS_PRIZES = {
+    "aga2",
     "default_shop_item_1",
     "default_shop_item_2",
     "default_shop_item_3",
@@ -456,7 +454,7 @@ SHOP_ITEMS_PRIZES = {
     "default_shop_prizes_33"
 }
 
-function AddDUNGEON_REWARDS_BOSSESManualItemStorage(code)
+function AddManualItemStorage(code)
     if MANUAL_CHECKED then
         local item = Tracker:FindObjectForCode(code)
         local manual_storage_item = Tracker:FindObjectForCode("manual_dungeon_reward_storage")
@@ -464,13 +462,6 @@ function AddDUNGEON_REWARDS_BOSSESManualItemStorage(code)
     end
 end
 
-function AddSHOP_ITEMS_PRIZESManualItemStorage(code)
-    if MANUAL_CHECKED then
-        local item = Tracker:FindObjectForCode(code)
-        local manual_storage_item = Tracker:FindObjectForCode("manual_shop_items_prizes_storage")
-        manual_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][code] = item.CurrentStage
-    end
-end
 
 local invalid_bunny_revival_dungeons = {
     -- ["at_entrance_inside"] = true,

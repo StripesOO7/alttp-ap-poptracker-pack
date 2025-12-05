@@ -992,7 +992,6 @@ end
 Tracker.BulkUpdate = true
 CreateLuaManualStorageItem("manual_location_storage")
 CreateLuaManualStorageItem("manual_er_storage")
-CreateLuaManualStorageItem("manual_shop_items_prizes_storage")
-CreateLuaManualStorageItem("manual_dungeon_reward_storage")
+CreateLuaManualStorageItem("manual_misc_items_storage")
 CreateDoorsLuaitems()
 Tracker.BulkUpdate = false

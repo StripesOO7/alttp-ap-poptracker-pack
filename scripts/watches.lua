@@ -41,9 +41,6 @@ for _, code in pairs({"autofill_dungeon_settings", "autofill_goal_reqs", "autofi
 end
 ScriptHost:AddWatchForCode("glitches changed", "glitches", UpdateCanInteract)
 
-for _, code in pairs(DUNGEON_REWARDS_BOSSES) do
-    ScriptHost:AddWatchForCode("manual storage watch for " .. code, code, AddDUNGEON_REWARDS_BOSSESManualItemStorage)
-end
-for _, code in pairs(SHOP_ITEMS_PRIZES) do
-    ScriptHost:AddWatchForCode("manual storage watch for " .. code, code, AddSHOP_ITEMS_PRIZESManualItemStorage)
+for _, code in pairs(MISC_MANUAL_ITEMS) do
+    ScriptHost:AddWatchForCode("manual storage watch for " .. code, code, AddManualItemStorage)
 end

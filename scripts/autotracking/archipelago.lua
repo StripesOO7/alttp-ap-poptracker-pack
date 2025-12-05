@@ -116,17 +116,12 @@ function onClear(slot_data)
         er_custom_storage_item = Tracker:FindObjectForCode("manual_er_storage")
     end
 
-    local manual_dungeon_reward_storage = Tracker:FindObjectForCode("manual_dungeon_reward_storage")
-    if manual_dungeon_reward_storage == nil then
-        CreateLuaManualStorageItem("manual_dungeon_reward_storage")
-        manual_dungeon_reward_storage = Tracker:FindObjectForCode("manual_dungeon_reward_storage")
+    local manual_misc_items_storage = Tracker:FindObjectForCode("manual_misc_items_storage")
+    if manual_misc_items_storage == nil then
+        manual_misc_items_storage("manual_misc_items_storage")
+        manual_misc_items_storage = Tracker:FindObjectForCode("manual_misc_items_storage")
     end
 
-    local manual_shop_items_prizes_storage = Tracker:FindObjectForCode("manual_shop_items_prizes_storage")
-    if manual_shop_items_prizes_storage == nil then
-        CreateLuaManualStorageItem("manual_shop_items_prizes_storage")
-        manual_shop_items_prizes_storage = Tracker:FindObjectForCode("manual_shop_items_prizes_storage")
-    end
     preOnClear()
     
     ScriptHost:RemoveWatchForCode("StateChanged")
@@ -192,19 +187,12 @@ function onClear(slot_data)
         BossShuffle()
     end
 
-    if manual_dungeon_reward_storage.ItemState.MANUAL_LOCATIONS[ROOM_SEED] then
-        for dungeon_code, item_state in pairs(manual_dungeon_reward_storage.ItemState.MANUAL_LOCATIONS[ROOM_SEED]) do -- redo location based on savestate for seed
+    if manual_misc_items_storage.ItemState.MANUAL_LOCATIONS[ROOM_SEED] then
+        for dungeon_code, item_state in pairs(manual_misc_items_storage.ItemState.MANUAL_LOCATIONS[ROOM_SEED]) do -- redo location based on savestate for seed
             Tracker:FindObjectForCode(dungeon_code).CurrentStage = item_state
         end
     else
-        manual_dungeon_reward_storage.ItemState.MANUAL_LOCATIONS[ROOM_SEED] = {}
-    end
-    if manual_shop_items_prizes_storage.ItemState.MANUAL_LOCATIONS[ROOM_SEED] then
-        for shop_slot, prize in pairs(manual_shop_items_prizes_storage.ItemState.MANUAL_LOCATIONS[ROOM_SEED]) do -- redo location based on savestate for seed
-            Tracker:FindObjectForCode(shop_slot).CurrentStage = prize
-        end
-    else
-        manual_shop_items_prizes_storage.ItemState.MANUAL_LOCATIONS[ROOM_SEED] = {}
+        manual_misc_items_storage.ItemState.MANUAL_LOCATIONS[ROOM_SEED] = {}
     end
 
     print("reset er connections")
