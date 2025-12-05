@@ -10,10 +10,10 @@ local at_pre_curtain = alttp_location.new("at_pre_curtain", nil, nil, true)
 at_entrance_inside:connect_one_way(at_golden_guards, function() 
     return ANY(
         ALL(
-            CanInteract(at_entrance_inside, 0),
+            CanInteract(at_entrance_inside),
             OpenOrStandard
         ),
-        CanInteract(at_entrance_inside, 1)
+        CanInteract(at_entrance_inside)
     )
 end)
 
@@ -45,7 +45,7 @@ at_circle_of_pots:connect_two_ways(at_pre_curtain, function(keys)
         Has("at_smallkey", keys, 2, keys + 1, 4)
     ), KDSreturn(keys, keys + 1)
 end)
-at_circle_of_pots:connect_one_way("AT - Circle of Pots Key Drop") --functoin() return CanInteract("",1) end)
+at_circle_of_pots:connect_one_way("AT - Circle of Pots Key Drop") --functoin() return CanInteract("", end)
 at_pre_curtain:connect_one_way(at_aga1, function() return CanRemoveCurtains() end)
 at_aga1:connect_one_way("AT - Aga1", function()
     return ANY(

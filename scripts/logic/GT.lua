@@ -33,13 +33,13 @@ local gt_top_aga2 = alttp_location.new("gt_top_aga2", nil, nil, true)
 
 gt_entrance_inside:connect_two_ways(gt_bottom_main_room, function() 
     return ALL(
-        CanInteract(gt_entrance_inside, 0), 
+        CanInteract(gt_entrance_inside), 
         OpenOrStandard
     )
 end)
 gt_entrance_inside:connect_two_ways(gt_bottom_main_room, function() 
     return ALL(
-        CanInteract(gt_entrance_inside, 0), 
+        CanInteract(gt_entrance_inside), 
         Inverted
     )
 end)
@@ -54,7 +54,7 @@ gt_bottom_bobs_torch:connect_one_way("GT - Bob's Torch", function()
     return ANY(
         ALL(
             "boots",
-            CanInteract(gt_bottom_bobs_torch, 0)
+            CanInteract(gt_bottom_bobs_torch)
         ),
         ACCESS_INSPECT
     )
@@ -111,7 +111,7 @@ gt_bottom_double_switch_room:connect_one_way("GT - Double Switch Pot Key")--, fu
 gt_bottom_firesnake_room:connect_two_ways(gt_bottom_teleporter_puzzle_room, function(keys) return Has("gt_smallkey", keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 4, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 8), keys + 1 end)
 gt_bottom_firesnake_room:connect_one_way("GT - Firesnake Room")
 
-gt_bottom_teleporter_puzzle_room:connect_two_ways(gt_bottom_randomizer_room, function() return ALL("bombs", CanInteract(gt_bottom_teleporter_puzzle_room, 0)) end)
+gt_bottom_teleporter_puzzle_room:connect_two_ways(gt_bottom_randomizer_room, function() return ALL("bombs", CanInteract(gt_bottom_teleporter_puzzle_room)) end)
 gt_bottom_teleporter_puzzle_room:connect_one_way(gt_bottom_invisibile_bonk_room)
 
 gt_bottom_randomizer_room:connect_one_way("GT - Randomizer Room Top Left")
@@ -119,9 +119,9 @@ gt_bottom_randomizer_room:connect_one_way("GT - Randomizer Room Top Right")
 gt_bottom_randomizer_room:connect_one_way("GT - Randomizer Room Bottom Left")
 gt_bottom_randomizer_room:connect_one_way("GT - Randomizer Room Bottom Right")
 
-gt_bottom_hope_room:connect_two_ways(gt_bottom_tile_room, function() return ALL("somaria",CanInteract(gt_bottom_hope_room, 0)) end)
-gt_bottom_hope_room:connect_one_way("GT - Hope Room Left", function() return CanInteract(gt_bottom_hope_room, 0) end)
-gt_bottom_hope_room:connect_one_way("GT - Hope Room Right", function() return CanInteract(gt_bottom_hope_room, 0) end)
+gt_bottom_hope_room:connect_two_ways(gt_bottom_tile_room, function() return ALL("somaria",CanInteract(gt_bottom_hope_room)) end)
+gt_bottom_hope_room:connect_one_way("GT - Hope Room Left", function() return CanInteract(gt_bottom_hope_room) end)
+gt_bottom_hope_room:connect_one_way("GT - Hope Room Right", function() return CanInteract(gt_bottom_hope_room) end)
 
 gt_bottom_tile_room:connect_two_ways(gt_bottom_torch_puzzle, function(keys) return Has("gt_smallkey", keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 3, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room", "@Ganon's Tower Bottom Left/Map Chest/Map Chest", "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 7), keys + 1 end)
 gt_bottom_tile_room:connect_one_way("GT - Tile Room Chest")
@@ -164,7 +164,7 @@ gt_top_entrance:connect_two_ways(gt_top_gauntlet, function()
     return ALL(
         "gt_bigkey",
         EnemizerCheck("bow"),
-        CanInteract(gt_top_entrance, 0)
+        CanInteract(gt_top_entrance)
     )
 end)
 gt_top_gauntlet:connect_two_ways(gt_top_desert_refight, function() return GetBossRef("gt_lanmo") end)

@@ -13,10 +13,10 @@ local sp_boss_room = alttp_location.new("sp_boss_room", nil, nil, true)
 
 sp_entrance_inside:connect_two_ways(sp_first_room, function()
     return ALL(
-        CanInteract(sp_entrance_inside, 0),
+        CanInteract(sp_entrance_inside),
         "flippers",
         CanReach("dam_inside"),
-        CanInteract(dam_inside, 0),
+        CanInteract(dam_inside),
         ANY(
             CanChangeWorldWithMirror,
             Tracker:FindObjectForCode("er_tracking").CurrentStage > 0
@@ -25,7 +25,7 @@ sp_entrance_inside:connect_two_ways(sp_first_room, function()
 end)
 
 sp_first_room:connect_two_ways(sp_hallway_before_first_trench, function(keys) return Has("sp_smallkey", keys + 1, 1, keys + 1, 1), keys + 1 end)
-sp_first_room:connect_one_way("SP - Entrance Chest", function() return ALL(DealDamage, CanInteract(sp_first_room, 0)) end)
+sp_first_room:connect_one_way("SP - Entrance Chest", function() return ALL(DealDamage, CanInteract(sp_first_room)) end)
 
 sp_hallway_before_first_trench:connect_two_ways(sp_first_trench, function(keys) return Has("sp_smallkey", keys, 1, keys + 1, 2), KDSreturn(keys, keys + 1) end)
 sp_hallway_before_first_trench:connect_one_way("SP - Pot Row Key")

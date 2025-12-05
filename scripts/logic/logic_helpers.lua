@@ -315,51 +315,6 @@ function EnemizerCheck(item)
     return Tracker:FindObjectForCode("enemizer").Active or Tracker:FindObjectForCode(item).Active
 end
 
-CAN_INTERACT = {
-    [0] = true,
-    [1] = false,
-    [2] = false,
-    [3] = false,
-    [4] = false,
-    -- [5] = false,
-    -- [6] = false,
-    ["light"] = {
-        [0] = false,
-        [1] = false,
-        [2] = false,
-        [3] = false,
-        [4] = false,
-    },
-    ["dark"] = {
-        [0] = false,
-        [1] = false,
-        [2] = false,
-        [3] = false,
-        [4] = false,
-    }
-}
-
-function PrecalcCanInteract()
-    -- print("---------PrecalcCanInteract---------")
-    local moonpearl = Tracker:FindObjectForCode("pearl").Active
-    for i=0,4 do
-        CAN_INTERACT["light"][i] = CAN_INTERACT[i] and (OpenOrStandard() or moonpearl)
-        CAN_INTERACT["dark"][i] = CAN_INTERACT[i] and (Inverted() or moonpearl)
-    end
-    
-end
-
-function UpdateCanInteract()
-    -- print("---------UpdateCanInteract---------")
-    -- local moonpearl = Tracker:FindObjectForCode("pearl").Active
-    local glitch_lvl = Tracker:FindObjectForCode("glitches").CurrentStage
-    -- print("glitch_lvl", glitch_lvl)
-    for i=0,4 do
-        CAN_INTERACT[i] = (glitch_lvl >= i)
-    end
-    PrecalcCanInteract()
-end
-
 MISC_MANUAL_ITEMS = {
     "easternpalace",
     "desertpalace",
@@ -457,11 +412,21 @@ MISC_MANUAL_ITEMS = {
 function AddManualItemStorage(code)
     if MANUAL_CHECKED then
         local item = Tracker:FindObjectForCode(code)
-        local manual_storage_item = Tracker:FindObjectForCode("manual_dungeon_reward_storage")
+        local manual_storage_item = Tracker:FindObjectForCode("manual_misc_items_storage")
         manual_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][code] = item.CurrentStage
     end
 end
 
+CAN_INTERACT = {
+    ["light"] = false,
+    ["dark"] = false
+}
+
+function UpdateCanInteract() -- dumb helper function to determine if one can interact in no glitches state with the world
+    local moonpearl = Tracker:FindObjectForCode("pearl").Active
+    CAN_INTERACT["light"] = (OpenOrStandard() or moonpearl)
+    CAN_INTERACT["dark"] = (Inverted() or moonpearl)
+end
 
 local invalid_bunny_revival_dungeons = {
     -- ["at_entrance_inside"] = true,
@@ -496,56 +461,28 @@ local invalid_bunny_revival_dungeons = {
     ["toh_entrance_inside"] = true,
 }
 
--- bunny_impassable_caves = ['Bumper Cave', 'Two Brothers House', 'Hookshot Cave', 'Skull Woods First Section (Right)',
---                               'Skull Woods First Section (Left)', 'Skull Woods First Section (Top)', 'Turtle Rock (Entrance)', 'Turtle Rock (Second Section)',
---                               'Turtle Rock (Big Chest)', 'Skull Woods Second Section (Drop)', 'Turtle Rock (Eye Bridge)', 'Sewers', 'Pyramid',
---                               'Spiral Cave (Top)', 'Desert Palace Main (Inner)', 'Fairy Ascension Cave (Drop)']
+local valid_super_bunny_items = {
+    ["boots"] = true,
+    ["sword"] = true
+}
 
---     bunny_accessible_locations = ['Link\'s Uncle', 'Sahasrahla', 'Sick Kid', 'Lost Woods Hideout', 'Lumberjack Tree',
---                                   'Checkerboard Cave', 'Potion Shop', 'Spectacle Rock Cave', 'Pyramid',
---                                   'Hype Cave - Generous Guy', 'Peg Cave', 'Bumper Cave Ledge', 'Dark Blacksmith Ruins',
---                                   'Spectacle Rock', 'Bombos Tablet', 'Ether Tablet', 'Purple Chest', 'Blacksmith',
---                                   'Missing Smith', 'Master Sword Pedestal', 'Bottle Merchant', 'Sunken Treasure',
---                                   'Desert Ledge']
-function CanInteract(location, glitch_lvl)
-    -- print("---------Can_interact---------")
-    -- print("worldstate", worldstate, "glitch_lvl", glitch_lvl)
+function CanInteract(location) -- this basically just calls for if you are able to use everything in the locations state. and determines dungeon bunny revival or entering dungeons with mirror bunny
     if location.worldstate then
-        -- print(location.name, location.worldstate)
-        -- print("1", CAN_INTERACT[location.worldstate][glitch_lvl])
-        -- print("2", Tracker:FindObjectForCode("mirror").Active and location.deadEndOrDungeonOrConnector == "deadend")
-        -- print("3", location.inside_dungeon and not invalid_bunny_revival_dungeons[location.name])
-        -- print("result" ,CAN_INTERACT[location.worldstate][glitch_lvl] or ((Tracker:FindObjectForCode("mirror").Active and (location.side ~= nil))) or (location.inside_dungeon and not invalid_bunny_revival_dungeons[location.name]))
-        if CAN_INTERACT[location.worldstate][glitch_lvl] then
-            -- print("1", CAN_INTERACT[location.worldstate][glitch_lvl])
+        if CAN_INTERACT[location.worldstate] then --normal interaction possible or has moonpearl
             return true
         end
-        if Tracker:FindObjectForCode("mirror").Active and location.deadEndOrDungeonOrConnector == "deadend" then
-            -- print("2", Tracker:FindObjectForCode("mirror").Active and (location.deadEndOrDungeonOrConnector == "deadend"))
-            return true
-        end
-        if location.inside_dungeon then
-            -- print("3", location.inside_dungeon and not invalid_bunny_revival_dungeons[location.name])
+        if location.inside_dungeon then -- dungeon bunny revival
             if invalid_bunny_revival_dungeons[location.name] then
                 return false
+            elseif Tracker:FindObjectForCode("mirror").Active then --mirror bunny into dungeon
+                return Tracker:FindObjectForCode("glitches").CurrentStage > 0
             end
             if Tracker:FindObjectForCode("glitches").CurrentStage > 0 then
                 return true
             end
-            return false
         end
-        return false
-        -- return CAN_INTERACT[location.worldstate][glitch_lvl] or
-        --     (
-        --         (Tracker:FindObjectForCode("mirror").Active and
-        --         (location.side ~= nil)
-        --     ) or
-        --     (bunny_revival_dungeons[location.name] or false)
-        -- )
-        -- normal access OR mirror bunny OR dungeon bunny revival
-    else
-        return false
     end
+    return false
 end
 
 function CanFinish()

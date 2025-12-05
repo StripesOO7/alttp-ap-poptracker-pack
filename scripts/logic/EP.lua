@@ -9,7 +9,7 @@ local ep_big_key_chest_room = alttp_location.new("ep_big_key_chest_room", nil, n
 local ep_dark_eyegore_room = alttp_location.new("ep_dark_eyegore_room", nil, nil, true)
 local ep_boss_room = alttp_location.new("ep_boss_room", nil, nil, true)
 
-ep_entrance_inside:connect_two_ways(ep_cannonball_room, function() return CanInteract(ep_entrance_inside, 0) end)
+ep_entrance_inside:connect_two_ways(ep_cannonball_room, function() return CanInteract(ep_entrance_inside) end)
 
 ep_cannonball_room:connect_two_ways(ep_main_room_top)
 ep_cannonball_room:connect_one_way("EP - Cannonball Chest")

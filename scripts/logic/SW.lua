@@ -37,7 +37,7 @@ sw_pinball_room:connect_two_ways(sw_map_room, function(keys) return Has("sw_smal
 sw_pinball_room:connect_one_way("SW - Pinball Chest")
 
 sw_pot_circle_drop_inside:connect_one_way(sw_pot_circle)
-sw_pot_circle:connect_one_way(sw_map_room, function() return CanInteract(sw_pot_circle, 0) end)
+sw_pot_circle:connect_one_way(sw_map_room, function() return CanInteract(sw_pot_circle) end)
 sw_pot_circle:connect_two_ways(sw_big_chest_entrance_inside)
 
 sw_map_room:connect_two_ways(sw_big_chest_entrance_inside)
@@ -47,7 +47,7 @@ sw_big_chest_entrance_inside:connect_one_way("SW - Big Chest", function()
     return ALL(
         "sw_bigkey",
         "bombs",
-        CanInteract(sw_big_chest_entrance_inside, 0)
+        CanInteract(sw_big_chest_entrance_inside)
     )
 end)
 

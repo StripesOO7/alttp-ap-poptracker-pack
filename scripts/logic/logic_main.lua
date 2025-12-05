@@ -413,7 +413,7 @@ entry_point:connect_one_way(darkworld_spawns, Inverted)
 
 --
 function StateChanged()
-    PrecalcCanInteract()
+    UpdateCanInteract()
     stale = true
 end
 

@@ -24,7 +24,7 @@ mm_entrance_inside:connect_two_ways(mm_main_room, function()
             "hookshot",
             "boots"
         ),
-        CanInteract(mm_entrance_inside, 0)
+        CanInteract(mm_entrance_inside)
     )
 end)
 mm_main_room:connect_two_ways(mm_map_room_bottom)
