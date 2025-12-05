@@ -36,10 +36,11 @@ Archipelago:AddLocationHandler("location handler", onLocation)
 Archipelago:AddSetReplyHandler("notify handler", onNotify)
 Archipelago:AddRetrievedHandler("notify launch handler", onNotifyLaunch)
 
-ScriptHost:AddWatchForCode("settings autofill_dungeon_settings", "autofill_dungeon_settings", autoFill)
-ScriptHost:AddWatchForCode("settings autofill_goal_reqs", "autofill_goal_reqs", autoFill)
-ScriptHost:AddWatchForCode("settings autofill_medallions", "autofill_medallions", autoFill)
-ScriptHost:AddWatchForCode("settings autofill_modes", "autofill_modes", autoFill)
-ScriptHost:AddWatchForCode("settings autofill_misc", "autofill_misc", autoFill)
-ScriptHost:AddWatchForCode("settings autofill_sanities", "autofill_sanities", autoFill)
+for _, code in pairs({"autofill_dungeon_settings", "autofill_goal_reqs", "autofill_medallions", "autofill_modes", "autofill_misc", "autofill_sanities"}) do
+    ScriptHost:AddWatchForCode("settings ".. code, code, autoFill)
+end
 ScriptHost:AddWatchForCode("glitches changed", "glitches", UpdateCanInteract)
+
+for _, code in pairs({"easternpalace", "desertpalace", "towerofhera", "palaceofdarkness", "swamppalace", "skullwoods", "thievestown", "icepalace", "miserymire", "turtlerock", "ep_boss", "dp_boss", "toh_boss", "pod_boss", "sp_boss", "sw_boss", "tt_boss", "ip_boss", "mm_boss", "tr_boss", "gt_lanmo", "gt_ice","gt_boss", }) do
+    ScriptHost:AddWatchForCode("manual storage watch for " .. code, code, AddManualDungenRewardStorage)
+end
