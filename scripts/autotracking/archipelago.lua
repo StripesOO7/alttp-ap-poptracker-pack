@@ -140,6 +140,7 @@ function onClear(slot_data)
                         else
                             location_obj.AvailableChestCount = location_obj.ChestCount
                         end
+                        location_obj.Highlight = HIGHTLIGHT_LEVEL[40]
                     else
                         location_obj.Active = false
                     end
