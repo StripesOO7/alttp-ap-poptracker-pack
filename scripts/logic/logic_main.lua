@@ -350,6 +350,7 @@ function alttp_location:discover(accessibility, keys, worldstate)
             if self.worldstate == location.worldstate and worldstate ~= self.worldstate then
                 worldstate = self.worldstate
             end
+            -- print(worldstate, location.worldstate, location.name)
             if location.worldstate == nil then
                 location.worldstate = worldstate
             end
@@ -393,8 +394,8 @@ function alttp_location:discover(accessibility, keys, worldstate)
                     key = keys
                 end
                 if access > oldAccess or (access == oldAccess and key < oldKey) then -- not sure about the <
-                    -- print(self.name, "to", location.name)
-                    -- print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access], "with worldstate:", worldstate)
+                    print(self.name, "to", location.name)
+                    print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access], "with worldstate:", worldstate)
                     -- print("lower:", self.worldstate, worldstate, location.worldstate)
                     -- print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access])--, "with worldstate:", worldstate)
                     location:discover(access, key, worldstate)
@@ -482,7 +483,7 @@ function EmptyLocationTargets()
         print(er_tracking.CurrentStage)
         if er_tracking.CurrentStage == 0 then
             print("run discorver")
-            entry_point:discover(ACCESS_NORMAL, 0)
+            -- entry_point:discover(ACCESS_NORMAL, 0, nil)
             print("finshed discover")
         elseif er_tracking.CurrentStage == 1 then
             print("dungeons er")
@@ -502,14 +503,12 @@ function EmptyLocationTargets()
                 else
                     -- location is in DUNGEONS ER
                     _UnsetLocationOptions(Tracker:FindObjectForCode(name))
-                    Tracker:FindObjectForCode(name).ItemState.Target = nil
                 end
             end
             for name, _ in pairs(ER_DUNGEONS) do
                 -- print(name)
                 -- print(Tracker:FindObjectForCode(name).ItemState.Target)
                 _UnsetLocationOptions(Tracker:FindObjectForCode(name))
-                Tracker:FindObjectForCode(name).ItemState.Target = nil
             end
            
         elseif er_tracking.CurrentStage > 1 then
@@ -520,7 +519,6 @@ function EmptyLocationTargets()
                 local location_reset = Tracker:FindObjectForCode(name)
                 if location_reset then
                     _UnsetLocationOptions(location_reset)
-                    location_reset.ItemState.Target = nil
                 end
                 -- Tracker:FindObjectForCode(name).worldstate = nil
             end
@@ -546,6 +544,9 @@ function EmptyLocationTargets()
     else
         print("skipped ER reset")
     end
+    print("run discorver")
+    entry_point:discover(ACCESS_NORMAL, 0, nil)
+    print("finshed discover")
     MANUAL_CHECKED = true
 end
 

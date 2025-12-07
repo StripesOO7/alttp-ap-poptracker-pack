@@ -182,7 +182,7 @@ hype_cave_inside:connect_one_way("Hype Cave_Generous Guy")
 hype_cave_inside:connect_two_ways(hype_cave_back, function() 
     return ALL(
         "bombs",
-        CanInteract(hype_cave_inside)
+        CanInteract(hype_cave_inside, "bombs")
     )
 end)
 
@@ -603,7 +603,7 @@ dark_bumper_cave_bottom_inside:connect_two_ways(bumpercave_top_back)
 bumpercave_top_back:connect_two_ways(bumpercave_top_front, function()
     return ALL(
         "cape",
-        CanInteract(bumpercave_top_back)
+        CanInteract(bumpercave_top_back, "cape")
     )
 end)
 bumpercave_top_front:connect_two_ways(dark_bumper_cave_top_inside)
@@ -977,7 +977,7 @@ hookshot_cave_outside:connect_two_ways_entrance("Hookshot Cave", hookshot_cave_i
 hookshot_cave_inside:connect_two_ways(dark_floating_island_inside, function()
     return ALL(
         "bombs",
-        CanInteract(hookshot_cave_inside)
+        CanInteract(hookshot_cave_inside, "bombs")
     )
 end)
 dark_floating_island_inside:connect_two_ways_entrance("Dark Floating Island", dark_floating_island_outside)
@@ -996,30 +996,27 @@ dark_floating_island:connect_one_way(dark_death_mountain_right_top)
 
 
 hookshot_cave_inside:connect_one_way("Hookshot Cave Item Bottom Right", function()
-    return ALL(
-        ANY(
-            "hookshot",
-            "boots"
-        ),
-        CanInteract(hookshot_cave_inside)
+    return ANY(
+        ALL("hookshot", CanInteract(hookshot_cave_inside, "hookshot")),
+        ALL("boots", CanInteract(hookshot_cave_inside, "boots"))
     )
 end)
 hookshot_cave_inside:connect_one_way("Hookshot Cave Item Top Right", function()
     return ALL(
         "hookshot",
-        CanInteract(hookshot_cave_inside)
+        CanInteract(hookshot_cave_inside, "hookshot")
     )
 end)
 hookshot_cave_inside:connect_one_way("Hookshot Cave Item Top Left", function()
     return ALL(
         "hookshot",
-        CanInteract(hookshot_cave_inside)
+        CanInteract(hookshot_cave_inside, "hookshot")
     )
 end)
 hookshot_cave_inside:connect_one_way("Hookshot Cave Item Bottom Left", function()
     return ALL(
         "hookshot",
-        CanInteract(hookshot_cave_inside)
+        CanInteract(hookshot_cave_inside, "hookshot")
     )
 end)
 

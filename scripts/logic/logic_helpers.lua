@@ -466,7 +466,7 @@ local valid_super_bunny_items = {
     ["sword"] = true
 }
 
-function CanInteract(location) -- this basically just calls for if you are able to use everything in the locations state. and determines dungeon bunny revival or entering dungeons with mirror bunny
+function CanInteract(location, item) -- this basically just calls for if you are able to use everything in the locations state. and determines dungeon bunny revival or entering dungeons with mirror bunny
     if location.worldstate then
         if CAN_INTERACT[location.worldstate] then --normal interaction possible or has moonpearl
             return true
@@ -479,6 +479,17 @@ function CanInteract(location) -- this basically just calls for if you are able 
             end
             if Tracker:FindObjectForCode("glitches").CurrentStage > 0 then
                 return true
+            end
+        end
+        if location.deadEndOrDungeonOrConnector == "connector" or location.deadEndOrDungeonOrConnector == "deadend" then
+            print(item, valid_super_bunny_items[item], Tracker:FindObjectForCode(item).Active)
+            print(Tracker:FindObjectForCode("mirror").Active and (valid_super_bunny_items[item] or false) and Tracker:FindObjectForCode(item).Active)
+            if item then
+                print("------------------> mirror + item")
+                return Tracker:FindObjectForCode("mirror").Active and (valid_super_bunny_items[item] or false) and Tracker:FindObjectForCode(item).Active -- and Tracker:FindObjectForCode(item).Active -- not really neede because i should always check for the specifi3ed item outside aswell because this check is only for super bunny state accessibility
+            else
+                print("------------------> mirror only")
+                return Tracker:FindObjectForCode("mirror").Active
             end
         end
     end

@@ -188,7 +188,7 @@ kakariko_well_item:connect_one_way("Kakariko Well - Bottom") -- can interact as 
 
 
 
-kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Back", function() return ALL("bombs", CanInteract(kakariko_blinds_hideout_inside)) end)
+kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Back", function() return ALL("bombs", CanInteract(kakariko_blinds_hideout_inside, "bombs")) end)
 kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Far Left", function() return CanInteract(kakariko_blinds_hideout_inside) end)
 kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Left", function() return CanInteract(kakariko_blinds_hideout_inside) end)
 kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Right", function() return CanInteract(kakariko_blinds_hideout_inside) end)
@@ -197,7 +197,7 @@ kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Far Right", fu
 kakariko_elder_house_left_inside:connect_two_ways(kakariko_elder_house_right_inside)
 
 
-kakariko_chickenhut_inside:connect_one_way("Chicken Hut", function() return ALL("bombs", CanInteract(kakariko_chickenhut_inside)) end)
+kakariko_chickenhut_inside:connect_one_way("Chicken Hut", function() return ALL("bombs", CanInteract(kakariko_chickenhut_inside, "bombs")) end)
 
 
 kakariko_sick_kid_inside:connect_one_way("Sick Kid", function() return Has("bottle") end) -- can interact as bunny
@@ -235,16 +235,15 @@ magic_bat_hole_inside:connect_one_way(magic_bat_item)
 magic_bat_hole_inside:connect_one_way(magic_bat_cave_inside)
 
 magic_bat_item:connect_one_way("Magic Bat", function()
-    return ALL(
-        ANY(
-            "powder",
-            ALL(
-                CheckGlitches(2),
-                "somaria",
-                "mushroom"
-            )
+    return ANY(
+        ALL(
+            "powder", CanInteract(magic_bat_item, "powder")
         ),
-        CanInteract(magic_bat_item)
+        ALL(
+            CheckGlitches(2),
+            ALL("somaria", CanInteract(magic_bat_item, "somaria")),
+            ALL("mushroom", CanInteract(magic_bat_item, "mushroom"))
+        )
     )
 end)
 
@@ -286,7 +285,7 @@ library_inside:connect_one_way("Library Item", function()
     return ANY(
         ALL(
             "boots",
-            CanInteract(library_inside)
+            CanInteract(library_inside, "boots")
         ),
         ACCESS_INSPECT
     )
@@ -298,21 +297,15 @@ end)
 
 
 twin_house_right_inside:connect_one_way(twin_house_left_inside, function()
-    return ALL(
-        ANY(
-            "bombs",
-            "boots"
-        ),
-        CanInteract(twin_house_right_inside)
+    return ANY(
+        ALL("bombs", CanInteract(twin_house_right_inside, "bombs")),
+        ALL("boots", CanInteract(twin_house_right_inside, "boots"))
     )
 end)
 twin_house_left_inside:connect_one_way(twin_house_right_inside, function()
-    return ALL(
-        ANY(
-            "bombs",
-            "boots"
-        ),
-        CanInteract(twin_house_left_inside)
+    return ANY(
+        ALL("bombs", CanInteract(twin_house_right_inside, "bombs")),
+        ALL("boots", CanInteract(twin_house_right_inside, "boots"))
     )
 end)
 
@@ -393,7 +386,7 @@ graveyard_ledge_outside:connect_two_ways_entrance("Graveyardledge Cave", graveya
 
 graveyard_ledge_inside:connect_one_way("Graveyard Ledge Item", function()
     return ALL(
-        CanInteract(graveyard_ledge_inside),
+        CanInteract(graveyard_ledge_inside, "bombs"),
         "bombs"
     )
 end)
@@ -529,7 +522,7 @@ dam_inside:connect_one_way("Floodgate Chest", function() return CanInteract(dam_
 mini_moldorm_cave_inside:connect_two_ways(mini_moldorm_cave_back, function()
     return ALL(
         DealDamage,
-        CanInteract(mini_moldorm_cave_inside)
+        CanInteract(mini_moldorm_cave_inside, "sword")
     )
 end)
 mini_moldorm_cave_back:connect_one_way("Mini Moldorm Cave - Far Left")
@@ -579,7 +572,7 @@ dp_main_entrance_outside:connect_two_ways_entrance("Desert Palace Front", dp_mai
 aginah_cave_inside:connect_one_way("Aginah Item", function()
     return ALL(
         "bombs",
-        CanInteract(aginah_cave_inside)
+        CanInteract(aginah_cave_inside, "bombs")
     )
 end)
 
@@ -947,12 +940,9 @@ ep_entrance_outside:connect_two_ways_entrance("Eastern Palace Entrance", ep_entr
 
 sahasralahs_hut_inside:connect_one_way("Sahasralah", function() return Has("greenpendant") end)
 sahasralahs_hut_inside:connect_two_ways(sahasralahs_hut_back, function()
-    return ALL(
-        ANY(
-            "bombs",
-            "boots"
-        ),
-        CanInteract(sahasralahs_hut_inside)
+    return ANY(
+        ALL("bombs", CanInteract(twin_house_right_inside, "bombs")),
+        ALL("boots", CanInteract(twin_house_right_inside, "boots"))
     )
 end)
 sahasralahs_hut_back:connect_one_way("Sahasrahla's Hut - Left")
@@ -1397,7 +1387,7 @@ mimic_cave_outside:connect_two_ways_entrance("Mimic Cave Entrance", mimic_cave_i
 mimic_cave_inside:connect_one_way("Mimic Cave Chest", function()
     return ALL(
         "hammer",
-        CanInteract(mimic_cave_inside)
+        CanInteract(mimic_cave_inside, "hammer")
     )
 end)
 
@@ -1412,7 +1402,7 @@ paradox_cave_inside_middle:connect_two_ways(paradox_cave_inside_top)
 paradox_cave_inside_bottom:connect_one_way(paradox_cave_bottom_back, function()
     return ALL(
         "bombs",
-        CanInteract(paradox_cave_inside_bottom)
+        CanInteract(paradox_cave_inside_bottom, "bombs")
     )
 end) -- fbomb wall
 -- paradox_cave_inside_bottom:connect_two_ways(paradox_cave_top_back) -- stairs up left
@@ -1420,26 +1410,23 @@ paradox_cave_inside_bottom:connect_one_way(paradox_cave_bottom_front, function()
 paradox_cave_inside_bottom:connect_two_ways(paradox_cave_inside_middle) -- go upstairs to middle
 paradox_cave_inside_middle:connect_two_ways(paradox_cave_inside_top) -- go upstairs to top
 paradox_cave_inside_middle:connect_one_way(paradox_cave_inside_bottom) -- drop down to bottom floor
-paradox_cave_inside_middle:connect_one_way(paradox_cave_middle_front, function() return ALL("bombs", CanInteract(paradox_cave_inside_bottom)) end) -- bombjump to middle entrance
+paradox_cave_inside_middle:connect_one_way(paradox_cave_middle_front, function() return ALL("bombs", CanInteract(paradox_cave_inside_bottom, "bombs")) end) -- bombjump to middle entrance
 
 paradox_cave_inside_top:connect_two_ways_entrance_door_stuck("Paradox Cave Top Back", paradox_cave_top_back, function()
-    return ALL(
-        ANY(
-            "bombs",
-            "boomerangs",
-            "somaria",
-            "mastersword",
-            "icerod",
-            "firerod",
-            "bow"
-        ),
-        CanInteract(paradox_cave_inside_top)
+    return ANY(
+        ALL("bombs", CanInteract(paradox_cave_inside_top, "bombs")),
+        ALL("boomerangs", CanInteract(paradox_cave_inside_top, "boomerangs")),
+        ALL("somaria", CanInteract(paradox_cave_inside_top, "somaria")),
+        ALL("mastersword", CanInteract(paradox_cave_inside_top, "mastersword")),
+        ALL("icerod", CanInteract(paradox_cave_inside_top, "icerod")),
+        ALL("firerod", CanInteract(paradox_cave_inside_top, "firerod")),
+        ALL("bow", CanInteract(paradox_cave_inside_top, "bow"))
     )
 end) -- go to the 5 chests
 
 paradox_cave_bottom_entrance_inside:connect_two_ways(paradox_cave_bottom_front)
 
-paradox_cave_bottom_front:connect_two_ways(paradox_cave_bottom_shop_entrance, function() return ALL("bombs", CanInteract(paradox_cave_bottom_front)) end)
+paradox_cave_bottom_front:connect_two_ways(paradox_cave_bottom_shop_entrance, function() return ALL("bombs", CanInteract(paradox_cave_bottom_front, "bombs")) end)
 paradox_cave_bottom_front:connect_two_ways(paradox_cave_inside_bottom, function() return ALL("mirror", CanInteract(paradox_cave_bottom_front)) end) --block delete with mirror
 
 
