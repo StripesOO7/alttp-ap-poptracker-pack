@@ -346,7 +346,7 @@ end)
 dark_lake_hylia:connect_one_way(ice_palace_island, function()
     return ALL(
         "flippers",
-        CheckGlitches(2)
+        CheckGlitches(2),
         "boots",
         OpenOrStandard
     )

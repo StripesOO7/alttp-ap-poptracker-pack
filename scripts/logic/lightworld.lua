@@ -1315,7 +1315,7 @@ light_death_mountain_left_top_weird_state:connect_one_way(light_death_mountain_l
     return false
 end) -- TOH only resets weird overworld state when its a dungeon. other caves will stil have weird state after exiting again
 
-light_death_mountain_left_top_weird_state:connect_two_way(toh_entrance_outside_weird_state) -- connector for weird map state after clip up to DM left top
+light_death_mountain_left_top_weird_state:connect_two_ways(toh_entrance_outside_weird_state) -- connector for weird map state after clip up to DM left top
 
 toh_entrance_outside_weird_state:connect_one_way(toh_entrance_outside, function() 
     local toh_entrance_traget = Tracker:FindObjectForCode("toh_entrance_outside").Itemstate.Target
