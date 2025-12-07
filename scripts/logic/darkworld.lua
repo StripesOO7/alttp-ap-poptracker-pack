@@ -205,6 +205,17 @@ mire_ledge:connect_one_way(teleporter_at_mire, function()
         "titans"
     )
 end)
+
+-- OWG
+mire_area:connect_one_way(mire_ledge, function()
+    return ALL(
+        Inverted,
+        CheckGlitches(2),
+        "boots"
+    )
+end)
+-- OWG end
+
 teleporter_at_mire:connect_one_way(mire_ledge)
 
 mire_area:connect_one_way(dark_flute_map, function()
@@ -330,6 +341,17 @@ dark_lake_hylia:connect_two_ways(ice_palace_island, function()
         CanInteract(dark_lake_hylia)
     )
 end)
+
+-- OWG
+dark_lake_hylia:connect_one_way(ice_palace_island, function()
+    return ALL(
+        "flippers",
+        CheckGlitches(2)
+        "boots",
+        OpenOrStandard
+    )
+end) -- Ice Palace Clip
+-- OWG end
 
 ice_palace_island:connect_one_way(teleporter_at_ice_palace, function()
     return ALL(
@@ -504,6 +526,15 @@ south_of_village_of_the_outcast:connect_one_way(race_ledge, function()
     )
 end)
 
+-- OWG
+south_of_village_of_the_outcast:connect_one_way(mire_area, function()
+    return ALL(
+        CheckGlitches(2),
+        "boots"
+    )
+end) -- Dark Desert Cliffs Clip Spot
+-- OWG end
+
 -- south_of_village_of_the_outcast:connect_one_way(mire_area) -- glitches
 
 big_bomb_shop_area:connect_two_ways(stumpy, function() return CanInteract(big_bomb_shop_area) end)
@@ -575,6 +606,29 @@ dark_lumpberjacks:connect_two_ways(dark_bumper_cave_bottom_ledge, function()
     )
 end)
 
+-- OWG
+dark_lumpberjacks:connect_one_way(dark_death_mountain_left_bottom, function()
+    return ALL(
+        CheckGlitches(2),
+        "boots",
+        Inverted
+    )
+end) -- Dark World DMA Clip Spot
+
+dark_lumpberjacks:connect_one_way(dark_bumper_cave_top_ledge, function()
+    return ALL(
+        CheckGlitches(2),
+        "boots"
+    )
+end) -- Bumper Cave Ledge Clip Spot
+
+dark_lumpberjacks:connect_one_way(dark_bumper_cave_bottom_ledge, function()
+    return ALL(
+        CheckGlitches(2),
+        "boots"
+    )
+end) -- Bumper Cave Entrance Clip Spot
+-- OWG end
 
 dark_lumpberjacks_shop_inside:connect_one_way("Dark Lumberjack Shop Left")
 dark_lumpberjacks_shop_inside:connect_one_way("Dark Lumberjack Shop Center")
@@ -874,6 +928,22 @@ pod_area:connect_two_ways(dark_lake_hylia_fairy_outside)
 pod_area:connect_two_ways(pod_east_darkworld_hint_outside)
 -- pod_area:connect_two_ways(pod_entrance_outside, function() return CanInteract("", end)
 
+-- OWG
+pod_area:connect_one_way(dark_icerod_area, function()
+    return ALL(
+        CheckGlitches(2),
+        "boots"
+    )
+end) -- Dark Lake Hylia Ledge Clip Spot
+
+pod_area:connect_one_way(purple_chest_pickup, function()
+    return ALL(
+        CheckGlitches(2),
+        "boots"
+    )
+end) -- Hammer Pegs River Clip Spot 
+-- OWG end
+
 pod_hint_house_outside:connect_two_ways_entrance("Kiki Cave", pod_hint_house_inside)
 pod_entrance_outside:connect_two_ways_entrance("Palace of Darkness", pod_entrance_inside)
 dark_lake_hylia_fairy_outside:connect_two_ways_entrance("Dark PoD Fairy", dark_lake_hylia_fairy_inside)
@@ -913,7 +983,7 @@ dark_death_mountain_left_top:connect_one_way(light_death_mountain_left_top, func
         CanChangeWorldWithMirror
     )
 end)
-dark_death_mountain_left_top:connect_two_ways_stuck(gt_entrance_outside, function()
+dark_death_mountain_left_top:connect_two_ways(gt_entrance_outside, function()
     return ANY(
         ALL(
             GTCrystalCount,
@@ -926,6 +996,16 @@ end)
 
 dark_death_mountain_left_top:connect_two_ways(dark_death_mountain_right_top)
 dark_death_mountain_left_top:connect_one_way(dark_death_mountain_left_bottom)
+
+-- OWG
+dark_death_mountain_left_top:connect_one_way(dark_bumper_cave_top_ledge, function()
+    return ALL(
+        CheckGlitches(2),
+        "boots",
+        OpenOrStandard
+    )
+end) -- Dark Death Mountain Descent to bumper ledge
+-- OWG end
 
 gt_entrance_outside:connect_two_ways_entrance("Ganons Tower", gt_entrance_inside, function() return OpenOrStandard() end)
 gt_entrance_outside:connect_two_ways_entrance("Aga Tower", at_entrance_inside, function() return Inverted() end)
@@ -969,6 +1049,24 @@ dark_death_mountain_right_top:connect_two_ways_stuck(hookshot_cave_outside, func
         )
     )
 end)
+
+-- OWG
+dark_death_mountain_right_top:connect_one_way(catfish_area, function()
+    return ALL(
+        Inverted,
+        CheckGlitches(2),
+        "boots"
+    )
+end) -- Catfish Descent
+
+dark_death_mountain_right_top:connect_one_way(dark_death_mountain_tr_medallion_spot, function()
+    return ALL(
+        CheckGlitches(2),
+        "boots",
+        OpenOrStandard
+    )
+end) -- Turtle Rock (Top) Clip Spot
+--OWG end
 
 tr_main_entrance_outside:connect_two_ways_entrance("Turtle Rock Main Entrance", tr_main_entrance_inside)
 hookshot_cave_outside:connect_two_ways_entrance("Hookshot Cave", hookshot_cave_inside)
@@ -1066,6 +1164,47 @@ dark_death_mountain_left_bottom:connect_one_way(dark_death_mountain_left_top, fu
 
 dark_death_mountain_left_bottom:connect_two_ways(dark_death_mountain_fairy_outside)
 
+-- OWG
+dark_death_mountain_left_bottom:connect_one_way(dark_lumpberjacks, function()
+    return ALL(
+        CheckGlitches(2),
+        "boots"
+    )
+end) -- Dark Death Mountain Descent 
+
+-- dark_death_mountain_left_bottom:connect_one_way(skull_woods_area_back, function()
+--     return ALL(
+--         CheckGlitches(2),
+--         "boots",
+--         OpenOrStandard
+--     )
+-- end) -- Dark Death Mountain Descent 
+
+-- dark_death_mountain_left_bottom:connect_one_way(swamp_area, function()
+--     return ALL(
+--         CheckGlitches(2),
+--         "boots",
+--         OpenOrStandard
+--     )
+-- end) -- Mire superjump DMD
+
+dark_death_mountain_left_bottom:connect_one_way(gt_entrance_outside, function()
+    return ALL(
+        CheckGlitches(2),
+        "boots",
+        OpenOrStandard
+    )
+end) -- Ganons Tower Ascent
+
+dark_death_mountain_left_bottom:connect_one_way(dark_death_mountain_right_top, function()
+    return ALL(
+        CheckGlitches(2),
+        "boots",
+        OpenOrStandard
+    )
+end) -- Dark Death Mountain Glitched Bridge
+-- OWG end
+
 dark_death_mountain_fairy_outside:connect_two_ways_entrance("Dark Death Mountain Fairy", dark_death_mountain_fairy_inside, function() return OpenOrStandard() end)
 
 dark_death_mountain_fairy_outside:connect_two_ways_entrance("Old Man Cave Right Inside", old_man_cave_right_inside, function() return Inverted() end)
@@ -1087,6 +1226,16 @@ dark_death_mountain_right_bottom:connect_one_way(teleporter_at_dark_death_mounta
     )
 end)
 teleporter_at_dark_death_mountain_right_bottom:connect_one_way(dark_death_mountain_right_bottom)
+
+-- OWG
+dark_death_mountain_right_bottom:connect_one_way(dark_floating_island, function()
+    return ALL(
+        CheckGlitches(2),
+        "boots"
+    )
+end) -- DW Floating Island Clip Spot
+-- OWG end
+
 
 turtle_rock_ledge:connect_two_ways(tr_big_chest_entrance_outside)
 turtle_rock_ledge:connect_two_ways(tr_laser_entrance_outside, function()
