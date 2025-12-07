@@ -214,6 +214,14 @@ mire_area:connect_one_way(mire_ledge, function()
         "boots"
     )
 end)
+
+mire_area:connect_one_way(dp_right_entrance_outside, function()
+    return ALL(
+        OpenOrStandard,
+        CheckGlitches(2),
+        "mirror"
+    )
+end)
 -- OWG end
 
 teleporter_at_mire:connect_one_way(mire_ledge)
@@ -1200,6 +1208,22 @@ dark_death_mountain_left_bottom:connect_one_way(dark_death_mountain_right_top, f
     return ALL(
         CheckGlitches(2),
         "boots",
+        OpenOrStandard
+    )
+end) -- Dark Death Mountain Glitched Bridge
+
+dark_death_mountain_left_bottom:connect_one_way(dark_death_mountain_right_bottom, function()
+    return ALL(
+        CheckGlitches(2),
+        "mirror",
+        OpenOrStandard
+    )
+end) -- Dark Death Mountain Glitched Bridge
+
+dark_death_mountain_left_bottom:connect_one_way(dark_chapel_area, function()
+    return ALL(
+        CheckGlitches(2),
+        "mirror",
         OpenOrStandard
     )
 end) -- Dark Death Mountain Glitched Bridge
