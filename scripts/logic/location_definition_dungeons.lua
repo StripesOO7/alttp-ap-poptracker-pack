@@ -28,6 +28,7 @@ hc_right_entrance_outside = alttp_location.new("hc_right_entrance_outside", "HC 
 hc_right_entrance_inside = alttp_location.new("hc_right_entrance_inside", "HC Right", nil, true, 98, 1144, 3544, 3572, nil, {"Central Hyrule - Insides", "Hyrule Castle Entrance (East)", "Hyrule Castle Entrance (East)"}, "dungeon")
 
 toh_entrance_outside = alttp_location.new("toh_entrance_outside", "ToH Main", "light", false, 3, 2288, 104, 119, nil, {"Light Death Mountain - Entrances", "Tower of Hera", "Tower of Hera"})
+toh_entrance_outside_weird_state = alttp_location.new("toh_entrance_outside_weird_state", "ToH Main", "light", false)
 toh_entrance_inside = alttp_location.new("toh_entrance_inside", "ToH Main", nil, true, 119, 3832, 4032, 4084, nil, {"Light Death Mountain - Insides", "Tower of Hera", "Tower of Hera"}, "dungeon")
 
 

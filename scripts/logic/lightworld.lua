@@ -118,7 +118,7 @@ kakariko_village:connect_one_way(purple_chest_pickup, function()
         CanChangeWorldWithMirror
     )
 end)
-kakariko_village:connect_one_way(magic_bat_hole_outside, function()
+kakariko_village:connect_two_ways(magic_bat_hole_ledge, function()
     return ALL(
         ANY(
             "hammer",
@@ -136,6 +136,15 @@ kakariko_village:connect_two_ways(kakariko_furtune_teller_outside)
 
 kakariko_village:connect_two_ways(light_activate_flute, function() return ALL("flute", CanInteract(kakariko_village)) end)
 
+magic_bat_hole_ledge:connect_one_way(magic_bat_hole_outside)
+-- OWG
+kakariko_village:connect_one_way(magic_bat_hole_ledge, function()
+    return ALL(
+        CheckGlitches(2),
+        "boots"
+    )
+end) -- Bat Cave River Clip Spot
+-- OWG end
 
 kakariko_village:connect_one_way("Bottle Merchant")
 
@@ -275,6 +284,24 @@ south_of_village:connect_one_way(helpless_frog, function()
         CanChangeWorldWithMirror
     )
 end)
+
+-- OWG
+south_of_village:connect_one_way(cave45_ledge, function()
+    return ALL(
+        CheckGlitches(2),
+        "boots",
+        OpenOrStandard
+    )
+end)
+south_of_village:connect_one_way(checkerboard_lege, function()
+    return ALL(
+        CheckGlitches(2),
+        "boots",
+        OpenOrStandard
+    )
+end)
+-- OWG end
+
 -- south_of_village:connect_two_ways_entrance()
 
 library_outside:connect_two_ways_entrance("Library", library_inside)
@@ -317,18 +344,30 @@ race_ledge:connect_one_way(south_of_village)
 race_ledge:connect_two_ways(race_ledge_finish, function() return CanInteract(race_ledge) end)
 race_ledge_finish:connect_one_way("Race Minigame")
 south_of_village:connect_one_way("Race Minigame", function() return ACCESS_INSPECT end)
+
+-- OWG
 south_of_village:connect_two_ways(race_ledge, function()
     return ALL(
         CheckGlitches(2),
         "boots"
     )
 end)
+
 south_of_village:connect_two_ways(race_ledge_finish, function()
     return ALL(
         CheckGlitches(2),
         "boots"
     )
 end)
+
+south_of_village:connect_two_ways(desert_area_boots_clip, function()
+    return ALL(
+        CheckGlitches(2),
+        "boots"
+    )
+end)
+-- OWG end
+
 -- sanctuary_area
 sanctuary_area:connect_one_way(lost_woods)
 sanctuary_area:connect_one_way(eastern_palace_area)
@@ -560,6 +599,22 @@ end)
 -- desert_area:connect_one_way(desert_palace_front, function() return "book" end)
 desert_area:connect_two_ways(aginah_cave_outside)
 desert_area:connect_one_way(dp_entrance_stairs, function() return Has("book") end)
+
+-- OWG
+-- desert_area_boots_clip:connect_one_way(desert_area) --?
+desert_area_boots_clip:connect_one_way(desert_ledge) -- jumping down to desert ledge
+desert_area_boots_clip:connect_one_way(dp_back_entrance_outside) -- jumping down right behind de bolders. you are basically stuck here
+-- desert_area_boots_clip:connect_one_way(checkerboard_lege, function() return OpenOrStandard() end) -- checkerboard clip
+
+desert_area:connect_one_way(bombos_tablet_ledge, function()
+    return ALL(
+        CheckGlitches(2),
+        "boots",
+        OpenOrStandard
+    )
+end)
+-- OWG end
+
 dp_entrance_stairs:connect_one_way(dp_main_entrance_outside)
 
 checkerboard_lege:connect_one_way(desert_area)
@@ -684,6 +739,30 @@ lumberjacks_area:connect_two_ways(old_man_cave_left_ledge, function()
         CanInteract(lumberjacks_area)
     )
 end)
+
+-- OWG
+lumberjacks_area:connect_one_way(light_death_mountain_return_ledge, function()
+    return ALL(
+        CheckGlitches(2),
+        "boots"
+    )
+end) -- Death Mountain Return Ledge Clip Spot
+
+lumberjacks_area:connect_one_way(old_man_cave_left_ledge, function()
+    return ALL(
+        CheckGlitches(2),
+        "boots"
+    )
+end) -- Death Mountain Entrance Clip Spot
+
+lumberjacks_area:connect_one_way(light_death_mountain_left_bottom, function()
+    return ALL(
+        CheckGlitches(2),
+        "boots"
+    )
+end) -- Light World DMA Clip Spot
+-- OWG end
+
 light_death_mountain_return_ledge:connect_one_way(lumberjacks_area)
 light_death_mountain_return_ledge:connect_two_ways(light_death_mountain_return_left_outside, function() return OpenOrStandard() end)
 
@@ -778,6 +857,14 @@ light_lake_hylia:connect_one_way(dark_icerod_area, function()
     )
 end)
 
+-- OWG
+light_lake_hylia:connect_one_way(lake_hylia_island, function()
+    return ALL(
+        CheckGlitches(2),
+        "boots"
+    )
+end) -- Lake Hylia Island Clip Spot
+--OWG end
 
 light_lake_fortune_outside:connect_two_ways_entrance("Light Lake Forune", light_lake_fortune_inside)
 light_lake_shop_outside:connect_two_ways_entrance("Light Lake Shop", light_lake_shop_inside)
@@ -1188,6 +1275,57 @@ light_death_mountain_left_bottom:connect_one_way(spectacle_rock_top, function()
     )
 end)
 
+-- OWG
+light_death_mountain_left_bottom:connect_one_way(graveyard_ledge, function()
+    return ALL(
+        CheckGlitches(2),
+        "boots",
+        OpenOrStandard
+    )
+end) -- Graveyard Ledge Clip Spot
+
+light_death_mountain_left_bottom:connect_one_way(kings_tomb_area, function()
+    return ALL(
+        CheckGlitches(2),
+        "boots"
+    )
+end) -- Kings Grave Clip Spot
+
+light_death_mountain_left_bottom:connect_one_way(light_death_mountain_left_top_weird_state, function()
+    return ALL(
+        CheckGlitches(2),
+        "boots",
+        OpenOrStandard
+    )
+end) -- Hera Ascent
+
+
+light_death_mountain_left_bottom:connect_one_way(light_death_mountain_right_top, function()
+    return ALL(
+        CheckGlitches(2),
+        "boots"
+    )
+end) -- Death Mountain Glitched Bridge
+
+light_death_mountain_left_top_weird_state:connect_one_way(light_death_mountain_left_top, function() 
+    local toh_entrance_traget = Tracker:FindObjectForCode("toh_entrance_outside").Itemstate.Target
+    if toh_entrance_traget ~= nil then
+        return Tracker:FindObjectForCode(toh_entrance_traget).Itemstate.IsDungeon
+    end
+    return false
+end) -- TOH only resets weird overworld state when its a dungeon. other caves will stil have weird state after exiting again
+
+light_death_mountain_left_top_weird_state:connect_two_way(toh_entrance_outside_weird_state) -- connector for weird map state after clip up to DM left top
+
+toh_entrance_outside_weird_state:connect_one_way(toh_entrance_outside, function() 
+    local toh_entrance_traget = Tracker:FindObjectForCode("toh_entrance_outside").Itemstate.Target
+    if toh_entrance_traget ~= nil then
+        return Tracker:FindObjectForCode(toh_entrance_traget).Itemstate.IsDungeon
+    end
+    return false
+end) -- TOH only resets weird overworld state when its a dungeon. other caves will stil have weird state after exiting again
+-- OWG end
+
 old_man_home_bottom_outside:connect_two_ways_entrance("Old Man Home Entrance", old_man_home_bottom_inside)
 spec_rock_top_entrance_outside:connect_two_ways_entrance("Spectecal Rock Top Entrance", spec_rock_top_entrance_inside)
 old_man_home_top_outside:connect_two_ways_entrance("Old Man Cave Backside", old_man_home_top_inside)
@@ -1260,6 +1398,16 @@ light_death_mountain_left_top:connect_one_way(spectacle_rock_top, Inverted)
 spectacle_rock_top:connect_one_way("Spec Rock Top Item")
 light_death_mountain_left_bottom:connect_one_way("Spec Rock Top Item", function() return ACCESS_INSPECT end)
 
+-- OWG
+light_death_mountain_left_top:connect_one_way(spectacle_rock_top, function() 
+    return ALL(
+        CheckGlitches(2),
+        "boots",
+        OpenOrStandard
+    )
+end)
+-- OWG end
+
 toh_entrance_outside:connect_two_ways_entrance("Tower of Hera Entrance", toh_entrance_inside)
 
 -- light_death_mountain_left_top:connect_one_way(light_death_mountain_right_top)
@@ -1305,6 +1453,15 @@ light_death_mountain_right_bottom:connect_one_way(fairy_ascension_cave_bottom_ou
     )
 end) --coming from dm
 light_death_mountain_right_bottom:connect_two_ways(hookshot_fairy_outside)
+
+-- OWG
+dark_death_mountain_right_bottom:connect_one_way(witchhut, function()
+    return ALL(
+        CheckGlitches(2),
+        "boots"
+    )
+end) -- light DMD
+-- OWG end
 
 spiral_cave_bottom_outside:connect_two_ways_entrance("Spiral Cave Bottom Entrance", spiral_cave_bottom_inside)
 paradox_cave_bottom_entrance_outside:connect_two_ways_entrance("Paradox Cave Bottom Entrance", paradox_cave_bottom_entrance_inside)
@@ -1358,6 +1515,22 @@ light_death_mountain_right_top:connect_one_way(spiral_cave_top_outside)
 light_death_mountain_right_top:connect_one_way(mimic_cave_ledge, function() return Inverted() end)
 light_death_mountain_right_top:connect_one_way(light_eyebridge_fairy_ledge)--, Inverted)
 
+-- OWG
+light_death_mountain_right_top:connect_one_way(zora_river, function()
+    return ALL(
+        CheckGlitches(2),
+        "boots"
+    )
+end) --Zora Descent Clip Spot
+light_death_mountain_right_top:connect_one_way(floating_island, function()
+    return ALL(
+        CheckGlitches(2),
+        "boots",
+        OpenOrStandard
+    )
+end) -- Floating Island Clip Spot
+-- OWG end
+
 paradox_cave_top_entrance_outside:connect_two_ways_entrance("Paradox Cave Top Entrance", paradox_cave_top_entrance_inside)
 spiral_cave_top_outside:connect_two_ways_entrance("Spiral Cave Top Entrance", spiral_cave_top_inside)
 
@@ -1380,7 +1553,7 @@ fairy_ascension_cave_top_outside:connect_two_ways_entrance("Fairy Ascention Top 
 fairy_ascension_cave_top_outside:connect_two_ways(fairy_ascension_cave_bottom_inside)
 
 spiral_cave_top_inside:connect_one_way(spiral_cave_bottom_inside)
-spiral_cave_top_inside:connect_one_way("Spiral Cave Item", function() return CanInteract(spiral_cave_top_inside) end)
+spiral_cave_top_inside:connect_one_way("Spiral Cave Item", function() return CanInteract(spiral_cave_top_inside, "sword") end)
 
 mimic_cave_ledge:connect_two_ways(mimic_cave_outside)
 mimic_cave_outside:connect_two_ways_entrance("Mimic Cave Entrance", mimic_cave_inside)
