@@ -221,7 +221,7 @@ mire_area:connect_one_way(dp_right_entrance_outside, function()
         CheckGlitches(2),
         "mirror"
     )
-end)
+end) --Desert East Mirror Clip
 -- OWG end
 
 teleporter_at_mire:connect_one_way(mire_ledge)
@@ -356,7 +356,13 @@ dark_lake_hylia:connect_one_way(ice_palace_island, function()
         "flippers",
         CheckGlitches(2),
         "boots",
-        OpenOrStandard
+        ANY(
+            OpenOrStandard,
+            ALL(
+                Inverted,
+                "moonpearl"
+            )
+        )
     )
 end) -- Ice Palace Clip
 -- OWG end
@@ -1218,7 +1224,7 @@ dark_death_mountain_left_bottom:connect_one_way(dark_death_mountain_right_bottom
         "mirror",
         OpenOrStandard
     )
-end) -- Dark Death Mountain Glitched Bridge
+end) -- Dark Death Mountain (East Bottom) Jump
 
 dark_death_mountain_left_bottom:connect_one_way(dark_chapel_area, function()
     return ALL(
@@ -1226,7 +1232,32 @@ dark_death_mountain_left_bottom:connect_one_way(dark_chapel_area, function()
         "mirror",
         OpenOrStandard
     )
-end) -- Dark Death Mountain Glitched Bridge
+end) -- West Dark World Bunny Descent
+
+dark_death_mountain_left_bottom:connect_one_way(pod_area, function()
+    return ALL(
+        CheckGlitches(2),
+        "mirror",
+        OpenOrStandard
+    )
+end) -- Dark Death Mountain Offset Mirror -- mirror spot displacement
+
+dark_death_mountain_left_bottom:connect_one_way(hyrule_castle_area, function()
+    return ALL(
+        CheckGlitches(2),
+        "mirror",
+        OpenOrStandard
+    )
+end) -- Death Mountain Offset Mirror -- mirror spot displacement
+
+dark_death_mountain_left_bottom:connect_one_way(hyrule_castle_top, function()
+    return ALL(
+        CheckGlitches(2),
+        "mirror",
+        "pearl",
+        "boots"
+    )
+end) -- Death Mountain Offset Mirror (Houlihan Exit) -- mirror spot displacement
 -- OWG end
 
 dark_death_mountain_fairy_outside:connect_two_ways_entrance("Dark Death Mountain Fairy", dark_death_mountain_fairy_inside, function() return OpenOrStandard() end)
