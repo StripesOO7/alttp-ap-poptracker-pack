@@ -62,6 +62,16 @@ local function _LeftClickMarkHelper(taget, source)
     end
 end
 
+function MarkFirstConnectionPart(location, highlight)
+    local source_location
+    if Tracker:FindObjectForCode("er_tracking").CurrentStage < 3 then
+        source_location = "@"..table.concat(location.ItemState.CorrespondingLocationSection, "/")
+    else
+        source_location = "@"..location.ItemState.CorrespondingLocationSection[1].."/"..location.ItemState.CorrespondingLocationSection[2].."/From".." "..location.ItemState.CorrespondingLocationSection[3]
+    end
+    Tracker:FindObjectForCode(source_location).Highlight = highlight
+end
+
 local function OnLeftClickFunc(self)
     if ER_STAGE < 3 then --off, dungeons, full
         if ENTRANCE_SELECTED then -- ENTRANCE_SELECTED ~= nil
@@ -70,8 +80,10 @@ local function OnLeftClickFunc(self)
             end
             -- second step of normal new connection
             _LeftClickMarkHelper(ENTRANCE_SELECTED, self.ItemState.BaseName)
+            MarkFirstConnectionPart(Tracker:FindObjectForCode(self.ItemState.Target), Highlight.None)
             ENTRANCE_SELECTED = nil
         else -- ENTRANCE_SELECTED == nil
+            MarkFirstConnectionPart(self, Highlight.NoPriority)
             ENTRANCE_SELECTED = self.ItemState.BaseName
             if self.ItemState.Target then -- retarget a connection to new target location
                 _LeftClickUnmarkHelper(self.ItemState.TargetBaseName, ENTRANCE_SELECTED)
@@ -95,12 +107,14 @@ local function OnLeftClickFunc(self)
 
             -- second step of normal new connection
             target_entrance = Tracker:FindObjectForCode(ENTRANCE_SELECTED)
+            MarkFirstConnectionPart(target_entrance, Highlight.None)
             if target_entrance ~= nil then
                 _SetLocationOptions(self, target_entrance)
                 _SetLocationOptions(target_entrance, self)
             end
             ENTRANCE_SELECTED = nil
         else -- ENTRANCE_SELECTED == nil
+            MarkFirstConnectionPart(self, Highlight.Priority)
             ENTRANCE_SELECTED = self.Name
             if self.ItemState.Target then -- retarget a connection to new target location
                 target_entrance = Tracker:FindObjectForCode(self.ItemState.Target)
