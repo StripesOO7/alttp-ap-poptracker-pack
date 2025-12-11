@@ -1,6 +1,40 @@
 {
 	"versions": [
 		{
+			"package_version": "0.4.1",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.4.1/alttp-ap-tracker-v0.4.1.zip",
+			"sha256": "bf2755f52b2b212faa64c632abbf8e041616a3260c9d938d247c1ac901398aee",
+			"changelog": [
+				"bugfixes for ER and some other logic issues",
+				"",
+				"# fixed ER stuff:",
+				"- moved witchhut item sqqaure to not overlap with the entrance diamond",
+				"- addes entrance dimaonds to the interior/detailed dungeon maps",
+				"- fixed some location not being properly highlighted when middle clicked",
+				"",
+				"# fixed logic:",
+				"- fixed missing connector color definition for floating island and sanctuary",
+				"- fixed access rules for twin brothers connection",
+				"- fix TT and graveyard ledge rules",
+				"- fixed EP big chest key logic",
+				"- fixed a bunch of interaction checks. the old system was not useable with glichtes",
+				"- fixed blinds hideout rules",
+				"- fixed duingeon connections not being properly reapplied from 'cache' on reconnnect",
+				"- fixed some auto map switching mistakes",
+				"- fixed light DM shop discovery via AP was off by 1 in the location IDs so it showed the wrong checks",
+				"",
+				"# added:",
+				"- Minor and OWG glitches connections for the overworld should now be considered in the logic (but I really really did not tested that xD)",
+				"- those mainly are just overworld connections that require boots clips OR mirror offsets",
+				"- added 'persistant' storage for ",
+				"- added dungeon bunny revival into logic",
+				"",
+				"# new features that other packs may also implement in the future:",
+				"- added persistent manual storage for dungeon rewards and boss selection as well as shop inventory and prizes",
+				""
+			]
+		},
+		{
 			"package_version": "0.4.0",
 			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.4.0/alttp-ap-tracker-v0.4.0.zip",
 			"sha256": "594ff4007f97c511669bc5622db7db06efcf7e8524cbe5f53ab66375ea695ce0",
@@ -530,6 +564,7 @@
 		}
 	]
 }
+
 
 
 
