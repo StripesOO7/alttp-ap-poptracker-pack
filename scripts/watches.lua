@@ -44,3 +44,4 @@ ScriptHost:AddWatchForCode("glitches changed", "glitches", UpdateCanInteract)
 for _, code in pairs(MISC_MANUAL_ITEMS) do
     ScriptHost:AddWatchForCode("manual storage watch for " .. code, code, AddManualItemStorage)
 end
+ScriptHost:AddWatchForCode("Enable/Disable Route Mode", "route_mode", ChangeRouteMode)

@@ -5,6 +5,8 @@ HIGHLIGHT_SOURCE = nil
 HIGHLIGHT_TARGET = nil
 HIGHLIGHT_LAST_ACTIVATED = 0
 
+ROUTE_MODE = false
+
 function _SetLocationOptions(source, target) -- source == inside, target == outside
     if MANUAL_CHECKED then
         local er_storage_item = Tracker:FindObjectForCode("manual_er_storage")
@@ -19,9 +21,9 @@ end
 
 function _UnsetLocationOptions(source)
     if MANUAL_CHECKED then
-        local er_storage_item = Tracker:FindObjectForCode("manual_er_storage")
-        if er_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][source.Name] then
-            er_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][source.Name] = nil
+        local er_storage_item = Tracker:FindObjectForCode("manual_er_storage").ItemState
+        if er_storage_item.MANUAL_LOCATIONS[ROOM_SEED][source.Name] then
+            er_storage_item.MANUAL_LOCATIONS[ROOM_SEED][source.Name] = nil
         end
     end
     source.ItemState.Target = nil
@@ -73,56 +75,66 @@ function MarkFirstConnectionPart(location, highlight)
 end
 
 local function OnLeftClickFunc(self)
-    if ER_STAGE < 3 then --off, dungeons, full
-        if ENTRANCE_SELECTED then -- ENTRANCE_SELECTED ~= nil
-            if self.ItemState.Target then -- attempt of new connection to already existing connection (how to handle that?)
-                _LeftClickUnmarkHelper(self.ItemState.TargetBaseName, ENTRANCE_SELECTED)
+    if not ROUTE_MODE then
+        if ER_STAGE < 3 then --off, dungeons, full
+            if ENTRANCE_SELECTED then -- ENTRANCE_SELECTED ~= nil
+                if self.ItemState.Target then -- attempt of new connection to already existing connection (how to handle that?)
+                    _LeftClickUnmarkHelper(self.ItemState.TargetBaseName, ENTRANCE_SELECTED)
+                end
+                -- second step of normal new connection
+                _LeftClickMarkHelper(ENTRANCE_SELECTED, self.ItemState.BaseName)
+                MarkFirstConnectionPart(Tracker:FindObjectForCode(self.ItemState.Target), Highlight.None)
+                ENTRANCE_SELECTED = nil
+            else -- ENTRANCE_SELECTED == nil
+                MarkFirstConnectionPart(self, Highlight.NoPriority)
+                ENTRANCE_SELECTED = self.ItemState.BaseName
+                if self.ItemState.Target then -- retarget a connection to new target location
+                    _LeftClickUnmarkHelper(self.ItemState.TargetBaseName, ENTRANCE_SELECTED)
+                end
             end
-            -- second step of normal new connection
-            _LeftClickMarkHelper(ENTRANCE_SELECTED, self.ItemState.BaseName)
-            MarkFirstConnectionPart(Tracker:FindObjectForCode(self.ItemState.Target), Highlight.None)
-            ENTRANCE_SELECTED = nil
-        else -- ENTRANCE_SELECTED == nil
-            MarkFirstConnectionPart(self, Highlight.NoPriority)
-            ENTRANCE_SELECTED = self.ItemState.BaseName
-            if self.ItemState.Target then -- retarget a connection to new target location
-                _LeftClickUnmarkHelper(self.ItemState.TargetBaseName, ENTRANCE_SELECTED)
+        else -- insanity
+            local target_entrance
+            if ENTRANCE_SELECTED then -- ENTRANCE_SELECTED ~= nil
+                if string.find(ENTRANCE_SELECTED, "from_") then
+                    self = Tracker:FindObjectForCode("to_" .. self.ItemState.BaseName)
+                else
+                    self = Tracker:FindObjectForCode("from_" .. self.ItemState.BaseName)
+                end
+                if self.ItemState.Target then -- attempt of new connection to already existing connection (how to handle that?)
+                    target_entrance = Tracker:FindObjectForCode(self.ItemState.Target)
+                    if target_entrance ~= nil then
+                        _UnsetLocationOptions(target_entrance)
+                        _UnsetLocationOptions(self)
+                    end
+                end
+
+                -- second step of normal new connection
+                target_entrance = Tracker:FindObjectForCode(ENTRANCE_SELECTED)
+                MarkFirstConnectionPart(target_entrance, Highlight.None)
+                if target_entrance ~= nil then
+                    _SetLocationOptions(self, target_entrance)
+                    _SetLocationOptions(target_entrance, self)
+                end
+                ENTRANCE_SELECTED = nil
+            else -- ENTRANCE_SELECTED == nil
+                MarkFirstConnectionPart(self, Highlight.Priority)
+                ENTRANCE_SELECTED = self.Name
+                if self.ItemState.Target then -- retarget a connection to new target location
+                    target_entrance = Tracker:FindObjectForCode(self.ItemState.Target)
+                    if target_entrance ~= nil then
+                        _UnsetLocationOptions(target_entrance)
+                        _UnsetLocationOptions(self)
+                    end
+                end
             end
         end
-    else -- insanity
-        local target_entrance
-        if ENTRANCE_SELECTED then -- ENTRANCE_SELECTED ~= nil
-            if string.find(ENTRANCE_SELECTED, "from_") then
-                self = Tracker:FindObjectForCode("to_" .. self.ItemState.BaseName)
-            else
-                self = Tracker:FindObjectForCode("from_" .. self.ItemState.BaseName)
-            end
-            if self.ItemState.Target then -- attempt of new connection to already existing connection (how to handle that?)
-                target_entrance = Tracker:FindObjectForCode(self.ItemState.Target)
-                if target_entrance ~= nil then
-                    _UnsetLocationOptions(target_entrance)
-                    _UnsetLocationOptions(self)
-                end
-            end
-
-            -- second step of normal new connection
-            target_entrance = Tracker:FindObjectForCode(ENTRANCE_SELECTED)
-            MarkFirstConnectionPart(target_entrance, Highlight.None)
-            if target_entrance ~= nil then
-                _SetLocationOptions(self, target_entrance)
-                _SetLocationOptions(target_entrance, self)
-            end
+    else
+        if ENTRANCE_SELECTED then
+            GetRoute(NAMED_LOCATIONS[Tracker:FindObjectForCode(ENTRANCE_SELECTED).ItemState.BaseName], NAMED_LOCATIONS[self.ItemState.BaseName])
+            Tracker:FindObjectForCode("route_mode").Active = false
             ENTRANCE_SELECTED = nil
-        else -- ENTRANCE_SELECTED == nil
-            MarkFirstConnectionPart(self, Highlight.Priority)
+        else
             ENTRANCE_SELECTED = self.Name
-            if self.ItemState.Target then -- retarget a connection to new target location
-                target_entrance = Tracker:FindObjectForCode(self.ItemState.Target)
-                if target_entrance ~= nil then
-                    _UnsetLocationOptions(target_entrance)
-                    _UnsetLocationOptions(self)
-                end
-            end
         end
     end
 end
@@ -132,30 +144,32 @@ local function OnRightClickFunc(self)
         print("set back to nil")
         ENTRANCE_SELECTED = nil
     end
-    if ER_STAGE < 3 then -- off, dungeons, full
-        if self.ItemState.Target ~= nil then
-            local target_from = Tracker:FindObjectForCode("from_" .. self.ItemState.TargetBaseName)
-            local target_to = Tracker:FindObjectForCode("to_" .. self.ItemState.TargetBaseName)
-            local source_from = Tracker:FindObjectForCode("from_" .. self.ItemState.BaseName)
-            local source_to = Tracker:FindObjectForCode("to_" .. self.ItemState.BaseName)
-            if target_from ~= nil then
-                _UnsetLocationOptions(target_from)
-                _UnsetLocationOptions(source_to)
+    if not ROUTE_MODE then
+        if ER_STAGE < 3 then -- off, dungeons, full
+            if self.ItemState.Target ~= nil then
+                local target_from = Tracker:FindObjectForCode("from_" .. self.ItemState.TargetBaseName)
+                local target_to = Tracker:FindObjectForCode("to_" .. self.ItemState.TargetBaseName)
+                local source_from = Tracker:FindObjectForCode("from_" .. self.ItemState.BaseName)
+                local source_to = Tracker:FindObjectForCode("to_" .. self.ItemState.BaseName)
+                if target_from ~= nil then
+                    _UnsetLocationOptions(target_from)
+                    _UnsetLocationOptions(source_to)
+                end
+                if target_to ~= nil then
+                    _UnsetLocationOptions(target_to)
+                    _UnsetLocationOptions(source_from)
+                end
+                ForceUpdate()
             end
-            if target_to ~= nil then
-                _UnsetLocationOptions(target_to)
-                _UnsetLocationOptions(source_from)
+        else -- insanity
+            if self.ItemState.Target ~= nil then
+                local target = Tracker:FindObjectForCode(self.ItemState.Target)
+                if target ~= nil then
+                    _UnsetLocationOptions(target)
+                    _UnsetLocationOptions(self)
+                end
+                ForceUpdate()
             end
-            ForceUpdate()
-        end
-    else -- insanity
-        if self.ItemState.Target ~= nil then
-            local target = Tracker:FindObjectForCode(self.ItemState.Target)
-            if target ~= nil then
-                _UnsetLocationOptions(target)
-                _UnsetLocationOptions(self)
-            end
-            ForceUpdate()
         end
     end
 end
@@ -443,24 +457,24 @@ end
 function ChangeLocationColor(locationname)
     if not Tracker.BulkUpdate then
     -- print(locationname)
-    local location_obj = Tracker:FindObjectForCode(locationname)
+    local location_obj = Tracker:FindObjectForCode(locationname).ItemState
     -- if location_obj == nil then
     --     return 0
     -- end
         if location_obj then
-            if location_obj.ItemState.Target then
-                local target_obj = Tracker:FindObjectForCode(location_obj.ItemState.Target)
+            if location_obj.Target then
+                local target_obj = Tracker:FindObjectForCode(location_obj.Target).ItemState
                 -- print(dump_table(target_obj.ItemState))
                 -- local from_target_obj = Tracker:FindObjectForCode("from_"..location_obj.ItemState.target)
                 if target_obj then
-                    if location_obj.ItemState.IsDeadEnd or target_obj.ItemState.IsDeadEnd then
+                    if location_obj.IsDeadEnd or target_obj.IsDeadEnd then
                         -- print("target ACCESS_CLEARED")
                         -- return ACCESS_NONE
                         -- return ACCESS_NONE
-                    elseif location_obj.ItemState.IsConnector or target_obj.ItemState.IsConnector then
+                    elseif location_obj.IsConnector or target_obj.IsConnector then
                         -- print("target ACCESS_INSPECT")
                         return ACCESS_INSPECT
-                    elseif location_obj.ItemState.IsDungeon or target_obj.ItemState.IsDungeon then
+                    elseif location_obj.IsDungeon or target_obj.IsDungeon then
                         -- print("target ACCESS_SEQUENCEBREAK")
                         return ACCESS_SEQUENCEBREAK
                     end
@@ -469,7 +483,7 @@ function ChangeLocationColor(locationname)
             end
         end
         -- print(location_obj.ItemState.BaseName)
-        return CanReach(location_obj.ItemState.BaseName)
+        return CanReach(location_obj.BaseName)
     end
     -- print("afer bulkupdate check")
     -- local base_locationname = string.gsub(string.gsub(locationname, "from_", "", 1), "to_", "", 1)

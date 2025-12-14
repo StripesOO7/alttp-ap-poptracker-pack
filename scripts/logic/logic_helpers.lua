@@ -409,11 +409,18 @@ MISC_MANUAL_ITEMS = {
     "default_shop_prizes_33"
 }
 
+function ChangeRouteMode()
+    ROUTE_MODE = Tracker:FindObjectForCode("route_mode").Active
+    if ROUTE_MODE == false and ENTRANCE_SELECTED ~= nil then
+        ENTRANCE_SELECTED = nil
+    end
+end 
+
 function AddManualItemStorage(code)
     if MANUAL_CHECKED then
         local item = Tracker:FindObjectForCode(code)
-        local manual_storage_item = Tracker:FindObjectForCode("manual_misc_items_storage")
-        manual_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][code] = item.CurrentStage
+        local manual_storage_item = Tracker:FindObjectForCode("manual_misc_items_storage").ItemState
+        manual_storage_item.MANUAL_LOCATIONS[ROOM_SEED][code] = item.CurrentStage
     end
 end
 
@@ -482,8 +489,8 @@ function CanInteract(location, item) -- this basically just calls for if you are
             end
         end
         if location.deadEndOrDungeonOrConnector == "connector" or location.deadEndOrDungeonOrConnector == "deadend" then
-            print(item, valid_super_bunny_items[item], Tracker:FindObjectForCode(item).Active)
-            print(Tracker:FindObjectForCode("mirror").Active and (valid_super_bunny_items[item] or false) and Tracker:FindObjectForCode(item).Active)
+            -- print(item, valid_super_bunny_items[item], Tracker:FindObjectForCode(item).Active)
+            -- print(Tracker:FindObjectForCode("mirror").Active and (valid_super_bunny_items[item] or false) and Tracker:FindObjectForCode(item).Active)
             if item then
                 print("------------------> mirror + item")
                 return Tracker:FindObjectForCode("mirror").Active and (valid_super_bunny_items[item] or false) and Tracker:FindObjectForCode(item).Active -- and Tracker:FindObjectForCode(item).Active -- not really neede because i should always check for the specifi3ed item outside aswell because this check is only for super bunny state accessibility

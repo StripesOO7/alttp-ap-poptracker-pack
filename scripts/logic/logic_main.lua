@@ -315,22 +315,10 @@ function alttp_location:discover(accessibility, keys, worldstate)
                 local er_check_result = er_check[er_setting_stage](location_name)
                 if er_check_result then -- dungeons ER
                     -- print("from_" .. self.name)
-                    temp = Tracker:FindObjectForCode("from_" .. location_name)
-                    -- temp = Tracker:FindObjectForCode(self.name)
-                    -- print(self.name, "to er_dungeons[self.name]: -->", ER_DUNGEONS[self.name])
+                    temp = Tracker:FindObjectForCode("from_" .. location_name).ItemState
                    
-                    if temp ~= nil and temp.ItemState.Target ~= nil then
-                        -- -- print(NAMED_LOCATIONS[string.gsub(temp.ItemState.Target, "to_", "")])
-                        -- local stripped_target_name = string.gsub(temp.ItemState.Target, "to_", "")
-                        -- -- print("stripped_target_name", stripped_target_name)
-                        -- -- local stripped_target_name = temp.ItemState.Target
-                        -- -- if self.worldstate then
-                        -- --     print(stripped_target_name)
-                        -- --     location = NAMED_LOCATIONS[stripped_target_name]
-                        -- -- else
-                        -- print("stripped_target_name", stripped_target_name)
-                        -- print("temp.ItemState.TargetBaseName", temp.ItemState.TargetBaseName)
-                        location = NAMED_LOCATIONS[temp.ItemState.TargetBaseName]
+                    if temp ~= nil and temp.Target ~= nil then
+                        location = NAMED_LOCATIONS[temp.TargetBaseName]
                     else
                         -- print("exit connection is fucked")
                         -- return
@@ -366,7 +354,6 @@ function alttp_location:discover(accessibility, keys, worldstate)
                 if type(access) == "boolean" then --
                     access = A(access)
                 end
-                -- print(self.name, type(access), type(parent_access), location.name)
                 if access > parent_access then
                     access = parent_access
                 end
@@ -376,19 +363,6 @@ function alttp_location:discover(accessibility, keys, worldstate)
                     print("Warning: " .. self.name .. " -> " .. location.name .. " rule returned nil")
                     access = ACCESS_NONE
                 end
-                -- print(access, self.name)
-                -- print(access, true, access == true, 0 == true)
-                            -- if access == 5 then
-                            --     access = ACCESS_SEQUENCEBREAK
-                            -- elseif access == 3 then
-                            --     access = ACCESS_INSPECT
-                            -- end
-                
-                -- elseif access == true then
-                --     access = ACCESS_NORMAL
-                -- elseif access == false then
-                --     access = ACCESS_NONE
-                -- end
                
                 if key == nil then
                     key = keys
@@ -420,27 +394,27 @@ end
 
 function LocationHandler(location)
     if MANUAL_CHECKED then
-        local custom_storage_item = Tracker:FindObjectForCode("manual_location_storage")
+        local custom_storage_item = Tracker:FindObjectForCode("manual_location_storage").ItemState
         if not custom_storage_item then
             return
         end
         if Archipelago.PlayerNumber == -1 then -- not connected
             if ROOM_SEED ~= "default" then -- seed is from previous connection
                 ROOM_SEED = "default"
-                custom_storage_item.ItemState.MANUAL_LOCATIONS["default"] = {}
+                custom_storage_item.MANUAL_LOCATIONS["default"] = {}
             else -- seed is default
             end
         end
         local full_path = location.FullID
-        if not custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED] then
-            custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED] = {}
+        if not custom_storage_item.MANUAL_LOCATIONS[ROOM_SEED] then
+            custom_storage_item.MANUAL_LOCATIONS[ROOM_SEED] = {}
         end
         if location.AvailableChestCount < location.ChestCount then --add to list
             -- print("add to list")
-            custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][full_path] = location.AvailableChestCount
+            custom_storage_item.MANUAL_LOCATIONS[ROOM_SEED][full_path] = location.AvailableChestCount
         else --remove from list of set back to max chestcount
             -- print("remove from list")
-            custom_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][full_path] = nil
+            custom_storage_item.MANUAL_LOCATIONS[ROOM_SEED][full_path] = nil
         end
     end
 -- local custom_storage_item = Tracker:FindObjectForCode("manual_location_storage")
@@ -458,16 +432,111 @@ function ForceUpdate(...)
     -- print(dump_table(CAN_INTERACT))
 end
 
+FOUND = false
+ALREADY_VISITED = {}
+PATH = {}
+
+function GetRoute(start, finish)
+    ALREADY_FINISHED = {}
+    PATH = {}
+    PATH[0] = start.shortname
+    Test_path(start, finish, 0)
+    print(dump_table(PATH))
+    for i=0,30 do
+        Tracker:FindObjectForCode("solidblack"..tostring(i)):SetOverlay("")
+    end
+    for index, location_name in pairs(PATH) do
+        Tracker:FindObjectForCode("solidblack"..tostring(index)):SetOverlay(location_name)
+        -- Tracker:FindObjectForCode("solidblack"..tostring(i)):SetOverlayColor("#FF0000")
+        Tracker:FindObjectForCode("solidblack"..tostring(index)):SetOverlayFontSize(16)
+        Tracker:FindObjectForCode("solidblack"..tostring(index)):SetOverlayColor("#FF0000")
+        Tracker:FindObjectForCode("solidblack"..tostring(index)):SetOverlayAlign("left")
+    end
+end
+
+function Test_path(start, finish, stage)
+    local next_sweep = {}
+    local res = false
+    local any_true = false
+    stage = stage + 1
+    print(stage)
+    -- print("start.name, finish", start.name, finish.name)
+    if FOUND and ALREADY_VISITED[finish.name] > stage then
+        FOUND = false
+    end
+    if not FOUND  or (stage < #PATH) then
+        if ALREADY_VISITED[start.name] then
+            -- print(ALREADY_VISITED[start.name], stage)
+            if ALREADY_VISITED[start.name] > stage then
+                stage = ALREADY_VISITED[start.name]
+            -- print("already visited " .. start.name)
+            else
+                return false
+            end
+        else
+            ALREADY_VISITED[start.name] = stage
+        end
+        if start.name == finish.name then
+            print("FOUND")
+            FOUND = true
+            -- print(dump_table(path))
+            return true
+        end
+        for _, exit in pairs(start.exits) do
+            local location
+            local location_name = start.name
+            if ER_STATE and (exit[1].side == "inside" and start.side == "outside") or (start.side == "inside" and exit[1].side == "outside") then
+                local temp
+                local er_setting_stage = Tracker:FindObjectForCode("er_tracking").CurrentStage
+                local er_check_result = er_check[er_setting_stage](location_name)
+                if er_check_result then -- dungeons ER
+                    temp = Tracker:FindObjectForCode("from_" .. location_name)
+                   
+                    if temp ~= nil and temp.ItemState.Target ~= nil then
+                        location = NAMED_LOCATIONS[temp.ItemState.TargetBaseName]
+                    else
+                        -- print("exit connection is fucked")
+                        -- return
+                    end
+                end
+                if location == nil and er_check_result then
+                    location = empty_location
+                end
+            end
+            if location == nil then
+                location = exit[1] or empty_location
+            end
+            local rules = exit[2]
+            local access, key = rules(location.keys)
+            if type(access) == "boolean" then
+                access = A(access)
+            end
+            if location:accessibility() > 4 and access > 4 then
+                table.insert(next_sweep, location)
+            end
+        end
+        for _, loc in pairs(next_sweep) do
+            res = Test_path(loc, finish, stage)
+            if res == true then
+                PATH[stage] = loc.shortname
+                any_true = true
+            end
+        end
+        return any_true
+    end
+    return false
+end --Test_path(location, finish, stage)
+
 function EmptyLocationTargets()
     MANUAL_CHECKED = false
     local er_tracking = Tracker:FindObjectForCode("er_tracking")
-    local er_custom_storage_item = Tracker:FindObjectForCode("manual_er_storage")
+    local er_custom_storage_item = Tracker:FindObjectForCode("manual_er_storage").ItemState
     ER_STAGE = er_tracking.CurrentStage
     ER_STATE = er_tracking.CurrentStage > 0
     if Archipelago.PlayerNumber == -1 then -- not connected
         if ROOM_SEED ~= "default" then -- seed is from previous connection
             ROOM_SEED = "default"
-            er_custom_storage_item.ItemState.MANUAL_LOCATIONS["default"] = {}
+            er_custom_storage_item.MANUAL_LOCATIONS["default"] = {}
         else -- seed is default
         end
     end
@@ -480,13 +549,13 @@ function EmptyLocationTargets()
             return
         end
         ER_STATE = er_tracking.CurrentStage > 0
-        print(er_tracking.CurrentStage)
+        -- print(er_tracking.CurrentStage)
         if er_tracking.CurrentStage == 0 then
-            print("run discorver")
+            -- print("run discorver")
             -- entry_point:discover(ACCESS_NORMAL, 0, nil)
-            print("finshed discover")
+            -- print("finshed discover")
         elseif er_tracking.CurrentStage == 1 then
-            print("dungeons er")
+            -- print("dungeons er")
             for name, inside in pairs(NAMED_ENTRANCES) do
                 local source = Tracker:FindObjectForCode(name)
                 local target_outside = Tracker:FindObjectForCode(string.gsub(name, "_inside", "_outside"))

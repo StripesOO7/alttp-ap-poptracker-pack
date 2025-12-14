@@ -27,11 +27,25 @@
                             ],
                             [
                                 "triforce_pieces_needed",
-                                "map"
-                            ],
+                                "swordless"
+                            // ],
+                            // [
+                            //     "swordless",
+                            //     "compass"
+                            ]
+                        ]
+                    },
+                    {
+                        "type": "itemgrid",
+                        "item_margin": "0, 0",
+                        "item_size": "90, 45",
+                        "h_alignment": "center",
+                        "v_alignment": "center",
+                        "item_h_alignment": "center",
+                        "item_v_alignment": "center",
+                        "rows": [
                             [
-                                "swordless",
-                                "compass"
+                                "route_mode"
                             ]
                         ]
                     }
