@@ -22,6 +22,19 @@ ScriptHost:AddMemoryWatch("LTTP In-Game status", 0x7e0010, 0x250, updateInGameSt
 if Tracker.ActiveVariantUID == "Map Tracker - AP" then
     ScriptHost:AddMemoryWatch("LTTP Item Data", 0x7ef340, 0x90, updateAga1)
 end
+--logic_helpers
+ScriptHost:AddWatchForCode("settings maps_setting", "maps_setting", GiveAll)
+ScriptHost:AddWatchForCode("settings compass_shuffle", "compass_setting", GiveAll)
+ScriptHost:AddWatchForCode("settings smallkeys_setting", "smallkeys_setting", GiveAll)
+ScriptHost:AddWatchForCode("settings bigkeys_setting", "bigkeys_setting", GiveAll)
+
+
+ScriptHost:AddWatchForCode("set shop cost-type", "shuffle_cost_type", SetCostType)
+ScriptHost:AddWatchForCode("set shop default inventory", "shop_sanity", SetShopInventory)
+ScriptHost:AddWatchForCode("set prize shuffles", "prize_shuffle", SetPrizeShuffle)
+
+
+ScriptHost:AddWatchForCode("set all autofill", "autofill_all_settings", setAllAutofill)
 
 --luaitems
 ScriptHost:AddWatchForCode("ER_reset_triggered", "reset_er", Reset_ER_setings)

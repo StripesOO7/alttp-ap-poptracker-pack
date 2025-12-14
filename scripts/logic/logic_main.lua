@@ -435,40 +435,55 @@ end
 FOUND = false
 ALREADY_VISITED = {}
 PATH = {}
-
+STEPS = -1
 function GetRoute(start, finish)
-    ALREADY_FINISHED = {}
+    ALREADY_VISITED = {}
     PATH = {}
     PATH[0] = start.shortname
-    Test_path(start, finish, 0)
-    print(dump_table(PATH))
+    FindPath(start, finish, 0)
     for i=0,30 do
         Tracker:FindObjectForCode("solidblack"..tostring(i)):SetOverlay("")
     end
-    for index, location_name in pairs(PATH) do
-        Tracker:FindObjectForCode("solidblack"..tostring(index)):SetOverlay(location_name)
+    if #PATH ~= 1 then
+        for i=STEPS, #PATH do
+            PATH[i] = nil
+        end
+        for index, location_name in pairs(PATH) do
+            Tracker:FindObjectForCode("solidblack"..tostring(index)):SetOverlay(location_name)
+            -- Tracker:FindObjectForCode("solidblack"..tostring(i)):SetOverlayColor("#FF0000")
+            Tracker:FindObjectForCode("solidblack"..tostring(index)):SetOverlayFontSize(16)
+            Tracker:FindObjectForCode("solidblack"..tostring(index)):SetOverlayColor("#FF0000")
+            Tracker:FindObjectForCode("solidblack"..tostring(index)):SetOverlayAlign("left")
+        end
+    else
+        Tracker:FindObjectForCode("solidblack0"):SetOverlay("No Route Found")
         -- Tracker:FindObjectForCode("solidblack"..tostring(i)):SetOverlayColor("#FF0000")
-        Tracker:FindObjectForCode("solidblack"..tostring(index)):SetOverlayFontSize(16)
-        Tracker:FindObjectForCode("solidblack"..tostring(index)):SetOverlayColor("#FF0000")
-        Tracker:FindObjectForCode("solidblack"..tostring(index)):SetOverlayAlign("left")
+        Tracker:FindObjectForCode("solidblack0"):SetOverlayFontSize(16)
+        Tracker:FindObjectForCode("solidblack0"):SetOverlayColor("#FF0000")
+        Tracker:FindObjectForCode("solidblack0"):SetOverlayAlign("left")
     end
+    -- print(dump_table(PATH))
+    Tracker:UiHint("ActivateTab", "Route")
 end
 
-function Test_path(start, finish, stage)
+function FindPath(start, finish, stage)
     local next_sweep = {}
     local res = false
     local any_true = false
     stage = stage + 1
-    print(stage)
+    -- print(stage, start.name)
+    -- print(start.name)
     -- print("start.name, finish", start.name, finish.name)
     if FOUND and ALREADY_VISITED[finish.name] > stage then
         FOUND = false
     end
     if not FOUND  or (stage < #PATH) then
-        if ALREADY_VISITED[start.name] then
-            -- print(ALREADY_VISITED[start.name], stage)
+        if ALREADY_VISITED[start.name] ~= nil then
+            -- print("ALREADY_VISITED " .. start.name, ALREADY_VISITED[start.name], stage)
             if ALREADY_VISITED[start.name] > stage then
-                stage = ALREADY_VISITED[start.name]
+                -- print("ALREADY_VISITED " .. start.name, ALREADY_VISITED[start.name], stage)
+                -- stage = ALREADY_VISITED[start.name]
+                ALREADY_VISITED[start.name] = stage
             -- print("already visited " .. start.name)
             else
                 return false
@@ -477,8 +492,9 @@ function Test_path(start, finish, stage)
             ALREADY_VISITED[start.name] = stage
         end
         if start.name == finish.name then
-            print("FOUND")
+            -- print("FOUND", stage)
             FOUND = true
+            STEPS = stage
             -- print(dump_table(path))
             return true
         end
@@ -516,7 +532,7 @@ function Test_path(start, finish, stage)
             end
         end
         for _, loc in pairs(next_sweep) do
-            res = Test_path(loc, finish, stage)
+            res = FindPath(loc, finish, stage)
             if res == true then
                 PATH[stage] = loc.shortname
                 any_true = true

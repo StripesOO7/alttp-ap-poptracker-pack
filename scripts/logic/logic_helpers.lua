@@ -773,6 +773,7 @@ function SetPrizeShuffle()
 end
 
 function setAllAutofill()
+    ScriptHost:RemoveWatchForCode("StateChanged")
     local set_all = Tracker:FindObjectForCode("autofill_all_settings").Active
     Tracker:FindObjectForCode("autofill_dungeon_settings").Active = set_all
     Tracker:FindObjectForCode("autofill_goal_reqs").Active = set_all
@@ -780,21 +781,22 @@ function setAllAutofill()
     Tracker:FindObjectForCode("autofill_modes").Active = set_all
     Tracker:FindObjectForCode("autofill_misc").Active = set_all
     Tracker:FindObjectForCode("autofill_sanities").Active = set_all
+    ScriptHost:AddWatchForCode("StateChanged", "*", StateChanged)
 end
 
 
-ScriptHost:AddWatchForCode("settings maps_setting", "maps_setting", GiveAll)
-ScriptHost:AddWatchForCode("settings compass_shuffle", "compass_setting", GiveAll)
-ScriptHost:AddWatchForCode("settings smallkeys_setting", "smallkeys_setting", GiveAll)
-ScriptHost:AddWatchForCode("settings bigkeys_setting", "bigkeys_setting", GiveAll)
+-- ScriptHost:AddWatchForCode("settings maps_setting", "maps_setting", GiveAll)
+-- ScriptHost:AddWatchForCode("settings compass_shuffle", "compass_setting", GiveAll)
+-- ScriptHost:AddWatchForCode("settings smallkeys_setting", "smallkeys_setting", GiveAll)
+-- ScriptHost:AddWatchForCode("settings bigkeys_setting", "bigkeys_setting", GiveAll)
 
 
-ScriptHost:AddWatchForCode("set shop cost-type", "shuffle_cost_type", SetCostType)
-ScriptHost:AddWatchForCode("set shop default inventory", "shop_sanity", SetShopInventory)
-ScriptHost:AddWatchForCode("set prize shuffles", "prize_shuffle", SetPrizeShuffle)
+-- ScriptHost:AddWatchForCode("set shop cost-type", "shuffle_cost_type", SetCostType)
+-- ScriptHost:AddWatchForCode("set shop default inventory", "shop_sanity", SetShopInventory)
+-- ScriptHost:AddWatchForCode("set prize shuffles", "prize_shuffle", SetPrizeShuffle)
 
 
-ScriptHost:AddWatchForCode("set all autofill", "autofill_all_settings", setAllAutofill)
+-- ScriptHost:AddWatchForCode("set all autofill", "autofill_all_settings", setAllAutofill)
 -- function owDungeonDetails()
 --     local dungeon_details = Tracker:FindObjectForCode("ow_dungeon_details")
 --     if dungeon_details.Active then
