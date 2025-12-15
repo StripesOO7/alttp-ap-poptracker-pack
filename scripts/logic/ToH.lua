@@ -1,10 +1,10 @@
 -- toh_entrance = alttp_location.new("", nil, nil, true)
-local toh_basement_cage = alttp_location.new("toh_basement_cage", nil, nil, true)
-local toh_main_room = alttp_location.new("toh_main_room", nil, nil, true)
-local toh_big_key_chest = alttp_location.new("toh_big_key_chest", nil, nil, true)
-local toh_big_chest_room = alttp_location.new("toh_big_chest_room", nil, nil, true)
-local toh_boss_room = alttp_location.new("toh_boss_room", nil, nil, true)
-local toh_above_big_chest = alttp_location.new("toh_above_big_chest", nil, nil, true)
+local toh_basement_cage = alttp_location.new("toh_basement_cage", "ToH Basement Cage", nil, true)
+local toh_main_room = alttp_location.new("toh_main_room", "ToH Main", nil, true)
+local toh_big_key_chest = alttp_location.new("toh_big_key_chest", "ToH Basement Back", nil, true)
+local toh_big_chest_room = alttp_location.new("toh_big_chest_room", "ToH Big Chest Floor", nil, true)
+local toh_boss_room = alttp_location.new("toh_boss_room", "ToH Boss Floor", nil, true)
+local toh_above_big_chest = alttp_location.new("toh_above_big_chest", "ToH Boss Dropdown", nil, true)
 
 
 toh_entrance_inside:connect_two_ways(toh_main_room, function()

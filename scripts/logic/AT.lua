@@ -1,11 +1,11 @@
 -- at_entrance = alttp_location.new("", nil, nil, true)
-local at_golden_guards = alttp_location.new("at_golden_guards", nil, nil, true)
-local at_first_chest = alttp_location.new("at_first_chest", nil, nil, true)
-local at_dark_maze = alttp_location.new("at_dark_maze", nil, nil, true)
-local at_dark_archer_key_drop = alttp_location.new("at_dark_archer_key_drop", nil, nil, true)
-local at_circle_of_pots = alttp_location.new("at_circle_of_pots", nil, nil, true)
-local at_aga1 = alttp_location.new("at_aga1", nil, nil, true)
-local at_pre_curtain = alttp_location.new("at_pre_curtain", nil, nil, true)
+local at_golden_guards = alttp_location.new("at_golden_guards", "AT Golden Guards", nil, true)
+local at_first_chest = alttp_location.new("at_first_chest", "AT First Chest", nil, true)
+local at_dark_maze = alttp_location.new("at_dark_maze", "AT Dark Maze", nil, true)
+local at_dark_archer_key_drop = alttp_location.new("at_dark_archer_key_drop", "AT Dark Archer", nil, true)
+local at_circle_of_pots = alttp_location.new("at_circle_of_pots", "AT Circle of Pots", nil, true)
+local at_aga1 = alttp_location.new("at_aga1", "AT Aga1 Arena", nil, true)
+local at_pre_curtain = alttp_location.new("at_pre_curtain", "AT Cutscene Room", nil, true)
 
 at_entrance_inside:connect_one_way(at_golden_guards, function() 
     return ANY(
