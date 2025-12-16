@@ -452,14 +452,14 @@ function GetRoute(start, finish)
             Tracker:FindObjectForCode("solidblack"..tostring(index)):SetOverlay(location_name)
             -- Tracker:FindObjectForCode("solidblack"..tostring(i)):SetOverlayColor("#FF0000")
             Tracker:FindObjectForCode("solidblack"..tostring(index)):SetOverlayFontSize(16)
-            Tracker:FindObjectForCode("solidblack"..tostring(index)):SetOverlayColor("#FF0000")
+            Tracker:FindObjectForCode("solidblack"..tostring(index)):SetOverlayColor("FFFFFFFF")
             Tracker:FindObjectForCode("solidblack"..tostring(index)):SetOverlayAlign("left")
         end
     else
         Tracker:FindObjectForCode("solidblack0"):SetOverlay("No Route Found")
         -- Tracker:FindObjectForCode("solidblack"..tostring(i)):SetOverlayColor("#FF0000")
         Tracker:FindObjectForCode("solidblack0"):SetOverlayFontSize(16)
-        Tracker:FindObjectForCode("solidblack0"):SetOverlayColor("#FF0000")
+        Tracker:FindObjectForCode("solidblack0"):SetOverlayColor("FFFFFFFF")
         Tracker:FindObjectForCode("solidblack0"):SetOverlayAlign("left")
     end
     -- print(dump_table(PATH))
