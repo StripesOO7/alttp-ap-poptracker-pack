@@ -1308,9 +1308,9 @@ light_death_mountain_left_bottom:connect_one_way(light_death_mountain_right_top,
 end) -- Death Mountain Glitched Bridge
 
 light_death_mountain_left_top_weird_state:connect_one_way(light_death_mountain_left_top, function() 
-    local toh_entrance_traget = Tracker:FindObjectForCode("toh_entrance_outside").Itemstate.Target
+    local toh_entrance_traget = Tracker:FindObjectForCode("from_toh_entrance_outside").ItemState.Target
     if toh_entrance_traget ~= nil then
-        return Tracker:FindObjectForCode(toh_entrance_traget).Itemstate.IsDungeon
+        return Tracker:FindObjectForCode(toh_entrance_traget).ItemState.IsDungeon
     end
     return false
 end) -- TOH only resets weird overworld state when its a dungeon. other caves will stil have weird state after exiting again
@@ -1318,9 +1318,9 @@ end) -- TOH only resets weird overworld state when its a dungeon. other caves wi
 light_death_mountain_left_top_weird_state:connect_two_ways(toh_entrance_outside_weird_state) -- connector for weird map state after clip up to DM left top
 
 toh_entrance_outside_weird_state:connect_one_way(toh_entrance_outside, function() 
-    local toh_entrance_traget = Tracker:FindObjectForCode("toh_entrance_outside").Itemstate.Target
+    local toh_entrance_traget = Tracker:FindObjectForCode("from_toh_entrance_outside").ItemState.Target
     if toh_entrance_traget ~= nil then
-        return Tracker:FindObjectForCode(toh_entrance_traget).Itemstate.IsDungeon
+        return Tracker:FindObjectForCode(toh_entrance_traget).ItemState.IsDungeon
     end
     return false
 end) -- TOH only resets weird overworld state when its a dungeon. other caves will stil have weird state after exiting again
