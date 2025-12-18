@@ -809,19 +809,19 @@ end)
 light_lake_hylia:connect_one_way(eastern_palace_area)
 light_lake_hylia:connect_one_way(witchhut, function()
     return ALL(
-        CanSwim(),
+        CanSwim,
         CanInteract(light_lake_hylia)
     )
 end) --teleport
 light_lake_hylia:connect_one_way(lumberjacks_area, function()
     return ALL(
-        CanSwim(),
+        CanSwim,
         CanInteract(light_lake_hylia)
     )
 end) --teleport
 light_lake_hylia:connect_one_way(zora_river, function()
     return ALL(
-        CanSwim(),
+        CanSwim,
         CanInteract(light_lake_hylia)
     )
 end) --teleport
@@ -845,7 +845,7 @@ light_lake_hylia:connect_two_ways_stuck(twenty_rupee_thief_outside, function()
 end)
 light_lake_hylia:connect_two_ways(upgrade_fairy_island, function()
     return ALL(
-        CanSwim(),
+        CanSwim,
         CanInteract(light_lake_hylia)
     )
 end)
@@ -878,7 +878,7 @@ twenty_rupee_thief_outside:connect_two_ways_entrance("Twenty Rupee Cave", twenty
 end)
 light_lake_hylia:connect_two_ways(upgrade_fairy_island, function()
     return ALL(
-        CanSwim(),
+        CanSwim,
         CanInteract(light_lake_hylia)
     )
 end)
@@ -903,7 +903,7 @@ teleporter_at_upgrade_fairy:connect_one_way(upgrade_fairy_island, function() ret
 
 light_lake_hylia:connect_two_ways(hobo, function()
     return ALL(
-        CanSwim(),
+        CanSwim,
         CanInteract(light_lake_hylia)
     )
 end)
@@ -1071,7 +1071,7 @@ zora_river:connect_two_ways(waterfall_fairy_outside, function()
     return ANY(
         "flippers",
         ALL(
-            CanSwim(),
+            CanSwim,
             "pearl"
         )
     )

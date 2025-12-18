@@ -262,12 +262,8 @@ function GanonCrystalCount()
     return CheckRequirements("ganon_killable", "crystal") > 0
 end
 
-function CanSwim(itemNeeded) --fake flippers
-    if itemNeeded then
-        return Tracker:FindObjectForCode(itemNeeded).Active
-    else
-        return Tracker:FindObjectForCode("glitches").CurrentStage > 0
-    end
+function CanSwim() --fake flippers
+    return Tracker:FindObjectForCode("flippers").Active or Tracker:FindObjectForCode("glitches").CurrentStage > 0
 end
 
 

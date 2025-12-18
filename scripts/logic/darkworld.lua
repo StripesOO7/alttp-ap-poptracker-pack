@@ -320,7 +320,7 @@ end)
 dark_lake_hylia:connect_one_way(lake_hylia_island, function()
     return ALL(
         CanChangeWorldWithMirror,
-        CanSwim("flippers"),
+        CanSwim,
         OpenOrStandard,
         CanInteract(dark_lake_hylia)
     )
