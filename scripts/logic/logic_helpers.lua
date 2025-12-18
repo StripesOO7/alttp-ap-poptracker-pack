@@ -266,6 +266,13 @@ function CanSwim() --fake flippers
     return Tracker:FindObjectForCode("flippers").Active or Tracker:FindObjectForCode("glitches").CurrentStage > 0
 end
 
+function CanBombClip(location)
+    return ALL(
+        "boots",
+        "bombs",
+        CanInteract(location)
+    )
+end
 
 function BigKeys(dungeon)
     if Tracker:FindObjectForCode("big_keys").Active then

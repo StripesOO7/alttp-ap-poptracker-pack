@@ -1347,6 +1347,15 @@ spec_rock_ledge_exit_outside:connect_two_ways_entrance("Spectecal Rock Ledge exi
 spec_rock_ledge_entrance_inside:connect_two_ways(spectacle_rock_inside_bottom)
 spec_rock_ledge_exit_inside:connect_two_ways(spectacle_rock_cave)
 
+-- UWG
+spectacle_rock_cave:connect_one_way(pod_shooter_room, function() 
+    return ALL(
+        CheckGlitches(3),
+        CanBombClip(spectacle_rock_cave)
+    )
+end) -- kiki skip
+-- UWG
+
 spectacle_rock_top_drop:connect_one_way(spectacle_rock_cave)
 spectacle_rock_top_drop:connect_one_way("Spec Rock Inside Item", function() return ACCESS_INSPECT end)
 spectacle_rock_inside_bottom:connect_one_way(spectacle_rock_top_drop)

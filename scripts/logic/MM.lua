@@ -99,6 +99,31 @@ end)
 mm_four_torches_tile_room:connect_two_ways(mm_compass_room, function() return Has("firesource") end)
 mm_four_torches_tile_room:connect_two_ways(mm_cutscene_room)
 
+-- UWG
+mm_cutscene_room:connect_one_way(toh_fairy_drop, function()
+    return ALL(
+        CheckGlitches(3),
+        CanBombClip(mm_cutscene_room),
+        "firesource",
+        "mm_bigkey"
+    )
+end) -- mire to hera
+mm_cutscene_room:connect_one_way(sp_first_room, function()
+    return ALL(
+        CheckGlitches(3),
+        CanBombClip(mm_cutscene_room),
+        "firesource"
+    )
+end) -- mire to swamp
+mm_cutscene_room:connect_one_way(sp_main_room, function()
+    return ALL(
+        CheckGlitches(3),
+        CanBombClip(mm_cutscene_room),
+        "firesource"
+    )
+end) -- mire to swamp center
+-- UWG end
+
 mm_conveyor_crystal_room:connect_one_way("MM - Conveyor Crystal Key Drop")
 
 mm_compass_room:connect_one_way(mm_main_room)

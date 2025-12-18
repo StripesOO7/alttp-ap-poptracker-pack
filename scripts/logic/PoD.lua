@@ -3,7 +3,7 @@
 local pod_three_way_room_left = alttp_location.new("pod_three_way_room_left", "PoD 3-Way Left", nil, true)
 local pod_three_way_room_middle = alttp_location.new("pod_three_way_room_middle", "PoD 3-Way Center", nil, true)
 local pod_three_way_room_right = alttp_location.new("pod_three_way_room_right", "PoD 3-Way Right", nil, true)
-local pod_shooter_room = alttp_location.new("pod_shooter_room", "PoD Shooter", nil, true)
+pod_shooter_room = alttp_location.new("pod_shooter_room", "PoD Shooter", nil, true) -- not local because of kiki skip
 local pod_teleporter_room = alttp_location.new("pod_teleporter_room", "PoD Teleporter", nil, true)
 local pod_mimic_room = alttp_location.new("pod_mimic_room", "PoD Mimics", nil, true)
 local pod_switch_room_top = alttp_location.new("pod_switch_room_top", "PoD Hammer Ledge", nil, true)

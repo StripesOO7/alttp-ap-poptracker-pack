@@ -34,6 +34,16 @@ ip_freezor_entrance:connect_two_ways(ip_jelly_room, function()
         )
     )
 end)
+
+-- UWG
+ip_freezor_entrance:connect_one_way(ip_bomb_dropdown, function()
+    return ALL(
+        CheckGlitches(3),
+        CanBombClip(ip_freezor_entrance)
+    )
+end) -- Ice Palace Entrance Clip
+-- UWG end
+
 ip_jelly_room:connect_two_ways(ip_push_cross, function(keys) return Has("ip_smallkey", keys, 0, keys + 1, 1), KDSreturn(keys, keys + 1) end)
 ip_jelly_room:connect_one_way("IP - Jelly Key Drop", function() return DealDamage() end)
 ip_push_cross:connect_two_ways(ip_bomb_dropdown)
