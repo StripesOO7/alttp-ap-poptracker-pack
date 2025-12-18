@@ -106,6 +106,9 @@ kakariko_village:connect_two_ways_stuck(kakariko_bombhut_outside, function()
         "bombs",
         CanInteract(kakariko_village)
     )
+end,
+function()
+    return CanInteract(kakariko_village)
 end)
 kakariko_village:connect_two_ways(kakariko_shop_outside)
 kakariko_village:connect_two_ways(kakariko_frontside_pub_outside)
