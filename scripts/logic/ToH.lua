@@ -32,6 +32,7 @@ toh_main_room:connect_two_ways(toh_big_chest_room, function()
     )
 end)
 toh_main_room:connect_one_way("ToH - Map Chest", function() return CanInteract(toh_main_room) end)
+toh_main_room:connect_two_ways(toh_basement_cage)
 
 toh_basement_cage:connect_one_way("ToH - Basement Cage", function() return CanInteract(toh_basement_cage) end)
 toh_big_key_chest:connect_one_way("ToH - Big Key Chest", function() return Has("firesource") end)
