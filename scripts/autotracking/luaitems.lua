@@ -488,8 +488,6 @@ function ChangeLocationColor(locationname)
                             for _, lookup_location in pairs(deadendBackup) do
                                 sum = sum + Tracker:FindObjectForCode(lookup_location).AvailableChestCount
                             end
-                            print("location_obj.BaseName:", location_obj.BaseName, target_obj.BaseName)
-                            print("sum:", sum)
                             if sum > 0 then
                                 -- print("return ACCESS_INSPECT")
                                 return ACCESS_INSPECT
