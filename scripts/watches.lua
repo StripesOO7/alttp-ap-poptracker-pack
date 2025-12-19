@@ -32,6 +32,7 @@ ScriptHost:AddWatchForCode("settings bigkeys_setting", "bigkeys_setting", GiveAl
 ScriptHost:AddWatchForCode("set shop cost-type", "shuffle_cost_type", SetCostType)
 ScriptHost:AddWatchForCode("set shop default inventory", "shop_sanity", SetShopInventory)
 ScriptHost:AddWatchForCode("set prize shuffles", "prize_shuffle", SetPrizeShuffle)
+SetPrizeShuffle()
 
 
 ScriptHost:AddWatchForCode("set all autofill", "autofill_all_settings", setAllAutofill)
