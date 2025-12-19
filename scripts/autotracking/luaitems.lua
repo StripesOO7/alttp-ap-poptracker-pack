@@ -239,6 +239,19 @@ local function ProvidesCodeFunc(self, code)
         -- print(self.Name)
         if self.ItemState.Target ~= nil then  --and Tracker:FindObjectForCode("er_tracking").CurrentStage > 0 then
             if self.ItemState.IsDeadEnd or Tracker:FindObjectForCode(self.ItemState.Target).ItemState.IsDeadEnd then
+                local location_obj = self.ItemState
+                local target_obj = Tracker:FindObjectForCode(self.ItemState.Target).ItemState
+                local deadendBackup = location_obj.DeadendColorBackup or target_obj.DeadendColorBackup
+                if deadendBackup ~= nil then
+                    local sum = 0
+                    for _, lookup_location in pairs(deadendBackup) do
+                        sum = sum + Tracker:FindObjectForCode(lookup_location).AvailableChestCount
+                    end
+                    if sum > 0 then
+                        -- print("return ACCESS_INSPECT")
+                        return 0
+                    end
+                end
                 return 1
             end
         end
@@ -273,7 +286,8 @@ local function SaveLocationFunc(self)
         TargetCorrespondingLocationSection = self.ItemState.TargetCorrespondingLocationSection,
         IsDeadEnd = self.ItemState.IsDeadEnd,
         IsDungeon = self.ItemState.IsDungeon,
-        IsConnector = self.ItemState.IsConnector
+        IsConnector = self.ItemState.IsConnector,
+        DeadendColorBackup = self.ItemState.DeadendColorBackup
     }
     -- print("SaveFunc")
 end
@@ -298,6 +312,7 @@ local function LoadLocationFunc(self, data)
         self.ItemState.IsDeadEnd = data.IsDeadEnd
         self.ItemState.IsDungeon = data.IsDungeon
         self.ItemState.IsConnector = data.IsConnector
+        self.ItemState.DeadendColorBackup = data.DeadendColorBackup
         if data.BadgeText ~= nil then
             self.BadgeText = data.BadgeText
             self.BadgeTextColor = "#abcdef"
@@ -351,7 +366,8 @@ function CreateLuaLocationItems(direction, location_obj, side)
         TargetCorrespondingLocationSection = nil,
         IsDeadEnd = false,
         IsDungeon = false,
-        IsConnector = false
+        IsConnector = false,
+        DeadendColorBackup = location_obj.deadendColorBackup,
     }
     if location_obj.deadEndOrDungeonOrConnector == "deadend" then
         self.ItemState.IsDeadEnd = true
@@ -456,11 +472,7 @@ end
 
 function ChangeLocationColor(locationname)
     if not Tracker.BulkUpdate then
-    -- print(locationname)
-    local location_obj = Tracker:FindObjectForCode(locationname).ItemState
-    -- if location_obj == nil then
-    --     return 0
-    -- end
+        local location_obj = Tracker:FindObjectForCode(locationname).ItemState
         if location_obj then
             if location_obj.Target then
                 local target_obj = Tracker:FindObjectForCode(location_obj.Target).ItemState
@@ -468,13 +480,32 @@ function ChangeLocationColor(locationname)
                 -- local from_target_obj = Tracker:FindObjectForCode("from_"..location_obj.ItemState.target)
                 if target_obj then
                     if location_obj.IsDeadEnd or target_obj.IsDeadEnd then
+                        -- print(location_obj.DeadendColorBackup)
+                        -- print(target_obj.DeadendColorBackup)
+                        local deadendBackup = location_obj.DeadendColorBackup or target_obj.DeadendColorBackup
+                        if deadendBackup ~= nil then
+                            local sum = 0
+                            for _, lookup_location in pairs(deadendBackup) do
+                                sum = sum + Tracker:FindObjectForCode(lookup_location).AvailableChestCount
+                            end
+                            print("location_obj.BaseName:", location_obj.BaseName, target_obj.BaseName)
+                            print("sum:", sum)
+                            if sum > 0 then
+                                -- print("return ACCESS_INSPECT")
+                                return ACCESS_INSPECT
+                            end
+                        else
+                            return ACCESS_CLEARED
+                        end
                         -- print("target ACCESS_CLEARED")
                         -- return ACCESS_NONE
                         -- return ACCESS_NONE
-                    elseif location_obj.IsConnector or target_obj.IsConnector then
+                    end
+                    if location_obj.IsConnector or target_obj.IsConnector then
                         -- print("target ACCESS_INSPECT")
                         return ACCESS_INSPECT
-                    elseif location_obj.IsDungeon or target_obj.IsDungeon then
+                    end
+                    if location_obj.IsDungeon or target_obj.IsDungeon then
                         -- print("target ACCESS_SEQUENCEBREAK")
                         return ACCESS_SEQUENCEBREAK
                     end
