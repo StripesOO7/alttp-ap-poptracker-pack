@@ -3,7 +3,7 @@
 		{
 			"package_version": "0.4.2",
 			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.4.2/alttp-ap-tracker-v0.4.2.zip",
-			"sha256": "9565c79d7d5167b11fcfec5b82ad0cf293a5a564c980875d985926d8e8800a8b",
+			"sha256": "929423070deb492da39fef28d34f6fe83b06a833169def06bb8261802d45ef31",
 			"changelog": [
 				"bugfixes for ER and some other logic issues",
 				"",
@@ -16,6 +16,7 @@
 				"- canSwin function for IP and Hobo was broken",
 				"- ToH Bassement cage was unreachable",
 				"- fix price shuffle not being marked properly when its vanilla",
+				"- fixed old man cave being marked as a one-way only accessible coming from light DM but not being able to enter DM",
 				"",
 				"# added:",
 				"- when marking entrances manually the selected entracne now gets highlighted to indicate the ineraction happened",
@@ -591,6 +592,7 @@
 		}
 	]
 }
+
 
 
 
