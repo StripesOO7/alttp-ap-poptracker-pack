@@ -111,7 +111,7 @@ function Has(item, noKDS_amount, noKDS_amountInLogic, KDS_amount, KDS_amountInLo
     end
 end
 
-function KDSreturn( noKDS, KDS)
+function KDSreturn(noKDS, KDS)
     return KEY_DROP_SHUFFLE_STATE and KDS or noKDS
     -- if KEY_DROP_SHUFFLE_STATE then
     --     return KDS
@@ -144,7 +144,6 @@ function OWDungeonChecks(...)
     end
     return ACCESS_NONE
 end
-
 
 function DealDamage()
     return ANY(
@@ -655,6 +654,7 @@ local dungeons_prefixes = {
         "gt"
     }
 -- not sure howto handle reset. i should probably keep a record of some sort of all already gotten items.
+
 function GiveAll(setting)
     local setting_stage = Tracker:FindObjectForCode(setting).CurrentStage
     local mapping = {
@@ -738,6 +738,7 @@ function SetCostType()
         end
     end
 end
+
 function SetShopInventory()
     local active = Tracker:FindObjectForCode("shop_sanity").Active
     local witch = Tracker:FindObjectForCode("shop_include_witchhut").Active
@@ -763,6 +764,7 @@ local prize_table = {
     ["tree_pull_2"] = 2,
     ["tree_pull_3"] = 3
 }
+
 function SetPrizeShuffle()
     if Tracker:FindObjectForCode("prize_shuffle").Active then
         for code, stage in pairs(prize_table) do
