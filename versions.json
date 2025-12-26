@@ -1,6 +1,33 @@
 {
 	"versions": [
 		{
+			"package_version": "0.4.2",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.4.2/alttp-ap-tracker-v0.4.2.zip",
+			"sha256": "9565c79d7d5167b11fcfec5b82ad0cf293a5a564c980875d985926d8e8800a8b",
+			"changelog": [
+				"bugfixes for ER and some other logic issues",
+				"",
+				"# fixed ER stuff:",
+				"- fixed legend coloring, grey now is always visible and not only when ER is enabled",
+				"- fix Kakariko <-> bombhut connection tht showed kak as available when it wasnt if you exit bombhut as bunny",
+				"- changed how coloring of deadends work if they stil have check to be obtained behind them. they are now marked as connectors instead until everything is collected",
+				"",
+				"# fixed logic:",
+				"- canSwin function for IP and Hobo was broken",
+				"- ToH Bassement cage was unreachable",
+				"- fix price shuffle not being marked properly when its vanilla",
+				"",
+				"# added:",
+				"- when marking entrances manually the selected entracne now gets highlighted to indicate the ineraction happened",
+				"- added a route calculation feature and displays the shortest route (without considering s&q)",
+				"- added underworld glitched connections",
+				"",
+				"# new features that other packs may also implement in the future:",
+				"- ",
+				""
+			]
+		},
+		{
 			"package_version": "0.4.1",
 			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.4.1/alttp-ap-tracker-v0.4.1.zip",
 			"sha256": "bf2755f52b2b212faa64c632abbf8e041616a3260c9d938d247c1ac901398aee",
@@ -564,6 +591,7 @@
 		}
 	]
 }
+
 
 
 
