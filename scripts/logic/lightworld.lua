@@ -1236,8 +1236,8 @@ light_death_mountain_left_bottom:connect_one_way(light_flute_map, function()
     )
 end)
 -- light_death_mountain_left_bottom:connect_one_way()
-old_man_cave_right_outside:connect_one_way_entrance("Old Man Cave Right Inside",old_man_cave_right_inside, function() return OpenOrStandard() end)
-old_man_cave_right_outside:connect_one_way_entrance("Inverted Light Death Mountain Return Left",light_death_mountain_return_left_inside, function() return Inverted() end)
+old_man_cave_right_outside:connect_two_ways_entrance("Old Man Cave Right Inside",old_man_cave_right_inside, function() return OpenOrStandard() end)
+old_man_cave_right_outside:connect_two_ways_entrance("Inverted Light Death Mountain Return Left",light_death_mountain_return_left_inside, function() return Inverted() end)
 
 light_death_mountain_return_right_outside:connect_two_ways_entrance("Light Death Mountain Return Right",light_death_mountain_return_right_inside)
 

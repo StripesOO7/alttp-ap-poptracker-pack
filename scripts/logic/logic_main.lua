@@ -114,7 +114,7 @@ function alttp_location.new(name, shortname, origin, inside_dungeon, room, x, yM
     elseif string.find(self.name, "_outside") then
         self.side = "outside"
     else
-        self.side = nil
+        self.side = ""
     end
     self.interactable = false
     if inside_dungeon then
@@ -309,7 +309,8 @@ function alttp_location:discover(accessibility, keys, worldstate)
 
             -- local exit_name = exit[1].name
             local location_name = self.name
-            -- if (string.sub(exit_name, -7,-1) == "_inside" and string.sub(location_name, -8,-1) == "_outside") or (string.sub(location_name, -7,-1) == "_inside" and string.sub(exit_name, -8,-1) == "_outside") then
+            -- if (string.sub(exit_name, -7,-1) == "_inside" and string.sub(location_name, -8,-1) == "_outside") or
+            -- (string.sub(location_name, -7,-1) == "_inside" and string.sub(exit_name, -8,-1) == "_outside") then
             if ER_STATE and (exit[1].side == "inside" and self.side == "outside") or (self.side == "inside" and exit[1].side == "outside") then
                 local temp
                 local er_setting_stage = Tracker:FindObjectForCode("er_tracking").CurrentStage
@@ -465,6 +466,10 @@ function GetRoute(start, finish)
     end
     -- print(dump_table(PATH))
     Tracker:UiHint("ActivateTab", "Route")
+    FOUND = false
+    ALREADY_VISITED = {}
+    PATH = {}
+    STEPS = -1
 end
 
 function FindPath(start, finish, stage)
