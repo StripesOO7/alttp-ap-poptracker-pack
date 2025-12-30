@@ -1170,7 +1170,26 @@ spike_cave_inside:connect_one_way("Spike Cave Chest", function()
     return ALL(
         "hammer",
         "glove",
-        CanInteract(spike_cave_inside) --,
+        CanInteract(spike_cave_inside),
+        ANY(
+            ALL(
+                "cape",
+                SpikeCaveMagicLogic(16)
+            ),
+            ALL(
+                "byrna",
+                ANY(
+                    SpikeCaveMagicLogic(12),
+                    ALL(
+                        false ,-- not in ohko mode
+                        ANY(
+                            "boots",
+                            CalcHealth() > 4
+                        )
+                    )
+                )
+            )
+        )
         -- Has("heartpieces", )
     )
 end)

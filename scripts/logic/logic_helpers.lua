@@ -313,6 +313,64 @@ function CalcHeartpieces()
     pieces.CurrentStage = (Tracker:FindObjectForCode("heartpieces").AcquiredCount % 4)
 end
 
+function CalcHealth()
+    return (4 + (Tracker:FindObjectForCode("heartpieces").AcquiredCount // 4) + Tracker:FindObjectForCode("heartcontainer").AcquiredCount)
+end
+
+local shoplist = {
+    "dark_lumpberjacks_shop_inside",
+    "red_shield_shop_inside",
+    "dark_village_shop_inside",
+    "dark_lake_shop_inside",
+    "dark_potion_shop_inside",
+    "dark_death_mountain_shop_inside",
+    "kakariko_shop_inside",
+    "light_lake_shop_inside",
+    "upgrade_fairy_inside",
+    "light_death_mountain_shop_inside",
+    "light_potion_shop_inside"
+}
+
+function CanRefillBottles(item, stage_needed)
+    print(item, Tracker:ProviderCountForCode(item))
+    if Tracker:ProviderCountForCode(item) > 0 then
+        for index, shop in pairs(shoplist) do
+            if CanReach(shop) > 4 then
+                local range_min = 3*index-2
+                local range_max = 3*index
+                for i=range_min, range_max do
+                    if Tracker:FindObjectForCode("default_shop_item_"..i).CurrentStage == stage_needed then
+                        return true
+                    end
+                end
+            end
+        end
+    end
+    return false
+end
+
+function SpikeCaveMagicLogic(needed_magic)
+    local basemagic = 8
+    local magic_upgrades = Tracker:FindObjectForCode("magic_upgrade").CurrentStage
+    local bottle_count = Tracker:FindObjectForCode("bottle").CurrentStage
+    basemagic = basemagic * (2^magic_upgrades)
+    if CanRefillBottles("buy_green_potion", 7) or CanRefillBottles("buy_blue_potion", 8) then
+        local item_mode = Tracker:FindObjectForCode("item_mode").CurrentStage
+        local modifier = 1
+        if item_mode > 1 then
+            if item_mode == 3 then -- expert item functionality
+                modifier = 0.25
+            else -- hard item functionality
+                modifier = 0.5
+            end
+        end
+        basemagic = basemagic + math.floor(basemagic * modifier * bottle_count)
+        
+    -- local total_hearts = (Tracker:FindObjectForCode("heartpieces").AcquiredCount // 4) + 3 + Tracker:FindObjectForCode("heartcontainer").AcquiredCount
+    end
+    return math.floor(basemagic) >= needed_magic
+end
+
 function EnemizerCheck(item)
     return Tracker:FindObjectForCode("enemizer").Active or Tracker:FindObjectForCode(item).Active
 end

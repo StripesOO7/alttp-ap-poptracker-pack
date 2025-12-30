@@ -7,12 +7,12 @@
         "stages": [
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "fairy_bottle1, green_potion",
+                "codes": "fairy_bottle1, greeredion",
                 "disabled_img": "/images/items/Bottle.png"
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "fairy_bottle1, red_potion"
+                "codes": "fairy_bottle1, red_greenion"
             },
             {
                 "img": "/images/items/blue_potion.png",
@@ -36,16 +36,16 @@
         "stages": [
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "fairy_bottle2, green_potion",
+                "codes": "fairy_bottle2, green_potion, greeredill",
                 "disabled_img": "/images/items/Bottle.png"
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "fairy_bottle2, red_potion"
+                "codes": "fairy_bottle2, red_potion, red_greenill"
             },
             {
                 "img": "/images/items/blue_potion.png",
-                "codes": "fairy_bottle2, blue_potion"
+                "codes": "fairy_bottle2, blue_potion, blue_refill"
             },
             {
                 "img": "/images/items/fairy_bottle.png",
@@ -96,12 +96,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_1, buy_green_potion",
+                "codes": "default_shop_item_1, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_1, buy_red_potion",
+                "codes": "default_shop_item_1, buy_green_potion",
                 "inherit_codes": false
             },
             {
@@ -170,12 +170,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_2, buy_green_potion",
+                "codes": "default_shop_item_2, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_2, buy_red_potion",
+                "codes": "default_shop_item_2, buy_green_potion",
                 "inherit_codes": false
             },
             {
@@ -244,12 +244,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_3, buy_green_potion",
+                "codes": "default_shop_item_3, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_3, buy_red_potion",
+                "codes": "default_shop_item_3, buy_green_potion",
                 "inherit_codes": false
             },
             {
@@ -318,12 +318,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_4, buy_green_potion",
+                "codes": "default_shop_item_4, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_4, buy_red_potion",
+                "codes": "default_shop_item_4, buy_green_potion",
                 "inherit_codes": false
             },
             {
@@ -392,12 +392,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_5, buy_green_potion",
+                "codes": "default_shop_item_5, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_5, buy_red_potion",
+                "codes": "default_shop_item_5, buy_green_potion",
                 "inherit_codes": false
             },
             {
@@ -466,12 +466,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_6, buy_green_potion",
+                "codes": "default_shop_item_6, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_6, buy_red_potion",
+                "codes": "default_shop_item_6, buy_green_potion",
                 "inherit_codes": false
             },
             {
@@ -540,12 +540,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_7, buy_green_potion",
+                "codes": "default_shop_item_7, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_7, buy_red_potion",
+                "codes": "default_shop_item_7, buy_green_potion",
                 "inherit_codes": false
             },
             {
@@ -614,12 +614,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_8, buy_green_potion",
+                "codes": "default_shop_item_8, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_8, buy_red_potion",
+                "codes": "default_shop_item_8, buy_green_potion",
                 "inherit_codes": false
             },
             {
@@ -688,12 +688,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_9, buy_green_potion",
+                "codes": "default_shop_item_9, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_9, buy_red_potion",
+                "codes": "default_shop_item_9, buy_green_potion",
                 "inherit_codes": false
             },
             {
@@ -762,12 +762,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_10, buy_green_potion",
+                "codes": "default_shop_item_10, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_10, buy_red_potion",
+                "codes": "default_shop_item_10, buy_green_potion",
                 "inherit_codes": false
             },
             {
@@ -836,12 +836,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_11, buy_green_potion",
+                "codes": "default_shop_item_11, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_11, buy_red_potion",
+                "codes": "default_shop_item_11, buy_green_potion",
                 "inherit_codes": false
             },
             {
@@ -910,12 +910,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_12, buy_green_potion",
+                "codes": "default_shop_item_12, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_12, buy_red_potion",
+                "codes": "default_shop_item_12, buy_green_potion",
                 "inherit_codes": false
             },
             {
@@ -984,12 +984,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_13, buy_green_potion",
+                "codes": "default_shop_item_13, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_13, buy_red_potion",
+                "codes": "default_shop_item_13, buy_green_potion",
                 "inherit_codes": false
             },
             {
@@ -1058,12 +1058,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_14, buy_green_potion",
+                "codes": "default_shop_item_14, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_14, buy_red_potion",
+                "codes": "default_shop_item_14, buy_green_potion",
                 "inherit_codes": false
             },
             {
@@ -1132,12 +1132,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_15, buy_green_potion",
+                "codes": "default_shop_item_15, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_15, buy_red_potion",
+                "codes": "default_shop_item_15, buy_green_potion",
                 "inherit_codes": false
             },
             {
@@ -1206,12 +1206,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_16, buy_green_potion",
+                "codes": "default_shop_item_16, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_16, buy_red_potion",
+                "codes": "default_shop_item_16, buy_green_potion",
                 "inherit_codes": false
             },
             {
@@ -1280,12 +1280,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_17, buy_green_potion",
+                "codes": "default_shop_item_17, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_17, buy_red_potion",
+                "codes": "default_shop_item_17, buy_green_potion",
                 "inherit_codes": false
             },
             {
@@ -1354,12 +1354,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_18, buy_green_potion",
+                "codes": "default_shop_item_18, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_18, buy_red_potion",
+                "codes": "default_shop_item_18, buy_green_potion",
                 "inherit_codes": false
             },
             {
@@ -1428,12 +1428,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_19, buy_green_potion",
+                "codes": "default_shop_item_19, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_19, buy_red_potion",
+                "codes": "default_shop_item_19, buy_green_potion",
                 "inherit_codes": false
             },
             {
@@ -1502,12 +1502,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_20, buy_green_potion",
+                "codes": "default_shop_item_20, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_20, buy_red_potion",
+                "codes": "default_shop_item_20, buy_green_potion",
                 "inherit_codes": false
             },
             {
@@ -1576,12 +1576,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_21, buy_green_potion",
+                "codes": "default_shop_item_21, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_21, buy_red_potion",
+                "codes": "default_shop_item_21, buy_green_potion",
                 "inherit_codes": false
             },
             {
@@ -1650,12 +1650,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_22, buy_green_potion",
+                "codes": "default_shop_item_22, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_22, buy_red_potion",
+                "codes": "default_shop_item_22, buy_green_potion",
                 "inherit_codes": false
             },
             {
@@ -1724,12 +1724,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_23, buy_green_potion",
+                "codes": "default_shop_item_23, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_23, buy_red_potion",
+                "codes": "default_shop_item_23, buy_green_potion",
                 "inherit_codes": false
             },
             {
@@ -1798,12 +1798,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_24, buy_green_potion",
+                "codes": "default_shop_item_24, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_24, buy_red_potion",
+                "codes": "default_shop_item_24, buy_green_potion",
                 "inherit_codes": false
             },
             {
@@ -1871,12 +1871,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_25, buy_green_potion",
+                "codes": "default_shop_item_25, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_25, buy_red_potion",
+                "codes": "default_shop_item_25, buy_green_potion",
                 "inherit_codes": false
             },
             {
@@ -1944,12 +1944,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_26, buy_green_potion",
+                "codes": "default_shop_item_26, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_26, buy_red_potion",
+                "codes": "default_shop_item_26, buy_green_potion",
                 "inherit_codes": false
             },
             {
@@ -2018,12 +2018,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_27, buy_green_potion",
+                "codes": "default_shop_item_27, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_27, buy_red_potion",
+                "codes": "default_shop_item_27, buy_green_potion",
                 "inherit_codes": false
             },
             {
@@ -2092,12 +2092,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_28, buy_green_potion",
+                "codes": "default_shop_item_28, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_28, buy_red_potion",
+                "codes": "default_shop_item_28, buy_green_potion",
                 "inherit_codes": false
             },
             {
@@ -2166,12 +2166,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_29, buy_green_potion",
+                "codes": "default_shop_item_29, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_29, buy_red_potion",
+                "codes": "default_shop_item_29, buy_green_potion",
                 "inherit_codes": false
             },
             {
@@ -2240,12 +2240,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_30, buy_green_potion",
+                "codes": "default_shop_item_30, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_30, buy_red_potion",
+                "codes": "default_shop_item_30, buy_green_potion",
                 "inherit_codes": false
             },
             {
@@ -2314,12 +2314,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_31, buy_green_potion",
+                "codes": "default_shop_item_31, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_31, buy_red_potion",
+                "codes": "default_shop_item_31, buy_green_potion",
                 "inherit_codes": false
             },
             {
@@ -2388,12 +2388,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_32, buy_green_potion",
+                "codes": "default_shop_item_32, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_32, buy_red_potion",
+                "codes": "default_shop_item_32, buy_green_potion",
                 "inherit_codes": false
             },
             {
@@ -2462,12 +2462,12 @@
             },
             {
                 "img": "/images/items/red_potion.png",
-                "codes": "default_shop_item_33, buy_green_potion",
+                "codes": "default_shop_item_33, buy_red_potion",
                 "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "default_shop_item_33, buy_red_potion",
+                "codes": "default_shop_item_33, buy_green_potion",
                 "inherit_codes": false
             },
             {
