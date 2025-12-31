@@ -444,24 +444,24 @@ function GetRoute(start, finish)
     PATH[0] = start.shortname
     FindPath(start, finish, 0)
     for i=0,30 do
-        Tracker:FindObjectForCode("solidblack"..tostring(i)):SetOverlay("")
+        Tracker:FindObjectForCode("solidblack"..tostring(i)).BadgeText("")
     end
-    if #PATH ~= 1 then
+    if #PATH > 1 then
         for i=STEPS, #PATH do
             PATH[i] = nil
         end
         for index, location_name in pairs(PATH) do
-            Tracker:FindObjectForCode("solidblack"..tostring(index)):SetOverlay(location_name)
+            Tracker:FindObjectForCode("solidblack"..tostring(index)).BadgeText(location_name)
             -- Tracker:FindObjectForCode("solidblack"..tostring(i)):SetOverlayColor("#FF0000")
             Tracker:FindObjectForCode("solidblack"..tostring(index)):SetOverlayFontSize(16)
-            Tracker:FindObjectForCode("solidblack"..tostring(index)):SetOverlayColor("FFFFFFFF")
+            Tracker:FindObjectForCode("solidblack"..tostring(index)).BadgeTextColor("FFFFFFFF")
             Tracker:FindObjectForCode("solidblack"..tostring(index)):SetOverlayAlign("left")
         end
     else
-        Tracker:FindObjectForCode("solidblack0"):SetOverlay("No Route Found")
+        Tracker:FindObjectForCode("solidblack0").BadgeText("No Route Found")
         -- Tracker:FindObjectForCode("solidblack"..tostring(i)):SetOverlayColor("#FF0000")
         Tracker:FindObjectForCode("solidblack0"):SetOverlayFontSize(16)
-        Tracker:FindObjectForCode("solidblack0"):SetOverlayColor("FFFFFFFF")
+        Tracker:FindObjectForCode("solidblack0").BadgeTextColor("FFFFFFFF")
         Tracker:FindObjectForCode("solidblack0"):SetOverlayAlign("left")
     end
     -- print(dump_table(PATH))

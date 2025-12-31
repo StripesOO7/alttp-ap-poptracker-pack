@@ -332,7 +332,6 @@ local shoplist = {
 }
 
 function CanRefillBottles(item, stage_needed)
-    print(item, Tracker:ProviderCountForCode(item))
     if Tracker:ProviderCountForCode(item) > 0 then
         for index, shop in pairs(shoplist) do
             if CanReach(shop) > 4 then
