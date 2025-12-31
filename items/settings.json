@@ -293,28 +293,29 @@
         "name": "Item Modes",
         "type": "progressive",
         "allow_disabled":false,
+        "initial_stage_idx": 2,
         "stages":
             [
                 {
-                    "img": "/images/settings/items/item_functionallity_easy.png",
+                    "img": "/images/settings/item_functionallity_easy.png",
                     "inherit_codes": false,
                     "name": "Itemmode Easy",
                     "codes": "item_mode, item_mode_easy"
                 },
                 {
-                    "img": "/images/settings/items/item_functionallity_normal.png",
+                    "img": "/images/settings/item_functionallity_normal.png",
                     "inherit_codes": false,
                     "name": "Itemmode Normal",
                     "codes": "item_mode, item_mode_normal"
                 },
                 {
-                    "img": "/images/settings/items/item_functionallity_hard.png",
+                    "img": "/images/settings/item_functionallity_hard.png",
                     "inherit_codes": false,
                     "name": "Itemmode Hard",
                     "codes": "item_mode, item_mode_hard"
                 },
                 {
-                    "img": "/images/settings/items/item_functionallity_expert.png",
+                    "img": "/images/settings/item_functionallity_expert.png",
                     "inherit_codes": false,
                     "name": "Itemmode Expert",
                     "codes": "item_mode, item_mode_expert"
