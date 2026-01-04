@@ -18,21 +18,26 @@ local tr_poke_2_room = alttp_location.new("tr_poke_2_room", "TR Poke 2", nil, tr
 local tr_big_key_door_room = alttp_location.new("tr_big_key_door_room", "TR Big Key Door", nil, true)
 local tr_crystalroller_room = alttp_location.new("tr_crystalroller_room", "TR Crystalroller", nil, true)
 local tr_travel_maze = alttp_location.new("tr_travel_maze", "TR Dark Maze", nil, true)
-local tr_eye_hallway = alttp_location.new("tr_eye_hallway", "TR Eye Hallway", nil, true)
+local tr_side_eye_hallway = alttp_location.new("tr_side_eye_hallway", "TR Side Eye Hallway", nil, true)
 local tr_switch_puzzle = alttp_location.new("tr_switch_puzzle", "TR Switch Puzzle", nil, true)
+local tr_pokes_after_big_door = alttp_location.new("tr_pokes_after_big_door", "TR Pokes After Big Door", nil, true)
+local tr_laser_entrance_room = alttp_location.new("tr_laser_entrance_room", "TR Laser Entrance Room", nil, true)
+local tr_eye_bridge_room = alttp_location.new("tr_eye_bridge_room", "TR Eye-Bridge Room", nil, true)
 local tr_boss_room = alttp_location.new("tr_boss_room", "TR Boss Room", nil, true)
 
 tr_main_entrance_inside:connect_two_ways(tr_square_travel_room, function() return ALL("somaria", CanInteract(tr_main_entrance_inside)) end)
-tr_square_travel_room:connect_two_ways(tr_compass_room, function() return Has("somaria") end)
+tr_square_travel_room:connect_two_ways(tr_compass_room, function() return ALL("somaria", CanInteract(tr_square_travel_room)) end)
 tr_square_travel_room:connect_two_ways(tr_torch_puzzle, function()
     return ALL(
         "somaria",
-        "firerod"
+        "firerod",
+        CanInteract(tr_square_travel_room)
     )
 end)
 tr_square_travel_room:connect_two_ways(tr_poke_1_room, function(keys)
     return ALL(
         "somaria",
+        CanInteract(tr_square_travel_room),
         Has("tr_smallkey", keys + 1, 1, keys + 1, 1)
         -- Has("tr_smallkey", keys + 1, 3, keys + 1, 4)
     ), keys + 1
@@ -47,21 +52,31 @@ tr_map_room:connect_one_way("TR - Roller Room Right")
 
 tr_poke_1_room:connect_two_ways(tr_chain_chomps_room, function(keys) return Has("tr_smallkey", keys, 1, keys + 1, 2), KDSreturn(keys, keys + 1) end)
 -- tr_poke_1_room:connect_two_ways(tr_chain_chomps_room, function(keys) return Has("tr_smallkey", keys, 3, keys + 1, 5), KDSreturn(keys, keys + 1) end)
-tr_poke_1_room:connect_one_way("TR - Poke 1 Key Drop")
+tr_poke_1_room:connect_one_way("TR - Poke 1 Key Drop", function() return ALL(DealDamage, CanInteract(tr_poke_1_room)) end)
 
-tr_chain_chomps_room:connect_two_ways(tr_big_key_room_top_right, function(keys) return Has("tr_smallkey", keys + 1, 2, keys + 1, 3), keys + 1 end)
+tr_chain_chomps_room:connect_two_ways(tr_big_key_room_top_right, function(keys)
+    return ALL(
+        Has("tr_smallkey", keys + 1, 2, keys + 1, 3),
+        HitRanged
+    ), keys + 1
+end)
 -- tr_chain_chomps_room:connect_two_ways(tr_big_key_room_top_right, function(keys) return Has("tr_smallkey", keys + 1, 3, keys + 1, 5), keys + 1 end)
 -- tr_big_key_room_top_right:connect_one_way(tr_chain_chomps_room, function(keys) return Has("tr_smallkey", keys, 3, keys, 5), KDSreturn(keys, keys + 1) end)
-tr_chain_chomps_room:connect_one_way("TR - Chain Chomp Chest")
+tr_chain_chomps_room:connect_one_way("TR - Chain Chomp Chest", function() return HitRanged() end)
 
 tr_big_key_room_top_right:connect_two_ways(tr_big_key_room_top_left)
 tr_big_key_room_top_right:connect_two_ways(tr_shooter_after_big_key)
 
 tr_big_key_room_top_left:connect_two_ways(tr_poke_2_room)
 
-tr_poke_2_room:connect_two_ways(tr_big_key_room_bottom_left, function(keys) return Has("tr_smallkey", keys + CountDoneDeadends(0, "@Turtle Rock Back/Eye Bridge Top Right/Eye Bridge Top Right", "@Turtle Rock Back/Boss/Boss Item"), 4, keys + CountDoneDeadends(1, "@Turtle Rock Back/Eye Bridge Top Right/Eye Bridge Top Right", "@Turtle Rock Back/Boss/Boss Item"), 6), KDSreturn(keys, keys + 1) end)
+tr_poke_2_room:connect_two_ways(tr_big_key_room_bottom_left, function(keys)
+    return ALL(
+        DealDamage,
+        Has("tr_smallkey", keys + CountDoneDeadends(0, "@Turtle Rock Back/Eye Bridge Top Right/Eye Bridge Top Right", "@Turtle Rock Back/Boss/Boss Item"), 4, keys + CountDoneDeadends(1, "@Turtle Rock Back/Eye Bridge Top Right/Eye Bridge Top Right", "@Turtle Rock Back/Boss/Boss Item"), 6), KDSreturn(keys, keys + 1)
+    )
+end)
 -- tr_poke_2_room:connect_two_ways(tr_big_key_room_bottom_left, function(keys) return Has("tr_smallkey", keys, 3, keys + 1, 5), KDSreturn(keys, keys + 1) end)
-tr_poke_2_room:connect_one_way("TR - Poke 2 Key Drop")
+tr_poke_2_room:connect_one_way("TR - Poke 2 Key Drop", function() return ALL(DealDamage, CanInteract(tr_poke_2_room)) end)
 
 tr_big_key_room_bottom_left:connect_two_ways(tr_big_key_room_bottom_right)
 tr_big_key_room_bottom_left:connect_two_ways(tr_big_key_chest_island)
@@ -70,15 +85,31 @@ tr_big_key_room_bottom_left:connect_two_ways(tr_big_key_chest_island)
 tr_big_key_room_bottom_right:connect_one_way(tr_big_key_room_top_right)
 tr_big_key_room_bottom_right:connect_two_ways(tr_big_key_chest_island)
 
-tr_big_key_chest_island:connect_one_way("TR - Big Key Chest")
+tr_big_key_chest_island:connect_one_way("TR - Big Key Chest", function() return CanInteract(tr_big_key_chest_island) end)
 
-tr_shooter_after_big_key:connect_two_ways(tr_big_key_door_room)
-tr_shooter_after_big_key:connect_two_ways(tr_laser_entrance_inside, function() return ALL("bombs", CanInteract(tr_shooter_after_big_key)) end)
+tr_shooter_after_big_key:connect_two_ways(tr_big_key_door_room, function() return DealDamage() end)
+tr_shooter_after_big_key:connect_one_way(tr_laser_entrance_room, function()
+    return ALL(
+        DealDamage,
+        CanInteract(tr_shooter_after_big_key)
+    )
+end)
+tr_laser_entrance_room:connect_one_way(tr_shooter_after_big_key, function() return CanInteract(tr_shooter_after_big_key) end)
+tr_laser_entrance_inside:connect_two_ways(tr_laser_entrance_room, function()
+    return ANY(
+        ALL(
+            "bombs",
+            CanInteract(tr_shooter_after_big_key)
+        ),
+        ER_STAGE > 0,
+        Inverted
+    )
+end)
 
 tr_big_chest_entrance_inside:connect_one_way(tr_big_key_door_room, function()
     return ALL(
         ANY(
-            "boots",
+            -- "boots",
             "hookshot",
             "somaria"
         ),
@@ -96,8 +127,20 @@ tr_big_chest_entrance_inside:connect_one_way("TR - Big Chest", function()
     )
 end)
 
-tr_big_key_door_room:connect_one_way(tr_crystalroller_room, function() return Has("tr_bigkey") end)
-tr_crystalroller_room:connect_one_way(tr_big_key_door_room, function(keys) return Has("tr_smallkey", keys + 1, 3, keys + 1, 4), keys + 1 end)
+tr_big_key_door_room:connect_one_way(tr_pokes_after_big_door, function() return Has("tr_bigkey") end)
+tr_pokes_after_big_door:connect_one_way(tr_big_key_door_room, function(keys)
+    return ALL(
+        HitRanged,
+        Has("tr_smallkey", keys + 1, 3, keys + 1, 4)
+    ), keys + 1
+end)
+tr_pokes_after_big_door:connect_two_ways(tr_crystalroller_room, function() return ANY("bombs", "boots") end)
+-- tr_crystalroller_room:connect_one_way(tr_big_key_door_room, function(keys)
+--     return ALL(
+--         HitRanged,
+--         Has("tr_smallkey", keys + 1, 3, keys + 1, 4)
+--     ), keys + 1
+-- end)
 -- tr_crystalroller_room:connect_one_way(tr_big_key_door_room, function(keys) return Has("tr_smallkey", keys + 1, 4, keys + 1, 6), keys + 1 end)
 
 tr_crystalroller_room:connect_one_way(tr_travel_maze, function(keys) return Has("tr_smallkey", keys + CountDoneDeadends(1, "@Turtle Rock Front/Big Key Chest/Big Key Chest"), 3, keys + CountDoneDeadends(1, "@Turtle Rock Front/Big Key Chest/Big Key Chest"), 5), keys + 1 end)
@@ -110,26 +153,33 @@ tr_travel_maze:connect_one_way(tr_crystalroller_room, function(keys)
         CanInteract(tr_travel_maze)
     ), KDSreturn(keys, keys + 1)
 end)
-tr_crystalroller_room:connect_one_way("TR - Crystalroller Chest")
 
-tr_travel_maze:connect_two_ways(tr_eye_hallway, function()
+tr_crystalroller_room:connect_one_way("TR - Crystalroller Chest", function() 
     return ALL(
-        "somaria",
-        DarkRooms(false)
+        HitRanged,
+        CanInteract(tr_crystalroller_room)
     )
 end)
 
-tr_eye_hallway:connect_two_ways(tr_eye_bridge_entrance_inside)
-tr_eye_hallway:connect_two_ways(tr_switch_puzzle, function(keys)
+tr_travel_maze:connect_two_ways(tr_side_eye_hallway, function()
+    return ALL(
+        "somaria",
+        DarkRooms(false),
+        CanInteract(tr_travel_maze)
+    )
+end)
+
+tr_side_eye_hallway:connect_two_ways(tr_eye_bridge_room)
+tr_side_eye_hallway:connect_two_ways(tr_switch_puzzle, function(keys)
     return ALL(
         Has("tr_smallkey", keys + CountDoneDeadends(1, "@Turtle Rock Front/Big Key Chest/Big Key Chest"), 4, keys + CountDoneDeadends(1, "@Turtle Rock Front/Big Key Chest/Big Key Chest"), 6),
-        CanInteract(tr_eye_hallway)
+        CanInteract(tr_side_eye_hallway)
     ), keys + 1 end)
 -- tr_eye_hallway:connect_two_ways(tr_switch_puzzle, function(keys) return Has("tr_smallkey", keys + 1, 3, keys + 1, 5), keys + 1 end)
 
-tr_eye_bridge_entrance_inside:connect_one_way("TR - Eyebridge Top Right", function()
+tr_eye_bridge_room:connect_one_way("TR - Eyebridge Top Right", function()
     return ALL(
-        CanInteract(tr_eye_bridge_entrance_inside),
+        CanInteract(tr_eye_bridge_room),
         ANY(
             "byrna",
             "cape",
@@ -137,9 +187,9 @@ tr_eye_bridge_entrance_inside:connect_one_way("TR - Eyebridge Top Right", functi
         )
     )
 end)
-tr_eye_bridge_entrance_inside:connect_one_way("TR - Eyebridge Top Left", function()
+tr_eye_bridge_room:connect_one_way("TR - Eyebridge Top Left", function()
     return ALL(
-        CanInteract(tr_eye_bridge_entrance_inside),
+        CanInteract(tr_eye_bridge_room),
         ANY(
             "byrna",
             "cape",
@@ -147,9 +197,9 @@ tr_eye_bridge_entrance_inside:connect_one_way("TR - Eyebridge Top Left", functio
         )
     )
 end)
-tr_eye_bridge_entrance_inside:connect_one_way("TR - Eyebridge Bottom Right", function()
+tr_eye_bridge_room:connect_one_way("TR - Eyebridge Bottom Right", function()
     return ALL(
-        CanInteract(tr_eye_bridge_entrance_inside),
+        CanInteract(tr_eye_bridge_room),
         ANY(
             "byrna",
             "cape",
@@ -157,14 +207,25 @@ tr_eye_bridge_entrance_inside:connect_one_way("TR - Eyebridge Bottom Right", fun
         )
     )
 end)
-tr_eye_bridge_entrance_inside:connect_one_way("TR - Eyebridge Bottom Left", function()
+tr_eye_bridge_room:connect_one_way("TR - Eyebridge Bottom Left", function()
     return ALL(
-    CanInteract(tr_eye_bridge_entrance_inside),
+    CanInteract(tr_eye_bridge_room),
     ANY(
             "byrna",
             "cape",
             "mirrorshield"
         )
+    )
+end)
+
+tr_eye_bridge_entrance_inside:connect_two_ways(tr_eye_bridge_room, function()
+    return ANY(
+        ALL(
+            "bombs",
+            CanInteract(tr_eye_bridge_entrance_inside)
+        ),
+        ER_STAGE > 0,
+        Inverted
     )
 end)
 
