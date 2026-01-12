@@ -1103,7 +1103,8 @@ dark_floating_island_outside:connect_two_ways(dark_floating_island)
 -- end)
 
 --# TODO: inverted: light floating island -> mirror -> dark floating island -> hookshot cave available
-dark_floating_island:connect_two_ways(floating_island, function() return CanChangeWorldWithMirror() end)
+dark_floating_island:connect_one_way(floating_island, function() return ALL(CanChangeWorldWithMirror,OpenOrStandard) end)
+floating_island:connect_one_way(dark_floating_island, function() return ALL(CanChangeWorldWithMirror,Inverted) end)
 dark_floating_island:connect_one_way(dark_death_mountain_right_top)
 
 
