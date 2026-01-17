@@ -1,6 +1,30 @@
 {
 	"versions": [
 		{
+			"package_version": "0.4.3",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.4.3/alttp-ap-tracker-v0.4.3.zip",
+			"sha256": "2d61282b63bbb2ea3cd0854df15a1df6b888978fed64cedf584562806c973cf9",
+			"changelog": [
+				"Mainly getting minor bigfixes out before the january 2026 Big-Async starts",
+				"",
+				"bugfixes for ER and some other logic issues",
+				"",
+				"# fixed ER stuff:",
+				"",
+				"",
+				"# fixed logic:",
+				"- TR traversal- and keylogic should not match the apworld way more closely than before. still not a 1:1",
+				"- adds items functionality into the settings popup as a setting to track",
+				"- updates the README with a tutorial on how-to use the ER tracking side of things alongside the 'Route Mode'",
+				"- adds Spike Cave Logic to match worlds logic with magic use and needing cape or byrna",
+				"- fixed floating island mirror connection being a 2 way connection regardless of world setting. this got split so each world-mode only has a one way in the correct direction",
+				"- fixed DM exit of 'old man rescue cave' being internally set as a one way thus making it impossible to leave light DM for the tracker",
+				"",
+				"# added:",
+				""
+			]
+		},
+		{
 			"package_version": "0.4.2",
 			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.4.2/alttp-ap-tracker-v0.4.2.zip",
 			"sha256": "918302bbb76e2e4fa04074691e6a716cd8f73add9ed5fc845d49ca7a91a7efac",
@@ -592,6 +616,7 @@
 		}
 	]
 }
+
 
 
 
