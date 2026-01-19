@@ -25,7 +25,7 @@
                     },
                     {
                         "name": "Master Sword Meadow",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_mastersword_meadow_outside"
@@ -73,7 +73,7 @@
                     },
                     {
                         "name": "Lost Woods Gamble",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_lost_woods_gamble_outside"
@@ -121,7 +121,7 @@
                     },
                     {
                         "name": "Lost Woods Hideout Drop",
-                    "visibility_rules": ["er_dungeons", "er_full"],
+                    "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                     "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_lost_woods_hideout_hole_outside"
@@ -169,7 +169,7 @@
                     },
                     {
                         "name": "Lost Woods Hideout Stump",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_lost_woods_hideout_cave_outside"
@@ -217,7 +217,7 @@
                     },
                     {
                         "name": "Lumberjack House",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_lumberjacks_house_outside"
@@ -265,7 +265,7 @@
                     },
                     {
                         "name": "Lumberjack Tree Tree",
-                    "visibility_rules": ["er_dungeons", "er_full"],
+                    "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                     "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_lumberjacks_hole_outside"
@@ -313,7 +313,7 @@
                     },
                     {
                         "name": "Lumberjack Tree Cave",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_lumberjacks_cave_outside"
@@ -361,7 +361,7 @@
                     },
                     {
                         "name": "Old Man Cave Exit (West)",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_old_man_cave_left_outside"
@@ -409,7 +409,7 @@
                     },
                     {
                         "name": "Death Mountain Return Cave Exit (West)",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_light_death_mountain_return_left_outside"
@@ -462,7 +462,7 @@
                     },
                     {
                         "name": "Death Mountain Return Cave (East)",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_light_death_mountain_return_right_outside"
@@ -510,7 +510,7 @@
                     },
                     {
                         "name": "Old Man Cave (East)",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_old_man_cave_right_outside"
@@ -558,7 +558,7 @@
                     },
                     {
                         "name": "Old Man House (Top)",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_old_man_home_top_outside"
@@ -606,7 +606,7 @@
                     },
                     {
                         "name": "Old Man House (Bottom)",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_old_man_home_bottom_outside"
@@ -654,7 +654,7 @@
                     },
                     {
                         "name": "Spectacle Rock Cave Peak",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_spec_rock_top_entrance_outside"
@@ -702,7 +702,7 @@
                     },
                     {
                         "name": "Spectacle Rock Cave (Bottom)",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_spec_rock_ledge_entrance_outside"
@@ -750,7 +750,7 @@
                     },
                     {
                         "name": "Spectacle Rock Cave Exit",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_spec_rock_ledge_exit_outside"
@@ -798,7 +798,7 @@
                     },
                     {
                         "name": "Tower of Hera",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_toh_entrance_outside"
@@ -846,7 +846,7 @@
                     },
                     {
                         "name": "Paradox Cave (Bottom)",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_paradox_cave_bottom_entrance_outside"
@@ -894,7 +894,7 @@
                     },
                     {
                         "name": "Paradox Cave (Top)",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_paradox_cave_top_entrance_outside"
@@ -942,7 +942,7 @@
                     },
                     {
                         "name": "Paradox Cave (Middle)",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_paradox_cave_middle_entrance_outside"
@@ -990,7 +990,7 @@
                     },
                     {
                         "name": "Spiral Cave",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_spiral_cave_top_outside"
@@ -1038,7 +1038,7 @@
                     },
                     {
                         "name": "Spiral Cave (Bottom)",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_spiral_cave_bottom_outside"
@@ -1086,7 +1086,7 @@
                     },
                     {
                         "name": "Mimic Cave",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_mimic_cave_outside"
@@ -1134,7 +1134,7 @@
                     },
                     {
                         "name": "Hookshot Fairy",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_hookshot_fairy_outside"
@@ -1182,7 +1182,7 @@
                     },
                     {
                         "name": "Fairy Ascension Cave (Bottom)",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_fairy_ascension_cave_bottom_outside"
@@ -1230,7 +1230,7 @@
                     },
                     {
                         "name": "Fairy Ascension Cave (Top)",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_fairy_ascension_cave_top_outside"
@@ -1278,7 +1278,7 @@
                     },
                     {
                         "name": "Waterfall of Wishing",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_waterfall_fairy_outside"
@@ -1331,7 +1331,7 @@
                     },
                     {
                         "name": "Bat Cave Drop",
-                    "visibility_rules": ["er_dungeons", "er_full"],
+                    "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                     "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_magic_bat_hole_outside"
@@ -1379,7 +1379,7 @@
                     },
                     {
                         "name": "Bat Cave Exit",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_magic_bat_cave_outside"
@@ -1427,7 +1427,7 @@
                     },
                     {
                         "name": "Sick Kids House",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_kakariko_sick_kid_outside"
@@ -1475,7 +1475,7 @@
                     },
                     {
                         "name": "Elder House (East)",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_kakariko_elder_house_right_outside"
@@ -1523,7 +1523,7 @@
                     },
                     {
                         "name": "Elder House (West)",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_kakariko_elder_house_left_outside"
@@ -1571,7 +1571,7 @@
                     },
                     {
                         "name": "Fortune Teller (Light)",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_kakariko_furtune_teller_outside"
@@ -1619,7 +1619,7 @@
                     },
                     {
                         "name": "Snitch Lady (East)",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_kakariko_snitch_house_right_outside"
@@ -1667,7 +1667,7 @@
                     },
                     {
                         "name": "Snitch Lady (West)",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_kakariko_snitch_house_left_outside"
@@ -1715,7 +1715,7 @@
                     },
                     {
                         "name": "Bush Covered House",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_kakariko_overgrown_house_outside"
@@ -1763,7 +1763,7 @@
                     },
                     {
                         "name": "Tavern (Front)",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_kakariko_frontside_pub_outside"
@@ -1811,7 +1811,7 @@
                     },
                     {
                         "name": "Tavern (Back)",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_kakariko_backside_pub_outside"
@@ -1859,7 +1859,7 @@
                     },
                     {
                         "name": "Light World Bomb Hut",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_kakariko_bombhut_outside"
@@ -1907,7 +1907,7 @@
                     },
                     {
                         "name": "Kakariko Shop",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_kakariko_shop_outside"
@@ -1955,7 +1955,7 @@
                     },
                     {
                         "name": "Kakariko Well Drop",
-                    "visibility_rules": ["er_dungeons", "er_full"],
+                    "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                     "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_kakariko_well_hole_outside"
@@ -2003,7 +2003,7 @@
                     },
                     {
                         "name": "Kakariko Well Exit",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_kakariko_well_cave_outside"
@@ -2051,7 +2051,7 @@
                     },
                     {
                         "name": "Chicken House",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_kakariko_chickenhut_outside"
@@ -2099,7 +2099,7 @@
                     },
                     {
                         "name": "Blinds Hideout",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_kakariko_blinds_hideout_outside"
@@ -2147,7 +2147,7 @@
                     },
                     {
                         "name": "Blacksmiths Hut",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_dwarf_smiths_outside"
@@ -2195,7 +2195,7 @@
                     },
                     {
                         "name": "Two Brothers House (East)",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_twin_house_right_outside"
@@ -2243,7 +2243,7 @@
                     },
                     {
                         "name": "Two Brothers House (West)",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_twin_house_left_outside"
@@ -2291,7 +2291,7 @@
                     },
                     {
                         "name": "Library",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_library_outside"
@@ -2339,7 +2339,7 @@
                     },
                     {
                         "name": "Kakariko Gamble Game",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_kakariko_chest_minigame_outside"
@@ -2392,7 +2392,7 @@
                     },
                     {
                         "name": "Hyrule Castle Secret Entrance Drop",
-                    "visibility_rules": ["er_dungeons", "er_full"],
+                    "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                     "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_secret_passage_hole_outside"
@@ -2440,7 +2440,7 @@
                     },
                     {
                         "name": "Hyrule Castle Secret Entrance Stairs",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_secret_passage_stairs_outside"
@@ -2488,7 +2488,7 @@
                     },
                     {
                         "name": "Kings Grave",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_kings_tomb_outside"
@@ -2536,7 +2536,7 @@
                     },
                     {
                         "name": "Graveyard Cave",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_graveyard_ledge_outside"
@@ -2584,7 +2584,7 @@
                     },
                     {
                         "name": "Bonk Rock Cave",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_sanctuary_bonk_pile_cave_outside"
@@ -2632,7 +2632,7 @@
                     },
                     {
                         "name": "Sanctuary",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_sanctuary_entrance_outside"
@@ -2680,7 +2680,7 @@
                     },
                     {
                         "name": "Sanctuary Grave",
-                    "visibility_rules": ["er_dungeons", "er_full"],
+                    "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                     "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_ce_dropdown_entrance_outside"
@@ -2728,7 +2728,7 @@
                     },
                     {
                         "name": "North Fairy Cave Drop",
-                    "visibility_rules": ["er_dungeons", "er_full"],
+                    "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                     "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_north_fairy_drop_outside"
@@ -2776,7 +2776,7 @@
                     },
                     {
                         "name": "North Fairy Cave Exit",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_north_fairy_cave_outside"
@@ -2824,7 +2824,7 @@
                     },
                     {
                         "name": "Hyrule Castle Entrance (South)",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_hc_main_entrance_outside"
@@ -2872,7 +2872,7 @@
                     },
                     {
                         "name": "Hyrule Castle Entrance (West)",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_hc_left_entrance_outside"
@@ -2920,7 +2920,7 @@
                     },
                     {
                         "name": "Hyrule Castle Entrance (East)",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_hc_right_entrance_outside"
@@ -2970,7 +2970,7 @@
                     },
                     {
                         "name": "Pyramid Hole",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_pyramid_hole_outside"
@@ -3020,7 +3020,7 @@
                     },
                     {
                         "name": "Pyramid Exit",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_pyramid_exit_outside"
@@ -3068,7 +3068,7 @@
                     },
                     {
                         "name": "Agahnims Tower",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_at_entrance_outside"
@@ -3121,7 +3121,7 @@
                     },
                     {
                         "name": "Eastern Palace",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_ep_entrance_outside"
@@ -3169,7 +3169,7 @@
                     },
                     {
                         "name": "Sahasrahlas Hut",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_sahasralahs_hut_outside"
@@ -3217,7 +3217,7 @@
                     },
                     {
                         "name": "Long Fairy Cave",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_eastern_long_fairy_cave_outside"
@@ -3265,7 +3265,7 @@
                     },
                     {
                         "name": "Trees Fairy Cave",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_eastern_tree_fairy_cave_outside"
@@ -3313,7 +3313,7 @@
                     },
                     {
                         "name": "Potion Shop",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_light_potion_shop_outside"
@@ -3366,7 +3366,7 @@
                     },
                     {
                         "name": "Aginahs Cave",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_aginah_cave_outside"
@@ -3414,7 +3414,7 @@
                     },
                     {
                         "name": "50 Rupee Cave",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_fifty_rupee_thief_outside"
@@ -3462,7 +3462,7 @@
                     },
                     {
                         "name": "Desert Palace Entrance (South)",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_dp_main_entrance_outside"
@@ -3510,7 +3510,7 @@
                     },
                     {
                         "name": "Desert Palace Entrance (West)",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_dp_left_entrance_outside"
@@ -3558,7 +3558,7 @@
                     },
                     {
                         "name": "Desert Palace Entrance (North)",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_dp_back_entrance_outside"
@@ -3606,7 +3606,7 @@
                     },
                     {
                         "name": "Desert Palace Entrance (East)",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_dp_right_entrance_outside"
@@ -3654,7 +3654,7 @@
                     },
                     {
                         "name": "Checkerboard Cave",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_checkerboard_cave_outside"
@@ -3702,7 +3702,7 @@
                     },
                     {
                         "name": "Desert Fairy Cave",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_dam_desert_fairy_outside"
@@ -3750,7 +3750,7 @@
                     },
                     {
                         "name": "Cave 45",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_cave45_outside"
@@ -3803,7 +3803,7 @@
                     },
                     {
                         "name": "Light Hype Fairy",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_light_hype_fairy_outside"
@@ -3851,7 +3851,7 @@
                     },
                     {
                         "name": "Bonk Fairy (Light)",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_links_fairy_fountain_outside"
@@ -3899,7 +3899,7 @@
                     },
                     {
                         "name": "Dam",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_dam_outside"
@@ -3947,7 +3947,7 @@
                     },
                     {
                         "name": "Links House",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_links_house_outside"
@@ -4000,7 +4000,7 @@
                     },
                     {
                         "name": "20 Rupee Cave",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_twenty_rupee_thief_outside"
@@ -4048,7 +4048,7 @@
                     },
                     {
                         "name": "Lake Hylia Fortune Teller",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_light_lake_fortune_outside"
@@ -4096,7 +4096,7 @@
                     },
                     {
                         "name": "Cave Shop (Lake Hylia)",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_light_lake_shop_outside"
@@ -4144,7 +4144,7 @@
                     },
                     {
                         "name": "Mini Moldorm Cave",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_mini_moldorm_cave_outside"
@@ -4192,7 +4192,7 @@
                     },
                     {
                         "name": "Upgrade Faiy Cave",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_upgrade_fairy_outside"
@@ -4240,7 +4240,7 @@
                     },
                     {
                         "name": "Ice Rod Cave",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_icerod_cave_outside"
@@ -4288,7 +4288,7 @@
                     },
                     {
                         "name": "Good Bee Cave",
-                        "visibility_rules": ["er_dungeons", "er_full"],
+                        "visibility_rules": ["er_dungeons", "er_full", "route_mode"],
                         "clear_as_group":false,
                         "access_rules": [
                             "^$ChangeLocationColor|from_good_bee_cave_outside"
