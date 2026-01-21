@@ -1,5 +1,5 @@
 {
-    "Route": {
+    "Route_horizontal": {
         "type": "itemgrid",
         "item_margin": "110, 2",
         "margin": "2,2,110,2",
@@ -22,6 +22,41 @@
             [ "solidblack7", "solidblack17", "solidblack27", "solidblack37" ],
             [ "solidblack8", "solidblack18", "solidblack28", "solidblack38" ],
             [ "solidblack9", "solidblack19", "solidblack29", "solidblack39" ]
+        ]
+    },
+    "Route_vertical": {
+        "type": "itemgrid",
+        "item_margin": "110, 2",
+        "margin": "2,2,110,2",
+        "h_alignment": "stretch",
+        "v_alignment": "stretch",
+        "item_h_alignment": "stretch",
+        "item_v_alignment": "stretch",
+        // "item_height": 3,
+        // "item_width": 3,
+        // "background": "#FFFF00",
+        "item_size": 3,
+        "rows": [
+            [ "solidblack0", "solidblack20"],
+            [ "solidblack1", "solidblack21"],
+            [ "solidblack2", "solidblack22"],
+            [ "solidblack3", "solidblack23"],
+            [ "solidblack4", "solidblack24"],
+            [ "solidblack5", "solidblack25"],
+            [ "solidblack6", "solidblack26"],
+            [ "solidblack7", "solidblack27"],
+            [ "solidblack8", "solidblack28"],
+            [ "solidblack9", "solidblack29"],
+            [ "solidblack10", "solidblack30"],
+            [ "solidblack11", "solidblack31"],
+            [ "solidblack12", "solidblack32"],
+            [ "solidblack13", "solidblack33"],
+            [ "solidblack14", "solidblack34"],
+            [ "solidblack15", "solidblack35"],
+            [ "solidblack16", "solidblack36"],
+            [ "solidblack17", "solidblack37"],
+            [ "solidblack18", "solidblack38"],
+            [ "solidblack19", "solidblack39"]
         ]
     }
 }

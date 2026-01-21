@@ -35,7 +35,7 @@ ScriptHost:AddWatchForCode("set prize shuffles", "prize_shuffle", SetPrizeShuffl
 SetPrizeShuffle()
 
 
-ScriptHost:AddWatchForCode("set all autofill", "autofill_all_settings", setAllAutofill)
+ScriptHost:AddWatchForCode("set all autofill", "autofill_all_settings", SetAllAutofill)
 
 --luaitems
 ScriptHost:AddWatchForCode("ER_reset_triggered", "reset_er", Reset_ER_setings)
@@ -49,6 +49,12 @@ Archipelago:AddLocationHandler("location handler", onLocation)
 
 Archipelago:AddSetReplyHandler("notify handler", onNotify)
 Archipelago:AddRetrievedHandler("notify launch handler", onNotifyLaunch)
+
+--ER reduced layout
+ScriptHost:AddWatchForCode("reduce ER map clutter", "reduce_maps", ChangeERMap)
+ScriptHost:AddWatchForCode("remove ER Layout", "er_tracking", ChangeERLayout)
+ChangeERMap()
+ChangeERLayout()
 
 for _, code in pairs({"autofill_dungeon_settings", "autofill_goal_reqs", "autofill_medallions", "autofill_modes", "autofill_misc", "autofill_sanities"}) do
     ScriptHost:AddWatchForCode("settings ".. code, code, autoFill)

@@ -729,5 +729,13 @@
         "img": "/images/settings/route_mode_on.png",
         "disabled_img": "/images/settings/route_mode_off.png",
         "codes": "route_mode"
+    },
+    {
+        "name": "Remove Deadends from Map",
+        "type": "toggle",
+        "img": "/images/settings/remove_map_clutter_on.png",
+        "disabled_img": "/images/settings/remove_map_clutter_off.png",
+        "disabled_img_mods": "",
+        "codes": "reduce_maps"
     }
 ]

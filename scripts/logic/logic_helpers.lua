@@ -834,7 +834,7 @@ function SetPrizeShuffle()
     end
 end
 
-function setAllAutofill()
+function SetAllAutofill()
     ScriptHost:RemoveWatchForCode("StateChanged")
     local set_all = Tracker:FindObjectForCode("autofill_all_settings").Active
     Tracker:FindObjectForCode("autofill_dungeon_settings").Active = set_all
@@ -846,6 +846,22 @@ function setAllAutofill()
     ScriptHost:AddWatchForCode("StateChanged", "*", StateChanged)
 end
 
+function ChangeERMap()
+    if Tracker:FindObjectForCode("reduce_maps").Active then
+        Tracker:AddLayouts("layouts/entrances_reduced.json")
+
+    else
+        Tracker:AddLayouts("layouts/entrances.json")
+    end
+end
+
+function ChangeERLayout()
+    if Tracker:FindObjectForCode("er_tracking").CurrentStage == 0 then
+        Tracker:AddLayouts("layouts/tabs.json")
+    else
+        Tracker:AddLayouts("layouts/tabs_er.json")
+    end
+end
 
 -- ScriptHost:AddWatchForCode("settings maps_setting", "maps_setting", GiveAll)
 -- ScriptHost:AddWatchForCode("settings compass_shuffle", "compass_setting", GiveAll)
