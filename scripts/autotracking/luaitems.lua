@@ -199,32 +199,12 @@ local function OnMiddleClickFunc(self)
     HIGHLIGHT_TARGET = Tracker:FindObjectForCode(target_location) --location/section
     HIGHLIGHT_TARGET.Highlight = Highlight.Avoid
     Tracker:UiHint("ActivateTab", "Entrances")
-    if self.ItemState.BaseWorldstate ~= nil then --outside
-        if self.ItemState.BaseWorldstate == "light" then
-            Tracker:UiHint("ActivateTab", "Lightworld OW")
-        else
-            Tracker:UiHint("ActivateTab", "Darkworld OW")
-        end
-    -- else
-    --     if self.ItemState.BaseWorldstate == "light" then --inside
-    --         Tracker:UiHint("ActivateTab", "Lightworld Caves")
-    --     else
-    --         Tracker:UiHint("ActivateTab", "Darkworld Caves")
-    --     end
+    if self.ItemState.Map ~= nil then --outside
+        Tracker:UiHint("ActivateTab", self.ItemState.Map)
     end
     local target = Tracker:FindObjectForCode(self.ItemState.Target)
-    if target.ItemState.BaseWorldstate  ~= nil then --outside
-        if target.ItemState.BaseWorldstate == "light" then
-            Tracker:UiHint("ActivateTab", "Lightworld OW")
-        else
-            Tracker:UiHint("ActivateTab", "Darkworld OW")
-        end
-    -- else
-    --     if target.ItemState.BaseWorldstate == "light" then --inside
-    --         Tracker:UiHint("ActivateTab", "Lightworld Caves")
-    --     else
-    --         Tracker:UiHint("ActivateTab", "Darkworld Caves")
-    --     end
+    if target.ItemState.Map  ~= nil then --outside
+        Tracker:UiHint("ActivateTab", target.ItemState.Map)
     end
 end
 
@@ -287,7 +267,8 @@ local function SaveLocationFunc(self)
         IsDeadEnd = self.ItemState.IsDeadEnd,
         IsDungeon = self.ItemState.IsDungeon,
         IsConnector = self.ItemState.IsConnector,
-        DeadendColorBackup = self.ItemState.DeadendColorBackup
+        DeadendColorBackup = self.ItemState.DeadendColorBackup,
+        Map = self.ItemState.Map
     }
     -- print("SaveFunc")
 end
@@ -313,6 +294,7 @@ local function LoadLocationFunc(self, data)
         self.ItemState.IsDungeon = data.IsDungeon
         self.ItemState.IsConnector = data.IsConnector
         self.ItemState.DeadendColorBackup = data.DeadendColorBackup
+        self.ItemState.Map = data.Map
         if data.BadgeText ~= nil then
             self.BadgeText = data.BadgeText
             self.BadgeTextColor = "#abcdef"
@@ -361,6 +343,7 @@ function CreateLuaLocationItems(direction, location_obj, side)
         Room = location_obj.room,
         Worldstate = location_obj.worldstate,
         BaseWorldstate = location_obj.worldstate,
+        Map= location_obj.map, 
         BadgeTextDirection = direction .. " " .. location_obj.shortname,
         CorrespondingLocationSection = location_obj.locationsection,
         TargetCorrespondingLocationSection = nil,

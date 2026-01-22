@@ -968,7 +968,7 @@ cave45_ledge:connect_two_ways(cave45_outside)
 cave45_outside:connect_two_ways_entrance("Cave 45 Inside", cave45_inside)
 cave45_ledge:connect_one_way(links_house_area, function() return OpenOrStandard() end)
 cave45_ledge:connect_two_ways(links_house_area, function() return Inverted() end)
-cave45_inside:connect_one_way("Cave 45", function() return CanInteract(cave45_inside) end)
+cave45_inside:connect_one_way("Cave 45", function() return ANY(CanInteract(cave45_inside), ACCESS_INSPECT) end)
 
 links_house_area:connect_one_way("Flute Spot", function()
     return ALL(

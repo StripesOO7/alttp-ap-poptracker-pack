@@ -53,8 +53,6 @@ Archipelago:AddRetrievedHandler("notify launch handler", onNotifyLaunch)
 --ER reduced layout
 ScriptHost:AddWatchForCode("reduce ER map clutter", "reduce_maps", ChangeERMap)
 ScriptHost:AddWatchForCode("remove ER Layout", "er_tracking", ChangeERLayout)
-ChangeERMap()
-ChangeERLayout()
 
 for _, code in pairs({"autofill_dungeon_settings", "autofill_goal_reqs", "autofill_medallions", "autofill_modes", "autofill_misc", "autofill_sanities"}) do
     ScriptHost:AddWatchForCode("settings ".. code, code, autoFill)

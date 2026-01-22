@@ -36,6 +36,8 @@ function OnFrameHandler()
     -- stuff
     ScriptHost:AddWatchForCode("StateChanged", "*", StateChanged)
     ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", LocationHandler)
+    ChangeERMap()
+    ChangeERLayout()
     ForceUpdate()
 end
 require("scripts/watches")
