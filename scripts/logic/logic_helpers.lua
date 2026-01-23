@@ -547,7 +547,7 @@ function CanInteract(location, item) -- this basically just calls for if you are
                 return true
             end
         end
-        if location.deadEndOrDungeonOrConnector == "connector" or location.deadEndOrDungeonOrConnector == "deadend" then
+        if (location.deadEndOrDungeonOrConnector == "connector" or location.deadEndOrDungeonOrConnector == "deadend") and Tracker:FindObjectForCode("glitches").CurrentStage > 0 then
             -- print(item, valid_super_bunny_items[item], Tracker:FindObjectForCode(item).Active)
             -- print(Tracker:FindObjectForCode("mirror").Active and (valid_super_bunny_items[item] or false) and Tracker:FindObjectForCode(item).Active)
             if item then
