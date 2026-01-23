@@ -680,6 +680,7 @@ dark_bumper_cave_top_outside:connect_two_ways_entrance("Bumper Cave Top", dark_b
 dark_bumper_cave_top_outside:connect_two_ways_entrance("Dark Death Mountain Fairy Inside", dark_death_mountain_fairy_inside, function() return Inverted() end)
 
 dark_bumper_cave_top_ledge:connect_two_ways(dark_bumper_cave_top_outside)
+dark_bumper_cave_top_ledge:connect_one_way(light_death_mountain_return_ledge, function() return ALL(CanChangeWorldWithMirror, OpenOrStandard)end)
 -- dark_bumper_cave_top_ledge:connect_two_ways(dark_death_mountain_fairy_outside, Inverted)
 
 

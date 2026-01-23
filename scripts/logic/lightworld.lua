@@ -767,7 +767,9 @@ end) -- Light World DMA Clip Spot
 -- OWG end
 
 light_death_mountain_return_ledge:connect_one_way(lumberjacks_area)
-light_death_mountain_return_ledge:connect_two_ways(light_death_mountain_return_left_outside, function() return OpenOrStandard() end)
+light_death_mountain_return_ledge:connect_two_ways(light_death_mountain_return_left_outside)
+
+light_death_mountain_return_ledge:connect_one_way(dark_bumper_cave_top_ledge, function() return ALL(CanChangeWorldWithMirror, Inverted) end)
 
 old_man_cave_left_ledge:connect_two_ways(old_man_cave_left_outside)
 
