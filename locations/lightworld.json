@@ -1241,6 +1241,14 @@
                         ],
                         "item_count": 2,
                         "clear_as_group": false
+                    },
+                    {
+                        "name": "Bottle refill",
+                        "access_rules": [
+                            "^$CanReach|waterfall_fairy_inside"
+                        ],
+                        "hosted_item": "fairy_bottle1",
+                        "clear_as_group": false
                     }
                 ],
                 "map_locations": [

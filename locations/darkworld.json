@@ -727,6 +727,14 @@
                         ],
                         "clear_as_group": false,
                         "item_count": 2
+                    },
+                    {
+                        "name": "Bottle refill",
+                        "access_rules": [
+                            "^$CanReach|pyramid_fairy_cave_inside"
+                        ],
+                        "hosted_item": "fairy_bottle2",
+                        "clear_as_group": false
                     }
                 ],
                 "map_locations": [

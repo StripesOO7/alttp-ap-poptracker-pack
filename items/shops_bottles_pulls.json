@@ -3,28 +3,42 @@
         "name": "Fairy Bottle 1",
         "type": "progressive",
         "allow_disabled": false,
-        "loop": false,
+        "loop": true,
         "stages": [
+            {
+                "img": "images/items/unknown.png",
+                "codes": "fairy_bottle1, bottle_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bottle.png",
+                "codes": "fairy_bottle1, emmpty_potion, empty_refill",
+                "inherit_codes": false
+            },
             {
                 "img": "/images/items/red_potion.png",
                 "codes": "fairy_bottle1, greeredion",
-                "disabled_img": "/images/items/Bottle.png"
+                "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "fairy_bottle1, red_greenion"
+                "codes": "fairy_bottle1, red_greenion",
+                "inherit_codes": false
             },
             {
                 "img": "/images/items/blue_potion.png",
-                "codes": "fairy_bottle1, blue_potion"
+                "codes": "fairy_bottle1, blue_potion",
+                "inherit_codes": false
             },
             {
                 "img": "/images/items/fairy_bottle.png",
-                "codes": "fairy_bottle1, fairy_bottle"
+                "codes": "fairy_bottle1, fairy_bottle",
+                "inherit_codes": false
             },
             {
                 "img": "/images/items/bee_bottle.png",
-                "codes": "fairy_bottle1, bee_bottle"
+                "codes": "fairy_bottle1, bee_bottle",
+                "inherit_codes": false
             }
         ]
     },
@@ -32,28 +46,43 @@
         "name": "Fairy Bottle 2",
         "type": "progressive",
         "allow_disabled": false,
-        "loop": false,
+        "loop": true,
         "stages": [
             {
+                "img": "images/items/unknown.png",
+                "codes": "fairy_bottle2, bottle_unknown",
+                "inherit_codes": false
+            },
+            {
+                "img": "/images/items/Bottle.png",
+                "codes": "fairy_bottle2, green_potion, green_refill",
+                "inherit_codes": false
+            },
+            {
                 "img": "/images/items/red_potion.png",
-                "codes": "fairy_bottle2, green_potion, greeredill",
-                "disabled_img": "/images/items/Bottle.png"
+                "codes": "fairy_bottle2, green_potion, green_refill",
+                "disabled_img": "/images/items/Bottle.png",
+                "inherit_codes": false
             },
             {
                 "img": "/images/items/green_potion.png",
-                "codes": "fairy_bottle2, red_potion, red_greenill"
+                "codes": "fairy_bottle2, red_potion, red_refill",
+                "inherit_codes": false
             },
             {
                 "img": "/images/items/blue_potion.png",
-                "codes": "fairy_bottle2, blue_potion, blue_refill"
+                "codes": "fairy_bottle2, blue_potion, blue_refill",
+                "inherit_codes": false
             },
             {
                 "img": "/images/items/fairy_bottle.png",
-                "codes": "fairy_bottle2, fairy_bottle"
+                "codes": "fairy_bottle2, fairy_bottle",
+                "inherit_codes": false
             },
             {
                 "img": "/images/items/bee_bottle.png",
-                "codes": "fairy_bottle2, bee_bottle"
+                "codes": "fairy_bottle2, bee_bottle",
+                "inherit_codes": false
             }
         ]
     },
