@@ -1,6 +1,32 @@
 {
 	"versions": [
 		{
+			"package_version": "0.4.4",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.4.4/alttp-ap-tracker-v0.4.4.zip",
+			"sha256": "47f2d8a0453e6af980730659916fd9bc4ecfc2536a922436ed8e4249c7908993",
+			"changelog": [
+				"bugfixes for ER and some other logic issues",
+				"",
+				"# fixed ER stuff:",
+				"",
+				"",
+				"# fixed logic:",
+				"- fixed connections to cave45 in inverted",
+				"- fixed mirror connection between bumpercave and dm return cave ledges",
+				"- fix superbunny being considered in logic for superbunny cave or kakariko well depending on world mode",
+				"- fixes map switching for highlighting entrances",
+				"- fix some route mode path texts",
+				"- fix missing aga1 check for inverted teleporter behind big bomb shop",
+				"- hopefully fix retro caves",
+				"",
+				"# added:",
+				"- hides Entrances adn route tab when ER is not enabled",
+				"- addes setting to remove certain useless rooms from the ER map to make ot more legible",
+				"- tracking of bottle refills for waterfall and pyramid fairy was somehow missed to be shown, fixed now",
+				"",
+			]
+		},
+		{
 			"package_version": "0.4.3",
 			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.4.3/alttp-ap-tracker-v0.4.3.zip",
 			"sha256": "2d61282b63bbb2ea3cd0854df15a1df6b888978fed64cedf584562806c973cf9",
@@ -616,6 +642,7 @@
 		}
 	]
 }
+
 
 
 
