@@ -183,18 +183,18 @@ kakariko_overgrown_house_outside:connect_one_way(dark_village_shop_outside, func
     )
 end)
 
-kakariko_well_hole_inside:connect_one_way(kakariko_well_item)
+kakariko_well_hole_inside:connect_one_way(kakariko_well_ledge)
 kakariko_well_hole_inside:connect_one_way(kakariko_well_cave_inside)
-kakariko_well_item:connect_one_way("Kakariko Well - Top", function()
+kakariko_well_ledge:connect_one_way("Kakariko Well - Top", function()
     return ALL(
         "bombs",
-        CanInteract(kakariko_well_item)
+        CanInteract(kakariko_well_ledge)
     )
 end)
-kakariko_well_item:connect_one_way("Kakariko Well - Left") -- can interact as bunny
-kakariko_well_item:connect_one_way("Kakariko Well - Middle") -- can interact as bunny
-kakariko_well_item:connect_one_way("Kakariko Well - Right") -- can interact as bunny
-kakariko_well_item:connect_one_way("Kakariko Well - Bottom") -- can interact as bunny
+kakariko_well_ledge:connect_one_way("Kakariko Well - Left", function() return CanInteract(kakariko_well_ledge) end) -- can interact as bunny
+kakariko_well_ledge:connect_one_way("Kakariko Well - Middle", function() return CanInteract(kakariko_well_ledge) end) -- can interact as bunny
+kakariko_well_ledge:connect_one_way("Kakariko Well - Right", function() return CanInteract(kakariko_well_ledge) end) -- can interact as bunny
+kakariko_well_ledge:connect_one_way("Kakariko Well - Bottom", function() return CanInteract(kakariko_well_ledge) end) -- can interact as bunny
 
 
 

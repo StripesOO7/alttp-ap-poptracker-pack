@@ -1341,6 +1341,6 @@ superbunny_cave_bottom_outside:connect_two_ways_entrance("Super Bunny Cave Botto
 superbunny_cave_top_outside:connect_two_ways_entrance("Super Bunny Cave Top Entrance", superbunny_cave_top_inside)
 
 superbunny_cave_bottom_inside:connect_one_way(superbunny_cave_top_inside)
-superbunny_cave_top_inside:connect_one_way("Super Bunny Cave Chest Top")
-superbunny_cave_top_inside:connect_one_way("Super Bunny Cave Chest Bottom")
+superbunny_cave_top_inside:connect_one_way("Super Bunny Cave Chest Top", function() return CanInteract(superbunny_cave_top_inside) end)
+superbunny_cave_top_inside:connect_one_way("Super Bunny Cave Chest Bottom", function() return CanInteract(superbunny_cave_top_inside) end)
 
