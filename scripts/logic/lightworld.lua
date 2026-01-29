@@ -1549,7 +1549,7 @@ paradox_cave_top_entrance_outside:connect_two_ways_entrance("Paradox Cave Top En
 spiral_cave_top_outside:connect_two_ways_entrance("Spiral Cave Top Entrance", spiral_cave_top_inside)
 
 light_eyebridge_fairy_ledge:connect_two_ways(fairy_ascension_cave_top_outside)
-light_eyebridge_fairy_ledge:connect_one_way(light_death_mountain_right_bottom)
+light_eyebridge_fairy_ledge:connect_one_way(fairy_ascension_cave_bottom_outside)
 -- tr_eye_bridge_entrance_outside:connect_one_way_entrance("Light Eyebridge Fairy", light_eyebridge_fairy_outside, function()
 --     return ALL(
 --         CanChangeWorldWithMirror(),
@@ -1564,7 +1564,7 @@ light_eyebridge_fairy_ledge:connect_one_way(tr_eye_bridge_entrance_ledge, functi
 end)
 
 fairy_ascension_cave_top_outside:connect_two_ways_entrance("Fairy Ascention Top Entrance", fairy_ascension_cave_top_inside)
-fairy_ascension_cave_top_outside:connect_two_ways(fairy_ascension_cave_bottom_inside)
+fairy_ascension_cave_top_inside:connect_two_ways(fairy_ascension_cave_bottom_inside)
 
 spiral_cave_top_inside:connect_one_way(spiral_cave_bottom_inside)
 spiral_cave_top_inside:connect_one_way("Spiral Cave Item", function() return CanInteract(spiral_cave_top_inside, "sword") end)
@@ -1636,7 +1636,7 @@ paradox_cave_top_back:connect_one_way("Paradox Cave Top Far Right", function() r
 
 
 light_death_mountain_right_top:connect_two_ways(floating_island, function() return Inverted() end)
-floating_island:connect_one_way(light_death_mountain_right_top)
+-- floating_island:connect_one_way(light_death_mountain_right_top)
 
 floating_island:connect_one_way("Floating Island Item")
 light_death_mountain_right_top:connect_one_way("Floating Island Item", function() return ACCESS_INSPECT end)
