@@ -9,6 +9,12 @@ ALL_LOCATIONS = {}
 MANUAL_CHECKED = true
 ROOM_SEED = "default"
 
+local FIRSTSTAGE = {
+    [73] = 80, --fightersword
+    [4] = 4, --blue shield
+    [11] = 11, --bow+arrow 
+    [27] = 27 -- power glove
+}
 local SECONDSTAGE = {
     [5] = 5, --red shield
     [34] = 34, --blue mail
@@ -21,6 +27,7 @@ local THIRDSTAGE = {
     [6] = 6, --mirror shield
     [35] = 35 --red mail
 }
+
 local MEDALLIONS = {
     [15] = "bombos",
     [16] = "ether",
@@ -172,13 +179,13 @@ function onClear(slot_data)
                     elseif item[2] == "progressive" then
                         item_obj.CurrentStage = 0
                         item_obj.Active = false
-                    elseif item[2] == "consumable" then
+                    elseif item[2] == "consumable" or item[2] == "combined_consumable" then
                         if item_obj.MinCount then
                             item_obj.AcquiredCount = item_obj.MinCount
                         else
                             item_obj.AcquiredCount = 0
                         end
-                    elseif item[2] == "progressive_toggle" then
+                    elseif item[2] == "progressive_toggle" or item[2] == "split_toggle" then
                         item_obj.CurrentStage = 0
                         item_obj.Active = false
                     end
@@ -244,13 +251,6 @@ function onItem(index, item_id, item_name, player_number)
             if item[2] == "toggle" then
                 -- print("toggle")
                 item_obj.Active = true
-                if (SECONDSTAGE[item_id] ~= nil and item_obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
-                    item_obj.CurrentStage = 2
-                elseif (THIRDSTAGE[item_id] ~= nil and item_obj.CurrentStage < 3 ) then -- tempered sword, red mail, mirror shield
-                    item_obj.CurrentStage = 3
-                elseif (item_id == 3  and item_obj.CurrentStage < 4) then --golden sword
-                    item_obj.CurrentStage = 4
-                end
             elseif item[2] == "progressive" then
                 -- print("progressive")
                 if item_obj.Active == true then
@@ -259,20 +259,27 @@ function onItem(index, item_id, item_name, player_number)
                     item_obj.Active = true
                 end
             elseif item[2] == "consumable" then
-                -- print("consumable")
-                if item_id == 76 or item_id == 77 then -- +50/70 capacity upgrades
-                    item_obj.AcquiredCount = item_obj.MaxCount
-                else
-                    item_obj.AcquiredCount = item_obj.AcquiredCount + item_obj.Increment
+                item_obj.AcquiredCount = item_obj.AcquiredCount + item_obj.Increment
+            elseif item[2] == "combined_consumable" then
+                -- print("combined_consumable")
+                item_obj.AcquiredCount = item_obj.MaxCount -- +50/70 capacity upgrades
+            elseif item[2] == "split_toggle" then
+            -- print("split_toggle")
+                item_obj.Active = true
+                if (FIRSTSTAGE[item_id] ~= nil and item_obj.CurrentStage < 1) then -- blue shield, fighter sword, powergloves, bow+arrows 
+                    item_obj.CurrentStage = 1
+                elseif (SECONDSTAGE[item_id] ~= nil and item_obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
+                    item_obj.CurrentStage = 2
+                elseif (THIRDSTAGE[item_id] ~= nil and item_obj.CurrentStage < 3 ) then -- tempered sword, red mail, mirror shield
+                    item_obj.CurrentStage = 3
+                elseif (item_id == 3  and item_obj.CurrentStage < 4) then --golden sword
+                    item_obj.CurrentStage = 4
+                elseif ((item_id == 88 or item_id == 59) and item_obj.CurrentStage < 2) then -- silver arrows or silvers+bow
+                    item_obj.CurrentStage = 2
                 end
             elseif item[2] == "progressive_toggle" then
                 -- print("progressive_toggle")
-                if (item_id == 88 and item_obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
-                    item_obj.CurrentStage = 2
-                elseif (item_id == 59 and item_obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
-                    item_obj.Active = true
-                    item_obj.CurrentStage = 2
-                elseif item_obj.Active == true then
+                if item_obj.Active == true then
                     item_obj.CurrentStage = item_obj.CurrentStage + 1
                 else
                     item_obj.Active = true
@@ -612,7 +619,7 @@ end
 
 function updateHints(locationID, status)
     if Highlight then
-        print(locationID, status)
+        -- print(locationID, status)
         local location_table = LOCATION_MAPPING[locationID]
         for _, location in ipairs(location_table) do
             if location:sub(1, 1) == "@" then
