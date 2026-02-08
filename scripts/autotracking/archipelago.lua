@@ -131,6 +131,7 @@ function onClear(slot_data)
     
     ScriptHost:RemoveWatchForCode("StateChanged")
     ScriptHost:RemoveOnLocationSectionHandler("location_section_change_handler")
+    -- ScriptHost:RemoveOnLocationSectionChangedHandler("location_section_change_handler")
     --SLOT_DATA = slot_data
     CUR_INDEX = -1
     -- reset locations
@@ -206,6 +207,7 @@ function onClear(slot_data)
     
     ScriptHost:RemoveWatchForCode("StateChanged")
     ScriptHost:RemoveOnLocationSectionHandler("location_section_change_handler")
+    -- ScriptHost:RemoveOnLocationSectionChangedHandler("location_section_change_handler")
     -- print(dump_table(er_custom_storage_item.MANUAL_LOCATIONS))
     -- print(dump_table(er_custom_storage_item.MANUAL_LOCATIONS[ROOM_SEED]))
     if er_custom_storage_item.MANUAL_LOCATIONS[ROOM_SEED] then

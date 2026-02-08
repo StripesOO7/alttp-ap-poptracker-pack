@@ -568,6 +568,7 @@ function EmptyLocationTargets()
     if not (Tracker.BulkUpdate == true) then
         ScriptHost:RemoveWatchForCode("StateChanged")
         ScriptHost:RemoveOnLocationSectionHandler("location_section_change_handler")
+        -- ScriptHost:RemoveOnLocationSectionChangedHandler("location_section_change_handler")
         -- local er_tracking = Tracker:FindObjectForCode("er_tracking")
         if er_tracking == nil then
             print("item with code 'er_tracking' not found")
