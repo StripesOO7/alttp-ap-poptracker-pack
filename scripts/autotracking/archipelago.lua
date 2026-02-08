@@ -33,6 +33,10 @@ if Highlight then
         [20] = Highlight.Avoid,
         [30] = Highlight.Priority,
         [40] = Highlight.None,
+        [100] = Highlight.Avoid,
+        [101] = Highlight.Priority,
+        [102] = Highlight.NoPriority,
+        [104] = Highlight.Avoid,
     }
 end
 
@@ -577,9 +581,9 @@ function onNotify(key, value, old_value)
         Tracker.BulkUpdate = true
         for _, hint in ipairs(value) do
             if hint.finding_player == Archipelago.PlayerNumber then
-                if not hint.found then
-                    updateHints(hint.location, hint.status)
-                elseif hint.found then
+                if hint.status == 0 then
+                    updateHints(hint.location, 100+hint.item_flags)
+                else
                     updateHints(hint.location, hint.status)
                 end
             end
@@ -593,11 +597,11 @@ function onNotifyLaunch(key, value)
         Tracker.BulkUpdate = true
         for _, hint in ipairs(value) do
             if hint.finding_player == Archipelago.PlayerNumber then
-                if not hint.found then
+                if hint.status == 0 then
+                    updateHints(hint.location, 100+hint.item_flags)
+                else
                     updateHints(hint.location, hint.status)
-                else if hint.found then
-                    updateHints(hint.location, hint.status)
-                end end
+                end
             end
         end
         Tracker.BulkUpdate = false
