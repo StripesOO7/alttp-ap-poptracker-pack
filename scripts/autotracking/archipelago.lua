@@ -112,6 +112,44 @@ function preOnClear()
     else -- seed is from previous connection
         -- do nothing
     end
+    require("scripts/logic/traps")
+end
+
+function LocationReset(location, location_obj, custom_storage_item)
+    if location:sub(1, 1) == "@" then
+        if custom_storage_item.MANUAL_LOCATIONS[ROOM_SEED][location_obj.FullID] then
+            location_obj.AvailableChestCount = custom_storage_item.MANUAL_LOCATIONS[ROOM_SEED][location_obj.FullID]
+        else
+            location_obj.AvailableChestCount = location_obj.ChestCount
+        end
+        location_obj.Highlight = HIGHTLIGHT_LEVEL[40]
+    else
+        location_obj.Active = false
+    end
+end
+
+function ItemReset(item, item_obj, item_code)
+    if item[2] == "toggle" then
+        if MEDALLIONS[item_code] ~= nil then
+            item_obj.CurrentStage = 0
+        end
+        item_obj.Active = false
+        if item_obj == "shop_shuffle" then
+            item_obj.AcquiredCount = 0
+        end
+    elseif item[2] == "progressive" then
+        item_obj.CurrentStage = 0
+        item_obj.Active = false
+    elseif item[2] == "consumable" or item[2] == "combined_consumable" then
+        if item_obj.MinCount then
+            item_obj.AcquiredCount = item_obj.MinCount
+        else
+            item_obj.AcquiredCount = 0
+        end
+    elseif item[2] == "progressive_toggle" or item[2] == "split_toggle" then
+        item_obj.CurrentStage = 0
+        item_obj.Active = false
+    end
 end
 
 
@@ -147,16 +185,7 @@ function onClear(slot_data)
             if location then
                 local location_obj = Tracker:FindObjectForCode(location)
                 if location_obj then
-                    if location:sub(1, 1) == "@" then
-                        if custom_storage_item.MANUAL_LOCATIONS[ROOM_SEED][location_obj.FullID] then
-                            location_obj.AvailableChestCount = custom_storage_item.MANUAL_LOCATIONS[ROOM_SEED][location_obj.FullID]
-                        else
-                            location_obj.AvailableChestCount = location_obj.ChestCount
-                        end
-                        location_obj.Highlight = HIGHTLIGHT_LEVEL[40]
-                    else
-                        location_obj.Active = false
-                    end
+                    LocationReset(location, location_obj, custom_storage_item)
                 end
             end
         end
@@ -167,28 +196,8 @@ function onClear(slot_data)
             if item_code and item[2] then
                 local item_obj = Tracker:FindObjectForCode(item_code)
                 if item_obj then
+                    ItemReset(item, item_obj, item_code)
                     -- clear_item_type[item[2]](item_obj, item_code) --alternate version
-                    if item[2] == "toggle" then
-                        if MEDALLIONS[item_code] ~= nil then
-                            item_obj.CurrentStage = 0
-                        end
-                        item_obj.Active = false
-                        if item_obj == "shop_shuffle" then
-                            item_obj.AcquiredCount = 0
-                        end
-                    elseif item[2] == "progressive" then
-                        item_obj.CurrentStage = 0
-                        item_obj.Active = false
-                    elseif item[2] == "consumable" or item[2] == "combined_consumable" then
-                        if item_obj.MinCount then
-                            item_obj.AcquiredCount = item_obj.MinCount
-                        else
-                            item_obj.AcquiredCount = 0
-                        end
-                    elseif item[2] == "progressive_toggle" or item[2] == "split_toggle" then
-                        item_obj.CurrentStage = 0
-                        item_obj.Active = false
-                    end
                 end
             end
         end
