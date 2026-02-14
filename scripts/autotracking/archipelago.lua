@@ -5,6 +5,7 @@ CUR_INDEX = -1
 SLOT_DATA = nil
 SKIP_BOSSSHUFFLE = false
 ALL_LOCATIONS = {}
+TROLL_PLAYER= false
 
 MANUAL_CHECKED = true
 ROOM_SEED = "default"
@@ -28,13 +29,18 @@ local THIRDSTAGE = {
     [35] = 35 --red mail
 }
 
+TROLL_LOOKUP = {
+    ["solarcell"] = true,
+    ["earthor"] = true,
+}
+
 local MEDALLIONS = {
     [15] = "bombos",
     [16] = "ether",
     [17] = "quake"
 }
 if Highlight then
-    HIGHTLIGHT_LEVEL= {
+    HIGHLIGHT_LEVEL= {
         [0] = Highlight.Unspecified,
         [10] = Highlight.NoPriority,
         [20] = Highlight.Avoid,
@@ -72,6 +78,12 @@ function preOnClear()
     PLAYER_ID = Archipelago.PlayerNumber or -1
 	TEAM_NUMBER = Archipelago.TeamNumber or 0
     if Archipelago.PlayerNumber > -1 then
+        for key, _ in pairs(TROLL_LOOKUP) do
+            if string.find(string.lower(Archipelago:GetPlayerAlias(PLAYER_ID)), key, 1, true) ~= nil then
+                TROLL_PLAYER = true
+                break
+            end
+        end
         if #ALL_LOCATIONS > 0 then
             ALL_LOCATIONS = {}
         end
@@ -112,7 +124,9 @@ function preOnClear()
     else -- seed is from previous connection
         -- do nothing
     end
-    require("scripts/logic/traps")
+    if TROLL_PLAYER then
+        require("scripts/logic/traps")
+    end
 end
 
 function LocationReset(location, location_obj, custom_storage_item)
@@ -122,7 +136,7 @@ function LocationReset(location, location_obj, custom_storage_item)
         else
             location_obj.AvailableChestCount = location_obj.ChestCount
         end
-        location_obj.Highlight = HIGHTLIGHT_LEVEL[40]
+        location_obj.Highlight = HIGHLIGHT_LEVEL[40]
     else
         location_obj.Active = false
     end
@@ -593,16 +607,15 @@ function goal_check()
 end
 
 
-function onNotify(key, value, old_value)
-
+function OnNotify(key, value, old_value)
     if value ~= old_value and key == HINTS_ID then
         Tracker.BulkUpdate = true
         for _, hint in ipairs(value) do
             if hint.finding_player == Archipelago.PlayerNumber then
                 if hint.status == 0 then
-                    updateHints(hint.location, 100+hint.item_flags)
+                    UpdateHints(hint.location, 100+hint.item_flags)
                 else
-                    updateHints(hint.location, hint.status)
+                    UpdateHints(hint.location, hint.status)
                 end
             end
         end
@@ -610,15 +623,15 @@ function onNotify(key, value, old_value)
     end
 end
 
-function onNotifyLaunch(key, value)
+function OnNotifyLaunch(key, value)
     if key == HINTS_ID then
         Tracker.BulkUpdate = true
         for _, hint in ipairs(value) do
             if hint.finding_player == Archipelago.PlayerNumber then
                 if hint.status == 0 then
-                    updateHints(hint.location, 100+hint.item_flags)
+                    UpdateHints(hint.location, 100+hint.item_flags)
                 else
-                    updateHints(hint.location, hint.status)
+                    UpdateHints(hint.location, hint.status)
                 end
             end
         end
@@ -626,7 +639,7 @@ function onNotifyLaunch(key, value)
     end
 end
 
-function updateHints(locationID, status)
+function UpdateHints(locationID, status)
     if Highlight then
         -- print(locationID, status)
         local location_table = LOCATION_MAPPING[locationID]
@@ -635,7 +648,11 @@ function updateHints(locationID, status)
                 local obj = Tracker:FindObjectForCode(location)
 
                 if obj then
-                    obj.Highlight = HIGHTLIGHT_LEVEL[status]
+                    if TROLL_PLAYER and status == 20 then
+                        obj.Highlight = HIGHLIGHT_LEVEL[30]
+                    else
+                        obj.Highlight = HIGHLIGHT_LEVEL[status]
+                    end
                 else
                     print(string.format("No object found for code: %s", location))
                 end
@@ -651,8 +668,8 @@ end
 -- Archipelago:AddItemHandler("item handler", onItem)
 -- Archipelago:AddLocationHandler("location handler", onLocation)
 
--- Archipelago:AddSetReplyHandler("notify handler", onNotify)
--- Archipelago:AddRetrievedHandler("notify launch handler", onNotifyLaunch)
+-- Archipelago:AddSetReplyHandler("notify handler", OnNotify)
+-- Archipelago:AddRetrievedHandler("notify launch handler", OnNotifyLaunch)
 
 -- ScriptHost:AddWatchForCode("settings autofill_dungeon_settings", "autofill_dungeon_settings", autoFill)
 -- ScriptHost:AddWatchForCode("settings autofill_goal_reqs", "autofill_goal_reqs", autoFill)
