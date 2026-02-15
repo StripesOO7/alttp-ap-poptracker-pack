@@ -170,6 +170,7 @@ function alttp_location.new(name, shortname, origin, map, inside_dungeon, room, 
     end
     -- print("------")
     -- print(origin)
+    self.baseWorldstate = origin
     self.worldstate = origin
     -- print(self.worldstate)
     -- print("------")
@@ -193,9 +194,6 @@ function alttp_location:connect_one_way(exit, rule)
         else
             exit = alttp_location.new(exit)
         end
-        -- if exit.worldstate == nil then --or exit.worldstate ~= self.worldstate then
-        --     exit.worldstate = self.worldstate
-        -- end
     end
     if rule == nil then
         rule = always
@@ -216,9 +214,6 @@ function alttp_location:connect_one_way_entrance(name, exit, rule)
     if rule == nil then
         rule = always
     end
-    -- if exit.worldstate == nil then --or exit.worldstate ~= self.worldstate then
-    --     exit.worldstate = self.worldstate
-    -- end
     -- print(name, "wann wird das aufgerufen?", exit.name)
     self.exits[#self.exits + 1] = { exit, rule }
 end
@@ -632,6 +627,18 @@ function EmptyLocationTargets()
                 _SetLocationOptions(source, target_inside)
                 _SetLocationOptions(target_inside, source)
             end
+        end
+        for _, location in pairs(NAMED_LOCATIONS) do
+            local location_obj
+            if PopVersion < "0.32.0" then
+                location_obj = NAMED_LOCATIONS[location]
+            else
+                location_obj = location
+            end
+            location_obj.worldstate = location_obj.baseWorldstate
+            -- if location_obj.worldstate ~= location_obj.baseWorldstate then
+            --     location_obj.worldstate = location_obj.baseWorldstate
+            -- end
         end
         ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", LocationHandler)
         ScriptHost:AddWatchForCode("StateChanged", "*", StateChanged)

@@ -576,7 +576,7 @@ function bombless()
     local bombs = Tracker:FindObjectForCode("bombs")
 
     local bombless_setting = Tracker:FindObjectForCode("bombless")
-    if bombless_setting.Active == false then
+    if bombless_setting and bombless_setting.Active == false then
         bombs.AcquiredCount = bombs.AcquiredCount + 10
     else
 
