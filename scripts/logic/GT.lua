@@ -10,7 +10,8 @@ local gt_bottom_bonk_pit_room_bottom = alttp_location.new("gt_bottom_bonk_pit_ro
 local gt_bottom_dm_room = alttp_location.new("gt_bottom_dm_room", "GT DM Room", nil, true)
 local gt_bottom_map_room = alttp_location.new("gt_bottom_map_room", "GT Map Room", nil, true)
 local gt_bottom_double_switch_room = alttp_location.new("gt_bottom_double_switch_room", "GT Double Switch", nil, true)
-local gt_bottom_firesnake_room = alttp_location.new("gt_bottom_firesnake_room", "GT Firesneak", nil, true)
+local gt_bottom_firesnake_room_before_pit = alttp_location.new("gt_bottom_firesnake_room_before_pit", "GT Firesneak Pre(d)-Pit", nil, true)
+local gt_bottom_firesnake_room_after_pit = alttp_location.new("gt_bottom_firesnake_room_after_pit", "GT Firesneak Post-Pit", nil, true)
 local gt_bottom_randomizer_room = alttp_location.new("gt_bottom_randomizer_room", "GT Randomizer Room", nil, true)
 local gt_bottom_teleporter_puzzle_room = alttp_location.new("gt_bottom_teleporter_puzzle_room", "GT Teleporter Puzzle", nil, true)
 local gt_bottom_invisibile_bonk_room = alttp_location.new("gt_bottom_invisibile_bonk_room", "GT Invis. Path", nil, true)
@@ -86,7 +87,7 @@ gt_bottom_dm_room:connect_one_way("GT - DM Room Bottom Right")
 
 gt_bottom_map_room:connect_one_way("GT - Map Chest")
 
-gt_bottom_double_switch_room:connect_two_ways(gt_bottom_firesnake_room, function(keys)
+gt_bottom_double_switch_room:connect_two_ways(gt_bottom_firesnake_room_before_pit, function(keys)
     return ALL(
         ANY(
             "bombs",
@@ -108,8 +109,10 @@ gt_bottom_double_switch_room:connect_one_way("GT - Double Switch Pot Key")--, fu
 --     )
 -- end)
 
-gt_bottom_firesnake_room:connect_two_ways(gt_bottom_teleporter_puzzle_room, function(keys) return Has("gt_smallkey", keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 4, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 8), keys + 1 end)
-gt_bottom_firesnake_room:connect_one_way("GT - Firesnake Room")
+gt_bottom_firesnake_room_before_pit:connect_two_ways(gt_bottom_firesnake_room_after_pit, function() return Has("hookshot") end)
+
+gt_bottom_firesnake_room_after_pit:connect_two_ways(gt_bottom_teleporter_puzzle_room, function(keys) return Has("gt_smallkey", keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 4, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 8), keys + 1 end)
+gt_bottom_firesnake_room_after_pit:connect_one_way("GT - Firesnake Room")
 
 gt_bottom_teleporter_puzzle_room:connect_two_ways(gt_bottom_randomizer_room, function() return ALL("bombs", CanInteract(gt_bottom_teleporter_puzzle_room)) end)
 gt_bottom_teleporter_puzzle_room:connect_one_way(gt_bottom_invisibile_bonk_room)
