@@ -55,5 +55,5 @@ at_aga1:connect_one_way("AT - Aga1", function()
     )
 end)
 
-at_aga1:connect_one_way(pyramid, function() return ALL(OpenOrStandard, "aga1") end)
+at_aga1:connect_one_way(pyramid_area, function() return ALL(OpenOrStandard, "aga1") end)
 at_aga1:connect_one_way(hyrule_castle_area, function() return ALL(Inverted, "aga1") end)

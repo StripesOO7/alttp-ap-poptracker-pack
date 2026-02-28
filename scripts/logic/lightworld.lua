@@ -979,7 +979,7 @@ links_house_area:connect_one_way("Flute Spot", function()
     )
 end)
 
-links_house_area:connect_one_way(pyramid, function() 
+links_house_area:connect_one_way(pyramid_area, function() 
     return ALL(
         "aga1", 
         OpenOrStandard
@@ -1112,7 +1112,7 @@ hyrule_castle_area:connect_two_ways(secret_passage_stairs_outside, function() re
 
 hyrule_castle_area:connect_one_way(pyramid_area, function() return ALL("aga1", OpenOrStandard) end)
 
-hyrule_castle_top:connect_one_way(pyramid, function()
+hyrule_castle_top:connect_one_way(pyramid_area, function()
     return ALL(
         Inverted,
         CanChangeWorldWithMirror

@@ -825,8 +825,8 @@ catfish_area:connect_one_way("Catfish Item", function() return CanInteract(catfi
 
 
 -- pyramid
-pyramid:connect_one_way(pod_area)
-pyramid:connect_one_way(dark_flute_map, function()
+pyramid_area:connect_one_way(pod_area)
+pyramid_area:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",
         Inverted,
@@ -834,12 +834,12 @@ pyramid:connect_one_way(dark_flute_map, function()
     )
 end)
 
-pyramid:connect_one_way("Pyramid Item")
-pyramid:connect_two_ways_stuck(pyramid_fairy_cave_outside, function()
+pyramid_area:connect_one_way("Pyramid Item")
+pyramid_area:connect_two_ways_stuck(pyramid_fairy_cave_outside, function()
     return ALL(
         Has("crystal56", 2, 2, 2, 2),
         big_bomb_shop_inside:accessibility(),
-        CanInteract(pyramid),
+        CanInteract(pyramid_area),
         ANY(
             ALL(
                 "mirror",
@@ -850,10 +850,10 @@ pyramid:connect_two_ways_stuck(pyramid_fairy_cave_outside, function()
     )
 end)
 
-pyramid:connect_two_ways(pyramid_hole_outside, function() return ALL(CheckPyramidState, OpenOrStandard) end)
+pyramid_area:connect_two_ways(pyramid_hole_outside, function() return ALL(CheckPyramidState, OpenOrStandard) end)
 pyramid_exit_outside:connect_two_ways(pyramid_exit_ledge, function() return OpenOrStandard() end)
 
-pyramid_exit_ledge:connect_one_way(pyramid)
+pyramid_exit_ledge:connect_one_way(pyramid_area)
 
 pyramid_hole_outside:connect_one_way(pyramid_hole_inside)
 pyramid_exit_outside:connect_two_ways(pyramid_exit_inside)
@@ -873,7 +873,7 @@ pyramid_fairy_cave_outside:connect_one_way_entrance("Fat Fairy", pyramid_fairy_c
 pyramid_fairy_cave_inside:connect_one_way("Pyramid Fairy Left", function() return CanInteract(pyramid_fairy_cave_inside) end)
 pyramid_fairy_cave_inside:connect_one_way("Pyramid Fairy Right", function() return CanInteract(pyramid_fairy_cave_inside) end)
 
-pyramid:connect_one_way(hyrule_castle_top, function()
+pyramid_area:connect_one_way(hyrule_castle_top, function()
     return ALL(
         OpenOrStandard,
         CanChangeWorldWithMirror
@@ -897,7 +897,7 @@ teleporter_at_pod:connect_one_way(pod_area, function()
     )
 end)
 
-pod_area:connect_one_way(pyramid)
+pod_area:connect_one_way(pyramid_area)
 pod_area:connect_one_way(dark_flute_map, function()
     return ALL(
         "flute",

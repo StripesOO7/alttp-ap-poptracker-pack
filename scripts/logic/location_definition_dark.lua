@@ -1,6 +1,6 @@
 --darkworld
 
-big_bomb_shop_area = alttp_location.new("big_bomb_shop_area", "Big Bomb Shop (OW)", "dark", "Darkworld OW", false)
+big_bomb_shop_area = alttp_location.new("big_bomb_shop_area", "Big Bomb Shop Area (OW)", "dark", "Darkworld OW", false)
 big_bomb_shop_fairy_cave_inside = alttp_location.new("big_bomb_shop_fairy_cave_inside", "Big Bomb Fairy (Inside)", nil, "Darkworld caves", false, 294, 3192, 9688, 9716, nil, {"Swamp - Insides", "Bonk Fairy (Dark)", "Bonk Fairy (Dark)"}, "deadend")
 big_bomb_shop_fairy_cave_outside = alttp_location.new("big_bomb_shop_fairy_cave_outside", "Big Bomb Fairy (OW)", "dark", "Darkworld OW", false, 107, 1928, 2656, 2664, nil, {"Swamp - Entrances", "Bonk Fairy (Dark)", "Bonk Fairy (Dark)"})
 big_bomb_shop_inside = alttp_location.new("big_bomb_shop_inside", "Big Bomb Shop (Inside)", nil, "Darkworld caves", false, 284, 6264, 9176, 9204, nil, {"Swamp - Insides", "Big Bomb Shop", "Big Bomb Shop"}, "deadend")
@@ -87,7 +87,7 @@ pod_east_darkworld_hint_outside = alttp_location.new("pod_east_darkworld_hint_ou
 pod_hint_house_inside = alttp_location.new("pod_hint_house_inside", "PoD Hint House (Inside)", nil, "Darkworld caves", false, 282, 5496, 9176, 9204, nil, {"PoD Area - Insides", "Palace of Darkness Hint", "Palace of Darkness Hint"}, "deadend")
 pod_hint_house_outside = alttp_location.new("pod_hint_house_outside", "PoD Hint House (OW)", "dark", "Darkworld OW", false, 94, 3472, 2023, 2038, nil, {"PoD Area - Entrances", "Palace of Darkness Hint", "Palace of Darkness Hint"})
 purple_chest_pickup = alttp_location.new("purple_chest_pickup", "Purple Chest Pickup (OW)", "dark", "Darkworld OW", false)
-pyramid = alttp_location.new("pyramid", "Pyramid Area (OW)", "dark", "Darkworld OW", false)
+pyramid_area = alttp_location.new("pyramid_area", "Pyramid Area (OW)", "dark", "Darkworld OW", false)
 pyramid_exit_inside = alttp_location.new("pyramid_exit_inside", "Pyramid Exit (Inside)", nil, "Darkworld caves", false, 16, 120, 984, 1012, nil, {"Dark Central - Insides", "Pyramid Exit", "Pyramid Exit"}, "connector")
 pyramid_exit_ledge = alttp_location.new("pyramid_exit_ledge", "Pyramid Exit Ledge (OW)", "dark", "Darkworld OW", false)
 pyramid_exit_outside = alttp_location.new("pyramid_exit_outside", "Pyramid Exit (OW)", "dark", "Darkworld OW", false, 91, 1768, 1960, 1976, nil, {"Dark Central - Entrances", "Pyramid Exit", "Pyramid Exit"})
