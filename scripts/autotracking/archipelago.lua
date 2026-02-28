@@ -648,7 +648,7 @@ function UpdateHints(locationID, status)
                 local obj = Tracker:FindObjectForCode(location)
 
                 if obj then
-                    if TROLL_PLAYER and status == 20 then
+                    if TROLL_PLAYER and HIGHLIGHT_LEVEL[status] == Highlight.Avoid then
                         obj.Highlight = HIGHLIGHT_LEVEL[30]
                     else
                         obj.Highlight = HIGHLIGHT_LEVEL[status]
