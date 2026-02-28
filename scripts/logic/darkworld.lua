@@ -118,7 +118,7 @@ big_bomb_shop_area:connect_one_way(cave45_ledge, function()
         OpenOrStandard
     )
 end)
-big_bomb_shop_area:connect_one_way(links_house_area, function()
+big_bomb_shop_area:connect_one_way(hyrule_castle_area, function()
     return ALL(
         Inverted,
         "aga1"
