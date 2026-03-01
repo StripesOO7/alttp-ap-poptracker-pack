@@ -1,6 +1,30 @@
 {
 	"versions": [
 		{
+			"package_version": "0.4.5",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.4.5/alttp-ap-tracker-v0.4.5.zip",
+			"sha256": "47f2d8a0453e6af980730659916fd9bc4ecfc2536a922436ed8e4249c7908993",
+			"changelog": [
+				"bugfixes for ER and some other logic issues",
+				"",
+				"# fixed ER stuff:",
+				"- fixed image not showing for fairy ascention cave",
+				"",
+				"# fixed logic:",
+				"- fix connection internally between fairy ascention cave top and bottom",
+				"- fix worldstate not properly being reset for some connections when manually switching to the desired mode",
+				"- fix aga1 in inverted causing rightside darkworld to be accessible because if false double warp",
+				"- rename pyramid to pyramid area for route mode",
+				"",
+				"# added:",
+				"- make highlights use the item classification for highlights if its an unspecified hint",
+				"- adds trap.lua from future shenanigans",
+				"",
+				"#known issue:",
+				"- insanity ER not properly respecting that multiple interiors can exit the same exterior"
+			]
+		},
+		{
 			"package_version": "0.4.4",
 			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.4.4/alttp-ap-tracker-v0.4.4.zip",
 			"sha256": "47f2d8a0453e6af980730659916fd9bc4ecfc2536a922436ed8e4249c7908993",
@@ -642,6 +666,7 @@
 		}
 	]
 }
+
 
 
 
