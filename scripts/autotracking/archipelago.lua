@@ -477,6 +477,7 @@ function autoFill()
 
         -- retro_bow = {codes={""}, mapping, autofill="",=},
         retro_caves = {codes={"retro_caves"}, mappings={mapToggle}, autofill="autofill_modes",},
+        item_functionality = {codes={"item_mode"}, mappings={mapToggle}, autofill="autofill_modes",},
 
 
         -- pot_shuffle = {codes={"pot_shuffle"}, mapping, autofill="",=},
