@@ -1460,10 +1460,10 @@ teleporter_at_dark_death_mountain_right_bottom:connect_one_way(light_death_mount
 light_death_mountain_right_bottom:connect_two_ways(spiral_cave_bottom_outside)
 light_death_mountain_right_bottom:connect_two_ways(paradox_cave_bottom_entrance_outside)
 light_death_mountain_right_bottom:connect_two_ways(paradox_cave_middle_entrance_outside)
-light_death_mountain_right_bottom:connect_one_way(fairy_ascension_cave_bottom_outside, function()
+light_death_mountain_right_bottom:connect_two_ways(fairy_ascension_cave_bottom_outside, function()
     return ALL(
         CanInteract(light_death_mountain_right_bottom),
-        "glove"
+        "titans"
     )
 end) --coming from dm
 light_death_mountain_right_bottom:connect_two_ways(hookshot_fairy_outside)
