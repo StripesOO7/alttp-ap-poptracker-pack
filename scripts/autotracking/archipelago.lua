@@ -6,6 +6,7 @@ SLOT_DATA = nil
 SKIP_BOSSSHUFFLE = false
 ALL_LOCATIONS = {}
 TROLL_PLAYER= false
+DATE_CHECK_PASSED = false
 
 MANUAL_CHECKED = true
 ROOM_SEED = "default"
@@ -53,6 +54,53 @@ if Highlight then
     }
 end
 
+---@param start_date number //build_time_obj() return aka unix timestamp
+---@param end_date number //build_time_obj() return aka unix timestamp
+---@param target_date number //build_time_obj() return aka unix timestamp
+function Check_Date_Range(start_date, end_date, target_date)
+    local one_day = 86400
+    local check_result = false
+    for day_obj = start_date, end_date, one_day do
+        check_result = Check_Date(day_obj, target_date)
+        if check_result then
+            return true
+        end
+    end
+end
+
+---@param target_date number //build_time_obj() return aka unix timestamp
+---@param reference_time number? //build_time_obj() return aka unix timestamp
+function Check_Date(reference_time, target_date)
+    local today = os.date("*t")
+    local reference_day =  os.date("*t", target_date)
+    if reference_time then
+        today = os.date("*t", reference_time)
+    end
+    return today.year == reference_day.year and 
+    today.month == reference_day.month and 
+    today.day == reference_day.day
+end
+
+---@param year number?
+---@param month number?
+---@param day number?
+---@param hour number?
+---@param minute number?
+---@param second number?
+function Build_Time_Obj(year, month, day, hour, minute, second)
+    local today = os.date("*t", os.time())
+    return os.time(
+        {
+            year = year or today.year,
+            month = month or today.month,
+            day = day or today.day,
+            hour = hour or 0,
+            min = minute or 0,
+            sec = second or 0
+        }
+    )
+end
+
 function dump_table(o, depth)
     if depth == nil then
         depth = 0
@@ -74,7 +122,7 @@ function dump_table(o, depth)
     end
 end
 
-function preOnClear()
+function PreOnClear()
     PLAYER_ID = Archipelago.PlayerNumber or -1
 	TEAM_NUMBER = Archipelago.TeamNumber or 0
     if Archipelago.PlayerNumber > -1 then
@@ -83,6 +131,15 @@ function preOnClear()
                 TROLL_PLAYER = true
                 break
             end
+        end
+        local target_day = Build_Time_Obj(nil, 4 , 1)
+        -- local start_day_range = Build_Time_Obj(nil, 12 , 24)
+        -- local end_day_range = Build_Time_Obj(nil, 12 , 31)
+        -- DATE_CHECK_PASSED = Check_Date_Range(start_day_range, end_day_range, os.time())
+        -- example checks for days between christmas and new years
+        DATE_CHECK_PASSED = Check_Date(nil, target_day)
+        if TROLL_PLAYER == false and DATE_CHECK_PASSED then
+            TROLL_PLAYER = true
         end
         if #ALL_LOCATIONS > 0 then
             ALL_LOCATIONS = {}
