@@ -23,12 +23,14 @@ end
 
 function TrapUndoLocation()
     MANUAL_CHECKED = false
-    local id = math.random(#Archipelago.CheckedLocations)
-    for _, location in pairs(LOCATION_MAPPING[id]) do
-        if location then
-            local location_obj = Tracker:FindObjectForCode(location)
-            if location_obj then
-                LocationReset(location, location_obj, Tracker:FindObjectForCode("manual_location_storage").ItemState)
+    if #Archipelago.CheckedLocations > 0 then
+        local id = math.random(#Archipelago.CheckedLocations)
+        for _, location in pairs(LOCATION_MAPPING[Archipelago.CheckedLocations[id]]) do
+            if location then
+                local location_obj = Tracker:FindObjectForCode(location)
+                if location_obj then
+                    LocationReset(location, location_obj, Tracker:FindObjectForCode("manual_location_storage").ItemState)
+                end
             end
         end
     end
@@ -47,8 +49,8 @@ end
 
 function TrapRandomHighlight()
     if #Archipelago.MissingLocations > 0 then
-        local locationid = math.random(Archipelago.MissingLocations[1], Archipelago.MissingLocations[#Archipelago.MissingLocations])
-        for ID, location in pairs(LOCATION_MAPPING[locationid]) do
+        local locationid = math.random(#Archipelago.MissingLocations)
+        for ID, location in pairs(LOCATION_MAPPING[Archipelago.MissingLocations[locationid]]) do
             if location:sub(1, 1) == "@" then
                 Tracker:FindObjectForCode(location).Highlight = Highlight.Priority
             end
