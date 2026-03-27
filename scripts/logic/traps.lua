@@ -62,3 +62,26 @@ function TrapSleepStall()
         -- print("trololo")
     end
 end
+
+local LAST_TRAP_CALLED = os.time()
+function Frame_counter()
+    if os.time() - LAST_TRAP_CALLED > 600 then
+        local roll = math.random(1001)
+        
+        if roll <= 250 then  -- 25.0%
+            TrapUndoItem()
+        elseif roll <= 599 then  -- 24.9%
+            TrapUndoLocation()
+        elseif roll == 600 then -- 0.1%
+            TrapOnClear()
+        elseif roll <= 650 then  -- 5.0%
+            TrapInvalidState()
+        elseif roll <= 800 then  -- 15.0%
+            TrapRandomHighlight()
+        else                     -- 20.0%
+            TrapSleepStall()
+        end
+    end
+end
+
+ScriptHost:AddOnFrameHandler("Trap Handler", Frame_counter)
