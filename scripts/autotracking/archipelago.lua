@@ -125,19 +125,19 @@ end
 function PreOnClear()
     PLAYER_ID = Archipelago.PlayerNumber or -1
 	TEAM_NUMBER = Archipelago.TeamNumber or 0
-    if Archipelago.PlayerNumber > -1 then
+    if PLAYER_ID > -1 then
         for key, _ in pairs(TROLL_LOOKUP) do
             if string.find(string.lower(Archipelago:GetPlayerAlias(PLAYER_ID)), key, 1, true) ~= nil then
                 TROLL_PLAYER = true
                 break
             end
         end
-        local target_day = Build_Time_Obj(nil, 4 , 1)
-        -- local start_day_range = Build_Time_Obj(nil, 12 , 24)
-        -- local end_day_range = Build_Time_Obj(nil, 12 , 31)
-        -- DATE_CHECK_PASSED = Check_Date_Range(start_day_range, end_day_range, os.time())
+        -- local target_day = Build_Time_Obj(nil, 3 , 29)
+        local start_day_range = Build_Time_Obj(nil, 3 , 31)
+        local end_day_range = Build_Time_Obj(nil, 4 , 5)
+        DATE_CHECK_PASSED = Check_Date_Range(start_day_range, end_day_range, os.time())
         -- example checks for days between christmas and new years
-        DATE_CHECK_PASSED = Check_Date(nil, target_day)
+        -- DATE_CHECK_PASSED = Check_Date(nil, target_day)
         if TROLL_PLAYER == false and DATE_CHECK_PASSED then
             TROLL_PLAYER = true
         end
@@ -182,6 +182,8 @@ function PreOnClear()
         -- do nothing
     end
     if TROLL_PLAYER then
+        print("----------------load traps----------------")
+        -- ScriptHost:LoadScript("scripts/logic/traps.lua")
         require("scripts/logic/traps")
     end
 end
@@ -200,6 +202,7 @@ function LocationReset(location, location_obj, custom_storage_item)
 end
 
 function ItemReset(item, item_obj, item_code)
+    item_obj.CurrentStage = 0
     if item[2] == "toggle" then
         if MEDALLIONS[item_code] ~= nil then
             item_obj.CurrentStage = 0
@@ -226,6 +229,9 @@ end
 
 function onClear(slot_data)
     MANUAL_CHECKED = false
+
+    ScriptHost:RemoveOnFrameHandler("Trap Handler")
+    
     local custom_storage_item = Tracker:FindObjectForCode("manual_location_storage").ItemState
     if custom_storage_item == nil then
         CreateLuaManualStorageItem("manual_location_storage")
@@ -243,7 +249,7 @@ function onClear(slot_data)
         manual_misc_items_storage = Tracker:FindObjectForCode("manual_misc_items_storage").ItemState
     end
 
-    preOnClear()
+    PreOnClear()
     
     ScriptHost:RemoveWatchForCode("StateChanged")
     ScriptHost:RemoveOnLocationSectionHandler("location_section_change_handler")

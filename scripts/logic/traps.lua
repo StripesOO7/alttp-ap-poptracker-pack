@@ -1,11 +1,11 @@
 local frequency = math.random(10, #ALL_LOCATIONS)
 local trap_counter = 0
-local item_id_index = {}
+local item_id_index = { [0] = nil}
 for item_index,v in pairs(ITEM_MAPPING) do
-    Table_insert_at(item_id_index, #item_id_index, item_index)
+    table.insert(item_id_index, item_index)
 end
 
-
+-- print(dump_table(item_id_index))
 function TrapOnClear()
     onClear()
 end
@@ -14,7 +14,7 @@ function TrapUndoItem()
     MANUAL_CHECKED = false
     local id = math.random(#item_id_index)
     local item_code = item_id_index[id]
-    local item_obj = Tracker:FindObjectForCode(item_code)
+    local item_obj = Tracker:FindObjectForCode(ITEM_MAPPING[item_code][1][1])
     if item_obj then
         ItemReset(item_obj.Type, item_obj, item_code)
     end
@@ -43,7 +43,9 @@ end
 function TrapInvalidState()
     MANUAL_CHECKED = false
     local itemid = math.random(#item_id_index)
-    Tracker:FindObjectForCode(item_id_index[itemid]).CurrentStage = 1000
+    local item_code = item_id_index[itemid]
+    local item_obj = Tracker:FindObjectForCode(ITEM_MAPPING[item_code][1][1])
+    item_obj.CurrentStage = 1000
     MANUAL_CHECKED = true
 end
 
@@ -60,21 +62,30 @@ end
 
 function TrapSleepStall()
     local start = os.time()
-    while os.difftime(os.time(), start) < math.random(5,15) do
-        -- print("trololo")
+    local stall_time = math.random(5,15)
+    print("stall_time", stall_time)
+    while os.difftime(os.time(), start) < stall_time do
+        -- entry_point:discover(ACCESS_NORMAL, 0, nil)
+        -- print(os.difftime(os.time(), start))
+        
     end
 end
 
 local LAST_TRAP_CALLED = os.time()
 function Frame_counter()
-    if os.time() - LAST_TRAP_CALLED > 600 then
+    -- print("call trap frame counter", LAST_TRAP_CALLED)
+
+    -- if os.time() - LAST_TRAP_CALLED > 600 then --for prod
+    if os.time() - LAST_TRAP_CALLED > 6 then --for testing
         local roll = math.random(1001)
-        
+        -- print("rolled new random value for traps")
+        -- print(roll)
         if roll <= 250 then  -- 25.0%
             TrapUndoItem()
         elseif roll <= 599 then  -- 24.9%
             TrapUndoLocation()
         elseif roll == 600 then -- 0.1%
+            ScriptHost:RemoveOnFrameHandler("Trap Handler")
             TrapOnClear()
         elseif roll <= 650 then  -- 5.0%
             TrapInvalidState()
@@ -83,7 +94,14 @@ function Frame_counter()
         else                     -- 20.0%
             TrapSleepStall()
         end
+        
+        if Archipelago.PlayerNumber == -1 then
+            ScriptHost:RemoveOnFrameHandler("Trap Handler")
+            return
+        end
+        LAST_TRAP_CALLED = os.time() --comment out for testing
     end
 end
+
 
 ScriptHost:AddOnFrameHandler("Trap Handler", Frame_counter)
