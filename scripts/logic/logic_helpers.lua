@@ -1,4 +1,4 @@
-KEY_DROP_SHUFFLE_STATE = false
+KEY_DROP_SHUFFLE_STATE = Tracker:FindObjectForCode("key_drop_shuffle").Active
 SMALL_KEY_STAGE = 0
 
 
@@ -204,6 +204,22 @@ function CanActivateTablets()
     return (Tracker:FindObjectForCode("sword").CurrentStage > 1)
 end
 
+function CanActivateCrystalSwitches()
+    return ANY(
+        "sword",
+        "bombs",
+        "byrna",
+        "somaria",
+        "bow",
+        "hookshot",
+        "firerod",
+        "icerod",
+        "blueboomerang",
+        "redboomerang",
+        "hammer"
+    )
+end
+
 function CanTurnSuperbunnyAt(location)
     local mirror = Tracker:FindObjectForCode("mirror").Active
     return mirror and CanInteract(location.worldstate, 1)
@@ -314,7 +330,7 @@ function CalcHeartpieces()
 end
 
 function CalcHealth()
-    return (4 + (Tracker:FindObjectForCode("heartpieces").AcquiredCount // 4) + Tracker:FindObjectForCode("heartcontainer").AcquiredCount)
+    return (3 + (Tracker:FindObjectForCode("heartpieces").AcquiredCount // 4) + Tracker:FindObjectForCode("heartcontainer").AcquiredCount)
 end
 
 local shoplist = {
