@@ -115,7 +115,7 @@ kakariko_village:connect_two_ways(kakariko_frontside_pub_outside)
 kakariko_village:connect_two_ways(kakariko_backside_pub_outside)
 
 kakariko_village:connect_two_ways(dwarf_smiths_outside)
-kakariko_village:connect_one_way(purple_chest_pickup, function()
+kakariko_village:connect_one_way(hammer_peg_field, function()
     return ALL(
         Inverted,
         CanChangeWorldWithMirror
@@ -127,7 +127,7 @@ kakariko_village:connect_two_ways(magic_bat_hole_ledge, function()
             "hammer",
             ALL(
                 CanChangeWorldWithMirror,
-                CanReach("purple_chest_pickup"),
+                CanReach("hammer_peg_field"),
                 OpenOrStandard
             )
         ),
@@ -170,7 +170,7 @@ kakariko_shop_outside:connect_two_ways_entrance("Kakariko Shop", kakariko_shop_i
 magic_bat_cave_outside:connect_two_ways_entrance("Kakariko Magic Bat Cave", magic_bat_cave_inside)
 dwarf_smiths_outside:connect_two_ways_entrance("Kakariko Dwarf Smiths", dwarf_smiths_inside)
 kakariko_furtune_teller_outside:connect_two_ways_entrance("Kakariko Fortune Teller", kakariko_furtune_teller_inside)
--- kakariko_village:connect_one_way(purple_chest_pickup, function()
+-- kakariko_village:connect_one_way(hammer_peg_field, function()
 --     return ALL(
 --         Inverted,
 --         CanChangeWorldWithMirror()
@@ -236,7 +236,7 @@ dwarf_smiths_inside:connect_one_way("Rescue Dwarf")
 --     return ANY(
 --         "hammer",
 --         ALL(
---             CanReach("purple_chest_pickup")),
+--             CanReach("hammer_peg_field")),
 --             "mirror"
 --         )
 --     )
@@ -576,7 +576,7 @@ mini_moldorm_cave_back:connect_one_way("Mini Moldorm Cave - Far Right")
 
 dam_area:connect_one_way("Sunken Treasure", function() return CanReach("Floodgate Chest") end)
 
-dam_area:connect_one_way("Purple Chest Return", function() return purple_chest_pickup:accessibility() end)
+dam_area:connect_one_way("Purple Chest Return", function() return purple_chest_spawn:accessibility() > 5 end)
 
 
 

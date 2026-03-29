@@ -191,7 +191,7 @@ hype_cave_back:connect_one_way("Hype Cave Middle Left")
 hype_cave_back:connect_one_way("Hype Cave Middle Right")
 hype_cave_back:connect_one_way("Hype Cave Bottom")
 
--- swamp_area:connect_one_way("Purple Chest Return", function() return CanReach("purple_chest_pickup")) end)
+-- swamp_area:connect_one_way("Purple Chest Return", function() return CanReach("hammer_peg_field")) end)
 
 
 
@@ -501,9 +501,15 @@ dark_village_shop_inside:connect_one_way("Village of Outcasts Shop Right")
 brewery_inside:connect_one_way("Brewery Chest", function() return CanInteract(brewery_inside) end)
 
 
-village_of_the_outcast:connect_two_ways(purple_chest_pickup, function() return ALL("titans", CanInteract(village_of_the_outcast)) end)
-purple_chest_pickup:connect_two_ways_stuck(peg_cave_outside, function() return ALL("hammer", CanInteract(purple_chest_pickup)) end)
-purple_chest_pickup:connect_one_way(magic_bat_cave_outside, function()
+village_of_the_outcast:connect_two_ways(hammer_peg_field, function() return ALL("titans", CanInteract(village_of_the_outcast)) end)
+hammer_peg_field:connect_two_ways(purple_chest_spawn, function() 
+    return ALL(
+        helpless_frog:accessibility() > 5,
+        dwarf_smiths_inside:accessibility() > 5
+    )
+end)
+hammer_peg_field:connect_two_ways_stuck(peg_cave_outside, function() return ALL("hammer", CanInteract(hammer_peg_field)) end)
+hammer_peg_field:connect_one_way(magic_bat_cave_outside, function()
     return ALL(
         OpenOrStandard,
         CanChangeWorldWithMirror
@@ -951,7 +957,7 @@ pod_area:connect_one_way(dark_icerod_area, function()
     )
 end) -- Dark Lake Hylia Ledge Clip Spot
 
-pod_area:connect_one_way(purple_chest_pickup, function()
+pod_area:connect_one_way(hammer_peg_field, function()
     return ALL(
         CheckGlitches(2),
         "boots"
