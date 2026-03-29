@@ -75,8 +75,8 @@ local LAST_TRAP_CALLED = os.time()
 function Frame_counter()
     -- print("call trap frame counter", LAST_TRAP_CALLED)
 
-    -- if os.time() - LAST_TRAP_CALLED > 600 then --for prod
-    if os.time() - LAST_TRAP_CALLED > 6 then --for testing
+    if os.time() - LAST_TRAP_CALLED > 600 then --for prod
+    -- if os.time() - LAST_TRAP_CALLED > 6 then --for testing
         local roll = math.random(1001)
         -- print("rolled new random value for traps")
         -- print(roll)
