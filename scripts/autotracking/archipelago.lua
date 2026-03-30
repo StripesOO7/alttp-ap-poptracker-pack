@@ -47,10 +47,14 @@ if Highlight then
         [20] = Highlight.Avoid,
         [30] = Highlight.Priority,
         [40] = Highlight.None,
-        [100] = Highlight.Avoid,
+        [100] = Highlight.Unspecified,
         [101] = Highlight.Priority,
         [102] = Highlight.NoPriority,
+        [103] = Highlight.Priority,
         [104] = Highlight.Avoid,
+        [105] = Highlight.Priority,
+        [106] = Highlight.NoPriority,
+        [107] = Highlight.Priority,
     }
 end
 
@@ -292,7 +296,7 @@ function onClear(slot_data)
             Tracker:FindObjectForCode(dungeon_code).CurrentStage = item_state
         end
     else
-        manual_misc_items_storage.ItemState.MANUAL_LOCATIONS[ROOM_SEED] = {}
+        manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED] = {}
     end
 
     print("reset er connections")
