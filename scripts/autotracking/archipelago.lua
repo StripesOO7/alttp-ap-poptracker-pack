@@ -56,7 +56,40 @@ if Highlight then
         [106] = Highlight.NoPriority,
         [107] = Highlight.Priority,
     }
+
+    HINTS_PRIORITY_LOOKUP = {} 
+    -- table for lookups on the section to behighlighted
+    -- structure 
+    -- {
+    --     ["@path/to/section1"] = {
+    --         [location ID] = hint status,
+    --         [location ID] = hint stauts,
+    --         },
+    --     ["@path/to/section2"] = {
+    --         [location ID] = hint status,
+    --         [location ID] = hint stauts,
+    --         }
+    -- }
+
+    HINT_PRIO_MAPPING = {
+        [0] = 0,
+        [10] = 3,
+        [20] = 2,
+        [30] = 4,
+        [40] = 1,
+        [100] = 0,
+        [101] = 4,
+        [102] = 3,
+        [103] = 4,
+        [104] = 2,
+        [105] = 4,
+        [106] = 3,
+        [107] = 4,
+    }
+
 end
+
+
 
 ---@param start_date number //build_time_obj() return aka unix timestamp
 ---@param end_date number //build_time_obj() return aka unix timestamp
@@ -714,15 +747,40 @@ function UpdateHints(locationID, status)
         for _, location in ipairs(location_table) do
             if location:sub(1, 1) == "@" then
                 local obj = Tracker:FindObjectForCode(location)
-
-                if obj then
-                    if TROLL_PLAYER and HIGHLIGHT_LEVEL[status] == Highlight.Avoid then
-                        obj.Highlight = HIGHLIGHT_LEVEL[30]
-                    else
-                        obj.Highlight = HIGHLIGHT_LEVEL[status]
-                    end
-                else
+                if obj == nil then
                     print(string.format("No object found for code: %s", location))
+                    return
+                end
+                print("obj.ChestCount", obj.ChestCount)
+                if obj.ChestCount > 1 then
+                    if HINTS_PRIORITY_LOOKUP[location] == nil then
+                        HINTS_PRIORITY_LOOKUP[location] = {}
+                    end
+                    
+                    HINTS_PRIORITY_LOOKUP[location][locationID] = status
+                    local amount_of_entries = 0
+                    for _, saved_status in pairs(HINTS_PRIORITY_LOOKUP[location]) do
+                        amount_of_entries = amount_of_entries + 1
+                    end
+                    -- print(dump_table(HINTS_PRIORITY_LOOKUP))
+                    -- print(dump_table(HINTS_PRIORITY_LOOKUP[location]))
+                    -- print(#HINTS_PRIORITY_LOOKUP[location])
+                    if amount_of_entries > 1 then
+                        local max_status = 0
+                        for _, saved_status in pairs(HINTS_PRIORITY_LOOKUP[location]) do
+                            print("in loop max", max_status)
+                            if HINT_PRIO_MAPPING[max_status] < HINT_PRIO_MAPPING[saved_status] and saved_status ~= 0 and saved_status ~= 100 then 
+                                max_status = saved_status
+                            end
+                        end
+                        print("max_status", max_status)
+                        status = max_status
+                    end
+                end
+                if TROLL_PLAYER and HIGHLIGHT_LEVEL[status] == Highlight.Avoid then
+                    obj.Highlight = HIGHLIGHT_LEVEL[30]
+                else
+                    obj.Highlight = HIGHLIGHT_LEVEL[status]
                 end
             end
         end
