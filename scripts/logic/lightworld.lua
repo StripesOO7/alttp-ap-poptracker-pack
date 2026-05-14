@@ -680,15 +680,15 @@ end)
 bombos_tablet_ledge:connect_one_way(desert_area)
 bombos_tablet_ledge:connect_one_way(bombos_tablet)
 bombos_tablet:connect_one_way("Bombos Tablet", function() return
-    ALL(
-        ANY(
-            ALL(
-                "book",
-                CanActivateTablets
-            ),
-            CanCheckWithBook
+    -- ALL(
+    ANY(
+        ALL(
+            "book",
+            CanActivateTablets
         ),
-        CanInteract(bombos_tablet)
+        CanCheckWithBook
+    -- ),
+    --     CanInteract(bombos_tablet)
     )
 end)
 
