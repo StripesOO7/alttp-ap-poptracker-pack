@@ -138,27 +138,6 @@ function Build_Time_Obj(year, month, day, hour, minute, second)
     )
 end
 
-function dump_table(o, depth)
-    if depth == nil then
-        depth = 0
-    end
-    if type(o) == 'table' then
-        local tabs = ('\t'):rep(depth)
-        local tabs2 = ('\t'):rep(depth + 1)
-        local s = '{\n'
-        for k, v in pairs(o) do
-            local kc = k
-            if type(k) ~= 'number' then
-                kc = '"' .. k .. '"'
-            end
-            s = s .. tabs2 .. '[' .. kc .. '] = ' .. dump_table(v, depth + 1) .. ',\n'
-        end
-        return s .. tabs .. '}'
-    else
-        return tostring(o)
-    end
-end
-
 function PreOnClear()
     PLAYER_ID = Archipelago.PlayerNumber or -1
 	TEAM_NUMBER = Archipelago.TeamNumber or 0
@@ -751,7 +730,6 @@ function UpdateHints(locationID, status)
                     print(string.format("No object found for code: %s", location))
                     return
                 end
-                print("obj.ChestCount", obj.ChestCount)
                 if obj.ChestCount > 1 then
                     if HINTS_PRIORITY_LOOKUP[location] == nil then
                         HINTS_PRIORITY_LOOKUP[location] = {}
@@ -762,18 +740,13 @@ function UpdateHints(locationID, status)
                     for _, saved_status in pairs(HINTS_PRIORITY_LOOKUP[location]) do
                         amount_of_entries = amount_of_entries + 1
                     end
-                    -- print(dump_table(HINTS_PRIORITY_LOOKUP))
-                    -- print(dump_table(HINTS_PRIORITY_LOOKUP[location]))
-                    -- print(#HINTS_PRIORITY_LOOKUP[location])
                     if amount_of_entries > 1 then
                         local max_status = 0
                         for _, saved_status in pairs(HINTS_PRIORITY_LOOKUP[location]) do
-                            print("in loop max", max_status)
                             if HINT_PRIO_MAPPING[max_status] < HINT_PRIO_MAPPING[saved_status] and saved_status ~= 0 and saved_status ~= 100 then 
                                 max_status = saved_status
                             end
                         end
-                        print("max_status", max_status)
                         status = max_status
                     end
                 end

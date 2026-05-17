@@ -14,6 +14,63 @@ local bool_to_accesslvl = {
     [false] = ACCESS_NONE
 }
 
+SMALLKEYDEFAULTS = {
+    [true] = {
+        ["ep_smallkey"] = 2, -- ep_smallkey 162
+        ["dp_smallkey"] = 4, -- dp_smallkey 163
+        ["toh_smallkey"] = 1, -- toh_smallkey 170
+        ["hc_smallkey"] = 4, -- hc_smallkey 160
+        ["at_smallkey"] = 4, -- at_smallkey 164
+        ["pod_smallkey"] = 6, -- pod_smallkey 166
+        ["tt_smallkey"] = 3, -- tt_smallkey 171
+        ["sw_smallkey"] = 5, -- sw_smallkey 168
+        ["sp_smallkey"] = 6, -- sp_smallkey 165
+        ["ip_smallkey"] = 6, -- ip_smallkey 169
+        ["mm_smallkey"] = 6, -- mm_smallkey 167
+        ["tr_smallkey"] = 6, -- tr_smallkey 172
+        ["gt_smallkey"] = 8, -- gt_smallkey 173
+    },
+    [false] = {
+        ["ep_smallkey"] = 0,-- ep_smallkey 162
+        ["dp_smallkey"] = 1,-- dp_smallkey 163
+        ["toh_smallkey"] = 1,-- toh_smallkey 170
+        ["hc_smallkey"] = 1,-- hc_smallkey 160
+        ["at_smallkey"] = 2,-- at_smallkey 164
+        ["pod_smallkey"] = 6,-- pod_smallkey 166
+        ["tt_smallkey"] = 1,-- tt_smallkey 171
+        ["sw_smallkey"] = 3,-- sw_smallkey 168
+        ["sp_smallkey"] = 1,-- sp_smallkey 165
+        ["ip_smallkey"] = 2,-- ip_smallkey 169
+        ["mm_smallkey"] = 3,-- mm_smallkey 167
+        ["tr_smallkey"] = 4,-- tr_smallkey 172
+        ["gt_smallkey"] = 4,-- gt_smallkey 173
+    }
+}
+
+function dump_table(o, depth)
+    if depth == nil then
+        depth = 0
+    end
+    if type(o) == 'table' then
+        local tabs = ('\t'):rep(depth)
+        local tabs2 = ('\t'):rep(depth + 1)
+        local s = '{\n'
+        for k, v in pairs(o) do
+            local kc = k
+            if type(k) == 'boolean' then
+                k = tostring(k)
+            end
+            if type(k) ~= 'number'then
+                kc = '"' .. k .. '"'
+            end
+            s = s .. tabs2 .. '[' .. kc .. '] = ' .. dump_table(v, depth + 1) .. ',\n'
+        end
+        return s .. tabs .. '}'
+    else
+        return tostring(o)
+    end
+end
+
 function A(result)
     if result then
         return ACCESS_NORMAL
@@ -633,11 +690,20 @@ end
 
 function KeyDropLayoutChange()
     KEY_DROP_SHUFFLE_STATE = Tracker:FindObjectForCode("key_drop_shuffle").Active
-    if KEY_DROP_SHUFFLE_STATE then
-        Tracker:AddLayouts("layouts/dungeon_items_keydrop.json")
-    else
-        Tracker:AddLayouts("layouts/dungeon_items.json")
+    print("KEY_DROP_SHUFFLE_STATE", KEY_DROP_SHUFFLE_STATE)
+    print("full table", dump_table(SMALLKEYDEFAULTS))
+    print("part table", dump_table(SMALLKEYDEFAULTS[KEY_DROP_SHUFFLE_STATE]))
+    for dungeon, default in pairs(SMALLKEYDEFAULTS[KEY_DROP_SHUFFLE_STATE]) do
+        print(dungeon, default)
+        print(Tracker:FindObjectForCode(dungeon).MaxCount)
+        Tracker:FindObjectForCode(dungeon).MaxCount = default
+        print(Tracker:FindObjectForCode(dungeon).MaxCount)
     end
+    -- if KEY_DROP_SHUFFLE_STATE then
+    --     Tracker:AddLayouts("layouts/dungeon_items_keydrop.json")
+    -- else
+    --     Tracker:AddLayouts("layouts/dungeon_items.json")
+    -- end
 end
 
 function TT_boss_check()
@@ -735,7 +801,7 @@ function GiveAll(setting)
         ["maps_setting"] = "_map",
         ["compass_setting"] = "_compass",
         ["bigkeys_setting"] = "_bigkey",
-        ["smallkeys_setting"] = "_smallkey"
+        -- mallkeys_setting"] = "_smallkey"
     }
     -- if Archipelago.PlayerNumber < 0 then
         for _, dungeon_prefix in ipairs(dungeons_prefixes) do
