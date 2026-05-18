@@ -40,6 +40,23 @@ local MEDALLIONS = {
     [16] = "ether",
     [17] = "quake"
 }
+
+local KEYRINGS = {
+    [194] = true,
+    [195] = true,
+    [202] = true,
+    [192] = true,
+    [196] = true,
+    [198] = true,
+    [203] = true,
+    [200] = true,
+    [197] = true,
+    [201] = true,
+    [199] = true,
+    [204] = true,
+    [205] = true
+}
+
 if Highlight then
     HIGHLIGHT_LEVEL= {
         [0] = Highlight.Unspecified,
@@ -230,13 +247,13 @@ function ItemReset(item, item_obj, item_code)
     elseif item[2] == "progressive" then
         item_obj.CurrentStage = 0
         item_obj.Active = false
-    elseif item[2] == "consumable" or item[2] == "combined_consumable" then
+    elseif ({["consumable"] = true, ["combined_consumable"] = true, ["keyring"] = true})[item[2]] then
         if item_obj.MinCount then
             item_obj.AcquiredCount = item_obj.MinCount
         else
             item_obj.AcquiredCount = 0
         end
-    elseif item[2] == "progressive_toggle" or item[2] == "split_toggle" then
+    elseif ({["progressive_toggle"] = true, ["split_toggle"] = true})[item[2]] then
         item_obj.CurrentStage = 0
         item_obj.Active = false
     end
@@ -386,6 +403,8 @@ function onItem(index, item_id, item_name, player_number)
                 else
                     item_obj.Active = true
                 end
+            elseif item[2] == "keyring" then
+                item_obj.AcquiredCount = item_obj.MaxCount
             end
         else
             print(string.format("onItem: could not find object for code %s", item_code[1]))
