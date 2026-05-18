@@ -298,7 +298,7 @@ function onClear(slot_data)
     SLOT_DATA = slot_data
 
     autoFill(slot_data)
-    bombless()
+    Bombless()
     if SKIP_BOSSSHUFFLE == false then
         BossShuffle()
     end
@@ -651,22 +651,6 @@ function autoFill()
     goal_check()
 end
 
-
-function bombless()
-    local bombs = Tracker:FindObjectForCode("bombs")
-
-    local bombless_setting = Tracker:FindObjectForCode("bombless")
-    if bombless_setting and bombless_setting.Active == false then
-        bombs.AcquiredCount = bombs.AcquiredCount + 10
-    else
-
-        if bombs.AcquiredCount > 9 then
-            bombs.AcquiredCount = bombs.AcquiredCount - 10
-        else
-            bombs.AcquiredCount = bombs.MinCount
-        end
-    end
-end
 
 function goal_check()
     if SLOT_DATA ~= nil  and Tracker:FindObjectForCode("autofill_goal_reqs").Active then

@@ -176,6 +176,35 @@ function KDSreturn(noKDS, KDS)
     -- return noKDS
 end
 
+function Bombless()
+    local bombs = Tracker:FindObjectForCode("bombs")
+
+    local bombless_setting = Tracker:FindObjectForCode("bombless")
+    if not bombs then
+        print("error during setting bombless")
+        return
+    end
+    if bombless_setting and bombless_setting.Active == false then
+        bombs.MinCount = 0
+        bombs.AcquiredCount = bombs.AcquiredCount + 10
+        bombs.MinCount = 10
+    else
+        bombs.MinCount = 0
+        if bombs.AcquiredCount > 9 then
+            bombs.AcquiredCount = bombs.AcquiredCount - 10
+        else
+            bombs.AcquiredCount = bombs.MinCount
+        end
+    end
+
+    -- if Archipelago.PlayerNumber > 0 then
+    --     for index, id in ipairs() do
+    --     end
+    -- else
+
+    -- end
+end
+
 function OWDungeonChecks(...)
     local locations = { ... }
     local availale = 0

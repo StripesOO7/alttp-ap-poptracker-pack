@@ -41,7 +41,7 @@ ScriptHost:AddWatchForCode("set all autofill", "autofill_all_settings", SetAllAu
 ScriptHost:AddWatchForCode("ER_reset_triggered", "reset_er", Reset_ER_setings)
 
 --archipelago
-ScriptHost:AddWatchForCode("bombless start handler", "bombless", bombless)
+ScriptHost:AddWatchForCode("bombless start handler", "bombless", Bombless)
 ScriptHost:AddWatchForCode("goal handler", "goal", goal_check)
 Archipelago:AddClearHandler("clear handler", onClear)
 Archipelago:AddItemHandler("item handler", onItem)

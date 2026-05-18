@@ -7,6 +7,7 @@ require("scripts/items_import")
 -- Logic
 require("scripts/logic/logic_helpers")
 KeyDropLayoutChange()
+Bombless()
 require("scripts/logic/logic_main")
 require("scripts/logic_import")
 
