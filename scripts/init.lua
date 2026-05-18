@@ -1,5 +1,4 @@
 local variant = Tracker.ActiveVariantUID
-IS_UNLABELLED = variant:find("maps-u")
 require("os")
 -- Items
 require("scripts/items_import")
@@ -12,15 +11,7 @@ require("scripts/logic/logic_main")
 require("scripts/logic_import")
 
 -- Maps
-if Tracker.ActiveVariantUID == "maps-u" then
-    Tracker:AddMaps("maps/maps-u.json")
-else
-    Tracker:AddMaps("maps/maps.json")
-end
-
-if PopVersion and PopVersion >= "0.23.0" then
-    Tracker:AddLocations("locations/dungeons.json")
-end
+Tracker:AddMaps("maps/maps.json")
 
 -- Layout
 require("scripts/layouts_import")
@@ -29,9 +20,7 @@ require("scripts/layouts_import")
 require("scripts/locations_import")
 
 -- AutoTracking for Poptracker
-if PopVersion and PopVersion >= "0.18.0" then
-    require("scripts/autotracking")
-end
+require("scripts/autotracking")
 
 function OnFrameHandler()
     ScriptHost:RemoveOnFrameHandler("load handler")
