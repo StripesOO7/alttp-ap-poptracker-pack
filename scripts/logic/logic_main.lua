@@ -386,6 +386,12 @@ entry_point:connect_one_way(darkworld_spawns, Inverted)
 
 --
 function StateChanged()
+    PLAYER_ID = Archipelago.PlayerNumber
+    if PLAYER_ID == -1 then
+        ROOM_SEED = "default"
+    else
+        ROOM_SEED = (Archipelago.Seed or tostring(#ALL_LOCATIONS)).."_"..Archipelago.TeamNumber.."_"..Archipelago.PlayerNumber
+    end
     UpdateCanInteract()
     stale = true
 end
