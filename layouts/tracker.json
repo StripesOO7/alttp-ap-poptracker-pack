@@ -21,31 +21,41 @@
                             }
                         },
                         {
-                            "type": "group",
-                            "header": "Settings",
-                            "dock": "top",
-                            "content": {
-                                "type": "layout",
-                                "key": "setting_grid"
-                            }
-                        },
-                        {
-                            "type": "group",
-                            "header": "Pulltree Drops",
-                            "dock": "top",
-                            "content": {
-                                "type": "layout",
-                                "key": "pulltree_drops"
-                            }
-                        },
-                        {
-                            "type": "group",
-                            "header": "Hoarder + Stun Drops",
-                            "dock": "top",
-                            "content": {
-                                "type": "layout",
-                                "key": "hoarder_drops"
-                            }
+                            "type": "array",
+                            "orientation": "horizontal",
+                            "margin": "0,0",
+                            "content": [
+                                {
+                                    "type": "group",
+                                    "header": "Settings",
+                                    // "dock": "left",
+                                    "margin": "0,0,3,0",
+                                    "content": {
+                                        "type": "layout",
+                                        "h_alignment": "center",
+                                        "v_alignment": "center",
+                                        "key": "setting_grid_horizontal"
+                                    }
+                                },
+                                {
+                                    "type": "group",
+                                    "header": "Pulltree Drops",
+                                    // "dock": "left",
+                                    "content": {
+                                        "type": "layout",
+                                        "key": "pulltree_drops_horizontal"
+                                    }
+                                },
+                                {
+                                    "type": "group",
+                                    "header": "Hoarder +\nStun Drops",
+                                    // "dock": "left",
+                                    "content": {
+                                        "type": "layout",
+                                        "key": "hoarder_drops_horizontal"
+                                    }
+                                }
+                            ]
                         },
                         {
                             "type": "group",
@@ -125,7 +135,7 @@
                                 "type": "layout",
                                 "h_alignment": "center",
                                 "v_alignment": "center",
-                                "key": "setting_grid"
+                                "key": "setting_grid_horizontal"
                             }
                         },
                         {
@@ -134,7 +144,7 @@
                             "dock": "left",
                             "content": {
                                 "type": "layout",
-                                "key": "pulltree_drops"
+                                "key": "pulltree_drops_horizontal"
                             }
                         },
                         {
@@ -143,7 +153,7 @@
                             "dock": "left",
                             "content": {
                                 "type": "layout",
-                                "key": "hoarder_drops"
+                                "key": "hoarder_drops_horizontal"
                             }
                         },
                         {

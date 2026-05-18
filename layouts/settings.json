@@ -1,5 +1,5 @@
 {
-    "setting_grid": {
+    "setting_grid_horizontal": {
         "type": "array",
         "orientation": "horizontal",
         "margin": "0,0",
@@ -53,7 +53,7 @@
             }
         ]
     },
-    "pulltree_drops": {
+    "pulltree_drops_horizontal": {
         "type": "array",
         "orientation": "horizontal",
         "margin": "0,0",
@@ -86,7 +86,7 @@
             }
         ]
     },
-    "hoarder_drops": {
+    "hoarder_drops_horizontal": {
         "type": "array",
         "orientation": "horizontal",
         "margin": "0,0",
@@ -112,6 +112,118 @@
                             ],
                             [
                                 "stun_label", "stunprice"
+                            ]
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "setting_grid_vertical": {
+        "type": "array",
+        "orientation": "horizontal",
+        "margin": "0,0",
+        "content": [
+            {
+                "type": "array",
+                "orientation": "vertical",
+                "margin": "0,0",
+                "content": [
+                    {
+                        "type": "itemgrid",
+                        "item_margin": "2, 2",
+                        "item_size": "45, 45",
+                        "h_alignment": "left",
+                        "item_h_alignment": "center",
+                        "item_v_alignment": "center",
+                        "rows": [
+                            [
+                                "gt_access", //gt crystal  count
+                                "ganon_killable", //ganon crystal count
+                                "triforce_pieces_needed"
+                            ],
+                            [
+                                "small_keys",
+                                "big_keys",
+                                "swordless"
+                            // ],
+                            // [
+                            //     "swordless",
+                            //     "compass"
+                            ]
+                        ]
+                    },
+                    {
+                        "type": "itemgrid",
+                        "item_margin": "0, 0",
+                        "item_size": "90, 45",
+                        "h_alignment": "center",
+                        "v_alignment": "center",
+                        "item_h_alignment": "center",
+                        "item_v_alignment": "center",
+                        "rows": [
+                            [
+                                "route_mode"
+                            ]
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "pulltree_drops_vertical": {
+        "type": "array",
+        "orientation": "horizontal",
+        "margin": "0,0",
+        "content": [
+            {
+                "type": "array",
+                "orientation": "vertical",
+                "margin": "0,0",
+                "content": [
+                    {
+                        "type": "itemgrid",
+                        "item_margin": "2, 2",
+                        "item_size": "45, 45",
+                        "h_alignment": "left",
+                        "item_h_alignment": "center",
+                        "item_v_alignment": "center",
+                        "rows": [
+                            [
+                                "tree_label_1", "tree_label_2", "tree_label_3"
+                            ],
+                            [
+                                "tree_pull_1", "tree_pull_2", "tree_pull_3"
+                            ]
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "hoarder_drops_vertical": {
+        "type": "array",
+        "orientation": "horizontal",
+        "margin": "0,0",
+        "content": [
+            {
+                "type": "array",
+                "orientation": "vertical",
+                "margin": "0,0",
+                "content": [
+                    {
+                        "type": "itemgrid",
+                        "item_margin": "2, 2",
+                        "item_size": "45, 45",
+                        "h_alignment": "left",
+                        "item_h_alignment": "center",
+                        "item_v_alignment": "center",
+                        "rows": [
+                            [
+                                "crab_label_1", "crab_label_2", "stun_label", "crab_pull_1"
+                            ],
+                            [
+                                "crab_pull_1", "crab_pull_2", "stunprice"
                             ]
                         ]
                     }
