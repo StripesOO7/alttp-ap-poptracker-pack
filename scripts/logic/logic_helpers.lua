@@ -137,9 +137,9 @@ function Has(item, noKDS_amount, noKDS_amountInLogic, KDS_amount, KDS_amountInLo
     if KEY_DROP_SHUFFLE_STATE then
         amount = KDS_amount
         amountInLogic = KDS_amountInLogic
-        if item:sub(-8,-1) == "smallkey" then
-            item = item.."_drop"
-        end
+        -- if item:sub(-8,-1) == "smallkey" then
+        --     item = item.."_drop"
+        -- end
     else
         amount = noKDS_amount
         amountInLogic = noKDS_amountInLogic
@@ -690,20 +690,9 @@ end
 
 function KeyDropLayoutChange()
     KEY_DROP_SHUFFLE_STATE = Tracker:FindObjectForCode("key_drop_shuffle").Active
-    print("KEY_DROP_SHUFFLE_STATE", KEY_DROP_SHUFFLE_STATE)
-    print("full table", dump_table(SMALLKEYDEFAULTS))
-    print("part table", dump_table(SMALLKEYDEFAULTS[KEY_DROP_SHUFFLE_STATE]))
     for dungeon, default in pairs(SMALLKEYDEFAULTS[KEY_DROP_SHUFFLE_STATE]) do
-        print(dungeon, default)
-        print(Tracker:FindObjectForCode(dungeon).MaxCount)
         Tracker:FindObjectForCode(dungeon).MaxCount = default
-        print(Tracker:FindObjectForCode(dungeon).MaxCount)
     end
-    -- if KEY_DROP_SHUFFLE_STATE then
-    --     Tracker:AddLayouts("layouts/dungeon_items_keydrop.json")
-    -- else
-    --     Tracker:AddLayouts("layouts/dungeon_items.json")
-    -- end
 end
 
 function TT_boss_check()
