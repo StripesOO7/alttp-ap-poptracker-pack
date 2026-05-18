@@ -1402,8 +1402,8 @@ end)
 light_death_mountain_left_top:connect_one_way("Ether Tablet", function()
     return ANY(
         ALL(
-        "book",
-        CanActivateTablets
+            "book",
+            CanActivateTablets
         ),
         CanCheckWithBook
     )
