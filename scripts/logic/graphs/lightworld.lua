@@ -736,11 +736,14 @@ lumberjacks_item:connect_one_way("Lumberjacks Item")
 
 lumberjacks_cave_inside:connect_one_way("Lumberjacks Item", function() return ACCESS_INSPECT end)
 
-lumberjacks_area:connect_two_ways(old_man_cave_left_ledge, function()
+lumberjacks_area:connect_one_way(old_man_cave_left_ledge, function()
     return ALL(
         "glove",
         CanInteract(lumberjacks_area)
     )
+end)
+old_man_cave_left_ledge:connect_one_way(lumberjacks_area, function()
+    return true
 end)
 
 -- OWG
