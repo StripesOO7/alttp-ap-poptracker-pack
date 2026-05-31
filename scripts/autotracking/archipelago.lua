@@ -200,7 +200,7 @@ function PreOnClear()
 
         ROOM_SEED = seed_base --something like 2345_0_12
         for _, custom_item_code in pairs({"manual_location_storage",  "manual_er_storage", "manual_misc_items_storage"}) do
-            local custom_storage_item = Tracker:FindObjectForCode(custom_item_code).ItemState
+            local custom_storage_item = (Tracker:FindObjectForCode(custom_item_code) --[[@as LuaItem]]).ItemState
             if custom_storage_item then
                 if #custom_storage_item.MANUAL_LOCATIONS > 10 then
                     custom_storage_item.MANUAL_LOCATIONS[custom_storage_item.MANUAL_LOCATIONS_ORDER[1]] = nil
@@ -221,10 +221,10 @@ function PreOnClear()
         require("scripts/logic/traps")
     end
 end
-(JsonItem|Location|LocationSection|LuaItem)?
+-- (JsonItem|Location|LocationSection|LuaItem)?
 ---@param location string String of the Location or LocatioSection to reset
 ---@param location_obj JsonItem|LocationSection Tracker:Findobject(location)retrun object
----@param custom_storage_item table|LuaItem Reference for the custom LuaItem CachesItems
+---@param custom_storage_item table Reference for the custom LuaItem CachesItems
 function LocationReset(location, location_obj, custom_storage_item)
     if location:sub(1, 1) == "@" then
         ---@cast location_obj LocationSection
@@ -241,7 +241,7 @@ function LocationReset(location, location_obj, custom_storage_item)
 end
 
 ---@param item table table of the ItemCode and extra parameters from the Item_Mapping.lau
----@param item_obj JsonItem Tracker:Findobject(item)retrun object
+---@param item_obj JsonItem Tracker:Findobject(item) retrun object
 ---@param item_code string Reference for the custom LuaItem CachesItems
 function ItemReset(item, item_obj, item_code)
     ---@cast item_obj JsonItem
@@ -275,21 +275,18 @@ function onClear(slot_data)
 
     ScriptHost:RemoveOnFrameHandler("Trap Handler")
     
-    local custom_storage_item = Tracker:FindObjectForCode("manual_location_storage").ItemState
+    local custom_storage_item = (Tracker:FindObjectForCode("manual_location_storage") --[[@as LuaItem]]).ItemState
     if custom_storage_item == nil then
-        CreateLuaManualStorageItem("manual_location_storage")
-        custom_storage_item = Tracker:FindObjectForCode("manual_location_storage").ItemState
+        custom_storage_item = CreateLuaManualStorageItem("manual_location_storage").ItemState or {}
     end
-    local er_custom_storage_item = Tracker:FindObjectForCode("manual_er_storage").ItemState
+    local er_custom_storage_item = (Tracker:FindObjectForCode("manual_er_storage") --[[@as LuaItem]]).ItemState
     if er_custom_storage_item == nil then
-        CreateLuaManualStorageItem("manual_er_storage")
-        er_custom_storage_item = Tracker:FindObjectForCode("manual_er_storage").ItemState
+        er_custom_storage_item = CreateLuaManualStorageItem("manual_er_storage").ItemState or {}
     end
 
-    local manual_misc_items_storage = Tracker:FindObjectForCode("manual_misc_items_storage").ItemState
+    local manual_misc_items_storage = (Tracker:FindObjectForCode("manual_misc_items_storage") --[[@as LuaItem]]).ItemState
     if manual_misc_items_storage == nil then
-        CreateLuaManualStorageItem("manual_misc_items_storage")
-        manual_misc_items_storage = Tracker:FindObjectForCode("manual_misc_items_storage").ItemState
+        manual_misc_items_storage = CreateLuaManualStorageItem("manual_misc_items_storage").ItemState or {}
     end
 
     PreOnClear()
@@ -303,7 +300,7 @@ function onClear(slot_data)
     for _, location_array in pairs(LOCATION_MAPPING) do
         for _, location in pairs(location_array) do
             if location then
-                local location_obj = Tracker:FindObjectForCode(location)
+                local location_obj = Tracker:FindObjectForCode(location) --[[@as LocationSection]]
                 if location_obj then
                     LocationReset(location, location_obj, custom_storage_item)
                 end
@@ -314,7 +311,7 @@ function onClear(slot_data)
     for _, item in pairs(ITEM_MAPPING) do
         for _, item_code in pairs(item[1]) do
             if item_code and item[2] then
-                local item_obj = Tracker:FindObjectForCode(item_code)
+                local item_obj = Tracker:FindObjectForCode(item_code) --[[@as JsonItem]]
                 if item_obj then
                     ItemReset(item, item_obj, item_code)
                     -- clear_item_type[item[2]](item_obj, item_code) --alternate version
@@ -332,7 +329,7 @@ function onClear(slot_data)
 
     if manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED] then
         for dungeon_code, item_state in pairs(manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]) do -- redo location based on savestate for seed
-            Tracker:FindObjectForCode(dungeon_code).CurrentStage = item_state
+            (Tracker:FindObjectForCode(dungeon_code) --[[@JsonItem]]).CurrentStage = item_state
         end
     else
         manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED] = {}
@@ -361,20 +358,25 @@ function onClear(slot_data)
     MANUAL_CHECKED = true
 end
 
+---Run every time an Item gets send to the connected slot
+---@param index integer running index for the items the connected slot has receivied so far 
+---@param item_id integer itemID from the games datapackage the the send item
+---@param item_name string name of the item from the datapackage for the given itemID
+---@param player_number integer slotnumber of the player who picked up the item
 function onItem(index, item_id, item_name, player_number)
     if index <= CUR_INDEX then
         return
     end
     local is_local = player_number == Archipelago.PlayerNumber
     CUR_INDEX = index;
-    local item = ITEM_MAPPING[item_id]
+    local item = ITEM_MAPPING[item_id]  --[[@as table<integer, table<string>>]]
     if not item or not item[1] then
         print(string.format("onItem: could not find item mapping for id %s", item_id))
         return
     end
     for _, item_code in pairs(item[1]) do
         -- print(item[1], item[2])
-        local item_obj = Tracker:FindObjectForCode(item_code)
+        local item_obj = Tracker:FindObjectForCode(item_code) --[[@as JsonItem]]
         if item_obj then
             -- set_item_type[item[2]](item_id, item_obj) --alternate version
             if item[2] == "toggle" then
@@ -425,6 +427,8 @@ function onItem(index, item_id, item_name, player_number)
 end
 
 --called when a location gets cleared
+---@param location_id integer ID of the locations cleared from the datapackage
+---@param location_name string name of the location cleared fromt he datapackage
 function onLocation(location_id, location_name)
     MANUAL_CHECKED = false
     local location_array = LOCATION_MAPPING[location_id]
@@ -636,9 +640,9 @@ function autoFill()
         --         item.Active = false
         --     end
         else
-            if settings_name == "shop_item_slots" and Tracker:FindObjectForCode(slotCodes[settings_name].autofill).Active then
-                Tracker:FindObjectForCode("shop_sanity").Active = (settings_value > 0)
-                Tracker:FindObjectForCode("shuffle_item_slots").BadgeText = settings_value
+            if settings_name == "shop_item_slots" and (Tracker:FindObjectForCode(slotCodes[settings_name].autofill)  --[[@as JsonItem]]).Active then
+                (Tracker:FindObjectForCode("shop_sanity") --[[@as JsonItem]]).Active = settings_value > 0
+                (Tracker:FindObjectForCode("shuffle_item_slots") --[[@as JsonItem]]).BadgeText = settings_value
             elseif slotCodes[settings_name] then
                 for index, _ in ipairs(slotCodes[settings_name].codes) do
                    
@@ -650,7 +654,7 @@ function autoFill()
                     print("<--------------------------------->")
                     if Tracker:FindObjectForCode(slotCodes[settings_name].autofill).Active then
                         print("settings_name", settings_name)
-                        local item = Tracker:FindObjectForCode((slotCodes[settings_name].codes)[index])
+                        local item = Tracker:FindObjectForCode((slotCodes[settings_name].codes)[index]) --[[@as JsonItem]]
                         if item.Type == "toggle" then
                             -- print("toggle", settings_name, settings_value)
                             item.Active = (slotCodes[settings_name].mappings[index])[settings_value]
@@ -681,12 +685,12 @@ function autoFill()
     goal_check()
 end
 
-
+---comment function to check if goal conditions are meet and in turn lights up the goal item
 function goal_check()
-    if SLOT_DATA ~= nil  and Tracker:FindObjectForCode("autofill_goal_reqs").Active then
-        local goal = Tracker:FindObjectForCode("goal")
-        local ganon = Tracker:FindObjectForCode("ganon_killable")
-        local triforce = Tracker:FindObjectForCode("triforce_pieces_needed")
+    if SLOT_DATA ~= nil  and (Tracker:FindObjectForCode("autofill_goal_reqs") --[[@as JsonItem]]).Active then
+        local goal = Tracker:FindObjectForCode("goal")  --[[@as JsonItem]]
+        local ganon = Tracker:FindObjectForCode("ganon_killable")  --[[@as JsonItem]]
+        local triforce = Tracker:FindObjectForCode("triforce_pieces_needed")  --[[@as JsonItem]]
         local goal_stage = goal.CurrentStage
         if goal_stage == 3 or
         goal_stage == 5 or
@@ -700,7 +704,19 @@ function goal_check()
     end
 end
 
-
+---@class APhint_message
+---@field receiving_player integer
+---@field finding_player integer
+---@field location integer
+---@field item integer
+---@field found boolean
+---@field entrance string
+---@field item_flags 0|1|2|3|4|5|6|7
+---@field status 0|10|20|30|40
+---comment used on subsequent updatesfrom the server a given key we subscribed to
+---@param key string
+---@param value table<integer, APhint_message> 
+---@param old_value table<integer, APhint_message> 
 function OnNotify(key, value, old_value)
     if value ~= old_value and key == HINTS_ID then
         Tracker.BulkUpdate = true
@@ -717,6 +733,9 @@ function OnNotify(key, value, old_value)
     end
 end
 
+---comment used the very first time we receive this message from the server after subscribing to a given key
+---@param key string Name of the key that was used to send the message
+---@param value table<integer, APhint_message>
 function OnNotifyLaunch(key, value)
     if key == HINTS_ID then
         Tracker.BulkUpdate = true
@@ -733,13 +752,17 @@ function OnNotifyLaunch(key, value)
     end
 end
 
+---comment function to update the hint statu of a LocationSection to represent the status fo the hint that is present
+--for that LocationSection
+---@param locationID integer ID of the locations the hint is being given for
+---@param status 0|10|20|30|40|100|101|102|103|104|105|106|107 status to determine the color of the hint glow
 function UpdateHints(locationID, status)
     if Highlight then
         -- print(locationID, status)
         local location_table = LOCATION_MAPPING[locationID]
         for _, location in ipairs(location_table) do
             if location:sub(1, 1) == "@" then
-                local obj = Tracker:FindObjectForCode(location)
+                local obj = Tracker:FindObjectForCode(location)  --[[@as LocationSection]]
                 if obj == nil then
                     print(string.format("No object found for code: %s", location))
                     return
@@ -757,7 +780,7 @@ function UpdateHints(locationID, status)
                     if amount_of_entries > 1 then
                         local max_status = 0
                         for _, saved_status in pairs(HINTS_PRIORITY_LOOKUP[location]) do
-                            if HINT_PRIO_MAPPING[max_status] < HINT_PRIO_MAPPING[saved_status] and saved_status ~= 0 and saved_status ~= 100 then 
+                            if HINT_PRIO_MAPPING[max_status] < HINT_PRIO_MAPPING[saved_status] and saved_status ~= 0 and saved_status ~= 100 then
                                 max_status = saved_status
                             end
                         end
