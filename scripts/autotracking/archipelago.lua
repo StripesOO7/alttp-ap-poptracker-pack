@@ -155,6 +155,7 @@ function Build_Time_Obj(year, month, day, hour, minute, second)
     )
 end
 
+--- Function for prepare custom LuaItems for caching, check for mischieve/traps, subscribe to datastorage 
 function PreOnClear()
     PLAYER_ID = Archipelago.PlayerNumber or -1
 	TEAM_NUMBER = Archipelago.TeamNumber or 0
@@ -220,9 +221,13 @@ function PreOnClear()
         require("scripts/logic/traps")
     end
 end
-
+(JsonItem|Location|LocationSection|LuaItem)?
+---@param location string String of the Location or LocatioSection to reset
+---@param location_obj JsonItem|LocationSection Tracker:Findobject(location)retrun object
+---@param custom_storage_item table|LuaItem Reference for the custom LuaItem CachesItems
 function LocationReset(location, location_obj, custom_storage_item)
     if location:sub(1, 1) == "@" then
+        ---@cast location_obj LocationSection
         if custom_storage_item.MANUAL_LOCATIONS[ROOM_SEED][location_obj.FullID] then
             location_obj.AvailableChestCount = custom_storage_item.MANUAL_LOCATIONS[ROOM_SEED][location_obj.FullID]
         else
@@ -230,11 +235,16 @@ function LocationReset(location, location_obj, custom_storage_item)
         end
         location_obj.Highlight = HIGHLIGHT_LEVEL[40]
     else
+        ---@cast location_obj JsonItem
         location_obj.Active = false
     end
 end
 
+---@param item table table of the ItemCode and extra parameters from the Item_Mapping.lau
+---@param item_obj JsonItem Tracker:Findobject(item)retrun object
+---@param item_code string Reference for the custom LuaItem CachesItems
 function ItemReset(item, item_obj, item_code)
+    ---@cast item_obj JsonItem
     item_obj.CurrentStage = 0
     if item[2] == "toggle" then
         if MEDALLIONS[item_code] ~= nil then
@@ -259,7 +269,7 @@ function ItemReset(item, item_obj, item_code)
     end
 end
 
-
+---@param slot_data table Slotdata send from AP server for the specific user/slot
 function onClear(slot_data)
     MANUAL_CHECKED = false
 
@@ -463,6 +473,7 @@ function onEventsLaunch(key, value)
     updateEvents(value)
 end
 
+---function to handle conversion of SLOT_DATA values into states for setting-items
 function autoFill()
     if SLOT_DATA == nil  then
         print("its fucked")
@@ -553,10 +564,10 @@ function autoFill()
         [8] = 3
     }
 
-    mapStages = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=6, [7]=7, [8]=8, ["open"]=1,["inverted"]=2,["standard"]=0}
-    mapToggle = {[0]=false, [1]=true, [2]=true,[3]=true,[4]=true,[6]=true} -- false, true
+    local mapStages = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=6, [7]=7, [8]=8, ["open"]=1,["inverted"]=2,["standard"]=0}
+    local mapToggle = {[0]=false, [1]=true, [2]=true,[3]=true,[4]=true,[6]=true} -- false, true
 
-    slotCodes = {
+    local slotCodes = {
         crystals_needed_for_gt = {codes={"gt_access"}, mappings={nil}, autofill="autofill_goal_reqs",},
         crystals_needed_for_ganon = {codes={"ganon_killable"}, mappings={nil}, autofill="autofill_goal_reqs",},
         triforce_pieces_required = {codes={"triforce_pieces_needed"}, mappings={nil}, autofill="autofill_goal_reqs",},
