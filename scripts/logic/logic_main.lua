@@ -48,13 +48,6 @@ end
 --- @param name string
 --- @return accessibilityLevel
 function CanReach(name)
-    -- if type(name) == "table" then
-    --     -- print("-----------")
-    --     -- print("start CanREach for", name.name)
-    -- -- else
-    --     -- print("start CanREach for", name)
-    -- end
-    local location
     if stale then
         stale = false
         accessibilityCacheComplete = false
@@ -72,27 +65,10 @@ function CanReach(name)
                 end
             end
         end
-        --entry_point:discover(ACCESS_NORMAL, 0) -- since there is no code to track indirect connections, we run it twice here
-        --entry_point:discover(ACCESS_NORMAL, 0)
     end
-    -- if type(region_name) == "function" then
-    --     location = self
-    -- else
-    -- print(type(name))
-    -- if type(name) == "table" then
-    --     print(name.name)
-    --     -- location = NAMED_LOCATIONS[name.name]
-    --     name = name.name
-    -- end
-    location = NAMED_LOCATIONS[name]
-    -- print(location, name)
-    -- end
+
+    local location = NAMED_LOCATIONS[name]
     if location == nil then
-        -- print(location, name)
-        -- if type(name) == "table" then
-        -- else
-        --     print("Unknown location : " .. tostring(name))
-        -- end
         return ACCESS_NONE
     end
     return location:accessibility()
