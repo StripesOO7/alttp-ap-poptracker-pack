@@ -1,35 +1,38 @@
 local frequency = math.random(10, #ALL_LOCATIONS)
 local trap_counter = 0
-local item_id_index = { [0] = nil}
+local item_id_index = { [0] = ""}
 for item_index,v in pairs(ITEM_MAPPING) do
     table.insert(item_id_index, item_index)
 end
 
 -- print(dump_table(item_id_index))
+---trap functions to reset the entire pack via whats being called in onClear
 function TrapOnClear()
     onClear()
 end
 
+---trap function to randomly reset 1 item from the already obtained items
 function TrapUndoItem()
     MANUAL_CHECKED = false
     local id = math.random(#item_id_index)
     local item_code = item_id_index[id]
-    local item_obj = Tracker:FindObjectForCode(ITEM_MAPPING[item_code][1][1])
+    local item_obj = Tracker:FindObjectForCode(ITEM_MAPPING[item_code][1][1])  --[[@as JsonItem]]
     if item_obj then
         ItemReset(item_obj.Type, item_obj, item_code)
     end
     MANUAL_CHECKED = true
 end
 
+---trap function to randomly reset 1 location from the already checked locations
 function TrapUndoLocation()
     MANUAL_CHECKED = false
     if #Archipelago.CheckedLocations > 0 then
         local id = math.random(#Archipelago.CheckedLocations)
         for _, location in pairs(LOCATION_MAPPING[Archipelago.CheckedLocations[id]]) do
             if location then
-                local location_obj = Tracker:FindObjectForCode(location)
+                local location_obj = Tracker:FindObjectForCode(location)  --[[@as LocationSection]]
                 if location_obj then
-                    LocationReset(location, location_obj, Tracker:FindObjectForCode("manual_location_storage").ItemState)
+                    LocationReset(location, location_obj, (Tracker:FindObjectForCode("manual_location_storage")  --[[@as LuaItem]]).ItemState)
                 end
             end
         end
@@ -40,6 +43,8 @@ end
 -- function TrapUiHint()
 -- end
 
+---trap function to bring most items into an invalid state. Progressive Items will be set to the max stage others will
+--disappear from the grid
 function TrapInvalidState()
     MANUAL_CHECKED = false
     local itemid = math.random(#item_id_index)
@@ -49,17 +54,19 @@ function TrapInvalidState()
     MANUAL_CHECKED = true
 end
 
+---Puts a random highlight on a not already highlighted and not cleared locationSection
 function TrapRandomHighlight()
     if #Archipelago.MissingLocations > 0 then
         local locationid = math.random(#Archipelago.MissingLocations)
         for ID, location in pairs(LOCATION_MAPPING[Archipelago.MissingLocations[locationid]]) do
             if location:sub(1, 1) == "@" then
-                Tracker:FindObjectForCode(location).Highlight = Highlight.Priority
+                (Tracker:FindObjectForCode(location)  --[[@as LocationSection]]).Highlight = Highlight.Priority
             end
         end
     end
 end
 
+---comment
 function TrapSleepStall()
     local start = os.time()
     local stall_time = math.random(5,15)
@@ -72,6 +79,7 @@ function TrapSleepStall()
 end
 
 local LAST_TRAP_CALLED = os.time()
+---comment
 function Frame_counter()
     -- print("call trap frame counter", LAST_TRAP_CALLED)
 

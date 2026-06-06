@@ -20,8 +20,11 @@ local accessLVL= {
 -- Table to store named locations
 local ER_STATE = false
 ER_STAGE = 0
+---@type table<string, alttp_location_new_return>
 NAMED_LOCATIONS = {}
+---@type string[]
 NAMED_LOCATIONS_KEYS = {}
+---@type table< integer, table< integer, table< integer, {[1]:string, [2]: string?}? >? >? >
 ENTRANCE_MAPPING = {} -- structure --> ENTRANCE_MAPPING[<roomnumber>][<x-coord>][<y-coord>] = location name
 local stale = true
 local accessibilityCache = {}
@@ -30,6 +33,10 @@ local currentParent = nil
 local currentLocation = nil
 local indirectConnections = {}
 
+---simple helper to insert into tables and create them if not already present
+---@param er_table table table to insert into
+---@param key string|integer|boolean key to use to insert into the table
+---@param value any value to insert into the table
 function Table_insert_at(er_table, key, value)
     if er_table[key] == nil then
         er_table[key] = {}
@@ -37,7 +44,9 @@ function Table_insert_at(er_table, key, value)
     table.insert(er_table[key], value)
 end
 
---
+--- checks if a given location is reacable in any way from any of the starting points and returns an accessibilityLevel
+--- @param name string
+--- @return accessibilityLevel
 function CanReach(name)
     -- if type(name) == "table" then
     --     -- print("-----------")
@@ -89,8 +98,49 @@ function CanReach(name)
     return location:accessibility()
 end
 
--- creates a lua object for the given name. it acts as a representation of a overworld reagion or indoor locatoin and
--- tracks its connected objects wvia the exit-table
+
+---@class alttp_location_new_return
+---@field accessibility function
+---@field connect_one_way function
+---@field connect_one_way_entrance function
+---@field connect_two_ways function
+---@field connect_two_ways_entrance function
+---@field connect_two_ways_entrance_door_stuck function
+---@field connect_two_ways_stuck function
+---@field discover function
+---@field name string
+---@field shortname string
+---@field locationsection string
+---@field map string
+---@field deadEndOrDungeonOrConnector boolean
+---@field side string
+---@field interactable boolean
+---@field inside_dungeon boolean
+---@field deadendColorBackup boolean
+---@field room integer
+---@field x integer
+---@field y integer
+---@field baseWorldstate "light"|"dark"|""
+---@field worldstate "light"|"dark"|""
+---@field exits table
+---@field keys integer
+
+
+-- creates a lua object for the given name. it acts as a representation of an overworld region or indoor location and tracks its connected objects via the exit-table
+---@param name string
+---@param shortname? string short name of the created location for display purposes. Defaults to name if omitted
+---@param origin? string
+---@param map? string
+---@param inside_dungeon? boolean
+---@param room? integer
+---@param x? integer
+---@param yMin? integer
+---@param yMax? integer
+---@param xMax? integer
+---@param LocationSection? string[]
+---@param deadEndOrDungeonOrConnector? boolean
+---@param deadendLocationCheck? boolean
+---@return table alttp_location_new_return
 function alttp_location.new(name, shortname, origin, map, inside_dungeon, room, x, yMin, yMax, xMax, LocationSection, deadEndOrDungeonOrConnector, deadendLocationCheck)
     if shortname == nil then
         shortname = name
@@ -148,10 +198,10 @@ function alttp_location.new(name, shortname, origin, map, inside_dungeon, room, 
             end
             for y_range = y_min_range, y_max_range do
                 Table_insert_at(ENTRANCE_MAPPING[room], x_range, {})
-                Table_insert_at(ENTRANCE_MAPPING[room][x_range], y_range, nil)
+                Table_insert_at(ENTRANCE_MAPPING[room][x_range], y_range, {})
                 -- print(self.name, origin == nil)
                 table.insert(ENTRANCE_MAPPING[room][x_range][y_range], self.name)
-                table.insert(ENTRANCE_MAPPING[room][x_range][y_range], origin == nil)
+                table.insert(ENTRANCE_MAPPING[room][x_range][y_range], origin)
             end
         end
     -- else
@@ -180,12 +230,17 @@ function alttp_location.new(name, shortname, origin, map, inside_dungeon, room, 
     return self
 end
 
+---function to give a default value during rule evaluations of no other rule got specified. 
+---@return integer
 local function always()
     return ACCESS_NORMAL
 end
 
--- markes a 1-way connections between 2 "locations/regions" in the source "locations" exit-table with rules if provided
+---markes a 1-way connections between 2 "locations/regions" in the source "locations" exit-table with rules if provided
+---@param exit string|alttp_location_new_return alttp_location_new_return or code/name
+---@param rule? function
 function alttp_location:connect_one_way(exit, rule)
+    -- used for actual check-locations so you dont have to predefine them and just reference them by name in the graph(s)
     if type(exit) == "string" then
         local existing = NAMED_LOCATIONS[exit]
         if existing then
@@ -201,7 +256,9 @@ function alttp_location:connect_one_way(exit, rule)
     self.exits[#self.exits + 1] = { exit, rule }
 end
 
--- markes a 2-way connection between 2 locations. acts as a shortcut for 2 connect_one_way-calls
+---markes a 2-way connection between 2 locations. acts as a shortcut for 2 connect_one_way-calls
+---@param exit string|alttp_location_new_return alttp_location_new_return or code/name
+---@param rule? function
 function alttp_location:connect_two_ways(exit, rule)
     -- print(exit.name, self.name)
     self:connect_one_way(exit, rule)
@@ -210,6 +267,9 @@ end
 
 -- creates a 1-way connection from a region/location to another one via a 1-way connector like a ledge, hole,
 -- self-closing door, 1-way teleport, ...
+---@param name string arbitrary name for the connection. isnt used anywhere
+---@param exit string|alttp_location_new_return alttp_location_new_return or code/name
+---@param rule? function
 function alttp_location:connect_one_way_entrance(name, exit, rule)
     if rule == nil then
         rule = always
@@ -220,6 +280,9 @@ end
 
 -- creates a connection between 2 locations that is traversable in both ways using the same rules both ways
 -- acts as a shortcut for 2 connect_one_way_entrance-calls
+---@param name string arbitrary name for the connection. isnt used anywhere
+---@param exit string|alttp_location_new_return alttp_location_new_return or code/name
+---@param rule? function
 function alttp_location:connect_two_ways_entrance(name, exit, rule)
     if exit == nil then -- for ER
         return
@@ -230,6 +293,10 @@ end
 
 -- creates a connection between 2 locations that is traversable in both ways but each connection follow different rules.
 -- acts as a shortcut for 2 connect_one_way_entrance-calls
+---@param name string arbitrary name for the connection. isnt used anywhere
+---@param exit string|alttp_location_new_return alttp_location_new_return or code/name
+---@param rule1? function
+---@param rule2? function
 function alttp_location:connect_two_ways_entrance_door_stuck(name, exit, rule1, rule2)
     self:connect_one_way_entrance(name, exit, rule1)
     exit:connect_one_way_entrance(name, self, rule2)
@@ -238,12 +305,16 @@ end
 -- technically redundant but well
 -- creates a connection between 2 locations that is traversable in both ways but each connection follow different rules.
 -- acts as a shortcut for 2 connect_one_way-calls
+---@param exit string|alttp_location_new_return alttp_location_new_return or code/name
+---@param rule1? function
+---@param rule2? function
 function alttp_location:connect_two_ways_stuck(exit, rule1, rule2)
     self:connect_one_way(exit, rule1)
     exit:connect_one_way(self, rule2)
 end
 
--- checks for the accessibility of a regino/location given its own exit requirements
+---checks for the accessibility of a regino/location given its own exit requirements
+---@return 0|1|2|3|4|5|6|7
 function alttp_location:accessibility()
     -- only executed when run from a rules within a connection
     if currentLocation ~= nil and currentParent ~= nil then
@@ -253,7 +324,7 @@ function alttp_location:accessibility()
         indirectConnections[currentLocation][currentParent] = self
     end
     -- up to here
-    local res = accessibilityCache[self] -- get accessibilty lvl set in discover for a given location
+    local res = accessibilityCache[self] --[[@as 0|1|2|3|4|5|6|7]] -- get accessibilty lvl set in discover for a given location
     if res == nil then
         res = ACCESS_NONE
         accessibilityCache[self] = res
@@ -261,7 +332,7 @@ function alttp_location:accessibility()
     return res
 end
 
---
+-- lookup to get which reference table to use for further ER lookups
 local er_check = {
     [0] = function(location_name)
         return false end,
@@ -286,6 +357,10 @@ local er_check = {
         return NAMED_ENTRANCES["from_" .. location_name] ~= nil end
 }
 
+---function to start walking the graph them this location
+---@param accessibility 0|1|2|3|4|5|6|7
+---@param keys integer
+---@param worldstate ""|"light"|"dark"
 function alttp_location:discover(accessibility, keys, worldstate)
     -- checks if given Accessbibility is higer then last stored one
     -- prevents walking in circles
@@ -309,7 +384,7 @@ function alttp_location:discover(accessibility, keys, worldstate)
             -- (string.sub(location_name, -7,-1) == "_inside" and string.sub(exit_name, -8,-1) == "_outside") then
             if ER_STATE and (exit[1].side == "inside" and self.side == "outside") or (self.side == "inside" and exit[1].side == "outside") then
                 local temp
-                local er_setting_stage = Tracker:FindObjectForCode("er_tracking").CurrentStage
+                local er_setting_stage = (Tracker:FindObjectForCode("er_tracking") --[[@as JsonItem]]).CurrentStage
                 local er_check_result = er_check[er_setting_stage](location_name)
                 if er_check_result then -- dungeons ER
                     -- print("from_" .. self.name)
@@ -384,7 +459,7 @@ darkworld_spawns = alttp_location.new("darkworld_spawns", nil, "dark")
 entry_point:connect_one_way(lightworld_spawns, OpenOrStandard)
 entry_point:connect_one_way(darkworld_spawns, Inverted)
 
---
+---helperfunction that is used to force a grpah update on every state change within poptracker.
 function StateChanged()
     PLAYER_ID = Archipelago.PlayerNumber
     if PLAYER_ID == -1 then
@@ -396,9 +471,13 @@ function StateChanged()
     stale = true
 end
 
+---helper function that gets called when a locationSection has changed state. 
+---checks if the interaction was from the server or manual. 
+---if manual puts it into a cache for keeping that locationSection toggled when reconnecting
+---@param location LocationSection
 function LocationHandler(location)
     if MANUAL_CHECKED then
-        local custom_storage_item = Tracker:FindObjectForCode("manual_location_storage").ItemState
+        local custom_storage_item = (Tracker:FindObjectForCode("manual_location_storage") --[[@as LuaItem]]).ItemState
         if not custom_storage_item then
             return
         end
@@ -426,6 +505,7 @@ function LocationHandler(location)
     ForceUpdate()
 end
 
+--function to force an update even if the interaction within poptracker noramlly would not call for a state update
 function ForceUpdate(...)
     -- UpdateCanInteract()
     local update = Tracker:FindObjectForCode("update")
@@ -440,20 +520,23 @@ FOUND = false
 ALREADY_VISITED = {}
 PATH = {}
 STEPS = -1
+---Traverses the graph from start to finish and if a path is found applies the nodes as badge texts to the 40 route mode items
+---@param start any
+---@param finish any
 function GetRoute(start, finish)
     ALREADY_VISITED = {}
     PATH = {}
     PATH[0] = start.shortname
     FindPath(start, finish, 0)
     for i=0,30 do
-        Tracker:FindObjectForCode("solidblack"..tostring(i)).BadgeText = ""
+        (Tracker:FindObjectForCode("solidblack"..tostring(i))--[[@as JsonItem]]).BadgeText = ""
     end
     if #PATH > 1 then
         for i=STEPS, #PATH do
             PATH[i] = nil
         end
         for index, location_name in pairs(PATH) do
-            local black_tile = Tracker:FindObjectForCode("solidblack"..tostring(index))
+            local black_tile = Tracker:FindObjectForCode("solidblack"..tostring(index)) --[[@as JsonItem]]
             black_tile.BadgeText = location_name
             -- Tracker:FindObjectForCode("solidblack"..tostring(i)):SetOverlayColor("#FF0000")
             black_tile:SetOverlayFontSize(16)
@@ -461,7 +544,7 @@ function GetRoute(start, finish)
             black_tile:SetOverlayAlign("left")
         end
     else
-        local black_tile = Tracker:FindObjectForCode("solidblack0")
+        local black_tile = Tracker:FindObjectForCode("solidblack0") --[[@as JsonItem]]
         black_tile.BadgeText = "No Route Found"
         -- Tracker:FindObjectForCode("solidblack"..tostring(i)):SetOverlayColor("#FF0000")
         black_tile:SetOverlayFontSize(16)
@@ -476,6 +559,12 @@ function GetRoute(start, finish)
     STEPS = -1
 end
 
+---helper functoin to GetRoute to find the actual, possible shortes, path on from Start to Finish without considering
+--s&q/respawns
+---@param start any
+---@param finish any
+---@param stage any
+---@return boolean
 function FindPath(start, finish, stage)
     local next_sweep = {}
     local res = false
@@ -553,14 +642,15 @@ function FindPath(start, finish, stage)
     return false
 end --Test_path(location, finish, stage)
 
+---functio to set and reset all connections to their base state or ER-stage defined defaults
 function EmptyLocationTargets()
     MANUAL_CHECKED = false
-    local er_tracking = Tracker:FindObjectForCode("er_tracking")
-    local er_custom_storage_item = Tracker:FindObjectForCode("manual_er_storage").ItemState
+    local er_tracking = Tracker:FindObjectForCode("er_tracking") --[[@as JsonItem]]
+    local er_custom_storage_item = (Tracker:FindObjectForCode("manual_er_storage") --[[@as LuaItem]]).ItemState
     ER_STAGE = er_tracking.CurrentStage
     ER_STATE = er_tracking.CurrentStage > 0
     if Archipelago.PlayerNumber == -1 then -- not connected
-        if ROOM_SEED ~= "default" then -- seed is from previous connection
+        if ROOM_SEED ~= "default" and er_custom_storage_item then -- seed is from previous connection
             ROOM_SEED = "default"
             er_custom_storage_item.MANUAL_LOCATIONS["default"] = {}
         else -- seed is default
@@ -568,8 +658,8 @@ function EmptyLocationTargets()
     end
     if not (Tracker.BulkUpdate == true) then
         ScriptHost:RemoveWatchForCode("StateChanged")
-        ScriptHost:RemoveOnLocationSectionHandler("location_section_change_handler")
-        -- ScriptHost:RemoveOnLocationSectionChangedHandler("location_section_change_handler")
+        -- ScriptHost:RemoveOnLocationSectionHandler("location_section_change_handler")
+        ScriptHost:RemoveOnLocationSectionChangedHandler("location_section_change_handler")
         -- local er_tracking = Tracker:FindObjectForCode("er_tracking")
         if er_tracking == nil then
             print("item with code 'er_tracking' not found")
@@ -584,9 +674,9 @@ function EmptyLocationTargets()
         elseif er_tracking.CurrentStage == 1 then
             -- print("dungeons er")
             for name, inside in pairs(NAMED_ENTRANCES) do
-                local source = Tracker:FindObjectForCode(name)
-                local target_outside = Tracker:FindObjectForCode(string.gsub(name, "_inside", "_outside"))
-                local target_inside = Tracker:FindObjectForCode(string.gsub(name, "_outside", "_inside"))
+                local source = Tracker:FindObjectForCode(name) --[[@as LuaItem]]
+                local target_outside = Tracker:FindObjectForCode(string.gsub(name, "_inside", "_outside")) --[[@as LuaItem]]
+                local target_inside = Tracker:FindObjectForCode(string.gsub(name, "_outside", "_inside")) --[[@as LuaItem]]
                 if ER_DUNGEONS[name] == nil then
                     --location is NOT in DUNGEONS ER so preset targets
                     if inside then
@@ -598,13 +688,13 @@ function EmptyLocationTargets()
                     end
                 else
                     -- location is in DUNGEONS ER
-                    _UnsetLocationOptions(Tracker:FindObjectForCode(name))
+                    _UnsetLocationOptions(Tracker:FindObjectForCode(name) --[[@as LuaItem]])
                 end
             end
             for name, _ in pairs(ER_DUNGEONS) do
                 -- print(name)
                 -- print(Tracker:FindObjectForCode(name).ItemState.Target)
-                _UnsetLocationOptions(Tracker:FindObjectForCode(name))
+                _UnsetLocationOptions(Tracker:FindObjectForCode(name) --[[@as LuaItem]])
             end
            
         elseif er_tracking.CurrentStage > 1 then
@@ -612,7 +702,7 @@ function EmptyLocationTargets()
             for name, _ in pairs(NAMED_ENTRANCES) do
                 -- print(name)
                 -- print(Tracker:FindObjectForCode(name).ItemState.Target)
-                local location_reset = Tracker:FindObjectForCode(name)
+                local location_reset = Tracker:FindObjectForCode(name) --[[@as LuaItem]]
                 if location_reset then
                     _UnsetLocationOptions(location_reset)
                 end
@@ -623,9 +713,9 @@ function EmptyLocationTargets()
         --     print("insanity ER is not supported you troll")
         end
         for name, inside in pairs(PERMANENT_CONNECTIONS) do
-            local source = Tracker:FindObjectForCode(name)
-            local target_outside = Tracker:FindObjectForCode(string.gsub(name, "_inside", "_outside"))
-            local target_inside = Tracker:FindObjectForCode(string.gsub(name, "_outside", "_inside"))
+            local source = Tracker:FindObjectForCode(name) --[[@as LuaItem]]
+            local target_outside = Tracker:FindObjectForCode(string.gsub(name, "_inside", "_outside")) --[[@as LuaItem]]
+            local target_inside = Tracker:FindObjectForCode(string.gsub(name, "_outside", "_inside")) --[[@as LuaItem]]
             if inside then
                 _SetLocationOptions(source, target_outside)
                 _SetLocationOptions(target_outside, source)

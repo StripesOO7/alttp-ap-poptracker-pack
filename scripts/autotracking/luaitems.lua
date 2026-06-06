@@ -7,9 +7,12 @@ HIGHLIGHT_LAST_ACTIVATED = 0
 
 ROUTE_MODE = false
 
+---Sets the connection between the 2 provided lua items to link them in the graph
+---@param source LuaItem
+---@param target LuaItem
 function _SetLocationOptions(source, target) -- source == inside, target == outside
     if MANUAL_CHECKED then
-        local er_storage_item = Tracker:FindObjectForCode("manual_er_storage")
+        local er_storage_item = Tracker:FindObjectForCode("manual_er_storage") --[[@as LuaItem]]
         er_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][source.Name] = target.Name
     end
     source.ItemState.Target = target.Name
@@ -19,10 +22,12 @@ function _SetLocationOptions(source, target) -- source == inside, target == outs
     source.BadgeText = target.ItemState.BadgeTextDirection
 end
 
+---Unsets the connection between the provided LuaItem and its set target if any is set
+---@param source LuaItem
 function _UnsetLocationOptions(source)
     if MANUAL_CHECKED then
-        local er_storage_item = Tracker:FindObjectForCode("manual_er_storage").ItemState
-        if er_storage_item.MANUAL_LOCATIONS[ROOM_SEED][source.Name] then
+        local er_storage_item = (Tracker:FindObjectForCode("manual_er_storage") --[[@as LuaItem]]).ItemState
+        if er_storage_item and er_storage_item.MANUAL_LOCATIONS[ROOM_SEED][source.Name] then
             er_storage_item.MANUAL_LOCATIONS[ROOM_SEED][source.Name] = nil
         end
     end
@@ -34,11 +39,14 @@ function _UnsetLocationOptions(source)
     source.ItemState.Worldstate = source.ItemState.BaseWorldstate
 end
 
-local function _LeftClickUnmarkHelper(taget, source)
-    local target_entrance_from = Tracker:FindObjectForCode("from_" .. taget)
-    local target_entrance_to = Tracker:FindObjectForCode("to_" .. taget)
-    local source_entrance_from = Tracker:FindObjectForCode("from_" .. source)
-    local source_entrance_to = Tracker:FindObjectForCode("to_" .. source)
+---helper function for disconnecting the 2 provided LuaItems
+---@param target string
+---@param source string
+local function _LeftClickUnmarkHelper(target, source)
+    local target_entrance_from = Tracker:FindObjectForCode("from_" .. target) --[[@as LuaItem]]
+    local target_entrance_to = Tracker:FindObjectForCode("to_" .. target) --[[@as LuaItem]]
+    local source_entrance_from = Tracker:FindObjectForCode("from_" .. source) --[[@as LuaItem]]
+    local source_entrance_to = Tracker:FindObjectForCode("to_" .. source) --[[@as LuaItem]]
     if target_entrance_from ~= nil then
         _UnsetLocationOptions(target_entrance_from)
     end
@@ -49,21 +57,27 @@ local function _LeftClickUnmarkHelper(taget, source)
     _UnsetLocationOptions(source_entrance_from)
 end
 
-local function _LeftClickMarkHelper(taget, source)
-    local target_entrance_from = Tracker:FindObjectForCode("from_" .. taget)
-    local target_entrance_to = Tracker:FindObjectForCode("to_" .. taget)
-    local source_entrance_from = Tracker:FindObjectForCode("from_" .. source)
-    local source_entrance_to = Tracker:FindObjectForCode("to_" .. source)
+---helperfunction to connect the provided LuaItems 
+---@param target string
+---@param source string
+local function _LeftClickMarkHelper(target, source)
+    local target_entrance_from = Tracker:FindObjectForCode("from_" .. target) --[[@as LuaItem]]
+    local target_entrance_to = Tracker:FindObjectForCode("to_" .. target) --[[@as LuaItem]]
+    local source_entrance_from = Tracker:FindObjectForCode("from_" .. source) --[[@as LuaItem]]
+    local source_entrance_to = Tracker:FindObjectForCode("to_" .. source) --[[@as LuaItem]]
     if target_entrance_from ~= nil then
         _SetLocationOptions(source_entrance_from, target_entrance_to) -- enter source exit target
         _SetLocationOptions(target_entrance_to, source_entrance_from)
-    end
-    if target_entrance_to ~= nil then 
+    end 
+    if target_entrance_from and target_entrance_to ~= nil then
         _SetLocationOptions(target_entrance_from, source_entrance_to) -- enter target exit source
         _SetLocationOptions(source_entrance_to, target_entrance_from)
     end
 end
 
+---helper function to highlight the first location of a pair that gets selected to signal that something happened
+---@param location LuaItem
+---@param highlight integer
 function MarkFirstConnectionPart(location, highlight)
     local source_location
     if Tracker:FindObjectForCode("er_tracking").CurrentStage < 3 then
@@ -74,6 +88,9 @@ function MarkFirstConnectionPart(location, highlight)
     Tracker:FindObjectForCode(source_location).Highlight = highlight
 end
 
+---function that get triggered when left clicking a lua items as hosted item or in an itemgrid
+---will select 2 LuaItems and connect them to be traversable in the graph
+---@param self LuaItem
 local function OnLeftClickFunc(self)
     if not ROUTE_MODE then
         if ER_STAGE < 3 then --off, dungeons, full
@@ -83,7 +100,7 @@ local function OnLeftClickFunc(self)
                 end
                 -- second step of normal new connection
                 _LeftClickMarkHelper(ENTRANCE_SELECTED, self.ItemState.BaseName)
-                MarkFirstConnectionPart(Tracker:FindObjectForCode(self.ItemState.Target), Highlight.None)
+                MarkFirstConnectionPart(Tracker:FindObjectForCode(self.ItemState.Target)--[[@as LuaItem]], Highlight.None)
                 ENTRANCE_SELECTED = nil
             else -- ENTRANCE_SELECTED == nil
                 MarkFirstConnectionPart(self, Highlight.NoPriority)
@@ -96,12 +113,12 @@ local function OnLeftClickFunc(self)
             local target_entrance
             if ENTRANCE_SELECTED then -- ENTRANCE_SELECTED ~= nil
                 if string.find(ENTRANCE_SELECTED, "from_") then
-                    self = Tracker:FindObjectForCode("to_" .. self.ItemState.BaseName)
+                    self = Tracker:FindObjectForCode("to_" .. self.ItemState.BaseName) --[[@as LuaItem]]
                 else
-                    self = Tracker:FindObjectForCode("from_" .. self.ItemState.BaseName)
+                    self = Tracker:FindObjectForCode("from_" .. self.ItemState.BaseName) --[[@as LuaItem]]
                 end
                 if self.ItemState.Target then -- attempt of new connection to already existing connection (how to handle that?)
-                    target_entrance = Tracker:FindObjectForCode(self.ItemState.Target)
+                    target_entrance = Tracker:FindObjectForCode(self.ItemState.Target) --[[@as LuaItem]]
                     if target_entrance ~= nil then
                         _UnsetLocationOptions(target_entrance)
                         _UnsetLocationOptions(self)
@@ -109,7 +126,7 @@ local function OnLeftClickFunc(self)
                 end
 
                 -- second step of normal new connection
-                target_entrance = Tracker:FindObjectForCode(ENTRANCE_SELECTED)
+                target_entrance = Tracker:FindObjectForCode(ENTRANCE_SELECTED) --[[@as LuaItem]]
                 MarkFirstConnectionPart(target_entrance, Highlight.None)
                 if target_entrance ~= nil then
                     _SetLocationOptions(self, target_entrance)
@@ -120,7 +137,7 @@ local function OnLeftClickFunc(self)
                 MarkFirstConnectionPart(self, Highlight.Priority)
                 ENTRANCE_SELECTED = self.Name
                 if self.ItemState.Target then -- retarget a connection to new target location
-                    target_entrance = Tracker:FindObjectForCode(self.ItemState.Target)
+                    target_entrance = Tracker:FindObjectForCode(self.ItemState.Target) --[[@as LuaItem]]
                     if target_entrance ~= nil then
                         _UnsetLocationOptions(target_entrance)
                         _UnsetLocationOptions(self)
@@ -139,6 +156,10 @@ local function OnLeftClickFunc(self)
     end
 end
 
+---function that get triggered when right clicking a lua items as hosted item or in an itemgrid
+---will remove the connection between the selected luaItem and its connected partner
+---specific to ER LuaItems
+---@param self LuaItem
 local function OnRightClickFunc(self)
     if ENTRANCE_SELECTED ~= nil then
         print("set back to nil")
@@ -147,10 +168,10 @@ local function OnRightClickFunc(self)
     if not ROUTE_MODE then
         if ER_STAGE < 3 then -- off, dungeons, full
             if self.ItemState.Target ~= nil then
-                local target_from = Tracker:FindObjectForCode("from_" .. self.ItemState.TargetBaseName)
-                local target_to = Tracker:FindObjectForCode("to_" .. self.ItemState.TargetBaseName)
-                local source_from = Tracker:FindObjectForCode("from_" .. self.ItemState.BaseName)
-                local source_to = Tracker:FindObjectForCode("to_" .. self.ItemState.BaseName)
+                local target_from = Tracker:FindObjectForCode("from_" .. self.ItemState.TargetBaseName) --[[@as LuaItem]]
+                local target_to = Tracker:FindObjectForCode("to_" .. self.ItemState.TargetBaseName) --[[@as LuaItem]]
+                local source_from = Tracker:FindObjectForCode("from_" .. self.ItemState.BaseName) --[[@as LuaItem]]
+                local source_to = Tracker:FindObjectForCode("to_" .. self.ItemState.BaseName) --[[@as LuaItem]]
                 if target_from ~= nil then
                     _UnsetLocationOptions(target_from)
                     _UnsetLocationOptions(source_to)
@@ -163,7 +184,7 @@ local function OnRightClickFunc(self)
             end
         else -- insanity
             if self.ItemState.Target ~= nil then
-                local target = Tracker:FindObjectForCode(self.ItemState.Target)
+                local target = Tracker:FindObjectForCode(self.ItemState.Target) --[[@as LuaItem]]
                 if target ~= nil then
                     _UnsetLocationOptions(target)
                     _UnsetLocationOptions(self)
@@ -174,6 +195,10 @@ local function OnRightClickFunc(self)
     end
 end
 
+---function that get triggered when middle clicking a lua items as hosted item or in an itemgrid
+---will highlight itself and the connected LuaItem on the map to make sptting connected entrances easier
+---specific to ER LuaItems
+---@param self LuaItem
 local function OnMiddleClickFunc(self)
     HIGHLIGHT_LAST_ACTIVATED = os.clock()
     ScriptHost:AddOnFrameHandler("temporary highlight handler", RemoveTempHighlight)
@@ -186,7 +211,7 @@ local function OnMiddleClickFunc(self)
     -- print(dump_table(self.ItemState))
     local source_location = nil
     local target_location = nil
-    local target = Tracker:FindObjectForCode(self.ItemState.Target)
+    local target = Tracker:FindObjectForCode(self.ItemState.Target) --[[@as LuaItem]]
     if Tracker:FindObjectForCode("er_tracking").CurrentStage == 3 then
         source_location = "@"..self.ItemState.CorrespondingLocationSection[1].."/"..self.ItemState.CorrespondingLocationSection[2].."/"..target.ItemState.Direction.." "..self.ItemState.CorrespondingLocationSection[3]
         target_location = "@"..target.ItemState.CorrespondingLocationSection[1].."/"..target.ItemState.CorrespondingLocationSection[2].."/"..self.ItemState.Direction.." "..target.ItemState.CorrespondingLocationSection[3]
@@ -194,34 +219,42 @@ local function OnMiddleClickFunc(self)
         source_location = "@"..table.concat(self.ItemState.CorrespondingLocationSection, "/")
         target_location = "@"..table.concat(target.ItemState.CorrespondingLocationSection, "/")
     end
-    HIGHLIGHT_SOURCE = Tracker:FindObjectForCode(source_location) --location/section
+    HIGHLIGHT_SOURCE = Tracker:FindObjectForCode(source_location) --[[@as LocationSection]] --location/section
     HIGHLIGHT_SOURCE.Highlight = Highlight.Avoid
-    HIGHLIGHT_TARGET = Tracker:FindObjectForCode(target_location) --location/section
+    HIGHLIGHT_TARGET = Tracker:FindObjectForCode(target_location) --[[@as LocationSection]] --location/section
     HIGHLIGHT_TARGET.Highlight = Highlight.Avoid
     Tracker:UiHint("ActivateTab", "Entrances")
     if self.ItemState.Map ~= nil then --outside
         Tracker:UiHint("ActivateTab", self.ItemState.Map)
     end
-    local target = Tracker:FindObjectForCode(self.ItemState.Target)
+    local target = Tracker:FindObjectForCode(self.ItemState.Target) --[[@as LuaItem]]
     if target.ItemState.Map  ~= nil then --outside
         Tracker:UiHint("ActivateTab", target.ItemState.Map)
     end
 end
 
+---comment
+---@param self LuaItem
+---@param code string
+---@return boolean
 local function CanProvideCodeFunc(self, code)
     return code == self.Name
 end
 
+---comment
+---@param self LuaItem
+---@param code string
+---@return integer
 local function ProvidesCodeFunc(self, code)
 --     return 1
 -- end
     if CanProvideCodeFunc(self, code) then
         -- print(self.Name)
         if self.ItemState.Target ~= nil then  --and Tracker:FindObjectForCode("er_tracking").CurrentStage > 0 then
-            if self.ItemState.IsDeadEnd or Tracker:FindObjectForCode(self.ItemState.Target).ItemState.IsDeadEnd then
-                local location_obj = self.ItemState
-                local target_obj = Tracker:FindObjectForCode(self.ItemState.Target).ItemState
-                local deadendBackup = location_obj.DeadendColorBackup or target_obj.DeadendColorBackup
+            if self.ItemState.IsDeadEnd or (Tracker:FindObjectForCode(self.ItemState.Target) --[[@as LuaItem]]).ItemState.IsDeadEnd then
+                local location_obj = self.ItemState --[[@as table]]
+                local target_obj = Tracker:FindObjectForCode(self.ItemState.Target).ItemState --[[@as table]]
+                local deadendBackup = (location_obj.DeadendColorBackup or target_obj.DeadendColorBackup) --[[@as table]]
                 if deadendBackup ~= nil then
                     local sum = 0
                     for _, lookup_location in pairs(deadendBackup) do
@@ -239,10 +272,14 @@ local function ProvidesCodeFunc(self, code)
     return 0
 end
 
+---comment
 local function AdvanceToCodeFunc()
     print("AdvanceToCodeFunc")
 end
 
+---save function triggered on closeing popotracker to have a state to restore later on. specific to ER LuaItems
+---@param self LuaItem
+---@return table
 local function SaveLocationFunc(self)
     return {
         Stage = self.ItemState.Stage, --unused
@@ -273,6 +310,9 @@ local function SaveLocationFunc(self)
     -- print("SaveFunc")
 end
 
+---function triggered on loading the pack to restore the lat saves state. specific to ER LuaItems
+---@param self LuaItem
+---@param data table
 local function LoadLocationFunc(self, data)
     if data ~= nil and self.Name == data.Name then
         self.ItemState.Target = data.Target
@@ -321,14 +361,44 @@ end
 local function Type()
 end
 
+
+---@class ItemState
+---@field BaseName string
+---@field ImgPath ImageReference
+---@field BaseImg string
+---@field Stage integer
+---@field Active boolean
+---@field Side string
+---@field Target? string
+---@field TargetBaseName? string
+---@field Shortname string
+---@field Direction string
+---@field Room integer
+---@field Worldstate string
+---@field BaseWorldstate string
+---@field Map string
+---@field BadgeTextDirection string
+---@field CorrespondingLocationSection string
+---@field TargetCorrespondingLocationSection? string
+---@field IsDeadEnd boolean
+---@field IsDungeon boolean
+---@field IsConnector boolean
+---@field DeadendColorBackup any
+
 -- LuaLocationItems = {}
 -- LuaLocationItems.__index = LuaLocationItems
 
+---function to create ER LuaItems in their default state
+---@param direction string
+---@param location_obj alttp_location_new_return
+---@param side string
+---@return LuaItem
 function CreateLuaLocationItems(direction, location_obj, side)
     local self = ScriptHost:CreateLuaItem()
     -- self.Type = "custom"
     self.Name = string.lower(direction) .. "_" .. location_obj.name --code --
     self.Icon = ImageReference:FromPackRelativePath("images/door_closed.png")
+    ---@type ItemState
     self.ItemState = {
         BaseName = location_obj.name,
         ImgPath = ImageReference:FromPackRelativePath("images/entrances/" .. side .. "/" .. string.gsub(location_obj.name, "_" .. side, "") .. ".png"),
@@ -351,7 +421,7 @@ function CreateLuaLocationItems(direction, location_obj, side)
         IsDungeon = false,
         IsConnector = false,
         DeadendColorBackup = location_obj.deadendColorBackup,
-    }
+    } --[[@as table<string, any>]]
     if location_obj.deadEndOrDungeonOrConnector == "deadend" then
         self.ItemState.IsDeadEnd = true
     elseif location_obj.deadEndOrDungeonOrConnector == "dungeon" then
@@ -379,6 +449,9 @@ function CreateLuaLocationItems(direction, location_obj, side)
     return self
 end
 
+---save function triggered on closeing popotracker to have a state to restore later on. specific to custom preudo-cache LuaItems
+---@param self LuaItem
+---@return table
 local function SaveManualLocationStorageFunc(self)
     return {
         MANUAL_LOCATIONS = self.ItemState.MANUAL_LOCATIONS,
@@ -389,6 +462,9 @@ local function SaveManualLocationStorageFunc(self)
     -- print("SaveFunc")
 end
 
+---function triggered on loading the pack to restore the lat saves state. specific to custom preudo-cache LuaItems
+---@param self LuaItem
+---@param data table
 local function LoadManualLocationStorageFunc(self, data)
     -- print(self.Name, data.Name)
     -- print("loading data from:", data)
@@ -406,6 +482,11 @@ local function LoadManualLocationStorageFunc(self, data)
     -- print("LoadFunc")
 end
 
+---creates an empty pseudo cache item to store various states for up to 10 seeds to restroe when reconncing to those.
+---mainly intended for manually marked off locations like shops or inspected locations OR for item states that have been
+---manually set because they are hard to infer from game/server state
+---@param name string
+---@return LuaItem
 function CreateLuaManualStorageItem(name)
     local self = ScriptHost:CreateLuaItem()
     -- self.Type = "custom"
@@ -414,9 +495,9 @@ function CreateLuaManualStorageItem(name)
     self.ItemState = {
         MANUAL_LOCATIONS = {
             ["default"] = {}
-        },
+        }, --[[@as table<string, string[]>]]
         MANUAL_LOCATIONS_ORDER = {}
-    }
+    } --[[@as table<string, any>]]
    
     self.CanProvideCodeFunc = CanProvideCodeFunc
     self.OnLeftClickFunc = OnLeftClickFunc
@@ -431,16 +512,18 @@ function CreateLuaManualStorageItem(name)
     return self
 end
 
+---function to reset all ER connections back to their base state for the given ER setting
 function Reset_ER_setings()
     ScriptHost:RemoveMemoryWatch("StateChanged")
     for name, _ in pairs(NAMED_ENTRANCES) do
-        _UnsetLocationOptions(Tracker:FindObjectForCode(name))
+        _UnsetLocationOptions(Tracker:FindObjectForCode(name)--[[@as LuaItem]])
     end
     ScriptHost:AddWatchForCode("StateChanged", "*", StateChanged)
     Tracker:FindObjectForCode("reset_er").Active = false
 end
 -- ScriptHost:AddWatchForCode("ER_reset_triggered", "reset_er", Reset_ER_setings)
 
+---helper function that gets called to remove the hilight set from ER luaItem-middleclick function
 function RemoveTempHighlight()
     local current_time = os.clock()
     if current_time - HIGHLIGHT_LAST_ACTIVATED > 10 then
@@ -453,12 +536,16 @@ function RemoveTempHighlight()
     end
 end
 
+---functions to make clear that a normally useless deadend connections still has an uncollected item and thus has some
+---significance to the player
+---@param locationname string
+---@return integer
 function ChangeLocationColor(locationname)
     if not Tracker.BulkUpdate then
-        local location_obj = Tracker:FindObjectForCode(locationname).ItemState
+        local location_obj = (Tracker:FindObjectForCode(locationname)--[[@as LuaItem]]).ItemState --[[@as table]]
         if location_obj then
             if location_obj.Target then
-                local target_obj = Tracker:FindObjectForCode(location_obj.Target).ItemState
+                local target_obj = (Tracker:FindObjectForCode(location_obj.Target)--[[@as LuaItem]]).ItemState
                 -- print(dump_table(target_obj.ItemState))
                 -- local from_target_obj = Tracker:FindObjectForCode("from_"..location_obj.ItemState.target)
                 if target_obj then

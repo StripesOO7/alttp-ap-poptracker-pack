@@ -47,6 +47,10 @@ SMALLKEYDEFAULTS = {
     }
 }
 
+---function to build a pretty-printable representation of a provided table
+---@param o table
+---@param depth integer?
+---@return string
 function dump_table(o, depth)
     if depth == nil then
         depth = 0
@@ -71,6 +75,9 @@ function dump_table(o, depth)
     end
 end
 
+---helper to convert boolean return values to accessibility values for graph evaluation
+---@param result boolean
+---@return integer
 function A(result)
     if result then
         return ACCESS_NORMAL
@@ -78,6 +85,13 @@ function A(result)
     return ACCESS_NONE
 end
 
+---Takes in a arbitrary amount of arguments which themselfes are already evaluated function return values for having a
+---certain item or being able to reach a certain location etc. combines these values and returns the minimum shared
+---accessibility
+---
+---basically evaluates "are all requirements meet?"
+---@param ... unknown
+---@return integer
 function ALL(...)
     local args = { ... }
     local min = ACCESS_NORMAL
@@ -100,6 +114,13 @@ function ALL(...)
     return min
 end
 
+---Takes in a arbitrary amount of arguments which themselfes are already evaluated function return values for having a
+---certain item or being able to reach a certain location etc. combines these values and returns the maximum
+---accessibility of any provided argument
+---
+---basically evaluates "is any 1 of the requirements meet?"
+---@param ... unknown
+---@return integer
 function ANY(...)
     local args = { ... }
     local max = ACCESS_NONE
@@ -123,10 +144,18 @@ function ANY(...)
     return max
 end
 
+---comment
 function SetSmallKeyGlobal()
     SMALL_KEY_STAGE = Tracker:FindObjectForCode("small_keys").CurrentStage
 end
 
+---function to determine if a given item has been obtained/is active or has the needed amount
+---@param item string
+---@param noKDS_amount? integer
+---@param noKDS_amountInLogic? integer
+---@param KDS_amount? integer
+---@param KDS_amountInLogic? integer
+---@return integer
 function Has(item, noKDS_amount, noKDS_amountInLogic, KDS_amount, KDS_amountInLogic)
     local count
     local amount
@@ -168,6 +197,11 @@ function Has(item, noKDS_amount, noKDS_amountInLogic, KDS_amount, KDS_amountInLo
     end
 end
 
+---helper function that returns the key value to change depedning on the KeyDropShuffle setting.
+---Some doors dont "consume" a key for the rules based on if there are static obtainable keys or not
+---@param noKDS integer
+---@param KDS integer
+---@return integer
 function KDSreturn(noKDS, KDS)
     return KEY_DROP_SHUFFLE_STATE and KDS or noKDS
     -- if KEY_DROP_SHUFFLE_STATE then
@@ -176,6 +210,7 @@ function KDSreturn(noKDS, KDS)
     -- return noKDS
 end
 
+---helperfunction to set Bomb Min cound and current obtained value based on the bombless start setting
 function Bombless()
     local bombs = Tracker:FindObjectForCode("bombs")
 
@@ -205,6 +240,11 @@ function Bombless()
     -- end
 end
 
+---helperfunction for helping to color the overworld dungeon locations.
+---since they combine multiple chests into a single section and accessibnility cant be inherited this way via refs i
+---needed this function to set the color of the location based on any of the referenced inner locations
+---@param ... unknown
+---@return integer
 function OWDungeonChecks(...)
     local locations = { ... }
     local availale = 0
@@ -231,6 +271,8 @@ function OWDungeonChecks(...)
     return ACCESS_NONE
 end
 
+---
+---@return integer
 function DealDamage()
     return ANY(
         "sword",
@@ -247,6 +289,8 @@ function DealDamage()
     )
 end
 
+---comment
+---@return integer
 function HitRanged()
     return ANY(
         "masterword",
@@ -261,6 +305,9 @@ function HitRanged()
     )
 end
 
+---comment
+---@param nameRef any
+---@return accessibilityLevel
 function GetBossRef(nameRef)
     local bosses = {
         [0] = "@Bosses/Unknown",
@@ -283,6 +330,8 @@ function GetBossRef(nameRef)
     -- return access_lvl
 end
 
+---comment
+---@return boolean
 function CanActivateTablets()
     if Tracker:FindObjectForCode("swordless").Active then
         return Tracker:FindObjectForCode("hammer").Active
@@ -290,6 +339,8 @@ function CanActivateTablets()
     return (Tracker:FindObjectForCode("sword").CurrentStage > 1)
 end
 
+---comment
+---@return integer
 function CanActivateCrystalSwitches()
     return ANY(
         "sword",
@@ -306,21 +357,33 @@ function CanActivateCrystalSwitches()
     )
 end
 
+---comment
+---@param location any
+---@return boolean
 function CanTurnSuperbunnyAt(location)
     local mirror = Tracker:FindObjectForCode("mirror").Active
     return mirror and CanInteract(location.worldstate, 1)
     -- return mirror and CanInteract(location.worldstate, 1)
 end
 
+---comment
+---@param location any
+---@return boolean
 function DungeonBunnyRevival(location)
     return CanInteract(location.worldstate, 1)
 end
 
+---comment
+---@param item any
+---@param type any
+---@return boolean
 function GetShuffle(item, type)
     -- print(item, type)
     return (Tracker:ProviderCountForCode(item) > 0 and type == "shuffle") or (Tracker:ProviderCountForCode(item) == 0 and type == "vanilla")
 end
 
+---comment
+---@return boolean
 function CheckSwordless()
     if Tracker:ProviderCountForCode("swordless") > 0 then
         return true
@@ -328,6 +391,8 @@ function CheckSwordless()
     return Tracker:FindObjectForCode("sword").Active
 end
 
+---comment
+---@return integer
 function CanCheckWithBook()
     if Tracker:FindObjectForCode("Book").Active then
         return ACCESS_INSPECT
@@ -335,14 +400,20 @@ function CanCheckWithBook()
     return ACCESS_NONE
 end
 
+---comment
+---@return boolean
 function CanUseMedallions()
     return CheckSwordless()
 end
 
+---comment
+---@return boolean
 function CanRemoveCurtains()
     return CheckSwordless()
 end
 
+---comment
+---@return boolean
 function CanClearAgaTowerBarrier()
     -- With cape, we can always get through
     if Tracker:FindObjectForCode("cape").Active then
@@ -355,18 +426,27 @@ function CanClearAgaTowerBarrier()
     return Tracker:ProviderCountForCode("mastersword") > 0
 end
 
+---comment
+---@return boolean
 function GTCrystalCount()
     return CheckRequirements("gt_access", "crystal") > 0
 end
 
+---comment
+---@return boolean
 function GanonCrystalCount()
     return CheckRequirements("ganon_killable", "crystal") > 0
 end
 
+---comment
+---@return boolean
 function CanSwim() --fake flippers
     return Tracker:FindObjectForCode("flippers").Active or Tracker:FindObjectForCode("glitches").CurrentStage > 0
 end
 
+---comment
+---@param location any
+---@return integer
 function CanBombClip(location)
     return ALL(
         "boots",
@@ -375,6 +455,9 @@ function CanBombClip(location)
     )
 end
 
+---comment
+---@param dungeon any
+---@return boolean
 function BigKeys(dungeon)
     if Tracker:FindObjectForCode("big_keys").Active then
         return Tracker:FindObjectForCode(dungeon).Active
@@ -384,6 +467,10 @@ function BigKeys(dungeon)
     return true
 end
 
+---comment
+---@param reference any
+---@param check_count any
+---@return integer
 function CheckRequirements(reference, check_count)
     local reqCount = Tracker:ProviderCountForCode(reference)
     local count = Tracker:ProviderCountForCode(check_count)
@@ -394,6 +481,9 @@ function CheckRequirements(reference, check_count)
     return 0 --false
 end
 
+---comment
+---@param torches_available any
+---@return integer
 function DarkRooms(torches_available)
     local dark_mode = Tracker:FindObjectForCode("dark_mode").CurrentStage
     local has_lamp = Tracker:ProviderCountForCode("lamp")
@@ -410,11 +500,14 @@ function DarkRooms(torches_available)
     return ACCESS_NONE
 end
 
+---comment
 function CalcHeartpieces()
     local pieces = Tracker:FindObjectForCode("heartpieces")
     pieces.CurrentStage = (Tracker:FindObjectForCode("heartpieces").AcquiredCount % 4)
 end
 
+---comment
+---@return integer
 function CalcHealth()
     return (3 + (Tracker:FindObjectForCode("heartpieces").AcquiredCount // 4) + Tracker:FindObjectForCode("heartcontainer").AcquiredCount)
 end
@@ -433,6 +526,10 @@ local shoplist = {
     "light_potion_shop_inside"
 }
 
+---comment
+---@param item any
+---@param stage_needed any
+---@return boolean
 function CanRefillBottles(item, stage_needed)
     if Tracker:ProviderCountForCode(item) > 0 then
         for index, shop in pairs(shoplist) do
@@ -450,6 +547,9 @@ function CanRefillBottles(item, stage_needed)
     return false
 end
 
+---helper function to calculate spike cave logic
+---@param needed_magic any
+---@return boolean
 function SpikeCaveMagicLogic(needed_magic)
     local basemagic = 8
     local magic_upgrades = Tracker:FindObjectForCode("magic_upgrade").CurrentStage
@@ -472,10 +572,14 @@ function SpikeCaveMagicLogic(needed_magic)
     return math.floor(basemagic) >= needed_magic
 end
 
+---comment
+---@param item any
+---@return boolean
 function EnemizerCheck(item)
     return Tracker:FindObjectForCode("enemizer").Active or Tracker:FindObjectForCode(item).Active
 end
 
+--- table of items to definitely store in the pseudo-cache LuaItems
 MISC_MANUAL_ITEMS = {
     "easternpalace",
     "desertpalace",
@@ -570,6 +674,7 @@ MISC_MANUAL_ITEMS = {
     "default_shop_prizes_33"
 }
 
+---comment
 function ChangeRouteMode()
     ROUTE_MODE = Tracker:FindObjectForCode("route_mode").Active
     if ROUTE_MODE == false and ENTRANCE_SELECTED ~= nil then
@@ -577,11 +682,15 @@ function ChangeRouteMode()
     end
 end 
 
+---function that stores a given item into a the pseudo-cache LuaItem to remeber for later reuse when coming back to that seed
+---@param code string
 function AddManualItemStorage(code)
     if MANUAL_CHECKED then
-        local item = Tracker:FindObjectForCode(code)
-        local manual_storage_item = Tracker:FindObjectForCode("manual_misc_items_storage").ItemState
-        manual_storage_item.MANUAL_LOCATIONS[ROOM_SEED][code] = item.CurrentStage
+        local item = Tracker:FindObjectForCode(code) --[[@as JsonItem]]
+        local manual_storage_item = (Tracker:FindObjectForCode("manual_misc_items_storage") --[[@as LuaItem]]).ItemState
+        if manual_storage_item and manual_storage_item.MANUAL_LOCATIONS[ROOM_SEED] then
+            manual_storage_item.MANUAL_LOCATIONS[ROOM_SEED][code] = item.CurrentStage
+        end
     end
 end
 
@@ -590,6 +699,7 @@ CAN_INTERACT = {
     ["dark"] = false
 }
 
+---comment
 function UpdateCanInteract() -- dumb helper function to determine if one can interact in no glitches state with the world
     local moonpearl = Tracker:FindObjectForCode("pearl").Active
     CAN_INTERACT["light"] = (OpenOrStandard() or moonpearl)
@@ -633,7 +743,12 @@ local valid_super_bunny_items = {
     ["boots"] = true,
     ["sword"] = true
 }
-function CanInteract(location, item) -- this basically just calls for if you are able to use everything in the locations state. and determines dungeon bunny revival or entering dungeons with mirror bunny
+
+---this basically just calls for if you are able to use everything in the locations state. and determines dungeon bunny revival or entering dungeons with mirror bunny
+---@param location any
+---@param item any
+---@return boolean
+function CanInteract(location, item)
     if location.worldstate then
         if CAN_INTERACT[location.worldstate] then --normal interaction possible or has moonpearl
             return true
@@ -665,6 +780,8 @@ function CanInteract(location, item) -- this basically just calls for if you are
     return false
 end
 
+---comment
+---@return boolean
 function CanFinish()
     local reqs = {
         [1] = {CheckRequirements("ganon_killable", "crystal")},
@@ -701,22 +818,33 @@ function CanFinish()
     return false
 end
 
+---comment
+---@return boolean
 function CanChangeWorldWithMirror()
     return Tracker:FindObjectForCode("mirror").Active
 end
 
+---retruns if gamemode is (open or Standard) or not
+---@return boolean
 function OpenOrStandard()
     return Tracker:FindObjectForCode("start_option").CurrentStage ~= 2
 end
 
+---retruns if gamemode is inverted or not
+---@return boolean
 function Inverted()
     return Tracker:FindObjectForCode("start_option").CurrentStage == 2
 end
 
+---comment
+---@param stage any
+---@return boolean
 function CheckGlitches(stage)
     return Tracker:FindObjectForCode("glitches").CurrentStage >= tonumber(stage)
 end
 
+---if the KDS setting is changed this functoin is used to change the max amount of keys being obtainable for each
+--dungeon. previously loaded a second layout
 function KeyDropLayoutChange()
     KEY_DROP_SHUFFLE_STATE = Tracker:FindObjectForCode("key_drop_shuffle").Active
     for dungeon, default in pairs(SMALLKEYDEFAULTS[KEY_DROP_SHUFFLE_STATE]) do
@@ -724,6 +852,9 @@ function KeyDropLayoutChange()
     end
 end
 
+---helper functoin to check the set TT boss and thus decide if bombing the top floo r of TT is needed to beat the boss
+--or not
+---@return integer|boolean
 function TT_boss_check()
     if Tracker:FindObjectForCode("tt_boss").CurrentStage == 7 then
         return ALL(
@@ -735,6 +866,7 @@ function TT_boss_check()
     return true
 end
 
+---comment
 function BossShuffle()
     local dungeon_list = {"ep","dp","toh","pod","sp","sw","tt","ip","mm","tr"}
     if Tracker:FindObjectForCode("boss_shuffle").CurrentStage == 0 then
@@ -754,23 +886,35 @@ function BossShuffle()
     end
 end
 
+---comment
+---@param inital_keys_needed integer
+---@param ... string
+---@return integer
 function CountDoneDeadends(inital_keys_needed, ...)
     local locations = { ... }
     local keys_needed = inital_keys_needed
     for _, location in pairs(locations) do
-        keys_needed = keys_needed + (Tracker:FindObjectForCode(location).AccessibilityLevel//7)
+        keys_needed = keys_needed + ((Tracker:FindObjectForCode(location) --[[@as LocationSection]]).AccessibilityLevel//7)
     end
     return keys_needed
 end
 
+---comment
+---@return boolean
 function CheckPyramidState()
-    local pyramid_open = Tracker:FindObjectForCode("pyramid_state").Active
+    local pyramid_open = (Tracker:FindObjectForCode("pyramid_state") --[[@as JsonItem]]).Active
     if not pyramid_open then
         return Tracker:FindObjectForCode("aga2").Active
     end
     return true
 end
 
+---functoin to make more and more shop shops visible the higher the number of available slots is set. 
+---worlds logic, as i inderstand it, will try to balance the number so its not possible for 1 shop to have 3 items if
+---others have 0
+---@param shop_slot any
+---@param number any
+---@return boolean
 function ShopSlotHelper(shop_slot, number)
     
     if Archipelago.PlayerNumber > 0 then
@@ -813,8 +957,10 @@ local dungeons_prefixes = {
     }
 -- not sure howto handle reset. i should probably keep a record of some sort of all already gotten items.
 
+---comment
+---@param setting string
 function GiveAll(setting)
-    local setting_stage = Tracker:FindObjectForCode(setting).CurrentStage
+    local setting_stage = (Tracker:FindObjectForCode(setting) --[[@as JsonItem]]).CurrentStage
     local mapping = {
         ["maps_setting"] = "_map",
         ["compass_setting"] = "_compass",
@@ -823,14 +969,14 @@ function GiveAll(setting)
     }
     -- if Archipelago.PlayerNumber < 0 then
         for _, dungeon_prefix in ipairs(dungeons_prefixes) do
-            local item = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting])
-            local copy = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting] .. "_copy")
+            local item = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting])  --[[@as JsonItem]]
+            local copy = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting] .. "_copy")  --[[@as JsonItem]]
             if setting_stage == 5 or setting_stage == 6 then
                
                 if setting == "smallkeys_setting" then
                     item.AcquiredCount = item.MaxCount
-                    item = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting].. "_drop")
-                    copy = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting] .. "_drop_copy")
+                    item = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting].. "_drop")  --[[@as JsonItem]]
+                    copy = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting] .. "_drop_copy")  --[[@as JsonItem]]
                     item.AcquiredCount = item.MaxCount
                 else
                     item.Active = true
@@ -838,8 +984,8 @@ function GiveAll(setting)
             else
                 if setting == "smallkeys_setting" then
                     item.AcquiredCount = copy.AcquiredCount
-                    item = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting].. "_drop")
-                    copy = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting] .. "_drop_copy")
+                    item = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting].. "_drop")  --[[@as JsonItem]]
+                    copy = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting] .. "_drop_copy")  --[[@as JsonItem]]
                     item.AcquiredCount = copy.AcquiredCount
                 else
                     item.Active = copy.Active
@@ -885,6 +1031,7 @@ local shop_default_mapping = {
     [33] = 8
 }
 
+---comment
 function SetCostType()
     local active = Tracker:FindObjectForCode("shuffle_cost_type").Active
     for i,_ in pairs(shop_default_mapping) do
@@ -897,6 +1044,7 @@ function SetCostType()
     end
 end
 
+---comment
 function SetShopInventory()
     local active = Tracker:FindObjectForCode("shop_sanity").Active
     local witch = Tracker:FindObjectForCode("shop_include_witchhut").Active
@@ -923,6 +1071,7 @@ local prize_table = {
     ["tree_pull_3"] = 3
 }
 
+---comment
 function SetPrizeShuffle()
     if Tracker:FindObjectForCode("prize_shuffle").Active then
         for code, stage in pairs(prize_table) do
@@ -935,6 +1084,7 @@ function SetPrizeShuffle()
     end
 end
 
+---comment
 function SetAllAutofill()
     ScriptHost:RemoveWatchForCode("StateChanged")
     local set_all = Tracker:FindObjectForCode("autofill_all_settings").Active
@@ -947,6 +1097,7 @@ function SetAllAutofill()
     ScriptHost:AddWatchForCode("StateChanged", "*", StateChanged)
 end
 
+---comment
 function ChangeERMap()
     if Tracker:FindObjectForCode("reduce_maps").Active then
         Tracker:AddLayouts("layouts/entrances_reduced.json")
@@ -956,6 +1107,7 @@ function ChangeERMap()
     end
 end
 
+---comment
 function ChangeERLayout()
     if Tracker:FindObjectForCode("er_tracking").CurrentStage == 0 then
         Tracker:AddLayouts("layouts/tabs.json")

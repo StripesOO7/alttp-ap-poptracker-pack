@@ -135,12 +135,14 @@ function Check_Date(reference_time, target_date)
     today.day == reference_day.day
 end
 
+---helperfunctoin to return a date object for the provided day
 ---@param year number?
 ---@param month number?
 ---@param day number?
 ---@param hour number?
 ---@param minute number?
 ---@param second number?
+---@return integer
 function Build_Time_Obj(year, month, day, hour, minute, second)
     local today = os.date("*t", os.time())
     return os.time(
@@ -155,7 +157,7 @@ function Build_Time_Obj(year, month, day, hour, minute, second)
     )
 end
 
---- Function for prepare custom LuaItems for caching, check for mischieve/traps, subscribe to datastorage 
+--- Function for prepare custom LuaItems for caching, check for mischieve/traps, subscribe to datastorage
 function PreOnClear()
     PLAYER_ID = Archipelago.PlayerNumber or -1
 	TEAM_NUMBER = Archipelago.TeamNumber or 0
@@ -221,7 +223,8 @@ function PreOnClear()
         require("scripts/logic/traps")
     end
 end
--- (JsonItem|Location|LocationSection|LuaItem)?
+
+---resets a given location back to default or whats saved for the gives seed in the pseuso-cache LuaItems
 ---@param location string String of the Location or LocatioSection to reset
 ---@param location_obj JsonItem|LocationSection Tracker:Findobject(location)retrun object
 ---@param custom_storage_item table Reference for the custom LuaItem CachesItems
@@ -240,13 +243,14 @@ function LocationReset(location, location_obj, custom_storage_item)
     end
 end
 
----@param item table table of the ItemCode and extra parameters from the Item_Mapping.lau
+---resets a give item back to default or whats saved for the gives seed in the pseuso-cache LuaItems
+---@param item_type string table of the ItemCode and extra parameters from the Item_Mapping.lau
 ---@param item_obj JsonItem Tracker:Findobject(item) retrun object
 ---@param item_code string Reference for the custom LuaItem CachesItems
-function ItemReset(item, item_obj, item_code)
+function ItemReset(item_type, item_obj, item_code)
     ---@cast item_obj JsonItem
     item_obj.CurrentStage = 0
-    if item[2] == "toggle" then
+    if item_type == "toggle" then
         if MEDALLIONS[item_code] ~= nil then
             item_obj.CurrentStage = 0
         end
@@ -254,22 +258,23 @@ function ItemReset(item, item_obj, item_code)
         if item_obj == "shop_shuffle" then
             item_obj.AcquiredCount = 0
         end
-    elseif item[2] == "progressive" then
+    elseif item_type == "progressive" then
         item_obj.CurrentStage = 0
         item_obj.Active = false
-    elseif ({["consumable"] = true, ["combined_consumable"] = true, ["keyring"] = true})[item[2]] then
+    elseif ({["consumable"] = true, ["combined_consumable"] = true, ["keyring"] = true})[item_type] then
         if item_obj.MinCount then
             item_obj.AcquiredCount = item_obj.MinCount
         else
             item_obj.AcquiredCount = 0
         end
-    elseif ({["progressive_toggle"] = true, ["split_toggle"] = true})[item[2]] then
+    elseif ({["progressive_toggle"] = true, ["split_toggle"] = true})[item_type] then
         item_obj.CurrentStage = 0
         item_obj.Active = false
     end
 end
 
----@param slot_data table Slotdata send from AP server for the specific user/slot
+---function that gets called when the pack connects to an AP server
+---@param slot_data? table Slotdata send from AP server for the specific user/slot
 function onClear(slot_data)
     MANUAL_CHECKED = false
 
@@ -290,10 +295,10 @@ function onClear(slot_data)
     end
 
     PreOnClear()
-    
+
     ScriptHost:RemoveWatchForCode("StateChanged")
-    ScriptHost:RemoveOnLocationSectionHandler("location_section_change_handler")
-    -- ScriptHost:RemoveOnLocationSectionChangedHandler("location_section_change_handler")
+    -- ScriptHost:RemoveOnLocationSectionHandler("location_section_change_handler")
+    ScriptHost:RemoveOnLocationSectionChangedHandler("location_section_change_handler")
     --SLOT_DATA = slot_data
     CUR_INDEX = -1
     -- reset locations
@@ -313,7 +318,7 @@ function onClear(slot_data)
             if item_code and item[2] then
                 local item_obj = Tracker:FindObjectForCode(item_code) --[[@as JsonItem]]
                 if item_obj then
-                    ItemReset(item, item_obj, item_code)
+                    ItemReset(item[2], item_obj, item_code)
                     -- clear_item_type[item[2]](item_obj, item_code) --alternate version
                 end
             end
@@ -339,14 +344,14 @@ function onClear(slot_data)
     EmptyLocationTargets()
     
     ScriptHost:RemoveWatchForCode("StateChanged")
-    ScriptHost:RemoveOnLocationSectionHandler("location_section_change_handler")
-    -- ScriptHost:RemoveOnLocationSectionChangedHandler("location_section_change_handler")
+    -- ScriptHost:RemoveOnLocationSectionHandler("location_section_change_handler")
+    ScriptHost:RemoveOnLocationSectionChangedHandler("location_section_change_handler")
     -- print(dump_table(er_custom_storage_item.MANUAL_LOCATIONS))
     -- print(dump_table(er_custom_storage_item.MANUAL_LOCATIONS[ROOM_SEED]))
     if er_custom_storage_item.MANUAL_LOCATIONS[ROOM_SEED] then
         for source_name, targe_name in pairs(er_custom_storage_item.MANUAL_LOCATIONS[ROOM_SEED]) do -- redo location based on savestate for seed
-            local source = Tracker:FindObjectForCode(source_name)
-            local target = Tracker:FindObjectForCode(targe_name)
+            local source = Tracker:FindObjectForCode(source_name) --[[@as LuaItem]]
+            local target = Tracker:FindObjectForCode(targe_name) --[[@as LuaItem]]
             _SetLocationOptions(source,target)
             _SetLocationOptions(target,source)
         end
@@ -369,7 +374,7 @@ function onItem(index, item_id, item_name, player_number)
     end
     local is_local = player_number == Archipelago.PlayerNumber
     CUR_INDEX = index;
-    local item = ITEM_MAPPING[item_id]  --[[@as table<integer, table<string>>]]
+    local item = ITEM_MAPPING[item_id]  --[[@as table<integer, string[]>]]
     if not item or not item[1] then
         print(string.format("onItem: could not find item mapping for id %s", item_id))
         return
@@ -685,7 +690,7 @@ function autoFill()
     goal_check()
 end
 
----comment function to check if goal conditions are meet and in turn lights up the goal item
+---function to check if goal conditions are meet and in turn lights up the goal item
 function goal_check()
     if SLOT_DATA ~= nil  and (Tracker:FindObjectForCode("autofill_goal_reqs") --[[@as JsonItem]]).Active then
         local goal = Tracker:FindObjectForCode("goal")  --[[@as JsonItem]]

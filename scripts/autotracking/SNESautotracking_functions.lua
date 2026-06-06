@@ -277,23 +277,38 @@ local multi_purpose_room = {
                             return FAIRYS_FOUND
                             end
 }
-Selected_entrance = nil
-Selected_exit = nil
-Selected_entrance_origin = nil
-Selected_exit_origin = nil
+---@type LuaItem?
+local Selected_entrance = nil 
+---@type LuaItem?
+local Selected_exit = nil 
+---@type string?
+local Selected_entrance_origin = nil  --global var which should probably be local for that file
+---@type string?
+local Selected_exit_origin = nil  --global var which should probably be local for that file
+---@type integer
 local er_target_counter = 0
 LIGHT_SHOPS_FOUND = 0
 FORTUNE_FOUND = 0
 FAIRYS_FOUND = 0
 
+---function for checking map coords and if entering a door fest coords and corresponding entrances to match for ER purposses
+---@param segment any
+---@param mainModuleIdx any
 function UpdateEntrances(segment, mainModuleIdx)
     -- print(AutoTracker:ReadU8(0x7e0010, 0))
+    ---@type integer
     local current_room
+    ---@type integer
     local new_ow_room
+    ---@type integer
     local new_dungeon_room
+    ---@type integer
     local current_coords_y
+    ---@type integer
     local current_coords_x
+    ---@type integer
     current_coords_y = segment:ReadUInt16(0x7e0020)
+    ---@type integer
     current_coords_x = segment:ReadUInt16(0x7e0022)
 
     if mainModuleIdx > 0x05 then
@@ -337,6 +352,9 @@ function UpdateEntrances(segment, mainModuleIdx)
                 current_room = new_ow_room
             end
         end
+
+        --- this if checks if a are in a transition state of walking up/down a stair entrance, falling into a hole or
+        --  walking into a normal door. 0x0F door, 0x08 stair upvalue, 0x06 stair down, 0x11 falling iirc
         if mainModuleIdx == 0x0F or mainModuleIdx == 0x08 or mainModuleIdx == 0x06 or mainModuleIdx == 0x11 then
 
             local temp_room = ENTRANCE_MAPPING[current_room]
@@ -350,7 +368,7 @@ function UpdateEntrances(segment, mainModuleIdx)
                     temp_room_y = temp_room_x[current_coords_y]
                     if temp_room_y then
                         entrance_name = temp_room_y[1]
-                        entrance_origin = temp_room_y[2]
+                        entrance_origin = temp_room_y[2] --assign the bool
                     end
                 end
             end
@@ -360,7 +378,7 @@ function UpdateEntrances(segment, mainModuleIdx)
                 local door_name = entrance_name
                 if current_door ~= nil and type(current_door) == "table" then
                     if Selected_entrance == nil then
-                        Selected_entrance = Tracker:FindObjectForCode("from_"..door_name)
+                        Selected_entrance = Tracker:FindObjectForCode("from_"..door_name)  --[[@as LuaItem]]
                         Selected_entrance_origin = entrance_origin
                     else
                         if string.gsub(Selected_entrance.Name, "from_", "") ~= door_name then
@@ -368,7 +386,7 @@ function UpdateEntrances(segment, mainModuleIdx)
                             if multi_purpose_room_call == nil then
                                 multi_purpose_room_call = function() return 1 end
                             end
-                            Selected_exit = Tracker:FindObjectForCode("to_"..current_door[multi_purpose_room_call()])
+                            Selected_exit = Tracker:FindObjectForCode("to_"..current_door[multi_purpose_room_call()]) --[[@as LuaItem]]
                             Selected_exit_origin = entrance_origin
                         end
 
@@ -383,8 +401,8 @@ function UpdateEntrances(segment, mainModuleIdx)
                         else --trackes both sides simlutaniously
                             _SetLocationOptions(Selected_entrance, Selected_exit)
                             _SetLocationOptions(Selected_exit, Selected_entrance)
-                            Selected_entrance = Tracker:FindObjectForCode(string.gsub(Selected_entrance.Name, "from_", "to_"))
-                            Selected_exit = Tracker:FindObjectForCode(string.gsub(Selected_exit.Name, "to_", "from_"))
+                            Selected_entrance = Tracker:FindObjectForCode(string.gsub(Selected_entrance.Name, "from_", "to_"))  --[[@as LuaItem]]
+                            Selected_exit = Tracker:FindObjectForCode(string.gsub(Selected_exit.Name, "to_", "from_"))  --[[@as LuaItem]]
                             _SetLocationOptions(Selected_entrance, Selected_exit)
                             _SetLocationOptions(Selected_exit, Selected_entrance)
                         end
