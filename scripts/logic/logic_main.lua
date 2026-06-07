@@ -98,7 +98,7 @@ end
 ---@field y integer
 ---@field baseWorldstate "light"|"dark"|""
 ---@field worldstate "light"|"dark"|""
----@field exits table
+---@field exits table<integer, {[1]:alttp_location_new_return, [2]:function}>
 ---@field keys integer
 
 
@@ -114,9 +114,9 @@ end
 ---@param yMax? integer
 ---@param xMax? integer
 ---@param LocationSection? string[]
----@param deadEndOrDungeonOrConnector? boolean
----@param deadendLocationCheck? boolean
----@return table alttp_location_new_return
+---@param deadEndOrDungeonOrConnector? string
+---@param deadendLocationCheck? string[]
+---@return alttp_location_new_return
 function alttp_location.new(name, shortname, origin, map, inside_dungeon, room, x, yMin, yMax, xMax, LocationSection, deadEndOrDungeonOrConnector, deadendLocationCheck)
     if shortname == nil then
         shortname = name
@@ -420,7 +420,7 @@ function alttp_location:discover(accessibility, keys, worldstate)
                     -- print(self.name, "to", location.name)
                     -- print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access], "with worldstate:", worldstate)
                     -- print("lower:", self.worldstate, worldstate, location.worldstate)
-                    -- print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access])--, "with worldstate:", worldstate)
+                    print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access])--, "with worldstate:", worldstate)
                     location:discover(access, key, worldstate)
                 end
             end
@@ -428,7 +428,7 @@ function alttp_location:discover(accessibility, keys, worldstate)
     end
 end
 
-entry_point = alttp_location.new("entry_point")
+entry_point = alttp_location.new("entry_point", "Save & Quit")
 lightworld_spawns = alttp_location.new("lightworld_spawns", nil, "light")
 darkworld_spawns = alttp_location.new("darkworld_spawns", nil, "dark")
 
@@ -497,14 +497,14 @@ ALREADY_VISITED = {}
 PATH = {}
 STEPS = -1
 ---Traverses the graph from start to finish and if a path is found applies the nodes as badge texts to the 40 route mode items
----@param start any
----@param finish any
+---@param start alttp_location_new_return
+---@param finish alttp_location_new_return
 function GetRoute(start, finish)
     ALREADY_VISITED = {}
     PATH = {}
     PATH[0] = start.shortname
     FindPath(start, finish, 0)
-    for i=0,30 do
+    for i=0,40 do
         (Tracker:FindObjectForCode("solidblack"..tostring(i))--[[@as JsonItem]]).BadgeText = ""
     end
     if #PATH > 1 then
@@ -536,13 +536,14 @@ function GetRoute(start, finish)
 end
 
 ---helper functoin to GetRoute to find the actual, possible shortes, path on from Start to Finish without considering
---s&q/respawns
----@param start any
----@param finish any
----@param stage any
+---s&q/respawns
+---@param start alttp_location_new_return
+---@param finish alttp_location_new_return
+---@param stage integer
 ---@return boolean
 function FindPath(start, finish, stage)
-    local next_sweep = {}
+    ---@type alttp_location_new_return[]
+    local next_sweep = {entry_point}
     local res = false
     local any_true = false
     stage = stage + 1
@@ -581,10 +582,10 @@ function FindPath(start, finish, stage)
                 local er_setting_stage = Tracker:FindObjectForCode("er_tracking").CurrentStage
                 local er_check_result = er_check[er_setting_stage](location_name)
                 if er_check_result then -- dungeons ER
-                    temp = Tracker:FindObjectForCode("from_" .. location_name)
+                    temp = (Tracker:FindObjectForCode("from_" .. location_name) --[[@as LuaItem]]).ItemState
                    
-                    if temp ~= nil and temp.ItemState.Target ~= nil then
-                        location = NAMED_LOCATIONS[temp.ItemState.TargetBaseName]
+                    if temp ~= nil and temp.Target ~= nil then
+                        location = NAMED_LOCATIONS[temp.TargetBaseName]
                     else
                         -- print("exit connection is fucked")
                         -- return

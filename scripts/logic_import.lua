@@ -17,3 +17,24 @@ require("scripts/logic/graphs/TR")
 require("scripts/logic/graphs/GT")
 require("scripts/logic/graphs/darkworld")
 require("scripts/logic/graphs/lightworld")
+
+
+for _, location in pairs(NAMED_LOCATIONS) do
+    if location.baseWorldstate == "light" then
+        location:connect_one_way(light_flute_map, function()
+            return ALL(
+                "flute",
+                light_activate_flute:accessibility() > 5,
+                OpenOrStandard
+            )
+        end)
+    elseif location.baseWorldstate == "dark" then
+        location:connect_one_way(light_flute_map, function()
+            return ALL(
+                "flute",
+                inverted_activate_flute:accessibility() > 5,
+                Inverted
+            )
+        end)
+    end
+end

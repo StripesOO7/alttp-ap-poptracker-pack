@@ -75,6 +75,7 @@ hype_cave_back = alttp_location.new("hype_cave_back", "Hype Cave Back", nil, "Da
 hype_cave_inside = alttp_location.new("hype_cave_inside", "Hype Cave (Inside)", nil, "Darkworld caves", false, 286, 7544, 9176, 9204, nil, {"Swamp - Insides", "Hype Cave", "Hype Cave"}, "deadend", {"@Darkworld Bottom/Hype Cave/Hype"})
 hype_cave_outside = alttp_location.new("hype_cave_outside", "Hype Cave (OW)", "dark", "Darkworld OW", false, 116, 2440, 3159, 3176, nil, {"Swamp - Entrances", "Hype Cave", "Hype Cave"})
 ice_palace_island = alttp_location.new("ice_palace_island", "Ice Palace Island (OW)", "dark", "Darkworld OW", false)
+inverted_activate_flute = alttp_location.new("inverted_activate_flute", "Activate Flute Spot (OW)", "dark", "Darkworld OW", false)
 light_eyebridge_fairy_ledge = alttp_location.new("light_eyebridge_fairy_ledge", "Light Eyebridge Fairy Ledge (OW)", "dark", "Darkworld OW", false)
 mire_area = alttp_location.new("mire_area", "Mire Area (OW)", "dark", "Darkworld OW", false)
 mire_ledge = alttp_location.new("mire_ledge", "Mire Teleporter Ledge (OW)", "dark", "Darkworld OW", false)

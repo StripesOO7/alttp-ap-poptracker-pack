@@ -124,7 +124,6 @@ hyrule_castle_area = alttp_location.new("hyrule_castle_area", "HC Court Area (OW
 hyrule_castle_top = alttp_location.new("hyrule_castle_top", "HC Top Balcony (OW)", "light", "Lightworld OW", false)
 icerod_cave_inside = alttp_location.new("icerod_cave_inside", "Icerod Cave (Inside)", nil, "Lightworld caves", false, 288, 120, 9688, 9717, nil, {"Lake Hylia - Insides", "Ice Rod Cave", "Ice Rod Cave"}, "deadend", {"@Lightworld/Ice Rod Cave/Ice Rod Chest"})
 icerod_cave_outside = alttp_location.new("icerod_cave_outside", "Icerod Cave (OW)", "light", "Lightworld OW", false, 55, 3656, 3127, 3142, nil, {"Lake Hylia - Entrances", "Ice Rod Cave", "Ice Rod Cave"})
-inverted_activate_flute = alttp_location.new("inverted_activate_flute", "Activate Flute Spot (OW)", "light", "Lightworld OW", false)
 kakariko_backside_pub = alttp_location.new("kakariko_backside_pub", "Pub Back (OW)", nil, "Lightworld caves", false)
 kakariko_backside_pub_inside = alttp_location.new("kakariko_backside_pub_inside", "Backside Pub (Inside)", nil, "Lightworld caves", false, 259, 1656, 8209, 8224, nil, {"Kakariko Village - Insides", "Tavern (Back)", "Tavern (Back)"}, "deadend", {"@Lightworld/Backside Pub/Backside Pub"})
 kakariko_backside_pub_outside = alttp_location.new("kakariko_backside_pub_outside", "Backside Pub (OW)", "light", "Lightworld OW", false, 24, 648, 2318, 2331, nil, {"Kakariko Village - Entrances", "Tavern (Back)", "Tavern (Back)"})
