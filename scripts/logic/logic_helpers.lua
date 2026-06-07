@@ -362,7 +362,7 @@ end
 ---@return boolean
 function CanTurnSuperbunnyAt(location)
     local mirror = Tracker:FindObjectForCode("mirror").Active
-    return mirror and CanInteract(location.worldstate, 1)
+    return mirror and CanInteract(location.worldstate)
     -- return mirror and CanInteract(location.worldstate, 1)
 end
 
@@ -370,7 +370,7 @@ end
 ---@param location any
 ---@return boolean
 function DungeonBunnyRevival(location)
-    return CanInteract(location.worldstate, 1)
+    return CanInteract(location.worldstate)
 end
 
 ---comment
@@ -745,8 +745,8 @@ local valid_super_bunny_items = {
 }
 
 ---this basically just calls for if you are able to use everything in the locations state. and determines dungeon bunny revival or entering dungeons with mirror bunny
----@param location any
----@param item any
+---@param location alttp_location_new_return
+---@param item? string
 ---@return boolean
 function CanInteract(location, item)
     if location.worldstate then
@@ -903,7 +903,7 @@ end
 ---comment
 ---@return boolean
 function CheckPyramidState()
-    local pyramid_open = (Tracker:FindObjectForCode("Pyramid_state") --[[@as JsonItem]]).Active
+    local pyramid_open = (Tracker:FindObjectForCode("pyramid_state") --[[@as JsonItem]]).Active
     if not pyramid_open then
         return Tracker:FindObjectForCode("aga2").Active
     end

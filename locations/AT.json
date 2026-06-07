@@ -4,13 +4,13 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$CanReach|at_entrance_inside"
+            "^$CanReach|AT_entrance_inside"
         ],
         "children": [
             {
                 "name": "Front",
                 "access_rules": [
-                    "^$CanReach|at_first_chest"
+                    "^$CanReach|AT_first_chest"
                 ],
                 "sections": [
                     {
@@ -32,7 +32,7 @@
             {
                 "name": "Dark Archer Key Drop",
                 "access_rules": [
-                    "^$CanReach|at_dark_archer_key_drop"
+                    "^$CanReach|AT_dark_archer_key_drop"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
@@ -55,7 +55,7 @@
             {
                 "name": "Maze Chest",
                 "access_rules": [
-                    "^$CanReach|at_dark_maze"
+                    "^$CanReach|AT_dark_maze"
                 ],
                 "sections": [
                     {
@@ -77,7 +77,7 @@
             {
                 "name": "Circle of Pots Key Drop",
                 "access_rules": [
-                    "^$CanReach|at_circle_of_pots"
+                    "^$CanReach|AT_circle_of_pots"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
@@ -100,13 +100,13 @@
             {
                 "name": "Agahnim 1",
                 "access_rules": [
-                    "^$CanReach|at_aga1, ^$CanReach|AT - Aga1"
+                    "^$CanReach|AT_aga1, ^$CanReach|AT - Aga1"
                 ],
                 "sections": [
                     {
                         "name": "Agahnim 1",
                         "access_rules": [
-                            "^$CanReach|at_aga1, ^$CanReach|AT - Aga1"
+                            "^$CanReach|AT_aga1, ^$CanReach|AT - Aga1"
                         ],
                         "hosted_item": "aga1"
                     }

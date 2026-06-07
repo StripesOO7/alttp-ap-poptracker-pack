@@ -7,7 +7,7 @@
             {
                 "name": "Dark Lumberjack Shop",
                 "access_rules":[
-                    "^$CanReach|dark_lumpberjacks_shop_inside"
+                    "^$CanReach|Dark_lumpberjacks_shop_inside"
                 ],
                 // "visibility_rules": ["shop_sanity"],
                 "sections": [
@@ -102,7 +102,7 @@
             {
                 "name": "Red Shield Shop",
                 "access_rules":[
-                    "^$CanReach|red_shield_shop_inside"
+                    "^$CanReach|Red_shield_shop_inside"
                 ],
                 // "visibility_rules": ["shop_sanity"],
                 "sections": [
@@ -168,7 +168,7 @@
             {
                 "name": "Chest Game (Money Making Game)",
                 "access_rules":[
-                    "^$CanReach|chest_game_inside"
+                    "^$CanReach|Chest_game_inside"
                 ],
                 "sections": [
                     {
@@ -202,7 +202,7 @@
             {
                 "name": "Breadsmiths",
                 "access_rules":[
-                    "^$CanReach|helpless_frog"
+                    "^$CanReach|Helpless_frog"
                 ],
                 "sections": [
                     {
@@ -249,7 +249,7 @@
                 "name": "Dark Kakariko Shop",
                 // "visibility_rules": ["shop_sanity"],
                 "access_rules": [
-                    "^$CanReach|dark_village_shop_inside"
+                    "^$CanReach|Dark_village_shop_inside"
                 ],
                 "sections": [
                     {
@@ -345,7 +345,7 @@
             {
                 "name": "Activate Flute",
                 "access_rules":[
-                    "^$CanReach|inverted_activate_flute"
+                    "^$CanReach|Inverted_activate_flute"
                 ],
                 "visibility_rules": ["flute, inverted"],
                 "sections": [
@@ -372,7 +372,7 @@
             {
                 "name": "Brewery (Glory Hole)",
                 "access_rules": [
-                    "^$CanReach|brewery_inside"
+                    "^$CanReach|Brewery_inside"
                 ],
                 "sections": [
                     {
@@ -448,7 +448,7 @@
             {
                 "name": "Link's House",
                 "access_rules": [
-                    "^$CanReach|dark_spawn_links_house"
+                    "^$CanReach|Dark_spawn_links_house"
                 ],
                 "visibility_rules": ["inverted"],
                 "sections": [
@@ -483,7 +483,7 @@
             {
                 "name": "Purple Chest Return",
                 "access_rules":[
-                    "^$CanReach|hammer_peg_field"
+                    "^$CanReach|Hammer_peg_field"
                 ],
                 "sections": [
                     {
@@ -523,7 +523,7 @@
             {
                 "name": "Digging Game",
                 "access_rules":[
-                    "^$CanReach|south_of_village_of_the_outcast"
+                    "^$CanReach|South_of_village_of_the_outcast"
                 ],
                 "sections": [
                     {
@@ -551,7 +551,7 @@
             {
                 "name": "Stumpy",
                 "access_rules":[
-                    "^$CanReach|stumpy"
+                    "^$CanReach|Stumpy"
                 ],
                 "sections": [
                     {
@@ -579,13 +579,13 @@
             {
                 "name": "Hype Cave",
                 "access_rules": [
-                    "^$CanReach|hype_cave_inside"
+                    "^$CanReach|Hype_cave_inside"
                 ],
                 "sections": [
                     {
                         "name": "Hype",
                         "access_rules":[
-                            "^$CanReach|Hype Cave_Generous Guy, [^$CanReach|hype_cave_back]"
+                            "^$CanReach|Hype Cave_Generous Guy, [^$CanReach|Hype_cave_back]"
                         ],
                         "item_count": 5,
                         "clear_as_group": false
@@ -615,7 +615,7 @@
             {
                 "name": "Dark Lake Hylia Shop",
                 "access_rules":[
-                    "^$CanReach|dark_lake_shop_inside"
+                    "^$CanReach|Dark_lake_shop_inside"
                 ],
                 // "visibility_rules": ["shop_sanity"],
                 "sections": [
@@ -688,7 +688,7 @@
             {
                 "name": "Pyramid Ledge",
                 "access_rules":[
-                    "^$CanReach|pyramid_area"
+                    "^$CanReach|Pyramid_area"
                 ],
                 "sections": [
                     {
@@ -717,13 +717,13 @@
             {
                 "name": "Big Bomb Fairy",
                 "access_rules": [
-                    "^$CanReach|pyramid_area"
+                    // "^$CanReach|Pyramid_area"
                 ],
                 "sections": [
                     {
                         "name": "Boom",
                         "access_rules":[
-                            "^$CanReach|pyramid_fairy_cave_inside"
+                            "^$CanReach|Pyramid_fairy_cave_inside"
                         ],
                         "clear_as_group": false,
                         "item_count": 2
@@ -731,7 +731,7 @@
                     {
                         "name": "Bottle refill",
                         "access_rules": [
-                            "^$CanReach|pyramid_fairy_cave_inside"
+                            "^$CanReach|Pyramid_fairy_cave_inside"
                         ],
                         "hosted_item": "fairy_bottle2",
                         "clear_as_group": false
@@ -761,7 +761,7 @@
             {
                 "name": "Dark Potion Shop",
                 "access_rules": [
-                    "^$CanReach|dark_potion_shop_inside"
+                    "^$CanReach|Dark_potion_shop_inside"
                 ],
                 // "visibility_rules": ["shop_sanity"],
                 "sections": [
@@ -827,7 +827,7 @@
             {
                 "name": "Catfish",
                 "access_rules": [
-                    "^$CanReach|catfish_area"
+                    "^$CanReach|Catfish_area"
                 ],
                 "sections": [
                     {
@@ -859,7 +859,7 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            // "^$CanReach|mire_area"
+            // "^$CanReach|Mire_area"
         ],
         "children": [
             {
@@ -908,7 +908,7 @@
             {
                 "name": "Spike Cave",
                 "access_rules":[
-                    "^$CanReach|spike_cave_inside"
+                    "^$CanReach|Spike_cave_inside"
                 ],
                 "sections": [
                     {
@@ -984,7 +984,7 @@
             {
                 "name": "Dark Death Mountain Shop",
                 "access_rules":[
-                    "^$CanReach|dark_death_mountain_shop_inside"
+                    "^$CanReach|Dark_death_mountain_shop_inside"
                 ],
                 // "visibility_rules": ["shop_sanity"],
                 "sections": [
@@ -1050,7 +1050,7 @@
             {
                 "name": "Hookshot Cave",
                 "access_rules":[
-                    "^$CanReach|hookshot_cave_inside"
+                    "^$CanReach|Hookshot_cave_inside"
                 ],
                 "sections": [
                     {
@@ -1094,13 +1094,13 @@
             {
                 "name": "Superbunny Cave",
                 "access_rules":[
-                    "^$CanReach|superbunny_cave_top_inside"
+                    "^$CanReach|Superbunny_cave_top_inside"
                 ],
                 "sections": [
                     {
                         "name": "Superbunny Chest",
                         "access_rules":[
-                            "^$CanReach|superbunny_cave_top_inside"
+                            "^$CanReach|Superbunny_cave_top_inside"
                         ],
                         "clear_as_group": false,
                         "item_count": 2
@@ -1141,7 +1141,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules": [
-            "^$CanReach|pod_entrance_inside"
+            "^$CanReach|PoD_entrance_inside"
         ],
         "children": [
             {
@@ -1198,8 +1198,8 @@
             {
                 "name": "Turtle Rock Front",
                 "access_rules": [
-                    "^$CanReach|tr_main_entrance_inside",
-                    "^$CanReach|tr_laser_entrance_inside"
+                    "^$CanReach|TR_main_entrance_inside",
+                    "^$CanReach|TR_laser_entrance_inside"
                 ],
                 "item_count": 5,
                 "sections": [
@@ -1251,8 +1251,8 @@
             {
                 "name": "Turtle Rock Back",
                 "access_rules": [
-                    "^$CanReach|tr_big_chest_entrance_inside",
-                    "^$CanReach|tr_eye_bridge_entrance_inside"
+                    "^$CanReach|TR_big_chest_entrance_inside",
+                    "^$CanReach|TR_eye_bridge_entrance_inside"
                 ],
                 "item_count": 8,
                 "sections": [
@@ -1309,7 +1309,7 @@
             {
                 "name": "Turtle Rock Eye Bridge Entrance",
                 "access_rules": [
-                    "^$CanReach|tr_eye_bridge_entrance_inside"
+                    "^$CanReach|TR_eye_bridge_entrance_inside"
                 ],
                 "visibility_rules": ["inverted"],
                 "item_count": 1,
@@ -1348,13 +1348,13 @@
             {
                 "name": "Skull Woods Front",
                 "access_rules": [
-                    "^$CanReach|sw_gibdo_entrance_inside",
-                    "^$CanReach|sw_big_chest_entrance_inside",
-                    "^$CanReach|sw_pot_circle_drop_inside",
-                    "^$CanReach|sw_bottom_left_drop_inside",
-                    "^$CanReach|sw_pinball_drop_inside",
-                    "^$CanReach|sw_west_lobby_entrance_inside",
-                    "^$CanReach|sw_north_drop_inside"
+                    "^$CanReach|SW_gibdo_entrance_inside",
+                    "^$CanReach|SW_big_chest_entrance_inside",
+                    "^$CanReach|SW_pot_circle_drop_inside",
+                    "^$CanReach|SW_bottom_left_drop_inside",
+                    "^$CanReach|SW_pinball_drop_inside",
+                    "^$CanReach|SW_west_lobby_entrance_inside",
+                    "^$CanReach|SW_north_drop_inside"
                 ],
                 "item_count": 6,
                 "sections": [
@@ -1400,7 +1400,7 @@
             {
                 "name": "Skull Woods Back",
                 "access_rules": [
-                    "^$CanReach|sw_back_entrance_inside"
+                    "^$CanReach|SW_back_entrance_inside"
                 ],
                 "item_count": 3,
                 "sections": [
@@ -1460,7 +1460,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules": [
-            "^$CanReach|mm_entrance_inside"
+            "^$CanReach|MM_entrance_inside"
         ],
         "children": [
             {
@@ -1523,7 +1523,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules": [
-            "^$CanReach|sp_entrance_inside"
+            "^$CanReach|SP_entrance_inside"
         ],
         "children": [
             {
@@ -1589,7 +1589,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules": [
-            "^$CanReach|ip_entrance_inside"
+            "^$CanReach|IP_entrance_inside"
         ],
         "children": [
             {
@@ -1652,7 +1652,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules": [
-            "^$CanReach|tt_entrance_inside"
+            "^$CanReach|TT_entrance_inside"
         ],
         "children": [
             {
@@ -1728,7 +1728,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules": [
-            "^$CanReach|gt_entrance_inside"
+            "^$CanReach|GT_entrance_inside"
         ],
         "visibility_rules": ["$OpenOrStandard"],
         "children": [
@@ -1825,7 +1825,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules": [
-            "^$CanReach|at_entrance_inside"
+            "^$CanReach|AT_entrance_inside"
         ],
         "visibility_rules": ["inverted"],
         "children": [
