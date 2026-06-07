@@ -55,7 +55,7 @@ function CanReach(name)
         indirectConnections = {}
         while not accessibilityCacheComplete do
             accessibilityCacheComplete = true
-            entry_point:discover(ACCESS_NORMAL, 0, nil)
+            Entry_point:discover(ACCESS_NORMAL, 0, nil)
             for dst, parents in pairs(indirectConnections) do
                 if dst:accessibility() < ACCESS_NORMAL then
                     for parent, src in pairs(parents) do
@@ -374,12 +374,12 @@ function alttp_location:discover(accessibility, keys, worldstate)
                     end
                 end
                 if location == nil and er_check_result then
-                    location = empty_location
+                    location = Empty_location
                 end
             end
 
             if location == nil then
-                location = exit[1] or empty_location-- exit name
+                location = exit[1] or Empty_location-- exit name
             end
             if worldstate == nil then
                 worldstate = self.worldstate
@@ -420,7 +420,7 @@ function alttp_location:discover(accessibility, keys, worldstate)
                     -- print(self.name, "to", location.name)
                     -- print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access], "with worldstate:", worldstate)
                     -- print("lower:", self.worldstate, worldstate, location.worldstate)
-                    print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access])--, "with worldstate:", worldstate)
+                    -- print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access])--, "with worldstate:", worldstate)
                     location:discover(access, key, worldstate)
                 end
             end
@@ -428,12 +428,12 @@ function alttp_location:discover(accessibility, keys, worldstate)
     end
 end
 
-entry_point = alttp_location.new("entry_point", "Save & Quit")
-lightworld_spawns = alttp_location.new("lightworld_spawns", nil, "light")
-darkworld_spawns = alttp_location.new("darkworld_spawns", nil, "dark")
+Entry_point = alttp_location.new("Entry_point", "Save & Quit")
+Lightworld_spawns = alttp_location.new("Lightworld_spawns", nil, "light")
+Darkworld_spawns = alttp_location.new("Darkworld_spawns", nil, "dark")
 
-entry_point:connect_one_way(lightworld_spawns, OpenOrStandard)
-entry_point:connect_one_way(darkworld_spawns, Inverted)
+Entry_point:connect_one_way(Lightworld_spawns, OpenOrStandard)
+Entry_point:connect_one_way(Darkworld_spawns, Inverted)
 
 ---helperfunction that is used to force a grpah update on every state change within poptracker.
 function StateChanged()
@@ -477,7 +477,7 @@ function LocationHandler(location)
         end
     end
 -- local custom_storage_item = Tracker:FindObjectForCode("manual_location_storage")
--- print(dump_table(custom_storage_item.ItemState.MANUAL_LOCATIONS))
+-- print(Dump_table(custom_storage_item.ItemState.MANUAL_LOCATIONS))
     ForceUpdate()
 end
 
@@ -489,7 +489,7 @@ function ForceUpdate(...)
         return
     end
     update.Active = not update.Active
-    -- print(dump_table(CAN_INTERACT))
+    -- print(Dump_table(CAN_INTERACT))
 end
 
 FOUND = false
@@ -527,7 +527,7 @@ function GetRoute(start, finish)
         black_tile.BadgeTextColor = "FFFFFFFF"
         black_tile:SetOverlayAlign("left")
     end
-    -- print(dump_table(PATH))
+    -- print(Dump_table(PATH))
     Tracker:UiHint("ActivateTab", "Route")
     FOUND = false
     ALREADY_VISITED = {}
@@ -543,7 +543,7 @@ end
 ---@return boolean
 function FindPath(start, finish, stage)
     ---@type alttp_location_new_return[]
-    local next_sweep = {entry_point}
+    local next_sweep = {Entry_point}
     local res = false
     local any_true = false
     stage = stage + 1
@@ -571,7 +571,7 @@ function FindPath(start, finish, stage)
             -- print("FOUND", stage)
             FOUND = true
             STEPS = stage
-            -- print(dump_table(path))
+            -- print(Dump_table(path))
             return true
         end
         for _, exit in pairs(start.exits) do
@@ -592,11 +592,11 @@ function FindPath(start, finish, stage)
                     end
                 end
                 if location == nil and er_check_result then
-                    location = empty_location
+                    location = Empty_location
                 end
             end
             if location == nil then
-                location = exit[1] or empty_location
+                location = exit[1] or Empty_location
             end
             local rules = exit[2]
             local access, key = rules(location.keys)
@@ -646,7 +646,7 @@ function EmptyLocationTargets()
         -- print(er_tracking.CurrentStage)
         if er_tracking.CurrentStage == 0 then
             -- print("run discorver")
-            -- entry_point:discover(ACCESS_NORMAL, 0, nil)
+            -- Entry_point:discover(ACCESS_NORMAL, 0, nil)
             -- print("finshed discover")
         elseif er_tracking.CurrentStage == 1 then
             -- print("dungeons er")
@@ -720,7 +720,7 @@ function EmptyLocationTargets()
         print("skipped ER reset")
     end
     print("run discorver")
-    entry_point:discover(ACCESS_NORMAL, 0, nil)
+    Entry_point:discover(ACCESS_NORMAL, 0, nil)
     print("finshed discover")
     MANUAL_CHECKED = true
 end

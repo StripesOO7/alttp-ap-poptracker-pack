@@ -4,13 +4,13 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$CanReach|sp_entrance_inside"
+            "^$CanReach|SP_entrance_inside"
         ],
         "children": [
             {
                 "name": "Entrance",
                 "access_rules": [
-                    "^$CanReach|sp_first_room"
+                    "^$CanReach|SP_first_room"
                 ],
                 "sections": [
                     {
@@ -32,7 +32,7 @@
             {
                 "name": "Map Chest",
                 "access_rules": [
-                    "^$CanReach|sp_hallway_before_first_trench"
+                    "^$CanReach|SP_hallway_before_first_trench"
                 ],
                 "sections": [
                     {
@@ -54,7 +54,7 @@
             {
                 "name": "Pot Row Pot Key",
                 "access_rules": [
-                    "^$CanReach|sp_hallway_before_first_trench"
+                    "^$CanReach|SP_hallway_before_first_trench"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
@@ -77,7 +77,7 @@
             {
                 "name": "Trench 1 Pot Key",
                 "access_rules": [
-                    "^$CanReach|sp_first_trench"
+                    "^$CanReach|SP_first_trench"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
@@ -100,7 +100,7 @@
             {
                 "name": "Big Key Chest",
                 "access_rules": [
-                    "^$CanReach|sp_hallway_after_second_trench"
+                    "^$CanReach|SP_hallway_after_second_trench"
                 ],
                 "sections": [
                     {
@@ -122,7 +122,7 @@
             {
                 "name": "Hookshot Pot Key",
                 "access_rules": [
-                    "^$CanReach|sp_main_room"
+                    "^$CanReach|SP_main_room"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
@@ -145,7 +145,7 @@
             {
                 "name": "Trench 2 Pot Key",
                 "access_rules": [
-                    "^$CanReach|sp_second_trench"
+                    "^$CanReach|SP_second_trench"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
@@ -168,7 +168,7 @@
             {
                 "name": "West Chest",
                 "access_rules": [
-                    "^$CanReach|sp_hallway_after_second_trench"
+                    "^$CanReach|SP_hallway_after_second_trench"
                 ],
                 "sections": [
                     {
@@ -190,7 +190,7 @@
             {
                 "name": "Compass Chest",
                 "access_rules": [
-                    "^$CanReach|sp_roundabout"
+                    "^$CanReach|SP_roundabout"
                 ],
                 "sections": [
                     {
@@ -212,7 +212,7 @@
             {
                 "name": "Flooded Room Left",
                 "access_rules": [
-                    "^$CanReach|sp_flooded_room"
+                    "^$CanReach|SP_flooded_room"
                 ],
                 "sections": [
                     {
@@ -234,7 +234,7 @@
             {
                 "name": "Flooded Room Right",
                 "access_rules": [
-                    "^$CanReach|sp_flooded_room"
+                    "^$CanReach|SP_flooded_room"
                 ],
                 "sections": [
                     {
@@ -256,7 +256,7 @@
             {
                 "name": "Waterfall Room",
                 "access_rules": [
-                    "^$CanReach|sp_waterfall_room"
+                    "^$CanReach|SP_waterfall_room"
                 ],
                 "sections": [
                     {
@@ -278,7 +278,7 @@
             {
                 "name": "Waterway Pot Key",
                 "access_rules": [
-                    "^$CanReach|sp_after_waterfall_room"
+                    "^$CanReach|SP_after_waterfall_room"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
@@ -301,7 +301,7 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "^$CanReach|sp_main_room"
+                    "^$CanReach|SP_main_room"
                 ],
                 "sections": [
                     {
@@ -323,7 +323,7 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "^$CanReach|sp_boss_room"
+                    "^$CanReach|SP_boss_room"
                 ],
                 "sections": [
                     {

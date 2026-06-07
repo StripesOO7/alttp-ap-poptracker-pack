@@ -4,13 +4,13 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$CanReach|toh_entrance_inside"
+            "^$CanReach|ToH_entrance_inside"
         ],
         "children": [
             {
                 "name": "Basement Cage",
                 "access_rules": [
-                    "^$CanReach|toh_basement_cage"
+                    "^$CanReach|ToH_basement_cage"
                 ],
                 "sections": [
                     {
@@ -32,7 +32,7 @@
             {
                 "name": "Big Key Chest",
                 "access_rules": [
-                    "^$CanReach|toh_big_key_chest"
+                    "^$CanReach|ToH_big_key_chest"
                 ],
                 "sections": [
                     {
@@ -54,7 +54,7 @@
             {
                 "name": "Map Chest",
                 "access_rules": [
-                    "^$CanReach|toh_entrance_inside"
+                    "^$CanReach|ToH_entrance_inside"
                 ],
                 "sections": [
                     {
@@ -76,7 +76,7 @@
             {
                 "name": "Compass Chest",
                 "access_rules": [
-                    "^$CanReach|toh_big_chest_room"
+                    "^$CanReach|ToH_big_chest_room"
                 ],
                 "sections": [
                     {
@@ -98,7 +98,7 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "^$CanReach|toh_big_chest_room"
+                    "^$CanReach|ToH_big_chest_room"
                 ],
                 "sections": [
                     {
@@ -120,13 +120,13 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "^$CanReach|toh_above_big_chest"
+                    "^$CanReach|ToH_above_big_chest"
                 ],
                 "sections": [
                     {
                         "name": "Boss Item",
                         "access_rules": [
-                            "^$CanReach|toh_boss_room, ^$CanReach|ToH - Boss"
+                            "^$CanReach|ToH_boss_room, ^$CanReach|ToH - Boss"
                         ],
                         "item_count": 1,
                         "hosted_item": "toh_boss, towerofhera"

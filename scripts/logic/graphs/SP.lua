@@ -1,22 +1,22 @@
--- sp_entrance = alttp_location.new("", nil, nil, true)
-sp_first_room = alttp_location.new("sp_first_room", "SP First Room", nil, true)
-local sp_hallway_before_first_trench = alttp_location.new("sp_hallway_before_first_trench", "SP ", nil, true)
-local sp_first_trench = alttp_location.new("sp_first_trench", "SP 1st Trench", nil, true)
-sp_main_room = alttp_location.new("sp_main_room", "SP Center Room", nil, true)
-local sp_roundabout = alttp_location.new("sp_roundabout", "SP Roundabout", nil, true)
-local sp_second_trench = alttp_location.new("sp_second_trench", "SP 2nd Trench", nil, true)
-local sp_hallway_after_second_trench = alttp_location.new("sp_hallway_after_second_trench", "SP Hallway After 2nd Tranch", nil, true)
-local sp_flooded_room = alttp_location.new("sp_flooded_room", "SP Flooded Room", nil, true)
-local sp_waterfall_room = alttp_location.new("sp_waterfall_room", "SP Waterfall", nil, true)
-local sp_after_waterfall_room = alttp_location.new("sp_after_waterfall_room", "SP Beyond Waterfall", nil, true)
-local sp_boss_room = alttp_location.new("sp_boss_room", "SP Boss Room", nil, true)
+-- SP_entrance = alttp_location.new("", nil, nil, "SP", true)
+SP_first_room = alttp_location.new("SP_first_room", "SP First Room", nil, "SP", true)
+local SP_hallway_before_first_trench = alttp_location.new("SP_hallway_before_first_trench", "SP ", nil, "SP", true)
+local SP_first_trench = alttp_location.new("SP_first_trench", "SP 1st Trench", nil, "SP", true)
+SP_main_room = alttp_location.new("SP_main_room", "SP Center Room", nil, "SP", true)
+local SP_roundabout = alttp_location.new("SP_roundabout", "SP Roundabout", nil, "SP", true)
+local SP_second_trench = alttp_location.new("SP_second_trench", "SP 2nd Trench", nil, "SP", true)
+local SP_hallway_after_second_trench = alttp_location.new("SP_hallway_after_second_trench", "SP Hallway After 2nd Tranch", nil, "SP", true)
+local SP_flooded_room = alttp_location.new("SP_flooded_room", "SP Flooded Room", nil, "SP", true)
+local SP_waterfall_room = alttp_location.new("SP_waterfall_room", "SP Waterfall", nil, "SP", true)
+local SP_after_waterfall_room = alttp_location.new("SP_after_waterfall_room", "SP Beyond Waterfall", nil, "SP", true)
+local SP_boss_room = alttp_location.new("SP_boss_room", "SP Boss Room", nil, "SP", true)
 
-sp_entrance_inside:connect_two_ways(sp_first_room, function()
+SP_entrance_inside:connect_two_ways(SP_first_room, function()
     return ALL(
-        CanInteract(sp_entrance_inside),
+        CanInteract(SP_entrance_inside),
         "flippers",
-        CanReach("dam_inside"),
-        CanInteract(dam_inside),
+        CanReach("Dam_inside"),
+        CanInteract(Dam_inside),
         ANY(
             CanChangeWorldWithMirror,
             Tracker:FindObjectForCode("er_tracking").CurrentStage > 0
@@ -24,14 +24,14 @@ sp_entrance_inside:connect_two_ways(sp_first_room, function()
     )
 end)
 
-sp_first_room:connect_two_ways(sp_hallway_before_first_trench, function(keys) return Has("sp_smallkey", keys + 1, 1, keys + 1, 1), keys + 1 end)
-sp_first_room:connect_one_way("SP - Entrance Chest", function() return ALL(DealDamage, CanInteract(sp_first_room)) end)
+SP_first_room:connect_two_ways(SP_hallway_before_first_trench, function(keys) return Has("sp_smallkey", keys + 1, 1, keys + 1, 1), keys + 1 end)
+SP_first_room:connect_one_way("SP - Entrance Chest", function() return ALL(DealDamage, CanInteract(SP_first_room)) end)
 
-sp_hallway_before_first_trench:connect_two_ways(sp_first_trench, function(keys) return Has("sp_smallkey", keys, 1, keys + 1, 2), KDSreturn(keys, keys + 1) end)
-sp_hallway_before_first_trench:connect_one_way("SP - Pot Row Key")
-sp_hallway_before_first_trench:connect_one_way("SP - Map chest", function() return Has("bombs") end)
+SP_hallway_before_first_trench:connect_two_ways(SP_first_trench, function(keys) return Has("sp_smallkey", keys, 1, keys + 1, 2), KDSreturn(keys, keys + 1) end)
+SP_hallway_before_first_trench:connect_one_way("SP - Pot Row Key")
+SP_hallway_before_first_trench:connect_one_way("SP - Map chest", function() return Has("bombs") end)
 
-sp_first_trench:connect_two_ways(sp_main_room, function(keys)
+SP_first_trench:connect_two_ways(SP_main_room, function(keys)
     return ANY(
         ALL(
             Has("sp_smallkey", keys, 1, keys, 2),
@@ -45,11 +45,11 @@ sp_first_trench:connect_two_ways(sp_main_room, function(keys)
         )
     ), KDSreturn(keys, keys + 1)
 end)
-sp_first_trench:connect_one_way("SP - Tench 1 Pot Key")
+SP_first_trench:connect_one_way("SP - Tench 1 Pot Key")
 
-sp_main_room:connect_two_ways(sp_roundabout)
-sp_main_room:connect_two_ways(sp_second_trench)
-sp_main_room:connect_two_ways(sp_flooded_room, function(keys)
+SP_main_room:connect_two_ways(SP_roundabout)
+SP_main_room:connect_two_ways(SP_second_trench)
+SP_main_room:connect_two_ways(SP_flooded_room, function(keys)
     return ANY(
         ALL(
             Has("sp_smallkey", keys, 1, keys + CountDoneDeadends(1, "@Swamp Palace/Big Key Chest/Big Key Chest"), 4),
@@ -62,10 +62,10 @@ sp_main_room:connect_two_ways(sp_flooded_room, function(keys)
         )
     ), KDSreturn(keys, keys + 1)
 end)
-sp_main_room:connect_one_way("SP - Hookshot Pot Key", function() return Has("hookshot") end)
-sp_main_room:connect_one_way("SP - Big Chest", function() return Has("sp_bigkey") end)
+SP_main_room:connect_one_way("SP - Hookshot Pot Key", function() return Has("hookshot") end)
+SP_main_room:connect_one_way("SP - Big Chest", function() return Has("sp_bigkey") end)
 
-sp_second_trench:connect_two_ways(sp_hallway_after_second_trench, function(keys)
+SP_second_trench:connect_two_ways(SP_hallway_after_second_trench, function(keys)
     return ANY(
         ALL(
             Has("sp_smallkey", keys, 1, keys + CountDoneDeadends(1, "@Swamp Palace/Boss/Boss Item", "@Swamp Palace/Waterfall Room/Waterfall Room"), 5),
@@ -76,21 +76,21 @@ sp_second_trench:connect_two_ways(sp_hallway_after_second_trench, function(keys)
         )
     ), KDSreturn(keys, keys + 1)
 end)
-sp_second_trench:connect_one_way("SP - Trench 2 Pot Key")
+SP_second_trench:connect_one_way("SP - Trench 2 Pot Key")
 
-sp_hallway_after_second_trench:connect_one_way("SP - West Chest")
-sp_hallway_after_second_trench:connect_one_way("SP - Big Key Chest")
+SP_hallway_after_second_trench:connect_one_way("SP - West Chest")
+SP_hallway_after_second_trench:connect_one_way("SP - Big Key Chest")
 
-sp_roundabout:connect_one_way("SP - Compass Chest")
+SP_roundabout:connect_one_way("SP - Compass Chest")
 
-sp_flooded_room:connect_two_ways(sp_waterfall_room)
-sp_flooded_room:connect_one_way("SP - Flooded Room Left")
-sp_flooded_room:connect_one_way("SP - Flooded Room Right")
+SP_flooded_room:connect_two_ways(SP_waterfall_room)
+SP_flooded_room:connect_one_way("SP - Flooded Room Left")
+SP_flooded_room:connect_one_way("SP - Flooded Room Right")
 
-sp_waterfall_room:connect_two_ways(sp_after_waterfall_room)
-sp_waterfall_room:connect_one_way("SP - Waterfall Room")
+SP_waterfall_room:connect_two_ways(SP_after_waterfall_room)
+SP_waterfall_room:connect_one_way("SP - Waterfall Room")
 
-sp_after_waterfall_room:connect_two_ways(sp_boss_room, function(keys)
+SP_after_waterfall_room:connect_two_ways(SP_boss_room, function(keys)
     return ANY(
         ALL(
             Has("sp_smallkey", keys, 1, keys + CountDoneDeadends(1, "@Swamp Palace/Big Key Chest/Big Key Chest"), 5),
@@ -101,6 +101,6 @@ sp_after_waterfall_room:connect_two_ways(sp_boss_room, function(keys)
         )
     ), KDSreturn(keys, keys + 1)
 end)
-sp_after_waterfall_room:connect_one_way("SP - Waterway Pot Key")
+SP_after_waterfall_room:connect_one_way("SP - Waterway Pot Key")
 
-sp_boss_room:connect_one_way("SP - Boss", function() return GetBossRef("sp_boss") end)
+SP_boss_room:connect_one_way("SP - Boss", function() return GetBossRef("sp_boss") end)

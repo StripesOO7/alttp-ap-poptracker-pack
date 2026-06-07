@@ -4,13 +4,13 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$CanReach|pod_entrance_inside"
+            "^$CanReach|PoD_entrance_inside"
         ],
         "children": [
             {
                 "name": "Shooter Room",
                 "access_rules": [
-                    "^$CanReach|pod_shooter_room"
+                    "^$CanReach|PoD_shooter_room"
                 ],
                 "sections": [
                     {
@@ -32,7 +32,7 @@
             {
                 "name": "Stalfos Basement",
                 "access_rules": [
-                    "^$CanReach|pod_basement_floor"
+                    "^$CanReach|PoD_basement_floor"
                 ],
                 "sections": [
                     {
@@ -54,7 +54,7 @@
             {
                 "name": "Big Key Chest",
                 "access_rules": [
-                    "^$CanReach|pod_big_key_chest_ledge"
+                    "^$CanReach|PoD_big_key_chest_ledge"
                 ],
                 "sections": [
                     {
@@ -76,7 +76,7 @@
             {
                 "name": "Dark Maze Top",
                 "access_rules": [
-                    "^$CanReach|pod_dark_maze"
+                    "^$CanReach|PoD_dark_maze"
                 ],
                 "sections": [
                     {
@@ -98,7 +98,7 @@
             {
                 "name": "Dark Maze Bottom",
                 "access_rules": [
-                    "^$CanReach|pod_dark_maze"
+                    "^$CanReach|PoD_dark_maze"
                 ],
                 "sections": [
                     {
@@ -120,7 +120,7 @@
             {
                 "name": "Compass Chest",
                 "access_rules": [
-                    "^$CanReach|pod_compass_room"
+                    "^$CanReach|PoD_compass_room"
                 ],
                 "sections": [
                     {
@@ -142,7 +142,7 @@
             {
                 "name": "Harmless Hellway",
                 "access_rules": [
-                    "^$CanReach|pod_harmless_hellway"
+                    "^$CanReach|PoD_harmless_hellway"
                 ],
                 "sections": [
                     {
@@ -164,7 +164,7 @@
             {
                 "name": "The Arena Bridge",
                 "access_rules": [
-                    "^$CanReach|pod_arena"
+                    "^$CanReach|PoD_arena"
                 ],
                 "sections": [
                     {
@@ -186,7 +186,7 @@
             {
                 "name": "The Arena Ledge",
                 "access_rules": [
-                    "^$CanReach|pod_switch_room_top"
+                    "^$CanReach|PoD_switch_room_top"
                 ],
                 "sections": [
                     {
@@ -208,7 +208,7 @@
             {
                 "name": "Map Chest",
                 "access_rules": [
-                    "^$CanReach|pod_switch_room_top"
+                    "^$CanReach|PoD_switch_room_top"
                 ],
                 "sections": [
                     {
@@ -230,7 +230,7 @@
             {
                 "name": "Dark Basement Left",
                 "access_rules": [
-                    "^$CanReach|pod_dark_basement"
+                    "^$CanReach|PoD_dark_basement"
                 ],
                 "sections": [
                     {
@@ -252,7 +252,7 @@
             {
                 "name": "Dark Basement Right",
                 "access_rules": [
-                    "^$CanReach|pod_dark_basement"
+                    "^$CanReach|PoD_dark_basement"
                 ],
                 "sections": [
                     {
@@ -274,7 +274,7 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "^$CanReach|pod_dark_maze"
+                    "^$CanReach|PoD_dark_maze"
                 ],
                 "sections": [
                     {
@@ -296,7 +296,7 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "^$CanReach|pod_boss_room"
+                    "^$CanReach|PoD_boss_room"
                 ],
                 "sections": [
                     {
@@ -305,7 +305,7 @@
                             "^$CanReach|PoD - Boss"
                         ],
                         "item_count": 1,
-                        "hosted_item": "pod_boss,palaceofdarkness"
+                        "hosted_item": "PoD_boss,palaceofdarkness"
                     }
                 ],
                 "map_locations": [

@@ -27,7 +27,7 @@ U8_READ_CACHE_ADDRESS = 0
 U16_READ_CACHE = 0
 U16_READ_CACHE_ADDRESS = 0
 
-room_lookuptable = {
+ROOM_LOOKUPTABLE = {
     [1] = {"Lightworld Dungeons", "Hyrule Castle",},
     [2] = {"Lightworld Dungeons", "Castle Escape",},
     [4] = {"Darkworld Dungeons", "Turtle Rock",},
@@ -230,49 +230,49 @@ room_lookuptable = {
     [260] = {"Overworld", "Lightworld",},
 }
 
-dungeon_entrance_IDS = {
+DUNGEON_ENTRANCE_IDs = {
     [0] = {Pyramid_Drop},
     [16] = {Pyramid_Exit},
-    [12] = {gt_entrance_inside},
-    [14] = {ip_entrance_inside},
-    [18] = {sanctuary_entrance_inside},
-    [35] = {tr_laser_entrance_inside},
-    [36] = {tr_big_chest_entrance_inside},
-    [40] = {sp_entrance_inside},
-    [74] = {pod_entrance_inside},
-    [85] = {secret_passage_hole_inside, secret_passage_stairs_inside},
-    [86] = {sw_west_lobby_entrance_inside, sw_north_drop_inside},
-    [87] = {sw_gibdo_entrance_inside},
-    [88] = {sw_big_chest_entrance_inside, sw_pot_circle_drop_inside},
-    [89] = {sw_back_entrance_inside},
-    [96] = {hc_left_entrance_inside},
-    [97] = {hc_main_entrance_inside},
-    [98] = {hc_right_entrance_inside},
-    [99] = {dp_back_entrance_inside},
-    [103] = {sw_bottom_left_drop_inside},
-    [104] = {sw_pinball_drop_inside},
-    [119] = {toh_entrance_inside},
-    [131] = {dp_left_entrance_inside},
-    [132] = {dp_main_entrance_inside},
-    [133] = {dp_right_entrance_inside},
-    [152] = {mm_entrance_inside},
-    [201] = {ep_entrance_inside},
-    [213] = {tr_eye_bridge_entrance_inside},
-    [214] = {tr_main_entrance_inside},
-    [219] = {tt_entrance_inside},
-    [224] = {at_entrance_inside},
+    [12] = {GT_entrance_inside},
+    [14] = {IP_entrance_inside},
+    [18] = {Sanctuary_entrance_inside},
+    [35] = {TR_laser_entrance_inside},
+    [36] = {TR_big_chest_entrance_inside},
+    [40] = {SP_entrance_inside},
+    [74] = {PoD_entrance_inside},
+    [85] = {Secret_passage_hole_inside, Secret_passage_stairs_inside},
+    [86] = {SW_west_lobby_entrance_inside, SW_north_drop_inside},
+    [87] = {SW_gibdo_entrance_inside},
+    [88] = {SW_big_chest_entrance_inside, SW_pot_circle_drop_inside},
+    [89] = {SW_back_entrance_inside},
+    [96] = {HC_left_entrance_inside},
+    [97] = {HC_main_entrance_inside},
+    [98] = {HC_right_entrance_inside},
+    [99] = {DP_back_entrance_inside},
+    [103] = {SW_bottom_left_drop_inside},
+    [104] = {SW_pinball_drop_inside},
+    [119] = {ToH_entrance_inside},
+    [131] = {DP_left_entrance_inside},
+    [132] = {DP_main_entrance_inside},
+    [133] = {DP_right_entrance_inside},
+    [152] = {MM_entrance_inside},
+    [201] = {EP_entrance_inside},
+    [213] = {TR_eye_bridge_entrance_inside},
+    [214] = {TR_main_entrance_inside},
+    [219] = {TT_entrance_inside},
+    [224] = {AT_entrance_inside},
 }
 
 local multi_purpose_room = {
-    ["kakariko_shop"] = function()
+    ["Kakariko_shop"] = function()
                             LIGHT_SHOPS_FOUND = LIGHT_SHOPS_FOUND + 1
                             return LIGHT_SHOPS_FOUND
                             end,
-    ["kakariko_fortune"] = function()
+    ["Kakariko_fortune"] = function()
                             FORTUNE_FOUND = FORTUNE_FOUND + 1
                             return FORTUNE_FOUND
                             end,
-    ["dam_desert_fairy_"] = function()
+    ["Dam_desert_fairy_"] = function()
                             FAIRYS_FOUND = FAIRYS_FOUND + 1
                             return FAIRYS_FOUND
                             end
@@ -299,9 +299,9 @@ function UpdateEntrances(segment, mainModuleIdx)
     ---@type integer
     local current_room
     ---@type integer
-    local new_ow_room
+    local New_ow_room
     ---@type integer
-    local new_dungeon_room
+    local New_dungeon_room
     ---@type integer
     local current_coords_y
     ---@type integer
@@ -313,16 +313,16 @@ function UpdateEntrances(segment, mainModuleIdx)
 
     if mainModuleIdx > 0x05 then
         -- print("-------------------------------------------------")
-        new_ow_room = segment:ReadUInt16(0x7e008a)
-        new_dungeon_room = segment:ReadUInt16(0x7e00a0)
+        New_ow_room = segment:ReadUInt16(0x7e008a)
+        New_dungeon_room = segment:ReadUInt16(0x7e00a0)
         -- print("Room Memory for Address: 0x7e00a2")
-        -- print(last_seen_room1)
-        -- last_seen_room2 = segment:ReadUInt8(0x7e00a9)
+        -- print(Last_seen_room1)
+        -- Last_seen_room2 = segment:ReadUInt8(0x7e00a9)
         -- print("Room Memory for Address: 0x7e00a9")
-        -- print(last_seen_room2)
-        -- last_seen_room3 = segment:ReadUInt8(0x7e00aA)
+        -- print(Last_seen_room2)
+        -- Last_seen_room3 = segment:ReadUInt8(0x7e00aA)
         -- print("Room Memory for Address: 0x7e00aA")
-        -- print(last_seen_room3)
+        -- print(Last_seen_room3)
         -- print("left/right qudrant:", segment:ReadUInt8(0x7e00a9))
         -- print("upper/lower qudrant:", segment:ReadUInt8(0x7e00aa))
         -- print("x cord :", segment:ReadUInt16(0x7e0022))
@@ -330,26 +330,26 @@ function UpdateEntrances(segment, mainModuleIdx)
         -- print("y cord :", segment:ReadUInt16(0x7e0020))
         current_coords_y = segment:ReadUInt16(0x7e0020)
         -- print("-------------------------------------------------")
-        -- print("Current Room Index: ", new_dungeon_room)
-        -- print("Current OW   Index: ", new_ow_room)
+        -- print("Current Room Index: ", New_dungeon_room)
+        -- print("Current OW   Index: ", New_ow_room)
 
 
 
         -- print("------------------------------------------")
-        -- print(dump_table(OVERWORLD_MAPPING[current_coords_x][current_coords_y][new_ow_room]))
-        -- print(dump_table(CAVES_MAPPING[current_coords_x][current_coords_y][new_dungeon_room]))
+        -- print(Dump_table(OVERWORLD_MAPPING[current_coords_x][current_coords_y][New_ow_room]))
+        -- print(Dump_table(CAVES_MAPPING[current_coords_x][current_coords_y][New_dungeon_room]))
         -- print("------------------------------------------")
        
 
-        if new_ow_room == 0 then
+        if New_ow_room == 0 then
             if current_coords_x > 740 and current_coords_x < 780 and current_coords_y > 0 and current_coords_y < 610 then
-                current_room = new_ow_room
+                current_room = New_ow_room
             else
-                current_room = new_dungeon_room
+                current_room = New_dungeon_room
             end
         else
-            if current_room ~= new_ow_room then
-                current_room = new_ow_room
+            if current_room ~= New_ow_room then
+                current_room = New_ow_room
             end
         end
 
@@ -439,25 +439,25 @@ function UpdateEntrances(segment, mainModuleIdx)
 end
 
 function UpdateUI(segment, mainModuleIdx)
-    local ow_room_reset
-    local dungeon_room_reset
+    local Ow_room_reset
+    local Dungeon_room_reset
    
    
-    ow_room_reset = false
-    dungeon_room_reset = false
+    Ow_room_reset = false
+    Dungeon_room_reset = false
     if mainModuleIdx > 0x05 then
         -- print("-------------------------------------------------")
-        new_ow_room = segment:ReadUInt16(0x7e008a)
-        new_dungeon_room = segment:ReadUInt16(0x7e00a0)
-        last_seen_room1 = segment:ReadUInt16(0x7e00a2)
+        New_ow_room = segment:ReadUInt16(0x7e008a)
+        New_dungeon_room = segment:ReadUInt16(0x7e00a0)
+        Last_seen_room1 = segment:ReadUInt16(0x7e00a2)
         -- print("Room Memory for Address: 0x7e00a2")
-        -- print(last_seen_room1)
-        -- last_seen_room2 = segment:ReadUInt8(0x7e00a9)
+        -- print(Last_seen_room1)
+        -- Last_seen_room2 = segment:ReadUInt8(0x7e00a9)
         -- print("Room Memory for Address: 0x7e00a9")
-        -- print(last_seen_room2)
-        -- last_seen_room3 = segment:ReadUInt8(0x7e00aA)
+        -- print(Last_seen_room2)
+        -- Last_seen_room3 = segment:ReadUInt8(0x7e00aA)
         -- print("Room Memory for Address: 0x7e00aA")
-        -- print(last_seen_room3)
+        -- print(Last_seen_room3)
         -- print("left/right qudrant:", segment:ReadUInt8(0x7e00a9))
         -- print("upper/lower qudrant:", segment:ReadUInt8(0x7e00aa))
         -- print("x cord :", segment:ReadUInt16(0x7e0022))
@@ -465,28 +465,28 @@ function UpdateUI(segment, mainModuleIdx)
         -- print("y cord :", segment:ReadUInt16(0x7e0020))
         -- current_coords_y = segment:ReadUInt16(0x7e0020)
         -- print("-------------------------------------------------")
-        -- print("Current Room Index: ", new_dungeon_room)
-        -- print("Current OW   Index: ", new_ow_room)
-        if new_ow_room == 0 then
-            new_dungeon_room = segment:ReadUInt16(0x7e00a0)
-            ow_room_reset = true
+        -- print("Current Room Index: ", New_dungeon_room)
+        -- print("Current OW   Index: ", New_ow_room)
+        if New_ow_room == 0 then
+            New_dungeon_room = segment:ReadUInt16(0x7e00a0)
+            Ow_room_reset = true
             --dungeon_room_quadrant_lr = segment:ReadUInt8(0x7e00a9) -- 0 or 1 / left or rigth
             --dungeon_room_quadrant_ud = segment:ReadUInt8(0x7e00aa) -- 0 or 2 / upper or lower
         else
-            transition_to_dungeon = true
-            dungeon_room_reset = true
-            new_dungeon_room = 0
+            Transition_to_dungeon = true
+            Dungeon_room_reset = true
+            New_dungeon_room = 0
         end
-        if new_ow_room > 0 then -- and ow_room ~= new_ow_room then
-            if  ow_room ~= new_ow_room then
-                ow_room = new_ow_room
+        if New_ow_room > 0 then -- and Ow_room ~= New_ow_room then
+            if  Ow_room ~= New_ow_room then
+                Ow_room = New_ow_room
                 if Tracker:FindObjectForCode("er_tracking").CurrentStage > 0 then
                     ChangeTab("Entrances")
                 else
                     ChangeTab("Overworld")
                 end
             end
-        elseif new_dungeon_room > 0 and dungeon_room ~= new_dungeon_room then
+        elseif New_dungeon_room > 0 and Dungeon_room ~= New_dungeon_room then
             if (segment:ReadUInt16(0x7e0020) < 1050 and segment:ReadUInt16(0x7e0022) < 1050) then
                 if Tracker:FindObjectForCode("er_tracking").CurrentStage > 0 then
                     ChangeTab("Entrances")
@@ -494,33 +494,33 @@ function UpdateUI(segment, mainModuleIdx)
                     ChangeTab("Overworld")
                 end
             else
-                dungeon_room = new_dungeon_room
-                -- print(room_lookuptable[dungeon_room][1])
-                -- print(dump_table(room_lookuptable[dungeon_room]))
-                if room_lookuptable[dungeon_room] ~= nil then
-                    for _, ui_name in pairs(room_lookuptable[dungeon_room]) do
+                Dungeon_room = New_dungeon_room
+                -- print(ROOM_LOOKUPTABLE[dungeon_room][1])
+                -- print(Dump_table(ROOM_LOOKUPTABLE[dungeon_room]))
+                if ROOM_LOOKUPTABLE[Dungeon_room] ~= nil then
+                    for _, ui_name in pairs(ROOM_LOOKUPTABLE[Dungeon_room]) do
                         -- print(_, ui_name)
                         ChangeTab(ui_name)
                     end
                 else
-                    print("room_lookuptable[dungeon_room] returned nil for dungeon room:".. dungeon_room)
+                    print("ROOM_LOOKUPTABLE[dungeon_room] returned nil for dungeon room:".. Dungeon_room)
                 end
             end
         end
        
-        -- print(room_lookuptable[dungeon_room])
+        -- print(ROOM_LOOKUPTABLE[dungeon_room])
     end
-    if ow_room_reset then
-        ow_room = 0
+    if Ow_room_reset then
+        Ow_room = 0
     end
-    if dungeon_room_reset then
-        dungeon_room = 0
+    if Dungeon_room_reset then
+        Dungeon_room = 0
     end
 end
 
 function ChangeTab(target_tab)
     if Tracker:FindObjectForCode("ui_hint").Active and target_tab ~= nil then
-        -- print(ow_room, dungeon_room, Tracker:FindObjectForCode("ui_hint").Active, target_tab)
+        -- print(ow_room, Dungeon_room, Tracker:FindObjectForCode("ui_hint").Active, target_tab)
         Tracker:UiHint("ActivateTab", target_tab)
     end
 end
@@ -548,11 +548,11 @@ function ReadU16(segment, address)
     return U16_READ_CACHE
 end
 
-function isInGame()
+function IsInGame()
     return AutoTracker:ReadU8(0x7e0010, 0) > 0x05
 end
 
-function updateInGameStatusFromMemorySegment(segment)
+function UpdateInGameStatusFromMemorySegment(segment)
 
     local mainModuleIdx = segment:ReadUInt8(0x7e0010)
 
@@ -560,7 +560,7 @@ function updateInGameStatusFromMemorySegment(segment)
     AUTOTRACKER_IS_IN_TRIFORCE_ROOM = (mainModuleIdx == 0x19 or mainModuleIdx == 0x1a)
 
     if AUTOTRACKER_IS_IN_TRIFORCE_ROOM and not wasInTriforceRoom then
-        ScriptHost:AddMemoryWatch("LTTP Statistics", 0x7ef420, 0x46, updateStatisticsFromMemorySegment)
+        ScriptHost:AddMemoryWatch("LTTP Statistics", 0x7ef420, 0x46, UpdateStatisticsFromMemorySegment)
     end
 
     if AUTOTRACKER_ENABLE_DEBUG_LOGGING then
@@ -588,7 +588,7 @@ function updateInGameStatusFromMemorySegment(segment)
     return true
 end
 
-function updateProgressiveItemFromByte(segment, code, address, offset)
+function UpdateProgressiveItemFromByte(segment, code, address, offset)
     local item = Tracker:FindObjectForCode(code)
     if item then
         local value = ReadU8(segment, address)
@@ -596,7 +596,7 @@ function updateProgressiveItemFromByte(segment, code, address, offset)
     end
 end
 
-function updateAga1(segment)
+function UpdateAga1(segment)
     local item = Tracker:FindObjectForCode("aga1")
     local value = ReadU8(segment, 0x7ef3c5)
     if value >= 3 then
@@ -606,7 +606,7 @@ function updateAga1(segment)
     end
 end
 
-function testFlag(segment, address, flag)
+function TestFlag(segment, address, flag)
     local value = ReadU8(segment, address)
     local flagTest = value & flag
 
@@ -617,23 +617,23 @@ function testFlag(segment, address, flag)
     end
 end
 
-function updateProgressiveBow(segment)
+function UpdateProgressiveBow(segment)
     local item = Tracker:FindObjectForCode("bow")
 
-    if testFlag(segment, 0x7ef38e, 0x80) and ReadU8(segment, 0x7ef340) > 0 then
+    if TestFlag(segment, 0x7ef38e, 0x80) and ReadU8(segment, 0x7ef340) > 0 then
         item.Active = true
     else
         item.Active = false
     end
 
-    if testFlag(segment, 0x7ef38e, 0x40) then
+    if TestFlag(segment, 0x7ef38e, 0x40) then
         item.CurrentStage = 1
     else
         item.CurrentStage = 0
     end
 end
 
-function updateBottles(segment)
+function UpdateBottles(segment)
     local item = Tracker:FindObjectForCode("bottle")
     local count = 0
     for i = 0, 3, 1 do
@@ -644,14 +644,14 @@ function updateBottles(segment)
     item.CurrentStage = count
 end
 
-function updateBowAndBombUpgrade(segment)
+function UpdateBowAndBombUpgrade(segment)
     local value = segment:ReadU8(0x7ef370)
     Tracker:FindObjectForCode("bombs").AcquiredCount = 10 + value
     local value = segment:ReadU8(0x7ef371)
     Tracker:FindObjectForCode("bow").AcquiredCount = 30 + value
 end
 
-function updateToggleItemFromByte(segment, code, address)
+function UpdateToggleItemFromByte(segment, code, address)
     local item = Tracker:FindObjectForCode(code)
     if item then
         local value = ReadU8(segment, address)
@@ -663,7 +663,7 @@ function updateToggleItemFromByte(segment, code, address)
     end
 end
 
-function updateToggleItemFromByteAndFlag(segment, code, address, flag)
+function UpdateToggleItemFromByteAndFlag(segment, code, address, flag)
     local item = Tracker:FindObjectForCode(code)
     if item then
         local value = ReadU8(segment, address)
@@ -681,7 +681,7 @@ function updateToggleItemFromByteAndFlag(segment, code, address, flag)
     end
 end
 
-function updateToggleFromRoomSlot(segment, code, slot)
+function UpdateToggleFromRoomSlot(segment, code, slot)
     local item = Tracker:FindObjectForCode(code)
     local item_boss
     if code == "gt_ice" or code == "gt_lanmo" then
@@ -701,7 +701,7 @@ function updateToggleFromRoomSlot(segment, code, slot)
     end
 end
 
-function updateFlute(segment)
+function UpdateFlute(segment)
     local item = Tracker:FindObjectForCode("flute")
     local value = ReadU8(segment, 0x7ef38c)
 
@@ -719,7 +719,7 @@ function updateFlute(segment)
     end
 end
 
-function updateConsumableItemFromByte(segment, code, address, roomSlots)
+function UpdateConsumableItemFromByte(segment, code, address, roomSlots)
     local item = Tracker:FindObjectForCode(code)
     if item then
         local value = ReadU8(segment, address)
@@ -745,7 +745,7 @@ function updateConsumableItemFromByte(segment, code, address, roomSlots)
     end
 end
 
-function updateConsumableItemFromTwoByteSum(segment, code, address, address2, roomSlots)
+function UpdateConsumableItemFromTwoByteSum(segment, code, address, address2, roomSlots)
     local item = Tracker:FindObjectForCode(code)
     if item then
         local value = ReadU8(segment, address)
@@ -771,7 +771,7 @@ function updateConsumableItemFromTwoByteSum(segment, code, address, address2, ro
     end
 end
 
-function updatePseudoProgressiveItemFromByteAndFlag(segment, code, address, flag, locationCode)
+function UpdatePseudoProgressiveItemFromByteAndFlag(segment, code, address, flag, locationCode)
     local item = Tracker:FindObjectForCode(code)
     if item then
         local value = ReadU8(segment, address)
@@ -797,7 +797,7 @@ function updatePseudoProgressiveItemFromByteAndFlag(segment, code, address, flag
     end
 end
 
-function updateSectionChestCountFromByteAndFlag(segment, locationRef, address, flag, callback)
+function UpdateSectionChestCountFromByteAndFlag(segment, locationRef, address, flag, callback)
     local location = Tracker:FindObjectForCode(locationRef)
     if location then
         -- Do not auto-track this the user has manually modified it
@@ -827,8 +827,8 @@ function updateSectionChestCountFromByteAndFlag(segment, locationRef, address, f
     end
 end
 
-function updateSectionChestCountFromOverworldIndexAndFlag(segment, locationRef, index, callback)
-    updateSectionChestCountFromByteAndFlag(segment, locationRef, 0x7ef280 + index, 0x40, callback)
+function UpdateSectionChestCountFromOverworldIndexAndFlag(segment, locationRef, index, callback)
+    UpdateSectionChestCountFromByteAndFlag(segment, locationRef, 0x7ef280 + index, 0x40, callback)
 end
 
 -- local clock = os.clock
@@ -837,7 +837,7 @@ end
 -- while clock() - t0 <= n do end
 -- end
 
-function updateSectionChestCountFromRoomSlotList(segment, locationRefList, roomSlots, callback)
+function UpdateSectionChestCountFromRoomSlotList(segment, locationRefList, roomSlots, callback)
     for h,locationRef in pairs(locationRefList) do
         local location = Tracker:FindObjectForCode(locationRef)
         if location then
@@ -868,7 +868,7 @@ function updateSectionChestCountFromRoomSlotList(segment, locationRefList, roomS
     end
 end
 
-function updateBombIndicatorStatus(status)
+function UpdateBombIndicatorStatus(status)
     local item = Tracker:FindObjectForCode("big_bomb")
     if item then
         if status then
@@ -879,7 +879,7 @@ function updateBombIndicatorStatus(status)
     end
 end
 
-function updateBatIndicatorStatus(status)
+function UpdateBatIndicatorStatus(status)
     local item = Tracker:FindObjectForCode("powder")
     if item then
         if status then
@@ -890,7 +890,7 @@ function updateBatIndicatorStatus(status)
     end
 end
 
-function updateShovelIndicatorStatus(status)
+function UpdateShovelIndicatorStatus(status)
     local item = Tracker:FindObjectForCode("shovel")
     if item then
         if status then
@@ -901,7 +901,7 @@ function updateShovelIndicatorStatus(status)
     end
 end
 
-function updateMushroomStatus(status)
+function UpdateMushroomStatus(status)
     local item = Tracker:FindObjectForCode("mushroom")
     if item then
         if status then
@@ -925,7 +925,7 @@ Stat | Value
 **Total Time** | %02d:%02d:%02d.%02d
 ]===]
 
-function read32BitTimer(segment, baseAddress)
+function Read32BitTimer(segment, baseAddress)
     local timer = 0;
     timer = timer | (ReadU8(segment, baseAddress + 3) << 24)
     timer = timer | (ReadU8(segment, baseAddress + 2) << 16)
@@ -940,10 +940,10 @@ function read32BitTimer(segment, baseAddress)
     return hours, minutes, seconds, frames
 end
 
-function updateStatisticsFromMemorySegment(segment)
+function UpdateStatisticsFromMemorySegment(segment)
     -- print(AutoTracker:ReadU8(0x7e0010, 0))
 
-    if not isInGame() then
+    if not IsInGame() then
         return false
     end
 
@@ -951,7 +951,7 @@ function updateStatisticsFromMemorySegment(segment)
 
     if not AUTOTRACKER_HAS_DONE_POST_GAME_SUMMARY then
         -- Read completion timer
-        local hours, minutes, seconds, frames = read32BitTimer(segment, 0x7ef43e)
+        local hours, minutes, seconds, frames = Read32BitTimer(segment, 0x7ef43e)
 
         local collection_rate = ReadU8(segment, 0x7ef423)
         local deaths = ReadU8(segment, 0x7ef449)
@@ -966,18 +966,18 @@ function updateStatisticsFromMemorySegment(segment)
     return true
 end
 
-function test(segment)
+function Test(segment)
     --print("detailed Current OW   Index: ", segment:ReadUInt16(0x7e040a))
 end
 -- Run the in-game status check more frequently (every 250ms) to catch save/quit scenarios more effectively
 
 
--- ScriptHost:AddMemoryWatch("LTTP In-Game Rooms", 0x7e0010, 0x90,  updateInGameRoomsFromMemorySegment, 250)
+-- ScriptHost:AddMemoryWatch("LTTP In-Game Rooms", 0x7e0010, 0x90,  UpdateInGameRoomsFromMemorySegment, 250)
 
--- ScriptHost:AddMemoryWatch("LTTP In-Game status", 0x7e0010, 0x250, updateInGameStatusFromMemorySegment, 250)
+-- ScriptHost:AddMemoryWatch("LTTP In-Game status", 0x7e0010, 0x250, UpdateInGameStatusFromMemorySegment, 250)
 -- if Tracker.ActiveVariantUID == "Map Tracker - AP" then
---     ScriptHost:AddMemoryWatch("LTTP Item Data", 0x7ef340, 0x90, updateAga1)
+--     ScriptHost:AddMemoryWatch("LTTP Item Data", 0x7ef340, 0x90, UpdateAga1)
 -- end
 
 -- ScriptHost:AddMemoryWatch("LTTP Settings", 0x180000, 250, autofillSettings)
--- ScriptHost:AddMemoryWatch("LTTP In-Game status 2", 0x7e0400, 0x250, test, 250)
+-- ScriptHost:AddMemoryWatch("LTTP In-Game status 2", 0x7e0400, 0x250, Test, 250)

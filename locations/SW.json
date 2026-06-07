@@ -4,19 +4,19 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$CanReach|sw_bottom_left_drop_inside",
-            "^$CanReach|sw_pinball_drop_inside",
-            "^$CanReach|sw_pot_circle_drop_inside",
-            "^$CanReach|sw_big_chest_entrance_inside",
-            "^$CanReach|sw_gibdo_entrance_inside",
-            "^$CanReach|sw_west_lobby_entrance_inside",
-            "^$CanReach|sw_north_drop_inside"
+            "^$CanReach|SW_bottom_left_drop_inside",
+            "^$CanReach|SW_pinball_drop_inside",
+            "^$CanReach|SW_pot_circle_drop_inside",
+            "^$CanReach|SW_big_chest_entrance_inside",
+            "^$CanReach|SW_gibdo_entrance_inside",
+            "^$CanReach|SW_west_lobby_entrance_inside",
+            "^$CanReach|SW_north_drop_inside"
         ],
         "children": [
             {
                 "name": "Pot Prison",
                 "access_rules": [
-                    "^$CanReach|sw_pot_prison"
+                    "^$CanReach|SW_pot_prison"
                 ],
                 "sections": [
                     {
@@ -38,7 +38,7 @@
             {
                 "name": "Compass Chest",
                 "access_rules": [
-                    "^$CanReach|sw_compass_room"
+                    "^$CanReach|SW_compass_room"
                 ],
                 "sections": [
                     {
@@ -60,7 +60,7 @@
             {
                 "name": "Pinball Room",
                 "access_rules": [
-                    "^$CanReach|sw_pinball_room"
+                    "^$CanReach|SW_pinball_room"
                 ],
                 "sections": [
                     {
@@ -82,7 +82,7 @@
             {
                 "name": "Map Chest",
                 "access_rules": [
-                    "^$CanReach|sw_map_room"
+                    "^$CanReach|SW_map_room"
                 ],
                 "sections": [
                     {
@@ -104,7 +104,7 @@
             {
                 "name": "Big Key Chest",
                 "access_rules": [
-                    "^$CanReach|sw_big_key_room"
+                    "^$CanReach|SW_big_key_room"
                 ],
                 "sections": [
                     {
@@ -126,7 +126,7 @@
             {
                 "name": "West Lobby Pot Key",
                 "access_rules": [
-                    "^$CanReach|sw_west_lobby_entrance_inside"
+                    "^$CanReach|SW_west_lobby_entrance_inside"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
@@ -149,7 +149,7 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "^$CanReach|sw_big_chest_entrance_inside"
+                    "^$CanReach|SW_big_chest_entrance_inside"
                 ],
                 "sections": [
                     {
@@ -175,13 +175,13 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$CanReach|sw_back_entrance_inside"
+            "^$CanReach|SW_back_entrance_inside"
         ],
         "children": [
             {
                 "name": "Bridge Room",
                 "access_rules": [
-                    "^$CanReach|sw_back_bottom_hallway"
+                    "^$CanReach|SW_back_bottom_hallway"
                 ],
                 "sections": [
                     {
@@ -203,7 +203,7 @@
             {
                 "name": "Spike Corner Key Drop",
                 "access_rules": [
-                    "^$CanReach|sw_back_spike_corner_room"
+                    "^$CanReach|SW_back_spike_corner_room"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
@@ -226,7 +226,7 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "^$CanReach|sw_back_boss_room"
+                    "^$CanReach|SW_back_boss_room"
                 ],
                 "sections": [
                     {

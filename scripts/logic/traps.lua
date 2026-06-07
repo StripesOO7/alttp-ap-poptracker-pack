@@ -5,10 +5,10 @@ for item_index,v in pairs(ITEM_MAPPING) do
     table.insert(item_id_index, item_index)
 end
 
--- print(dump_table(item_id_index))
+-- print(Dump_table(item_id_index))
 ---trap functions to reset the entire pack via whats being called in onClear
 function TrapOnClear()
-    onClear()
+    OnClear()
 end
 
 ---trap function to randomly reset 1 item from the already obtained items
@@ -72,7 +72,7 @@ function TrapSleepStall()
     local stall_time = math.random(5,15)
     print("stall_time", stall_time)
     while os.difftime(os.time(), start) < stall_time do
-        -- entry_point:discover(ACCESS_NORMAL, 0, nil)
+        -- Entry_point:discover(ACCESS_NORMAL, 0, nil)
         -- print(os.difftime(os.time(), start))
         
     end

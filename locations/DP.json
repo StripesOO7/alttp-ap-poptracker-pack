@@ -4,9 +4,9 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$CanReach|dp_main_entrance_inside",
-            "^$CanReach|dp_left_entrance_inside",
-            "^$CanReach|dp_right_entrance_inside"
+            "^$CanReach|DP_main_entrance_inside",
+            "^$CanReach|DP_left_entrance_inside",
+            "^$CanReach|DP_right_entrance_inside"
         ],
         "children": [
             {
@@ -73,7 +73,7 @@
             {
                 "name": "Big Key Chest",
                 "access_rules": [
-                    "^$CanReach|dp_compass_room, ^$CanReach|DP - Big Key Chest"
+                    "^$CanReach|DP_compass_room, ^$CanReach|DP - Big Key Chest"
                 ],
                 "sections": [
                     {
@@ -92,7 +92,7 @@
             {
                 "name": "Compass Chest",
                 "access_rules": [
-                    "^$CanReach|dp_compass_room, ^$CanReach|DP - Compass Chest"
+                    "^$CanReach|DP_compass_room, ^$CanReach|DP - Compass Chest"
                 ],
                 "sections": [
                     {
@@ -115,19 +115,19 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/chest_opened_img.png",
         "access_rules": [
-            "^$CanReach|dp_back_entrance_inside"
+            "^$CanReach|DP_back_entrance_inside"
         ],
         "children": [
             {
                 "name": "Boss",
                 "access_rules": [
-                    "^$CanReach|dp_back_torch_room"
+                    "^$CanReach|DP_back_torch_room"
                 ],
                 "sections": [
                     {
                         "name": "Boss Item",
                         "access_rules": [
-                            "^$CanReach|dp_back_boss_room, ^$CanReach|DP - Boss"
+                            "^$CanReach|DP_back_boss_room, ^$CanReach|DP - Boss"
                         ],
                         "item_count": 1,
                         "hosted_item": "dp_boss, desertpalace"
@@ -145,7 +145,7 @@
             {
                 "name": "Desert Tiles 1 Pot Key",
                 "access_rules": [
-                    "^$CanReach|dp_back_tile1_room, ^$CanReach|DP - Tile 1 Key Drop"
+                    "^$CanReach|DP_back_tile1_room, ^$CanReach|DP - Tile 1 Key Drop"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
@@ -165,7 +165,7 @@
             {
                 "name": "Beamos Hall Pot Key",
                 "access_rules": [
-                    "^$CanReach|dp_back_beamos_hallway, ^$CanReach|DP - Beamos Hallway Key Drop"
+                    "^$CanReach|DP_back_beamos_hallway, ^$CanReach|DP - Beamos Hallway Key Drop"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
@@ -185,7 +185,7 @@
             {
                 "name": "Desert Tiles 2 Pot Key",
                 "access_rules": [
-                    "^$CanReach|dp_back_tiles2_room, ^$CanReach|DP - Tile 2 Key Drop"
+                    "^$CanReach|DP_back_tiles2_room, ^$CanReach|DP - Tile 2 Key Drop"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [

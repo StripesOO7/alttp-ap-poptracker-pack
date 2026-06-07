@@ -208,7 +208,7 @@ local function OnMiddleClickFunc(self)
     if HIGHLIGHT_TARGET then
         HIGHLIGHT_TARGET.Highlight = Highlight.None
     end
-    -- print(dump_table(self.ItemState))
+    -- print(Dump_table(self.ItemState))
     local source_location = nil
     local target_location = nil
     local target = Tracker:FindObjectForCode(self.ItemState.Target) --[[@as LuaItem]]
@@ -468,10 +468,10 @@ end
 local function LoadManualLocationStorageFunc(self, data)
     -- print(self.Name, data.Name)
     -- print("loading data from:", data)
-    -- print(dump_table(data))
+    -- print(Dump_table(data))
     if data ~= nil and self.Name == data.Name then
         -- print("assigning saved data for ", data.Name)
-        -- print(dump_table(data))
+        -- print(Dump_table(data))
         self.ItemState.MANUAL_LOCATIONS = data.MANUAL_LOCATIONS
         self.ItemState.MANUAL_LOCATIONS_ORDER = data.MANUAL_LOCATIONS_ORDER
         self.Icon = ImageReference:FromPackRelativePath(data.Icon)
@@ -546,7 +546,7 @@ function ChangeLocationColor(locationname)
         if location_obj then
             if location_obj.Target then
                 local target_obj = (Tracker:FindObjectForCode(location_obj.Target)--[[@as LuaItem]]).ItemState
-                -- print(dump_table(target_obj.ItemState))
+                -- print(Dump_table(target_obj.ItemState))
                 -- local from_target_obj = Tracker:FindObjectForCode("from_"..location_obj.ItemState.target)
                 if target_obj then
                     if location_obj.IsDeadEnd or target_obj.IsDeadEnd then

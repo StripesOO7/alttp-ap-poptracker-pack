@@ -4,15 +4,15 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$CanReach|tr_main_entrance_inside",
-            "^$CanReach|tr_big_chest_entrance_inside",
-            "^$CanReach|tr_laser_entrance_inside"
+            "^$CanReach|TR_main_entrance_inside",
+            "^$CanReach|TR_big_chest_entrance_inside",
+            "^$CanReach|TR_laser_entrance_inside"
         ],
         "children": [
             {
                 "name": "Compass Chest",
                 "access_rules": [
-                    "^$CanReach|tr_compass_room"
+                    "^$CanReach|TR_compass_room"
                 ],
                 "sections": [
                     {
@@ -34,7 +34,7 @@
             {
                 "name": "Chain Chomps",
                 "access_rules": [
-                    "^$CanReach|tr_chain_chomps_room"
+                    "^$CanReach|TR_chain_chomps_room"
                 ],
                 "sections": [
                     {
@@ -57,7 +57,7 @@
                 "name": "Pokey 1 Key Drop",
                 "visibility_rules": ["key_drop_shuffle"],
                 "access_rules": [
-                    "^$CanReach|tr_poke_1_room"
+                    "^$CanReach|TR_poke_1_room"
                 ],
                 "sections": [
                     {
@@ -79,7 +79,7 @@
             {
                 "name": "Map Chest",
                 "access_rules": [
-                    "^$CanReach|tr_map_room"
+                    "^$CanReach|TR_map_room"
                 ],
                 "sections": [
                     {
@@ -101,7 +101,7 @@
             {
                 "name": "Roller Room Right",
                 "access_rules": [
-                    "^$CanReach|tr_map_room"
+                    "^$CanReach|TR_map_room"
                 ],
                 "sections": [
                     {
@@ -124,7 +124,7 @@
                 "name": "Pokey 2 Key Drop",
                 "visibility_rules": ["key_drop_shuffle"],
                 "access_rules": [
-                    "^$CanReach|tr_poke_2_room"
+                    "^$CanReach|TR_poke_2_room"
                 ],
                 "sections": [
                     {
@@ -146,8 +146,8 @@
             {
                 "name": "Big Key Chest",
                 "access_rules": [
-                    "^$CanReach|tr_big_key_room_bottom_left",
-                    "^$CanReach|tr_big_key_room_bottom_right"
+                    "^$CanReach|TR_big_key_room_bottom_left",
+                    "^$CanReach|TR_big_key_room_bottom_right"
                 ],
                 "sections": [
                     {
@@ -173,14 +173,14 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$CanReach|tr_big_key_door_room",
-            "^$CanReach|tr_eye_bridge_entrance_inside"
+            "^$CanReach|TR_big_key_door_room",
+            "^$CanReach|TR_eye_bridge_entrance_inside"
         ],
         "children": [
             {
                 "name": "Crystalroller Room",
                 "access_rules": [
-                    "^$CanReach|tr_crystalroller_room"
+                    "^$CanReach|TR_crystalroller_room"
                 ],
                 "sections": [
                     {
@@ -202,13 +202,13 @@
             {
                 "name": "Eye Bridge Accessible",
                 "access_rules": [
-                    "^$CanReach|tr_eye_bridge_entrance_inside"
+                    "^$CanReach|TR_eye_bridge_entrance_inside"
                 ]
             },
             {
                 "name": "Eye Bridge Top Left",
                 "access_rules": [
-                    "^$CanReach|tr_eye_bridge_entrance_inside"
+                    "^$CanReach|TR_eye_bridge_entrance_inside"
                 ],
                 "sections": [
                     {
@@ -230,7 +230,7 @@
             {
                 "name": "Eye Bridge Bottom Left",
                 "access_rules": [
-                    "^$CanReach|tr_eye_bridge_entrance_inside"
+                    "^$CanReach|TR_eye_bridge_entrance_inside"
                 ],
                 "sections": [
                     {
@@ -252,7 +252,7 @@
             {
                 "name": "Eye Bridge Top Right",
                 "access_rules": [
-                    "^$CanReach|tr_eye_bridge_entrance_inside"
+                    "^$CanReach|TR_eye_bridge_entrance_inside"
                 ],
                 "sections": [
                     {
@@ -274,7 +274,7 @@
             {
                 "name": "Eye Bridge Bottom Right",
                 "access_rules": [
-                    "^$CanReach|tr_eye_bridge_entrance_inside"
+                    "^$CanReach|TR_eye_bridge_entrance_inside"
                 ],
                 "sections": [
                     {
@@ -296,7 +296,7 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "^$CanReach|tr_big_chest_entrance_inside"
+                    "^$CanReach|TR_big_chest_entrance_inside"
                 ],
                 "sections": [
                     {
@@ -318,7 +318,7 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "^$CanReach|tr_boss_room"
+                    "^$CanReach|TR_boss_room"
                 ],
                 "sections": [
                     {

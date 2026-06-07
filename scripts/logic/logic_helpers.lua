@@ -51,7 +51,7 @@ SMALLKEYDEFAULTS = {
 ---@param o table
 ---@param depth integer?
 ---@return string
-function dump_table(o, depth)
+function Dump_table(o, depth)
     if depth == nil then
         depth = 0
     end
@@ -67,7 +67,7 @@ function dump_table(o, depth)
             if type(k) ~= 'number'then
                 kc = '"' .. k .. '"'
             end
-            s = s .. tabs2 .. '[' .. kc .. '] = ' .. dump_table(v, depth + 1) .. ',\n'
+            s = s .. tabs2 .. '[' .. kc .. '] = ' .. Dump_table(v, depth + 1) .. ',\n'
         end
         return s .. tabs .. '}'
     else
@@ -482,7 +482,7 @@ function CheckRequirements(reference, check_count)
 end
 
 ---comment
----@param torches_available any
+---@param torches_available boolean
 ---@return integer
 function DarkRooms(torches_available)
     local dark_mode = Tracker:FindObjectForCode("dark_mode").CurrentStage
@@ -493,9 +493,9 @@ function DarkRooms(torches_available)
         return ACCESS_NORMAL
     elseif dark_mode == 1 then
         if torches_available then
-            return (has_lamp > 0 or has_lamp > 0)
+            return A(has_lamp > 0 or has_lamp > 0)
         end
-        return (has_lamp > 0) -- scornes/firerod
+        return A(has_lamp > 0) -- scornes/firerod
     end
     return ACCESS_NONE
 end
@@ -513,17 +513,17 @@ function CalcHealth()
 end
 
 local shoplist = {
-    "dark_lumpberjacks_shop_inside",
-    "red_shield_shop_inside",
-    "dark_village_shop_inside",
-    "dark_lake_shop_inside",
-    "dark_potion_shop_inside",
-    "dark_death_mountain_shop_inside",
-    "kakariko_shop_inside",
-    "light_lake_shop_inside",
-    "upgrade_fairy_inside",
-    "light_death_mountain_shop_inside",
-    "light_potion_shop_inside"
+    "Dark_lumpberjacks_shop_inside",
+    "Red_shield_shop_inside",
+    "Dark_village_shop_inside",
+    "Dark_lake_shop_inside",
+    "Dark_potion_shop_inside",
+    "Dark_death_mountain_shop_inside",
+    "Kakariko_shop_inside",
+    "Light_lake_shop_inside",
+    "Upgrade_fairy_inside",
+    "Light_death_mountain_shop_inside",
+    "Light_potion_shop_inside"
 }
 
 ---comment
@@ -594,7 +594,7 @@ MISC_MANUAL_ITEMS = {
     "ep_boss",
     "dp_boss",
     "toh_boss",
-    "pod_boss",
+    "Pod_boss",
     "sp_boss",
     "sw_boss",
     "tt_boss",
@@ -707,36 +707,36 @@ function UpdateCanInteract() -- dumb helper function to determine if one can int
 end
 
 local invalid_bunny_revival_dungeons = {
-    -- ["at_entrance_inside"] = true,
-    -- ["ce_dropdown_entrance_inside"] = true,
-    -- ["dp_back_entrance_inside"] = true,
-    -- ["dp_left_entrance_inside"] = true,
-    -- ["dp_main_entrance_inside"] = true,
-    -- ["dp_right_entrance_inside"] = true,
-    -- ["ep_entrance_inside"] = true,
-    -- ["gt_entrance_inside"] = true,
-    -- ["hc_left_entrance_inside"] = true,
-    -- ["hc_main_entrance_inside"] = true,
-    -- ["hc_right_entrance_inside"] = true,
-    -- ["ip_entrance_inside"] = true,
-    -- ["mm_entrance_inside"] = true,
+    -- ["AT_entrance_inside"] = true,
+    -- ["CE_dropdown_entrance_inside"] = true,
+    -- ["DP_back_entrance_inside"] = true,
+    -- ["DP_left_entrance_inside"] = true,
+    -- ["DP_main_entrance_inside"] = true,
+    -- ["DP_right_entrance_inside"] = true,
+    -- ["EP_entrance_inside"] = true,
+    -- ["GT_entrance_inside"] = true,
+    -- ["HC_left_entrance_inside"] = true,
+    -- ["HC_main_entrance_inside"] = true,
+    -- ["HC_right_entrance_inside"] = true,
+    -- ["IP_entrance_inside"] = true,
+    -- ["MM_entrance_inside"] = true,
     -- ["pod_entrance_inside"] = true,
-    -- ["sw_back_entrance_inside"] = true,
-    -- ["sw_big_chest_entrance_inside"] = true,
-    -- ["sw_bottom_left_drop_inside"] = true,
-    -- ["sw_gibdo_entrance_inside"] = true,
-    -- ["sw_north_drop_inside"] = true,
-    -- ["sw_pinball_drop_inside"] = true,
-    -- ["sw_pot_circle_drop_inside"] = true,
-    -- ["sw_west_lobby_entrance_inside"] = true,
-    -- ["tr_big_chest_entrance_inside"] = true,
-    -- ["tr_eye_bridge_entrance_inside"] = true,
-    -- ["tr_laser_entrance_inside"] = true,
-    -- ["tt_entrance_inside"] = true,
-    ["tr_main_entrance_inside"] = true,
-    ["sanctuary_entrance_inside"] = true,
-    ["sp_entrance_inside"] = true,
-    ["toh_entrance_inside"] = true,
+    -- ["SW_back_entrance_inside"] = true,
+    -- ["SW_big_chest_entrance_inside"] = true,
+    -- ["SW_bottom_left_drop_inside"] = true,
+    -- ["SW_gibdo_entrance_inside"] = true,
+    -- ["SW_north_drop_inside"] = true,
+    -- ["SW_pinball_drop_inside"] = true,
+    -- ["SW_pot_circle_drop_inside"] = true,
+    -- ["SW_west_lobby_entrance_inside"] = true,
+    -- ["TR_big_chest_entrance_inside"] = true,
+    -- ["TR_eye_bridge_entrance_inside"] = true,
+    -- ["TR_laser_entrance_inside"] = true,
+    -- ["TT_entrance_inside"] = true,
+    ["TR_main_entrance_inside"] = true,
+    ["Sanctuary_entrance_inside"] = true,
+    ["SP_entrance_inside"] = true,
+    ["ToH_entrance_inside"] = true,
 }
 
 local valid_super_bunny_items = {
@@ -769,7 +769,7 @@ function CanInteract(location, item)
             if item then
                 print("------------------> mirror + item")
                 return Tracker:FindObjectForCode("mirror").Active and (valid_super_bunny_items[item] or false) and Tracker:FindObjectForCode(item).Active -- and Tracker:FindObjectForCode(item).Active -- not really neede because i should always check for the specifi3ed item outside aswell because this check is only for super bunny state accessibility
-            elseif location.name == "kakariko_well_ledge" or location.name == "superbunny_cave_top_inside" then
+            elseif location.name == "Kakariko_well_ledge" or location.name == "Superbunny_cave_top_inside" then
                 return true
             else
                 print("------------------> mirror only")
@@ -783,6 +783,7 @@ end
 ---comment
 ---@return boolean
 function CanFinish()
+    local table_length
     local reqs = {
         [1] = {CheckRequirements("ganon_killable", "crystal")},
         [2] = {Tracker:ProviderCountForCode("aga1")},
@@ -858,7 +859,7 @@ end
 function TT_boss_check()
     if Tracker:FindObjectForCode("tt_boss").CurrentStage == 7 then
         return ALL(
-            CanReach("tt_attic"),
+            CanReach("TT_attic"),
             CanReach("TT - Blind's Cell"),
             "bombs"
         )
@@ -902,7 +903,7 @@ end
 ---comment
 ---@return boolean
 function CheckPyramidState()
-    local pyramid_open = (Tracker:FindObjectForCode("pyramid_state") --[[@as JsonItem]]).Active
+    local pyramid_open = (Tracker:FindObjectForCode("Pyramid_state") --[[@as JsonItem]]).Active
     if not pyramid_open then
         return Tracker:FindObjectForCode("aga2").Active
     end
@@ -965,28 +966,29 @@ function GiveAll(setting)
         ["maps_setting"] = "_map",
         ["compass_setting"] = "_compass",
         ["bigkeys_setting"] = "_bigkey",
-        -- mallkeys_setting"] = "_smallkey"
+        ["smallkeys_setting"] = "_smallkey"
     }
     -- if Archipelago.PlayerNumber < 0 then
         for _, dungeon_prefix in ipairs(dungeons_prefixes) do
+            print(dungeon_prefix, setting ,setting_stage)
             local item = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting])  --[[@as JsonItem]]
             local copy = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting] .. "_copy")  --[[@as JsonItem]]
             if setting_stage == 5 or setting_stage == 6 then
                
                 if setting == "smallkeys_setting" then
                     item.AcquiredCount = item.MaxCount
-                    item = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting].. "_drop")  --[[@as JsonItem]]
-                    copy = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting] .. "_drop_copy")  --[[@as JsonItem]]
-                    item.AcquiredCount = item.MaxCount
+                    -- item = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting].. "_drop")  --[[@as JsonItem]]
+                    -- copy = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting] .. "_drop_copy")  --[[@as JsonItem]]
+                    -- item.AcquiredCount = item.MaxCount
                 else
                     item.Active = true
                 end
             else
                 if setting == "smallkeys_setting" then
                     item.AcquiredCount = copy.AcquiredCount
-                    item = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting].. "_drop")  --[[@as JsonItem]]
-                    copy = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting] .. "_drop_copy")  --[[@as JsonItem]]
-                    item.AcquiredCount = copy.AcquiredCount
+                    -- item = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting].. "_drop")  --[[@as JsonItem]]
+                    -- copy = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting] .. "_drop_copy")  --[[@as JsonItem]]
+                    -- item.AcquiredCount = copy.AcquiredCount
                 else
                     item.Active = copy.Active
                 end
@@ -1085,7 +1087,7 @@ function SetPrizeShuffle()
 end
 
 ---comment
-function SetAllAutofill()
+function SetAllAutoFill()
     ScriptHost:RemoveWatchForCode("StateChanged")
     local set_all = Tracker:FindObjectForCode("autofill_all_settings").Active
     Tracker:FindObjectForCode("autofill_dungeon_settings").Active = set_all
@@ -1129,7 +1131,7 @@ end
 -- ScriptHost:AddWatchForCode("set prize shuffles", "prize_shuffle", SetPrizeShuffle)
 
 
--- ScriptHost:AddWatchForCode("set all autofill", "autofill_all_settings", setAllAutofill)
+-- ScriptHost:AddWatchForCode("set all autofill", "autofill_all_settings", setAllAutoFill)
 -- function owDungeonDetails()
 --     local dungeon_details = Tracker:FindObjectForCode("ow_dungeon_details")
 --     if dungeon_details.Active then

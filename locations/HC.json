@@ -4,15 +4,15 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$CanReach|hc_main_entrance_inside",
-            "^$CanReach|hc_left_entrance_inside",
-            "^$CanReach|hc_right_entrance_inside"
+            "^$CanReach|HC_main_entrance_inside",
+            "^$CanReach|HC_left_entrance_inside",
+            "^$CanReach|HC_right_entrance_inside"
         ],
         "children": [
             {
                 "name": "Map Chest",
                 "access_rules": [
-                    "^$CanReach|hc_map_chest_room"
+                    "^$CanReach|HC_map_chest_room"
                 ],
                 "sections": [
                     {
@@ -34,7 +34,7 @@
             {
                 "name": "Boomerang Chest",
                 "access_rules": [
-                    "^$CanReach|hc_boomerang_chest_room"
+                    "^$CanReach|HC_boomerang_chest_room"
                 ],
                 "sections": [
                     {
@@ -56,7 +56,7 @@
             {
                 "name": "Zelda's Chest",
                 "access_rules": [
-                    "^$CanReach|hc_zeldas_cell, ^$CanReach|hc_ball_guard_room"
+                    "^$CanReach|HC_zeldas_cell, ^$CanReach|HC_ball_guard_room"
                 ],
                 "sections": [
                     {
@@ -78,7 +78,7 @@
             {
                 "name": "Map Guard Key Drop",
                 "access_rules": [
-                    "^$CanReach|hc_map_chest_room"
+                    "^$CanReach|HC_map_chest_room"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
@@ -101,7 +101,7 @@
             {
                 "name": "Boomerang Guard Key Drop",
                 "access_rules": [
-                    "^$CanReach|hc_boomerang_chest_room"
+                    "^$CanReach|HC_boomerang_chest_room"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
@@ -124,7 +124,7 @@
             {
                 "name": "Big Key Drop",
                 "access_rules": [
-                    "^$CanReach|hc_ball_guard_room"
+                    "^$CanReach|HC_ball_guard_room"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
@@ -151,15 +151,15 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$CanReach|ce_stairs_inside",
+            "^$CanReach|CE_stairs_inside",
             "^$CanReach|sanctuary_entrance_inside",
-            "^$CanReach|ce_dropdown_entrance_inside"
+            "^$CanReach|CE_dropdown_entrance_inside"
         ],
         "children": [
             {
                 "name": "Dark Cross",
                 "access_rules": [
-                    "^$CanReach|ce_dark_cross"
+                    "^$CanReach|CE_dark_cross"
                 ],
                 "sections": [
                     {
@@ -181,7 +181,7 @@
             {
                 "name": "Secret Passage Left",
                 "access_rules": [
-                    "^$CanReach|ce_secret_room"
+                    "^$CanReach|CE_secret_room"
                 ],
                 "sections": [
                     {
@@ -203,7 +203,7 @@
             {
                 "name": "Secret Passage Middle",
                 "access_rules": [
-                    "^$CanReach|ce_secret_room"
+                    "^$CanReach|CE_secret_room"
                 ],
                 "sections": [
                     {
@@ -225,7 +225,7 @@
             {
                 "name": "Secret Passage Right",
                 "access_rules": [
-                    "^$CanReach|ce_secret_room"
+                    "^$CanReach|CE_secret_room"
                 ],
                 "sections": [
                     {
@@ -248,7 +248,7 @@
                 "name": "Key Rat Key Drop",
                 "visibility_rules": ["key_drop_shuffle"],
                 "access_rules": [
-                    "^$CanReach|ce_rat_key_room"
+                    "^$CanReach|CE_rat_key_room"
                 ],
                 "sections": [
                     {

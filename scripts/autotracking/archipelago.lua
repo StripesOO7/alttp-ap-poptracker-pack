@@ -275,7 +275,7 @@ end
 
 ---function that gets called when the pack connects to an AP server
 ---@param slot_data? table Slotdata send from AP server for the specific user/slot
-function onClear(slot_data)
+function OnClear(slot_data)
     MANUAL_CHECKED = false
 
     ScriptHost:RemoveOnFrameHandler("Trap Handler")
@@ -326,7 +326,7 @@ function onClear(slot_data)
     end
     SLOT_DATA = slot_data
 
-    autoFill(slot_data)
+    AutoFill()
     Bombless()
     if SKIP_BOSSSHUFFLE == false then
         BossShuffle()
@@ -346,8 +346,8 @@ function onClear(slot_data)
     ScriptHost:RemoveWatchForCode("StateChanged")
     -- ScriptHost:RemoveOnLocationSectionHandler("location_section_change_handler")
     ScriptHost:RemoveOnLocationSectionChangedHandler("location_section_change_handler")
-    -- print(dump_table(er_custom_storage_item.MANUAL_LOCATIONS))
-    -- print(dump_table(er_custom_storage_item.MANUAL_LOCATIONS[ROOM_SEED]))
+    -- print(Dump_table(er_custom_storage_item.MANUAL_LOCATIONS))
+    -- print(Dump_table(er_custom_storage_item.MANUAL_LOCATIONS[ROOM_SEED]))
     if er_custom_storage_item.MANUAL_LOCATIONS[ROOM_SEED] then
         for source_name, targe_name in pairs(er_custom_storage_item.MANUAL_LOCATIONS[ROOM_SEED]) do -- redo location based on savestate for seed
             local source = Tracker:FindObjectForCode(source_name) --[[@as LuaItem]]
@@ -368,7 +368,7 @@ end
 ---@param item_id integer itemID from the games datapackage the the send item
 ---@param item_name string name of the item from the datapackage for the given itemID
 ---@param player_number integer slotnumber of the player who picked up the item
-function onItem(index, item_id, item_name, player_number)
+function OnItem(index, item_id, item_name, player_number)
     if index <= CUR_INDEX then
         return
     end
@@ -376,7 +376,7 @@ function onItem(index, item_id, item_name, player_number)
     CUR_INDEX = index;
     local item = ITEM_MAPPING[item_id]  --[[@as table<integer, string[]>]]
     if not item or not item[1] then
-        print(string.format("onItem: could not find item mapping for id %s", item_id))
+        print(string.format("OnItem: could not find item mapping for id %s", item_id))
         return
     end
     for _, item_code in pairs(item[1]) do
@@ -424,7 +424,7 @@ function onItem(index, item_id, item_name, player_number)
                 item_obj.AcquiredCount = item_obj.MaxCount
             end
         else
-            print(string.format("onItem: could not find object for code %s", item_code[1]))
+            print(string.format("OnItem: could not find object for code %s", item_code[1]))
         end
     end
     CanFinish()
@@ -434,11 +434,11 @@ end
 --called when a location gets cleared
 ---@param location_id integer ID of the locations cleared from the datapackage
 ---@param location_name string name of the location cleared fromt he datapackage
-function onLocation(location_id, location_name)
+function OnLocation(location_id, location_name)
     MANUAL_CHECKED = false
     local location_array = LOCATION_MAPPING[location_id]
     if not location_array or not location_array[1] then
-        print(string.format("onLocation: could not find location mapping for id %s", location_id))
+        print(string.format("OnLocation: could not find location mapping for id %s", location_id))
         return
     end
     
@@ -466,7 +466,7 @@ function onLocation(location_id, location_name)
 
             -- Tracker:FindObjectForCode("universal_keys").Active
         else
-            print(string.format("onLocation: could not find location_object for code %s", location))
+            print(string.format("OnLocation: could not find location_object for code %s", location))
         end
     end
     CanFinish()
@@ -474,21 +474,21 @@ function onLocation(location_id, location_name)
     MANUAL_CHECKED = true
 end
 
-function onEvent(key, value, old_value)
-    updateEvents(value)
-end
+-- function OnEvent(key, value, old_value)
+--     UpdateEvents(value)
+-- end
 
-function onEventsLaunch(key, value)
-    updateEvents(value)
-end
+-- function OnEventsLaunch(key, value)
+--     UpdateEvents(value)
+-- end
 
 ---function to handle conversion of SLOT_DATA values into states for setting-items
-function autoFill()
+function AutoFill()
     if SLOT_DATA == nil  then
         print("its fucked")
         return
     end
-    print(dump_table(SLOT_DATA))
+    print(Dump_table(SLOT_DATA))
 
     -- mapGlitcheMode = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4} -- noGlitches, minor, overworld, hybrid_major, no_logic
     local mapDarkRoomLogic = {[0]=0, [1]=1, [2]=2, ["none"]=2,["lamp"]=0,["troches"]=1} --lamp, torches, none
@@ -613,7 +613,7 @@ function autoFill()
         enemy_shuffle = {codes={"enemizer"}, mappings={mapToggle}, autofill="autofill_misc",},
     }
 
-    -- print(dump_table(SLOT_DATA))
+    -- print(Dump_table(SLOT_DATA))
     -- print(Tracker:FindObjectForCode("autofill_settings").Active)
     for settings_name , settings_value in pairs(SLOT_DATA) do
         if type(settings_value) == "table" then
@@ -687,11 +687,11 @@ function autoFill()
             Tracker:FindObjectForCode(mapMedallions[SLOT_DATA["tr_medalion"]]).CurrentStage = 1
         end
     end
-    goal_check()
+    GoalCheck()
 end
 
 ---function to check if goal conditions are meet and in turn lights up the goal item
-function goal_check()
+function GoalCheck()
     if SLOT_DATA ~= nil  and (Tracker:FindObjectForCode("autofill_goal_reqs") --[[@as JsonItem]]).Active then
         local goal = Tracker:FindObjectForCode("goal")  --[[@as JsonItem]]
         local ganon = Tracker:FindObjectForCode("ganon_killable")  --[[@as JsonItem]]
@@ -718,6 +718,7 @@ end
 ---@field entrance string
 ---@field item_flags 0|1|2|3|4|5|6|7
 ---@field status 0|10|20|30|40
+
 ---comment used on subsequent updatesfrom the server a given key we subscribed to
 ---@param key string
 ---@param value table<integer, APhint_message> 
@@ -804,17 +805,17 @@ end
 
 
 -- ScriptHost:AddWatchForCode("bombless start handler", "bombless", bombless)
--- ScriptHost:AddWatchForCode("goal handler", "goal", goal_check)
--- Archipelago:AddClearHandler("clear handler", onClear)
--- Archipelago:AddItemHandler("item handler", onItem)
--- Archipelago:AddLocationHandler("location handler", onLocation)
+-- ScriptHost:AddWatchForCode("goal handler", "goal", GoalCheck)
+-- Archipelago:AddClearHandler("clear handler", OnClear)
+-- Archipelago:AddItemHandler("item handler", OnItem)
+-- Archipelago:AddLocationHandler("location handler", OnLocation)
 
 -- Archipelago:AddSetReplyHandler("notify handler", OnNotify)
 -- Archipelago:AddRetrievedHandler("notify launch handler", OnNotifyLaunch)
 
--- ScriptHost:AddWatchForCode("settings autofill_dungeon_settings", "autofill_dungeon_settings", autoFill)
--- ScriptHost:AddWatchForCode("settings autofill_goal_reqs", "autofill_goal_reqs", autoFill)
--- ScriptHost:AddWatchForCode("settings autofill_medallions", "autofill_medallions", autoFill)
--- ScriptHost:AddWatchForCode("settings autofill_modes", "autofill_modes", autoFill)
--- ScriptHost:AddWatchForCode("settings autofill_misc", "autofill_misc", autoFill)
--- ScriptHost:AddWatchForCode("settings autofill_sanities", "autofill_sanities", autoFill)
+-- ScriptHost:AddWatchForCode("settings autofill_dungeon_settings", "autofill_dungeon_settings", AutoFill)
+-- ScriptHost:AddWatchForCode("settings autofill_goal_reqs", "autofill_goal_reqs", AutoFill)
+-- ScriptHost:AddWatchForCode("settings autofill_medallions", "autofill_medallions", AutoFill)
+-- ScriptHost:AddWatchForCode("settings autofill_modes", "autofill_modes", AutoFill)
+-- ScriptHost:AddWatchForCode("settings autofill_misc", "autofill_misc", AutoFill)
+-- ScriptHost:AddWatchForCode("settings autofill_sanities", "autofill_sanities", AutoFill)

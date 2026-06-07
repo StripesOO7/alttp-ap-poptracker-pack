@@ -5,13 +5,13 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "parent": "TT",
         "access_rules": [
-            "^$CanReach|tt_entrance_inside"
+            "^$CanReach|TT_entrance_inside"
         ],
         "children": [
             {
                 "name": "Map Chest",
                 "access_rules": [
-                    "^$CanReach|tt_front_bottom_left"
+                    "^$CanReach|TT_front_bottom_left"
                 ],
                 "sections": [
                     {
@@ -33,7 +33,7 @@
             {
                 "name": "Ambush Chest",
                 "access_rules": [
-                    "^$CanReach|tt_front_top_left"
+                    "^$CanReach|TT_front_top_left"
                 ],
                 "sections": [
                     {
@@ -55,7 +55,7 @@
             {
                 "name": "Compass Chest",
                 "access_rules": [
-                    "^$CanReach|tt_front_bottom_right"
+                    "^$CanReach|TT_front_bottom_right"
                 ],
                 "sections": [
                     {
@@ -77,7 +77,7 @@
             {
                 "name": "Big Key Chest",
                 "access_rules": [
-                    "^$CanReach|tt_front_bottom_right"
+                    "^$CanReach|TT_front_bottom_right"
                 ],
                 "sections": [
                     {
@@ -103,7 +103,7 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$CanReach|tt_back_hallway"
+            "^$CanReach|TT_back_hallway"
         ],
         "parent": "TT",
         "children": [
@@ -111,7 +111,7 @@
                 "name": "Hallway Pot Key",
                 "visibility_rules": ["key_drop_shuffle"],
                 "access_rules": [
-                    "^$CanReach|tt_back_hallway"
+                    "^$CanReach|TT_back_hallway"
                 ],
                 "sections": [
                     {
@@ -133,7 +133,7 @@
             {
                 "name": "Spike Switch Pot Key",
                 "access_rules": [
-                    "^$CanReach|tt_crystal_switch_room"
+                    "^$CanReach|TT_crystal_switch_room"
                 ],
                 "visibility_rules": ["key_drop_shuffle"],
                 "sections": [
@@ -156,7 +156,7 @@
             {
                 "name": "Blind's Cell",
                 "access_rules": [
-                    "^$CanReach|tt_basement_cell"
+                    "^$CanReach|TT_basement_cell"
                 ],
                 "sections": [
                     {
@@ -178,7 +178,7 @@
             {
                 "name": "Attic",
                 "access_rules": [
-                    "^$CanReach|tt_attic"
+                    "^$CanReach|TT_attic"
                 ],
                 "sections": [
                     {
@@ -200,7 +200,7 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "^$CanReach|tt_big_chest_room"
+                    "^$CanReach|TT_big_chest_room"
                 ],
                 "sections": [
                     {
@@ -222,7 +222,7 @@
             {
                 "name": "Boss",
                 "access_rules": [
-                    "^$CanReach|tt_boss_room"
+                    "^$CanReach|TT_boss_room"
                 ],
                 "sections": [
                     {

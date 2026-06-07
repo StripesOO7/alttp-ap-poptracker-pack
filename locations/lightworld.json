@@ -8,13 +8,13 @@
             {
                 "name": "Kakariko Well",
                 "access_rules": [
-                    "^$CanReach|kakariko_well_hole_inside"
+                    "^$CanReach|Kakariko_well_hole_inside"
                 ],
                 "sections": [
                     {
                         "name": "Well Items",
                         "access_rules": [
-                            "^$CanReach|kakariko_well_ledge"
+                            "^$CanReach|Kakariko_well_ledge"
                         ],
                         "clear_as_group": false,
                         "item_count": 4
@@ -50,7 +50,7 @@
             {
                 "name": "Blind's Hideout",
                 "access_rules": [
-                    "^$CanReach|kakariko_blinds_hideout_inside"
+                    "^$CanReach|Kakariko_blinds_hideout_inside"
                 ],
                 "sections": [
                     {
@@ -131,7 +131,7 @@
             {
                 "name": "Activate Flute",
                 "access_rules": [
-                    "^$CanReach|light_activate_flute"
+                    "^$CanReach|Light_activate_flute"
                 ],
                 "visibility_rules": ["flute, ^$OpenOrStandard"],
                 "sections": [
@@ -158,7 +158,7 @@
             {
                 "name": "Chicken Hut",
                 "access_rules": [
-                    "^$CanReach|kakariko_chickenhut_inside"
+                    "^$CanReach|Kakariko_chickenhut_inside"
                 ],
                 "sections": [
                     {
@@ -192,14 +192,14 @@
             {
                 "name": "Kakariko Light-Shop",
                 "access_rules": [
-                    "^$CanReach|kakariko_shop_inside"
+                    "^$CanReach|Kakariko_shop_inside"
                 ],
                 // "visibility_rules": ["shop_sanity"],
                 "sections": [
                     {
                         "name": "Shop Left Item",
                         "access_rules": [
-                            "^$CanReach|kakariko_shop_inside"
+                            "^$CanReach|Kakariko_shop_inside"
                         ],
                         "visibility_rules": [
                             "^$ShopSlotHelper|4194325|1"
@@ -209,7 +209,7 @@
                     {
                         "name": "Shop Center Item",
                         "access_rules": [
-                            "^$CanReach|kakariko_shop_inside"
+                            "^$CanReach|Kakariko_shop_inside"
                         ],
                         "visibility_rules": [
                             "^$ShopSlotHelper|4194326|2"
@@ -219,7 +219,7 @@
                     {
                         "name": "Shop Right Item",
                         "access_rules": [
-                            "^$CanReach|kakariko_shop_inside"
+                            "^$CanReach|Kakariko_shop_inside"
                         ],
                         "visibility_rules": [
                             "^$ShopSlotHelper|4194327|3"
@@ -230,7 +230,7 @@
                         "name": "Shop Default-Inventory",
                         "hosted_item": "default_shop_item_19, default_shop_item_20, default_shop_item_21",
                         "access_rules": [
-                            "^$CanReach|kakariko_shop_inside"
+                            "^$CanReach|Kakariko_shop_inside"
                         ],
                         // "visibility_rules": [
                         //     "shop_sanity"
@@ -241,7 +241,7 @@
                         "name": "Shop Cost-Type",
                         "hosted_item": "default_shop_price_19, default_shop_price_20, default_shop_price_21",
                         "access_rules": [
-                            "^$CanReach|kakariko_shop_inside"
+                            "^$CanReach|Kakariko_shop_inside"
                         ],
                         // "visibility_rules": [
                         //     "shop_sanity"
@@ -273,7 +273,7 @@
             {
                 "name": "Sick Kid",
                 "access_rules": [
-                    "^$CanReach|kakariko_sick_kid_inside"
+                    "^$CanReach|Kakariko_sick_kid_inside"
                 ],
                 "sections": [
                     {
@@ -307,7 +307,7 @@
             {
                 "name": "Backside Pub",
                 "access_rules": [
-                    "^$CanReach|kakariko_backside_pub_inside"
+                    "^$CanReach|Kakariko_backside_pub_inside"
                 ],
                 "sections": [
                     {
@@ -341,7 +341,7 @@
             {
                 "name": "Magic Bat",
                 "access_rules": [
-                    "^$CanReach|magic_bat_cave_inside"
+                    "^$CanReach|Magic_bat_cave_inside"
                 ],
                 "sections": [
                     {
@@ -375,7 +375,7 @@
             {
                 "name": "Lost Woods",
                 "access_rules": [
-                    "^$CanReach|lost_woods"
+                    "^$CanReach|Lost_woods"
                 ],
                 "sections": [
                     {
@@ -404,8 +404,8 @@
             {
                 "name": "Lost Woods - Hideout",
                 "access_rules": [
-                    "^$CanReach|lost_woods_hideout_hole_inside",
-                    "^$CanReach|lost_woods_hideout_cave_inside"
+                    "^$CanReach|Lost_woods_hideout_hole_inside",
+                    "^$CanReach|Lost_woods_hideout_cave_inside"
                 ],
                 "sections": [
                     {
@@ -439,7 +439,7 @@
             {
                 "name": "Master Sword Pedestal",
                 "access_rules": [
-                    "^$CanReach|mastersword_meadow_inside"
+                    "^$CanReach|Mastersword_meadow_inside"
                 ],
                 "sections": [
                     {
@@ -474,8 +474,8 @@
             {
                 "name": "Lumberjacks",
                 "access_rules": [
-                    "^$CanReach|lumberjacks_item",
-                    "^$CanReach|lumberjacks_cave_inside"
+                    "^$CanReach|Lumberjacks_item",
+                    "^$CanReach|Lumberjacks_cave_inside"
                 ],
                 "sections": [
                     {
@@ -510,7 +510,7 @@
             {
                 "name": "Bonk Pile",
                 "access_rules": [
-                    "^$CanReach|sanctuary_bonk_pile_cave_inside"
+                    "^$CanReach|Sanctuary_bonk_pile_cave_inside"
                 ],
                 "sections": [
                     {
@@ -544,7 +544,7 @@
             {
                 "name": "Library",
                 "access_rules": [
-                    "^$CanReach|library_inside"
+                    "^$CanReach|Library_inside"
                 ],
                 "sections": [
                     {
@@ -579,7 +579,7 @@
             {
                 "name": "Race",
                 // "access_rules": [
-                //     "^$CanReach|race_ledge"
+                //     "^$CanReach|Race_ledge"
                 // ],
                 "sections": [
                     {
@@ -615,7 +615,7 @@
             {
                 "name": "Cave 45",
                 "access_rules": [
-                    "^$CanReach|cave45_inside"
+                    "^$CanReach|Cave45_inside"
                 ],
                 "sections": [
                     {
@@ -650,7 +650,7 @@
             {
                 "name": "Flute Spot",
                 "access_rules": [
-                    "^$CanReach|links_house_area"
+                    "^$CanReach|Links_house_area"
                 ],
                 "sections": [
                     {
@@ -678,8 +678,8 @@
             {
                 "name": "Desert Ledge",
                 "access_rules": [
-                    "^$CanReach|desert_ledge",
-                    "^$CanReach|desert_area"
+                    "^$CanReach|Desert_ledge",
+                    "^$CanReach|Desert_area"
                 ],
                 "sections": [
                     {
@@ -708,7 +708,7 @@
             {
                 "name": "Aginah's Cave",
                 "access_rules": [
-                    "^$CanReach|aginah_cave_inside"
+                    "^$CanReach|Aginah_cave_inside"
                 ],
                 "sections": [
                     {
@@ -742,7 +742,7 @@
             {
                 "name": "Checkerboard Cave",
                 "access_rules": [
-                    "^$CanReach|checkerboard_cave_inside"
+                    "^$CanReach|Checkerboard_cave_inside"
                 ],
                 "sections": [
                     {
@@ -776,19 +776,19 @@
             {
                 "name": "Dam",
                 "access_rules": [
-                    // "^$CanReach|dam_area"
+                    // "^$CanReach|Dam_area"
                 ],
                 "sections": [
                     {
                         "name": "Sunken Treasure",
                         "access_rules": [
-                            "^$CanReach|dam_area, ^$CanReach|Sunken Treasure"
+                            "^$CanReach|Dam_area, ^$CanReach|Sunken Treasure"
                         ]
                     },
                     {
                         "name": "Dam Chest",
                         "access_rules": [
-                            "^$CanReach|dam_inside, ^$CanReach|Floodgate Chest"
+                            "^$CanReach|Dam_inside, ^$CanReach|Floodgate Chest"
                         ]
                     }
                 ],
@@ -822,13 +822,13 @@
             {
                 "name": "Mini Moldorm Cave",
                 "access_rules": [
-                    "^$CanReach|mini_moldorm_cave_inside"
+                    "^$CanReach|Mini_moldorm_cave_inside"
                 ],
                 "sections": [
                     {
                         "name": "Mini Moldorm Chest",
                         "access_rules": [
-                            "^$CanReach|mini_moldorm_cave_back"
+                            "^$CanReach|Mini_moldorm_cave_back"
                         ],
                         "clear_as_group": false,
                         "item_count": 5
@@ -858,7 +858,7 @@
             {
                 "name": "Ice Rod Cave",
                 "access_rules": [
-                    "^$CanReach|icerod_cave_inside"
+                    "^$CanReach|Icerod_cave_inside"
                 ],
                 "sections": [
                     {
@@ -892,7 +892,7 @@
             {
                 "name": "Hobo",
                 "access_rules": [
-                    "^$CanReach|light_lake_hylia"
+                    "^$CanReach|Light_lake_hylia"
                 ],
                 "sections": [
                     {
@@ -920,7 +920,7 @@
             {
                 "name": "Lake Hylia Light-Shop",
                 "access_rules": [
-                    "^$CanReach|light_lake_shop_inside"
+                    "^$CanReach|Light_lake_shop_inside"
                 ],
                 // "visibility_rules": ["shop_sanity"],
                 "sections": [
@@ -986,7 +986,7 @@
             {
                 "name": "Lake Hylia",
                 "access_rules": [
-                    "^$CanReach|light_lake_hylia"
+                    "^$CanReach|Light_lake_hylia"
                 ],
                 "sections": [
                     {
@@ -1015,7 +1015,7 @@
             {
                 "name": "Capacity Fairy",
                 "access_rules": [
-                    "^$CanReach|upgrade_fairy_inside"
+                    "^$CanReach|Upgrade_fairy_inside"
                 ],
                 "visibility_rules": [
                     "shop_shuffle_capacity"
@@ -1086,7 +1086,7 @@
             {
                 "name": "Link's House",
                 "access_rules": [
-                    "^$CanReach|links_house_inside"
+                    "^$CanReach|Links_house_inside"
                 ],
                 "visibility_rules": ["$OpenOrStandard"],
                 "sections": [
@@ -1121,13 +1121,13 @@
             {
                 "name": "Sahasrahla's Hut",
                 "access_rules": [
-                    "^$CanReach|sahasralahs_hut_inside"
+                    "^$CanReach|Sahasralahs_hut_inside"
                 ],
                 "sections": [
                     {
                         "name": "Back Items",
                         "access_rules": [
-                            "^$CanReach|sahasralahs_hut_back"
+                            "^$CanReach|Sahasralahs_hut_back"
                         ],
                         "clear_as_group": false,
                         "item_count": 3
@@ -1164,34 +1164,34 @@
             {
                 "name": "Potion Shop (Witch Hut)",
                 "access_rules": [
-                    "^$CanReach|light_potion_shop_inside"
+                    "^$CanReach|Light_potion_shop_inside"
                 ],
                 "sections": [
                     {
                         "name": "Shop Left Item",
-                        "visibility_rules": ["shop_include_witchhut, ^$ShopSlotHelper|4194331|1"],
+                        "visibility_rules": ["shop_include_Witchhut, ^$ShopSlotHelper|4194331|1"],
                         "clear_as_group": false
                     },
                     {
                         "name": "Shop Center Item",
-                        "visibility_rules": ["shop_include_witchhut, ^$ShopSlotHelper|4194332|2"],
+                        "visibility_rules": ["shop_include_Witchhut, ^$ShopSlotHelper|4194332|2"],
                         "clear_as_group": false
                     },
                     {
                         "name": "Shop Right Item",
-                        "visibility_rules": ["shop_include_witchhut, ^$ShopSlotHelper|4194333|3"],
+                        "visibility_rules": ["shop_include_Witchhut, ^$ShopSlotHelper|4194333|3"],
                         "clear_as_group": false
                     },
                     {
                         "name": "Shop Default-Inventory",
                         "hosted_item": "default_shop_item_31, default_shop_item_32, default_shop_item_33",
-                        // "visibility_rules": ["shop_sanity, shop_include_witchhut"],
+                        // "visibility_rules": ["shop_sanity, shop_include_Witchhut"],
                         "clear_as_group": false
                     },
                     {
                         "name": "Shop Cost-Type",
                         "hosted_item": "default_shop_price_31, default_shop_price_32, default_shop_price_33",
-                        // "visibility_rules": ["shop_sanity, shop_include_witchhut"],
+                        // "visibility_rules": ["shop_sanity, shop_include_Witchhut"],
                         "clear_as_group": false
                     },
                     {
@@ -1231,13 +1231,13 @@
             {
                 "name": "Waterfall Fairy",
                 "access_rules": [
-                    "^$CanReach|waterfall_fairy_inside"
+                    "^$CanReach|Waterfall_fairy_inside"
                 ],
                 "sections": [
                     {
                         "name": "Chest",
                         "access_rules": [
-                            "^$CanReach|waterfall_fairy_inside"
+                            "^$CanReach|Waterfall_fairy_inside"
                         ],
                         "item_count": 2,
                         "clear_as_group": false
@@ -1245,7 +1245,7 @@
                     {
                         "name": "Bottle refill",
                         "access_rules": [
-                            "^$CanReach|waterfall_fairy_inside"
+                            "^$CanReach|Waterfall_fairy_inside"
                         ],
                         "hosted_item": "fairy_bottle1",
                         "clear_as_group": false
@@ -1275,7 +1275,7 @@
             {
                 "name": "Zora's Domain",
                 "access_rules": [
-                    "^$CanReach|zora_river"
+                    "^$CanReach|Zora_river"
                 ],
                 "sections": [
                     {
@@ -1310,7 +1310,7 @@
             {
                 "name": "Secret Passage",
                 "access_rules": [
-                    "^$CanReach|secret_passage"
+                    "^$CanReach|Secret_passage"
                 ],
                 "inherit_codes": false,
                 "sections": [
@@ -1357,7 +1357,7 @@
             {
                 "name": "Graveyard Ledge",
                 "access_rules": [
-                    "^$CanReach|graveyard_ledge_inside"
+                    "^$CanReach|Graveyard_ledge_inside"
                 ],
                 "sections": [
                     {
@@ -1391,7 +1391,7 @@
             {
                 "name": "King's Tomb",
                 "access_rules": [
-                    "^$CanReach|kings_tomb_inside"
+                    "^$CanReach|Kings_tomb_inside"
                 ],
                 "sections": [
                     {
@@ -1425,7 +1425,7 @@
             {
                 "name": "Bombos Tablet",
                 "access_rules": [
-                    "^$CanReach|bombos_tablet"
+                    "^$CanReach|Bombos_tablet"
                 ],
                 "sections": [
                     {
@@ -1491,7 +1491,7 @@
             {
                 "name": "Rescue Old Man",
                 "access_rules": [
-                    "^$CanReach|old_man_cave"
+                    "^$CanReach|Old_man_cave"
                 ],
                 "visibility_rules": ["$OpenOrStandard"],
                 "sections": [
@@ -1526,7 +1526,7 @@
             {
                 "name": "Spectacle Rock Top",
                 "access_rules": [
-                    "^$CanReach|light_death_mountain_left_bottom"
+                    "^$CanReach|Light_death_mountain_left_bottom"
                 ],
                 "sections": [
                     {
@@ -1555,8 +1555,8 @@
             {
                 "name": "Spectacle Rock inside",
                 "access_rules": [
-                    "^$CanReach|spectacle_rock_top_drop",
-                    "^$CanReach|spectacle_rock_inside_bottom"
+                    "^$CanReach|Spectacle_rock_top_drop",
+                    "^$CanReach|Spectacle_rock_inside_bottom"
                 ],
                 "sections": [
                     {
@@ -1632,7 +1632,7 @@
             {
                 "name": "Floating Island",
                 "access_rules": [
-                    "^$CanReach|light_death_mountain_right_top"
+                    "^$CanReach|Light_death_mountain_right_top"
                 ],
                 "sections": [
                     {
@@ -1661,7 +1661,7 @@
             {
                 "name": "Light Death Mountain Shop",
                 "access_rules": [
-                    "^$CanReach|light_death_mountain_shop_inside"
+                    "^$CanReach|Light_death_mountain_shop_inside"
                 ],
                 // "visibility_rules": ["shop_sanity"],
                 "item_count": 3,
@@ -1728,15 +1728,15 @@
             {
                 "name": "Paradox Cave",
                 "access_rules": [
-                    "^$CanReach|paradox_cave_top_entrance_inside",
-                    "^$CanReach|paradox_cave_bottom_entrance_inside",
-                    "^$CanReach|paradox_cave_bottom_shop_entrance"
+                    "^$CanReach|Paradox_cave_top_entrance_inside",
+                    "^$CanReach|Paradox_cave_bottom_entrance_inside",
+                    "^$CanReach|Paradox_cave_bottom_shop_entrance"
                 ],
                 "sections": [
                     {
                         "name": "Lower",
                         "access_rules": [
-                            "^$CanReach|paradox_cave_top_back"
+                            "^$CanReach|Paradox_cave_top_back"
                         ],
                         "clear_as_group": false,
                         "item_count": 5
@@ -1847,7 +1847,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules": [
-            "^$CanReach|dp_main_entrance_inside"
+            "^$CanReach|DP_main_entrance_inside"
         ],
         "children": [
             {
@@ -1891,7 +1891,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules": [
-            "^$CanReach|dp_back_entrance_inside"
+            "^$CanReach|DP_back_entrance_inside"
         ],
         "children": [
             {
@@ -1946,7 +1946,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules": [
-            "^$CanReach|ep_entrance_inside"
+            "^$CanReach|EP_entrance_inside"
         ],
         "children": [
             {
@@ -2009,7 +2009,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules": [
-            "^$CanReach|at_entrance_inside"
+            "^$CanReach|AT_entrance_inside"
         ],
         "visibility_rules": ["$OpenOrStandard"],
         "children": [
@@ -2075,9 +2075,9 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules": [
-            "^$CanReach|hc_main_entrance_inside",
-            "^$CanReach|hc_left_entrance_inside",
-            "^$CanReach|hc_right_entrance_inside"
+            "^$CanReach|HC_main_entrance_inside",
+            "^$CanReach|HC_left_entrance_inside",
+            "^$CanReach|HC_right_entrance_inside"
         ],
         "children": [
             {
@@ -2142,9 +2142,9 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules": [
-            "^$CanReach|ce_stairs_inside",
-            "^$CanReach|ce_dropdown_entrance_inside",
-            "^$CanReach|sanctuary_entrance_inside"
+            "^$CanReach|CE_stairs_inside",
+            "^$CanReach|CE_dropdown_entrance_inside",
+            "^$CanReach|Sanctuary_entrance_inside"
         ],
         "children": [
             {
@@ -2199,7 +2199,7 @@
                 "name": "Sanctuary",
                 "item_count": 1,
                 "access_rules": [
-                    "^$CanReach|sanctuary_entrance_inside"
+                    "^$CanReach|Sanctuary_entrance_inside"
                 ],
                 "sections": [
                     {
@@ -2238,7 +2238,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules": [
-            "^$CanReach|toh_entrance_inside"
+            "^$CanReach|ToH_entrance_inside"
         ],
         "children": [
             {
@@ -2300,7 +2300,7 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "overlay_background": "#000000",
         "access_rules": [
-            "^$CanReach|gt_entrance_inside"
+            "^$CanReach|GT_entrance_inside"
         ],
         "visibility_rules": ["inverted"],
         "children": [
