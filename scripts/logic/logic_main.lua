@@ -174,7 +174,7 @@ function alttp_location.new(name, shortname, origin, map, inside_dungeon, room, 
             end
             for y_range = y_min_range, y_max_range do
                 Table_insert_at(ENTRANCE_MAPPING[room], x_range, {})
-                Table_insert_at(ENTRANCE_MAPPING[room][x_range], y_range, {})
+                Table_insert_at(ENTRANCE_MAPPING[room][x_range], y_range, nil) 
                 -- print(self.name, origin == nil)
                 table.insert(ENTRANCE_MAPPING[room][x_range][y_range], self.name)
                 table.insert(ENTRANCE_MAPPING[room][x_range][y_range], origin)
