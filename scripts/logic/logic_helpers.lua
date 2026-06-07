@@ -970,7 +970,6 @@ function GiveAll(setting)
     }
     -- if Archipelago.PlayerNumber < 0 then
         for _, dungeon_prefix in ipairs(dungeons_prefixes) do
-            print(dungeon_prefix, setting ,setting_stage)
             local item = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting])  --[[@as JsonItem]]
             local copy = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting] .. "_copy")  --[[@as JsonItem]]
             if setting_stage == 5 or setting_stage == 6 then
