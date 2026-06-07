@@ -270,12 +270,6 @@ south_of_village:connect_one_way(light_flute_map, function()
     )
 end)
 
-south_of_village:connect_one_way(helpless_frog, function()
-    return ALL(
-        Inverted,
-        CanChangeWorldWithMirror
-    )
-end)
 
 south_of_village:connect_two_ways(library_outside)
 south_of_village:connect_two_ways(kakariko_chest_minigame_outside)
