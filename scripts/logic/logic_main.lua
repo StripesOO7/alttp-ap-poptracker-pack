@@ -212,7 +212,7 @@ local function always()
     return ACCESS_NORMAL
 end
 
----markes a 1-way connections between 2 "locations/regions" in the source "locations" exit-table with rules if provided
+---marks a 1-way connections between 2 "locations/regions" in the source "locations" exit-table with rules if provided
 ---@param exit string|alttp_location_new_return alttp_location_new_return or code/name
 ---@param rule? function
 function alttp_location:connect_one_way(exit, rule)
@@ -232,7 +232,7 @@ function alttp_location:connect_one_way(exit, rule)
     self.exits[#self.exits + 1] = { exit, rule }
 end
 
----markes a 2-way connection between 2 locations. acts as a shortcut for 2 connect_one_way-calls
+---marks a 2-way connection between 2 locations. acts as a shortcut for 2 connect_one_way-calls
 ---@param exit string|alttp_location_new_return alttp_location_new_return or code/name
 ---@param rule? function
 function alttp_location:connect_two_ways(exit, rule)

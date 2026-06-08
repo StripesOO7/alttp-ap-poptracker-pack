@@ -433,7 +433,7 @@ end
 
 --called when a location gets cleared
 ---@param location_id integer ID of the locations cleared from the datapackage
----@param location_name string name of the location cleared fromt he datapackage
+---@param location_name string name of the location cleared from the datapackage
 function OnLocation(location_id, location_name)
     MANUAL_CHECKED = false
     local location_array = LOCATION_MAPPING[location_id]
@@ -719,7 +719,7 @@ end
 ---@field item_flags 0|1|2|3|4|5|6|7
 ---@field status 0|10|20|30|40
 
----comment used on subsequent updatesfrom the server a given key we subscribed to
+---used on subsequent updatesfrom the server a given key we subscribed to
 ---@param key string
 ---@param value table<integer, APhint_message> 
 ---@param old_value table<integer, APhint_message> 
@@ -739,7 +739,7 @@ function OnNotify(key, value, old_value)
     end
 end
 
----comment used the very first time we receive this message from the server after subscribing to a given key
+---used the very first time we receive this message from the server after subscribing to a given key
 ---@param key string Name of the key that was used to send the message
 ---@param value table<integer, APhint_message>
 function OnNotifyLaunch(key, value)

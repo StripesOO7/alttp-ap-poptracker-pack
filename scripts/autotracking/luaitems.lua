@@ -277,7 +277,7 @@ local function AdvanceToCodeFunc()
     print("AdvanceToCodeFunc")
 end
 
----save function triggered on closeing popotracker to have a state to restore later on. specific to ER LuaItems
+---save function triggered on closing popotracker to have a state to restore later on. specific to ER LuaItems
 ---@param self LuaItem
 ---@return table
 local function SaveLocationFunc(self)
@@ -449,7 +449,7 @@ function CreateLuaLocationItems(direction, location_obj, side)
     return self
 end
 
----save function triggered on closeing popotracker to have a state to restore later on. specific to custom preudo-cache LuaItems
+---save function triggered on closing popotracker to have a state to restore later on. specific to custom preudo-cache LuaItems
 ---@param self LuaItem
 ---@return table
 local function SaveManualLocationStorageFunc(self)
