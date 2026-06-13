@@ -1,6 +1,36 @@
 {
 	"versions": [
 		{
+			"package_version": "0.5.0",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.5.0/alttp-ap-tracker-v0.5.0.zip",
+			"sha256": "419a92034d7babae7d7bb1ad38d9fe6d01847c569a3e52d12a7345dd9546dd06",
+			"changelog": [
+				"bugfixes for ER and some other logic issues",
+				"",
+				"# fixed ER stuff:",
+				"- drop downs are no longer considered as randomized entrances in dungeons ER-mode",
+				"",
+				"# fixed logic:",
+				"- Bombos table was wrongfully checkign for non-bunny state although bunny can interact with the tablet",
+				"- changed some of the hint colors and their priorities for how they are shown",
+				"- old man cave west did not properly set the connection to jump down the ledge which caused this entrance to not put the rest of light world into logic in ER when exiting there",
+				"- fixed pyramid fairy checking for access to pyramid area in json before turning available",
+				"- fix auto map switching behavior for the back hallway of HC",
+				"- fix icerod being a viable weapon to pass the first wizrobe room in Misery Mire",
+				"",
+				"# added:",
+				"- Adds Race mode Variant for ALTTPR Race Community that disables interacting with ER autotracking and auto map-switching and forces them to be OFF/MANUAL",
+				"- small keys for KDS on/off are now handled internally as the same item and not 2 separate ones. this just makes internal code a bit cleaner",
+				"- made some preparations for keyrings, and dungeon prizes outside of boss rooms",
+				"- cleaned up some code and added massive amounts of type hints and function parameter classifications. thanks to @OmegaZeron for helping there and pushing me to do this",
+				"- ER legend is now only visible when in any ER state that is not OFF",
+				"- add cost-type and inventory to upgrade fairy",
+				"",
+				"# clarification:",
+				"- the prior assumption that insanity ER can cause multiple interior exits to lead to 1 exterior door was not confirmed by generting 43k seeds and looking at the ER list in the spoiler log"
+			]
+		},
+		{
 			"package_version": "0.4.6",
 			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.4.6/alttp-ap-tracker-v0.4.6.zip",
 			"sha256": "dd9d7829a099c627b103f1a9e55e137d889273a4f2d7c3b91608415ea0cf8d43",
@@ -17,7 +47,7 @@
 				"",
 				"# added:",
 				"",
-				"#known issue:",
+				"# known issue:",
 				"- insanity ER not properly respecting that multiple interiors can exit the same exterior"
 			]
 		},
@@ -41,7 +71,7 @@
 				"- make highlights use the item classification for highlights if its an unspecified hint",
 				"- adds trap.lua from future shenanigans",
 				"",
-				"#known issue:",
+				"# known issue:",
 				"- insanity ER not properly respecting that multiple interiors can exit the same exterior"
 			]
 		},
