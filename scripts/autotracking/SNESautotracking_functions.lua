@@ -439,17 +439,18 @@ function UpdateEntrances(segment, mainModuleIdx)
 end
 
 function UpdateUI(segment, mainModuleIdx)
-    local Ow_room_reset
-    local Dungeon_room_reset
+    local ow_room_reset
+    local dungeon_room_reset
    
    
-    Ow_room_reset = false
-    Dungeon_room_reset = false
+    ow_room_reset = false
+    dungeon_room_reset = false
     if mainModuleIdx > 0x05 then
         -- print("-------------------------------------------------")
         New_ow_room = segment:ReadUInt16(0x7e008a)
         New_dungeon_room = segment:ReadUInt16(0x7e00a0)
         Last_seen_room1 = segment:ReadUInt16(0x7e00a2)
+        -- print("-------------------------------------------------")
         -- print("Room Memory for Address: 0x7e00a2")
         -- print(Last_seen_room1)
         -- Last_seen_room2 = segment:ReadUInt8(0x7e00a9)
@@ -469,12 +470,12 @@ function UpdateUI(segment, mainModuleIdx)
         -- print("Current OW   Index: ", New_ow_room)
         if New_ow_room == 0 then
             New_dungeon_room = segment:ReadUInt16(0x7e00a0)
-            Ow_room_reset = true
+            ow_room_reset = true
             --dungeon_room_quadrant_lr = segment:ReadUInt8(0x7e00a9) -- 0 or 1 / left or rigth
             --dungeon_room_quadrant_ud = segment:ReadUInt8(0x7e00aa) -- 0 or 2 / upper or lower
         else
             Transition_to_dungeon = true
-            Dungeon_room_reset = true
+            dungeon_room_reset = true
             New_dungeon_room = 0
         end
         if New_ow_room > 0 then -- and Ow_room ~= New_ow_room then
@@ -487,7 +488,13 @@ function UpdateUI(segment, mainModuleIdx)
                 end
             end
         elseif New_dungeon_room > 0 and Dungeon_room ~= New_dungeon_room then
-            if (segment:ReadUInt16(0x7e0020) < 1050 and segment:ReadUInt16(0x7e0022) < 1050) then
+            -- print("segment:ReadUInt16(0x7e0020)", segment:ReadUInt16(0x7e0020))
+            -- print("segment:ReadUInt16(0x7e0022)", segment:ReadUInt16(0x7e0022))
+            if (segment:ReadUInt16(0x7e0020) < 1050 and segment:ReadUInt16(0x7e0022) < 1050) and 
+                not (
+                    (segment:ReadUInt16(0x7e0020) > 74 and segment:ReadUInt16(0x7e0020) < 145) and 
+                    (segment:ReadUInt16(0x7e0022) > 499 and segment:ReadUInt16(0x7e0022) < 1025) )
+            then
                 if Tracker:FindObjectForCode("er_tracking").CurrentStage > 0 then
                     ChangeTab("Entrances")
                 else
@@ -495,11 +502,11 @@ function UpdateUI(segment, mainModuleIdx)
                 end
             else
                 Dungeon_room = New_dungeon_room
-                -- print(ROOM_LOOKUPTABLE[dungeon_room][1])
-                -- print(Dump_table(ROOM_LOOKUPTABLE[dungeon_room]))
+                -- print("ROOM_LOOKUPTABLE[Dungeon_room][1]", ROOM_LOOKUPTABLE[Dungeon_room][1])
+                -- print("Dump_table(ROOM_LOOKUPTABLE[Dungeon_room])", Dump_table(ROOM_LOOKUPTABLE[Dungeon_room]))
                 if ROOM_LOOKUPTABLE[Dungeon_room] ~= nil then
                     for _, ui_name in pairs(ROOM_LOOKUPTABLE[Dungeon_room]) do
-                        -- print(_, ui_name)
+                        -- print("_, ui_name", _, ui_name)
                         ChangeTab(ui_name)
                     end
                 else
@@ -510,10 +517,10 @@ function UpdateUI(segment, mainModuleIdx)
        
         -- print(ROOM_LOOKUPTABLE[dungeon_room])
     end
-    if Ow_room_reset then
+    if ow_room_reset then
         Ow_room = 0
     end
-    if Dungeon_room_reset then
+    if dungeon_room_reset then
         Dungeon_room = 0
     end
 end
