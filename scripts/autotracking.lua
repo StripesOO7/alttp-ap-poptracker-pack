@@ -17,25 +17,22 @@ end
 print("---------------------------------------------------------------------")
 print("")
 
-require("scripts/autotracking/settings")
+require("scripts.autotracking.settings")
 -- loads the AP autotracking code
-if  Tracker.ActiveVariantUID == "Map Tracker - AP" or
-    Tracker.ActiveVariantUID == "Map Tracker /w detailed ow-Dungeons - AP" or
-    Tracker.ActiveVariantUID == "Entrance Randomizer Tracker - AP" or
-    Tracker.ActiveVariantUID == "Entrance Randomizer Tracker /w Pot-shuffle - AP" then
-    require("scripts/autotracking/archipelago")
-    require("scripts/autotracking/SNESautotracking_functions")
+
+local variant = Tracker.ActiveVariantUID
+if  variant == "Map Tracker - AP" then
+    require("scripts.autotracking.archipelago")
+    require("scripts.autotracking.SNESautotracking_functions")
 
 end
 -- loads the SNES autotrecking codes
-if  Tracker.ActiveVariantUID == "Map Tracker - SNES" or
-Tracker.ActiveVariantUID == "Map Tracker /w detailed ow-Dungeons - SNES" or
-Tracker.ActiveVariantUID == "Entrance Randomizer Tracker - SNES" or
-Tracker.ActiveVariantUID == "Entrance Randomizer Tracker /w Pot-shuffle - SNES" then
-    require("scripts/autotracking/SNESautotracking_functions")
-    require("scripts/autotracking/SNESautotracking_ROMdata")
+if  variant == "Map Tracker - SNES" or
+    variant == "Map Tracker ALTTPR Race Mode - SNES" then
+    require("scripts.autotracking.SNESautotracking_functions")
+    require("scripts.autotracking.SNESautotracking_ROMdata")
     Tracker.AllowDeferredLogicUpdate = true
 end
 
-require("scripts/autotracking/luaitems")
-require("scripts/autotracking/doors")
+require("scripts.autotracking.luaitems")
+require("scripts.autotracking.doors")

@@ -1,5 +1,5 @@
-require("scripts/autotracking/item_mapping")
-require("scripts/autotracking/location_mapping")
+require("scripts.autotracking.item_mapping")
+require("scripts.autotracking.location_mapping")
 
 CUR_INDEX = -1
 SLOT_DATA = nil
@@ -220,7 +220,7 @@ function PreOnClear()
     if TROLL_PLAYER then
         print("----------------load traps----------------")
         -- ScriptHost:LoadScript("scripts/logic/traps.lua")
-        require("scripts/logic/traps")
+        require("scripts.logic.traps")
     end
 end
 
