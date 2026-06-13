@@ -53,7 +53,7 @@ MM_wizrobe_room:connect_two_ways(MM_main_room, function()
             "bow",
             "hookshot",
             "firerod",
-            "icerod",
+            -- "icerod",
             "hammer"
         )
     end
