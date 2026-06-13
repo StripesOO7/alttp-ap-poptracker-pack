@@ -281,6 +281,7 @@ Spiral_cave_bottom_inside = alttp_location.new("Spiral_cave_bottom_inside", "Spi
 Spiral_cave_bottom_outside = alttp_location.new("Spiral_cave_bottom_outside", "Spiral Cave Bottom (OW)", "light", "Lightworld OW", false, 5, 3272, 503, 520, nil, {"Light Death Mountain - Entrances", "Spiral Cave (Bottom)", "Spiral Cave (Bottom)"})
 Spiral_cave_top_inside = alttp_location.new("Spiral_cave_top_inside", "Spiral Cave Top (Inside)", nil, "Lightworld caves", false, 238, 7544, 7640, 7669, nil, {"Light Death Mountain - Insides", "Spiral Cave", "Spiral Cave"}, "connector")
 Spiral_cave_top_outside = alttp_location.new("Spiral_cave_top_outside", "Spiral Cave Top (OW)", "light", "Lightworld OW", false, 5, 3256, 344, 358, nil, {"Light Death Mountain - Entrances", "Spiral Cave", "Spiral Cave"})
+Spiral_cave_top_Ledge = alttp_location.new("Spiral_cave_top_Ledge", "Spiral Cave Top Ledge(OW)", "light", "Lightworld OW", false)
 Teleporter_at_Desert_ledge = alttp_location.new("Teleporter_at_Desert_ledge", "Desert LEdge Teleporter (OW)", "light", "Lightworld OW", false)
 Twenty_rupee_thief_inside = alttp_location.new("Twenty_rupee_thief_inside", "20 Rupee (Inside)", nil, "Lightworld caves", false, 293, 2680, 9688, 9717, nil, {"Lake Hylia - Insides", "20 Rupee Cave", "20 Rupee Cave"}, "deadend")
 Twenty_rupee_thief_outside = alttp_location.new("Twenty_rupee_thief_outside", "20 Rupee (OW)", "light", "Lightworld OW", false, 55, 3688, 3191, 3208, nil, {"Lake Hylia - Entrances", "20 Rupee Cave", "20 Rupee Cave"})

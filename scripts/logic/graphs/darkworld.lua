@@ -1331,6 +1331,13 @@ Turtle_rock_ledge:connect_one_way(Mimic_cave_ledge, function()
         OpenOrStandard
     )
 end)
+Turtle_rock_ledge:connect_one_way(Spiral_cave_top_Ledge, function()
+    return ALL(
+        CanChangeWorldWithMirror,
+        OpenOrStandard
+    )
+end)
+
 
 TR_big_chest_entrance_outside:connect_two_ways_entrance("Turtle Rock Big Chest Entrance", TR_big_chest_entrance_inside)
 TR_laser_entrance_outside:connect_two_ways_entrance("Turtle Rock Laser Entrance", TR_laser_entrance_inside)

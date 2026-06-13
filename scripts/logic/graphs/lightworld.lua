@@ -1522,7 +1522,7 @@ end)
 -- Light_death_mountain_right_top:connect_one_way()
 
 Light_death_mountain_right_top:connect_two_ways(Paradox_cave_top_entrance_outside)
-Light_death_mountain_right_top:connect_one_way(Spiral_cave_top_outside)
+Light_death_mountain_right_top:connect_one_way(Spiral_cave_top_Ledge)
 Light_death_mountain_right_top:connect_one_way(Mimic_cave_ledge, function() return Inverted() end)
 Light_death_mountain_right_top:connect_one_way(Light_eyebridge_fairy_ledge)--, Inverted)
 
@@ -1543,7 +1543,19 @@ end) -- Floating Island Clip Spot
 -- OWG end
 
 Paradox_cave_top_entrance_outside:connect_two_ways_entrance("Paradox Cave Top Entrance", Paradox_cave_top_entrance_inside)
+
+Spiral_cave_top_Ledge:connect_two_ways(Spiral_cave_top_outside)
+Spiral_cave_top_Ledge:connect_one_way(Light_death_mountain_right_bottom)
+Spiral_cave_top_Ledge:connect_one_way(Turtle_rock_ledge, function() 
+    return ALL(
+        Inverted,
+        CanChangeWorldWithMirror
+    )
+end)
+
 Spiral_cave_top_outside:connect_two_ways_entrance("Spiral Cave Top Entrance", Spiral_cave_top_inside)
+
+
 
 Light_eyebridge_fairy_ledge:connect_two_ways(Fairy_ascension_cave_top_outside)
 Light_eyebridge_fairy_ledge:connect_one_way(Fairy_ascension_cave_bottom_outside)
