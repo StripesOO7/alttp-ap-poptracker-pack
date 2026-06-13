@@ -1028,35 +1028,35 @@
                             "^$ShopSlotHelper|4194334|1"
                         ]
                     },
-                    {
-                        "name": "Shop Center Item",
-                        "clear_as_group": false,
-                        "visibility_rules": [
-                            "^$ShopSlotHelper|4194335|2"
-                        ]
-                    },
+                    // {
+                    //     "name": "Shop Center Item",
+                    //     "clear_as_group": false,
+                    //     "visibility_rules": [
+                    //         "^$ShopSlotHelper|4194336|2"
+                    //     ]
+                    // },
                     {
                         "name": "Shop Right Item",
                         "clear_as_group": false,
                         "visibility_rules": [
-                            "^$ShopSlotHelper|4194336|3"
+                            "^$ShopSlotHelper|4194335|3"
                         ]
-                    // },
-                    // {
-                    //     "name": "Shop Default-Inventory",
-                    //     "hosted_item": "default_shop_item_25, default_shop_item_26, default_shop_item_27",
-                    //     "clear_as_group": false,
-                    //     "visibility_rules": [
-                    //         "shop_sanity"
-                    //     ]
-                    // },
-                    // {
-                    //     "name": "Shop Cost-Type",
-                    //     "hosted_item": "default_shop_price_25, default_shop_price_26, default_shop_price_27",
-                    //     "clear_as_group": false,
-                    //     "visibility_rules": [
-                    //         "shop_sanity"
-                    //     ]
+                    },
+                    {
+                        "name": "Shop Default-Inventory",
+                        "hosted_item": "default_shop_item_25, default_shop_item_26",// default_shop_item_27",
+                        "clear_as_group": false,
+                        "visibility_rules": [
+                            "shop_sanity"
+                        ]
+                    },
+                    {
+                        "name": "Shop Cost-Type",
+                        "hosted_item": "default_shop_price_25, default_shop_price_26,", //default_shop_price_27",
+                        "clear_as_group": false,
+                        "visibility_rules": [
+                            "shop_sanity"
+                        ]
                     }
                 ],
                 "map_locations": [
