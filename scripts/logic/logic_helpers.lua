@@ -789,8 +789,8 @@ function CanFinish()
         [2] = Tracker:ProviderCountForCode("aga1"),
         [3] = Tracker:ProviderCountForCode("aga2"),
         [4] = Tracker:ProviderCountForCode("green_pendant"),
-        [5] = Tracker:ProviderCountForCode("blue_pendant"),
-        [6] = Tracker:ProviderCountForCode("red_pendant"),
+        [5] = Tracker:ProviderCountForCode("blue_pendant")//2,
+        [6] = Tracker:ProviderCountForCode("red_pendant")//2,
         [7] = CheckRequirements("triforce_pieces_needed", "triforcepieces"),
         [8] = Tracker:ProviderCountForCode("icerod")
     }
@@ -904,7 +904,8 @@ end
 ---@return boolean
 function CheckPyramidState()
     local pyramid_stage = (Tracker:FindObjectForCode("pyramid_state") --[[@as JsonItem]]).CurrentStage
-    
+    print("CanFinish()", CanFinish())
+
     if pyramid_stage == 0 then
         return Tracker:FindObjectForCode("aga2").Active
     elseif pyramid_stage == 1 then
