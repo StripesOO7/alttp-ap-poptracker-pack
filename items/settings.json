@@ -670,12 +670,37 @@
     },
     {
         "name": "Pyramid state",
-        "type": "toggle",
-        "img": "/images/settings/Pyramid_open.png",
-        "disabled_img": "/images/settings/pyramid_closed.png",
-        "disabled_img_mods": "",
-        "initial_active_state": "true",
-        "codes": "pyramid_state"
+        "type": "progressive",
+        "allow_disabled": false,
+        "initial_stage_idx": 0, 
+        "stages":
+            [
+                
+                {
+                    "img": "/images/settings/pyramid_closed.png",
+                    "inherit_codes": false,
+                    "name": "Beat Agahnim 2 to open the Pyramid",
+                    "codes": "pyramid_state, pyramid_closed"
+                },
+                {
+                    "img": "/images/settings/Pyramid_open.png",
+                    "inherit_codes": false,
+                    "name": "Pyramid always open",
+                    "codes": "pyramid_state, pyramid_open"
+                },
+                {
+                    "img": "/images/settings/Pyramid_goal.png",
+                    "inherit_codes": false,
+                    "name": "Pyramid opens when other goal conditions are meet without without Agahnim 2",
+                    "codes": "pyramid_state, pyramid_goal"
+                },
+                {
+                    "img": "/images/settings/Pyramid_auto.png",
+                    "inherit_codes": false,
+                    "name": "Same as goal unless in ER and Ganon is not behind this hole",
+                    "codes": "pyramid_state, pyramid_auto"
+                }
+        ]
     },
     {
         "name": "Randomize Prizes (Pull, Bonk, Crabs)",
@@ -688,7 +713,7 @@
     {
         "name": "Enable Entrance Randomizer Tracking",
         "type": "progressive",
-        "allow_disabled":false,
+        "allow_disabled": false,
         "stages":
             [
                 {

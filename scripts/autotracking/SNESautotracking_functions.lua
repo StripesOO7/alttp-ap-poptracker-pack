@@ -392,9 +392,9 @@ function UpdateEntrances(segment, mainModuleIdx)
 
                     end
                 
-                    local er_stage = Tracker:FindObjectForCode("er_tracking").CurrentStage
+                    -- local er_stage = Tracker:FindObjectForCode("er_tracking").CurrentStage
                     if Selected_entrance ~= nil and Selected_exit ~= nil and Selected_entrance_origin ~= Selected_exit_origin then
-                        if er_stage == 3 then -- separated doors
+                        if ER_STAGE == 3 then -- separated doors
                     
                             _SetLocationOptions(Selected_entrance, Selected_exit)
                             _SetLocationOptions(Selected_exit, Selected_entrance)
