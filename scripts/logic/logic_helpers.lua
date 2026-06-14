@@ -785,24 +785,24 @@ end
 function CanFinish()
     local table_length
     local reqs = {
-        [1] = {CheckRequirements("ganon_killable", "crystal")},
-        [2] = {Tracker:ProviderCountForCode("aga1")},
-        [3] = {Tracker:ProviderCountForCode("aga2")},
-        [4] = {Tracker:ProviderCountForCode("green_pendant")},
-        [5] = {Tracker:ProviderCountForCode("blue_pendant")},
-        [6] = {Tracker:ProviderCountForCode("red_pendant")},
-        [7] = {CheckRequirements("triforce_pieces_needed", "triforcepieces")},
-        [8] = {Tracker:ProviderCountForCode("icerod")}
+        [1] = CheckRequirements("ganon_killable", "crystal"),
+        [2] = Tracker:ProviderCountForCode("aga1"),
+        [3] = Tracker:ProviderCountForCode("aga2"),
+        [4] = Tracker:ProviderCountForCode("green_pendant"),
+        [5] = Tracker:ProviderCountForCode("blue_pendant"),
+        [6] = Tracker:ProviderCountForCode("red_pendant"),
+        [7] = CheckRequirements("triforce_pieces_needed", "triforcepieces"),
+        [8] = Tracker:ProviderCountForCode("icerod")
     }
     local goals = {
-        [0] = {reqs[1][1], reqs[3][1]}, --aga2 + ganon killable
-        [1] = {reqs[1][1]}, --ganon killable
-        [2] = {reqs[1][1], reqs[2][1], reqs[3][1], reqs[4][1], reqs[5][1], reqs[6][1]}, --7crystal, aga1+aga2, 3pendants
-        [3] = {reqs[4][1], reqs[5][1], reqs[6][1]}, --3 pendants
-        [4] = {reqs[1][1], reqs[4][1], reqs[5][1], reqs[6][1]}, --pendants+ ganon killable
-        [5] = {reqs[7][1]}, --trifoce pieces
-        [6] = {reqs[1][1], reqs[7][1]}, --triforce pieces + ganon killabel
-        [7] = {reqs[8][1]} --icerod
+        [0] = {reqs[1], reqs[3]}, --aga2 + ganon killable
+        [1] = {reqs[1]}, --ganon killable
+        [2] = {reqs[1], reqs[2], reqs[3], reqs[4], reqs[5], reqs[6]}, --7crystal, aga1+aga2, 3pendants
+        [3] = {reqs[4], reqs[5], reqs[6]}, --3 pendants
+        [4] = {reqs[1], reqs[4], reqs[5], reqs[6]}, --pendants+ ganon killable
+        [5] = {reqs[7]}, --trifoce pieces
+        [6] = {reqs[1], reqs[7]}, --triforce pieces + ganon killabel
+        [7] = {reqs[8]} --icerod
     }
     local beatable = 0
 
@@ -903,11 +903,22 @@ end
 ---comment
 ---@return boolean
 function CheckPyramidState()
-    local pyramid_open = (Tracker:FindObjectForCode("pyramid_state") --[[@as JsonItem]]).Active
-    if not pyramid_open then
+    local pyramid_stage = (Tracker:FindObjectForCode("pyramid_state") --[[@as JsonItem]]).CurrentStage
+    
+    if pyramid_stage == 0 then
         return Tracker:FindObjectForCode("aga2").Active
+    elseif pyramid_stage == 1 then
+        return true
+    elseif pyramid_stage == 2 then
+        return CanFinish()
+    elseif pyramid_stage == 3 then
+        if ER_STAGE > 2 and (Tracker:FindObjectForCode("from_Pyramid_hole_outside") --[[@as LuaItem]]).ItemState.Target ~= "to_Pyramid_hole_inside" then
+            return Tracker:FindObjectForCode("aga2").Active
+        else
+            return CanFinish()
+        end
     end
-    return true
+    return false
 end
 
 ---functoin to make more and more shop shops visible the higher the number of available slots is set. 
