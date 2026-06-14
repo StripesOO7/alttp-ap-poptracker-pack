@@ -1109,6 +1109,8 @@ Hyrule_castle_area:connect_two_ways(Secret_passage_stairs_outside, function() re
 
 Hyrule_castle_area:connect_one_way(Pyramid_area, function() return ALL("aga1", OpenOrStandard) end)
 
+Hyrule_castle_area:connect_two_ways(Pyramid_exit_outside, function() return ALL(Inverted) end)
+
 Hyrule_castle_top:connect_one_way(Pyramid_area, function()
     return ALL(
         Inverted,
