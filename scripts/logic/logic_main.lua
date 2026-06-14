@@ -18,6 +18,8 @@ local accessLVL= {
 }
 
 -- Table to store named locations
+PLAYER_ID = -1
+TEAM_NUMBER = -1
 local ER_STATE = false
 ER_STAGE = 0
 ---@type table<string, alttp_location_new_return>
@@ -437,11 +439,13 @@ Entry_point:connect_one_way(Darkworld_spawns, Inverted)
 
 ---helperfunction that is used to force a grpah update on every state change within poptracker.
 function StateChanged()
-    PLAYER_ID = Archipelago.PlayerNumber
+    if Archipelago then
+        PLAYER_ID = Archipelago.PlayerNumber
+    end
     if PLAYER_ID == -1 then
         ROOM_SEED = "default"
     else
-        ROOM_SEED = (Archipelago.Seed or tostring(#ALL_LOCATIONS)).."_"..Archipelago.TeamNumber.."_"..Archipelago.PlayerNumber
+        ROOM_SEED = (Archipelago.Seed or tostring(#ALL_LOCATIONS)).."_"..TEAM_NUMBER.."_"..PLAYER_ID
     end
     UpdateCanInteract()
     stale = true
@@ -457,7 +461,7 @@ function LocationHandler(location)
         if not custom_storage_item then
             return
         end
-        if Archipelago.PlayerNumber == -1 then -- not connected
+        if PLAYER_ID == -1 then -- not connected
             if ROOM_SEED ~= "default" then -- seed is from previous connection
                 ROOM_SEED = "default"
                 custom_storage_item.MANUAL_LOCATIONS["default"] = {}
@@ -626,7 +630,7 @@ function EmptyLocationTargets()
     local er_custom_storage_item = (Tracker:FindObjectForCode("manual_er_storage") --[[@as LuaItem]]).ItemState
     ER_STAGE = er_tracking.CurrentStage
     ER_STATE = er_tracking.CurrentStage > 0
-    if Archipelago.PlayerNumber == -1 then -- not connected
+    if PLAYER_ID == -1 then -- not connected
         if ROOM_SEED ~= "default" and er_custom_storage_item then -- seed is from previous connection
             ROOM_SEED = "default"
             er_custom_storage_item.MANUAL_LOCATIONS["default"] = {}

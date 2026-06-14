@@ -103,7 +103,7 @@ function Frame_counter()
             TrapSleepStall()
         end
         
-        if Archipelago.PlayerNumber == -1 then
+        if PLAYER_ID == -1 then
             ScriptHost:RemoveOnFrameHandler("Trap Handler")
             return
         end

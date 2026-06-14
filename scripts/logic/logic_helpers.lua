@@ -232,7 +232,7 @@ function Bombless()
         end
     end
 
-    -- if Archipelago.PlayerNumber > 0 then
+    -- if PLAYER_ID > 0 then
     --     for index, id in ipairs() do
     --     end
     -- else
@@ -918,7 +918,7 @@ end
 ---@return boolean
 function ShopSlotHelper(shop_slot, number)
     
-    if Archipelago.PlayerNumber > 0 then
+    if PLAYER_ID > 0 then
         for index, value in pairs(ALL_LOCATIONS) do
             if type(value) == "number" then
                 if tonumber(shop_slot) == value then
@@ -968,7 +968,7 @@ function GiveAll(setting)
         ["bigkeys_setting"] = "_bigkey",
         ["smallkeys_setting"] = "_smallkey"
     }
-    -- if Archipelago.PlayerNumber < 0 then
+    -- if PLAYER_ID < 0 then
         for _, dungeon_prefix in ipairs(dungeons_prefixes) do
             local item = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting])  --[[@as JsonItem]]
             local copy = Tracker:FindObjectForCode(dungeon_prefix .. mapping[setting] .. "_copy")  --[[@as JsonItem]]

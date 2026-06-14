@@ -43,13 +43,14 @@ ScriptHost:AddWatchForCode("ER_reset_triggered", "reset_er", Reset_ER_setings)
 --archipelago
 ScriptHost:AddWatchForCode("bombless start handler", "bombless", Bombless)
 ScriptHost:AddWatchForCode("goal handler", "goal", GoalCheck)
-Archipelago:AddClearHandler("clear handler", OnClear)
-Archipelago:AddItemHandler("item handler", OnItem)
-Archipelago:AddLocationHandler("location handler", OnLocation)
+if Archipelago then
+    Archipelago:AddClearHandler("clear handler", OnClear)
+    Archipelago:AddItemHandler("item handler", OnItem)
+    Archipelago:AddLocationHandler("location handler", OnLocation)
 
-Archipelago:AddSetReplyHandler("notify handler", OnNotify)
-Archipelago:AddRetrievedHandler("notify launch handler", OnNotifyLaunch)
-
+    Archipelago:AddSetReplyHandler("notify handler", OnNotify)
+    Archipelago:AddRetrievedHandler("notify launch handler", OnNotifyLaunch)
+end
 --ER reduced layout
 ScriptHost:AddWatchForCode("reduce ER map clutter", "reduce_maps", ChangeERMap)
 ScriptHost:AddWatchForCode("remove ER Layout", "er_tracking", ChangeERLayout)

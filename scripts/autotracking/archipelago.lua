@@ -193,11 +193,11 @@ function PreOnClear()
     end
 
 
-    -- local temp_seed = tostring(#ALL_LOCATIONS).."_"..tostring(Archipelago.TeamNumber).."_"..tostring(Archipelago.PlayerNumber)
+    -- local temp_seed = tostring(#ALL_LOCATIONS).."_"..tostring(TEAM_NUMBER).."_"..tostring(PLAYER_ID)
     -- print(Archipelago.Seed)
     -- local storage_location = custom_storage_item.MANUAL_LOCATIONS
     -- local storage_location_order = custom_storage_item.MANUAL_LOCATIONS_ORDER
-    local seed_base = (Archipelago.Seed or tostring(#ALL_LOCATIONS)).."_"..Archipelago.TeamNumber.."_"..Archipelago.PlayerNumber
+    local seed_base = (Archipelago.Seed or tostring(#ALL_LOCATIONS)).."_"..TEAM_NUMBER.."_"..PLAYER_ID
     if ROOM_SEED == "default" or ROOM_SEED ~= seed_base then -- seed is default or from previous connection
 
         ROOM_SEED = seed_base --something like 2345_0_12
@@ -372,7 +372,7 @@ function OnItem(index, item_id, item_name, player_number)
     if index <= CUR_INDEX then
         return
     end
-    local is_local = player_number == Archipelago.PlayerNumber
+    local is_local = player_number == PLAYER_ID
     CUR_INDEX = index;
     local item = ITEM_MAPPING[item_id]  --[[@as table<integer, string[]>]]
     if not item or not item[1] then
@@ -727,7 +727,7 @@ function OnNotify(key, value, old_value)
     if value ~= old_value and key == HINTS_ID then
         Tracker.BulkUpdate = true
         for _, hint in ipairs(value) do
-            if hint.finding_player == Archipelago.PlayerNumber then
+            if hint.finding_player == PLAYER_ID then
                 if hint.status == 0 then
                     UpdateHints(hint.location, 100+hint.item_flags)
                 else
@@ -746,7 +746,7 @@ function OnNotifyLaunch(key, value)
     if key == HINTS_ID then
         Tracker.BulkUpdate = true
         for _, hint in ipairs(value) do
-            if hint.finding_player == Archipelago.PlayerNumber then
+            if hint.finding_player == PLAYER_ID then
                 if hint.status == 0 then
                     UpdateHints(hint.location, 100+hint.item_flags)
                 else
