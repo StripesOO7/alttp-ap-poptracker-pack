@@ -50,14 +50,14 @@ if Archipelago then
 
     Archipelago:AddSetReplyHandler("notify handler", OnNotify)
     Archipelago:AddRetrievedHandler("notify launch handler", OnNotifyLaunch)
+    for _, code in pairs({"autofill_dungeon_settings", "autofill_goal_reqs", "autofill_medallions", "autofill_modes", "autofill_misc", "autofill_sanities"}) do
+        ScriptHost:AddWatchForCode("settings ".. code, code, AutoFill)
+    end
 end
 --ER reduced layout
 ScriptHost:AddWatchForCode("reduce ER map clutter", "reduce_maps", ChangeERMap)
 ScriptHost:AddWatchForCode("remove ER Layout", "er_tracking", ChangeERLayout)
 
-for _, code in pairs({"autofill_dungeon_settings", "autofill_goal_reqs", "autofill_medallions", "autofill_modes", "autofill_misc", "autofill_sanities"}) do
-    ScriptHost:AddWatchForCode("settings ".. code, code, AutoFill)
-end
 ScriptHost:AddWatchForCode("glitches changed", "glitches", UpdateCanInteract)
 
 for _, code in pairs(MISC_MANUAL_ITEMS) do
