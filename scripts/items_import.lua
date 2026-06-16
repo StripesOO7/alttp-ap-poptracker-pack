@@ -17,4 +17,7 @@ if variant == "Map Tracker ALTTPR Race Mode - SNES" then
     local Map_switch = Tracker:FindObjectForCode("ui_hint") --[[@as JsonItem]]
     Map_switch.Active = false
     Map_switch.IgnoreUserInput = true
+    local route_mode = Tracker:FindObjectForCode("route_mode") --[[@as JsonItem]]
+    route_mode.Active = false
+    route_mode.IgnoreUserInput = true
 end
