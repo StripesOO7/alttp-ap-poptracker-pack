@@ -1,6 +1,29 @@
 {
 	"versions": [
 		{
+			"package_version": "0.5.1",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.5.1/alttp-ap-tracker-v0.5.1.zip",
+			"sha256": "0fec704050d51db22703576e821b82f26bc162d3b3f942db38048f037c3eca66",
+			"changelog": [
+				"bugfixes for ER and some other logic issues",
+				"",
+				"# fixed ER stuff:",
+				"- fix ER connection in inverted for pyramid hole being in castle courtyard",
+				"",
+				"# fixed logic:",
+				"- add spiral cave top ledge as graph node to fix the missing mirror link connection",
+				"- changed some of the hint colors and their priorities for how they are shown",
+				"",
+				"# added:",
+				"- internal code cleanup to not use Archipelago functions in non AP variant",
+				"- fix CE entracnce marker in normal dungeon map",
+				"- made the canFinish function work again for non slow or fast ganon goals",
+				"- changes pyramid state item from on/off to represent all 4 stages",
+				"- diable route mode for race variant",
+				"",
+			]
+		},
+		{
 			"package_version": "0.5.0",
 			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.5.0/alttp-ap-tracker-v0.5.0.zip",
 			"sha256": "419a92034d7babae7d7bb1ad38d9fe6d01847c569a3e52d12a7345dd9546dd06",
