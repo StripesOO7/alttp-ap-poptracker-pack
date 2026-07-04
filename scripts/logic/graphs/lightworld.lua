@@ -59,13 +59,13 @@ Light_spawn_old_man:connect_one_way(Old_man_home_bottom_inside, function() retur
 -- Kakariko_village
 Kakariko_village:connect_one_way(South_of_village)
 Kakariko_village:connect_one_way(Lost_woods)
-Kakariko_village:connect_one_way(Light_flute_map, function()
-    return ALL(
-        "flute",
-        OpenOrStandard,
-        CanReach("Light_activate_flute")
-    )
-end)
+-- Kakariko_village:connect_one_way(Light_flute_map, function()
+--     return ALL(
+--         "flute",
+--         OpenOrStandard,
+--         CanReach("Light_activate_flute")
+--     )
+-- end)
 
 
 
@@ -263,12 +263,12 @@ end)
 -- South_of_village
 South_of_village:connect_one_way(Kakariko_village)
 South_of_village:connect_one_way(Links_house_area)
-South_of_village:connect_one_way(Light_flute_map, function()
-    return ALL(
-        "flute",
-        OpenOrStandard
-    )
-end)
+-- South_of_village:connect_one_way(Light_flute_map, function()
+--     return ALL(
+--         "flute",
+--         OpenOrStandard
+--     )
+-- end)
 
 
 South_of_village:connect_two_ways(Library_outside)
@@ -368,13 +368,13 @@ end)
 -- Sanctuary_area
 Sanctuary_area:connect_one_way(Lost_woods)
 Sanctuary_area:connect_one_way(Eastern_palace_area)
-Sanctuary_area:connect_one_way(Light_flute_map, function()
-    return ALL(
-        "flute",
-        OpenOrStandard,
-        CanReach("Light_activate_flute")
-    )
-end)
+-- Sanctuary_area:connect_one_way(Light_flute_map, function()
+--     return ALL(
+--         "flute",
+--         OpenOrStandard,
+--         CanReach("Light_activate_flute")
+--     )
+-- end)
 Sanctuary_area:connect_one_way(Light_lake_hylia, function()
     return Has("flippers")
 end) --teleport
@@ -450,13 +450,13 @@ CE_dropdown_entrance_outside:connect_one_way_entrance("Castle Escape secret Grav
 -- Lost_woods
 Lost_woods:connect_one_way(Lumberjacks_area)
 Lost_woods:connect_one_way(Kakariko_village)
-Lost_woods:connect_one_way(Light_flute_map, function()
-    return ALL(
-        "flute",
-        OpenOrStandard,
-        CanReach("Light_activate_flute")
-    )
-end)
+-- Lost_woods:connect_one_way(Light_flute_map, function()
+--     return ALL(
+--         "flute",
+--         OpenOrStandard,
+--         CanReach("Light_activate_flute")
+--     )
+-- end)
 
 Lost_woods:connect_two_ways(Lost_woods_hideout_hole_outside, function() return CanInteract(Lost_woods) end)
 Lost_woods:connect_two_ways(Lost_woods_hideout_cave_outside)
@@ -512,13 +512,13 @@ end)
 Dam_area:connect_one_way(Teleporter_at_dam, function() return Has("hammer") end)
 
 Dam_area:connect_one_way(Desert_area)
-Dam_area:connect_one_way(Light_flute_map, function()
-    return ALL(
-        "flute",
-        OpenOrStandard,
-        CanReach("Light_activate_flute")
-    )
-end)
+-- Dam_area:connect_one_way(Light_flute_map, function()
+--     return ALL(
+--         "flute",
+--         OpenOrStandard,
+--         CanReach("Light_activate_flute")
+--     )
+-- end)
 Dam_area:connect_one_way(Links_house_area)
 Dam_area:connect_one_way(Light_lake_hylia, function()
     return Has("flippers")
@@ -689,13 +689,13 @@ end)
 
 -- Lumberjacks_area
 Lumberjacks_area:connect_one_way(Lost_woods)
-Lumberjacks_area:connect_one_way(Light_flute_map, function()
-    return ALL(
-        "flute",
-        OpenOrStandard,
-        CanReach("Light_activate_flute")
-    )
-end)
+-- Lumberjacks_area:connect_one_way(Light_flute_map, function()
+--     return ALL(
+--         "flute",
+--         OpenOrStandard,
+--         CanReach("Light_activate_flute")
+--     )
+-- end)
 Lumberjacks_area:connect_one_way(Sanctuary_area)
 Lumberjacks_area:connect_one_way(Light_lake_hylia, function()
     return Has("flippers")
@@ -801,13 +801,13 @@ Light_death_mountain_return_left_outside:connect_two_ways_entrance("Bumper Cave 
 -- Light_lake_hylia
 Light_lake_hylia:connect_one_way(Links_house_area)
 Light_lake_hylia:connect_one_way(Dam_area)
-Light_lake_hylia:connect_one_way(Light_flute_map, function()
-    return ALL(
-        "flute",
-        OpenOrStandard,
-        CanReach("Light_activate_flute")
-    )
-end)
+-- Light_lake_hylia:connect_one_way(Light_flute_map, function()
+--     return ALL(
+--         "flute",
+--         OpenOrStandard,
+--         CanReach("Light_activate_flute")
+--     )
+-- end)
 Light_lake_hylia:connect_one_way(Eastern_palace_area)
 Light_lake_hylia:connect_one_way(Witchhut, function()
     return ALL(
@@ -940,13 +940,13 @@ Links_house_area:connect_one_way(Dam_area)
 Links_house_area:connect_one_way(Light_lake_hylia)
 Links_house_area:connect_one_way(Eastern_palace_area)
 Links_house_area:connect_one_way(Hyrule_castle_area)
-Links_house_area:connect_one_way(Light_flute_map, function()
-    return ALL(
-        "flute",
-        OpenOrStandard,
-        CanReach("Light_activate_flute")
-    )
-end)
+-- Links_house_area:connect_one_way(Light_flute_map, function()
+--     return ALL(
+--         "flute",
+--         OpenOrStandard,
+--         CanReach("Light_activate_flute")
+--     )
+-- end)
 
 Links_house_area:connect_two_ways(Links_house_outside)--, OpenOrStandard)
 -- Links_house_area:connect_two_ways(Big_bomb_shop_outside, Inverted)
@@ -1007,13 +1007,13 @@ Eastern_palace_area:connect_one_way(Links_house_area)
 Eastern_palace_area:connect_one_way(Light_lake_hylia)
 Eastern_palace_area:connect_one_way(Witchhut, function() return CanInteract(Eastern_palace_area) end)
 Eastern_palace_area:connect_one_way(Links_house_area)
-Eastern_palace_area:connect_one_way(Light_flute_map, function()
-    return ALL(
-        "flute",
-        OpenOrStandard,
-        CanReach("Light_activate_flute")
-    )
-end)
+-- Eastern_palace_area:connect_one_way(Light_flute_map, function()
+--     return ALL(
+--         "flute",
+--         OpenOrStandard,
+--         CanReach("Light_activate_flute")
+--     )
+-- end)
 
 Eastern_palace_area:connect_two_ways(Eastern_tree_fairy_cave_outside)
 Eastern_palace_area:connect_two_ways(Eastern_long_fairy_cave_outside)
@@ -1095,13 +1095,13 @@ Hyrule_castle_area:connect_one_way(Links_house_area)
 -- Hyrule_castle_area:connect_two_ways(Hyrule_castle_top_outside)
 Hyrule_castle_area:connect_one_way(Eastern_palace_area)
 Hyrule_castle_area:connect_one_way(Lumberjacks_area)
-Hyrule_castle_area:connect_one_way(Light_flute_map, function()
-    return ALL(
-        "flute",
-        OpenOrStandard,
-        CanReach("Light_activate_flute")
-    )
-end)
+-- Hyrule_castle_area:connect_one_way(Light_flute_map, function()
+--     return ALL(
+--         "flute",
+--         OpenOrStandard,
+--         CanReach("Light_activate_flute")
+--     )
+-- end)
 
 Hyrule_castle_area:connect_two_ways(HC_main_entrance_outside)
 Hyrule_castle_area:connect_two_ways(Secret_passage_hole_outside, function() return CanInteract(Hyrule_castle_area) end)
@@ -1169,13 +1169,13 @@ Secret_passage:connect_one_way("Link's Uncle")
 -- Witchhut
 Witchhut:connect_one_way(Eastern_palace_area, function() return CanInteract(Witchhut) end)
 Witchhut:connect_one_way(Sanctuary_area)
-Witchhut:connect_one_way(Light_flute_map, function()
-    return ALL(
-        "flute",
-        OpenOrStandard,
-        CanReach("Light_activate_flute")
-    )
-end)
+-- Witchhut:connect_one_way(Light_flute_map, function()
+--     return ALL(
+--         "flute",
+--         OpenOrStandard,
+--         CanReach("Light_activate_flute")
+--     )
+-- end)
 Witchhut:connect_one_way(Zora_river, function()
     return ALL(
         "glove",
@@ -1229,13 +1229,13 @@ Light_death_mountain_left_bottom:connect_one_way(Light_death_mountain_right_bott
     )
 end)
 -- Light_death_mountain_left_bottom:connect_one_way("Spectacle Rock", function() return "mirror" end)
-Light_death_mountain_left_bottom:connect_one_way(Light_flute_map, function()
-    return ALL(
-        "flute",
-        OpenOrStandard,
-        CanReach("Light_activate_flute")
-    )
-end)
+-- Light_death_mountain_left_bottom:connect_one_way(Light_flute_map, function()
+--     return ALL(
+--         "flute",
+--         OpenOrStandard,
+--         CanReach("Light_activate_flute")
+--     )
+-- end)
 -- Light_death_mountain_left_bottom:connect_one_way()
 Old_man_cave_right_outside:connect_two_ways_entrance("Old Man Cave Right Inside",Old_man_cave_right_inside, function() return OpenOrStandard() end)
 Old_man_cave_right_outside:connect_two_ways_entrance("Inverted Light Death Mountain Return Left",Light_death_mountain_return_left_inside, function() return Inverted() end)
@@ -1383,13 +1383,13 @@ Light_death_mountain_left_top:connect_one_way(Dark_death_mountain_left_top, func
     )
 end)
 Light_death_mountain_left_top:connect_one_way(Light_death_mountain_left_bottom)
-Light_death_mountain_left_top:connect_one_way(Light_flute_map, function()
-    return ALL(
-        "flute",
-        OpenOrStandard,
-        CanReach("Light_activate_flute")
-    )
-end)
+-- Light_death_mountain_left_top:connect_one_way(Light_flute_map, function()
+--     return ALL(
+--         "flute",
+--         OpenOrStandard,
+--         CanReach("Light_activate_flute")
+--     )
+-- end)
 Light_death_mountain_left_top:connect_one_way(Light_death_mountain_right_top, function()
     return ANY(
         ALL(
@@ -1443,13 +1443,13 @@ Light_death_mountain_right_bottom:connect_one_way(Light_death_mountain_left_bott
         CanInteract(Light_death_mountain_right_bottom)
     )
 end)
-Light_death_mountain_right_bottom:connect_one_way(Light_flute_map, function()
-    return ALL(
-        "flute",
-        OpenOrStandard,
-        CanReach("Light_activate_flute")
-    )
-end)
+-- Light_death_mountain_right_bottom:connect_one_way(Light_flute_map, function()
+--     return ALL(
+--         "flute",
+--         OpenOrStandard,
+--         CanReach("Light_activate_flute")
+--     )
+-- end)
 Light_death_mountain_right_bottom:connect_one_way(Teleporter_at_dark_death_mountain_right_bottom, function() return Has("titans") end)
 Teleporter_at_dark_death_mountain_right_bottom:connect_one_way(Light_death_mountain_right_bottom, function() return Inverted() end)
 
@@ -1505,13 +1505,13 @@ Teleporter_at_light_turtle_rock:connect_one_way(Light_death_mountain_right_top, 
 end)
 
 Light_death_mountain_right_top:connect_one_way(Light_death_mountain_right_bottom)
-Light_death_mountain_right_top:connect_one_way(Light_flute_map, function()
-    return ALL(
-        "flute",
-        OpenOrStandard,
-        CanReach("Light_activate_flute")
-    )
-end)
+-- Light_death_mountain_right_top:connect_one_way(Light_flute_map, function()
+--     return ALL(
+--         "flute",
+--         OpenOrStandard,
+--         CanReach("Light_activate_flute")
+--     )
+-- end)
 Light_death_mountain_right_top:connect_one_way(Light_death_mountain_left_top, function()
     return ANY(
         ALL(
