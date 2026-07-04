@@ -29,7 +29,7 @@ for _, location in pairs(NAMED_LOCATIONS) do
             )
         end)
     elseif location.baseWorldstate == "dark" then
-        location:connect_one_way(Light_flute_map, function()
+        location:connect_one_way(Dark_flute_map, function()
             return ALL(
                 "flute",
                 Inverted_activate_flute:accessibility() > 5,

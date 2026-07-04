@@ -31,8 +31,8 @@ ENTRANCE_MAPPING = {} -- structure --> ENTRANCE_MAPPING[<roomnumber>][<x-coord>]
 local stale = true
 local accessibilityCache = {}
 local accessibilityCacheComplete = false
-local currentParent = nil
-local currentLocation = nil
+-- local currentParent = nil
+-- local currentLocation = nil
 local indirectConnections = {}
 
 ---simple helper to insert into tables and create them if not already present
@@ -295,12 +295,12 @@ end
 ---@return 0|1|2|3|4|5|6|7
 function alttp_location:accessibility()
     -- only executed when run from a rules within a connection
-    if currentLocation ~= nil and currentParent ~= nil then
-        if indirectConnections[currentLocation] == nil then
-            indirectConnections[currentLocation] = {}
-        end
-        indirectConnections[currentLocation][currentParent] = self
-    end
+    -- if currentLocation ~= nil and currentParent ~= nil then
+    --     if indirectConnections[currentLocation] == nil then
+    --         indirectConnections[currentLocation] = {}
+    --     end
+    --     indirectConnections[currentLocation][currentParent] = self
+    -- end
     -- up to here
     local res = accessibilityCache[self] --[[@as 0|1|2|3|4|5|6|7]] -- get accessibilty lvl set in discover for a given location
     if res == nil then
@@ -365,9 +365,8 @@ function alttp_location:discover(accessibility, keys, worldstate)
                 local er_setting_stage = (Tracker:FindObjectForCode("er_tracking") --[[@as JsonItem]]).CurrentStage
                 local er_check_result = er_check[er_setting_stage](location_name)
                 if er_check_result then -- dungeons ER
-                    -- print("from_" .. self.name)
                     temp = Tracker:FindObjectForCode("from_" .. location_name).ItemState
-                   
+                    -- print("temp", temp) 
                     if temp ~= nil and temp.Target ~= nil then
                         location = NAMED_LOCATIONS[temp.TargetBaseName]
                     else
@@ -399,22 +398,22 @@ function alttp_location:discover(accessibility, keys, worldstate)
             if oldAccess < accessibility then -- if new accessibility from above is higher then currently stored one, so is more accessible then before
                 local rule = exit[2] -- get rules to check
 
-                currentParent, currentLocation = self, location -- just set for ":accessibilty()" check within rules
+                -- currentParent, currentLocation = self, location -- just set for ":accessibilty()" check within rules
                 local access, key = rule(keys)
-                local parent_access = currentParent:accessibility()
+                local parent_access = self:accessibility()
                 if type(access) == "boolean" then --
                     access = A(access)
                 end
                 if access > parent_access then
                     access = parent_access
                 end
-                currentParent, currentLocation = nil, nil -- just set for ":accessibilty()" check within rules
+                -- currentParent, currentLocation = nil, nil -- just set for ":accessibilty()" check within rules
 
                 if access == nil then
                     print("Warning: " .. self.name .. " -> " .. location.name .. " rule returned nil")
                     access = ACCESS_NONE
                 end
-               
+                -- print("access", access)
                 if key == nil then
                     key = keys
                 end
