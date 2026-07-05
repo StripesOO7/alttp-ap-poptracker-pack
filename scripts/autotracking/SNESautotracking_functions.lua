@@ -263,11 +263,19 @@ DUNGEON_ENTRANCE_IDs = {
     [224] = {AT_entrance_inside},
 }
 
-local multi_purpose_room = {
-    ["Kakariko_shop"] = function()
-                            LIGHT_SHOPS_FOUND = LIGHT_SHOPS_FOUND + 1
-                            return LIGHT_SHOPS_FOUND
-                            end,
+local multi_purpose_room_table = {
+    -- [255] = {[18] = Light_death_mountain_shop_inside.name}, --light dm cave shop
+    [265] = {[27] = Light_potion_shop_inside.name}, --potion shop
+    [271] = {
+                [6] = Dark_lake_shop_inside.name, 
+                [9] = Dark_lumpberjacks_shop_inside.name,
+                [12] = Dark_village_shop_inside.name,
+                [15] = Dark_potion_shop_inside.name,
+            }, --dark lake shop, dark lumberjacks, dark village shop, dark potion
+    [272] = {[3] = Red_shield_shop_inside.name}, --red shield shop
+    [274] = {[0] = Dark_death_mountain_shop_inside.name, [24] = Light_lake_shop_inside.name}, --dark dm cave shop, light lake cave shop
+    [277] = {[30] = Upgrade_fairy_inside.name}, --capacity fairy
+    [287] = {[21] = Kakariko_shop_inside.name}, --light kak shop
     ["Kakariko_fortune"] = function()
                             FORTUNE_FOUND = FORTUNE_FOUND + 1
                             return FORTUNE_FOUND
@@ -276,6 +284,14 @@ local multi_purpose_room = {
                             FAIRYS_FOUND = FAIRYS_FOUND + 1
                             return FAIRYS_FOUND
                             end
+    -- [255] = {[18] = Light_death_mountain_shop_inside.name}, --light dm cave shop
+    -- [265] = {[27] = Light_potion_shop_inside.name}, --potion shop
+    -- [271] = {[6] = Dark_lake_shop_inside.name,
+    -- [9] = Dark_lumpberjacks_shop_inside.name,[12] = Dark_village_shop_inside.name,[15] = Dark_potion_shop_inside.name,}, --dark lake shop, dark lumberjacks, dark village shop, dark potion
+    -- [272] = {[3] = Red_shield_shop_inside.name}, --red shield shop
+    -- [274] = {[0] = Dark_death_mountain_shop_inside.name, [24] = Light_lake_shop_inside.name}, --dark dm cave shop, light lake cave shop
+    -- [277] = {[30] = Upgrade_fairy_inside.name}, --capacity fairy
+    -- [287] = {[21] = Kakariko_shop_inside.name}, --light kak shop
 }
 ---@type LuaItem?
 local Selected_entrance = nil 
@@ -329,9 +345,11 @@ function UpdateEntrances(segment, mainModuleIdx)
         current_coords_x = segment:ReadUInt16(0x7e0022)
         -- print("y cord :", segment:ReadUInt16(0x7e0020))
         current_coords_y = segment:ReadUInt16(0x7e0020)
+        local shop_offset = segment:ReadUInt8(0x7f506C)
         -- print("-------------------------------------------------")
         -- print("Current Room Index: ", New_dungeon_room)
         -- print("Current OW   Index: ", New_ow_room)
+        -- print("shop_offset: ", shop_offset)
 
 
 
@@ -382,12 +400,19 @@ function UpdateEntrances(segment, mainModuleIdx)
                         Selected_entrance_origin = entrance_origin
                     else
                         if string.gsub(Selected_entrance.Name, "from_", "") ~= door_name then
-                            local multi_purpose_room_call = multi_purpose_room[door_name]
-                            if multi_purpose_room_call == nil then
-                                multi_purpose_room_call = function() return 1 end
+                            local new_door_name = current_door[1]
+                            if multi_purpose_room_table[current_room] ~= nil then
+                                local multi_purpose_room = multi_purpose_room_table[current_room]
+                                if type(multi_purpose_room) == "function" then
+                                    new_door_name = current_door[multi_purpose_room_table[current_room]()]
+                                elseif  type(multi_purpose_room) == "table" then
+                                    new_door_name = multi_purpose_room[shop_offset]
+                                end
                             end
-                            Selected_exit = Tracker:FindObjectForCode("to_"..current_door[multi_purpose_room_call()]) --[[@as LuaItem]]
-                            Selected_exit_origin = entrance_origin
+                            if new_door_name ~= nil then --shop offsets load later than room numbers so its possible to get a nil value for the door name if the shop offset is not yet loaded
+                                Selected_exit = Tracker:FindObjectForCode("to_"..new_door_name) --[[@as LuaItem]]
+                                Selected_exit_origin = entrance_origin
+                            end
                         end
 
                     end
