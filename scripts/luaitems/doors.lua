@@ -819,6 +819,7 @@ Tracker.BulkUpdate = true
 CreateLuaManualStorageItem("manual_location_storage")
 CreateLuaManualStorageItem("manual_er_storage")
 CreateLuaManualStorageItem("manual_misc_items_storage")
+CreateLuaManualStorageItem("manual_dmg_class_storage")
 CreateDoorsLuaitems()
 Tracker.BulkUpdate = false
 

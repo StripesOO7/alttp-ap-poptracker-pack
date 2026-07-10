@@ -22,6 +22,9 @@ require("scripts.locations_import")
 -- AutoTracking for Poptracker
 require("scripts.autotracking")
 
+-- LuaItems
+require("scripts.luaitems_import")
+
 function OnFrameHandler()
     ScriptHost:RemoveOnFrameHandler("load handler")
     -- stuff

@@ -33,6 +33,3 @@ if  variant == "Map Tracker - SNES" or
     require("scripts.autotracking.SNESautotracking_ROMdata")
     Tracker.AllowDeferredLogicUpdate = true
 end
-
-require("scripts.autotracking.luaitems")
-require("scripts.autotracking.doors")
