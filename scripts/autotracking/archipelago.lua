@@ -201,7 +201,7 @@ function PreOnClear()
     if ROOM_SEED == "default" or ROOM_SEED ~= seed_base then -- seed is default or from previous connection
 
         ROOM_SEED = seed_base --something like 2345_0_12
-        for _, custom_item_code in pairs({"manual_location_storage",  "manual_er_storage", "manual_misc_items_storage"}) do --, "manual_dmg_class_storage"}) do
+        for _, custom_item_code in pairs({"manual_location_storage",  "manual_er_storage", "manual_misc_items_storage", "manual_dmg_class_storage"}) do
             local custom_storage_item = (Tracker:FindObjectForCode(custom_item_code) --[[@as LuaItem]]).ItemState
             if custom_storage_item then
                 if #custom_storage_item.MANUAL_LOCATIONS > 10 then
@@ -294,10 +294,10 @@ function OnClear(slot_data)
         manual_misc_items_storage = CreateLuaManualStorageItem("manual_misc_items_storage").ItemState or {}
     end
 
-    -- local manual_dmg_class_storage = (Tracker:FindObjectForCode("manual_dmg_class_storage") --[[@as LuaItem]]).ItemState
-    -- if manual_dmg_class_storage == nil then
-    --     manual_dmg_class_storage = CreateLuaManualStorageItem("manual_dmg_class_storage").ItemState or {}
-    -- end
+    local manual_dmg_class_storage = (Tracker:FindObjectForCode("manual_dmg_class_storage") --[[@as LuaItem]]).ItemState
+    if manual_dmg_class_storage == nil then
+        manual_dmg_class_storage = CreateLuaManualStorageItem("manual_dmg_class_storage").ItemState or {}
+    end
 
     PreOnClear()
 
@@ -329,21 +329,27 @@ function OnClear(slot_data)
             end
         end
     end
-    
-    local counter = -1
-    -- for i=0, #DEFAULT_ENEMY_DAMAGE_TABLE do
-    --     for j=0, 15 do
-    --         print(i, j)
-    --         local dmg_class_code = i.."_"..j
-    --         if manual_dmg_class_storage.MANUAL_LOCATIONS[ROOM_SEED][dmg_class_code] then
-    --             local dmg_class_item = (Tracker:FindObjectForCode(dmg_class_code) --[[@as LuaItem]])
-    --             dmg_class_item:Set("PrimaryStage", manual_dmg_class_storage.MANUAL_LOCATIONS[ROOM_SEED][dmg_class_code].primary_stage)
-    --             dmg_class_item:Set("SecondaryStage", manual_dmg_class_storage.MANUAL_LOCATIONS[ROOM_SEED][dmg_class_code].secondary_stage)
-    --             dmg_class_item.Icon = manual_dmg_class_storage.MANUAL_LOCATIONS[ROOM_SEED][dmg_class_code].icon
-    --         end
-    --     end
-    -- end
+
+    Tracker.BulkUpdate = true
+    if manual_dmg_class_storage.MANUAL_LOCATIONS[ROOM_SEED] then
+        for i=0, #DEFAULT_ENEMY_DAMAGE_TABLE-1 do
+            for j=0, 15 do
+                local dmg_class_code = i.."_"..j
+                local manual_table = manual_dmg_class_storage.MANUAL_LOCATIONS[ROOM_SEED][dmg_class_code]
+                local dmg_class_item = (Tracker:FindObjectForCode(dmg_class_code) --[[@as LuaItem]])
+                if manual_table then
+                    dmg_class_item:Set("PrimaryStage", manual_table.primary_stage)
+                    dmg_class_item:Set("SecondaryStage", manual_table.secondary_stage)
+                    _SetDmgClassImageHelper(dmg_class_item)
+                end
+            end
+        end
     -- print(Dump_table(manual_dmg_class_storage.MANUAL_LOCATIONS))
+    end
+    Tracker.BulkUpdate = false
+    for k, v in pairs(manual_dmg_class_storage.MANUAL_LOCATIONS) do
+        print(k, v)
+    end
 
     SLOT_DATA = slot_data
 

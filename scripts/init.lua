@@ -1,5 +1,5 @@
 local variant = Tracker.ActiveVariantUID
-require("os")
+
 -- Items
 require("scripts.items_import")
 

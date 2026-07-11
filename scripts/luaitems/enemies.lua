@@ -1,12 +1,3 @@
-ENTRANCE_SELECTED = nil
-BASE_IMG_PATH = ImageReference:FromPackRelativePath("images/door_closed.png")
-
-HIGHLIGHT_SOURCE = nil
-HIGHLIGHT_TARGET = nil
-HIGHLIGHT_LAST_ACTIVATED = 0
-
-ROUTE_MODE = false
-
 ---function that get triggered when left clicking a lua items as hosted item or in an itemgrid
 ---will select 2 LuaItems and connect them to be traversable in the graph
 ---@param self LuaItem
@@ -39,7 +30,7 @@ end
 ---@param code string
 ---@return boolean
 local function CanProvideCodeFunc(self, code)
-    return code == self.Name or code == "enemy_"..self:Get("Index")
+    return code == self:Get("Code") or code == self.Name
 end
 
 ---comment
@@ -47,7 +38,7 @@ end
 ---@param code string
 ---@return integer
 local function ProvidesCodeFunc(self, code)
-    if code == self.Name or code == "enemy_"..self:Get("Index") then
+    if code == self:Get("Code") or code == self.Name then
         return 1
     else
         return 0
@@ -70,6 +61,7 @@ local function SaveLocationFunc(self)
         Default_damage_table = self.ItemState.Default_damage_table,
         Damage_table = self.ItemState.Damage_table,
         Index = self:Get("Index"),
+        Code = self:Get("Code"),
         SpecialEffect = self:Get("SpecialEffect"),
         Invulnerable = self:Get("Invulnerable"),
     }
@@ -87,6 +79,7 @@ local function LoadLocationFunc(self, data)
         self.ItemState.Default_damage_table = data.Default_damage_table
         self.ItemState.Damage_table = data.Damage_table
         self:Set("Index", data.Index)
+        self:Set("Code", data.Code)
         self:Set("SpecialEffect", data.SpecialEffect)
         self:Set("Invulnerable", data.Invulnerable)
         if data.BadgeText ~= nil then
@@ -115,8 +108,6 @@ end
 local function Type()
 end
 
--- LuaLocationItems = {}
--- LuaLocationItems.__index = LuaLocationItems
 
 ---function to create ER LuaItems in their default state
 ---@param name string
@@ -132,20 +123,17 @@ function CreateLuaEnemeyClass(name, health, dmg_table, counter)
     ---@type ItemState
     self.ItemState = {
         Health = health,
-        Default_damage_table = {
+        Default_damage_table = {table.unpack(dmg_table)
         },
-        Damage_table = {
+        Damage_table = {table.unpack(dmg_table)
         },
         Index = counter,
+        Code = "enemy_"..counter,
         Invulnerable = nil,
         SpecialEffect = nil,
         
     } --[[@as table<string, any>]]
 
-    for i = 1, #dmg_table do
-        self.ItemState.Default_damage_table[i] = dmg_table[i]
-        self.ItemState.Damage_table[i] = dmg_table[i]
-    end
 
     if health == 255 then
         self:Set("Invulnerable", true)

@@ -1,12 +1,3 @@
-ENTRANCE_SELECTED = nil
-BASE_IMG_PATH = ImageReference:FromPackRelativePath("images/door_closed.png")
-
-HIGHLIGHT_SOURCE = nil
-HIGHLIGHT_TARGET = nil
-HIGHLIGHT_LAST_ACTIVATED = 0
-
-ROUTE_MODE = false
-
 local unknown = ImageReference:FromPackRelativePath("images/enemies/effects/unknown.png")
 local can_hit = ImageReference:FromPackRelativePath("images/enemies/effects/can_hit.png")
 local immune = ImageReference:FromPackRelativePath("images/enemies/effects/immune.png")
@@ -68,73 +59,23 @@ local reverse_secondary_dmg_list = {
 
 
 function _SetDmgClassImageHelper(self)
-    -- local dmg_class_storage_item = (Tracker:FindObjectForCode("manual_dmg_class_storage") --[[@as LuaItem]]).ItemState
+    local dmg_class_storage_item = (Tracker:FindObjectForCode("manual_dmg_class_storage") --[[@as LuaItem]])
 
     local primary_stage = self:Get("PrimaryStage")
     local secondary_stage = self:Get("SecondaryStage")
-    local base_classindex =self:Get("BaseClassindex")
     if primary_stage == 1 then
         self.Icon = secondary_img_list[secondary_stage]
         -- self.IconMods = secondary_img_list[itemstate.SecondaryStage]
     else
         self.Icon = primary_img_list[primary_stage]
     end
-    -- if dmg_class_storage_item then
-        
-    --     if dmg_class_storage_item.MANUAL_LOCATIONS[ROOM_SEED][self:Get("Code")] == nil then
-    --         dmg_class_storage_item.MANUAL_LOCATIONS[ROOM_SEED][self:Get("Code")] = {
-    --             primary_stage = self:Get("PrimaryStage"),
-    --             secondary_stage = self:Get("SecondaryStage"),
-    --             icon = self.Icon
-    --         }
-    --     end
-    -- end
-end
-
----Sets the connection between the 2 provided lua items to link them in the graph
----@param source LuaItem
----@param target LuaItem
-function _SetLocationOptions(source, target) -- source == inside, target == outside
-end
-
----Unsets the connection between the provided LuaItem and its set target if any is set
----@param source LuaItem
-function _UnsetLocationOptions(source)
-end
-
----helper function for disconnecting the 2 provided LuaItems
----@param target string
----@param source string
-local function _LeftClickUnmarkHelper(target, source)
-    local target_entrance_from = Tracker:FindObjectForCode("from_" .. target) --[[@as LuaItem]]
-    local target_entrance_to = Tracker:FindObjectForCode("to_" .. target) --[[@as LuaItem]]
-    local source_entrance_from = Tracker:FindObjectForCode("from_" .. source) --[[@as LuaItem]]
-    local source_entrance_to = Tracker:FindObjectForCode("to_" .. source) --[[@as LuaItem]]
-    if target_entrance_from ~= nil then
-        _UnsetLocationOptions(target_entrance_from)
-    end
-    if target_entrance_to ~= nil then
-        _UnsetLocationOptions(target_entrance_to)
-    end
-    _UnsetLocationOptions(source_entrance_to)
-    _UnsetLocationOptions(source_entrance_from)
-end
-
----helperfunction to connect the provided LuaItems 
----@param target string
----@param source string
-local function _LeftClickMarkHelper(target, source)
-    local target_entrance_from = Tracker:FindObjectForCode("from_" .. target) --[[@as LuaItem]]
-    local target_entrance_to = Tracker:FindObjectForCode("to_" .. target) --[[@as LuaItem]]
-    local source_entrance_from = Tracker:FindObjectForCode("from_" .. source) --[[@as LuaItem]]
-    local source_entrance_to = Tracker:FindObjectForCode("to_" .. source) --[[@as LuaItem]]
-    if target_entrance_from ~= nil then
-        _SetLocationOptions(source_entrance_from, target_entrance_to) -- enter source exit target
-        _SetLocationOptions(target_entrance_to, source_entrance_from)
-    end 
-    if target_entrance_from and target_entrance_to ~= nil then
-        _SetLocationOptions(target_entrance_from, source_entrance_to) -- enter target exit source
-        _SetLocationOptions(source_entrance_to, target_entrance_from)
+    if MANUAL_CHECKED then
+        if dmg_class_storage_item and dmg_class_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED] then
+            dmg_class_storage_item.ItemState.MANUAL_LOCATIONS[ROOM_SEED][self:Get("Code")] = {
+                primary_stage = primary_stage,
+                secondary_stage = secondary_stage,
+            }
+        end
     end
 end
 
@@ -155,6 +96,7 @@ end
 ---will select 2 LuaItems and connect them to be traversable in the graph
 ---@param self LuaItem
 local function OnLeftClickFunc(self)
+    MANUAL_CHECKED = true
     
     local primary_stage =self:Get("PrimaryStage")
     local base_classindex =self:Get("BaseClassindex")
@@ -169,6 +111,7 @@ local function OnLeftClickFunc(self)
 
     enemy_item.ItemState.Damage_table[base_classindex] = primary_dmg_list[base_classindex]
     _SetDmgClassImageHelper(self)
+    MANUAL_CHECKED = false
     -- self.Icon = primary_img_list[itemstate.PrimaryStage]
 end
 
@@ -184,6 +127,7 @@ local function OnRightClickFunc(self)
     
     local enemy_item = Tracker:FindObjectForCode(self:Get("Basename")) --[[@as LuaItem]]
     if primary_stage == 1 then
+        MANUAL_CHECKED = true
         if secondary_stage == self:Get("SecondaryStageMax") then
             self:Set("SecondaryStage", 0)
             enemy_item.ItemState.Damage_table[base_classindex] = primary_dmg_list[primary_stage]
@@ -192,6 +136,7 @@ local function OnRightClickFunc(self)
             enemy_item.ItemState.Damage_table[base_classindex] = secondary_dmg_list[secondary_stage]
         end
         _SetDmgClassImageHelper(self)
+        MANUAL_CHECKED = false
         -- self.Icon = secondary_img_list[itemstate.SecondaryStage]
         -- self.IconMods = secondary_img_list[itemstate.SecondaryStage]
     end
@@ -209,7 +154,7 @@ end
 ---@param code string
 ---@return boolean
 local function CanProvideCodeFunc(self, code)
-    return code == self:Get("Basename") or code == self:Get("Code")
+    return code == self:Get("Code") or code == self:Get("Basename")
 end
 
 ---comment
@@ -219,7 +164,7 @@ end
 local function ProvidesCodeFunc(self, code)
 --     return 1
 -- end
-    if code == self:Get("Basename") or code == self:Get("Code") then
+    if code == self:Get("Code") or code == self:Get("Basename") then
         return 1
     else
         return 0
@@ -296,9 +241,6 @@ local function Type()
 end
 
 
--- LuaLocationItems = {}
--- LuaLocationItems.__index = LuaLocationItems
-
 ---function to create ER LuaItems in their default state
 ---@param code string
 ---@param name string
@@ -334,11 +276,11 @@ function CreateLuaDamageClass(enemy_index, class_index, name, default_dmg_value)
         self:Set("SecondaryStage",0)
     end
     _SetDmgClassImageHelper(self)
-    local stun = {255, 252, 251}
-    local freeze = {254}
-    local burn = {253}
-    local transform_slime = {250}
-    local transform_fairy = {249}
+    -- local stun = {255, 252, 251}
+    -- local freeze = {254}
+    -- local burn = {253}
+    -- local transform_slime = {250}
+    -- local transform_fairy = {249}
 
     self.ItemState.SpecialEffect = nil
 
