@@ -172,3 +172,15 @@ ITEM_MAPPING = {
 [190]   =   {{"red_crystal"}, "toggle"},
 [191]   =   {{"blue_crystal"}, "toggle"}
 }
+
+JSON_ITEMS = {}
+for _, item in pairs(ITEM_MAPPING) do
+    for _, item_code in pairs(item[1]) do
+        if item_code and item[2] then
+            local item_obj = Tracker:FindObjectForCode(item_code) --[[@as JsonItem]]
+            if item_obj then
+                JSON_ITEMS[item_code] = item_obj
+            end
+        end
+    end
+end

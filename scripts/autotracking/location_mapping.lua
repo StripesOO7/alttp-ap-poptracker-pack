@@ -299,3 +299,13 @@ LOCATION_MAPPING = {
     -- [4194340]   =   {"Take-Any #3"},
     -- [4194341]   =   {"Take-Any #4"},
 }
+
+JSON_LOCATIONS = {}
+for _, location_array in pairs(LOCATION_MAPPING) do
+    for _, location in pairs(location_array) do
+        if location then
+            local location_obj = Tracker:FindObjectForCode(location) --[[@as LocationSection]]
+            JSON_LOCATIONS[location] = location_obj
+        end
+    end
+end

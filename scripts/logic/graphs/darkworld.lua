@@ -1058,9 +1058,11 @@ Dark_death_mountain_right_top:connect_one_way(Teleporter_at_dark_turtle_rock, fu
         Inverted
     )
 end)
-Teleporter_at_dark_turtle_rock:connect_one_way(Dark_death_mountain_right_top)
 
 Teleporter_at_dark_turtle_rock:connect_one_way(Dark_death_mountain_tr_medallion_spot)
+
+Teleporter_at_dark_turtle_rock:connect_one_way(Dark_death_mountain_right_top)
+
 
 Dark_death_mountain_right_top:connect_two_ways_stuck(TR_main_entrance_outside, function()
     return ALL(

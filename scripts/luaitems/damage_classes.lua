@@ -79,19 +79,6 @@ function _SetDmgClassImageHelper(self)
     end
 end
 
----helper function to highlight the first location of a pair that gets selected to signal that something happened
----@param location LuaItem
----@param highlight integer
-function MarkFirstConnectionPart(location, highlight)
-    local source_location
-    if Tracker:FindObjectForCode("er_tracking").CurrentStage < 3 then
-        source_location = "@"..table.concat(location.ItemState.CorrespondingLocationSection, "/")
-    else
-        source_location = "@"..location.ItemState.CorrespondingLocationSection[1].."/"..location.ItemState.CorrespondingLocationSection[2].."/From".." "..location.ItemState.CorrespondingLocationSection[3]
-    end
-    Tracker:FindObjectForCode(source_location).Highlight = highlight
-end
-
 ---function that get triggered when left clicking a lua items as hosted item or in an itemgrid
 ---will select 2 LuaItems and connect them to be traversable in the graph
 ---@param self LuaItem
@@ -101,7 +88,7 @@ local function OnLeftClickFunc(self)
     local primary_stage =self:Get("PrimaryStage")
     local base_classindex =self:Get("BaseClassindex")
 
-    local enemy_item = Tracker:FindObjectForCode(self:Get("Basename")) --[[@as LuaItem]]
+    local enemy_item = NAMED_ENEMIES[self:Get("Basename")] --[[@as LuaItem]]
     
     if primary_stage == self:Get("PrimaryStageMax") then
         self:Set("PrimaryStage", 0)
@@ -125,16 +112,14 @@ local function OnRightClickFunc(self)
     local secondary_stage =self:Get("SecondaryStage")
     local base_classindex =self:Get("BaseClassindex")
     
-    local enemy_item = Tracker:FindObjectForCode(self:Get("Basename")) --[[@as LuaItem]]
+    local enemy_item = NAMED_ENEMIES[self:Get("Basename")] --[[@as LuaItem]]
     if primary_stage == 1 then
         MANUAL_CHECKED = true
-        if secondary_stage == self:Get("SecondaryStageMax") then
-            self:Set("SecondaryStage", 0)
-            enemy_item.ItemState.Damage_table[base_classindex] = primary_dmg_list[primary_stage]
-        else
-            self:Set("SecondaryStage", secondary_stage + 1)
-            enemy_item.ItemState.Damage_table[base_classindex] = secondary_dmg_list[secondary_stage]
-        end
+        local stage_max = secondary_stage == self:Get("SecondaryStageMax")
+
+        self:Set("SecondaryStage", stage_max and 0 or (secondary_stage + 1))
+        enemy_item.ItemState.Damage_table[base_classindex] = stage_max and primary_dmg_list[primary_stage] or secondary_dmg_list[secondary_stage]
+
         _SetDmgClassImageHelper(self)
         MANUAL_CHECKED = false
         -- self.Icon = secondary_img_list[itemstate.SecondaryStage]
@@ -164,11 +149,12 @@ end
 local function ProvidesCodeFunc(self, code)
 --     return 1
 -- end
-    if code == self:Get("Code") or code == self:Get("Basename") then
-        return 1
-    else
-        return 0
-    end
+    return CanProvideCodeFunc(self, code) and 1 or 0
+    -- if CanProvideCodeFunc(self, code) then
+    --     return 1
+    -- else
+    --     return 0
+    -- end
 end
 
 ---comment
@@ -283,6 +269,9 @@ function CreateLuaDamageClass(enemy_index, class_index, name, default_dmg_value)
     -- local transform_fairy = {249}
 
     self.ItemState.SpecialEffect = nil
+    
+    ---@type table<string, LuaItem>
+    NAMED_DMG_CLASSES[enemy_index.."_"..class_index] = self
 
     self.BadgeTextColor = "#abcdef"
     self:SetOverlayFontSize(10)
