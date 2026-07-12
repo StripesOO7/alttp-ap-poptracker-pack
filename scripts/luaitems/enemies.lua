@@ -38,6 +38,7 @@ end
 ---@param code string
 ---@return integer
 local function ProvidesCodeFunc(self, code)
+    -- return CanProvideCodeFunc(self, code) and 1 or 0
     if code == self:Get("Code") or code == self.Name then
         return 1
     else
@@ -146,6 +147,8 @@ function CreateLuaEnemeyClass(name, health, dmg_table, counter)
     -- local transform_slime = {250}
     -- local transform_fairy = {249}
     self:Set("SpecialEffect", nil)
+
+    NAMED_ENEMIES[name] = self
 
     self.BadgeTextColor = "#abcdef"
     self:SetOverlayFontSize(10)
@@ -341,7 +344,7 @@ DEFAULT_ENEMY_DAMAGE_TABLE = {
     {"Green Zol", 4, 255, 2, 4, 8, 16, 16, 4, 64, 64, 100, 0, 253, 254, 253, 254, 64}, --"enemy_123",
     {"Red Zol", 4, 255, 2, 4, 8, 16, 16, 4, 64, 64, 100, 0, 253, 254, 253, 254, 64}, --"enemy_124",
     {"Yellow Zol", 4, 255, 2, 4, 8, 16, 16, 4, 64, 64, 100, 0, 253, 254, 253, 254, 64}, --"enemy_125"
-    {"Zoro", 4, 0, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 64, 253, 64, 64}, --
+    {"Zoro", 4, 0, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 64, 253, 64, 64}, --"enemy_125"
 }
 
 

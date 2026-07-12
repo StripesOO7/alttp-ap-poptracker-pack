@@ -95,6 +95,15 @@ end
 function ALL(...)
     local args = { ... }
     local min = ACCESS_NORMAL
+    local args_strings = ""
+    
+    for _, arg in ipairs(args) do
+        args_strings = args_strings..tostring(arg)
+    end
+    if CachedValues["ALL"..args_strings] then
+
+        return CachedValues["ALL"..args_strings]
+    end
     for _, v in ipairs(args) do
         if type(v) == "function" then
             v = v()
@@ -106,11 +115,13 @@ function ALL(...)
         end
         if v < min then
             if v == ACCESS_NONE then
+                CachedValues["ALL"..args_strings] = ACCESS_NONE
                 return ACCESS_NONE
             end
             min = v
         end
     end
+    CachedValues["ALL"..args_strings] = min
     return min
 end
 
@@ -124,6 +135,14 @@ end
 function ANY(...)
     local args = { ... }
     local max = ACCESS_NONE
+    local args_strings = ""
+    
+    for _, arg in ipairs(args) do
+        args_strings = args_strings..tostring(arg)
+    end
+    if CachedValues["ANY"..args_strings] then
+        return CachedValues["ANY"..args_strings]
+    end
     for _, v in ipairs(args) do
         if type(v) == "function" then
             v = v()
@@ -136,11 +155,13 @@ function ANY(...)
         end
         if v > max then
             if v == ACCESS_NORMAL then
+                CachedValues["ANY"..args_strings] = ACCESS_NORMAL
                 return ACCESS_NORMAL
             end
             max = v
         end
     end
+    CachedValues["ANY"..args_strings] = max
     return max
 end
 
@@ -157,10 +178,15 @@ end
 ---@param KDS_amountInLogic? integer
 ---@return integer
 function Has(item, noKDS_amount, noKDS_amountInLogic, KDS_amount, KDS_amountInLogic)
+    local string_args = "Has"..tostring(item)..tostring(noKDS_amount)..tostring(noKDS_amountInLogic)..tostring(KDS_amount)..tostring(KDS_amountInLogic)
+    if CachedValues[string_args] then
+        return CachedValues[string_args]
+    end
     local count
     local amount
     local amountInLogic
     if (SMALL_KEY_STAGE == 2) and item:sub(-8,-1) == "smallkey" then -- universal keys
+        CachedValues[string_args] = ACCESS_NORMAL
         return ACCESS_NORMAL
     end
     if KEY_DROP_SHUFFLE_STATE then
@@ -178,21 +204,28 @@ function Has(item, noKDS_amount, noKDS_amountInLogic, KDS_amount, KDS_amountInLo
     -- print(item, count, amount, amountInLogic)
     if amountInLogic then
         if count >= amountInLogic then
+            CachedValues[string_args] = ACCESS_NORMAL
             return ACCESS_NORMAL
         elseif count >= amount then
+            CachedValues[string_args] = ACCESS_SEQUENCEBREAK
             return ACCESS_SEQUENCEBREAK
         end
+        CachedValues[string_args] = ACCESS_NONE
         return ACCESS_NONE
     end
     if not amount then
         if count > 0 then
+            CachedValues[string_args] = ACCESS_NORMAL
             return ACCESS_NORMAL
         end
+        CachedValues[string_args] = ACCESS_NONE
         return ACCESS_NONE
     else
         if count >= amount then
+            CachedValues[string_args] = ACCESS_SEQUENCEBREAK
             return ACCESS_SEQUENCEBREAK
         end
+        CachedValues[string_args] = ACCESS_NONE
         return ACCESS_NONE
     end
 end
@@ -255,7 +288,8 @@ function OWDungeonChecks(...)
     for _, location in ipairs(locations) do
         access_check = Tracker:FindObjectForCode(location).AccessibilityLevel
         if access_check == 6 then
-            availale = availale + 1        elseif access_check == 3 then
+            availale = availale + 1
+        elseif access_check == 3 then
             inspect = inspect + 1
         elseif access_check == 5 then
             sequence_breakable = sequence_breakable + 1
@@ -274,6 +308,10 @@ end
 ---
 ---@return integer
 function DealDamage()
+    if CachedValues["DealDamage"] then
+        return CachedValues["DealDamage"]
+    end
+    CachedValues["DealDamage"] = ANY("sword","bombs","byrna","somaria","bow","hookshot","firerod","hammer")
     return ANY(
         "sword",
         "bombs",
@@ -292,6 +330,10 @@ end
 ---comment
 ---@return integer
 function HitRanged()
+    if CachedValues["HitRanged"] then
+        return CachedValues["HitRanged"]
+    end
+    CachedValues["HitRanged"] = ANY("masterword","bombs","somaria","bow","hookshot","firerod","icerod","blueboomerang","redboomerang")
     return ANY(
         "masterword",
         "bombs",
@@ -333,9 +375,14 @@ end
 ---comment
 ---@return boolean
 function CanActivateTablets()
+    if CachedValues["CanActivateTablets"] then
+        return CachedValues["CanActivateTablets"]
+    end
     if Tracker:FindObjectForCode("swordless").Active then
+        CachedValues["CanActivateTablets"] = Tracker:FindObjectForCode("hammer").Active
         return Tracker:FindObjectForCode("hammer").Active
     end
+    CachedValues["CanActivateTablets"] = (Tracker:FindObjectForCode("sword").CurrentStage > 1)
     return (Tracker:FindObjectForCode("sword").CurrentStage > 1)
 end
 
@@ -415,14 +462,21 @@ end
 ---comment
 ---@return boolean
 function CanClearAgaTowerBarrier()
+    if CachedValues["CanClearAgaTowerBarrier"] then
+        return CachedValues["CanClearAgaTowerBarrier"]
+    end
+
     -- With cape, we can always get through
     if Tracker:FindObjectForCode("cape").Active then
+        CachedValues["CanClearAgaTowerBarrier"] = true
         return true
     end
     -- Otherwise we need master sword or a hammer depending on the mode
     if Tracker:ProviderCountForCode("swordless") > 0 then
+        CachedValues["CanClearAgaTowerBarrier"] = Tracker:FindObjectForCode("hammer").Active
         return Tracker:FindObjectForCode("hammer").Active
     end
+    CachedValues["CanClearAgaTowerBarrier"] = Tracker:ProviderCountForCode("mastersword") > 0
     return Tracker:ProviderCountForCode("mastersword") > 0
 end
 
@@ -441,6 +495,10 @@ end
 ---comment
 ---@return boolean
 function CanSwim() --fake flippers
+    if CachedValues["CanSwim"] then
+        return CachedValues["CanSwim"]
+    end
+    CachedValues["CanSwim"] =  Tracker:FindObjectForCode("flippers").Active or Tracker:FindObjectForCode("glitches").CurrentStage > 0
     return Tracker:FindObjectForCode("flippers").Active or Tracker:FindObjectForCode("glitches").CurrentStage > 0
 end
 
@@ -459,11 +517,16 @@ end
 ---@param dungeon any
 ---@return boolean
 function BigKeys(dungeon)
+    if CachedValues["BigKeys"..tostring(dungeon)] then
+        return CachedValues["BigKeys"..tostring(dungeon)]
+    end
     if Tracker:FindObjectForCode("big_keys").Active then
+        CachedValues["BigKeys"..tostring(dungeon)] = Tracker:FindObjectForCode(dungeon).Active
         return Tracker:FindObjectForCode(dungeon).Active
     -- elseif Tracker:FindObjectForCode("big_keys").Active == false and key == "sw_bigkey" and Tracker:FindObjectForCode("firerod").Active == false then
     --     return false
     end
+    CachedValues["BigKeys"..tostring(dungeon)] = true
     return true
 end
 
@@ -472,12 +535,18 @@ end
 ---@param check_count any
 ---@return integer
 function CheckRequirements(reference, check_count)
+    local string_args = "CheckRequirements"..tostring(reference)..tostring(check_count)
+    if CachedValues[string_args] then
+        return CachedValues[string_args]
+    end
     local reqCount = Tracker:ProviderCountForCode(reference)
     local count = Tracker:ProviderCountForCode(check_count)
 
     if count >= reqCount then
+        CachedValues[string_args] = 1
         return 1 --true
     end
+    CachedValues[string_args] = 0
     return 0 --false
 end
 
@@ -485,18 +554,27 @@ end
 ---@param torches_available boolean
 ---@return integer
 function DarkRooms(torches_available)
+    local string_args = "DarkRooms"..tostring(torches_available)
+    if CachedValues[string_args] then
+        return CachedValues[string_args]
+    end
     local dark_mode = Tracker:FindObjectForCode("dark_mode").CurrentStage
     local has_lamp = Tracker:ProviderCountForCode("lamp")
     if dark_mode == 2 then --none
+        CachedValues[string_args] = ACCESS_NORMAL
         return ACCESS_NORMAL
     elseif dark_mode == 0 and has_lamp > 0 then -- lamp
+        CachedValues[string_args] = ACCESS_NORMAL
         return ACCESS_NORMAL
     elseif dark_mode == 1 then
         if torches_available then
+            CachedValues[string_args] = A(has_lamp > 0 or has_lamp > 0)
             return A(has_lamp > 0 or has_lamp > 0)
         end
+        CachedValues[string_args] = A(has_lamp > 0)
         return A(has_lamp > 0) -- scornes/firerod
     end
+    CachedValues[string_args] = ACCESS_NONE
     return ACCESS_NONE
 end
 
@@ -509,6 +587,10 @@ end
 ---comment
 ---@return integer
 function CalcHealth()
+    if CachedValues["CalcHealth"] then
+        return CachedValues["CalcHealth"]
+    end
+    CachedValues["CalcHealth"] = (3 + (Tracker:FindObjectForCode("heartpieces").AcquiredCount // 4) + Tracker:FindObjectForCode("heartcontainer").AcquiredCount)
     return (3 + (Tracker:FindObjectForCode("heartpieces").AcquiredCount // 4) + Tracker:FindObjectForCode("heartcontainer").AcquiredCount)
 end
 
@@ -531,6 +613,10 @@ local shoplist = {
 ---@param stage_needed any
 ---@return boolean
 function CanRefillBottles(item, stage_needed)
+    local string_args = "CanRefillBottles"..tostring(item)..tostring(stage_needed)
+    if CachedValues[string_args] then
+        return CachedValues[string_args]
+    end
     if Tracker:ProviderCountForCode(item) > 0 then
         for index, shop in pairs(shoplist) do
             if CanReach(shop) > 4 then
@@ -538,12 +624,14 @@ function CanRefillBottles(item, stage_needed)
                 local range_max = 3*index
                 for i=range_min, range_max do
                     if Tracker:FindObjectForCode("default_shop_item_"..i).CurrentStage == stage_needed then
+                        CachedValues[string_args] = true
                         return true
                     end
                 end
             end
         end
     end
+    CachedValues[string_args] = false
     return false
 end
 
@@ -551,6 +639,9 @@ end
 ---@param needed_magic any
 ---@return boolean
 function SpikeCaveMagicLogic(needed_magic)
+    if CachedValues["SpikeCaveMagicLogic"..tostring(needed_magic)] then
+        return CachedValues["SpikeCaveMagicLogic"..tostring(needed_magic)]
+    end
     local basemagic = 8
     local magic_upgrades = Tracker:FindObjectForCode("magic_upgrade").CurrentStage
     local bottle_count = Tracker:FindObjectForCode("bottle").CurrentStage
@@ -569,6 +660,7 @@ function SpikeCaveMagicLogic(needed_magic)
         
     -- local total_hearts = (Tracker:FindObjectForCode("heartpieces").AcquiredCount // 4) + 3 + Tracker:FindObjectForCode("heartcontainer").AcquiredCount
     end
+    CachedValues["SpikeCaveMagicLogic"..tostring(needed_magic)] = math.floor(basemagic) >= needed_magic
     return math.floor(basemagic) >= needed_magic
 end
 
@@ -576,6 +668,10 @@ end
 ---@param item any
 ---@return boolean
 function EnemizerCheck(item)
+    if CachedValues["EnemizerCheck"..tostring(item)] then
+        return CachedValues["EnemizerCheck"..tostring(item)]
+    end
+    CachedValues["EnemizerCheck"..tostring(item)] = Tracker:FindObjectForCode("enemizer").Active or Tracker:FindObjectForCode(item).Active
     return Tracker:FindObjectForCode("enemizer").Active or Tracker:FindObjectForCode(item).Active
 end
 
@@ -749,17 +845,25 @@ local valid_super_bunny_items = {
 ---@param item? string
 ---@return boolean
 function CanInteract(location, item)
+    local string_args = "CanInteract"..tostring(location)..tostring(item)
+    if CachedValues[string_args] then
+        return CachedValues[string_args]
+    end
     if location.worldstate then
         if CAN_INTERACT[location.worldstate] then --normal interaction possible or has moonpearl
+            CachedValues[string_args] = true
             return true
         end
         if location.inside_dungeon then -- dungeon bunny revival
             if invalid_bunny_revival_dungeons[location.name] then
+                CachedValues[string_args] = false
                 return false
             elseif Tracker:FindObjectForCode("mirror").Active then --mirror bunny into dungeon
+                CachedValues[string_args] = Tracker:FindObjectForCode("glitches").CurrentStage > 0
                 return Tracker:FindObjectForCode("glitches").CurrentStage > 0
             end
             if Tracker:FindObjectForCode("glitches").CurrentStage > 0 then
+                CachedValues[string_args] = true
                 return true
             end
         end
@@ -768,21 +872,29 @@ function CanInteract(location, item)
             -- print(Tracker:FindObjectForCode("mirror").Active and (valid_super_bunny_items[item] or false) and Tracker:FindObjectForCode(item).Active)
             if item then
                 print("------------------> mirror + item")
+                CachedValues[string_args] = Tracker:FindObjectForCode("mirror").Active and (valid_super_bunny_items[item] or false) and Tracker:FindObjectForCode(item).Active
+
                 return Tracker:FindObjectForCode("mirror").Active and (valid_super_bunny_items[item] or false) and Tracker:FindObjectForCode(item).Active -- and Tracker:FindObjectForCode(item).Active -- not really neede because i should always check for the specifi3ed item outside aswell because this check is only for super bunny state accessibility
             elseif location.name == "Kakariko_well_ledge" or location.name == "Superbunny_cave_top_inside" then
+                CachedValues[string_args] = true
                 return true
             else
                 print("------------------> mirror only")
+                CachedValues[string_args] = Tracker:FindObjectForCode("mirror").Active
                 return Tracker:FindObjectForCode("mirror").Active
             end
         end
     end
+    CachedValues[string_args] = false
     return false
 end
 
 ---comment
 ---@return boolean
 function CanFinish()
+    if CachedValues["CanFinish"] then
+        return CachedValues["CanFinish"]
+    end
     local table_length
     local reqs = {
         [1] = CheckRequirements("ganon_killable", "crystal"),
@@ -813,9 +925,11 @@ function CanFinish()
     local obj = Tracker:FindObjectForCode("go_mode")
     if beatable >= table_length then
         obj.Active = true
+        CachedValues["CanFinish"] = true
         return true
     end
     obj.Active = false
+    CachedValues["CanFinish"] = false
     return false
 end
 
@@ -903,22 +1017,31 @@ end
 ---comment
 ---@return boolean
 function CheckPyramidState()
+    if CachedValues["CheckPyramidState"] then
+        return CachedValues["CheckPyramidState"]
+    end
     local pyramid_stage = (Tracker:FindObjectForCode("pyramid_state") --[[@as JsonItem]]).CurrentStage
     print("CanFinish()", CanFinish())
+    local lookup_table = {
+        [0] = Tracker:FindObjectForCode("aga2").Active,
+        [1] = true,
+        [2] = CanFinish(),
+        [3] = nil,
+    }
 
-    if pyramid_stage == 0 then
-        return Tracker:FindObjectForCode("aga2").Active
-    elseif pyramid_stage == 1 then
-        return true
-    elseif pyramid_stage == 2 then
-        return CanFinish()
+    if lookup_table[pyramid_stage] ~= nil then
+        CachedValues["CheckPyramidState"] = lookup_table[pyramid_stage]
+        return lookup_table[pyramid_stage]
     elseif pyramid_stage == 3 then
         if ER_STAGE > 2 and (Tracker:FindObjectForCode("from_Pyramid_hole_outside") --[[@as LuaItem]]).ItemState.Target ~= "to_Pyramid_hole_inside" then
-            return Tracker:FindObjectForCode("aga2").Active
+            CachedValues["CheckPyramidState"] = lookup_table[0]
+            return lookup_table[0]
         else
-            return CanFinish()
+            CachedValues["CheckPyramidState"] = lookup_table[2]
+            return lookup_table[2]
         end
     end
+    CachedValues["CheckPyramidState"] = false
     return false
 end
 

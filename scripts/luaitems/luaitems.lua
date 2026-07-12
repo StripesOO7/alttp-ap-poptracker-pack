@@ -251,9 +251,10 @@ local function ProvidesCodeFunc(self, code)
     if CanProvideCodeFunc(self, code) then
         -- print(self.Name)
         if self.ItemState.Target ~= nil then  --and Tracker:FindObjectForCode("er_tracking").CurrentStage > 0 then
-            if self.ItemState.IsDeadEnd or (Tracker:FindObjectForCode(self.ItemState.Target) --[[@as LuaItem]]).ItemState.IsDeadEnd then
+            local target_obj = (Tracker:FindObjectForCode(self.ItemState.Target) --[[@as LuaItem]]).ItemState --[[@as table]]
+            if self.ItemState.IsDeadEnd or target_obj.IsDeadEnd then
                 local location_obj = self.ItemState --[[@as table]]
-                local target_obj = Tracker:FindObjectForCode(self.ItemState.Target).ItemState --[[@as table]]
+                -- local target_obj = Tracker:FindObjectForCode(self.ItemState.Target).ItemState --[[@as table]]
                 local deadendBackup = (location_obj.DeadendColorBackup or target_obj.DeadendColorBackup) --[[@as table]]
                 if deadendBackup ~= nil then
                     local sum = 0

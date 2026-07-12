@@ -28,6 +28,11 @@ NAMED_LOCATIONS = {}
 NAMED_LOCATIONS_KEYS = {}
 ---@type table< integer, table< integer, table< integer, {[1]:string, [2]: string?}? >? >? >
 ENTRANCE_MAPPING = {} -- structure --> ENTRANCE_MAPPING[<roomnumber>][<x-coord>][<y-coord>] = location name
+NAMED_ENEMIES = {}
+NAMED_DMG_CLASSES = {}
+
+
+
 local stale = true
 local accessibilityCache = {}
 local accessibilityCacheComplete = false
@@ -436,6 +441,11 @@ Darkworld_spawns = alttp_location.new("Darkworld_spawns", nil, "dark")
 Entry_point:connect_one_way(Lightworld_spawns, OpenOrStandard)
 Entry_point:connect_one_way(Darkworld_spawns, Inverted)
 
+CachedValues = {}
+function ClearCache()
+    CachedValues = {}
+end
+
 ---helperfunction that is used to force a grpah update on every state change within poptracker.
 function StateChanged()
     if Archipelago then
@@ -446,6 +456,7 @@ function StateChanged()
     else
         ROOM_SEED = (Archipelago.Seed or tostring(#ALL_LOCATIONS)).."_"..TEAM_NUMBER.."_"..PLAYER_ID
     end
+    ClearCache()
     UpdateCanInteract()
     stale = true
 end
