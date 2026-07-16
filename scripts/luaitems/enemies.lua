@@ -1,174 +1,180 @@
----function that get triggered when left clicking a lua items as hosted item or in an itemgrid
----will select 2 LuaItems and connect them to be traversable in the graph
----@param self LuaItem
-local function OnLeftClickFunc(self)
-    local row_counter_horizontal = 1+self:Get("Index")//21
-    local row_counter_vertical = 1+(2*self:Get("Index")//24)
-    Tracker:UiHint("ActivateTab", "Damage Table")
-    Tracker:UiHint("ActivateTab", "Row "..row_counter_horizontal)
-    Tracker:UiHint("ActivateTab", "Row "..row_counter_vertical.."&"..row_counter_vertical+1)
-end
-
----function that get triggered when right clicking a lua items as hosted item or in an itemgrid
----will remove the connection between the selected luaItem and its connected partner
----specific to ER LuaItems
----@param self LuaItem
-local function OnRightClickFunc(self)
-    Tracker:UiHint("ActivateTab", "Damage Table")
-    Tracker:UiHint("ActivateTab", "Overview")
-end
-
----function that get triggered when middle clicking a lua items as hosted item or in an itemgrid
----will highlight itself and the connected LuaItem on the map to make sptting connected entrances easier
----specific to ER LuaItems
----@param self LuaItem
-local function OnMiddleClickFunc(self)
-end
-
----comment
----@param self LuaItem
----@param code string
----@return boolean
-local function CanProvideCodeFunc(self, code)
-    return code == self:Get("Code") or code == self.Name
-end
-
----comment
----@param self LuaItem
----@param code string
----@return integer
-local function ProvidesCodeFunc(self, code)
-    -- return CanProvideCodeFunc(self, code) and 1 or 0
-    if code == self:Get("Code") or code == self.Name then
-        return 1
-    else
-        return 0
-    end
-end
-
----comment
-local function AdvanceToCodeFunc()
-    print("AdvanceToCodeFunc")
-end
-
----save function triggered on closing popotracker to have a state to restore later on. specific to ER LuaItems
----@param self LuaItem
----@return table
-local function SaveLocationFunc(self)
-    return {
-        Name = self.Name,
-        Icon = self.Icon,
-        Health = self:Get("Health"),
-        Default_damage_table = self.ItemState.Default_damage_table,
-        Damage_table = self.ItemState.Damage_table,
-        Index = self:Get("Index"),
-        Code = self:Get("Code"),
-        SpecialEffect = self:Get("SpecialEffect"),
-        Invulnerable = self:Get("Invulnerable"),
-    }
-    -- print("SaveFunc")
-end
-
----function triggered on loading the pack to restore the lat saves state. specific to ER LuaItems
----@param self LuaItem
----@param data table
-local function LoadLocationFunc(self, data)
-    if data ~= nil and self.Name == data.Name then
-        self.Name = data.Name
-        self.Icon = data.Icon
-        self:Set("Health", data.Health)
-        self.ItemState.Default_damage_table = data.Default_damage_table
-        self.ItemState.Damage_table = data.Damage_table
-        self:Set("Index", data.Index)
-        self:Set("Code", data.Code)
-        self:Set("SpecialEffect", data.SpecialEffect)
-        self:Set("Invulnerable", data.Invulnerable)
-        if data.BadgeText ~= nil then
-            self.BadgeText = data.BadgeText
-            self.BadgeTextColor = "#abcdef"
-            self:SetOverlayFontSize(10)
-            self:SetOverlayAlign("left")
-        end
-    else
-        -- print("skipped laoding")
-    end
-
-    -- print("LoadFunc")
-end
-
-
-local function PropertyChangedFunc()
-    -- print("PropertyChangedFunc")
-end
-local function ItemState()
-end
-local function Name()
-end
-local function Icon ()--> ImageReference:FromPackRelativePath()
-end
-local function Type()
-end
-
-
----function to create ER LuaItems in their default state
----@param name string
----@param health integer
----@param dmg_table integer[]
----@param counter integer
----@return LuaItem
-function CreateLuaEnemeyClass(name, health, dmg_table, counter)
-    local self = ScriptHost:CreateLuaItem()
-    -- self.Type = "custom"
-    self.Name = name
-    self.Icon = ImageReference:FromPackRelativePath("images/enemies/" .. string.lower(name) .. ".png")
-    ---@type ItemState
-    self.ItemState = {
-        Health = health,
-        Default_damage_table = {table.unpack(dmg_table)
-        },
-        Damage_table = {table.unpack(dmg_table)
-        },
-        Index = counter,
-        Code = "enemy_"..counter,
-        Invulnerable = nil,
-        SpecialEffect = nil,
-        
-    } --[[@as table<string, any>]]
-
-
-    if health == 255 then
-        self:Set("Invulnerable", true)
-    else
-        self:Set("Invulnerable", false)
-    end
-    -- local stun = {255, 251}
-    -- local freeze = {254}
-    -- local burn = {253}
-    -- local transform_slime = {250}
-    -- local transform_fairy = {249}
-    self:Set("SpecialEffect", nil)
-
-    NAMED_ENEMIES[name] = self
-
-    self.BadgeTextColor = "#abcdef"
-    self:SetOverlayFontSize(10)
-    self:SetOverlayAlign("left")
-
+function Enemies_scope(scope_name, scope_health, scope_dmg_table, scope_counter)
     
-    self.CanProvideCodeFunc = CanProvideCodeFunc
-    self.OnLeftClickFunc = OnLeftClickFunc
-    self.OnRightClickFunc = OnRightClickFunc
-    -- self.OnRightClickFunc = OnMiddleClickFunc
-    self.OnMiddleClickFunc = OnMiddleClickFunc
-    self.ProvidesCodeFunc = ProvidesCodeFunc
-    -- self.AdvanceToCodeFunc = AdvanceToCodeFunc
-    self.SaveFunc = SaveLocationFunc
-    self.LoadFunc = LoadLocationFunc
-    self.PropertyChangedFunc = PropertyChangedFunc
-    -- self.ItemState = ItemState
-    return self
-end
+    local Code = "enemy_"..scope_counter
+    local Basename = scope_name
 
+    ---function that get triggered when left clicking a lua items as hosted item or in an itemgrid
+    ---will select 2 LuaItems and connect them to be traversable in the graph
+    ---@param self LuaItem
+    local function OnLeftClickFunc(self)
+        local row_counter_horizontal = 1+self:Get("Index")//21
+        local row_counter_vertical = 1+(2*self:Get("Index")//24)
+        Tracker:UiHint("ActivateTab", "Damage Table")
+        Tracker:UiHint("ActivateTab", "Row "..row_counter_horizontal)
+        Tracker:UiHint("ActivateTab", "Row "..row_counter_vertical.."&"..row_counter_vertical+1)
+    end
+
+    ---function that get triggered when right clicking a lua items as hosted item or in an itemgrid
+    ---will remove the connection between the selected luaItem and its connected partner
+    ---specific to ER LuaItems
+    ---@param self LuaItem
+    local function OnRightClickFunc(self)
+        Tracker:UiHint("ActivateTab", "Damage Table")
+        Tracker:UiHint("ActivateTab", "Overview")
+    end
+
+    ---function that get triggered when middle clicking a lua items as hosted item or in an itemgrid
+    ---will highlight itself and the connected LuaItem on the map to make sptting connected entrances easier
+    ---specific to ER LuaItems
+    ---@param self LuaItem
+    local function OnMiddleClickFunc(self)
+    end
+
+    ---comment
+    ---@param self LuaItem
+    ---@param code string
+    ---@return boolean
+    local function CanProvideCodeFunc(self, code)
+        return code == Code or code == Basename
+    end
+
+    ---comment
+    ---@param self LuaItem
+    ---@param code string
+    ---@return integer
+    local function ProvidesCodeFunc(self, code)
+        -- return CanProvideCodeFunc(self, code) and 1 or 0
+        if code == Code or code == Basename then
+            return 1
+        else
+            return 0
+        end
+    end
+
+    ---comment
+    local function AdvanceToCodeFunc()
+        print("AdvanceToCodeFunc")
+    end
+
+    ---save function triggered on closing popotracker to have a state to restore later on. specific to ER LuaItems
+    ---@param self LuaItem
+    ---@return table
+    local function SaveLocationFunc(self)
+        return {
+            Name = self.Name,
+            Icon = self.Icon,
+            Health = self:Get("Health"),
+            Default_damage_table = self.ItemState.Default_damage_table,
+            Damage_table = self.ItemState.Damage_table,
+            Index = self:Get("Index"),
+            Code = self:Get("Code"),
+            SpecialEffect = self:Get("SpecialEffect"),
+            Invulnerable = self:Get("Invulnerable"),
+        }
+        -- print("SaveFunc")
+    end
+
+    ---function triggered on loading the pack to restore the lat saves state. specific to ER LuaItems
+    ---@param self LuaItem
+    ---@param data table
+    local function LoadLocationFunc(self, data)
+        if data ~= nil and self.Name == data.Name then
+            self.Name = data.Name
+            self.Icon = data.Icon
+            self:Set("Health", data.Health)
+            self.ItemState.Default_damage_table = data.Default_damage_table
+            self.ItemState.Damage_table = data.Damage_table
+            self:Set("Index", data.Index)
+            self:Set("Code", data.Code)
+            self:Set("SpecialEffect", data.SpecialEffect)
+            self:Set("Invulnerable", data.Invulnerable)
+            if data.BadgeText ~= nil then
+                self.BadgeText = data.BadgeText
+                self.BadgeTextColor = "#abcdef"
+                self:SetOverlayFontSize(10)
+                self:SetOverlayAlign("left")
+            end
+        else
+            -- print("skipped laoding")
+        end
+
+        -- print("LoadFunc")
+    end
+
+
+    local function PropertyChangedFunc()
+        -- print("PropertyChangedFunc")
+    end
+    local function ItemState()
+    end
+    local function Name()
+    end
+    local function Icon ()--> ImageReference:FromPackRelativePath()
+    end
+    local function Type()
+    end
+
+
+    ---function to create ER LuaItems in their default state
+    ---@param name string
+    ---@param health integer
+    ---@param dmg_table integer[]
+    ---@param counter integer
+    ---@return LuaItem
+    function CreateLuaEnemeyClass(name, health, dmg_table, counter)
+        local self = ScriptHost:CreateLuaItem()
+        -- self.Type = "custom"
+        self.Name = name
+        self.Icon = ImageReference:FromPackRelativePath("images/enemies/" .. string.lower(name) .. ".png")
+        ---@type ItemState
+        self.ItemState = {
+            Health = health,
+            Default_damage_table = {table.unpack(dmg_table)
+            },
+            Damage_table = {table.unpack(dmg_table)
+            },
+            Index = counter,
+            Code = "enemy_"..counter,
+            Invulnerable = nil,
+            SpecialEffect = nil,
+            
+        } --[[@as table<string, any>]]
+
+        if health == 255 then
+            self:Set("Invulnerable", true)
+        else
+            self:Set("Invulnerable", false)
+        end
+        -- local stun = {255, 251}
+        -- local freeze = {254}
+        -- local burn = {253}
+        -- local transform_slime = {250}
+        -- local transform_fairy = {249}
+        self:Set("SpecialEffect", nil)
+
+        NAMED_ENEMIES[name] = self
+
+        self.BadgeTextColor = "#abcdef"
+        self:SetOverlayFontSize(10)
+        self:SetOverlayAlign("left")
+
+        
+        self.CanProvideCodeFunc = CanProvideCodeFunc
+        self.OnLeftClickFunc = OnLeftClickFunc
+        self.OnRightClickFunc = OnRightClickFunc
+        -- self.OnRightClickFunc = OnMiddleClickFunc
+        self.OnMiddleClickFunc = OnMiddleClickFunc
+        self.ProvidesCodeFunc = ProvidesCodeFunc
+        -- self.AdvanceToCodeFunc = AdvanceToCodeFunc
+        self.SaveFunc = SaveLocationFunc
+        self.LoadFunc = LoadLocationFunc
+        self.PropertyChangedFunc = PropertyChangedFunc
+        -- self.ItemState = ItemState
+        return self
+    end
+
+    return CreateLuaEnemeyClass(scope_name, scope_health, scope_dmg_table, scope_counter)
+end
 
 DEFAULT_WEAPON_CLASSES = {
     [0] = {"blueboomerang", "redboomerang"},
@@ -368,9 +374,11 @@ local counter = -1
 Tracker.BulkUpdate = true
 for _, enemy in pairs(DEFAULT_ENEMY_DAMAGE_TABLE) do
     counter = counter+1
-    CreateLuaEnemeyClass(enemy[1], enemy[2], {table.unpack(enemy, 3)}, counter)
+    -- CreateLuaEnemeyClass(enemy[1], enemy[2], {table.unpack(enemy, 3)}, counter)
+    Enemies_scope(enemy[1], enemy[2], {table.unpack(enemy, 3)}, counter)
     for i=0,15 do
-        CreateLuaDamageClass(counter, i, enemy[1], enemy[i+3])--, enemy[2], {table.unpack(enemy, 3)})
+        -- CreateLuaDamageClass(counter, i, enemy[1], enemy[i+3])--, enemy[2], {table.unpack(enemy, 3)})
+        Damage_Classes_scope(counter, i, enemy[1], enemy[i+3])--, enemy[2], {table.unpack(enemy, 3)})
     end
 end
 Tracker.BulkUpdate = false

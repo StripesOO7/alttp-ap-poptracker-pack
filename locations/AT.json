@@ -121,5 +121,279 @@
                 ]
             }
         ]
+    },
+    {
+        "name": "Agahnim's Tower Doors",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "access_rules": [
+            "^$CanReach|AT_entrance_inside"
+        ],
+        "children": [
+            {
+                "name": "AT_first_chest_2N_door", 
+                "access_rules": ["^$CanReach|AT_first_chest"],
+                "sections": [
+                    {
+                        "name": "AT_first_chest_2N_door",
+                        "access_rules": [""],
+                        "clear_as_group": false,
+                        "visibility_rules": [],
+                        "hosted_item": "from_AT_first_chest_2N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "AT",
+                        "shape": "diamond",
+                        "x": 1,
+                        "y": 1,
+                        "size": 8
+                    }
+                ]
+            },
+            {
+                "name": "AT_dark_maze_2N_door", 
+                "access_rules": ["^$CanReach|AT_dark_maze"],
+                "sections": [
+                    {
+                        "name": "AT_dark_maze_2N_door",
+                        "access_rules": [""],
+                        "clear_as_group": false,
+                        "visibility_rules": [],
+                        "hosted_item": "from_AT_dark_maze_2N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "AT",
+                        "shape": "diamond",
+                        "x": 1,
+                        "y": 1,
+                        "size": 8
+                    }
+                ]
+            },
+            {
+                "name": "AT_dark_chargers_4N_door", 
+                "access_rules": ["^$CanReach|AT_dark_chargers"],
+                "sections": [
+                    {
+                        "name": "AT_dark_chargers_4N_door",
+                        "access_rules": [""],
+                        "clear_as_group": false,
+                        "visibility_rules": [],
+                        "hosted_item": "from_AT_dark_chargers_4N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "AT",
+                        "shape": "diamond",
+                        "x": 1,
+                        "y": 1,
+                        "size": 8
+                    }
+                ]
+            },
+            {
+                "name": "AT_dual_statues_4N_door", 
+                "access_rules": ["^$CanReach|AT_dual_statues"],
+                "sections": [
+                    {
+                        "name": "AT_dual_statues_4N_door",
+                        "access_rules": [""],
+                        "clear_as_group": false,
+                        "visibility_rules": [],
+                        "hosted_item": "from_AT_dual_statues_4N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "AT",
+                        "shape": "diamond",
+                        "x": 1,
+                        "y": 1,
+                        "size": 8
+                    }
+                ]
+            },
+            {
+                "name": "AT_dark_archers_2N_door", 
+                "access_rules": ["^$CanReach|AT_dark_archers"],
+                "sections": [
+                    {
+                        "name": "AT_dark_archers_2N_door",
+                        "access_rules": [""],
+                        "clear_as_group": false,
+                        "visibility_rules": [],
+                        "hosted_item": "from_AT_dark_archers_2N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "AT",
+                        "shape": "diamond",
+                        "x": 1,
+                        "y": 1,
+                        "size": 8
+                    }
+                ]
+            },
+            {
+                "name": "AT_red_spears_2N_door", 
+                "access_rules": ["^$CanReach|AT_red_spears"],
+                "sections": [
+                    {
+                        "name": "AT_red_spears_2N_door",
+                        "access_rules": [""],
+                        "clear_as_group": false,
+                        "visibility_rules": [],
+                        "hosted_item": "from_AT_red_spears_2N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "AT",
+                        "shape": "diamond",
+                        "x": 1,
+                        "y": 1,
+                        "size": 8
+                    }
+                ]
+            },
+            {
+                "name": "AT_pacifist_run_4N_door", 
+                "access_rules": ["^$CanReach|AT_pacifist_run"],
+                "sections": [
+                    {
+                        "name": "AT_pacifist_run_4N_door",
+                        "access_rules": [""],
+                        "clear_as_group": false,
+                        "visibility_rules": [],
+                        "hosted_item": "from_AT_pacifist_run_4N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "AT",
+                        "shape": "diamond",
+                        "x": 1,
+                        "y": 1,
+                        "size": 8
+                    }
+                ]
+            },
+            {
+                "name": "AT_push_statue_down_4N_door", 
+                "access_rules": ["^$CanReach|AT_push_statue_down"],
+                "sections": [
+                    {
+                        "name": "AT_push_statue_down_4N_door",
+                        "access_rules": [""],
+                        "clear_as_group": false,
+                        "visibility_rules": [],
+                        "hosted_item": "from_AT_push_statue_down_4N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "AT",
+                        "shape": "diamond",
+                        "x": 1,
+                        "y": 1,
+                        "size": 8
+                    }
+                ]
+            },
+            {
+                "name": "AT_catwalk_1N_door", 
+                "access_rules": ["^$CanReach|AT_catwalk"],
+                "sections": [
+                    {
+                        "name": "AT_catwalk_1N_door",
+                        "access_rules": [""],
+                        "clear_as_group": false,
+                        "visibility_rules": [],
+                        "hosted_item": "from_AT_catwalk_1N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "AT",
+                        "shape": "diamond",
+                        "x": 1,
+                        "y": 1,
+                        "size": 8
+                    }
+                ]
+            },
+            {
+                "name": "AT_antechamber_2S_door", 
+                "access_rules": ["^$CanReach|AT_antechamber"],
+                "sections": [
+                    {
+                        "name": "AT_antechamber_2S_door",
+                        "access_rules": [""],
+                        "clear_as_group": false,
+                        "visibility_rules": [],
+                        "hosted_item": "from_AT_antechamber_2S_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "AT",
+                        "shape": "diamond",
+                        "x": 1,
+                        "y": 1,
+                        "size": 8
+                    }
+                ]
+            },
+            {
+                "name": "AT_pre_curtain_1N_door", 
+                "access_rules": ["^$CanReach|AT_pre_curtain"],
+                "sections": [
+                    {
+                        "name": "AT_pre_curtain_1N_door",
+                        "access_rules": [""],
+                        "clear_as_group": false,
+                        "visibility_rules": [],
+                        "hosted_item": "from_AT_pre_curtain_1N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "AT",
+                        "shape": "diamond",
+                        "x": 1,
+                        "y": 1,
+                        "size": 8
+                    }
+                ]
+            },
+            {
+                "name": "AT_aga_arena_1S_door", 
+                "access_rules": ["^$CanReach|AT_aga_arena"],
+                "sections": [
+                    {
+                        "name": "AT_aga_arena_1S_door",
+                        "access_rules": [""],
+                        "clear_as_group": false,
+                        "visibility_rules": [],
+                        "hosted_item": "from_AT_aga_arena_1S_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "AT",
+                        "shape": "diamond",
+                        "x": 1,
+                        "y": 1,
+                        "size": 8
+                    }
+                ]
+            }
+        ]
     }
 ]

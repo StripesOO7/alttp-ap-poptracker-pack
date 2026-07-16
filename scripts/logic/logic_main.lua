@@ -22,6 +22,7 @@ PLAYER_ID = -1
 TEAM_NUMBER = -1
 local ER_STATE = false
 ER_STAGE = 0
+DOORS_STATE = true
 ---@type table<string, alttp_location_new_return>
 NAMED_LOCATIONS = {}
 ---@type string[]
@@ -93,7 +94,7 @@ end
 ---@field discover function
 ---@field name string
 ---@field shortname string
----@field locationsection string
+---@field locationsection string[]
 ---@field map string
 ---@field deadEndOrDungeonOrConnector boolean
 ---@field side string
@@ -270,6 +271,7 @@ function alttp_location:connect_two_ways_entrance(name, exit, rule)
     if exit == nil then -- for ER
         return
     end
+    print(self.name)
     self:connect_one_way_entrance(name, exit, rule)
     exit:connect_one_way_entrance(name, self, rule)
 end
@@ -281,6 +283,7 @@ end
 ---@param rule1? function
 ---@param rule2? function
 function alttp_location:connect_two_ways_entrance_door_stuck(name, exit, rule1, rule2)
+    print(self.name)
     self:connect_one_way_entrance(name, exit, rule1)
     exit:connect_one_way_entrance(name, self, rule2)
 end
@@ -365,22 +368,46 @@ function alttp_location:discover(accessibility, keys, worldstate)
             local location_name = self.name
             -- if (string.sub(exit_name, -7,-1) == "_inside" and string.sub(location_name, -8,-1) == "_outside") or
             -- (string.sub(location_name, -7,-1) == "_inside" and string.sub(exit_name, -8,-1) == "_outside") then
-            if ER_STATE and (exit[1].side == "inside" and self.side == "outside") or (self.side == "inside" and exit[1].side == "outside") then
-                local temp
-                local er_setting_stage = (Tracker:FindObjectForCode("er_tracking") --[[@as JsonItem]]).CurrentStage
-                local er_check_result = er_check[er_setting_stage](location_name)
-                if er_check_result then -- dungeons ER
-                    temp = Tracker:FindObjectForCode("from_" .. location_name).ItemState
-                    -- print("temp", temp) 
-                    if temp ~= nil and temp.Target ~= nil then
-                        location = NAMED_LOCATIONS[temp.TargetBaseName]
-                    else
-                        -- print("exit connection is fucked")
-                        -- return
+            if ER_STATE then
+                if (exit[1].side == "inside" and self.side == "outside") or (self.side == "inside" and exit[1].side == "outside") then
+                    local temp
+                    local er_setting_stage = (Tracker:FindObjectForCode("er_tracking") --[[@as JsonItem]]).CurrentStage
+                    local er_check_result = er_check[er_setting_stage](location_name)
+                    if er_check_result then -- dungeons ER
+                        temp = NAMED_ER_CONNECTIONS("from_" .. location_name).ItemState
+                        -- print("temp", temp) 
+                        if temp ~= nil and temp.Target ~= nil then
+                            location = NAMED_LOCATIONS[temp.TargetBaseName]
+                        else
+                            -- print("exit connection is fucked")
+                            -- return
+                        end
+                    end
+                    if location == nil and er_check_result then
+                        location = Empty_location
                     end
                 end
-                if location == nil and er_check_result then
-                    location = Empty_location
+            end
+            
+            if DOORS_STATE then
+                if (exit[1].side == "door" and self.side == "door") then
+                    local temp
+                    -- local doors_setting_stage = (NAMED_DOORS_CONNECTIONS("doors_tracking") --[[@as JsonItem]]).CurrentStage
+                    -- local doors_check_result = doors_check[doors_setting_stage](location_name)
+                    local doors_check_result = true
+                    if doors_check_result then -- dungeons ER
+                        temp = NAMED_DOORS_CONNECTIONS("from_" .. location_name).ItemState
+                        -- print("temp", temp) 
+                        if temp ~= nil and temp.Target ~= nil then
+                            location = NAMED_LOCATIONS[temp.TargetBaseName]
+                        else
+                            -- print("exit connection is fucked")
+                            -- return
+                        end
+                    end
+                    if location == nil and doors_check_result then
+                        location = Empty_location
+                    end
                 end
             end
 
@@ -405,6 +432,9 @@ function alttp_location:discover(accessibility, keys, worldstate)
 
                 -- currentParent, currentLocation = self, location -- just set for ":accessibilty()" check within rules
                 local access, key = rule(keys)
+                if type(access) == "function" then
+                    access = access()
+                end
                 local parent_access = self:accessibility()
                 if type(access) == "boolean" then --
                     access = A(access)

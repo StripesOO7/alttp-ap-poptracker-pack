@@ -73,7 +73,7 @@ PoD_switch_room_bottom:connect_two_ways(PoD_boss_room, function(keys)
     return ALL(
         "bow",
         "hammer",
-        DarkRooms(false),
+        DarkRooms,
         "Pod_bigkey",
         Has("Pod_smallkey", keys + CountDoneDeadends(1, "@Palace of Darkness/Big Key Chest/Big Key Chest", "@Palace of Darkness/Dark Maze Top/Dark Maze Top", "@Palace of Darkness/Harmless Hellway/Harmless Hellway"), 6, keys + CountDoneDeadends(1, "@Palace of Darkness/Big Key Chest/Big Key Chest", "@Palace of Darkness/Dark Maze Top/Dark Maze Top", "@Palace of Darkness/Harmless Hellway/Harmless Hellway"), 6)
     ), keys + 1
@@ -94,7 +94,7 @@ PoD_arena:connect_one_way("PoD - Arena Bridge")
 PoD_collapsing_bridge:connect_two_ways(PoD_dark_maze, function(keys)
     return ALL(
         PoD_compass_room:accessibility(),
-        DarkRooms(false),
+        DarkRooms,
         Has("lamp"),
         Has("Pod_smallkey", keys + CountDoneDeadends(1, "@Palace of Darkness/Harmless Hellway/Harmless Hellway", "@Palace of Darkness/Boss/Boss Item", "@Palace of Darkness/Big Key Chest/Big Key Chest"), 6, keys + CountDoneDeadends(1, "@Palace of Darkness/Harmless Hellway/Harmless Hellway", "@Palace of Darkness/Boss/Boss Item", "@Palace of Darkness/Big Key Chest/Big Key Chest"), 6)
     ), keys + 1

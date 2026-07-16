@@ -2,6 +2,10 @@ local variant = Tracker.ActiveVariantUID
 
 -- Items
 require("scripts.items_import")
+require("scripts.autotracking.item_mapping")
+-- Locations
+require("scripts.locations_import")
+require("scripts.autotracking.location_mapping")
 
 -- Logic
 require("scripts.logic.logic_helpers")
@@ -11,7 +15,7 @@ require("scripts.logic.logic_main")
 require("scripts.logic_import")
 
 -- Maps
-Tracker:AddMaps("maps/maps.json")
+require("scripts.maps_import")
 
 -- Layout
 require("scripts.layouts_import")

@@ -184,7 +184,7 @@ Kakariko_overgrown_house_outside:connect_one_way(Dark_village_shop_outside, func
 end)
 
 Kakariko_well_hole_inside:connect_one_way(Kakariko_well_ledge)
-Kakariko_well_hole_inside:connect_one_way(Kakariko_well_cave_inside)
+Kakariko_well_ledge:connect_one_way(Kakariko_well_cave_inside)
 Kakariko_well_ledge:connect_one_way("Kakariko Well - Top", function()
     return ALL(
         "bombs",
@@ -773,7 +773,7 @@ Old_man_cave_left_ledge:connect_two_ways(Old_man_cave_left_outside)
 Old_man_cave_left_outside:connect_two_ways_entrance("Old Man Cave Left", Old_man_cave_left_inside, function() return OpenOrStandard() end)
 Old_man_cave_left_outside:connect_two_ways_entrance("Bumper Cave Bottom", Dark_bumper_cave_bottom_inside, function() return Inverted() end)
 
-Old_man_cave_left_inside:connect_one_way(Old_man_cave, function() return DarkRooms(false) end)
+Old_man_cave_left_inside:connect_one_way(Old_man_cave, function() return DarkRooms end)
 
 
 Light_death_mountain_return_left_outside:connect_two_ways_entrance("Light Death Mountain Return Left", Light_death_mountain_return_left_inside, function() return OpenOrStandard() end)
@@ -1242,8 +1242,8 @@ Old_man_cave_right_outside:connect_two_ways_entrance("Inverted Light Death Mount
 
 Light_death_mountain_return_right_outside:connect_two_ways_entrance("Light Death Mountain Return Right",Light_death_mountain_return_right_inside)
 
-Light_death_mountain_return_right_inside:connect_two_ways(Light_death_mountain_return_left_inside, function() return DarkRooms(false) end)
-Old_man_cave_right_inside:connect_two_ways(Old_man_cave, function() return DarkRooms(false) end)
+Light_death_mountain_return_right_inside:connect_two_ways(Light_death_mountain_return_left_inside, function() return DarkRooms end)
+Old_man_cave_right_inside:connect_two_ways(Old_man_cave, function() return DarkRooms end)
 
 -- Light_death_mountain_ascent_ledge:connect_one_way(Light_death_mountain_ascent, function()
 --     return ALL(
@@ -1370,7 +1370,7 @@ Spec_rock_ledge_exit:connect_one_way(Light_death_mountain_left_bottom)
 
 -- cave mide left lightg DM bottom
 
-Old_man_home_bottom_inside:connect_two_ways(Old_man_home_top_inside, function() return DarkRooms(false) end)
+Old_man_home_bottom_inside:connect_two_ways(Old_man_home_top_inside, function() return DarkRooms end)
 
 
 -- Light_death_mountain_left_top

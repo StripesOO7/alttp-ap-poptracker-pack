@@ -1,6 +1,3 @@
-require("scripts.autotracking.item_mapping")
-require("scripts.autotracking.location_mapping")
-
 CUR_INDEX = -1
 SLOT_DATA = nil
 SKIP_BOSSSHUFFLE = false
@@ -340,7 +337,7 @@ function OnClear(slot_data)
                 if manual_table then
                     dmg_class_item:Set("PrimaryStage", manual_table.primary_stage)
                     dmg_class_item:Set("SecondaryStage", manual_table.secondary_stage)
-                    _SetDmgClassImageHelper(dmg_class_item)
+                    _SetDmgClassImageHelper(dmg_class_item, dmg_class_code)
                 end
             end
         end

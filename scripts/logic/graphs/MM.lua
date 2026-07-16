@@ -185,7 +185,7 @@ MM_bridge_middle:connect_two_ways(MM_boss_room, function(keys)
     return ALL(
         "somaria",
         "bombs",
-        DarkRooms(false),
+        DarkRooms,
         Has("mm_smallkey", keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest"), 3, keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key"), 6),
         "mm_bigkey"
     ), keys + 1 -- + 1)
