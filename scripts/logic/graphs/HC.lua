@@ -353,7 +353,7 @@ CE_secret_room_N_door:connect_two_ways_entrance("", CE_pulley_N_door)
 
 CE_pulley_N_door:connect_two_ways(CE_pulley)
 CE_pulley:connect_two_ways(CE_pulley_S_door, function() return CanInteract(CE_pulley) end)
-CE_pulley_S_door:connect_two_ways_entrance("", Sanctuary_secret_door)
+CE_pulley_S_door:connect_one_way_entrance("", Sanctuary_secret_door)
 
 Sanctuary_secret_door:connect_two_ways(Sanctuary_entrance_inside)
 

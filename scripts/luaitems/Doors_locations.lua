@@ -8,7 +8,7 @@ HIGHLIGHT_LAST_ACTIVATED = 0
 ROUTE_MODE = false
 
 local er_storage_item = (Tracker:FindObjectForCode("manual_er_storage") --[[@as LuaItem]]).ItemState
-function Doors_locations_scope(scope_direction, scope_location_obj, scope_side)
+function Doors_locations_scope(scope_direction, scope_location_obj)
 
     local Code = string.lower(scope_direction) .. "_" .. scope_location_obj.name
     local Basename  = scope_location_obj.name
@@ -410,7 +410,7 @@ function Doors_locations_scope(scope_direction, scope_location_obj, scope_side)
     ---@param location_obj alttp_location_new_return
     ---@param side string
     ---@return LuaItem
-    function CreateLuaDoorsItems(direction, location_obj, side)
+    function CreateLuaDoorsItems(direction, location_obj)
         local self = ScriptHost:CreateLuaItem()
         -- self.Type = "custom"
         self.Name = string.lower(direction) .. "_" .. location_obj.name --code --
@@ -418,11 +418,11 @@ function Doors_locations_scope(scope_direction, scope_location_obj, scope_side)
         ---@type DoorsItemState
         self.ItemState = {
             BaseName = location_obj.name,
-            ImgPath = ImageReference:FromPackRelativePath("images/entrances/" .. side .. "/" .. string.gsub(location_obj.name, "_" .. side, "") .. ".png"),
+            ImgPath = ImageReference:FromPackRelativePath("images/entrances/doors/" .. string.gsub(location_obj.name, "_door", "") .. ".png"),
             BaseImg = BASE_IMG_PATH,
             Stage = 0,
             Active = true,
-            Side = side,
+            Side = "door",
             Target = nil,
             TargetBaseName = nil,
             Shortname = location_obj.shortname,
@@ -454,7 +454,7 @@ function Doors_locations_scope(scope_direction, scope_location_obj, scope_side)
         self:SetOverlayAlign("left")
 
         
-        self.ItemState.Side = side
+        self.ItemState.Side = "door"
     
         self.CanProvideCodeFunc = CanProvideCodeFunc
         self.OnLeftClickFunc = OnLeftClickFunc
@@ -471,7 +471,7 @@ function Doors_locations_scope(scope_direction, scope_location_obj, scope_side)
     end
 
 
-    return CreateLuaDoorsItems(scope_direction, scope_location_obj, scope_side)
+    return CreateLuaDoorsItems(scope_direction, scope_location_obj)
 
 end
 

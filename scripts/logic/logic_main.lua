@@ -374,14 +374,19 @@ function alttp_location:discover(accessibility, keys, worldstate)
                     local er_setting_stage = (Tracker:FindObjectForCode("er_tracking") --[[@as JsonItem]]).CurrentStage
                     local er_check_result = er_check[er_setting_stage](location_name)
                     if er_check_result then -- dungeons ER
-                        temp = NAMED_ER_CONNECTIONS("from_" .. location_name).ItemState
-                        -- print("temp", temp) 
-                        if temp ~= nil and temp.Target ~= nil then
-                            location = NAMED_LOCATIONS[temp.TargetBaseName]
+                        temp = NAMED_ER_CONNECTIONS["from_" .. location_name]
+                        if temp ~= nil then 
+                            temp = temp.ItemState
+                            if temp.Target ~= nil then
+                                location = NAMED_LOCATIONS[temp.TargetBaseName]
+                                -- print("exit connection is fucked")
+                                -- return
+                            end
                         else
-                            -- print("exit connection is fucked")
-                            -- return
+                            location = Empty_location
                         end
+                        -- print("temp", temp) 
+                        
                     end
                     if location == nil and er_check_result then
                         location = Empty_location
@@ -456,7 +461,7 @@ function alttp_location:discover(accessibility, keys, worldstate)
                     -- print(self.name, "to", location.name)
                     -- print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access], "with worldstate:", worldstate)
                     -- print("lower:", self.worldstate, worldstate, location.worldstate)
-                    -- print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access])--, "with worldstate:", worldstate)
+                    print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access])--, "with worldstate:", worldstate)
                     location:discover(access, key, worldstate)
                 end
             end

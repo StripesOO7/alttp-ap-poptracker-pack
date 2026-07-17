@@ -800,8 +800,8 @@ function CreateDoorsLuaitems()
                 -- CreateLuaLocationItems("To", location_obj, "outside")
                 NAMED_ER_CONNECTIONS["to_" .. location_obj.name] = ER_locations_scope("To", location_obj, "outside")
             elseif string.sub(location_obj.name, -8,-1) == "_door" then
-                NAMED_DOORS_CONNECTIONS["from_" .. location_obj.name] = Doors_locations_scope("From", location, "doors")
-                NAMED_DOORS_CONNECTIONS["to_" .. location_obj.name] = Doors_locations_scope("To", location, "doors")
+                NAMED_DOORS_CONNECTIONS["from_" .. location_obj.name] = Doors_locations_scope("From", location)
+                NAMED_DOORS_CONNECTIONS["to_" .. location_obj.name] = Doors_locations_scope("To", location)
             end
 
         end
@@ -823,8 +823,8 @@ function CreateDoorsLuaitems()
                 -- CreateLuaLocationItems("To", location, "outside")
                 NAMED_ER_CONNECTIONS["to_" .. location.name] = ER_locations_scope("To", location, "outside")
             elseif string.sub(location.name, -5,-1) == "_door" then
-                NAMED_DOORS_CONNECTIONS["from_" .. location.name] = Doors_locations_scope("From", location, "doors")
-                NAMED_DOORS_CONNECTIONS["to_" .. location.name] = Doors_locations_scope("To", location, "doors")
+                NAMED_DOORS_CONNECTIONS["from_" .. location.name] = Doors_locations_scope("From", location)
+                NAMED_DOORS_CONNECTIONS["to_" .. location.name] = Doors_locations_scope("To", location)
             end
         end
         return 1

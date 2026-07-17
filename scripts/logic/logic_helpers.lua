@@ -972,8 +972,9 @@ end
 ---@return integer|boolean
 function TT_boss_check()
     if Tracker:FindObjectForCode("tt_boss").CurrentStage == 7 then
+        print("TT Boss Check", CanReach("TT - Attic"), CanReach("TT - Blind's Cell"), Has("bombs"), ALL(CanReach("TT - Attic"),CanReach("TT - Blind's Cell"),"bombs") )
         return ALL(
-            CanReach("TT_attic"),
+            CanReach("TT - Attic"),
             CanReach("TT - Blind's Cell"),
             "bombs"
         )

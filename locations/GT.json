@@ -4,7 +4,7 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$CanReach|GT_entrance_inside"
+            // "^$CanReach|GT_entrance_inside"
         ],
         "children": [
             {
@@ -195,7 +195,7 @@
             {
                 "name": "Firesnake Room",
                 "access_rules": [
-                    "^$CanReach|GT_bottom_firesnake_room"
+                    "^$CanReach|GT_bottom_firesnake_room_after_pit"
                 ],
                 "sections": [
                     {
@@ -629,7 +629,7 @@
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [
-            "^$CanReach|GT_top_entrance"
+            // "^$CanReach|GT_top_entrance"
         ],
         "children": [
             {
@@ -702,7 +702,7 @@
             {
                 "name": "Pre-Moldorm Chest",
                 "access_rules": [
-                    "^$CanReach|GT_top_pre_moldorm_room"
+                    "^$CanReach|GT_top_crystal_switch_circles"
                 ],
                 "sections": [
                     {

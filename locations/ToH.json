@@ -8,6 +8,150 @@
         ],
         "children": [
             {
+                "name": "Basement Cage",
+                "access_rules": [
+                    "^$CanReach|ToH_basement_cage"
+                ],
+                "sections": [
+                    {
+                        "name": "Basement Cage",
+                        "access_rules": [
+                            "^$CanReach|ToH - Basement Cage"
+                        ]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "ToH",
+                        "x": 35,
+                        "y": 375,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Big Key Chest",
+                "access_rules": [
+                    "^$CanReach|ToH_big_key_chest"
+                ],
+                "sections": [
+                    {
+                        "name": "Big Key Chest",
+                        "access_rules": [
+                            "^$CanReach|ToH - Big Key Chest"
+                        ]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "ToH",
+                        "x": 95,
+                        "y": 380,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Map Chest",
+                "access_rules": [
+                    "^$CanReach|ToH_entrance_inside"
+                ],
+                "sections": [
+                    {
+                        "name": "Map Chest",
+                        "access_rules": [
+                            "^$CanReach|ToH - Map Chest"
+                        ]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "ToH",
+                        "x": 190,
+                        "y": 305,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Compass Chest",
+                "access_rules": [
+                    "^$CanReach|ToH_big_chest_room"
+                ],
+                "sections": [
+                    {
+                        "name": "Compass Chest",
+                        "access_rules": [
+                            "^$CanReach|ToH - Compass Chest"
+                        ]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "ToH",
+                        "x": 190,
+                        "y": 210,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Big Chest",
+                "access_rules": [
+                    "^$CanReach|ToH_big_chest_room"
+                ],
+                "sections": [
+                    {
+                        "name": "Big Chest",
+                        "access_rules": [
+                            "^$CanReach|ToH - Big Chest"
+                        ]
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "ToH",
+                        "x": 190,
+                        "y": 155,
+                        "size": 6
+                    }
+                ]
+            },
+            {
+                "name": "Boss",
+                "access_rules": [
+                    "^$CanReach|ToH_above_big_chest"
+                ],
+                "sections": [
+                    {
+                        "name": "Boss Item",
+                        "access_rules": [
+                            "^$CanReach|ToH_boss_room, ^$CanReach|ToH - Boss"
+                        ],
+                        "item_count": 1,
+                        "hosted_item": "toh_boss, towerofhera"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "ToH",
+                        "x": 195,
+                        "y": 70,
+                        "size": 6
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Tower of Hera Doors",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "access_rules": [
+            "^$CanReach|ToH_entrance_inside"
+        ],
+        "children": [
+            {
                 "name": "ToH_main_room_1N_door",
                 "access_rules":[],
                 "sections": [
