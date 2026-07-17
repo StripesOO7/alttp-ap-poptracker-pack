@@ -8,136 +8,266 @@
         ],
         "children": [
             {
-                "name": "Basement Cage",
-                "access_rules": [
-                    "^$CanReach|ToH_basement_cage"
-                ],
+                "name": "ToH_main_room_1N_door",
+                "access_rules":[],
                 "sections": [
                     {
-                        "name": "Basement Cage",
-                        "access_rules": [
-                            "^$CanReach|ToH - Basement Cage"
-                        ]
+                        "name": "ToH_main_room_1N_door",
+                        "access_rules":[],
+                        "visibility_rules":[],
+                        "clear_as_group":false,
+                        "hosted_item": "from_ToH_main_room_1N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "ToH",
-                        "x": 35,
-                        "y": 375,
-                        "size": 6
+                        "shape": "diamond",
+                        "x":1,
+                        "y":1,
+                        "size":8
                     }
                 ]
             },
             {
-                "name": "Big Key Chest",
-                "access_rules": [
-                    "^$CanReach|ToH_big_key_chest"
-                ],
+                "name": "ToH_main_room_3N_door",
+                "access_rules":[],
                 "sections": [
                     {
-                        "name": "Big Key Chest",
-                        "access_rules": [
-                            "^$CanReach|ToH - Big Key Chest"
-                        ]
+                        "name": "ToH_main_room_3N_door",
+                        "access_rules":[],
+                        "visibility_rules":[],
+                        "clear_as_group":false,
+                        "hosted_item": "from_ToH_main_room_3N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "ToH",
-                        "x": 95,
-                        "y": 380,
-                        "size": 6
+                        "shape": "diamond",
+                        "x":1,
+                        "y":1,
+                        "size":8
                     }
                 ]
             },
             {
-                "name": "Map Chest",
-                "access_rules": [
-                    "^$CanReach|ToH_entrance_inside"
-                ],
+                "name": "ToH_main_room_4N_door",
+                "access_rules":[],
                 "sections": [
                     {
-                        "name": "Map Chest",
-                        "access_rules": [
-                            "^$CanReach|ToH - Map Chest"
-                        ]
+                        "name": "ToH_main_room_4N_door",
+                        "access_rules":[],
+                        "visibility_rules":[],
+                        "clear_as_group":false,
+                        "hosted_item": "from_ToH_main_room_4N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "ToH",
-                        "x": 190,
-                        "y": 305,
-                        "size": 6
+                        "shape": "diamond",
+                        "x":1,
+                        "y":1,
+                        "size":8
                     }
                 ]
             },
             {
-                "name": "Compass Chest",
-                "access_rules": [
-                    "^$CanReach|ToH_big_chest_room"
-                ],
+                "name": "ToH_basement_cage_3N_door",
+                "access_rules":[],
                 "sections": [
                     {
-                        "name": "Compass Chest",
-                        "access_rules": [
-                            "^$CanReach|ToH - Compass Chest"
-                        ]
+                        "name": "ToH_basement_cage_3N_door",
+                        "access_rules":[],
+                        "visibility_rules":[],
+                        "clear_as_group":false,
+                        "hosted_item": "from_ToH_basement_cage_3N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "ToH",
-                        "x": 190,
-                        "y": 210,
-                        "size": 6
+                        "shape": "diamond",
+                        "x":1,
+                        "y":1,
+                        "size":8
                     }
                 ]
             },
             {
-                "name": "Big Chest",
-                "access_rules": [
-                    "^$CanReach|ToH_big_chest_room"
-                ],
+                "name": "ToH_tile_room_1N_door",
+                "access_rules":[],
                 "sections": [
                     {
-                        "name": "Big Chest",
-                        "access_rules": [
-                            "^$CanReach|ToH - Big Chest"
-                        ]
+                        "name": "ToH_tile_room_1N_door",
+                        "access_rules":[],
+                        "visibility_rules":[],
+                        "clear_as_group":false,
+                        "hosted_item": "from_ToH_tile_room_1N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "ToH",
-                        "x": 190,
-                        "y": 155,
-                        "size": 6
+                        "shape": "diamond",
+                        "x":1,
+                        "y":1,
+                        "size":8
                     }
                 ]
             },
             {
-                "name": "Boss",
-                "access_rules": [
-                    "^$CanReach|ToH_above_big_chest"
-                ],
+                "name": "ToH_3_hard_head_beatles_4N_door",
+                "access_rules":[],
                 "sections": [
                     {
-                        "name": "Boss Item",
-                        "access_rules": [
-                            "^$CanReach|ToH_boss_room, ^$CanReach|ToH - Boss"
-                        ],
-                        "item_count": 1,
-                        "hosted_item": "toh_boss, towerofhera"
+                        "name": "ToH_3_hard_head_beatles_4N_door",
+                        "access_rules":[],
+                        "visibility_rules":[],
+                        "clear_as_group":false,
+                        "hosted_item": "from_ToH_3_hard_head_beatles_4N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "ToH",
-                        "x": 195,
-                        "y": 70,
-                        "size": 6
+                        "shape": "diamond",
+                        "x":1,
+                        "y":1,
+                        "size":8
+                    }
+                ]
+            },
+            {
+                "name": "ToH_startile_wide_2N_door",
+                "access_rules":[],
+                "sections": [
+                    {
+                        "name": "ToH_startile_wide_2N_door",
+                        "access_rules":[],
+                        "visibility_rules":[],
+                        "clear_as_group":false,
+                        "hosted_item": "from_ToH_startile_wide_2N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "ToH",
+                        "shape": "diamond",
+                        "x":1,
+                        "y":1,
+                        "size":8
+                    }
+                ]
+            },
+            {
+                "name": "ToH_big_chest_room_1N_door",
+                "access_rules":[],
+                "sections": [
+                    {
+                        "name": "ToH_big_chest_room_1N_door",
+                        "access_rules":[],
+                        "visibility_rules":[],
+                        "clear_as_group":false,
+                        "hosted_item": "from_ToH_big_chest_room_1N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "ToH",
+                        "shape": "diamond",
+                        "x":1,
+                        "y":1,
+                        "size":8
+                    }
+                ]
+            },
+            {
+                "name": "ToH_big_chest_room_2N_door",
+                "access_rules":[],
+                "sections": [
+                    {
+                        "name": "ToH_big_chest_room_2N_door",
+                        "access_rules":[],
+                        "visibility_rules":[],
+                        "clear_as_group":false,
+                        "hosted_item": "from_ToH_big_chest_room_2N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "ToH",
+                        "shape": "diamond",
+                        "x":1,
+                        "y":1,
+                        "size":8
+                    }
+                ]
+            },
+            {
+                "name": "ToH_5F_orange_path_1N_door",
+                "access_rules":[],
+                "sections": [
+                    {
+                        "name": "ToH_5F_orange_path_1N_door",
+                        "access_rules":[],
+                        "visibility_rules":[],
+                        "clear_as_group":false,
+                        "hosted_item": "from_ToH_5F_orange_path_1N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "ToH",
+                        "shape": "diamond",
+                        "x":1,
+                        "y":1,
+                        "size":8
+                    }
+                ]
+            },
+            {
+                "name": "ToH_5F_orange_path_2N_door",
+                "access_rules":[],
+                "sections": [
+                    {
+                        "name": "ToH_5F_orange_path_2N_door",
+                        "access_rules":[],
+                        "visibility_rules":[],
+                        "clear_as_group":false,
+                        "hosted_item": "from_ToH_5F_orange_path_2N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "ToH",
+                        "shape": "diamond",
+                        "x":1,
+                        "y":1,
+                        "size":8
+                    }
+                ]
+            },
+            {
+                "name": "ToH_boss_room_2N_door",
+                "access_rules":[],
+                "sections": [
+                    {
+                        "name": "ToH_boss_room_2N_door",
+                        "access_rules":[],
+                        "visibility_rules":[],
+                        "clear_as_group":false,
+                        "hosted_item": "from_ToH_boss_room_2N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "ToH",
+                        "shape": "diamond",
+                        "x":1,
+                        "y":1,
+                        "size":8
                     }
                 ]
             }
