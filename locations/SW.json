@@ -248,5 +248,332 @@
                 ]
             }
         ]
+    },
+
+    {
+        "name": "Skull Woods Front Door",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "access_rules": [
+        ],
+        "children": [
+            {
+                "name": "SW_compass_room_2N_door",
+                "access_rules":[],
+                "sections": [
+                    {
+                        "name": "SW_compass_room_2N_door",
+                        "access_rules":[],
+                        "visibility_rules":[],
+                        "clear_as_group":false,
+                        "hosted_item": "from_SW_compass_room_2N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "SW",
+                        "shape": "diamond",
+                        "x":1,
+                        "y":1,
+                        "size":8
+                    }
+                ]
+            },
+            {
+                "name": "SW_compass_room_4E_door",
+                "access_rules":[],
+                "sections": [
+                    {
+                        "name": "SW_compass_room_4E_door",
+                        "access_rules":[],
+                        "visibility_rules":[],
+                        "clear_as_group":false,
+                        "hosted_item": "from_SW_compass_room_4E_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "SW",
+                        "shape": "diamond",
+                        "x":1,
+                        "y":1,
+                        "size":8
+                    }
+                ]
+            },
+            {
+                "name": "SW_pot_prison_4E_door",
+                "access_rules":[],
+                "sections": [
+                    {
+                        "name": "SW_pot_prison_4E_door",
+                        "access_rules":[],
+                        "visibility_rules":[],
+                        "clear_as_group":false,
+                        "hosted_item": "from_SW_pot_prison_4E_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "SW",
+                        "shape": "diamond",
+                        "x":1,
+                        "y":1,
+                        "size":8
+                    }
+                ]
+            },
+            {
+                "name": "SW_pot_prison_4S_door",
+                "access_rules":[],
+                "sections": [
+                    {
+                        "name": "SW_pot_prison_4S_door",
+                        "access_rules":[],
+                        "visibility_rules":[],
+                        "clear_as_group":false,
+                        "hosted_item": "from_SW_pot_prison_4S_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "SW",
+                        "shape": "diamond",
+                        "x":1,
+                        "y":1,
+                        "size":8
+                    }
+                ]
+            },
+            {
+                "name": "SW_pinball_room_3W_door",
+                "access_rules":[],
+                "sections": [
+                    {
+                        "name": "SW_pinball_room_3W_door",
+                        "access_rules":[],
+                        "visibility_rules":[],
+                        "clear_as_group":false,
+                        "hosted_item": "from_SW_pinball_room_3W_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "SW",
+                        "shape": "diamond",
+                        "x":1,
+                        "y":1,
+                        "size":8
+                    }
+                ]
+            },
+            {
+                "name": "SW_pinball_room_2N_door",
+                "access_rules":[],
+                "sections": [
+                    {
+                        "name": "SW_pinball_room_2N_door",
+                        "access_rules":[],
+                        "visibility_rules":[],
+                        "clear_as_group":false,
+                        "hosted_item": "from_SW_pinball_room_2N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "SW",
+                        "shape": "diamond",
+                        "x":1,
+                        "y":1,
+                        "size":8
+                    }
+                ]
+            },
+            {
+                "name": "SW_map_room_4S_door",
+                "access_rules":[],
+                "sections": [
+                    {
+                        "name": "SW_map_room_4S_door",
+                        "access_rules":[],
+                        "visibility_rules":[],
+                        "clear_as_group":false,
+                        "hosted_item": "from_SW_map_room_4S_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "SW",
+                        "shape": "diamond",
+                        "x":1,
+                        "y":1,
+                        "size":8
+                    }
+                ]
+            },
+            {
+                "name": "SW_big_chest_entrance_3W_door",
+                "access_rules":[],
+                "sections": [
+                    {
+                        "name": "SW_big_chest_entrance_3W_door",
+                        "access_rules":[],
+                        "visibility_rules":[],
+                        "clear_as_group":false,
+                        "hosted_item": "from_SW_big_chest_entrance_3W_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "SW",
+                        "shape": "diamond",
+                        "x":1,
+                        "y":1,
+                        "size":8
+                    }
+                ]
+            },
+            {
+                "name": "SW_gibdo_entrance_3W_door",
+                "access_rules":[],
+                "sections": [
+                    {
+                        "name": "SW_gibdo_entrance_3W_door",
+                        "access_rules":[],
+                        "visibility_rules":[],
+                        "clear_as_group":false,
+                        "hosted_item": "from_SW_gibdo_entrance_3W_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "SW",
+                        "shape": "diamond",
+                        "x":1,
+                        "y":1,
+                        "size":8
+                    }
+                ]
+            },
+            {
+                "name": "SW_gibdo_west_lobby_connector_4E_door",
+                "access_rules":[],
+                "sections": [
+                    {
+                        "name": "SW_gibdo_west_lobby_connector_4E_door",
+                        "access_rules":[],
+                        "visibility_rules":[],
+                        "clear_as_group":false,
+                        "hosted_item": "from_SW_gibdo_west_lobby_connector_4E_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "SW",
+                        "shape": "diamond",
+                        "x":1,
+                        "y":1,
+                        "size":8
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Skull Woods Back Door",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "access_rules": [
+        ],
+        "children": [
+            {
+                "name": "SW_back_bridge_1N_door",
+                "access_rules":[],
+                "sections": [
+                    {
+                        "name": "SW_back_bridge_1N_door",
+                        "access_rules":[],
+                        "visibility_rules":[],
+                        "clear_as_group":false,
+                        "hosted_item": "from_SW_back_bridge_1N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "SW",
+                        "shape": "diamond",
+                        "x":1,
+                        "y":1,
+                        "size":8
+                    }
+                ]
+            },
+            {
+                "name": "SW_star_switch_holes_3S_door",
+                "access_rules":[],
+                "sections": [
+                    {
+                        "name": "SW_star_switch_holes_3S_door",
+                        "access_rules":[],
+                        "visibility_rules":[],
+                        "clear_as_group":false,
+                        "hosted_item": "from_SW_star_switch_holes_3S_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "SW",
+                        "shape": "diamond",
+                        "x":1,
+                        "y":1,
+                        "size":8
+                    }
+                ]
+            },
+            {
+                "name": "SW_vines_room_1N_door",
+                "access_rules":[],
+                "sections": [
+                    {
+                        "name": "SW_vines_room_1N_door",
+                        "access_rules":[],
+                        "visibility_rules":[],
+                        "clear_as_group":false,
+                        "hosted_item": "from_SW_vines_room_1N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "SW",
+                        "shape": "diamond",
+                        "x":1,
+                        "y":1,
+                        "size":8
+                    }
+                ]
+            },
+            {
+                "name": "SW_back_spike_corner_room_3S_door",
+                "access_rules":[],
+                "sections": [
+                    {
+                        "name": "SW_back_spike_corner_room_3S_door",
+                        "access_rules":[],
+                        "visibility_rules":[],
+                        "clear_as_group":false,
+                        "hosted_item": "from_SW_back_spike_corner_room_3S_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "SW",
+                        "shape": "diamond",
+                        "x":1,
+                        "y":1,
+                        "size":8
+                    }
+                ]
+            }
+        ]
     }
 ]
