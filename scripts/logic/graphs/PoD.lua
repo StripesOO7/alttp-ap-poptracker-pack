@@ -166,7 +166,7 @@ PoD_switch_room_top_S_door:connect_two_ways(PoD_switch_room_top)
 PoD_switch_room_top:connect_one_way("PoD - Map Chest")
 PoD_switch_room_top:connect_two_ways(PoD_switch_room_top_3W_door)
 PoD_switch_room_top_3W_door:connect_two_ways_entrance("", PoD_arena_ledge_4E_door, function() return Has("bombs") end)
-PoD_arena_ledge_4E_door:connect_two_ways("", PoD_arena_ledge)
+PoD_arena_ledge_4E_door:connect_two_ways(PoD_arena_ledge)
 PoD_arena_ledge:connect_one_way("PoD - Arena Ledge")
 
 PoD_arena_back_bridge:connect_two_ways(PoD_arena_back_bridge_1N_door)
@@ -217,7 +217,7 @@ PoD_compass_room:connect_two_ways(PoD_harmless_hellway, function(keys)
 end)
 PoD_harmless_hellway:connect_one_way("PoD - Harmless Hellway")
 PoD_harmless_hellway:connect_two_ways(PoD_harmless_hellway_S_door)
-PoD_harmless_hellway_S_door:connect_two_ways_stuck("", PoD_arena_back_bridge_2N_door, nil, function() return false end)
+PoD_harmless_hellway_S_door:connect_two_ways_entrance_door_stuck("", PoD_arena_back_bridge_2N_door, nil, function() return false end)
 
 
 PoD_arena_back_bridge:connect_two_ways(PoD_arena_back_bridge_2N_door)
