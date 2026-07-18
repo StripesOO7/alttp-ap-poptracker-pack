@@ -551,9 +551,10 @@ function CheckRequirements(reference, check_count)
 end
 
 ---comment
----@param torches_available boolean
+---@param torches_available? boolean default false
 ---@return integer
 function DarkRooms(torches_available)
+    torches_available =torches_available or false
     local string_args = "DarkRooms"..tostring(torches_available)
     if CachedValues[string_args] then
         return CachedValues[string_args]
