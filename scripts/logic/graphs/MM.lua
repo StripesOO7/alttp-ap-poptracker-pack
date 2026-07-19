@@ -179,14 +179,14 @@ MM_conveyor_bomb_slug_room:connect_two_ways(MM_conveyor_bomb_slug_room_N_door)
 MM_conveyor_bomb_slug_room_N_door:connect_two_ways_entrance("", MM_torches_top_N_door)
 MM_torches_top_N_door:connect_two_ways(MM_torches_top)
 
-MM_torches_top:connect_one_way() --drop down
+MM_torches_top:connect_one_way(MM_conveyor_bomb_slug_room) --drop down
 MM_torches_top:connect_two_ways(MM_torches_bottom)
 
-MM_torches_bottom:connect_one_way() --drop down
+MM_torches_bottom:connect_one_way(MM_big_key_chest_teleporter_room) --drop down
 MM_torches_bottom:connect_two_ways(MM_cutscene_room)
 
 MM_cutscene_room:connect_one_way(MM_big_key_chest)
-MM_big_key_chest:connect_two_ways(MM_big_key_chest_teleporter_room)
+MM_big_key_chest:connect_one_way(MM_big_key_chest_teleporter_room)
 
 MM_big_key_chest_teleporter_room:connect_one_way(MM_square_rail)
 MM_square_rail:connect_two_ways(MM_hourglas_room)

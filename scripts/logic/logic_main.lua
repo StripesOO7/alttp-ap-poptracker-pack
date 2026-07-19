@@ -31,6 +31,7 @@ NAMED_LOCATIONS_KEYS = {}
 ENTRANCE_MAPPING = {} -- structure --> ENTRANCE_MAPPING[<roomnumber>][<x-coord>][<y-coord>] = location name
 NAMED_ENEMIES = {}
 NAMED_DMG_CLASSES = {}
+-- current_dungeon = ""
 
 
 
@@ -63,12 +64,12 @@ function CanReach(name)
         indirectConnections = {}
         while not accessibilityCacheComplete do
             accessibilityCacheComplete = true
-            Entry_point:discover(ACCESS_NORMAL, 0, nil)
+            Entry_point:discover(ACCESS_NORMAL, 0, nil, "")
             for dst, parents in pairs(indirectConnections) do
                 if dst:accessibility() < ACCESS_NORMAL then
                     for parent, src in pairs(parents) do
                         -- print("Checking indirect " .. src.name .. " for " .. parent.name .. " -> " .. dst.name)
-                        parent:discover(parent:accessibility(), parent.keys, parent.worldstate)
+                        parent:discover(parent:accessibility(), parent.keys, parent.worldstate, "")
                     end
                 end
             end
@@ -347,7 +348,9 @@ local er_check = {
 ---@param accessibility 0|1|2|3|4|5|6|7
 ---@param keys integer
 ---@param worldstate ""|"light"|"dark"
-function alttp_location:discover(accessibility, keys, worldstate)
+---@param current_dungeon ""|"at"|"hc"|"ep"|"dp"|"toh"|"sw"|"tt"|"sp"|"ip"|"mm"|"tr"|"pod"|"gt"|
+function alttp_location:discover(accessibility, keys, worldstate, current_dungeon)
+
     -- checks if given Accessbibility is higer then last stored one
     -- prevents walking in circles
     
@@ -369,7 +372,7 @@ function alttp_location:discover(accessibility, keys, worldstate)
             -- if (string.sub(exit_name, -7,-1) == "_inside" and string.sub(location_name, -8,-1) == "_outside") or
             -- (string.sub(location_name, -7,-1) == "_inside" and string.sub(exit_name, -8,-1) == "_outside") then
             if ER_STATE then
-                if (exit[1].side == "inside" and self.side == "outside") or (self.side == "inside" and exit[1].side == "outside") then
+                if (exit[1].side == "inside" and self.side == "outside") then
                     local temp
                     local er_setting_stage = (Tracker:FindObjectForCode("er_tracking") --[[@as JsonItem]]).CurrentStage
                     local er_check_result = er_check[er_setting_stage](location_name)
@@ -391,6 +394,32 @@ function alttp_location:discover(accessibility, keys, worldstate)
                     if location == nil and er_check_result then
                         location = Empty_location
                     end
+
+                    current_dungeon = Dungeon_key_mapping[self.name] or Dungeon_key_mapping[exit[1].name] or ""
+                elseif (self.side == "inside" and exit[1].side == "outside") then
+                    local temp
+                    local er_setting_stage = (Tracker:FindObjectForCode("er_tracking") --[[@as JsonItem]]).CurrentStage
+                    local er_check_result = er_check[er_setting_stage](location_name)
+                    if er_check_result then -- dungeons ER
+                        temp = NAMED_ER_CONNECTIONS["from_" .. location_name]
+                        if temp ~= nil then 
+                            temp = temp.ItemState
+                            if temp.Target ~= nil then
+                                location = NAMED_LOCATIONS[temp.TargetBaseName]
+                                -- print("exit connection is fucked")
+                                -- return
+                            end
+                        else
+                            location = Empty_location
+                        end
+                        -- print("temp", temp) 
+                        
+                    end
+                    if location == nil and er_check_result then
+                        location = Empty_location
+                    end
+
+                    current_dungeon = Dungeon_key_mapping[exit[1].name] or Dungeon_key_mapping[self.name] or ""
                 end
             end
             
@@ -425,7 +454,7 @@ function alttp_location:discover(accessibility, keys, worldstate)
             if self.worldstate == location.worldstate and worldstate ~= self.worldstate then
                 worldstate = self.worldstate
             end
-            -- print(worldstate, location.worldstate, location.name)
+            -- print(worldstate, location.worldstate, location.name, exit[1].name, current_dungeon)
             if location.worldstate == nil then
                 location.worldstate = worldstate
             end
@@ -434,9 +463,9 @@ function alttp_location:discover(accessibility, keys, worldstate)
             local oldKey = location.keys or 0
             if oldAccess < accessibility then -- if new accessibility from above is higher then currently stored one, so is more accessible then before
                 local rule = exit[2] -- get rules to check
-
+                -- print(self.name, exit[1].name, current_dungeon)
                 -- currentParent, currentLocation = self, location -- just set for ":accessibilty()" check within rules
-                local access, key = rule(keys)
+                local access, key = rule(keys, current_dungeon)
                 if type(access) == "function" then
                     access = access()
                 end
@@ -460,9 +489,13 @@ function alttp_location:discover(accessibility, keys, worldstate)
                 if access > oldAccess or (access == oldAccess and key < oldKey) then -- not sure about the <
                     -- print(self.name, "to", location.name)
                     -- print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access], "with worldstate:", worldstate)
-                    -- print("lower:", self.worldstate, worldstate, location.worldstate)
-                    print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access])--, "with worldstate:", worldstate)
-                    location:discover(access, key, worldstate)
+                    -- print("lower:", self.worldstate, worldstate, location.worldstate, current_dungeon)
+                    -- if current_dungeon ~= "" then
+                    --     print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access])--, "with worldstate:", worldstate)
+                    -- else
+                    --     print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access], "in dungeon: ", current_dungeon)--, "with worldstate:", worldstate)
+                    -- end
+                    location:discover(access, key, worldstate, current_dungeon)
                 end
             end
         end
@@ -695,7 +728,7 @@ function EmptyLocationTargets()
         -- print(er_tracking.CurrentStage)
         if er_tracking.CurrentStage == 0 then
             -- print("run discorver")
-            -- Entry_point:discover(ACCESS_NORMAL, 0, nil)
+            -- Entry_point:discover(ACCESS_NORMAL, 0, nil "")
             -- print("finshed discover")
         elseif er_tracking.CurrentStage == 1 then
             -- print("dungeons er")
@@ -769,7 +802,7 @@ function EmptyLocationTargets()
         print("skipped ER reset")
     end
     print("run discorver")
-    Entry_point:discover(ACCESS_NORMAL, 0, nil)
+    Entry_point:discover(ACCESS_NORMAL, 0, nil, "")
     print("finshed discover")
     MANUAL_CHECKED = true
 end

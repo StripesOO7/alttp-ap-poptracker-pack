@@ -72,7 +72,7 @@ function TrapSleepStall()
     local stall_time = math.random(5,15)
     print("stall_time", stall_time)
     while os.difftime(os.time(), start) < stall_time do
-        -- Entry_point:discover(ACCESS_NORMAL, 0, nil)
+        -- Entry_point:discover(ACCESS_NORMAL, 0, nil, "")
         -- print(os.difftime(os.time(), start))
         
     end

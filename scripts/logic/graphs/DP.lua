@@ -148,13 +148,13 @@ DP_back_tiles1_room_1N_door:connect_two_ways_entrance_door_stuck("", DP_back_bri
 end)
 DP_back_tiles1_room_1N_door:connect_two_ways(DP_back_bridge_room)
 
-DP_back_bridge_room:connect_two_ways_stuck(DP_back_four_statues, nil, function() ALL(DealDamage, CanInteract(DP_back_four_statues) ) end)
+DP_back_bridge_room:connect_two_ways_stuck(DP_back_four_statues, nil, function() return ALL(DealDamage, CanInteract(DP_back_four_statues) ) end)
 
-DP_back_four_statues:connect_two_ways_stuck(DP_back_beamos_hallway, function() ALL(DealDamage, CanInteract(DP_back_four_statues) ) end)
+DP_back_four_statues:connect_two_ways_stuck(DP_back_beamos_hallway, function() return ALL(DealDamage, CanInteract(DP_back_four_statues) ) end)
 DP_back_beamos_hallway:connect_one_way("DP - Beamos Hallway Key Drop")
 
 DP_back_beamos_hallway:connect_two_ways(DP_back_beamos_hallway_2N_door)
-DP_back_beamos_hallway_2N_door:connect_two_ways(DP_back_tiles2_room_4S_door, function(keys)
+DP_back_beamos_hallway_2N_door:connect_two_ways_entrance("", DP_back_tiles2_room_4S_door, function(keys)
     return Has("dp_smallkey", keys + CountDoneDeadends(0, "@Desert Palace/Compass Chest/Compass Chest"), 1, keys + CountDoneDeadends(1, "@Desert Palace/Compass Chest/Compass Chest"), 3), KDSreturn(keys, keys + 1)
 end)
 DP_back_tiles2_room_4S_door:connect_two_ways(DP_back_tiles2_room)

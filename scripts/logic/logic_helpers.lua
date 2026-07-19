@@ -178,14 +178,17 @@ end
 ---@param KDS_amountInLogic? integer
 ---@return integer
 function Has(item, noKDS_amount, noKDS_amountInLogic, KDS_amount, KDS_amountInLogic)
-    local string_args = "Has"..tostring(item)..tostring(noKDS_amount)..tostring(noKDS_amountInLogic)..tostring(KDS_amount)..tostring(KDS_amountInLogic)
+
+    local dungeon_modifier = current_dungeon or ""
+
+    local string_args = "Has"..tostring(item)..tostring(noKDS_amount)..tostring(noKDS_amountInLogic)..tostring(KDS_amount)..tostring(KDS_amountInLogic)..tostring(current_dungeon)
     if CachedValues[string_args] then
         return CachedValues[string_args]
     end
     local count
     local amount
     local amountInLogic
-    if (SMALL_KEY_STAGE == 2) and item:sub(-8,-1) == "smallkey" then -- universal keys
+    if (SMALL_KEY_STAGE == 2) and item == "smallkey" then -- universal keys
         CachedValues[string_args] = ACCESS_NORMAL
         return ACCESS_NORMAL
     end
@@ -198,6 +201,10 @@ function Has(item, noKDS_amount, noKDS_amountInLogic, KDS_amount, KDS_amountInLo
     else
         amount = noKDS_amount
         amountInLogic = noKDS_amountInLogic
+    end
+
+    if dungeon_modifier ~= "" then
+        item = dungeon_modifier.."_smallkey"
     end
     count = Tracker:ProviderCountForCode(item)
 
