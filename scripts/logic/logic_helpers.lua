@@ -179,9 +179,7 @@ end
 ---@return integer
 function Has(item, noKDS_amount, noKDS_amountInLogic, KDS_amount, KDS_amountInLogic)
 
-    local dungeon_modifier = current_dungeon or ""
-
-    local string_args = "Has"..tostring(item)..tostring(noKDS_amount)..tostring(noKDS_amountInLogic)..tostring(KDS_amount)..tostring(KDS_amountInLogic)..tostring(current_dungeon)
+    local string_args = "Has"..tostring(item)..tostring(noKDS_amount)..tostring(noKDS_amountInLogic)..tostring(KDS_amount)..tostring(KDS_amountInLogic)..tostring(Current_Dungeon or "")
     if CachedValues[string_args] then
         return CachedValues[string_args]
     end
@@ -191,6 +189,9 @@ function Has(item, noKDS_amount, noKDS_amountInLogic, KDS_amount, KDS_amountInLo
     if (SMALL_KEY_STAGE == 2) and item == "smallkey" then -- universal keys
         CachedValues[string_args] = ACCESS_NORMAL
         return ACCESS_NORMAL
+    end
+    if item == "smallkey"  or  item == "bigkey" then
+        item = Current_Dungeon.."_"..item
     end
     if KEY_DROP_SHUFFLE_STATE then
         amount = KDS_amount
@@ -203,9 +204,9 @@ function Has(item, noKDS_amount, noKDS_amountInLogic, KDS_amount, KDS_amountInLo
         amountInLogic = noKDS_amountInLogic
     end
 
-    if dungeon_modifier ~= "" then
-        item = dungeon_modifier.."_smallkey"
-    end
+    -- if dungeon_modifier ~= "" then
+    --     item = dungeon_modifier.."_smallkey"
+    -- end
     count = Tracker:ProviderCountForCode(item)
 
     -- print(item, count, amount, amountInLogic)

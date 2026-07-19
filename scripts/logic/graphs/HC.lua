@@ -152,11 +152,11 @@ HC_map_chest_room:connect_one_way("HC - Map Guard Key Drop", function()
         CanInteract(HC_map_chest_room)
     )
 end)
-HC_map_chest_room:connect_two_ways(HC_north_abyss, function(keys)
+HC_map_chest_room:connect_two_ways(HC_north_abyss, function(keys, Current_Dungeon)
     return ALL(
         ANY(
             "standard",
-            Has("hc_smallkey", keys, 0, keys + 1, 3)
+            Has("smallkey", keys, 0, keys + 1, 3)
         ),
         CanInteract(HC_map_chest_room)
     ), KDSreturn(keys, keys + 1)
@@ -196,10 +196,10 @@ HC_boomerang_chest_room:connect_one_way("HC - Booomerang Guard Key Drop", functi
         "standard"
     )
 end)
-HC_before_boomerang_chest_room:connect_two_ways(HC_cell_hallway, function(keys)
+HC_before_boomerang_chest_room:connect_two_ways(HC_cell_hallway, function(keys, Current_Dungeon)
     return ANY(
         "standard",
-        Has("hc_smallkey", keys, 0, keys + 1, 4)
+        Has("smallkey", keys, 0, keys + 1, 4)
     ), KDSreturn(keys, keys + 1)
 end)
 HC_cell_hallway:connect_two_ways(HC_cell_hallway_1N_door)
@@ -212,18 +212,18 @@ HC_ball_guard_room:connect_one_way("HC - Big Key", function()
     )
 end)
 
-HC_ball_guard_room:connect_two_ways(HC_zeldas_cell, function() return Has("hc_bigkey") end)
+HC_ball_guard_room:connect_two_ways(HC_zeldas_cell, function() return Has("bigkey") end)
 HC_zeldas_cell:connect_one_way("HC - Zelda's Chest")
 
 ---
 
-CE_tapestry_S_door:connect_two_ways(CE_tapestry, function(keys)
+CE_tapestry_S_door:connect_two_ways(CE_tapestry, function(keys, Current_Dungeon)
     return ANY(
         DarkRooms(true),
         "standard"
     )
 end)
-CE_tapestry:connect_two_ways(CE_tapestry_N_door, function(keys)
+CE_tapestry:connect_two_ways(CE_tapestry_N_door, function(keys, Current_Dungeon)
     return ANY(
         DarkRooms(true),
         "standard"
@@ -231,13 +231,13 @@ CE_tapestry:connect_two_ways(CE_tapestry_N_door, function(keys)
 end)
 CE_tapestry_N_door:connect_one_way_entrance("", CE_snake_hall_2N_door)
 
-CE_snake_hall_2N_door:connect_two_ways(CE_snake_hall, function(keys)
+CE_snake_hall_2N_door:connect_two_ways(CE_snake_hall, function(keys, Current_Dungeon)
     return ANY(
         DarkRooms(true),
         "standard"
     )
 end)
-CE_snake_hall:connect_two_ways(CE_snake_hall_1N_door, function(keys)
+CE_snake_hall:connect_two_ways(CE_snake_hall_1N_door, function(keys, Current_Dungeon)
     return ANY(
         DarkRooms(true),
         "standard"
@@ -245,7 +245,7 @@ CE_snake_hall:connect_two_ways(CE_snake_hall_1N_door, function(keys)
 end)
 CE_snake_hall_1N_door:connect_two_ways_entrance("", CE_dark_cross_S_door)
 
-CE_dark_cross_S_door:connect_two_ways(CE_dark_cross, function(keys)
+CE_dark_cross_S_door:connect_two_ways(CE_dark_cross, function(keys, Current_Dungeon)
     return ANY(
         DarkRooms(true),
         "standard"
@@ -260,34 +260,34 @@ CE_dark_cross:connect_one_way("CE - Dark Cross", function()
         CanInteract(CE_dark_cross)
     )
 end)
-CE_dark_cross:connect_two_ways(CE_dark_cross_N_door, function(keys)
+CE_dark_cross:connect_two_ways(CE_dark_cross_N_door, function(keys, Current_Dungeon)
     return ANY(
         DarkRooms(true),
         "standard"
     )
 end)
-CE_dark_cross_N_door:connect_two_ways_entrance("", CE_small_sewers_S_door, function(keys)
+CE_dark_cross_N_door:connect_two_ways_entrance("", CE_small_sewers_S_door, function(keys, Current_Dungeon)
     return ANY(
         ALL(
             DarkRooms(true),
-            Has("hc_smallkey", keys + 1, 1, keys + 1, 3)
+            Has("smallkey", keys + 1, 1, keys + 1, 3)
         ),
         ALL(
             DarkRooms(true),
-            Has("hc_smallkey", keys + 1, 1, keys + 1, 3),
+            Has("smallkey", keys + 1, 1, keys + 1, 3),
             "glove"
         ),
         "standard"
     ), keys + 1
 end)
 
-CE_small_sewers_S_door:connect_two_ways(CE_small_sewers, function(keys)
+CE_small_sewers_S_door:connect_two_ways(CE_small_sewers, function(keys, Current_Dungeon)
     return ANY(
         DarkRooms(true),
         "standard"
     )
 end)
-CE_small_sewers:connect_one_way(CE_small_sewers_W_door, function(keys)
+CE_small_sewers:connect_one_way(CE_small_sewers_W_door, function(keys, Current_Dungeon)
     return ANY(
         DarkRooms(true),
         "standard"
@@ -295,13 +295,13 @@ CE_small_sewers:connect_one_way(CE_small_sewers_W_door, function(keys)
 end)
 CE_small_sewers_W_door:connect_two_ways_entrance("", CE_large_sewers_E_door)
 
-CE_large_sewers_E_door:connect_two_ways(CE_large_sewers, function(keys)
+CE_large_sewers_E_door:connect_two_ways(CE_large_sewers, function(keys, Current_Dungeon)
     return ANY(
         DarkRooms(true),
         "standard"
     )
 end)
-CE_large_sewers:connect_two_ways(CE_large_sewers_N_door, function(keys)
+CE_large_sewers:connect_two_ways(CE_large_sewers_N_door, function(keys, Current_Dungeon)
     return ANY(
         DarkRooms(true),
         "standard"
@@ -310,26 +310,26 @@ end)
 CE_large_sewers_N_door:connect_two_ways_entrance("", CE_rat_key_room_S_door)
 
 CE_rat_key_room_S_door:connect_two_ways(CE_rat_key_room)
-CE_rat_key_room:connect_one_way("CE - Rat Key Drop", function(keys)
+CE_rat_key_room:connect_one_way("CE - Rat Key Drop", function(keys, Current_Dungeon)
     return ANY(
         ALL(
             DarkRooms(true),
-            Has("hc_smallkey", keys, 1, keys, 3),
+            Has("smallkey", keys, 1, keys, 3),
             DealDamage
         ),
         "standard"
     ), keys
 end)
-CE_rat_key_room:connect_two_ways(CE_dropdown_room, function(keys)
+CE_rat_key_room:connect_two_ways(CE_dropdown_room, function(keys, Current_Dungeon)
     return ANY(
         ALL(
             DarkRooms(true),
-            Has("hc_smallkey", keys, 1, keys + 1, 4)
+            Has("smallkey", keys, 1, keys + 1, 4)
         ),
         ALL(
             OpenOrStandard,
             DarkRooms(true),
-            Has("hc_smallkey", keys, 1, keys + 1, 4)
+            Has("smallkey", keys, 1, keys + 1, 4)
         ),
         "standard"
     ), KDSreturn(keys, keys + 1)
@@ -357,22 +357,22 @@ CE_pulley_S_door:connect_one_way_entrance("", Sanctuary_secret_door)
 
 Sanctuary_secret_door:connect_two_ways(Sanctuary_entrance_inside)
 
--- CE_stairs_inside:connect_two_ways(CE_dark_cross, function(keys)
+-- CE_stairs_inside:connect_two_ways(CE_dark_cross, function(keys, Current_Dungeon)
 --     return ANY(
 --         DarkRooms(true),
 --         "standard"
 --     )
 -- end)
 
--- CE_dark_cross:connect_two_ways(CE_rat_key_room, function(keys)
+-- CE_dark_cross:connect_two_ways(CE_rat_key_room, function(keys, Current_Dungeon)
 --     return ANY(
 --         ALL(
 --             DarkRooms(true),
---             Has("hc_smallkey", keys + 1, 1, keys + 1, 3)
+--             Has("smallkey", keys + 1, 1, keys + 1, 3)
 --         ),
 --         ALL(
 --             DarkRooms(true),
---             Has("hc_smallkey", keys + 1, 1, keys + 1, 3),
+--             Has("smallkey", keys + 1, 1, keys + 1, 3),
 --             "glove"
 --         ),
 --         "standard"
@@ -381,31 +381,31 @@ Sanctuary_secret_door:connect_two_ways(Sanctuary_entrance_inside)
 -- CE_dark_cross:connect_one_way("CE - Dark Cross", function() return CanInteract(CE_dark_cross) end)
 
 -- -- CE_rat_key_room:connect_two_ways(CE_dropdown_entrance)
--- CE_rat_key_room:connect_two_ways(CE_dropdown_room, function(keys)
+-- CE_rat_key_room:connect_two_ways(CE_dropdown_room, function(keys, Current_Dungeon)
 --     return ANY(
 --         ALL(
 --             DarkRooms(true),
---             Has("hc_smallkey", keys, 1, keys + 1, 4)
+--             Has("smallkey", keys, 1, keys + 1, 4)
 --         ),
 --         -- ALL(
 --         --     Has("golve"),
 --         --     OpenOrStandard,
 --         --     DarkRooms(),
---         --     Has("hc_smallkey", keys, 1, keys + 1, 1)
+--         --     Has("smallkey", keys, 1, keys + 1, 1)
 --         -- ),
 --         ALL(
 --             OpenOrStandard,
 --             DarkRooms(true),
---             Has("hc_smallkey", keys, 1, keys + 1, 4)
+--             Has("smallkey", keys, 1, keys + 1, 4)
 --         ),
 --         "standard"
 --     ), KDSreturn(keys, keys + 1)
 -- end)
--- CE_rat_key_room:connect_one_way("CE - Rat Key Drop", function(keys)
+-- CE_rat_key_room:connect_one_way("CE - Rat Key Drop", function(keys, Current_Dungeon)
 --     return ANY(
 --         ALL(
 --             DarkRooms(true),
---             Has("hc_smallkey", keys, 1, keys, 3),
+--             Has("smallkey", keys, 1, keys, 3),
 --             DealDamage
 --         ),
 --         "standard"

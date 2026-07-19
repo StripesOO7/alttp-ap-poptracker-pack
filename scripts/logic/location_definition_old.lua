@@ -556,4 +556,4 @@ Bumpercave_top_inside = alttp_location.new("Bumpercave_top_inside", "Bumpercave 
 Bumpercave_top_back = alttp_location.new("Bumpercave_top_back")
 Bumpercave_top_front = alttp_location.new("Bumpercave_top_front")
 
-Empty_location = alttp_location.new("Empty_location")
+-- Empty_location = alttp_location.new("Empty_location")

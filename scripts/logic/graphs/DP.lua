@@ -89,7 +89,7 @@ end)
 
 DP_west_sandworm_corner:connect_two_ways_stuck(DP_pot_circle, nil, function() return CanInteract(DP_pot_circle) end)
 DP_pot_circle:connect_two_ways_stuck(DP_big_chest_room, function() return CanInteract(DP_pot_circle) end)
-DP_big_chest_room:connect_one_way("DP - Big Chest", function() return ALL("dp_bigkey", CanInteract(DP_big_chest_room)) end)
+DP_big_chest_room:connect_one_way("DP - Big Chest", function() return ALL("bigkey", CanInteract(DP_big_chest_room)) end)
 
 DP_west_sandworm_corner:connect_two_ways(DP_west_sandworm_corner_4S_door)
 DP_west_sandworm_corner_4S_door:connect_two_ways(DP_west_wing_2N_door)
@@ -110,16 +110,16 @@ DP_east_3_pots:connect_two_ways(DP_east_3_pots_3S_door)
 DP_east_3_pots_3S_door:connect_two_ways(DP_east_wing_1N_door)
 DP_east_wing_1N_door:connect_two_ways(DP_east_wing)
 
-DP_east_wing:connect_two_ways(DP_compass_room, function(keys)
+DP_east_wing:connect_two_ways(DP_compass_room, function(keys, Current_Dungeon)
     if not Tracker:FindObjectForCode("key_drop_shuffle").Active then
         return ALL(
-            Has("dp_smallkey", keys + CountDoneDeadends(0, "@Desert Palace Back/Boss/Boss Item"), 1, keys + CountDoneDeadends(1, "@Desert Palace Back/Boss/Boss Item", "@Desert Palace Back/Beamos Hall Pot Key/Beamos Hall Pot Key", "@Desert Palace Back/Desert Tiles 2 Pot Key/Desert Tiles 2 Pot Key"), 4),
+            Has("smallkey", keys + CountDoneDeadends(0, "@Desert Palace Back/Boss/Boss Item"), 1, keys + CountDoneDeadends(1, "@Desert Palace Back/Boss/Boss Item", "@Desert Palace Back/Beamos Hall Pot Key/Beamos Hall Pot Key", "@Desert Palace Back/Desert Tiles 2 Pot Key/Desert Tiles 2 Pot Key"), 4),
             "boots",
             CanInteract(DP_main_room)
         ), keys + 1
     else
         return ALL(
-            Has("dp_smallkey", keys + CountDoneDeadends(0, "@Desert Palace Back/Boss/Boss Item"), 1, keys + CountDoneDeadends(1, "@Desert Palace Back/Boss/Boss Item", "@Desert Palace Back/Beamos Hall Pot Key/Beamos Hall Pot Key", "@Desert Palace Back/Desert Tiles 2 Pot Key/Desert Tiles 2 Pot Key"), 4),
+            Has("smallkey", keys + CountDoneDeadends(0, "@Desert Palace Back/Boss/Boss Item"), 1, keys + CountDoneDeadends(1, "@Desert Palace Back/Boss/Boss Item", "@Desert Palace Back/Beamos Hall Pot Key/Beamos Hall Pot Key", "@Desert Palace Back/Desert Tiles 2 Pot Key/Desert Tiles 2 Pot Key"), 4),
             CanInteract(DP_main_room)
         ), keys + 1
     end
@@ -143,8 +143,8 @@ DP_back_lobby:connect_two_ways_stuck(DP_back_tiles1_room, function () return Can
 
 DP_back_tiles1_room:connect_one_way("DP - Tile 1 Key Drop")
 DP_back_tiles1_room:connect_two_ways(DP_back_tiles1_room_1N_door)
-DP_back_tiles1_room_1N_door:connect_two_ways_entrance_door_stuck("", DP_back_bridge_room_1N_door, function(keys)
-    return Has("dp_smallkey", keys + CountDoneDeadends(0, "@Desert Palace/Compass Chest/Compass Chest"), 1, keys + CountDoneDeadends(1, "@Desert Palace/Compass Chest/Compass Chest"), 2), KDSreturn(keys, keys + 1)
+DP_back_tiles1_room_1N_door:connect_two_ways_entrance_door_stuck("", DP_back_bridge_room_1N_door, function(keys, Current_Dungeon)
+    return Has("smallkey", keys + CountDoneDeadends(0, "@Desert Palace/Compass Chest/Compass Chest"), 1, keys + CountDoneDeadends(1, "@Desert Palace/Compass Chest/Compass Chest"), 2), KDSreturn(keys, keys + 1)
 end)
 DP_back_tiles1_room_1N_door:connect_two_ways(DP_back_bridge_room)
 
@@ -154,27 +154,27 @@ DP_back_four_statues:connect_two_ways_stuck(DP_back_beamos_hallway, function() r
 DP_back_beamos_hallway:connect_one_way("DP - Beamos Hallway Key Drop")
 
 DP_back_beamos_hallway:connect_two_ways(DP_back_beamos_hallway_2N_door)
-DP_back_beamos_hallway_2N_door:connect_two_ways_entrance("", DP_back_tiles2_room_4S_door, function(keys)
-    return Has("dp_smallkey", keys + CountDoneDeadends(0, "@Desert Palace/Compass Chest/Compass Chest"), 1, keys + CountDoneDeadends(1, "@Desert Palace/Compass Chest/Compass Chest"), 3), KDSreturn(keys, keys + 1)
+DP_back_beamos_hallway_2N_door:connect_two_ways_entrance("", DP_back_tiles2_room_4S_door, function(keys, Current_Dungeon)
+    return Has("smallkey", keys + CountDoneDeadends(0, "@Desert Palace/Compass Chest/Compass Chest"), 1, keys + CountDoneDeadends(1, "@Desert Palace/Compass Chest/Compass Chest"), 3), KDSreturn(keys, keys + 1)
 end)
 DP_back_tiles2_room_4S_door:connect_two_ways(DP_back_tiles2_room)
 DP_back_tiles2_room:connect_one_way("DP - Tile 2 Key Drop")
 
-DP_back_tiles2_room:connect_two_ways(DP_back_torch_room, function(keys)
-    return Has("dp_smallkey", keys + CountDoneDeadends(0, "@Desert Palace/Compass Chest/Compass Chest"), 1, keys + CountDoneDeadends(1, "@Desert Palace/Compass Chest/Compass Chest"), 4), KDSreturn(keys, keys + 1)
+DP_back_tiles2_room:connect_two_ways(DP_back_torch_room, function(keys, Current_Dungeon)
+    return Has("smallkey", keys + CountDoneDeadends(0, "@Desert Palace/Compass Chest/Compass Chest"), 1, keys + CountDoneDeadends(1, "@Desert Palace/Compass Chest/Compass Chest"), 4), KDSreturn(keys, keys + 1)
 end)
 
 DP_back_torch_room:connect_two_ways(DP_back_torch_room_1N_door)
-DP_back_torch_room_1N_door:connect_two_ways(DP_back_boss_room_2S_door, function(keys)
+DP_back_torch_room_1N_door:connect_two_ways(DP_back_boss_room_2S_door, function(keys, Current_Dungeon)
     if Tracker:FindObjectForCode("key_drop_shuffle").Active then
         return ALL(
             "firesource",
-            "dp_bigkey"
+            "bigkey"
         ),keys
     else
         return ALL(
             "firesource",
-            "dp_bigkey",
+            "bigkey",
             "boots"
         ),keys
     end
@@ -188,7 +188,7 @@ DP_back_boss_room:connect_one_way("DP - Boss", function() return GetBossRef("dp_
 -- DP_left_entrance_inside:connect_two_ways(DP_right_entrance_inside)
 -- DP_main_entrance_inside:connect_two_ways(DP_main_room, function() return CanInteract(DP_main_entrance_inside) end)
 -- DP_left_entrance_inside:connect_two_ways(DP_big_chest_room)
--- DP_big_chest_room:connect_one_way("DP - Big Chest", function() return ALL("dp_bigkey", CanInteract(DP_big_chest_room)) end)
+-- DP_big_chest_room:connect_one_way("DP - Big Chest", function() return ALL("bigkey", CanInteract(DP_big_chest_room)) end)
 
 -- DP_left_entrance_inside:connect_two_ways(DP_torch_room)
 -- DP_torch_room:connect_one_way("DP - Torch", function()
@@ -203,16 +203,16 @@ DP_back_boss_room:connect_one_way("DP - Boss", function() return GetBossRef("dp_
 -- DP_left_entrance_inside:connect_two_ways(DP_map_chest_room)
 -- DP_map_chest_room:connect_one_way("DP - Map Chest", function() return CanInteract(DP_map_chest_room) end)
 
--- DP_main_room:connect_one_way(DP_compass_room, function(keys)
+-- DP_main_room:connect_one_way(DP_compass_room, function(keys, Current_Dungeon)
 --     if not Tracker:FindObjectForCode("key_drop_shuffle").Active then
 --         return ALL(
---             Has("dp_smallkey", keys + CountDoneDeadends(0, "@Desert Palace Back/Boss/Boss Item"), 1, keys + CountDoneDeadends(1, "@Desert Palace Back/Boss/Boss Item", "@Desert Palace Back/Beamos Hall Pot Key/Beamos Hall Pot Key", "@Desert Palace Back/Desert Tiles 2 Pot Key/Desert Tiles 2 Pot Key"), 4),
+--             Has("smallkey", keys + CountDoneDeadends(0, "@Desert Palace Back/Boss/Boss Item"), 1, keys + CountDoneDeadends(1, "@Desert Palace Back/Boss/Boss Item", "@Desert Palace Back/Beamos Hall Pot Key/Beamos Hall Pot Key", "@Desert Palace Back/Desert Tiles 2 Pot Key/Desert Tiles 2 Pot Key"), 4),
 --             "boots",
 --             CanInteract(DP_main_room)
 --         ), keys + 1
 --     else
 --         return ALL(
---             Has("dp_smallkey", keys + CountDoneDeadends(0, "@Desert Palace Back/Boss/Boss Item"), 1, keys + CountDoneDeadends(1, "@Desert Palace Back/Boss/Boss Item", "@Desert Palace Back/Beamos Hall Pot Key/Beamos Hall Pot Key", "@Desert Palace Back/Desert Tiles 2 Pot Key/Desert Tiles 2 Pot Key"), 4),
+--             Has("smallkey", keys + CountDoneDeadends(0, "@Desert Palace Back/Boss/Boss Item"), 1, keys + CountDoneDeadends(1, "@Desert Palace Back/Boss/Boss Item", "@Desert Palace Back/Beamos Hall Pot Key/Beamos Hall Pot Key", "@Desert Palace Back/Desert Tiles 2 Pot Key/Desert Tiles 2 Pot Key"), 4),
 --             CanInteract(DP_main_room)
 --         ), keys + 1
 --     end
@@ -225,32 +225,32 @@ DP_back_boss_room:connect_one_way("DP - Boss", function() return GetBossRef("dp_
 -- DP_main_room:connect_two_ways(DP_left_entrance_inside, function() return CanInteract(DP_main_room) end)
 -- DP_back_entrance_inside:connect_two_ways(DP_back_tile1_room, function() return CanInteract(DP_back_entrance_inside) end)
 
--- DP_back_tile1_room:connect_one_way(DP_back_beamos_hallway, function(keys)
---     return Has("dp_smallkey", keys + CountDoneDeadends(0, "@Desert Palace/Compass Chest/Compass Chest"), 1, keys + CountDoneDeadends(1, "@Desert Palace/Compass Chest/Compass Chest"), 2), KDSreturn(keys, keys + 1)
+-- DP_back_tile1_room:connect_one_way(DP_back_beamos_hallway, function(keys, Current_Dungeon)
+--     return Has("smallkey", keys + CountDoneDeadends(0, "@Desert Palace/Compass Chest/Compass Chest"), 1, keys + CountDoneDeadends(1, "@Desert Palace/Compass Chest/Compass Chest"), 2), KDSreturn(keys, keys + 1)
 -- end)
 -- DP_back_tile1_room:connect_one_way("DP - Tile 1 Key Drop")
 
--- DP_back_beamos_hallway:connect_one_way(DP_back_tiles2_room, function(keys)
---     return Has("dp_smallkey", keys + CountDoneDeadends(0, "@Desert Palace/Compass Chest/Compass Chest"), 1, keys + CountDoneDeadends(1, "@Desert Palace/Compass Chest/Compass Chest"), 3), KDSreturn(keys, keys + 1)
+-- DP_back_beamos_hallway:connect_one_way(DP_back_tiles2_room, function(keys, Current_Dungeon)
+--     return Has("smallkey", keys + CountDoneDeadends(0, "@Desert Palace/Compass Chest/Compass Chest"), 1, keys + CountDoneDeadends(1, "@Desert Palace/Compass Chest/Compass Chest"), 3), KDSreturn(keys, keys + 1)
 -- end)
 -- DP_back_beamos_hallway:connect_one_way("DP - Beamos Hallway Key Drop")
 
--- DP_back_tiles2_room:connect_one_way(DP_back_torch_room, function(keys)
---     return Has("dp_smallkey", keys + CountDoneDeadends(0, "@Desert Palace/Compass Chest/Compass Chest"), 1, keys + CountDoneDeadends(1, "@Desert Palace/Compass Chest/Compass Chest"), 4), KDSreturn(keys, keys + 1)
+-- DP_back_tiles2_room:connect_one_way(DP_back_torch_room, function(keys, Current_Dungeon)
+--     return Has("smallkey", keys + CountDoneDeadends(0, "@Desert Palace/Compass Chest/Compass Chest"), 1, keys + CountDoneDeadends(1, "@Desert Palace/Compass Chest/Compass Chest"), 4), KDSreturn(keys, keys + 1)
 -- end)
 -- DP_back_tiles2_room:connect_one_way("DP - Tile 2 Key Drop")
 
 
--- DP_back_torch_room:connect_one_way(DP_back_boss_room, function(keys)
+-- DP_back_torch_room:connect_one_way(DP_back_boss_room, function(keys, Current_Dungeon)
 --     if Tracker:FindObjectForCode("key_drop_shuffle").Active then
 --         return ALL(
 --             "firesource",
---             "dp_bigkey"
+--             "bigkey"
 --         ),keys
 --     else
 --         return ALL(
 --             "firesource",
---             "dp_bigkey",
+--             "bigkey",
 --             "boots"
 --         ),keys
 --     end

@@ -479,7 +479,7 @@ end)
 Lost_woods_hideout_hole_outside:connect_one_way_entrance("Lost Woods Hideout Hole", Lost_woods_hideout_hole_inside)
 Lost_woods_hideout_cave_outside:connect_two_ways_entrance("Lost Woods Hideout Cave", Lost_woods_hideout_cave_inside)
 Lost_woods_gamble_outside:connect_two_ways_entrance("Lost Woods Gamble", Lost_woods_gamble_inside)
-Mastersword_meadow_outside:connect_two_ways_entrance("Mastersword Meador (Pedastal)", Mastersword_meadow_inside)
+Mastersword_meadow_outside:connect_two_ways_entrance("Mastersword Meadow (Pedastal)", Mastersword_meadow_inside)
 
 Lost_woods_hideout_hole_inside:connect_one_way("Lost Woods Hideout")
 Lost_woods_hideout_hole_inside:connect_one_way(Lost_woods_hideout_cave_inside)

@@ -273,7 +273,7 @@ MM_boss_room_3S_door:connect_two_ways(MM_boss_room)
 MM_main_room:connect_one_way("MM - Main Lobby Chest", function()
     return CanReachCrystalSwitches() >= 5
 end)
-MM_big_chest_room_top:connect_one_way("MM - Big Chest", function() return Has("mm_bigkey") end)
+MM_big_chest_room_top:connect_one_way("MM - Big Chest", function() return Has("bigkey") end)
 
 MM_map_room_top_left:connect_one_way("MM - Map Chest")
 
@@ -326,21 +326,21 @@ MM_boss_room:connect_one_way("MM - Boss", function() return GetBossRef("mm_boss"
 --         )
 --     end
 -- end)
--- MM_main_room:connect_two_ways(MM_conveyor_crystal_room,function(keys)
---     if Tracker:FindObjectForCode("mm_bigkey").Active then
---         return Has("mm_smallkey", keys + 0, 2, keys + CountDoneDeadends(1, "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key", "@Misery Mire/Boss/Boss Item"), 4), KDSreturn(keys, keys + 1)
+-- MM_main_room:connect_two_ways(MM_conveyor_crystal_room,function(keys, Current_Dungeon)
+--     if Tracker:FindObjectForCode("bigkey").Active then
+--         return Has("smallkey", keys + 0, 2, keys + CountDoneDeadends(1, "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key", "@Misery Mire/Boss/Boss Item"), 4), KDSreturn(keys, keys + 1)
 --     else
---         return Has("mm_smallkey", keys + 0, 2, keys + CountDoneDeadends(1, "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key"), 3), KDSreturn(keys, keys + 1)
+--         return Has("smallkey", keys + 0, 2, keys + CountDoneDeadends(1, "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key"), 3), KDSreturn(keys, keys + 1)
 --     end
 -- end)
 -- MM_main_room:connect_two_ways(MM_block_push)
 
 -- MM_main_room:connect_two_ways(MM_map_room_bottom)
--- MM_main_room:connect_two_ways(MM_map_room_top_left, function(keys)
+-- MM_main_room:connect_two_ways(MM_map_room_top_left, function(keys, Current_Dungeon)
 --     if CanReachCrystalSwitches() >= 5 then
---         return Has("mm_smallkey", keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest"), 2, keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key"), 2), keys
+--         return Has("smallkey", keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest"), 2, keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key"), 2), keys
 --     else
---         return Has("mm_smallkey", keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest"), 2, keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key"), 4), keys + 1
+--         return Has("smallkey", keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest"), 2, keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key"), 4), keys + 1
 --     end
 -- end)
 -- MM_main_room:connect_one_way("MM - Main Lobby Chest", function()
@@ -351,7 +351,7 @@ MM_boss_room:connect_one_way("MM - Boss", function() return GetBossRef("mm_boss"
 -- MM_map_room_bottom:connect_two_ways(MM_big_chest_room)
 
 -- MM_big_chest_room:connect_one_way(MM_map_room_top_right)
--- MM_big_chest_room:connect_one_way("MM - Big Chest", function() return Has("mm_bigkey") end)
+-- MM_big_chest_room:connect_one_way("MM - Big Chest", function() return Has("bigkey") end)
 
 -- MM_map_room_top_right:connect_one_way(MM_map_room_bottom)
 -- MM_map_room_top_middle:connect_two_ways(MM_map_room_top_right, function() 
@@ -374,8 +374,8 @@ MM_boss_room:connect_one_way("MM - Boss", function() return GetBossRef("mm_boss"
 
 -- MM_bridge_right:connect_one_way("MM - Bridge Chest")
 
--- MM_spike_room:connect_two_ways(MM_above_spike_room, function(keys)
---     return Has("mm_smallkey", keys + CountDoneDeadends(0, "@Misery Mire/Compass Chest/Compass Chest"), 2, keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key"), 5), KDSreturn(keys, keys + 1)
+-- MM_spike_room:connect_two_ways(MM_above_spike_room, function(keys, Current_Dungeon)
+--     return Has("smallkey", keys + CountDoneDeadends(0, "@Misery Mire/Compass Chest/Compass Chest"), 2, keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key"), 5), KDSreturn(keys, keys + 1)
 -- end)
 
 -- MM_spike_room:connect_one_way("MM - Spike Chest", function()
@@ -386,22 +386,22 @@ MM_boss_room:connect_one_way("MM - Boss", function() return GetBossRef("mm_boss"
 -- end)
 -- MM_spike_room:connect_one_way("MM - Spike Key Drop")
 
--- MM_fishbone_room:connect_one_way(MM_hourglas_room, function(keys)
---     if Tracker:FindObjectForCode("mm_bigkey").Active then
---         return Has("mm_smallkey", keys + CountDoneDeadends(0, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Boss/Boss Item"), 2, keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop", "@Misery Mire/Boss/Boss Item", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key"), 5), KDSreturn(keys, keys + 1)
+-- MM_fishbone_room:connect_one_way(MM_hourglas_room, function(keys, Current_Dungeon)
+--     if Tracker:FindObjectForCode("bigkey").Active then
+--         return Has("smallkey", keys + CountDoneDeadends(0, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Boss/Boss Item"), 2, keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop", "@Misery Mire/Boss/Boss Item", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key"), 5), KDSreturn(keys, keys + 1)
 --     else
---         return Has("mm_smallkey", keys + CountDoneDeadends(0, "@Misery Mire/Compass Chest/Compass Chest"), 2, keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key"), 4), KDSreturn(keys, keys + 1)
+--         return Has("smallkey", keys + CountDoneDeadends(0, "@Misery Mire/Compass Chest/Compass Chest"), 2, keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key"), 4), KDSreturn(keys, keys + 1)
 --     end
 -- end)
 -- MM_fishbone_room:connect_one_way("MM - Fishbone Key Drop")
 
 -- MM_hourglas_room:connect_two_ways(MM_main_room)
 -- MM_hourglas_room:connect_two_ways(MM_lonely_teleporter_room)
--- MM_conveyor_crystal_room:connect_two_ways(MM_four_torches_tile_room, function(keys)
---     if Tracker:FindObjectForCode("mm_bigkey").Active then
---         return Has("mm_smallkey", keys + CountDoneDeadends(0, "@Misery Mire/Boss/Boss Item"), 3, keys + CountDoneDeadends(1, "@Misery Mire/Boss/Boss Item"), 6), KDSreturn(keys, keys + 1)
+-- MM_conveyor_crystal_room:connect_two_ways(MM_four_torches_tile_room, function(keys, Current_Dungeon)
+--     if Tracker:FindObjectForCode("bigkey").Active then
+--         return Has("smallkey", keys + CountDoneDeadends(0, "@Misery Mire/Boss/Boss Item"), 3, keys + CountDoneDeadends(1, "@Misery Mire/Boss/Boss Item"), 6), KDSreturn(keys, keys + 1)
 --     else
---         return Has("mm_smallkey", keys + CountDoneDeadends(0, "@Misery Mire/Boss/Boss Item"), 2, keys + CountDoneDeadends(1, "@Misery Mire/Boss/Boss Item"), 5), KDSreturn(keys, keys + 1)
+--         return Has("smallkey", keys + CountDoneDeadends(0, "@Misery Mire/Boss/Boss Item"), 2, keys + CountDoneDeadends(1, "@Misery Mire/Boss/Boss Item"), 5), KDSreturn(keys, keys + 1)
 --     end
 -- end)
 
@@ -414,7 +414,7 @@ MM_boss_room:connect_one_way("MM - Boss", function() return GetBossRef("mm_boss"
 --         CheckGlitches(3),
 --         CanBombClip(MM_cutscene_room),
 --         "firesource",
---         "mm_bigkey"
+--         "bigkey"
 --     )
 -- end) -- mire to hera
 -- MM_cutscene_room:connect_one_way(SP_first_room, function()
@@ -443,19 +443,19 @@ MM_boss_room:connect_one_way("MM - Boss", function() return GetBossRef("mm_boss"
 -- MM_big_key_chest:connect_one_way(MM_hourglas_room)
 -- MM_big_key_chest:connect_one_way("MM - Big Key Chest")
 
--- MM_lonely_teleporter_room:connect_one_way(MM_big_key_door_room, function() return Has("mm_bigkey") end)
+-- MM_lonely_teleporter_room:connect_one_way(MM_big_key_door_room, function() return Has("bigkey") end)
 
 -- MM_above_spike_room:connect_two_ways(MM_fishbone_room)
 -- MM_above_spike_room:connect_two_ways(MM_big_key_door_room)
 
--- MM_big_key_door_room:connect_two_ways(MM_bridge_middle, function() return Has("mm_bigkey") end)
--- MM_bridge_middle:connect_two_ways(MM_boss_room, function(keys)
+-- MM_big_key_door_room:connect_two_ways(MM_bridge_middle, function() return Has("bigkey") end)
+-- MM_bridge_middle:connect_two_ways(MM_boss_room, function(keys, Current_Dungeon)
 --     return ALL(
 --         "somaria",
 --         "bombs",
 --         DarkRooms,
---         Has("mm_smallkey", keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest"), 3, keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key"), 6),
---         "mm_bigkey"
+--         Has("smallkey", keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest"), 3, keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key"), 6),
+--         "bigkey"
 --     ), keys + 1 -- + 1)
 -- end)
 

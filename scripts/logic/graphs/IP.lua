@@ -153,7 +153,7 @@ end)
 IP_freezor_room:connect_one_way(IP_big_chest_room_left)
 IP_freezor_room:connect_one_way(IP_big_chest_room_right)
 
-IP_big_chest_room_left:connect_one_way("IP - Big Chest", function() return Has("ip_bigkey") end)
+IP_big_chest_room_left:connect_one_way("IP - Big Chest", function() return Has("bigkey") end)
 IP_big_chest_room_left:connect_two_ways_stuck(IP_big_chest_room_right, nil, function() return Has("hookshot") end)
 IP_big_chest_room_right:connect_two_ways(IP_crystal_switch_left)
 IP_crystal_switch_left:connect_one_way(IP_pre_boss_hold_switch)
@@ -268,7 +268,7 @@ IP_boss_room:connect_one_way("IP - Boss", function() return GetBossRef("ip_boss"
 -- end) -- Ice Palace Entrance Clip
 -- -- UWG end
 
--- IP_jelly_room:connect_two_ways(IP_push_cross, function(keys) return Has("ip_smallkey", keys, 0, keys + 1, 1), KDSreturn(keys, keys + 1) end)
+-- IP_jelly_room:connect_two_ways(IP_push_cross, function(keys, Current_Dungeon) return Has("smallkey", keys, 0, keys + 1, 1), KDSreturn(keys, keys + 1) end)
 -- IP_jelly_room:connect_one_way("IP - Jelly Key Drop", function() return DealDamage() end)
 -- IP_push_cross:connect_two_ways(IP_bomb_dropdown)
 -- IP_push_cross:connect_two_ways(IP_sliding_switch_room)
@@ -276,15 +276,15 @@ IP_boss_room:connect_one_way("IP - Boss", function() return GetBossRef("ip_boss"
 -- IP_compass_room:connect_one_way("IP - Compass Chest", function() return DealDamage() end)
 -- IP_bomb_dropdown:connect_one_way(IP_conveyor_room, function() return Has("bombs") end)
 
--- IP_conveyor_room:connect_two_ways(IP_sliding_penguins, function(keys) return Has("ip_smallkey", keys, 0, keys + 1, 2), KDSreturn(keys, keys + 1) end)
+-- IP_conveyor_room:connect_two_ways(IP_sliding_penguins, function(keys, Current_Dungeon) return Has("smallkey", keys, 0, keys + 1, 2), KDSreturn(keys, keys + 1) end)
 -- IP_conveyor_room:connect_one_way("IP - Conveyor Key Drop", function() return DealDamage() end)
 -- IP_sliding_penguins:connect_two_ways(IP_cross, function() return DealDamage() end)
 -- IP_cross:connect_two_ways(IP_falling_floor)
--- IP_cross:connect_two_ways(IP_spike_room, function(keys)
+-- IP_cross:connect_two_ways(IP_spike_room, function(keys, Current_Dungeon)
 --     if Tracker:FindObjectForCode("hookshot").Active then
---         return Has("ip_smallkey", keys + 1, 2, keys + 1, 4), keys + 1
+--         return Has("smallkey", keys + 1, 2, keys + 1, 4), keys + 1
 --     else
---         return Has("ip_smallkey", keys + 1, 2, keys + 1, 6), keys + 1
+--         return Has("smallkey", keys + 1, 2, keys + 1, 6), keys + 1
 --     end
 -- end)
 -- IP_cross:connect_two_ways(IP_sliding_firebar)
@@ -305,23 +305,23 @@ IP_boss_room:connect_one_way("IP - Boss", function() return GetBossRef("ip_boss"
 -- IP_big_chest_room:connect_two_ways(IP_above_boss_dropdown)
 -- IP_big_chest_room:connect_one_way("IP - Big Chest", function()
 --     return ALL(
---         "ip_bigkey",
+--         "bigkey",
 --         ANY(
 --             "bombs",
 --             "hookshot"
 --         )
 --     )
 -- end)
--- IP_above_boss_dropdown:connect_one_way(IP_boss_dropdown, function(keys)
+-- IP_above_boss_dropdown:connect_one_way(IP_boss_dropdown, function(keys, Current_Dungeon)
 --     if Tracker:FindObjectForCode("hookshot").Active then
 --         return ALL(
---             Has("ip_smallkey", keys + 1, 2, keys + 1, 5),
---             "ip_bigkey"
+--             Has("smallkey", keys + 1, 2, keys + 1, 5),
+--             "bigkey"
 --         ), keys + 1
 --     else
 --         return ALL(
---             Has("ip_smallkey", keys + 1, 2, keys + 1, 6),
---             "ip_bigkey"
+--             Has("smallkey", keys + 1, 2, keys + 1, 6),
+--             "bigkey"
 --         ), keys + 1
 --     end
 -- end)
@@ -329,11 +329,11 @@ IP_boss_room:connect_one_way("IP - Boss", function() return GetBossRef("ip_boss"
 
 -- IP_many_pots_room:connect_two_ways(IP_iced_t_room)
 -- IP_many_pots_room:connect_one_way("IP - Many Pots Key Drop")
--- IP_iced_t_room:connect_two_ways(IP_ice_hallway, function(keys)
+-- IP_iced_t_room:connect_two_ways(IP_ice_hallway, function(keys, Current_Dungeon)
 --     if Tracker:FindObjectForCode("hookshot").Active then
---         return Has("ip_smallkey", keys + 1, 2, keys + 1, 4), keys + 1
+--         return Has("smallkey", keys + 1, 2, keys + 1, 4), keys + 1
 --     else
---         return Has("ip_smallkey", keys + 1, 2, keys + 1, 6), keys + 1
+--         return Has("smallkey", keys + 1, 2, keys + 1, 6), keys + 1
 --     end
 -- end)
 -- IP_iced_t_room:connect_one_way("IP - Iced T Chest")
@@ -374,18 +374,18 @@ IP_boss_room:connect_one_way("IP - Boss", function() return GetBossRef("ip_boss"
 -- IP_big_key_room:connect_one_way(IP_sliding_switch_room)
 -- IP_big_key_room:connect_one_way("IP - Big Key Chest")
 -- -- IP_sliding_switch_room:connect_two_ways(IP_big_key_room) --icebreaker
--- IP_boss_dropdown:connect_one_way(IP_boss_room, function(keys)
+-- IP_boss_dropdown:connect_one_way(IP_boss_room, function(keys, Current_Dungeon)
 --     if Tracker:FindObjectForCode("somaria").Active then
 --         return ALL(
 --             "hammer",
 --             "glove",
---             Has("ip_smallkey", keys + 1, 2, keys + 1, 5)
+--             Has("smallkey", keys + 1, 2, keys + 1, 5)
 --         ), keys + 1
 --     else
 --         return ALL(
 --             "hammer",
 --             "glove",
---             Has("ip_smallkey", keys + 1, 2, keys + 1, 6)
+--             Has("smallkey", keys + 1, 2, keys + 1, 6)
 --         ), keys + 1
 --     end
 -- end)

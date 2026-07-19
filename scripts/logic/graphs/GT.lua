@@ -191,9 +191,9 @@ GT_bottom_dm_room:connect_one_way("GT - DM Room Bottom Right")
 
 
 GT_bottom_bonk_pit_room_bottom:connect_two_ways(GT_bottom_bonk_pit_room_3S_door, function() return ALL(DealDamage, HitRanged) end)
-GT_bottom_bonk_pit_room_3S_door:connect_two_ways(GT_bottom_map_room, function(keys)
+GT_bottom_bonk_pit_room_3S_door:connect_two_ways(GT_bottom_map_room, function(keys, Current_Dungeon)
     return ALL(
-        Has("gt_smallkey", keys + CountDoneDeadends(0, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 4, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 8)
+        Has("smallkey", keys + CountDoneDeadends(0, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 4, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 8)
     ), KDSreturn(keys, keys + 1)
 end)
 GT_bottom_map_room:connect_one_way("GT - Map Chest")
@@ -208,7 +208,7 @@ GT_bottom_after_double_switch_room:connect_two_ways(GT_bottom_firesnake_room_bef
 GT_bottom_firesnake_room_before_pit:connect_two_ways(GT_bottom_firesnake_room_after_pit, function() return Has("hookshot") end)
 GT_bottom_firesnake_room_after_pit:connect_one_way("GT - Firesnake Room")
 
-GT_bottom_firesnake_room_after_pit:connect_two_ways(GT_bottom_teleporter_puzzle_room_A_side, function(keys) return Has("gt_smallkey", keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 4, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 8), keys + 1 end)
+GT_bottom_firesnake_room_after_pit:connect_two_ways(GT_bottom_teleporter_puzzle_room_A_side, function(keys, Current_Dungeon) return Has("smallkey", keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 4, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 8), keys + 1 end)
 
 GT_bottom_teleporter_puzzle_room_A_side:connect_two_ways(GT_bottom_teleporter_puzzle_room_A_side_3W_door)
 GT_bottom_teleporter_puzzle_room_A_side_3W_door:connect_two_ways_entrance("", GT_bottom_randomizer_room_4E_door, function() return ALL("bombs") end)
@@ -233,7 +233,7 @@ GT_bottom_invisibile_bonk_room:connect_two_ways(GT_bottom_invisibile_bonk_room_1
 GT_bottom_invisibile_bonk_room_1N_door:connect_two_ways_entrance("", GT_bottom_big_chest_room_3S_door)
 GT_bottom_big_chest_room_3S_door:connect_two_ways(GT_bottom_big_chest_room)
 
-GT_bottom_big_chest_room:connect_one_way("GT - Big Chest", function() return Has("gt_bigkey") end)
+GT_bottom_big_chest_room:connect_one_way("GT - Big Chest", function() return Has("bigkey") end)
 GT_bottom_big_chest_room:connect_one_way(GT_bottom_bobs_torch)
 
 GT_bottom_invisibile_bonk_room:connect_two_ways(GT_bottom_invisibile_bonk_room_2N_door)
@@ -296,7 +296,7 @@ GT_bottom_compass_room:connect_one_way(GT_bottom_conveyor_star_room)
 
 GT_bottom_conveyor_star_room:connect_one_way("GT - Conveyor Star Key Drop")
 GT_bottom_conveyor_star_room:connect_two_ways(GT_bottom_conveyor_star_room_2E_door)
-GT_bottom_conveyor_star_room_2E_door:connect_two_ways_entrance("", GT_bottom_fire_spinner_catwalk_1W_door, function(keys) return Has("gt_smallkey", keys + CountDoneDeadends(0, "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 4, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room", "@Ganon's Tower Bottom Left/Map Chest/Map Chest", "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 8), KDSreturn(keys, keys + 1) end)
+GT_bottom_conveyor_star_room_2E_door:connect_two_ways_entrance("", GT_bottom_fire_spinner_catwalk_1W_door, function(keys, Current_Dungeon) return Has("smallkey", keys + CountDoneDeadends(0, "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 4, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room", "@Ganon's Tower Bottom Left/Map Chest/Map Chest", "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 8), KDSreturn(keys, keys + 1) end)
 
 GT_bottom_fire_spinner_catwalk_1W_door:connect_two_ways(GT_bottom_fire_spinner_catwalk)
 GT_bottom_fire_spinner_catwalk:connect_two_ways(GT_bottom_fire_spinner_catwalk_3W_door)
@@ -309,7 +309,7 @@ GT_bottom_invisible_bridges_3W_door:connect_two_ways_entrance("", GT_bottom_invi
 GT_bottom_invisibile_bonk_room_4E_door:connect_two_ways(GT_bottom_invisibile_bonk_room)
 
 
--- GT_bottom_bobs_torch:connect_two_ways(GT_bottom_hope_room, function(keys) return Has("gt_smallkey", keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 4, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room", "@Ganon's Tower Bottom Left/Map Chest/Map Chest", "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 7), keys + 1 end)
+-- GT_bottom_bobs_torch:connect_two_ways(GT_bottom_hope_room, function(keys, Current_Dungeon) return Has("smallkey", keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 4, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room", "@Ganon's Tower Bottom Left/Map Chest/Map Chest", "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 7), keys + 1 end)
 
 ---
 GT_bottom_main_room_N_door:connect_two_ways_entrance("", GT_top_spike_crystal_switch_N_door)
@@ -319,7 +319,7 @@ GT_top_4_mimics:connect_two_ways_stuck(GT_top_mimics2, function() return DealDam
 
 GT_top_mimics2:connect_two_ways_stuck(GT_top_big_key_door, function() return DealDamage end)
 GT_top_big_key_door:connect_two_ways(GT_top_big_key_door_2N_door)
-GT_top_big_key_door_2N_door:connect_two_ways_entrance_door_stuck("", GT_top_pinball_crystal_switch_4S_door, function() return Has("gt_bigkey") end, function() return true end) --smallkey unaccounted for
+GT_top_big_key_door_2N_door:connect_two_ways_entrance_door_stuck("", GT_top_pinball_crystal_switch_4S_door, function() return Has("bigkey") end, function() return true end) --smallkey unaccounted for
 GT_top_pinball_crystal_switch_4S_door:connect_two_ways(GT_top_pinball_crystal_switch)
 GT_top_pinball_crystal_switch:connect_two_ways(GT_top_pinball_crystal_switch_2E_door)
 GT_top_pinball_crystal_switch_2E_door:connect_two_ways_entrance_door_stuck("", GT_top_cannonball_bridge_1W_door, function() return CanInteract(GT_top_pinball_crystal_switch) end)
@@ -366,9 +366,9 @@ GT_top_falling_torches:connect_two_ways_stuck(GT_top_mini_helmasaur_room, functi
 GT_top_mini_helmasaur_room:connect_one_way("GT - Mini Helmasaur Left")
 GT_top_mini_helmasaur_room:connect_one_way("GT - Mini Helmasaur Right")
 GT_top_mini_helmasaur_room:connect_one_way("GT - Mini Helmasaur Key Drop")
-GT_top_mini_helmasaur_room:connect_two_ways(GT_top_bomb_conveyor, function(keys)
+GT_top_mini_helmasaur_room:connect_two_ways(GT_top_bomb_conveyor, function(keys, Current_Dungeon)
     return ALL(
-        Has("gt_smallkey", keys + CountDoneDeadends(0, "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 3, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room", "@Ganon's Tower Bottom Left/Map Chest/Map Chest", "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 7),
+        Has("smallkey", keys + CountDoneDeadends(0, "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 3, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room", "@Ganon's Tower Bottom Left/Map Chest/Map Chest", "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 7),
         "bombs"
     ), KDSreturn(keys + 0 , keys + 1 )
 end)
@@ -377,7 +377,7 @@ GT_top_bomb_conveyor:connect_two_ways(GT_top_crystal_switch_circles ,function() 
 
 GT_top_crystal_switch_circles:connect_one_way("GT - Pre Moldorm Chest")
 GT_top_crystal_switch_circles:connect_two_ways(GT_top_crystal_switch_circles_3S_door)
-GT_top_crystal_switch_circles_3S_door:connect_two_ways_entrance("", GT_top_top_refight_1N_door, function(keys) return Has("gt_smallkey", keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest"), 4, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room", "@Ganon's Tower Bottom Left/Map Chest/Map Chest", "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key"), 8), keys + 1 end)
+GT_top_crystal_switch_circles_3S_door:connect_two_ways_entrance("", GT_top_top_refight_1N_door, function(keys, Current_Dungeon) return Has("smallkey", keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest"), 4, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room", "@Ganon's Tower Bottom Left/Map Chest/Map Chest", "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key"), 8), keys + 1 end)
 
 
 GT_top_top_refight_1N_door:connect_one_way(GT_top_top_refight)
@@ -432,8 +432,8 @@ end)
 -- GT_bottom_main_room:connect_two_ways(GT_top_entrance)
 
 -- GT_bottom_bobs_torch:connect_two_ways(GT_bottom_conveyor_cross_room)
--- -- GT_bottom_bobs_torch:connect_two_ways(GT_bottom_hope_room)--, function(keys) return Has("gt_smallkey", keys + 1, 4, keys + 1, 6), KDSreturn(keys+1, keys+1) end)
--- GT_bottom_bobs_torch:connect_two_ways(GT_bottom_hope_room, function(keys) return Has("gt_smallkey", keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 4, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room", "@Ganon's Tower Bottom Left/Map Chest/Map Chest", "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 7), keys + 1 end)
+-- -- GT_bottom_bobs_torch:connect_two_ways(GT_bottom_hope_room)--, function(keys, Current_Dungeon) return Has("smallkey", keys + 1, 4, keys + 1, 6), KDSreturn(keys+1, keys+1) end)
+-- GT_bottom_bobs_torch:connect_two_ways(GT_bottom_hope_room, function(keys, Current_Dungeon) return Has("smallkey", keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 4, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room", "@Ganon's Tower Bottom Left/Map Chest/Map Chest", "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 7), keys + 1 end)
 -- GT_bottom_bobs_torch:connect_one_way("GT - Bob's Torch", function()
 --     return ANY(
 --         ALL(
@@ -457,9 +457,9 @@ end)
 -- end)
 
 -- GT_bottom_bonk_pit_room_bottom:connect_two_ways(GT_bottom_double_switch_room, function() return DealDamage() end)
--- GT_bottom_bonk_pit_room_bottom:connect_two_ways(GT_bottom_map_room, function(keys)
+-- GT_bottom_bonk_pit_room_bottom:connect_two_ways(GT_bottom_map_room, function(keys, Current_Dungeon)
 --     return ALL(
---         Has("gt_smallkey", keys + CountDoneDeadends(0, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 4, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 8)
+--         Has("smallkey", keys + CountDoneDeadends(0, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 4, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 8)
 --     ), KDSreturn(keys, keys + 1)
 -- end)
 
@@ -470,7 +470,7 @@ end)
 
 -- GT_bottom_map_room:connect_one_way("GT - Map Chest")
 
--- GT_bottom_double_switch_room:connect_two_ways(GT_bottom_firesnake_room_before_pit, function(keys)
+-- GT_bottom_double_switch_room:connect_two_ways(GT_bottom_firesnake_room_before_pit, function(keys, Current_Dungeon)
 --     return ALL(
 --         ANY(
 --             "bombs",
@@ -483,7 +483,7 @@ end)
 --                 )
 --             )
 --         ),
---         Has("gt_smallkey", keys + CountDoneDeadends(0, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 3, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 5)
+--         Has("smallkey", keys + CountDoneDeadends(0, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 3, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 5)
 --     ), KDSreturn(keys, keys + 1) end)
 -- GT_bottom_double_switch_room:connect_one_way("GT - Double Switch Pot Key")--, function() ret
 -- --     return ANY(
@@ -494,7 +494,7 @@ end)
 
 -- GT_bottom_firesnake_room_before_pit:connect_two_ways(GT_bottom_firesnake_room_after_pit, function() return Has("hookshot") end)
 
--- GT_bottom_firesnake_room_after_pit:connect_two_ways(GT_bottom_teleporter_puzzle_room, function(keys) return Has("gt_smallkey", keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 4, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 8), keys + 1 end)
+-- GT_bottom_firesnake_room_after_pit:connect_two_ways(GT_bottom_teleporter_puzzle_room, function(keys, Current_Dungeon) return Has("smallkey", keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 4, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 8), keys + 1 end)
 -- GT_bottom_firesnake_room_after_pit:connect_one_way("GT - Firesnake Room")
 
 -- GT_bottom_teleporter_puzzle_room:connect_two_ways(GT_bottom_randomizer_room, function() return ALL("bombs", CanInteract(GT_bottom_teleporter_puzzle_room)) end)
@@ -509,7 +509,7 @@ end)
 -- GT_bottom_hope_room:connect_one_way("GT - Hope Room Left", function() return CanInteract(GT_bottom_hope_room) end)
 -- GT_bottom_hope_room:connect_one_way("GT - Hope Room Right", function() return CanInteract(GT_bottom_hope_room) end)
 
--- GT_bottom_tile_room:connect_two_ways(GT_bottom_torch_puzzle, function(keys) return Has("gt_smallkey", keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 3, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room", "@Ganon's Tower Bottom Left/Map Chest/Map Chest", "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 7), keys + 1 end)
+-- GT_bottom_tile_room:connect_two_ways(GT_bottom_torch_puzzle, function(keys, Current_Dungeon) return Has("smallkey", keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 3, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room", "@Ganon's Tower Bottom Left/Map Chest/Map Chest", "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 7), keys + 1 end)
 -- GT_bottom_tile_room:connect_one_way("GT - Tile Room Chest")
 
 -- GT_bottom_torch_puzzle:connect_one_way(GT_bottom_compass_room, function()
@@ -528,13 +528,13 @@ end)
 -- GT_bottom_compass_room:connect_one_way("GT - Compass Room Bottom Left")
 -- GT_bottom_compass_room:connect_one_way("GT - Compass Room Bottom Right")
 
--- GT_bottom_conveyor_star_room:connect_one_way(GT_bottom_invisibile_bonk_room, function(keys) return Has("gt_smallkey", keys + CountDoneDeadends(0, "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 4, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room", "@Ganon's Tower Bottom Left/Map Chest/Map Chest", "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 8), KDSreturn(keys, keys + 1) end)
+-- GT_bottom_conveyor_star_room:connect_one_way(GT_bottom_invisibile_bonk_room, function(keys, Current_Dungeon) return Has("smallkey", keys + CountDoneDeadends(0, "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 4, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room", "@Ganon's Tower Bottom Left/Map Chest/Map Chest", "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 8), KDSreturn(keys, keys + 1) end)
 -- GT_bottom_conveyor_star_room:connect_one_way("GT - Conveyor Star Key Drop")
 
 -- GT_bottom_invisibile_bonk_room:connect_two_ways(GT_bottom_big_chest_room)
 -- GT_bottom_invisibile_bonk_room:connect_two_ways(GT_bottom_above_ice_fight)
 
--- GT_bottom_big_chest_room:connect_one_way("GT - Big Chest", function() return Has("gt_bigkey") end)
+-- GT_bottom_big_chest_room:connect_one_way("GT - Big Chest", function() return Has("bigkey") end)
 
 -- GT_bottom_above_ice_fight:connect_one_way(GT_bottom_ice_fight, function() return Has("bombs") end)
 -- GT_bottom_above_ice_fight:connect_one_way("GT - Bob's Chest")
@@ -548,7 +548,7 @@ end)
 
 -- GT_top_entrance:connect_two_ways(GT_top_gauntlet, function()
 --     return ALL(
---         "gt_bigkey",
+--         "bigkey",
 --         EnemizerCheck("bow"),
 --         CanInteract(GT_top_entrance)
 --     )
@@ -557,9 +557,9 @@ end)
 -- GT_top_Desert_refight:connect_two_ways(GT_top_torch_puzzle)
 -- GT_top_torch_puzzle:connect_one_way(GT_top_mini_helmasaur_room, function() return Has("firesource") end)
 
--- GT_top_mini_helmasaur_room:connect_two_ways(GT_top_pre_moldorm_room, function(keys)
+-- GT_top_mini_helmasaur_room:connect_two_ways(GT_top_pre_moldorm_room, function(keys, Current_Dungeon)
 --     return ALL(
---         Has("gt_smallkey", keys + CountDoneDeadends(0, "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 3, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room", "@Ganon's Tower Bottom Left/Map Chest/Map Chest", "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 7),
+--         Has("smallkey", keys + CountDoneDeadends(0, "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 3, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room", "@Ganon's Tower Bottom Left/Map Chest/Map Chest", "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 7),
 --         "bombs"
 --     ), KDSreturn(keys + 0 , keys + 1 )
 -- end)
@@ -567,7 +567,7 @@ end)
 -- GT_top_mini_helmasaur_room:connect_one_way("GT - Mini Helmasaur Right")
 -- GT_top_mini_helmasaur_room:connect_one_way("GT - Mini Helmasaur Key Drop")
 
--- GT_top_pre_moldorm_room:connect_one_way(GT_top_top_refight, function(keys) return Has("gt_smallkey", keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest"), 4, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room", "@Ganon's Tower Bottom Left/Map Chest/Map Chest", "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key"), 8), keys + 1 end)
+-- GT_top_pre_moldorm_room:connect_one_way(GT_top_top_refight, function(keys, Current_Dungeon) return Has("smallkey", keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest"), 4, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room", "@Ganon's Tower Bottom Left/Map Chest/Map Chest", "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key"), 8), keys + 1 end)
 -- GT_top_pre_moldorm_room:connect_one_way("GT - Pre Moldorm Chest")
 
 -- GT_top_top_refight:connect_one_way(GT_top_validation, function() return ALL(

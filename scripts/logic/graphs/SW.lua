@@ -56,7 +56,7 @@ SW_compass_room_2N_door:connect_two_ways_entrance("", SW_pot_prison_4S_door)
 SW_pot_prison_4S_door:connect_two_ways(SW_pot_prison)
 SW_pot_prison:connect_one_way("SW - Pot Prison")
 SW_pot_prison:connect_one_way(SW_pot_prison_4E_door)
-SW_pot_prison_4E_door:connect_two_ways_entrance("", SW_big_chest_entrance_3W_door, function(keys) return Has("sw_smallkey", keys + 1, 1, keys + 1, 1), keys + 1 end)
+SW_pot_prison_4E_door:connect_two_ways_entrance("", SW_big_chest_entrance_3W_door, function(keys, Current_Dungeon) return Has("smallkey", keys + 1, 1, keys + 1, 1), keys + 1 end)
 SW_big_chest_entrance_3W_door:connect_two_ways(SW_big_chest_entrance_lobby)
 
 
@@ -68,7 +68,7 @@ SW_compass_room:connect_one_way(SW_pinball_room)
 
 SW_pinball_room:connect_one_way("SW - Pinball Chest")
 SW_pinball_room:connect_two_ways(SW_pinball_room_2N_door)
-SW_pinball_room_2N_door:connect_two_ways_entrance("", SW_map_room_4S_door, function(keys) return Has("sw_smallkey", keys + 1, 1, keys + 1, 1), keys + 1 end)
+SW_pinball_room_2N_door:connect_two_ways_entrance("", SW_map_room_4S_door, function(keys, Current_Dungeon) return Has("smallkey", keys + 1, 1, keys + 1, 1), keys + 1 end)
 SW_map_room_4S_door:connect_two_ways(SW_map_room)
 
 SW_map_room:connect_one_way("SW - Map Chest")
@@ -79,7 +79,7 @@ SW_pot_circle_drop_inside:connect_one_way(SW_pot_circle)
 SW_pot_circle:connect_two_ways_stuck(SW_map_room, function() return CanInteract(SW_pot_circle) end, function() return Has("hookshot") end)
 SW_pot_circle:connect_two_ways(SW_big_chest_section, function() return Has("bombs") end)
 
-SW_big_chest_section:connect_one_way("SW - Big Chest", function() return Has("sw_bigkey") end)
+SW_big_chest_section:connect_one_way("SW - Big Chest", function() return Has("bigkey") end)
 -- SW_big_chest_section:connect_two_ways()
 -- SW_big_chest_section --get over the pit without pot circle access
 
@@ -111,7 +111,7 @@ SW_back_bottom_hallway:connect_one_way("SW - Bridge Chest")
 SW_back_entrance_inside:connect_two_ways(SW_back_bridge)
 
 SW_back_bridge:connect_two_ways(SW_back_bridge_1N_door)
-SW_back_bridge_1N_door:connect_two_ways_entrance("", SW_star_switch_holes_3S_door, function(keys) return Has("sw_smallkey", keys + 1, 3, keys + 1, 3), keys + 1 end)
+SW_back_bridge_1N_door:connect_two_ways_entrance("", SW_star_switch_holes_3S_door, function(keys, Current_Dungeon) return Has("smallkey", keys + 1, 3, keys + 1, 3), keys + 1 end)
 SW_star_switch_holes_3S_door:connect_two_ways(SW_star_switch_holes)
 
 SW_star_switch_holes:connect_two_ways(SW_back_troch_puzzle)
@@ -123,7 +123,7 @@ SW_vines_room_1N_door:connect_two_ways_entrance("", SW_back_spike_corner_room_3S
 SW_back_spike_corner_room_3S_door:connect_one_way(SW_back_spike_corner_room)
 
 SW_back_spike_corner_room:connect_one_way("SW - Spike Corner Key Drop")
-SW_back_spike_corner_room:connect_two_ways(SW_back_boss_room, function(keys) return Has("sw_smallkey", keys, 3, keys + 1, 4), KDSreturn(keys, keys + 1) end)
+SW_back_spike_corner_room:connect_two_ways(SW_back_boss_room, function(keys, Current_Dungeon) return Has("smallkey", keys, 3, keys + 1, 4), KDSreturn(keys, keys + 1) end)
 
 
 SW_back_boss_room:connect_one_way("SW - Boss")
@@ -136,17 +136,17 @@ SW_back_boss_room:connect_one_way("SW - Boss")
 
 
 
--- SW_pot_prison:connect_two_ways(SW_big_chest_entrance_inside, function(keys) return Has("sw_smallkey", keys + 1, 1, keys + 1, 1), keys + 1 end)
+-- SW_pot_prison:connect_two_ways(SW_big_chest_entrance_inside, function(keys, Current_Dungeon) return Has("smallkey", keys + 1, 1, keys + 1, 1), keys + 1 end)
 
 
 -- SW_pinball_drop_inside:connect_one_way(SW_pinball_room)
 
--- SW_pinball_room:connect_two_ways(SW_map_room, function(keys) return Has("sw_smallkey", keys + 1, 1, keys + 1, 1), keys + 1 end)
+-- SW_pinball_room:connect_two_ways(SW_map_room, function(keys, Current_Dungeon) return Has("smallkey", keys + 1, 1, keys + 1, 1), keys + 1 end)
 
 
 -- SW_big_chest_entrance_inside:connect_one_way("SW - Big Chest", function()
 --     return ALL(
---         "sw_bigkey",
+--         "bigkey",
 --         "bombs",
 --         CanInteract(SW_big_chest_entrance_inside)
 --     )
@@ -166,7 +166,7 @@ SW_back_boss_room:connect_one_way("SW - Boss")
 
 -- SW_back_bottom_hallway:connect_one_way("SW - Bridge Chest")
 
--- SW_back_bridge:connect_two_ways(SW_back_troch_puzzle, function(keys) return Has("sw_smallkey", keys + 1, 3, keys + 1, 3), keys + 1 end)
+-- SW_back_bridge:connect_two_ways(SW_back_troch_puzzle, function(keys, Current_Dungeon) return Has("smallkey", keys + 1, 3, keys + 1, 3), keys + 1 end)
 
 -- SW_back_troch_puzzle:connect_one_way(SW_back_spike_corner_room, function()
 --     return ALL(
@@ -175,7 +175,7 @@ SW_back_boss_room:connect_one_way("SW - Boss")
 --     )
 -- end)
 
--- SW_back_spike_corner_room:connect_two_ways(SW_back_boss_room, function(keys) return Has("sw_smallkey", keys, 3, keys + 1, 4), KDSreturn(keys, keys + 1) end)
+-- SW_back_spike_corner_room:connect_two_ways(SW_back_boss_room, function(keys, Current_Dungeon) return Has("smallkey", keys, 3, keys + 1, 4), KDSreturn(keys, keys + 1) end)
 -- SW_back_spike_corner_room:connect_one_way("SW - Spike Corner Key Drop")
 
 -- SW_back_boss_room:connect_one_way("SW - Boss")

@@ -297,4 +297,4 @@ Waterfall_fairy_outside = alttp_location.new("Waterfall_fairy_outside", "Waterfa
 Witchhut = alttp_location.new("Witchhut", "Witchhut Area (OW)", nil, "Lightworld OW", false)
 Zora_river = alttp_location.new("Zora_river", "Zora River (OW)", "light", "Lightworld OW", false)
 
-Empty_location = alttp_location.new("Empty_location", nil, "light", "", false)
+Empty_location = alttp_location.new("Empty_location", "Empty_location", "light", "", false)

@@ -34,5 +34,3 @@ Bumpercave_top_outside = alttp_location.new("Bumpercave_top_outside", "Bumpercav
 Bumpercave_top_inside = alttp_location.new("Bumpercave_top_inside", "Bumpercave Top (Inside)", nil, "Darkworld caves", false, nil, nil, nil, nil, nil, {"Skull Woods - Insides", "Bumper Cave (Top)", "Bumper Cave (Top)"}, "connector")
 Bumpercave_top_back = alttp_location.new("Bumpercave_top_back", "Bumpercave Top Back", "dark", "Darkworld caves", false)
 Bumpercave_top_front = alttp_location.new("Bumpercave_top_front", "Bumpercave Top Front", "dark", "Darkworld caves", false)
-
-Empty_location = alttp_location.new("Empty_location")

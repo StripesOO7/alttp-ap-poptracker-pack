@@ -40,7 +40,7 @@ ToH_entrance_inside:connect_two_ways(ToH_main_room, function()
         )
     )
 end)
-ToH_main_room:connect_two_ways(ToH_big_key_chest, function(keys) return ALL(Has("toh_smallkey", keys + 1, 1, keys + 1, 1), CanInteract(ToH_main_room)), keys + 1 end)
+ToH_main_room:connect_two_ways(ToH_big_key_chest, function(keys, Current_Dungeon) return ALL(Has("smallkey", keys + 1, 1, keys + 1, 1), CanInteract(ToH_main_room)), keys + 1 end)
 ToH_main_room:connect_one_way("ToH - Map Chest", function() return CanInteract(ToH_main_room) end)
 
 ToH_main_room:connect_two_ways(ToH_main_room_1N_door)
@@ -62,7 +62,7 @@ ToH_3_hard_head_beatles_4N_door:connect_two_ways(ToH_3_hard_head_beatles)
 
 ToH_3_hard_head_beatles:connect_two_ways_stuck(ToH_big_key_door_room, function() return ALL(CanInteract(ToH_3_hard_head_beatles), DealDamage) end)
 ToH_3_hard_head_beatles:connect_one_way(ToH_main_room)
-ToH_big_key_door_room:connect_two_ways_stuck(ToH_startile_wide, function() return Has("toh_bigkey") end)
+ToH_big_key_door_room:connect_two_ways_stuck(ToH_startile_wide, function() return Has("bigkey") end)
 ToH_big_key_door_room:connect_one_way(ToH_main_room)
 ToH_startile_wide:connect_two_ways(ToH_startile_wide_2N_door)
 ToH_startile_wide:connect_one_way(ToH_main_room)
@@ -75,7 +75,7 @@ ToH_big_chest_room:connect_two_ways(ToH_big_chest_room_1N_door)
 ToH_big_chest_room:connect_one_way(ToH_startile_wide)
 ToH_big_chest_room:connect_one_way(ToH_big_chest_platform, function() return Has("hookshot") end)
 
-ToH_big_chest_platform:connect_one_way("ToH - Big Chest", function() return Has("toh_bigkey") end)
+ToH_big_chest_platform:connect_one_way("ToH - Big Chest", function() return Has("bigkey") end)
 ToH_big_chest_platform:connect_one_way(ToH_big_chest_room)
 
 ToH_big_chest_room_1N_door:connect_two_ways_entrance("", ToH_5F_orange_path_1N_door)
@@ -99,7 +99,7 @@ ToH_boss_room:connect_one_way(ToH_startile_wide)
 -- ToH_main_room:connect_two_ways(ToH_big_chest_room, function()
 --     return ALL(
 --         ANY(
---             "toh_bigkey",
+--             "bigkey",
 --             ALL(
 --                 CheckGlitches(2),
 --                 "hookshot"

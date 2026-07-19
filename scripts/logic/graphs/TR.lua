@@ -124,16 +124,16 @@ TR_map_room:connect_one_way("TR - Roller Room Right")
 TR_square_travel_room_4W_door:connect_two_ways_entrance("", TR_torch_puzzle_deadend_3E_door)
 TR_torch_puzzle_deadend_3E_door:connect_two_ways(TR_torch_puzzle_deadend)
 
-TR_square_travel_room_1N_door:connect_two_ways_entrance("", TR_poke_1_room_3S_door, function(keys) return Has("tr_smallkey", keys + 1, 1, keys + 1, 1), keys + 1 end)
+TR_square_travel_room_1N_door:connect_two_ways_entrance("", TR_poke_1_room_3S_door, function(keys, Current_Dungeon) return Has("smallkey", keys + 1, 1, keys + 1, 1), keys + 1 end)
 TR_poke_1_room_3S_door:connect_two_ways(TR_poke_1_room)
 
 TR_poke_1_room:connect_one_way("TR - Poke 1 Key Drop", function() return ALL(DealDamage, CanInteract(TR_poke_1_room)) end)
-TR_poke_1_room_3S_door:connect_two_ways(TR_chain_chomps_room, function(keys) return Has("tr_smallkey", keys, 1, keys + 1, 2), KDSreturn(keys, keys + 1) end)
+TR_poke_1_room_3S_door:connect_two_ways(TR_chain_chomps_room, function(keys, Current_Dungeon) return Has("smallkey", keys, 1, keys + 1, 2), KDSreturn(keys, keys + 1) end)
 TR_chain_chomps_room:connect_one_way("TR - Chain Chomp Chest", function() return HitRanged() end)
 TR_chain_chomps_room:connect_two_ways(TR_chain_chomps_room_1N_door)
-TR_chain_chomps_room_1N_door:connect_two_ways_entrance_door_stuck("", TR_pipe_pit_1N_door, function(keys)
+TR_chain_chomps_room_1N_door:connect_two_ways_entrance_door_stuck("", TR_pipe_pit_1N_door, function(keys, Current_Dungeon)
     return ALL(
-        Has("tr_smallkey", keys + 1, 2, keys + 1, 3),
+        Has("smallkey", keys + 1, 2, keys + 1, 3),
         HitRanged
     ), keys + 1
 end)
@@ -150,10 +150,10 @@ TR_big_key_room_top_left_1W_door:connect_two_ways_entrance("", TR_poke_2_room_2E
 TR_poke_2_room:connect_one_way("TR - Poke 2 Key Drop", function() return ALL(DealDamage, CanInteract(TR_poke_2_room)) end)
 TR_poke_2_room_2E_door:connect_two_ways(TR_poke_2_room)
 TR_poke_2_room:connect_two_ways(TR_poke_2_room_4E_door)
-TR_poke_2_room_4E_door:connect_two_ways_entrance("", TR_big_key_room_bottom_left_3E_door, function(keys)
+TR_poke_2_room_4E_door:connect_two_ways_entrance("", TR_big_key_room_bottom_left_3E_door, function(keys, Current_Dungeon)
     return ALL(
         DealDamage,
-        Has("tr_smallkey", keys + CountDoneDeadends(0, "@Turtle Rock Back/Eye Bridge Top Right/Eye Bridge Top Right", "@Turtle Rock Back/Boss/Boss Item"), 4, keys + CountDoneDeadends(1, "@Turtle Rock Back/Eye Bridge Top Right/Eye Bridge Top Right", "@Turtle Rock Back/Boss/Boss Item"), 6), KDSreturn(keys, keys + 1)
+        Has("smallkey", keys + CountDoneDeadends(0, "@Turtle Rock Back/Eye Bridge Top Right/Eye Bridge Top Right", "@Turtle Rock Back/Boss/Boss Item"), 4, keys + CountDoneDeadends(1, "@Turtle Rock Back/Eye Bridge Top Right/Eye Bridge Top Right", "@Turtle Rock Back/Boss/Boss Item"), 6), KDSreturn(keys, keys + 1)
     )
 end)
 
@@ -207,7 +207,7 @@ TR_big_chest_below_pit:connect_two_ways(TR_big_chest_above_pit, function() retur
 
 TR_big_chest_above_pit:connect_one_way("TR - Big Chest", function()
     return ALL(
-        "tr_bigkey",
+        "bigkey",
         CanInteract(TR_big_chest_above_pit)
     )
 end)
@@ -216,7 +216,7 @@ TR_big_chest_above_pit:connect_two_ways_stuck(TR_big_key_door_room, nil, functio
 -- TR_big_chest_below_pit:connect_one_way(TR_big_chest_ledge)
 
 TR_big_key_door_room:connect_two_ways(TR_big_key_door_room_2N_door)
-TR_big_key_door_room_2N_door:connect_two_ways_entrance_door_stuck("", TR_big_key_room_bottom_right_4S_door, function() return Has("tr_bigkey") end, function(keys) return false end) --smallkeydoor unconsidered
+TR_big_key_door_room_2N_door:connect_two_ways_entrance_door_stuck("", TR_big_key_room_bottom_right_4S_door, function() return Has("bigkey") end, function(keys, Current_Dungeon) return false end) --smallkeydoor unconsidered
 
 TR_big_key_room_bottom_right_4S_door:connect_two_ways(TR_big_key_room_pipe_after_big_key)
 TR_big_key_room_pipe_after_big_key:connect_two_ways(TR_big_key_room_top_left_1N_door)
@@ -229,9 +229,9 @@ TR_snake_trap_room:connect_two_ways(TR_rupee_room)
 TR_pokes_after_big_door:connect_two_ways(TR_crystalroller_room)
 TR_crystalroller_room:connect_two_ways(TR_crystalroller_room_1N_door)
 
-TR_crystalroller_room_1N_door:connect_two_ways_entrance_door_stuck("", TR_travel_maze_1N_door, function(keys) return Has("tr_smallkey", keys + CountDoneDeadends(1, "@Turtle Rock Front/Big Key Chest/Big Key Chest"), 3, keys + CountDoneDeadends(1, "@Turtle Rock Front/Big Key Chest/Big Key Chest"), 5), keys + 1 end, function(keys)
+TR_crystalroller_room_1N_door:connect_two_ways_entrance_door_stuck("", TR_travel_maze_1N_door, function(keys, Current_Dungeon) return Has("smallkey", keys + CountDoneDeadends(1, "@Turtle Rock Front/Big Key Chest/Big Key Chest"), 3, keys + CountDoneDeadends(1, "@Turtle Rock Front/Big Key Chest/Big Key Chest"), 5), keys + 1 end, function(keys, Current_Dungeon)
     return ALL(
-        Has("tr_smallkey", keys, 3, keys, 5),
+        Has("smallkey", keys, 3, keys, 5),
         DarkRooms,
         "somaria",
         CanInteract(TR_travel_maze)
@@ -297,9 +297,9 @@ TR_eye_bridge_entrance_inside:connect_two_ways(TR_eye_bridge_room, function()
 end)
 
 
-TR_side_eye_hallway_3W_door:connect_two_ways_entrance("", TR_crystal_maze_4E_door, function(keys)
+TR_side_eye_hallway_3W_door:connect_two_ways_entrance("", TR_crystal_maze_4E_door, function(keys, Current_Dungeon)
     return ALL(
-        Has("tr_smallkey", keys + CountDoneDeadends(1, "@Turtle Rock Front/Big Key Chest/Big Key Chest"), 4, keys + CountDoneDeadends(1, "@Turtle Rock Front/Big Key Chest/Big Key Chest"), 6),
+        Has("smallkey", keys + CountDoneDeadends(1, "@Turtle Rock Front/Big Key Chest/Big Key Chest"), 4, keys + CountDoneDeadends(1, "@Turtle Rock Front/Big Key Chest/Big Key Chest"), 6),
         CanInteract(TR_side_eye_hallway)
     ), keys + 1 end)
 TR_crystal_maze_4E_door:connect_two_ways(TR_crystal_maze)
@@ -309,7 +309,7 @@ TR_crystal_maze_N_door:connect_two_ways_entrance("", TR_pre_boss_pit_S_door)
 TR_pre_boss_pit_S_door:connect_two_ways(TR_pre_boss_below_pit)
 TR_pre_boss_below_pit:connect_two_ways(TR_pre_boss_above_pit, function() return Has("somaria") end)
 TR_pre_boss_above_pit:connect_two_ways(TR_pre_boss_pit_1N_door)
-TR_pre_boss_pit_1N_door:connect_two_ways_entrance("", TR_boss_room_3S_door, function() return Has("tr_bigkey") end)
+TR_pre_boss_pit_1N_door:connect_two_ways_entrance("", TR_boss_room_3S_door, function() return Has("bigkey") end)
 
 TR_boss_room_3S_door:connect_two_ways(TR_boss_room)
 TR_boss_room:connect_one_way("TR - Boss", function() return GetBossRef("tr_boss") end)
@@ -325,12 +325,12 @@ TR_boss_room:connect_one_way("TR - Boss", function() return GetBossRef("tr_boss"
 --         CanInteract(TR_square_travel_room)
 --     )
 -- end)
--- TR_square_travel_room:connect_two_ways(TR_poke_1_room, function(keys)
+-- TR_square_travel_room:connect_two_ways(TR_poke_1_room, function(keys, Current_Dungeon)
 --     return ALL(
 --         "somaria",
 --         CanInteract(TR_square_travel_room),
---         Has("tr_smallkey", keys + 1, 1, keys + 1, 1)
---         -- Has("tr_smallkey", keys + 1, 3, keys + 1, 4)
+--         Has("smallkey", keys + 1, 1, keys + 1, 1)
+--         -- Has("smallkey", keys + 1, 3, keys + 1, 4)
 --     ), keys + 1
 -- end)
 
@@ -341,18 +341,18 @@ TR_boss_room:connect_one_way("TR - Boss", function() return GetBossRef("tr_boss"
 -- TR_map_room:connect_one_way("TR - Roller Room Left")
 -- TR_map_room:connect_one_way("TR - Roller Room Right")
 
--- TR_poke_1_room:connect_two_ways(TR_chain_chomps_room, function(keys) return Has("tr_smallkey", keys, 1, keys + 1, 2), KDSreturn(keys, keys + 1) end)
--- -- TR_poke_1_room:connect_two_ways(TR_chain_chomps_room, function(keys) return Has("tr_smallkey", keys, 3, keys + 1, 5), KDSreturn(keys, keys + 1) end)
+-- TR_poke_1_room:connect_two_ways(TR_chain_chomps_room, function(keys, Current_Dungeon) return Has("smallkey", keys, 1, keys + 1, 2), KDSreturn(keys, keys + 1) end)
+-- -- TR_poke_1_room:connect_two_ways(TR_chain_chomps_room, function(keys, Current_Dungeon) return Has("smallkey", keys, 3, keys + 1, 5), KDSreturn(keys, keys + 1) end)
 -- TR_poke_1_room:connect_one_way("TR - Poke 1 Key Drop", function() return ALL(DealDamage, CanInteract(TR_poke_1_room)) end)
 
--- TR_chain_chomps_room:connect_two_ways(TR_big_key_room_top_right, function(keys)
+-- TR_chain_chomps_room:connect_two_ways(TR_big_key_room_top_right, function(keys, Current_Dungeon)
 --     return ALL(
---         Has("tr_smallkey", keys + 1, 2, keys + 1, 3),
+--         Has("smallkey", keys + 1, 2, keys + 1, 3),
 --         HitRanged
 --     ), keys + 1
 -- end)
--- -- TR_chain_chomps_room:connect_two_ways(TR_big_key_room_top_right, function(keys) return Has("tr_smallkey", keys + 1, 3, keys + 1, 5), keys + 1 end)
--- -- TR_big_key_room_top_right:connect_one_way(TR_chain_chomps_room, function(keys) return Has("tr_smallkey", keys, 3, keys, 5), KDSreturn(keys, keys + 1) end)
+-- -- TR_chain_chomps_room:connect_two_ways(TR_big_key_room_top_right, function(keys, Current_Dungeon) return Has("smallkey", keys + 1, 3, keys + 1, 5), keys + 1 end)
+-- -- TR_big_key_room_top_right:connect_one_way(TR_chain_chomps_room, function(keys, Current_Dungeon) return Has("smallkey", keys, 3, keys, 5), KDSreturn(keys, keys + 1) end)
 -- TR_chain_chomps_room:connect_one_way("TR - Chain Chomp Chest", function() return HitRanged() end)
 
 -- TR_big_key_room_top_right:connect_two_ways(TR_big_key_room_top_left)
@@ -360,13 +360,13 @@ TR_boss_room:connect_one_way("TR - Boss", function() return GetBossRef("tr_boss"
 
 -- TR_big_key_room_top_left:connect_two_ways(TR_poke_2_room)
 
--- TR_poke_2_room:connect_two_ways(TR_big_key_room_bottom_left, function(keys)
+-- TR_poke_2_room:connect_two_ways(TR_big_key_room_bottom_left, function(keys, Current_Dungeon)
 --     return ALL(
 --         DealDamage,
---         Has("tr_smallkey", keys + CountDoneDeadends(0, "@Turtle Rock Back/Eye Bridge Top Right/Eye Bridge Top Right", "@Turtle Rock Back/Boss/Boss Item"), 4, keys + CountDoneDeadends(1, "@Turtle Rock Back/Eye Bridge Top Right/Eye Bridge Top Right", "@Turtle Rock Back/Boss/Boss Item"), 6), KDSreturn(keys, keys + 1)
+--         Has("smallkey", keys + CountDoneDeadends(0, "@Turtle Rock Back/Eye Bridge Top Right/Eye Bridge Top Right", "@Turtle Rock Back/Boss/Boss Item"), 4, keys + CountDoneDeadends(1, "@Turtle Rock Back/Eye Bridge Top Right/Eye Bridge Top Right", "@Turtle Rock Back/Boss/Boss Item"), 6), KDSreturn(keys, keys + 1)
 --     )
 -- end)
--- -- TR_poke_2_room:connect_two_ways(TR_big_key_room_bottom_left, function(keys) return Has("tr_smallkey", keys, 3, keys + 1, 5), KDSreturn(keys, keys + 1) end)
+-- -- TR_poke_2_room:connect_two_ways(TR_big_key_room_bottom_left, function(keys, Current_Dungeon) return Has("smallkey", keys, 3, keys + 1, 5), KDSreturn(keys, keys + 1) end)
 -- TR_poke_2_room:connect_one_way("TR - Poke 2 Key Drop", function() return ALL(DealDamage, CanInteract(TR_poke_2_room)) end)
 
 -- TR_big_key_room_bottom_left:connect_two_ways(TR_big_key_room_bottom_right)
@@ -409,7 +409,7 @@ TR_boss_room:connect_one_way("TR - Boss", function() return GetBossRef("tr_boss"
 -- end)
 -- TR_big_chest_entrance_inside:connect_one_way("TR - Big Chest", function()
 --     return ALL(
---         "tr_bigkey",
+--         "bigkey",
 --         ANY(
 --             "somaria",
 --             "hookshot"
@@ -418,27 +418,27 @@ TR_boss_room:connect_one_way("TR - Boss", function() return GetBossRef("tr_boss"
 --     )
 -- end)
 
--- TR_big_key_door_room:connect_one_way(TR_pokes_after_big_door, function() return Has("tr_bigkey") end)
--- TR_pokes_after_big_door:connect_one_way(TR_big_key_door_room, function(keys)
+-- TR_big_key_door_room:connect_one_way(TR_pokes_after_big_door, function() return Has("bigkey") end)
+-- TR_pokes_after_big_door:connect_one_way(TR_big_key_door_room, function(keys, Current_Dungeon)
 --     return ALL(
 --         HitRanged,
---         Has("tr_smallkey", keys + 1, 3, keys + 1, 4)
+--         Has("smallkey", keys + 1, 3, keys + 1, 4)
 --     ), keys + 1
 -- end)
 -- TR_pokes_after_big_door:connect_two_ways(TR_crystalroller_room, function() return ANY("bombs", "boots") end)
--- -- TR_crystalroller_room:connect_one_way(TR_big_key_door_room, function(keys)
+-- -- TR_crystalroller_room:connect_one_way(TR_big_key_door_room, function(keys, Current_Dungeon)
 -- --     return ALL(
 -- --         HitRanged,
--- --         Has("tr_smallkey", keys + 1, 3, keys + 1, 4)
+-- --         Has("smallkey", keys + 1, 3, keys + 1, 4)
 -- --     ), keys + 1
 -- -- end)
--- -- TR_crystalroller_room:connect_one_way(TR_big_key_door_room, function(keys) return Has("tr_smallkey", keys + 1, 4, keys + 1, 6), keys + 1 end)
+-- -- TR_crystalroller_room:connect_one_way(TR_big_key_door_room, function(keys, Current_Dungeon) return Has("smallkey", keys + 1, 4, keys + 1, 6), keys + 1 end)
 
--- TR_crystalroller_room:connect_one_way(TR_travel_maze, function(keys) return Has("tr_smallkey", keys + CountDoneDeadends(1, "@Turtle Rock Front/Big Key Chest/Big Key Chest"), 3, keys + CountDoneDeadends(1, "@Turtle Rock Front/Big Key Chest/Big Key Chest"), 5), keys + 1 end)
--- -- TR_crystalroller_room:connect_one_way(TR_travel_maze, function(keys) return Has("tr_smallkey", keys + 1, 3, keys + 1, 5), keys + 1 end)
--- TR_travel_maze:connect_one_way(TR_crystalroller_room, function(keys)
+-- TR_crystalroller_room:connect_one_way(TR_travel_maze, function(keys, Current_Dungeon) return Has("smallkey", keys + CountDoneDeadends(1, "@Turtle Rock Front/Big Key Chest/Big Key Chest"), 3, keys + CountDoneDeadends(1, "@Turtle Rock Front/Big Key Chest/Big Key Chest"), 5), keys + 1 end)
+-- -- TR_crystalroller_room:connect_one_way(TR_travel_maze, function(keys, Current_Dungeon) return Has("smallkey", keys + 1, 3, keys + 1, 5), keys + 1 end)
+-- TR_travel_maze:connect_one_way(TR_crystalroller_room, function(keys, Current_Dungeon)
 --     return ALL(
---         Has("tr_smallkey", keys, 3, keys, 5),
+--         Has("smallkey", keys, 3, keys, 5),
 --         DarkRooms,
 --         "somaria",
 --         CanInteract(TR_travel_maze)
@@ -461,12 +461,12 @@ TR_boss_room:connect_one_way("TR - Boss", function() return GetBossRef("tr_boss"
 -- end)
 
 -- TR_side_eye_hallway:connect_two_ways(TR_eye_bridge_room)
--- TR_side_eye_hallway:connect_two_ways(TR_switch_puzzle, function(keys)
+-- TR_side_eye_hallway:connect_two_ways(TR_switch_puzzle, function(keys, Current_Dungeon)
 --     return ALL(
---         Has("tr_smallkey", keys + CountDoneDeadends(1, "@Turtle Rock Front/Big Key Chest/Big Key Chest"), 4, keys + CountDoneDeadends(1, "@Turtle Rock Front/Big Key Chest/Big Key Chest"), 6),
+--         Has("smallkey", keys + CountDoneDeadends(1, "@Turtle Rock Front/Big Key Chest/Big Key Chest"), 4, keys + CountDoneDeadends(1, "@Turtle Rock Front/Big Key Chest/Big Key Chest"), 6),
 --         CanInteract(TR_side_eye_hallway)
 --     ), keys + 1 end)
--- -- Tr_eye_hallway:connect_two_ways(TR_switch_puzzle, function(keys) return Has("tr_smallkey", keys + 1, 3, keys + 1, 5), keys + 1 end)
+-- -- Tr_eye_hallway:connect_two_ways(TR_switch_puzzle, function(keys, Current_Dungeon) return Has("smallkey", keys + 1, 3, keys + 1, 5), keys + 1 end)
 
 -- TR_eye_bridge_room:connect_one_way("TR - Eyebridge Top Right", function()
 --     return ALL(
@@ -520,6 +520,6 @@ TR_boss_room:connect_one_way("TR - Boss", function() return GetBossRef("tr_boss"
 --     )
 -- end)
 
--- TR_switch_puzzle:connect_two_ways(TR_boss_room, function() return ALL("somaria","tr_bigkey") end)
+-- TR_switch_puzzle:connect_two_ways(TR_boss_room, function() return ALL("somaria","bigkey") end)
 
 -- TR_boss_room:connect_one_way("TR - Boss", function() return GetBossRef("tr_boss") end)

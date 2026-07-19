@@ -43,18 +43,18 @@ AT_golden_guards:connect_two_ways(AT_first_chest, function() return DealDamage e
 AT_first_chest:connect_one_way("AT - First Chest", function() return DealDamage end)
 AT_first_chest:connect_two_ways(AT_first_chest_2N_door)
 
-AT_first_chest_2N_door:connect_two_ways_entrance("", AT_dark_maze_2N_door, function(keys)
-    return Has("at_smallkey", keys + 1, 1, keys + 1, 1), keys + 1
+AT_first_chest_2N_door:connect_two_ways_entrance("", AT_dark_maze_2N_door, function(keys, Current_Dungeon)
+    return Has("smallkey", keys + 1, 1, keys + 1, 1), keys + 1
 end)
 
 AT_dark_maze_2N_door:connect_two_ways(AT_dark_maze)
 AT_dark_maze:connect_one_way("AT - Maze Chest", function()
     return DarkRooms(true)
 end)
-AT_dark_maze:connect_two_ways(AT_dark_chargers, function(keys)
+AT_dark_maze:connect_two_ways(AT_dark_chargers, function(keys, Current_Dungeon)
     return ALL(
         DarkRooms(true),
-        Has("at_smallkey", keys + 1, 2, keys + 1, 2)
+        Has("smallkey", keys + 1, 2, keys + 1, 2)
     ), keys + 1
 end)
 
@@ -67,8 +67,8 @@ AT_dark_pits:connect_two_ways(AT_dark_archers, function() return DarkRooms(true)
 
 AT_dark_archers:connect_one_way("AT - Dark Archer Key Drop", function() return DealDamage end)
 AT_dark_archers:connect_two_ways(AT_dark_archers_2N_door)
-AT_dark_archers_2N_door:connect_two_ways_entrance("", AT_red_spears_2N_door, function(keys)
-    return Has("at_smallkey", keys, 2, keys + 1, 3), KDSreturn( keys, keys + 1)
+AT_dark_archers_2N_door:connect_two_ways_entrance("", AT_red_spears_2N_door, function(keys, Current_Dungeon)
+    return Has("smallkey", keys, 2, keys + 1, 3), KDSreturn( keys, keys + 1)
 end)
 AT_red_spears_2N_door:connect_two_ways(AT_red_spears)
 AT_red_spears:connect_two_ways(AT_red_guards)
@@ -78,9 +78,9 @@ AT_circle_of_pots:connect_one_way("AT - Circle of Pots Key Drop") --functoin() r
 AT_circle_of_pots:connect_two_ways(AT_pacifist_run)
 
 AT_pacifist_run:connect_two_ways(AT_pacifist_run_4N_door)
-AT_pacifist_run_4N_door:connect_two_ways_entrance("", AT_push_statue_down_4N_door, function(keys)
+AT_pacifist_run_4N_door:connect_two_ways_entrance("", AT_push_statue_down_4N_door, function(keys, Current_Dungeon)
     return ALL(
-        Has("at_smallkey", keys, 2, keys + 1, 4)
+        Has("smallkey", keys, 2, keys + 1, 4)
     ), KDSreturn(keys, keys + 1)
 end)
 AT_push_statue_down_4N_door:connect_two_ways(AT_push_statue_down)

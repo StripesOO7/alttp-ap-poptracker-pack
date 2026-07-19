@@ -103,7 +103,7 @@ TT_front_top_right:connect_two_ways(TT_front_top_right_2N_door)
 
 TT_front_top_right_S_door:connect_two_ways_entrance("", TT_front_bottom_right_1N_door)
 TT_front_top_right_3S_door:connect_two_ways_entrance("", TT_front_bottom_right_N_door)
-TT_front_top_right_1N_door:connect_two_ways_entrance("", TT_back_hallway_S_door, function() return ALL("tt_bigkey", CanInteract(TT_front_top_right)) end)
+TT_front_top_right_1N_door:connect_two_ways_entrance("", TT_back_hallway_S_door, function() return ALL("bigkey", CanInteract(TT_front_top_right)) end)
 TT_front_top_right_2N_door:connect_two_ways_entrance("", TT_cricket_hall_deadend_3S_door)
 
 TT_front_bottom_right_1N_door:connect_two_ways(TT_front_bottom_right)
@@ -121,8 +121,8 @@ TT_cricket_hall_deadend_3S_door:connect_two_ways(TT_cricket_hall_deadend)
 
 TT_back_hallway_S_door:connect_two_ways(TT_back_hallway)
 TT_back_hallway:connect_one_way("TT - Hallway Pot Key")
-TT_back_hallway:connect_two_ways(TT_cricket_hall, function(keys)
-    return Has("tt_smallkey", keys, 0, keys + 1, 1), KDSreturn(keys, keys + 1)
+TT_back_hallway:connect_two_ways(TT_cricket_hall, function(keys, Current_Dungeon)
+    return Has("smallkey", keys, 0, keys + 1, 1), KDSreturn(keys, keys + 1)
 end)
 TT_back_hallway:connect_two_ways(TT_back_hallway_N_door)
 
@@ -147,8 +147,8 @@ TT_crystal_switch_room_S_door:connect_two_ways(TT_crystal_switch_room)
 
 TT_crystal_switch_room:connect_one_way("TT - Spike Switch Pot Key")
 TT_crystal_switch_room:connect_two_ways(TT_crystal_switch_room_N_door)
-TT_crystal_switch_room_S_door:connect_two_ways_entrance_door_stuck("", TT_attic_N_door, function(keys)
-    return Has("tt_smallkey", keys + CountDoneDeadends(0, "@Thieves Town Back/Big Chest/Big Chest"), 0, keys + CountDoneDeadends(1, "@Thieves Town Back/Big Chest/Big Chest"), 3), KDSreturn(keys, keys + 1)
+TT_crystal_switch_room_S_door:connect_two_ways_entrance_door_stuck("", TT_attic_N_door, function(keys, Current_Dungeon)
+    return Has("smallkey", keys + CountDoneDeadends(0, "@Thieves Town Back/Big Chest/Big Chest"), 0, keys + CountDoneDeadends(1, "@Thieves Town Back/Big Chest/Big Chest"), 3), KDSreturn(keys, keys + 1)
 end)
 TT_attic_N_door:connect_two_ways(TT_attic)
 
@@ -179,7 +179,7 @@ TT_conveyor_catwalk:connect_two_ways(TT_conveyor_catwalk_4E_door)
 TT_big_chest_room:connect_one_way("TT - Big Chest", function()
     return ALL(
         "hammer",
-        "tt_bigkey"
+        "bigkey"
     )
 end)
 TT_conveyor_catwalk_4E_door:connect_two_ways_entrance("", TT_big_pot_hall_4W_door)
@@ -207,7 +207,7 @@ TT_basement_cell:connect_one_way("TT - Blind's Cell")
 -- TT_front_top_left:connect_one_way("TT - Ambush Chest", function() return CanInteract(TT_front_top_left) end)
 
 -- TT_front_top_right:connect_two_ways(TT_front_bottom_right)
--- TT_front_top_right:connect_two_ways(TT_back_hallway, function() return ALL("tt_bigkey", CanInteract(TT_front_top_right)) end)
+-- TT_front_top_right:connect_two_ways(TT_back_hallway, function() return ALL("bigkey", CanInteract(TT_front_top_right)) end)
 
 -- TT_front_bottom_right:connect_one_way(TT_front_bottom_left)
 -- TT_front_bottom_right:connect_one_way("TT - Compass Chest", function() return CanInteract(TT_front_bottom_right) end)
@@ -215,21 +215,21 @@ TT_basement_cell:connect_one_way("TT - Blind's Cell")
 
 
 
--- TT_back_hallway:connect_two_ways(TT_crystal_switch_room, function(keys)
---     return Has("tt_smallkey", keys, 0, keys + 1, 1), KDSreturn(keys, keys + 1)
+-- TT_back_hallway:connect_two_ways(TT_crystal_switch_room, function(keys, Current_Dungeon)
+--     return Has("smallkey", keys, 0, keys + 1, 1), KDSreturn(keys, keys + 1)
 -- end)
 -- TT_back_hallway:connect_one_way("TT - Hallway Pot Key")
 
 -- TT_crystal_switch_room:connect_two_ways(TT_basement)
--- TT_crystal_switch_room:connect_two_ways(TT_attic, function(keys)
---     return Has("tt_smallkey", keys + CountDoneDeadends(0, "@Thieves Town Back/Big Chest/Big Chest"), 0, keys + CountDoneDeadends(1, "@Thieves Town Back/Big Chest/Big Chest"), 3), KDSreturn(keys, keys + 1)
+-- TT_crystal_switch_room:connect_two_ways(TT_attic, function(keys, Current_Dungeon)
+--     return Has("smallkey", keys + CountDoneDeadends(0, "@Thieves Town Back/Big Chest/Big Chest"), 0, keys + CountDoneDeadends(1, "@Thieves Town Back/Big Chest/Big Chest"), 3), KDSreturn(keys, keys + 1)
 -- end)
 -- TT_crystal_switch_room:connect_one_way("TT - Spike Switch Pot Key")
 
 -- TT_attic:connect_one_way("TT - Attic")
 
--- TT_basement:connect_two_ways(TT_big_chest_room, function(keys)
---     return Has("tt_smallkey", keys + CountDoneDeadends(1, "@Thieves Town Back/Attic/Attic"), 1, keys + CountDoneDeadends(1, "@Thieves Town Back/Attic/Attic"), 3), keys + 1
+-- TT_basement:connect_two_ways(TT_big_chest_room, function(keys, Current_Dungeon)
+--     return Has("smallkey", keys + CountDoneDeadends(1, "@Thieves Town Back/Attic/Attic"), 1, keys + CountDoneDeadends(1, "@Thieves Town Back/Attic/Attic"), 3), keys + 1
 -- end)
 -- TT_basement:connect_two_ways(TT_basement_cell)
 
@@ -237,7 +237,7 @@ TT_basement_cell:connect_one_way("TT - Blind's Cell")
 -- TT_big_chest_room:connect_one_way("TT - Big Chest", function()
 --     return ALL(
 --         "hammer",
---         "tt_bigkey"
+--         "bigkey"
 --     )
 -- end)
 -- TT_back_hallway:connect_two_ways(TT_boss_room)

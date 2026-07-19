@@ -177,10 +177,10 @@ function ER_locations_scope(scope_direction, scope_location_obj, scope_side)
         if not ROUTE_MODE then
             if ER_STAGE < 3 then -- off, dungeons, full
                 if self_itemstate.Target ~= nil then
-                    local target_from = NAMED_ER_CONNECTIONS{"from_" .. self_itemstate.TargetBaseName} --[[@as LuaItem]]
-                    local target_to = NAMED_ER_CONNECTIONS{"to_" .. self_itemstate.TargetBaseName} --[[@as LuaItem]]
-                    local source_from = NAMED_ER_CONNECTIONS{"from_" .. self_itemstate.BaseName} --[[@as LuaItem]]
-                    local source_to = NAMED_ER_CONNECTIONS{"to_" .. self_itemstate.BaseName} --[[@as LuaItem]]
+                    local target_from = NAMED_ER_CONNECTIONS["from_" .. self_itemstate.TargetBaseName] --[[@as LuaItem]]
+                    local target_to = NAMED_ER_CONNECTIONS["to_" .. self_itemstate.TargetBaseName] --[[@as LuaItem]]
+                    local source_from = NAMED_ER_CONNECTIONS["from_" .. self_itemstate.BaseName] --[[@as LuaItem]]
+                    local source_to = NAMED_ER_CONNECTIONS["to_" .. self_itemstate.BaseName] --[[@as LuaItem]]
                     if target_from ~= nil then
                         _UnsetLocationOptions(target_from)
                         _UnsetLocationOptions(source_to)
@@ -193,7 +193,7 @@ function ER_locations_scope(scope_direction, scope_location_obj, scope_side)
                 end
             else -- insanity
                 if self_itemstate.Target ~= nil then
-                    local target = NAMED_ER_CONNECTIONS(self_itemstate.Target) --[[@as LuaItem]]
+                    local target = NAMED_ER_CONNECTIONS[self_itemstate.Target] --[[@as LuaItem]]
                     if target ~= nil then
                         _UnsetLocationOptions(target)
                         _UnsetLocationOptions(self)
@@ -241,7 +241,7 @@ function ER_locations_scope(scope_direction, scope_location_obj, scope_side)
         if source_ItemState.Map ~= nil then --outside
             Tracker:UiHint("ActivateTab", source_ItemState.Map)
         end
-        -- local target = NAMED_ER_CONNECTIONS(source_ItemState.Target) --[[@as LuaItem]]
+        -- local target = NAMED_ER_CONNECTIONS[source_ItemState.Target] --[[@as LuaItem]]
         if target_ItemState.Map  ~= nil then --outside
             Tracker:UiHint("ActivateTab", target_ItemState.Map)
         end

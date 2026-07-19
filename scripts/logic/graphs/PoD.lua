@@ -100,14 +100,14 @@ PoD_shooter_room_1N_door:connect_two_ways(PoD_shooter_room)
 PoD_shooter_room:connect_one_way("PoD - Shooter Room", function() return CanInteract(PoD_shooter_room) end)
 
 PoD_three_way_room_middle:connect_two_ways(PoD_three_way_room_middle_N_door)
-PoD_three_way_room_middle_N_door:connect_two_ways_entrance("", PoD_big_key_chest_room_S_door, function(keys)
+PoD_three_way_room_middle_N_door:connect_two_ways_entrance("", PoD_big_key_chest_room_S_door, function(keys, Current_Dungeon)
     if not (PoD_switch_room_bottom:accessibility() > 5 and PoD_switch_room_top:accessibility() > 5) then
-        return Has("Pod_smallkey", keys + 1, 1, keys + 1, 1), keys + 1
+        return Has("smallkey", keys + 1, 1, keys + 1, 1), keys + 1
     else
         return ALL(
             PoD_switch_room_bottom:accessibility(),
             PoD_switch_room_top:accessibility(),
-            Has("Pod_smallkey", keys, 0, keys, 0)
+            Has("smallkey", keys, 0, keys, 0)
         ), keys
     end
 end)
@@ -117,8 +117,8 @@ PoD_big_key_chest_room:connect_one_way(Pod_basement_ledge, function() return Has
 Pod_basement_ledge:connect_one_way(Pod_basement_ledge)
 Pod_basement_ledge:connect_two_ways(Pod_basement_ledge_N_door)
 
-Pod_basement_ledge_N_door:connect_two_ways_entrance_door_stuck("", PoD_big_key_chest_room_N_door, function(keys)
-    return Has("Pod_smallkey", keys + CountDoneDeadends(1, "@Palace of Darkness/Boss/Boss Item", "@Palace of Darkness/Harmless Hellway/Harmless Hellway", "@Palace of Darkness/Dark Maze Top/Dark Maze Top"), 6, keys + CountDoneDeadends(1, "@Palace of Darkness/Boss/Boss Item", "@Palace of Darkness/Harmless Hellway/Harmless Hellway", "@Palace of Darkness/Dark Maze Top/Dark Maze Top"), 6), keys + 1
+Pod_basement_ledge_N_door:connect_two_ways_entrance_door_stuck("", PoD_big_key_chest_room_N_door, function(keys, Current_Dungeon)
+    return Has("smallkey", keys + CountDoneDeadends(1, "@Palace of Darkness/Boss/Boss Item", "@Palace of Darkness/Harmless Hellway/Harmless Hellway", "@Palace of Darkness/Dark Maze Top/Dark Maze Top"), 6, keys + CountDoneDeadends(1, "@Palace of Darkness/Boss/Boss Item", "@Palace of Darkness/Harmless Hellway/Harmless Hellway", "@Palace of Darkness/Dark Maze Top/Dark Maze Top"), 6), keys + 1
 end) --smallkey
 PoD_big_key_chest_room_N_door:connect_two_ways(PoD_big_key_chest_ledge)
 
@@ -156,7 +156,7 @@ PoD_teleporter_room:connect_two_ways(PoD_bari_hallway, function() return ANY("bo
 PoD_bari_hallway:connect_two_ways(PoD_mimic_room, function() return ANY("boots", "bombs") end)
 PoD_mimic_room:connect_two_ways(PoD_mimic_room_1N_door)
 
-PoD_mimic_room_1N_door:connect_two_ways_entrance_door_stuck("", PoD_conveyor_hallway_3S_door, function(keys) return EnemizerCheck("bow"), keys + 1 end)
+PoD_mimic_room_1N_door:connect_two_ways_entrance_door_stuck("", PoD_conveyor_hallway_3S_door, function(keys, Current_Dungeon) return EnemizerCheck("bow"), keys + 1 end)
 PoD_conveyor_hallway_3S_door:connect_two_ways(PoD_conveyor_hallway)
 PoD_conveyor_hallway:connect_two_ways(PoD_conveyor_hallway_1N_door)
 
@@ -170,23 +170,23 @@ PoD_arena_ledge_4E_door:connect_two_ways(PoD_arena_ledge)
 PoD_arena_ledge:connect_one_way("PoD - Arena Ledge")
 
 PoD_arena_back_bridge:connect_two_ways(PoD_arena_back_bridge_1N_door)
-PoD_arena_back_bridge_1N_door:connect_two_ways_entrance("", PoD_collapsing_bridge_front_2S_door, function(keys)
+PoD_arena_back_bridge_1N_door:connect_two_ways_entrance("", PoD_collapsing_bridge_front_2S_door, function(keys, Current_Dungeon)
     if Tracker:FindObjectForCode("bow").Active then
-        return Has("Pod_smallkey", keys + 1, 4, keys + 1, 4), keys + 1
+        return Has("smallkey", keys + 1, 4, keys + 1, 4), keys + 1
     else
-        return Has("Pod_smallkey", keys + 1, 3, keys + 1, 3), keys + 1
+        return Has("smallkey", keys + 1, 3, keys + 1, 3), keys + 1
     end
 end)
 PoD_collapsing_bridge_front_2S_door:connect_two_ways(PoD_collapsing_bridge_front)
 PoD_collapsing_bridge_front:connect_two_ways_stuck(PoD_collapsing_bridge_back, nil, function() return ANY("boots", "hookshot") end)
 
 PoD_collapsing_bridge_back:connect_two_ways(PoD_collapsing_bridge_back_1W_door)
-PoD_collapsing_bridge_back_1W_door:connect_two_ways_entrance("", PoD_dark_maze_2E_door, function(keys)
+PoD_collapsing_bridge_back_1W_door:connect_two_ways_entrance("", PoD_dark_maze_2E_door, function(keys, Current_Dungeon)
     return ALL(
         PoD_compass_room:accessibility(),
         DarkRooms,
         Has("lamp"),
-        Has("Pod_smallkey", keys + CountDoneDeadends(1, "@Palace of Darkness/Harmless Hellway/Harmless Hellway", "@Palace of Darkness/Boss/Boss Item", "@Palace of Darkness/Big Key Chest/Big Key Chest"), 6, keys + CountDoneDeadends(1, "@Palace of Darkness/Harmless Hellway/Harmless Hellway", "@Palace of Darkness/Boss/Boss Item", "@Palace of Darkness/Big Key Chest/Big Key Chest"), 6)
+        Has("smallkey", keys + CountDoneDeadends(1, "@Palace of Darkness/Harmless Hellway/Harmless Hellway", "@Palace of Darkness/Boss/Boss Item", "@Palace of Darkness/Big Key Chest/Big Key Chest"), 6, keys + CountDoneDeadends(1, "@Palace of Darkness/Harmless Hellway/Harmless Hellway", "@Palace of Darkness/Boss/Boss Item", "@Palace of Darkness/Big Key Chest/Big Key Chest"), 6)
     ), keys + 1
 end)
 PoD_dark_maze_2E_door:connect_two_ways(PoD_dark_maze)
@@ -196,7 +196,7 @@ PoD_dark_maze:connect_two_ways(PoD_dark_maze_E_door, function() return DarkRooms
 
 PoD_dark_maze_E_door:connect_two_ways_entrance("", PoD_big_chest_ledge_W_door, function() return Has("bombs") end)
 PoD_big_chest_ledge_W_door:connect_two_ways(PoD_big_chest_ledge)
-PoD_dark_maze:connect_one_way("PoD - Big Chest", function() return Has("pod_bigkey") end)
+PoD_dark_maze:connect_one_way("PoD - Big Chest", function() return Has("bigkey") end)
 
 PoD_collapsing_bridge_back:connect_two_ways(PoD_compass_room)
 PoD_compass_room:connect_one_way("PoD - Compass Chest")
@@ -212,8 +212,8 @@ PoD_compass_room:connect_two_ways(PoD_compass_room_N_door)
 PoD_compass_room_N_door:connect_two_ways_entrance("", PoD_dark_U_basement_N_door)
 PoD_dark_U_basement_N_door:connect_two_ways(PoD_dark_U_basement)
 
-PoD_compass_room:connect_two_ways(PoD_harmless_hellway, function(keys)
-    return Has("Pod_smallkey", keys + CountDoneDeadends(1, "@Palace of Darkness/Big Key Chest/Big Key Chest", "@Palace of Darkness/Dark Maze Top/Dark Maze Top", "@Palace of Darkness/Boss/Boss Item"), 6, keys + CountDoneDeadends(1, "@Palace of Darkness/Big Key Chest/Big Key Chest", "@Palace of Darkness/Dark Maze Top/Dark Maze Top", "@Palace of Darkness/Boss/Boss Item"), 6), keys + 1
+PoD_compass_room:connect_two_ways(PoD_harmless_hellway, function(keys, Current_Dungeon)
+    return Has("smallkey", keys + CountDoneDeadends(1, "@Palace of Darkness/Big Key Chest/Big Key Chest", "@Palace of Darkness/Dark Maze Top/Dark Maze Top", "@Palace of Darkness/Boss/Boss Item"), 6, keys + CountDoneDeadends(1, "@Palace of Darkness/Big Key Chest/Big Key Chest", "@Palace of Darkness/Dark Maze Top/Dark Maze Top", "@Palace of Darkness/Boss/Boss Item"), 6), keys + 1
 end)
 PoD_harmless_hellway:connect_one_way("PoD - Harmless Hellway")
 PoD_harmless_hellway:connect_two_ways(PoD_harmless_hellway_S_door)
@@ -254,14 +254,14 @@ PoD_boss_room:connect_one_way("PoD - Boss", function() return GetBossRef("Pod_bo
 -- PoD_three_way_room_middle:connect_two_ways(PoD_three_way_room_right)
 
 -- PoD_three_way_room_left:connect_two_ways(PoD_shooter_room)
--- PoD_three_way_room_middle:connect_two_ways(PoD_big_key_chest_room, function(keys)
+-- PoD_three_way_room_middle:connect_two_ways(PoD_big_key_chest_room, function(keys, Current_Dungeon)
 --     if not (PoD_switch_room_bottom:accessibility() > 5 and PoD_switch_room_top:accessibility() > 5) then
---         return Has("Pod_smallkey", keys + 1, 1, keys + 1, 1), keys + 1
+--         return Has("smallkey", keys + 1, 1, keys + 1, 1), keys + 1
 --     else
 --         return ALL(
 --             PoD_switch_room_bottom:accessibility(),
 --             PoD_switch_room_top:accessibility(),
---             Has("Pod_smallkey", keys, 0, keys, 0)
+--             Has("smallkey", keys, 0, keys, 0)
 --         ), keys
 --     end
 -- end)
@@ -271,8 +271,8 @@ PoD_boss_room:connect_one_way("PoD - Boss", function() return GetBossRef("Pod_bo
 -- PoD_shooter_room:connect_one_way("PoD - Shooter Room", function() return CanInteract(PoD_shooter_room) end)
 
 -- Pod_basement_ledge:connect_one_way(Pod_basement_floor)
--- Pod_basement_ledge:connect_two_ways(PoD_big_key_chest_ledge, function(keys)
---     return Has("Pod_smallkey", keys + CountDoneDeadends(1, "@Palace of Darkness/Boss/Boss Item", "@Palace of Darkness/Harmless Hellway/Harmless Hellway", "@Palace of Darkness/Dark Maze Top/Dark Maze Top"), 6, keys + CountDoneDeadends(1, "@Palace of Darkness/Boss/Boss Item", "@Palace of Darkness/Harmless Hellway/Harmless Hellway", "@Palace of Darkness/Dark Maze Top/Dark Maze Top"), 6), keys + 1
+-- Pod_basement_ledge:connect_two_ways(PoD_big_key_chest_ledge, function(keys, Current_Dungeon)
+--     return Has("smallkey", keys + CountDoneDeadends(1, "@Palace of Darkness/Boss/Boss Item", "@Palace of Darkness/Harmless Hellway/Harmless Hellway", "@Palace of Darkness/Dark Maze Top/Dark Maze Top"), 6, keys + CountDoneDeadends(1, "@Palace of Darkness/Boss/Boss Item", "@Palace of Darkness/Harmless Hellway/Harmless Hellway", "@Palace of Darkness/Dark Maze Top/Dark Maze Top"), 6), keys + 1
 -- end)
 
 -- PoD_big_key_chest_ledge:connect_one_way(Pod_basement_floor)
@@ -291,40 +291,40 @@ PoD_boss_room:connect_one_way("PoD - Boss", function() return GetBossRef("Pod_bo
 --     )
 -- end)
 
--- PoD_mimic_room:connect_two_ways(PoD_switch_room_top, function(keys) return EnemizerCheck("bow"), keys + 1 end)
+-- PoD_mimic_room:connect_two_ways(PoD_switch_room_top, function(keys, Current_Dungeon) return EnemizerCheck("bow"), keys + 1 end)
 
 -- PoD_switch_room_top:connect_one_way(PoD_switch_room_bottom, function() return Has("hammer") end)
 -- PoD_switch_room_top:connect_one_way("PoD - Map Chest")
 -- PoD_switch_room_top:connect_one_way("PoD - Arena Ledge", function() return Has("bombs") end)
 
--- PoD_switch_room_bottom:connect_two_ways(PoD_boss_room, function(keys)
+-- PoD_switch_room_bottom:connect_two_ways(PoD_boss_room, function(keys, Current_Dungeon)
 --     return ALL(
 --         "bow",
 --         "hammer",
 --         DarkRooms,
---         "Pod_bigkey",
---         Has("Pod_smallkey", keys + CountDoneDeadends(1, "@Palace of Darkness/Big Key Chest/Big Key Chest", "@Palace of Darkness/Dark Maze Top/Dark Maze Top", "@Palace of Darkness/Harmless Hellway/Harmless Hellway"), 6, keys + CountDoneDeadends(1, "@Palace of Darkness/Big Key Chest/Big Key Chest", "@Palace of Darkness/Dark Maze Top/Dark Maze Top", "@Palace of Darkness/Harmless Hellway/Harmless Hellway"), 6)
+--         "bigkey",
+--         Has("smallkey", keys + CountDoneDeadends(1, "@Palace of Darkness/Big Key Chest/Big Key Chest", "@Palace of Darkness/Dark Maze Top/Dark Maze Top", "@Palace of Darkness/Harmless Hellway/Harmless Hellway"), 6, keys + CountDoneDeadends(1, "@Palace of Darkness/Big Key Chest/Big Key Chest", "@Palace of Darkness/Dark Maze Top/Dark Maze Top", "@Palace of Darkness/Harmless Hellway/Harmless Hellway"), 6)
 --     ), keys + 1
 -- end)
 -- PoD_switch_room_bottom:connect_two_ways(PoD_arena, HitRanged)
 
 -- PoD_big_key_chest_room:connect_two_ways(PoD_arena)
 
--- PoD_arena:connect_one_way(PoD_collapsing_bridge, function(keys)
+-- PoD_arena:connect_one_way(PoD_collapsing_bridge, function(keys, Current_Dungeon)
 --     if Tracker:FindObjectForCode("bow").Active then
---         return Has("Pod_smallkey", keys + 1, 4, keys + 1, 4), keys + 1
+--         return Has("smallkey", keys + 1, 4, keys + 1, 4), keys + 1
 --     else
---         return Has("Pod_smallkey", keys + 1, 3, keys + 1, 3), keys + 1
+--         return Has("smallkey", keys + 1, 3, keys + 1, 3), keys + 1
 --     end
 -- end)
 -- PoD_arena:connect_one_way("PoD - Arena Bridge")
 
--- PoD_collapsing_bridge:connect_two_ways(PoD_dark_maze, function(keys)
+-- PoD_collapsing_bridge:connect_two_ways(PoD_dark_maze, function(keys, Current_Dungeon)
 --     return ALL(
 --         PoD_compass_room:accessibility(),
 --         DarkRooms,
 --         Has("lamp"),
---         Has("Pod_smallkey", keys + CountDoneDeadends(1, "@Palace of Darkness/Harmless Hellway/Harmless Hellway", "@Palace of Darkness/Boss/Boss Item", "@Palace of Darkness/Big Key Chest/Big Key Chest"), 6, keys + CountDoneDeadends(1, "@Palace of Darkness/Harmless Hellway/Harmless Hellway", "@Palace of Darkness/Boss/Boss Item", "@Palace of Darkness/Big Key Chest/Big Key Chest"), 6)
+--         Has("smallkey", keys + CountDoneDeadends(1, "@Palace of Darkness/Harmless Hellway/Harmless Hellway", "@Palace of Darkness/Boss/Boss Item", "@Palace of Darkness/Big Key Chest/Big Key Chest"), 6, keys + CountDoneDeadends(1, "@Palace of Darkness/Harmless Hellway/Harmless Hellway", "@Palace of Darkness/Boss/Boss Item", "@Palace of Darkness/Big Key Chest/Big Key Chest"), 6)
 --     ), keys + 1
 -- end)
 -- PoD_collapsing_bridge:connect_two_ways(PoD_compass_room, function() return PoD_collapsing_bridge:accessibility() end)
@@ -333,14 +333,14 @@ PoD_boss_room:connect_one_way("PoD - Boss", function() return GetBossRef("Pod_bo
 -- PoD_dark_maze:connect_one_way("PoD - Dark Maze Bottom")
 -- PoD_dark_maze:connect_one_way("PoD - Big Chest", function()
 --     return ALL(
---         "Pod_bigkey",
+--         "bigkey",
 --         "bombs"
 --     )
 -- end)
 
 -- PoD_compass_room:connect_two_ways(PoD_dark_basement, function() return DarkRooms(true) end)
--- PoD_compass_room:connect_two_ways(PoD_harmless_hellway, function(keys)
---     return Has("Pod_smallkey", keys + CountDoneDeadends(1, "@Palace of Darkness/Big Key Chest/Big Key Chest", "@Palace of Darkness/Dark Maze Top/Dark Maze Top", "@Palace of Darkness/Boss/Boss Item"), 6, keys + CountDoneDeadends(1, "@Palace of Darkness/Big Key Chest/Big Key Chest", "@Palace of Darkness/Dark Maze Top/Dark Maze Top", "@Palace of Darkness/Boss/Boss Item"), 6), keys + 1
+-- PoD_compass_room:connect_two_ways(PoD_harmless_hellway, function(keys, Current_Dungeon)
+--     return Has("smallkey", keys + CountDoneDeadends(1, "@Palace of Darkness/Big Key Chest/Big Key Chest", "@Palace of Darkness/Dark Maze Top/Dark Maze Top", "@Palace of Darkness/Boss/Boss Item"), 6, keys + CountDoneDeadends(1, "@Palace of Darkness/Big Key Chest/Big Key Chest", "@Palace of Darkness/Dark Maze Top/Dark Maze Top", "@Palace of Darkness/Boss/Boss Item"), 6), keys + 1
 -- end)
 -- PoD_compass_room:connect_one_way("PoD - Compass Chest")
 

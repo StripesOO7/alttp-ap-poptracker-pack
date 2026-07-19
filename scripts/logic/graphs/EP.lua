@@ -97,7 +97,7 @@ EP_west_wing_bottom:connect_two_ways(EP_west_wing_bottom_E_door)
 EP_west_wing_bottom_E_door:connect_two_ways_entrance("", EP_main_room_bottom_W_door)
 EP_main_room_bottom_W_door:connect_two_ways(EP_main_room_bottom)
 
-EP_main_room_bottom:connect_one_way("EP - Big Chest", function() return Has("ep_bigkey") end)
+EP_main_room_bottom:connect_one_way("EP - Big Chest", function() return Has("bigkey") end)
 
 EP_main_room_bottom:connect_two_ways(EP_main_room_bottom_E_door)
 EP_main_room_bottom_E_door:connect_two_ways_entrance("", EP_east_wing_bottom_W_door)
@@ -111,7 +111,7 @@ EP_dark_square_room:connect_two_ways(EP_dark_pots, function() return DarkRooms e
 EP_dark_pots:connect_one_way("EP - Dark Square Key Drop", function() return DarkRooms end)
 
 EP_dark_square_room:connect_two_ways(EP_dark_square_room_1W_door, function() return DarkRooms end)
-EP_dark_square_room_1W_door:connect_two_ways_entrance("", EP_cannonball_room_bridge_E_door, function(keys) return Has("ep_smallkey", keys, 0, keys + 1, 1), KDSreturn(keys, keys + 1) end)
+EP_dark_square_room_1W_door:connect_two_ways_entrance("", EP_cannonball_room_bridge_E_door, function(keys, Current_Dungeon) print("inside rule for: EP_dark_square_room_1W_door", keys, Current_Dungeon) return Has("smallkey", keys, 0, keys + 1, 1), KDSreturn(keys, keys + 1) end)
 EP_cannonball_room_bridge_E_door:connect_two_ways(EP_cannonball_room_bridge)
 
 EP_cannonball_room_bridge:connect_two_ways(EP_cannonball_room_bridge_W_door)
@@ -120,19 +120,19 @@ EP_big_key_chest_room_E_door:connect_two_ways(EP_big_key_chest_room)
 
 EP_big_key_chest_room:connect_one_way("EP - Big Key Chest", function() return ALL(DealDamage, CanInteract(EP_big_key_chest_room)) end)
 EP_big_key_chest_room:connect_two_ways(EP_big_key_chest_room_N_door)
-EP_big_key_chest_room_N_door:connect_two_ways_entrance_door_stuck("", EP_west_wing_bottom_S_door, function() return ALL("ep_bigkey") end, function(keys) return Has("ep_smallkey", keys, 0, keys + 1, 1), KDSreturn(keys, keys + 1) end)
+EP_big_key_chest_room_N_door:connect_two_ways_entrance_door_stuck("", EP_west_wing_bottom_S_door, function() print("inside rule for: EP_big_key_chest_room_N_door", Current_Dungeon) return ALL("bigkey") end, function(keys, Current_Dungeon) print("inside rule for: EP_west_wing_bottom_S_door", keys, Current_Dungeon) return Has("smallkey", keys, 0, keys + 1, 1), KDSreturn(keys, keys + 1) end)
 EP_west_wing_bottom_S_door:connect_one_way(EP_west_wing_bottom)
 
 
 EP_main_room_bottom:connect_two_ways(EP_main_room_bottom_N_door)
-EP_main_room_bottom_N_door:connect_two_ways_entrance_door_stuck("", EP_dark_eyegore_room_S_door, function() return ALL("ep_bigkey") end, function(keys) return Has("ep_smallkey", keys, 0, keys + 1, 1), KDSreturn(keys, keys + 1) end )
+EP_main_room_bottom_N_door:connect_two_ways_entrance_door_stuck("", EP_dark_eyegore_room_S_door, function() print("inside rule for: EP_main_room_bottom_N_door", keys, Current_Dungeon) return ALL("bigkey") end, function(keys, Current_Dungeon) print("inside rule for: EP_dark_eyegore_room_S_door", keys, Current_Dungeon) return Has("smallkey", keys, 0, keys + 1, 1), KDSreturn(keys, keys + 1) end )
 EP_dark_eyegore_room_S_door:connect_two_ways(EP_dark_eyegore_room)
 
 EP_dark_eyegore_room:connect_one_way("EP - Dark Eyegore Key Drop", function() return ALL(EnemizerCheck("bow"), DealDamage) end)
 EP_dark_eyegore_room:connect_two_ways(EP_rupee_room, function() return DarkRooms(true) end)
 
 EP_dark_eyegore_room:connect_two_ways(EP_dark_eyegore_room_S_door, function() return DarkRooms(true) end)
-EP_dark_eyegore_room_S_door:connect_two_ways_entrance_door_stuck("", EP_false_switches_3N_door, function(keys) return Has("ep_smallkey", keys, 0, keys + 1, 2), KDSreturn(keys, keys + 1) end)
+EP_dark_eyegore_room_S_door:connect_two_ways_entrance_door_stuck("", EP_false_switches_3N_door, function(keys, Current_Dungeon) print("inside rule for: EP_dark_eyegore_room_S_door", keys, Current_Dungeon) return Has("smallkey", keys, 0, keys + 1, 2), KDSreturn(keys, keys + 1) end)
 EP_false_switches_3N_door:connect_two_ways(EP_false_switches)
 
 EP_false_switches:connect_two_ways(EP_false_switches_3W_door)
