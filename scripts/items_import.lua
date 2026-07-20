@@ -6,6 +6,7 @@ Tracker:AddItems("items/dungeon_bosses.json")
 Tracker:AddItems("items/dungeon_items.json")
 Tracker:AddItems("items/doors_static_images.json")
 Tracker:AddItems("items/shops_bottles_pulls.json")
+Tracker:AddItems("items/enemies.json")
 
 
 local variant = Tracker.ActiveVariantUID
