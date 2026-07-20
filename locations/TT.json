@@ -26,7 +26,8 @@
                         "map": "TT",
                         "x": 35,
                         "y": 170,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -48,7 +49,8 @@
                         "map": "TT",
                         "x": 50,
                         "y": 75,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -70,7 +72,8 @@
                         "map": "TT",
                         "x": 175,
                         "y": 204,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -92,7 +95,8 @@
                         "map": "TT",
                         "x": 100,
                         "y": 215,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             }
@@ -109,7 +113,9 @@
         "children": [
             {
                 "name": "Hallway Pot Key",
-                "visibility_rules": ["key_drop_shuffle"],
+                "visibility_rules": [
+                    "key_drop_shuffle"
+                ],
                 "access_rules": [
                     "^$CanReach|TT_back_hallway"
                 ],
@@ -126,7 +132,8 @@
                         "map": "TT",
                         "x": 500,
                         "y": 145,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -135,7 +142,9 @@
                 "access_rules": [
                     "^$CanReach|TT_crystal_switch_room"
                 ],
-                "visibility_rules": ["key_drop_shuffle"],
+                "visibility_rules": [
+                    "key_drop_shuffle"
+                ],
                 "sections": [
                     {
                         "name": "Spike Switch Pot Key",
@@ -149,7 +158,8 @@
                         "map": "TT",
                         "x": 291,
                         "y": 98,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -171,7 +181,8 @@
                         "map": "TT",
                         "x": 774,
                         "y": 152,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -193,7 +204,8 @@
                         "map": "TT",
                         "x": 473,
                         "y": 18,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -215,7 +227,8 @@
                         "map": "TT",
                         "x": 568,
                         "y": 222,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -239,7 +252,910 @@
                         "map": "TT",
                         "x": 490,
                         "y": 100,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Thieves Town Front Doors",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "parent": "TT",
+        "access_rules": [
+            "^$CanReach|TT_entrance_inside"
+        ],
+        "children": [
+            {
+                "name": "TT_front_bottom_left_N_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_front_bottom_left_N_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_front_bottom_left_N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 65,
+                        "y": 154,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_front_bottom_left_2N_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_front_bottom_left_2N_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_front_bottom_left_2N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 97,
+                        "y": 154,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_front_bottom_left_E_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_front_bottom_left_E_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_front_bottom_left_E_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 120,
+                        "y": 194,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_front_bottom_left_deadend_4E_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_front_bottom_left_deadend_4E_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_front_bottom_left_deadend_4E_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 115,
+                        "y": 216,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_front_top_left_S_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_front_top_left_S_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_front_top_left_S_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 65,
+                        "y": 104,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_front_top_left_4S_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_front_top_left_4S_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_front_top_left_4S_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 97,
+                        "y": 103,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_front_top_left_2E_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_front_top_left_2E_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_front_top_left_2E_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 106,
+                        "y": 41,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_front_top_left_4E_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_front_top_left_4E_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_front_top_left_4E_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 107,
+                        "y": 85,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_front_top_left_E_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_front_top_left_E_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_front_top_left_E_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 118,
+                        "y": 66,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_front_top_right_1W_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_front_top_right_1W_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_front_top_right_1W_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 151,
+                        "y": 41,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_front_top_right_3W_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_front_top_right_3W_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_front_top_right_3W_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 152,
+                        "y": 85,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_front_top_right_W_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_front_top_right_W_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_front_top_right_W_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 139,
+                        "y": 66,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_front_top_right_S_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_front_top_right_S_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_front_top_right_S_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 193,
+                        "y": 103,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_front_top_right_3S_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_front_top_right_3S_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_front_top_right_3S_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 159,
+                        "y": 103,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_front_top_right_1N_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_front_top_right_1N_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_front_top_right_1N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 160,
+                        "y": 13,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_front_top_right_2N_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_front_top_right_2N_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_front_top_right_2N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 225,
+                        "y": 13,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_front_bottom_right_1N_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_front_bottom_right_1N_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_front_bottom_right_1N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 160,
+                        "y": 154,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_front_bottom_right_N_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_front_bottom_right_N_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_front_bottom_right_N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 193,
+                        "y": 154,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_front_bottom_right_3W_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_front_bottom_right_3W_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_front_bottom_right_3W_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 150,
+                        "y": 217,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_front_bottom_right_W_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_front_bottom_right_W_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_front_bottom_right_W_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 138,
+                        "y": 194,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "name": "Thieves Town Back Doors",
+        "chest_unopened_img": "/images/items/closed_Chest.png",
+        "chest_opened_img": "/images/items/open_Chest.png",
+        "access_rules": [
+            "^$CanReach|TT_back_hallway"
+        ],
+        "parent": "TT",
+        "children": [
+            {
+                "name": "TT_back_hallway_S_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_back_hallway_S_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_back_hallway_S_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 492,
+                        "y": 247,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_back_hallway_N_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_back_hallway_N_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_back_hallway_N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 493,
+                        "y": 140,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_boss_room_S_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_boss_room_S_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_boss_room_S_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 492,
+                        "y": 119,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_cricket_hall_W_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_cricket_hall_W_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_cricket_hall_W_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 406,
+                        "y": 226,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_cricket_hall_deadend_3S_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_cricket_hall_deadend_3S_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_cricket_hall_deadend_3S_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 429,
+                        "y": 245,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_blue_blocks_room_2E_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_blue_blocks_room_2E_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_blue_blocks_room_2E_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 387,
+                        "y": 161,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_short_conveyor_room_4E_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_short_conveyor_room_4E_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_short_conveyor_room_4E_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 388,
+                        "y": 226,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_long_conveyor_belt_room_N_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_long_conveyor_belt_room_N_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_long_conveyor_belt_room_N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 301,
+                        "y": 141,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_square_conveyor_room_1W_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_square_conveyor_room_1W_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_square_conveyor_room_1W_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 405,
+                        "y": 161,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_square_conveyor_room_1N_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_square_conveyor_room_1N_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_square_conveyor_room_1N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 429,
+                        "y": 140,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_crystal_switch_room_N_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_crystal_switch_room_N_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_crystal_switch_room_N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 301,
+                        "y": 77,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_crystal_switch_room_S_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_crystal_switch_room_S_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_crystal_switch_room_S_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 301,
+                        "y": 120,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_attic_N_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_attic_N_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_attic_N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 300,
+                        "y": 13,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_attic_E_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_attic_E_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_attic_E_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 324,
+                        "y": 34,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_attic_bomb_floor_W_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_attic_bomb_floor_W_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_attic_bomb_floor_W_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 341,
+                        "y": 34,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_big_block_basement_N_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_big_block_basement_N_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_big_block_basement_N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 696,
+                        "y": 141,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_big_block_basement_1W_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_big_block_basement_1W_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_big_block_basement_1W_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 673,
+                        "y": 162,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_conveyor_catwalk_2E_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_conveyor_catwalk_2E_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_conveyor_catwalk_2E_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 655,
+                        "y": 162,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_conveyor_catwalk_4E_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_conveyor_catwalk_4E_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_conveyor_catwalk_4E_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 655,
+                        "y": 226,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TT_big_pot_hall_4W_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TT_big_pot_hall_4W_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TT_big_pot_hall_4W_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 673,
+                        "y": 226,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             }

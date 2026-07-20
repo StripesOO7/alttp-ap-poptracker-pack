@@ -12,7 +12,9 @@
                 "access_rules": [
                     "^$CanReach|IP_jelly_room"
                 ],
-                "visibility_rules": ["key_drop_shuffle"],
+                "visibility_rules": [
+                    "key_drop_shuffle"
+                ],
                 "sections": [
                     {
                         "name": "Jelly Key Drop",
@@ -26,7 +28,8 @@
                         "map": "IP",
                         "x": 21,
                         "y": 34,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -35,7 +38,9 @@
                 "access_rules": [
                     "^$CanReach|IP_conveyor_room"
                 ],
-                "visibility_rules": ["key_drop_shuffle"],
+                "visibility_rules": [
+                    "key_drop_shuffle"
+                ],
                 "sections": [
                     {
                         "name": "Conveyor Key Drop",
@@ -49,7 +54,8 @@
                         "map": "IP",
                         "x": 84,
                         "y": 363,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -58,7 +64,9 @@
                 "access_rules": [
                     "^$CanReach|IP_map_room"
                 ],
-                "visibility_rules": ["key_drop_shuffle"],
+                "visibility_rules": [
+                    "key_drop_shuffle"
+                ],
                 "sections": [
                     {
                         "name": "Hammer Block Key Drop",
@@ -72,7 +80,8 @@
                         "map": "IP",
                         "x": 159,
                         "y": 424,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -81,7 +90,9 @@
                 "access_rules": [
                     "^$CanReach|IP_many_pots_room"
                 ],
-                "visibility_rules": ["key_drop_shuffle"],
+                "visibility_rules": [
+                    "key_drop_shuffle"
+                ],
                 "sections": [
                     {
                         "name": "Many Pots Pot Key",
@@ -95,7 +106,8 @@
                         "map": "IP",
                         "x": 514,
                         "y": 88,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -117,7 +129,8 @@
                         "map": "IP",
                         "x": 95,
                         "y": 235,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -139,7 +152,8 @@
                         "map": "IP",
                         "x": 205,
                         "y": 100,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -161,7 +175,8 @@
                         "map": "IP",
                         "x": 320,
                         "y": 310,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -183,7 +198,8 @@
                         "map": "IP",
                         "x": 173,
                         "y": 438,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -205,7 +221,8 @@
                         "map": "IP",
                         "x": 455,
                         "y": 175,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -227,7 +244,8 @@
                         "map": "IP",
                         "x": 220,
                         "y": 180,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -249,7 +267,8 @@
                         "map": "IP",
                         "x": 390,
                         "y": 85,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -273,13 +292,13 @@
                         "map": "IP",
                         "x": 470,
                         "y": 425,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             }
         ]
     },
-    
     {
         "name": "Ice Palace Doors",
         "chest_unopened_img": "/images/items/closed_Chest.png",
@@ -290,925 +309,925 @@
         "children": [
             {
                 "name": "IP_jelly_room_3N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_jelly_room_3N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_jelly_room_3N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 33,
+                        "y": 13,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_floor_switch_3N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_floor_switch_3N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_floor_switch_3N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 32,
+                        "y": 145,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_push_cross_4S_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_push_cross_4S_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_push_cross_4S_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 96,
+                        "y": 187,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_push_cross_4E_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_push_cross_4E_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_push_cross_4E_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 120,
+                        "y": 167,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_compass_room_2N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_compass_room_2N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_compass_room_2N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 96,
+                        "y": 209,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_sliding_switch_room_3W_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_sliding_switch_room_3W_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_sliding_switch_room_3W_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 137,
+                        "y": 167,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_big_key_room_right_4N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_big_key_room_right_4N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_big_key_room_right_4N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 218,
+                        "y": 155,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_conveyor_room_3S_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_conveyor_room_3S_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_conveyor_room_3S_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 32,
+                        "y": 384,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_firebar_or_bomb_jump_1N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_firebar_or_bomb_jump_1N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_firebar_or_bomb_jump_1N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 32,
+                        "y": 405,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_narrow_corridor_2N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_narrow_corridor_2N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_narrow_corridor_2N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 112,
+                        "y": 421,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_sliding_penguins_N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_sliding_penguins_N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_sliding_penguins_N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 273,
+                        "y": 341,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_sliding_penguins_3N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_sliding_penguins_3N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_sliding_penguins_3N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 288,
+                        "y": 357,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_spike_cross_4S_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_spike_cross_4S_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_spike_cross_4S_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 273,
+                        "y": 320,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_spike_cross_4E_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_spike_cross_4E_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_spike_cross_4E_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 295,
+                        "y": 298,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_sliding_firebar_3S_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_sliding_firebar_3S_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_sliding_firebar_3S_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 194,
+                        "y": 307,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_spike_room_left_3W_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_spike_room_left_3W_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_spike_room_left_3W_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 313,
+                        "y": 299,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_spike_room_left_3N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_spike_room_left_3N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_spike_room_left_3N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 322,
+                        "y": 277,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_spike_room_right_3N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_spike_room_right_3N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_spike_room_right_3N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 350,
+                        "y": 277,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_freezor_room_3S_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_freezor_room_3S_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_freezor_room_3S_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 195,
+                        "y": 107,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_ice_hallway_3S_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_ice_hallway_3S_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_ice_hallway_3S_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 272,
+                        "y": 120,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_ice_hallway_2E_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_ice_hallway_2E_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_ice_hallway_2E_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 295,
+                        "y": 35,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_big_spikeballs_4N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_big_spikeballs_4N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_big_spikeballs_4N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 323,
+                        "y": 77,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_bomb_slugs_N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_bomb_slugs_N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_bomb_slugs_N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 260,
+                        "y": 141,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_bomb_slugs_2N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_bomb_slugs_2N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_bomb_slugs_2N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 273,
+                        "y": 141,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_crystal_switch_right_4E_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_crystal_switch_right_4E_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_crystal_switch_right_4E_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 494,
+                        "y": 98,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_anti_fairy_2_pots_1N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_anti_fairy_2_pots_1N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_anti_fairy_2_pots_1N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 472,
+                        "y": 213,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_pre_boss_hold_switch_4S_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_pre_boss_hold_switch_4S_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_pre_boss_hold_switch_4S_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 471,
+                        "y": 320,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_pre_boss_hold_switch_4E_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_pre_boss_hold_switch_4E_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_pre_boss_hold_switch_4E_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 495,
+                        "y": 299,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_pre_boss_refill_3W_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_pre_boss_refill_3W_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_pre_boss_refill_3W_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 512,
+                        "y": 299,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_backwards_room_2N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_backwards_room_2N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_backwards_room_2N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 470,
+                        "y": 13,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_many_pots_room_3W_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_many_pots_room_3W_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_many_pots_room_3W_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 511,
+                        "y": 98,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_many_pots_room_3S_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_many_pots_room_3S_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_many_pots_room_3S_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 534,
+                        "y": 119,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_ice_catwalk_1N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_ice_catwalk_1N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_ice_catwalk_1N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 535,
+                        "y": 141,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_ice_catwalk_1W_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_ice_catwalk_1W_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_ice_catwalk_1W_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 512,
+                        "y": 162,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_iced_t_room_2N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_iced_t_room_2N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_iced_t_room_2N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 459,
+                        "y": 141,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_iced_t_room_2E_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_iced_t_room_2E_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_iced_t_room_2E_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 494,
+                        "y": 163,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_map_room_3N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_map_room_3N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_map_room_3N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 174,
+                        "y": 405,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_tongue_pull_4N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_tongue_pull_4N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_tongue_pull_4N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 217,
+                        "y": 414,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_boss_antechamber_2N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_boss_antechamber_2N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_boss_antechamber_2N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 471,
+                        "y": 341,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_lonely_freezor_1N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_lonely_freezor_1N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_lonely_freezor_1N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 273,
+                        "y": 141,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_lonely_freezor_N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_lonely_freezor_N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_lonely_freezor_N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 260,
+                        "y": 141,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "IP_hookshot_pit_1W_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "IP_hookshot_pit_1W_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_IP_hookshot_pit_1W_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "IP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 313,
+                        "y": 35,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             }

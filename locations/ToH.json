@@ -25,7 +25,8 @@
                         "map": "ToH",
                         "x": 35,
                         "y": 375,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -47,7 +48,8 @@
                         "map": "ToH",
                         "x": 95,
                         "y": 380,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -69,7 +71,8 @@
                         "map": "ToH",
                         "x": 190,
                         "y": 305,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -91,7 +94,8 @@
                         "map": "ToH",
                         "x": 190,
                         "y": 210,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -113,7 +117,8 @@
                         "map": "ToH",
                         "x": 190,
                         "y": 155,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -137,7 +142,8 @@
                         "map": "ToH",
                         "x": 195,
                         "y": 70,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             }
@@ -153,265 +159,265 @@
         "children": [
             {
                 "name": "ToH_main_room_1N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "ToH_main_room_1N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_ToH_main_room_1N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "ToH",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 161,
+                        "y": 292,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "ToH_main_room_3N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "ToH_main_room_3N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_ToH_main_room_3N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "ToH",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 165,
+                        "y": 360,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "ToH_main_room_4N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "ToH_main_room_4N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_ToH_main_room_4N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "ToH",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 221,
+                        "y": 360,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "ToH_basement_cage_3N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "ToH_basement_cage_3N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_ToH_basement_cage_3N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "ToH",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 37,
+                        "y": 354,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "ToH_tile_room_1N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "ToH_tile_room_1N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_ToH_tile_room_1N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "ToH",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 33,
+                        "y": 286,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "ToH_3_hard_head_beatles_4N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "ToH_3_hard_head_beatles_4N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_ToH_3_hard_head_beatles_4N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "ToH",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 93,
+                        "y": 218,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "ToH_startile_wide_2N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "ToH_startile_wide_2N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_ToH_startile_wide_2N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "ToH",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 113,
+                        "y": 170,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "ToH_big_chest_room_1N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "ToH_big_chest_room_1N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_ToH_big_chest_room_1N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "ToH",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 145,
+                        "y": 170,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "ToH_big_chest_room_2N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "ToH_big_chest_room_2N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_ToH_big_chest_room_2N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "ToH",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 241,
+                        "y": 170,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "ToH_5F_orange_path_1N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "ToH_5F_orange_path_1N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_ToH_5F_orange_path_1N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "ToH",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 17,
+                        "y": 33,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "ToH_5F_orange_path_2N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "ToH_5F_orange_path_2N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_ToH_5F_orange_path_2N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "ToH",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 109,
+                        "y": 33,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "ToH_boss_room_2N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "ToH_boss_room_2N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_ToH_boss_room_2N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "ToH",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 237,
+                        "y": 33,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             }

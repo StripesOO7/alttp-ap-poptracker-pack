@@ -28,7 +28,8 @@
                         "map": "DP",
                         "x": 80,
                         "y": 25,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -47,7 +48,8 @@
                         "map": "DP",
                         "x": 30,
                         "y": 30,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -66,7 +68,8 @@
                         "map": "DP",
                         "x": 190,
                         "y": 30,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -85,7 +88,8 @@
                         "map": "DP",
                         "x": 350,
                         "y": 20,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -104,7 +108,8 @@
                         "map": "DP",
                         "x": 350,
                         "y": 150,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             }
@@ -138,7 +143,8 @@
                         "map": "DP",
                         "x": 455,
                         "y": 30,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -147,7 +153,9 @@
                 "access_rules": [
                     "^$CanReach|DP_back_tile1_room, ^$CanReach|DP - Tile 1 Key Drop"
                 ],
-                "visibility_rules": ["key_drop_shuffle"],
+                "visibility_rules": [
+                    "key_drop_shuffle"
+                ],
                 "sections": [
                     {
                         "name": "Desert Tiles 1 Pot Key"
@@ -158,7 +166,8 @@
                         "map": "DP",
                         "x": 412,
                         "y": 175,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -167,7 +176,9 @@
                 "access_rules": [
                     "^$CanReach|DP_back_beamos_hallway, ^$CanReach|DP - Beamos Hallway Key Drop"
                 ],
-                "visibility_rules": ["key_drop_shuffle"],
+                "visibility_rules": [
+                    "key_drop_shuffle"
+                ],
                 "sections": [
                     {
                         "name": "Beamos Hall Pot Key"
@@ -178,7 +189,8 @@
                         "map": "DP",
                         "x": 564,
                         "y": 172,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -187,7 +199,9 @@
                 "access_rules": [
                     "^$CanReach|DP_back_tiles2_room, ^$CanReach|DP - Tile 2 Key Drop"
                 ],
-                "visibility_rules": ["key_drop_shuffle"],
+                "visibility_rules": [
+                    "key_drop_shuffle"
+                ],
                 "sections": [
                     {
                         "name": "Desert Tiles 2 Pot Key"
@@ -198,13 +212,13 @@
                         "map": "DP",
                         "x": 575,
                         "y": 81,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             }
         ]
     },
-
     {
         "name": "Desert Palace Doors",
         "chest_unopened_img": "/images/items/closed_Chest.png",
@@ -217,397 +231,397 @@
         "children": [
             {
                 "name": "DP_main_room_1N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "DP_main_room_1N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false, 
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_DP_main_room_1N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "DP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 143,
+                        "y": 134,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "DP_main_room_2N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "DP_main_room_2N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false, 
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_DP_main_room_2N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "DP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 239,
+                        "y": 134,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "DP_main_room_N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "DP_main_room_N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false, 
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_DP_main_room_N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "DP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 192,
+                        "y": 134,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "DP_main_room_E_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "DP_main_room_E_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false, 
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_DP_main_room_E_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "DP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 250,
+                        "y": 171,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "DP_main_room_deadend_S_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "DP_main_room_deadend_S_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false, 
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_DP_main_room_deadend_S_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "DP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 1,
+                        "y": 1,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "DP_north_hallway_3S_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "DP_north_hallway_3S_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false, 
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_DP_north_hallway_3S_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "DP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 143,
+                        "y": 121,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "DP_north_hallway_3W_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "DP_north_hallway_3W_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false, 
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_DP_north_hallway_3W_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "DP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 134,
+                        "y": 84,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "DP_north_hallway_4S_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "DP_north_hallway_4S_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false, 
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_DP_north_hallway_4S_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "DP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 239,
+                        "y": 121,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "DP_north_hallway_4E_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "DP_north_hallway_4E_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false, 
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_DP_north_hallway_4E_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "DP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 248,
+                        "y": 84,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "DP_west_sandworm_corner_4S_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "DP_west_sandworm_corner_4S_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false, 
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_DP_west_sandworm_corner_4S_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "DP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 112,
+                        "y": 121,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "DP_west_sandworm_corner_4E_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "DP_west_sandworm_corner_4E_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false, 
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_DP_west_sandworm_corner_4E_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "DP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 121,
+                        "y": 84,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "DP_west_wing_2N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "DP_west_wing_2N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false, 
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_DP_west_wing_2N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "DP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 112,
+                        "y": 134,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "DP_east_3_pots_3W_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "DP_east_3_pots_3W_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false, 
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_DP_east_3_pots_3W_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "DP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 262,
+                        "y": 84,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "DP_east_3_pots_3S_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "DP_east_3_pots_3S_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false, 
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_DP_east_3_pots_3S_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "DP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 288,
+                        "y": 121,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "DP_east_wing_1N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "DP_east_wing_1N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false, 
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_DP_east_wing_1N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "DP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 288,
+                        "y": 134,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "DP_east_wing_1W_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "DP_east_wing_1W_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false, 
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_DP_east_wing_1W_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "DP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 262,
+                        "y": 185,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "DP_compass_room_2N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "DP_compass_room_2N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false, 
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_DP_compass_room_2N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "DP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 352,
+                        "y": 139,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "DP_big_key_chest_room_3S_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "DP_big_key_chest_room_3S_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false, 
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_DP_big_key_chest_room_3S_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "DP",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 352,
+                        "y": 120,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             }
@@ -623,135 +637,123 @@
         "children": [
             {
                 "name": "DP_back_tiles1_room_1N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "DP_back_tiles1_room_1N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_DP_back_tiles1_room_1N_door"
                     }
                 ],
-                "map_locations": [
-                    {
-                        "map": "DP Back",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
-                    }
-                ]
+                "map_locations": {
+                    "map": "DP",
+                    "x": 430,
+                    "y": 138,
+                    "size": 8,
+                    "shape": "diamond"
+                }
             },
             {
                 "name": "DP_back_tiles2_room_4S_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "DP_back_tiles2_room_4S_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_DP_back_tiles2_room_4S_door"
                     }
                 ],
-                "map_locations": [
-                    {
-                        "map": "DP Back",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
-                    }
-                ]
+                "map_locations": {
+                    "map": "DP",
+                    "x": 558,
+                    "y": 120,
+                    "size": 8,
+                    "shape": "diamond"
+                }
             },
             {
                 "name": "DP_back_bridge_room_1N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "DP_back_bridge_room_1N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_DP_back_bridge_room_1N_door"
                     }
                 ],
-                "map_locations": [
-                    {
-                        "map": "DP Back",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
-                    }
-                ]
+                "map_locations": {
+                    "map": "DP",
+                    "x": 494,
+                    "y": 138,
+                    "size": 8,
+                    "shape": "diamond"
+                }
             },
             {
                 "name": "DP_back_torch_room_1N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "DP_back_torch_room_1N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_DP_back_torch_room_1N_door"
                     }
                 ],
-                "map_locations": [
-                    {
-                        "map": "DP Back",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
-                    }
-                ]
+                "map_locations": {
+                    "map": "DP",
+                    "x": 511,
+                    "y": 13,
+                    "size": 8,
+                    "shape": "diamond"
+                }
             },
             {
                 "name": "DP_back_beamos_hallway_2N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "DP_back_beamos_hallway_2N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_DP_back_beamos_hallway_2N_door"
                     }
                 ],
-                "map_locations": [
-                    {
-                        "map": "DP Back",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
-                    }
-                ]
+                "map_locations": {
+                    "map": "DP",
+                    "x": 558,
+                    "y": 138,
+                    "size": 8,
+                    "shape": "diamond"
+                }
             },
             {
                 "name": "DP_back_boss_room_2S_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "DP_back_boss_room_2S_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_DP_back_boss_room_2S_door"
                     }
                 ],
-                "map_locations": [
-                    {
-                        "map": "DP Back",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
-                    }
-                ]
+                "map_locations": {
+                    "map": "DP",
+                    "x": 458,
+                    "y": 55,
+                    "size": 8,
+                    "shape": "diamond"
+                }
             }
         ]
     }

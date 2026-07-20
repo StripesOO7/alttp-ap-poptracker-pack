@@ -3,9 +3,7 @@
         "name": "Ganon's Tower Bottom Left",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
-        "access_rules": [
-            // "^$CanReach|GT_entrance_inside"
-        ],
+        "access_rules": [],
         "children": [
             {
                 "name": "Bob's Torch",
@@ -26,7 +24,8 @@
                         "map": "GT_Bottom",
                         "x": 370,
                         "y": 220,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -54,7 +53,8 @@
                         "map": "GT_Bottom",
                         "x": 114,
                         "y": 17,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -76,7 +76,8 @@
                         "map": "GT_Bottom",
                         "x": 114,
                         "y": 33,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -98,7 +99,8 @@
                         "map": "GT_Bottom",
                         "x": 77,
                         "y": 17,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -120,7 +122,8 @@
                         "map": "GT_Bottom",
                         "x": 77,
                         "y": 33,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -142,13 +145,16 @@
                         "map": "GT_Bottom",
                         "x": 162,
                         "y": 160,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
             {
                 "name": "Double Switch Pot Key",
-                "visibility_rules": ["key_drop_shuffle"],
+                "visibility_rules": [
+                    "key_drop_shuffle"
+                ],
                 "access_rules": [
                     "^$CanReach|GT_bottom_double_switch_room"
                 ],
@@ -165,7 +171,8 @@
                         "map": "GT_Bottom",
                         "x": 114,
                         "y": 240,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -174,7 +181,9 @@
                 "access_rules": [
                     "^$CanReach|GT_bottom_conveyor_cross_room"
                 ],
-                "visibility_rules": ["key_drop_shuffle"],
+                "visibility_rules": [
+                    "key_drop_shuffle"
+                ],
                 "sections": [
                     {
                         "name": "Conveyor Cross Pot Key",
@@ -188,7 +197,8 @@
                         "map": "GT_Bottom",
                         "x": 178,
                         "y": 113,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -210,7 +220,8 @@
                         "map": "GT_Bottom",
                         "x": 93,
                         "y": 287,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -238,7 +249,8 @@
                         "map": "GT_Bottom",
                         "x": 25,
                         "y": 299,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -260,7 +272,8 @@
                         "map": "GT_Bottom",
                         "x": 38,
                         "y": 299,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -282,7 +295,8 @@
                         "map": "GT_Bottom",
                         "x": 25,
                         "y": 287,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -304,7 +318,8 @@
                         "map": "GT_Bottom",
                         "x": 38,
                         "y": 287,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             }
@@ -336,7 +351,8 @@
                         "map": "GT_Bottom",
                         "x": 408,
                         "y": 208,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -358,7 +374,8 @@
                         "map": "GT_Bottom",
                         "x": 445,
                         "y": 208,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -380,7 +397,8 @@
                         "map": "GT_Bottom",
                         "x": 557,
                         "y": 142,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -408,7 +426,8 @@
                         "map": "GT_Bottom",
                         "x": 550,
                         "y": 280,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -430,7 +449,8 @@
                         "map": "GT_Bottom",
                         "x": 562,
                         "y": 280,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -452,7 +472,8 @@
                         "map": "GT_Bottom",
                         "x": 550,
                         "y": 295,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -474,13 +495,16 @@
                         "map": "GT_Bottom",
                         "x": 562,
                         "y": 295,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
             {
                 "name": "Conveyor Star Pits Pot Key",
-                "visibility_rules": ["key_drop_shuffle"],
+                "visibility_rules": [
+                    "key_drop_shuffle"
+                ],
                 "access_rules": [
                     "^$CanReach|GT_bottom_conveyor_star_room"
                 ],
@@ -497,7 +521,8 @@
                         "map": "GT_Bottom",
                         "x": 585,
                         "y": 335,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             }
@@ -529,7 +554,8 @@
                         "map": "GT_Bottom",
                         "x": 363,
                         "y": 285,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -551,7 +577,8 @@
                         "map": "GT_Bottom",
                         "x": 445,
                         "y": 300,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -573,7 +600,8 @@
                         "map": "GT_Bottom",
                         "x": 288,
                         "y": 272,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -595,7 +623,8 @@
                         "map": "GT_Bottom",
                         "x": 300,
                         "y": 272,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -617,24 +646,24 @@
                         "map": "GT_Bottom",
                         "x": 293,
                         "y": 280,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             }
-     
         ]
     },
     {
         "name": "Ganon's Tower Top",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
-        "access_rules": [
-            // "^$CanReach|GT_top_entrance"
-        ],
+        "access_rules": [],
         "children": [
             {
                 "name": "Mini Helmasaur Key Drop",
-                "visibility_rules": ["key_drop_shuffle"],
+                "visibility_rules": [
+                    "key_drop_shuffle"
+                ],
                 "access_rules": [
                     "^$CanReach|GT_top_mini_helmasaur_room"
                 ],
@@ -651,7 +680,8 @@
                         "map": "GT_Top",
                         "x": 288,
                         "y": 34,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -673,7 +703,8 @@
                         "map": "GT_Top",
                         "x": 270,
                         "y": 17,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -695,7 +726,8 @@
                         "map": "GT_Top",
                         "x": 305,
                         "y": 17,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -717,7 +749,8 @@
                         "map": "GT_Top",
                         "x": 222,
                         "y": 97,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -739,7 +772,8 @@
                         "map": "GT_Top",
                         "x": 265,
                         "y": 222,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -762,238 +796,236 @@
                         "map": "GT_Top",
                         "x": 32,
                         "y": 100,
-                        "size": 6
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             }
         ]
     },
-
     {
         "name": "Ganon's Tower Bottom Left Doors",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
-        "access_rules": [
-            // "^$CanReach|GT_entrance_inside"
-        ],
+        "access_rules": [],
         "children": [
             {
                 "name": "GT_bottom_main_room_1N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_bottom_main_room_1N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_bottom_main_room_1N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Bottom",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 363,
+                        "y": 80,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_bottom_bobs_torch_1N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_bottom_bobs_torch_1N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_bottom_bobs_torch_1N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Bottom",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 363,
+                        "y": 203,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_bottom_conveyor_cross_room_2E_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_bottom_conveyor_cross_room_2E_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_bottom_conveyor_cross_room_2E_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Bottom",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 183,
+                        "y": 97,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_bottom_bonk_pit_room_1N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_bottom_bonk_pit_room_1N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_bottom_bonk_pit_room_1N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Bottom",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 96,
+                        "y": 76,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_bottom_bonk_pit_room_3S_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_bottom_bonk_pit_room_3S_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_bottom_bonk_pit_room_3S_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Bottom",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 96,
+                        "y": 182,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_bottom_dm_room_3S_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_bottom_dm_room_3S_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_bottom_dm_room_3S_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Bottom",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 96,
+                        "y": 54,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_bottom_double_switch_room_1N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_bottom_double_switch_room_1N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_bottom_double_switch_room_1N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Bottom",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 96,
+                        "y": 203,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_bottom_teleporter_puzzle_room_A_side_3W_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_bottom_teleporter_puzzle_room_A_side_3W_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_bottom_teleporter_puzzle_room_A_side_3W_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Bottom",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 72,
+                        "y": 352,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_bottom_teleporter_puzzle_room_B_side_4E_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_bottom_teleporter_puzzle_room_B_side_4E_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_bottom_teleporter_puzzle_room_B_side_4E_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Bottom",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 160,
+                        "y": 373,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_bottom_randomizer_room_4E_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_bottom_randomizer_room_4E_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_bottom_randomizer_room_4E_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Bottom",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 54,
+                        "y": 352,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             }
@@ -1009,287 +1041,287 @@
         "children": [
             {
                 "name": "GT_bottom_main_room_2N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_bottom_main_room_2N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_bottom_main_room_2N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Bottom",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 427,
+                        "y": 80,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_bottom_hope_room_2N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_bottom_hope_room_2N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_bottom_hope_room_2N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Bottom",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 427,
+                        "y": 203,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_bottom_hope_room_2E_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_bottom_hope_room_2E_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_bottom_hope_room_2E_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Bottom",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 450,
+                        "y": 224,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_bottom_tile_room_1W_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_bottom_tile_room_1W_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_bottom_tile_room_1W_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Bottom",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 532,
+                        "y": 159,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_bottom_torch_puzzle_N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_bottom_torch_puzzle_N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_bottom_torch_puzzle_N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Bottom",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 620,
+                        "y": 138,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_bottom_torch_puzzle_S_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_bottom_torch_puzzle_S_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_bottom_torch_puzzle_S_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Bottom",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 620,
+                        "y": 244,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_bottom_gibdo_crystal_switch_room_2N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_bottom_gibdo_crystal_switch_room_2N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_bottom_gibdo_crystal_switch_room_2N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Bottom",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 620,
+                        "y": 267,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_bottom_conveyor_star_room_2E_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_bottom_conveyor_star_room_2E_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_bottom_conveyor_star_room_2E_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Bottom",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 642,
+                        "y": 352,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_bottom_fire_spinner_catwalk_1W_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_bottom_fire_spinner_catwalk_1W_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_bottom_fire_spinner_catwalk_1W_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Bottom",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 662,
+                        "y": 352,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_bottom_fire_spinner_catwalk_3W_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_bottom_fire_spinner_catwalk_3W_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_bottom_fire_spinner_catwalk_3W_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Bottom",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 662,
+                        "y": 416,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_bottom_four_torches_edge_N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_bottom_four_torches_edge_N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_bottom_four_torches_edge_N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Bottom",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 214,
+                        "y": 331,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_bottom_hidden_star_4E_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_bottom_hidden_star_4E_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_bottom_hidden_star_4E_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Bottom",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 642,
+                        "y": 416,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_bottom_invisible_bridges_3W_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_bottom_invisible_bridges_3W_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_bottom_invisible_bridges_3W_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Bottom",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 468,
+                        "y": 416,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             }
@@ -1305,155 +1337,155 @@
         "children": [
             {
                 "name": "GT_bottom_invisibile_bonk_room_1N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_bottom_invisibile_bonk_room_1N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_bottom_invisibile_bonk_room_1N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Bottom",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":9
+                        "x": 363,
+                        "y": 331,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_bottom_invisibile_bonk_room_2N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_bottom_invisibile_bonk_room_2N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_bottom_invisibile_bonk_room_2N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Bottom",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":9
+                        "x": 427,
+                        "y": 331,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_bottom_invisibile_bonk_room_3W_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_bottom_invisibile_bonk_room_3W_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_bottom_invisibile_bonk_room_3W_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Bottom",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":9
+                        "x": 340,
+                        "y": 416,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_bottom_invisibile_bonk_room_4E_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_bottom_invisibile_bonk_room_4E_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_bottom_invisibile_bonk_room_4E_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Bottom",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":9
+                        "x": 450,
+                        "y": 416,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_bottom_big_chest_room_isolated_N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_bottom_big_chest_room_isolated_N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_bottom_big_chest_room_isolated_N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Bottom",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":9
+                        "x": 347,
+                        "y": 267,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_bottom_big_chest_room_3S_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_bottom_big_chest_room_3S_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_bottom_big_chest_room_3S_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Bottom",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":9
+                        "x": 363,
+                        "y": 309,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_bottom_above_ice_fight_4S_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_bottom_above_ice_fight_4S_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_bottom_above_ice_fight_4S_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Bottom",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":9
+                        "x": 427,
+                        "y": 309,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             }
@@ -1463,645 +1495,643 @@
         "name": "Ganon's Tower Top Doors",
         "chest_unopened_img": "/images/items/closed_Chest.png",
         "chest_opened_img": "/images/items/open_Chest.png",
-        "access_rules": [
-            // "^$CanReach|GT_top_entrance"
-        ],
+        "access_rules": [],
         "children": [
             {
                 "name": "GT_top_spike_crystal_switch_N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_top_spike_crystal_switch_N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_top_spike_crystal_switch_N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Top",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 647,
+                        "y": 141,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_top_big_key_door_2N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_top_big_key_door_2N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_top_big_key_door_2N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Top",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 679,
+                        "y": 141,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_top_pinball_crystal_switch_4S_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_top_pinball_crystal_switch_4S_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_top_pinball_crystal_switch_4S_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Top",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 679,
+                        "y": 119,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_top_pinball_crystal_switch_2E_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_top_pinball_crystal_switch_2E_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_top_pinball_crystal_switch_2E_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Top",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 701,
+                        "y": 34,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_top_cannonball_bridge_1W_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_top_cannonball_bridge_1W_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_top_cannonball_bridge_1W_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Top",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 720,
+                        "y": 34,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_top_cannonball_bridge_2N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_top_cannonball_bridge_2N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_top_cannonball_bridge_2N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Top",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 806,
+                        "y": 14,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_top_5_blocks_conveyor_2N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_top_5_blocks_conveyor_2N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_top_5_blocks_conveyor_2N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Top",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 548,
+                        "y": 141,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_top_big_circle_conveyor_3S_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_top_big_circle_conveyor_3S_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_top_big_circle_conveyor_3S_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Top",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 484,
+                        "y": 248,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_top_ice_conveyor_1N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_top_ice_conveyor_1N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_top_ice_conveyor_1N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Top",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 484,
+                        "y": 269,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_top_ice_floor_shooter_3W_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_top_ice_floor_shooter_3W_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_top_ice_floor_shooter_3W_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Top",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 460,
+                        "y": 354,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_top_pre_desert_refight_4E_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_top_pre_desert_refight_4E_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_top_pre_desert_refight_4E_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Top",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 443,
+                        "y": 354,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_top_quad_pots_1N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_top_quad_pots_1N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_top_quad_pots_1N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Top",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 356,
+                        "y": 269,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_top_invisible_floor_wizzrobes_1N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_top_invisible_floor_wizzrobes_1N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_top_invisible_floor_wizzrobes_1N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Top",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 356,
+                        "y": 141,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_top_center_conveyor_wizzrobes_2N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_top_center_conveyor_wizzrobes_2N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_top_center_conveyor_wizzrobes_2N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Top",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 420,
+                        "y": 141,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_top_dashing_bridge_NS_4S_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_top_dashing_bridge_NS_4S_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_top_dashing_bridge_NS_4S_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Top",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 419,
+                        "y": 120,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_top_dashing_bridge_NS_2E_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_top_dashing_bridge_NS_2E_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_top_dashing_bridge_NS_2E_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Top",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 443,
+                        "y": 34,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_top_torch_puzzle_1W_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_top_torch_puzzle_1W_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_top_torch_puzzle_1W_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Top",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 460,
+                        "y": 34,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_top_staredown_4N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_top_staredown_4N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_top_staredown_4N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Top",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 548,
+                        "y": 105,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_top_falling_torches_4S_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_top_falling_torches_4S_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_top_falling_torches_4S_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Top",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 289,
+                        "y": 103,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_top_crystal_switch_circles_3S_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_top_crystal_switch_circles_3S_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_top_crystal_switch_circles_3S_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Top",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 225,
+                        "y": 119,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_top_top_refight_1N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_top_top_refight_1N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_top_top_refight_1N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Top",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 225,
+                        "y": 141,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_top_top_refight_2N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_top_top_refight_2N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_top_top_refight_2N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Top",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 289,
+                        "y": 141,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_top_below_moldorm_refight_2N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_top_below_moldorm_refight_2N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_top_below_moldorm_refight_2N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Top",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 288,
+                        "y": 269,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_top_validation_3W_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_top_validation_3W_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_top_validation_3W_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Top",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 201,
+                        "y": 226,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_top_ice_conveyor_mess_4E_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_top_ice_conveyor_mess_4E_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_top_ice_conveyor_mess_4E_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Top",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 183,
+                        "y": 226,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_top_ice_conveyor_mess_2N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_top_ice_conveyor_mess_2N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_top_ice_conveyor_mess_2N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Top",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 160,
+                        "y": 141,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_top_pre_aga2_hallway_1N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_top_pre_aga2_hallway_1N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_top_pre_aga2_hallway_1N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Top",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 32,
+                        "y": 141,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_top_pre_aga2_hallway_2N_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_top_pre_aga2_hallway_2N_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_top_pre_aga2_hallway_2N_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Top",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 96,
+                        "y": 141,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
             {
                 "name": "GT_top_aga2_3S_door",
-                "access_rules":[],
+                "access_rules": [],
                 "sections": [
                     {
                         "name": "GT_top_aga2_3S_door",
-                        "access_rules":[],
-                        "visibility_rules":[],
-                        "clear_as_group":false,
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
                         "hosted_item": "from_GT_top_aga2_3S_door"
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "GT_Top",
-                        "shape": "diamond",
-                        "x":1,
-                        "y":1,
-                        "size":8
+                        "x": 32,
+                        "y": 120,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             }
