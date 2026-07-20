@@ -352,7 +352,10 @@ local er_check = {
 function alttp_location:discover(accessibility, keys, worldstate)
     -- checks if given Accessbibility is higer then last stored one
     -- prevents walking in circles
-    
+    local current_dungeon_local = nil
+    if Current_Dungeon ~= nil then
+        current_dungeon_local = Current_Dungeon
+    end
     if accessibility > self:accessibility() then
         self.keys = math.huge -- resets keys used up to this point
         accessibilityCache[self] = accessibility
@@ -364,6 +367,7 @@ function alttp_location:discover(accessibility, keys, worldstate)
 
     if accessibility > 0 then -- if parent-location was accessible
         for _, exit in pairs(self.exits) do -- iterate over current watched locations exits
+            Current_Dungeon = current_dungeon_local
             local location
 
             -- local exit_name = exit[1].name
@@ -496,9 +500,9 @@ function alttp_location:discover(accessibility, keys, worldstate)
             local oldKey = location.keys or 0
             if oldAccess < accessibility then -- if new accessibility from above is higher then currently stored one, so is more accessible then before
                 local rule = exit[2] -- get rules to check
-                -- print(self.name, exit[1].name, Current_Dungeon)
+                -- print(self.name, exit[1].name, Current_Dungeon, current_dungeon_local)
                 -- currentParent, currentLocation = self, location -- just set for ":accessibilty()" check within rules
-                local access, key = rule(keys, Current_Dungeon)
+                local access, key = rule(keys, current_dungeon_local)
                 if type(access) == "function" then
                     access = access()
                 end

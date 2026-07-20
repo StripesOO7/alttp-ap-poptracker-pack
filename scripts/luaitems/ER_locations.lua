@@ -260,16 +260,11 @@ function ER_locations_scope(scope_direction, scope_location_obj, scope_side)
     ---@param code string
     ---@return integer
     local function ProvidesCodeFunc(self, code)
-        local self_itemstate = self.ItemState  --[[@as ERItemState]]
-    --     return 1
-    -- end
         if code == Code then
-            -- print(self.Name)
+            local self_itemstate = self.ItemState  --[[@as ERItemState]]
             if self_itemstate.Target ~= nil then  --and Tracker:FindObjectForCode("er_tracking").CurrentStage > 0 then
                 local target_obj = (NAMED_ER_CONNECTIONS[self_itemstate.Target] --[[@as LuaItem]]).ItemState --[[@as ERItemState]]
                 if self_itemstate.IsDeadEnd or target_obj.IsDeadEnd then
-                    -- local location_obj = self.ItemState --[[@as table]]
-                    -- local target_obj = Tracker:FindObjectForCode(self.ItemState.Target).ItemState --[[@as table]]
                     local deadendBackup = (self_itemstate.DeadendColorBackup or target_obj.DeadendColorBackup) --[[@as table]]
                     if deadendBackup ~= nil then
                         local sum = 0
