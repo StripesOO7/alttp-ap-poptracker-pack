@@ -763,5 +763,32 @@
         "disabled_img": "/images/settings/remove_map_clutter_off.png",
         "disabled_img_mods": "",
         "codes": "reduce_maps"
+    },
+    {
+        "name": "Selected Game: (effects some logic and settings)",
+        "type": "progressive",
+        "allow_disabled": false,
+        "initial_stage_idx":0,
+        "stages":
+            [
+                {
+                    "img": "/images/settings/core_alttp.png",
+                    "inherit_codes": false,
+                    "name": "Core AlttP World",
+                    "codes": "selected_game, core_alttp"
+                },
+                {
+                    "img": "/images/settings/beta_alttp.png",
+                    "inherit_codes": false,
+                    "name": "Beta for Core AlttP World",
+                    "codes": "selected_game, beta_alttp"
+                },
+                {
+                    "img": "/images/settings/alttpr.png",
+                    "inherit_codes": false,
+                    "name": "AlttPR APWorld",
+                    "codes": "selected_game, alttpr_apworld"
+                }
+            ]
     }
 ]

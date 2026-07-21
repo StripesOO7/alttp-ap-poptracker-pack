@@ -9,6 +9,10 @@ ACCESS_SEQUENCEBREAK = AccessibilityLevel.SequenceBreak
 ACCESS_NORMAL = AccessibilityLevel.Normal
 ACCESS_CLEARED = AccessibilityLevel.Cleared
 
+GAMEVERISON = Tracker:FindObjectForCode("selected_game")
+GAMEVERSION_NAME = "Core AlttP"
+GAMEVERSION_STAGE = 0
+
 local bool_to_accesslvl = {
     [true] = ACCESS_NORMAL,
     [false] = ACCESS_NONE
@@ -786,6 +790,20 @@ function ChangeRouteMode()
         ENTRANCE_SELECTED = nil
     end
 end 
+
+function ChangeGameVersion()
+    local version_lookup = {
+        [0] = "Core AlttP World",
+        [1] = "Beta for Core AlttP World",
+        [2] = "AlttPR APWorld",
+    }
+    GAMEVERISON = Tracker:FindObjectForCode("selected_game")
+    if GAMEVERISON then
+        GAMEVERSION_NAME = version_lookup[GAMEVERISON.CurrentStage]
+        GAMEVERSION_STAGE = GAMEVERISON.CurrentStage
+    end
+    
+end
 
 ---function that stores a given item into a the pseudo-cache LuaItem to remeber for later reuse when coming back to that seed
 ---@param code string
