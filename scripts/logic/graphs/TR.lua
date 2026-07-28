@@ -83,12 +83,13 @@ TR_travel_maze_3S_door = alttp_location.new("TR_travel_maze_3S_door", "TR Travel
 TR_side_eye_hallway_1N_door = alttp_location.new("TR_side_eye_hallway_1N_door", "TR Side Eye Hallway 1N Door")
 TR_side_eye_hallway_3S_door = alttp_location.new("TR_side_eye_hallway_3S_door", "TR Side Eye Hallway 3S Door")
 TR_side_eye_hallway_3W_door = alttp_location.new("TR_side_eye_hallway_3W_door", "TR Side Eye Hallway 3W Door")
+TR_eye_bridge_1N_door = alttp_location.new("TR_eye_bridge_1N_door", "TR Eye Bridge 1N Door")
 TR_crystal_maze_N_door = alttp_location.new("TR_crystal_maze_N_door", "TR Crystal Maze N Door")
 TR_crystal_maze_4E_door = alttp_location.new("TR_crystal_maze_4E_door", "TR Crystal Maze 4E Door")
 TR_pre_boss_pit_S_door = alttp_location.new("TR_pre_boss_pit_S_door", "TR Pre Boss Pit S Door")
 TR_pre_boss_pit_1N_door = alttp_location.new("TR_pre_boss_pit_1N_door", "TR Pre Boss Pit 1N Door")
 TR_boss_room_3S_door = alttp_location.new("TR_boss_room_3S_door", "TR Boss Room 3S Door")
-
+TR_poke_1_room_3S_door = alttp_location.new("TR_poke_1_room_3S_door", "TR Poke 1 Room 3S Door")
 
 ---
 
@@ -192,16 +193,16 @@ TR_laser_entrance_inside:connect_two_ways(TR_laser_entrance_room, function()
         Inverted
     )
 end)
-TR_big_chest_entrance_inside:connect_one_way(TR_big_chest_below_pit, function()
-    return ALL(
-        ANY(
-            -- "boots",
-            "hookshot",
-            "somaria"
-        ),
-        CanInteract(TR_big_chest_entrance_inside)
-    )
-end)
+TR_big_chest_entrance_inside:connect_one_way(TR_big_chest_below_pit)--, function()
+--     return ALL(
+--         ANY(
+--             -- "boots",
+--             "hookshot",
+--             "somaria"
+--         ),
+--         CanInteract(TR_big_chest_entrance_inside)
+--     )
+-- end)
 TR_big_chest_below_pit:connect_one_way(TR_big_chest_above_pit, function() return ALL("hookshot", CanInteract(TR_big_chest_below_pit)) end)
 TR_big_chest_below_pit:connect_two_ways(TR_big_chest_above_pit, function() return ALL("somaria", CanInteract(TR_big_chest_below_pit)) end)
 
@@ -244,7 +245,8 @@ TR_side_eye_hallway_1N_door:connect_two_ways(TR_side_eye_hallway)
 TR_side_eye_hallway:connect_two_ways(TR_side_eye_hallway_3S_door)
 TR_side_eye_hallway:connect_two_ways(TR_side_eye_hallway_3W_door)
 
-TR_side_eye_hallway_3S_door:connect_two_ways_entrance("", TR_eye_bridge_room)
+TR_side_eye_hallway_3S_door:connect_two_ways_entrance("", TR_eye_bridge_1N_door)
+TR_eye_bridge_1N_door:connect_two_ways(TR_eye_bridge_room)
 TR_eye_bridge_room:connect_one_way("TR - Eyebridge Top Right", function()
     return ALL(
         CanInteract(TR_eye_bridge_room),

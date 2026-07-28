@@ -434,6 +434,7 @@ function ER_locations_scope(scope_direction, scope_location_obj, scope_side)
             IsConnector = false,
             DeadendColorBackup = location_obj.deadendColorBackup,
         } --[[@as table<string, any>]]
+        self.PotentialCodes = {Code, Basename}
 
         local Code = string.lower(direction) .. "_" .. location_obj.name
 

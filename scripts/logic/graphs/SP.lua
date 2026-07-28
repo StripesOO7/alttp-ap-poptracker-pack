@@ -46,6 +46,7 @@ SP_first_trench_4E_door = alttp_location.new("SP_first_trench_4E_door", "SP Firs
 SP_first_trench_3W_door = alttp_location.new("SP_first_trench_3W_door", "SP First Trench 3W Door")
 SP_flood_first_trench_room_1W_door = alttp_location.new("SP_flood_first_trench_room_1W_door", "SP Flood First Trench Room 1W Door")
 SP_main_room_north_ledge_N_door = alttp_location.new("SP_main_room_north_ledge_N_door", "SP Main Room North Ledge N Door")
+SP_main_room_north_east_ledge_E_door = alttp_location.new("SP_main_room_north_east_ledge_E_door", "SP Main Room North East Ledge E Door")
 SP_main_room_1W_door = alttp_location.new("SP_main_room_1W_door", "SP Main Room 1W_door")
 SP_main_room_3W_door = alttp_location.new("SP_main_room_3W_door", "SP Main Room 3W_door")
 SP_main_room_4E_door = alttp_location.new("SP_main_room_4E_door", "SP Main Room 4E_door")

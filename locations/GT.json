@@ -828,6 +828,13 @@
                         "y": 80,
                         "size": 8,
                         "shape": "diamond"
+                    },
+                    {
+                        "map": "GT_Top",
+                        "x": 614,
+                        "y": 274,
+                        "size": 8,
+                        "shape": "diamond"
                     }
                 ]
             },
@@ -848,6 +855,28 @@
                         "map": "GT_Bottom",
                         "x": 363,
                         "y": 203,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "GT_bottom_bobs_torch_1W_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "GT_bottom_bobs_torch_1W_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_GT_bottom_bobs_torch_1W_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "GT_Bottom",
+                        "x": 339,
+                        "y": 224,
                         "size": 8,
                         "shape": "diamond"
                     }
@@ -964,6 +993,28 @@
                 ]
             },
             {
+                "name": "GT_bottom_teleporter_puzzle_room_A_side_deadend_4S_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "GT_bottom_teleporter_puzzle_room_A_side_deadend_4S_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_GT_bottom_teleporter_puzzle_room_A_side_deadend_4S_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "GT_Bottom",
+                        "x": 160,
+                        "y": 373,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
                 "name": "GT_bottom_teleporter_puzzle_room_A_side_3W_door",
                 "access_rules": [],
                 "sections": [
@@ -1000,8 +1051,8 @@
                 "map_locations": [
                     {
                         "map": "GT_Bottom",
-                        "x": 160,
-                        "y": 373,
+                        "x": 183,
+                        "y": 416,
                         "size": 8,
                         "shape": "diamond"
                     }
@@ -1056,6 +1107,13 @@
                         "map": "GT_Bottom",
                         "x": 427,
                         "y": 80,
+                        "size": 8,
+                        "shape": "diamond"
+                    },
+                    {
+                        "map": "GT_Top",
+                        "x": 678,
+                        "y": 274,
                         "size": 8,
                         "shape": "diamond"
                     }
@@ -1497,6 +1555,35 @@
         "chest_opened_img": "/images/items/open_Chest.png",
         "access_rules": [],
         "children": [
+            {
+                "name": "GT_bottom_main_room_N_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "GT_bottom_main_room_N_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_GT_bottom_main_room_N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "GT_Bottom",
+                        "x": 395,
+                        "y": 74,
+                        "size": 8,
+                        "shape": "diamond"
+                    },
+                    {
+                        "map": "GT_Top",
+                        "x": 646,
+                        "y": 268,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
             {
                 "name": "GT_top_spike_crystal_switch_N_door",
                 "access_rules": [],

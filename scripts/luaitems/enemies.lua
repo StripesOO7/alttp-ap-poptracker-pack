@@ -139,7 +139,7 @@ function Enemies_scope(scope_name, scope_health, scope_dmg_table, scope_counter)
             SpecialEffect = nil,
             
         } --[[@as table<string, any>]]
-
+        self.PotentialCodes = {Code, Basename}
         if health == 255 then
             self:Set("Invulnerable", true)
         else

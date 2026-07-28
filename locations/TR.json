@@ -656,6 +656,28 @@
                 ]
             },
             {
+                "name": "TR_poke_1_room_3S_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TR_poke_1_room_3S_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TR_poke_1_room_3S_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR",
+                        "x": 554,
+                        "y": 174,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
                 "name": "TR_chain_chomps_room_1N_door",
                 "access_rules": [],
                 "sections": [
@@ -1277,6 +1299,28 @@
                         "map": "TR",
                         "x": 32,
                         "y": 66,
+                        "size": 8,
+                        "shape": "diamond"
+                    }
+                ]
+            },
+            {
+                "name": "TR_eye_bridge_1N_door",
+                "access_rules": [],
+                "sections": [
+                    {
+                        "name": "TR_eye_bridge_1N_door",
+                        "access_rules": [],
+                        "visibility_rules": [],
+                        "clear_as_group": false,
+                        "hosted_item": "from_TR_eye_bridge_1N_door"
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR",
+                        "x": 161,
+                        "y": 323,
                         "size": 8,
                         "shape": "diamond"
                     }

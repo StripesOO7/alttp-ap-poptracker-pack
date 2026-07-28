@@ -71,7 +71,7 @@ function Manual_Storage_Cache_scope(scope_name)
             MANUAL_LOCATIONS_ORDER = {}
         } --[[@as table<string, any>]]
         local Code = name
-        
+        self.PotentialCodes = {Code}
 
         local function OnLeftClickFunc() return true end
         local function OnRightClickFunc() return true end

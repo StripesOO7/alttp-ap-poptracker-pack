@@ -439,7 +439,8 @@ function Doors_locations_scope(scope_direction, scope_location_obj)
             IsConnector = false,
             DeadendColorBackup = location_obj.deadendColorBackup,
         }
-
+        self.PotentialCodes = {Code, Basename}
+        
         local Code = string.lower(direction) .. "_" .. location_obj.name
 
         if location_obj.deadEndOrDungeonOrConnector == "deadend" then

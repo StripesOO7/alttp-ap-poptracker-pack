@@ -259,7 +259,7 @@ function Damage_Classes_scope(scope_enemy_index, scope_class_index, scope_name, 
         self:Set("PrimaryStageMax", 2)
         self:Set("SecondaryStage", 0)
         self:Set("SecondaryStageMax", 5)
-
+        self.PotentialCodes = {Code, Basename}
         if default_dmg_value > 0 then
             self:Set("PrimaryStage",1)
             if reverse_secondary_dmg_list[default_dmg_value] ~= nil then 
