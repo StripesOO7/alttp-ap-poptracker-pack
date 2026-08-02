@@ -44,14 +44,14 @@ DP_east_3_pots_3S_door = alttp_location.new("DP_east_3_pots_3S_door", "DP East 3
 DP_east_wing_1N_door = alttp_location.new("DP_east_wing_1N_door", "DP East Wing 1N Door")
 DP_east_wing_1W_door = alttp_location.new("DP_east_wing_1W_door", "DP East Wing 1W Door")
 DP_compass_room_2N_door = alttp_location.new("DP_compass_room_2N_door", "DP Compass Room 2N Door")
-DP_big_key_chest_room_3S_door = alttp_location.new("DP_big_key_chest_room_3S_door", "DP Big Key Chest Room 3S Door")
+DP_big_key_chest_room_4S_door = alttp_location.new("DP_big_key_chest_room_4S_door", "DP Big Key Chest Room 4S Door")
 
 DP_back_tiles1_room_1N_door = alttp_location.new("DP_back_tiles1_room_1N_door", "DP Back Tiles1 Room 1N Door")
 DP_back_tiles2_room_4S_door = alttp_location.new("DP_back_tiles2_room_4S_door", "DP Back Tiles2 Room 4S Door")
 DP_back_bridge_room_1N_door = alttp_location.new("DP_back_bridge_room_1N_door", "DP Back Bridge Room 1N Door")
 DP_back_torch_room_1N_door = alttp_location.new("DP_back_torch_room_1N_door", "DP Back Torch Room 1N Door")
 DP_back_beamos_hallway_2N_door = alttp_location.new("DP_back_beamos_hallway_2N_door", "DP Back Beamos Hallway 2N Door")
-DP_back_boss_room_2S_door = alttp_location.new("DP_back_boss_room_2S_door", "DP Back Boss Room 2S Door")
+DP_back_boss_room_3S_door = alttp_location.new("DP_back_boss_room_3S_door", "DP Back Boss Room 3S Door")
 
 ---
 
@@ -128,8 +128,8 @@ end)
 DP_compass_room:connect_one_way("DP - Compass Chest", function() return CanInteract(DP_compass_room) end)
 
 DP_compass_room:connect_two_ways(DP_compass_room_2N_door)
-DP_compass_room_2N_door:connect_two_ways_entrance_door_stuck("", DP_big_key_chest_room_3S_door, function() return DealDamage() end)
-DP_big_key_chest_room_3S_door:connect_two_ways(DP_big_key_chest_room)
+DP_compass_room_2N_door:connect_two_ways_entrance_door_stuck("", DP_big_key_chest_room_4S_door, function() return DealDamage() end)
+DP_big_key_chest_room_4S_door:connect_two_ways(DP_big_key_chest_room)
 
 DP_big_key_chest_room:connect_one_way("DP - Big Key Chest", function() return CanInteract(DP_big_key_chest_room) end)
 
@@ -165,7 +165,7 @@ DP_back_tiles2_room:connect_two_ways(DP_back_torch_room, function(keys, Current_
 end)
 
 DP_back_torch_room:connect_two_ways(DP_back_torch_room_1N_door)
-DP_back_torch_room_1N_door:connect_two_ways(DP_back_boss_room_2S_door, function(keys, Current_Dungeon)
+DP_back_torch_room_1N_door:connect_two_ways(DP_back_boss_room_3S_door, function(keys, Current_Dungeon)
     if Tracker:FindObjectForCode("key_drop_shuffle").Active then
         return ALL(
             "firesource",
@@ -179,7 +179,7 @@ DP_back_torch_room_1N_door:connect_two_ways(DP_back_boss_room_2S_door, function(
         ),keys
     end
 end)
-DP_back_boss_room_2S_door:connect_two_ways(DP_back_boss_room)
+DP_back_boss_room_3S_door:connect_two_ways(DP_back_boss_room)
 
 DP_back_boss_room:connect_one_way("DP - Boss", function() return GetBossRef("dp_boss") end)
 

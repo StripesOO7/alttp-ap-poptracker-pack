@@ -46,14 +46,14 @@ TT_front_bottom_right_1N_door = alttp_location.new("TT_front_bottom_right_1N_doo
 TT_front_bottom_right_N_door = alttp_location.new("TT_front_bottom_right_N_door", "TT Front Bottom Right N Door")
 TT_front_bottom_right_3W_door = alttp_location.new("TT_front_bottom_right_3W_door", "TT Front Bottom Right 3W Door")
 TT_front_bottom_right_W_door = alttp_location.new("TT_front_bottom_right_W_door", "TT Front Bottom Right W Door")
-TT_back_hallway_S_door = alttp_location.new("TT_back_hallway_S_door", "TT Back Hallway S Door")
-TT_back_hallway_N_door = alttp_location.new("TT_back_hallway_N_door", "TT Back Hallway N Door")
-TT_boss_room_S_door = alttp_location.new("TT_boss_room_S_door", "TT Boss Room S Door")
-TT_cricket_hall_W_door = alttp_location.new("TT_cricket_hall_W_door", "TT Cricket Hall W Door")
+TT_back_hallway_4S_door = alttp_location.new("TT_back_hallway_4S_door", "TT Back Hallway 4S Door")
+TT_back_hallway_2N_door = alttp_location.new("TT_back_hallway_2N_door", "TT Back Hallway 2N Door")
+TT_boss_room_4S_door = alttp_location.new("TT_boss_room_4S_door", "TT Boss Room 4S Door")
+TT_cricket_hall_3W_door = alttp_location.new("TT_cricket_hall_3W_door", "TT Cricket Hall 3W Door")
 TT_cricket_hall_deadend_3S_door = alttp_location.new("TT_cricket_hall_deadend_3S_door", "TT Cricket Hall Deadend 3S Door")
 TT_blue_blocks_room_2E_door = alttp_location.new("TT_blue_blocks_room_2E_door", "TT blue_blocks Room 2E Door")
 TT_short_conveyor_room_4E_door = alttp_location.new("TT_short_conveyor_room_4E_door", "TT Short Conveyor Room 4E Door")
-TT_long_conveyor_belt_room_N_door = alttp_location.new("TT_long_conveyor_belt_room_N_door", "TT Long Conveyor Belt Room N Door")
+TT_long_conveyor_belt_room_1N_door = alttp_location.new("TT_long_conveyor_belt_room_1N_door", "TT Long Conveyor Belt Room 1N Door")
 TT_square_conveyor_room_1W_door = alttp_location.new("TT_square_conveyor_room_1W_door", "TT Square Conveyor Room 1W Door")
 TT_square_conveyor_room_1N_door = alttp_location.new("TT_square_conveyor_room_1N_door", "TT Square Conveyor Room 1N Door")
 TT_crystal_switch_room_N_door = alttp_location.new("TT_crystal_switch_room_N_door", "TT Crystal Switch Room N Door")
@@ -103,7 +103,7 @@ TT_front_top_right:connect_two_ways(TT_front_top_right_2N_door)
 
 TT_front_top_right_S_door:connect_two_ways_entrance("", TT_front_bottom_right_1N_door)
 TT_front_top_right_3S_door:connect_two_ways_entrance("", TT_front_bottom_right_N_door)
-TT_front_top_right_1N_door:connect_two_ways_entrance("", TT_back_hallway_S_door, function() return ALL("bigkey", CanInteract(TT_front_top_right)) end)
+TT_front_top_right_1N_door:connect_two_ways_entrance("", TT_back_hallway_4S_door, function() return ALL("bigkey", CanInteract(TT_front_top_right)) end)
 TT_front_top_right_2N_door:connect_two_ways_entrance("", TT_cricket_hall_deadend_3S_door)
 
 TT_front_bottom_right_1N_door:connect_two_ways(TT_front_bottom_right)
@@ -119,15 +119,15 @@ TT_front_bottom_left_deadend:connect_one_way("TT - Big Key Chest", function() re
 
 TT_cricket_hall_deadend_3S_door:connect_two_ways(TT_cricket_hall_deadend)
 
-TT_back_hallway_S_door:connect_two_ways(TT_back_hallway)
+TT_back_hallway_4S_door:connect_two_ways(TT_back_hallway)
 TT_back_hallway:connect_one_way("TT - Hallway Pot Key")
 TT_back_hallway:connect_two_ways(TT_cricket_hall, function(keys, Current_Dungeon)
     return Has("smallkey", keys, 0, keys + 1, 1), KDSreturn(keys, keys + 1)
 end)
-TT_back_hallway:connect_two_ways(TT_back_hallway_N_door)
+TT_back_hallway:connect_two_ways(TT_back_hallway_2N_door)
 
-TT_back_hallway_N_door:connect_two_ways_entrance("", TT_boss_room_S_door)
-TT_boss_room_S_door:connect_two_ways(TT_boss_room)
+TT_back_hallway_2N_door:connect_two_ways_entrance("", TT_boss_room_4S_door)
+TT_boss_room_4S_door:connect_two_ways(TT_boss_room)
 TT_boss_room:connect_one_way("TT - Boss", function()
     return ALL(
         GetBossRef("tt_boss"),
@@ -135,14 +135,14 @@ TT_boss_room:connect_one_way("TT - Boss", function()
     )
 end)
 
-TT_cricket_hall:connect_two_ways(TT_cricket_hall_W_door)
+TT_cricket_hall:connect_two_ways(TT_cricket_hall_3W_door)
 TT_cricket_hall:connect_two_ways(TT_blue_blocks_room)
-TT_cricket_hall_W_door:connect_two_ways_entrance("", TT_short_conveyor_room_4E_door)
+TT_cricket_hall_3W_door:connect_two_ways_entrance("", TT_short_conveyor_room_4E_door)
 TT_short_conveyor_room_4E_door:connect_two_ways(TT_short_conveyor_room)
 TT_short_conveyor_room:connect_two_ways(TT_long_conveyor_belt_room)
 
-TT_long_conveyor_belt_room:connect_two_ways(TT_long_conveyor_belt_room_N_door)
-TT_long_conveyor_belt_room_N_door:connect_two_ways_entrance("", TT_crystal_switch_room_S_door)
+TT_long_conveyor_belt_room:connect_two_ways(TT_long_conveyor_belt_room_1N_door)
+TT_long_conveyor_belt_room_1N_door:connect_two_ways_entrance("", TT_crystal_switch_room_S_door)
 TT_crystal_switch_room_S_door:connect_two_ways(TT_crystal_switch_room)
 
 TT_crystal_switch_room:connect_one_way("TT - Spike Switch Pot Key")
@@ -187,8 +187,8 @@ TT_big_pot_hall_4W_door:connect_two_ways(TT_big_pot_hall)
 TT_big_pot_hall:connect_two_ways(TT_basement_cell)
 TT_basement_cell:connect_one_way("TT - Blind's Cell")
 
--- TT_back_hallway_N_door:connect_two_ways_entrance("", TT_boss_room_S_door)
--- TT_boss_room_S_door:connect_two_ways(TT_boss_room)
+-- TT_back_hallway_2N_door:connect_two_ways_entrance("", TT_boss_room_4S_door)
+-- TT_boss_room_4S_door:connect_two_ways(TT_boss_room)
 -- TT_boss_room:connect_one_way("TT - Boss", function()
 --     return ALL(
 --         GetBossRef("tt_boss"),

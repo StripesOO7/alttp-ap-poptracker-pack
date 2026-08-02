@@ -31,35 +31,35 @@ HC_main_hall_N_door = alttp_location.new("HC_main_hall_N_door", "HC Main Hall N 
 HC_main_hall_1W_door = alttp_location.new("HC_main_hall_1W_door", "HC Main Hall 1W Door")
 HC_main_hall_W_door = alttp_location.new("HC_main_hall_W_door", "HC Main Hall W Door")
 HC_main_hall_E_door = alttp_location.new("HC_main_hall_E_door", "HC Main Hall E Door")
-HC_left_wing_lobby_1E_door = alttp_location.new("HC_left_wing_lobby_1E_door", "HC Left Wing Lobby 1E Door")
+HC_left_wing_lobby_2E_door = alttp_location.new("HC_left_wing_lobby_2E_door", "HC Left Wing Lobby 2E Door")
 HC_left_wing_lobby_E_door = alttp_location.new("HC_left_wing_lobby_E_door", "HC Left Wing Lobby E Door")
-HC_left_wing_lobby_N_door = alttp_location.new("HC_left_wing_lobby_N_door", "HC Left Wing Lobby N Door")
-HC_left_wing_S_door = alttp_location.new("HC_left_wing_S_door", "HC Left Wing S Door")
-HC_left_wing_E_door = alttp_location.new("HC_left_wing_E_door", "HC Left Wing E Door")
-HC_right_wing_lobby_W_door = alttp_location.new("HC_right_wing_lobby_W_door", "HC Right Wing Lobby W Door")
+HC_left_wing_lobby_2N_door = alttp_location.new("HC_left_wing_lobby_2N_door", "HC Left Wing Lobby 2N Door")
+HC_left_wing_4S_door = alttp_location.new("HC_left_wing_4S_door", "HC Left Wing 4S Door")
+HC_left_wing_2E_door = alttp_location.new("HC_left_wing_2E_door", "HC Left Wing 2E Door")
+HC_right_wing_lobby_3W_door = alttp_location.new("HC_right_wing_lobby_3W_door", "HC Right Wing Lobby 3W Door")
+HC_right_wing_lobby_1N_door = alttp_location.new("HC_right_wing_lobby_1N_door", "HC Right Wing Lobby 1N Door")
 HC_right_wing_lobby_N_door = alttp_location.new("HC_right_wing_lobby_N_door", "HC Right Wing Lobby N Door")
-HC_right_wing_lobby_2N_door = alttp_location.new("HC_right_wing_lobby_2N_door", "HC Right Wing Lobby 2N Door")
+HC_right_wing_3S_door = alttp_location.new("HC_right_wing_3S_door", "HC Right Wing 3S Door")
 HC_right_wing_S_door = alttp_location.new("HC_right_wing_S_door", "HC Right Wing S Door")
-HC_right_wing_2S_door = alttp_location.new("HC_right_wing_2S_door", "HC Right Wing 2S Door")
-HC_right_wing_W_door = alttp_location.new("HC_right_wing_W_door", "HC Right Wing W Door")
+HC_right_wing_1W_door = alttp_location.new("HC_right_wing_1W_door", "HC Right Wing 1W Door")
 HC_throne_room_S_door = alttp_location.new("HC_throne_room_S_door", "HC Throne Room S Door")
 HC_throne_room_N_door = alttp_location.new("HC_throne_room_N_door", "HC Throne Room N Door")
-HC_back_wing_E_door = alttp_location.new("HC_back_wing_E_door", "HC Back Wing E Door")
-HC_back_wing_W_door = alttp_location.new("HC_back_wing_W_door", "HC Back Wing W Door")
+HC_back_wing_2E_door = alttp_location.new("HC_back_wing_2E_door", "HC Back Wing 2E Door")
+HC_back_wing_1W_door = alttp_location.new("HC_back_wing_1W_door", "HC Back Wing 1W Door")
 HC_back_wing_N_door = alttp_location.new("HC_back_wing_N_door", "HC Back Wing N Door")
 HC_map_chest_room_N_door = alttp_location.new("HC_map_chest_room_N_door", "HC_map Chest Room N Door")
 HC_north_abyss_S_door = alttp_location.new("HC_north_abyss_S_door", "HC North Abyss S Door")
-HC_north_abyss_balcony_S_door = alttp_location.new("HC_north_abyss_balcony_S_door", "HC North Abyss Balcony S Door")
-HC_abyss_balcony_N_door = alttp_location.new("HC_abyss_balcony_N_door", "HC Abyss Balcony N Door")
-HC_abyss_balcony_W_door = alttp_location.new("HC_abyss_balcony_W_door", "HC Abyss Balcony W Door")
+HC_north_abyss_balcony_3S_door = alttp_location.new("HC_north_abyss_balcony_3S_door", "HC North Abyss Balcony 3S Door")
+HC_abyss_balcony_1N_door = alttp_location.new("HC_abyss_balcony_1N_door", "HC Abyss Balcony 1N Door")
+HC_abyss_balcony_1W_door = alttp_location.new("HC_abyss_balcony_1W_door", "HC Abyss Balcony 1W Door")
 HC_abyss_catwalk_N_door = alttp_location.new("HC_abyss_catwalk_N_door", "HC Abyss Catwalk N Door")
-HC_abyss_catwalk_W_door = alttp_location.new("HC_abyss_catwalk_W_door", "HC Abyss Catwalk W Door")
+HC_abyss_catwalk_3W_door = alttp_location.new("HC_abyss_catwalk_3W_door", "HC Abyss Catwalk 3W Door")
 HC_armory_2E_door = alttp_location.new("HC_armory_2E_door", "HC Armory 2E Door")
 HC_armory_4E_door = alttp_location.new("HC_armory_4E_door", "HC Armory 4E Door")
 HC_armory_1N_door = alttp_location.new("HC_armory_1N_door", "HC Armory 1N Door")
-HC_before_boomerang_chest_room_S_door = alttp_location.new("HC_before_boomerang_chest_room_S_door", "HC Before Boomerang Chest Room S Door")
+HC_before_boomerang_chest_room_3S_door = alttp_location.new("HC_before_boomerang_chest_room_3S_door", "HC Before Boomerang Chest Room 3S Door")
 HC_cell_hallway_1N_door = alttp_location.new("HC_cell_hallway_1N_door", "HC Cell Hallway 1N Door")
-HC_ball_guard_room_N_door = alttp_location.new("HC_ball_guard_room_N_door", "HC Ball Guard Room N Door")
+HC_ball_guard_room_1N_door = alttp_location.new("HC_ball_guard_room_1N_door", "HC Ball Guard Room 1N Door")
 
 local CE_tapestry = alttp_location.new("CE_tapestry", "CE Tapestry")
 local CE_snake_hall = alttp_location.new("CE_snake_hall", "CE Snake Hall")
@@ -77,13 +77,14 @@ CE_small_sewers_S_door = alttp_location.new("CE_small_sewers_S_door", "CE Small 
 CE_small_sewers_W_door = alttp_location.new("CE_small_sewers_W_door", "CE Small Sewers W Door")
 CE_large_sewers_E_door = alttp_location.new("CE_large_sewers_E_door", "CE Large Sewers E Door")
 CE_large_sewers_N_door = alttp_location.new("CE_large_sewers_N_door", "CE Large Sewers N Door")
-CE_rat_key_room_S_door = alttp_location.new("CE_rat_key_room_S_door", "CE Rat Key Room S Door")
+CE_rat_key_room_N_door = alttp_location.new("CE_rat_key_room_N_door", "CE Rat Key Room N Door")
+CE_dropdown_room_S_door = alttp_location.new("CE_dropdown_room_S_door", "CE Dropdown Room S Door")
 CE_dropdown_room_N_door = alttp_location.new("CE_dropdown_room_N_door", "CE Dropdown Room N Door")
 CE_pulley_S_door = alttp_location.new("CE_pulley_S_door", "CE Pulley S Door")
-CE_pulley_N_door = alttp_location.new("CE_pulley_N_door", "CE Pulley N Door")
-CE_secret_room_N_door = alttp_location.new("CE_secret_room_N_door", "CE Secret Room N Door")
+CE_yet_more_rats_N_door = alttp_location.new("CE_yet_more_rats_N_door", "CE Yet More Rats N Door")
+CE_stairs_1N_door = alttp_location.new("CE_stairs_1N_door", "CE Stairs 1N Door")
 
-CE_stairs_S_door = alttp_location.new("CE_stairs_S_door", "CE Stairs S Door")
+CE_stairs_N_door = alttp_location.new("CE_stairs_N_door", "CE Stairs N Door")
 -- local HC_
 Sanctuary_secret_door = alttp_location.new("Sanctuary_secret_door", "Sanctuary Secret Door")
 
@@ -98,33 +99,33 @@ HC_main_hall:connect_two_ways(HC_main_hall_1W_door)
 
 HC_main_hall_W_door:connect_two_ways_entrance("", HC_left_wing_lobby_E_door)
 HC_left_wing_lobby_E_door:connect_two_ways(HC_left_wing_lobby)
-HC_main_hall_1W_door:connect_two_ways_entrance("", HC_left_wing_lobby_1E_door)
-HC_left_wing_lobby_1E_door:connect_two_ways(HC_left_wing_lobby)
+HC_main_hall_1W_door:connect_two_ways_entrance("", HC_left_wing_lobby_2E_door)
+HC_left_wing_lobby_2E_door:connect_two_ways(HC_left_wing_lobby)
 
-HC_left_wing_lobby:connect_two_ways(HC_left_wing_lobby_N_door)
-HC_left_wing_lobby_N_door:connect_two_ways_entrance("", HC_left_wing_S_door)
-HC_left_wing_S_door:connect_two_ways(HC_left_wing)
+HC_left_wing_lobby:connect_two_ways(HC_left_wing_lobby_2N_door)
+HC_left_wing_lobby_2N_door:connect_two_ways_entrance("", HC_left_wing_4S_door)
+HC_left_wing_4S_door:connect_two_ways(HC_left_wing)
 
-HC_left_wing:connect_two_ways(HC_left_wing_E_door)
-HC_left_wing_E_door:connect_two_ways_entrance("", HC_back_wing_W_door)
-HC_back_wing_W_door:connect_two_ways(HC_back_wing)
+HC_left_wing:connect_two_ways(HC_left_wing_2E_door)
+HC_left_wing_2E_door:connect_two_ways_entrance("", HC_back_wing_1W_door)
+HC_back_wing_1W_door:connect_two_ways(HC_back_wing)
 
 HC_back_wing:connect_two_ways(HC_back_wing_N_door)
-HC_back_wing:connect_two_ways(HC_back_wing_E_door)
+HC_back_wing:connect_two_ways(HC_back_wing_2E_door)
 HC_back_wing_N_door:connect_two_ways_entrance("", HC_map_chest_room_N_door)
 
-HC_back_wing_E_door:connect_two_ways_entrance("", HC_right_wing_W_door)
-HC_right_wing_W_door:connect_two_ways(HC_right_wing)
+HC_back_wing_2E_door:connect_two_ways_entrance("", HC_right_wing_1W_door)
+HC_right_wing_1W_door:connect_two_ways(HC_right_wing)
+
+HC_right_wing:connect_two_ways(HC_right_wing_3S_door)
+HC_right_wing_3S_door:connect_two_ways_entrance("", HC_right_wing_lobby_1N_door)
+HC_right_wing_lobby_1N_door:connect_two_ways(HC_right_wing_lobby)
 
 HC_right_wing:connect_two_ways(HC_right_wing_S_door)
 HC_right_wing_S_door:connect_two_ways_entrance("", HC_right_wing_lobby_N_door)
 HC_right_wing_lobby_N_door:connect_two_ways(HC_right_wing_lobby)
 
-HC_right_wing:connect_two_ways(HC_right_wing_2S_door)
-HC_right_wing_2S_door:connect_two_ways_entrance("", HC_right_wing_lobby_2N_door)
-HC_right_wing_lobby_2N_door:connect_two_ways(HC_right_wing_lobby)
-
-HC_right_wing_lobby:connect_two_ways(HC_right_wing_lobby_W_door)
+HC_right_wing_lobby:connect_two_ways(HC_right_wing_lobby_3W_door)
 
 ---
 
@@ -132,7 +133,7 @@ HC_right_wing_lobby:connect_two_ways(HC_right_wing_lobby_W_door)
 HC_right_wing_lobby:connect_two_ways(HC_right_entrance_inside)
 HC_left_wing_lobby:connect_two_ways(HC_left_entrance_inside)
 
-HC_main_hall_E_door:connect_two_ways_entrance("", HC_right_wing_lobby_W_door)
+HC_main_hall_E_door:connect_two_ways_entrance("", HC_right_wing_lobby_3W_door)
 
 HC_main_hall_N_door:connect_two_ways_entrance("", HC_throne_room_S_door)
 HC_throne_room_S_door:connect_two_ways(HC_throne_room)
@@ -166,22 +167,22 @@ HC_north_abyss:connect_two_ways(HC_north_abyss_S_door)
 HC_north_abyss_S_door:connect_two_ways_entrance("", HC_abyss_catwalk_N_door)
 HC_abyss_catwalk_N_door:connect_two_ways(HC_abyss_catwalk)
 
-HC_abyss_catwalk:connect_two_ways(HC_abyss_catwalk_W_door)
-HC_abyss_catwalk_W_door:connect_two_ways_entrance("", HC_armory_4E_door)
+HC_abyss_catwalk:connect_two_ways(HC_abyss_catwalk_3W_door)
+HC_abyss_catwalk_3W_door:connect_two_ways_entrance("", HC_armory_4E_door)
 HC_armory_4E_door:connect_two_ways(HC_armory)
 
 HC_armory:connect_two_ways(HC_armory_1N_door)
 HC_armory:connect_two_ways(HC_armory_2E_door)
 
-HC_armory_2E_door:connect_two_ways_entrance("", HC_abyss_balcony_W_door)
-HC_abyss_balcony_W_door:connect_two_ways(HC_abyss_balcony)
-HC_abyss_balcony:connect_two_ways(HC_abyss_balcony_N_door)
-HC_abyss_balcony_N_door:connect_two_ways_entrance("", HC_north_abyss_balcony_S_door)
-HC_north_abyss_balcony_S_door:connect_two_ways(HC_north_abyss_balcony)
+HC_armory_2E_door:connect_two_ways_entrance("", HC_abyss_balcony_1W_door)
+HC_abyss_balcony_1W_door:connect_two_ways(HC_abyss_balcony)
+HC_abyss_balcony:connect_two_ways(HC_abyss_balcony_1N_door)
+HC_abyss_balcony_1N_door:connect_two_ways_entrance("", HC_north_abyss_balcony_3S_door)
+HC_north_abyss_balcony_3S_door:connect_two_ways(HC_north_abyss_balcony)
 HC_north_abyss_balcony:connect_one_way(HC_north_abyss)
 
-HC_armory_1N_door:connect_two_ways_entrance_door_stuck("", HC_before_boomerang_chest_room_S_door, nil, function() return ALL(CanInteract(HC_before_boomerang_chest_room), DealDamage) end)
-HC_before_boomerang_chest_room_S_door:connect_two_ways(HC_before_boomerang_chest_room)
+HC_armory_1N_door:connect_two_ways_entrance_door_stuck("", HC_before_boomerang_chest_room_3S_door, nil, function() return ALL(CanInteract(HC_before_boomerang_chest_room), DealDamage) end)
+HC_before_boomerang_chest_room_3S_door:connect_two_ways(HC_before_boomerang_chest_room)
 
 HC_before_boomerang_chest_room:connect_two_ways(HC_boomerang_chest_room, function()
     return ANY(
@@ -203,8 +204,8 @@ HC_before_boomerang_chest_room:connect_two_ways(HC_cell_hallway, function(keys, 
     ), KDSreturn(keys, keys + 1)
 end)
 HC_cell_hallway:connect_two_ways(HC_cell_hallway_1N_door)
-HC_cell_hallway_1N_door:connect_two_ways_entrance("", HC_ball_guard_room_N_door)
-HC_ball_guard_room_N_door:connect_two_ways(HC_ball_guard_room)
+HC_cell_hallway_1N_door:connect_two_ways_entrance("", HC_ball_guard_room_1N_door)
+HC_ball_guard_room_1N_door:connect_two_ways(HC_ball_guard_room)
 HC_ball_guard_room:connect_one_way("HC - Big Key", function()
     return ANY(
         DealDamage,
@@ -301,15 +302,9 @@ CE_large_sewers_E_door:connect_two_ways(CE_large_sewers, function(keys, Current_
         "standard"
     )
 end)
-CE_large_sewers:connect_two_ways(CE_large_sewers_N_door, function(keys, Current_Dungeon)
-    return ANY(
-        DarkRooms(true),
-        "standard"
-    )
-end)
-CE_large_sewers_N_door:connect_two_ways_entrance("", CE_rat_key_room_S_door)
 
-CE_rat_key_room_S_door:connect_two_ways(CE_rat_key_room)
+CE_large_sewers:connect_two_ways(CE_rat_key_room)
+
 CE_rat_key_room:connect_one_way("CE - Rat Key Drop", function(keys, Current_Dungeon)
     return ANY(
         ALL(
@@ -320,7 +315,13 @@ CE_rat_key_room:connect_one_way("CE - Rat Key Drop", function(keys, Current_Dung
         "standard"
     ), keys
 end)
-CE_rat_key_room:connect_two_ways(CE_dropdown_room, function(keys, Current_Dungeon)
+CE_rat_key_room:connect_two_ways(CE_rat_key_room_N_door, function(keys, Current_Dungeon)
+    return ANY(
+        DarkRooms(true),
+        "standard"
+    )
+end)
+CE_rat_key_room_N_door:connect_two_ways_entrance("", CE_dropdown_room_S_door, function(keys, Current_Dungeon)
     return ANY(
         ALL(
             DarkRooms(true),
@@ -335,6 +336,7 @@ CE_rat_key_room:connect_two_ways(CE_dropdown_room, function(keys, Current_Dungeo
     ), KDSreturn(keys, keys + 1)
 end)
 
+CE_dropdown_room_S_door:connect_two_ways(CE_dropdown_room)
 CE_dropdown_room:connect_two_ways(CE_secret_room, function()
     return ALL(
         ANY(
@@ -348,10 +350,10 @@ CE_secret_room:connect_one_way("CE - Secret Room Left", function() return CanInt
 CE_secret_room:connect_one_way("CE - Secret Room Center", function() return CanInteract(CE_secret_room) end)
 CE_secret_room:connect_one_way("CE - Secret Room Right", function() return CanInteract(CE_secret_room) end)
 
-CE_secret_room:connect_one_way(CE_secret_room_N_door)
-CE_secret_room_N_door:connect_two_ways_entrance("", CE_pulley_N_door)
+CE_secret_room:connect_one_way(CE_stairs_1N_door)
+CE_stairs_1N_door:connect_two_ways_entrance("", CE_yet_more_rats_N_door)
 
-CE_pulley_N_door:connect_two_ways(CE_pulley)
+CE_yet_more_rats_N_door:connect_two_ways(CE_pulley)
 CE_pulley:connect_two_ways(CE_pulley_S_door, function() return CanInteract(CE_pulley) end)
 CE_pulley_S_door:connect_one_way_entrance("", Sanctuary_secret_door)
 

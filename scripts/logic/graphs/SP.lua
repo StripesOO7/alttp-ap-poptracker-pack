@@ -51,7 +51,7 @@ SP_main_room_1W_door = alttp_location.new("SP_main_room_1W_door", "SP Main Room 
 SP_main_room_3W_door = alttp_location.new("SP_main_room_3W_door", "SP Main Room 3W_door")
 SP_main_room_4E_door = alttp_location.new("SP_main_room_4E_door", "SP Main Room 4E_door")
 SP_main_room_S_door = alttp_location.new("SP_main_room_S_door", "SP Main Room S Door")
-SP_flood_second_trench_room_1E_door = alttp_location.new("SP_flood_second_trench_room_1E_door", "SP Flood Second Trench Room 1E Door")
+SP_flood_second_trench_room_2E_door = alttp_location.new("SP_flood_second_trench_room_2E_door", "SP Flood Second Trench Room 2E Door")
 SP_second_trench_4E_door = alttp_location.new("SP_second_trench_4E_door", "SP Second Trench 4E Door")
 SP_second_trench_3W_door = alttp_location.new("SP_second_trench_3W_door", "SP Second Trench 3W Door")
 SP_big_key_chest_ledge_1W_door = alttp_location.new("SP_big_key_chest_ledge_1W_door", "SP Big Key Chest Ledge 1W Door")
@@ -138,7 +138,7 @@ SP_roundabout_N_door:connect_two_ways(SP_roundabout)
 SP_roundabout:connect_one_way("SP - Compass Chest")
 
 SP_main_room:connect_two_ways(SP_main_room_1W_door)
-SP_main_room_1W_door:connect_two_ways_entrance("", SP_flood_second_trench_room_1E_door, function(keys, Current_Dungeon)
+SP_main_room_1W_door:connect_two_ways_entrance("", SP_flood_second_trench_room_2E_door, function(keys, Current_Dungeon)
     return ANY(
         ALL(
             Has("smallkey", keys, 1, keys + CountDoneDeadends(1, "@Swamp Palace/Boss/Boss Item", "@Swamp Palace/Waterfall Room/Waterfall Room"), 5),
@@ -149,7 +149,7 @@ SP_main_room_1W_door:connect_two_ways_entrance("", SP_flood_second_trench_room_1
         )
     ), KDSreturn(keys, keys + 1)
 end)
-SP_flood_second_trench_room_1E_door:connect_two_ways(SP_flood_second_trench_room)
+SP_flood_second_trench_room_2E_door:connect_two_ways(SP_flood_second_trench_room)
 
 SP_main_room:connect_two_ways(SP_main_room_3W_door)
 SP_main_room_3W_door:connect_two_ways_entrance("", SP_second_trench_4E_door)

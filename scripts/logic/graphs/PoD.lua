@@ -52,7 +52,7 @@ PoD_teleporter_room_2N_door = alttp_location.new("PoD_teleporter_room_2N_door", 
 PoD_mimic_room_1N_door = alttp_location.new("PoD_mimic_room_1N_door", "PoD_mimic_room_1N_door")
 PoD_conveyor_hallway_1N_door = alttp_location.new("PoD_conveyor_hallway_1N_door", "PoD_conveyor_hallway_1N_door")
 PoD_conveyor_hallway_3S_door = alttp_location.new("PoD_conveyor_hallway_3S_door", "PoD_conveyor_hallway_3S_door")
-PoD_switch_room_top_S_door = alttp_location.new("PoD_switch_room_top_S_door", "PoD_switch_room_top_S_door")
+PoD_switch_room_top_3S_door = alttp_location.new("PoD_switch_room_top_3S_door", "PoD_switch_room_top_3S_door")
 PoD_switch_room_top_3W_door = alttp_location.new("PoD_switch_room_top_3W_door", "PoD_switch_room_top_3W_door")
 PoD_switch_room_bottom_N_door = alttp_location.new("PoD_switch_room_bottom_N_door", "PoD_switch_room_bottom_N_door")
 PoD_switch_room_bottom_W_door = alttp_location.new("PoD_switch_room_bottom_W_door", "PoD_switch_room_bottom_W_door")
@@ -72,7 +72,7 @@ PoD_compass_room_2N_door = alttp_location.new("PoD_compass_room_2N_door", "PoD_c
 PoD_compass_room_N_door = alttp_location.new("PoD_compass_room_N_door", "PoD_compass_room_N_door")
 PoD_dark_U_basement_2N_door = alttp_location.new("PoD_dark_U_basement_2N_door", "PoD_dark_U_basement_2N_door")
 PoD_dark_U_basement_N_door = alttp_location.new("PoD_dark_U_basement_N_door", "PoD_dark_U_basement_N_door")
-PoD_harmless_hellway_S_door = alttp_location.new("PoD_harmless_hellway_S_door", "PoD_harmless_hellway_S_door")
+PoD_harmless_hellway_4S_door = alttp_location.new("PoD_harmless_hellway_4S_door", "PoD_harmless_hellway_4S_door")
 PoD_mimics2_3S_door = alttp_location.new("PoD_mimics2_3S_door", "PoD_mimics2_3S_door")
 PoD_bow_statue_2N_door = alttp_location.new("PoD_bow_statue_2N_door", "PoD_bow_statue_2N_door")
 PoD_dark_pegs_2N_door = alttp_location.new("PoD_dark_pegs_2N_door", "PoD_dark_pegs_2N_door")
@@ -160,8 +160,8 @@ PoD_mimic_room_1N_door:connect_two_ways_entrance_door_stuck("", PoD_conveyor_hal
 PoD_conveyor_hallway_3S_door:connect_two_ways(PoD_conveyor_hallway)
 PoD_conveyor_hallway:connect_two_ways(PoD_conveyor_hallway_1N_door)
 
-PoD_conveyor_hallway_1N_door:connect_two_ways_entrance("", PoD_switch_room_top_S_door)
-PoD_switch_room_top_S_door:connect_two_ways(PoD_switch_room_top)
+PoD_conveyor_hallway_1N_door:connect_two_ways_entrance("", PoD_switch_room_top_3S_door)
+PoD_switch_room_top_3S_door:connect_two_ways(PoD_switch_room_top)
 
 PoD_switch_room_top:connect_one_way("PoD - Map Chest")
 PoD_switch_room_top:connect_two_ways(PoD_switch_room_top_3W_door)
@@ -216,8 +216,8 @@ PoD_compass_room:connect_two_ways(PoD_harmless_hellway, function(keys, Current_D
     return Has("smallkey", keys + CountDoneDeadends(1, "@Palace of Darkness/Big Key Chest/Big Key Chest", "@Palace of Darkness/Dark Maze Top/Dark Maze Top", "@Palace of Darkness/Boss/Boss Item"), 6, keys + CountDoneDeadends(1, "@Palace of Darkness/Big Key Chest/Big Key Chest", "@Palace of Darkness/Dark Maze Top/Dark Maze Top", "@Palace of Darkness/Boss/Boss Item"), 6), keys + 1
 end)
 PoD_harmless_hellway:connect_one_way("PoD - Harmless Hellway")
-PoD_harmless_hellway:connect_two_ways(PoD_harmless_hellway_S_door)
-PoD_harmless_hellway_S_door:connect_two_ways_entrance_door_stuck("", PoD_arena_back_bridge_2N_door, nil, function() return false end)
+PoD_harmless_hellway:connect_two_ways(PoD_harmless_hellway_4S_door)
+PoD_harmless_hellway_4S_door:connect_two_ways_entrance_door_stuck("", PoD_arena_back_bridge_2N_door, nil, function() return false end)
 
 
 PoD_arena_back_bridge:connect_two_ways(PoD_arena_back_bridge_2N_door)

@@ -1,4 +1,4 @@
-ENTRANCE_SELECTED = nil
+DOOR_SELECTED = nil
 BASE_IMG_PATH = ImageReference:FromPackRelativePath("images/door_closed.png")
 
 HIGHLIGHT_SOURCE = nil
@@ -49,35 +49,35 @@ function Doors_locations_scope(scope_direction, scope_location_obj)
     ---@param target string
     ---@param source string
     local function _LeftClickUnmarkHelper(target, source)
-        local target_entrance_from = NAMED_ER_CONNECTIONS["from_" .. target] --[[@as LuaItem]]
-        local target_entrance_to = NAMED_ER_CONNECTIONS["to_" .. target] --[[@as LuaItem]]
-        local source_entrance_from = NAMED_ER_CONNECTIONS["from_" .. source] --[[@as LuaItem]]
-        local source_entrance_to = NAMED_ER_CONNECTIONS["to_" .. source] --[[@as LuaItem]]
-        if target_entrance_from ~= nil then
-            _UnsetLocationOptions(target_entrance_from)
+        local target_door_from = NAMED_DOORS_CONNECTIONS["from_" .. target] --[[@as LuaItem]]
+        local target_door_to = NAMED_DOORS_CONNECTIONS["to_" .. target] --[[@as LuaItem]]
+        local source_door_from = NAMED_DOORS_CONNECTIONS["from_" .. source] --[[@as LuaItem]]
+        local source_door_to = NAMED_DOORS_CONNECTIONS["to_" .. source] --[[@as LuaItem]]
+        if target_door_from ~= nil then
+            _UnsetLocationOptions(target_door_from)
         end
-        if target_entrance_to ~= nil then
-            _UnsetLocationOptions(target_entrance_to)
+        if target_door_to ~= nil then
+            _UnsetLocationOptions(target_door_to)
         end
-        _UnsetLocationOptions(source_entrance_to)
-        _UnsetLocationOptions(source_entrance_from)
+        _UnsetLocationOptions(source_door_to)
+        _UnsetLocationOptions(source_door_from)
     end
 
     ---helperfunction to connect the provided LuaItems 
     ---@param target string
     ---@param source string
     local function _LeftClickMarkHelper(target, source)
-        local target_entrance_from = NAMED_ER_CONNECTIONS["from_" .. target] --[[@as LuaItem]]
-        local target_entrance_to = NAMED_ER_CONNECTIONS["to_" .. target] --[[@as LuaItem]]
-        local source_entrance_from = NAMED_ER_CONNECTIONS["from_" .. source] --[[@as LuaItem]]
-        local source_entrance_to = NAMED_ER_CONNECTIONS["to_" .. source] --[[@as LuaItem]]
-        if target_entrance_from ~= nil then
-            _SetLocationOptions(source_entrance_from, target_entrance_to) -- enter source exit target
-            _SetLocationOptions(target_entrance_to, source_entrance_from)
+        local target_door_from = NAMED_DOORS_CONNECTIONS["from_" .. target] --[[@as LuaItem]]
+        local target_door_to = NAMED_DOORS_CONNECTIONS["to_" .. target] --[[@as LuaItem]]
+        local source_door_from = NAMED_DOORS_CONNECTIONS["from_" .. source] --[[@as LuaItem]]
+        local source_door_to = NAMED_DOORS_CONNECTIONS["to_" .. source] --[[@as LuaItem]]
+        if target_door_from ~= nil then
+            _SetLocationOptions(source_door_from, target_door_to) -- enter source exit target
+            _SetLocationOptions(target_door_to, source_door_from)
         end 
-        if target_entrance_from and target_entrance_to ~= nil then
-            _SetLocationOptions(target_entrance_from, source_entrance_to) -- enter target exit source
-            _SetLocationOptions(source_entrance_to, target_entrance_from)
+        if target_door_from and target_door_to ~= nil then
+            _SetLocationOptions(target_door_from, source_door_to) -- enter target exit source
+            _SetLocationOptions(source_door_to, target_door_from)
         end
     end
 
@@ -102,64 +102,64 @@ function Doors_locations_scope(scope_direction, scope_location_obj)
         local self_itemstate =  self.ItemState --[[@as DoorsItemState]]
         if not ROUTE_MODE then
             if ER_STAGE < 3 then --off, dungeons, full
-                if ENTRANCE_SELECTED then -- ENTRANCE_SELECTED ~= nil
+                if DOOR_SELECTED then -- DOOR_SELECTED ~= nil
                     if self_itemstate.Target then -- attempt of new connection to already existing connection (how to handle that?)
-                        _LeftClickUnmarkHelper(self_itemstate.TargetBaseName, ENTRANCE_SELECTED)
+                        _LeftClickUnmarkHelper(self_itemstate.TargetBaseName, DOOR_SELECTED)
                     end
                     -- second step of normal new connection
-                    _LeftClickMarkHelper(ENTRANCE_SELECTED, self_itemstate.BaseName)
-                    MarkFirstConnectionPart(NAMED_ER_CONNECTIONS[self_itemstate.Target]--[[@as LuaItem]], Highlight.None)
-                    ENTRANCE_SELECTED = nil
-                else -- ENTRANCE_SELECTED == nil
-                    MarkFirstConnectionPart(self, Highlight.NoPriority)
-                    ENTRANCE_SELECTED = self_itemstate.BaseName
+                    _LeftClickMarkHelper(DOOR_SELECTED, self_itemstate.BaseName)
+                    -- MarkFirstConnectionPart(NAMED_DOORS_CONNECTIONS[self_itemstate.Target]--[[@as LuaItem]], Highlight.None)
+                    DOOR_SELECTED = nil
+                else -- DOOR_SELECTED == nil
+                    -- MarkFirstConnectionPart(self, Highlight.NoPriority)
+                    DOOR_SELECTED = self_itemstate.BaseName
                     if self_itemstate.Target then -- retarget a connection to new target location
-                        _LeftClickUnmarkHelper(self_itemstate.TargetBaseName, ENTRANCE_SELECTED)
+                        _LeftClickUnmarkHelper(self_itemstate.TargetBaseName, DOOR_SELECTED)
                     end
                 end
             else -- insanity
-                local target_entrance
-                if ENTRANCE_SELECTED then -- ENTRANCE_SELECTED ~= nil
-                    if string.find(ENTRANCE_SELECTED, "from_") then
-                        self = NAMED_ER_CONNECTIONS["to_" .. self_itemstate.BaseName] --[[@as LuaItem]]
+                local target_door
+                if DOOR_SELECTED then -- DOOR_SELECTED ~= nil
+                    if string.find(DOOR_SELECTED, "from_") then
+                        self = NAMED_DOORS_CONNECTIONS["to_" .. self_itemstate.BaseName] --[[@as LuaItem]]
                     else
-                        self = NAMED_ER_CONNECTIONS["from_" .. self_itemstate.BaseName] --[[@as LuaItem]]
+                        self = NAMED_DOORS_CONNECTIONS["from_" .. self_itemstate.BaseName] --[[@as LuaItem]]
                     end
                     if self_itemstate.Target then -- attempt of new connection to already existing connection (how to handle that?)
-                        target_entrance = NAMED_ER_CONNECTIONS[self_itemstate.Target] --[[@as LuaItem]]
-                        if target_entrance ~= nil then
-                            _UnsetLocationOptions(target_entrance)
+                        target_door = NAMED_DOORS_CONNECTIONS[self_itemstate.Target] --[[@as LuaItem]]
+                        if target_door ~= nil then
+                            _UnsetLocationOptions(target_door)
                             _UnsetLocationOptions(self)
                         end
                     end
 
                     -- second step of normal new connection
-                    target_entrance = NAMED_ER_CONNECTIONS[ENTRANCE_SELECTED] --[[@as LuaItem]]
-                    MarkFirstConnectionPart(target_entrance, Highlight.None)
-                    if target_entrance ~= nil then
-                        _SetLocationOptions(self, target_entrance)
-                        _SetLocationOptions(target_entrance, self)
+                    target_door = NAMED_DOORS_CONNECTIONS[DOOR_SELECTED] --[[@as LuaItem]]
+                    -- MarkFirstConnectionPart(target_door, Highlight.None)
+                    if target_door ~= nil then
+                        _SetLocationOptions(self, target_door)
+                        _SetLocationOptions(target_door, self)
                     end
-                    ENTRANCE_SELECTED = nil
-                else -- ENTRANCE_SELECTED == nil
-                    MarkFirstConnectionPart(self, Highlight.Priority)
-                    ENTRANCE_SELECTED = self.Name
+                    DOOR_SELECTED = nil
+                else -- DOOR_SELECTED == nil
+                    -- MarkFirstConnectionPart(self, Highlight.Priority)
+                    DOOR_SELECTED = self.Name
                     if self.ItemState.Target then -- retarget a connection to new target location
-                        target_entrance = NAMED_ER_CONNECTIONS[self_itemstate.Target] --[[@as LuaItem]]
-                        if target_entrance ~= nil then
-                            _UnsetLocationOptions(target_entrance)
+                        target_door = NAMED_DOORS_CONNECTIONS[self_itemstate.Target] --[[@as LuaItem]]
+                        if target_door ~= nil then
+                            _UnsetLocationOptions(target_door)
                             _UnsetLocationOptions(self)
                         end
                     end
                 end
             end
         else
-            if ENTRANCE_SELECTED then
-                GetRoute(NAMED_LOCATIONS[NAMED_ER_CONNECTIONS[ENTRANCE_SELECTED].ItemState.BaseName], NAMED_LOCATIONS[self_itemstate.BaseName])
+            if DOOR_SELECTED then
+                GetRoute(NAMED_LOCATIONS[NAMED_DOORS_CONNECTIONS[DOOR_SELECTED].ItemState.BaseName], NAMED_LOCATIONS[self_itemstate.BaseName])
                 Tracker:FindObjectForCode("route_mode").Active = false
-                ENTRANCE_SELECTED = nil
+                DOOR_SELECTED = nil
             else
-                ENTRANCE_SELECTED = self.Name
+                DOOR_SELECTED = self.Name
             end
         end
     end
@@ -170,17 +170,17 @@ function Doors_locations_scope(scope_direction, scope_location_obj)
     ---@param self LuaItem
     local function OnRightClickFunc(self)
         local self_itemstate = self.ItemState --[[@as DoorsItemState]]
-        if ENTRANCE_SELECTED ~= nil then
+        if DOOR_SELECTED ~= nil then
             print("set back to nil")
-            ENTRANCE_SELECTED = nil
+            DOOR_SELECTED = nil
         end
         if not ROUTE_MODE then
             if ER_STAGE < 3 then -- off, dungeons, full
                 if self_itemstate.Target ~= nil then
-                    local target_from = NAMED_ER_CONNECTIONS["from_" .. self_itemstate.TargetBaseName] --[[@as LuaItem]]
-                    local target_to = NAMED_ER_CONNECTIONS["to_" .. self_itemstate.TargetBaseName] --[[@as LuaItem]]
-                    local source_from = NAMED_ER_CONNECTIONS["from_" .. self_itemstate.BaseName] --[[@as LuaItem]]
-                    local source_to = NAMED_ER_CONNECTIONS["to_" .. self_itemstate.BaseName] --[[@as LuaItem]]
+                    local target_from = NAMED_DOORS_CONNECTIONS["from_" .. self_itemstate.TargetBaseName] --[[@as LuaItem]]
+                    local target_to = NAMED_DOORS_CONNECTIONS["to_" .. self_itemstate.TargetBaseName] --[[@as LuaItem]]
+                    local source_from = NAMED_DOORS_CONNECTIONS["from_" .. self_itemstate.BaseName] --[[@as LuaItem]]
+                    local source_to = NAMED_DOORS_CONNECTIONS["to_" .. self_itemstate.BaseName] --[[@as LuaItem]]
                     if target_from ~= nil then
                         _UnsetLocationOptions(target_from)
                         _UnsetLocationOptions(source_to)
@@ -193,7 +193,7 @@ function Doors_locations_scope(scope_direction, scope_location_obj)
                 end
             else -- insanity
                 if self_itemstate.Target ~= nil then
-                    local target = NAMED_ER_CONNECTIONS[self_itemstate.Target] --[[@as LuaItem]]
+                    local target = NAMED_DOORS_CONNECTIONS[self_itemstate.Target] --[[@as LuaItem]]
                     if target ~= nil then
                         _UnsetLocationOptions(target)
                         _UnsetLocationOptions(self)
@@ -205,7 +205,7 @@ function Doors_locations_scope(scope_direction, scope_location_obj)
     end
 
     ---function that get triggered when middle clicking a lua items as hosted item or in an itemgrid
-    ---will highlight itself and the connected LuaItem on the map to make sptting connected entrances easier
+    ---will highlight itself and the connected LuaItem on the map to make sptting connected doors easier
     ---specific to ER LuaItems
     ---@param self LuaItem
     local function OnMiddleClickFunc(self)
@@ -223,7 +223,7 @@ function Doors_locations_scope(scope_direction, scope_location_obj)
 
         local source_location = nil
         local target_location = nil
-        local target = NAMED_ER_CONNECTIONS[source_ItemState.Target] --[[@as LuaItem]]
+        local target = NAMED_DOORS_CONNECTIONS[source_ItemState.Target] --[[@as LuaItem]]
 
         local target_ItemState = target.ItemState --[[@as DoorsItemState]]
         if ER_STAGE == 3 then
@@ -237,11 +237,11 @@ function Doors_locations_scope(scope_direction, scope_location_obj)
         HIGHLIGHT_SOURCE.Highlight = Highlight.Avoid
         HIGHLIGHT_TARGET = Tracker:FindObjectForCode(target_location) --[[@as LocationSection]] --location/section
         HIGHLIGHT_TARGET.Highlight = Highlight.Avoid
-        Tracker:UiHint("ActivateTab", "Entrances")
+        Tracker:UiHint("ActivateTab", "doors")
         if source_ItemState.Map ~= nil then --outside
             Tracker:UiHint("ActivateTab", source_ItemState.Map)
         end
-        local target = NAMED_ER_CONNECTIONS[source_ItemState.Target] --[[@as LuaItem]]
+        local target = NAMED_DOORS_CONNECTIONS[source_ItemState.Target] --[[@as LuaItem]]
         if target_ItemState.Map  ~= nil then --outside
             Tracker:UiHint("ActivateTab", target_ItemState.Map)
         end
@@ -266,7 +266,7 @@ function Doors_locations_scope(scope_direction, scope_location_obj)
         if code == Code then
             -- print(self.Name)
             if self_itemstate.Target ~= nil then  --and Tracker:FindObjectForCode("er_tracking").CurrentStage > 0 then
-                local target_obj = (NAMED_ER_CONNECTIONS[self_itemstate.Target] --[[@as LuaItem]]).ItemState --[[@as table]]
+                local target_obj = (NAMED_DOORS_CONNECTIONS[self_itemstate.Target] --[[@as LuaItem]]).ItemState --[[@as table]]
                 if self_itemstate.IsDeadEnd or target_obj.IsDeadEnd then
                     -- local location_obj = self.ItemState --[[@as table]]
                     -- local target_obj = Tracker:FindObjectForCode(self.ItemState.Target).ItemState --[[@as table]]
@@ -381,8 +381,8 @@ function Doors_locations_scope(scope_direction, scope_location_obj)
 
     ---@class DoorsItemState
     ---@field BaseName string
-    ---@field ImgPath ImageReference
-    ---@field BaseImg string
+    ---@field ImgPath ImageRef
+    ---@field BaseImg ImageRef
     ---@field Stage integer
     ---@field Active boolean
     ---@field Side string
@@ -480,7 +480,7 @@ end
 function Reset_ER_setings()
     ScriptHost:RemoveMemoryWatch("StateChanged")
     for name, _ in pairs(NAMED_ENTRANCES) do
-        _UnsetLocationOptions(NAMED_ER_CONNECTIONS[name]--[[@as LuaItem]])
+        _UnsetLocationOptions(NAMED_DOORS_CONNECTIONS[name]--[[@as LuaItem]])
     end
     ScriptHost:AddWatchForCode("StateChanged", "*", StateChanged)
     Tracker:FindObjectForCode("reset_er").Active = false
@@ -500,56 +500,56 @@ function RemoveTempHighlight()
     end
 end
 
----functions to make clear that a normally useless deadend connections still has an uncollected item and thus has some
----significance to the player
----@param locationname string
----@return integer
-function ChangeLocationColor(locationname)
-    if not Tracker.BulkUpdate then
-        local location_obj = (NAMED_ER_CONNECTIONS[locationname]--[[@as LuaItem]]).ItemState --[[@as table]]
-        if location_obj then
-            if location_obj.Target then
-                local target_obj = (NAMED_ER_CONNECTIONS[location_obj.Target]--[[@as LuaItem]]).ItemState
-                -- print(Dump_table(target_obj.ItemState))
-                -- local from_target_obj = Tracker:FindObjectForCode("from_"..location_obj.ItemState.target)
-                if target_obj then
-                    if location_obj.IsDeadEnd or target_obj.IsDeadEnd then
-                        -- print(location_obj.DeadendColorBackup)
-                        -- print(target_obj.DeadendColorBackup)
-                        local deadendBackup = location_obj.DeadendColorBackup or target_obj.DeadendColorBackup
-                        if deadendBackup ~= nil then
-                            local sum = 0
-                            for _, lookup_location in pairs(deadendBackup) do
-                                sum = sum + Tracker:FindObjectForCode(lookup_location).AvailableChestCount
-                            end
-                            if sum > 0 then
-                                -- print("return ACCESS_INSPECT")
-                                return ACCESS_INSPECT
-                            end
-                        else
-                            return ACCESS_CLEARED
-                        end
-                        -- print("target ACCESS_CLEARED")
-                        -- return ACCESS_NONE
-                        -- return ACCESS_NONE
-                    end
-                    if location_obj.IsConnector or target_obj.IsConnector then
-                        -- print("target ACCESS_INSPECT")
-                        return ACCESS_INSPECT
-                    end
-                    if location_obj.IsDungeon or target_obj.IsDungeon then
-                        -- print("target ACCESS_SEQUENCEBREAK")
-                        return ACCESS_SEQUENCEBREAK
-                    end
-                    -- return ACCESS_NORMAL
-                end
-            end
-        end
-        -- print(location_obj.ItemState.BaseName)
-        return CanReach(location_obj.BaseName)
-    end
-    -- print("afer bulkupdate check")
-    -- local base_locationname = string.gsub(string.gsub(locationname, "from_", "", 1), "to_", "", 1)
-    -- print("return CanReach", locationname, base_locationname, CanReach(base_locationname))
-    return ACCESS_NONE
-end
+-- ---functions to make clear that a normally useless deadend connections still has an uncollected item and thus has some
+-- ---significance to the player
+-- ---@param locationname string
+-- ---@return integer
+-- function ChangeLocationColor(locationname)
+--     if not Tracker.BulkUpdate then
+--         local location_obj = (NAMED_DOORS_CONNECTIONS[locationname]--[[@as LuaItem]]).ItemState --[[@as table]]
+--         if location_obj then
+--             if location_obj.Target then
+--                 local target_obj = (NAMED_DOORS_CONNECTIONS[location_obj.Target]--[[@as LuaItem]]).ItemState
+--                 -- print(Dump_table(target_obj.ItemState))
+--                 -- local from_target_obj = Tracker:FindObjectForCode("from_"..location_obj.ItemState.target)
+--                 if target_obj then
+--                     if location_obj.IsDeadEnd or target_obj.IsDeadEnd then
+--                         -- print(location_obj.DeadendColorBackup)
+--                         -- print(target_obj.DeadendColorBackup)
+--                         local deadendBackup = location_obj.DeadendColorBackup or target_obj.DeadendColorBackup
+--                         if deadendBackup ~= nil then
+--                             local sum = 0
+--                             for _, lookup_location in pairs(deadendBackup) do
+--                                 sum = sum + Tracker:FindObjectForCode(lookup_location).AvailableChestCount
+--                             end
+--                             if sum > 0 then
+--                                 -- print("return ACCESS_INSPECT")
+--                                 return ACCESS_INSPECT
+--                             end
+--                         else
+--                             return ACCESS_CLEARED
+--                         end
+--                         -- print("target ACCESS_CLEARED")
+--                         -- return ACCESS_NONE
+--                         -- return ACCESS_NONE
+--                     end
+--                     if location_obj.IsConnector or target_obj.IsConnector then
+--                         -- print("target ACCESS_INSPECT")
+--                         return ACCESS_INSPECT
+--                     end
+--                     if location_obj.IsDungeon or target_obj.IsDungeon then
+--                         -- print("target ACCESS_SEQUENCEBREAK")
+--                         return ACCESS_SEQUENCEBREAK
+--                     end
+--                     -- return ACCESS_NORMAL
+--                 end
+--             end
+--         end
+--         -- print(location_obj.ItemState.BaseName)
+--         return CanReach(location_obj.BaseName)
+--     end
+--     -- print("afer bulkupdate check")
+--     -- local base_locationname = string.gsub(string.gsub(locationname, "from_", "", 1), "to_", "", 1)
+--     -- print("return CanReach", locationname, base_locationname, CanReach(base_locationname))
+--     return ACCESS_NONE
+-- end

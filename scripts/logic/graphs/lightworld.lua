@@ -1030,8 +1030,8 @@ EP_entrance_outside:connect_two_ways_entrance("Eastern Palace Entrance", EP_entr
 Sahasralahs_hut_inside:connect_one_way("Sahasralah", function() return Has("greenpendant") end)
 Sahasralahs_hut_inside:connect_two_ways(Sahasralahs_hut_back, function()
     return ANY(
-        ALL("bombs", CanInteract(Twin_house_right_inside, "bombs")),
-        ALL("boots", CanInteract(Twin_house_right_inside, "boots"))
+        ALL("bombs", CanInteract(Sahasralahs_hut_inside, "bombs")),
+        ALL("boots", CanInteract(Sahasralahs_hut_inside, "boots"))
     )
 end)
 Sahasralahs_hut_back:connect_one_way("Sahasrahla's Hut - Left")

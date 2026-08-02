@@ -92,8 +92,8 @@ GT_bottom_big_chest_room_isolated_N_door = alttp_location.new("GT_bottom_big_che
 GT_bottom_big_chest_room_3S_door = alttp_location.new("GT_bottom_big_chest_room_3S_door", "GT Bottom Big Chest Room 3S Door")
 GT_bottom_above_ice_fight_4S_door = alttp_location.new("GT_bottom_above_ice_fight_4S_door", "GT Bottom Above Ice fight 4S Door")
 GT_bottom_tile_room_1W_door = alttp_location.new("GT_bottom_tile_room_1W_door", "GT Bottom Tile Room 1W Door")
-GT_bottom_torch_puzzle_N_door = alttp_location.new("GT_bottom_torch_puzzle_N_door", "GT Bottom Torch Puzzle N Door")
-GT_bottom_torch_puzzle_S_door = alttp_location.new("GT_bottom_torch_puzzle_S_door", "GT Bottom Torch Puzzle S Door")
+GT_bottom_torch_puzzle_2N_door = alttp_location.new("GT_bottom_torch_puzzle_2N_door", "GT Bottom Torch Puzzle 2N Door")
+GT_bottom_torch_puzzle_4S_door = alttp_location.new("GT_bottom_torch_puzzle_4S_door", "GT Bottom Torch Puzzle 4S Door")
 GT_bottom_gibdo_crystal_switch_room_2N_door = alttp_location.new("GT_bottom_gibdo_crystal_switch_room_2N_door", "GT Bottom Gibdo Crystal Switch Room 2N Door")
 GT_bottom_conveyor_star_room_2E_door = alttp_location.new("GT_bottom_conveyor_star_room_2E_door", "GT Bottom Conveyor Star Room 2E Door")
 GT_bottom_fire_spinner_catwalk_1W_door = alttp_location.new("GT_bottom_fire_spinner_catwalk_1W_door", "GT Bottom Fire Spinner Catwalk 1W Door")
@@ -104,7 +104,7 @@ GT_bottom_invisible_bridges_3W_door = alttp_location.new("GT_bottom_invisible_br
 
 
 GT_top_spike_crystal_switch_N_door = alttp_location.new("GT_top_spike_crystal_switch_N_door", "GT Top Spike Crystal Switch N Door")
-GT_top_big_key_door_2N_door = alttp_location.new("GT_top_big_key_door_2N_door", "GT Top Big Key Door 2N Door")
+GT_top_big_keydoor_2N_door = alttp_location.new("GT_top_big_keydoor_2N_door", "GT Top Big Key Door 2N Door")
 GT_top_pinball_crystal_switch_4S_door = alttp_location.new("GT_top_pinball_crystal_switch_4S_door", "GT Top Pinball Crystal Switch 4S Door")
 GT_top_pinball_crystal_switch_2E_door = alttp_location.new("GT_top_pinball_crystal_switch_2E_door", "GT Top Pinball Crystal Switch 2E Door")
 GT_top_cannonball_bridge_1W_door = alttp_location.new("GT_top_cannonball_bridge_1W_door", "GT Top Cannonball Bridge 1W Door")
@@ -270,12 +270,12 @@ GT_bottom_tile_room_1W_door:connect_two_ways(GT_bottom_tile_room)
 GT_bottom_tile_room:connect_one_way("GT - Tile Room Chest")
 GT_bottom_tile_room:connect_two_ways(GT_bottom_torch_puzzle)
 
-GT_bottom_torch_puzzle:connect_two_ways(GT_bottom_torch_puzzle_N_door)
-GT_bottom_torch_puzzle_N_door:connect_two_ways_entrance("", GT_bottom_teleporter_puzzle_room_A_side_deadend_4S_door)
+GT_bottom_torch_puzzle:connect_two_ways(GT_bottom_torch_puzzle_2N_door)
+GT_bottom_torch_puzzle_2N_door:connect_two_ways_entrance("", GT_bottom_teleporter_puzzle_room_A_side_deadend_4S_door)
 GT_bottom_teleporter_puzzle_room_A_side_deadend_4S_door:connect_two_ways(GT_bottom_teleporter_puzzle_room_A_side_deadend)
 
-GT_bottom_torch_puzzle:connect_two_ways(GT_bottom_torch_puzzle_S_door)
-GT_bottom_torch_puzzle_S_door:connect_two_ways_entrance("", GT_bottom_gibdo_crystal_switch_room_2N_door, function()
+GT_bottom_torch_puzzle:connect_two_ways(GT_bottom_torch_puzzle_4S_door)
+GT_bottom_torch_puzzle_4S_door:connect_two_ways_entrance("", GT_bottom_gibdo_crystal_switch_room_2N_door, function()
     return ALL(
         "firerod",
         ANY(
@@ -318,8 +318,8 @@ GT_top_spike_crystal_switch:connect_two_ways_stuck(GT_top_4_mimics, function() r
 GT_top_4_mimics:connect_two_ways_stuck(GT_top_mimics2, function() return DealDamage end)
 
 GT_top_mimics2:connect_two_ways_stuck(GT_top_big_key_door, function() return DealDamage end)
-GT_top_big_key_door:connect_two_ways(GT_top_big_key_door_2N_door)
-GT_top_big_key_door_2N_door:connect_two_ways_entrance_door_stuck("", GT_top_pinball_crystal_switch_4S_door, function() return Has("bigkey") end, function() return true end) --smallkey unaccounted for
+GT_top_big_key_door:connect_two_ways(GT_top_big_keydoor_2N_door)
+GT_top_big_keydoor_2N_door:connect_two_ways_entrance_door_stuck("", GT_top_pinball_crystal_switch_4S_door, function() return Has("bigkey") end, function() return true end) --smallkey unaccounted for
 GT_top_pinball_crystal_switch_4S_door:connect_two_ways(GT_top_pinball_crystal_switch)
 GT_top_pinball_crystal_switch:connect_two_ways(GT_top_pinball_crystal_switch_2E_door)
 GT_top_pinball_crystal_switch_2E_door:connect_two_ways_entrance_door_stuck("", GT_top_cannonball_bridge_1W_door, function() return CanInteract(GT_top_pinball_crystal_switch) end)

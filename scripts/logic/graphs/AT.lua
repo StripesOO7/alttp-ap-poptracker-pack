@@ -19,8 +19,8 @@ local AT_catwalk = alttp_location.new("AT_catwalk", "AT Catwalk")
 local AT_antechamber = alttp_location.new("AT_antechamber", "AT Antechamber")
 
 -- local AT_Lobby_north_door = alttp_location.new("AT_", "AT Lobby North Door")
-AT_first_chest_2N_door = alttp_location.new("AT_first_chest_2N_door", "AT First Chest 2N Door")
-AT_dark_maze_2N_door = alttp_location.new("AT_dark_maze_2N_door", "AT Dark Maze 2N Door")
+AT_first_chest_2N_door = alttp_location.new("AT_first_chest_2N_door", "AT First Chest 2N Door", nil, "", false, 1,1,1,1, nil, {"Agahnim's Tower Doors", "AT_first_chest_2N_door", "AT_first_chest_2N_door"})
+AT_dark_maze_2N_door = alttp_location.new("AT_dark_maze_2N_door", "AT Dark Maze 2N Door", nil, "", false, 1,1,1,1, nil, {"Agahnim's Tower Doors", "AT_dark_maze_2N_door", "AT_dark_maze_2N_door"})
 AT_dark_chargers_4N_door = alttp_location.new("AT_dark_chargers_4N_door", "AT dark chargers 4N Door")
 AT_dual_statues_4N_door = alttp_location.new("AT_dual_statues_4N_door", "AT Dual Statues 4N Door")
 AT_dark_archers_2N_door = alttp_location.new("AT_dark_archers_2N_door", "AT Dark Archers 2N Door")
@@ -30,7 +30,7 @@ AT_push_statue_down_4N_door = alttp_location.new("AT_push_statue_down_4N_door", 
 AT_catwalk_1N_door = alttp_location.new("AT_catwalk_1N_door", "AT Catwalk 1N Door")
 AT_antechamber_2S_door = alttp_location.new("AT_antechamber_2S_door", "AT Antechamber 2S Door")
 AT_pre_curtain_1N_door = alttp_location.new("AT_pre_curtain_1N_door", "AT Pre Crtain 1N Door")
-AT_aga_arena_1S_door = alttp_location.new("AT_aga_arena_1S_door", "AT Aga Arena 1S Door")
+AT_aga_arena_3S_door = alttp_location.new("AT_aga_arena_3S_door", "AT Aga Arena 3S Door")
 
 
 
@@ -94,8 +94,8 @@ AT_antechamber_2S_door:connect_two_ways(AT_antechamber)
 AT_antechamber:connect_two_ways(AT_pre_curtain)
 
 AT_pre_curtain:connect_two_ways(AT_pre_curtain_1N_door)
-AT_pre_curtain_1N_door:connect_two_ways_entrance("", AT_aga_arena_1S_door, function() return CanRemoveCurtains end)
-AT_aga_arena_1S_door:connect_two_ways(AT_aga1)
+AT_pre_curtain_1N_door:connect_two_ways_entrance("", AT_aga_arena_3S_door, function() return CanRemoveCurtains end)
+AT_aga_arena_3S_door:connect_two_ways(AT_aga1)
 
 
 AT_aga1:connect_one_way("AT - Aga1", function()
