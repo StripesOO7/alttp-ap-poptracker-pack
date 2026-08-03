@@ -159,6 +159,15 @@ function PreOnClear()
     PLAYER_ID = Archipelago.PlayerNumber or -1
 	TEAM_NUMBER = Archipelago.TeamNumber or 0
     if PLAYER_ID > -1 then
+        local version_name = Archipelago:GetPlayerGame(PLAYER_ID)
+        if version_name == "A Link to the Past Beta" then
+            Tracker:FindObjectForCode("selected_game").CurrentStage = 1
+            version_name = "ALttP"
+        elseif version_name == "The Legend of Zelda: A Link to the Past" then
+            Tracker:FindObjectForCode("selected_game").CurrentStage = 2
+        else
+            Tracker:FindObjectForCode("selected_game").CurrentStage = 0
+        end
         for key, _ in pairs(TROLL_LOOKUP) do
             if string.find(string.lower(Archipelago:GetPlayerAlias(PLAYER_ID)), key, 1, true) ~= nil then
                 TROLL_PLAYER = true

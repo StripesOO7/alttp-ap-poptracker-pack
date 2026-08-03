@@ -791,16 +791,16 @@ function ChangeRouteMode()
     end
 end 
 
-function ChangeGameVersion()
+function ChangeGameVersion(version_stage)
     local version_lookup = {
         [0] = "Core AlttP World",
         [1] = "Beta for Core AlttP World",
         [2] = "AlttPR APWorld",
     }
-    GAMEVERISON = Tracker:FindObjectForCode("selected_game")
-    if GAMEVERISON then
-        GAMEVERSION_NAME = version_lookup[GAMEVERISON.CurrentStage]
-        GAMEVERSION_STAGE = GAMEVERISON.CurrentStage
+    -- GAMEVERISON = Tracker:FindObjectForCode("selected_game")
+    if version_stage then
+        GAMEVERSION_NAME = version_lookup[version_stage]
+        GAMEVERSION_STAGE = version_stage
     end
     
 end
@@ -1284,13 +1284,75 @@ end
 
 function ChangePopupLayout()
     local version = Tracker:FindObjectForCode("selected_game").CurrentStage
+    local doors_tracking = Tracker:FindObjectForCode("doors_tracking")
+    local doors_tracking_method = Tracker:FindObjectForCode("doors_tracking_method")
+    local lobby_shuffle = Tracker:FindObjectForCode("lobby_shuffle")
+    local doortype_shuffle = Tracker:FindObjectForCode("doortype_shuffle")
+    local dmg_class_shuffle = Tracker:FindObjectForCode("dmg_class_shuffle")
+    local preserve_melee_dmg_classes = Tracker:FindObjectForCode("preserve_melee_dmg_classes")
+    local manual_misc_items_storage = Tracker:FindObjectForCode("manual_misc_items_storage").ItemState
     if version == 2 then --alttpr apworld
         Tracker:AddLayouts("layouts/settings_tab_alttpr.json")
+        doors_tracking.IgnoreUserInput = false
+        
+        doors_tracking_method.IgnoreUserInput = false
+
+        lobby_shuffle.IgnoreUserInput = false
+
+        doortype_shuffle.IgnoreUserInput = false
+
+        dmg_class_shuffle.IgnoreUserInput = false
+
+        preserve_melee_dmg_classes.IgnoreUserInput = false
+        if manual_misc_items_storage and manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED] then
+            doors_tracking.CurrentStage = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["doors_tracking"] or false
+            doors_tracking_method.Active = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["doors_tracking_method"] or false
+            lobby_shuffle.Active = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["lobby_shuffle"] or false
+            doortype_shuffle.Active = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["doortype_shuffle"] or false
+            dmg_class_shuffle.CurrentStage = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["dmg_class_shuffle"] or false
+            preserve_melee_dmg_classes.Active = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["preserve_melee_dmg_classes"] or false
+        end
+
     elseif version == 1 then --core beta
         Tracker:AddLayouts("layouts/settings_tab_beta.json")
+        doors_tracking.IgnoreUserInput = true
+        doors_tracking.CurrentStage = 0
+
+        doors_tracking_method.IgnoreUserInput = true
+        doors_tracking_method.Active = false
+
+        lobby_shuffle.IgnoreUserInput = true
+        lobby_shuffle.Active = false
+
+        doortype_shuffle.IgnoreUserInput = true
+        doortype_shuffle.Active = false
+
+        dmg_class_shuffle.IgnoreUserInput = true
+        dmg_class_shuffle.CurrentStage = 0
+
+        preserve_melee_dmg_classes.IgnoreUserInput = true
+        preserve_melee_dmg_classes.Active = false
     else --core
         Tracker:AddLayouts("layouts/settings_tab_core.json")
+        doors_tracking.IgnoreUserInput = true
+        doors_tracking.CurrentStage = 0
+
+        doors_tracking_method.IgnoreUserInput = true
+        doors_tracking_method.Active = false
+
+        lobby_shuffle.IgnoreUserInput = true
+        lobby_shuffle.Active = false
+
+        doortype_shuffle.IgnoreUserInput = true
+        doortype_shuffle.Active = false
+
+        dmg_class_shuffle.IgnoreUserInput = true
+        dmg_class_shuffle.CurrentStage = 0
+
+        preserve_melee_dmg_classes.IgnoreUserInput = true
+        preserve_melee_dmg_classes.Active = false
     end
+    ChangeGameVersion(version)
 end
 
 -- ScriptHost:AddWatchForCode("settings maps_setting", "maps_setting", GiveAll)
