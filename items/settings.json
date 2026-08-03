@@ -790,5 +790,115 @@
                     "codes": "selected_game, alttpr_apworld"
                 }
             ]
+    },
+    {
+        "name": "Enable Doors Randomizer Tracking",
+        "type": "progressive",
+        "allow_disabled": false,
+        "stages":
+            [
+                {
+                    "img": "/images/settings/doors_rando_vanilla.png",
+                    "inherit_codes": false,
+                    "name": "Vanilla Door",
+                    "codes": "doors_tracking, doors_vanilla"
+                },
+                {
+                    "img": "/images/settings/doors_rando_basic.png",
+                    "inherit_codes": false,
+                    "name": "Basic Door Shuffle",
+                    "codes": "doors_tracking, doors_basic"
+                },
+                {
+                    "img": "/images/settings/doors_rando_partitioned.png",
+                    "inherit_codes": false,
+                    "name": "Partitioned Door Shuffle",
+                    "codes": "doors_tracking, doors_partitioned"
+                },
+                {
+                    "img": "/images/settings/doors_rando_crossed.png",
+                    "inherit_codes": false,
+                    "name": "Crossed Door Shuffle",
+                    "codes": "doors_tracking, doors_crossed"
+                }
+            ]
+    },
+    {
+        "name": "Manual or Automatic Doors Tracking",
+        "type": "toggle",
+        "img": "/images/settings/doors_tracking_automatic.png",
+        "disabled_img": "/images/settings/doors_tracking_manual.png",
+        // "disabled_img_mods": "overlay|/images/settings/doors_tracking_manual.png",
+        "disabled_img_mods": "",
+        "codes": "doors_tracking_method"
+    },
+    {
+        "name": "Lobby Shuffle",
+        "type": "toggle",
+        "img": "/images/settings/lobby_shuffle_on.png",
+        "disabled_img": "/images/settings/lobby_shuffle_off.png",
+        // "disabled_img_mods": "overlay|/images/settings/doors_tracking_manual.png",
+        "disabled_img_mods": "",
+        "codes": "lobby_shuffle"
+    },
+    {
+        "name": "Doortype Shuffle",
+        "type": "toggle",
+        "img": "/images/settings/doortype_shuffle_big.png",
+        "disabled_img": "/images/settings/doortype_shuffle_original.png",
+        // "disabled_img_mods": "overlay|/images/settings/doors_tracking_manual.png",
+        "disabled_img_mods": "",
+        "codes": "doortype_shuffle"
+    },
+    {
+        "name": "Damage Class Shuffle",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": true,
+        "stages":
+            [
+                {
+                    "img": "/images/settings/shuffle_dmg_class_vanilla.png",
+                    "inherit_codes": false,
+                    "name": "Vanilla Door",
+                    "codes": "dmg_class_shuffle, dmg_class_vanilla"
+                },
+                {
+                    "img": "/images/settings/shuffle_dmg_class_enemy_swap.png",
+                    "inherit_codes": false,
+                    "name": "Basic Door Shuffle",
+                    "codes": "dmg_class_shuffle, dmg_class_enemy_swap"
+                },
+                {
+                    "img": "/images/settings/shuffle_dmg_class_dmg_class_swap.png",
+                    "inherit_codes": false,
+                    "name": "Partitioned Door Shuffle",
+                    "codes": "dmg_class_shuffle, dmg_class_damage_class_swap"
+                },
+                {
+                    "img": "/images/settings/shuffle_dmg_class_mixed.png",
+                    "inherit_codes": false,
+                    "name": "Crossed Door Shuffle",
+                    "codes": "dmg_class_shuffle, dmg_class_mixed"
+                },
+                {
+                    "img": "/images/settings/shuffle_dmg_class_chaos.png",
+                    "inherit_codes": false,
+                    "name": "Crossed Door Shuffle",
+                    "codes": "dmg_class_shuffle, dmg_class_chaos"
+                },
+                {
+                    "img": "/images/settings/shuffle_dmg_class_nightmare.png",
+                    "inherit_codes": false,
+                    "name": "Crossed Door Shuffle",
+                    "codes": "dmg_class_shuffle, dmg_class_nightmare"
+                }
+            ]
+    },
+    {
+        "name": "Preserve Melee Damage Classes",
+        "type": "toggle",
+        "img": "/images/settings/preserve_melee_dmg_classes.png",
+        "codes": "preserve_melee_dmg_classes"
     }
 ]

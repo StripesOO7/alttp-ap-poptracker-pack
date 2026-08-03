@@ -1282,6 +1282,17 @@ function ChangeERLayout()
     end
 end
 
+function ChangePopupLayout()
+    local version = Tracker:FindObjectForCode("selected_game").CurrentStage
+    if version == 2 then --alttpr apworld
+        Tracker:AddLayouts("layouts/settings_tab_alttpr.json")
+    elseif version == 1 then --core beta
+        Tracker:AddLayouts("layouts/settings_tab_beta.json")
+    else --core
+        Tracker:AddLayouts("layouts/settings_tab_core.json")
+    end
+end
+
 -- ScriptHost:AddWatchForCode("settings maps_setting", "maps_setting", GiveAll)
 -- ScriptHost:AddWatchForCode("settings compass_shuffle", "compass_setting", GiveAll)
 -- ScriptHost:AddWatchForCode("settings smallkeys_setting", "smallkeys_setting", GiveAll)

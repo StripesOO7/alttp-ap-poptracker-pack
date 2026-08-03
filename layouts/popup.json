@@ -1,28 +1,10 @@
 ﻿{
   "settings_popup": {
-      "type": "tabbed",
-      "tabs": [
-        {
-          "title": "Settings",
-          "content": {
-            "type": "layout",
-            "key": "settings_tab"
-          }
-        // },
-        // {
-        //   "title": "ER Doors",
-        //   "content": {
-        //     "type": "layout",
-        //     "key": "er_doors_tab"
-        //   }
-        // },
-        // {
-        //   "title": "Logic Tricks",
-        //   "content": {
-        //       "type": "layout",
-        //       "key": "logic_tricks"
-        //   }
-        }
-      ]
+    "type": "container",
+    "title": "Settings",
+    "content": {
+      "type": "layout",
+      "key": "settings"
     }
   }
+}

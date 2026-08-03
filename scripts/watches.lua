@@ -65,3 +65,4 @@ for _, code in pairs(MISC_MANUAL_ITEMS) do
 end
 ScriptHost:AddWatchForCode("Enable/Disable Route Mode", "route_mode", ChangeRouteMode)
 ScriptHost:AddWatchForCode("Selected Game Version Change", "selected_game", ChangeGameVersion)
+ScriptHost:AddWatchForCode("change Settings-PopUp Layout", "selected_game", ChangePopupLayout)
