@@ -421,15 +421,15 @@ function UpdateEntrances(segment, mainModuleIdx)
                     if Selected_entrance ~= nil and Selected_exit ~= nil and Selected_entrance_origin ~= Selected_exit_origin then
                         if ER_STAGE == 3 then -- separated doors
                     
-                            _SetLocationOptions(Selected_entrance, Selected_exit)
-                            _SetLocationOptions(Selected_exit, Selected_entrance)
+                            _SetERLocationOptions(Selected_entrance, Selected_exit)
+                            _SetERLocationOptions(Selected_exit, Selected_entrance)
                         else --trackes both sides simlutaniously
-                            _SetLocationOptions(Selected_entrance, Selected_exit)
-                            _SetLocationOptions(Selected_exit, Selected_entrance)
+                            _SetERLocationOptions(Selected_entrance, Selected_exit)
+                            _SetERLocationOptions(Selected_exit, Selected_entrance)
                             Selected_entrance = Tracker:FindObjectForCode(string.gsub(Selected_entrance.Name, "from_", "to_"))  --[[@as LuaItem]]
                             Selected_exit = Tracker:FindObjectForCode(string.gsub(Selected_exit.Name, "to_", "from_"))  --[[@as LuaItem]]
-                            _SetLocationOptions(Selected_entrance, Selected_exit)
-                            _SetLocationOptions(Selected_exit, Selected_entrance)
+                            _SetERLocationOptions(Selected_entrance, Selected_exit)
+                            _SetERLocationOptions(Selected_exit, Selected_entrance)
                         end
                         Selected_entrance = nil
                         Selected_exit = nil

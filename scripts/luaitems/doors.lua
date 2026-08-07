@@ -185,7 +185,7 @@ ER_DUNGEONS = { --true marks inside, false marks outside
     -- ["to_Sanctuary_entrance_outside"] = false,
 }
 
-NAMED_ENTRANCES = {
+NAMED_ER_ENTRANCES = {
     ["from_Aginah_cave_inside"] = true,
     ["to_Aginah_cave_inside"] = true,
     ["from_Aginah_cave_outside"] = false,
@@ -776,12 +776,10 @@ NAMED_ENTRANCES = {
 
 NAMED_DOORS_CONNECTIONS = {}
 
-INSANITY_ENTRANCES = {}
-
 NAMED_ER_CONNECTIONS = {}
     ---function to create all ER lua items for poptracker
     ---@return integer --completely useless
-function CreateDoorsLuaitems()
+function CreateLuaItems()
     if PopVersion < "0.32.0" then
         -- pre 0.32.0
         table.sort(NAMED_LOCATIONS_KEYS)
@@ -805,7 +803,6 @@ function CreateDoorsLuaitems()
             end
 
         end
-        return 1
     else
         -- 0.32.0 onwards
         for _, location in pairs(NAMED_LOCATIONS) do
@@ -827,191 +824,11 @@ function CreateDoorsLuaitems()
                 NAMED_DOORS_CONNECTIONS["to_" .. location.name] = Doors_locations_scope("To", location)
             end
         end
-        return 1
     end
 end
 
 
 Tracker.BulkUpdate = true
--- CreateLuaManualStorageItem("manual_location_storage")
--- CreateLuaManualStorageItem("manual_er_storage")
--- CreateLuaManualStorageItem("manual_misc_items_storage")
--- CreateLuaManualStorageItem("manual_dmg_class_storage")
-CreateDoorsLuaitems()
+
+CreateLuaItems()
 Tracker.BulkUpdate = false
-
-
--- INDOORS_INDEX = {
---     [0] = archery_minigame_inside,
---     [1] = HC_main_entrance_inside,
---     [2] = HC_left_entrance_inside,
---     [3] = HC_right_entrance_inside,
---     [4] = Sanctuary_entrance_inside,
---     [5] = CE_dropdown_entrance_inside,
---     [6] = AT_entrance_inside,
---     [7] = EP_entrance_inside,
---     [8] = DP_main_entrance_inside,
---     [9] = DP_left_entrance_inside,
---     [10] = DP_right_entrance_inside,
---     [11] = DP_back_entrance_inside,
---     [12] = ToH_entrance_inside,
---     [13] = PoD_entrance_inside,
---     [14] = SP_entrance_inside,
---     [15] = SW_big_chest_entrance_inside,
---     [16] = SW_gibdo_entrance_inside,
---     [17] = SW_west_lobby_entrance_inside,
---     [18] = SW_bottom_left_drop_inside,
---     [19] = SW_north_drop_inside,
---     [20] = SW_pinball_drop_inside,
---     [21] = SW_pot_circle_drop_inside,
---     [22] = SW_back_entrance_inside,
---     [23] = TT_entrance_inside,
---     [24] = IP_entrance_inside,
---     [25] = MM_entrance_inside,
---     [26] = TR_main_entrance_inside,
---     [27] = TR_laser_entrance_inside,
---     [28] = TR_big_chest_entrance_inside,
---     [29] = TR_eye_bridge_entrance_inside,
---     [30] = GT_entrance_inside,
---     [31] = Aginah_cave_inside,
---     [32] = archery_minigame_inside,
---     [33] = Cave45_inside,
---     [34] = Checkerboard_cave_inside,
---     [35] = Dam_desert_fairy_inside,
---     [36] = Dam_inside,
---     [37] = Dam_top_right_cave_inside,
---     [38] = darf_smiths_inside,
---     [39] = Eastern_fairy_inside,
---     [40] = Graveyard_fairy_inside,
---     [41] = Graveyard_ledge_inside,
---     [42] = Icerod_cave_inside,
---     [43] = Icerod_cave_inside,
---     [44] = icerod_fairy_inside,
---     [45] = icerod_stone_inside,
---     [46] = Kakariko_blinds_hideout_inside,
---     [47] = Kakariko_bombhut_inside,
---     [48] = Kakariko_chickenhut_inside,
---     [49] = Kakariko_frontside_pub_inside,
---     [50] = Kakariko_house_hill_top_inside,
---     [51] = Kakariko_house_right_center_inside,
---     [52] = Kakariko_house_right_top_inside,
---     [53] = Kakariko_house_top_left_inside,
---     [54] = Kakariko_shop_inside,
---     [55] = Kakariko_sick_kid_inside,
---     [56] = Kakariko_well_cave_inside,
---     [57] = Kakariko_well_hole_inside,
---     [58] = Kings_tomb_inside,
---     [59] = Kings_tomb_inside,
---     [60] = Library_inside,
---     [61] = Inverted_bumper_cave_inside,
---     [62] = Light_bumper_cave_inside,
---     [63] = Light_death_mountain_ascent_inside,
---     [64] = Light_death_mountain_cave1_inside,
---     [65] = Light_death_mountain_cave2_inside,
---     [66] = Light_death_mountain_cave3_inside,
---     [67] = _insideLight_death_mountain_Old_man_cave_outside_inside,
---     [68] = Light_death_mountain_shop_inside,
---     [69] = Light_eyebridge_fairy_inside,
---     [70] = Light_lake_fortune_inside,
---     [71] = Light_lake_shop_inside,
---     [72] = Light_potion_shop_inside,
---     [73] = Links_fairy_fountain_inside,
---     [74] = Links_house_inside,
---     [75] = Lost_woods_fortune_inside,
---     [76] = Lost_woods_hideout_cave_inside,
---     [77] = Lost_woods_hideout_hole_inside,
---     [78] = Lost_woods_top_inside,
---     [79] = Lumberjacks_cave_inside,
---     [80] = Lumberjacks_hole_inside,
---     [81] = Lumberjacks_house_inside,
---     [82] = Magic_bat_cave_inside,
---     [83] = Magic_bat_hole_inside,
---     [84] = Mimic_cave_inside,
---     [85] = Mini_moldorm_cave_inside,
---     [86] = Old_man_cave_inside,
---     [87] = Old_man_cave_inside,
---     [88] = Paradox_cave_bottom_entrance_inside,
---     [89] = Paradox_cave_top_entrance_inside,
---     [90] = Sahasralahs_hut_inside,
---     [91] = Sanctuary_entrance_inside,
---     [92] = Sanctuary_bonk_pile_cave_inside,
---     [93] = Secret_passage_hole_inside,
---     [94] = Secret_passage_stairs_inside,
---     [95] = shooting_gallery_inside,
---     [96] = Spec_rock_ledge_entrance_inside,
---     [97] = Spec_rock_ledge_exit_inside,
---     [98] = Spec_rock_top_entrance_inside,
---     [99] = Spiral_cave_bottom_inside,
---     [100] = Spiral_cave_top_inside,
---     [101] = Twenty_rupee_thief_inside,
---     [102] = Twin_house_left_inside,
---     [103] = Twin_house_right_inside,
---     [104] = Upgrade_fairy_inside,
---     [105] = Waterfall_fairy_inside,
---     [106] = Witchhut_inside,
---     [107] = Big_bomb_shop_inside,
---     [108] = Big_bomb_shop_fairy_cave_inside,
---     [109] = Brewery_inside,
---     [110] = Dark_bumper_cave_inside,
---     [111] = C_shaped_house_inside,
---     [112] = Chest_game_inside,
---     [113] = Dark_aghina_inside,
---     [114] = Dark_archery_minigame_inside,
---     [115] = Dark_chapel_inside,
---     [116] = Dark_desert_hint_cave_inside,
---     [117] = Dark_death_mountain_shop_inside,
---     [118] = Dark_Icerod_cave_inside,
---     [119] = Dark_icerod_fairy_inside,
---     [120] = Dark_icerod_stone_inside,
---     [121] = Dark_lake_shop_inside,
---     [122] = Dark_lumpberjacks_shop_inside,
---     [123] = Dark_Old_man_cave_inside,
---     [124] = Dark_potion_shop_inside,
---     [125] = Dark_village_shop_inside,
---     [126] = Hookshot_cave_inside,
---     [127] = Hype_cave_inside,
---     [128] = Hype_cave_back_inside,
---     [129] = kiki_cave_inside,
---     [130] = Mire_shed_left_inside,
---     [131] = Mire_shed_right_inside,
---     [132] = Peg_cave_inside,
---     [133] = PoD_fairy_cave_inside,
---     [134] = PoD_teleport_cave_inside,
---     [135] = Pyramid_fairy_cave_inside,
---     [136] = Pyramid_inside,
---     [137] = Red_shield_shop_inside,
---     [138] = Spike_cave_inside,
---     [139] = Superbunny_cave_inside,
---     [140] = Superbunny_cave_bottom_inside,
---     [141] = Superbunny_cave_top_inside,
---     [142] = AT_entrance_inside,
---     [143] = CE_dropdown_entrance_inside,
---     [144] = CE_stairs_inside,
---     [145] = DP_back_entrance_inside,
---     [146] = DP_left_entrance_inside,
---     [147] = DP_main_entrance_inside,
---     [148] = DP_right_entrance_inside,
---     [149] = EP_entrance_inside,
---     [150] = GT_entrance_inside,
---     [151] = HC_left_entrance_inside,
---     [152] = HC_main_entrance_inside,
---     [153] = HC_right_entrance_inside,
---     [154] = IP_entrance_inside,
---     [155] = MM_entrance_inside,
---     [156] = PoD_entrance_inside,
---     [157] = SP_entrance_inside,
---     [158] = SW_back_entrance_inside,
---     [159] = SW_big_chest_entrance_inside,
---     [160] = SW_bottom_left_drop_inside,
---     [161] = SW_gibdo_entrance_inside,
---     [162] = SW_north_drop_inside,
---     [163] = SW_pinball_drop_inside,
---     [164] = SW_pot_circle_drop_inside,
---     [165] = SW_west_lobby_entrance_inside,
---     [166] = ToH_entrance_inside,
---     [167] = TR_big_chest_entrance_inside,
---     [168] = TR_eye_bridge_entrance_inside,
---     [169] = TR_laser_entrance_inside,
---     [170] = TR_main_entrance_inside,
---     [171] = TT_entrance_inside
--- }

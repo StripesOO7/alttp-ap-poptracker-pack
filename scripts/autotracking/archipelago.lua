@@ -374,7 +374,7 @@ function OnClear(slot_data)
     end
 
     print("reset er connections")
-    EmptyLocationTargets()
+    EmptyERLocationTargets()
     
     ScriptHost:RemoveWatchForCode("StateChanged")
     -- ScriptHost:RemoveOnLocationSectionHandler("location_section_change_handler")
@@ -385,8 +385,8 @@ function OnClear(slot_data)
         for source_name, targe_name in pairs(er_custom_storage_item.MANUAL_LOCATIONS[ROOM_SEED]) do -- redo location based on savestate for seed
             local source = Tracker:FindObjectForCode(source_name) --[[@as LuaItem]]
             local target = Tracker:FindObjectForCode(targe_name) --[[@as LuaItem]]
-            _SetLocationOptions(source,target)
-            _SetLocationOptions(target,source)
+            _SetERLocationOptions(source,target)
+            _SetERLocationOptions(target,source)
         end
     else
         er_custom_storage_item.MANUAL_LOCATIONS[ROOM_SEED] = {}
@@ -658,6 +658,10 @@ function AutoFill()
                     end
                 end
             elseif settings_name == "prizes" then
+                for dungeon, reward in pairs(settings_value) do
+                    Tracker:FindObjectForCode(mapDungeon[dungeon][2]).CurrentStage = mapRewards[reward]
+                end
+            elseif settings_name == "key_rings_list" then
                 for dungeon, reward in pairs(settings_value) do
                     Tracker:FindObjectForCode(mapDungeon[dungeon][2]).CurrentStage = mapRewards[reward]
                 end

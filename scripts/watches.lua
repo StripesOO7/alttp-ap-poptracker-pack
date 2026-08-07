@@ -1,7 +1,8 @@
 --logic main
-ScriptHost:AddWatchForCode("ER_Setting_Changed", "er_full", EmptyLocationTargets)
+ScriptHost:AddWatchForCode("ER_Setting_Changed", "er_full", EmptyERLocationTargets)
 -- ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", LocationHandler)
 ScriptHost:AddWatchForCode("keydropshuffle handler", "key_drop_shuffle", KeyDropLayoutChange)
+ScriptHost:AddWatchForCode("doors_enabled handler", "doors_enabled", KeyDropLayoutChange)
 ScriptHost:AddWatchForCode("boss handler", "boss_shuffle", BossShuffle)
 ScriptHost:AddWatchForCode("set smallkey stage global", "small_keys", SetSmallKeyGlobal)
 
@@ -38,7 +39,7 @@ SetPrizeShuffle()
 ScriptHost:AddWatchForCode("set all autofill", "autofill_all_settings", SetAllAutoFill)
 
 --luaitems
-ScriptHost:AddWatchForCode("ER_reset_triggered", "reset_er", Reset_ER_setings)
+ScriptHost:AddWatchForCode("ER_reset_triggered", "reset_er", Reset_ER_settings)
 
 --archipelago
 ScriptHost:AddWatchForCode("bombless start handler", "bombless", Bombless)

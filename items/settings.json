@@ -768,6 +768,7 @@
         "name": "Selected Game: (effects some logic and settings)",
         "type": "progressive",
         "allow_disabled": false,
+        "loop": true,
         "initial_stage_idx":0,
         "stages":
             [
@@ -801,25 +802,25 @@
                     "img": "/images/settings/doors_rando_vanilla.png",
                     "inherit_codes": false,
                     "name": "Vanilla Door",
-                    "codes": "doors_tracking, doors_vanilla"
+                    "codes": "doors_tracking, doors_vanilla, doors_disabled"
                 },
                 {
                     "img": "/images/settings/doors_rando_basic.png",
                     "inherit_codes": false,
                     "name": "Basic Door Shuffle",
-                    "codes": "doors_tracking, doors_basic"
+                    "codes": "doors_tracking, doors_basic, doors_enabled"
                 },
                 {
                     "img": "/images/settings/doors_rando_partitioned.png",
                     "inherit_codes": false,
                     "name": "Partitioned Door Shuffle",
-                    "codes": "doors_tracking, doors_partitioned"
+                    "codes": "doors_tracking, doors_partitioned, doors_enabled"
                 },
                 {
                     "img": "/images/settings/doors_rando_crossed.png",
                     "inherit_codes": false,
                     "name": "Crossed Door Shuffle",
-                    "codes": "doors_tracking, doors_crossed"
+                    "codes": "doors_tracking, doors_crossed, doors_enabled"
                 }
             ]
     },
@@ -900,5 +901,11 @@
         "type": "toggle",
         "img": "/images/settings/preserve_melee_dmg_classes.png",
         "codes": "preserve_melee_dmg_classes"
+    },
+    {
+        "name": "Room Puzzle Shuffle",
+        "type": "toggle",
+        "img": "/images/settings/puzzle_shuffle.png",
+        "codes": "room_puzzle_shuffle"
     }
 ]

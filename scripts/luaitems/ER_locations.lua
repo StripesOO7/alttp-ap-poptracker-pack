@@ -16,7 +16,7 @@ function ER_locations_scope(scope_direction, scope_location_obj, scope_side)
     ---Sets the connection between the 2 provided lua items to link them in the graph
     ---@param source LuaItem
     ---@param target LuaItem
-    function _SetLocationOptions(source, target) -- source == inside, target == outside
+    function _SetERLocationOptions(source, target) -- source == inside, target == outside
         if MANUAL_CHECKED and er_storage_item then
             -- local er_storage_item = Tracker:FindObjectForCode("manual_er_storage") --[[@as LuaItem]]
             er_storage_item.MANUAL_LOCATIONS[ROOM_SEED][source.Name] = target.Name
@@ -72,19 +72,19 @@ function ER_locations_scope(scope_direction, scope_location_obj, scope_side)
         local source_entrance_from = NAMED_ER_CONNECTIONS["from_" .. source] --[[@as LuaItem]]
         local source_entrance_to = NAMED_ER_CONNECTIONS["to_" .. source] --[[@as LuaItem]]
         if target_entrance_from ~= nil then
-            _SetLocationOptions(source_entrance_from, target_entrance_to) -- enter source exit target
-            _SetLocationOptions(target_entrance_to, source_entrance_from)
+            _SetERLocationOptions(source_entrance_from, target_entrance_to) -- enter source exit target
+            _SetERLocationOptions(target_entrance_to, source_entrance_from)
         end 
         if target_entrance_from and target_entrance_to ~= nil then
-            _SetLocationOptions(target_entrance_from, source_entrance_to) -- enter target exit source
-            _SetLocationOptions(source_entrance_to, target_entrance_from)
+            _SetERLocationOptions(target_entrance_from, source_entrance_to) -- enter target exit source
+            _SetERLocationOptions(source_entrance_to, target_entrance_from)
         end
     end
 
     ---helper function to highlight the first location of a pair that gets selected to signal that something happened
     ---@param location LuaItem
     ---@param highlight integer
-    function MarkFirstConnectionPart(location, highlight)
+    function MarkFirstERConnectionPart(location, highlight)
         local source_location
         local location_itemstate = location.ItemState  --[[@as ERItemState]]
         if ER_STAGE < 3 then
@@ -108,10 +108,10 @@ function ER_locations_scope(scope_direction, scope_location_obj, scope_side)
                     end
                     -- second step of normal new connection
                     _LeftClickMarkHelper(ENTRANCE_SELECTED, self_itemstate.BaseName)
-                    MarkFirstConnectionPart(NAMED_ER_CONNECTIONS[self_itemstate.Target]--[[@as LuaItem]], Highlight.None)
+                    MarkFirstERConnectionPart(NAMED_ER_CONNECTIONS[self_itemstate.Target]--[[@as LuaItem]], Highlight.None)
                     ENTRANCE_SELECTED = nil
                 else -- ENTRANCE_SELECTED == nil
-                    MarkFirstConnectionPart(self, Highlight.NoPriority)
+                    MarkFirstERConnectionPart(self, Highlight.NoPriority)
                     ENTRANCE_SELECTED = self_itemstate.BaseName
                     if self_itemstate.Target then -- retarget a connection to new target location
                         _LeftClickUnmarkHelper(self_itemstate.TargetBaseName, ENTRANCE_SELECTED)
@@ -135,14 +135,14 @@ function ER_locations_scope(scope_direction, scope_location_obj, scope_side)
 
                     -- second step of normal new connection
                     target_entrance = NAMED_ER_CONNECTIONS[ENTRANCE_SELECTED] --[[@as LuaItem]]
-                    MarkFirstConnectionPart(target_entrance, Highlight.None)
+                    MarkFirstERConnectionPart(target_entrance, Highlight.None)
                     if target_entrance ~= nil then
-                        _SetLocationOptions(self, target_entrance)
-                        _SetLocationOptions(target_entrance, self)
+                        _SetERLocationOptions(self, target_entrance)
+                        _SetERLocationOptions(target_entrance, self)
                     end
                     ENTRANCE_SELECTED = nil
                 else -- ENTRANCE_SELECTED == nil
-                    MarkFirstConnectionPart(self, Highlight.Priority)
+                    MarkFirstERConnectionPart(self, Highlight.Priority)
                     ENTRANCE_SELECTED = self.Name
                     if self.ItemState.Target then -- retarget a connection to new target location
                         target_entrance = NAMED_ER_CONNECTIONS[self_itemstate.Target] --[[@as LuaItem]]
@@ -472,15 +472,15 @@ function ER_locations_scope(scope_direction, scope_location_obj, scope_side)
 end
 
 ---function to reset all ER connections back to their base state for the given ER setting
-function Reset_ER_setings()
+function Reset_ER_settings()
     ScriptHost:RemoveMemoryWatch("StateChanged")
-    for name, _ in pairs(NAMED_ENTRANCES) do
+    for name, _ in pairs(NAMED_ER_ENTRANCES) do
         _UnsetLocationOptions(NAMED_ER_CONNECTIONS[name]--[[@as LuaItem]])
     end
     ScriptHost:AddWatchForCode("StateChanged", "*", StateChanged)
     Tracker:FindObjectForCode("reset_er").Active = false
 end
--- ScriptHost:AddWatchForCode("ER_reset_triggered", "reset_er", Reset_ER_setings)
+-- ScriptHost:AddWatchForCode("ER_reset_triggered", "reset_er", Reset_ER_settings)
 
 ---helper function that gets called to remove the hilight set from ER luaItem-middleclick function
 function RemoveTempHighlight()

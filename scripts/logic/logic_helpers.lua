@@ -988,13 +988,20 @@ end
 ---if the KDS setting is changed this functoin is used to change the max amount of keys being obtainable for each
 --dungeon. previously loaded a second layout
 function KeyDropLayoutChange()
-    KEY_DROP_SHUFFLE_STATE = Tracker:FindObjectForCode("key_drop_shuffle").Active
-    for dungeon, default in pairs(SMALLKEYDEFAULTS[KEY_DROP_SHUFFLE_STATE]) do
-        Tracker:FindObjectForCode(dungeon).MaxCount = default
+    local ignore_key_amounts = Tracker:FindObjectForCode("doors_enabled").Active or Tracker:FindObjectForCode("key_drop_shuffle").Active
+    if Tracker:FindObjectForCode("doors_enabled").Active then
+        for dungeon, default in pairs(SMALLKEYDEFAULTS[KEY_DROP_SHUFFLE_STATE]) do
+            Tracker:FindObjectForCode(dungeon).MaxCount = 30
+        end
+    else
+        KEY_DROP_SHUFFLE_STATE = Tracker:FindObjectForCode("key_drop_shuffle").Active
+        for dungeon, default in pairs(SMALLKEYDEFAULTS[KEY_DROP_SHUFFLE_STATE]) do
+            Tracker:FindObjectForCode(dungeon).MaxCount = default
+        end
     end
 end
 
----helper functoin to check the set TT boss and thus decide if bombing the top floo r of TT is needed to beat the boss
+---helper function to check the set TT boss and thus decide if bombing the top floor of TT is needed to beat the boss
 --or not
 ---@return integer|boolean
 function TT_boss_check()
@@ -1294,22 +1301,17 @@ function ChangePopupLayout()
     if version == 2 then --alttpr apworld
         Tracker:AddLayouts("layouts/settings_tab_alttpr.json")
         doors_tracking.IgnoreUserInput = false
-        
         doors_tracking_method.IgnoreUserInput = false
-
         lobby_shuffle.IgnoreUserInput = false
-
         doortype_shuffle.IgnoreUserInput = false
-
         dmg_class_shuffle.IgnoreUserInput = false
-
         preserve_melee_dmg_classes.IgnoreUserInput = false
         if manual_misc_items_storage and manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED] then
-            doors_tracking.CurrentStage = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["doors_tracking"] or false
+            doors_tracking.CurrentStage = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["doors_tracking"] or 0
             doors_tracking_method.Active = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["doors_tracking_method"] or false
             lobby_shuffle.Active = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["lobby_shuffle"] or false
             doortype_shuffle.Active = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["doortype_shuffle"] or false
-            dmg_class_shuffle.CurrentStage = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["dmg_class_shuffle"] or false
+            dmg_class_shuffle.CurrentStage = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["dmg_class_shuffle"] or 0
             preserve_melee_dmg_classes.Active = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["preserve_melee_dmg_classes"] or false
         end
 

@@ -1,11 +1,11 @@
 DOOR_SELECTED = nil
 BASE_IMG_PATH = ImageReference:FromPackRelativePath("images/door_closed.png")
 
-HIGHLIGHT_SOURCE = nil
-HIGHLIGHT_TARGET = nil
-HIGHLIGHT_LAST_ACTIVATED = 0
+-- HIGHLIGHT_SOURCE = nil
+-- HIGHLIGHT_TARGET = nil
+-- HIGHLIGHT_LAST_ACTIVATED = 0
 
-ROUTE_MODE = false
+-- ROUTE_MODE = false
 
 local er_storage_item = (Tracker:FindObjectForCode("manual_er_storage") --[[@as LuaItem]]).ItemState
 function Doors_locations_scope(scope_direction, scope_location_obj)
@@ -16,7 +16,7 @@ function Doors_locations_scope(scope_direction, scope_location_obj)
     ---Sets the connection between the 2 provided lua items to link them in the graph
     ---@param source LuaItem
     ---@param target LuaItem
-    function _SetLocationOptions(source, target) -- source == inside, target == outside
+    function _SetDoorsLocationOptions(source, target) -- source == inside, target == outside
         if MANUAL_CHECKED and er_storage_item then
             -- local er_storage_item = Tracker:FindObjectForCode("manual_er_storage") --[[@as LuaItem]]
             er_storage_item.MANUAL_LOCATIONS[ROOM_SEED][source.Name] = target.Name
@@ -30,7 +30,7 @@ function Doors_locations_scope(scope_direction, scope_location_obj)
 
     ---Unsets the connection between the provided LuaItem and its set target if any is set
     ---@param source LuaItem
-    function _UnsetLocationOptions(source)
+     function _UnsetDoorsLocationOptions(source)
         if MANUAL_CHECKED and er_storage_item then
             -- local er_storage_item = (Tracker:FindObjectForCode("manual_er_storage") --[[@as LuaItem]]).ItemState
             if er_storage_item.MANUAL_LOCATIONS[ROOM_SEED][source.Name] then
@@ -72,26 +72,26 @@ function Doors_locations_scope(scope_direction, scope_location_obj)
         local source_door_from = NAMED_DOORS_CONNECTIONS["from_" .. source] --[[@as LuaItem]]
         local source_door_to = NAMED_DOORS_CONNECTIONS["to_" .. source] --[[@as LuaItem]]
         if target_door_from ~= nil then
-            _SetLocationOptions(source_door_from, target_door_to) -- enter source exit target
-            _SetLocationOptions(target_door_to, source_door_from)
+            _SetDoorsLocationOptions(source_door_from, target_door_to) -- enter source exit target
+            _SetDoorsLocationOptions(target_door_to, source_door_from)
         end 
         if target_door_from and target_door_to ~= nil then
-            _SetLocationOptions(target_door_from, source_door_to) -- enter target exit source
-            _SetLocationOptions(source_door_to, target_door_from)
+            _SetDoorsLocationOptions(target_door_from, source_door_to) -- enter target exit source
+            _SetDoorsLocationOptions(source_door_to, target_door_from)
         end
     end
 
     ---helper function to highlight the first location of a pair that gets selected to signal that something happened
     ---@param location LuaItem
     ---@param highlight integer
-    function MarkFirstConnectionPart(location, highlight)
+    function MarkFirstDoorsConnectionPart(location, highlight)
         local source_location
         local location_itemstate = location.ItemState  --[[@as DoorsItemState]]
-        if ER_STAGE < 3 then
-            source_location = "@"..table.concat(location_itemstate.CorrespondingLocationSection, "/")
-        else
-            source_location = "@"..location_itemstate.CorrespondingLocationSection[1].."/"..location_itemstate.CorrespondingLocationSection[2].."/From".." "..location_itemstate.CorrespondingLocationSection[3]
-        end
+        -- if DOORS_STAGE > 0 then
+        source_location = "@"..table.concat(location_itemstate.CorrespondingLocationSection, "/")
+        -- else
+        --     source_location = "@"..location_itemstate.CorrespondingLocationSection[1].."/"..location_itemstate.CorrespondingLocationSection[2].."/From".." "..location_itemstate.CorrespondingLocationSection[3]
+        -- end
         Tracker:FindObjectForCode(source_location).Highlight = highlight
     end
 
@@ -101,17 +101,17 @@ function Doors_locations_scope(scope_direction, scope_location_obj)
     local function OnLeftClickFunc(self)
         local self_itemstate =  self.ItemState --[[@as DoorsItemState]]
         if not ROUTE_MODE then
-            if ER_STAGE < 3 then --off, dungeons, full
+            if DOORS_STAGE > 0 then --off, dungeons, full
                 if DOOR_SELECTED then -- DOOR_SELECTED ~= nil
                     if self_itemstate.Target then -- attempt of new connection to already existing connection (how to handle that?)
                         _LeftClickUnmarkHelper(self_itemstate.TargetBaseName, DOOR_SELECTED)
                     end
                     -- second step of normal new connection
                     _LeftClickMarkHelper(DOOR_SELECTED, self_itemstate.BaseName)
-                    -- MarkFirstConnectionPart(NAMED_DOORS_CONNECTIONS[self_itemstate.Target]--[[@as LuaItem]], Highlight.None)
+                    MarkFirstDoorsConnectionPart(NAMED_DOORS_CONNECTIONS[self_itemstate.Target]--[[@as LuaItem]], Highlight.None)
                     DOOR_SELECTED = nil
                 else -- DOOR_SELECTED == nil
-                    -- MarkFirstConnectionPart(self, Highlight.NoPriority)
+                    MarkFirstDoorsConnectionPart(self, Highlight.NoPriority)
                     DOOR_SELECTED = self_itemstate.BaseName
                     if self_itemstate.Target then -- retarget a connection to new target location
                         _LeftClickUnmarkHelper(self_itemstate.TargetBaseName, DOOR_SELECTED)
@@ -135,20 +135,20 @@ function Doors_locations_scope(scope_direction, scope_location_obj)
 
                     -- second step of normal new connection
                     target_door = NAMED_DOORS_CONNECTIONS[DOOR_SELECTED] --[[@as LuaItem]]
-                    -- MarkFirstConnectionPart(target_door, Highlight.None)
+                    -- MarkFirstDoorsConnectionPart(target_door, Highlight.None)
                     if target_door ~= nil then
-                        _SetLocationOptions(self, target_door)
-                        _SetLocationOptions(target_door, self)
+                        _SetDoorsLocationOptions(self, target_door)
+                        _SetDoorsLocationOptions(target_door, self)
                     end
                     DOOR_SELECTED = nil
                 else -- DOOR_SELECTED == nil
-                    -- MarkFirstConnectionPart(self, Highlight.Priority)
+                    -- MarkFirstDoorsConnectionPart(self, Highlight.Priority)
                     DOOR_SELECTED = self.Name
                     if self.ItemState.Target then -- retarget a connection to new target location
                         target_door = NAMED_DOORS_CONNECTIONS[self_itemstate.Target] --[[@as LuaItem]]
                         if target_door ~= nil then
-                            _UnsetLocationOptions(target_door)
-                            _UnsetLocationOptions(self)
+                            _UnsetDoorsLocationOptions(target_door)
+                            _UnsetDoorsLocationOptions(self)
                         end
                     end
                 end
@@ -182,12 +182,12 @@ function Doors_locations_scope(scope_direction, scope_location_obj)
                     local source_from = NAMED_DOORS_CONNECTIONS["from_" .. self_itemstate.BaseName] --[[@as LuaItem]]
                     local source_to = NAMED_DOORS_CONNECTIONS["to_" .. self_itemstate.BaseName] --[[@as LuaItem]]
                     if target_from ~= nil then
-                        _UnsetLocationOptions(target_from)
-                        _UnsetLocationOptions(source_to)
+                        _UnsetDoorsLocationOptions(target_from)
+                        _UnsetDoorsLocationOptions(source_to)
                     end
                     if target_to ~= nil then
-                        _UnsetLocationOptions(target_to)
-                        _UnsetLocationOptions(source_from)
+                        _UnsetDoorsLocationOptions(target_to)
+                        _UnsetDoorsLocationOptions(source_from)
                     end
                     ForceUpdate()
                 end
@@ -195,8 +195,8 @@ function Doors_locations_scope(scope_direction, scope_location_obj)
                 if self_itemstate.Target ~= nil then
                     local target = NAMED_DOORS_CONNECTIONS[self_itemstate.Target] --[[@as LuaItem]]
                     if target ~= nil then
-                        _UnsetLocationOptions(target)
-                        _UnsetLocationOptions(self)
+                        _UnsetDoorsLocationOptions(target)
+                        _UnsetDoorsLocationOptions(self)
                     end
                     ForceUpdate()
                 end
@@ -408,7 +408,6 @@ function Doors_locations_scope(scope_direction, scope_location_obj)
     ---function to create ER LuaItems in their default state
     ---@param direction string
     ---@param location_obj alttp_location_new_return
-    ---@param side string
     ---@return LuaItem
     function CreateLuaDoorsItems(direction, location_obj)
         local self = ScriptHost:CreateLuaItem()
@@ -455,7 +454,7 @@ function Doors_locations_scope(scope_direction, scope_location_obj)
         self:SetOverlayAlign("left")
 
         
-        self.ItemState.Side = "door"
+        -- self.ItemState.Side = "door"
     
         self.CanProvideCodeFunc = CanProvideCodeFunc
         self.OnLeftClickFunc = OnLeftClickFunc
@@ -477,15 +476,15 @@ function Doors_locations_scope(scope_direction, scope_location_obj)
 end
 
 ---function to reset all ER connections back to their base state for the given ER setting
-function Reset_ER_setings()
+function Reset_Doors_settings()
     ScriptHost:RemoveMemoryWatch("StateChanged")
-    for name, _ in pairs(NAMED_ENTRANCES) do
-        _UnsetLocationOptions(NAMED_DOORS_CONNECTIONS[name]--[[@as LuaItem]])
+    for name, _ in pairs(NAMED_ER_ENTRANCES) do
+        _UnsetDoorsLocationOptions(NAMED_DOORS_CONNECTIONS[name]--[[@as LuaItem]])
     end
     ScriptHost:AddWatchForCode("StateChanged", "*", StateChanged)
     Tracker:FindObjectForCode("reset_er").Active = false
 end
--- ScriptHost:AddWatchForCode("ER_reset_triggered", "reset_er", Reset_ER_setings)
+-- ScriptHost:AddWatchForCode("ER_reset_triggered", "reset_er", Reset_ER_settings)
 
 ---helper function that gets called to remove the hilight set from ER luaItem-middleclick function
 function RemoveTempHighlight()
