@@ -1,35 +1,35 @@
 -- dungeons
 --lightworld
-AT_entrance_outside = alttp_location.new("AT_entrance_outside", "Aga Tower (OW)", "light", "Lightworld OW", false, 27, 2040, 1588, 1623, nil, {"Central Hyrule - Entrances", "Agahnims Tower", "Agahnims Tower"})
-AT_entrance_inside = alttp_location.new("AT_entrance_inside", "Aga Tower (Inside)", nil, "Lightworld caves", true, 224, 120, 7640, 7668, nil, {"Central Hyrule - Insides", "Agahnims Tower", "Agahnims Tower"}, "dungeon")
+AT_entrance_outside = alttp_location.new("AT_entrance_outside", "Aga Tower (OW)", "light", "Lightworld OW", false, 27, 2040, nil , 1588, 1623, {"Central Hyrule - Entrances", "Agahnims Tower", "Agahnims Tower"})
+AT_entrance_inside = alttp_location.new("AT_entrance_inside", "Aga Tower (Inside)", nil, "Lightworld caves", true, 224, 120, nil , 7640, 7668, {"Central Hyrule - Insides", "Agahnims Tower", "Agahnims Tower"}, "dungeon")
 
-CE_dropdown_entrance_outside = alttp_location.new("CE_dropdown_entrance_outside", "Castle Escape Drop (OW)", "light", "Lightworld OW", false, 20, 2120, 1068, 1068, nil, {"Central Hyrule - Entrances", "Sanctuary Grave", "Sanctuary Grave"})
-CE_dropdown_entrance_inside = alttp_location.new("CE_dropdown_entrance_inside", "Castle Escape Drop (Inside)", nil, "Lightworld caves", true, 17, 915, 669, 669, nil, {"Central Hyrule - Insides", "Sanctuary Grave", "Sanctuary Grave"}, "dungeon")
+CE_dropdown_entrance_outside = alttp_location.new("CE_dropdown_entrance_outside", "Castle Escape Drop (OW)", "light", "Lightworld OW", false, 20, 2120, nil , 1068, 1068, {"Central Hyrule - Entrances", "Sanctuary Grave", "Sanctuary Grave"})
+CE_dropdown_entrance_inside = alttp_location.new("CE_dropdown_entrance_inside", "Castle Escape Drop (Inside)", nil, "Lightworld caves", true, 17, 915, nil , 669, 669, {"Central Hyrule - Insides", "Sanctuary Grave", "Sanctuary Grave"}, "dungeon")
 CE_stairs_outside = alttp_location.new("CE_stairs_outside", "Castle Escape Stairs (OW)", nil, "Lightworld OW", false)
 CE_stairs_inside = alttp_location.new("CE_stairs_insidetrue", "Castle Escape Stairs (Inside)", "dungeon", "Lightworld caves", true)
 
-DP_back_entrance_outside = alttp_location.new("DP_back_entrance_outside", "DP Back (OW)", "light", "Lightworld OW", false, 48, 296, 3112, 3128, nil, {"Desert - Entrances", "Desert Palace Entrance (North)", "Desert Palace Entrance (North)"})
-DP_back_entrance_inside = alttp_location.new("DP_back_entrance_inside", "DP Back (Inside)", nil, "Lightworld caves", true, 99, 1656, 3544, 3572, nil, {"Desert - Insides", "Desert Palace Entrance (North)", "Desert Palace Entrance (North)"}, "dungeon")
-DP_left_entrance_outside = alttp_location.new("DP_left_entrance_outside", "DP Left (OW)", "light", "Lightworld OW", false, 48, 136, 3224, 3253, nil, {"Desert - Entrances", "Desert Palace Entrance (West)", "Desert Palace Entrance (West)"})
-DP_left_entrance_inside = alttp_location.new("DP_left_entrance_inside", "DP Left (Inside)", nil, "Lightworld caves", true, 131, 1656, 4568, 4597, nil, {"Desert - Insides", "Desert Palace Entrance (West)", "Desert Palace Entrance (West)"}, "dungeon")
-DP_main_entrance_outside = alttp_location.new("DP_main_entrance_outside", "DP Main (OW)", "light", "Lightworld OW", false, 48, 296, 3224, 3253, nil, {"Desert - Entrances", "Desert Palace Entrance (South)", "Desert Palace Entrance (South)"})
-DP_main_entrance_inside = alttp_location.new("DP_main_entrance_inside", "DP Main (Inside)", nil, "Lightworld caves", true, 132, 2296, 4568, 4597, nil, {"Desert - Insides", "Desert Palace Entrance (South)", "Desert Palace Entrance (South)"}, "dungeon")
-DP_right_entrance_outside = alttp_location.new("DP_right_entrance_outside", "DP Right (OW)", "light", "Lightworld OW", false, 48, 456, 3224, 3253, nil, {"Desert - Entrances", "Desert Palace Entrance (East)", "Desert Palace Entrance (East)"})
-DP_right_entrance_inside = alttp_location.new("DP_right_entrance_inside", "DP Right (Inside)", nil, "Lightworld caves", true, 133, 2936, 4568, 4597, nil, {"Desert - Insides", "Desert Palace Entrance (East)", "Desert Palace Entrance (East)"}, "dungeon")
+DP_back_entrance_outside = alttp_location.new("DP_back_entrance_outside", "DP Back (OW)", "light", "Lightworld OW", false, 48, 296, nil , 3112, 3128, {"Desert - Entrances", "Desert Palace Entrance (North)", "Desert Palace Entrance (North)"})
+DP_back_entrance_inside = alttp_location.new("DP_back_entrance_inside", "DP Back (Inside)", nil, "Lightworld caves", true, 99, 1656, nil , 3544, 3572, {"Desert - Insides", "Desert Palace Entrance (North)", "Desert Palace Entrance (North)"}, "dungeon")
+DP_left_entrance_outside = alttp_location.new("DP_left_entrance_outside", "DP Left (OW)", "light", "Lightworld OW", false, 48, 136, nil , 3224, 3253, {"Desert - Entrances", "Desert Palace Entrance (West)", "Desert Palace Entrance (West)"})
+DP_left_entrance_inside = alttp_location.new("DP_left_entrance_inside", "DP Left (Inside)", nil, "Lightworld caves", true, 131, 1656, nil , 4568, 4597, {"Desert - Insides", "Desert Palace Entrance (West)", "Desert Palace Entrance (West)"}, "dungeon")
+DP_main_entrance_outside = alttp_location.new("DP_main_entrance_outside", "DP Main (OW)", "light", "Lightworld OW", false, 48, 296, nil , 3224, 3253, {"Desert - Entrances", "Desert Palace Entrance (South)", "Desert Palace Entrance (South)"})
+DP_main_entrance_inside = alttp_location.new("DP_main_entrance_inside", "DP Main (Inside)", nil, "Lightworld caves", true, 132, 2296, nil , 4568, 4597, {"Desert - Insides", "Desert Palace Entrance (South)", "Desert Palace Entrance (South)"}, "dungeon")
+DP_right_entrance_outside = alttp_location.new("DP_right_entrance_outside", "DP Right (OW)", "light", "Lightworld OW", false, 48, 456, nil , 3224, 3253, {"Desert - Entrances", "Desert Palace Entrance (East)", "Desert Palace Entrance (East)"})
+DP_right_entrance_inside = alttp_location.new("DP_right_entrance_inside", "DP Right (Inside)", nil, "Lightworld caves", true, 133, 2936, nil , 4568, 4597, {"Desert - Insides", "Desert Palace Entrance (East)", "Desert Palace Entrance (East)"}, "dungeon")
 
-EP_entrance_outside = alttp_location.new("EP_entrance_outside", "EP Main (OW)", "light", "Lightworld OW", false, 30, 3920, 1560, 1576, nil, {"Eastern Area - Entrances", "Eastern Palace", "Eastern Palace"})
-EP_entrance_inside = alttp_location.new("EP_entrance_inside", "EP Main (Inside)", nil, "Lightworld caves", true, 201, 4856, 6616, 6645, nil, {"Eastern Area - Insides", "Eastern Palace", "Eastern Palace"}, "dungeon")
+EP_entrance_outside = alttp_location.new("EP_entrance_outside", "EP Main (OW)", "light", "Lightworld OW", false, 30, 3920, nil , 1560, 1576, {"Eastern Area - Entrances", "Eastern Palace", "Eastern Palace"})
+EP_entrance_inside = alttp_location.new("EP_entrance_inside", "EP Main (Inside)", nil, "Lightworld caves", true, 201, 4856, nil , 6616, 6645, {"Eastern Area - Insides", "Eastern Palace", "Eastern Palace"}, "dungeon")
 
-HC_left_entrance_outside = alttp_location.new("HC_left_entrance_outside", "HC Left (OW)", "light", "Lightworld OW", false, 27, 1832, 1540, 1575, nil, {"Central Hyrule - Entrances", "Hyrule Castle Entrance (West)", "Hyrule Castle Entrance (West)"})
-HC_left_entrance_inside = alttp_location.new("HC_left_entrance_inside", "HC Left (Inside)", nil, "Lightworld caves", true, 96, 376, 3544, 3575, nil, {"Central Hyrule - Insides", "Hyrule Castle Entrance (West)", "Hyrule Castle Entrance (West)"}, "dungeon")
-HC_main_entrance_outside = alttp_location.new("HC_main_entrance_outside", "HC Main (OW)", "light", "Lightworld OW", false, 27, 2040, 1740, 1782, nil, {"Central Hyrule - Entrances", "Hyrule Castle Entrance (South)", "Hyrule Castle Entrance (South)"})
-HC_main_entrance_inside = alttp_location.new("HC_main_entrance_inside", "HC Main (Inside)", nil, "Lightworld caves", true, 97, 760, 3520, 3573, nil, {"Central Hyrule - Insides", "Hyrule Castle Entrance (South)", "Hyrule Castle Entrance (South)"}, "dungeon")
-HC_right_entrance_outside = alttp_location.new("HC_right_entrance_outside", "HC Right (OW)", "light", "Lightworld OW", false, 27, 2248, 1540, 1575, nil, {"Central Hyrule - Entrances", "Hyrule Castle Entrance (East)", "Hyrule Castle Entrance (East)"})
-HC_right_entrance_inside = alttp_location.new("HC_right_entrance_inside", "HC Right (Inside)", nil, "Lightworld caves", true, 98, 1144, 3544, 3572, nil, {"Central Hyrule - Insides", "Hyrule Castle Entrance (East)", "Hyrule Castle Entrance (East)"}, "dungeon")
+HC_left_entrance_outside = alttp_location.new("HC_left_entrance_outside", "HC Left (OW)", "light", "Lightworld OW", false, 27, 1832, nil , 1540, 1575, {"Central Hyrule - Entrances", "Hyrule Castle Entrance (West)", "Hyrule Castle Entrance (West)"})
+HC_left_entrance_inside = alttp_location.new("HC_left_entrance_inside", "HC Left (Inside)", nil, "Lightworld caves", true, 96, 376, nil , 3544, 3575, {"Central Hyrule - Insides", "Hyrule Castle Entrance (West)", "Hyrule Castle Entrance (West)"}, "dungeon")
+HC_main_entrance_outside = alttp_location.new("HC_main_entrance_outside", "HC Main (OW)", "light", "Lightworld OW", false, 27, 2040, nil , 1740, 1782, {"Central Hyrule - Entrances", "Hyrule Castle Entrance (South)", "Hyrule Castle Entrance (South)"})
+HC_main_entrance_inside = alttp_location.new("HC_main_entrance_inside", "HC Main (Inside)", nil, "Lightworld caves", true, 97, 760, nil , 3520, 3573, {"Central Hyrule - Insides", "Hyrule Castle Entrance (South)", "Hyrule Castle Entrance (South)"}, "dungeon")
+HC_right_entrance_outside = alttp_location.new("HC_right_entrance_outside", "HC Right (OW)", "light", "Lightworld OW", false, 27, 2248, nil , 1540, 1575, {"Central Hyrule - Entrances", "Hyrule Castle Entrance (East)", "Hyrule Castle Entrance (East)"})
+HC_right_entrance_inside = alttp_location.new("HC_right_entrance_inside", "HC Right (Inside)", nil, "Lightworld caves", true, 98, 1144, nil , 3544, 3572, {"Central Hyrule - Insides", "Hyrule Castle Entrance (East)", "Hyrule Castle Entrance (East)"}, "dungeon")
 
-ToH_entrance_outside = alttp_location.new("ToH_entrance_outside", "ToH Main (OW)", "light", "Lightworld OW", false, 3, 2288, 104, 119, nil, {"Light Death Mountain - Entrances", "Tower of Hera", "Tower of Hera"})
+ToH_entrance_outside = alttp_location.new("ToH_entrance_outside", "ToH Main (OW)", "light", "Lightworld OW", false, 3, 2288, nil , 104, 119, {"Light Death Mountain - Entrances", "Tower of Hera", "Tower of Hera"})
 ToH_entrance_outside_weird_state = alttp_location.new("ToH_entrance_outside_weird_state", "ToH Main Weird State (OW)", "light", "Lightworld OW", false)
-ToH_entrance_inside = alttp_location.new("ToH_entrance_inside", "ToH Main (Inside)", nil, "Lightworld caves", true, 119, 3832, 4032, 4084, nil, {"Light Death Mountain - Insides", "Tower of Hera", "Tower of Hera"}, "dungeon")
+ToH_entrance_inside = alttp_location.new("ToH_entrance_inside", "ToH Main (Inside)", nil, "Lightworld caves", true, 119, 3832, nil , 4032, 4084, {"Light Death Mountain - Insides", "Tower of Hera", "Tower of Hera"}, "dungeon")
 
 
 --darkworld

@@ -307,10 +307,30 @@ LIGHT_SHOPS_FOUND = 0
 FORTUNE_FOUND = 0
 FAIRYS_FOUND = 0
 
+---@type integer
+local previous_x_coords = 0
+---@type integer
+local previous_y_coords = 0
+
 ---function for checking map coords and if entering a door fest coords and corresponding entrances to match for ER purposses
 ---@param segment any
 ---@param mainModuleIdx any
 function UpdateEntrances(segment, mainModuleIdx)
+
+    local mainModuleLookup = {
+        [0x0F] = "door",
+        [0x08] = "stair_up",
+        [0x06] = "stair_down",
+        [0x11] = "falling"
+    }
+    local subModuleLookup = {
+        [0x01] = "in-supertile transition",
+        [0x02] = "supertile transition",
+        -- [0x03] = "falling",
+        -- [0x02] = "stair_down",
+        -- [0x03] = "falling"
+    }
+
     -- print(AutoTracker:ReadU8(0x7e0010, 0))
     ---@type integer
     local current_room
@@ -326,6 +346,7 @@ function UpdateEntrances(segment, mainModuleIdx)
     current_coords_y = segment:ReadUInt16(0x7e0020)
     ---@type integer
     current_coords_x = segment:ReadUInt16(0x7e0022)
+    local sub_module_state = segment:ReadUInt8(0x7e0011)
 
     if mainModuleIdx > 0x05 then
         -- print("-------------------------------------------------")
@@ -349,6 +370,9 @@ function UpdateEntrances(segment, mainModuleIdx)
         -- print("-------------------------------------------------")
         -- print("Current Room Index: ", New_dungeon_room)
         -- print("Current OW   Index: ", New_ow_room)
+
+        -- print("mainModuleIdx:   ", mainModuleIdx)
+        -- print("sub_module_state:", sub_module_state)
         -- print("shop_offset: ", shop_offset)
 
 
@@ -373,7 +397,20 @@ function UpdateEntrances(segment, mainModuleIdx)
 
         --- this if checks if a are in a transition state of walking up/down a stair entrance, falling into a hole or
         --  walking into a normal door. 0x0F door, 0x08 stair upvalue, 0x06 stair down, 0x11 falling iirc
-        if mainModuleIdx == 0x0F or mainModuleIdx == 0x08 or mainModuleIdx == 0x06 or mainModuleIdx == 0x11 then
+        local mainModuleLookup = {
+            [0x0F] = "door",
+            [0x08] = "stair_up",
+            [0x06] = "stair_down",
+            [0x11] = "falling"
+        }
+        local subModuleLookup = {
+            [0x01] = "in-supertile transition",
+            [0x02] = "supertile transition",
+            -- [0x03] = "falling",
+            -- [0x02] = "stair_down",
+            -- [0x03] = "falling"
+        }
+        if mainModuleLookup[mainModuleIdx] ~= nil  then
 
             local temp_room = ENTRANCE_MAPPING[current_room]
             local temp_room_x
@@ -445,6 +482,24 @@ function UpdateEntrances(segment, mainModuleIdx)
                     print("If this is a dropdown it's probably fine. If not, the mapping needs to be expanded.")
                 end
             end
+        elseif subModuleLookup[sub_module_state] then
+            
+        print("-------------------------------------------------")
+
+        print("prev x cord :", previous_x_coords)
+        print("prev y cord :", previous_y_coords)
+        print("prev room :", segment:ReadUInt16(0x7e00A2))
+
+        print("current x cord :", segment:ReadUInt16(0x7e0022))
+        print("current y cord :", segment:ReadUInt16(0x7e0020))
+        -- print("-------------------------------------------------")
+        print("Current Room Index: ", New_dungeon_room)
+        print("Current OW   Index: ", New_ow_room)
+        -- end
+        print("mainModuleIdx:   ", mainModuleIdx)
+        print("sub_module_state:", sub_module_state)
+        
+        print("-------------------------------------------------")
         else
             Selected_entrance = nil
             Selected_exit = nil
@@ -604,9 +659,9 @@ function UpdateInGameStatusFromMemorySegment(segment)
             -- print("detailed Current OW   Index: ", segment:ReadUInt16(0x7e040a))
             print("left/right qudrant:", segment:ReadUInt8(0x7e00a9))
             print("upper/lower qudrant:", segment:ReadUInt8(0x7e00aa))
-            print("transtion direction:", segment:ReadUInt8(0x7e0418)) -- 0 - 4 / transition up, downn, left, right
-            print("y cord :", segment:ReadUInt16(0x7e0020))
-            print("x cord :", segment:ReadUInt16(0x7e0022))
+            print("transition direction:", segment:ReadUInt8(0x7e0418)) -- 0 - 4 / transition up, downn, left, right
+            print("y coord :", segment:ReadUInt16(0x7e0020))
+            print("x coord :", segment:ReadUInt16(0x7e0022))
         end
         return false
     end
@@ -616,6 +671,9 @@ function UpdateInGameStatusFromMemorySegment(segment)
     if Tracker:FindObjectForCode("er_tracking_method").Active then
         UpdateEntrances(segment, mainModuleIdx)
     end
+
+    previous_x_coords = segment:ReadUInt16(0x7e0022)
+    previous_y_coords = segment:ReadUInt16(0x7e0020)
 
     return true
 end

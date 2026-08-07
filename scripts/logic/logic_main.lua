@@ -30,6 +30,8 @@ NAMED_LOCATIONS = {}
 NAMED_LOCATIONS_KEYS = {}
 ---@type table< integer, table< integer, table< integer, {[1]:string, [2]: string?}? >? >? >
 ENTRANCE_MAPPING = {} -- structure --> ENTRANCE_MAPPING[<roomnumber>][<x-coord>][<y-coord>] = location name
+---@type table< integer, table< integer, table< integer, {[1]:string, [2]: string?}? >? >? >
+DOORS_MAPPING = {} -- structure --> DOORS_MAPPING[<roomnumber>][<x-coord>][<y-coord>] = location name
 NAMED_ENEMIES = {}
 NAMED_DMG_CLASSES = {}
 Current_Dungeon = nil
@@ -127,7 +129,7 @@ end
 ---@param deadEndOrDungeonOrConnector? string
 ---@param deadendLocationCheck? string[]
 ---@return alttp_location_new_return
-function alttp_location.new(name, shortname, origin, map, inside_dungeon, room, x, yMin, yMax, xMax, LocationSection, deadEndOrDungeonOrConnector, deadendLocationCheck)
+function alttp_location.new(name, shortname, origin, map, inside_dungeon, room, x, xMax, yMin, yMax, LocationSection, deadEndOrDungeonOrConnector, deadendLocationCheck)
     if shortname == nil then
         shortname = name
     end
@@ -150,6 +152,8 @@ function alttp_location.new(name, shortname, origin, map, inside_dungeon, room, 
         self.side = "inside"
     elseif string.find(self.name, "_outside") then
         self.side = "outside"
+    elseif string.find(self.name, "_door") then
+        self.side = "door"
     else
         self.side = ""
     end
@@ -169,25 +173,37 @@ function alttp_location.new(name, shortname, origin, map, inside_dungeon, room, 
         self.y = yMin
         -- self.cave = cave -- boolean
         -- 20 pixel tolerance
-        Table_insert_at(ENTRANCE_MAPPING, room, {})
+        if self.side == "inside" or self.side == "outside" then
+            Table_insert_at(ENTRANCE_MAPPING, room, {})
+        elseif self.side == "door" then
+            Table_insert_at(DOORS_MAPPING, room, {})
+        end
         local x_min = x
         local x_max = x
         if xMax ~= nil then
             x_max = xMax -- As far as I can tell this is only ever used for the ganon dropdown
         end
         for x_range = x_min-2, x_max+2 do
-            local y_min_range = yMin-30
-            local y_max_range = yMin+30
+            local y_min_range = yMin-5
+            local y_max_range = yMin+5
             if yMax ~= nil then
                 y_min_range = yMin-2
                 y_max_range = yMax+2
             end
             for y_range = y_min_range, y_max_range do
-                Table_insert_at(ENTRANCE_MAPPING[room], x_range, {})
-                Table_insert_at(ENTRANCE_MAPPING[room][x_range], y_range, nil) 
-                -- print(self.name, origin == nil)
-                table.insert(ENTRANCE_MAPPING[room][x_range][y_range], self.name)
-                table.insert(ENTRANCE_MAPPING[room][x_range][y_range], origin)
+                if self.side == "inside" or self.side == "outside" then
+                    Table_insert_at(ENTRANCE_MAPPING[room], x_range, {})
+                    Table_insert_at(ENTRANCE_MAPPING[room][x_range], y_range, nil) 
+                    -- print(self.name, origin == nil)
+                    table.insert(ENTRANCE_MAPPING[room][x_range][y_range], self.name)
+                    table.insert(ENTRANCE_MAPPING[room][x_range][y_range], origin)
+                elseif self.side == "door" then
+                    Table_insert_at(DOORS_MAPPING[room], x_range, {})
+                    Table_insert_at(DOORS_MAPPING[room][x_range], y_range, nil) 
+                    -- print(self.name, origin == nil)
+                    table.insert(DOORS_MAPPING[room][x_range][y_range], self.name)
+                    table.insert(DOORS_MAPPING[room][x_range][y_range], origin)
+                end
             end
         end
     -- else
