@@ -72,7 +72,7 @@ SP_after_waterfall_room_2N_door = alttp_location.new("SP_after_waterfall_room_2N
 SP_C_hallway_2N_door = alttp_location.new("SP_C_hallway_2N_door", "SP C Hallway 2N Door", nil, "", true, 1,1,1,1, nil, {"Swamp Palace Doors", "SP C Hallway 2N Door", "SP C Hallway 2N Door"})
 SP_boss_hallway_1N_door = alttp_location.new("SP_boss_hallway_1N_door", "SP Boss Hallway 1N Door", nil, "", true, 1,1,1,1, nil, {"Swamp Palace Doors", "SP Boss Hallway 1N Door", "SP Boss Hallway 1N Door"})
 SP_boss_room_3S_door = alttp_location.new("SP_boss_room_3S_door", "SP Boss Room 3S Door", nil, "", true, 1,1,1,1, nil, {"Swamp Palace Doors", "SP Boss Room 3S Door", "SP Boss Room 3S Door"})
-SP_flooded_room_balcony_4N_door =alttp_location.new("SP_flooded_room_balcony_4N_door", "SP Flooded Room Balcony 4N Door", nil, "", true, 1,1,1,1, nil, {"Swamp Palace Doors""SP Flooded Room Balcony 4N Door", "SP Flooded Room Balcony 4N Door"})
+SP_flooded_room_balcony_4N_door =alttp_location.new("SP_flooded_room_balcony_4N_door", "SP Flooded Room Balcony 4N Door", nil, "", true, 1,1,1,1, nil, {"Swamp Palace Doors", "SP Flooded Room Balcony 4N Door", "SP Flooded Room Balcony 4N Door"})
 
 
 SP_entrance_inside:connect_two_ways(SP_first_room, function()

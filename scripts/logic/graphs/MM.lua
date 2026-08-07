@@ -170,8 +170,7 @@ MM_conveyor_crystal_room:connect_two_ways(MM_conveyor_crystal_room_4S_door)
 MM_conveyor_crystal_room_4S_door:connect_two_ways_entrance("", MM_neglected_room_2N_door)
 
 MM_neglected_room_2N_door:connect_two_ways(MM_neglected_room)
-MM_neglected_room:connect_two_ways(MM_chest_view_2N_door)
-MM_chest_view_2N_door:connect_two_ways(MM_chest_view)
+MM_neglected_room:connect_two_ways(MM_chest_view)
 
 MM_conveyor_crystal_room:connect_two_ways(MM_four_torches_tile_room)
 MM_four_torches_tile_room:connect_two_ways(MM_compass_room)
