@@ -311,6 +311,8 @@ FAIRYS_FOUND = 0
 local previous_x_coords = 0
 ---@type integer
 local previous_y_coords = 0
+---@type integer
+local previous_sub_module_state = 0
 
 ---function for checking map coords and if entering a door fest coords and corresponding entrances to match for ER purposses
 ---@param segment any
@@ -482,24 +484,24 @@ function UpdateEntrances(segment, mainModuleIdx)
                     print("If this is a dropdown it's probably fine. If not, the mapping needs to be expanded.")
                 end
             end
-        elseif subModuleLookup[sub_module_state] then
+        elseif subModuleLookup[sub_module_state] and previous_sub_module_state == 0 then
             
-        print("-------------------------------------------------")
+            print("-------------------------------------------------")
 
-        print("prev x cord :", previous_x_coords)
-        print("prev y cord :", previous_y_coords)
-        print("prev room :", segment:ReadUInt16(0x7e00A2))
+            print("prev x cord :", previous_x_coords)
+            print("prev y cord :", previous_y_coords)
+            print("prev room :", segment:ReadUInt16(0x7e00A2))
 
-        print("current x cord :", segment:ReadUInt16(0x7e0022))
-        print("current y cord :", segment:ReadUInt16(0x7e0020))
-        -- print("-------------------------------------------------")
-        print("Current Room Index: ", New_dungeon_room)
-        print("Current OW   Index: ", New_ow_room)
-        -- end
-        print("mainModuleIdx:   ", mainModuleIdx)
-        print("sub_module_state:", sub_module_state)
-        
-        print("-------------------------------------------------")
+            print("current x cord :", segment:ReadUInt16(0x7e0022))
+            print("current y cord :", segment:ReadUInt16(0x7e0020))
+            -- print("-------------------------------------------------")
+            print("Current Room Index: ", New_dungeon_room)
+            print("Current OW   Index: ", New_ow_room)
+            -- end
+            print("mainModuleIdx:   ", mainModuleIdx)
+            print("sub_module_state:", sub_module_state)
+            
+            print("-------------------------------------------------")
         else
             Selected_entrance = nil
             Selected_exit = nil
@@ -674,6 +676,7 @@ function UpdateInGameStatusFromMemorySegment(segment)
 
     previous_x_coords = segment:ReadUInt16(0x7e0022)
     previous_y_coords = segment:ReadUInt16(0x7e0020)
+    previous_sub_module_state = segment:ReadUInt8(0x7e0011)
 
     return true
 end
