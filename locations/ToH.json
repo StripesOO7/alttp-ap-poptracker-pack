@@ -158,13 +158,13 @@
         ],
         "children": [
             {
-                "name": "ToH_main_room_1N_door",
+                "name": "ToH Main Room 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "ToH_main_room_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "ToH Main Room 1N Door",
+                        "access_rules": ["^$CanReach|ToH_main_room_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_ToH_main_room_1N_door"
@@ -181,13 +181,13 @@
                 ]
             },
             {
-                "name": "ToH_main_room_3N_door",
+                "name": "ToH Main Room 3N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "ToH_main_room_3N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "ToH Main Room 3N Door",
+                        "access_rules": ["^$CanReach|ToH_main_room_3N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_ToH_main_room_3N_door"
@@ -204,13 +204,13 @@
                 ]
             },
             {
-                "name": "ToH_main_room_4N_door",
+                "name": "ToH Main Room 4N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "ToH_main_room_4N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "ToH Main Room 4N Door",
+                        "access_rules": ["^$CanReach|ToH_main_room_4N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_ToH_main_room_4N_door"
@@ -227,13 +227,13 @@
                 ]
             },
             {
-                "name": "ToH_basement_cage_3N_door",
+                "name": "ToH Basement Cage 3N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "ToH_basement_cage_3N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "ToH Basement Cage 3N Door",
+                        "access_rules": ["^$CanReach|ToH_basement_cage_3N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_ToH_basement_cage_3N_door"
@@ -250,13 +250,13 @@
                 ]
             },
             {
-                "name": "ToH_tile_room_1N_door",
+                "name": "ToH Tile Room 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "ToH_tile_room_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "ToH Tile Room 1N Door",
+                        "access_rules": ["^$CanReach|ToH_tile_room_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_ToH_tile_room_1N_door"
@@ -273,13 +273,13 @@
                 ]
             },
             {
-                "name": "ToH_3_hard_head_beatles_4N_door",
+                "name": "ToH 3 Hard Head Beatles 4N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "ToH_3_hard_head_beatles_4N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "ToH 3 Hard Head Beatles 4N Door",
+                        "access_rules": ["^$CanReach|ToH_3_hard_head_beatles_4N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_ToH_3_hard_head_beatles_4N_door"
@@ -296,13 +296,13 @@
                 ]
             },
             {
-                "name": "ToH_startile_wide_2N_door",
+                "name": "ToH Startile Wide 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "ToH_startile_wide_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "ToH Startile Wide 2N Door",
+                        "access_rules": ["^$CanReach|ToH_startile_wide_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_ToH_startile_wide_2N_door"
@@ -319,13 +319,13 @@
                 ]
             },
             {
-                "name": "ToH_big_chest_room_1N_door",
+                "name": "ToH Big Chest Room 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "ToH_big_chest_room_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "ToH Big Chest Room 1N Door",
+                        "access_rules": ["^$CanReach|ToH_big_chest_room_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_ToH_big_chest_room_1N_door"
@@ -342,13 +342,13 @@
                 ]
             },
             {
-                "name": "ToH_big_chest_room_2N_door",
+                "name": "ToH Big Chest Room 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "ToH_big_chest_room_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "ToH Big Chest Room 2N Door",
+                        "access_rules": ["^$CanReach|ToH_big_chest_room_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_ToH_big_chest_room_2N_door"
@@ -365,13 +365,13 @@
                 ]
             },
             {
-                "name": "ToH_5F_orange_path_1N_door",
+                "name": "ToH 5F Orange Path 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "ToH_5F_orange_path_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "ToH 5F Orange Path 1N Door",
+                        "access_rules": ["^$CanReach|ToH_5F_orange_path_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_ToH_5F_orange_path_1N_door"
@@ -388,13 +388,13 @@
                 ]
             },
             {
-                "name": "ToH_5F_orange_path_2N_door",
+                "name": "ToH 5F Orange Path 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "ToH_5F_orange_path_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "ToH 5F Orange Path 2N Door",
+                        "access_rules": ["^$CanReach|ToH_5F_orange_path_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_ToH_5F_orange_path_2N_door"
@@ -411,13 +411,13 @@
                 ]
             },
             {
-                "name": "ToH_boss_room_2N_door",
+                "name": "ToH Boss Room 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "ToH_boss_room_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "ToH Boss Room 2N Door",
+                        "access_rules": ["^$CanReach|ToH_boss_room_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_ToH_boss_room_2N_door"

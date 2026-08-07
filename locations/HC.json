@@ -332,13 +332,13 @@
         ],
         "children": [
             {
-                "name": "HC_main_hall_N_door",
+                "name": "HC Main Hall N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_main_hall_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC Main Hall N Door",
+                        "access_rules": ["^$CanReach|HC_main_hall_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_main_hall_N_door"
@@ -355,13 +355,13 @@
                 ]
             },
             {
-                "name": "HC_main_hall_1W_door",
+                "name": "HC Main Hall 1W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_main_hall_1W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC Main Hall 1W Door",
+                        "access_rules": ["^$CanReach|HC_main_hall_1W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_main_hall_1W_door"
@@ -378,13 +378,13 @@
                 ]
             },
             {
-                "name": "HC_main_hall_W_door",
+                "name": "HC Main Hall W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_main_hall_W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC Main Hall W Door",
+                        "access_rules": ["^$CanReach|HC_main_hall_W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_main_hall_W_door"
@@ -401,13 +401,13 @@
                 ]
             },
             {
-                "name": "HC_main_hall_E_door",
+                "name": "HC Main Hall E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_main_hall_E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC Main Hall E Door",
+                        "access_rules": ["^$CanReach|HC_main_hall_E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_main_hall_E_door"
@@ -424,13 +424,13 @@
                 ]
             },
             {
-                "name": "HC_left_wing_lobby_2E_door",
+                "name": "HC Left Wing Lobby 2E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_left_wing_lobby_2E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC Left Wing Lobby 2E Door",
+                        "access_rules": ["^$CanReach|HC_left_wing_lobby_2E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_left_wing_lobby_2E_door"
@@ -447,13 +447,13 @@
                 ]
             },
             {
-                "name": "HC_left_wing_lobby_E_door",
+                "name": "HC Left Wing Lobby E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_left_wing_lobby_E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC Left Wing Lobby E Door",
+                        "access_rules": ["^$CanReach|HC_left_wing_lobby_E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_left_wing_lobby_E_door"
@@ -470,13 +470,13 @@
                 ]
             },
             {
-                "name": "HC_left_wing_lobby_2N_door",
+                "name": "HC Left Wing Lobby 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_left_wing_lobby_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC Left Wing Lobby 2N Door",
+                        "access_rules": ["^$CanReach|HC_left_wing_lobby_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_left_wing_lobby_2N_door"
@@ -493,13 +493,13 @@
                 ]
             },
             {
-                "name": "HC_left_wing_4S_door",
+                "name": "HC Left Wing 4S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_left_wing_4S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC Left Wing 4S Door",
+                        "access_rules": ["^$CanReach|HC_left_wing_4S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_left_wing_4S_door"
@@ -516,13 +516,13 @@
                 ]
             },
             {
-                "name": "HC_left_wing_2E_door",
+                "name": "HC Left Wing 2E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_left_wing_2E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC Left Wing 2E Door",
+                        "access_rules": ["^$CanReach|HC_left_wing_2E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_left_wing_2E_door"
@@ -539,13 +539,13 @@
                 ]
             },
             {
-                "name": "HC_right_wing_lobby_3W_door",
+                "name": "HC Right Wing Lobby 3W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_right_wing_lobby_3W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC Right Wing Lobby 3W Door",
+                        "access_rules": ["^$CanReach|HC_right_wing_lobby_3W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_right_wing_lobby_3W_door"
@@ -562,13 +562,13 @@
                 ]
             },
             {
-                "name": "HC_right_wing_lobby_1N_door",
+                "name": "HC Right Wing Lobby 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_right_wing_lobby_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC Right Wing Lobby 1N Door",
+                        "access_rules": ["^$CanReach|HC_right_wing_lobby_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_right_wing_lobby_1N_door"
@@ -585,13 +585,13 @@
                 ]
             },
             {
-                "name": "HC_right_wing_lobby_N_door",
+                "name": "HC Right Wing Lobby N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_right_wing_lobby_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC Right Wing Lobby N Door",
+                        "access_rules": ["^$CanReach|HC_right_wing_lobby_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_right_wing_lobby_N_door"
@@ -608,13 +608,13 @@
                 ]
             },
             {
-                "name": "HC_right_wing_3S_door",
+                "name": "HC Right Wing 3S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_right_wing_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC Right Wing 3S Door",
+                        "access_rules": ["^$CanReach|HC_right_wing_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_right_wing_3S_door"
@@ -631,13 +631,13 @@
                 ]
             },
             {
-                "name": "HC_right_wing_S_door",
+                "name": "HC Right Wing S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_right_wing_S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC Right Wing S Door",
+                        "access_rules": ["^$CanReach|HC_right_wing_S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_right_wing_S_door"
@@ -654,13 +654,13 @@
                 ]
             },
             {
-                "name": "HC_right_wing_1W_door",
+                "name": "HC Right Wing 1W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_right_wing_1W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC Right Wing 1W Door",
+                        "access_rules": ["^$CanReach|HC_right_wing_1W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_right_wing_1W_door"
@@ -677,13 +677,13 @@
                 ]
             },
             {
-                "name": "HC_throne_room_S_door",
+                "name": "HC Throne Room S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_throne_room_S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC Throne Room S Door",
+                        "access_rules": ["^$CanReach|HC_throne_room_S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_throne_room_S_door"
@@ -700,13 +700,13 @@
                 ]
             },
             {
-                "name": "HC_throne_room_N_door",
+                "name": "HC Throne Room N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_throne_room_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC Throne Room N Door",
+                        "access_rules": ["^$CanReach|HC_throne_room_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_throne_room_N_door"
@@ -723,13 +723,13 @@
                 ]
             },
             {
-                "name": "HC_back_wing_2E_door",
+                "name": "HC Back Wing 2E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_back_wing_2E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC Back Wing 2E Door",
+                        "access_rules": ["^$CanReach|HC_back_wing_2E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_back_wing_2E_door"
@@ -746,13 +746,13 @@
                 ]
             },
             {
-                "name": "HC_back_wing_1W_door",
+                "name": "HC Back Wing 1W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_back_wing_1W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC Back Wing 1W Door",
+                        "access_rules": ["^$CanReach|HC_back_wing_1W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_back_wing_1W_door"
@@ -769,13 +769,13 @@
                 ]
             },
             {
-                "name": "HC_back_wing_N_door",
+                "name": "HC Back Wing N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_back_wing_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC Back Wing N Door",
+                        "access_rules": ["^$CanReach|HC_back_wing_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_back_wing_N_door"
@@ -792,13 +792,13 @@
                 ]
             },
             {
-                "name": "HC_map_chest_room_N_door",
+                "name": "HC_map Chest Room N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_map_chest_room_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC_map Chest Room N Door",
+                        "access_rules": ["^$CanReach|HC_map_chest_room_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_map_chest_room_N_door"
@@ -815,13 +815,13 @@
                 ]
             },
             {
-                "name": "HC_north_abyss_S_door",
+                "name": "HC North Abyss S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_north_abyss_S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC North Abyss S Door",
+                        "access_rules": ["^$CanReach|HC_north_abyss_S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_north_abyss_S_door"
@@ -838,13 +838,13 @@
                 ]
             },
             {
-                "name": "HC_north_abyss_balcony_3S_door",
+                "name": "HC North Abyss Balcony 3S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_north_abyss_balcony_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC North Abyss Balcony 3S Door",
+                        "access_rules": ["^$CanReach|HC_north_abyss_balcony_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_north_abyss_balcony_3S_door"
@@ -861,13 +861,13 @@
                 ]
             },
             {
-                "name": "HC_abyss_balcony_1N_door",
+                "name": "HC Abyss Balcony 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_abyss_balcony_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC Abyss Balcony 1N Door",
+                        "access_rules": ["^$CanReach|HC_abyss_balcony_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_abyss_balcony_1N_door"
@@ -884,13 +884,13 @@
                 ]
             },
             {
-                "name": "HC_abyss_balcony_1W_door",
+                "name": "HC Abyss Balcony 1W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_abyss_balcony_1W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC Abyss Balcony 1W Door",
+                        "access_rules": ["^$CanReach|HC_abyss_balcony_1W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_abyss_balcony_1W_door"
@@ -907,13 +907,13 @@
                 ]
             },
             {
-                "name": "HC_abyss_catwalk_N_door",
+                "name": "HC Abyss Catwalk N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_abyss_catwalk_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC Abyss Catwalk N Door",
+                        "access_rules": ["^$CanReach|HC_abyss_catwalk_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_abyss_catwalk_N_door"
@@ -930,13 +930,13 @@
                 ]
             },
             {
-                "name": "HC_abyss_catwalk_3W_door",
+                "name": "HC Abyss Catwalk 3W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_abyss_catwalk_3W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC Abyss Catwalk 3W Door",
+                        "access_rules": ["^$CanReach|HC_abyss_catwalk_3W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_abyss_catwalk_3W_door"
@@ -953,13 +953,13 @@
                 ]
             },
             {
-                "name": "HC_armory_2E_door",
+                "name": "HC Armory 2E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_armory_2E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC Armory 2E Door",
+                        "access_rules": ["^$CanReach|HC_armory_2E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_armory_2E_door"
@@ -976,13 +976,13 @@
                 ]
             },
             {
-                "name": "HC_armory_4E_door",
+                "name": "HC Armory 4E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_armory_4E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC Armory 4E Door",
+                        "access_rules": ["^$CanReach|HC_armory_4E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_armory_4E_door"
@@ -999,13 +999,13 @@
                 ]
             },
             {
-                "name": "HC_armory_1N_door",
+                "name": "HC Armory 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_armory_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC Armory 1N Door",
+                        "access_rules": ["^$CanReach|HC_armory_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_armory_1N_door"
@@ -1022,13 +1022,13 @@
                 ]
             },
             {
-                "name": "HC_before_boomerang_chest_room_3S_door",
+                "name": "HC Before Boomerang Chest Room 3S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_before_boomerang_chest_room_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC Before Boomerang Chest Room 3S Door",
+                        "access_rules": ["^$CanReach|HC_before_boomerang_chest_room_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_before_boomerang_chest_room_3S_door"
@@ -1045,13 +1045,13 @@
                 ]
             },
             {
-                "name": "HC_cell_hallway_1N_door",
+                "name": "HC Cell Hallway 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_cell_hallway_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC Cell Hallway 1N Door",
+                        "access_rules": ["^$CanReach|HC_cell_hallway_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_cell_hallway_1N_door"
@@ -1068,13 +1068,13 @@
                 ]
             },
             {
-                "name": "HC_ball_guard_room_1N_door",
+                "name": "HC Ball Guard Room 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "HC_ball_guard_room_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "HC Ball Guard Room 1N Door",
+                        "access_rules": ["^$CanReach|HC_ball_guard_room_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_HC_ball_guard_room_1N_door"
@@ -1103,13 +1103,13 @@
         ],
         "children": [
             {
-                "name": "CE_tapestry_S_door",
+                "name": "CE Tapestry S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "CE_tapestry_S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "CE Tapestry S Door",
+                        "access_rules": ["^$CanReach|CE_tapestry_S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_CE_tapestry_S_door"
@@ -1126,13 +1126,13 @@
                 ]
             },
             {
-                "name": "CE_tapestry_N_door",
+                "name": "CE Tapestry N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "CE_tapestry_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "CE Tapestry N Door",
+                        "access_rules": ["^$CanReach|CE_tapestry_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_CE_tapestry_N_door"
@@ -1149,13 +1149,13 @@
                 ]
             },
             {
-                "name": "CE_snake_hall_1N_door",
+                "name": "CE Snake Hall 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "CE_snake_hall_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "CE Snake Hall 1N Door",
+                        "access_rules": ["^$CanReach|CE_snake_hall_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_CE_snake_hall_1N_door"
@@ -1172,13 +1172,13 @@
                 ]
             },
             {
-                "name": "CE_snake_hall_2N_door",
+                "name": "CE Snake Hall 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "CE_snake_hall_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "CE Snake Hall 2N Door",
+                        "access_rules": ["^$CanReach|CE_snake_hall_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_CE_snake_hall_2N_door"
@@ -1195,13 +1195,13 @@
                 ]
             },
             {
-                "name": "CE_dark_cross_N_door",
+                "name": "CE Dark Cross N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "CE_dark_cross_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "CE Dark Cross N Door",
+                        "access_rules": ["^$CanReach|CE_dark_cross_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_CE_dark_cross_N_door"
@@ -1218,13 +1218,13 @@
                 ]
             },
             {
-                "name": "CE_dark_cross_S_door",
+                "name": "CE Dark Cross S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "CE_dark_cross_S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "CE Dark Cross S Door",
+                        "access_rules": ["^$CanReach|CE_dark_cross_S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_CE_dark_cross_S_door"
@@ -1241,13 +1241,13 @@
                 ]
             },
             {
-                "name": "CE_small_sewers_S_door",
+                "name": "CE Small Sewers S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "CE_small_sewers_S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "CE Small Sewers S Door",
+                        "access_rules": ["^$CanReach|CE_small_sewers_S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_CE_small_sewers_S_door"
@@ -1264,13 +1264,13 @@
                 ]
             },
             {
-                "name": "CE_small_sewers_W_door",
+                "name": "CE Small Sewers W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "CE_small_sewers_W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "CE Small Sewers W Door",
+                        "access_rules": ["^$CanReach|CE_small_sewers_W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_CE_small_sewers_W_door"
@@ -1287,13 +1287,13 @@
                 ]
             },
             {
-                "name": "CE_large_sewers_E_door",
+                "name": "CE Large Sewers E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "CE_large_sewers_E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "CE Large Sewers E Door",
+                        "access_rules": ["^$CanReach|CE_large_sewers_E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_CE_large_sewers_E_door"
@@ -1310,13 +1310,13 @@
                 ]
             },
             {
-                "name": "CE_rat_key_room_N_door",
+                "name": "CE Rat Key Room N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "CE_rat_key_room_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "CE Rat Key Room N Door",
+                        "access_rules": ["^$CanReach|CE_rat_key_room_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_CE_rat_key_room_N_door"
@@ -1333,13 +1333,13 @@
                 ]
             },
             {
-                "name": "CE_dropdown_room_S_door",
+                "name": "CE Dropdown Room S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "CE_dropdown_room_S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "CE Dropdown Room S Door",
+                        "access_rules": ["^$CanReach|CE_dropdown_room_S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_CE_dropdown_room_S_door"
@@ -1356,13 +1356,13 @@
                 ]
             },
             {
-                "name": "CE_dropdown_room_N_door",
+                "name": "CE Dropdown Room N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "CE_dropdown_room_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "CE Dropdown Room N Door",
+                        "access_rules": ["^$CanReach|CE_dropdown_room_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_CE_dropdown_room_N_door"
@@ -1379,13 +1379,13 @@
                 ]
             },
             {
-                "name": "CE_pulley_S_door",
+                "name": "CE Pulley S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "CE_pulley_S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "CE Pulley S Door",
+                        "access_rules": ["^$CanReach|CE_pulley_S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_CE_pulley_S_door"
@@ -1402,13 +1402,13 @@
                 ]
             },
             {
-                "name": "CE_yet_more_rats_N_door",
+                "name": "CE Yet More Rats N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "CE_yet_more_rats_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "CE Yet More Rats N Door",
+                        "access_rules": ["^$CanReach|CE_yet_more_rats_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_CE_yet_more_rats_N_door"
@@ -1425,13 +1425,13 @@
                 ]
             },
             {
-                "name": "CE_stairs_1N_door",
+                "name": "CE Stairs 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "CE_stairs_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "CE Stairs 1N Door",
+                        "access_rules": ["^$CanReach|CE_stairs_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_CE_stairs_1N_door"
@@ -1448,13 +1448,13 @@
                 ]
             },
             {
-                "name": "CE_stairs_N_door",
+                "name": "CE Stairs N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "CE_stairs_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "CE Stairs N Door",
+                        "access_rules": ["^$CanReach|CE_stairs_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_CE_stairs_N_door"
@@ -1481,13 +1481,13 @@
         ],
         "children": [
             {
-                "name": "Sanctuary_secret_door",
+                "name": "Sanctuary Secret Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "Sanctuary_secret_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "Sanctuary Secret Door",
+                        "access_rules": ["^$CanReach|Sanctuary_secret_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_Sanctuary_secret_door"

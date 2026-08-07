@@ -230,13 +230,13 @@
         ],
         "children": [
             {
-                "name": "DP_main_room_1N_door",
+                "name": "DP Main Room 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "DP_main_room_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "DP Main Room 1N Door",
+                        "access_rules": ["^$CanReach|DP_main_room_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_DP_main_room_1N_door"
@@ -253,13 +253,13 @@
                 ]
             },
             {
-                "name": "DP_main_room_2N_door",
+                "name": "DP Main Room 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "DP_main_room_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "DP Main Room 2N Door",
+                        "access_rules": ["^$CanReach|DP_main_room_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_DP_main_room_2N_door"
@@ -276,13 +276,13 @@
                 ]
             },
             {
-                "name": "DP_main_room_N_door",
+                "name": "DP Main Room N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "DP_main_room_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "DP Main Room N Door",
+                        "access_rules": ["^$CanReach|DP_main_room_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_DP_main_room_N_door"
@@ -299,13 +299,13 @@
                 ]
             },
             {
-                "name": "DP_main_room_E_door",
+                "name": "DP Main Room E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "DP_main_room_E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "DP Main Room E Door",
+                        "access_rules": ["^$CanReach|DP_main_room_E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_DP_main_room_E_door"
@@ -322,13 +322,13 @@
                 ]
             },
             {
-                "name": "DP_main_room_deadend_S_door",
+                "name": "DP Main Room deadend S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "DP_main_room_deadend_S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "DP Main Room deadend S Door",
+                        "access_rules": ["^$CanReach|DP_main_room_deadend_S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_DP_main_room_deadend_S_door"
@@ -345,13 +345,13 @@
                 ]
             },
             {
-                "name": "DP_north_hallway_3S_door",
+                "name": "DP North Hallway 3S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "DP_north_hallway_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "DP North Hallway 3S Door",
+                        "access_rules": ["^$CanReach|DP_north_hallway_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_DP_north_hallway_3S_door"
@@ -368,13 +368,13 @@
                 ]
             },
             {
-                "name": "DP_north_hallway_3W_door",
+                "name": "DP North Hallway 3W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "DP_north_hallway_3W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "DP North Hallway 3W Door",
+                        "access_rules": ["^$CanReach|DP_north_hallway_3W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_DP_north_hallway_3W_door"
@@ -391,13 +391,13 @@
                 ]
             },
             {
-                "name": "DP_north_hallway_4S_door",
+                "name": "DP North Hallway 4S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "DP_north_hallway_4S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "DP North Hallway 4S Door",
+                        "access_rules": ["^$CanReach|DP_north_hallway_4S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_DP_north_hallway_4S_door"
@@ -414,13 +414,13 @@
                 ]
             },
             {
-                "name": "DP_north_hallway_4E_door",
+                "name": "DP North Hallway 4E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "DP_north_hallway_4E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "DP North Hallway 4E Door",
+                        "access_rules": ["^$CanReach|DP_north_hallway_4E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_DP_north_hallway_4E_door"
@@ -437,13 +437,13 @@
                 ]
             },
             {
-                "name": "DP_west_sandworm_corner_4S_door",
+                "name": "DP West Sandworm Corner 4S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "DP_west_sandworm_corner_4S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "DP West Sandworm Corner 4S Door",
+                        "access_rules": ["^$CanReach|DP_west_sandworm_corner_4S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_DP_west_sandworm_corner_4S_door"
@@ -460,13 +460,13 @@
                 ]
             },
             {
-                "name": "DP_west_sandworm_corner_4E_door",
+                "name": "DP West Sandworm Corner 4E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "DP_west_sandworm_corner_4E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "DP West Sandworm Corner 4E Door",
+                        "access_rules": ["^$CanReach|DP_west_sandworm_corner_4E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_DP_west_sandworm_corner_4E_door"
@@ -483,13 +483,13 @@
                 ]
             },
             {
-                "name": "DP_west_wing_2N_door",
+                "name": "DP West Wing 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "DP_west_wing_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "DP West Wing 2N Door",
+                        "access_rules": ["^$CanReach|DP_west_wing_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_DP_west_wing_2N_door"
@@ -506,13 +506,13 @@
                 ]
             },
             {
-                "name": "DP_east_3_pots_3W_door",
+                "name": "DP East 3 Pots 3W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "DP_east_3_pots_3W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "DP East 3 Pots 3W Door",
+                        "access_rules": ["^$CanReach|DP_east_3_pots_3W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_DP_east_3_pots_3W_door"
@@ -529,13 +529,13 @@
                 ]
             },
             {
-                "name": "DP_east_3_pots_3S_door",
+                "name": "DP East 3 Pots 3S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "DP_east_3_pots_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "DP East 3 Pots 3S Door",
+                        "access_rules": ["^$CanReach|DP_east_3_pots_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_DP_east_3_pots_3S_door"
@@ -552,13 +552,13 @@
                 ]
             },
             {
-                "name": "DP_east_wing_1N_door",
+                "name": "DP East Wing 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "DP_east_wing_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "DP East Wing 1N Door",
+                        "access_rules": ["^$CanReach|DP_east_wing_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_DP_east_wing_1N_door"
@@ -575,13 +575,13 @@
                 ]
             },
             {
-                "name": "DP_east_wing_1W_door",
+                "name": "DP East Wing 1W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "DP_east_wing_1W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "DP East Wing 1W Door",
+                        "access_rules": ["^$CanReach|DP_east_wing_1W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_DP_east_wing_1W_door"
@@ -598,13 +598,13 @@
                 ]
             },
             {
-                "name": "DP_compass_room_2N_door",
+                "name": "DP Compass Room 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "DP_compass_room_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "DP Compass Room 2N Door",
+                        "access_rules": ["^$CanReach|DP_compass_room_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_DP_compass_room_2N_door"
@@ -621,13 +621,13 @@
                 ]
             },
             {
-                "name": "DP_big_key_chest_room_4S_door",
+                "name": "DP Big Key Chest Room 4S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "DP_big_key_chest_room_4S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "DP Big Key Chest Room 4S Door",
+                        "access_rules": ["^$CanReach|DP_big_key_chest_room_4S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_DP_big_key_chest_room_4S_door"
@@ -654,13 +654,13 @@
         ],
         "children": [
             {
-                "name": "DP_back_tiles1_room_1N_door",
+                "name": "DP Back Tiles1 Room 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "DP_back_tiles1_room_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "DP Back Tiles1 Room 1N Door",
+                        "access_rules": ["^$CanReach|DP_back_tiles1_room_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_DP_back_tiles1_room_1N_door"
@@ -677,13 +677,13 @@
                 ]
             },
             {
-                "name": "DP_back_tiles2_room_4S_door",
+                "name": "DP Back Tiles2 Room 4S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "DP_back_tiles2_room_4S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "DP Back Tiles2 Room 4S Door",
+                        "access_rules": ["^$CanReach|DP_back_tiles2_room_4S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_DP_back_tiles2_room_4S_door"
@@ -700,13 +700,13 @@
                 ]
             },
             {
-                "name": "DP_back_bridge_room_1N_door",
+                "name": "DP Back Bridge Room 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "DP_back_bridge_room_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "DP Back Bridge Room 1N Door",
+                        "access_rules": ["^$CanReach|DP_back_bridge_room_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_DP_back_bridge_room_1N_door"
@@ -723,13 +723,13 @@
                 ]
             },
             {
-                "name": "DP_back_torch_room_1N_door",
+                "name": "DP Back Torch Room 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "DP_back_torch_room_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "DP Back Torch Room 1N Door",
+                        "access_rules": ["^$CanReach|DP_back_torch_room_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_DP_back_torch_room_1N_door"
@@ -746,13 +746,13 @@
                 ]
             },
             {
-                "name": "DP_back_beamos_hallway_2N_door",
+                "name": "DP Back Beamos Hallway 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "DP_back_beamos_hallway_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "DP Back Beamos Hallway 2N Door",
+                        "access_rules": ["^$CanReach|DP_back_beamos_hallway_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_DP_back_beamos_hallway_2N_door"
@@ -769,13 +769,13 @@
                 ]
             },
             {
-                "name": "DP_back_boss_room_3S_door",
+                "name": "DP Back Boss Room 3S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "DP_back_boss_room_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "DP Back Boss Room 3S Door",
+                        "access_rules": ["^$CanReach|DP_back_boss_room_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_DP_back_boss_room_3S_door"

@@ -269,13 +269,13 @@
         ],
         "children": [
             {
-                "name": "TT_front_bottom_left_N_door",
+                "name": "TT Front Bottom Left N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_front_bottom_left_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Front Bottom Left N Door",
+                        "access_rules": ["^$CanReach|TT_front_bottom_left_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_front_bottom_left_N_door"
@@ -292,13 +292,13 @@
                 ]
             },
             {
-                "name": "TT_front_bottom_left_2N_door",
+                "name": "TT Front Bottom Left 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_front_bottom_left_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Front Bottom Left 2N Door",
+                        "access_rules": ["^$CanReach|TT_front_bottom_left_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_front_bottom_left_2N_door"
@@ -315,13 +315,13 @@
                 ]
             },
             {
-                "name": "TT_front_bottom_left_E_door",
+                "name": "TT Front Bottom Left E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_front_bottom_left_E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Front Bottom Left E Door",
+                        "access_rules": ["^$CanReach|TT_front_bottom_left_E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_front_bottom_left_E_door"
@@ -338,13 +338,13 @@
                 ]
             },
             {
-                "name": "TT_front_bottom_left_deadend_4E_door",
+                "name": "TT Front Bottom Left Deadend 4E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_front_bottom_left_deadend_4E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Front Bottom Left Deadend 4E Door",
+                        "access_rules": ["^$CanReach|TT_front_bottom_left_deadend_4E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_front_bottom_left_deadend_4E_door"
@@ -361,13 +361,13 @@
                 ]
             },
             {
-                "name": "TT_front_top_left_S_door",
+                "name": "TT Front Top Left S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_front_top_left_S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Front Top Left S Door",
+                        "access_rules": ["^$CanReach|TT_front_top_left_S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_front_top_left_S_door"
@@ -384,13 +384,13 @@
                 ]
             },
             {
-                "name": "TT_front_top_left_4S_door",
+                "name": "TT Front Top Left 4S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_front_top_left_4S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Front Top Left 4S Door",
+                        "access_rules": ["^$CanReach|TT_front_top_left_4S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_front_top_left_4S_door"
@@ -407,13 +407,13 @@
                 ]
             },
             {
-                "name": "TT_front_top_left_2E_door",
+                "name": "TT Front Top Left 2E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_front_top_left_2E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Front Top Left 2E Door",
+                        "access_rules": ["^$CanReach|TT_front_top_left_2E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_front_top_left_2E_door"
@@ -430,13 +430,13 @@
                 ]
             },
             {
-                "name": "TT_front_top_left_4E_door",
+                "name": "TT Front Top Left 4E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_front_top_left_4E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Front Top Left 4E Door",
+                        "access_rules": ["^$CanReach|TT_front_top_left_4E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_front_top_left_4E_door"
@@ -453,13 +453,13 @@
                 ]
             },
             {
-                "name": "TT_front_top_left_E_door",
+                "name": "TT Front Top Left E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_front_top_left_E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Front Top Left E Door",
+                        "access_rules": ["^$CanReach|TT_front_top_left_E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_front_top_left_E_door"
@@ -476,13 +476,13 @@
                 ]
             },
             {
-                "name": "TT_front_top_right_1W_door",
+                "name": "TT Front Top Right 1W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_front_top_right_1W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Front Top Right 1W Door",
+                        "access_rules": ["^$CanReach|TT_front_top_right_1W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_front_top_right_1W_door"
@@ -499,13 +499,13 @@
                 ]
             },
             {
-                "name": "TT_front_top_right_3W_door",
+                "name": "TT Front Top Right 3W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_front_top_right_3W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Front Top Right 3W Door",
+                        "access_rules": ["^$CanReach|TT_front_top_right_3W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_front_top_right_3W_door"
@@ -522,13 +522,13 @@
                 ]
             },
             {
-                "name": "TT_front_top_right_W_door",
+                "name": "TT Front Top Right W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_front_top_right_W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Front Top Right W Door",
+                        "access_rules": ["^$CanReach|TT_front_top_right_W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_front_top_right_W_door"
@@ -545,13 +545,13 @@
                 ]
             },
             {
-                "name": "TT_front_top_right_S_door",
+                "name": "TT Front Top Right S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_front_top_right_S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Front Top Right S Door",
+                        "access_rules": ["^$CanReach|TT_front_top_right_S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_front_top_right_S_door"
@@ -568,13 +568,13 @@
                 ]
             },
             {
-                "name": "TT_front_top_right_3S_door",
+                "name": "TT Front Top Right 3S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_front_top_right_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Front Top Right 3S Door",
+                        "access_rules": ["^$CanReach|TT_front_top_right_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_front_top_right_3S_door"
@@ -591,13 +591,13 @@
                 ]
             },
             {
-                "name": "TT_front_top_right_1N_door",
+                "name": "TT Front Top Right 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_front_top_right_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Front Top Right 1N Door",
+                        "access_rules": ["^$CanReach|TT_front_top_right_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_front_top_right_1N_door"
@@ -614,13 +614,13 @@
                 ]
             },
             {
-                "name": "TT_front_top_right_2N_door",
+                "name": "TT Front Top Right 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_front_top_right_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Front Top Right 2N Door",
+                        "access_rules": ["^$CanReach|TT_front_top_right_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_front_top_right_2N_door"
@@ -637,13 +637,13 @@
                 ]
             },
             {
-                "name": "TT_front_bottom_right_1N_door",
+                "name": "TT Front Bottom Right 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_front_bottom_right_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Front Bottom Right 1N Door",
+                        "access_rules": ["^$CanReach|TT_front_bottom_right_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_front_bottom_right_1N_door"
@@ -660,13 +660,13 @@
                 ]
             },
             {
-                "name": "TT_front_bottom_right_N_door",
+                "name": "TT Front Bottom Right N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_front_bottom_right_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Front Bottom Right N Door",
+                        "access_rules": ["^$CanReach|TT_front_bottom_right_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_front_bottom_right_N_door"
@@ -683,13 +683,13 @@
                 ]
             },
             {
-                "name": "TT_front_bottom_right_3W_door",
+                "name": "TT Front Bottom Right 3W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_front_bottom_right_3W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Front Bottom Right 3W Door",
+                        "access_rules": ["^$CanReach|TT_front_bottom_right_3W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_front_bottom_right_3W_door"
@@ -706,13 +706,13 @@
                 ]
             },
             {
-                "name": "TT_front_bottom_right_W_door",
+                "name": "TT Front Bottom Right W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_front_bottom_right_W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Front Bottom Right W Door",
+                        "access_rules": ["^$CanReach|TT_front_bottom_right_W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_front_bottom_right_W_door"
@@ -740,13 +740,13 @@
         "parent": "TT",
         "children": [
             {
-                "name": "TT_back_hallway_4S_door",
+                "name": "TT Back Hallway 4S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_back_hallway_4S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Back Hallway 4S Door",
+                        "access_rules": ["^$CanReach|TT_back_hallway_4S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_back_hallway_4S_door"
@@ -763,13 +763,13 @@
                 ]
             },
             {
-                "name": "TT_back_hallway_2N_door",
+                "name": "TT Back Hallway 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_back_hallway_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Back Hallway 2N Door",
+                        "access_rules": ["^$CanReach|TT_back_hallway_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_back_hallway_2N_door"
@@ -786,13 +786,13 @@
                 ]
             },
             {
-                "name": "TT_boss_room_4S_door",
+                "name": "TT Boss Room 4S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_boss_room_4S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Boss Room 4S Door",
+                        "access_rules": ["^$CanReach|TT_boss_room_4S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_boss_room_4S_door"
@@ -809,13 +809,13 @@
                 ]
             },
             {
-                "name": "TT_cricket_hall_3W_door",
+                "name": "TT Cricket Hall 3W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_cricket_hall_3W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Cricket Hall 3W Door",
+                        "access_rules": ["^$CanReach|TT_cricket_hall_3W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_cricket_hall_3W_door"
@@ -832,13 +832,13 @@
                 ]
             },
             {
-                "name": "TT_cricket_hall_deadend_3S_door",
+                "name": "TT Cricket Hall Deadend 3S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_cricket_hall_deadend_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Cricket Hall Deadend 3S Door",
+                        "access_rules": ["^$CanReach|TT_cricket_hall_deadend_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_cricket_hall_deadend_3S_door"
@@ -855,13 +855,13 @@
                 ]
             },
             {
-                "name": "TT_blue_blocks_room_2E_door",
+                "name": "TT blue_blocks Room 2E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_blue_blocks_room_2E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT blue_blocks Room 2E Door",
+                        "access_rules": ["^$CanReach|TT_blue_blocks_room_2E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_blue_blocks_room_2E_door"
@@ -878,13 +878,13 @@
                 ]
             },
             {
-                "name": "TT_short_conveyor_room_4E_door",
+                "name": "TT Short Conveyor Room 4E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_short_conveyor_room_4E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Short Conveyor Room 4E Door",
+                        "access_rules": ["^$CanReach|TT_short_conveyor_room_4E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_short_conveyor_room_4E_door"
@@ -901,13 +901,13 @@
                 ]
             },
             {
-                "name": "TT_long_conveyor_belt_room_1N_door",
+                "name": "TT Long Conveyor Belt Room 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_long_conveyor_belt_room_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Long Conveyor Belt Room 1N Door",
+                        "access_rules": ["^$CanReach|TT_long_conveyor_belt_room_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_long_conveyor_belt_room_1N_door"
@@ -924,13 +924,13 @@
                 ]
             },
             {
-                "name": "TT_square_conveyor_room_1W_door",
+                "name": "TT Square Conveyor Room 1W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_square_conveyor_room_1W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Square Conveyor Room 1W Door",
+                        "access_rules": ["^$CanReach|TT_square_conveyor_room_1W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_square_conveyor_room_1W_door"
@@ -947,13 +947,13 @@
                 ]
             },
             {
-                "name": "TT_square_conveyor_room_1N_door",
+                "name": "TT Square Conveyor Room 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_square_conveyor_room_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Square Conveyor Room 1N Door",
+                        "access_rules": ["^$CanReach|TT_square_conveyor_room_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_square_conveyor_room_1N_door"
@@ -970,13 +970,13 @@
                 ]
             },
             {
-                "name": "TT_crystal_switch_room_N_door",
+                "name": "TT Crystal Switch Room N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_crystal_switch_room_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Crystal Switch Room N Door",
+                        "access_rules": ["^$CanReach|TT_crystal_switch_room_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_crystal_switch_room_N_door"
@@ -993,13 +993,13 @@
                 ]
             },
             {
-                "name": "TT_crystal_switch_room_S_door",
+                "name": "TT Crystal Switch Room S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_crystal_switch_room_S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Crystal Switch Room S Door",
+                        "access_rules": ["^$CanReach|TT_crystal_switch_room_S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_crystal_switch_room_S_door"
@@ -1016,13 +1016,13 @@
                 ]
             },
             {
-                "name": "TT_attic_N_door",
+                "name": "TT Attic N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_attic_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Attic N Door",
+                        "access_rules": ["^$CanReach|TT_attic_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_attic_N_door"
@@ -1039,13 +1039,13 @@
                 ]
             },
             {
-                "name": "TT_attic_E_door",
+                "name": "TT Attic E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_attic_E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Attic E Door",
+                        "access_rules": ["^$CanReach|TT_attic_E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_attic_E_door"
@@ -1062,13 +1062,13 @@
                 ]
             },
             {
-                "name": "TT_attic_bomb_floor_W_door",
+                "name": "TT Attic Bomb Floor W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_attic_bomb_floor_W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Attic Bomb Floor W Door",
+                        "access_rules": ["^$CanReach|TT_attic_bomb_floor_W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_attic_bomb_floor_W_door"
@@ -1085,13 +1085,13 @@
                 ]
             },
             {
-                "name": "TT_big_block_basement_N_door",
+                "name": "TT Big Block Basement N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_big_block_basement_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Big Block Basement N Door",
+                        "access_rules": ["^$CanReach|TT_big_block_basement_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_big_block_basement_N_door"
@@ -1108,13 +1108,13 @@
                 ]
             },
             {
-                "name": "TT_big_block_basement_1W_door",
+                "name": "TT Big Block Basement 1W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_big_block_basement_1W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Big Block Basement 1W Door",
+                        "access_rules": ["^$CanReach|TT_big_block_basement_1W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_big_block_basement_1W_door"
@@ -1131,13 +1131,13 @@
                 ]
             },
             {
-                "name": "TT_conveyor_catwalk_2E_door",
+                "name": "TT Conveyor Catwalk 2E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_conveyor_catwalk_2E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Conveyor Catwalk 2E Door",
+                        "access_rules": ["^$CanReach|TT_conveyor_catwalk_2E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_conveyor_catwalk_2E_door"
@@ -1154,13 +1154,13 @@
                 ]
             },
             {
-                "name": "TT_conveyor_catwalk_4E_door",
+                "name": "TT Conveyor Catwalk 4E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_conveyor_catwalk_4E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Conveyor Catwalk 4E Door",
+                        "access_rules": ["^$CanReach|TT_conveyor_catwalk_4E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_conveyor_catwalk_4E_door"
@@ -1177,13 +1177,13 @@
                 ]
             },
             {
-                "name": "TT_big_pot_hall_4W_door",
+                "name": "TT Big Pot Hall_4W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TT_big_pot_hall_4W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TT Big Pot Hall_4W Door",
+                        "access_rules": ["^$CanReach|TT_big_pot_hall_4W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TT_big_pot_hall_4W_door"

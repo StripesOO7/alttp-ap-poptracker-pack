@@ -140,19 +140,15 @@
         ],
         "children": [
             {
-                "name": "AT_first_chest_2N_door",
-                "access_rules": [
-                    "^$CanReach|AT_first_chest"
-                ],
+                "name": "AT First Chest 2N Door",
+                "access_rules": [],
                 "sections": [
                     {
-                        "name": "AT_first_chest_2N_door",
-                        "access_rules": [
-                            ""
-                        ],
+                        "name": "AT First Chest 2N Door",
+                        "access_rules": ["^$CanReach|AT_first_chest_2N_door"],
                         "item_size":128,
                         "clear_as_group": false,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_AT_first_chest_2N_door"
                     }
                 ],
@@ -167,19 +163,15 @@
                 ]
             },
             {
-                "name": "AT_dark_maze_2N_door",
-                "access_rules": [
-                    "^$CanReach|AT_dark_maze"
-                ],
+                "name": "AT dark maze 2N door",
+                "access_rules": [],
                 "sections": [
                     {
-                        "name": "AT_dark_maze_2N_door",
-                        "access_rules": [
-                            ""
-                        ],
+                        "name": "AT Dark Maze 2N Door",
+                        "access_rules": ["^$CanReach|AT_dark_maze_2N_door"],
                         "item_size":128,
                         "clear_as_group": false,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_AT_dark_maze_2N_door"
                     }
                 ],
@@ -194,19 +186,15 @@
                 ]
             },
             {
-                "name": "AT_dark_chargers_4N_door",
-                "access_rules": [
-                    "^$CanReach|AT_dark_chargers"
-                ],
+                "name": "AT dark chargers 4N Door",
+                "access_rules": [],
                 "sections": [
                     {
-                        "name": "AT_dark_chargers_4N_door",
-                        "access_rules": [
-                            ""
-                        ],
+                        "name": "AT dark chargers 4N Door",
+                        "access_rules": ["^$CanReach|AT_dark_chargers_4N_door"],
                         "item_size":128,
                         "clear_as_group": false,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_AT_dark_chargers_4N_door"
                     }
                 ],
@@ -221,19 +209,15 @@
                 ]
             },
             {
-                "name": "AT_dual_statues_4N_door",
-                "access_rules": [
-                    "^$CanReach|AT_dual_statues"
-                ],
+                "name": "AT Dual Statues 4N Door",
+                "access_rules": [],
                 "sections": [
                     {
-                        "name": "AT_dual_statues_4N_door",
-                        "access_rules": [
-                            ""
-                        ],
+                        "name": "AT Dual Statues 4N Door",
+                        "access_rules": ["^$CanReach|AT_dual_statues_4N_door"],
                         "item_size":128,
                         "clear_as_group": false,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_AT_dual_statues_4N_door"
                     }
                 ],
@@ -248,19 +232,15 @@
                 ]
             },
             {
-                "name": "AT_dark_archers_2N_door",
-                "access_rules": [
-                    "^$CanReach|AT_dark_archers"
-                ],
+                "name": "AT Dark Archers 2N Door",
+                "access_rules": [],
                 "sections": [
                     {
-                        "name": "AT_dark_archers_2N_door",
-                        "access_rules": [
-                            ""
-                        ],
+                        "name": "AT Dark Archers 2N Door",
+                        "access_rules": ["^$CanReach|AT_dark_archers_2N_door"],
                         "item_size":128,
                         "clear_as_group": false,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_AT_dark_archers_2N_door"
                     }
                 ],
@@ -275,19 +255,15 @@
                 ]
             },
             {
-                "name": "AT_red_spears_2N_door",
-                "access_rules": [
-                    "^$CanReach|AT_red_spears"
-                ],
+                "name": "AT Red Spears 2N door",
+                "access_rules": [],
                 "sections": [
                     {
-                        "name": "AT_red_spears_2N_door",
-                        "access_rules": [
-                            ""
-                        ],
+                        "name": "AT Red Spears 2N door",
+                        "access_rules": ["^$CanReach|AT_red_spears_2N_door"],
                         "item_size":128,
                         "clear_as_group": false,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_AT_red_spears_2N_door"
                     }
                 ],
@@ -302,19 +278,15 @@
                 ]
             },
             {
-                "name": "AT_pacifist_run_4N_door",
-                "access_rules": [
-                    "^$CanReach|AT_pacifist_run"
-                ],
+                "name": "AT Pacifist run 4N door",
+                "access_rules": [],
                 "sections": [
                     {
-                        "name": "AT_pacifist_run_4N_door",
-                        "access_rules": [
-                            ""
-                        ],
+                        "name": "AT Pacifist run 4N door",
+                        "access_rules": ["^$CanReach|AT_pacifist_run_4N_door"],
                         "item_size":128,
                         "clear_as_group": false,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_AT_pacifist_run_4N_door"
                     }
                 ],
@@ -329,19 +301,15 @@
                 ]
             },
             {
-                "name": "AT_push_statue_down_4N_door",
-                "access_rules": [
-                    "^$CanReach|AT_push_statue_down"
-                ],
+                "name": "AT Push Statue Down 4N door",
+                "access_rules": [],
                 "sections": [
                     {
-                        "name": "AT_push_statue_down_4N_door",
-                        "access_rules": [
-                            ""
-                        ],
+                        "name": "AT Push Statue Dow",
+                        "access_rules": ["^$CanReach|AT_push_statue_down_4N_door"],
                         "item_size":128,
                         "clear_as_group": false,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_AT_push_statue_down_4N_door"
                     }
                 ],
@@ -356,19 +324,15 @@
                 ]
             },
             {
-                "name": "AT_catwalk_1N_door",
-                "access_rules": [
-                    "^$CanReach|AT_catwalk"
-                ],
+                "name": "AT Catwalk 1N Door",
+                "access_rules": [],
                 "sections": [
                     {
-                        "name": "AT_catwalk_1N_door",
-                        "access_rules": [
-                            ""
-                        ],
+                        "name": "AT Catwalk 1N Door",
+                        "access_rules": ["^$CanReach|AT_catwalk_1N_door"],
                         "item_size":128,
                         "clear_as_group": false,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_AT_catwalk_1N_door"
                     }
                 ],
@@ -383,19 +347,15 @@
                 ]
             },
             {
-                "name": "AT_antechamber_2S_door",
-                "access_rules": [
-                    "^$CanReach|AT_antechamber"
-                ],
+                "name": "AT Antechamber 2S Door",
+                "access_rules": [],
                 "sections": [
                     {
-                        "name": "AT_antechamber_2S_door",
-                        "access_rules": [
-                            ""
-                        ],
+                        "name": "AT Antechamber 2S Door",
+                        "access_rules": ["^$CanReach|AT_antechamber_2S_door"],
                         "item_size":128,
                         "clear_as_group": false,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_AT_antechamber_2S_door"
                     }
                 ],
@@ -410,19 +370,15 @@
                 ]
             },
             {
-                "name": "AT_pre_curtain_1N_door",
-                "access_rules": [
-                    "^$CanReach|AT_pre_curtain"
-                ],
+                "name": "AT Pre Crtain 1N Door",
+                "access_rules": [],
                 "sections": [
                     {
-                        "name": "AT_pre_curtain_1N_door",
-                        "access_rules": [
-                            ""
-                        ],
+                        "name":  "AT Pre Crtain 1N Door",
+                        "access_rules": ["^$CanReach|AT_pre_curtain_1N_door"],
                         "item_size":128,
                         "clear_as_group": false,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_AT_pre_curtain_1N_door"
                     }
                 ],
@@ -437,19 +393,15 @@
                 ]
             },
             {
-                "name": "AT_aga_arena_3S_door",
-                "access_rules": [
-                    "^$CanReach|AT_aga_arena"
-                ],
+                "name": "AT Aga Arena 3S Door",
+                "access_rules": [],
                 "sections": [
                     {
-                        "name": "AT_aga_arena_3S_door",
-                        "access_rules": [
-                            ""
-                        ],
+                        "name": "AT Aga Arena 3S Door",
+                        "access_rules": ["^$CanReach|AT_aga_arena_3S_door"],
                         "item_size":128,
                         "clear_as_group": false,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_AT_aga_arena_3S_door"
                     }
                 ],

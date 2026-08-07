@@ -188,10 +188,10 @@
                 "sections": [
                     {
                         "name": "EP Switch Bridge N door",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|EP_switch_bridge_N_door"],
                         "clear_as_group": false,
                         "item_size":128,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_EP_switch_bridge_N_door"
                     }
                 ],
@@ -212,10 +212,10 @@
                 "sections": [
                     {
                         "name": "EP Cannonball Room S door",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|EP_cannonball_room_S_door"],
                         "clear_as_group": false,
                         "item_size":128,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_EP_cannonball_room_S_door"
                     }
                 ],
@@ -236,10 +236,10 @@
                 "sections": [
                     {
                         "name": "EP Cannonball Room N door",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|EP_cannonball_room_N_door"],
                         "clear_as_group": false,
                         "item_size":128,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_EP_cannonball_room_N_door"
                     }
                 ],
@@ -260,10 +260,10 @@
                 "sections": [
                     {
                         "name": "EP Main Room Top S door",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|EP_main_room_top_S_door"],
                         "clear_as_group": false,
                         "item_size":128,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_EP_main_room_top_S_door"
                     }
                 ],
@@ -284,10 +284,10 @@
                 "sections": [
                     {
                         "name": "EP Main Room Top E door",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|EP_main_room_top_E_door"],
                         "clear_as_group": false,
                         "item_size":128,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_EP_main_room_top_E_door"
                     }
                 ],
@@ -308,10 +308,10 @@
                 "sections": [
                     {
                         "name": "EP Main Room Top W door",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|EP_main_room_top_W_door"],
                         "clear_as_group": false,
                         "item_size":128,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_EP_main_room_top_W_door"
                     }
                 ],
@@ -332,10 +332,10 @@
                 "sections": [
                     {
                         "name": "EP Main Room Bottom N door",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|EP_main_room_bottom_N_door"],
                         "clear_as_group": false,
                         "item_size":128,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_EP_main_room_bottom_N_door"
                     }
                 ],
@@ -356,10 +356,10 @@
                 "sections": [
                     {
                         "name": "EP Main Room Bottom 2E door",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|EP_main_room_bottom_2E_door"],
                         "clear_as_group": false,
                         "item_size":128,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_EP_main_room_bottom_2E_door"
                     }
                 ],
@@ -380,10 +380,10 @@
                 "sections": [
                     {
                         "name": "EP Main Room Bottom 1W door",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|EP_main_room_bottom_1W_door"],
                         "clear_as_group": false,
                         "item_size":128,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_EP_main_room_bottom_1W_door"
                     }
                 ],
@@ -404,10 +404,10 @@
                 "sections": [
                     {
                         "name": "EP East Wing Top W door",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|EP_east_wing_top_W_door"],
                         "clear_as_group": false,
                         "item_size":128,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_EP_east_wing_top_W_door"
                     }
                 ],
@@ -428,10 +428,10 @@
                 "sections": [
                     {
                         "name": "EP East Wing Bottom 1W door",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|EP_east_wing_bottom_1W_door"],
                         "clear_as_group": false,
                         "item_size":128,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_EP_east_wing_bottom_1W_door"
                     }
                 ],
@@ -452,10 +452,10 @@
                 "sections": [
                     {
                         "name": "EP East Wing Bottom 3S door",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|EP_east_wing_bottom_3S_door"],
                         "clear_as_group": false,
                         "item_size":128,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_EP_east_wing_bottom_3S_door"
                     }
                 ],
@@ -476,10 +476,10 @@
                 "sections": [
                     {
                         "name": "EP Dark Square Room 1N door",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|EP_dark_square_room_1N_door"],
                         "clear_as_group": false,
                         "item_size":128,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_EP_dark_square_room_1N_door"
                     }
                 ],
@@ -500,10 +500,10 @@
                 "sections": [
                     {
                         "name": "EP Dark Square Room 1W door",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|EP_dark_square_room_1W_door"],
                         "clear_as_group": false,
                         "item_size":128,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_EP_dark_square_room_1W_door"
                     }
                 ],
@@ -524,10 +524,10 @@
                 "sections": [
                     {
                         "name": "EP Cannonball Room Bridge E door",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|EP_cannonball_room_bridge_E_door"],
                         "clear_as_group": false,
                         "item_size":128,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_EP_cannonball_room_bridge_E_door"
                     }
                 ],
@@ -548,10 +548,10 @@
                 "sections": [
                     {
                         "name": "EP Cannonball Room Bridge W door",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|EP_cannonball_room_bridge_W_door"],
                         "clear_as_group": false,
                         "item_size":128,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_EP_cannonball_room_bridge_W_door"
                     }
                 ],
@@ -572,10 +572,10 @@
                 "sections": [
                     {
                         "name": "EP Big Key Chest Room 2E door",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|EP_big_key_chest_room_2E_door"],
                         "clear_as_group": false,
                         "item_size":128,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_EP_big_key_chest_room_2E_door"
                     }
                 ],
@@ -595,11 +595,11 @@
                 "visibility_rules": [],
                 "sections": [
                     {
-                        "name": "EP Big Key Chest Room 2N door",
-                        "access_rules": [],
+                        "name": "EP Big Key Chest Room N door",
+                        "access_rules": ["^$CanReach|EP_big_key_chest_room_2N_door"],
                         "clear_as_group": false,
                         "item_size":128,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_EP_big_key_chest_room_2N_door"
                     }
                 ],
@@ -620,10 +620,10 @@
                 "sections": [
                     {
                         "name": "EP West Wing Top E door",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|EP_west_wing_top_E_door"],
                         "clear_as_group": false,
                         "item_size":128,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_EP_west_wing_top_E_door"
                     }
                 ],
@@ -644,10 +644,10 @@
                 "sections": [
                     {
                         "name": "EP West Wing Bottom 2E door",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|EP_west_wing_bottom_2E_door"],
                         "clear_as_group": false,
                         "item_size":128,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_EP_west_wing_bottom_2E_door"
                     }
                 ],
@@ -668,10 +668,10 @@
                 "sections": [
                     {
                         "name": "EP West Wing Bottom 4S door",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|EP_west_wing_bottom_4S_door"],
                         "clear_as_group": false,
                         "item_size":128,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_EP_west_wing_bottom_4S_door"
                     }
                 ],
@@ -692,10 +692,10 @@
                 "sections": [
                     {
                         "name": "EP Dark Eyegore Room S door",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|EP_dark_eyegore_room_S_door"],
                         "clear_as_group": false,
                         "item_size":128,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_EP_dark_eyegore_room_S_door"
                     }
                 ],
@@ -716,10 +716,10 @@
                 "sections": [
                     {
                         "name": "EP Dark Eyegore Room 1N door",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|EP_dark_eyegore_room_1N_door"],
                         "clear_as_group": false,
                         "item_size":128,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_EP_dark_eyegore_room_1N_door"
                     }
                 ],
@@ -740,10 +740,10 @@
                 "sections": [
                     {
                         "name": "EP False Switches 3N door",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|EP_false_switches_3N_door"],
                         "clear_as_group": false,
                         "item_size":128,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_EP_false_switches_3N_door"
                     }
                 ],
@@ -764,10 +764,10 @@
                 "sections": [
                     {
                         "name": "EP False Switches 3W door",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|EP_false_switches_3W_door"],
                         "clear_as_group": false,
                         "item_size":128,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_EP_false_switches_3W_door"
                     }
                 ],
@@ -788,10 +788,10 @@
                 "sections": [
                     {
                         "name": "EP Eyegore Switches 4E door",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|EP_eyegore_switches_4E_door"],
                         "clear_as_group": false,
                         "item_size":128,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_EP_eyegore_switches_4E_door"
                     }
                 ],
@@ -812,10 +812,10 @@
                 "sections": [
                     {
                         "name": "EP Cannonball Hell 3W door",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|EP_cannoball_hell_3W_door"],
                         "clear_as_group": false,
                         "item_size":128,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_EP_cannoball_hell_3W_door"
                     }
                 ],
@@ -836,10 +836,10 @@
                 "sections": [
                     {
                         "name": "EP Single Eyegore 4E door",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|EP_single_eyegore_4E_door"],
                         "clear_as_group": false,
                         "item_size":128,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_EP_single_eyegore_4E_door"
                     }
                 ],
@@ -860,10 +860,10 @@
                 "sections": [
                     {
                         "name": "EP Duo Eyegores 2N door",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|EP_duo_eyegores_2N_door"],
                         "clear_as_group": false,
                         "item_size":128,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_EP_duo_eyegores_2N_door"
                     }
                 ],
@@ -884,10 +884,10 @@
                 "sections": [
                     {
                         "name": "EP Boss Room 4S door",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|EP_boss_room_4S_door"],
                         "clear_as_group": false,
                         "item_size":128,
-                        "visibility_rules": [],
+                        "visibility_rules": ["doors_enabled"],
                         "hosted_item": "from_EP_boss_room_4S_door"
                     }
                 ],

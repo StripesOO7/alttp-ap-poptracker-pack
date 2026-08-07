@@ -342,13 +342,13 @@
         ],
         "children": [
             {
-                "name": "PoD_three_way_room_left_1N_door",
+                "name": "PoD Three Way Room Left 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_three_way_room_left_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Three Way Room Left 1N Door",
+                        "access_rules": ["^$CanReach|PoD_three_way_room_left_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_three_way_room_left_1N_door"
@@ -365,13 +365,13 @@
                 ]
             },
             {
-                "name": "PoD_three_way_room_middle_N_door",
+                "name": "PoD Three Way Room Middle N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_three_way_room_middle_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Three Way Room Middle N Door",
+                        "access_rules": ["^$CanReach|PoD_three_way_room_middle_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_three_way_room_middle_N_door"
@@ -388,13 +388,13 @@
                 ]
             },
             {
-                "name": "PoD_three_way_room_right_2N_door",
+                "name": "PoD Three Way Room Right 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_three_way_room_right_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Three Way Room Right 2N Door",
+                        "access_rules": ["^$CanReach|PoD_three_way_room_right_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_three_way_room_right_2N_door"
@@ -411,13 +411,13 @@
                 ]
             },
             {
-                "name": "PoD_big_key_chest_room_S_door",
+                "name": "PoD Big Key Chest Room S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_big_key_chest_room_S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Big Key Chest Room S Door",
+                        "access_rules": ["^$CanReach|PoD_big_key_chest_room_S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_big_key_chest_room_S_door"
@@ -434,13 +434,13 @@
                 ]
             },
             {
-                "name": "PoD_big_key_chest_room_1N_door",
+                "name": "PoD Big Key Chest Room 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_big_key_chest_room_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Big Key Chest Room 1N Door",
+                        "access_rules": ["^$CanReach|PoD_big_key_chest_room_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_big_key_chest_room_1N_door"
@@ -457,13 +457,13 @@
                 ]
             },
             {
-                "name": "PoD_big_key_chest_room_N_door",
+                "name": "PoD Big Key Chest Room N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_big_key_chest_room_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Big Key Chest Room N Door",
+                        "access_rules": ["^$CanReach|PoD_big_key_chest_room_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_big_key_chest_room_N_door"
@@ -480,13 +480,13 @@
                 ]
             },
             {
-                "name": "PoD_big_key_chest_room_2N_door",
+                "name": "PoD Big Key Chest Room 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_big_key_chest_room_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Big Key Chest Room 2N Door",
+                        "access_rules": ["^$CanReach|PoD_big_key_chest_room_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_big_key_chest_room_2N_door"
@@ -503,13 +503,13 @@
                 ]
             },
             {
-                "name": "PoD_shooter_room_1N_door",
+                "name": "PoD Shooter Room 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_shooter_room_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Shooter Room 1N Door",
+                        "access_rules": ["^$CanReach|PoD_shooter_room_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_shooter_room_1N_door"
@@ -526,13 +526,13 @@
                 ]
             },
             {
-                "name": "PoD_teleporter_room_2N_door",
+                "name": "PoD Teleporter Room 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_teleporter_room_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Teleporter Room 2N Door",
+                        "access_rules": ["^$CanReach|PoD_teleporter_room_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_teleporter_room_2N_door"
@@ -549,13 +549,13 @@
                 ]
             },
             {
-                "name": "PoD_mimic_room_1N_door",
+                "name": "PoD Mimic Room 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_mimic_room_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Mimic Room 1N Door",
+                        "access_rules": ["^$CanReach|PoD_mimic_room_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_mimic_room_1N_door"
@@ -572,13 +572,13 @@
                 ]
             },
             {
-                "name": "PoD_conveyor_hallway_1N_door",
+                "name": "PoD Conveyor Hallway 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_conveyor_hallway_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Conveyor Hallway 1N Door",
+                        "access_rules": ["^$CanReach|PoD_conveyor_hallway_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_conveyor_hallway_1N_door"
@@ -595,13 +595,13 @@
                 ]
             },
             {
-                "name": "PoD_conveyor_hallway_3S_door",
+                "name": "PoD Conveyor Hallway 3S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_conveyor_hallway_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Conveyor Hallway 3S Door",
+                        "access_rules": ["^$CanReach|PoD_conveyor_hallway_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_conveyor_hallway_3S_door"
@@ -618,13 +618,13 @@
                 ]
             },
             {
-                "name": "PoD_switch_room_top_3S_door",
+                "name": "PoD Switch Room Top 3S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_switch_room_top_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Switch Room Top 3S Door",
+                        "access_rules": ["^$CanReach|PoD_switch_room_top_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_switch_room_top_3S_door"
@@ -641,13 +641,13 @@
                 ]
             },
             {
-                "name": "PoD_switch_room_top_3W_door",
+                "name": "PoD Switch Room Top 3W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_switch_room_top_3W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Switch Room Top 3W Door",
+                        "access_rules": ["^$CanReach|PoD_switch_room_top_3W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_switch_room_top_3W_door"
@@ -664,13 +664,13 @@
                 ]
             },
             {
-                "name": "PoD_switch_room_bottom_N_door",
+                "name": "PoD Switch Room Bottom N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_switch_room_bottom_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Switch Room Bottom N Door",
+                        "access_rules": ["^$CanReach|PoD_switch_room_bottom_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_switch_room_bottom_N_door"
@@ -687,13 +687,13 @@
                 ]
             },
             {
-                "name": "PoD_switch_room_bottom_W_door",
+                "name": "PoD Switch Room Bottom W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_switch_room_bottom_W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Switch Room Bottom W Door",
+                        "access_rules": ["^$CanReach|PoD_switch_room_bottom_W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_switch_room_bottom_W_door"
@@ -710,13 +710,13 @@
                 ]
             },
             {
-                "name": "Pod_basement_ledge_N_door",
+                "name": "PoD Basement Ledge N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "Pod_basement_ledge_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Basement Ledge N Door",
+                        "access_rules": ["^$CanReach|Pod_basement_ledge_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_Pod_basement_ledge_N_door"
@@ -733,13 +733,13 @@
                 ]
             },
             {
-                "name": "PoD_arena_right_E_door",
+                "name": "PoD Arena Right E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_arena_right_E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Arena Right E Door",
+                        "access_rules": ["^$CanReach|PoD_arena_right_E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_arena_right_E_door"
@@ -756,13 +756,13 @@
                 ]
             },
             {
-                "name": "PoD_arena_left_bridge_3S_door",
+                "name": "PoD Arena Left Bridge 3S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_arena_left_bridge_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Arena Left Bridge 3S Door",
+                        "access_rules": ["^$CanReach|PoD_arena_left_bridge_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_arena_left_bridge_3S_door"
@@ -779,13 +779,13 @@
                 ]
             },
             {
-                "name": "PoD_arena_right_bridge_4S_door",
+                "name": "PoD Arena Right Bridge 4S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_arena_right_bridge_4S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Arena Right Bridge 4S Door",
+                        "access_rules": ["^$CanReach|PoD_arena_right_bridge_4S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_arena_right_bridge_4S_door"
@@ -802,13 +802,13 @@
                 ]
             },
             {
-                "name": "PoD_arena_back_bridge_1N_door",
+                "name": "PoD Arena Back Bridge 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_arena_back_bridge_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Arena Back Bridge 1N Door",
+                        "access_rules": ["^$CanReach|PoD_arena_back_bridge_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_arena_back_bridge_1N_door"
@@ -825,13 +825,13 @@
                 ]
             },
             {
-                "name": "PoD_arena_back_bridge_2N_door",
+                "name": "PoD Arena Back Bridge 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_arena_back_bridge_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Arena Back Bridge 2N Door",
+                        "access_rules": ["^$CanReach|PoD_arena_back_bridge_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_arena_back_bridge_2N_door"
@@ -848,13 +848,13 @@
                 ]
             },
             {
-                "name": "PoD_arena_ledge_4E_door",
+                "name": "PoD Arena Ledge 4E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_arena_ledge_4E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Arena Ledge 4E Door",
+                        "access_rules": ["^$CanReach|PoD_arena_ledge_4E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_arena_ledge_4E_door"
@@ -871,13 +871,13 @@
                 ]
             },
             {
-                "name": "PoD_collapsing_bridge_front_2S_door",
+                "name": "PoD Collapsing Bridge front 2S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_collapsing_bridge_front_2S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Collapsing Bridge front 2S Door",
+                        "access_rules": ["^$CanReach|PoD_collapsing_bridge_front_2S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_collapsing_bridge_front_2S_door"
@@ -894,13 +894,13 @@
                 ]
             },
             {
-                "name": "PoD_collapsing_bridge_back_1W_door",
+                "name": "PoD Collapsing Bridge Back 1W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_collapsing_bridge_back_1W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Collapsing Bridge Back 1W Door",
+                        "access_rules": ["^$CanReach|PoD_collapsing_bridge_back_1W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_collapsing_bridge_back_1W_door"
@@ -917,13 +917,13 @@
                 ]
             },
             {
-                "name": "PoD_dark_maze_2E_door",
+                "name": "PoD Dark Maze 2E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_dark_maze_2E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Dark Maze 2E Door",
+                        "access_rules": ["^$CanReach|PoD_dark_maze_2E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_dark_maze_2E_door"
@@ -940,13 +940,13 @@
                 ]
             },
             {
-                "name": "PoD_dark_maze_E_door",
+                "name": "PoD Dark Maze E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_dark_maze_E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Dark Maze E Door",
+                        "access_rules": ["^$CanReach|PoD_dark_maze_E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_dark_maze_E_door"
@@ -963,13 +963,13 @@
                 ]
             },
             {
-                "name": "PoD_big_key_chest_ledge_W_door",
+                "name": "PoD Big Key Chest Ledge W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_big_key_chest_ledge_W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Big Key Chest Ledge W Door",
+                        "access_rules": ["^$CanReach|PoD_big_key_chest_ledge_W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_big_key_chest_ledge_W_door"
@@ -986,13 +986,13 @@
                 ]
             },
             {
-                "name": "PoD_compass_room_2N_door",
+                "name": "PoD Compass Room 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_compass_room_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Compass Room 2N Door",
+                        "access_rules": ["^$CanReach|PoD_compass_room_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_compass_room_2N_door"
@@ -1009,13 +1009,13 @@
                 ]
             },
             {
-                "name": "PoD_compass_room_N_door",
+                "name": "PoD Compass Room N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_compass_room_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Compass Room N Door",
+                        "access_rules": ["^$CanReach|PoD_compass_room_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_compass_room_N_door"
@@ -1032,13 +1032,13 @@
                 ]
             },
             {
-                "name": "PoD_dark_U_basement_2N_door",
+                "name": "PoD Dark U Basement 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_dark_U_basement_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Dark U Basement 2N Door",
+                        "access_rules": ["^$CanReach|PoD_dark_U_basement_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_dark_U_basement_2N_door"
@@ -1055,13 +1055,13 @@
                 ]
             },
             {
-                "name": "PoD_dark_U_basement_N_door",
+                "name": "PoD Dark U Basement N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_dark_U_basement_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Dark U Basement N Door",
+                        "access_rules": ["^$CanReach|PoD_dark_U_basement_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_dark_U_basement_N_door"
@@ -1078,13 +1078,13 @@
                 ]
             },
             {
-                "name": "PoD_harmless_hellway_4S_door",
+                "name": "PoD Harmless Hellway 4S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_harmless_hellway_4S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Harmless Hellway 4S Door",
+                        "access_rules": ["^$CanReach|PoD_harmless_hellway_4S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_harmless_hellway_4S_door"
@@ -1101,13 +1101,13 @@
                 ]
             },
             {
-                "name": "PoD_mimics2_3S_door",
+                "name": "PoD Mimics2 3S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_mimics2_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Mimics2 3S Door",
+                        "access_rules": ["^$CanReach|PoD_mimics2_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_mimics2_3S_door"
@@ -1124,13 +1124,13 @@
                 ]
             },
             {
-                "name": "PoD_bow_statue_2N_door",
+                "name": "PoD Bow Statue 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_bow_statue_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Bow Statue 2N Door",
+                        "access_rules": ["^$CanReach|PoD_bow_statue_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_bow_statue_2N_door"
@@ -1147,13 +1147,13 @@
                 ]
             },
             {
-                "name": "PoD_dark_pegs_2N_door",
+                "name": "PoD Dark Pegs 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_dark_pegs_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Dark Pegs 2N Door",
+                        "access_rules": ["^$CanReach|PoD_dark_pegs_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_dark_pegs_2N_door"
@@ -1170,13 +1170,13 @@
                 ]
             },
             {
-                "name": "PoD_boss_room_4S_door",
+                "name": "PoD Boss Room 4S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_boss_room_4S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Boss Room 4S Door",
+                        "access_rules": ["^$CanReach|PoD_boss_room_4S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_boss_room_4S_door"
@@ -1193,13 +1193,13 @@
                 ]
             },
             {
-                "name": "PoD_dark_inner_basement_2N_door",
+                "name": "PoD Dark Inner Basement 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_dark_inner_basement_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Dark Inner Basement 2N Door",
+                        "access_rules": ["^$CanReach|PoD_dark_inner_basement_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_dark_inner_basement_2N_door"
@@ -1216,13 +1216,13 @@
                 ]
             },
             {
-                "name": "PoD_big_chest_ledge_W_door",
+                "name": "PoD Big Chest Ledge W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "PoD_big_chest_ledge_W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "PoD Big Chest Ledge W Door",
+                        "access_rules": ["^$CanReach|PoD_big_chest_ledge_W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_PoD_big_chest_ledge_W_door"

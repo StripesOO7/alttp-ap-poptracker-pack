@@ -370,13 +370,13 @@
         ],
         "children": [
             {
-                "name": "TR_main_entrance_post_gap_2N_door",
+                "name": "TR Main Entrance Post Gap 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_main_entrance_post_gap_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Main Entrance Post Gap 2N Door",
+                        "access_rules": ["^$CanReach|TR_main_entrance_post_gap_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_main_entrance_post_gap_2N_door"
@@ -393,13 +393,13 @@
                 ]
             },
             {
-                "name": "TR_square_travel_room_1N_door",
+                "name": "TR Square Travel Room 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_square_travel_room_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Square Travel Room 1N Door",
+                        "access_rules": ["^$CanReach|TR_square_travel_room_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_square_travel_room_1N_door"
@@ -416,13 +416,13 @@
                 ]
             },
             {
-                "name": "TR_square_travel_room_2N_door",
+                "name": "TR Square Travel Room 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_square_travel_room_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Square Travel Room 2N Door",
+                        "access_rules": ["^$CanReach|TR_square_travel_room_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_square_travel_room_2N_door"
@@ -439,13 +439,13 @@
                 ]
             },
             {
-                "name": "TR_square_travel_room_2E_door",
+                "name": "TR Square Travel Room 2E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_square_travel_room_2E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Square Travel Room 2E Door",
+                        "access_rules": ["^$CanReach|TR_square_travel_room_2E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_square_travel_room_2E_door"
@@ -462,13 +462,13 @@
                 ]
             },
             {
-                "name": "TR_square_travel_room_3S_door",
+                "name": "TR Square Travel Room 3S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_square_travel_room_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Square Travel Room 3S Door",
+                        "access_rules": ["^$CanReach|TR_square_travel_room_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_square_travel_room_3S_door"
@@ -485,13 +485,13 @@
                 ]
             },
             {
-                "name": "TR_square_travel_room_4E_door",
+                "name": "TR Square Travel Room 4E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_square_travel_room_4E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Square Travel Room 4E Door",
+                        "access_rules": ["^$CanReach|TR_square_travel_room_4E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_square_travel_room_4E_door"
@@ -508,13 +508,13 @@
                 ]
             },
             {
-                "name": "TR_square_travel_room_4S_door",
+                "name": "TR Square Travel Room 4S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_square_travel_room_4S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Square Travel Room 4S Door",
+                        "access_rules": ["^$CanReach|TR_square_travel_room_4S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_square_travel_room_4S_door"
@@ -531,13 +531,13 @@
                 ]
             },
             {
-                "name": "TR_compass_room_1N_door",
+                "name": "TR Compass Room 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_compass_room_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Compass Room 1N Door",
+                        "access_rules": ["^$CanReach|TR_compass_room_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_compass_room_1N_door"
@@ -554,13 +554,13 @@
                 ]
             },
             {
-                "name": "TR_tile_room_4S_door",
+                "name": "TR Tile Room 4S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_tile_room_4S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Tile Room 4S Door",
+                        "access_rules": ["^$CanReach|TR_tile_room_4S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_tile_room_4S_door"
@@ -577,13 +577,13 @@
                 ]
             },
             {
-                "name": "TR_torch_puzzle_1W_door",
+                "name": "TR Torch Puzzle 1W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_torch_puzzle_1W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Torch Puzzle 1W Door",
+                        "access_rules": ["^$CanReach|TR_torch_puzzle_1W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_torch_puzzle_1W_door"
@@ -600,13 +600,13 @@
                 ]
             },
             {
-                "name": "TR_torch_puzzle_1N_door",
+                "name": "TR Torch Puzzle 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_torch_puzzle_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Torch Puzzle 1N Door",
+                        "access_rules": ["^$CanReach|TR_torch_puzzle_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_torch_puzzle_1N_door"
@@ -623,13 +623,13 @@
                 ]
             },
             {
-                "name": "TR_map_room_3S_door",
+                "name": "TR Map Room 3S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_map_room_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Map Room 3S Door",
+                        "access_rules": ["^$CanReach|TR_map_room_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_map_room_3S_door"
@@ -646,13 +646,13 @@
                 ]
             },
             {
-                "name": "TR_torch_puzzle_deadend_3E_door",
+                "name": "TR Torch Puzzle Deadend 3E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_torch_puzzle_deadend_3E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Torch Puzzle Deadend 3E Door",
+                        "access_rules": ["^$CanReach|TR_torch_puzzle_deadend_3E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_torch_puzzle_deadend_3E_door"
@@ -669,13 +669,13 @@
                 ]
             },
             {
-                "name": "TR_poke_1_room_3S_door",
+                "name": "TR Chain Chomps Room 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_poke_1_room_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Chain Chomps Room 1N Door",
+                        "access_rules": ["^$CanReach|TR_poke_1_room_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_poke_1_room_3S_door"
@@ -692,13 +692,13 @@
                 ]
             },
             {
-                "name": "TR_chain_chomps_room_1N_door",
+                "name": "TR Pipe Pit 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_chain_chomps_room_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Pipe Pit 1N Door",
+                        "access_rules": ["^$CanReach|TR_chain_chomps_room_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_chain_chomps_room_1N_door"
@@ -715,13 +715,13 @@
                 ]
             },
             {
-                "name": "TR_pipe_pit_1N_door",
+                "name": "TR Pipe Pit 1W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_pipe_pit_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Pipe Pit 1W Door",
+                        "access_rules": ["^$CanReach|TR_pipe_pit_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_pipe_pit_1N_door"
@@ -738,13 +738,13 @@
                 ]
             },
             {
-                "name": "TR_pipe_pit_1W_door",
+                "name": "TR Pipe Pit Bottom Left Ledge 3W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_pipe_pit_1W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Pipe Pit Bottom Left Ledge 3W Door",
+                        "access_rules": ["^$CanReach|TR_pipe_pit_1W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_pipe_pit_1W_door"
@@ -761,13 +761,13 @@
                 ]
             },
             {
-                "name": "TR_pipe_pit_bottom_left_ledge_3W_door",
+                "name": "TR Big Key Room Top Right 2E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_pipe_pit_bottom_left_ledge_3W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Big Key Room Top Right 2E Door",
+                        "access_rules": ["^$CanReach|TR_pipe_pit_bottom_left_ledge_3W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_pipe_pit_bottom_left_ledge_3W_door"
@@ -784,13 +784,13 @@
                 ]
             },
             {
-                "name": "TR_big_key_room_top_right_2E_door",
+                "name": "TR Big Key Room Top Left 1W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_big_key_room_top_right_2E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Big Key Room Top Left 1W Door",
+                        "access_rules": ["^$CanReach|TR_big_key_room_top_right_2E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_big_key_room_top_right_2E_door"
@@ -807,13 +807,13 @@
                 ]
             },
             {
-                "name": "TR_big_key_room_top_left_1W_door",
+                "name": "TR Big Key Room Top Left 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_big_key_room_top_left_1W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Big Key Room Top Left 1N Door",
+                        "access_rules": ["^$CanReach|TR_big_key_room_top_left_1W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_big_key_room_top_left_1W_door"
@@ -830,13 +830,13 @@
                 ]
             },
             {
-                "name": "TR_big_key_room_top_left_1N_door",
+                "name": "TR Big Key Room Bottom Right 4E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_big_key_room_top_left_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Big Key Room Bottom Right 4E Door",
+                        "access_rules": ["^$CanReach|TR_big_key_room_top_left_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_big_key_room_top_left_1N_door"
@@ -853,13 +853,13 @@
                 ]
             },
             {
-                "name": "TR_big_key_room_bottom_right_4E_door",
+                "name": "TR Big Key Room Bottom Right 4S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_big_key_room_bottom_right_4E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Big Key Room Bottom Right 4S Door",
+                        "access_rules": ["^$CanReach|TR_big_key_room_bottom_right_4E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_big_key_room_bottom_right_4E_door"
@@ -876,13 +876,13 @@
                 ]
             },
             {
-                "name": "TR_big_key_room_bottom_right_4S_door",
+                "name": "TR Big Key Room Bottom Left 3W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_big_key_room_bottom_right_4S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Big Key Room Bottom Left 3W Door",
+                        "access_rules": ["^$CanReach|TR_big_key_room_bottom_right_4S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_big_key_room_bottom_right_4S_door"
@@ -899,13 +899,13 @@
                 ]
             },
             {
-                "name": "TR_big_key_room_bottom_left_3W_door",
+                "name": "TR Big Key Room Bottom Left 3S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_big_key_room_bottom_left_3W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Big Key Room Bottom Left 3S Door",
+                        "access_rules": ["^$CanReach|TR_big_key_room_bottom_left_3W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_big_key_room_bottom_left_3W_door"
@@ -922,13 +922,13 @@
                 ]
             },
             {
-                "name": "TR_big_key_room_bottom_left_3S_door",
+                "name": "TR Poke 2 Room_2E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_big_key_room_bottom_left_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Poke 2 Room_2E Door",
+                        "access_rules": ["^$CanReach|TR_big_key_room_bottom_left_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_big_key_room_bottom_left_3S_door"
@@ -945,13 +945,13 @@
                 ]
             },
             {
-                "name": "TR_poke_2_room_2E_door",
+                "name": "TR Poke 2 Room_4E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_poke_2_room_2E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Poke 2 Room_4E Door",
+                        "access_rules": ["^$CanReach|TR_poke_2_room_2E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_poke_2_room_2E_door"
@@ -968,13 +968,13 @@
                 ]
             },
             {
-                "name": "TR_poke_2_room_4E_door",
+                "name": "TR Double Poke Room_1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_poke_2_room_4E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Double Poke Room_1N Door",
+                        "access_rules": ["^$CanReach|TR_poke_2_room_4E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_poke_2_room_4E_door"
@@ -991,13 +991,13 @@
                 ]
             },
             {
-                "name": "TR_double_poke_room_1N_door",
+                "name": "TR Small T Hallway 3E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_double_poke_room_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Small T Hallway 3E Door",
+                        "access_rules": ["^$CanReach|TR_double_poke_room_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_double_poke_room_1N_door"
@@ -1014,13 +1014,13 @@
                 ]
             },
             {
-                "name": "TR_small_t_hallway_3E_door",
+                "name": "TR Laser Entrance Room 4E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_small_t_hallway_3E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Laser Entrance Room 4E Door",
+                        "access_rules": ["^$CanReach|TR_small_t_hallway_3E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_small_t_hallway_3E_door"
@@ -1037,13 +1037,13 @@
                 ]
             },
             {
-                "name": "TR_laser_entrance_room_4E_door",
+                "name": "TR Big Key Door Room 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_laser_entrance_room_4E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Big Key Door Room 2N Door",
+                        "access_rules": ["^$CanReach|TR_laser_entrance_room_4E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_laser_entrance_room_4E_door"
@@ -1060,13 +1060,13 @@
                 ]
             },
             {
-                "name": "TR_big_keydoor_room_2N_door",
+                "name": "TR Pokes After Big Door 3S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_big_keydoor_room_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Pokes After Big Door 3S Door",
+                        "access_rules": ["^$CanReach|TR_big_keydoor_room_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_big_keydoor_room_2N_door"
@@ -1094,13 +1094,13 @@
         ],
         "children": [
             {
-                "name": "TR_pokes_after_bigdoor_3S_door",
+                "name": "TR Crystalroller Room 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_pokes_after_bigdoor_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Crystalroller Room 1N Door",
+                        "access_rules": ["^$CanReach|TR_pokes_after_bigdoor_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_pokes_after_bigdoor_3S_door"
@@ -1117,13 +1117,13 @@
                 ]
             },
             {
-                "name": "TR_crystalroller_room_1N_door",
+                "name": "TR Travel Maze 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_crystalroller_room_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Travel Maze 1N Door",
+                        "access_rules": ["^$CanReach|TR_crystalroller_room_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_crystalroller_room_1N_door"
@@ -1140,13 +1140,13 @@
                 ]
             },
             {
-                "name": "TR_travel_maze_1N_door",
+                "name": "TR Travel Maze 3S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_travel_maze_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Travel Maze 3S Door",
+                        "access_rules": ["^$CanReach|TR_travel_maze_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_travel_maze_1N_door"
@@ -1163,13 +1163,13 @@
                 ]
             },
             {
-                "name": "TR_travel_maze_3S_door",
+                "name": "TR Side Eye Hallway 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_travel_maze_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Side Eye Hallway 1N Door",
+                        "access_rules": ["^$CanReach|TR_travel_maze_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_travel_maze_3S_door"
@@ -1186,13 +1186,13 @@
                 ]
             },
             {
-                "name": "TR_side_eye_hallway_1N_door",
+                "name": "TR Side Eye Hallway 3S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_side_eye_hallway_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Side Eye Hallway 3S Door",
+                        "access_rules": ["^$CanReach|TR_side_eye_hallway_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_side_eye_hallway_1N_door"
@@ -1209,13 +1209,13 @@
                 ]
             },
             {
-                "name": "TR_side_eye_hallway_3S_door",
+                "name": "TR Side Eye Hallway 3W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_side_eye_hallway_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Side Eye Hallway 3W Door",
+                        "access_rules": ["^$CanReach|TR_side_eye_hallway_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_side_eye_hallway_3S_door"
@@ -1232,13 +1232,13 @@
                 ]
             },
             {
-                "name": "TR_side_eye_hallway_3W_door",
+                "name": "TR Eye Bridge 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_side_eye_hallway_3W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Eye Bridge 1N Door",
+                        "access_rules": ["^$CanReach|TR_side_eye_hallway_3W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_side_eye_hallway_3W_door"
@@ -1255,13 +1255,13 @@
                 ]
             },
             {
-                "name": "TR_crystal_maze_N_door",
+                "name": "TR Crystal Maze N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_crystal_maze_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Crystal Maze N Door",
+                        "access_rules": ["^$CanReach|TR_crystal_maze_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_crystal_maze_N_door"
@@ -1278,13 +1278,13 @@
                 ]
             },
             {
-                "name": "TR_crystal_maze_4E_door",
+                "name": "TR Crystal Maze 4E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_crystal_maze_4E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Crystal Maze 4E Door",
+                        "access_rules": ["^$CanReach|TR_crystal_maze_4E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_crystal_maze_4E_door"
@@ -1301,13 +1301,13 @@
                 ]
             },
             {
-                "name": "TR_pre_boss_pit_S_door",
+                "name": "TR Pre Boss Pit S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_pre_boss_pit_S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Pre Boss Pit S Door",
+                        "access_rules": ["^$CanReach|TR_pre_boss_pit_S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_pre_boss_pit_S_door"
@@ -1324,13 +1324,13 @@
                 ]
             },
             {
-                "name": "TR_pre_boss_pit_1N_door",
+                "name": "TR Pre Boss Pit 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_pre_boss_pit_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Pre Boss Pit 1N Door",
+                        "access_rules": ["^$CanReach|TR_pre_boss_pit_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_pre_boss_pit_1N_door"
@@ -1347,13 +1347,13 @@
                 ]
             },
             {
-                "name": "TR_eye_bridge_1N_door",
+                "name": "TR Boss Room 3S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_eye_bridge_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Boss Room 3S Door",
+                        "access_rules": ["^$CanReach|TR_eye_bridge_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_eye_bridge_1N_door"
@@ -1370,13 +1370,13 @@
                 ]
             },
             {
-                "name": "TR_boss_room_3S_door",
+                "name": "TR Poke 1 Room 3S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "TR_boss_room_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "TR Poke 1 Room 3S Door",
+                        "access_rules": ["^$CanReach|TR_boss_room_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_TR_boss_room_3S_door"

@@ -270,13 +270,13 @@
         "access_rules": [],
         "children": [
             {
-                "name": "SW_compass_room_2N_door",
+                "name": "SW Compass Room 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SW_compass_room_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SW Compass Room 2N Door",
+                        "access_rules": ["^$CanReach|SW_compass_room_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SW_compass_room_2N_door"
@@ -293,13 +293,13 @@
                 ]
             },
             {
-                "name": "SW_compass_room_4E_door",
+                "name": "SW Compass Room 4E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SW_compass_room_4E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SW Compass Room 4E Door",
+                        "access_rules": ["^$CanReach|SW_compass_room_4E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SW_compass_room_4E_door"
@@ -316,13 +316,13 @@
                 ]
             },
             {
-                "name": "SW_pot_prison_4E_door",
+                "name": "SW Pot Prison 4E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SW_pot_prison_4E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SW Pot Prison 4E Door",
+                        "access_rules": ["^$CanReach|SW_pot_prison_4E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SW_pot_prison_4E_door"
@@ -339,13 +339,13 @@
                 ]
             },
             {
-                "name": "SW_pot_prison_4S_door",
+                "name": "SW Pot Prison 4S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SW_pot_prison_4S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SW Pot Prison 4S Door",
+                        "access_rules": ["^$CanReach|SW_pot_prison_4S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SW_pot_prison_4S_door"
@@ -362,13 +362,13 @@
                 ]
             },
             {
-                "name": "SW_pinball_room_3W_door",
+                "name": "SW Pinball Room 3W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SW_pinball_room_3W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SW Pinball Room 3W Door",
+                        "access_rules": ["^$CanReach|SW_pinball_room_3W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SW_pinball_room_3W_door"
@@ -385,13 +385,13 @@
                 ]
             },
             {
-                "name": "SW_pinball_room_2N_door",
+                "name": "SW Pinball Room 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SW_pinball_room_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SW Pinball Room 2N Door",
+                        "access_rules": ["^$CanReach|SW_pinball_room_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SW_pinball_room_2N_door"
@@ -408,13 +408,13 @@
                 ]
             },
             {
-                "name": "SW_map_room_4S_door",
+                "name": "SW Map Room 4S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SW_map_room_4S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SW Map Room 4S Door",
+                        "access_rules": ["^$CanReach|SW_map_room_4S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SW_map_room_4S_door"
@@ -431,13 +431,13 @@
                 ]
             },
             {
-                "name": "SW_big_chest_entrance_3W_door",
+                "name": "SW Big Chest Entrance 3W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SW_big_chest_entrance_3W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SW Big Chest Entrance 3W Door",
+                        "access_rules": ["^$CanReach|SW_big_chest_entrance_3W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SW_big_chest_entrance_3W_door"
@@ -454,13 +454,13 @@
                 ]
             },
             {
-                "name": "SW_gibdo_entrance_3W_door",
+                "name": "SW Gibdo Entrance 3W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SW_gibdo_entrance_3W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SW Gibdo Entrance 3W Door",
+                        "access_rules": ["^$CanReach|SW_gibdo_entrance_3W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SW_gibdo_entrance_3W_door"
@@ -477,13 +477,13 @@
                 ]
             },
             {
-                "name": "SW_gibdo_west_lobby_connector_4E_door",
+                "name": "SW Gibdo West Lobby Connector 4E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SW_gibdo_west_lobby_connector_4E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SW Gibdo West Lobby Connector 4E Door",
+                        "access_rules": ["^$CanReach|SW_gibdo_west_lobby_connector_4E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SW_gibdo_west_lobby_connector_4E_door"
@@ -508,13 +508,13 @@
         "access_rules": [],
         "children": [
             {
-                "name": "SW_back_bridge_1N_door",
+                "name": "SW Back Bridge 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SW_back_bridge_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SW Back Bridge 1N Door",
+                        "access_rules": ["^$CanReach|SW_back_bridge_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SW_back_bridge_1N_door"
@@ -531,13 +531,13 @@
                 ]
             },
             {
-                "name": "SW_star_switch_holes_3S_door",
+                "name": "SW Star Switch Holes 3S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SW_star_switch_holes_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SW Star Switch Holes 3S Door",
+                        "access_rules": ["^$CanReach|SW_star_switch_holes_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SW_star_switch_holes_3S_door"
@@ -554,13 +554,13 @@
                 ]
             },
             {
-                "name": "SW_vines_room_1N_door",
+                "name": "SW Vines Room 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SW_vines_room_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SW Vines Room 1N Door",
+                        "access_rules": ["^$CanReach|SW_vines_room_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SW_vines_room_1N_door"
@@ -577,13 +577,13 @@
                 ]
             },
             {
-                "name": "SW_back_spike_corner_room_3S_door",
+                "name": "SW Back Spike Corner Room 3S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SW_back_spike_corner_room_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SW Back Spike Corner Room 3S Door",
+                        "access_rules": ["^$CanReach|SW_back_spike_corner_room_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SW_back_spike_corner_room_3S_door"

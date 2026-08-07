@@ -308,13 +308,13 @@
         ],
         "children": [
             {
-                "name": "IP_jelly_room_3N_door",
+                "name": "IP Jelly Room 3N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_jelly_room_3N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Jelly Room 3N Door",
+                        "access_rules": ["^$CanReach|IP_jelly_room_3N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_jelly_room_3N_door"
@@ -331,13 +331,13 @@
                 ]
             },
             {
-                "name": "IP_floor_switch_3N_door",
+                "name": "IP Floor Switch 3N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_floor_switch_3N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Floor Switch 3N Door",
+                        "access_rules": ["^$CanReach|IP_floor_switch_3N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_floor_switch_3N_door"
@@ -354,13 +354,13 @@
                 ]
             },
             {
-                "name": "IP_push_cross_4S_door",
+                "name": "IP Push Cross 4S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_push_cross_4S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Push Cross 4S Door",
+                        "access_rules": ["^$CanReach|IP_push_cross_4S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_push_cross_4S_door"
@@ -377,13 +377,13 @@
                 ]
             },
             {
-                "name": "IP_push_cross_4E_door",
+                "name": "IP Push Cross 4E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_push_cross_4E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Push Cross 4E Door",
+                        "access_rules": ["^$CanReach|IP_push_cross_4E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_push_cross_4E_door"
@@ -400,13 +400,13 @@
                 ]
             },
             {
-                "name": "IP_compass_room_2N_door",
+                "name": "IP Compass Room 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_compass_room_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Compass Room 2N Door",
+                        "access_rules": ["^$CanReach|IP_compass_room_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_compass_room_2N_door"
@@ -423,13 +423,13 @@
                 ]
             },
             {
-                "name": "IP_sliding_switch_room_3W_door",
+                "name": "IP Sliding Switch Room 3W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_sliding_switch_room_3W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Sliding Switch Room 3W Door",
+                        "access_rules": ["^$CanReach|IP_sliding_switch_room_3W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_sliding_switch_room_3W_door"
@@ -446,13 +446,13 @@
                 ]
             },
             {
-                "name": "IP_big_key_room_right_4N_door",
+                "name": "IP Big Key Room Right 4N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_big_key_room_right_4N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Big Key Room Right 4N Door",
+                        "access_rules": ["^$CanReach|IP_big_key_room_right_4N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_big_key_room_right_4N_door"
@@ -469,13 +469,13 @@
                 ]
             },
             {
-                "name": "IP_conveyor_room_3S_door",
+                "name": "IP Conveyor Room 3S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_conveyor_room_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Conveyor Room 3S Door",
+                        "access_rules": ["^$CanReach|IP_conveyor_room_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_conveyor_room_3S_door"
@@ -492,13 +492,13 @@
                 ]
             },
             {
-                "name": "IP_firebar_or_bomb_jump_1N_door",
+                "name": "IP Firebar or Bomb Jump 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_firebar_or_bomb_jump_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Firebar or Bomb Jump 1N Door",
+                        "access_rules": ["^$CanReach|IP_firebar_or_bomb_jump_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_firebar_or_bomb_jump_1N_door"
@@ -515,13 +515,13 @@
                 ]
             },
             {
-                "name": "IP_narrow_corridor_2N_door",
+                "name": "IP Narrow Corridor 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_narrow_corridor_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Narrow Corridor 2N Door",
+                        "access_rules": ["^$CanReach|IP_narrow_corridor_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_narrow_corridor_2N_door"
@@ -538,13 +538,13 @@
                 ]
             },
             {
-                "name": "IP_sliding_penguins_N_door",
+                "name": "IP Sliding Penguins N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_sliding_penguins_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Sliding Penguins N Door",
+                        "access_rules": ["^$CanReach|IP_sliding_penguins_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_sliding_penguins_N_door"
@@ -561,13 +561,13 @@
                 ]
             },
             {
-                "name": "IP_sliding_penguins_3N_door",
+                "name": "IP Sliding Penguins 3N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_sliding_penguins_3N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Sliding Penguins 3N Door",
+                        "access_rules": ["^$CanReach|IP_sliding_penguins_3N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_sliding_penguins_3N_door"
@@ -584,13 +584,13 @@
                 ]
             },
             {
-                "name": "IP_spike_cross_4S_door",
+                "name": "IP Spike Cross 4S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_spike_cross_4S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Spike Cross 4S Door",
+                        "access_rules": ["^$CanReach|IP_spike_cross_4S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_spike_cross_4S_door"
@@ -607,13 +607,13 @@
                 ]
             },
             {
-                "name": "IP_spike_cross_4E_door",
+                "name": "IP Spike Cross 4E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_spike_cross_4E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Spike Cross 4E Door",
+                        "access_rules": ["^$CanReach|IP_spike_cross_4E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_spike_cross_4E_door"
@@ -630,13 +630,13 @@
                 ]
             },
             {
-                "name": "IP_sliding_firebar_3S_door",
+                "name": "IP Sliding Firebar 3S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_sliding_firebar_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Sliding Firebar 3S Door",
+                        "access_rules": ["^$CanReach|IP_sliding_firebar_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_sliding_firebar_3S_door"
@@ -653,13 +653,13 @@
                 ]
             },
             {
-                "name": "IP_spike_room_left_3W_door",
+                "name": "IP Spike Room Left 3W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_spike_room_left_3W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Spike Room Left 3W Door",
+                        "access_rules": ["^$CanReach|IP_spike_room_left_3W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_spike_room_left_3W_door"
@@ -676,13 +676,13 @@
                 ]
             },
             {
-                "name": "IP_spike_room_left_3N_door",
+                "name": "IP Spike Room Left 3N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_spike_room_left_3N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Spike Room Left 3N Door",
+                        "access_rules": ["^$CanReach|IP_spike_room_left_3N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_spike_room_left_3N_door"
@@ -699,13 +699,13 @@
                 ]
             },
             {
-                "name": "IP_spike_room_right_3N_door",
+                "name": "IP Spike Room Right 3N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_spike_room_right_3N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Spike Room Right 3N Door",
+                        "access_rules": ["^$CanReach|IP_spike_room_right_3N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_spike_room_right_3N_door"
@@ -722,13 +722,13 @@
                 ]
             },
             {
-                "name": "IP_freezor_room_3S_door",
+                "name": "IP Freezor Room 3S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_freezor_room_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Freezor Room 3S Door",
+                        "access_rules": ["^$CanReach|IP_freezor_room_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_freezor_room_3S_door"
@@ -745,13 +745,13 @@
                 ]
             },
             {
-                "name": "IP_ice_hallway_3S_door",
+                "name": "IP Ice Hallway 3S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_ice_hallway_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Ice Hallway 3S Door",
+                        "access_rules": ["^$CanReach|IP_ice_hallway_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_ice_hallway_3S_door"
@@ -768,13 +768,13 @@
                 ]
             },
             {
-                "name": "IP_ice_hallway_2E_door",
+                "name": "IP Ice Hallway 2E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_ice_hallway_2E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Ice Hallway 2E Door",
+                        "access_rules": ["^$CanReach|IP_ice_hallway_2E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_ice_hallway_2E_door"
@@ -791,13 +791,13 @@
                 ]
             },
             {
-                "name": "IP_big_spikeballs_4N_door",
+                "name": "IP Big Spikeballs 4N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_big_spikeballs_4N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Big Spikeballs 4N Door",
+                        "access_rules": ["^$CanReach|IP_big_spikeballs_4N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_big_spikeballs_4N_door"
@@ -814,13 +814,13 @@
                 ]
             },
             {
-                "name": "IP_bomb_slugs_N_door",
+                "name": "IP Bomb Slugs N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_bomb_slugs_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Bomb Slugs N Door",
+                        "access_rules": ["^$CanReach|IP_bomb_slugs_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_bomb_slugs_N_door"
@@ -837,13 +837,13 @@
                 ]
             },
             {
-                "name": "IP_bomb_slugs_2N_door",
+                "name": "IP Bomb Slugs 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_bomb_slugs_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Bomb Slugs 2N Door",
+                        "access_rules": ["^$CanReach|IP_bomb_slugs_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_bomb_slugs_2N_door"
@@ -860,13 +860,13 @@
                 ]
             },
             {
-                "name": "IP_crystal_switch_right_4E_door",
+                "name": "IP Crystal Switch Right 4E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_crystal_switch_right_4E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Crystal Switch Right 4E Door",
+                        "access_rules": ["^$CanReach|IP_crystal_switch_right_4E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_crystal_switch_right_4E_door"
@@ -883,13 +883,13 @@
                 ]
             },
             {
-                "name": "IP_anti_fairy_2_pots_1N_door",
+                "name": "IP Anti Fairy 2 Pots 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_anti_fairy_2_pots_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Anti Fairy 2 Pots 1N Door",
+                        "access_rules": ["^$CanReach|IP_anti_fairy_2_pots_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_anti_fairy_2_pots_1N_door"
@@ -906,13 +906,13 @@
                 ]
             },
             {
-                "name": "IP_pre_boss_hold_switch_4S_door",
+                "name": "IP Pre Boss Hold Switch 4S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_pre_boss_hold_switch_4S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Pre Boss Hold Switch 4S Door",
+                        "access_rules": ["^$CanReach|IP_pre_boss_hold_switch_4S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_pre_boss_hold_switch_4S_door"
@@ -929,13 +929,13 @@
                 ]
             },
             {
-                "name": "IP_pre_boss_hold_switch_4E_door",
+                "name": "IP Pre Boss Hold Switch 4E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_pre_boss_hold_switch_4E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Pre Boss Hold Switch 4E Door",
+                        "access_rules": ["^$CanReach|IP_pre_boss_hold_switch_4E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_pre_boss_hold_switch_4E_door"
@@ -952,13 +952,13 @@
                 ]
             },
             {
-                "name": "IP_pre_boss_refill_3W_door",
+                "name": "IP Pre Boss Refill 3W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_pre_boss_refill_3W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Pre Boss Refill 3W Door",
+                        "access_rules": ["^$CanReach|IP_pre_boss_refill_3W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_pre_boss_refill_3W_door"
@@ -975,13 +975,13 @@
                 ]
             },
             {
-                "name": "IP_backwards_room_2N_door",
+                "name": "IP Backwards Room 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_backwards_room_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Backwards Room 2N Door",
+                        "access_rules": ["^$CanReach|IP_backwards_room_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_backwards_room_2N_door"
@@ -998,13 +998,13 @@
                 ]
             },
             {
-                "name": "IP_many_pots_room_3W_door",
+                "name": "IP Many Pots Room 3W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_many_pots_room_3W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Many Pots Room 3W Door",
+                        "access_rules": ["^$CanReach|IP_many_pots_room_3W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_many_pots_room_3W_door"
@@ -1021,13 +1021,13 @@
                 ]
             },
             {
-                "name": "IP_many_pots_room_3S_door",
+                "name": "IP Many Pots Room 3S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_many_pots_room_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Many Pots Room 3S Door",
+                        "access_rules": ["^$CanReach|IP_many_pots_room_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_many_pots_room_3S_door"
@@ -1044,13 +1044,13 @@
                 ]
             },
             {
-                "name": "IP_ice_catwalk_1N_door",
+                "name": "IP Ice Catwalk 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_ice_catwalk_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Ice Catwalk 1N Door",
+                        "access_rules": ["^$CanReach|IP_ice_catwalk_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_ice_catwalk_1N_door"
@@ -1067,13 +1067,13 @@
                 ]
             },
             {
-                "name": "IP_ice_catwalk_1W_door",
+                "name": "IP Ice Catwalk 1W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_ice_catwalk_1W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Ice Catwalk 1W Door",
+                        "access_rules": ["^$CanReach|IP_ice_catwalk_1W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_ice_catwalk_1W_door"
@@ -1090,13 +1090,13 @@
                 ]
             },
             {
-                "name": "IP_iced_t_room_2N_door",
+                "name": "IP Iced T Room 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_iced_t_room_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Iced T Room 2N Door",
+                        "access_rules": ["^$CanReach|IP_iced_t_room_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_iced_t_room_2N_door"
@@ -1113,13 +1113,13 @@
                 ]
             },
             {
-                "name": "IP_iced_t_room_2E_door",
+                "name": "IP Iced T Room 2E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_iced_t_room_2E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Iced T Room 2E Door",
+                        "access_rules": ["^$CanReach|IP_iced_t_room_2E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_iced_t_room_2E_door"
@@ -1136,13 +1136,13 @@
                 ]
             },
             {
-                "name": "IP_map_room_3N_door",
+                "name": "IP Map Room 3N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_map_room_3N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Map Room 3N Door",
+                        "access_rules": ["^$CanReach|IP_map_room_3N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_map_room_3N_door"
@@ -1159,13 +1159,13 @@
                 ]
             },
             {
-                "name": "IP_tongue_pull_4N_door",
+                "name": "IP Tongue Pull 4N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_tongue_pull_4N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Tongue Pull 4N Door",
+                        "access_rules": ["^$CanReach|IP_tongue_pull_4N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_tongue_pull_4N_door"
@@ -1182,13 +1182,13 @@
                 ]
             },
             {
-                "name": "IP_boss_antechamber_2N_door",
+                "name": "IP Boss Antechamber 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_boss_antechamber_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Boss Antechamber 2N Door",
+                        "access_rules": ["^$CanReach|IP_boss_antechamber_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_boss_antechamber_2N_door"
@@ -1205,13 +1205,13 @@
                 ]
             },
             {
-                "name": "IP_lonely_freezor_1N_door",
+                "name": "IP Lonely Freezor 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_lonely_freezor_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Lonely Freezor 1N Door",
+                        "access_rules": ["^$CanReach|IP_lonely_freezor_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_lonely_freezor_1N_door"
@@ -1228,13 +1228,13 @@
                 ]
             },
             {
-                "name": "IP_lonely_freezor_N_door",
+                "name": "IP Lonely Freezor N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_lonely_freezor_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Lonely Freezor N Door",
+                        "access_rules": ["^$CanReach|IP_lonely_freezor_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_lonely_freezor_N_door"
@@ -1251,13 +1251,13 @@
                 ]
             },
             {
-                "name": "IP_hookshot_pit_1W_door",
+                "name": "IP Hookshot Pit 1W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "IP_hookshot_pit_1W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "IP Hookshot Pit 1W Door",
+                        "access_rules": ["^$CanReach|IP_hookshot_pit_1W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_IP_hookshot_pit_1W_door"

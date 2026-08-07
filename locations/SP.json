@@ -380,13 +380,13 @@
         ],
         "children": [
             {
-                "name": "SP_first_room_1N_door",
+                "name": "SP First Room 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_first_room_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP First Room 1N Door",
+                        "access_rules": ["^$CanReach|SP_first_room_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_first_room_1N_door"
@@ -403,13 +403,13 @@
                 ]
             },
             {
-                "name": "SP_pot_row_1N_door",
+                "name": "SP Pot Row 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_pot_row_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP Pot Row 1N Door",
+                        "access_rules": ["^$CanReach|SP_pot_row_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_pot_row_1N_door"
@@ -426,13 +426,13 @@
                 ]
             },
             {
-                "name": "SP_pot_row_1W_door",
+                "name": "SP Pot Row 1W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_pot_row_1W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP Pot Row 1W Door",
+                        "access_rules": ["^$CanReach|SP_pot_row_1W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_pot_row_1W_door"
@@ -449,13 +449,13 @@
                 ]
             },
             {
-                "name": "SP_pot_row_3W_door",
+                "name": "SP Pot Row 3W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_pot_row_3W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP Pot Row 3W Door",
+                        "access_rules": ["^$CanReach|SP_pot_row_3W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_pot_row_3W_door"
@@ -472,13 +472,13 @@
                 ]
             },
             {
-                "name": "SP_map_chest_ledge_2E_door",
+                "name": "SP Map Chest Ledge 2E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_map_chest_ledge_2E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP Map Chest Ledge 2E Door",
+                        "access_rules": ["^$CanReach|SP_map_chest_ledge_2E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_map_chest_ledge_2E_door"
@@ -495,13 +495,13 @@
                 ]
             },
             {
-                "name": "SP_first_trench_4E_door",
+                "name": "SP First Trench 4E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_first_trench_4E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP First Trench 4E Door",
+                        "access_rules": ["^$CanReach|SP_first_trench_4E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_first_trench_4E_door"
@@ -518,13 +518,13 @@
                 ]
             },
             {
-                "name": "SP_first_trench_3W_door",
+                "name": "SP First Trench 3W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_first_trench_3W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP First Trench 3W Door",
+                        "access_rules": ["^$CanReach|SP_first_trench_3W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_first_trench_3W_door"
@@ -541,13 +541,13 @@
                 ]
             },
             {
-                "name": "SP_flood_first_trench_room_1W_door",
+                "name": "SP Flood First Trench Room 1W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_flood_first_trench_room_1W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP Flood First Trench Room 1W Door",
+                        "access_rules": ["^$CanReach|SP_flood_first_trench_room_1W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_flood_first_trench_room_1W_door"
@@ -564,13 +564,13 @@
                 ]
             },
             {
-                "name": "SP_main_room_north_ledge_N_door",
+                "name": "SP Main Room North Ledge N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_main_room_north_ledge_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP Main Room North Ledge N Door",
+                        "access_rules": ["^$CanReach|SP_main_room_north_ledge_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_main_room_north_ledge_N_door"
@@ -587,13 +587,13 @@
                 ]
             },
             {
-                "name": "SP_main_room_north_east_ledge_E_door",
+                "name": "SP Main Room North East Ledge E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_main_room_north_east_ledge_E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP Main Room North East Ledge E Door",
+                        "access_rules": ["^$CanReach|SP_main_room_north_east_ledge_E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_main_room_north_east_ledge_E_door"
@@ -610,13 +610,13 @@
                 ]
             },
             {
-                "name": "SP_main_room_1W_door",
+                "name": "SP Main Room 1W_door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_main_room_1W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP Main Room 1W_door",
+                        "access_rules": ["^$CanReach|SP_main_room_1W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_main_room_1W_door"
@@ -633,13 +633,13 @@
                 ]
             },
             {
-                "name": "SP_main_room_3W_door",
+                "name": "SP Main Room 3W_door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_main_room_3W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP Main Room 3W_door",
+                        "access_rules": ["^$CanReach|SP_main_room_3W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_main_room_3W_door"
@@ -656,13 +656,13 @@
                 ]
             },
             {
-                "name": "SP_main_room_4E_door",
+                "name": "SP Main Room 4E_door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_main_room_4E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP Main Room 4E_door",
+                        "access_rules": ["^$CanReach|SP_main_room_4E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_main_room_4E_door"
@@ -679,13 +679,13 @@
                 ]
             },
             {
-                "name": "SP_main_room_S_door",
+                "name": "SP Main Room S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_main_room_S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP Main Room S Door",
+                        "access_rules": ["^$CanReach|SP_main_room_S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_main_room_S_door"
@@ -702,13 +702,13 @@
                 ]
             },
             {
-                "name": "SP_flood_second_trench_room_2E_door",
+                "name": "SP Flood Second Trench Room 2E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_flood_second_trench_room_2E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP Flood Second Trench Room 2E Door",
+                        "access_rules": ["^$CanReach|SP_flood_second_trench_room_2E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_flood_second_trench_room_2E_door"
@@ -725,13 +725,13 @@
                 ]
             },
             {
-                "name": "SP_second_trench_4E_door",
+                "name": "SP Second Trench 4E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_second_trench_4E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP Second Trench 4E Door",
+                        "access_rules": ["^$CanReach|SP_second_trench_4E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_second_trench_4E_door"
@@ -748,13 +748,13 @@
                 ]
             },
             {
-                "name": "SP_second_trench_3W_door",
+                "name": "SP Second Trench 3W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_second_trench_3W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP Second Trench 3W Door",
+                        "access_rules": ["^$CanReach|SP_second_trench_3W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_second_trench_3W_door"
@@ -771,13 +771,13 @@
                 ]
             },
             {
-                "name": "SP_big_key_chest_ledge_1W_door",
+                "name": "SP Big Key Chest Ledge 1W Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_big_key_chest_ledge_1W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP Big Key Chest Ledge 1W Door",
+                        "access_rules": ["^$CanReach|SP_big_key_chest_ledge_1W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_big_key_chest_ledge_1W_door"
@@ -794,13 +794,13 @@
                 ]
             },
             {
-                "name": "SP_shallow_trench_3N_door",
+                "name": "SP Shallow Trench 3N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_shallow_trench_3N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP Shallow Trench 3N Door",
+                        "access_rules": ["^$CanReach|SP_shallow_trench_3N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_shallow_trench_3N_door"
@@ -817,13 +817,13 @@
                 ]
             },
             {
-                "name": "SP_shallow_trench_4E_door",
+                "name": "SP Shallow Trench 4E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_shallow_trench_4E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP Shallow Trench 4E Door",
+                        "access_rules": ["^$CanReach|SP_shallow_trench_4E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_shallow_trench_4E_door"
@@ -840,13 +840,13 @@
                 ]
             },
             {
-                "name": "SP_shallow_water_attic_3N_door",
+                "name": "SP Shallow Water Attic 3N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_shallow_water_attic_3N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP Shallow Water Attic 3N Door",
+                        "access_rules": ["^$CanReach|SP_shallow_water_attic_3N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_shallow_water_attic_3N_door"
@@ -863,13 +863,13 @@
                 ]
             },
             {
-                "name": "SP_shallow_trench_big_key_ledge_2E_door",
+                "name": "SP Shallow Trench Big Key Ledge 2E Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_shallow_trench_big_key_ledge_2E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP Shallow Trench Big Key Ledge 2E Door",
+                        "access_rules": ["^$CanReach|SP_shallow_trench_big_key_ledge_2E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_shallow_trench_big_key_ledge_2E_door"
@@ -886,13 +886,13 @@
                 ]
             },
             {
-                "name": "SP_roundabout_N_door",
+                "name": "SP Roundabout N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_roundabout_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP Roundabout N Door",
+                        "access_rules": ["^$CanReach|SP_roundabout_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_roundabout_N_door"
@@ -909,13 +909,13 @@
                 ]
             },
             {
-                "name": "SP_push_statue_room_S_door",
+                "name": "SP Push Statue Room S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_push_statue_room_S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP Push Statue Room S Door",
+                        "access_rules": ["^$CanReach|SP_push_statue_room_S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_push_statue_room_S_door"
@@ -932,13 +932,13 @@
                 ]
             },
             {
-                "name": "SP_push_statue_room_4N_door",
+                "name": "SP Push Statue Room 4N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_push_statue_room_4N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP Push Statue Room 4N Door",
+                        "access_rules": ["^$CanReach|SP_push_statue_room_4N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_push_statue_room_4N_door"
@@ -955,13 +955,13 @@
                 ]
             },
             {
-                "name": "SP_tiny_hallway_N_door",
+                "name": "SP Tiny Hallway N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_tiny_hallway_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP Tiny Hallway N Door",
+                        "access_rules": ["^$CanReach|SP_tiny_hallway_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_tiny_hallway_N_door"
@@ -978,13 +978,13 @@
                 ]
             },
             {
-                "name": "SP_S_hallway_2N_door",
+                "name": "SP S Hallway 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_S_hallway_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP S Hallway 2N Door",
+                        "access_rules": ["^$CanReach|SP_S_hallway_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_S_hallway_2N_door"
@@ -1001,13 +1001,13 @@
                 ]
             },
             {
-                "name": "SP_drain_switch_room_N_door",
+                "name": "SP Drain Switch Room N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_drain_switch_room_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP Drain Switch Room N Door",
+                        "access_rules": ["^$CanReach|SP_drain_switch_room_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_drain_switch_room_N_door"
@@ -1024,13 +1024,13 @@
                 ]
             },
             {
-                "name": "SP_drain_switch_room_2N_door",
+                "name": "SP Drain Switch Room 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_drain_switch_room_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP Drain Switch Room 2N Door",
+                        "access_rules": ["^$CanReach|SP_drain_switch_room_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_drain_switch_room_2N_door"
@@ -1047,13 +1047,13 @@
                 ]
             },
             {
-                "name": "SP_basement_shallows_hallway_1N_door",
+                "name": "SP Basement Shallows Hallway 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_basement_shallows_hallway_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP Basement Shallows Hallway 1N Door",
+                        "access_rules": ["^$CanReach|SP_basement_shallows_hallway_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_basement_shallows_hallway_1N_door"
@@ -1070,13 +1070,13 @@
                 ]
             },
             {
-                "name": "SP_waterfall_room_3S_door",
+                "name": "SP Waterfall Room 3S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_waterfall_room_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP Waterfall Room 3S Door",
+                        "access_rules": ["^$CanReach|SP_waterfall_room_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_waterfall_room_3S_door"
@@ -1093,13 +1093,13 @@
                 ]
             },
             {
-                "name": "SP_after_waterfall_room_2N_door",
+                "name": "SP After Waterfall Room 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_after_waterfall_room_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP After Waterfall Room 2N Door",
+                        "access_rules": ["^$CanReach|SP_after_waterfall_room_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_after_waterfall_room_2N_door"
@@ -1116,13 +1116,13 @@
                 ]
             },
             {
-                "name": "SP_C_hallway_2N_door",
+                "name": "SP C Hallway 2N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_C_hallway_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP C Hallway 2N Door",
+                        "access_rules": ["^$CanReach|SP_C_hallway_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_C_hallway_2N_door"
@@ -1139,13 +1139,13 @@
                 ]
             },
             {
-                "name": "SP_boss_hallway_1N_door",
+                "name": "SP Boss Hallway 1N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_boss_hallway_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP Boss Hallway 1N Door",
+                        "access_rules": ["^$CanReach|SP_boss_hallway_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_boss_hallway_1N_door"
@@ -1162,13 +1162,13 @@
                 ]
             },
             {
-                "name": "SP_boss_room_3S_door",
+                "name": "SP Boss Room 3S Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_boss_room_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP Boss Room 3S Door",
+                        "access_rules": ["^$CanReach|SP_boss_room_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_boss_room_3S_door"
@@ -1185,13 +1185,13 @@
                 ]
             },
             {
-                "name": "SP_flooded_room_balcony_4N_door",
+                "name": "SP Flooded Room Balcony 4N Door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "SP_flooded_room_balcony_4N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "SP Flooded Room Balcony 4N Door",
+                        "access_rules": ["^$CanReach|SP_flooded_room_balcony_4N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_SP_flooded_room_balcony_4N_door"

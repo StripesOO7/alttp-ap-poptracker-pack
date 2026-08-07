@@ -282,13 +282,13 @@
         ],
         "children": [
             {
-                "name": "MM_post_gap_4N_door",
+                "name": "MM post gap 4N door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_post_gap_4N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM post gap 4N door",
+                        "access_rules": ["^$CanReach|MM_post_gap_4N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_post_gap_4N_door"
@@ -305,13 +305,13 @@
                 ]
             },
             {
-                "name": "MM_wizrobe_room_4N_door",
+                "name": "MM wizrobe room 4N door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_wizrobe_room_4N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM wizrobe room 4N door",
+                        "access_rules": ["^$CanReach|MM_wizrobe_room_4N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_wizrobe_room_4N_door"
@@ -328,13 +328,13 @@
                 ]
             },
             {
-                "name": "MM_wizrobe_room_2N_door",
+                "name": "MM wizrobe room 2N door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_wizrobe_room_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM wizrobe room 2N door",
+                        "access_rules": ["^$CanReach|MM_wizrobe_room_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_wizrobe_room_2N_door"
@@ -351,13 +351,13 @@
                 ]
             },
             {
-                "name": "MM_main_room_1N_door",
+                "name": "MM main room 1N door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_main_room_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM main room 1N door",
+                        "access_rules": ["^$CanReach|MM_main_room_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_main_room_1N_door"
@@ -374,13 +374,13 @@
                 ]
             },
             {
-                "name": "MM_main_room_1W_door",
+                "name": "MM main room 1W door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_main_room_1W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM main room 1W door",
+                        "access_rules": ["^$CanReach|MM_main_room_1W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_main_room_1W_door"
@@ -397,13 +397,13 @@
                 ]
             },
             {
-                "name": "MM_main_room_2N_door",
+                "name": "MM main room 2N door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_main_room_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM main room 2N door",
+                        "access_rules": ["^$CanReach|MM_main_room_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_main_room_2N_door"
@@ -420,13 +420,13 @@
                 ]
             },
             {
-                "name": "MM_main_room_2E_door",
+                "name": "MM main room 2E door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_main_room_2E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM main room 2E door",
+                        "access_rules": ["^$CanReach|MM_main_room_2E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_main_room_2E_door"
@@ -443,13 +443,13 @@
                 ]
             },
             {
-                "name": "MM_main_room_E_door",
+                "name": "MM main room E door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_main_room_E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM main room E door",
+                        "access_rules": ["^$CanReach|MM_main_room_E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_main_room_E_door"
@@ -466,13 +466,13 @@
                 ]
             },
             {
-                "name": "MM_main_room_3W_door",
+                "name": "MM main room 3W door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_main_room_3W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM main room 3W door",
+                        "access_rules": ["^$CanReach|MM_main_room_3W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_main_room_3W_door"
@@ -489,13 +489,13 @@
                 ]
             },
             {
-                "name": "MM_main_room_4E_door",
+                "name": "MM main room 4E door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_main_room_4E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM main room 4E door",
+                        "access_rules": ["^$CanReach|MM_main_room_4E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_main_room_4E_door"
@@ -512,13 +512,13 @@
                 ]
             },
             {
-                "name": "MM_main_room_4S_door",
+                "name": "MM main room 4S door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_main_room_4S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM main room 4S door",
+                        "access_rules": ["^$CanReach|MM_main_room_4S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_main_room_4S_door"
@@ -535,13 +535,13 @@
                 ]
             },
             {
-                "name": "MM_map_room_top_middle_1N_door",
+                "name": "MM map room top middle 1N door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_map_room_top_middle_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM map room top middle 1N door",
+                        "access_rules": ["^$CanReach|MM_map_room_top_middle_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_map_room_top_middle_1N_door"
@@ -558,13 +558,13 @@
                 ]
             },
             {
-                "name": "MM_map_room_top_left_1W_door",
+                "name": "MM map room top_left 1W door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_map_room_top_left_1W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM map room top_left 1W door",
+                        "access_rules": ["^$CanReach|MM_map_room_top_left_1W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_map_room_top_left_1W_door"
@@ -581,13 +581,13 @@
                 ]
             },
             {
-                "name": "MM_map_room_bottom_3W_door",
+                "name": "MM map room bottom 3W door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_map_room_bottom_3W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM map room bottom 3W door",
+                        "access_rules": ["^$CanReach|MM_map_room_bottom_3W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_map_room_bottom_3W_door"
@@ -604,13 +604,13 @@
                 ]
             },
             {
-                "name": "MM_map_room_center_bridge_W_door",
+                "name": "MM map room center bridge W door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_map_room_center_bridge_W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM map room center bridge W door",
+                        "access_rules": ["^$CanReach|MM_map_room_center_bridge_W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_map_room_center_bridge_W_door"
@@ -627,13 +627,13 @@
                 ]
             },
             {
-                "name": "MM_conveyor_crystal_room_4E_door",
+                "name": "MM conveyor crystal room 4E door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_conveyor_crystal_room_4E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM conveyor crystal room 4E door",
+                        "access_rules": ["^$CanReach|MM_conveyor_crystal_room_4E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_conveyor_crystal_room_4E_door"
@@ -650,13 +650,13 @@
                 ]
             },
             {
-                "name": "MM_conveyor_crystal_room_4S_door",
+                "name": "MM conveyor crystal room 4S door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_conveyor_crystal_room_4S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM conveyor crystal room 4S door",
+                        "access_rules": ["^$CanReach|MM_conveyor_crystal_room_4S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_conveyor_crystal_room_4S_door"
@@ -673,13 +673,13 @@
                 ]
             },
             {
-                "name": "MM_neglected_room_2N_door",
+                "name": "MM neglected room 2N door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_neglected_room_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM neglected room 2N door",
+                        "access_rules": ["^$CanReach|MM_neglected_room_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_neglected_room_2N_door"
@@ -696,13 +696,13 @@
                 ]
             },
             {
-                "name": "MM_four_torches_tile_room_3S_door",
+                "name": "MM four torches tile room 3S door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_four_torches_tile_room_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM four torches tile room 3S door",
+                        "access_rules": ["^$CanReach|MM_four_torches_tile_room_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_four_torches_tile_room_3S_door"
@@ -719,13 +719,13 @@
                 ]
             },
             {
-                "name": "MM_bomb_slug_room_3S_door",
+                "name": "MM bomb slug room 3S door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_bomb_slug_room_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM bomb slug room 3S door",
+                        "access_rules": ["^$CanReach|MM_bomb_slug_room_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_bomb_slug_room_3S_door"
@@ -742,13 +742,13 @@
                 ]
             },
             {
-                "name": "MM_spike_room_3W_door",
+                "name": "MM spike room 3W door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_spike_room_3W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM spike room 3W door",
+                        "access_rules": ["^$CanReach|MM_spike_room_3W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_spike_room_3W_door"
@@ -765,13 +765,13 @@
                 ]
             },
             {
-                "name": "MM_spike_room_3S_door",
+                "name": "MM spike room 3S door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_spike_room_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM spike room 3S door",
+                        "access_rules": ["^$CanReach|MM_spike_room_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_spike_room_3S_door"
@@ -788,13 +788,13 @@
                 ]
             },
             {
-                "name": "MM_2_torches_hidden_shooter_4E_door",
+                "name": "MM 2 torches hidden shooter 4E door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_2_torches_hidden_shooter_4E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM 2 torches hidden shooter 4E door",
+                        "access_rules": ["^$CanReach|MM_2_torches_hidden_shooter_4E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_2_torches_hidden_shooter_4E_door"
@@ -811,13 +811,13 @@
                 ]
             },
             {
-                "name": "MM_2_torches_hidden_shooter_4S_door",
+                "name": "MM 2 torches hidden shooter 4S door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_2_torches_hidden_shooter_4S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM 2 torches hidden shooter 4S door",
+                        "access_rules": ["^$CanReach|MM_2_torches_hidden_shooter_4S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_2_torches_hidden_shooter_4S_door"
@@ -834,13 +834,13 @@
                 ]
             },
             {
-                "name": "MM_above_spike_room_1N_door",
+                "name": "MM Big Key Door Room Bridge NS 2N door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_above_spike_room_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM Big Key Door Room Bridge NS 2N door",
+                        "access_rules": ["^$CanReach|MM_above_spike_room_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_above_spike_room_1N_door"
@@ -857,13 +857,13 @@
                 ]
             },
             {
-                "name": "MM_above_spike_room_1W_door",
+                "name": "MM above spike room 1N door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_above_spike_room_1W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM above spike room 1N door",
+                        "access_rules": ["^$CanReach|MM_above_spike_room_1W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_above_spike_room_1W_door"
@@ -880,11 +880,11 @@
                 ]
             },
             {
-                "name": "MM_big_keydoor_room_bridge_NS_2N_door",
+                "name": "MM above spike room 1W door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_big_keydoor_room_bridge_NS_2N_door",
+                        "name": "MM above spike room 1W door",
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_size":128,
@@ -903,13 +903,13 @@
                 ]
             },
             {
-                "name": "MM_big_keydoor_room_N_door",
+                "name": "MM big key door room N door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_big_keydoor_room_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM big key door room N door",
+                        "access_rules": ["^$CanReach|MM_big_keydoor_room_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_big_keydoor_room_N_door"
@@ -926,13 +926,13 @@
                 ]
             },
             {
-                "name": "MM_big_keydoor_room_2E_door",
+                "name": "MM big key door room 2E door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_big_keydoor_room_2E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM big key door room 2E door",
+                        "access_rules": ["^$CanReach|MM_big_keydoor_room_2E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_big_keydoor_room_2E_door"
@@ -949,13 +949,13 @@
                 ]
             },
             {
-                "name": "MM_bridge_right_4S_door",
+                "name": "MM bridge right 4S door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_bridge_right_4S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM bridge right 4S door",
+                        "access_rules": ["^$CanReach|MM_bridge_right_4S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_bridge_right_4S_door"
@@ -972,13 +972,13 @@
                 ]
             },
             {
-                "name": "MM_bridge_middle_N_door",
+                "name": "MM bridge_middle N door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_bridge_middle_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM bridge_middle N door",
+                        "access_rules": ["^$CanReach|MM_bridge_middle_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_bridge_middle_N_door"
@@ -995,13 +995,13 @@
                 ]
             },
             {
-                "name": "MM_bridge_middle_S_door",
+                "name": "MM bridge middle S door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_bridge_middle_S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM bridge middle S door",
+                        "access_rules": ["^$CanReach|MM_bridge_middle_S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_bridge_middle_S_door"
@@ -1018,13 +1018,13 @@
                 ]
             },
             {
-                "name": "MM_bridge_EW_E_door",
+                "name": "MM bridge EW E door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_bridge_EW_E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM bridge EW E door",
+                        "access_rules": ["^$CanReach|MM_bridge_EW_E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_bridge_EW_E_door"
@@ -1041,13 +1041,13 @@
                 ]
             },
             {
-                "name": "MM_bridge_EW_W_door",
+                "name": "MM bridge EW W door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_bridge_EW_W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM bridge EW W door",
+                        "access_rules": ["^$CanReach|MM_bridge_EW_W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_bridge_EW_W_door"
@@ -1064,13 +1064,13 @@
                 ]
             },
             {
-                "name": "MM_bent_bridge_W_door",
+                "name": "MM bent bridge W door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_bent_bridge_W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM bent bridge W door",
+                        "access_rules": ["^$CanReach|MM_bent_bridge_W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_bent_bridge_W_door"
@@ -1087,13 +1087,13 @@
                 ]
             },
             {
-                "name": "MM_bent_bridge_3S_door",
+                "name": "MM bent bridge 3S door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_bent_bridge_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM bent bridge 3S door",
+                        "access_rules": ["^$CanReach|MM_bent_bridge_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_bent_bridge_3S_door"
@@ -1110,13 +1110,13 @@
                 ]
             },
             {
-                "name": "MM_fishbone_room_E_door",
+                "name": "MM fishbone room E door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_fishbone_room_E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM fishbone room E door",
+                        "access_rules": ["^$CanReach|MM_fishbone_room_E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_fishbone_room_E_door"
@@ -1133,13 +1133,13 @@
                 ]
             },
             {
-                "name": "MM_fishbone_room_4S_door",
+                "name": "MM fishbone room 4S door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_fishbone_room_4S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM fishbone room 4S door",
+                        "access_rules": ["^$CanReach|MM_fishbone_room_4S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_fishbone_room_4S_door"
@@ -1156,13 +1156,13 @@
                 ]
             },
             {
-                "name": "MM_hourglas_room_2N_door",
+                "name": "MM hourglas room 2N door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_hourglas_room_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM hourglas room 2N door",
+                        "access_rules": ["^$CanReach|MM_hourglas_room_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_hourglas_room_2N_door"
@@ -1179,13 +1179,13 @@
                 ]
             },
             {
-                "name": "MM_hourglas_room_4S_door",
+                "name": "MM hourglas room 4S door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_hourglas_room_4S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM hourglas room 4S door",
+                        "access_rules": ["^$CanReach|MM_hourglas_room_4S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_hourglas_room_4S_door"
@@ -1202,13 +1202,13 @@
                 ]
             },
             {
-                "name": "MM_wizzrobe_bypass_2E_door",
+                "name": "MM wizzrobe bypass 2E door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_wizzrobe_bypass_2E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM wizzrobe bypass 2E door",
+                        "access_rules": ["^$CanReach|MM_wizzrobe_bypass_2E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_wizzrobe_bypass_2E_door"
@@ -1225,13 +1225,13 @@
                 ]
             },
             {
-                "name": "MM_wizzrobe_bypass_2N_door",
+                "name": "MM wizzrobe bypass 2N door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_wizzrobe_bypass_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM wizzrobe bypass 2N door",
+                        "access_rules": ["^$CanReach|MM_wizzrobe_bypass_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_wizzrobe_bypass_2N_door"
@@ -1248,13 +1248,13 @@
                 ]
             },
             {
-                "name": "MM_conveyor_bomb_slug_room_N_door",
+                "name": "MM conveyor bomb slug room N door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_conveyor_bomb_slug_room_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM conveyor bomb slug room N door",
+                        "access_rules": ["^$CanReach|MM_conveyor_bomb_slug_room_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_conveyor_bomb_slug_room_N_door"
@@ -1271,13 +1271,13 @@
                 ]
             },
             {
-                "name": "MM_conveyor_bomb_slug_room_1N_door",
+                "name": "MM conveyor bomb slug room 1N door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_conveyor_bomb_slug_room_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM conveyor bomb slug room 1N door",
+                        "access_rules": ["^$CanReach|MM_conveyor_bomb_slug_room_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_conveyor_bomb_slug_room_1N_door"
@@ -1294,13 +1294,13 @@
                 ]
             },
             {
-                "name": "MM_torches_top_N_door",
+                "name": "MM torches top N door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_torches_top_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM torches top N door",
+                        "access_rules": ["^$CanReach|MM_torches_top_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_torches_top_N_door"
@@ -1317,13 +1317,13 @@
                 ]
             },
             {
-                "name": "MM_dark_shooters_N_door",
+                "name": "MM dark_ hooters N door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_dark_shooters_N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM dark_ hooters N door",
+                        "access_rules": ["^$CanReach|MM_dark_shooters_N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_dark_shooters_N_door"
@@ -1340,13 +1340,13 @@
                 ]
             },
             {
-                "name": "MM_block_X_3W_door",
+                "name": "MM block X 3W door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_block_X_3W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM block X 3W door",
+                        "access_rules": ["^$CanReach|MM_block_X_3W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_block_X_3W_door"
@@ -1363,13 +1363,13 @@
                 ]
             },
             {
-                "name": "MM_tall_dark_and_roomy_4E_door",
+                "name": "MM tall dark and roomy 4E door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_tall_dark_and_roomy_4E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM tall dark and roomy 4E door",
+                        "access_rules": ["^$CanReach|MM_tall_dark_and_roomy_4E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_tall_dark_and_roomy_4E_door"
@@ -1386,13 +1386,13 @@
                 ]
             },
             {
-                "name": "MM_crystal_left_3W_door",
+                "name": "MM crystal left 3W door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_crystal_left_3W_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM crystal left 3W door",
+                        "access_rules": ["^$CanReach|MM_crystal_left_3W_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_crystal_left_3W_door"
@@ -1409,13 +1409,13 @@
                 ]
             },
             {
-                "name": "MM_falling_foes_4E_door",
+                "name": "MM falling foes 4E door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_falling_foes_4E_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM falling foes 4E door",
+                        "access_rules": ["^$CanReach|MM_falling_foes_4E_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_falling_foes_4E_door"
@@ -1432,13 +1432,13 @@
                 ]
             },
             {
-                "name": "MM_falling_foes_2N_door",
+                "name": "MM falling foes 2N door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_falling_foes_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM falling foes 2N door",
+                        "access_rules": ["^$CanReach|MM_falling_foes_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_falling_foes_2N_door"
@@ -1455,13 +1455,13 @@
                 ]
             },
             {
-                "name": "MM_antechamber_left_1N_door",
+                "name": "MM antechamber left 1N door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_antechamber_left_1N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM antechamber left 1N door",
+                        "access_rules": ["^$CanReach|MM_antechamber_left_1N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_antechamber_left_1N_door"
@@ -1478,13 +1478,13 @@
                 ]
             },
             {
-                "name": "MM_antechamber_right_2N_door",
+                "name": "MM antechamber right 2N door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_antechamber_right_2N_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM antechamber right 2N door",
+                        "access_rules": ["^$CanReach|MM_antechamber_right_2N_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_antechamber_right_2N_door"
@@ -1501,13 +1501,13 @@
                 ]
             },
             {
-                "name": "MM_boss_room_3S_door",
+                "name": "MM boss room 3S door",
                 "access_rules": [],
                 "sections": [
                     {
-                        "name": "MM_boss_room_3S_door",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "name": "MM boss room 3S door",
+                        "access_rules": ["^$CanReach|MM_boss_room_3S_door"],
+                        "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
                         "hosted_item": "from_MM_boss_room_3S_door"
