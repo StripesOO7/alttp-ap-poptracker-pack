@@ -1,6 +1,6 @@
 --logic main
 ScriptHost:AddWatchForCode("ER_Setting_Changed", "er_full", EmptyERLocationTargets)
-ScriptHost:AddWatchForCode("ER_Setting_Changed", "doors_tracking", EmptyDoorsTargets)
+ScriptHost:AddWatchForCode("ER_Setting_Changed", "doors_vanilla", EmptyDoorsTargets)
 -- ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", LocationHandler)
 ScriptHost:AddWatchForCode("keydropshuffle handler", "key_drop_shuffle", KeyDropLayoutChange)
 ScriptHost:AddWatchForCode("doors_enabled handler", "doors_enabled", KeyDropLayoutChange)
@@ -59,6 +59,7 @@ end
 --ER reduced layout
 ScriptHost:AddWatchForCode("reduce ER map clutter", "reduce_maps", ChangeERMap)
 ScriptHost:AddWatchForCode("remove ER Layout", "er_tracking", ChangeERLayout)
+ScriptHost:AddWatchForCode("remove ER Layout", "doors_tracking", ChangeERLayout)
 
 ScriptHost:AddWatchForCode("glitches changed", "glitches", UpdateCanInteract)
 

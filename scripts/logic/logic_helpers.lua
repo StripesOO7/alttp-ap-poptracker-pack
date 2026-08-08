@@ -1287,6 +1287,13 @@ function ChangeERLayout()
         Tracker:AddLayouts("layouts/tabs_er.json")
         Tracker:AddMaps("maps/er_legend_on.json")
     end
+    if Tracker:FindObjectForCode("doors_tracking").CurrentStage == 0 then
+        Tracker:AddLayouts("layouts/tabs.json")
+        Tracker:AddMaps("maps/er_legend_off.json")
+    else
+        Tracker:AddLayouts("layouts/tabs_er.json")
+        Tracker:AddMaps("maps/er_legend_on.json")
+    end
 end
 
 function ChangePopupLayout()

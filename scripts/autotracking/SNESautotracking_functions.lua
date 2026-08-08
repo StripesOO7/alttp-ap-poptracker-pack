@@ -409,7 +409,9 @@ function UpdateEntrances(segment, mainModuleIdx)
             [0x01] = "in-supertile transition",
             [0x02] = "supertile transition",
             -- [0x03] = "falling",
-            [0x0E] = "stair_up_and_down",
+            [0x0E] = "spiral_stair_up_and_down",
+            [0x12] = "straight_stair_up",
+            [0x13] = "straight_stair_down",
             -- [0x03] = "falling"
         }
         if mainModuleLookup[mainModuleIdx] ~= nil  then
@@ -755,10 +757,16 @@ function UpdateInGameStatusFromMemorySegment(segment)
     if Tracker:FindObjectForCode("er_tracking_method").Active then
         UpdateEntrances(segment, mainModuleIdx)
     end
-    if segment:ReadUInt8(0x7e0011) ~= 0x0E then --walking stair doors messes with the coords before a new room is loaded
+    local stop_updating_previous_coords_lookup = {
+        [0x0E] = true,
+        [0x12] = true,
+        [0x13] = true,
+        -- [] = true
+    }
+    if stop_updating_previous_coords_lookup[segment:ReadUInt8(0x7e0011)] ~= true then --walking stair doors messes with the coords before a new room is loaded
+        previous_sub_module_state = segment:ReadUInt8(0x7e0011)
         previous_x_coords = segment:ReadUInt16(0x7e0022)
         previous_y_coords = segment:ReadUInt16(0x7e0020)
-        previous_sub_module_state = segment:ReadUInt8(0x7e0011)
     end
     -- print(">------<")
     -- print("previous_x_coords: ", previous_x_coords)
