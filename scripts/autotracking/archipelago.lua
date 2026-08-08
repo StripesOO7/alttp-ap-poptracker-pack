@@ -375,6 +375,7 @@ function OnClear(slot_data)
 
     print("reset er connections")
     EmptyERLocationTargets()
+    EmptyDoorsTargets()
     
     ScriptHost:RemoveWatchForCode("StateChanged")
     -- ScriptHost:RemoveOnLocationSectionHandler("location_section_change_handler")

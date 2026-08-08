@@ -478,7 +478,7 @@ function alttp_location:discover(accessibility, keys, worldstate)
                     -- local doors_check_result = doors_check[doors_setting_stage](location_name)
                     local doors_check_result = true
                     if doors_check_result then -- dungeons ER
-                        temp = NAMED_DOORS_CONNECTIONS("from_" .. location_name).ItemState
+                        temp = NAMED_DOORS_CONNECTIONS["from_" .. location_name].ItemState
                         -- print("temp", temp) 
                         if temp ~= nil and temp.Target ~= nil then
                             location = NAMED_LOCATIONS[temp.TargetBaseName]
@@ -780,11 +780,11 @@ function EmptyERLocationTargets()
         end
         -- ER_STATE = er_tracking.CurrentStage > 0
         -- print(er_tracking.CurrentStage)
-        if er_tracking.CurrentStage == 0 then
+        if ER_STAGE == 0 then
             -- print("run discorver")
             -- Entry_point:discover(ACCESS_NORMAL, 0, nil)
             -- print("finshed discover")
-        elseif er_tracking.CurrentStage == 1 then
+        elseif ER_STAGE == 1 then
             -- print("dungeons er")
             for name, inside in pairs(NAMED_ER_ENTRANCES) do
                 local source = Tracker:FindObjectForCode(name) --[[@as LuaItem]]
@@ -810,7 +810,7 @@ function EmptyERLocationTargets()
                 _UnsetLocationOptions(Tracker:FindObjectForCode(name) --[[@as LuaItem]])
             end
            
-        elseif er_tracking.CurrentStage > 1 then
+        elseif ER_STAGE > 1 then
             print("full or insanity er")
             for name, _ in pairs(NAMED_ER_ENTRANCES) do
                 -- print(name)
@@ -886,39 +886,13 @@ function EmptyDoorsTargets()
         end
         -- ER_STATE = doors_tracking.CurrentStage > 0
         -- print(doors_tracking.CurrentStage)
-        if doors_tracking.CurrentStage == 0 then
+        if DOORS_STAGE == 0 then
             -- print("run discorver")
             -- Entry_point:discover(ACCESS_NORMAL, 0, nil)
             -- print("finshed discover")
-        elseif doors_tracking.CurrentStage == 1 then
-            -- print("dungeons doors")
-            for name, inside in pairs(NAMED_ER_ENTRANCES) do
-                local source = Tracker:FindObjectForCode(name) --[[@as LuaItem]]
-                local target_outside = Tracker:FindObjectForCode(string.gsub(name, "_inside", "_outside")) --[[@as LuaItem]]
-                local target_inside = Tracker:FindObjectForCode(string.gsub(name, "_outside", "_inside")) --[[@as LuaItem]]
-                if ER_DUNGEONS[name] == nil then
-                    --location is NOT in DUNGEONS ER so preset targets
-                    if inside then
-                        _SetERLocationOptions(source, target_outside)
-                        _SetERLocationOptions(target_outside, source)
-                    else
-                        _SetERLocationOptions(source, target_inside)
-                        _SetERLocationOptions(target_inside, source)
-                    end
-                else
-                    -- location is in DUNGEONS ER
-                    _UnsetLocationOptions(Tracker:FindObjectForCode(name) --[[@as LuaItem]])
-                end
-            end
-            for name, _ in pairs(ER_DUNGEONS) do
-                -- print(name)
-                -- print(Tracker:FindObjectForCode(name).ItemState.Target)
-                _UnsetLocationOptions(Tracker:FindObjectForCode(name) --[[@as LuaItem]])
-            end
            
-        elseif doors_tracking.CurrentStage > 1 then
-            print("full or insanity er")
-            for name, _ in pairs(NAMED_ER_ENTRANCES) do
+        elseif DOORS_STAGE ~= 0 then
+            for name, _ in pairs(NAMED_DOORS_ENTRANCES) do
                 -- print(name)
                 -- print(Tracker:FindObjectForCode(name).ItemState.Target)
                 local location_reset = Tracker:FindObjectForCode(name) --[[@as LuaItem]]
@@ -927,22 +901,22 @@ function EmptyDoorsTargets()
                 end
                 -- Tracker:FindObjectForCode(name).worldstate = nil
             end
-            Tracker:UiHint("ActivateTab", "Entrances")
+            -- Tracker:UiHint("ActivateTab", "Entrances")
         -- else
         --     print("insanity ER is not supported you troll")
         end
-        for name, inside in pairs(PERMANENT_CONNECTIONS) do
-            local source = Tracker:FindObjectForCode(name) --[[@as LuaItem]]
-            local target_outside = Tracker:FindObjectForCode(string.gsub(name, "_inside", "_outside")) --[[@as LuaItem]]
-            local target_inside = Tracker:FindObjectForCode(string.gsub(name, "_outside", "_inside")) --[[@as LuaItem]]
-            if inside then
-                _SetERLocationOptions(source, target_outside)
-                _SetERLocationOptions(target_outside, source)
-            else
-                _SetERLocationOptions(source, target_inside)
-                _SetERLocationOptions(target_inside, source)
-            end
-        end
+        -- for name, inside in pairs(PERMANENT_CONNECTIONS) do
+        --     local source = Tracker:FindObjectForCode(name) --[[@as LuaItem]]
+        --     local target_outside = Tracker:FindObjectForCode(string.gsub(name, "_inside", "_outside")) --[[@as LuaItem]]
+        --     local target_inside = Tracker:FindObjectForCode(string.gsub(name, "_outside", "_inside")) --[[@as LuaItem]]
+        --     if inside then
+        --         _SetERLocationOptions(source, target_outside)
+        --         _SetERLocationOptions(target_outside, source)
+        --     else
+        --         _SetERLocationOptions(source, target_inside)
+        --         _SetERLocationOptions(target_inside, source)
+        --     end
+        -- end
         for _, location in pairs(NAMED_LOCATIONS) do
             local location_obj
             if PopVersion < "0.32.0" then

@@ -350,7 +350,7 @@ function UpdateEntrances(segment, mainModuleIdx)
     current_coords_x = segment:ReadUInt16(0x7e0022)
     local sub_module_state = segment:ReadUInt8(0x7e0011)
 
-    if mainModuleIdx > 0x05 then
+    if mainModuleIdx > 0x05 and mainModuleIdx < 0x0E then --0x0e ==14 == pause menu
         -- print("-------------------------------------------------")
         New_ow_room = segment:ReadUInt16(0x7e008a)
         New_dungeon_room = segment:ReadUInt16(0x7e00a0)
@@ -409,7 +409,7 @@ function UpdateEntrances(segment, mainModuleIdx)
             [0x01] = "in-supertile transition",
             [0x02] = "supertile transition",
             -- [0x03] = "falling",
-            -- [0x02] = "stair_down",
+            [0x0E] = "stair_up_and_down",
             -- [0x03] = "falling"
         }
         if mainModuleLookup[mainModuleIdx] ~= nil  then
@@ -485,12 +485,13 @@ function UpdateEntrances(segment, mainModuleIdx)
                 end
             end
         elseif subModuleLookup[sub_module_state] and previous_sub_module_state == 0 then
+            local previous_room = segment:ReadUInt16(0x7e00A2)
             
             print("-------------------------------------------------")
 
             print("prev x cord :", previous_x_coords)
             print("prev y cord :", previous_y_coords)
-            print("prev room :", segment:ReadUInt16(0x7e00A2))
+            print("prev room :", previous_room)
 
             print("current x cord :", segment:ReadUInt16(0x7e0022))
             print("current y cord :", segment:ReadUInt16(0x7e0020))
@@ -502,6 +503,87 @@ function UpdateEntrances(segment, mainModuleIdx)
             print("sub_module_state:", sub_module_state)
             
             print("-------------------------------------------------")
+            local temp_room = DOORS_MAPPING[current_room]
+            local temp_prev_room = DOORS_MAPPING[previous_room]
+            local temp_room_x
+            local temp_prev_room_x
+            local temp_room_y
+            local temp_prev_room_y
+            local entrance_name
+            local entrance_prev_name
+            local entrance_origin
+            local entrance_prev_origin
+            if temp_room then
+                temp_room_x = temp_room[current_coords_x]
+                if temp_room_x then
+                    temp_room_y = temp_room_x[current_coords_y]
+                    if temp_room_y then
+                        entrance_name = temp_room_y[1]
+                        entrance_origin = temp_room_y[2] --assign the bool
+                    end
+                end
+            end
+            if temp_prev_room then
+                temp_prev_room_x = temp_prev_room[previous_x_coords]
+                if temp_prev_room_x then
+                    temp_prev_room_y = temp_prev_room_x[previous_y_coords]
+                    if temp_prev_room_y then
+                        entrance_prev_name = temp_prev_room_y[1]
+                        entrance_prev_origin = temp_prev_room_y[2] --assign the bool
+                    end
+                end
+            end
+            -- print("temp_prev_room:", temp_prev_room)
+            -- print("temp_prev_room_x:", temp_prev_room_x)
+            -- print("temp_prev_room_y:", temp_prev_room_y)
+            -- print(Dump_table(temp_prev_room_y))
+            -- print("entrance_prev_name:", entrance_prev_name)
+            -- print("entrance_prev_origin:", entrance_prev_origin)
+            -- print(">-------------<")
+            -- print("temp_room:", temp_room)
+            -- print("temp_room_x:", temp_room_x)
+            -- print("temp_room_y:", temp_room_y)
+            -- print(Dump_table(temp_room_y))
+            -- print("entrance_name:", entrance_name)
+            -- print("entrance_origin:", entrance_origin)
+            -- print("-------------------------------------------------")
+            if temp_room_y ~= nil then
+                local current_door = temp_room_y
+                local prev_door = temp_prev_room_y
+                local door_name = entrance_name
+                local prev_door_name = entrance_prev_name
+                if current_door ~= nil and type(current_door) == "table" then
+                    Selected_entrance = Tracker:FindObjectForCode("from_"..door_name)  --[[@as LuaItem]]
+                    Selected_entrance_origin = entrance_origin
+                end
+                if prev_door ~= nil and type(prev_door) == "table" then
+                    Selected_exit = Tracker:FindObjectForCode("to_"..prev_door_name)  --[[@as LuaItem]]
+                    Selected_exit_origin = entrance_prev_origin
+                end
+                
+                -- local er_stage = Tracker:FindObjectForCode("er_tracking").CurrentStage
+                if Selected_entrance ~= nil and Selected_exit ~= nil then -- and Selected_entrance_origin ~= Selected_exit_origin then
+                    -- if DOORS_STAGE > 0 then -- separated doors
+                
+                    --     _SetERLocationOptions(Selected_entrance, Selected_exit)
+                    --     _SetERLocationOptions(Selected_exit, Selected_entrance)
+                    -- else --trackes both sides simlutaniously
+                    _SetDoorsLocationOptions(Selected_entrance, Selected_exit)
+                    _SetDoorsLocationOptions(Selected_exit, Selected_entrance)
+                    Selected_entrance = Tracker:FindObjectForCode(string.gsub(Selected_entrance.Name, "from_", "to_"))  --[[@as LuaItem]]
+                    Selected_exit = Tracker:FindObjectForCode(string.gsub(Selected_exit.Name, "to_", "from_"))  --[[@as LuaItem]]
+                    _SetDoorsLocationOptions(Selected_entrance, Selected_exit)
+                    _SetDoorsLocationOptions(Selected_exit, Selected_entrance)
+                    -- end
+                    Selected_entrance = nil
+                    Selected_exit = nil
+                    Selected_entrance_origin = nil
+                    Selected_exit_origin = nil
+                end
+            else
+                Selected_entrance = nil
+                Selected_exit = nil
+            end
         else
             Selected_entrance = nil
             Selected_exit = nil
@@ -673,11 +755,16 @@ function UpdateInGameStatusFromMemorySegment(segment)
     if Tracker:FindObjectForCode("er_tracking_method").Active then
         UpdateEntrances(segment, mainModuleIdx)
     end
-
-    previous_x_coords = segment:ReadUInt16(0x7e0022)
-    previous_y_coords = segment:ReadUInt16(0x7e0020)
-    previous_sub_module_state = segment:ReadUInt8(0x7e0011)
-
+    if segment:ReadUInt8(0x7e0011) ~= 0x0E then --talking stair doors messes with the coords before a new room is loaded
+        previous_x_coords = segment:ReadUInt16(0x7e0022)
+        previous_y_coords = segment:ReadUInt16(0x7e0020)
+        previous_sub_module_state = segment:ReadUInt8(0x7e0011)
+    end
+    -- print(">------<")
+    -- print("previous_x_coords: ", previous_x_coords)
+    -- print("previous_y_coords: ", previous_y_coords)
+    -- print("previous_sub_module_state: ", previous_sub_module_state)
+    -- print(">------<")
     return true
 end
 
