@@ -755,7 +755,7 @@ function UpdateInGameStatusFromMemorySegment(segment)
     if Tracker:FindObjectForCode("er_tracking_method").Active then
         UpdateEntrances(segment, mainModuleIdx)
     end
-    if segment:ReadUInt8(0x7e0011) ~= 0x0E then --talking stair doors messes with the coords before a new room is loaded
+    if segment:ReadUInt8(0x7e0011) ~= 0x0E then --walking stair doors messes with the coords before a new room is loaded
         previous_x_coords = segment:ReadUInt16(0x7e0022)
         previous_y_coords = segment:ReadUInt16(0x7e0020)
         previous_sub_module_state = segment:ReadUInt8(0x7e0011)
