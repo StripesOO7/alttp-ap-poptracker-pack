@@ -651,11 +651,11 @@
                 "sections": [
                     {
                         "name": "TR Torch Puzzle Deadend 3E Door",
-                        "access_rules": ["^$CanReach|TR_torch_puzzle_deadend_3E_door"],
+                        "access_rules": ["^$CanReach|TR_torch_puzzle_deadend_3W_door"],
                         "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_torch_puzzle_deadend_3E_door"
+                        "hosted_item": "from_TR_torch_puzzle_deadend_3W_door"
                     }
                 ],
                 "map_locations": [
@@ -1019,11 +1019,11 @@
                 "sections": [
                     {
                         "name": "TR Laser Entrance Room 4E Door",
-                        "access_rules": ["^$CanReach|TR_small_t_hallway_3E_door"],
+                        "access_rules": ["^$CanReach|TR_small_t_hallway_3W_door"],
                         "visibility_rules": ["doors_enabled"],
                         "item_size":128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_small_t_hallway_3E_door"
+                        "hosted_item": "from_TR_small_t_hallway_3W_door"
                     }
                 ],
                 "map_locations": [
