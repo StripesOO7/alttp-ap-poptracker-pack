@@ -313,6 +313,8 @@ local previous_x_coords = 0
 local previous_y_coords = 0
 ---@type integer
 local previous_sub_module_state = 0
+---@type integer
+local previous_dungeon_room = 0
 
 ---function for checking map coords and if entering a door fest coords and corresponding entrances to match for ER purposses
 ---@param segment any
@@ -354,14 +356,11 @@ function UpdateEntrances(segment, mainModuleIdx)
         -- print("-------------------------------------------------")
         New_ow_room = segment:ReadUInt16(0x7e008a)
         New_dungeon_room = segment:ReadUInt16(0x7e00a0)
-        -- print("Room Memory for Address: 0x7e00a2")
-        -- print(Last_seen_room1)
+        -- print("Room Memory for Address: 0x7e00a2", Last_seen_room1)
         -- Last_seen_room2 = segment:ReadUInt8(0x7e00a9)
-        -- print("Room Memory for Address: 0x7e00a9")
-        -- print(Last_seen_room2)
+        -- print("Room Memory for Address: 0x7e00a9", Last_seen_room2)
         -- Last_seen_room3 = segment:ReadUInt8(0x7e00aA)
-        -- print("Room Memory for Address: 0x7e00aA")
-        -- print(Last_seen_room3)
+        -- print("Room Memory for Address: 0x7e00aA", Last_seen_room3)
         -- print("left/right qudrant:", segment:ReadUInt8(0x7e00a9))
         -- print("upper/lower qudrant:", segment:ReadUInt8(0x7e00aa))
         -- print("x cord :", segment:ReadUInt16(0x7e0022))
@@ -375,6 +374,8 @@ function UpdateEntrances(segment, mainModuleIdx)
 
         -- print("mainModuleIdx:   ", mainModuleIdx)
         -- print("sub_module_state:", sub_module_state)
+        -- print("b0_module_state:", segment:ReadUInt8(0x7e00b0))
+        -- print("b1_module_state:", segment:ReadUInt8(0x7e00b1))
         -- print("shop_offset: ", shop_offset)
 
 
@@ -487,13 +488,13 @@ function UpdateEntrances(segment, mainModuleIdx)
                 end
             end
         elseif subModuleLookup[sub_module_state] and previous_sub_module_state == 0 then
-            local previous_room = segment:ReadUInt16(0x7e00A2)
+            -- local previous_room = segment:ReadUInt16(0x7e00A2)
             
             print("-------------------------------------------------")
 
             print("prev x cord :", previous_x_coords)
             print("prev y cord :", previous_y_coords)
-            print("prev room :", previous_room)
+            print("prev room :", previous_dungeon_room)
 
             print("current x cord :", segment:ReadUInt16(0x7e0022))
             print("current y cord :", segment:ReadUInt16(0x7e0020))
@@ -506,7 +507,7 @@ function UpdateEntrances(segment, mainModuleIdx)
             
             print("-------------------------------------------------")
             local temp_room = DOORS_MAPPING[current_room]
-            local temp_prev_room = DOORS_MAPPING[previous_room]
+            local temp_prev_room = DOORS_MAPPING[previous_dungeon_room]
             local temp_room_x
             local temp_prev_room_x
             local temp_room_y
@@ -764,6 +765,7 @@ function UpdateInGameStatusFromMemorySegment(segment)
         -- [] = true
     }
     if stop_updating_previous_coords_lookup[segment:ReadUInt8(0x7e0011)] ~= true then --walking stair doors messes with the coords before a new room is loaded
+        previous_dungeon_room = segment:ReadUInt16(0x7e00a0)
         previous_sub_module_state = segment:ReadUInt8(0x7e0011)
         previous_x_coords = segment:ReadUInt16(0x7e0022)
         previous_y_coords = segment:ReadUInt16(0x7e0020)
@@ -771,7 +773,10 @@ function UpdateInGameStatusFromMemorySegment(segment)
     -- print(">------<")
     -- print("previous_x_coords: ", previous_x_coords)
     -- print("previous_y_coords: ", previous_y_coords)
-    -- print("previous_sub_module_state: ", previous_sub_module_state)
+    -- print("mainModuleIdx: ", mainModuleIdx)
+    -- print("11_sub_module_state: ", previous_sub_module_state)
+    -- print("b0_sub_module_state: ", segment:ReadUInt8(0x7e00b0))
+    -- print("b1_sub_module_state: ", segment:ReadUInt8(0x7e00b1))
     -- print(">------<")
     return true
 end
