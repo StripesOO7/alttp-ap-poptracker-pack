@@ -375,6 +375,7 @@ Tracker.BulkUpdate = true
 for _, enemy in pairs(DEFAULT_ENEMY_DAMAGE_TABLE) do
     counter = counter+1
     -- CreateLuaEnemeyClass(enemy[1], enemy[2], {table.unpack(enemy, 3)}, counter)
+    print(enemy[1], enemy[2], {table.unpack(enemy, 3)}, counter)
     Enemies_scope(enemy[1], enemy[2], {table.unpack(enemy, 3)}, counter)
     -- for i=0,15 do
     --     -- CreateLuaDamageClass(counter, i, enemy[1], enemy[i+3])--, enemy[2], {table.unpack(enemy, 3)})

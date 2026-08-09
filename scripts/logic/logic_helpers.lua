@@ -1311,8 +1311,8 @@ function ChangePopupLayout()
         doors_tracking_method.IgnoreUserInput = false
         lobby_shuffle.IgnoreUserInput = false
         doortype_shuffle.IgnoreUserInput = false
-        dmg_class_shuffle.IgnoreUserInput = false
-        preserve_melee_dmg_classes.IgnoreUserInput = false
+        dmg_class_shuffle.IgnoreUserInput = true
+        preserve_melee_dmg_classes.IgnoreUserInput = true
         if manual_misc_items_storage and manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED] then
             doors_tracking.CurrentStage = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["doors_tracking"] or 0
             doors_tracking_method.Active = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["doors_tracking_method"] or false
@@ -1336,10 +1336,10 @@ function ChangePopupLayout()
         doortype_shuffle.IgnoreUserInput = true
         doortype_shuffle.Active = false
 
-        dmg_class_shuffle.IgnoreUserInput = true
+        dmg_class_shuffle.IgnoreUserInput = false
         dmg_class_shuffle.CurrentStage = 0
 
-        preserve_melee_dmg_classes.IgnoreUserInput = true
+        preserve_melee_dmg_classes.IgnoreUserInput = false
         preserve_melee_dmg_classes.Active = false
     else --core
         Tracker:AddLayouts("layouts/settings_tab_core.json")
