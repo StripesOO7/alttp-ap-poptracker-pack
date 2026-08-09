@@ -409,7 +409,8 @@ function UpdateEntrances(segment, mainModuleIdx)
         local subModuleLookup = {
             [0x01] = "in-supertile transition",
             [0x02] = "supertile transition",
-            -- [0x03] = "falling",
+            [0x06] = " in room stair up and down",
+            -- [0x07] = "in room stair up",
             [0x0E] = "spiral_stair_up_and_down",
             [0x12] = "straight_stair_up",
             [0x13] = "straight_stair_down",
@@ -759,6 +760,7 @@ function UpdateInGameStatusFromMemorySegment(segment)
         UpdateEntrances(segment, mainModuleIdx)
     end
     local stop_updating_previous_coords_lookup = {
+        [0x06] = true,
         [0x0E] = true,
         [0x12] = true,
         [0x13] = true,
