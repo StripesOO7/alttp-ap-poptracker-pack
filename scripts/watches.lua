@@ -41,8 +41,8 @@ ScriptHost:AddWatchForCode("set all autofill", "autofill_all_settings", SetAllAu
 
 --luaitems
 ScriptHost:AddWatchForCode("ER_reset_triggered", "reset_er", Reset_ER_settings)
-ScriptHost:AddWatchForCode("ER_reset_triggered", "reset_doors", Reset_Doors_settings)
-ScriptHost:AddWatchForCode("ER_reset_triggered", "reset_dmg_class_shuffle", Reset_Dmg_Class_Shuffle_settings)
+ScriptHost:AddWatchForCode("Doors_reset_triggered", "reset_doors", Reset_Doors_settings)
+ScriptHost:AddWatchForCode("Dmg_Class_shuffle_reset_triggered", "reset_dmg_class_shuffle", Reset_Dmg_Class_Shuffle_settings)
 
 --archipelago
 ScriptHost:AddWatchForCode("bombless start handler", "bombless", Bombless)
