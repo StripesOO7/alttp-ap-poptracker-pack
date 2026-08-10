@@ -41,6 +41,8 @@ ScriptHost:AddWatchForCode("set all autofill", "autofill_all_settings", SetAllAu
 
 --luaitems
 ScriptHost:AddWatchForCode("ER_reset_triggered", "reset_er", Reset_ER_settings)
+ScriptHost:AddWatchForCode("ER_reset_triggered", "reset_doors", Reset_Doors_settings)
+ScriptHost:AddWatchForCode("ER_reset_triggered", "reset_dmg_class_shuffle", Reset_Dmg_Class_Shuffle_settings)
 
 --archipelago
 ScriptHost:AddWatchForCode("bombless start handler", "bombless", Bombless)
@@ -59,7 +61,7 @@ end
 --ER reduced layout
 ScriptHost:AddWatchForCode("reduce ER map clutter", "reduce_maps", ChangeERMap)
 ScriptHost:AddWatchForCode("remove ER Layout", "er_tracking", ChangeERLayout)
-ScriptHost:AddWatchForCode("remove ER Layout", "doors_tracking", ChangeERLayout)
+ScriptHost:AddWatchForCode("remove Doors Layout", "doors_tracking", ChangeERLayout)
 
 ScriptHost:AddWatchForCode("glitches changed", "glitches", UpdateCanInteract)
 
@@ -69,6 +71,7 @@ end
 ScriptHost:AddWatchForCode("Enable/Disable Route Mode", "route_mode", ChangeRouteMode)
 -- ScriptHost:AddWatchForCode("Selected Game Version Change", "selected_game", ChangeGameVersion)
 ScriptHost:AddWatchForCode("Change Settings-PopUp Layout for selected Game Version", "selected_game", ChangePopupLayout)
+
 
 -- ScriptHost:AddWatchForCode("change Settings-PopUp Layout", "selected_game", SetGlobals)
 -- ScriptHost:AddWatchForCode("change Settings-PopUp Layout", "selected_game", SetGlobals)

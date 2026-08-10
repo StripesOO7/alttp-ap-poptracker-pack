@@ -207,7 +207,7 @@ function PreOnClear()
     if ROOM_SEED == "default" or ROOM_SEED ~= seed_base then -- seed is default or from previous connection
 
         ROOM_SEED = seed_base --something like 2345_0_12
-        for _, custom_item_code in pairs({"manual_location_storage",  "manual_er_storage", "manual_misc_items_storage", "manual_dmg_class_storage"}) do
+        for _, custom_item_code in pairs({"manual_location_storage",  "manual_er_storage", "manual_misc_items_storage", "manual_dmg_class_storage"}) do --
             local custom_storage_item = (Tracker:FindObjectForCode(custom_item_code) --[[@as LuaItem]]).ItemState
             if custom_storage_item then
                 if #custom_storage_item.MANUAL_LOCATIONS > 10 then
@@ -318,7 +318,7 @@ function OnClear(slot_data)
             if location then
                 local location_obj = Tracker:FindObjectForCode(location) --[[@as LocationSection]]
                 if location_obj then
-                    LocationReset(location, location_obj, custom_storage_item)
+                    -- LocationReset(location, location_obj, custom_storage_item)
                 end
             end
         end
@@ -329,7 +329,7 @@ function OnClear(slot_data)
             if item_code and item[2] then
                 local item_obj = Tracker:FindObjectForCode(item_code) --[[@as JsonItem]]
                 if item_obj then
-                    ItemReset(item[2], item_obj, item_code)
+                    -- ItemReset(item[2], item_obj, item_code)
                     -- clear_item_type[item[2]](item_obj, item_code) --alternate version
                 end
             end
@@ -341,21 +341,19 @@ function OnClear(slot_data)
         for i=0, #DEFAULT_ENEMY_DAMAGE_TABLE-1 do
             for j=0, 15 do
                 local dmg_class_code = i.."_"..j
-                local manual_table = manual_dmg_class_storage.MANUAL_LOCATIONS[ROOM_SEED][dmg_class_code]
-                local dmg_class_item = (Tracker:FindObjectForCode(dmg_class_code) --[[@as LuaItem]])
-                if manual_table then
-                    dmg_class_item:Set("PrimaryStage", manual_table.primary_stage)
-                    dmg_class_item:Set("SecondaryStage", manual_table.secondary_stage)
-                    _SetDmgClassImageHelper(dmg_class_item, dmg_class_code)
+                local manual_class_stage = manual_dmg_class_storage.MANUAL_LOCATIONS[ROOM_SEED][dmg_class_code]
+                local dmg_class_item = (Tracker:FindObjectForCode(dmg_class_code) --[[@as JsonItem]])
+                if manual_class_stage then
+                    dmg_class_item.CurrentStage=manual_class_stage
                 end
             end
         end
     -- print(Dump_table(manual_dmg_class_storage.MANUAL_LOCATIONS))
     end
     Tracker.BulkUpdate = false
-    for k, v in pairs(manual_dmg_class_storage.MANUAL_LOCATIONS) do
-        print(k, v)
-    end
+    -- for k, v in pairs(manual_dmg_class_storage.MANUAL_LOCATIONS) do
+    --     print(k, v)
+    -- end
 
     SLOT_DATA = slot_data
 
@@ -662,10 +660,16 @@ function AutoFill()
                 for dungeon, reward in pairs(settings_value) do
                     Tracker:FindObjectForCode(mapDungeon[dungeon][2]).CurrentStage = mapRewards[reward]
                 end
-            elseif settings_name == "key_rings_list" then
-                for dungeon, reward in pairs(settings_value) do
-                    Tracker:FindObjectForCode(mapDungeon[dungeon][2]).CurrentStage = mapRewards[reward]
-                end
+            -- elseif settings_name == "key_rings_list" then
+            --     for dungeon, reward in pairs(settings_value) do
+            --         print(dungeon, reward)
+            --         print(Dump_table(mapDungeon))
+            --         print(Dump_table(mapDungeon[reward]))
+            --         print(mapDungeon[reward][2])
+            --         print(Dump_table(mapRewards[reward]))
+            --         print(mapRewards[reward])
+            --         Tracker:FindObjectForCode(mapDungeon[dungeon][2]).CurrentStage = mapRewards[reward]
+            --     end
                
             end
            

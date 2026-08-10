@@ -807,10 +807,14 @@ end
 
 ---function that stores a given item into a the pseudo-cache LuaItem to remeber for later reuse when coming back to that seed
 ---@param code string
-function AddManualItemStorage(code)
+---@param storage_item_code string
+function AddManualItemStorage(code, storage_item_code)
     if MANUAL_CHECKED then
+        if not storage_item_code then
+            storage_item_code = "manual_misc_items_storage"
+        end
         local item = Tracker:FindObjectForCode(code) --[[@as JsonItem]]
-        local manual_storage_item = (Tracker:FindObjectForCode("manual_misc_items_storage") --[[@as LuaItem]]).ItemState
+        local manual_storage_item = (Tracker:FindObjectForCode(storage_item_code) --[[@as LuaItem]]).ItemState
         if manual_storage_item and manual_storage_item.MANUAL_LOCATIONS[ROOM_SEED] then
             manual_storage_item.MANUAL_LOCATIONS[ROOM_SEED][code] = item.CurrentStage
         end
@@ -1280,14 +1284,7 @@ end
 
 ---comment
 function ChangeERLayout()
-    if Tracker:FindObjectForCode("er_tracking").CurrentStage == 0 then
-        Tracker:AddLayouts("layouts/tabs.json")
-        Tracker:AddMaps("maps/er_legend_off.json")
-    else
-        Tracker:AddLayouts("layouts/tabs_er.json")
-        Tracker:AddMaps("maps/er_legend_on.json")
-    end
-    if Tracker:FindObjectForCode("doors_tracking").CurrentStage == 0 then
+    if Tracker:FindObjectForCode("er_tracking").CurrentStage == 0 or Tracker:FindObjectForCode("doors_tracking").CurrentStage == 0 then
         Tracker:AddLayouts("layouts/tabs.json")
         Tracker:AddMaps("maps/er_legend_off.json")
     else
@@ -1295,7 +1292,9 @@ function ChangeERLayout()
         Tracker:AddMaps("maps/er_legend_on.json")
     end
 end
-
+CORE_ALTTP = true
+ALTTP_BETA = false
+ALTTPR = false
 function ChangePopupLayout()
     local version = Tracker:FindObjectForCode("selected_game").CurrentStage
     local doors_tracking = Tracker:FindObjectForCode("doors_tracking")
@@ -1306,6 +1305,9 @@ function ChangePopupLayout()
     local preserve_melee_dmg_classes = Tracker:FindObjectForCode("preserve_melee_dmg_classes")
     local manual_misc_items_storage = Tracker:FindObjectForCode("manual_misc_items_storage").ItemState
     if version == 2 then --alttpr apworld
+        CORE_ALTTP = false
+        ALTTP_BETA = false
+        ALTTPR = true
         Tracker:AddLayouts("layouts/settings_tab_alttpr.json")
         doors_tracking.IgnoreUserInput = false
         doors_tracking_method.IgnoreUserInput = false
@@ -1314,18 +1316,21 @@ function ChangePopupLayout()
         dmg_class_shuffle.IgnoreUserInput = true
         preserve_melee_dmg_classes.IgnoreUserInput = true
         if manual_misc_items_storage and manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED] then
-            doors_tracking.CurrentStage = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["doors_tracking"] or 0
+            -- doors_tracking.CurrentStage = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["doors_tracking"] or 0
             doors_tracking_method.Active = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["doors_tracking_method"] or false
             lobby_shuffle.Active = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["lobby_shuffle"] or false
             doortype_shuffle.Active = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["doortype_shuffle"] or false
-            dmg_class_shuffle.CurrentStage = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["dmg_class_shuffle"] or 0
+            -- dmg_class_shuffle.CurrentStage = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["dmg_class_shuffle"] or 0
             preserve_melee_dmg_classes.Active = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["preserve_melee_dmg_classes"] or false
         end
 
     elseif version == 1 then --core beta
+        CORE_ALTTP = false
+        ALTTP_BETA = true
+        ALTTPR = false
         Tracker:AddLayouts("layouts/settings_tab_beta.json")
         doors_tracking.IgnoreUserInput = true
-        doors_tracking.CurrentStage = 0
+        -- doors_tracking.CurrentStage = 0
 
         doors_tracking_method.IgnoreUserInput = true
         doors_tracking_method.Active = false
@@ -1337,14 +1342,17 @@ function ChangePopupLayout()
         doortype_shuffle.Active = false
 
         dmg_class_shuffle.IgnoreUserInput = false
-        dmg_class_shuffle.CurrentStage = 0
+        -- dmg_class_shuffle.CurrentStage = 0
 
         preserve_melee_dmg_classes.IgnoreUserInput = false
         preserve_melee_dmg_classes.Active = false
     else --core
+        CORE_ALTTP = true
+        ALTTP_BETA = false
+        ALTTPR = false
         Tracker:AddLayouts("layouts/settings_tab_core.json")
         doors_tracking.IgnoreUserInput = true
-        doors_tracking.CurrentStage = 0
+        -- doors_tracking.CurrentStage = 0
 
         doors_tracking_method.IgnoreUserInput = true
         doors_tracking_method.Active = false
@@ -1356,7 +1364,7 @@ function ChangePopupLayout()
         doortype_shuffle.Active = false
 
         dmg_class_shuffle.IgnoreUserInput = true
-        dmg_class_shuffle.CurrentStage = 0
+        -- dmg_class_shuffle.CurrentStage = 0
 
         preserve_melee_dmg_classes.IgnoreUserInput = true
         preserve_melee_dmg_classes.Active = false

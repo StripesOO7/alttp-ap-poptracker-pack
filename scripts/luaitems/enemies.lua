@@ -114,6 +114,16 @@ function Enemies_scope(scope_name, scope_health, scope_dmg_table, scope_counter)
     local function Type()
     end
 
+    local reverse_dmg_list = {
+        [255] = 2, --stun
+        [254] = 3, --freeze
+        [253] = 4, --burn 
+        [252] = 2, --stun
+        [251] = 2, --stun
+        [250] = 5, --transform slime 
+        [249] = 6, --fransform fairy
+        [0] = 7, --immune
+    }
 
     ---function to create ER LuaItems in their default state
     ---@param name string
@@ -129,22 +139,20 @@ function Enemies_scope(scope_name, scope_health, scope_dmg_table, scope_counter)
         ---@type ItemState
         self.ItemState = {
             Health = health,
-            Default_damage_table = {table.unpack(dmg_table)
-            },
-            Damage_table = {table.unpack(dmg_table)
-            },
+            RAW_damage_table = {table.unpack(dmg_table)},
+            Default_damage_table = {},
+            Damage_table = {},
             Index = counter,
             Code = "enemy_"..counter,
             Invulnerable = nil,
             SpecialEffect = nil,
             
         } --[[@as table<string, any>]]
+
         self.PotentialCodes = {Code, Basename}
-        if health == 255 then
-            self:Set("Invulnerable", true)
-        else
-            self:Set("Invulnerable", false)
-        end
+
+        local invulnerable = health == 255
+        self:Set("Invulnerable", invulnerable)
         -- local stun = {255, 251}
         -- local freeze = {254}
         -- local burn = {253}
@@ -153,6 +161,25 @@ function Enemies_scope(scope_name, scope_health, scope_dmg_table, scope_counter)
         self:Set("SpecialEffect", nil)
 
         NAMED_ENEMIES[name] = self
+        for i=1,16 do
+            local dmg_class_item = Tracker:FindObjectForCode(scope_counter.."_"..i-1)
+            
+            if invulnerable then
+                -- dmg_class_item.CurrentStage = 7
+                self.ItemState.Default_damage_table[i] = 7
+                self.ItemState.Damage_table[i] = 7
+            elseif reverse_dmg_list[dmg_table[i]] then
+                self.ItemState.Default_damage_table[i] = reverse_dmg_list[dmg_table[i]]
+                self.ItemState.Damage_table[i] = reverse_dmg_list[dmg_table[i]]
+            else
+                self.ItemState.Default_damage_table[i] = 1
+                self.ItemState.Damage_table[i] = 1
+            end
+            dmg_class_item.CurrentStage = self.ItemState.Damage_table[i]
+        end 
+        -- for i=0,15 do
+        --     ScriptHost:AddWatchForCode("handler for dmg class: "..scope_counter.."_"..i, scope_counter.."_"..i, ChangeDmgClassProperty)
+        -- end
 
         self.BadgeTextColor = "#abcdef"
         self:SetOverlayFontSize(10)
@@ -372,14 +399,17 @@ DEFAULT_ENEMY_DAMAGE_TABLE = {
 
 local counter = -1
 Tracker.BulkUpdate = true
+MANUAL_CHECKED = false
 for _, enemy in pairs(DEFAULT_ENEMY_DAMAGE_TABLE) do
     counter = counter+1
     -- CreateLuaEnemeyClass(enemy[1], enemy[2], {table.unpack(enemy, 3)}, counter)
-    print(enemy[1], enemy[2], {table.unpack(enemy, 3)}, counter)
+    -- print(enemy[1], enemy[2], {table.unpack(enemy, 3)}, counter)
     Enemies_scope(enemy[1], enemy[2], {table.unpack(enemy, 3)}, counter)
     -- for i=0,15 do
     --     -- CreateLuaDamageClass(counter, i, enemy[1], enemy[i+3])--, enemy[2], {table.unpack(enemy, 3)})
     --     Damage_Classes_scope(counter, i, enemy[1], enemy[i+3])--, enemy[2], {table.unpack(enemy, 3)})
     -- end
 end
+MANUAL_CHECKED = true
 Tracker.BulkUpdate = false
+

@@ -15,6 +15,9 @@ if variant == "Map Tracker ALTTPR Race Mode - SNES" then
     local ER_tracking = Tracker:FindObjectForCode("er_tracking_method") --[[@as JsonItem]]
     ER_tracking.Active = false
     ER_tracking.IgnoreUserInput = true
+    local Doors_tracking = Tracker:FindObjectForCode("doors_tracking_method") --[[@as JsonItem]]
+    Doors_tracking.Active = false
+    Doors_tracking.IgnoreUserInput = true
     local Map_switch = Tracker:FindObjectForCode("ui_hint") --[[@as JsonItem]]
     Map_switch.Active = false
     Map_switch.IgnoreUserInput = true
