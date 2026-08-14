@@ -580,6 +580,7 @@ function StateChanged()
     end
     ClearCache()
     UpdateCanInteract()
+    CanKillUpdate()
     stale = true
 end
 

@@ -1,28 +1,1524 @@
 [
   {
-    "name": "Bosses",
+    "name": "Anti-Fairy",
     "sections": [
       {
-        "name": "Unknown",
+        "name": "Anti-Fairy",
         "item_count": 1,
         "access_rules": [
-          ""
+          "^$CanKill|Anti-Fairy"
         ]
-      },
+      }
+    ]
+  },
+  {
+    "name": "Blue Archer",
+    "sections": [
       {
-        "name": "",
+        "name": "Blue Archer",
         "item_count": 1,
         "access_rules": [
-          "sword",
-          "hammer",
-          "bowandarrows",
-          "blueboomerang",
-          "redboomerang",
-          "firerod",
-          "icerod",
-          "somaria",
-          "byrna",
-          "bombs"
+          "^$CanKill|Blue Archer"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Green Archer",
+    "sections": [
+      {
+        "name": "Green Archer",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Green Archer"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Armos",
+    "sections": [
+      {
+        "name": "Armos",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Armos"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Arrgi",
+    "sections": [
+      {
+        "name": "Arrgi",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Arrgi"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Babusu",
+    "sections": [
+      {
+        "name": "Babusu",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Babusu"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ball",
+    "sections": [
+      {
+        "name": "Ball",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Ball"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ball and Chain Soldier",
+    "sections": [
+      {
+        "name": "Ball and Chain Soldier",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Ball and Chain Soldier"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Blue Bari",
+    "sections": [
+      {
+        "name": "Blue Bari",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Blue Bari"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Red Bari",
+    "sections": [
+      {
+        "name": "Red Bari",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Red Bari"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Beamos",
+    "sections": [
+      {
+        "name": "Beamos",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Beamos"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Bee",
+    "sections": [
+      {
+        "name": "Bee",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Bee"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Biri",
+    "sections": [
+      {
+        "name": "Biri",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Biri"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Blade Trap",
+    "sections": [
+      {
+        "name": "Blade Trap",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Blade Trap"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Blazing Bat",
+    "sections": [
+      {
+        "name": "Blazing Bat",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Blazing Bat"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Bomb Knight",
+    "sections": [
+      {
+        "name": "Bomb Knight",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Bomb Knight"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Bone Cucco",
+    "sections": [
+      {
+        "name": "Bone Cucco",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Bone Cucco"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Boulder",
+    "sections": [
+      {
+        "name": "Boulder",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Boulder"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Bumper",
+    "sections": [
+      {
+        "name": "Bumper",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Bumper"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Buzz",
+    "sections": [
+      {
+        "name": "Buzz",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Buzz"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Buzz Blob",
+    "sections": [
+      {
+        "name": "Buzz Blob",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Buzz Blob"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Chain Chomp",
+    "sections": [
+      {
+        "name": "Chain Chomp",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Chain Chomp"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Chasupa",
+    "sections": [
+      {
+        "name": "Chasupa",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Chasupa"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Crow",
+    "sections": [
+      {
+        "name": "Crow",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Crow"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Cucco",
+    "sections": [
+      {
+        "name": "Cucco",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Cucco"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Cukeman",
+    "sections": [
+      {
+        "name": "Cukeman",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Cukeman"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Deadrock",
+    "sections": [
+      {
+        "name": "Deadrock",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Deadrock"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Blue Devalant",
+    "sections": [
+      {
+        "name": "Blue Devalant",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Blue Devalant"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Red Devalant",
+    "sections": [
+      {
+        "name": "Red Devalant",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Red Devalant"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Green Eyegore",
+    "sections": [
+      {
+        "name": "Green Eyegore",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Green Eyegore"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Red Eyegore",
+    "sections": [
+      {
+        "name": "Red Eyegore",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Red Eyegore"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Fireball Cannon",
+    "sections": [
+      {
+        "name": "Fireball Cannon",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Fireball Cannon"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Flying Tile",
+    "sections": [
+      {
+        "name": "Flying Tile",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Flying Tile"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Freezor",
+    "sections": [
+      {
+        "name": "Freezor",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Freezor"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Geldman",
+    "sections": [
+      {
+        "name": "Geldman",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Geldman"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Giant Ball",
+    "sections": [
+      {
+        "name": "Giant Ball",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Giant Ball"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Giant Blade Trap",
+    "sections": [
+      {
+        "name": "Giant Blade Trap",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Giant Blade Trap"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gibdo",
+    "sections": [
+      {
+        "name": "Gibdo",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Gibdo"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gibo",
+    "sections": [
+      {
+        "name": "Gibo",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Gibo"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Golden Bee",
+    "sections": [
+      {
+        "name": "Golden Bee",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Golden Bee"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Green Goriya",
+    "sections": [
+      {
+        "name": "Green Goriya",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Green Goriya"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Red Goriya",
+    "sections": [
+      {
+        "name": "Red Goriya",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Red Goriya"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Guruguru Bar",
+    "sections": [
+      {
+        "name": "Guruguru Bar",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Guruguru Bar"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Blue Hardhat Beetle",
+    "sections": [
+      {
+        "name": "Blue Hardhat Beetle",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Blue Hardhat Beetle"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Red Hardhat Beetle",
+    "sections": [
+      {
+        "name": "Red Hardhat Beetle",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Red Hardhat Beetle"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Helmasaur",
+    "sections": [
+      {
+        "name": "Helmasaur",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Helmasaur"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hinox",
+    "sections": [
+      {
+        "name": "Hinox",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Hinox"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Bush Hoarder",
+    "sections": [
+      {
+        "name": "Bush Hoarder",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Bush Hoarder"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Stone Hoarder",
+    "sections": [
+      {
+        "name": "Stone Hoarder",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Stone Hoarder"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hokkubokku",
+    "sections": [
+      {
+        "name": "Hokkubokku",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Hokkubokku"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hover",
+    "sections": [
+      {
+        "name": "Hover",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Hover"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hyu",
+    "sections": [
+      {
+        "name": "Hyu",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Hyu"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Keese",
+    "sections": [
+      {
+        "name": "Keese",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Keese"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Green Kodongo",
+    "sections": [
+      {
+        "name": "Green Kodongo",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Green Kodongo"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Red Kodongo",
+    "sections": [
+      {
+        "name": "Red Kodongo",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Red Kodongo"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ku",
+    "sections": [
+      {
+        "name": "Ku",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Ku"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kyameron",
+    "sections": [
+      {
+        "name": "Kyameron",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Kyameron"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Kyune",
+    "sections": [
+      {
+        "name": "Kyune",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Kyune"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Laser Eye",
+    "sections": [
+      {
+        "name": "Laser Eye",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Laser Eye"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Green Leever",
+    "sections": [
+      {
+        "name": "Green Leever",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Green Leever"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Purple Leever",
+    "sections": [
+      {
+        "name": "Purple Leever",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Purple Leever"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Like Like",
+    "sections": [
+      {
+        "name": "Like Like",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Like Like"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Lynel",
+    "sections": [
+      {
+        "name": "Lynel",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Lynel"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Medusa",
+    "sections": [
+      {
+        "name": "Medusa",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Medusa"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mini-Moldorm",
+    "sections": [
+      {
+        "name": "Mini-Moldorm",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Mini-Moldorm"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Moblin",
+    "sections": [
+      {
+        "name": "Moblin",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Moblin"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Octoballoon",
+    "sections": [
+      {
+        "name": "Octoballoon",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Octoballoon"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Octorok",
+    "sections": [
+      {
+        "name": "Octorok",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Octorok"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pengator",
+    "sections": [
+      {
+        "name": "Pengator",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Pengator"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pikit",
+    "sections": [
+      {
+        "name": "Pikit",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Pikit"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pikku",
+    "sections": [
+      {
+        "name": "Pikku",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Pikku"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Pirogusu",
+    "sections": [
+      {
+        "name": "Pirogusu",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Pirogusu"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Poe",
+    "sections": [
+      {
+        "name": "Poe",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Poe"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Popo",
+    "sections": [
+      {
+        "name": "Popo",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Popo"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Rabbit_Beam",
+    "sections": [
+      {
+        "name": "Rabbit_Beam",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Rabbit_Beam"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Rat",
+    "sections": [
+      {
+        "name": "Rat",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Rat"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "River Zora",
+    "sections": [
+      {
+        "name": "River Zora",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|River Zora"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "River Zora Walking",
+    "sections": [
+      {
+        "name": "River Zora Walking",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|River Zora Walking"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ropa",
+    "sections": [
+      {
+        "name": "Ropa",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Ropa"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Rope",
+    "sections": [
+      {
+        "name": "Rope",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Rope"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sand Crab",
+    "sections": [
+      {
+        "name": "Sand Crab",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Sand Crab"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Slarok",
+    "sections": [
+      {
+        "name": "Slarok",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Slarok"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Slime",
+    "sections": [
+      {
+        "name": "Slime",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Slime"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sluggula",
+    "sections": [
+      {
+        "name": "Sluggula",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Sluggula"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Snap Dragon",
+    "sections": [
+      {
+        "name": "Snap Dragon",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Snap Dragon"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Green Soldier",
+    "sections": [
+      {
+        "name": "Green Soldier",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Green Soldier"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Spark",
+    "sections": [
+      {
+        "name": "Spark",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Spark"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Spear Knight",
+    "sections": [
+      {
+        "name": "Spear Knight",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Spear Knight"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Green Spear Soldier",
+    "sections": [
+      {
+        "name": "Green Spear Soldier",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Green Spear Soldier"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Red Spear Soldier",
+    "sections": [
+      {
+        "name": "Red Spear Soldier",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Red Spear Soldier"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Spear Throwing Soldier",
+    "sections": [
+      {
+        "name": "Spear Throwing Soldier",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Spear Throwing Soldier"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Spiked Roller",
+    "sections": [
+      {
+        "name": "Spiked Roller",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Spiked Roller"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Stal",
+    "sections": [
+      {
+        "name": "Stal",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Stal"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Blue Stalfos",
+    "sections": [
+      {
+        "name": "Blue Stalfos",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Blue Stalfos"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Gray Stalfos",
+    "sections": [
+      {
+        "name": "Gray Stalfos",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Gray Stalfos"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Red Stalfos",
+    "sections": [
+      {
+        "name": "Red Stalfos",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Red Stalfos"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Yellow Stalfos",
+    "sections": [
+      {
+        "name": "Yellow Stalfos",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Yellow Stalfos"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Orange Stalfos Head",
+    "sections": [
+      {
+        "name": "Orange Stalfos Head",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Orange Stalfos Head"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Green Stalfos Head",
+    "sections": [
+      {
+        "name": "Green Stalfos Head",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Green Stalfos Head"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Stalfos Knight",
+    "sections": [
+      {
+        "name": "Stalfos Knight",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Stalfos Knight"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Stalrope",
+    "sections": [
+      {
+        "name": "Stalrope",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Stalrope"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Swamola",
+    "sections": [
+      {
+        "name": "Swamola",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Swamola"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sword Knight",
+    "sections": [
+      {
+        "name": "Sword Knight",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Sword Knight"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Blue Sword Soldier",
+    "sections": [
+      {
+        "name": "Blue Sword Soldier",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Blue Sword Soldier"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Green Sword Soldier",
+    "sections": [
+      {
+        "name": "Green Sword Soldier",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Green Sword Soldier"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Blue Taros",
+    "sections": [
+      {
+        "name": "Blue Taros",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Blue Taros"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Red Taros",
+    "sections": [
+      {
+        "name": "Red Taros",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Red Taros"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Blue Tektite",
+    "sections": [
+      {
+        "name": "Blue Tektite",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Blue Tektite"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Red Tektite",
+    "sections": [
+      {
+        "name": "Red Tektite",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Red Tektite"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Terrorpin",
+    "sections": [
+      {
+        "name": "Terrorpin",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Terrorpin"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Thief",
+    "sections": [
+      {
+        "name": "Thief",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Thief"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Toppo",
+    "sections": [
+      {
+        "name": "Toppo",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Toppo"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Vulture",
+    "sections": [
+      {
+        "name": "Vulture",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Vulture"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Wall Turret",
+    "sections": [
+      {
+        "name": "Wall Turret",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Wall Turret"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Wallmaster",
+    "sections": [
+      {
+        "name": "Wallmaster",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Wallmaster"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Winder",
+    "sections": [
+      {
+        "name": "Winder",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Winder"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Green Wizzrobe",
+    "sections": [
+      {
+        "name": "Green Wizzrobe",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Green Wizzrobe"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Purple Wizzrobe",
+    "sections": [
+      {
+        "name": "Purple Wizzrobe",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Purple Wizzrobe"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Blue Zazak",
+    "sections": [
+      {
+        "name": "Blue Zazak",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Blue Zazak"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Red Zazak",
+    "sections": [
+      {
+        "name": "Red Zazak",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Red Zazak"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Green Zirro",
+    "sections": [
+      {
+        "name": "Green Zirro",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Green Zirro"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Blue Zirro",
+    "sections": [
+      {
+        "name": "Blue Zirro",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Blue Zirro"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Dark Green Zol",
+    "sections": [
+      {
+        "name": "Dark Green Zol",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Dark Green Zol"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Green Zol",
+    "sections": [
+      {
+        "name": "Green Zol",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Green Zol"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Red Zol",
+    "sections": [
+      {
+        "name": "Red Zol",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Red Zol"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Yellow Zol",
+    "sections": [
+      {
+        "name": "Yellow Zol",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Yellow Zol"
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Zoro",
+    "sections": [
+      {
+        "name": "Zoro",
+        "item_count": 1,
+        "access_rules": [
+          "^$CanKill|Zoro"
         ]
       }
     ]

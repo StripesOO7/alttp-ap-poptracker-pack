@@ -1,7 +1,7 @@
 function Enemies_scope(scope_name, scope_health, scope_dmg_table, scope_counter)
     
     local Code = "enemy_"..scope_counter
-    local Basename = scope_name
+    local Basename = scope_name.."_lua"
 
     ---function that get triggered when left clicking a lua items as hosted item or in an itemgrid
     ---will select 2 LuaItems and connect them to be traversable in the graph

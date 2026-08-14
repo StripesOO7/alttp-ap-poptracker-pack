@@ -1292,9 +1292,12 @@ function ChangeERLayout()
         Tracker:AddMaps("maps/er_legend_on.json")
     end
 end
+
+
 CORE_ALTTP = true
 ALTTP_BETA = false
 ALTTPR = false
+---comment
 function ChangePopupLayout()
     local version = Tracker:FindObjectForCode("selected_game").CurrentStage
     local doors_tracking = Tracker:FindObjectForCode("doors_tracking")
@@ -1370,6 +1373,54 @@ function ChangePopupLayout()
         preserve_melee_dmg_classes.Active = false
     end
     ChangeGameVersion(version)
+end
+
+local DMG_class_items = {
+    [1] = {"blueboomerang", "redboomerang"},
+    [2] = {"fightersword", "mastersword", "somaria", "byrna"},
+    [3] = {"fightersword", "mastersword", "temperedsword"},
+    [4] = {"masterword", "temperedsword", "goldensword", "hammer"},
+    [5] = {"temperedsword", "goldensword"},
+    [6] = {"goldensword"},
+    [7] = {"bow+arrow"},
+    [8] = {"hookshot"},
+    [9] = {"bombs"},
+    [10] = {"bow+silvers"},
+    [11] = {"powder"},
+    [12] = {"firerod"},
+    [13] = {"icerod"},
+    [14] = {"bombos"},
+    [15] = {"ether"},
+    [16] = {"quake"},
+}
+
+ENEMY_KILLABLE = {}
+
+function CanKillUpdate()
+    -- print(Dump_table(NAMED_ENEMIES))
+    for enemy_name, _ in pairs(NAMED_ENEMIES) do
+        -- print(enemy_name, _)
+        local enemy = (Tracker:FindObjectForCode(enemy_name.."_lua") --[[@as LuaItem]]).ItemState
+        if enemy then
+            for i=1,16 do
+                if enemy.Damage_table[i] < 7 and ANY(table.unpack(DMG_class_items[i])) > 0 then
+                    ENEMY_KILLABLE[enemy_name] = true
+                    break
+                else
+                    ENEMY_KILLABLE[enemy_name] = false
+                end
+            end
+        
+        else
+            error("No enemy found for name: ".. enemy_name.."_lua")
+        end
+    end
+end
+
+function CanKill(enemy_name)
+    -- print(Dump_table(ENEMY_KILLABLE))
+    -- print(enemy_name, ENEMY_KILLABLE[enemy_name])
+    return ENEMY_KILLABLE[enemy_name] and ACCESS_NORMAL or ACCESS_NONE
 end
 
 -- ScriptHost:AddWatchForCode("settings maps_setting", "maps_setting", GiveAll)

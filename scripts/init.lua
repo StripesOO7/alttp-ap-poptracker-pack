@@ -42,6 +42,7 @@ function OnFrameHandler()
         end
     end
     ForceUpdate()
+    CanKillUpdate()
 end
 require("scripts.watches")
 ScriptHost:AddOnFrameHandler("load handler", OnFrameHandler)
