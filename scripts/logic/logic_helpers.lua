@@ -1375,7 +1375,7 @@ function ChangePopupLayout()
     ChangeGameVersion(version)
 end
 
-local DMG_class_items = {
+local DMG_class_items_lookup = {
     [1] = {"blueboomerang", "redboomerang"},
     [2] = {"fightersword", "mastersword", "somaria", "byrna"},
     [3] = {"fightersword", "mastersword", "temperedsword"},
@@ -1394,8 +1394,6 @@ local DMG_class_items = {
     [16] = {"quake"},
 }
 
-ENEMY_KILLABLE = {}
-
 function CanKillUpdate()
     -- print(Dump_table(NAMED_ENEMIES))
     for enemy_name, _ in pairs(NAMED_ENEMIES) do
@@ -1403,7 +1401,7 @@ function CanKillUpdate()
         local enemy = (Tracker:FindObjectForCode(enemy_name.."_lua") --[[@as LuaItem]]).ItemState
         if enemy then
             for i=1,16 do
-                if enemy.Damage_table[i] < 7 and ANY(table.unpack(DMG_class_items[i])) > 0 then
+                if enemy.Damage_table[i] < 7 and ANY(table.unpack(DMG_class_items_lookup[i])) > 0 then
                     ENEMY_KILLABLE[enemy_name] = true
                     break
                 else
@@ -1420,6 +1418,7 @@ end
 function CanKill(enemy_name)
     -- print(Dump_table(ENEMY_KILLABLE))
     -- print(enemy_name, ENEMY_KILLABLE[enemy_name])
+    -- print(Dump_table(Tracker:FindObjectForCode("Green Archer_lua").ItemState))
     return ENEMY_KILLABLE[enemy_name] and ACCESS_NORMAL or ACCESS_NONE
 end
 

@@ -7,6 +7,9 @@ ScriptHost:AddWatchForCode("doors_enabled handler", "doors_enabled", KeyDropLayo
 ScriptHost:AddWatchForCode("boss handler", "boss_shuffle", BossShuffle)
 ScriptHost:AddWatchForCode("set smallkey stage global", "small_keys", SetSmallKeyGlobal)
 
+ScriptHost:AddWatchForCode("dmg class shuffle handler", "dmg_class_shuffle", SetDmgClassShuffle)
+ScriptHost:AddWatchForCode("preserve melee handler", "preserve_melee_dmg_classes", SetDmgClassShuffle)
+
 -- SNES_ROMdata
 -- ScriptHost:AddMemoryWatch("LTTP Overworld Event Data", 0x7ef280, 0x82, UpdateOverworldEventsFromMemorySegment)
 -- ScriptHost:AddMemoryWatch("LTTP NPC Item Data", 0x7ef410, 2, UpdateNPCItemFlagsFromMemorySegment)

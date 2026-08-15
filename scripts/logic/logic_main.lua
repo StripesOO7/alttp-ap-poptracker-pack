@@ -36,6 +36,8 @@ NAMED_ENEMIES = {}
 NAMED_DMG_CLASSES = {}
 Current_Dungeon = nil
 
+ENEMY_KILLABLE = {}
+REVERSE_DMG_CLASSES = {}
 
 
 local stale = true
@@ -580,7 +582,6 @@ function StateChanged()
     end
     ClearCache()
     UpdateCanInteract()
-    CanKillUpdate()
     stale = true
 end
 
@@ -756,6 +757,80 @@ function FindPath(start, finish, stage)
     return false
 end --Test_path(location, finish, stage)
 
+
+function SetDmgClassShuffle()
+    MANUAL_CHECKED = false
+    local dmg_class_setting = Tracker:FindObjectForCode("dmg_class_shuffle") --[[@as JsonItem]]
+    local preserve_melee_setting = Tracker:FindObjectForCode("preserve_melee_dmg_classes") --[[@as JsonItem]]
+    local manual_dmg_storage_item = (Tracker:FindObjectForCode("manual_dmg_class_storage") --[[@as LuaItem]]).ItemState
+
+    if PLAYER_ID == -1 then -- not connected
+        if ROOM_SEED ~= "default" and manual_dmg_storage_item then -- seed is from previous connection
+            ROOM_SEED = "default"
+            manual_dmg_storage_item.MANUAL_LOCATIONS["default"] = {}
+        else -- seed is default
+        end
+    end
+    if not (Tracker.BulkUpdate == true) then
+        ScriptHost:RemoveWatchForCode("StateChanged")
+        local counter = -1
+        if dmg_class_setting == nil then
+            print("item with code 'dmg_class_shuffle' not found")
+            return
+        end
+        if preserve_melee_setting == nil then
+            print("item with code 'preserve_melee_dmg_classes' not found")
+            return
+        end
+        Tracker.BulkUpdate = true
+        if dmg_class_setting.CurrentStage == 0 then
+            
+            for enemy, _ in pairs(NAMED_ENEMIES) do
+                counter = counter + 1
+                local enemy = Tracker:FindObjectForCode("enemy_"..counter)
+                if enemy then
+                    for class_number=0,15 do
+                        Tracker:FindObjectForCode(counter.."_"..class_number).CurrentStage = enemy.ItemState.Default_damage_table[class_number+1]
+                    end
+                end
+            end
+        elseif dmg_class_setting.CurrentStage > 0 then
+            
+            for enemy_name, _ in pairs(NAMED_ENEMIES) do
+                counter = counter + 1
+                local enemy = Tracker:FindObjectForCode("enemy_"..counter)
+                if preserve_melee_setting.Active then
+                    Tracker:FindObjectForCode(counter.."_"..0).CurrentStage = 0
+                    for class_number=6,15 do
+                        Tracker:FindObjectForCode(counter.."_"..class_number).CurrentStage = 0
+                    end
+                    if enemy then
+                        for class_number=1,5 do
+                            Tracker:FindObjectForCode(counter.."_"..class_number).CurrentStage = enemy.ItemState.Default_damage_table[class_number+1]
+                        end
+                    end
+                else
+                    for class_number=0,15 do
+                        Tracker:FindObjectForCode(counter.."_"..class_number).CurrentStage = 0
+                    end
+                end
+            end
+        end
+        Tracker.BulkUpdate = false
+        ScriptHost:AddWatchForCode("StateChanged", "*", StateChanged)
+        ForceUpdate()
+    else
+        print("skipped dmg class reset")
+    end
+    print("run discorver")
+    Current_Dungeon = nil
+    Entry_point:discover(ACCESS_NORMAL, 0, nil)
+    print("finshed discover")
+
+    MANUAL_CHECKED = true
+    --set and empty dmg class values based on setting similar to ER
+end
+
 ---functio to set and reset all connections to their base state or ER-stage defined defaults
 function EmptyERLocationTargets()
     MANUAL_CHECKED = false
@@ -839,17 +914,9 @@ function EmptyERLocationTargets()
             end
         end
         for _, location in pairs(NAMED_LOCATIONS) do
-            local location_obj
-            if PopVersion < "0.32.0" then
-                location_obj = NAMED_LOCATIONS[location]
-            else
-                location_obj = location
-            end
-            location_obj.worldstate = location_obj.baseWorldstate
-            -- if location_obj.worldstate ~= location_obj.baseWorldstate then
-            --     location_obj.worldstate = location_obj.baseWorldstate
-            -- end
+            location.worldstate = location.baseWorldstate
         end
+
         ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", LocationHandler)
         ScriptHost:AddWatchForCode("StateChanged", "*", StateChanged)
         ForceUpdate()
@@ -919,16 +986,7 @@ function EmptyDoorsTargets()
         --     end
         -- end
         for _, location in pairs(NAMED_LOCATIONS) do
-            local location_obj
-            if PopVersion < "0.32.0" then
-                location_obj = NAMED_LOCATIONS[location]
-            else
-                location_obj = location
-            end
-            location_obj.worldstate = location_obj.baseWorldstate
-            -- if location_obj.worldstate ~= location_obj.baseWorldstate then
-            --     location_obj.worldstate = location_obj.baseWorldstate
-            -- end
+            location.worldstate = location.baseWorldstate
         end
         ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", LocationHandler)
         ScriptHost:AddWatchForCode("StateChanged", "*", StateChanged)

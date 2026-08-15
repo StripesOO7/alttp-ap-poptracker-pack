@@ -2,7 +2,11 @@
 
 
 function ChangeDmgClassProperty(item_code)
+    local enemy_number, dmg_class = item_code:match("([^_]+)_([^_]+)")
+    -- print(enemy_number, dmg_class)
+    Tracker:FindObjectForCode("enemy_"..enemy_number).ItemState.Damage_table[tonumber(dmg_class)+1] = Tracker:FindObjectForCode(item_code).CurrentStage
     AddManualItemStorage(item_code, "manual_dmg_class_storage")
+    CanKillUpdate()
 end
 
 ---function to reset all ER connections back to their base state for the given ER setting

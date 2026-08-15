@@ -136,7 +136,7 @@ function Enemies_scope(scope_name, scope_health, scope_dmg_table, scope_counter)
         -- self.Type = "custom"
         self.Name = name
         self.Icon = ImageReference:FromPackRelativePath("images/enemies/" .. string.lower(name) .. ".png")
-        ---@type ItemState
+        -- -@type ItemState
         self.ItemState = {
             Health = health,
             RAW_damage_table = {table.unpack(dmg_table)},
@@ -163,7 +163,7 @@ function Enemies_scope(scope_name, scope_health, scope_dmg_table, scope_counter)
         NAMED_ENEMIES[name] = self
         for i=1,16 do
             local dmg_class_item = Tracker:FindObjectForCode(scope_counter.."_"..i-1)
-            
+            -- REVERSE_DMG_CLASSES[scope_counter.."_"..i-1] = Basename
             if invulnerable then
                 -- dmg_class_item.CurrentStage = 7
                 self.ItemState.Default_damage_table[i] = 7

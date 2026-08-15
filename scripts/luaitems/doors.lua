@@ -1692,51 +1692,26 @@ NAMED_DOORS_CONNECTIONS = {}
 
 NAMED_ER_CONNECTIONS = {}
     ---function to create all ER lua items for poptracker
-    ---@return integer --completely useless
+    -- -@return integer --completely useless
 function CreateLuaItems()
-    if PopVersion < "0.32.0" then
-        -- pre 0.32.0
-        table.sort(NAMED_LOCATIONS_KEYS)
-        for _, location in pairs(NAMED_LOCATIONS_KEYS) do
-            local location_obj = NAMED_LOCATIONS[location]
-            -- print(location.name)
-            if string.sub(location_obj.name, -7,-1) == "_inside" then
-                -- CreateLuaLocationItems("From", location_obj, "inside")
-                NAMED_ER_CONNECTIONS["from_" .. location_obj.name] = ER_locations_scope("From", location_obj, "inside")
-                -- CreateLuaLocationItems("To", location_obj, "inside")
-                NAMED_ER_CONNECTIONS["to_" .. location_obj.name] = ER_locations_scope("To", location_obj, "inside")
-                
-            elseif string.sub(location_obj.name, -8,-1) == "_outside" then
-                -- CreateLuaLocationItems("From", location_obj, "outside")
-                NAMED_ER_CONNECTIONS["from_" .. location_obj.name] = ER_locations_scope("From", location_obj, "outside")
-                -- CreateLuaLocationItems("To", location_obj, "outside")
-                NAMED_ER_CONNECTIONS["to_" .. location_obj.name] = ER_locations_scope("To", location_obj, "outside")
-            elseif string.sub(location_obj.name, -8,-1) == "_door" then
-                NAMED_DOORS_CONNECTIONS["from_" .. location_obj.name] = Doors_locations_scope("From", location)
-                NAMED_DOORS_CONNECTIONS["to_" .. location_obj.name] = Doors_locations_scope("To", location)
-            end
-
-        end
-    else
         -- 0.32.0 onwards
-        for _, location in pairs(NAMED_LOCATIONS) do
-            if string.sub(location.name, -7,-1) == "_inside" then
-            -- print(location.name)
-                -- CreateLuaLocationItems("From", location, "inside")
-                NAMED_ER_CONNECTIONS["from_" .. location.name] = ER_locations_scope("From", location, "inside")
-                -- CreateLuaLocationItems("To", location, "inside")
-                NAMED_ER_CONNECTIONS["to_" .. location.name] = ER_locations_scope("To", location, "inside")
-               
-            elseif string.sub(location.name, -8,-1) == "_outside" then
-            -- print(location.name)
-                -- CreateLuaLocationItems("From", location, "outside")
-                NAMED_ER_CONNECTIONS["from_" .. location.name] = ER_locations_scope("From", location, "outside")
-                -- CreateLuaLocationItems("To", location, "outside")
-                NAMED_ER_CONNECTIONS["to_" .. location.name] = ER_locations_scope("To", location, "outside")
-            elseif string.sub(location.name, -5,-1) == "_door" then
-                NAMED_DOORS_CONNECTIONS["from_" .. location.name] = Doors_locations_scope("From", location)
-                NAMED_DOORS_CONNECTIONS["to_" .. location.name] = Doors_locations_scope("To", location)
-            end
+    for _, location in pairs(NAMED_LOCATIONS) do
+        if string.sub(location.name, -7,-1) == "_inside" then
+        -- print(location.name)
+            -- CreateLuaLocationItems("From", location, "inside")
+            NAMED_ER_CONNECTIONS["from_" .. location.name] = ER_locations_scope("From", location, "inside")
+            -- CreateLuaLocationItems("To", location, "inside")
+            NAMED_ER_CONNECTIONS["to_" .. location.name] = ER_locations_scope("To", location, "inside")
+            
+        elseif string.sub(location.name, -8,-1) == "_outside" then
+        -- print(location.name)
+            -- CreateLuaLocationItems("From", location, "outside")
+            NAMED_ER_CONNECTIONS["from_" .. location.name] = ER_locations_scope("From", location, "outside")
+            -- CreateLuaLocationItems("To", location, "outside")
+            NAMED_ER_CONNECTIONS["to_" .. location.name] = ER_locations_scope("To", location, "outside")
+        elseif string.sub(location.name, -5,-1) == "_door" then
+            NAMED_DOORS_CONNECTIONS["from_" .. location.name] = Doors_locations_scope("From", location)
+            NAMED_DOORS_CONNECTIONS["to_" .. location.name] = Doors_locations_scope("To", location)
         end
     end
 end
