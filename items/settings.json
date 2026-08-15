@@ -919,5 +919,50 @@
         "type": "toggle",
         "img": "/images/settings/reset_dmg_class_shuffle.png",
         "codes": "reset_dmg_class_shuffle"
+    },
+    {
+        "name": "Pot Shuffle",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": true,
+        "stages":
+            [
+                {
+                    "img": "/images/settings/pot_shuffle_off.png",
+                    "inherit_codes": false,
+                    "name": "Potshuffle off",
+                    "codes": "potshuffle, potshuffle_off"
+                },
+                {
+                    "img": "/images/settings/pot_shuffle_keys.png",
+                    "inherit_codes": false,
+                    "name": "Potshuffle keys",
+                    "codes": "potshuffle, potshuffle_keys"
+                },
+                {
+                    "img": "/images/settings/pot_shuffle_caves.png",
+                    "inherit_codes": false,
+                    "name": "Potshuffle caves",
+                    "codes": "potshuffle, potshuffle_caves"
+                },
+                {
+                    "img": "/images/settings/pot_shuffle_caves+keys.png",
+                    "inherit_codes": false,
+                    "name": "Potshuffle caves+keys",
+                    "codes": "potshuffle, potshuffle_keyscaves, potshuffle_keys, potshuffle_caves"
+                },
+                {
+                    "img": "/images/settings/pot_shuffle_dungeons.png",
+                    "inherit_codes": false,
+                    "name": "Potshuffle caves",
+                    "codes": "potshuffle, potshuffle_dungeons"
+                },
+                {
+                    "img": "/images/settings/pot_shuffle_lottery.png",
+                    "inherit_codes": false,
+                    "name": "Pottery Lottery",
+                    "codes": "potshuffle, potshuffle_lottery"
+                }
+            ]
     }
 ]
