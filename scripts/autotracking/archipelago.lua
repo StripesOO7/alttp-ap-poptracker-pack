@@ -520,14 +520,14 @@ function AutoFill()
         print("its fucked")
         return
     end
-    -- print(Dump_table(SLOT_DATA))
-
+    print(Dump_table(SLOT_DATA))
     -- mapGlitcheMode = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4} -- noGlitches, minor, overworld, hybrid_major, no_logic
     local mapDarkRoomLogic = {[0]=0, [1]=1, [2]=2, ["none"]=2,["lamp"]=0,["troches"]=1} --lamp, torches, none
-    local mapGoal = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=5, [7]=6, [8]=6, ["crystals"]=1,["ganon"]=0,["bosses"]=2,["pedestal"]=3,["ganonpedestal"]=4,["triforcehunt"]=5,["ganontriforcehunt"]=6,["localtriforcehunt"]=5,["localganontriforcehunt"]=6} --slow, fast, AD, ped, ped+ganon, tfh, local_tfh, tfh+ganon, local tfh+ganon
+    local mapCoreGoal = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=5, [7]=6, [8]=6, ["crystals"]=0,["ganon"]=1,["bosses"]=2,["pedestal"]=3,["ganonpedestal"]=4,["triforcehunt"]=5,["ganontriforcehunt"]=6,["localtriforcehunt"]=5,["localganontriforcehunt"]=6, ["trinity"]=7, ["completionist"]=8} --slow, fast, AD, ped, ped+ganon, tfh, local_tfh, tfh+ganon, local tfh+ganon
+    local mapAlttprGoal = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=5, [7]=7, [8]=8, ["crystals"]=0,["ganon"]=1,["bosses"]=2,["pedestal"]=3,["ganonpedestal"]=4,["triforcehunt"]=5,["ganontriforcehunt"]=6,["localtriforcehunt"]=5,["localganontriforcehunt"]=6, ["trinity"]=7, ["completionist"]=8} --slow, fast, AD, ped, ped+ganon, tfh, local_tfh, tfh+ganon, local tfh+ganon
     -- mapEntranceRandomizer = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=6, [7]=7, [8]=8} --vanilla, dungeon simple, dungeon full, dungeon crossed, simple, restriced, full, crossed, insanity
-    -- mapTriforcePiecesAvailable = {} --range 1-90
-    -- mapTriforcePiecesRequiered = {} --range 1-90
+    -- mapTriforcePiecesAvailable = {} --range 1-850
+    -- mapTriforcePiecesRequiered = {} --range 1-850
     local mapDungeonItem = {[0]=0, [1]=1, [2]=1, [3]=1, [4]=1, [5]=2, [6]=0} --og dungeon, own dungeons,
     local mapDungeonItemSetting = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=6, [6]=5} --og dungeon, own dungeons,
     -- mapStartMode = {[0]=0, [1]=1, [2]=2} --standard, open, Inverted
@@ -640,95 +640,221 @@ function AutoFill()
         -- shuffle_shop_inventories = {codes={""}, mappings={mapToggle}, autofill="autofill_sanities",},
         shuffle_capacity_upgrades = {codes={"shop_shuffle_capacity"}, mappings={mapToggle}, autofill="autofill_misc",},
         entrance_shuffle = {codes={"er_tracking"}, mappings={mapEntranceShuffle}, autofill="autofill_misc",},
-        goal = {codes={"goal"}, mappings={mapGoal}, autofill="autofill_goal_reqs",},
+        goal = {codes={"goal"}, mappings={mapCoreGoal}, autofill="autofill_goal_reqs",},
         mode = {codes={"start_option"}, mappings={mapStages}, autofill="autofill_modes",},
         enemy_shuffle = {codes={"enemizer"}, mappings={mapToggle}, autofill="autofill_misc",},
     }
 
     -- print(Dump_table(SLOT_DATA))
     -- print(Tracker:FindObjectForCode("autofill_settings").Active)
-    for settings_name , settings_value in pairs(SLOT_DATA) do
-        if type(settings_value) == "table" then
-            if settings_name == "bosses" then
-                if Tracker:FindObjectForCode("autofill_dungeon_settings").Active then
-                    SKIP_BOSSSHUFFLE = true
-                    for dungeon, boss in pairs(settings_value) do
-                        Tracker:FindObjectForCode(mapDungeon[dungeon][1]).CurrentStage = mapBoss[boss]
-                    end
-                end
-            elseif settings_name == "prizes" then
-                for dungeon, reward in pairs(settings_value) do
-                    Tracker:FindObjectForCode(mapDungeon[dungeon][2]).CurrentStage = mapRewards[reward]
-                end
-            -- elseif settings_name == "key_rings_list" then
-            --     for dungeon, reward in pairs(settings_value) do
-            --         print(dungeon, reward)
-            --         print(Dump_table(mapDungeon))
-            --         print(Dump_table(mapDungeon[reward]))
-            --         print(mapDungeon[reward][2])
-            --         print(Dump_table(mapRewards[reward]))
-            --         print(mapRewards[reward])
-            --         Tracker:FindObjectForCode(mapDungeon[dungeon][2]).CurrentStage = mapRewards[reward]
-            --     end
-               
-            end
-           
-        -- print(k, v)
-        -- if settings_name == "crystals_needed_for_gt"
-        -- or settings_name == "crystals_needed_for_ganon"
-        -- or settings_name == "triforce_pieces_required" then
-        --     Tracker:FindObjectForCode(slotCodes[settings_name].code).AcquiredCount = settings_value
+    if SLOT_DATA["settings"] then --alttpr slotdata
+                -- ["triforce_pool"] = 30,
+                -- ["triforce_goal"] = 20,
+                -- ["ow_fluteshuffle"] = vanilla,
+                -- ["swords"] = random,
+                -- ["compassshuffle"] = none,
+                -- ["skullwoods"] = original,
+                -- ["enemy_health"] = default,
+                -- ["beemizer"] = 0,
+                -- ["shufflepots"] = false,
+                -- ["logic"] = noglitches,
+                -- ["bigkeyshuffle"] = none,
+                -- ["flute_mode"] = normal,
+                -- ["crystals_gt"] = {
+                -- },
+                -- ["bonk_drops"] = false,
+                -- ["pottery"] = none,
+                -- ["prizeshuffle"] = none,
+                -- ["shopsanity"] = 0,
+                -- ["bombbag"] = false,
+                -- ["shuffletavern"] = 0,
+                -- ["shuffle_followers"] = false,
+                -- ["mode"] = open,
+                -- ["goal"] = crystals,
+                -- ["enemy_shuffle"] = none,
+                -- ["openpyramid"] = auto,
+                -- ["mapshuffle"] = none,
+                -- ["decoupledoors"] = false,
+                -- ["keyshuffle"] = none,
+                -- ["door_shuffle"] = vanilla,
+                -- ["crystals_ganon"] = {
+                -- },
+                -- ["door_type_mode"] = original,
+                -- ["any_enemy_logic"] = none,
+                -- ["boss_shuffle"] = none,
+                -- ["bow_mode"] = progressive,
+                -- ["dropshuffle"] = none,
+                -- ["shuffle"] = vanilla,
+                -- ["take_any"] = none,
 
-        -- elseif settings_name == "shop_shuffle" then
-        --     item = Tracker:FindObjectForCode(slotCodes[settings_name].code)
-        --     if settings_value ~= "none" then
-        --         item.Active = true
-        --     elseif settings_value == "none" then
-        --         item.Active = false
-        --     end
-        else
-            if settings_name == "shop_item_slots" and (Tracker:FindObjectForCode(slotCodes[settings_name].autofill)  --[[@as JsonItem]]).Active then
-                (Tracker:FindObjectForCode("shop_sanity") --[[@as JsonItem]]).Active = settings_value > 0
-                (Tracker:FindObjectForCode("shuffle_item_slots") --[[@as JsonItem]]).BadgeText = settings_value
-            elseif slotCodes[settings_name] then
-                for index, _ in ipairs(slotCodes[settings_name].codes) do
-                   
-                    -- print("settings_name", settings_name)
-                    -- print("slotCodes[settings_name]", slotCodes[settings_name])
-                    -- print("slotCodes[settings_name].code", slotCodes[settings_name].code)
-                    -- print("slotCodes[settings_name].code", slotCodes[settings_name].code[1])
-                    -- print("slotCodes[settings_name].autoFill", slotCodes[settings_name].autofill)
-                    print("<--------------------------------->")
-                    if Tracker:FindObjectForCode(slotCodes[settings_name].autofill).Active then
-                        print("settings_name", settings_name)
-                        local item = Tracker:FindObjectForCode((slotCodes[settings_name].codes)[index]) --[[@as JsonItem]]
-                        if item.Type == "toggle" then
-                            -- print("toggle", settings_name, settings_value)
-                            item.Active = (slotCodes[settings_name].mappings[index])[settings_value]
-                        elseif slotCodes[settings_name].mappings[index] == nil then
-                            -- print("toggle", settings_name, settings_value)
-                            item.AcquiredCount = settings_value
-                        else
-                            -- print("else", settings_name, settings_value)
-                            -- print(k,v,Tracker:FindObjectForCode(slotCodes[k].code).CurrentStage, slotCodes[k].mapping[v])
-                            item.CurrentStage = (slotCodes[settings_name].mappings[index])[settings_value]
+                -- // ["difficulty"] = normal,
+                -- // ["trap_door_mode"] = vanilla,
+                -- // ["hints"] = false,
+                -- // ["ow_mixed"] = false,
+                -- // ["ow_layout"] = vanilla,
+                -- // ["ow_fog"] = false,
+                -- // ["pseudoboots"] = 0,
+                -- // ["ow_whirlpool"] = false,
+                -- // ["ow_keepsimilar"] = false,
+                -- // ["mirrorscroll"] = false,
+                -- // ["accessibility"] = locations,
+                -- // ["mixed_travel"] = prevent,
+                -- // ["enemy_damage"] = default,
+                -- // ["door_self_loops"] = false,
+                -- // ["money_balance"] = 100,
+                -- // ["standardize_palettes"] = standardize,
+                -- // ["ow_crossed"] = none,
+                -- // ["dungeon_counters"] = on,
+                -- // ["shufflelinks"] = 0,
+                -- // ["ow_terrain"] = false,
+                -- // ["ow_parallel"] = false,
+                -- // ["aga_randomness"] = true,
+                -- // ["overworld_map"] = default,
+                -- // ["collection_rate"] = false,
+                -- // ["key_logic_algorithm"] = partial,
+        local slot_data_alttpr = SLOT_DATA["settings"]["1"]
+        for settings_name , settings_value in pairs(slot_data_alttpr) do
+            if type(settings_value) == "table" then
+                if settings_name == "bosses" then
+                    if Tracker:FindObjectForCode("autofill_dungeon_settings").Active then
+                        SKIP_BOSSSHUFFLE = true
+                        for dungeon, boss in pairs(settings_value) do
+                            Tracker:FindObjectForCode(mapDungeon[dungeon][1]).CurrentStage = mapBoss[boss]
+                        end
+                    end
+                elseif settings_name == "prizes" then
+                    for dungeon, reward in pairs(settings_value) do
+                        Tracker:FindObjectForCode(mapDungeon[dungeon][2]).CurrentStage = mapRewards[reward]
+                    end
+                -- elseif settings_name == "key_rings_list" then
+                --     for dungeon, reward in pairs(settings_value) do
+                --         print(dungeon, reward)
+                --         print(Dump_table(mapDungeon))
+                --         print(Dump_table(mapDungeon[reward]))
+                --         print(mapDungeon[reward][2])
+                --         print(Dump_table(mapRewards[reward]))
+                --         print(mapRewards[reward])
+                --         Tracker:FindObjectForCode(mapDungeon[dungeon][2]).CurrentStage = mapRewards[reward]
+                --     end
+                
+                end
+            else
+                if settings_name == "shop_item_slots" and (Tracker:FindObjectForCode(slotCodes[settings_name].autofill)  --[[@as JsonItem]]).Active then
+                    (Tracker:FindObjectForCode("shop_sanity") --[[@as JsonItem]]).Active = settings_value > 0
+                    (Tracker:FindObjectForCode("shuffle_item_slots") --[[@as JsonItem]]).BadgeText = settings_value
+                elseif slotCodes[settings_name] then
+                    for index, _ in ipairs(slotCodes[settings_name].codes) do
+                    
+                        -- print("settings_name", settings_name)
+                        -- print("slotCodes[settings_name]", slotCodes[settings_name])
+                        -- print("slotCodes[settings_name].code", slotCodes[settings_name].code)
+                        -- print("slotCodes[settings_name].code", slotCodes[settings_name].code[1])
+                        -- print("slotCodes[settings_name].autoFill", slotCodes[settings_name].autofill)
+                        print("<--------------------------------->")
+                        if Tracker:FindObjectForCode(slotCodes[settings_name].autofill).Active then
+                            print("settings_name", settings_name)
+                            local item = Tracker:FindObjectForCode((slotCodes[settings_name].codes)[index]) --[[@as JsonItem]]
+                            if item.Type == "toggle" then
+                                -- print("toggle", settings_name, settings_value)
+                                item.Active = (slotCodes[settings_name].mappings[index])[settings_value]
+                            elseif slotCodes[settings_name].mappings[index] == nil then
+                                -- print("toggle", settings_name, settings_value)
+                                item.AcquiredCount = settings_value
+                            else
+                                -- print("else", settings_name, settings_value)
+                                -- print(k,v,Tracker:FindObjectForCode(slotCodes[k].code).CurrentStage, slotCodes[k].mapping[v])
+                                item.CurrentStage = (slotCodes[settings_name].mappings[index])[settings_value]
+                            end
                         end
                     end
                 end
             end
         end
-    end
-    if Tracker:FindObjectForCode("autofill_medallions").Active then
-        for _, medallion in pairs({"bombos", "ether", "quake"}) do
-            Tracker:FindObjectForCode(medallion).CurrentStage = 0
+        if Tracker:FindObjectForCode("autofill_medallions").Active then
+            for _, medallion in pairs({"bombos", "ether", "quake"}) do
+                Tracker:FindObjectForCode(medallion).CurrentStage = 0
+            end
+            local slot_data_medallions = SLOT_DATA["medalions"]["1"]
+            if slot_data_medallions["Misery Mire"] == slot_data_medallions["Turtle Rock"] then
+                Tracker:FindObjectForCode(mapMedallions[slot_data_medallions["Misery Mire"].lower()]).CurrentStage = 3
+            else
+                Tracker:FindObjectForCode(mapMedallions[slot_data_medallions["Misery Mire"].lower()]).CurrentStage = 2
+                Tracker:FindObjectForCode(mapMedallions[slot_data_medallions["Turtle Rock"].lower()]).CurrentStage = 1
+            end
         end
-        if SLOT_DATA["mm_medalion"] == SLOT_DATA["tr_medalion"] then
-            Tracker:FindObjectForCode(mapMedallions[SLOT_DATA["mm_medalion"]]).CurrentStage = 3
-        else
-            Tracker:FindObjectForCode(mapMedallions[SLOT_DATA["mm_medalion"]]).CurrentStage = 2
-            Tracker:FindObjectForCode(mapMedallions[SLOT_DATA["tr_medalion"]]).CurrentStage = 1
+        
+    else --core/beta slotdata
+        for settings_name , settings_value in pairs(SLOT_DATA) do
+            if type(settings_value) == "table" then
+                if settings_name == "bosses" then
+                    if Tracker:FindObjectForCode("autofill_dungeon_settings").Active then
+                        SKIP_BOSSSHUFFLE = true
+                        for dungeon, boss in pairs(settings_value) do
+                            Tracker:FindObjectForCode(mapDungeon[dungeon][1]).CurrentStage = mapBoss[boss]
+                        end
+                    end
+                elseif settings_name == "prizes" then
+                    for dungeon, reward in pairs(settings_value) do
+                        Tracker:FindObjectForCode(mapDungeon[dungeon][2]).CurrentStage = mapRewards[reward]
+                    end
+                -- elseif settings_name == "key_rings_list" then
+                --     for dungeon, reward in pairs(settings_value) do
+                --         print(dungeon, reward)
+                --         print(Dump_table(mapDungeon))
+                --         print(Dump_table(mapDungeon[reward]))
+                --         print(mapDungeon[reward][2])
+                --         print(Dump_table(mapRewards[reward]))
+                --         print(mapRewards[reward])
+                --         Tracker:FindObjectForCode(mapDungeon[dungeon][2]).CurrentStage = mapRewards[reward]
+                --     end
+                
+                end
+            else
+                if settings_name == "shop_item_slots" and (Tracker:FindObjectForCode(slotCodes[settings_name].autofill)  --[[@as JsonItem]]).Active then
+                    (Tracker:FindObjectForCode("shop_sanity") --[[@as JsonItem]]).Active = settings_value > 0
+                    (Tracker:FindObjectForCode("shuffle_item_slots") --[[@as JsonItem]]).BadgeText = settings_value
+                elseif slotCodes[settings_name] then
+                    for index, _ in ipairs(slotCodes[settings_name].codes) do
+                    
+                        -- print("settings_name", settings_name)
+                        -- print("slotCodes[settings_name]", slotCodes[settings_name])
+                        -- print("slotCodes[settings_name].code", slotCodes[settings_name].code)
+                        -- print("slotCodes[settings_name].code", slotCodes[settings_name].code[1])
+                        -- print("slotCodes[settings_name].autoFill", slotCodes[settings_name].autofill)
+                        print("<--------------------------------->")
+                        if Tracker:FindObjectForCode(slotCodes[settings_name].autofill).Active then
+                            print("settings_name", settings_name)
+                            local item = Tracker:FindObjectForCode((slotCodes[settings_name].codes)[index]) --[[@as JsonItem]]
+                            if item.Type == "toggle" then
+                                -- print("toggle", settings_name, settings_value)
+                                item.Active = (slotCodes[settings_name].mappings[index])[settings_value]
+                            elseif slotCodes[settings_name].mappings[index] == nil then
+                                -- print("toggle", settings_name, settings_value)
+                                item.AcquiredCount = settings_value
+                            else
+                                -- print("else", settings_name, settings_value)
+                                -- print(k,v,Tracker:FindObjectForCode(slotCodes[k].code).CurrentStage, slotCodes[k].mapping[v])
+                                item.CurrentStage = (slotCodes[settings_name].mappings[index])[settings_value]
+                            end
+                        end
+                    end
+                end
+            end
         end
+        if Tracker:FindObjectForCode("autofill_medallions").Active then
+            for _, medallion in pairs({"bombos", "ether", "quake"}) do
+                Tracker:FindObjectForCode(medallion).CurrentStage = 0
+            end
+            if SLOT_DATA["mm_medalion"] == SLOT_DATA["tr_medalion"] then
+                Tracker:FindObjectForCode(mapMedallions[SLOT_DATA["mm_medalion"]]).CurrentStage = 3
+            else
+                Tracker:FindObjectForCode(mapMedallions[SLOT_DATA["mm_medalion"]]).CurrentStage = 2
+                Tracker:FindObjectForCode(mapMedallions[SLOT_DATA["tr_medalion"]]).CurrentStage = 1
+            end
+        end
+
     end
+
     GoalCheck()
 end
 

@@ -246,6 +246,34 @@
                 {
                   "type": "item",
                   "max_width": "180",
+                  "item": "ui_hint"
+                },
+                {
+                  "type": "item",
+                  "max_width": "180",
+                  "item": "reduce_maps"
+                },
+                {
+                  "type": "item",
+                  "max_width": "180",
+                  "item": "shuffle_links_house"
+                },
+                {
+                  "type": "item",
+                  "max_width": "180",
+                  "item": "shuffle_tavern"
+                }
+              ]
+            },
+            {
+              "type": "group",
+              "header": "Doors Settings",
+              "description": "Enable/Disable the automatic fill of the settings pannel from for connected Slot_Data",
+              "header_background": "#3e4b57",
+              "content": [
+                {
+                  "type": "item",
+                  "max_width": "180",
                   "item": "reset_doors"
                 },
                 {
@@ -267,16 +295,6 @@
                   "type": "item",
                   "max_width": "180",
                   "item": "doortype_shuffle"
-                },
-                {
-                  "type": "item",
-                  "max_width": "180",
-                  "item": "ui_hint"
-                },
-                {
-                  "type": "item",
-                  "max_width": "180",
-                  "item": "reduce_maps"
                 }
               ]
             }
