@@ -901,6 +901,17 @@ function EmptyERLocationTargets()
         -- else
         --     print("insanity ER is not supported you troll")
         end
+        if Tracker:FindObjectForCode("shuffle_tavern").Active then
+            PERMANENT_CONNECTIONS["from_Kakariko_backside_pub_inside"] = nil
+            PERMANENT_CONNECTIONS["to_Kakariko_backside_pub_inside"] = nil
+            PERMANENT_CONNECTIONS["from_Kakariko_backside_pub_outside"] = nil
+            PERMANENT_CONNECTIONS["to_Kakariko_backside_pub_outside"] = nil
+        else
+            PERMANENT_CONNECTIONS["from_Kakariko_backside_pub_inside"] = true
+            PERMANENT_CONNECTIONS["to_Kakariko_backside_pub_inside"] = true
+            PERMANENT_CONNECTIONS["from_Kakariko_backside_pub_outside"] = false
+            PERMANENT_CONNECTIONS["to_Kakariko_backside_pub_outside"] = false
+        end
         for name, inside in pairs(PERMANENT_CONNECTIONS) do
             local source = Tracker:FindObjectForCode(name) --[[@as LuaItem]]
             local target_outside = Tracker:FindObjectForCode(string.gsub(name, "_inside", "_outside")) --[[@as LuaItem]]

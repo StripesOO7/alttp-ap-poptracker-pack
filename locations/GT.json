@@ -322,6 +322,425 @@
                         "shape": "rect"
                     }
                 ]
+            },
+            {
+                "name": "Firesnake Room Pot #1",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #1",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Firesnake Room Pot #2",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #2",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Firesnake Room Pot #3",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #3",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Warp Maze",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "children": [
+                    {
+                        "name": "Pot Rail Pot #4",
+                        "chest_unopened_img": "/images/items/close.png",
+                        "chest_opened_img": "/images/items/open.png",
+                        "overlay_background": "#000000",
+                        "access_rules": [
+                            " "
+                        ],
+                        "sections": [
+                            {
+                                "name": "Pot #4",
+                                "access_rules": [],
+                                "visibility_rules": [],
+                                "item_count": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mid Section Pot #3",
+                        "chest_unopened_img": "/images/items/close.png",
+                        "chest_opened_img": "/images/items/open.png",
+                        "overlay_background": "#000000",
+                        "access_rules": [
+                            " "
+                        ],
+                        "sections": [
+                            {
+                                "name": "Pot #3",
+                                "access_rules": [],
+                                "visibility_rules": [],
+                                "item_count": 1
+                            }
+                        ]
+                    },
+                    {
+                        "name": "Mid Section Pot #4",
+                        "chest_unopened_img": "/images/items/close.png",
+                        "chest_opened_img": "/images/items/open.png",
+                        "overlay_background": "#000000",
+                        "access_rules": [
+                            " "
+                        ],
+                        "sections": [
+                            {
+                                "name": "Pot #4",
+                                "access_rules": [],
+                                "visibility_rules": [],
+                                "item_count": 1
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "Conveyor Cross Pot #1",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #1",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Hookshot South Platform Pot #3",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #3",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Hookshot South Platform Pot #4",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #4",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Hookshot Mid Platform Pot #5",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #5",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Map Room Pot #6",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #6",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Map Room Pot #7",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #7",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Hope Room Pot #1",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #1",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Hope Room Pot #2",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #2",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Bobs Room Pot #3",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #3",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Bobs Room Pot #4",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #4",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Bobs Room Pot #5",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #5",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Bobs Room Pot #6",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #6",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Bobs Room Pot #7",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #7",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Double Switch Pot Corners Pot #1",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #1",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Crystal Conveyor Left Pot #1",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #1",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Crystal Conveyor Left Pot #2",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #2",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Compass Room Pot #3",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #3",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Compass Room Pot #4",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #4",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
             }
         ]
     },
@@ -525,6 +944,261 @@
                         "shape": "rect"
                     }
                 ]
+            },
+            {
+                "name": "Conveyor Star Pits Pot #1",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #1",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Conveyor Star Pits Pot #2",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #2",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Conveyor Star Pits Pot #3",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #3",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Conveyor Star Pits Pot #4",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #4",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Falling Bridge Pot #1",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #1",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Falling Bridge Pot #2",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #2",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Falling Bridge Pot #3",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #3",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Falling Bridge Pot #4",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #4",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Petting Zoo Pot #5",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #5",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Petting Zoo Pot #6",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #6",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Speed Torch Upper Pot #1",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #1",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Speed Torch Upper Pot #2",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #2",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Pots n Blocks Pot #3",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #3",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Pots n Blocks Pot #4",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #4",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Pots n Blocks Pot #5",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #5",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
             }
         ]
     },
@@ -648,6 +1322,40 @@
                         "y": 280,
                         "size": 6,
                         "shape": "rect"
+                    }
+                ]
+            },
+            {
+                "name": "Invisible Catwalk Pot #1",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #1",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Invisible Catwalk Pot #2",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #2",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
                     }
                 ]
             }
@@ -798,6 +1506,856 @@
                         "y": 100,
                         "size": 6,
                         "shape": "rect"
+                    }
+                ]
+            },
+            {
+                "name": "Mini Helmasaur Room Pot #1",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #1",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Mini Helmasaur Room Pot #2",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #2",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Crystal Inner Circle Pot #3",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #3",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Crystal Inner Circle Pot #4",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #4",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Crystal Inner Circle Pot #5",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #5",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Crystal Inner Circle Pot #6",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #6",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Crystal Inner Circle Pot #7",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #7",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Hidden Spikes Pot #1",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #1",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Hidden Spikes Pot #2",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #2",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Hidden Spikes Pot #3",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #3",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Refill Pot #1",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #1",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Refill Pot #2",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #2",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Refill Pot #3",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #3",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Refill Pot #4",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #4",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Refill Pot #5",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #5",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Refill Pot #6",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #6",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Refill Pot #7",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #7",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Refill Pot #8",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #8",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Gauntlet 2 Pot #1",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #1",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Gauntlet 2 Pot #2",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #2",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Gauntlet 2 Pot #3",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #3",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Gauntlet 2 Pot #4",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #4",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Gauntlet 3 Pot #5",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #5",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Gauntlet 3 Pot #6",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #6",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Gauntlet 3 Pot #7",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #7",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Gauntlet 3 Pot #8",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #8",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Crystal Paths Pot #1",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #1",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Crystal Paths Pot #2",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #2",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Crystal Paths Pot #3",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #3",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Crystal Paths Pot #4",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #4",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Crystal Paths Pot #5",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #5",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Crystal Paths Pot #6",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #6",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Mimics 2 Pot #7",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #7",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Mimics 2 Pot #8",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #8",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Quad Pot Pot #1",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #1",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Quad Pot Pot #2",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #2",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Quad Pot Pot #3",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #3",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Quad Pot Pot #4",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #4",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Gauntlet 5 Pot #1",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #1",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Gauntlet 5 Pot #2",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #2",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Gauntlet 5 Pot #3",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #3",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Gauntlet 5 Pot #4",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #4",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Torch Cross Pot #1",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #1",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Torch Cross Pot #2",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #2",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Torch Cross Pot #3",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #3",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Torch Cross Pot #4",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #4",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Torch Cross Pot #5",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #5",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Torch Cross Pot #6",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #6",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Staredown Pot #7",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #7",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Staredown Pot #8",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #8",
+                        "access_rules": [],
+                        "visibility_rules": ["potshuffle_lottery"],
+                        "item_count": 1
                     }
                 ]
             }

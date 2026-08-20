@@ -1283,8 +1283,8 @@ function ChangeERMap()
 end
 
 ---comment
-function ChangeERLayout()
-    if Tracker:FindObjectForCode("er_tracking").CurrentStage == 0 or Tracker:FindObjectForCode("doors_tracking").CurrentStage == 0 then
+function ChangeERLayout(code)
+    if Tracker:FindObjectForCode(code).CurrentStage == 0 then
         Tracker:AddLayouts("layouts/tabs.json")
         Tracker:AddMaps("maps/er_legend_off.json")
     else

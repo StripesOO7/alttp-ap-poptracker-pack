@@ -24,6 +24,13 @@
                         "access_rules": [
                             "^$CanReach|Kakariko Well - Top"
                         ]
+                    },
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 8
                     }
                 ],
                 "map_locations": [
@@ -69,6 +76,20 @@
                         "access_rules": [
                             "^$CanReach|Blind's Hideout - Back"
                         ]
+                    },
+                    {
+                        "name": "Top Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 4
+                    },
+                    {
+                        "name": "Bottom Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 6
                     }
                 ],
                 "map_locations": [
@@ -156,6 +177,66 @@
                 ]
             },
             {
+                "name": "Elder House",
+                "access_rules": [
+                    "^$CanReach|Kakariko_chickenhut_inside"
+                ],
+                "sections": [
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            "^$CanReach|Chicken Hut"
+                        ],
+                        "item_count": 3
+                    }
+                ]
+            },
+            {
+                "name": "Snitch House (West)",
+                "access_rules": [
+                    ""
+                ],
+                "sections": [
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 2
+                    }
+                ]
+            },
+            {
+                "name": "Snitch House (East)",
+                "access_rules": [
+                    ""
+                ],
+                "sections": [
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Bomb Hut",
+                "access_rules": [
+                    ""
+                ],
+                "sections": [
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 8
+                    }
+                ]
+            },
+            {
                 "name": "Chicken Hut",
                 "access_rules": [
                     "^$CanReach|Kakariko_chickenhut_inside"
@@ -166,6 +247,13 @@
                         "access_rules": [
                             "^$CanReach|Chicken Hut"
                         ]
+                    },
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 1
                     }
                 ],
                 "map_locations": [
@@ -281,6 +369,13 @@
                         "access_rules": [
                             "^$CanReach|Sick Kid"
                         ]
+                    },
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 2
                     }
                 ],
                 "map_locations": [
@@ -315,6 +410,13 @@
                         "access_rules": [
                             "^$CanReach|Backside Pub"
                         ]
+                    },
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 2
                     }
                 ],
                 "map_locations": [
@@ -339,6 +441,21 @@
                 ]
             },
             {
+                "name": "Tavern (Front)",
+                "access_rules": [
+                    "^$CanReach|Kakariko_backside_pub_inside"
+                ],
+                "sections": [
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
                 "name": "Magic Bat",
                 "access_rules": [
                     "^$CanReach|Magic_bat_cave_inside"
@@ -349,6 +466,13 @@
                         "access_rules": [
                             "^$CanReach|Magic Bat"
                         ]
+                    },
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 1
                     }
                 ],
                 "map_locations": [
@@ -468,6 +592,22 @@
                         "x": 60,
                         "y": 75,
                         "size": 32
+                    }
+                ]
+            },
+            {
+                "name": "Lumberjack House",
+                "access_rules": [
+                    "^$CanReach|Lumberjacks_item",
+                    "^$CanReach|Lumberjacks_cave_inside"
+                ],
+                "sections": [
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 2
                     }
                 ]
             },
@@ -623,7 +763,13 @@
                         "access_rules": [
                             "^$CanReach|Cave 45"
                         ]
-                       
+                    },
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 6
                     }
                 ],
                 "map_locations": [
@@ -820,6 +966,22 @@
                 ]
             },
             {
+                "name": "50 Rupee Cave",
+                "access_rules": [
+                    "^$CanReach|Lumberjacks_item",
+                    "^$CanReach|Lumberjacks_cave_inside"
+                ],
+                "sections": [
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 10
+                    }
+                ]
+            },
+            {
                 "name": "Mini Moldorm Cave",
                 "access_rules": [
                     "^$CanReach|Mini_moldorm_cave_inside"
@@ -886,6 +1048,22 @@
                         "x": 1656,
                         "y": 1385,
                         "size": 32
+                    }
+                ]
+            },
+            {
+                "name": "20 Rupee Cave",
+                "access_rules": [
+                    "^$CanReach|Lumberjacks_item",
+                    "^$CanReach|Lumberjacks_cave_inside"
+                ],
+                "sections": [
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 4
                     }
                 ]
             },
@@ -1095,6 +1273,13 @@
                         "access_rules": [
                             "^$CanReach|Link's House Chest"
                         ]
+                    },
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 3
                     }
                 ],
                 "map_locations": [
@@ -1138,6 +1323,13 @@
                             "^$CanReach|Sahasralah"
                         ],
                         "capture_item": true
+                    },
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 3
                     }
                 ],
                 "map_locations": [
@@ -1325,6 +1517,13 @@
                         "access_rules": [
                             "^$CanReach|Secret Passage"
                         ]
+                    },
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 2
                     }
                 ],
                 "map_locations": [
@@ -1500,6 +1699,20 @@
                         "access_rules": [
                             "^$CanReach|Old Man Item"
                         ]
+                    },
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 2
+                    },
+                    {
+                        "name": "Back Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 4
                     }
                 ],
                 "map_locations": [
@@ -1520,6 +1733,38 @@
                         "x": 900,
                         "y": 410,
                         "size": 32
+                    }
+                ]
+            },
+            {
+                "name": "Old Man Cave",
+                "access_rules": [
+                    ""
+                ],
+                "visibility_rules": [""],
+                "sections": [
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 2
+                    }
+                ]
+            },
+            {
+                "name": "DM Return Cave",
+                "access_rules": [
+                    "^$CanReach|Old_man_cave"
+                ],
+                "visibility_rules": ["$OpenOrStandard"],
+                "sections": [
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 6
                     }
                 ]
             },
@@ -1659,6 +1904,27 @@
                 ]
             },
             {
+                "name": "Fairy Ascension Cave",
+                "access_rules": [
+                ],
+                "sections": [
+                    {
+                        "name": "Top Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count":2
+                    },
+                    {
+                        "name": "Bottom Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count":2
+                    }
+                ]
+            },
+            {
                 "name": "Light Death Mountain Shop",
                 "access_rules": [
                     "^$CanReach|Light_death_mountain_shop_inside"
@@ -1748,6 +2014,13 @@
                         ],
                         "clear_as_group": false,
                         "item_count": 2
+                    },
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 3
                     }
                 ],
                 "map_locations": [

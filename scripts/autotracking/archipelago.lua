@@ -230,6 +230,61 @@ function PreOnClear()
     end
 end
 
+---resets or updates a given item back to default or what's saved for the given seed in the pseudo-cache LuaItems
+---@param item_code JsonItem|string Tracker:FindObjectForCode(item) return object
+---@param item_type string|nil table of the ItemCode and extra parameters from the Item_Mapping.lau
+---@param consumable_multiplier integer|nil table of the ItemCode and extra parameters from the Item_Mapping.lua
+---@param reset boolean|nil flag to update or reset the item false=update, true=reset, nil=update
+local function ItemUpdate(item_code, item_type, consumable_multiplier, reset)
+    local item_obj = nil
+
+    if type(item_code) == "string" then
+        item_obj = Tracker:FindObjectForCode(item_code)
+    else
+        item_obj = item_code
+    end
+    if item_obj == nil then
+        print(string.format("ItemUpdate: could not find item_object for code %s", item_code))
+    end
+
+    if item_type == nil then
+        item_type = item_obj.Type
+    end
+
+    if item_type == "toggle" then
+        item_obj.Active = not reset --reset and false or true
+    elseif item_type == "progressive" then
+        item_obj.CurrentStage = reset and 0 or (item_obj.CurrentStage + 1)
+    elseif item_type == "consumable" then
+        item_obj.AcquiredCount = reset and (item_obj.MinCount or 0) or
+        (item_obj.AcquiredCount + item_obj.Increment * (consumable_multiplier or 1))
+    elseif item_type == "progressive_toggle" then
+        item_obj.CurrentStage = reset and 0 or (item_obj.CurrentStage + 1)
+        item_obj.Active = not reset -- reset and false or true
+    end
+end
+
+
+---resets or updates a given location back to default or whats saved for the gives seed in the pseudo-cache LuaItems
+---@param location_obj LocationSection Tracker:FindObjectForCode(location) return object
+---@param custom_storage_item table Reference for the custom LuaItem CachesItems
+---@param reset boolean flag to update or reset the item false=update, true=reset, nil=update
+local function LocationUpdate(location_obj, custom_storage_item, reset)
+    ---@cast location_obj LocationSection
+    if reset then --reset
+        if custom_storage_item.MANUAL_LOCATIONS[ROOM_SEED][location_obj.FullID] then
+            location_obj.AvailableChestCount = custom_storage_item.MANUAL_LOCATIONS[ROOM_SEED][location_obj.FullID]
+        else
+            location_obj.AvailableChestCount = location_obj.ChestCount
+        end
+        location_obj.Highlight = HIGHLIGHT_LEVEL[40]
+    else --update
+        (location_obj --[[@as LocationSection]]).AvailableChestCount = location_obj.AvailableChestCount - 1
+    end
+end
+
+---
+
 ---resets a given location back to default or whats saved for the gives seed in the pseuso-cache LuaItems
 ---@param location string String of the Location or LocatioSection to reset
 ---@param location_obj JsonItem|LocationSection Tracker:Findobject(location)retrun object

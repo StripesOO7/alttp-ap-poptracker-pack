@@ -82,6 +82,13 @@
                             "^$CanReach|Bumper Cave Item"
                         ],
                         "capture_item": true
+                    },
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 5
                     }
                 ],
                 "map_locations": [
@@ -380,6 +387,13 @@
                         "access_rules":[
                             "^$CanReach|Brewery Chest"
                         ]
+                    },
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 1
                     }
                 ],
                 "map_locations": [
@@ -415,6 +429,13 @@
                         "access_rules":[
                             "^$CanReach|Peg-Cave Item"
                         ]
+                    },
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 4
                     }
                 ],
                 "map_locations": [
@@ -613,6 +634,21 @@
                 ]
             },
             {
+                "name": "Dark Lake Hylia Ledge Spike Cave",
+                "access_rules":[
+                    ""
+                ],
+                "sections": [
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 4
+                    }
+                ]
+            },
+            {
                 "name": "Dark Lake Hylia Shop",
                 "access_rules":[
                     "^$CanReach|Dark_lake_shop_inside"
@@ -711,6 +747,21 @@
                         "x": 1160,
                         "y": 910,
                         "size": 32
+                    }
+                ]
+            },
+            {
+                "name": "PoD Hint",
+                "access_rules":[
+                    ""
+                ],
+                "sections": [
+                    {
+                        "name": "Pots",
+                        "access_rules":[
+                            ""
+                        ],
+                        "item_count":4
                     }
                 ]
             },
@@ -916,6 +967,13 @@
                         "access_rules":[
                             "^$CanReach|Spike Cave Chest"
                         ]
+                    },
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 4
                     }
                 ],
                 "map_locations": [
@@ -1068,6 +1126,13 @@
                             "^$CanReach|Hookshot Cave Item Bottom Left"
                         ],
                         "item_count": 3
+                    },
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 8
                     }
                 ],
                 "map_locations": [
@@ -1104,6 +1169,20 @@
                         ],
                         "clear_as_group": false,
                         "item_count": 2
+                    },
+                    {
+                        "name": "Top Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Bottom Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 1
                     }
                 ],
                 "map_locations": [
