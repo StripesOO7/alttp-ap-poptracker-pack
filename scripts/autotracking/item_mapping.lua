@@ -176,28 +176,28 @@ ITEM_MAPPING = {
 [76] = {{"bombs"}, "combined_consumable"}, -- +50 Bombs capacity upgrade
 [77] = {{"bow"}, "combined_consumable"}, -- +70 Arrows capacity upgrade
 
---beta
-[182]   =   {{"red_pendant"}, "toggle"},
-[183]   =   {{"blue_pendant"}, "toggle"},
-[184]   =   {{"green_pendant"}, "toggle"},
-[185]   =   {{"blue_crystal"}, "toggle"},
-[186]   =   {{"blue_crystal"}, "toggle"},
-[187]   =   {{"blue_crystal"}, "toggle"},
-[188]   =   {{"blue_crystal"}, "toggle"},
-[189]   =   {{"red_crystal"}, "toggle"},
-[190]   =   {{"red_crystal"}, "toggle"},
-[191]   =   {{"blue_crystal"}, "toggle"},
---alttpr
-[177] = {{"crystal1", "toggle"}},
-[180] = {{"crystal2", "toggle"}},
-[182] = {{"crystal3", "toggle"}},
-[181] = {{"crystal4", "toggle"}},
-[178] = {{"crystal5", "toggle"}},
-[176] = {{"crystal6", "toggle"}},
-[179] = {{"crystal7", "toggle"}},
-[55] = {{"greenpendant", "toggle"}},
-[57] = {{"bluependant", "toggle"}},
-[56] = {{"redpendant", "toggle"}},
+-- --beta
+-- [182]   =   {{"red_pendant"}, "toggle"},
+-- [183]   =   {{"blue_pendant"}, "toggle"},
+-- [184]   =   {{"green_pendant"}, "toggle"},
+-- [185]   =   {{"blue_crystal"}, "toggle"},
+-- [186]   =   {{"blue_crystal"}, "toggle"},
+-- [187]   =   {{"blue_crystal"}, "toggle"},
+-- [188]   =   {{"blue_crystal"}, "toggle"},
+-- [189]   =   {{"red_crystal"}, "toggle"},
+-- [190]   =   {{"red_crystal"}, "toggle"},
+-- [191]   =   {{"blue_crystal"}, "toggle"},
+-- --alttpr
+-- [177] = {{"crystal1", "toggle"}},
+-- [180] = {{"crystal2", "toggle"}},
+-- [182] = {{"crystal3", "toggle"}},
+-- [181] = {{"crystal4", "toggle"}},
+-- [178] = {{"crystal5", "toggle"}},
+-- [176] = {{"crystal6", "toggle"}},
+-- [179] = {{"crystal7", "toggle"}},
+-- [55] = {{"greenpendant", "toggle"}},
+-- [57] = {{"bluependant", "toggle"}},
+-- [56] = {{"redpendant", "toggle"}},
 }
 
 JSON_ITEMS = {}
