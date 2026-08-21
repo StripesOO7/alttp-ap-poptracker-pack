@@ -1236,6 +1236,13 @@
                         "item_count": 13
                     },
                     {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 44
+                    },
+                    {
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules": [
@@ -1291,6 +1298,13 @@
                         "item_count": 5
                     },
                     {
+                        "name": "Front Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 26
+                    },
+                    {
                         "name": "Key Drops",
                         "item_count": 2,
                         "clear_as_group": false,
@@ -1342,6 +1356,13 @@
                         ],
                         "clear_as_group": false,
                         "item_count": 6
+                    },
+                    {
+                        "name": "Back Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 24
                     },
                     {
                         "name": "Boss Item",
@@ -1447,6 +1468,13 @@
                         "item_count": 6
                     },
                     {
+                        "name": "Front Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 67
+                    },
+                    {
                         "name": "Key Drops",
                         "access_rules": [
                             "^$OWDungeonChecks|@Skull Woods Front/West Lobby Pot Key/West Lobby Pot Key"
@@ -1491,6 +1519,13 @@
                         ],
                         "clear_as_group": false,
                         "item_count": 1
+                    },
+                    {
+                        "name": "Back Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 15
                     },
                     {
                         "name": "Key Drops",
@@ -1554,6 +1589,13 @@
                         ],
                         "clear_as_group": false,
                         "item_count": 7
+                    },
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 45
                     },
                     {
                         "name": "Key Drops",
@@ -1622,6 +1664,13 @@
                         "item_count": 9
                     },
                     {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 57
+                    },
+                    {
                         "name": "Key Drops",
                         "item_count": 5,
                         "clear_as_group": false,
@@ -1683,6 +1732,13 @@
                         ],
                         "clear_as_group": false,
                         "item_count": 7
+                    },
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 58
                     },
                     {
                         "name": "Key Drops",
@@ -1748,12 +1804,26 @@
                         "item_count": 4
                     },
                     {
+                        "name": "Front Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 18
+                    },
+                    {
                         "name": "Back",
                         "access_rules": [
                             "^$OWDungeonChecks|@Thieves Town Back/Attic/Attic|@Thieves Town Back/Big Chest/Big Chest|@Thieves Town Back/Blind's Cell/Blind's Cell"
                         ],
                         "clear_as_group": false,
                         "item_count": 3
+                    },
+                    {
+                        "name": "Back Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 26
                     },
                     {
                         "name": "Key Drops",
@@ -1824,12 +1894,26 @@
                         "item_count": 11
                     },
                     {
+                        "name": "Leftside Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 24
+                    },
+                    {
                         "name": "Rightside",
                         "access_rules": [
                             "^$OWDungeonChecks|@Ganon's Tower Bottom Right/Hope Room Left/Hope Room Left|@Ganon's Tower Bottom Right/Hope Room Right/Hope Room Right|@Ganon's Tower Bottom Right/Tile Room/Tile Room|@Ganon's Tower Bottom Right/Compass Chest/Compass Chest|@Ganon's Tower Bottom Right/Compass Room Top Right/Compass Room Top Right|@Ganon's Tower Bottom Right/Compass Room Bottom Left/Compass Room Bottom Left|@Ganon's Tower Bottom Right/Compass Room Bottom Right/Compass Room Bottom Right"
                         ],
                         "clear_as_group": false,
                         "item_count": 7
+                    },
+                    {
+                        "name": "Rightside Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 15
                     },
                     {
                         "name": "Big Chest + Ice refight",
@@ -1841,6 +1925,13 @@
                         "hosted_item": "gt_ice"
                     },
                     {
+                        "name": "Bottom Center Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 2
+                    },
+                    {
                         "name": "GT Top + Lanmo refight",
                         "access_rules": [
                             "^$OWDungeonChecks|@Ganon's Tower Top/Mini Helmasaur Room Left/Mini Helmasaur Room Left|@Ganon's Tower Top/Mini Helmasaur Room Right/Mini Helmasaur Room Right|@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest"
@@ -1848,6 +1939,13 @@
                         "clear_as_group": false,
                         "item_count": 3,
                         "hosted_item": "gt_lanmo"
+                    },
+                    {
+                        "name": "Top Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 50
                     },
                     {
                         "name": "GT Top Moldorm refight",
@@ -1924,6 +2022,13 @@
                         "access_rules": [
                             "^$OWDungeonChecks|@Agahnim's Tower/Maze Chest/Maze Chest"
                         ]
+                    },
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count":25
                     },
                     {
                         "name": "Key Drops",

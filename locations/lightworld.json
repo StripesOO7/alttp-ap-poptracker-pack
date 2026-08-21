@@ -2133,6 +2133,13 @@
                         ],
                         "clear_as_group": false,
                         "item_count": 5
+                    },
+                    {
+                        "name": "Front Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 34
                     }
                 ],
                 "map_locations": [
@@ -2179,6 +2186,13 @@
                         "item_count": 3,
                         "clear_as_group": false,
                         "visibility_rules": ["key_drop_shuffle"]
+                    },
+                    {
+                        "name": "Back Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 15
                     },
                     {
                         "name": "Boss Item" ,
@@ -2242,6 +2256,13 @@
                             "^$OWDungeonChecks|@Eastern Palace/Dark Square Pot Key/Dark Square Pot Key|@Eastern Palace/Dark Eyegore Key Drop/Dark Eyegore Key Drop"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
+                    },
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 54
                     },
                     {
                         "name": "Boss Item" ,
@@ -2312,6 +2333,13 @@
                         "visibility_rules": ["key_drop_shuffle"]
                     },
                     {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 25
+                    },
+                    {
                         "name": "Agahnim 1",
                         "access_rules": [
                             "^$OWDungeonChecks|@Agahnim's Tower/Agahnim 1/Agahnim 1"
@@ -2377,6 +2405,13 @@
                         ]
                     },
                     {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 13
+                    },
+                    {
                         "name": "Key Drops",
                         "access_rules": [
                             "^$OWDungeonChecks|@Hyrule Castle/Map Guard Key Drop/Map Guard Key Drop|@Hyrule Castle/Boomerang Guard Key Drop/Boomerang Guard Key Drop|@Hyrule Castle/Big Key Drop/Big Key Drop"
@@ -2436,6 +2471,13 @@
                         "access_rules": [
                             "^$OWDungeonChecks|@Castle Escape/Secret Passage Left/Secret Passage Left|@Castle Escape/Secret Passage Middle/Secret Passage Middle|@Castle Escape/Secret Passage Right/Secret Passage Right"
                         ]
+                    },
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 21
                     },
                     {
                         "name": "Key Drops",
@@ -2535,6 +2577,13 @@
                         "item_count": 2
                     },
                     {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 37
+                    },
+                    {
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules": [
@@ -2589,12 +2638,26 @@
                         "item_count": 11
                     },
                     {
+                        "name": "Leftside Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 15
+                    },
+                    {
                         "name": "Rightside",
                         "access_rules": [
                             "^$OWDungeonChecks|@Ganon's Tower Bottom Right/Hope Room Left/Hope Room Left|@Ganon's Tower Bottom Right/Hope Room Right/Hope Room Right|@Ganon's Tower Bottom Right/Tile Room/Tile Room|@Ganon's Tower Bottom Right/Compass Chest/Compass Chest|@Ganon's Tower Bottom Right/Compass Room Top Right/Compass Room Top Right|@Ganon's Tower Bottom Right/Compass Room Bottom Left/Compass Room Bottom Left|@Ganon's Tower Bottom Right/Compass Room Bottom Right/Compass Room Bottom Right"
                         ],
                         "clear_as_group": false,
                         "item_count": 7
+                    },
+                    {
+                        "name": "Rightside Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 24
                     },
                     {
                         "name": "Big Chest + Ice refight",
@@ -2606,6 +2669,13 @@
                         "hosted_item": "gt_ice"
                     },
                     {
+                        "name": "Bottom Center Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 2
+                    },
+                    {
                         "name": "GT Top + Lanmo refight",
                         "access_rules": [
                             "^$OWDungeonChecks|@Ganon's Tower Top/Mini Helmasaur Room Left/Mini Helmasaur Room Left|@Ganon's Tower Top/Mini Helmasaur Room Right/Mini Helmasaur Room Right|@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest"
@@ -2613,6 +2683,13 @@
                         "clear_as_group": false,
                         "item_count": 3,
                         "hosted_item": "gt_lanmo"
+                    },
+                    {
+                        "name": "Top Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "item_count": 50
                     },
                     {
                         "name": "GT Top Moldorm refight",
