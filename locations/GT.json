@@ -334,7 +334,7 @@
                 "sections": [
                     {
                         "name": "Pot #1",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Firesnake Room Pot #1"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -351,7 +351,7 @@
                 "sections": [
                     {
                         "name": "Pot #2",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Firesnake Room Pot #2"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -368,74 +368,63 @@
                 "sections": [
                     {
                         "name": "Pot #3",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Firesnake Room Pot #3"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
             },
             {
-                "name": "Warp Maze",
+                "name": "Warp Maze Pot Rail Pot #4",
                 "chest_unopened_img": "/images/items/close.png",
                 "chest_opened_img": "/images/items/open.png",
                 "overlay_background": "#000000",
                 "access_rules": [
                     " "
                 ],
-                "children": [
+                "sections": [
                     {
-                        "name": "Pot Rail Pot #4",
-                        "chest_unopened_img": "/images/items/close.png",
-                        "chest_opened_img": "/images/items/open.png",
-                        "overlay_background": "#000000",
-                        "access_rules": [
-                            " "
-                        ],
-                        "sections": [
-                            {
-                                "name": "Pot #4",
-                                "access_rules": [],
-                                "visibility_rules": [],
-                                "item_count": 1
-                            }
-                        ]
-                    },
-                    {
-                        "name": "Mid Section Pot #3",
-                        "chest_unopened_img": "/images/items/close.png",
-                        "chest_opened_img": "/images/items/open.png",
-                        "overlay_background": "#000000",
-                        "access_rules": [
-                            " "
-                        ],
-                        "sections": [
-                            {
-                                "name": "Pot #3",
-                                "access_rules": [],
-                                "visibility_rules": [],
-                                "item_count": 1
-                            }
-                        ]
-                    },
-                    {
-                        "name": "Mid Section Pot #4",
-                        "chest_unopened_img": "/images/items/close.png",
-                        "chest_opened_img": "/images/items/open.png",
-                        "overlay_background": "#000000",
-                        "access_rules": [
-                            " "
-                        ],
-                        "sections": [
-                            {
-                                "name": "Pot #4",
-                                "access_rules": [],
-                                "visibility_rules": [],
-                                "item_count": 1
-                            }
-                        ]
+                        "name": "Pot #4",
+                        "access_rules": ["^$CanReach|GT - Warp Maze Pot Rail Pot #4"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
+                        "item_count": 1
                     }
                 ]
             },
+            {
+                "name": "Warp Maze Mid Section Pot #3",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #3",
+                        "access_rules": ["^$CanReach|GT - Warp Maze Mid Section Pot #3"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Warp Maze Mid Section Pot #4",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #4",
+                        "access_rules": ["^$CanReach|GT - Warp Maze Mid Section Pot #4"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
+                        "item_count": 1
+                    }
+                ]
+            }
             {
                 "name": "Conveyor Cross Pot #1",
                 "chest_unopened_img": "/images/items/close.png",
@@ -447,7 +436,7 @@
                 "sections": [
                     {
                         "name": "Pot #1",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Conveyor Cross Pot #1"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -464,7 +453,7 @@
                 "sections": [
                     {
                         "name": "Pot #3",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Hookshot South Platform Pot #3"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -481,7 +470,7 @@
                 "sections": [
                     {
                         "name": "Pot #4",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Hookshot South Platform Pot #4"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -498,7 +487,7 @@
                 "sections": [
                     {
                         "name": "Pot #5",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Hookshot Mid Platform Pot #5"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -515,7 +504,7 @@
                 "sections": [
                     {
                         "name": "Pot #6",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Map Room Pot #6"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -532,7 +521,7 @@
                 "sections": [
                     {
                         "name": "Pot #7",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Map Room Pot #7"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -549,7 +538,7 @@
                 "sections": [
                     {
                         "name": "Pot #1",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Hope Room Pot #1"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -566,7 +555,7 @@
                 "sections": [
                     {
                         "name": "Pot #2",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Hope Room Pot #2"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -583,7 +572,7 @@
                 "sections": [
                     {
                         "name": "Pot #3",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Bobs Room Pot #3"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -600,7 +589,7 @@
                 "sections": [
                     {
                         "name": "Pot #4",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Bobs Room Pot #4"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -617,7 +606,7 @@
                 "sections": [
                     {
                         "name": "Pot #5",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Bobs Room Pot #5"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -634,7 +623,7 @@
                 "sections": [
                     {
                         "name": "Pot #6",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Bobs Room Pot #6"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -651,7 +640,7 @@
                 "sections": [
                     {
                         "name": "Pot #7",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Bobs Room Pot #7"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -668,7 +657,7 @@
                 "sections": [
                     {
                         "name": "Pot #1",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Double Switch Pot Corners Pot #1"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -685,7 +674,7 @@
                 "sections": [
                     {
                         "name": "Pot #1",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Crystal Conveyor Left Pot #1"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -702,7 +691,7 @@
                 "sections": [
                     {
                         "name": "Pot #2",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Crystal Conveyor Left Pot #2"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -719,7 +708,7 @@
                 "sections": [
                     {
                         "name": "Pot #3",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Compass Room Pot #3"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -736,7 +725,7 @@
                 "sections": [
                     {
                         "name": "Pot #4",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Compass Room Pot #4"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -956,7 +945,7 @@
                 "sections": [
                     {
                         "name": "Pot #1",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Conveyor Star Pits Pot #1"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -973,7 +962,7 @@
                 "sections": [
                     {
                         "name": "Pot #2",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Conveyor Star Pits Pot #2"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -990,7 +979,7 @@
                 "sections": [
                     {
                         "name": "Pot #3",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Conveyor Star Pits Pot #3"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1007,7 +996,7 @@
                 "sections": [
                     {
                         "name": "Pot #4",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Conveyor Star Pits Pot #4"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1024,7 +1013,7 @@
                 "sections": [
                     {
                         "name": "Pot #1",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Falling Bridge Pot #1"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1041,7 +1030,7 @@
                 "sections": [
                     {
                         "name": "Pot #2",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Falling Bridge Pot #2"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1058,7 +1047,7 @@
                 "sections": [
                     {
                         "name": "Pot #3",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Falling Bridge Pot #3"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1075,7 +1064,7 @@
                 "sections": [
                     {
                         "name": "Pot #4",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Falling Bridge Pot #4"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1092,7 +1081,7 @@
                 "sections": [
                     {
                         "name": "Pot #5",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Petting Zoo Pot #5"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1109,7 +1098,7 @@
                 "sections": [
                     {
                         "name": "Pot #6",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Petting Zoo Pot #6"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1126,7 +1115,7 @@
                 "sections": [
                     {
                         "name": "Pot #1",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Speed Torch Upper Pot #1"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1143,7 +1132,7 @@
                 "sections": [
                     {
                         "name": "Pot #2",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Speed Torch Upper Pot #2"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1160,7 +1149,7 @@
                 "sections": [
                     {
                         "name": "Pot #3",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Pots n Blocks Pot #3"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1177,7 +1166,7 @@
                 "sections": [
                     {
                         "name": "Pot #4",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Pots n Blocks Pot #4"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1194,7 +1183,7 @@
                 "sections": [
                     {
                         "name": "Pot #5",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Pots n Blocks Pot #5"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1336,7 +1325,7 @@
                 "sections": [
                     {
                         "name": "Pot #1",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Invisible Catwalk Pot #1"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1353,7 +1342,7 @@
                 "sections": [
                     {
                         "name": "Pot #2",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Invisible Catwalk Pot #2"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1520,7 +1509,7 @@
                 "sections": [
                     {
                         "name": "Pot #1",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Mini Helmasaur Room Pot #1"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1537,7 +1526,7 @@
                 "sections": [
                     {
                         "name": "Pot #2",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Mini Helmasaur Room Pot #2"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1554,7 +1543,7 @@
                 "sections": [
                     {
                         "name": "Pot #3",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Crystal Inner Circle Pot #3"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1571,7 +1560,7 @@
                 "sections": [
                     {
                         "name": "Pot #4",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Crystal Inner Circle Pot #4"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1588,7 +1577,7 @@
                 "sections": [
                     {
                         "name": "Pot #5",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Crystal Inner Circle Pot #5"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1605,7 +1594,7 @@
                 "sections": [
                     {
                         "name": "Pot #6",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Crystal Inner Circle Pot #6"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1622,7 +1611,7 @@
                 "sections": [
                     {
                         "name": "Pot #7",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Crystal Inner Circle Pot #7"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1639,7 +1628,7 @@
                 "sections": [
                     {
                         "name": "Pot #1",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Hidden Spikes Pot #1"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1656,7 +1645,7 @@
                 "sections": [
                     {
                         "name": "Pot #2",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Hidden Spikes Pot #2"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1673,7 +1662,7 @@
                 "sections": [
                     {
                         "name": "Pot #3",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Hidden Spikes Pot #3"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1690,7 +1679,7 @@
                 "sections": [
                     {
                         "name": "Pot #1",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Refill Pot #1"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1707,7 +1696,7 @@
                 "sections": [
                     {
                         "name": "Pot #2",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Refill Pot #2"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1724,7 +1713,7 @@
                 "sections": [
                     {
                         "name": "Pot #3",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Refill Pot #3"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1741,7 +1730,7 @@
                 "sections": [
                     {
                         "name": "Pot #4",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Refill Pot #4"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1758,7 +1747,7 @@
                 "sections": [
                     {
                         "name": "Pot #5",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Refill Pot #5"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1775,7 +1764,7 @@
                 "sections": [
                     {
                         "name": "Pot #6",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Refill Pot #6"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1792,7 +1781,7 @@
                 "sections": [
                     {
                         "name": "Pot #7",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Refill Pot #7"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1809,7 +1798,7 @@
                 "sections": [
                     {
                         "name": "Pot #8",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Refill Pot #8"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1826,7 +1815,7 @@
                 "sections": [
                     {
                         "name": "Pot #1",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Gauntlet 2 Pot #1"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1843,7 +1832,7 @@
                 "sections": [
                     {
                         "name": "Pot #2",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Gauntlet 2 Pot #2"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1860,7 +1849,7 @@
                 "sections": [
                     {
                         "name": "Pot #3",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Gauntlet 2 Pot #3"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1877,7 +1866,7 @@
                 "sections": [
                     {
                         "name": "Pot #4",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Gauntlet 2 Pot #4"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1894,7 +1883,7 @@
                 "sections": [
                     {
                         "name": "Pot #5",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Gauntlet 3 Pot #5"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1911,7 +1900,7 @@
                 "sections": [
                     {
                         "name": "Pot #6",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Gauntlet 3 Pot #6"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1928,7 +1917,7 @@
                 "sections": [
                     {
                         "name": "Pot #7",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Gauntlet 3 Pot #7"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1945,7 +1934,7 @@
                 "sections": [
                     {
                         "name": "Pot #8",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Gauntlet 3 Pot #8"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1962,7 +1951,7 @@
                 "sections": [
                     {
                         "name": "Pot #1",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Crystal Paths Pot #1"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1979,7 +1968,7 @@
                 "sections": [
                     {
                         "name": "Pot #2",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Crystal Paths Pot #2"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -1996,7 +1985,7 @@
                 "sections": [
                     {
                         "name": "Pot #3",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Crystal Paths Pot #3"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -2013,7 +2002,7 @@
                 "sections": [
                     {
                         "name": "Pot #4",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Crystal Paths Pot #4"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -2030,7 +2019,7 @@
                 "sections": [
                     {
                         "name": "Pot #5",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Crystal Paths Pot #5"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -2047,7 +2036,7 @@
                 "sections": [
                     {
                         "name": "Pot #6",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Crystal Paths Pot #6"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -2064,7 +2053,7 @@
                 "sections": [
                     {
                         "name": "Pot #7",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Mimics 2 Pot #7"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -2081,7 +2070,7 @@
                 "sections": [
                     {
                         "name": "Pot #8",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Mimics 2 Pot #8"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -2098,7 +2087,7 @@
                 "sections": [
                     {
                         "name": "Pot #1",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Quad Pot Pot #1"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -2115,7 +2104,7 @@
                 "sections": [
                     {
                         "name": "Pot #2",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Quad Pot Pot #2"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -2132,7 +2121,7 @@
                 "sections": [
                     {
                         "name": "Pot #3",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Quad Pot Pot #3"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -2149,7 +2138,7 @@
                 "sections": [
                     {
                         "name": "Pot #4",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Quad Pot Pot #4"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -2166,7 +2155,7 @@
                 "sections": [
                     {
                         "name": "Pot #1",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Gauntlet 5 Pot #1"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -2183,7 +2172,7 @@
                 "sections": [
                     {
                         "name": "Pot #2",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Gauntlet 5 Pot #2"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -2200,7 +2189,7 @@
                 "sections": [
                     {
                         "name": "Pot #3",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Gauntlet 5 Pot #3"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -2217,7 +2206,7 @@
                 "sections": [
                     {
                         "name": "Pot #4",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Gauntlet 5 Pot #4"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -2234,7 +2223,7 @@
                 "sections": [
                     {
                         "name": "Pot #1",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Torch Cross Pot #1"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -2251,7 +2240,7 @@
                 "sections": [
                     {
                         "name": "Pot #2",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Torch Cross Pot #2"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -2268,7 +2257,7 @@
                 "sections": [
                     {
                         "name": "Pot #3",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Torch Cross Pot #3"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -2285,7 +2274,7 @@
                 "sections": [
                     {
                         "name": "Pot #4",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Torch Cross Pot #4"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -2302,7 +2291,7 @@
                 "sections": [
                     {
                         "name": "Pot #5",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Torch Cross Pot #5"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -2319,7 +2308,7 @@
                 "sections": [
                     {
                         "name": "Pot #6",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Torch Cross Pot #6"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -2336,7 +2325,7 @@
                 "sections": [
                     {
                         "name": "Pot #7",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Staredown Pot #7"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -2353,7 +2342,7 @@
                 "sections": [
                     {
                         "name": "Pot #8",
-                        "access_rules": [],
+                        "access_rules": ["^$CanReach|GT - Staredown Pot #8"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
