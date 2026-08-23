@@ -88,6 +88,7 @@
                         "access_rules": [
                             ""
                         ],
+                        "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count": 5
                     }
                 ],
@@ -393,6 +394,7 @@
                         "access_rules": [
                             ""
                         ],
+                        "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count": 1
                     }
                 ],
@@ -435,6 +437,7 @@
                         "access_rules": [
                             ""
                         ],
+                        "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count": 4
                     }
                 ],
@@ -644,6 +647,7 @@
                         "access_rules": [
                             ""
                         ],
+                        "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count": 4
                     }
                 ]
@@ -761,6 +765,7 @@
                         "access_rules":[
                             ""
                         ],
+                        "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count":4
                     }
                 ]
@@ -973,6 +978,7 @@
                         "access_rules": [
                             ""
                         ],
+                        "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count": 4
                     }
                 ],
@@ -1132,6 +1138,7 @@
                         "access_rules": [
                             ""
                         ],
+                        "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count": 8
                     }
                 ],
@@ -1175,6 +1182,7 @@
                         "access_rules": [
                             ""
                         ],
+                        "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count": 1
                     },
                     {
@@ -1182,6 +1190,7 @@
                         "access_rules": [
                             ""
                         ],
+                        "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count": 1
                     }
                 ],
@@ -1240,6 +1249,7 @@
                         "access_rules": [
                             ""
                         ],
+                        "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 44
                     },
                     {
@@ -1302,10 +1312,11 @@
                         "access_rules": [
                             ""
                         ],
+                        "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 26
                     },
                     {
-                        "name": "Key Drops",
+                        "name": "Enemy Key Drops",
                         "item_count": 2,
                         "clear_as_group": false,
                         "access_rules": [
@@ -1362,6 +1373,7 @@
                         "access_rules": [
                             ""
                         ],
+                        "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 24
                     },
                     {
@@ -1472,16 +1484,17 @@
                         "access_rules": [
                             ""
                         ],
+                        "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 67
                     },
                     {
-                        "name": "Key Drops",
+                        "name": "Pot Key Drops",
                         "access_rules": [
                             "^$OWDungeonChecks|@Skull Woods Front/West Lobby Pot Key/West Lobby Pot Key"
                         ],
                         "item_count": 1,
                         "clear_as_group": false,
-                        "visibility_rules": ["key_drop_shuffle"]
+                        "visibility_rules": ["key_drop_shuffle", "potshuffle_keys", "potshuffle_dungeons"]
                     }
                 ],
                 "map_locations": [
@@ -1525,10 +1538,11 @@
                         "access_rules": [
                             ""
                         ],
+                        "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 15
                     },
                     {
-                        "name": "Key Drops",
+                        "name": "Enemy Key Drops",
                         "item_count": 1,
                         "clear_as_group": false,
                         "access_rules": [
@@ -1595,16 +1609,26 @@
                         "access_rules": [
                             ""
                         ],
+                        "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 45
                     },
                     {
-                        "name": "Key Drops",
-                        "item_count": 3,
+                        "name": "Enemy Key Drops",
+                        "item_count": 1,
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$OWDungeonChecks|@Misery Mire/Spikes Pot Key/Spikes Pot Key|@Misery Mire/Fishbone Pot Key/Fishbone Pot Key|@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop"
+                            "^$OWDungeonChecks|@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
+                    },
+                    {
+                        "name": "Pot Key Drops",
+                        "item_count": 2,
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "^$OWDungeonChecks|@Misery Mire/Spikes Pot Key/Spikes Pot Key|@Misery Mire/Fishbone Pot Key/Fishbone Pot Key"
+                        ],
+                        "visibility_rules": ["key_drop_shuffle", "potshuffle_keys", "potshuffle_dungeons"]
                     },
                     {
                         "name": "Boss Item" ,
@@ -1668,16 +1692,17 @@
                         "access_rules": [
                             ""
                         ],
+                        "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 57
                     },
                     {
-                        "name": "Key Drops",
+                        "name": "Pot Key Drops",
                         "item_count": 5,
                         "clear_as_group": false,
                         "access_rules": [
                             "^$OWDungeonChecks|@Swamp Palace/Pot Row Pot Key/Pot Row Pot Key|@Swamp Palace/Trench 1 Pot Key/Trench 1 Pot Key|@Swamp Palace/Hookshot Pot Key/Hookshot Pot Key|@Swamp Palace/Trench 2 Pot Key/Trench 2 Pot Key|@Swamp Palace/Waterway Pot Key/Waterway Pot Key"
                         ],
-                        "visibility_rules": ["key_drop_shuffle"]
+                        "visibility_rules": ["key_drop_shuffle", "potshuffle_keys", "potshuffle_dungeons"]
                     },
                     {
                         "name": "Boss Item" ,
@@ -1738,16 +1763,26 @@
                         "access_rules": [
                             ""
                         ],
+                        "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 58
                     },
                     {
-                        "name": "Key Drops",
-                        "item_count": 4,
+                        "name": "Enemy Key Drops",
+                        "item_count": 2,
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$OWDungeonChecks|@Ice Palace/Jelly Key Drop/Jelly Key Drop|@Ice Palace/Conveyor Key Drop/Conveyor Key Drop|@Ice Palace/Hammer Block Key Drop/Hammer Block Key Drop|@Ice Palace/Many Pots Pot Key/Many Pots Pot Key"
+                            "^$OWDungeonChecks|@Ice Palace/Jelly Key Drop/Jelly Key Drop|@Ice Palace/Conveyor Key Drop/Conveyor Key Drop"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
+                    },
+                    {
+                        "name": "Pot Key Drops",
+                        "item_count": 2,
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "^$OWDungeonChecks|@Ice Palace/Hammer Block Key Drop/Hammer Block Key Drop|@Ice Palace/Many Pots Pot Key/Many Pots Pot Key"
+                        ],
+                        "visibility_rules": ["key_drop_shuffle", "potshuffle_keys", "potshuffle_dungeons"]
                     },
                     {
                         "name": "Boss Item" ,
@@ -1808,6 +1843,7 @@
                         "access_rules": [
                             ""
                         ],
+                        "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 18
                     },
                     {
@@ -1823,16 +1859,17 @@
                         "access_rules": [
                             ""
                         ],
+                        "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 26
                     },
                     {
-                        "name": "Key Drops",
+                        "name": "Pot Key Drops",
                         "item_count": 2,
                         "clear_as_group": false,
                         "access_rules": [
                             "^$OWDungeonChecks|@Thieves Town Back/Hallway Pot Key/Hallway Pot Key|@Thieves Town Back/Spike Switch Pot Key/Spike Switch Pot Key"
                         ],
-                        "visibility_rules": ["key_drop_shuffle"]
+                        "visibility_rules": ["key_drop_shuffle", "potshuffle_keys", "potshuffle_dungeons"]
                     },
                     {
                         "name": "Boss Item",
@@ -1898,6 +1935,7 @@
                         "access_rules": [
                             ""
                         ],
+                        "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 24
                     },
                     {
@@ -1913,6 +1951,7 @@
                         "access_rules": [
                             ""
                         ],
+                        "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 15
                     },
                     {
@@ -1929,6 +1968,7 @@
                         "access_rules": [
                             ""
                         ],
+                        "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 2
                     },
                     {
@@ -1945,6 +1985,7 @@
                         "access_rules": [
                             ""
                         ],
+                        "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 50
                     },
                     {
@@ -1957,13 +1998,22 @@
                         "hosted_item": "gt_boss"
                     },
                     {
-                        "name": "Key Drops",
-                        "item_count": 4,
+                        "name": "Enemy Key Drops",
+                        "item_count": 1,
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$OWDungeonChecks|@Ganon's Tower Bottom Left/Conveyor Cross Pot Key/Conveyor Cross Pot Key|@Ganon's Tower Bottom Left/Double Switch Pot Key/Double Switch Pot Key|@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key|@Ganon's Tower Top/Mini Helmasaur Key Drop/Mini Helmasaur Key Drop"
+                            "^$OWDungeonChecks|@Ganon's Tower Top/Mini Helmasaur Key Drop/Mini Helmasaur Key Drop"
                         ],
                         "visibility_rules": ["key_drop_shuffle"]
+                    },
+                    {
+                        "name": "Pot Key Drops",
+                        "item_count": 3,
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "^$OWDungeonChecks|@Ganon's Tower Bottom Left/Conveyor Cross Pot Key/Conveyor Cross Pot Key|@Ganon's Tower Bottom Left/Double Switch Pot Key/Double Switch Pot Key|@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key"
+                        ],
+                        "visibility_rules": ["key_drop_shuffle", "potshuffle_keys", "potshuffle_dungeons"]
                     },
                     {
                         "name": "GT Top Agahnim 2",
@@ -2028,10 +2078,11 @@
                         "access_rules": [
                             ""
                         ],
+                        "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count":25
                     },
                     {
-                        "name": "Key Drops",
+                        "name": "Enemy Key Drops",
                         "item_count": 2,
                         "clear_as_group": false,
                         "access_rules": [
