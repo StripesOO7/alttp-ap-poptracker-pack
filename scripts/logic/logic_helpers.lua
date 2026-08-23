@@ -1326,27 +1326,27 @@ function ChangePopupLayout()
             -- dmg_class_shuffle.CurrentStage = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["dmg_class_shuffle"] or 0
             preserve_melee_dmg_classes.Active = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["preserve_melee_dmg_classes"] or false
         end
-        LOCATION_MAPPING[182] = nil
-        LOCATION_MAPPING[183] = nil
-        LOCATION_MAPPING[184] = nil
-        LOCATION_MAPPING[185] = nil
-        LOCATION_MAPPING[186] = nil
-        LOCATION_MAPPING[187] = nil
-        LOCATION_MAPPING[188] = nil
-        LOCATION_MAPPING[189] = nil
-        LOCATION_MAPPING[190] = nil
-        LOCATION_MAPPING[191] = nil
+        ITEM_MAPPING[182] = nil
+        ITEM_MAPPING[183] = nil
+        ITEM_MAPPING[184] = nil
+        ITEM_MAPPING[185] = nil
+        ITEM_MAPPING[186] = nil
+        ITEM_MAPPING[187] = nil
+        ITEM_MAPPING[188] = nil
+        ITEM_MAPPING[189] = nil
+        ITEM_MAPPING[190] = nil
+        ITEM_MAPPING[191] = nil
 
-        LOCATION_MAPPING[177] = {{"crystal1", "toggle"}}
-        LOCATION_MAPPING[180] = {{"crystal2", "toggle"}}
-        LOCATION_MAPPING[182] = {{"crystal3", "toggle"}}
-        LOCATION_MAPPING[181] = {{"crystal4", "toggle"}}
-        LOCATION_MAPPING[178] = {{"crystal5", "toggle"}}
-        LOCATION_MAPPING[176] = {{"crystal6", "toggle"}}
-        LOCATION_MAPPING[179] = {{"crystal7", "toggle"}}
-        LOCATION_MAPPING[55] = {{"greenpendant", "toggle"}}
-        LOCATION_MAPPING[57] = {{"bluependant", "toggle"}}
-        LOCATION_MAPPING[56] = {{"redpendant", "toggle"}}
+        ITEM_MAPPING[177] = {{"crystal1", "toggle"}}
+        ITEM_MAPPING[180] = {{"crystal2", "toggle"}}
+        ITEM_MAPPING[182] = {{"crystal3", "toggle"}}
+        ITEM_MAPPING[181] = {{"crystal4", "toggle"}}
+        ITEM_MAPPING[178] = {{"crystal5", "toggle"}}
+        ITEM_MAPPING[176] = {{"crystal6", "toggle"}}
+        ITEM_MAPPING[179] = {{"crystal7", "toggle"}}
+        ITEM_MAPPING[55] = {{"greenpendant", "toggle"}}
+        ITEM_MAPPING[57] = {{"bluependant", "toggle"}}
+        ITEM_MAPPING[56] = {{"redpendant", "toggle"}}
     elseif version == 1 then --core beta
         CORE_ALTTP = false
         ALTTP_BETA = true
@@ -1370,27 +1370,27 @@ function ChangePopupLayout()
         preserve_melee_dmg_classes.IgnoreUserInput = false
         preserve_melee_dmg_classes.Active = false
         
-        LOCATION_MAPPING[177] = nil
-        LOCATION_MAPPING[180] = nil
-        LOCATION_MAPPING[182] = nil
-        LOCATION_MAPPING[181] = nil
-        LOCATION_MAPPING[178] = nil
-        LOCATION_MAPPING[176] = nil
-        LOCATION_MAPPING[179] = nil
-        LOCATION_MAPPING[55] = nil
-        LOCATION_MAPPING[57] = nil
-        LOCATION_MAPPING[56] = nil
+        ITEM_MAPPING[177] = nil
+        ITEM_MAPPING[180] = nil
+        ITEM_MAPPING[182] = nil
+        ITEM_MAPPING[181] = nil
+        ITEM_MAPPING[178] = nil
+        ITEM_MAPPING[176] = nil
+        ITEM_MAPPING[179] = nil
+        ITEM_MAPPING[55] = nil
+        ITEM_MAPPING[57] = nil
+        ITEM_MAPPING[56] = nil
 
-        LOCATION_MAPPING[182] = {{"red_pendant", "toggle"}}
-        LOCATION_MAPPING[183] = {{"blue_pendant", "toggle"}}
-        LOCATION_MAPPING[184] = {{"green_pendant", "toggle"}}
-        LOCATION_MAPPING[185] = {{"blue_crystal", "toggle"}}
-        LOCATION_MAPPING[186] = {{"blue_crystal", "toggle"}}
-        LOCATION_MAPPING[187] = {{"blue_crystal", "toggle"}}
-        LOCATION_MAPPING[188] = {{"blue_crystal", "toggle"}}
-        LOCATION_MAPPING[189] = {{"red_crystal", "toggle"}}
-        LOCATION_MAPPING[190] = {{"red_crystal", "toggle"}}
-        LOCATION_MAPPING[191] = {{"blue_crystal", "toggle"}}
+        ITEM_MAPPING[182] = {{"red_pendant", "toggle"}}
+        ITEM_MAPPING[183] = {{"blue_pendant", "toggle"}}
+        ITEM_MAPPING[184] = {{"green_pendant", "toggle"}}
+        ITEM_MAPPING[185] = {{"blue_crystal", "toggle"}}
+        ITEM_MAPPING[186] = {{"blue_crystal", "toggle"}}
+        ITEM_MAPPING[187] = {{"blue_crystal", "toggle"}}
+        ITEM_MAPPING[188] = {{"blue_crystal", "toggle"}}
+        ITEM_MAPPING[189] = {{"red_crystal", "toggle"}}
+        ITEM_MAPPING[190] = {{"red_crystal", "toggle"}}
+        ITEM_MAPPING[191] = {{"blue_crystal", "toggle"}}
 
     else --core
         CORE_ALTTP = true
@@ -1415,27 +1415,27 @@ function ChangePopupLayout()
         preserve_melee_dmg_classes.IgnoreUserInput = true
         preserve_melee_dmg_classes.Active = false
         
-        LOCATION_MAPPING[182] = nil
-        LOCATION_MAPPING[183] = nil
-        LOCATION_MAPPING[184] = nil
-        LOCATION_MAPPING[185] = nil
-        LOCATION_MAPPING[186] = nil
-        LOCATION_MAPPING[187] = nil
-        LOCATION_MAPPING[188] = nil
-        LOCATION_MAPPING[189] = nil
-        LOCATION_MAPPING[190] = nil
-        LOCATION_MAPPING[191] = nil
+        ITEM_MAPPING[182] = nil
+        ITEM_MAPPING[183] = nil
+        ITEM_MAPPING[184] = nil
+        ITEM_MAPPING[185] = nil
+        ITEM_MAPPING[186] = nil
+        ITEM_MAPPING[187] = nil
+        ITEM_MAPPING[188] = nil
+        ITEM_MAPPING[189] = nil
+        ITEM_MAPPING[190] = nil
+        ITEM_MAPPING[191] = nil
 
-        LOCATION_MAPPING[177] = nil
-        LOCATION_MAPPING[180] = nil
-        LOCATION_MAPPING[182] = nil
-        LOCATION_MAPPING[181] = nil
-        LOCATION_MAPPING[178] = nil
-        LOCATION_MAPPING[176] = nil
-        LOCATION_MAPPING[179] = nil
-        LOCATION_MAPPING[55] = nil
-        LOCATION_MAPPING[57] = nil
-        LOCATION_MAPPING[56] = nil
+        ITEM_MAPPING[177] = nil
+        ITEM_MAPPING[180] = nil
+        ITEM_MAPPING[182] = nil
+        ITEM_MAPPING[181] = nil
+        ITEM_MAPPING[178] = nil
+        ITEM_MAPPING[176] = nil
+        ITEM_MAPPING[179] = nil
+        ITEM_MAPPING[55] = nil
+        ITEM_MAPPING[57] = nil
+        ITEM_MAPPING[56] = nil
     end
     ChangeGameVersion(version)
 end

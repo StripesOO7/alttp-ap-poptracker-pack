@@ -204,12 +204,14 @@ function PreOnClear()
     -- local storage_location = custom_storage_item.MANUAL_LOCATIONS
     -- local storage_location_order = custom_storage_item.MANUAL_LOCATIONS_ORDER
     local seed_base = (Archipelago.Seed or tostring(#ALL_LOCATIONS)).."_"..TEAM_NUMBER.."_"..PLAYER_ID
-    if ROOM_SEED == "default" or ROOM_SEED ~= seed_base then -- seed is default or from previous connection
-
+    -- if ROOM_SEED == "default" or ROOM_SEED ~= seed_base then -- seed is default or from previous connection
+-- removed the if ebcause of the special case of the special case of the game changing and triggering an update before
+--  the PreOnClear
         ROOM_SEED = seed_base --something like 2345_0_12
         for _, custom_item_code in pairs({"manual_location_storage",  "manual_er_storage", "manual_misc_items_storage", "manual_dmg_class_storage"}) do --
             local custom_storage_item = (Tracker:FindObjectForCode(custom_item_code) --[[@as LuaItem]]).ItemState
             if custom_storage_item then
+                print(custom_item_code, #custom_storage_item.MANUAL_LOCATIONS > 10)
                 if #custom_storage_item.MANUAL_LOCATIONS > 10 then
                     custom_storage_item.MANUAL_LOCATIONS[custom_storage_item.MANUAL_LOCATIONS_ORDER[1]] = nil
                     table.remove(custom_storage_item.MANUAL_LOCATIONS_ORDER, 1)
@@ -220,9 +222,9 @@ function PreOnClear()
                 end
             end
         end
-    else -- seed is from previous connection
-        -- do nothing
-    end
+    -- else -- seed is from previous connection
+    --     -- do nothing
+    -- end
     if TROLL_PLAYER then
         print("----------------load traps----------------")
         -- ScriptHost:LoadScript("scripts/logic/traps.lua")
@@ -234,8 +236,10 @@ end
 ---@param item_code JsonItem|string Tracker:FindObjectForCode(item) return object
 ---@param item_type string|nil table of the ItemCode and extra parameters from the Item_Mapping.lau
 ---@param consumable_multiplier integer|nil table of the ItemCode and extra parameters from the Item_Mapping.lua
+---@param item_id integer AP-ID of the item from ITEM_MAPPING
 ---@param reset boolean|nil flag to update or reset the item false=update, true=reset, nil=update
-local function ItemUpdate(item_code, item_type, consumable_multiplier, reset)
+local function ItemUpdate(item_code, item_type, consumable_multiplier, item_id, reset)
+    -- print(item_code, item_type, consumable_multiplier, item_id, reset)
     local item_obj = nil
 
     if type(item_code) == "string" then
@@ -245,6 +249,7 @@ local function ItemUpdate(item_code, item_type, consumable_multiplier, reset)
     end
     if item_obj == nil then
         print(string.format("ItemUpdate: could not find item_object for code %s", item_code))
+        return
     end
 
     if item_type == nil then
@@ -252,27 +257,56 @@ local function ItemUpdate(item_code, item_type, consumable_multiplier, reset)
     end
 
     if item_type == "toggle" then
+        if reset then
+            if MEDALLIONS[item_code] ~= nil then
+                item_obj.CurrentStage = 0
+            end
+            if item_obj == "shop_shuffle" then
+                item_obj.AcquiredCount = 0
+            end
+        end
         item_obj.Active = not reset --reset and false or true
-    elseif item_type == "progressive" then
+    elseif ({["progressive"] = true, ["progressive_toggle"] = true})[item_type] then
         item_obj.CurrentStage = reset and 0 or (item_obj.CurrentStage + 1)
+        -- item_obj.Active = not reset
     elseif item_type == "consumable" then
         item_obj.AcquiredCount = reset and (item_obj.MinCount or 0) or
         (item_obj.AcquiredCount + item_obj.Increment * (consumable_multiplier or 1))
-    elseif item_type == "progressive_toggle" then
-        item_obj.CurrentStage = reset and 0 or (item_obj.CurrentStage + 1)
-        item_obj.Active = not reset -- reset and false or true
+    elseif ({["combined_consumable"] = true, ["keyring"] = true})[item_type] then
+        item_obj.AcquiredCount = reset and (item_obj.MinCount or 0) or item_obj.MaxCount
+    elseif item_type == "split_toggle" then
+        if reset then
+            item_obj.CurrentStage = reset and 0 or (item_obj.CurrentStage + 1)
+            item_obj.Active = not reset -- reset and false or true
+        else
+            -- print("split_toggle")
+            item_obj.Active = true
+            if (FIRSTSTAGE[item_id] ~= nil and item_obj.CurrentStage < 1) then -- blue shield, fighter sword, powergloves, bow+arrows 
+                item_obj.CurrentStage = 1
+            elseif (SECONDSTAGE[item_id] ~= nil and item_obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
+                item_obj.CurrentStage = 2
+            elseif (THIRDSTAGE[item_id] ~= nil and item_obj.CurrentStage < 3 ) then -- tempered sword, red mail, mirror shield
+                item_obj.CurrentStage = 3
+            elseif (item_id == 3  and item_obj.CurrentStage < 4) then --golden sword
+                item_obj.CurrentStage = 4
+            elseif ((item_id == 88 or item_id == 59) and item_obj.CurrentStage < 2) then -- silver arrows or silvers+bow
+                item_obj.CurrentStage = 2
+            end
+        end
     end
 end
 
 
 ---resets or updates a given location back to default or whats saved for the gives seed in the pseudo-cache LuaItems
 ---@param location_obj LocationSection Tracker:FindObjectForCode(location) return object
----@param custom_storage_item table Reference for the custom LuaItem CachesItems
+---@param custom_storage_item table|nil Reference for the custom LuaItem CachesItems
+---@param location_id integer AP-ID of the location from LOCATION_MAPPING
 ---@param reset boolean flag to update or reset the item false=update, true=reset, nil=update
-local function LocationUpdate(location_obj, custom_storage_item, reset)
+local function LocationUpdate(location_obj, custom_storage_item, location_id, reset)
+    
     ---@cast location_obj LocationSection
     if reset then --reset
-        if custom_storage_item.MANUAL_LOCATIONS[ROOM_SEED][location_obj.FullID] then
+        if custom_storage_item and custom_storage_item.MANUAL_LOCATIONS[ROOM_SEED][location_obj.FullID] then
             location_obj.AvailableChestCount = custom_storage_item.MANUAL_LOCATIONS[ROOM_SEED][location_obj.FullID]
         else
             location_obj.AvailableChestCount = location_obj.ChestCount
@@ -283,56 +317,6 @@ local function LocationUpdate(location_obj, custom_storage_item, reset)
     end
 end
 
----
-
----resets a given location back to default or whats saved for the gives seed in the pseuso-cache LuaItems
----@param location string String of the Location or LocatioSection to reset
----@param location_obj JsonItem|LocationSection Tracker:Findobject(location)retrun object
----@param custom_storage_item table Reference for the custom LuaItem CachesItems
-function LocationReset(location, location_obj, custom_storage_item)
-    if location:sub(1, 1) == "@" then
-        ---@cast location_obj LocationSection
-        if custom_storage_item.MANUAL_LOCATIONS[ROOM_SEED][location_obj.FullID] then
-            location_obj.AvailableChestCount = custom_storage_item.MANUAL_LOCATIONS[ROOM_SEED][location_obj.FullID]
-        else
-            location_obj.AvailableChestCount = location_obj.ChestCount
-        end
-        location_obj.Highlight = HIGHLIGHT_LEVEL[40]
-    else
-        ---@cast location_obj JsonItem
-        location_obj.Active = false
-    end
-end
-
----resets a give item back to default or whats saved for the gives seed in the pseuso-cache LuaItems
----@param item_type string table of the ItemCode and extra parameters from the Item_Mapping.lau
----@param item_obj JsonItem Tracker:Findobject(item) retrun object
----@param item_code string Reference for the custom LuaItem CachesItems
-function ItemReset(item_type, item_obj, item_code)
-    ---@cast item_obj JsonItem
-    item_obj.CurrentStage = 0
-    if item_type == "toggle" then
-        if MEDALLIONS[item_code] ~= nil then
-            item_obj.CurrentStage = 0
-        end
-        item_obj.Active = false
-        if item_obj == "shop_shuffle" then
-            item_obj.AcquiredCount = 0
-        end
-    elseif item_type == "progressive" then
-        item_obj.CurrentStage = 0
-        item_obj.Active = false
-    elseif ({["consumable"] = true, ["combined_consumable"] = true, ["keyring"] = true})[item_type] then
-        if item_obj.MinCount then
-            item_obj.AcquiredCount = item_obj.MinCount
-        else
-            item_obj.AcquiredCount = 0
-        end
-    elseif ({["progressive_toggle"] = true, ["split_toggle"] = true})[item_type] then
-        item_obj.CurrentStage = 0
-        item_obj.Active = false
-    end
-end
 
 ---function that gets called when the pack connects to an AP server
 ---@param slot_data? table Slotdata send from AP server for the specific user/slot
@@ -340,7 +324,7 @@ function OnClear(slot_data)
     MANUAL_CHECKED = false
 
     ScriptHost:RemoveOnFrameHandler("Trap Handler")
-    
+
     local custom_storage_item = (Tracker:FindObjectForCode("manual_location_storage") --[[@as LuaItem]]).ItemState
     if custom_storage_item == nil then
         custom_storage_item = CreateLuaManualStorageItem("manual_location_storage").ItemState or {}
@@ -368,25 +352,38 @@ function OnClear(slot_data)
     --SLOT_DATA = slot_data
     CUR_INDEX = -1
     -- reset locations
-    for _, location_array in pairs(LOCATION_MAPPING) do
+    for location_ID, location_array in pairs(LOCATION_MAPPING) do
         for _, location in pairs(location_array) do
             if location then
-                local location_obj = Tracker:FindObjectForCode(location) --[[@as LocationSection]]
-                if location_obj then
-                    -- LocationReset(location, location_obj, custom_storage_item)
+                if type(location) == "table" then
+                    local item_code, item_type, consumable_multiplies = table.unpack(location)
+                    ItemUpdate(item_code, item_type, consumable_multiplies, location_ID, true)
+                else
+                    if location:sub(1, 1) == "@" then
+                        ---@type LocationSection
+                        local location_obj = Tracker:FindObjectForCode(location) --[[@as LocationSection]]
+                        if location_obj then
+                            LocationUpdate(location_obj, custom_storage_item, location_ID, true)
+                        end
+                    else
+                        ---@cast location JsonItem
+                        ItemUpdate(location, nil, nil, location_ID, true)
+                    end
                 end
             end
         end
     end
     -- reset items
-    for _, item in pairs(ITEM_MAPPING) do
-        for _, item_code in pairs(item[1]) do
-            if item_code and item[2] then
-                local item_obj = Tracker:FindObjectForCode(item_code) --[[@as JsonItem]]
-                if item_obj then
-                    -- ItemReset(item[2], item_obj, item_code)
-                    -- clear_item_type[item[2]](item_obj, item_code) --alternate version
-                end
+    for item_ID, item_array in pairs(ITEM_MAPPING) do
+        for _, item_pair in pairs(item_array) do
+            local item_code = item_pair[1]
+            local item_type = item_pair[2]
+            local consumable_multiplier = tonumber(item_pair[3]) or 1
+            -- print("on clear", item_code, item_type)
+			---@type JsonItem
+            local item_obj = Tracker:FindObjectForCode(item_code) --[[@as JsonItem]]
+            if item_obj then
+                ItemUpdate(item_obj, item_type, consumable_multiplier, item_ID, true)
             end
         end
     end
@@ -456,64 +453,30 @@ end
 ---@param item_name string name of the item from the datapackage for the given itemID
 ---@param player_number integer slotnumber of the player who picked up the item
 function OnItem(index, item_id, item_name, player_number)
+    
     if index <= CUR_INDEX then
         return
     end
-    local is_local = player_number == PLAYER_ID
+    local is_local = player_number == Archipelago.PlayerNumber
     CUR_INDEX = index;
     local item = ITEM_MAPPING[item_id]  --[[@as table<integer, string[]>]]
     if not item or not item[1] then
-        print(string.format("OnItem: could not find item mapping for id %s", item_id))
+        --print(string.format("OnItem: could not find item mapping for id %s", item_id))
         return
     end
-    for _, item_code in pairs(item[1]) do
-        -- print(item[1], item[2])
-        local item_obj = Tracker:FindObjectForCode(item_code) --[[@as JsonItem]]
+    for _, item_pair in pairs(item) do
+        local item_code = item_pair[1]
+        local item_type = item_pair[2]
+        local consumable_multiplier = tonumber(item_pair[3]) or 1
+
+        local item_obj = Tracker:FindObjectForCode(item_code)
         if item_obj then
-            -- set_item_type[item[2]](item_id, item_obj) --alternate version
-            if item[2] == "toggle" then
-                -- print("toggle")
-                item_obj.Active = true
-            elseif item[2] == "progressive" then
-                -- print("progressive")
-                if item_obj.Active == true then
-                    item_obj.CurrentStage = item_obj.CurrentStage + 1
-                else
-                    item_obj.Active = true
-                end
-            elseif item[2] == "consumable" then
-                item_obj.AcquiredCount = item_obj.AcquiredCount + item_obj.Increment
-            elseif item[2] == "combined_consumable" then
-                -- print("combined_consumable")
-                item_obj.AcquiredCount = item_obj.MaxCount -- +50/70 capacity upgrades
-            elseif item[2] == "split_toggle" then
-            -- print("split_toggle")
-                item_obj.Active = true
-                if (FIRSTSTAGE[item_id] ~= nil and item_obj.CurrentStage < 1) then -- blue shield, fighter sword, powergloves, bow+arrows 
-                    item_obj.CurrentStage = 1
-                elseif (SECONDSTAGE[item_id] ~= nil and item_obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
-                    item_obj.CurrentStage = 2
-                elseif (THIRDSTAGE[item_id] ~= nil and item_obj.CurrentStage < 3 ) then -- tempered sword, red mail, mirror shield
-                    item_obj.CurrentStage = 3
-                elseif (item_id == 3  and item_obj.CurrentStage < 4) then --golden sword
-                    item_obj.CurrentStage = 4
-                elseif ((item_id == 88 or item_id == 59) and item_obj.CurrentStage < 2) then -- silver arrows or silvers+bow
-                    item_obj.CurrentStage = 2
-                end
-            elseif item[2] == "progressive_toggle" then
-                -- print("progressive_toggle")
-                if item_obj.Active == true then
-                    item_obj.CurrentStage = item_obj.CurrentStage + 1
-                else
-                    item_obj.Active = true
-                end
-            elseif item[2] == "keyring" then
-                item_obj.AcquiredCount = item_obj.MaxCount
-            end
+            ItemUpdate(item_code, item_type, consumable_multiplier, item_id, false)
         else
-            print(string.format("OnItem: could not find object for code %s", item_code[1]))
+            print(string.format("OnItem: could not find object for code %s", item_code))
         end
     end
+
     CanFinish()
     CalcHeartpieces()
 end
@@ -522,38 +485,34 @@ end
 ---@param location_id integer ID of the locations cleared from the datapackage
 ---@param location_name string name of the location cleared from the datapackage
 function OnLocation(location_id, location_name)
+
     MANUAL_CHECKED = false
     local location_array = LOCATION_MAPPING[location_id]
     if not location_array or not location_array[1] then
         print(string.format("OnLocation: could not find location mapping for id %s", location_id))
         return
     end
-    
+
     for _, location in pairs(location_array) do
-        local location_obj = Tracker:FindObjectForCode(location)
-        -- print(location, location_obj)
-        if location_obj then
-
-            if location:sub(1, 1) == "@" then
-                location_obj.AvailableChestCount = location_obj.AvailableChestCount - 1
+        if location then
+            if type(location) == "table" then
+                local item_code, item_type, consumable_multiplier = table.unpack(location)
+                ItemUpdate(item_code, item_type, consumable_multiplier, location_id, false)
             else
-                location_obj.Active = true
-            end
-            -- if location:sub(-9, -1) == "Key Drops" then
-            --     smallkey = Tracker:FindObjectForCode(location:sub(2, 3).."_smallkey")
-            --     smallkey.AcquiredCount = smallkey.AcquiredCount + 1
-            -- end
-            -- x,_ = string.find(location, "universal")
-            -- if x > 0 and Tracker:FindObjectForCode("small_keys").CurrentStage == 2 then
-            --     universal = Tracker:FindObjectForCode("universal_keys")
-            --     universal.AcquiredCount = universal.AcquiredCount + 1
-            --     smallkey = Tracker:FindObjectForCode(location:sub(1, x-2).."_smallkey")
-            --     smallkey.AcquiredCount = smallkey.AcquiredCount + 1
-            -- end
 
-            -- Tracker:FindObjectForCode("universal_keys").Active
-        else
-            print(string.format("OnLocation: could not find location_object for code %s", location))
+                if location:sub(1, 1) == "@" then
+                    ---@type LocationSection
+                    local location_obj = Tracker:FindObjectForCode(location) --[[@as LocationSection]]
+                    local custom_storage_item = (Tracker:FindObjectForCode("manual_location_storage") --[[@as LuaItem]]).ItemState
+                    if location_obj then
+                        LocationUpdate(location_obj, custom_storage_item, location_id, false)
+                    else
+                        print(string.format("OnLocation: could not find location_object for code %s", location))
+                    end
+                else
+                    ItemUpdate(location, nil, nil, location_id, false)
+                end
+            end
         end
     end
     CanFinish()
@@ -575,11 +534,53 @@ function AutoFill()
         print("its fucked")
         return
     end
-    print(Dump_table(SLOT_DATA))
+    -- print(Dump_table(SLOT_DATA))
     -- mapGlitcheMode = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4} -- noGlitches, minor, overworld, hybrid_major, no_logic
     local mapDarkRoomLogic = {[0]=0, [1]=1, [2]=2, ["none"]=2,["lamp"]=0,["troches"]=1} --lamp, torches, none
-    local mapCoreGoal = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=5, [7]=6, [8]=6, ["crystals"]=0,["ganon"]=1,["bosses"]=2,["pedestal"]=3,["ganonpedestal"]=4,["triforcehunt"]=5,["ganontriforcehunt"]=6,["localtriforcehunt"]=5,["localganontriforcehunt"]=6, ["trinity"]=7, ["completionist"]=8} --slow, fast, AD, ped, ped+ganon, tfh, local_tfh, tfh+ganon, local tfh+ganon
-    local mapAlttprGoal = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=5, [7]=7, [8]=8, ["crystals"]=0,["ganon"]=1,["bosses"]=2,["pedestal"]=3,["ganonpedestal"]=4,["triforcehunt"]=5,["ganontriforcehunt"]=6,["localtriforcehunt"]=5,["localganontriforcehunt"]=6, ["trinity"]=7, ["completionist"]=8} --slow, fast, AD, ped, ped+ganon, tfh, local_tfh, tfh+ganon, local tfh+ganon
+    local mapCoreGoal = {
+        [0]=0,
+        [1]=1,
+        [2]=2,
+        [3]=3,
+        [4]=4,
+        [5]=5,
+        [6]=5,
+        [7]=6,
+        [8]=6,
+        ["crystals"]=0,
+        ["ganon"]=1,
+        ["bosses"]=2,
+        ["pedestal"]=3,
+        ["ganonpedestal"]=4,
+        ["triforcehunt"]=5,
+        ["ganontriforcehunt"]=6,
+        ["localtriforcehunt"]=5,
+        ["localganontriforcehunt"]=6,
+        ["trinity"]=7,
+        ["completionist"]=8
+    } --slow, fast, AD, ped, ped+ganon, tfh, local_tfh, tfh+ganon, local tfh+ganon
+    local mapAlttprGoal = {
+        [0]=0,
+        [1]=1,
+        [2]=2,
+        [3]=3,
+        [4]=4,
+        [5]=5,
+        [6]=5,
+        [7]=7,
+        [8]=8,
+        ["crystals"]=0,
+        ["ganon"]=1,
+        ["bosses"]=2,
+        ["pedestal"]=3,
+        ["ganonpedestal"]=4,
+        ["triforcehunt"]=5,
+        ["ganontriforcehunt"]=6,
+        ["localtriforcehunt"]=5,
+        ["localganontriforcehunt"]=6,
+        ["trinity"]=7,
+        ["completionist"]=8
+    } --slow, fast, AD, ped, ped+ganon, tfh, local_tfh, tfh+ganon, local tfh+ganon
     -- mapEntranceRandomizer = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=6, [7]=7, [8]=8} --vanilla, dungeon simple, dungeon full, dungeon crossed, simple, restriced, full, crossed, insanity
     -- mapTriforcePiecesAvailable = {} --range 1-850
     -- mapTriforcePiecesRequiered = {} --range 1-850
@@ -665,6 +666,7 @@ function AutoFill()
 
     local slotCodes = {
         crystals_needed_for_gt = {codes={"gt_access"}, mappings={nil}, autofill="autofill_goal_reqs",},
+        dungeons_needed_for_ganon = {codes={"gt_access"}, mappings={nil}, autofill="autofill_goal_reqs",},
         crystals_needed_for_ganon = {codes={"ganon_killable"}, mappings={nil}, autofill="autofill_goal_reqs",},
         triforce_pieces_required = {codes={"triforce_pieces_needed"}, mappings={nil}, autofill="autofill_goal_reqs",},
         open_pyramid = {codes={"pyramid_state"}, mappings={mapStages}, autofill="autofill_goal_reqs",},
@@ -682,7 +684,7 @@ function AutoFill()
 
         -- retro_bow = {codes={""}, mapping, autofill="",=},
         retro_caves = {codes={"retro_caves"}, mappings={mapToggle}, autofill="autofill_modes",},
-        item_functionality = {codes={"item_mode"}, mappings={mapToggle}, autofill="autofill_modes",},
+        item_functionality = {codes={"item_mode"}, mappings={mapStages}, autofill="autofill_modes",},
 
 
         -- pot_shuffle = {codes={"pot_shuffle"}, mapping, autofill="",=},
@@ -699,74 +701,100 @@ function AutoFill()
         mode = {codes={"start_option"}, mappings={mapStages}, autofill="autofill_modes",},
         enemy_shuffle = {codes={"enemizer"}, mappings={mapToggle}, autofill="autofill_misc",},
     }
+    ---dmg_table adjustment
+    killable_thieves        1
+    randomize_damage_classes        5
+    preserve_melee_damage_classes   0
+    --keyrings
+    key_rings       3
+    
+    --shop
+    randomize_cost_types    1
+    shuffle_shop_inventories        1
+    randomize_shop_inventories      2
+    include_witch_hut       1
+    --glitches
+    glitches_required       0
+    --puuzle
+    randomize_puzzles       1
+    
+    --pull rewards 
+    shuffle_prizes  1
+    --dungeon stuff
+    boss_prize_shuffle      1
+    pot_shuffle     0
+
+    
+    
 
     -- print(Dump_table(SLOT_DATA))
     -- print(Tracker:FindObjectForCode("autofill_settings").Active)
-    if SLOT_DATA["settings"] then --alttpr slotdata
-                -- ["triforce_pool"] = 30,
-                -- ["triforce_goal"] = 20,
-                -- ["ow_fluteshuffle"] = vanilla,
-                -- ["swords"] = random,
-                -- ["compassshuffle"] = none,
-                -- ["skullwoods"] = original,
-                -- ["enemy_health"] = default,
-                -- ["beemizer"] = 0,
-                -- ["shufflepots"] = false,
-                -- ["logic"] = noglitches,
-                -- ["bigkeyshuffle"] = none,
-                -- ["flute_mode"] = normal,
-                -- ["crystals_gt"] = {
-                -- },
-                -- ["bonk_drops"] = false,
-                -- ["pottery"] = none,
-                -- ["prizeshuffle"] = none,
-                -- ["shopsanity"] = 0,
-                -- ["bombbag"] = false,
-                -- ["shuffletavern"] = 0,
-                -- ["shuffle_followers"] = false,
-                -- ["mode"] = open,
-                -- ["goal"] = crystals,
-                -- ["enemy_shuffle"] = none,
-                -- ["openpyramid"] = auto,
-                -- ["mapshuffle"] = none,
-                -- ["decoupledoors"] = false,
-                -- ["keyshuffle"] = none,
-                -- ["door_shuffle"] = vanilla,
-                -- ["crystals_ganon"] = {
-                -- },
-                -- ["door_type_mode"] = original,
-                -- ["any_enemy_logic"] = none,
-                -- ["boss_shuffle"] = none,
-                -- ["bow_mode"] = progressive,
-                -- ["dropshuffle"] = none,
-                -- ["shuffle"] = vanilla,
-                -- ["take_any"] = none,
+    if SLOT_DATA["settings"] then 
+    --alttpr slotdata
+        -- ["triforce_pool"] = 30,
+        -- ["triforce_goal"] = 20,
+        -- ["ow_fluteshuffle"] = vanilla,
+        -- ["swords"] = random,
+        -- ["compassshuffle"] = none,
+        -- ["skullwoods"] = original,
+        -- ["enemy_health"] = default,
+        -- ["beemizer"] = 0,
+        -- ["shufflepots"] = false,
+        -- ["logic"] = noglitches,
+        -- ["bigkeyshuffle"] = none,
+        -- ["flute_mode"] = normal,
+        -- ["crystals_gt"] = {
+        -- },
+        -- ["bonk_drops"] = false,
+        -- ["pottery"] = none,
+        -- ["prizeshuffle"] = none,
+        -- ["shopsanity"] = 0,
+        -- ["bombbag"] = false,
+        -- ["shuffletavern"] = 0,
+        -- ["shuffle_followers"] = false,
+        -- ["mode"] = open,
+        -- ["goal"] = crystals,
+        -- ["enemy_shuffle"] = none,
+        -- ["openpyramid"] = auto,
+        -- ["mapshuffle"] = none,
+        -- ["decoupledoors"] = false,
+        -- ["keyshuffle"] = none,
+        -- ["door_shuffle"] = vanilla,
+        -- ["crystals_ganon"] = {
+        -- },
+        -- ["door_type_mode"] = original,
+        -- ["any_enemy_logic"] = none,
+        -- ["boss_shuffle"] = none,
+        -- ["bow_mode"] = progressive,
+        -- ["dropshuffle"] = none,
+        -- ["shuffle"] = vanilla,
+        -- ["take_any"] = none,
 
-                -- // ["difficulty"] = normal,
-                -- // ["trap_door_mode"] = vanilla,
-                -- // ["hints"] = false,
-                -- // ["ow_mixed"] = false,
-                -- // ["ow_layout"] = vanilla,
-                -- // ["ow_fog"] = false,
-                -- // ["pseudoboots"] = 0,
-                -- // ["ow_whirlpool"] = false,
-                -- // ["ow_keepsimilar"] = false,
-                -- // ["mirrorscroll"] = false,
-                -- // ["accessibility"] = locations,
-                -- // ["mixed_travel"] = prevent,
-                -- // ["enemy_damage"] = default,
-                -- // ["door_self_loops"] = false,
-                -- // ["money_balance"] = 100,
-                -- // ["standardize_palettes"] = standardize,
-                -- // ["ow_crossed"] = none,
-                -- // ["dungeon_counters"] = on,
-                -- // ["shufflelinks"] = 0,
-                -- // ["ow_terrain"] = false,
-                -- // ["ow_parallel"] = false,
-                -- // ["aga_randomness"] = true,
-                -- // ["overworld_map"] = default,
-                -- // ["collection_rate"] = false,
-                -- // ["key_logic_algorithm"] = partial,
+        -- // ["difficulty"] = normal,
+        -- // ["trap_door_mode"] = vanilla,
+        -- // ["hints"] = false,
+        -- // ["ow_mixed"] = false,
+        -- // ["ow_layout"] = vanilla,
+        -- // ["ow_fog"] = false,
+        -- // ["pseudoboots"] = 0,
+        -- // ["ow_whirlpool"] = false,
+        -- // ["ow_keepsimilar"] = false,
+        -- // ["mirrorscroll"] = false,
+        -- // ["accessibility"] = locations,
+        -- // ["mixed_travel"] = prevent,
+        -- // ["enemy_damage"] = default,
+        -- // ["door_self_loops"] = false,
+        -- // ["money_balance"] = 100,
+        -- // ["standardize_palettes"] = standardize,
+        -- // ["ow_crossed"] = none,
+        -- // ["dungeon_counters"] = on,
+        -- // ["shufflelinks"] = 0,
+        -- // ["ow_terrain"] = false,
+        -- // ["ow_parallel"] = false,
+        -- // ["aga_randomness"] = true,
+        -- // ["overworld_map"] = default,
+        -- // ["collection_rate"] = false,
+        -- // ["key_logic_algorithm"] = partial,
         local slot_data_alttpr = SLOT_DATA["settings"]["1"]
         for settings_name , settings_value in pairs(slot_data_alttpr) do
             if type(settings_value) == "table" then
@@ -878,7 +906,7 @@ function AutoFill()
                         -- print("slotCodes[settings_name].autoFill", slotCodes[settings_name].autofill)
                         print("<--------------------------------->")
                         if Tracker:FindObjectForCode(slotCodes[settings_name].autofill).Active then
-                            print("settings_name", settings_name)
+                            -- print("settings_name", settings_name)
                             local item = Tracker:FindObjectForCode((slotCodes[settings_name].codes)[index]) --[[@as JsonItem]]
                             if item.Type == "toggle" then
                                 -- print("toggle", settings_name, settings_value)
@@ -893,6 +921,9 @@ function AutoFill()
                             end
                         end
                     end
+                else
+                    
+            print(settings_name , settings_value)
                 end
             end
         end

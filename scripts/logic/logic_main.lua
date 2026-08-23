@@ -291,7 +291,7 @@ function alttp_location:connect_two_ways_entrance(name, exit, rule)
     if exit == nil then -- for ER
         return
     end
-    print(self.name)
+    -- print(self.name)
     self:connect_one_way_entrance(name, exit, rule)
     exit:connect_one_way_entrance(name, self, rule)
 end
@@ -303,7 +303,7 @@ end
 ---@param rule1? function
 ---@param rule2? function
 function alttp_location:connect_two_ways_entrance_door_stuck(name, exit, rule1, rule2)
-    print(self.name)
+    -- print(self.name)
     self:connect_one_way_entrance(name, exit, rule1)
     exit:connect_one_way_entrance(name, self, rule2)
 end
