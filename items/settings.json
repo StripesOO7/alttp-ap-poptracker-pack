@@ -214,8 +214,7 @@
                 "inherit_codes": false,
                 "codes": "glitches, no_logic"
             }
-        ],
-        "img": "/images/settings/items/Pegasus_Boots.png"
+        ]
     },
     {
         "name": "Swordless",
@@ -582,6 +581,7 @@
         "initial_active_state": true,
         "img": "/images/settings/keydrop_shuffle_on.png",
         "disabled_img": "/images/settings/keydrop_shuffle_off.png",
+        "disabled_img_mods": "",
         "codes": "key_drop_shuffle"
     },
     {
@@ -973,7 +973,7 @@
                     "codes": "potshuffle, potshuffle_keyscaves, potshuffle_keys, potshuffle_caves"
                 },
                 {
-                    "img": "/images/settings/pot_shuffle_dungeons.png",
+                    "img": "/images/settings/pot_shuffle_dungeon.png",
                     "inherit_codes": false,
                     "name": "Potshuffle caves",
                     "codes": "potshuffle, potshuffle_dungeons"
@@ -1001,5 +1001,21 @@
         "disabled_img": "/images/settings/shuffle_tavern_off.png",
         "disabled_img_mods": "",
         "codes": "shuffle_tavern"
+    },
+    {
+        "name": "Killable Thieves",
+        "type": "toggle",
+        "img": "/images/settings/killable_thieves_on.png",
+        "disabled_img": "/images/settings/killable_thieves_off.png",
+        "disabled_img_mods": "",
+        "codes": "killable_thieves"
+    },
+    {
+        "name": "Boss Prize Shuffle",
+        "type": "toggle",
+        "img": "/images/settings/shuffle_boss_rewards_on.png",
+        "disabled_img": "/images/settings/shuffle_boss_rewards_off.png",
+        "disabled_img_mods": "",
+        "codes": "boss_prize_shuffle"
     }
 ]

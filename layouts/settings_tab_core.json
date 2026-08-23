@@ -120,29 +120,29 @@
                       "item": "pyramid_state"
                       }
                   ]
-                // },
-                // {
-                //   "type": "group",
-                //   "header": "Dmg Class Settings",
-                //   "description": "",
-                //   "header_background": "#3e4b57",
-                //   "content": [
-                //       {
-                //       "type": "item",
-                //       "max_width": "180",
-                //       "item": "goal"
-                //       },
-                //       {
-                //       "type": "item",
-                //       "max_width": "180",
-                //       "item": "glitches"
-                //       },
-                //       {
-                //       "type": "item",
-                //       "max_width": "180",
-                //       "item": "pyramid_state"
-                //       }
-                //   ]
+                },
+                {
+                  "type": "group",
+                  "header": "Dmg Class Settings",
+                  "description": "",
+                  "header_background": "#3e4b57",
+                  "content": [
+                      // {
+                      // "type": "item",
+                      // "max_width": "180",
+                      // "item": "goal"
+                      // },
+                      // {
+                      // "type": "item",
+                      // "max_width": "180",
+                      // "item": "glitches"
+                      // },
+                      {
+                      "type": "item",
+                      "max_width": "180",
+                      "item": "killable_thieves"
+                      }
+                  ]
                 }
               ]
             },
@@ -214,6 +214,11 @@
                   "type": "item",
                   "max_width": "180",
                   "item": "boss_shuffle"
+                },
+                {
+                  "type": "item",
+                  "max_width": "180",
+                  "item": "boss_prize_shuffle"
                 },
                 {
                   "type": "item",

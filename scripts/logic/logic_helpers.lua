@@ -935,29 +935,33 @@ function CanFinish()
         [5] = Tracker:ProviderCountForCode("blue_pendant")//2,
         [6] = Tracker:ProviderCountForCode("red_pendant")//2,
         [7] = CheckRequirements("triforce_pieces_needed", "triforcepieces"),
-        [8] = Tracker:ProviderCountForCode("icerod")
+        -- [8] = Tracker:ProviderCountForCode("icerod"),
     }
     local goals = {
-        [0] = {reqs[1], reqs[3]}, --aga2 + ganon killable
-        [1] = {reqs[1]}, --ganon killable
-        [2] = {reqs[1], reqs[2], reqs[3], reqs[4], reqs[5], reqs[6]}, --7crystal, aga1+aga2, 3pendants
-        [3] = {reqs[4], reqs[5], reqs[6]}, --3 pendants
-        [4] = {reqs[1], reqs[4], reqs[5], reqs[6]}, --pendants+ ganon killable
-        [5] = {reqs[7]}, --trifoce pieces
-        [6] = {reqs[1], reqs[7]}, --triforce pieces + ganon killabel
-        [7] = {reqs[8]} --icerod
+        [0] = {{reqs[1], reqs[3]}}, --aga2 + ganon killable
+        [1] = {{reqs[1]}}, --ganon killable
+        [2] = {{reqs[1], reqs[2], reqs[3], reqs[4], reqs[5], reqs[6]}}, --7crystal, aga1+aga2, 3pendants
+        [3] = {{reqs[4], reqs[5], reqs[6]}}, --3 pendants
+        [4] = {{reqs[1], reqs[4], reqs[5], reqs[6]}}, --pendants+ ganon killable
+        [5] = {{reqs[7]}}, --trifoce pieces
+        [6] = {{reqs[1], reqs[7]}}, --triforce pieces + ganon killabel
+        [7] = {{reqs[4], reqs[5], reqs[6]}, {reqs[7]}, {reqs[1], reqs[3]}}, --trinity (pedestal, tfh, ganon)
+        [8] = {{reqs[1], reqs[2], reqs[3], reqs[4], reqs[5], reqs[6]}} --complitionist
     }
     local beatable = 0
-
-    for k,h in pairs(goals[Tracker:FindObjectForCode("goal").CurrentStage]) do
-        beatable = beatable + h
-        table_length = k
-    end
     local obj = Tracker:FindObjectForCode("go_mode")
-    if beatable >= table_length then
-        obj.Active = true
-        CachedValues["CanFinish"] = true
-        return true
+
+    for _, condition_set in pairs(goals[Tracker:FindObjectForCode("goal").CurrentStage]) do
+        for k,h in pairs(condition_set) do
+            beatable = beatable + h
+            table_length = k
+        end
+    
+        if beatable >= table_length then
+            obj.Active = true
+            CachedValues["CanFinish"] = true
+            return true
+        end
     end
     obj.Active = false
     CachedValues["CanFinish"] = false

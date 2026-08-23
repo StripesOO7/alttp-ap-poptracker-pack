@@ -665,6 +665,7 @@ function AutoFill()
     local mapToggle = {[0]=false, [1]=true, [2]=true,[3]=true,[4]=true,[6]=true} -- false, true
 
     local slotCodes = {
+        --goal 
         crystals_needed_for_gt = {codes={"gt_access"}, mappings={nil}, autofill="autofill_goal_reqs",},
         dungeons_needed_for_ganon = {codes={"gt_access"}, mappings={nil}, autofill="autofill_goal_reqs",},
         crystals_needed_for_ganon = {codes={"ganon_killable"}, mappings={nil}, autofill="autofill_goal_reqs",},
@@ -674,58 +675,58 @@ function AutoFill()
         -- triforce_pieces_percentage = {codes={""}, mapping, autofill="",=},
         -- triforce_pieces_available = {codes={"triforce_pieces_needed", mapping, autofill="",=},
         -- triforce_pieces_extra = {codes={""}, mapping, autofill="",=}
+
+        --dungeon
         big_key_shuffle = {codes={"big_keys", "bigkeys_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings",},
         small_key_shuffle = {codes={"small_keys", "smallkeys_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings",},
         compass_shuffle = {codes={"compass", "compass_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings",},
         map_shuffle = {codes={"map", "maps_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings",},
         boss_shuffle = {codes={"boss_shuffle"}, mappings={mapBosses}, autofill="autofill_dungeon_settings",},
+        boss_prize_shuffle = {codes={"boss_prize_shuffle"}, mappings={mapToggle}, autofill="autofill_dungeon_settings",},
+        randomize_puzzles = {codes={"room_puzzle_shuffle"}, mappings={mapToggle}, autofill="autofill_dungeon_settings",},
+        
         -- progressive = {codes={"progressive_items"}, mappings={mapStages}, autofill="",},
 
-
+        --item modes
         -- retro_bow = {codes={""}, mapping, autofill="",=},
         retro_caves = {codes={"retro_caves"}, mappings={mapToggle}, autofill="autofill_modes",},
         item_functionality = {codes={"item_mode"}, mappings={mapStages}, autofill="autofill_modes",},
 
-
+        --pots and keydrops
         -- pot_shuffle = {codes={"pot_shuffle"}, mapping, autofill="",=},
         key_drop_shuffle = {codes={"key_drop_shuffle"}, mappings={mapToggle}, autofill="autofill_dungeon_settings",},
+        -- key_rings = {codes={"key_drop_shuffle"}, mappings={mapToggle}, autofill="autofill_dungeon_settings",},
+
+        --item logic
         bombless_start = {codes={"bombless"}, mappings={mapToggle}, autofill="autofill_modes",},
         dark_room_logic = {codes={"dark_mode"}, mappings={mapDarkRoomLogic}, autofill="autofill_modes",},
         swordless = {codes={"swordless"}, mappings={mapToggle}, autofill="autofill_modes",},
+
+        --shops
         shop_item_slots = {codes={"shop_sanity"}, mappings={nil}, autofill="autofill_sanities",},
         -- randomize_shop_inventories = {codes={""}, mappings={mapToggle}, autofill="autofill_sanities",},
         -- shuffle_shop_inventories = {codes={""}, mappings={mapToggle}, autofill="autofill_sanities",},
         shuffle_capacity_upgrades = {codes={"shop_shuffle_capacity"}, mappings={mapToggle}, autofill="autofill_misc",},
+        include_witch_hut = {codes={"shop_include_witchhut"}, mappings={mapToggle}, autofill="autofill_modes",},
+        randomize_cost_types = {codes={"shuffle_cost_type"}, mappings={mapToggle}, autofill="autofill_modes",},
+        shuffle_prizes = {codes={"shuffle_cost_type"}, mappings={mapToggle}, autofill="autofill_modes",},
+        -- shuffle_prizes
+
+        --ER/Doors
         entrance_shuffle = {codes={"er_tracking"}, mappings={mapEntranceShuffle}, autofill="autofill_misc",},
+        -- doors_shuffle = {codes={"doors_tracking"}, mappings={}, autofill="autofill_misc",},
+
+        --goal logic
         goal = {codes={"goal"}, mappings={mapCoreGoal}, autofill="autofill_goal_reqs",},
         mode = {codes={"start_option"}, mappings={mapStages}, autofill="autofill_modes",},
-        enemy_shuffle = {codes={"enemizer"}, mappings={mapToggle}, autofill="autofill_misc",},
-    }
-    ---dmg_table adjustment
-    killable_thieves        1
-    randomize_damage_classes        5
-    preserve_melee_damage_classes   0
-    --keyrings
-    key_rings       3
-    
-    --shop
-    randomize_cost_types    1
-    shuffle_shop_inventories        1
-    randomize_shop_inventories      2
-    include_witch_hut       1
-    --glitches
-    glitches_required       0
-    --puuzle
-    randomize_puzzles       1
-    
-    --pull rewards 
-    shuffle_prizes  1
-    --dungeon stuff
-    boss_prize_shuffle      1
-    pot_shuffle     0
+        glitches_required = {codes={"glitches"}, mappings={mapStages}, autofill="autofill_modes",},
 
-    
-    
+        -- misc logic
+        enemy_shuffle = {codes={"enemizer"}, mappings={mapToggle}, autofill="autofill_misc",},
+        killable_thieves = {codes={"killable_thieves"}, mappings={mapToggle}, autofill="autofill_misc",},
+        randomize_damage_classes = {codes={"dmg_class_shuffle"}, mappings={mapStages}, autofill="autofill_misc",},
+        preserve_melee_damage_classes = {codes={"preserve_melee_dmg_classes"}, mappings={mapToggle}, autofill="autofill_misc",},
+    }
 
     -- print(Dump_table(SLOT_DATA))
     -- print(Tracker:FindObjectForCode("autofill_settings").Active)
@@ -868,6 +869,7 @@ function AutoFill()
         
     else --core/beta slotdata
         for settings_name , settings_value in pairs(SLOT_DATA) do
+            print(settings_name , settings_value)
             if type(settings_value) == "table" then
                 if settings_name == "bosses" then
                     if Tracker:FindObjectForCode("autofill_dungeon_settings").Active then
@@ -895,14 +897,15 @@ function AutoFill()
             else
                 if settings_name == "shop_item_slots" and (Tracker:FindObjectForCode(slotCodes[settings_name].autofill)  --[[@as JsonItem]]).Active then
                     (Tracker:FindObjectForCode("shop_sanity") --[[@as JsonItem]]).Active = settings_value > 0
+                    (Tracker:FindObjectForCode("shuffle_item_slots") --[[@as JsonItem]]).Active = settings_value > 0
                     (Tracker:FindObjectForCode("shuffle_item_slots") --[[@as JsonItem]]).BadgeText = settings_value
                 elseif slotCodes[settings_name] then
                     for index, _ in ipairs(slotCodes[settings_name].codes) do
                     
                         -- print("settings_name", settings_name)
                         -- print("slotCodes[settings_name]", slotCodes[settings_name])
-                        -- print("slotCodes[settings_name].code", slotCodes[settings_name].code)
-                        -- print("slotCodes[settings_name].code", slotCodes[settings_name].code[1])
+                        -- print("slotCodes[settings_name].codes", slotCodes[settings_name].codes)
+                        -- print("slotCodes[settings_name].codes[1]", slotCodes[settings_name].codes[1])
                         -- print("slotCodes[settings_name].autoFill", slotCodes[settings_name].autofill)
                         print("<--------------------------------->")
                         if Tracker:FindObjectForCode(slotCodes[settings_name].autofill).Active then
