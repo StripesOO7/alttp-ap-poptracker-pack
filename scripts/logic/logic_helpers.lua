@@ -945,7 +945,7 @@ function CanFinish()
         [4] = {{reqs[1], reqs[4], reqs[5], reqs[6]}}, --pendants+ ganon killable
         [5] = {{reqs[7]}}, --trifoce pieces
         [6] = {{reqs[1], reqs[7]}}, --triforce pieces + ganon killabel
-        [7] = {{reqs[4], reqs[5], reqs[6]}, {reqs[7]}, {reqs[1], reqs[3]}}, --trinity (pedestal, tfh, ganon)
+        [7] = {{reqs[4], reqs[5], reqs[6]}, {reqs[7]}, {reqs[1]}}, --trinity (pedestal, tfh, ganon)
         [8] = {{reqs[1], reqs[2], reqs[3], reqs[4], reqs[5], reqs[6]}} --complitionist
     }
     local beatable = 0

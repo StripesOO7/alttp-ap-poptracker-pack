@@ -65,7 +65,7 @@
                     "^$CanReach|IP_map_room"
                 ],
                 "visibility_rules": [
-                    "key_drop_shuffle"
+                    "key_drop_shuffle", "potshuffle_lottery", "potshuffle_dungeons", "potshuffle_keys"
                 ],
                 "sections": [
                     {
@@ -91,7 +91,7 @@
                     "^$CanReach|IP_many_pots_room"
                 ],
                 "visibility_rules": [
-                    "key_drop_shuffle"
+                    "key_drop_shuffle", "potshuffle_lottery", "potshuffle_dungeons", "potshuffle_keys"
                 ],
                 "sections": [
                     {
@@ -309,7 +309,7 @@
                     {
                         "name": "Pot #1",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -326,7 +326,7 @@
                     {
                         "name": "Pot #1",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -343,7 +343,7 @@
                     {
                         "name": "Pot #2",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -360,7 +360,7 @@
                     {
                         "name": "Pot #3",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -377,7 +377,7 @@
                     {
                         "name": "Pot #4",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -394,7 +394,7 @@
                     {
                         "name": "Pot #1",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -411,7 +411,7 @@
                     {
                         "name": "Pot #2",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -428,7 +428,7 @@
                     {
                         "name": "Pot #3",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -445,7 +445,7 @@
                     {
                         "name": "Pot #4",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -462,7 +462,7 @@
                     {
                         "name": "Pot #1",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -479,7 +479,7 @@
                     {
                         "name": "Pot #2",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -496,7 +496,7 @@
                     {
                         "name": "Pot #3",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -513,7 +513,7 @@
                     {
                         "name": "Pot #4",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -530,7 +530,7 @@
                     {
                         "name": "Pot #5",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -547,7 +547,7 @@
                     {
                         "name": "Pot #6",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -564,7 +564,7 @@
                     {
                         "name": "Pot #1",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -581,7 +581,7 @@
                     {
                         "name": "Pot #2",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -598,7 +598,7 @@
                     {
                         "name": "Pot #3",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -615,7 +615,7 @@
                     {
                         "name": "Pot #4",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -632,7 +632,7 @@
                     {
                         "name": "Pot #5",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -649,7 +649,7 @@
                     {
                         "name": "Pot #1",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -666,7 +666,7 @@
                     {
                         "name": "Pot #2",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -683,7 +683,7 @@
                     {
                         "name": "Pot #3",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -700,7 +700,7 @@
                     {
                         "name": "Pot #4",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -717,7 +717,7 @@
                     {
                         "name": "Pot #1",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -734,7 +734,7 @@
                     {
                         "name": "Pot #1",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -751,7 +751,7 @@
                     {
                         "name": "Pot #2",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -768,7 +768,7 @@
                     {
                         "name": "Pot #3",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -785,7 +785,7 @@
                     {
                         "name": "Pot #4",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -802,7 +802,7 @@
                     {
                         "name": "Pot #1",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -819,7 +819,7 @@
                     {
                         "name": "Pot #2",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -836,7 +836,7 @@
                     {
                         "name": "Pot #1",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -853,7 +853,7 @@
                     {
                         "name": "Pot #2",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -870,7 +870,7 @@
                     {
                         "name": "Pot #3",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -887,7 +887,7 @@
                     {
                         "name": "Pot #4",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -904,7 +904,7 @@
                     {
                         "name": "Pot #6",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -921,7 +921,7 @@
                     {
                         "name": "Pot #7",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -938,7 +938,7 @@
                     {
                         "name": "Pot #8",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -955,7 +955,7 @@
                     {
                         "name": "Pot #9",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -972,7 +972,7 @@
                     {
                         "name": "Pot #10",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -989,7 +989,7 @@
                     {
                         "name": "Pot #11",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -1006,7 +1006,7 @@
                     {
                         "name": "Pot #12",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -1023,7 +1023,7 @@
                     {
                         "name": "Pot #13",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -1040,7 +1040,7 @@
                     {
                         "name": "Pot #14",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -1057,7 +1057,7 @@
                     {
                         "name": "Pot #15",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -1074,7 +1074,7 @@
                     {
                         "name": "Pot #16",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -1091,7 +1091,7 @@
                     {
                         "name": "Pot #1",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -1108,7 +1108,7 @@
                     {
                         "name": "Pot #1",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -1125,7 +1125,7 @@
                     {
                         "name": "Pot #2",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -1142,7 +1142,7 @@
                     {
                         "name": "Pot #3",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -1159,7 +1159,7 @@
                     {
                         "name": "Pot #4",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -1176,7 +1176,7 @@
                     {
                         "name": "Pot #5",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -1193,7 +1193,7 @@
                     {
                         "name": "Pot #6",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -1210,7 +1210,7 @@
                     {
                         "name": "Pot #1",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -1227,7 +1227,7 @@
                     {
                         "name": "Pot #2",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -1244,7 +1244,7 @@
                     {
                         "name": "Pot #3",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -1261,7 +1261,7 @@
                     {
                         "name": "Pot #4",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -1278,7 +1278,7 @@
                     {
                         "name": "Pot #1",
                         "access_rules": [],
-                        "visibility_rules": ["potshuffle_lottery"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
