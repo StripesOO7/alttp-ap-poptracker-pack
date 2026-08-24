@@ -431,7 +431,10 @@ Dark_lake_hylia_ledge_fairy_outside:connect_two_ways_entrance("Dark Lake Hylia L
 Dark_lake_hylia_ledge_hint_outside:connect_two_ways_entrance("Dark Lake Hylia Ledge Hint", Dark_lake_hylia_ledge_hint_inside)
 Dark_lake_hylia_ledge_spike_hint_outside:connect_two_ways_entrance("Dark Lake Hylia Ledge Spike Hint", Dark_lake_hylia_ledge_spike_hint_inside)
 
-
+Dark_lake_hylia_ledge_spike_hint_inside:connect_one_way("Dark Lake Hylia Ledge Spike Cave - Pot #5", function() return CanInteract(Dark_lake_hylia_ledge_spike_hint_inside) end)
+Dark_lake_hylia_ledge_spike_hint_inside:connect_one_way("Dark Lake Hylia Ledge Spike Cave - Pot #6", function() return CanInteract(Dark_lake_hylia_ledge_spike_hint_inside) end)
+Dark_lake_hylia_ledge_spike_hint_inside:connect_one_way("Dark Lake Hylia Ledge Spike Cave - Pot #7", function() return CanInteract(Dark_lake_hylia_ledge_spike_hint_inside) end)
+Dark_lake_hylia_ledge_spike_hint_inside:connect_one_way("Dark Lake Hylia Ledge Spike Cave - Pot #8", function() return CanInteract(Dark_lake_hylia_ledge_spike_hint_inside) end)
 
 
 
@@ -489,7 +492,7 @@ C_shaped_house_outside:connect_two_ways_entrance("C-Shaped House", C_shaped_hous
 Chest_game_outside:connect_two_ways_entrance("Chest Game Entrance", Chest_game_inside)
 TT_entrance_outside:connect_two_ways_entrance("Thieves Town Entrance", TT_entrance_inside)
 Dark_village_shop_outside:connect_two_ways_entrance("Dark Village Shop", Dark_village_shop_inside)
-Dark_village_shop_outside:connect_one_way(Kakariko_overgrown_house_outside, function() 
+Dark_village_shop_outside:connect_one_way(Kakariko_overgrown_house_outside, function()
     return ALL(
         OpenOrStandard, 
         CanChangeWorldWithMirror
@@ -507,6 +510,7 @@ Dark_village_shop_inside:connect_one_way("Village of Outcasts Shop Center")
 Dark_village_shop_inside:connect_one_way("Village of Outcasts Shop Right")
 
 Brewery_inside:connect_one_way("Brewery Chest", function() return CanInteract(Brewery_inside) end)
+Brewery_inside:connect_one_way("Brewery - Pot #1", function() return CanInteract(Brewery_inside) end)
 
 
 Village_of_the_outcast:connect_two_ways(Hammer_peg_field, function() return ALL("titans", CanInteract(Village_of_the_outcast)) end)
@@ -526,6 +530,10 @@ end)
 Peg_cave_outside:connect_two_ways_entrance("Peg Cave", Peg_cave_inside)
 
 Peg_cave_inside:connect_one_way("Peg-Cave Item")
+Peg_cave_inside:connect_one_way("Peg-Cave - Pots #1", function() return CanInteract(Peg_cave_inside) end)
+Peg_cave_inside:connect_one_way("Peg-Cave - Pots #2", function() return CanInteract(Peg_cave_inside) end)
+Peg_cave_inside:connect_one_way("Peg-Cave - Pots #3", function() return CanInteract(Peg_cave_inside) end)
+Peg_cave_inside:connect_one_way("Peg-Cave - Pots #4", function() return CanInteract(Peg_cave_inside) end)
 
 Village_of_the_outcast:connect_two_ways(Helpless_frog, function() return ALL("titans", CanInteract(Village_of_the_outcast)) end)
 
@@ -688,6 +696,12 @@ Bumpercave_top_back:connect_two_ways(Bumpercave_top_front, function()
         CanInteract(Bumpercave_top_back, "cape")
     )
 end)
+Bumpercave_top_back:connect_one_way("Bumper Cave - Pot #1", function() return CanInteract(Bumpercave_top_back) end)
+Bumpercave_top_back:connect_one_way("Bumper Cave - Pot #2", function() return CanInteract(Bumpercave_top_back) end)
+Bumpercave_top_back:connect_one_way("Bumper Cave - Pot #3", function() return CanInteract(Bumpercave_top_back) end)
+Bumpercave_top_back:connect_one_way("Bumper Cave - Pot #4", function() return CanInteract(Bumpercave_top_back) end)
+Bumpercave_top_back:connect_one_way("Bumper Cave - Pot #5", function() return CanInteract(Bumpercave_top_back) end)
+
 Bumpercave_top_front:connect_two_ways(Dark_bumper_cave_top_inside)
 
 Dark_bumper_cave_top_outside:connect_two_ways_entrance("Bumper Cave Top", Dark_bumper_cave_top_inside, function() return OpenOrStandard() end)
@@ -982,7 +996,10 @@ Dark_lake_hylia_fairy_outside:connect_two_ways_entrance("Dark PoD Fairy", Dark_l
 PoD_east_darkworld_hint_outside:connect_two_ways_entrance("PoD Teleporter Cave", PoD_east_darkworld_hint_inside)
 
 -- PoD_entrance_outside:connect_two_ways_entrance("Palace of Darkness Entrance", PoD_entrance_inside)
-
+PoD_hint_house_inside:connect_one_way("PoD Hint - Pot #1", function() return CanInteract(PoD_hint_house_inside) end)
+PoD_hint_house_inside:connect_one_way("PoD Hint - Pot #2", function() return CanInteract(PoD_hint_house_inside) end)
+PoD_hint_house_inside:connect_one_way("PoD Hint - Pot #3", function() return CanInteract(PoD_hint_house_inside) end)
+PoD_hint_house_inside:connect_one_way("PoD Hint - Pot #4", function() return CanInteract(PoD_hint_house_inside) end)
 
 
 
@@ -1127,31 +1144,38 @@ Dark_floating_island:connect_one_way(Floating_island, function() return ALL(CanC
 Floating_island:connect_one_way(Dark_floating_island, function() return ALL(CanChangeWorldWithMirror,Inverted) end)
 Dark_floating_island:connect_one_way(Dark_death_mountain_right_top)
 
-
-Hookshot_cave_inside:connect_one_way("Hookshot Cave Item Bottom Right", function()
+Hookshot_cave_inside:connect_two_ways(Hookshot_cave_bonk_islands, function()
     return ANY(
         ALL("hookshot", CanInteract(Hookshot_cave_inside, "hookshot")),
         ALL("boots", CanInteract(Hookshot_cave_inside, "boots"))
     )
 end)
-Hookshot_cave_inside:connect_one_way("Hookshot Cave Item Top Right", function()
+Hookshot_cave_bonk_islands:connect_two_ways(Hookshot_cave_hook_islands, function()
     return ALL(
         "hookshot",
-        CanInteract(Hookshot_cave_inside, "hookshot")
+        CanInteract(Hookshot_cave_bonk_islands, "hookshot")
     )
 end)
-Hookshot_cave_inside:connect_one_way("Hookshot Cave Item Top Left", function()
-    return ALL(
-        "hookshot",
-        CanInteract(Hookshot_cave_inside, "hookshot")
-    )
-end)
-Hookshot_cave_inside:connect_one_way("Hookshot Cave Item Bottom Left", function()
-    return ALL(
-        "hookshot",
-        CanInteract(Hookshot_cave_inside, "hookshot")
-    )
-end)
+
+
+Hookshot_cave_bonk_islands:connect_one_way("Hookshot Cave Item Bottom Right")
+Hookshot_cave_hook_islands:connect_one_way("Hookshot Cave Item Top Right")
+Hookshot_cave_hook_islands:connect_one_way("Hookshot Cave Item Top Left")
+Hookshot_cave_hook_islands:connect_one_way("Hookshot Cave Item Bottom Left")
+
+Hookshot_cave_bonk_islands:connect_one_way("Hookshot Cave - Bonk Islands Pot #5")
+Hookshot_cave_bonk_islands:connect_one_way("Hookshot Cave - Bonk Islands Pot #7")
+Hookshot_cave_bonk_islands:connect_one_way("Hookshot Cave - Bonk Islands Pot #8")
+
+Hookshot_cave_hook_islands:connect_one_way("Hookshot Cave - Hook Islands Pot #1")
+Hookshot_cave_hook_islands:connect_one_way("Hookshot Cave - Hook Islands Pot #2")
+Hookshot_cave_hook_islands:connect_one_way("Hookshot Cave - Hook Islands Pot #3")
+Hookshot_cave_hook_islands:connect_one_way("Hookshot Cave - Hook Islands Pot #4")
+
+Hookshot_cave_inside:connect_one_way("Hookshot Cave - Front Pot #6", function() return CanInteract(Hookshot_cave_inside, "hookshot") end)
+Hookshot_cave_inside:connect_one_way("Hookshot Cave - Middle Pot #1", function() return CanInteract(Hookshot_cave_inside, "hookshot") end)
+Hookshot_cave_inside:connect_one_way("Hookshot Cave - Middle Pot #2", function() return CanInteract(Hookshot_cave_inside, "hookshot") end)
+
 
 TR_eye_bridge_entrance_outside:connect_two_ways(TR_eye_bridge_entrance_ledge)
 TR_eye_bridge_entrance_ledge:connect_one_way(Light_eyebridge_fairy_ledge, function()
@@ -1187,7 +1211,7 @@ Dark_death_mountain_left_bottom:connect_one_way(Light_death_mountain_left_top, f
         OpenOrStandard
     )
 end)
-Spike_cave_inside:connect_one_way("Spike Cave Chest", function()
+Spike_cave_inside:connect_two_ways(Spike_cave_back, function()
     return ALL(
         "hammer",
         "glove",
@@ -1213,6 +1237,17 @@ Spike_cave_inside:connect_one_way("Spike Cave Chest", function()
         )
     )
 end)
+
+Spike_cave_back:connect_one_way("Spike Cave Chest")
+Spike_cave_back:connect_one_way("Spike Cave - Pots #1")
+Spike_cave_back:connect_one_way("Spike Cave - Pots #2")
+Spike_cave_back:connect_one_way("Spike Cave - Pots #3")
+Spike_cave_back:connect_one_way("Spike Cave - Pots #4")
+Spike_cave_back:connect_one_way("Spike Cave - Pots #5")
+Spike_cave_back:connect_one_way("Spike Cave - Pots #6")
+Spike_cave_back:connect_one_way("Spike Cave - Pots #7")
+Spike_cave_back:connect_one_way("Spike Cave - Pots #8")
+
 Dark_death_mountain_left_bottom:connect_one_way(Dark_death_mountain_left_top, function() return Inverted() end)
 
 Dark_death_mountain_left_bottom:connect_two_ways(Dark_death_mountain_fairy_outside)

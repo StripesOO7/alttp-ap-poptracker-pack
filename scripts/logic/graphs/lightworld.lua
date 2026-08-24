@@ -183,36 +183,74 @@ Kakariko_overgrown_house_outside:connect_one_way(Dark_village_shop_outside, func
     )
 end)
 
+Kakariko_snitch_house_left_inside:connect_one_way("Snitch Lady East - Pot #1", function () return CanInteract(Kakariko_snitch_house_left_inside) end)
+Kakariko_snitch_house_left_inside:connect_one_way("Snitch Lady West - Pot #2", function () return CanInteract(Kakariko_snitch_house_left_inside) end)
+Kakariko_snitch_house_right_inside:connect_one_way("Snitch Lady West - Pot #3", function () return CanInteract(Kakariko_snitch_house_right_inside) end)
+Kakariko_bombhut_inside:connect_one_way("Bomb Hut - Pot #1", function() return CanInteract(Kakariko_bombhut_inside) end)
+Kakariko_bombhut_inside:connect_one_way("Bomb Hut - Pot #2", function() return CanInteract(Kakariko_bombhut_inside) end)
+Kakariko_bombhut_inside:connect_one_way("Bomb Hut - Pot #3", function() return CanInteract(Kakariko_bombhut_inside) end)
+Kakariko_bombhut_inside:connect_one_way("Bomb Hut - Pot #4", function() return CanInteract(Kakariko_bombhut_inside) end)
+Kakariko_bombhut_inside:connect_one_way("Bomb Hut - Pot #5", function() return CanInteract(Kakariko_bombhut_inside) end)
+Kakariko_bombhut_inside:connect_one_way("Bomb Hut - Pot #6", function() return CanInteract(Kakariko_bombhut_inside) end)
+Kakariko_bombhut_inside:connect_one_way("Bomb Hut - Pot #7", function() return CanInteract(Kakariko_bombhut_inside) end)
+Kakariko_bombhut_inside:connect_one_way("Bomb Hut - Pot #8", function() return CanInteract(Kakariko_bombhut_inside) end)
+
 Kakariko_well_hole_inside:connect_one_way(Kakariko_well_ledge)
 Kakariko_well_ledge:connect_one_way(Kakariko_well_cave_inside)
-Kakariko_well_ledge:connect_one_way("Kakariko Well - Top", function()
+Kakariko_well_ledge:connect_two_ways(Kakariko_well_back, function()
     return ALL(
         "bombs",
         CanInteract(Kakariko_well_ledge)
     )
 end)
+
+Kakariko_well_back:connect_one_way("Kakariko Well - Top")
+Kakariko_well_back:connect_one_way("Kakariko Well - Pot #1")
+Kakariko_well_back:connect_one_way("Kakariko Well - Pot #2")
+Kakariko_well_back:connect_one_way("Kakariko Well - Pot #3")
+Kakariko_well_back:connect_one_way("Kakariko Well - Pot #4")
+
 Kakariko_well_ledge:connect_one_way("Kakariko Well - Left", function() return CanInteract(Kakariko_well_ledge) end) -- can interact as bunny
 Kakariko_well_ledge:connect_one_way("Kakariko Well - Middle", function() return CanInteract(Kakariko_well_ledge) end) -- can interact as bunny
 Kakariko_well_ledge:connect_one_way("Kakariko Well - Right", function() return CanInteract(Kakariko_well_ledge) end) -- can interact as bunny
 Kakariko_well_ledge:connect_one_way("Kakariko Well - Bottom", function() return CanInteract(Kakariko_well_ledge) end) -- can interact as bunny
+Kakariko_well_ledge:connect_one_way("Kakariko Well - Pot #5", function() return CanInteract(Kakariko_well_ledge) end) -- can interact as bunny
+Kakariko_well_ledge:connect_one_way("Kakariko Well - Pot #6", function() return CanInteract(Kakariko_well_ledge) end) -- can interact as bunny
+
+Kakariko_well_cave_inside:connect_one_way("Kakariko Well - Pot #7", function() return CanInteract(Kakariko_well_ledge) end)
+Kakariko_well_cave_inside:connect_one_way("Kakariko Well - Pot #8", function() return CanInteract(Kakariko_well_ledge) end)
 
 
 
-
-
+Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Top Pot #1", function() return CanInteract(Kakariko_blinds_hideout_inside) end)
+Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Top Pot #2", function() return CanInteract(Kakariko_blinds_hideout_inside) end)
+Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Top Pot #3", function() return CanInteract(Kakariko_blinds_hideout_inside) end)
+Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Top Pot #4", function() return CanInteract(Kakariko_blinds_hideout_inside) end)
+Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Back Pot #1", function() return ALL("bombs", CanInteract(Kakariko_blinds_hideout_inside, "bombs")) end)
+Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Back Pot #2", function() return ALL("bombs", CanInteract(Kakariko_blinds_hideout_inside, "bombs")) end)
+Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Back Pot #3", function() return ALL("bombs", CanInteract(Kakariko_blinds_hideout_inside, "bombs")) end)
+Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Back Pot #4", function() return ALL("bombs", CanInteract(Kakariko_blinds_hideout_inside, "bombs")) end)
+Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Back Pot #5", function() return ALL("bombs", CanInteract(Kakariko_blinds_hideout_inside, "bombs")) end)
+Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Back Pot #6", function() return ALL("bombs", CanInteract(Kakariko_blinds_hideout_inside, "bombs")) end)
 Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Back", function() return ALL("bombs", CanInteract(Kakariko_blinds_hideout_inside, "bombs")) end)
 Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Far Left", function() return CanInteract(Kakariko_blinds_hideout_inside) end)
 Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Left", function() return CanInteract(Kakariko_blinds_hideout_inside) end)
 Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Right", function() return CanInteract(Kakariko_blinds_hideout_inside) end)
 Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Far Right", function() return CanInteract(Kakariko_blinds_hideout_inside) end)
 
+Kakariko_elder_house_right_inside:connect_one_way("Elder House Pot - Pot #1", function () return CanInteract(Kakariko_elder_house_right_inside) end)
+Kakariko_elder_house_right_inside:connect_one_way("Elder House Pot - Pot #2", function () return CanInteract(Kakariko_elder_house_right_inside) end)
+Kakariko_elder_house_right_inside:connect_one_way("Elder House Pot - Pot #3", function () return CanInteract(Kakariko_elder_house_right_inside) end)
 Kakariko_elder_house_left_inside:connect_two_ways(Kakariko_elder_house_right_inside)
 
 
 Kakariko_chickenhut_inside:connect_one_way("Chicken Hut", function() return ALL("bombs", CanInteract(Kakariko_chickenhut_inside, "bombs")) end)
+Kakariko_chickenhut_inside:connect_one_way("Chicken Hut - Pot #1", function() return CanInteract(Kakariko_chickenhut_inside, "bombs") end)
 
 
 Kakariko_sick_kid_inside:connect_one_way("Sick Kid", function() return Has("bottle") end) -- can interact as bunny
+Kakariko_sick_kid_inside:connect_one_way("Sick Kid - Pots #1", function() return CanInteract(Kakariko_sick_kid_inside) end) -- can interact as bunny
+Kakariko_sick_kid_inside:connect_one_way("Sick Kid - Pots #2", function() return CanInteract(Kakariko_sick_kid_inside) end) -- can interact as bunny
 
 
 
@@ -225,7 +263,9 @@ Kakariko_shop_inside:connect_one_way("Kakariko Shop Right")
 
 
 Kakariko_backside_pub_inside:connect_one_way("Backside Pub", function() return CanInteract(Kakariko_backside_pub_inside) end)
-
+Kakariko_backside_pub_inside:connect_one_way("Backside Pub - Pot #1", function() return CanInteract(Kakariko_backside_pub_inside) end)
+Kakariko_backside_pub_inside:connect_one_way("Backside Pub - Pot #2", function() return CanInteract(Kakariko_backside_pub_inside) end)
+Kakariko_frontside_pub_inside:connect_one_way("Tavern Front - Pot #3", function() return CanInteract(Kakariko_frontside_pub_inside) end)
 
 
 
@@ -242,9 +282,12 @@ Dwarf_smiths_inside:connect_one_way("Rescue Dwarf")
 --     )
 -- end)
 
+Magic_bat_hole_inside:connect_one_way("Magic Bat - Pot #1")
+Magic_bat_hole_inside:connect_one_way("Magic Bat - Pot #2")
 
 Magic_bat_hole_inside:connect_one_way(Magic_bat_item)
 Magic_bat_hole_inside:connect_one_way(Magic_bat_cave_inside)
+
 
 Magic_bat_item:connect_one_way("Magic Bat", function()
     return ANY(
@@ -420,6 +463,14 @@ Graveyard_ledge:connect_one_way(Sanctuary_area, OpenOrStandard)
 
 Graveyard_ledge_outside:connect_two_ways_entrance("Graveyardledge Cave", Graveyard_ledge_inside)
 
+Graveyard_ledge_inside:connect_one_way("Graveyard Ledge - Pots #7", function() return CanInteract(Graveyard_ledge_inside) end)
+Graveyard_ledge_inside:connect_one_way("Graveyard Ledge - Pots #8", function() return CanInteract(Graveyard_ledge_inside) end)
+Graveyard_ledge_inside:connect_one_way("Graveyard Ledge - Pots #9", function() return CanInteract(Graveyard_ledge_inside) end)
+Graveyard_ledge_inside:connect_one_way("Graveyard Ledge - Pots #10", function() return CanInteract(Graveyard_ledge_inside) end)
+Graveyard_ledge_inside:connect_one_way("Graveyard Ledge - Pots #11", function() return CanInteract(Graveyard_ledge_inside) end)
+Graveyard_ledge_inside:connect_one_way("Graveyard Ledge - Pots #12", function() return CanInteract(Graveyard_ledge_inside) end)
+Graveyard_ledge_inside:connect_one_way("Graveyard Ledge - Pots #13", function() return CanInteract(Graveyard_ledge_inside) end)
+Graveyard_ledge_inside:connect_one_way("Graveyard Ledge - Pots #14", function() return CanInteract(Graveyard_ledge_inside) end)
 Graveyard_ledge_inside:connect_one_way("Graveyard Ledge Item", function()
     return ALL(
         CanInteract(Graveyard_ledge_inside, "bombs"),
@@ -552,6 +603,16 @@ Dam_desert_fairy_outside:connect_two_ways_entrance("Desert Fairy", Dam_desert_fa
 Fifty_rupee_thief_outside:connect_two_ways_entrance("50 Rupee Cave", Fifty_rupee_thief_inside)
 Mini_moldorm_cave_outside:connect_two_ways_entrance("Mini Moldorm Cave", Mini_moldorm_cave_inside)
 
+Fifty_rupee_thief_inside:connect_one_way("50 Rupee Cave - Pot #1", function() return CanInteract(Fifty_rupee_thief_inside) end)
+Fifty_rupee_thief_inside:connect_one_way("50 Rupee Cave - Pot #2", function() return CanInteract(Fifty_rupee_thief_inside) end)
+Fifty_rupee_thief_inside:connect_one_way("50 Rupee Cave - Pot #3", function() return CanInteract(Fifty_rupee_thief_inside) end)
+Fifty_rupee_thief_inside:connect_one_way("50 Rupee Cave - Pot #4", function() return CanInteract(Fifty_rupee_thief_inside) end)
+Fifty_rupee_thief_inside:connect_one_way("50 Rupee Cave - Pot #5", function() return CanInteract(Fifty_rupee_thief_inside) end)
+Fifty_rupee_thief_inside:connect_one_way("50 Rupee Cave - Pot #6", function() return CanInteract(Fifty_rupee_thief_inside) end)
+Fifty_rupee_thief_inside:connect_one_way("50 Rupee Cave - Pot #7", function() return CanInteract(Fifty_rupee_thief_inside) end)
+Fifty_rupee_thief_inside:connect_one_way("50 Rupee Cave - Pot #8", function() return CanInteract(Fifty_rupee_thief_inside) end)
+Fifty_rupee_thief_inside:connect_one_way("50 Rupee Cave - Pot #9", function() return CanInteract(Fifty_rupee_thief_inside) end)
+Fifty_rupee_thief_inside:connect_one_way("50 Rupee Cave - Pot #10", function() return CanInteract(Fifty_rupee_thief_inside) end)
 
 Dam_inside:connect_one_way("Floodgate Chest", function() return CanInteract(Dam_inside) end)
 
@@ -721,6 +782,9 @@ Lumberjacks_hole_outside:connect_one_way_entrance("Tree Hole", Lumberjacks_hole_
 end)
 Lumberjacks_cave_outside:connect_two_ways_entrance("Lumberjacks Cave", Lumberjacks_cave_inside)
 Lumberjacks_house_outside:connect_two_ways_entrance("Lumberjacks House", Lumberjacks_house_inside)
+
+Lumberjacks_house_inside:connect_one_way("Lumberjacks House - Pot #1", function() return CanInteract(Lumberjacks_house_inside) end)
+Lumberjacks_house_inside:connect_one_way("Lumberjacks House - Pot #2", function() return CanInteract(Lumberjacks_house_inside) end)
 -- Lumberjacks_area:connect_two_ways_entrance("Light Death Mountain Ascent", Light_death_mountain_ascent, function() return "glove" end)
  -- aga item cave
 
@@ -885,6 +949,11 @@ Light_lake_hylia:connect_two_ways(Upgrade_fairy_island, function()
     )
 end)
 
+Twenty_rupee_thief_inside:connect_one_way("Twenty Rupee Cave - Pot #1", function() return CanInteract(Twenty_rupee_thief_inside) end)
+Twenty_rupee_thief_inside:connect_one_way("Twenty Rupee Cave - Pot #2", function() return CanInteract(Twenty_rupee_thief_inside) end)
+Twenty_rupee_thief_inside:connect_one_way("Twenty Rupee Cave - Pot #3", function() return CanInteract(Twenty_rupee_thief_inside) end)
+Twenty_rupee_thief_inside:connect_one_way("Twenty Rupee Cave - Pot #4", function() return CanInteract(Twenty_rupee_thief_inside) end)
+
 Light_lake_shop_inside:connect_one_way("Lake Hylia Shop - Left")
 Light_lake_shop_inside:connect_one_way("Lake Hylia Shop - Center")
 Light_lake_shop_inside:connect_one_way("Lake Hylia Shop - Right")
@@ -961,13 +1030,22 @@ Links_house_outside:connect_two_ways_entrance("Link's House", Links_house_inside
 Links_house_outside:connect_two_ways_entrance("Link's House", Big_bomb_shop_inside, function() return Inverted() end)
 Links_fairy_fountain_outside:connect_two_ways_entrance("Links Fairy", Links_fairy_fountain_inside)
 
-Links_house_inside:connect_one_way("Link's House Chest")
+Links_house_inside:connect_one_way("Link's House Chest", function() return CanInteract(Links_house_inside) end)
+Links_house_inside:connect_one_way("Link's House - Pot #1", function() return CanInteract(Links_house_inside) end)
+Links_house_inside:connect_one_way("Link's House - Pot #2", function() return CanInteract(Links_house_inside) end)
+Links_house_inside:connect_one_way("Link's House - Pot #3", function() return CanInteract(Links_house_inside) end)
 
 Cave45_ledge:connect_two_ways(Cave45_outside)
 Cave45_outside:connect_two_ways_entrance("Cave 45 Inside", Cave45_inside)
 Cave45_ledge:connect_one_way(Links_house_area, function() return OpenOrStandard() end)
 Cave45_ledge:connect_two_ways(Links_house_area, function() return Inverted() end)
 Cave45_inside:connect_one_way("Cave 45", function() return ANY(CanInteract(Cave45_inside), ACCESS_INSPECT) end)
+Cave45_inside:connect_one_way("Cave 45 - Pot #1", function() return CanInteract(Cave45_inside) end)
+Cave45_inside:connect_one_way("Cave 45 - Pot #2", function() return CanInteract(Cave45_inside) end)
+Cave45_inside:connect_one_way("Cave 45 - Pot #3", function() return CanInteract(Cave45_inside) end)
+Cave45_inside:connect_one_way("Cave 45 - Pot #4", function() return CanInteract(Cave45_inside) end)
+Cave45_inside:connect_one_way("Cave 45 - Pot #5", function() return CanInteract(Cave45_inside) end)
+Cave45_inside:connect_one_way("Cave 45 - Pot #6", function() return CanInteract(Cave45_inside) end)
 
 Links_house_area:connect_one_way("Flute Spot", function()
     return ALL(
@@ -1028,6 +1106,10 @@ EP_entrance_outside:connect_two_ways_entrance("Eastern Palace Entrance", EP_entr
 
 
 Sahasralahs_hut_inside:connect_one_way("Sahasralah", function() return Has("greenpendant") end)
+Sahasralahs_hut_inside:connect_one_way("Sahasralah - Pot #1", function() return CanInteract(Sahasralahs_hut_inside) end)
+Sahasralahs_hut_inside:connect_one_way("Sahasralah - Pot #2", function() return CanInteract(Sahasralahs_hut_inside) end)
+Sahasralahs_hut_inside:connect_one_way("Sahasralah - Pot #3", function() return CanInteract(Sahasralahs_hut_inside) end)
+
 Sahasralahs_hut_inside:connect_two_ways(Sahasralahs_hut_back, function()
     return ANY(
         ALL("bombs", CanInteract(Sahasralahs_hut_inside, "bombs")),
@@ -1164,6 +1246,8 @@ Secret_passage_stairs_inside:connect_two_ways(Secret_passage)
 
 Secret_passage:connect_one_way("Secret Passage", function() return CanInteract(Secret_passage) end)
 Secret_passage:connect_one_way("Link's Uncle")
+Secret_passage:connect_one_way("Secret Passage - Pot #1", function() return CanInteract(Secret_passage) end)
+Secret_passage:connect_one_way("Secret Passage - Pot #2", function() return CanInteract(Secret_passage) end)
 
 
 -- Witchhut
@@ -1242,7 +1326,15 @@ Old_man_cave_right_outside:connect_two_ways_entrance("Inverted Light Death Mount
 
 Light_death_mountain_return_right_outside:connect_two_ways_entrance("Light Death Mountain Return Right",Light_death_mountain_return_right_inside)
 
+Light_death_mountain_return_right_inside:connect_one_way("DM Return Cave Pot Right - Pot #1", function() return DarkRooms end)
+Light_death_mountain_return_right_inside:connect_one_way("DM Return Cave Pot Right - Pot #2", function() return DarkRooms end)
+Light_death_mountain_return_left_inside:connect_one_way("DM Return Cave Pot Left - Pot #1", function() return DarkRooms end)
+Light_death_mountain_return_left_inside:connect_one_way("DM Return Cave Pot Left - Pot #2", function() return DarkRooms end)
+Light_death_mountain_return_left_inside:connect_one_way("DM Return Cave Pot Left - Pot #3", function() return DarkRooms end)
+Light_death_mountain_return_left_inside:connect_one_way("DM Return Cave Pot Left - Pot #4", function() return DarkRooms end)
+
 Light_death_mountain_return_right_inside:connect_two_ways(Light_death_mountain_return_left_inside, function() return DarkRooms end)
+Old_man_cave_right_inside:connect_one_way("Old Man Cave Pot - Pot #1", function() return DarkRooms end)
 Old_man_cave_right_inside:connect_two_ways(Old_man_cave, function() return DarkRooms end)
 
 -- Light_death_mountain_ascent_ledge:connect_one_way(Light_death_mountain_ascent, function()
@@ -1370,8 +1462,13 @@ Spec_rock_ledge_exit:connect_one_way(Light_death_mountain_left_bottom)
 
 -- cave mide left lightg DM bottom
 
+Old_man_home_bottom_inside:connect_one_way("Old Man House Pot - Pot #1")
+Old_man_home_bottom_inside:connect_one_way("Old Man House Pot - Pot #2")
 Old_man_home_bottom_inside:connect_two_ways(Old_man_home_top_inside, function() return DarkRooms end)
-
+Old_man_home_top_inside:connect_one_way("Old Man House Back Pot - Pot #1", function() return DarkRooms end)
+Old_man_home_top_inside:connect_one_way("Old Man House Back Pot - Pot #2", function() return DarkRooms end)
+Old_man_home_top_inside:connect_one_way("Old Man House Back Pot - Pot #3", function() return DarkRooms end)
+Old_man_home_top_inside:connect_one_way("Old Man House Back Pot - Pot #4", function() return DarkRooms end)
 
 -- Light_death_mountain_left_top
 
@@ -1482,7 +1579,7 @@ Paradox_cave_middle_entrance_outside:connect_two_ways_entrance("Paradox Cave Mid
 Fairy_ascension_cave_bottom_outside:connect_two_ways_entrance("Fairy Ascension Cave Bottom", Fairy_ascension_cave_bottom_inside)
 Fairy_ascension_cave_bottom_outside:connect_one_way(Light_death_mountain_right_bottom) --back to dm
 Hookshot_fairy_outside:connect_two_ways_entrance("Hookshot Fairy Cave", Hookshot_fairy_inside)
-
+Hookshot_fairy_inside:connect_one_way("Hookshot Fairy - Pot #1", function() return ALL(CanInteract(Hookshot_fairy_inside), "hookshot") end)
 -- Paradox_cave_bottom:connect_one_way(Paradox_cave_top)
 -- Paradox_cave_bottom:connect_two_ways_entrance("Light Death Mountain Shop", Light_death_mountain_shop, function() return "bombs" end)
 
@@ -1576,6 +1673,10 @@ end)
 
 Fairy_ascension_cave_top_outside:connect_two_ways_entrance("Fairy Ascention Top Entrance", Fairy_ascension_cave_top_inside)
 Fairy_ascension_cave_top_inside:connect_two_ways(Fairy_ascension_cave_bottom_inside)
+Fairy_ascension_cave_top_inside:connect_one_way("Fairy Ascension Cave Top Pot - Pot #1")
+Fairy_ascension_cave_top_inside:connect_one_way("Fairy Ascension Cave Top Pot - Pot #2")
+Fairy_ascension_cave_bottom_inside:connect_one_way("Fairy Ascension Cave Bottom Pot - Pot #3")
+Fairy_ascension_cave_bottom_inside:connect_one_way("Fairy Ascension Cave Bottom Pot - Pot #4")
 
 Spiral_cave_top_inside:connect_one_way(Spiral_cave_bottom_inside)
 Spiral_cave_top_inside:connect_one_way("Spiral Cave Item", function() return CanInteract(Spiral_cave_top_inside, "sword") end)
@@ -1624,6 +1725,7 @@ end) -- go to the 5 chests
 
 Paradox_cave_bottom_entrance_inside:connect_two_ways(Paradox_cave_bottom_front)
 
+Paradox_cave_bottom_front:connect_one_way("Paradox Cave Bottom - Front Pot #3", function() return CanInteract(Paradox_cave_bottom_front) end)
 Paradox_cave_bottom_front:connect_two_ways(Paradox_cave_bottom_shop_entrance, function() return ALL("bombs", CanInteract(Paradox_cave_bottom_front, "bombs")) end)
 Paradox_cave_bottom_front:connect_two_ways(Paradox_cave_inside_bottom, function() return ALL("mirror", CanInteract(Paradox_cave_bottom_front)) end) --block delete with mirror
 
@@ -1636,6 +1738,8 @@ Light_death_mountain_right_top:connect_one_way(Dark_death_mountain_right_top, fu
         Inverted
     )
 end)
+Paradox_cave_bottom_back:connect_one_way("Paradox Cave Bottom Bomb Area - Pot #1", function() return CanInteract(Paradox_cave_bottom_back) end)
+Paradox_cave_bottom_back:connect_one_way("Paradox Cave Bottom Bomb Area - Pot #1", function() return CanInteract(Paradox_cave_bottom_back) end)
 Paradox_cave_bottom_back:connect_one_way("Paradox Cave Bottom Left", function() return CanInteract(Paradox_cave_bottom_back) end)
 Paradox_cave_bottom_back:connect_one_way("Paradox Cave Bottom Right", function() return CanInteract(Paradox_cave_bottom_back) end)
 Paradox_cave_top_back:connect_one_way("Paradox Cave Top Far Left", function() return CanInteract(Paradox_cave_top_back) end)
