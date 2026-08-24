@@ -130,7 +130,7 @@ SP_flood_first_trench_room_1W_door:connect_two_ways_entrance("", SP_main_room_no
 SP_main_room_north_east_ledge_E_door:connect_two_ways(SP_main_room_north_east_ledge)
 
 SP_main_room_north_east_ledge:connect_one_way("SP - Hub Dead Ledge Pot #1")
-SP_main_room_north_east_ledge:connect_one_way("SP - Hub Dead Ledge Pot #1")
+SP_main_room_north_east_ledge:connect_one_way("SP - Hub Dead Ledge Pot #2")
 
 SP_first_trench:connect_two_ways(SP_first_trench_3W_door)
 SP_first_trench_3W_door:connect_two_ways_entrance("", SP_main_room_4E_door)

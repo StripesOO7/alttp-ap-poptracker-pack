@@ -389,14 +389,14 @@ GT_top_pinball_crystal_switch_2E_door:connect_two_ways_entrance_door_stuck("", G
 GT_top_cannonball_bridge_1W_door:connect_two_ways(GT_top_cannonball_bridge)
 GT_top_cannonball_bridge:connect_two_ways(GT_top_refill_room) -- todo
 
-GT_top_refill_room:connect_two_ways("GT - Refill Pot #1")
-GT_top_refill_room:connect_two_ways("GT - Refill Pot #2")
-GT_top_refill_room:connect_two_ways("GT - Refill Pot #3")
-GT_top_refill_room:connect_two_ways("GT - Refill Pot #4")
-GT_top_refill_room:connect_two_ways("GT - Refill Pot #5")
-GT_top_refill_room:connect_two_ways("GT - Refill Pot #6")
-GT_top_refill_room:connect_two_ways("GT - Refill Pot #7")
-GT_top_refill_room:connect_two_ways("GT - Refill Pot #8")
+GT_top_refill_room:connect_one_way("GT - Refill Pot #1")
+GT_top_refill_room:connect_one_way("GT - Refill Pot #2")
+GT_top_refill_room:connect_one_way("GT - Refill Pot #3")
+GT_top_refill_room:connect_one_way("GT - Refill Pot #4")
+GT_top_refill_room:connect_one_way("GT - Refill Pot #5")
+GT_top_refill_room:connect_one_way("GT - Refill Pot #6")
+GT_top_refill_room:connect_one_way("GT - Refill Pot #7")
+GT_top_refill_room:connect_one_way("GT - Refill Pot #8")
 
 GT_top_cannonball_bridge:connect_two_ways(GT_top_cannonball_bridge_2N_door)
 GT_top_cannonball_bridge_2N_door:connect_two_ways_entrance("", GT_top_5_blocks_conveyor_2N_door)
