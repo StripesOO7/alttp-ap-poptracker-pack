@@ -2026,11 +2026,11 @@
                 "sections": [
                     {
                         "name": "EP False Switches 3N door",
-                        "access_rules": ["^$CanReach|EP_false_switches_3N_door"],
+                        "access_rules": ["^$CanReach|EP_attic_start_3N_door"],
                         "clear_as_group": false,
                         "item_size":128,
                         "visibility_rules": ["doors_enabled"],
-                        "hosted_item": "from_EP_false_switches_3N_door"
+                        "hosted_item": "from_EP_attic_start_3N_door"
                     },
                     {
                         "name":  "Enemies to kill",
@@ -2066,11 +2066,11 @@
                 "sections": [
                     {
                         "name": "EP False Switches 3W door",
-                        "access_rules": ["^$CanReach|EP_false_switches_3W_door"],
+                        "access_rules": ["^$CanReach|EP_attic_start_3W_door"],
                         "clear_as_group": false,
                         "item_size":128,
                         "visibility_rules": ["doors_enabled"],
-                        "hosted_item": "from_EP_false_switches_3W_door"
+                        "hosted_item": "from_EP_attic_start_3W_door"
                     },
                     {
                         "name":  "Enemies to kill",
@@ -2106,11 +2106,11 @@
                 "sections": [
                     {
                         "name": "EP Eyegore Switches 4E door",
-                        "access_rules": ["^$CanReach|EP_eyegore_switches_4E_door"],
+                        "access_rules": ["^$CanReach|EP_false_switches_4E_door"],
                         "clear_as_group": false,
                         "item_size":128,
                         "visibility_rules": ["doors_enabled"],
-                        "hosted_item": "from_EP_eyegore_switches_4E_door"
+                        "hosted_item": "from_EP_false_switches_4E_door"
                     },
                     {
                         "name":  "Enemies to kill",

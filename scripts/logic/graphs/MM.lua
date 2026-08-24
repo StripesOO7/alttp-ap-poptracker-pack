@@ -129,6 +129,11 @@ MM_wizrobe_room:connect_two_ways(MM_wizrobe_room_2N_door)
 MM_wizrobe_room_2N_door:connect_two_ways_entrance("", MM_main_room_4S_door)
 MM_main_room_4S_door:connect_two_ways(MM_main_room)
 
+MM_main_room:connect_one_way("MM - Hub Switch Pot #1") --needs switch
+MM_main_room:connect_one_way("MM - Hub Right Pot #2")
+MM_main_room:connect_one_way("MM - Hub Pot #3")
+MM_main_room:connect_one_way("MM - Hub Pot #4")
+
 MM_main_room:connect_two_ways(MM_main_room_1N_door)
 MM_main_room_1N_door:connect_two_ways_entrance("", MM_bomb_slug_room_3S_door)
 MM_bomb_slug_room_3S_door:connect_two_ways(MM_bomb_slug_room)
@@ -157,6 +162,19 @@ MM_2_torches_hidden_shooter:connect_two_ways(MM_2_torches_hidden_shooter_4E_door
 MM_2_torches_hidden_shooter_4E_door:connect_two_ways_entrance("", MM_spike_room_3W_door)
 
 MM_spike_room_3W_door:connect_two_ways(MM_spike_room)
+
+
+MM_spike_room:connect_one_way("MM - Spike Chest", function()
+    return ANY(
+        CalcHealth() > 3,
+        Has("invincibility")
+    )
+end)
+
+MM_spike_room:connect_one_way("MM - Spike Key Drop")
+MM_spike_room:connect_one_way("MM - Spikes Pot #2")
+MM_spike_room:connect_one_way("MM - Spikes Pot #3")
+
 MM_spike_room:connect_two_ways(MM_above_spike_room)
 MM_spike_room:connect_two_ways(MM_spike_room_3S_door)
 MM_spike_room_3S_door:connect_two_ways_entrance(MM_map_room_top_middle_1N_door)
@@ -170,6 +188,10 @@ MM_conveyor_crystal_room:connect_two_ways(MM_conveyor_crystal_room_4S_door)
 MM_conveyor_crystal_room_4S_door:connect_two_ways_entrance("", MM_neglected_room_2N_door)
 
 MM_neglected_room_2N_door:connect_two_ways(MM_neglected_room)
+MM_neglected_room:connect_one_way("MM - Neglected Room Pot #3")
+MM_neglected_room:connect_one_way("MM - Neglected Room Pot #4")
+MM_neglected_room:connect_one_way("MM - Neglected Room Pot #5")
+MM_neglected_room:connect_one_way("MM - Neglected Room Pot #6")
 MM_neglected_room:connect_two_ways(MM_chest_view)
 
 MM_conveyor_crystal_room:connect_two_ways(MM_four_torches_tile_room)
@@ -179,6 +201,10 @@ MM_four_torches_tile_room:connect_two_ways(MM_four_torches_tile_room_3S_door)
 
 MM_four_torches_tile_room_3S_door:connect_two_ways_entrance("", MM_conveyor_bomb_slug_room_1N_door)
 MM_conveyor_bomb_slug_room_1N_door:connect_two_ways(MM_conveyor_bomb_slug_room)
+
+MM_conveyor_bomb_slug_room:connect_one_way("MM - Conveyor Barrier Pot #1")
+MM_conveyor_bomb_slug_room:connect_one_way("MM - Conveyor Barrier Pot #2")
+
 MM_conveyor_bomb_slug_room:connect_two_ways(MM_conveyor_bomb_slug_room_N_door)
 
 MM_conveyor_bomb_slug_room_N_door:connect_two_ways_entrance("", MM_torches_top_N_door)
@@ -189,6 +215,13 @@ MM_torches_top:connect_two_ways(MM_torches_bottom)
 
 MM_torches_bottom:connect_one_way(MM_big_key_chest_teleporter_room) --drop down
 MM_torches_bottom:connect_two_ways(MM_cutscene_room)
+
+MM_cutscene_room:connect_one_way("MM - Hint Pot #1")
+MM_cutscene_room:connect_one_way("MM - Hint Pot #2")
+MM_cutscene_room:connect_one_way("MM - Hint Pot #3")
+MM_cutscene_room:connect_one_way("MM - Hint Pot #4")
+MM_cutscene_room:connect_one_way("MM - Hint Pot #5")
+MM_cutscene_room:connect_one_way("MM - Hint Pot #6")
 
 MM_cutscene_room:connect_one_way(MM_big_key_chest)
 MM_big_key_chest:connect_one_way(MM_big_key_chest_teleporter_room)
@@ -230,6 +263,19 @@ MM_bridge_EW:connect_two_ways(MM_bridge_EW_W_door)
 MM_bridge_EW_W_door:connect_two_ways_entrance("", MM_fishbone_room_E_door)
 
 MM_fishbone_room_E_door:connect_two_ways(MM_fishbone_room)
+
+MM_fishbone_room:connect_one_way("MM - Fishbone Key Drop")
+MM_fishbone_room:connect_one_way("MM - Fishbone Pot #2")
+MM_fishbone_room:connect_one_way("MM - Fishbone Pot #3")
+MM_fishbone_room:connect_one_way("MM - Fishbone Pot #4")
+MM_fishbone_room:connect_one_way("MM - Fishbone Pot #5")
+MM_fishbone_room:connect_one_way("MM - Fishbone Pot #6")
+MM_fishbone_room:connect_one_way("MM - Fishbone Pot #7")
+MM_fishbone_room:connect_one_way("MM - Fishbone Pot #8")
+MM_fishbone_room:connect_one_way("MM - Fishbone Pot #9")
+MM_fishbone_room:connect_one_way("MM - Fishbone Pot #10")
+MM_fishbone_room:connect_one_way("MM - Fishbone Pot #11")
+
 MM_fishbone_room:connect_two_ways(MM_fishbone_room_4S_door)
 MM_fishbone_room_4S_door:connect_two_ways_entrance("", MM_hourglas_room_2N_door)
 
@@ -241,13 +287,26 @@ MM_big_keydoor_room_2E_door:connect_two_ways(MM_big_key_door_room)
 
 MM_hourglas_room:connect_two_ways(MM_hourglas_room_4S_door)
 
+MM_big_key_door_room:connect_one_way("MM - BK Door Room Pot #1")
+MM_big_key_door_room:connect_one_way("MM - BK Door Room Pot #2")
+MM_big_key_door_room:connect_one_way("MM - BK Door Room Pot #3")
+MM_big_key_door_room:connect_one_way("MM - BK Door Room Pot #4")
+MM_big_key_door_room:connect_one_way("MM - BK Door Room Pot #5")
+MM_big_key_door_room:connect_one_way("MM - BK Door Room Pot #6")
 MM_big_key_door_room:connect_two_ways(MM_big_keydoor_room_N_door)
 MM_big_keydoor_room_N_door:connect_two_ways_entrance("", MM_bridge_middle_S_door)
 MM_bridge_middle_S_door:connect_two_ways(MM_bridge_middle)
+
+MM_bridge_middle:connect_one_way("MM - Left Bridge Pot #1")
+
 MM_bridge_middle:connect_two_ways(MM_bridge_middle_N_door)
 
 MM_bridge_middle_N_door:connect_two_ways_entrance("", MM_dark_shooters_N_door)
 MM_dark_shooters_N_door:connect_two_ways(MM_dark_shooters)
+
+MM_dark_shooters:connect_one_way("MM - Dark Shooters Pot #1")
+MM_dark_shooters:connect_one_way("MM - Dark Shooters Pot #3")
+
 MM_dark_shooters:connect_two_ways(MM_dark_key_rupees)
 MM_dark_shooters:connect_two_ways(MM_block_X)
 MM_block_X:connect_two_ways(MM_block_X_3W_door)
@@ -255,6 +314,10 @@ MM_block_X:connect_two_ways(MM_block_X_3W_door)
 MM_block_X_3W_door:connect_two_ways_entrance("", MM_tall_dark_and_roomy_4E_door)
 MM_tall_dark_and_roomy_4E_door:connect_two_ways(MM_tall_dark_and_roomy)
 
+MM_tall_dark_and_roomy:connect_one_way("MM - Tall Dark and Roomy Pot #1")
+MM_tall_dark_and_roomy:connect_one_way("MM - Tall Dark and Roomy Pot #2")
+MM_tall_dark_and_roomy:connect_one_way("MM - Tall Dark and Roomy Pot #3")
+MM_tall_dark_and_roomy:connect_one_way("MM - Tall Dark and Roomy Pot #4")
 MM_tall_dark_and_roomy:connect_two_ways(MM_shooter_rupees)
 MM_tall_dark_and_roomy:connect_two_ways(MM_crystal_right)
 MM_crystal_right:connect_two_ways(MM_crystal_middle)
@@ -264,6 +327,10 @@ MM_crystal_middle:connect_two_ways(MM_crystal_left)
 MM_crystal_left:connect_two_ways(MM_crystal_left_3W_door)
 MM_crystal_left_3W_door:connect_two_ways_entrance("", MM_falling_foes_4E_door)
 MM_falling_foes_4E_door:connect_two_ways(MM_falling_foes)
+
+MM_falling_foes:connect_one_way("MM - Falling Foes Pot #1")
+MM_falling_foes:connect_one_way("MM - Falling Foes Pot #2")
+
 MM_falling_foes:connect_two_ways(MM_falling_foes_2N_door)
 
 MM_falling_foes_2N_door:connect_two_ways_entrance("", MM_antechamber_right_2N_door)
@@ -284,16 +351,6 @@ MM_map_room_top_left:connect_one_way("MM - Map Chest")
 
 MM_bridge_right:connect_one_way("MM - Bridge Chest")
 
-MM_spike_room:connect_one_way("MM - Spike Chest", function()
-    return ANY(
-        CalcHealth() > 3,
-        Has("invincibility")
-    )
-end)
-
-MM_spike_room:connect_one_way("MM - Spike Key Drop")
-
-MM_fishbone_room:connect_one_way("MM - Fishbone Key Drop")
 
 MM_conveyor_crystal_room:connect_one_way("MM - Conveyor Crystal Key Drop")
 

@@ -56,6 +56,16 @@ DP_back_boss_room_3S_door = alttp_location.new("DP_back_boss_room_3S_door", "DP 
 ---
 
 DP_main_entrance_inside:connect_two_ways(DP_main_room)
+
+DP_main_room:connect_one_way("DP - Main Lobby Pot #1")
+DP_main_room:connect_one_way("DP - Main Lobby Pot #2")
+DP_main_room:connect_one_way("DP - Main Lobby Pot #3")
+DP_main_room:connect_one_way("DP - Main Lobby Pot #4")
+DP_main_room:connect_one_way("DP - Main Lobby Pot #5")
+DP_main_room:connect_one_way("DP - Main Lobby Pot #6")
+DP_main_room:connect_one_way("DP - Main Lobby Pot #7")
+DP_main_room:connect_one_way("DP - Main Lobby Pot #8")
+
 DP_main_room:connect_two_ways_entrance("", DP_main_room_N_door)
 DP_main_room:connect_two_ways_entrance("", DP_main_room_1N_door, function() return CanInteract(DP_main_room) end)
 DP_main_room:connect_two_ways_entrance("", DP_main_room_2N_door, function() return CanInteract(DP_main_room) end)
@@ -88,6 +98,18 @@ DP_torch_room:connect_one_way("DP - Torch", function()
 end)
 
 DP_west_sandworm_corner:connect_two_ways_stuck(DP_pot_circle, nil, function() return CanInteract(DP_pot_circle) end)
+
+DP_pot_circle:connect_one_way("DP - Circle of Pots Pot #1")
+DP_pot_circle:connect_one_way("DP - Circle of Pots Pot #2")
+DP_pot_circle:connect_one_way("DP - Circle of Pots Pot #3")
+DP_pot_circle:connect_one_way("DP - Circle of Pots Pot #4")
+DP_pot_circle:connect_one_way("DP - Circle of Pots Pot #5")
+DP_pot_circle:connect_one_way("DP - Circle of Pots Pot #6")
+DP_pot_circle:connect_one_way("DP - Circle of Pots Pot #7")
+DP_pot_circle:connect_one_way("DP - Circle of Pots Pot #8")
+DP_pot_circle:connect_one_way("DP - Circle of Pots Pot #9")
+DP_pot_circle:connect_one_way("DP - Circle of Pots Pot #10")
+
 DP_pot_circle:connect_two_ways_stuck(DP_big_chest_room, function() return CanInteract(DP_pot_circle) end)
 DP_big_chest_room:connect_one_way("DP - Big Chest", function() return ALL("bigkey", CanInteract(DP_big_chest_room)) end)
 
@@ -95,10 +117,23 @@ DP_west_sandworm_corner:connect_two_ways(DP_west_sandworm_corner_4S_door)
 DP_west_sandworm_corner_4S_door:connect_two_ways(DP_west_wing_2N_door)
 DP_west_wing_2N_door:connect_two_ways(DP_west_wing)
 
+DP_west_wing:connect_one_way("DP - West Wing Pot #1")
+DP_west_wing:connect_one_way("DP - West Wing Pot #2")
+DP_west_wing:connect_one_way("DP - West Wing Pot #3")
+DP_west_wing:connect_one_way("DP - West Wing Pot #4")
+
 DP_west_wing:connect_two_ways(DP_left_lobby)
 DP_left_lobby:connect_two_ways(DP_left_entrance_inside)
 
 DP_north_hallway:connect_two_ways(DP_map_chest_room)
+DP_map_chest_room:connect_one_way("DP - Map Room Pot #1")
+DP_map_chest_room:connect_one_way("DP - Map Room Pot #2")
+DP_map_chest_room:connect_one_way("DP - Map Room Pot #3")
+DP_map_chest_room:connect_one_way("DP - Map Room Pot #4")
+DP_map_chest_room:connect_one_way("DP - Map Room Pot #5")
+DP_map_chest_room:connect_one_way("DP - Map Room Pot #6")
+DP_map_chest_room:connect_one_way("DP - Map Room Pot #7")
+
 DP_map_chest_room:connect_one_way("DP - Map Chest", function() return CanInteract(DP_map_chest_room) end)
 
 DP_north_hallway:connect_two_ways(DP_north_hallway_4E_door)
@@ -106,9 +141,16 @@ DP_north_hallway_4E_door:connect_two_ways_entrance("", DP_east_3_pots_3W_door)
 DP_east_3_pots_3W_door:connect_two_ways(DP_east_3_pots)
 
 -- DP_west_3_pots:connect_two_ways() --trap
+DP_east_3_pots:connect_one_way("DP - Arrow Pot Corner Pot #1")
+DP_east_3_pots:connect_one_way("DP - Arrow Pot Corner Pot #2")
+DP_east_3_pots:connect_one_way("DP - Arrow Pot Corner Pot #3")
+
 DP_east_3_pots:connect_two_ways(DP_east_3_pots_3S_door)
 DP_east_3_pots_3S_door:connect_two_ways(DP_east_wing_1N_door)
 DP_east_wing_1N_door:connect_two_ways(DP_east_wing)
+
+DP_east_wing:connect_one_way("DP - East Wing Pot #1")
+DP_east_wing:connect_one_way("DP - East Wing Pot #2")
 
 DP_east_wing:connect_two_ways(DP_compass_room, function(keys, Current_Dungeon)
     if not Tracker:FindObjectForCode("key_drop_shuffle").Active then
@@ -142,6 +184,12 @@ DP_back_entrance_inside:connect_two_ways(DP_back_lobby)
 DP_back_lobby:connect_two_ways_stuck(DP_back_tiles1_room, function () return CanInteract(DP_back_lobby) end)
 
 DP_back_tiles1_room:connect_one_way("DP - Tile 1 Key Drop")
+DP_back_tiles1_room:connect_one_way("DP - Tiles 1 Pot #1")
+DP_back_tiles1_room:connect_one_way("DP - Tiles 1 Pot #2")
+DP_back_tiles1_room:connect_one_way("DP - Tiles 1 Pot #3")
+DP_back_tiles1_room:connect_one_way("DP - Tiles 1 Pot #4")
+DP_back_tiles1_room:connect_one_way("DP - Tiles 1 Pot #5")
+
 DP_back_tiles1_room:connect_two_ways(DP_back_tiles1_room_1N_door)
 DP_back_tiles1_room_1N_door:connect_two_ways_entrance_door_stuck("", DP_back_bridge_room_1N_door, function(keys, Current_Dungeon)
     return Has("smallkey", keys + CountDoneDeadends(0, "@Desert Palace/Compass Chest/Compass Chest"), 1, keys + CountDoneDeadends(1, "@Desert Palace/Compass Chest/Compass Chest"), 2), KDSreturn(keys, keys + 1)
@@ -152,6 +200,10 @@ DP_back_bridge_room:connect_two_ways_stuck(DP_back_four_statues, nil, function()
 
 DP_back_four_statues:connect_two_ways_stuck(DP_back_beamos_hallway, function() return ALL(DealDamage, CanInteract(DP_back_four_statues) ) end)
 DP_back_beamos_hallway:connect_one_way("DP - Beamos Hallway Key Drop")
+DP_back_beamos_hallway:connect_one_way("DP - Beamos Hall Pot #1")
+DP_back_beamos_hallway:connect_one_way("DP - Beamos Hall Pot #2")
+DP_back_beamos_hallway:connect_one_way("DP - Beamos Hall Pot #3")
+DP_back_beamos_hallway:connect_one_way("DP - Beamos Hall Pot #4")
 
 DP_back_beamos_hallway:connect_two_ways(DP_back_beamos_hallway_2N_door)
 DP_back_beamos_hallway_2N_door:connect_two_ways_entrance("", DP_back_tiles2_room_4S_door, function(keys, Current_Dungeon)
@@ -159,10 +211,18 @@ DP_back_beamos_hallway_2N_door:connect_two_ways_entrance("", DP_back_tiles2_room
 end)
 DP_back_tiles2_room_4S_door:connect_two_ways(DP_back_tiles2_room)
 DP_back_tiles2_room:connect_one_way("DP - Tile 2 Key Drop")
+DP_back_tiles2_room:connect_one_way("DP - Tiles 2 Pot #5")
+DP_back_tiles2_room:connect_one_way("DP - Tiles 2 Pot #6")
+DP_back_tiles2_room:connect_one_way("DP - Tiles 2 Pot #7")
 
 DP_back_tiles2_room:connect_two_ways(DP_back_torch_room, function(keys, Current_Dungeon)
     return Has("smallkey", keys + CountDoneDeadends(0, "@Desert Palace/Compass Chest/Compass Chest"), 1, keys + CountDoneDeadends(1, "@Desert Palace/Compass Chest/Compass Chest"), 4), KDSreturn(keys, keys + 1)
 end)
+
+DP_back_torch_room:connect_one_way("DP - Wall Slide Pot #1")
+DP_back_torch_room:connect_one_way("DP - Wall Slide Pot #2")
+DP_back_torch_room:connect_one_way("DP - Wall Slide Pot #3")
+DP_back_torch_room:connect_one_way("DP - Wall Slide Pot #4")
 
 DP_back_torch_room:connect_two_ways(DP_back_torch_room_1N_door)
 DP_back_torch_room_1N_door:connect_two_ways(DP_back_boss_room_3S_door, function(keys, Current_Dungeon)

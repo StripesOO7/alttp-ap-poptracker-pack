@@ -2,6 +2,7 @@
 local TT_front_bottom_left = alttp_location.new("TT_front_bottom_left", "TT Front Bottom Left", nil, "TT", true)
 local TT_front_top_left = alttp_location.new("TT_front_top_left", "TT Front Top Left", nil, "TT", true)
 local TT_front_top_right = alttp_location.new("TT_front_top_right", "TT Front Top Right", nil, "TT", true)
+local TT_front_top_right_rail_ledge = alttp_location.new("TT_front_top_right_rail_ledge", "TT Front Top Right Rail Ledge", nil, "TT", true)
 local TT_front_bottom_right = alttp_location.new("TT_front_bottom_right", "TT Front Bottom Right", nil, "TT", true)
 local TT_back_hallway = alttp_location.new("TT_back_hallway", "TT Back Hallway", nil, "TT", true)
 local TT_crystal_switch_room = alttp_location.new("TT_crystal_switch_room", "TT Crystal Switch", nil, "TT", true)
@@ -37,10 +38,10 @@ TT_front_top_left_4E_door = alttp_location.new("TT_front_top_left_4E_door", "TT 
 TT_front_top_left_E_door = alttp_location.new("TT_front_top_left_E_door", "TT Front Top Left E Door", nil, "", true, 203, 6100, 6160, 6392, 6392, {"Thieves Town Front Doors", "TT Front Top Left E Door", "TT Front Top Left E Door"})
 TT_front_top_right_1W_door = alttp_location.new("TT_front_top_right_1W_door", "TT Front Top Right 1W Door", nil, "", true, 204, 6100, 6180, 6256, 6336, {"Thieves Town Front Doors", "TT Front Top Right 1W Door", "TT Front Top Right 1W Door"})
 TT_front_top_right_3W_door = alttp_location.new("TT_front_top_right_3W_door", "TT Front Top Right 3W Door", nil, "", true, 204, 6100, 6180, 6448, 6528, {"Thieves Town Front Doors", "TT Front Top Right 3W Door", "TT Front Top Right 3W Door"})
-TT_front_top_right_W_door = alttp_location.new("TT_front_top_right_W_door", "TT Front Top Right W Door", nil, "", true, 204, 6110, 6180, 6392, 6392, {"Thieves Town Front Doors", "TT Front Top Right W Door", "TT Front Top Right W Door"})
+TT_front_top_right_rail_ledge_W_door = alttp_location.new("TT_front_top_right_rail_ledge_W_door", "TT Front Top Right W Door", nil, "", true, 204, 6110, 6180, 6392, 6392, {"Thieves Town Front Doors", "TT Front Top Right W Door", "TT Front Top Right W Door"})
 TT_front_top_right_S_door = alttp_location.new("TT_front_top_right_S_door", "TT Front Top Right S Door", nil, "", true, 204, 6384, 6400, 6600, 6670, {"Thieves Town Front Doors", "TT Front Top Right S Door", "TT Front Top Right S Door"})
 TT_front_top_right_3S_door = alttp_location.new("TT_front_top_right_3S_door", "TT Front Top Right 3S Door", nil, "", true, 204, 6248, 6272, 6600, 6670, {"Thieves Town Front Doors", "TT Front Top Right 3S Door", "TT Front Top Right 3S Door"})
-TT_front_top_right_1N_door = alttp_location.new("TT_front_top_right_1N_door", "TT Front Top Right 1N Door", nil, "", true, 204, 6264, 6264, 6120, 6170, {"Thieves Town Front Doors", "TT Front Top Right 1N Door", "TT Front Top Right 1N Door"})
+TT_front_top_right_rail_ledge_1N_door = alttp_location.new("TT_front_top_right_rail_ledge_1N_door", "TT Front Top Right 1N Door", nil, "", true, 204, 6264, 6264, 6120, 6170, {"Thieves Town Front Doors", "TT Front Top Right 1N Door", "TT Front Top Right 1N Door"})
 TT_front_top_right_2N_door = alttp_location.new("TT_front_top_right_2N_door", "TT Front Top Right 2N Door", nil, "", true, 204, 6520, 6520, 6120, 6170, {"Thieves Town Front Doors", "TT Front Top Right 2N Door", "TT Front Top Right 2N Door"})
 TT_front_bottom_right_1N_door = alttp_location.new("TT_front_bottom_right_1N_door", "TT Front Bottom Right 1N Door", nil, "", true, 220, 6248, 6272, 6610, 6675, {"Thieves Town Front Doors", "TT Front Bottom Right 1N Door", "TT Front Bottom Right 1N Door"})
 TT_front_bottom_right_N_door = alttp_location.new("TT_front_bottom_right_N_door", "TT Front Bottom Right N Door", nil, "", true, 220, 6384, 6400, 6610, 6675, {"Thieves Town Front Doors", "TT Front Bottom Right N Door", "TT Front Bottom Right N Door"})
@@ -70,6 +71,10 @@ TT_big_pot_hall_4W_door = alttp_location.new("TT_big_pot_hall_4W_door", "TT Big 
 
 TT_entrance_inside:connect_two_ways(TT_front_bottom_left)
 
+TT_front_bottom_left:connect_one_way("TT - Lobby Pot #1")
+TT_front_bottom_left:connect_one_way("TT - Lobby Pot #2")
+TT_front_bottom_left:connect_one_way("TT - Lobby Pot #3")
+TT_front_bottom_left:connect_one_way("TT - Lobby Pot #4")
 TT_front_bottom_left:connect_one_way("TT - Map Chest", function() return CanInteract(TT_front_bottom_left) end)
 TT_front_bottom_left:connect_two_ways(TT_front_bottom_left_N_door)
 TT_front_bottom_left_N_door:connect_two_ways_entrance("", TT_front_top_left_S_door)
@@ -84,32 +89,48 @@ TT_front_top_left_S_door:connect_two_ways(TT_front_top_left)
 TT_front_top_left_4S_door:connect_two_ways(TT_front_top_left)
 
 TT_front_top_left:connect_one_way("TT - Ambush Chest", function() return CanInteract(TT_front_top_left) end)
+TT_front_top_left:connect_one_way("TT - Ambush Pot #1")
+TT_front_top_left:connect_one_way("TT - Ambush Pot #2")
+TT_front_top_left:connect_one_way("TT - Ambush Pot #3")
+TT_front_top_left:connect_one_way("TT - Ambush Pot #4")
+
 TT_front_top_left:connect_two_ways(TT_front_top_left_E_door)
 TT_front_top_left:connect_two_ways(TT_front_top_left_2E_door)
 TT_front_top_left:connect_two_ways(TT_front_top_left_4E_door)
 
-TT_front_top_left_E_door:connect_two_ways_entrance("" ,TT_front_top_right_W_door, function() return ANY("boots", "bombs") end)
+TT_front_top_left_E_door:connect_two_ways_entrance("" ,TT_front_top_right_rail_ledge_W_door, function() return ANY("boots", "bombs") end)
 TT_front_top_left_2E_door:connect_two_ways_entrance("" ,TT_front_top_right_1W_door)
 TT_front_top_left_4E_door:connect_two_ways_entrance("" ,TT_front_top_right_3W_door)
 
-TT_front_top_right_W_door:connect_two_ways(TT_front_top_right)
+TT_front_top_right_rail_ledge_W_door:connect_two_ways(TT_front_top_right_rail_ledge)
 TT_front_top_right_1W_door:connect_two_ways(TT_front_top_right)
 TT_front_top_right_3W_door:connect_two_ways(TT_front_top_right)
 
+TT_front_top_right_rail_ledge:connect_one_way("TT - Rail Ledge Pot #1")
+TT_front_top_right_rail_ledge:connect_one_way("TT - Rail Ledge Pot #2")
+TT_front_top_right_rail_ledge:connect_one_way(TT_front_top_right)
+
+TT_front_top_right:connect_one_way("TT - BK Corner Pot #3")
+TT_front_top_right:connect_one_way("TT - BK Corner Pot #4")
+
+TT_front_top_right_rail_ledge:connect_two_ways(TT_front_top_right_rail_ledge_1N_door)
 TT_front_top_right:connect_two_ways(TT_front_top_right_S_door)
 TT_front_top_right:connect_two_ways(TT_front_top_right_3S_door)
-TT_front_top_right:connect_two_ways(TT_front_top_right_1N_door)
 TT_front_top_right:connect_two_ways(TT_front_top_right_2N_door)
 
 TT_front_top_right_S_door:connect_two_ways_entrance("", TT_front_bottom_right_1N_door)
 TT_front_top_right_3S_door:connect_two_ways_entrance("", TT_front_bottom_right_N_door)
-TT_front_top_right_1N_door:connect_two_ways_entrance("", TT_back_hallway_4S_door, function() return ALL("bigkey", CanInteract(TT_front_top_right)) end)
+TT_front_top_right_rail_ledge_1N_door:connect_two_ways_entrance("", TT_back_hallway_4S_door, function() return ALL("bigkey", CanInteract(TT_front_top_right)) end)
 TT_front_top_right_2N_door:connect_two_ways_entrance("", TT_cricket_hall_deadend_3S_door)
 
 TT_front_bottom_right_1N_door:connect_two_ways(TT_front_bottom_right)
 TT_front_bottom_right_N_door:connect_two_ways(TT_front_bottom_right)
 
 
+TT_front_bottom_right:connect_one_way("TT - Compass Room Pot #1")
+TT_front_bottom_right:connect_one_way("TT - Compass Room Pot #2")
+TT_front_bottom_right:connect_one_way("TT - Compass Room Pot #3")
+TT_front_bottom_right:connect_one_way("TT - Compass Room Pot #4")
 TT_front_bottom_right:connect_one_way("TT - Compass Chest", function() return CanInteract(TT_front_bottom_right) end)
 TT_front_bottom_right:connect_two_ways(TT_front_bottom_right_W_door)
 TT_front_bottom_right:connect_two_ways(TT_front_bottom_right_3W_door)
@@ -119,8 +140,14 @@ TT_front_bottom_left_deadend:connect_one_way("TT - Big Key Chest", function() re
 
 TT_cricket_hall_deadend_3S_door:connect_two_ways(TT_cricket_hall_deadend)
 
+TT_cricket_hall_deadend:connect_one_way("TT - Pot Alcove Bottom Pot #13")
+TT_cricket_hall_deadend:connect_one_way("TT - Pot Alcove Bottom Pot #14")
+
 TT_back_hallway_4S_door:connect_two_ways(TT_back_hallway)
+
 TT_back_hallway:connect_one_way("TT - Hallway Pot Key")
+TT_back_hallway:connect_one_way("TT - Hallway Pot #1")
+
 TT_back_hallway:connect_two_ways(TT_cricket_hall, function(keys, Current_Dungeon)
     return Has("smallkey", keys, 0, keys + 1, 1), KDSreturn(keys, keys + 1)
 end)
@@ -134,6 +161,11 @@ TT_boss_room:connect_one_way("TT - Boss", function()
         TT_boss_check
     )
 end)
+
+TT_cricket_hall:connect_one_way("TT - Pot Alcove Mid Pot #7")
+TT_cricket_hall:connect_one_way("TT - Pot Alcove Mid Pot #8")
+TT_cricket_hall:connect_one_way("TT - Pot Alcove Mid Pot #9")
+TT_cricket_hall:connect_one_way("TT - Pot Alcove Mid Pot #10")
 
 TT_cricket_hall:connect_two_ways(TT_cricket_hall_3W_door)
 TT_cricket_hall:connect_two_ways(TT_blue_blocks_room)
@@ -152,21 +184,42 @@ TT_crystal_switch_room_S_door:connect_two_ways_entrance_door_stuck("", TT_attic_
 end)
 TT_attic_N_door:connect_two_ways(TT_attic)
 
+TT_attic:connect_one_way("TT - Attic Hint Pot #1")
+TT_attic:connect_one_way("TT - Attic Hint Pot #2")
+TT_attic:connect_one_way("TT - Attic Hint Pot #3")
+TT_attic:connect_one_way("TT - Attic Switch Pot #4")
+TT_attic:connect_one_way("TT - Attic Switch Pot #5")
+TT_attic:connect_one_way("TT - Attic Switch Pot #6")
+TT_attic:connect_one_way("TT - Attic Switch Pot #7")
+
 TT_attic:connect_two_ways(TT_attic_E_door)
 TT_attic_E_door:connect_two_ways_entrance("", TT_attic_bomb_floor_W_door)
 TT_attic_bomb_floor_W_door:connect_two_ways(TT_attic_bomb_floor)
 TT_attic_bomb_floor:connect_one_way("TT - Attic")
+TT_attic_bomb_floor:connect_one_way("TT - Attic Window Pot #1")
+TT_attic_bomb_floor:connect_one_way("TT - Attic Window Pot #2")
 
 
 TT_blue_blocks_room:connect_two_ways(TT_blue_blocks_room_2E_door)
 TT_blue_blocks_room_2E_door:connect_two_ways_entrance("", TT_square_conveyor_room_1W_door)
 TT_square_conveyor_room_1W_door:connect_two_ways(TT_square_conveyor_room)
 
+TT_square_conveyor_room:connect_one_way("TT - Conveyor Maze Pot #3")
+TT_square_conveyor_room:connect_one_way("TT - Conveyor Maze Pot #4")
+TT_square_conveyor_room:connect_one_way("TT - Conveyor Maze Pot #5")
+TT_square_conveyor_room:connect_one_way("TT - Conveyor Maze Pot #6")
+TT_square_conveyor_room:connect_one_way("TT - Pot Alcove Top Pot #11")
+TT_square_conveyor_room:connect_one_way("TT - Pot Alcove Top Pot #12")
+
 TT_square_conveyor_room:connect_two_ways(TT_square_conveyor_room_1N_door)
 TT_square_conveyor_room:connect_one_way(TT_back_hallway, function() return CanInteract(TT_square_conveyor_room) end)
 TT_square_conveyor_room_1N_door:connect_two_ways_entrance("", TT_big_block_basement_N_door)
 
 TT_big_block_basement_N_door:connect_two_ways(TT_big_block_basement)
+
+TT_big_block_basement:connect_one_way("TT - Basement Block Pot #1")
+TT_big_block_basement:connect_one_way("TT - Basement Block Pot #2")
+
 TT_big_block_basement:connect_two_ways(TT_big_block_basement_1W_door)
 TT_big_block_basement:connect_two_ways(TT_big_pot_hall, function() return Has("gloves") end)
 TT_big_block_basement_1W_door:connect_two_ways_entrance_door_stuck("", TT_conveyor_catwalk_2E_door, function() return DealDamage end)
@@ -186,6 +239,10 @@ TT_conveyor_catwalk_4E_door:connect_two_ways_entrance("", TT_big_pot_hall_4W_doo
 TT_big_pot_hall_4W_door:connect_two_ways(TT_big_pot_hall)
 TT_big_pot_hall:connect_two_ways(TT_basement_cell)
 TT_basement_cell:connect_one_way("TT - Blind's Cell")
+TT_basement_cell:connect_one_way("TT - Blinds Cell Interior Pot #3")
+TT_basement_cell:connect_one_way("TT - Blinds Cell Interior Pot #4")
+TT_basement_cell:connect_one_way("TT - Blinds Cell Interior Pot #5")
+TT_basement_cell:connect_one_way("TT - Blinds Cell Interior Pot #6")
 
 -- TT_back_hallway_2N_door:connect_two_ways_entrance("", TT_boss_room_4S_door)
 -- TT_boss_room_4S_door:connect_two_ways(TT_boss_room)

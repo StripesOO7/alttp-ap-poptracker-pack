@@ -19,6 +19,7 @@ local GT_bottom_teleporter_puzzle_room_B_side = alttp_location.new("GT_bottom_te
 local GT_bottom_invisibile_bonk_room = alttp_location.new("GT_bottom_invisibile_bonk_room", "GT Invis. Path", nil, "GT", true)
 local GT_bottom_tile_room = alttp_location.new("GT_bottom_tile_room", "GT Tile Room", nil, "GT", true)
 local GT_bottom_torch_puzzle = alttp_location.new("GT_bottom_torch_puzzle", "GT Torches", nil, "GT", true)
+local GT_bottom_pots_n_blocks = alttp_location.new("GT_bottom_pots_n_blocks", "GT Pots n Blocks", nil, "GT", true)
 local GT_bottom_compass_room = alttp_location.new("GT_bottom_compass_room", "GT Compass", nil, "GT", true)
 local GT_bottom_conveyor_star_room = alttp_location.new("GT_bottom_conveyor_star_room", "GT Conveyor Star", nil, "GT", true)
 local GT_bottom_ice_fight = alttp_location.new("GT_bottom_ice_fight", "GT Ice Refight", nil, "GT", true)
@@ -49,6 +50,7 @@ local GT_top_mimics2 = alttp_location.new("GT_top_mimics2", "GT Top Mimics2")
 local GT_top_big_key_door = alttp_location.new("GT_top_big_key_door", "GT Top Big Key Door", nil, "", true, 1, 1, 1, 1, 1, {"", "GT Top Big Key Door", "GT Top Big Key Door"})
 local GT_top_pinball_crystal_switch = alttp_location.new("GT_top_pinball_crystal_switch", "GT Top Pinball Crystal Switch")
 local GT_top_cannonball_bridge = alttp_location.new("GT_top_cannonball_bridge", "GT Top Cannonball Bridge")
+local GT_top_refill_room = alttp_location.new("GT_top_refill_room", "GT Top Refill Room")
 local GT_top_5_blocks_conveyor = alttp_location.new("GT_top_5_blocks_conveyor", "GT Top 5 Blocks Conveyor")
 local GT_top_small_circle_conveyor = alttp_location.new("GT_top_small_circle_conveyor", "GT Top Small Circle Conveyor")
 local GT_top_big_circle_conveyor = alttp_location.new("GT_top_big_circle_conveyor", "GT Top Big Circle Conveyor")
@@ -163,8 +165,10 @@ GT_bottom_bobs_torch_1W_door:connect_two_ways_entrance("", GT_bottom_conveyor_cr
 GT_bottom_conveyor_cross_room_2E_door:connect_two_ways(GT_bottom_conveyor_cross_room)
 
 GT_bottom_conveyor_cross_room:connect_one_way("GT - Conveyor Cross Key Drop")
+GT_bottom_conveyor_cross_room:connect_one_way("GT - Conveyor Cross Pot #1")
 GT_bottom_conveyor_cross_room:connect_two_ways_stuck(GT_bottom_bonk_pit_room_east, function() return Has("hammer") end, function() return Has("hookshot") end)
 
+GT_bottom_bonk_pit_room_east:connect_one_way("GT - Hookshot Mid Platform Pot #5")
 GT_bottom_bonk_pit_room_east:connect_two_ways(GT_bottom_bonk_pit_room_top, function() 
     return ANY(
         Has("hookshot"),
@@ -190,6 +194,8 @@ GT_bottom_dm_room:connect_one_way("GT - DM Room Bottom Left")
 GT_bottom_dm_room:connect_one_way("GT - DM Room Bottom Right")
 
 
+GT_bottom_bonk_pit_room_bottom:connect_one_way("GT - Hookshot South Platform Pot #3")
+GT_bottom_bonk_pit_room_bottom:connect_one_way("GT - Hookshot South Platform Pot #4")
 GT_bottom_bonk_pit_room_bottom:connect_two_ways(GT_bottom_bonk_pit_room_3S_door, function() return ALL(DealDamage, HitRanged) end)
 GT_bottom_bonk_pit_room_3S_door:connect_two_ways(GT_bottom_map_room, function(keys, Current_Dungeon)
     return ALL(
@@ -197,19 +203,28 @@ GT_bottom_bonk_pit_room_3S_door:connect_two_ways(GT_bottom_map_room, function(ke
     ), KDSreturn(keys, keys + 1)
 end)
 GT_bottom_map_room:connect_one_way("GT - Map Chest")
+GT_bottom_map_room:connect_one_way("GT - Map Room Pot #6")
+GT_bottom_map_room:connect_one_way("GT - Map Room Pot #7")
 
 GT_bottom_bonk_pit_room_3S_door:connect_two_ways_entrance("", GT_bottom_double_switch_room_1N_door)
 GT_bottom_double_switch_room_1N_door:connect_two_ways(GT_bottom_double_switch_room)
 
 GT_bottom_double_switch_room:connect_one_way("GT - Double Switch Pot Key")
+GT_bottom_double_switch_room:connect_one_way("GT - Double Switch Pot Corners Pot #1")
 GT_bottom_double_switch_room:connect_two_ways(GT_bottom_after_double_switch_room)
 GT_bottom_after_double_switch_room:connect_two_ways(GT_bottom_firesnake_room_before_pit)
 
 GT_bottom_firesnake_room_before_pit:connect_two_ways(GT_bottom_firesnake_room_after_pit, function() return Has("hookshot") end)
 GT_bottom_firesnake_room_after_pit:connect_one_way("GT - Firesnake Room")
+GT_bottom_firesnake_room_after_pit:connect_one_way("GT - Firesnake Room Pot #1")
+GT_bottom_firesnake_room_after_pit:connect_one_way("GT - Firesnake Room Pot #2")
+GT_bottom_firesnake_room_after_pit:connect_one_way("GT - Firesnake Room Pot #3")
 
 GT_bottom_firesnake_room_after_pit:connect_two_ways(GT_bottom_teleporter_puzzle_room_A_side, function(keys, Current_Dungeon) return Has("smallkey", keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 4, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 8), keys + 1 end)
 
+GT_bottom_teleporter_puzzle_room_A_side:connect_one_way("GT - Warp Maze Pot Rail Pot #4")
+GT_bottom_teleporter_puzzle_room_A_side:connect_one_way("GT - Warp Maze Mid Section Pot #3")
+GT_bottom_teleporter_puzzle_room_A_side:connect_one_way("GT - Warp Maze Mid Section Pot #4")
 GT_bottom_teleporter_puzzle_room_A_side:connect_two_ways(GT_bottom_teleporter_puzzle_room_A_side_3W_door)
 GT_bottom_teleporter_puzzle_room_A_side_3W_door:connect_two_ways_entrance("", GT_bottom_randomizer_room_4E_door, function() return ALL("bombs") end)
 
@@ -241,6 +256,11 @@ GT_bottom_invisibile_bonk_room_2N_door:connect_two_ways_entrance("", GT_bottom_a
 GT_bottom_above_ice_fight_4S_door:connect_two_ways(GT_bottom_above_ice_fight)
 
 GT_bottom_above_ice_fight:connect_one_way("GT - Bob's Chest")
+GT_bottom_above_ice_fight:connect_one_way("GT - Bobs Room Pot #3")
+GT_bottom_above_ice_fight:connect_one_way("GT - Bobs Room Pot #4")
+GT_bottom_above_ice_fight:connect_one_way("GT - Bobs Room Pot #5")
+GT_bottom_above_ice_fight:connect_one_way("GT - Bobs Room Pot #6")
+GT_bottom_above_ice_fight:connect_one_way("GT - Bobs Room Pot #7")
 GT_bottom_above_ice_fight:connect_one_way(GT_bottom_ice_fight, function() return ALL("bombs", CanInteract(GT_bottom_above_ice_fight)) end)
 -- GT_bottom_above_ice_fight:connect_one_way(GT_bottom_ice_fight, function() return Has("bombs") end)
 
@@ -260,6 +280,8 @@ GT_bottom_big_chest_room_isolated_edge:connect_one_way(GT_bottom_big_chest_room)
 GT_bottom_main_room_2N_door:connect_two_ways_entrance("", GT_bottom_hope_room_2N_door)
 GT_bottom_hope_room_2N_door:connect_two_ways(GT_bottom_hope_room)
 
+GT_bottom_hope_room:connect_one_way("GT - Hope Room Pot #1")
+GT_bottom_hope_room:connect_one_way("GT - Hope Room Pot #2")
 GT_bottom_hope_room:connect_one_way("GT - Hope Room Left", function() return CanInteract(GT_bottom_hope_room) end)
 GT_bottom_hope_room:connect_one_way("GT - Hope Room Right", function() return CanInteract(GT_bottom_hope_room) end)
 GT_bottom_hope_room:connect_two_ways(GT_bottom_hope_room_2E_door)
@@ -273,7 +295,16 @@ GT_bottom_tile_room:connect_two_ways(GT_bottom_torch_puzzle)
 GT_bottom_torch_puzzle:connect_two_ways(GT_bottom_torch_puzzle_2N_door)
 GT_bottom_torch_puzzle_2N_door:connect_two_ways_entrance("", GT_bottom_teleporter_puzzle_room_A_side_deadend_4S_door)
 GT_bottom_teleporter_puzzle_room_A_side_deadend_4S_door:connect_two_ways(GT_bottom_teleporter_puzzle_room_A_side_deadend)
+GT_bottom_teleporter_puzzle_room_A_side_deadend:connect_one_way("GT - Petting Zoo Pot #5")
+GT_bottom_teleporter_puzzle_room_A_side_deadend:connect_one_way("GT - Petting Zoo Pot #6")
 
+GT_bottom_torch_puzzle:connect_one_way("GT - Speed Torch Upper Pot #1")
+GT_bottom_torch_puzzle:connect_one_way("GT - Speed Torch Upper Pot #2")
+
+GT_bottom_torch_puzzle:connect_two_ways(GT_bottom_pots_n_blocks)
+GT_bottom_pots_n_blocks:connect_one_way("GT - Pots n Blocks Pot #3")
+GT_bottom_pots_n_blocks:connect_one_way("GT - Pots n Blocks Pot #4")
+GT_bottom_pots_n_blocks:connect_one_way("GT - Pots n Blocks Pot #5")
 GT_bottom_torch_puzzle:connect_two_ways(GT_bottom_torch_puzzle_4S_door)
 GT_bottom_torch_puzzle_4S_door:connect_two_ways_entrance("", GT_bottom_gibdo_crystal_switch_room_2N_door, function()
     return ALL(
@@ -286,23 +317,39 @@ GT_bottom_torch_puzzle_4S_door:connect_two_ways_entrance("", GT_bottom_gibdo_cry
 end)
 
 GT_bottom_gibdo_crystal_switch_room_2N_door:connect_two_ways(GT_bottom_gibdo_crystal_switch_room)
+GT_bottom_gibdo_crystal_switch_room:connect_one_way("GT - Crystal Conveyor Left Pot #1")
+GT_bottom_gibdo_crystal_switch_room:connect_one_way("GT - Crystal Conveyor Left Pot #2")
 GT_bottom_gibdo_crystal_switch_room:connect_two_ways(GT_bottom_compass_room)
 
 GT_bottom_compass_room:connect_one_way("GT - Compass Room Top Left")
 GT_bottom_compass_room:connect_one_way("GT - Compass Room Top Right")
 GT_bottom_compass_room:connect_one_way("GT - Compass Room Bottom Left")
 GT_bottom_compass_room:connect_one_way("GT - Compass Room Bottom Right")
+GT_bottom_compass_room:connect_one_way("GT - Compass Room Pot #3")
+GT_bottom_compass_room:connect_one_way("GT - Compass Room Pot #4")
 GT_bottom_compass_room:connect_one_way(GT_bottom_conveyor_star_room)
 
 GT_bottom_conveyor_star_room:connect_one_way("GT - Conveyor Star Key Drop")
+GT_bottom_conveyor_star_room:connect_one_way("GT - Conveyor Star Pits Pot #1")
+GT_bottom_conveyor_star_room:connect_one_way("GT - Conveyor Star Pits Pot #2")
+GT_bottom_conveyor_star_room:connect_one_way("GT - Conveyor Star Pits Pot #3")
+GT_bottom_conveyor_star_room:connect_one_way("GT - Conveyor Star Pits Pot #4")
 GT_bottom_conveyor_star_room:connect_two_ways(GT_bottom_conveyor_star_room_2E_door)
 GT_bottom_conveyor_star_room_2E_door:connect_two_ways_entrance("", GT_bottom_fire_spinner_catwalk_1W_door, function(keys, Current_Dungeon) return Has("smallkey", keys + CountDoneDeadends(0, "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 4, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room", "@Ganon's Tower Bottom Left/Map Chest/Map Chest", "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 8), KDSreturn(keys, keys + 1) end)
 
 GT_bottom_fire_spinner_catwalk_1W_door:connect_two_ways(GT_bottom_fire_spinner_catwalk)
+
+GT_bottom_fire_spinner_catwalk:connect_one_way("GT - Falling Bridge Pot #1")
+GT_bottom_fire_spinner_catwalk:connect_one_way("GT - Falling Bridge Pot #2")
+GT_bottom_fire_spinner_catwalk:connect_one_way("GT - Falling Bridge Pot #3")
+GT_bottom_fire_spinner_catwalk:connect_one_way("GT - Falling Bridge Pot #4")
+
 GT_bottom_fire_spinner_catwalk:connect_two_ways(GT_bottom_fire_spinner_catwalk_3W_door)
 GT_bottom_fire_spinner_catwalk_3W_door:connect_two_ways_entrance("", GT_bottom_hidden_star_4E_door)
 GT_bottom_hidden_star_4E_door:connect_two_ways(GT_bottom_hidden_star)
 GT_bottom_hidden_star:connect_one_way(GT_bottom_invisible_bridges)
+GT_bottom_invisible_bridges:connect_one_way("GT - Invisible Catwalk Pot #1")
+GT_bottom_invisible_bridges:connect_one_way("GT - Invisible Catwalk Pot #2")
 GT_bottom_invisible_bridges:connect_two_ways(GT_bottom_invisible_bridges_3W_door)
 GT_bottom_invisible_bridges_3W_door:connect_two_ways_entrance("", GT_bottom_invisibile_bonk_room_4E_door)
 
@@ -314,33 +361,83 @@ GT_bottom_invisibile_bonk_room_4E_door:connect_two_ways(GT_bottom_invisibile_bon
 ---
 GT_bottom_main_room_N_door:connect_two_ways_entrance("", GT_top_spike_crystal_switch_N_door)
 GT_top_spike_crystal_switch_N_door:connect_two_ways(GT_top_spike_crystal_switch)
+
+GT_top_spike_crystal_switch:connect_one_way("GT - Crystal Paths Pot #1")
+GT_top_spike_crystal_switch:connect_one_way("GT - Crystal Paths Pot #2")
+GT_top_spike_crystal_switch:connect_one_way("GT - Crystal Paths Pot #3")
+GT_top_spike_crystal_switch:connect_one_way("GT - Crystal Paths Pot #4")
+GT_top_spike_crystal_switch:connect_one_way("GT - Crystal Paths Pot #5")
+GT_top_spike_crystal_switch:connect_one_way("GT - Crystal Paths Pot #6")
+
 GT_top_spike_crystal_switch:connect_two_ways_stuck(GT_top_4_mimics, function() return CanInteract(GT_top_4_mimics) end, function() return DealDamage end)
 GT_top_4_mimics:connect_two_ways_stuck(GT_top_mimics2, function() return DealDamage end)
 
+GT_top_mimics2:connect_one_way("GT - Mimics 2 Pot #7")
+GT_top_mimics2:connect_one_way("GT - Mimics 2 Pot #8")
 GT_top_mimics2:connect_two_ways_stuck(GT_top_big_key_door, function() return DealDamage end)
 GT_top_big_key_door:connect_two_ways(GT_top_big_keydoor_2N_door)
 GT_top_big_keydoor_2N_door:connect_two_ways_entrance_door_stuck("", GT_top_pinball_crystal_switch_4S_door, function() return Has("bigkey") end, function() return true end) --smallkey unaccounted for
 GT_top_pinball_crystal_switch_4S_door:connect_two_ways(GT_top_pinball_crystal_switch)
+
+GT_top_pinball_crystal_switch:connect_one_way("GT - Hidden Spikes Pot #1")
+GT_top_pinball_crystal_switch:connect_one_way("GT - Hidden Spikes Pot #2")
+GT_top_pinball_crystal_switch:connect_one_way("GT - Hidden Spikes Pot #3")
+
 GT_top_pinball_crystal_switch:connect_two_ways(GT_top_pinball_crystal_switch_2E_door)
 GT_top_pinball_crystal_switch_2E_door:connect_two_ways_entrance_door_stuck("", GT_top_cannonball_bridge_1W_door, function() return CanInteract(GT_top_pinball_crystal_switch) end)
 
 GT_top_cannonball_bridge_1W_door:connect_two_ways(GT_top_cannonball_bridge)
+GT_top_cannonball_bridge:connect_two_ways(GT_top_refill_room) -- todo
+
+GT_top_refill_room:connect_two_ways("GT - Refill Pot #1")
+GT_top_refill_room:connect_two_ways("GT - Refill Pot #2")
+GT_top_refill_room:connect_two_ways("GT - Refill Pot #3")
+GT_top_refill_room:connect_two_ways("GT - Refill Pot #4")
+GT_top_refill_room:connect_two_ways("GT - Refill Pot #5")
+GT_top_refill_room:connect_two_ways("GT - Refill Pot #6")
+GT_top_refill_room:connect_two_ways("GT - Refill Pot #7")
+GT_top_refill_room:connect_two_ways("GT - Refill Pot #8")
+
 GT_top_cannonball_bridge:connect_two_ways(GT_top_cannonball_bridge_2N_door)
 GT_top_cannonball_bridge_2N_door:connect_two_ways_entrance("", GT_top_5_blocks_conveyor_2N_door)
 
 GT_top_5_blocks_conveyor_2N_door:connect_two_ways(GT_top_5_blocks_conveyor)
 GT_top_5_blocks_conveyor:connect_two_ways(GT_top_small_circle_conveyor, function() return DealDamage end)
+
+GT_top_small_circle_conveyor:connect_one_way("GT - Gauntlet 2 Pot #1")
+GT_top_small_circle_conveyor:connect_one_way("GT - Gauntlet 2 Pot #2")
+GT_top_small_circle_conveyor:connect_one_way("GT - Gauntlet 2 Pot #3")
+GT_top_small_circle_conveyor:connect_one_way("GT - Gauntlet 2 Pot #4")
+
 GT_top_small_circle_conveyor:connect_two_ways(GT_top_big_circle_conveyor, function() return DealDamage end)
+
+GT_top_big_circle_conveyor:connect_one_way("GT - Gauntlet 3 Pot #5")
+GT_top_big_circle_conveyor:connect_one_way("GT - Gauntlet 3 Pot #6")
+GT_top_big_circle_conveyor:connect_one_way("GT - Gauntlet 3 Pot #7")
+GT_top_big_circle_conveyor:connect_one_way("GT - Gauntlet 3 Pot #8")
+
 GT_top_big_circle_conveyor:connect_two_ways(GT_top_big_circle_conveyor_3S_door)
 
 GT_top_big_circle_conveyor_3S_door:connect_two_ways_entrance("", GT_top_ice_conveyor_1N_door, function() return DealDamage end)
 GT_top_ice_conveyor_1N_door:connect_two_ways(GT_top_ice_conveyor)
 GT_top_ice_conveyor:connect_two_ways(GT_top_ice_floor_shooter, function() return DealDamage end)
+
+GT_top_ice_floor_shooter:connect_one_way("GT - Gauntlet 5 Pot #1")
+GT_top_ice_floor_shooter:connect_one_way("GT - Gauntlet 5 Pot #2")
+GT_top_ice_floor_shooter:connect_one_way("GT - Gauntlet 5 Pot #3")
+GT_top_ice_floor_shooter:connect_one_way("GT - Gauntlet 5 Pot #4")
+
 GT_top_ice_floor_shooter:connect_two_ways(GT_top_ice_floor_shooter_3W_door)
 GT_top_ice_floor_shooter_3W_door:connect_one_way_entrance("", GT_top_pre_desert_refight_4E_door, function() return DealDamage end)
 GT_top_pre_desert_refight_4E_door:connect_two_ways_stuck(GT_top_pre_desert_refight)
 GT_top_pre_desert_refight:connect_two_ways_stuck(GT_top_desert_refight, nil, function() return GetBossRef("gt_lanmo") end)
 GT_top_desert_refight:connect_two_ways(GT_top_quad_pots, function() return GetBossRef("gt_lanmo") end)
+
+GT_top_quad_pots:connect_one_way("GT - Quad Pot Pot #1")
+GT_top_quad_pots:connect_one_way("GT - Quad Pot Pot #2")
+GT_top_quad_pots:connect_one_way("GT - Quad Pot Pot #3")
+GT_top_quad_pots:connect_one_way("GT - Quad Pot Pot #4")
+
 GT_top_quad_pots:connect_two_ways(GT_top_quad_pots_1N_door)
 
 GT_top_quad_pots_1N_door:connect_two_ways_entrance("", GT_top_invisible_floor_wizzrobes_1N_door)
@@ -355,7 +452,19 @@ GT_top_dashing_bridge_NS:connect_two_ways(GT_top_dashing_bridge_NS_2E_door)
 
 GT_top_dashing_bridge_NS_2E_door:connect_two_ways_entrance("", GT_top_torch_puzzle_1W_door)
 GT_top_torch_puzzle_1W_door:connect_two_ways(GT_top_torch_puzzle)
+
+GT_top_torch_puzzle:connect_one_way("GT - Torch Cross Pot #1")
+GT_top_torch_puzzle:connect_one_way("GT - Torch Cross Pot #2")
+GT_top_torch_puzzle:connect_one_way("GT - Torch Cross Pot #3")
+GT_top_torch_puzzle:connect_one_way("GT - Torch Cross Pot #4")
+GT_top_torch_puzzle:connect_one_way("GT - Torch Cross Pot #5")
+GT_top_torch_puzzle:connect_one_way("GT - Torch Cross Pot #6")
+
 GT_top_torch_puzzle:connect_two_ways_stuck(GT_top_staredown, function() return Has("firesource") end, nil)
+
+GT_top_staredown:connect_one_way("GT - Staredown Pot #7")
+GT_top_staredown:connect_one_way("GT - Staredown Pot #8")
+
 GT_top_staredown:connect_two_ways(GT_top_staredown_4N_door)
 
 GT_top_staredown_4N_door:connect_two_ways_entrance("", GT_top_falling_torches_4S_door)
@@ -366,6 +475,8 @@ GT_top_falling_torches:connect_two_ways_stuck(GT_top_mini_helmasaur_room, functi
 GT_top_mini_helmasaur_room:connect_one_way("GT - Mini Helmasaur Left")
 GT_top_mini_helmasaur_room:connect_one_way("GT - Mini Helmasaur Right")
 GT_top_mini_helmasaur_room:connect_one_way("GT - Mini Helmasaur Key Drop")
+GT_top_mini_helmasaur_room:connect_one_way("GT - Mini Helmasaur Room Pot #1")
+GT_top_mini_helmasaur_room:connect_one_way("GT - Mini Helmasaur Room Pot #2")
 GT_top_mini_helmasaur_room:connect_two_ways(GT_top_bomb_conveyor, function(keys, Current_Dungeon)
     return ALL(
         Has("smallkey", keys + CountDoneDeadends(0, "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 3, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room", "@Ganon's Tower Bottom Left/Map Chest/Map Chest", "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 7),
@@ -376,6 +487,11 @@ end)
 GT_top_bomb_conveyor:connect_two_ways(GT_top_crystal_switch_circles ,function() return Has("bombs") end)
 
 GT_top_crystal_switch_circles:connect_one_way("GT - Pre Moldorm Chest")
+GT_top_crystal_switch_circles:connect_one_way("GT - Crystal Inner Circle Pot #3")
+GT_top_crystal_switch_circles:connect_one_way("GT - Crystal Inner Circle Pot #4")
+GT_top_crystal_switch_circles:connect_one_way("GT - Crystal Inner Circle Pot #5")
+GT_top_crystal_switch_circles:connect_one_way("GT - Crystal Inner Circle Pot #6")
+GT_top_crystal_switch_circles:connect_one_way("GT - Crystal Inner Circle Pot #7")
 GT_top_crystal_switch_circles:connect_two_ways(GT_top_crystal_switch_circles_3S_door)
 GT_top_crystal_switch_circles_3S_door:connect_two_ways_entrance("", GT_top_top_refight_1N_door, function(keys, Current_Dungeon) return Has("smallkey", keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest"), 4, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room", "@Ganon's Tower Bottom Left/Map Chest/Map Chest", "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key"), 8), keys + 1 end)
 

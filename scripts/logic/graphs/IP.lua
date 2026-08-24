@@ -111,10 +111,21 @@ IP_compass_room:connect_one_way("IP - Compass Chest", function() return DealDama
 IP_push_cross:connect_two_ways(IP_push_cross_4E_door)
 IP_push_cross_4E_door:connect_two_ways_entrance("", IP_sliding_switch_room_3W_door)
 IP_sliding_switch_room_3W_door:connect_two_ways(IP_sliding_switch_room)
+IP_sliding_switch_room:connect_one_way("IP - Pengator Switch Pot #1")
+IP_sliding_switch_room:connect_one_way("IP - Pengator Switch Pot #2")
 IP_sliding_switch_room:connect_two_ways(IP_big_key_room_left)
 
 IP_push_cross:connect_two_ways(IP_bomb_dropdown)
+
+IP_bomb_dropdown:connect_one_way("IP - Bomb Drop Pot #1")
+
 IP_bomb_dropdown:connect_one_way(IP_Stalfos_trap)
+
+IP_Stalfos_trap:connect_one_way("IP - Stalfos Hint Pot #1")
+IP_Stalfos_trap:connect_one_way("IP - Stalfos Hint Pot #2")
+IP_Stalfos_trap:connect_one_way("IP - Stalfos Hint Pot #3")
+IP_Stalfos_trap:connect_one_way("IP - Stalfos Hint Pot #4")
+
 IP_Stalfos_trap:connect_two_ways(IP_conveyor_room)
 
 IP_conveyor_room:connect_one_way("IP - Conveyor Key Drop", function() return DealDamage() end)
@@ -122,7 +133,15 @@ IP_conveyor_room:connect_two_ways(IP_conveyor_room_3S_door)
 IP_conveyor_room_3S_door:connect_two_ways_entrance("", IP_firebar_or_bomb_jump_1N_door)
 IP_firebar_or_bomb_jump_1N_door:connect_two_ways(IP_firebar_or_bomb_jump)
 
+IP_firebar_or_bomb_jump:connect_one_way("IP - Bomb Jump Catwalk Pot #1")
+IP_firebar_or_bomb_jump:connect_one_way("IP - Bomb Jump Catwalk Pot #2")
+IP_firebar_or_bomb_jump:connect_one_way("IP - Bomb Jump Catwalk Pot #3")
+IP_firebar_or_bomb_jump:connect_one_way("IP - Bomb Jump Catwalk Pot #4")
+
 IP_firebar_or_bomb_jump:connect_two_ways(IP_narrow_corridor)
+
+IP_narrow_corridor:connect_one_way("IP - Narrow Corridor Pot #5")
+
 IP_narrow_corridor:connect_two_ways(IP_narrow_corridor_2N_door)
 IP_narrow_corridor_2N_door:connect_two_ways_entrance("", IP_sliding_penguins_3N_door)
 IP_sliding_penguins_3N_door:connect_two_ways(IP_sliding_penguins)
@@ -132,6 +151,12 @@ IP_sliding_penguins_N_door:connect_two_ways_entrance("", IP_spike_cross_4S_door)
 IP_spike_cross_4S_door:connect_two_ways(IP_spike_cross)
 
 IP_spike_cross:connect_two_ways(IP_falling_floor)
+
+IP_falling_floor:connect_one_way("IP - Falling Square Pot #1")
+IP_falling_floor:connect_one_way("IP - Falling Square Pot #2")
+IP_falling_floor:connect_one_way("IP - Falling Square Pot #3")
+IP_falling_floor:connect_one_way("IP - Falling Square Pot #4")
+
 IP_falling_floor:connect_one_way(IP_ice_hallway)
 
 IP_spike_cross:connect_two_ways(IP_sliding_firebar)
@@ -155,7 +180,18 @@ IP_big_chest_room_left:connect_one_way("IP - Big Chest", function() return Has("
 IP_big_chest_room_left:connect_two_ways_stuck(IP_big_chest_room_right, nil, function() return Has("hookshot") end)
 IP_big_chest_room_right:connect_two_ways(IP_crystal_switch_left)
 IP_crystal_switch_left:connect_one_way(IP_pre_boss_hold_switch)
+
+IP_pre_boss_hold_switch:connect_one_way("IP - Switch Room Pot #1")
+
 IP_pre_boss_hold_switch:connect_two_ways(IP_anti_fairy_2_pots)
+
+IP_anti_fairy_2_pots:connect_one_way("IP - Refill Pot #1")
+IP_anti_fairy_2_pots:connect_one_way("IP - Refill Pot #2")
+IP_anti_fairy_2_pots:connect_one_way("IP - Refill Pot #3")
+IP_anti_fairy_2_pots:connect_one_way("IP - Refill Pot #4")
+IP_anti_fairy_2_pots:connect_one_way("IP - Refill Pot #5")
+IP_anti_fairy_2_pots:connect_one_way("IP - Refill Pot #6")
+
 IP_anti_fairy_2_pots:connect_two_ways(IP_anti_fairy_2_pots_1N_door)
 IP_anti_fairy_2_pots_1N_door:connect_two_ways_entrance("", IP_backwards_room_2N_door)
 IP_backwards_room_2N_door:connect_two_ways(IP_backwards_room)
@@ -175,7 +211,25 @@ IP_crystal_switch_right:connect_two_ways(IP_crystal_switch_right_4E_door)
 IP_crystal_switch_right_4E_door:connect_two_ways_entrance(IP_many_pots_room_3W_door)
 
 IP_many_pots_room_3W_door:connect_two_ways(IP_many_pots_room)
+
 IP_many_pots_room:connect_one_way("IP - Many Pots Key Drop")
+IP_many_pots_room:connect_one_way("IP - Many Pots Pot #1")
+IP_many_pots_room:connect_one_way("IP - Many Pots Pot #2")
+IP_many_pots_room:connect_one_way("IP - Many Pots Pot #3")
+IP_many_pots_room:connect_one_way("IP - Many Pots Pot #4")
+IP_many_pots_room:connect_one_way("IP - Many Pots Pot #5")
+IP_many_pots_room:connect_one_way("IP - Many Pots Pot #6")
+IP_many_pots_room:connect_one_way("IP - Many Pots Pot #7")
+IP_many_pots_room:connect_one_way("IP - Many Pots Pot #8")
+IP_many_pots_room:connect_one_way("IP - Many Pots Pot #9")
+IP_many_pots_room:connect_one_way("IP - Many Pots Pot #10")
+IP_many_pots_room:connect_one_way("IP - Many Pots Pot #11")
+IP_many_pots_room:connect_one_way("IP - Many Pots Pot #12")
+IP_many_pots_room:connect_one_way("IP - Many Pots Pot #13")
+IP_many_pots_room:connect_one_way("IP - Many Pots Pot #14")
+IP_many_pots_room:connect_one_way("IP - Many Pots Pot #15")
+IP_many_pots_room:connect_one_way("IP - Many Pots Pot #16")
+
 IP_many_pots_room:connect_two_ways(IP_many_pots_room_3S_door)
 
 IP_many_pots_room_3S_door:connect_two_ways_entrance("", IP_ice_catwalk_1N_door)
@@ -184,15 +238,25 @@ IP_ice_catwalk:connect_two_ways(IP_ice_catwalk_1W_door)
 
 IP_ice_catwalk_1W_door:connect_two_ways_entrance("", IP_iced_t_room_2E_door)
 IP_iced_t_room:connect_one_way("IP - Iced T Chest")
+IP_iced_t_room:connect_one_way("IP - Iced T Pot #1")
 IP_iced_t_room_2E_door:connect_two_ways(IP_iced_t_room)
 IP_iced_t_room:connect_two_ways(IP_iced_t_room_2N_door)
 
 IP_iced_t_room_2N_door:connect_two_ways_entrance("", IP_lonely_freezor_1N_door)
 IP_lonely_freezor_1N_door:connect_two_ways(IP_lonely_freezor)
+
+IP_lonely_freezor:connect_one_way("IP - Lonely Freezor Pot #1")
+IP_lonely_freezor:connect_one_way("IP - Lonely Freezor Pot #2")
+
 IP_lonely_freezor:connect_two_ways(IP_lonely_freezor_N_door)
 
 IP_lonely_freezor_N_door:connect_two_ways_entrance("", IP_ice_hallway_3S_door)
 IP_ice_hallway_3S_door:connect_two_ways(IP_ice_hallway)
+
+IP_ice_hallway:connect_one_way("IP - Tall Hint Pot #1")
+IP_ice_hallway:connect_one_way("IP - Tall Hint Pot #2")
+IP_ice_hallway:connect_one_way("IP - Tall Hint Pot #3")
+IP_ice_hallway:connect_one_way("IP - Tall Hint Pot #4")
 
 IP_ice_hallway:connect_two_ways(IP_ice_hallway_2E_door)
 IP_ice_hallway_2E_door:connect_two_ways_entrance("", IP_hookshot_pit_1W_door)
@@ -213,12 +277,20 @@ IP_spike_room_left_3W_door:connect_two_ways(IP_spike_room_left)
 IP_spike_room_left:connect_two_ways(IP_spike_room_right)
 
 IP_spike_room_right:connect_one_way("IP - Spike Chest")
+IP_spike_room_right:connect_one_way("IP - Spike Room Pot #1")
+
 IP_spike_room_right:connect_two_ways(IP_spike_room_right_3N_door)
 IP_spike_room_right_3N_door:connect_two_ways_entrance("", IP_map_room_3N_door)
 
 IP_map_room_3N_door:connect_two_ways(IP_map_room)
 
 
+IP_map_room:connect_one_way("IP - Hammer Block Pot #1")
+IP_map_room:connect_one_way("IP - Hammer Block Pot #2")
+IP_map_room:connect_one_way("IP - Hammer Block Pot #3")
+IP_map_room:connect_one_way("IP - Hammer Block Pot #4")
+IP_map_room:connect_one_way("IP - Hammer Block Pot #5")
+IP_map_room:connect_one_way("IP - Hammer Block Pot #6")
 IP_map_room:connect_one_way("IP - Map Chest", function()
     return ALL(
         "hammer",
@@ -237,8 +309,14 @@ IP_tongue_pull_4N_door:connect_two_ways_entrance("", IP_big_key_room_right_4N_do
 IP_big_key_room_right_4N_door:connect_two_ways(IP_big_key_room_right)
 
 IP_big_key_room_right:connect_one_way("IP - Big Key Chest")
+IP_big_key_room_right:connect_one_way("IP - Big Key Pot #3")
+IP_big_key_room_right:connect_one_way("IP - Big Key Pot #4")
 IP_big_key_room_right:connect_one_way(IP_big_key_room_left)
 
+IP_boss_antechamber:connect_one_way("IP - Antechamber Pot #1")
+IP_boss_antechamber:connect_one_way("IP - Antechamber Pot #2")
+IP_boss_antechamber:connect_one_way("IP - Antechamber Pot #3")
+IP_boss_antechamber:connect_one_way("IP - Antechamber Pot #4")
 IP_boss_antechamber:connect_one_way(IP_boss_room)
 IP_boss_room:connect_one_way("IP - Boss", function() return GetBossRef("ip_boss") end)
 

@@ -14,10 +14,12 @@ local SW_bottom_left_room = alttp_location.new("SW_bottom_left_room", "SW Bottom
 local SW_map_room = alttp_location.new("SW_map_room", "SW Map Room", nil, "SW", true)
 local SW_pot_circle = alttp_location.new("SW_pot_circle", "SW Pot Circle", nil, "SW", true)
 local SW_big_key_room = alttp_location.new("SW_big_key_room", "SW Big Key Room", nil, "SW", true)
+local SW_lonely_pot_room = alttp_location.new("SW_lonely_pot_room", "SW Lonely Pot Room", nil, "SW", true)
 local SW_back_bridge = alttp_location.new("SW_back_bridge", "SW Back Bridge", nil, "SW", true)
 local SW_back_bottom_hallway = alttp_location.new("SW_back_bottom_hallway", "SW Back Below Bridge", nil, "SW", true)
 local SW_back_troch_puzzle = alttp_location.new("SW_back_troch_puzzle", "SW Back Torches", nil, "SW", true)
 local SW_back_spike_corner_room = alttp_location.new("SW_back_spike_corner_room", "SW Back Spike", nil, "SW", true)
+local SW_back_pre_boss_drop = alttp_location.new("SW_back_pre_boss_drop", "SW Back Pre Boss Drop", nil, "SW", true)
 local SW_back_boss_room = alttp_location.new("SW_back_boss_room", "SW Back Boss", nil, "SW", true)
 
 local SW_gibdo_west_lobby_connector = alttp_location.new("SW_gibdo_west_lobby_connector", "SW Gibdo West Lobby connector")
@@ -26,6 +28,7 @@ local SW_vines_room = alttp_location.new("SW_vines_room", "SW Vines room")
 local SW_big_chest_entrance_lobby = alttp_location.new("SW_big_chest_entrance_lobby", "SW Big Chest Entrance Lobby")
 local SW_gibdo_entrance_lobby =  alttp_location.new("SW_gibdo_entrance_lobby", "SW Gibdo Entrance Lobby")
 local SW_west_lobby =  alttp_location.new("SW_west_lobby", "SW West Lobby")
+local SW_x_room =  alttp_location.new("SW_x_room", "SW X Room")
 local SW_back_entrance_lobby =  alttp_location.new("SW_back_entrance_lobby", "SW Back Entrance Lobby")
 local SW_big_chest_section = alttp_location.new("SW_big_chest_section", "SW Big Chest Section")
 local SW_gibdo_west_lobby_connector_north = alttp_location.new("SW_gibdo_west_lobby_connector_north", "SW Gibdo West Lobby Connector North")
@@ -47,14 +50,32 @@ SW_back_spike_corner_room_3S_door = alttp_location.new("SW_back_spike_corner_roo
 
 
 SW_bottom_left_drop_inside:connect_one_way(SW_bottom_left_room)
+
+SW_bottom_left_room:connect_one_way("SW - Left Drop Pot #1")
+SW_bottom_left_room:connect_one_way("SW - Left Drop Pot #2")
+SW_bottom_left_room:connect_one_way("SW - Left Drop Pot #3")
+SW_bottom_left_room:connect_one_way("SW - Left Drop Pot #4")
+SW_bottom_left_room:connect_one_way("SW - Left Drop Pot #5")
+SW_bottom_left_room:connect_one_way("SW - Left Drop Pot #6")
+
 SW_bottom_left_room:connect_two_ways(SW_compass_room)
 SW_compass_room:connect_two_ways(SW_pot_prison)
 
 SW_compass_room:connect_one_way("SW - Compass Chest")
+SW_compass_room:connect_one_way("SW - Compass Room Pot #7")
+SW_compass_room:connect_one_way("SW - Compass Room Pot #8")
+SW_compass_room:connect_one_way("SW - Compass Room Pot #9")
+SW_compass_room:connect_one_way("SW - Compass Room Pot #10")
+SW_compass_room:connect_one_way("SW - Compass Room Pot #11")
+
 SW_compass_room:connect_two_ways(SW_compass_room_2N_door)
 SW_compass_room_2N_door:connect_two_ways_entrance("", SW_pot_prison_4S_door)
 SW_pot_prison_4S_door:connect_two_ways(SW_pot_prison)
 SW_pot_prison:connect_one_way("SW - Pot Prison")
+SW_pot_prison:connect_one_way("SW - Pot Prison Pot #3")
+SW_pot_prison:connect_one_way("SW - Pot Prison Pot #4")
+SW_pot_prison:connect_one_way("SW - Pot Prison Pot #5")
+SW_pot_prison:connect_one_way("SW - Pot Prison Pot #6")
 SW_pot_prison:connect_one_way(SW_pot_prison_4E_door)
 SW_pot_prison_4E_door:connect_two_ways_entrance("", SW_big_chest_entrance_3W_door, function(keys, Current_Dungeon) return Has("smallkey", keys + 1, 1, keys + 1, 1), keys + 1 end)
 SW_big_chest_entrance_3W_door:connect_two_ways(SW_big_chest_entrance_lobby)
@@ -67,6 +88,19 @@ SW_pinball_room_3W_door:connect_two_ways(SW_pinball_room)
 SW_compass_room:connect_one_way(SW_pinball_room)
 
 SW_pinball_room:connect_one_way("SW - Pinball Chest")
+SW_pinball_room:connect_one_way("SW - Pinball Pot #1")
+SW_pinball_room:connect_one_way("SW - Pinball Pot #2")
+SW_pinball_room:connect_one_way("SW - Pinball Pot #3")
+SW_pinball_room:connect_one_way("SW - Pinball Pot #4")
+SW_pinball_room:connect_one_way("SW - Pinball Pot #5")
+SW_pinball_room:connect_one_way("SW - Pinball Pot #6")
+SW_pinball_room:connect_one_way("SW - Pinball Pot #7")
+SW_pinball_room:connect_one_way("SW - Pinball Pot #8")
+SW_pinball_room:connect_one_way("SW - Pinball Pot #9")
+SW_pinball_room:connect_one_way("SW - Pinball Pot #10")
+SW_pinball_room:connect_one_way("SW - Pinball Pot #11")
+SW_pinball_room:connect_one_way("SW - Pinball Pot #12")
+SW_pinball_room:connect_one_way("SW - Pinball Pot #13")
 SW_pinball_room:connect_two_ways(SW_pinball_room_2N_door)
 SW_pinball_room_2N_door:connect_two_ways_entrance("", SW_map_room_4S_door, function(keys, Current_Dungeon) return Has("smallkey", keys + 1, 1, keys + 1, 1), keys + 1 end)
 SW_map_room_4S_door:connect_two_ways(SW_map_room)
@@ -76,9 +110,27 @@ SW_map_room:connect_two_ways(SW_big_chest_entrance_lobby)
 
 
 SW_pot_circle_drop_inside:connect_one_way(SW_pot_circle)
+
+SW_pot_circle:connect_one_way("SW - Pot Circle Pot #5")
+SW_pot_circle:connect_one_way("SW - Pot Circle Pot #6")
+SW_pot_circle:connect_one_way("SW - Pot Circle Pot #7")
+SW_pot_circle:connect_one_way("SW - Pot Circle Pot #8")
+SW_pot_circle:connect_one_way("SW - Pot Circle Pot #9")
+SW_pot_circle:connect_one_way("SW - Pot Circle Pot #10")
+SW_pot_circle:connect_one_way("SW - Pot Circle Pot #11")
+SW_pot_circle:connect_one_way("SW - Pot Circle Pot #12")
+SW_pot_circle:connect_one_way("SW - Pot Circle Pot #13")
+SW_pot_circle:connect_one_way("SW - Pot Circle Pot #14")
+SW_pot_circle:connect_one_way("SW - Pot Circle Pot #15")
+SW_pot_circle:connect_one_way("SW - Pot Circle Pot #16")
+
 SW_pot_circle:connect_two_ways_stuck(SW_map_room, function() return CanInteract(SW_pot_circle) end, function() return Has("hookshot") end)
 SW_pot_circle:connect_two_ways(SW_big_chest_section, function() return Has("bombs") end)
 
+SW_big_chest_section:connect_one_way("SW - Pull Switch Pot #1")
+SW_big_chest_section:connect_one_way("SW - Pull Switch Pot #2")
+SW_big_chest_section:connect_one_way("SW - Pull Switch Pot #3")
+SW_big_chest_section:connect_one_way("SW - Pull Switch Pot #4")
 SW_big_chest_section:connect_one_way("SW - Big Chest", function() return Has("bigkey") end)
 -- SW_big_chest_section:connect_two_ways()
 -- SW_big_chest_section --get over the pit without pot circle access
@@ -88,9 +140,19 @@ SW_big_chest_entrance_inside:connect_two_ways(SW_big_chest_entrance_lobby)
 ---
 
 SW_gibdo_entrance_inside:connect_two_ways(SW_gibdo_entrance_lobby)
+
+SW_gibdo_entrance_lobby:connect_one_way("SW - 2 East Lobby Pot #7")
+SW_gibdo_entrance_lobby:connect_one_way("SW - 2 East Lobby Pot #8")
+SW_gibdo_entrance_lobby:connect_one_way("SW - 2 East Lobby Pot #9")
+-- SW_gibdo_entrance_lobby:connect_one_way("SW - 3 Lobby Pot #3")
+
 SW_gibdo_entrance_lobby:connect_two_ways(SW_big_key_room)
 
 SW_big_key_room:connect_one_way("SW - Big Key Chest")
+SW_big_key_room:connect_one_way("SW - Big Key Pot #2")
+
+SW_big_key_room:connect_two_ways(SW_lonely_pot_room)
+SW_lonely_pot_room:connect_one_way("SW - Lone Pot Pot #1")
 
 SW_gibdo_entrance_lobby:connect_two_ways(SW_gibdo_entrance_3W_door)
 SW_gibdo_entrance_3W_door:connect_two_ways_entrance("", SW_gibdo_west_lobby_connector_4E_door)
@@ -98,15 +160,37 @@ SW_gibdo_west_lobby_connector_4E_door:connect_two_ways(SW_gibdo_west_lobby_conne
 SW_gibdo_west_lobby_connector:connect_two_ways(SW_west_lobby)
 
 SW_north_drop_inside:connect_one_way(SW_gibdo_west_lobby_connector_north)
+SW_gibdo_west_lobby_connector_north:connect_one_way("SW - Back Drop Pot #1")
+SW_gibdo_west_lobby_connector_north:connect_one_way("SW - Back Drop Pot #2")
+SW_gibdo_west_lobby_connector_north:connect_one_way("SW - Back Drop Pot #3")
+
 SW_gibdo_west_lobby_connector_north:connect_one_way(SW_gibdo_west_lobby_connector)
 
 SW_west_lobby:connect_one_way("SW - West Lobby Key Drop")
+SW_west_lobby:connect_one_way("SW - 2 West Lobby Pot #15")
+SW_west_lobby:connect_two_ways(SW_x_room)
+
+SW_x_room:connect_one_way("SW - X Room Pot #4")
+SW_x_room:connect_one_way("SW - X Room Pot #5")
+SW_x_room:connect_one_way("SW - X Room Pot #6")
+SW_x_room:connect_one_way("SW - X Room Pot #7")
+SW_x_room:connect_one_way("SW - X Room Pot #8")
+SW_x_room:connect_one_way("SW - X Room Pot #9")
+SW_x_room:connect_one_way("SW - X Room Pot #10")
+SW_x_room:connect_one_way("SW - X Room Pot #11")
+SW_x_room:connect_one_way("SW - X Room Pot #12")
+SW_x_room:connect_one_way("SW - X Room Pot #13")
+
 SW_west_lobby_entrance_inside:connect_two_ways(SW_west_lobby)
 
 ---
 
 SW_back_entrance_inside:connect_two_ways(SW_back_bottom_hallway)
 SW_back_bottom_hallway:connect_one_way("SW - Bridge Chest")
+SW_back_bottom_hallway:connect_one_way("SW - 3 Lobby Pot #1")
+SW_back_bottom_hallway:connect_one_way("SW - 3 Lobby Pot #2")
+SW_back_bottom_hallway:connect_one_way("SW - East Bridge Pot #3")
+SW_back_bottom_hallway:connect_one_way("SW - East Bridge Pot #4")
 
 SW_back_entrance_inside:connect_two_ways(SW_back_bridge)
 
@@ -114,8 +198,20 @@ SW_back_bridge:connect_two_ways(SW_back_bridge_1N_door)
 SW_back_bridge_1N_door:connect_two_ways_entrance("", SW_star_switch_holes_3S_door, function(keys, Current_Dungeon) return Has("smallkey", keys + 1, 3, keys + 1, 3), keys + 1 end)
 SW_star_switch_holes_3S_door:connect_two_ways(SW_star_switch_holes)
 
+SW_star_switch_holes:connect_one_way("SW - Star Pits Pot #3")
+SW_star_switch_holes:connect_one_way("SW - Star Pits Pot #4")
+SW_star_switch_holes:connect_one_way("SW - Star Pits Pot #5")
+SW_star_switch_holes:connect_one_way("SW - Star Pits Pot #6")
+SW_star_switch_holes:connect_one_way("SW - Star Pits Pot #7")
+SW_star_switch_holes:connect_one_way("SW - Star Pits Pot #8")
+SW_star_switch_holes:connect_one_way("SW - Star Pits Pot #9")
+SW_star_switch_holes:connect_one_way("SW - Star Pits Pot #10")
+SW_star_switch_holes:connect_one_way("SW - Star Pits Pot #11")
+
 SW_star_switch_holes:connect_two_ways(SW_back_troch_puzzle)
 
+SW_back_troch_puzzle:connect_one_way("SW - Torch Room Pot #1")
+SW_back_troch_puzzle:connect_one_way("SW - Torch Room Pot #2")
 SW_back_troch_puzzle:connect_one_way(SW_vines_room, function() return Has("firerod") end)
 
 SW_vines_room:connect_two_ways(SW_vines_room_1N_door)
@@ -123,9 +219,15 @@ SW_vines_room_1N_door:connect_two_ways_entrance("", SW_back_spike_corner_room_3S
 SW_back_spike_corner_room_3S_door:connect_one_way(SW_back_spike_corner_room)
 
 SW_back_spike_corner_room:connect_one_way("SW - Spike Corner Key Drop")
-SW_back_spike_corner_room:connect_two_ways(SW_back_boss_room, function(keys, Current_Dungeon) return Has("smallkey", keys, 3, keys + 1, 4), KDSreturn(keys, keys + 1) end)
+SW_back_spike_corner_room:connect_one_way("SW - Spike Corner Pot #1")
+SW_back_spike_corner_room:connect_one_way("SW - Spike Corner Pot #2")
+SW_back_spike_corner_room:connect_one_way("SW - Spike Corner Pot #3")
+SW_back_spike_corner_room:connect_one_way("SW - Spike Corner Pot #4")
+SW_back_spike_corner_room:connect_two_ways(SW_back_pre_boss_drop, function(keys, Current_Dungeon) return Has("smallkey", keys, 3, keys + 1, 4), KDSreturn(keys, keys + 1) end)
 
-
+SW_back_pre_boss_drop:connect_one_way("SW - Final Drop Pot #3")
+SW_back_pre_boss_drop:connect_one_way("SW - Final Drop Pot #4")
+SW_back_pre_boss_drop:connect_one_way(SW_back_boss_room)
 SW_back_boss_room:connect_one_way("SW - Boss")
 
 

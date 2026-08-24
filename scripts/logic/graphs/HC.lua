@@ -104,10 +104,14 @@ HC_left_wing_lobby_E_door:connect_two_ways(HC_left_wing_lobby)
 HC_main_hall_1W_door:connect_two_ways_entrance("", HC_left_wing_lobby_2E_door)
 HC_left_wing_lobby_2E_door:connect_two_ways(HC_left_wing_lobby)
 
+HC_left_wing_lobby:connect_one_way("HC - West Hall Pot #1")
+HC_left_wing_lobby:connect_one_way("HC - West Hall Pot #2")
 HC_left_wing_lobby:connect_two_ways(HC_left_wing_lobby_2N_door)
 HC_left_wing_lobby_2N_door:connect_two_ways_entrance("", HC_left_wing_4S_door)
 HC_left_wing_4S_door:connect_two_ways(HC_left_wing)
 
+HC_left_wing:connect_one_way("HC - West Lobby Pot #1")
+HC_left_wing:connect_one_way("HC - West Lobby Pot #2")
 HC_left_wing:connect_two_ways(HC_left_wing_2E_door)
 HC_left_wing_2E_door:connect_two_ways_entrance("", HC_back_wing_1W_door)
 HC_back_wing_1W_door:connect_two_ways(HC_back_wing)
@@ -119,10 +123,13 @@ HC_back_wing_N_door:connect_two_ways_entrance("", HC_map_chest_room_N_door)
 HC_back_wing_2E_door:connect_two_ways_entrance("", HC_right_wing_1W_door)
 HC_right_wing_1W_door:connect_two_ways(HC_right_wing)
 
+HC_right_wing:connect_one_way("HC - East Hall Pot #1")
+HC_right_wing:connect_one_way("HC - East Hall Pot #2")
 HC_right_wing:connect_two_ways(HC_right_wing_3S_door)
 HC_right_wing_3S_door:connect_two_ways_entrance("", HC_right_wing_lobby_1N_door)
 HC_right_wing_lobby_1N_door:connect_two_ways(HC_right_wing_lobby)
 
+HC_right_wing:connect_one_way("HC - East Lobby Pot #1")
 HC_right_wing:connect_two_ways(HC_right_wing_S_door)
 HC_right_wing_S_door:connect_two_ways_entrance("", HC_right_wing_lobby_N_door)
 HC_right_wing_lobby_N_door:connect_two_ways(HC_right_wing_lobby)
@@ -169,6 +176,9 @@ HC_north_abyss:connect_two_ways(HC_north_abyss_S_door)
 HC_north_abyss_S_door:connect_two_ways_entrance("", HC_abyss_catwalk_N_door)
 HC_abyss_catwalk_N_door:connect_two_ways(HC_abyss_catwalk)
 
+HC_abyss_catwalk:connect_one_way("HC - South Abyss Pot #1")
+HC_abyss_catwalk:connect_one_way("HC - South Abyss Pot #2")
+HC_abyss_catwalk:connect_one_way("HC - South Abyss Pot #3")
 HC_abyss_catwalk:connect_two_ways(HC_abyss_catwalk_3W_door)
 HC_abyss_catwalk_3W_door:connect_two_ways_entrance("", HC_armory_4E_door)
 HC_armory_4E_door:connect_two_ways(HC_armory)
@@ -217,6 +227,9 @@ HC_stairs:connect_two_ways(HC_stairs_N_door)
 
 HC_stairs_N_door:connect_two_ways_entrance("", HC_ball_guard_room_1N_door)
 HC_ball_guard_room_1N_door:connect_two_ways(HC_ball_guard_room)
+HC_ball_guard_room:connect_one_way("HC - Cellblock Pot #1")
+HC_ball_guard_room:connect_one_way("HC - Cellblock Pot #2")
+HC_ball_guard_room:connect_one_way("HC - Cellblock Pot #3")
 HC_ball_guard_room:connect_one_way("HC - Big Key", function()
     return ANY(
         DealDamage,
@@ -235,6 +248,10 @@ CE_tapestry_S_door:connect_two_ways(CE_tapestry, function(keys, Current_Dungeon)
         "standard"
     )
 end)
+CE_tapestry:connect_one_way("CE - Behind Tapestry Pot #1")
+CE_tapestry:connect_one_way("CE - Behind Tapestry Pot #2")
+CE_tapestry:connect_one_way("CE - Behind Tapestry Pot #3")
+CE_tapestry:connect_one_way("CE - Behind Tapestry Pot #4")
 CE_tapestry:connect_two_ways(CE_tapestry_N_door, function(keys, Current_Dungeon)
     return ANY(
         DarkRooms(true),
@@ -263,6 +280,7 @@ CE_dark_cross_S_door:connect_two_ways(CE_dark_cross, function(keys, Current_Dung
         "standard"
     )
 end)
+CE_dark_cross:connect_one_way("CE - Dark Cross Pot #1")
 CE_dark_cross:connect_one_way("CE - Dark Cross", function() 
     return ALL(
         ANY(
@@ -314,6 +332,12 @@ CE_large_sewers_E_door:connect_two_ways(CE_large_sewers, function(keys, Current_
     )
 end)
 
+CE_large_sewers:connect_one_way("CE - Dark Aquabats Pot #1")
+CE_large_sewers:connect_one_way("CE - Dark Aquabats Pot #2")
+CE_large_sewers:connect_one_way("CE - Dark Aquabats Pot #3")
+CE_large_sewers:connect_one_way("CE - Dark Aquabats Pot #4")
+CE_large_sewers:connect_one_way("CE - Dark Aquabats Pot #5")
+CE_large_sewers:connect_one_way("CE - Dark Aquabats Pot #6")
 CE_large_sewers:connect_two_ways(CE_rat_key_room)
 
 CE_rat_key_room:connect_one_way("CE - Rat Key Drop", function(keys, Current_Dungeon)
@@ -360,10 +384,20 @@ end)
 CE_secret_room:connect_one_way("CE - Secret Room Left", function() return CanInteract(CE_secret_room) end)
 CE_secret_room:connect_one_way("CE - Secret Room Center", function() return CanInteract(CE_secret_room) end)
 CE_secret_room:connect_one_way("CE - Secret Room Right", function() return CanInteract(CE_secret_room) end)
+CE_secret_room:connect_one_way("CE - Secret Room Pot #1", function() return CanInteract(CE_secret_room) end)
+CE_secret_room:connect_one_way("CE - Secret Room Pot #2", function() return CanInteract(CE_secret_room) end)
+CE_secret_room:connect_one_way("CE - Secret Room Pot #3", function() return CanInteract(CE_secret_room) end)
+CE_secret_room:connect_one_way("CE - Secret Room Pot #4", function() return CanInteract(CE_secret_room) end)
+CE_secret_room:connect_one_way("CE - Secret Room Pot #5", function() return CanInteract(CE_secret_room) end)
+CE_secret_room:connect_one_way("CE - Secret Room Pot #6", function() return CanInteract(CE_secret_room) end)
 
 CE_secret_room:connect_one_way(CE_dropdown_room_N_door)
 CE_dropdown_room_N_door:connect_two_ways_entrance("", CE_yet_more_rats_N_door)
 
+CE_yet_more_rats_N_door:connect_one_way("CE - Yet More Rats Pot #1")
+CE_yet_more_rats_N_door:connect_one_way("CE - Yet More Rats Pot #2")
+CE_yet_more_rats_N_door:connect_one_way("CE - Yet More Rats Pot #3")
+CE_yet_more_rats_N_door:connect_one_way("CE - Yet More Rats Pot #4")
 CE_yet_more_rats_N_door:connect_two_ways(CE_pulley)
 CE_pulley:connect_two_ways(CE_pulley_S_door, function() return CanInteract(CE_pulley) end)
 CE_pulley_S_door:connect_one_way_entrance("", Sanctuary_secret_door)

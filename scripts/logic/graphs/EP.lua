@@ -20,8 +20,8 @@ local EP_west_wing_bottom = alttp_location.new("EP_west_wing_bottom", "EP West W
 local EP_stalfos_spawn = alttp_location.new("EP_stalfos_spawn", "EP stalfos spawn", nil, "EP", true)
 local EP_dark_pots = alttp_location.new("EP_dark_pots", "EP Dark pots", nil, "EP", true)
 local EP_rupee_room = alttp_location.new("EP_rupee_room", "EP rupee room", nil, "EP", true)
-local EP_false_switches = alttp_location.new("EP_false_switches", "EP False Switches", nil, "EP", true)
-local EP_eyegore_switches = alttp_location.new("EP_eyegore_switches", "EP Eyegore Switches", nil, "EP", true)
+local EP_attic_start = alttp_location.new("EP_attic_start", "EP False Switches", nil, "EP", true)
+local EP_false_switches = alttp_location.new("EP_false_switches", "EP Eyegore Switches", nil, "EP", true)
 local EP_cannoball_hell = alttp_location.new("EP_cannoball_hell", "EP Cannonball Hell", nil, "EP", true)
 local EP_single_eyegore = alttp_location.new("EP_single_eyegore", "EP Single Eyegore", nil, "EP", true)
 local EP_duo_eyegores = alttp_location.new("EP_duo_eyegores", "EP Duo Eyegores", nil, "EP", true)
@@ -50,15 +50,22 @@ EP_west_wing_bottom_2E_door = alttp_location.new("EP_west_wing_bottom_2E_door", 
 EP_west_wing_bottom_4S_door = alttp_location.new("EP_west_wing_bottom_4S_door", "EP West Wing Bottom 4S door", nil, "", true, 168, 4472, 4472, 5590, 5650, {"Eastern Palace Doors", "EP West Wing Bottom 4S door", "EP West Wing Bottom 4S door"})
 EP_dark_eyegore_room_S_door = alttp_location.new("EP_dark_eyegore_room_S_door", "EP Dark Eyegore Room S door", nil, "", true, 153, 4856, 4856, 5085, 5140, {"Eastern Palace Doors", "EP Dark Eyegore Room S door", "EP Dark Eyegore Room S door"})
 EP_dark_eyegore_room_1N_door = alttp_location.new("EP_dark_eyegore_room_1N_door", "EP Dark Eyegore Room 1N door", nil, "", true, 153, 4725, 4730, 4890, 4920, {"Eastern Palace Doors", "EP Dark Eyegore Room 1N door", "EP Dark Eyegore Room 1N door"})
-EP_false_switches_3N_door = alttp_location.new("EP_false_switches_3N_door", "EP False Switches 3N door", nil, "", true, 218, 5235, 5245, 6945, 6975, {"Eastern Palace Doors", "EP False Switches 3N door", "EP False Switches 3N door"})
-EP_false_switches_3W_door = alttp_location.new("EP_false_switches_3W_door", "EP False Switches 3W door", nil, "", true, 218, 5105, 5145, 7032, 7032, {"Eastern Palace Doors", "EP False Switches 3W door", "EP False Switches 3W door"})
-EP_eyegore_switches_4E_door = alttp_location.new("EP_eyegore_switches_4E_door", "EP Eyegore Switches 4E door", nil, "", true, 217, 5085, 5125, 7032, 7032, {"Eastern Palace Doors", "EP Eyegore Switches 4E door", "EP Eyegore Switches 4E door"})
+EP_attic_start_3N_door = alttp_location.new("EP_attic_start_3N_door", "EP False Switches 3N door", nil, "", true, 218, 5235, 5245, 6945, 6975, {"Eastern Palace Doors", "EP False Switches 3N door", "EP False Switches 3N door"})
+EP_attic_start_3W_door = alttp_location.new("EP_attic_start_3W_door", "EP False Switches 3W door", nil, "", true, 218, 5105, 5145, 7032, 7032, {"Eastern Palace Doors", "EP False Switches 3W door", "EP False Switches 3W door"})
+EP_false_switches_4E_door = alttp_location.new("EP_false_switches_4E_door", "EP Eyegore Switches 4E door", nil, "", true, 217, 5085, 5125, 7032, 7032, {"Eastern Palace Doors", "EP Eyegore Switches 4E door", "EP Eyegore Switches 4E door"})
 EP_cannoball_hell_3W_door = alttp_location.new("EP_cannoball_hell_3W_door", "EP Cannonball Hell 3W door", nil, "", true, 217, 4590, 4630, 7032, 7032, {"Eastern Palace Doors", "EP Cannonball Hell 3W door", "EP Cannonball Hell 3W door"})
 EP_single_eyegore_4E_door = alttp_location.new("EP_single_eyegore_4E_door", "EP Single Eyegore 4E door", nil, "", true, 216, 4570, 4610, 7032, 7032, {"Eastern Palace Doors", "EP Single Eyegore 4E door", "EP Single Eyegore 4E door"})
 EP_duo_eyegores_2N_door = alttp_location.new("EP_duo_eyegores_2N_door", "EP Duo Eyegores 2N door", nil, "", true, 216, 4472, 4472, 6640, 6700, {"Eastern Palace Doors", "EP Duo Eyegores 2N door", "EP Duo Eyegores 2N door"})
 EP_boss_room_4S_door = alttp_location.new("EP_boss_room_4S_door", "EP Boss Room 4S door", nil, "", true, 200, 4472, 4472, 6610, 6675, {"Eastern Palace Doors", "EP Boss Room 4S door", "EP Boss Room 4S door"})
 
+
+---
+
+
 EP_entrance_inside:connect_two_ways(EP_lobby)
+EP_lobby:connect_one_way("EP - Lobby Pot #1")
+EP_lobby:connect_one_way("EP - Lobby Pot #2")
+EP_lobby:connect_one_way("EP - Lobby Pot #3")
 EP_lobby:connect_two_ways_entrance_door_stuck("", EP_switch_bridge, function() return CanInteract(EP_lobby) end, function() return CanInteract(EP_switch_bridge) end)
 
 EP_switch_bridge:connect_two_ways(EP_switch_bridge_N_door)
@@ -66,6 +73,10 @@ EP_switch_bridge_N_door:connect_two_ways_entrance_door_stuck("", EP_cannonball_r
 EP_cannonball_room_S_door:connect_two_ways(EP_cannonball_room)
 
 EP_cannonball_room:connect_one_way("EP - Cannonball Chest")
+EP_cannonball_room:connect_one_way("EP - Cannonball Pot #1")
+EP_cannonball_room:connect_one_way("EP - Cannonball Pot #2")
+EP_cannonball_room:connect_one_way("EP - Cannonball Pot #3")
+EP_cannonball_room:connect_one_way("EP - Cannonball Pot #4")
 
 EP_cannonball_room:connect_two_ways(EP_cannonball_room_N_door)
 EP_cannonball_room_N_door:connect_two_ways_entrance("", EP_main_room_top_S_door)
@@ -73,13 +84,28 @@ EP_main_room_top_S_door:connect_two_ways(EP_main_room_top)
 
 -- EP_main_room_top:connect_two_ways(EP_compass_chest_room)
 -- EP_main_room_top:connect_two_ways(EP_map_chest_room)
+EP_main_room_top:connect_one_way("EP - Courtyard Ledge Pot #5")
+EP_main_room_top:connect_one_way("EP - Courtyard Ledge Pot #6")
+EP_main_room_top:connect_one_way("EP - Courtyard Ledge Pot #7")
+EP_main_room_top:connect_one_way("EP - Courtyard Ledge Pot #8")
+
 EP_main_room_top:connect_two_ways(EP_main_room_top_E_door)
 EP_main_room_top_E_door:connect_two_ways_entrance_door_stuck("", EP_east_wing_top_W_door, function() return CanInteract(EP_main_room_top) end)
 EP_east_wing_top_W_door:connect_two_ways(EP_east_wing_top)
 
 EP_east_wing_top:connect_two_ways(EP_pot_switch)
+
+EP_pot_switch:connect_one_way("EP - Pot Switch Pot #1")
+EP_pot_switch:connect_one_way("EP - Pot Switch Pot #2")
+EP_pot_switch:connect_one_way("EP - Pot Switch Pot #3")
+EP_pot_switch:connect_one_way("EP - Pot Switch Pot #4")
+EP_pot_switch:connect_one_way("EP - Pot Switch Pot #5")
+
 EP_pot_switch:connect_two_ways(EP_map_chest_room_balcony)
 EP_map_chest_room_balcony:connect_one_way("EP - Map Chest")
+EP_map_chest_room_balcony:connect_one_way("EP - Map Balcony Pot #6")
+EP_map_chest_room_balcony:connect_one_way("EP - Map Balcony Pot #7")
+EP_map_chest_room_balcony:connect_one_way("EP - Map Balcony Pot #8")
 EP_map_chest_room_balcony:connect_one_way(EP_map_chest_room)
 EP_east_wing_top:connect_two_ways(EP_map_chest_room)
 
@@ -88,6 +114,13 @@ EP_main_room_top_W_door:connect_two_ways_entrance_door_stuck("", EP_west_wing_to
 EP_west_wing_top_E_door:connect_two_ways(EP_west_wing_top)
 
 EP_west_wing_top:connect_two_ways_entrance_door_stuck("", EP_stalfos_spawn, nil, function() return ALL(DealDamage, CanInteract(EP_stalfos_spawn)) end)
+
+EP_stalfos_spawn:connect_one_way("EP - Stalfos Spawn Pot #1")
+EP_stalfos_spawn:connect_one_way("EP - Stalfos Spawn Pot #2")
+EP_stalfos_spawn:connect_one_way("EP - Stalfos Spawn Pot #3")
+EP_stalfos_spawn:connect_one_way("EP - Stalfos Spawn Pot #4")
+EP_stalfos_spawn:connect_one_way("EP - Stalfos Spawn Pot #5")
+
 EP_stalfos_spawn:connect_two_ways_entrance_door_stuck("", EP_compass_chest_room, function() return ALL(DealDamage, CanInteract(EP_stalfos_spawn)) end, nil)
 
 EP_compass_chest_room:connect_one_way("EP - Compass Chest")
@@ -98,6 +131,10 @@ EP_west_wing_bottom_2E_door:connect_two_ways_entrance("", EP_main_room_bottom_1W
 EP_main_room_bottom_1W_door:connect_two_ways(EP_main_room_bottom)
 
 EP_main_room_bottom:connect_one_way("EP - Big Chest", function() return Has("bigkey") end)
+EP_main_room_bottom:connect_one_way("EP - Courtyard Pot #1")
+EP_main_room_bottom:connect_one_way("EP - Courtyard Pot #2")
+EP_main_room_bottom:connect_one_way("EP - Courtyard Pot #3")
+EP_main_room_bottom:connect_one_way("EP - Courtyard Pot #4")
 
 EP_main_room_bottom:connect_two_ways(EP_main_room_bottom_2E_door)
 EP_main_room_bottom_2E_door:connect_two_ways_entrance("", EP_east_wing_bottom_1W_door)
@@ -109,6 +146,14 @@ EP_dark_square_room_1N_door:connect_two_ways(EP_dark_square_room)
 
 EP_dark_square_room:connect_two_ways(EP_dark_pots, function() return DarkRooms end)
 EP_dark_pots:connect_one_way("EP - Dark Square Key Drop", function() return DarkRooms end)
+EP_dark_pots:connect_one_way("EP - Dark Pots Pot #1", function() return DarkRooms end)
+EP_dark_pots:connect_one_way("EP - Dark Pots Pot #2", function() return DarkRooms end)
+EP_dark_pots:connect_one_way("EP - Dark Pots Pot #3", function() return DarkRooms end)
+EP_dark_pots:connect_one_way("EP - Dark Pots Pot #4", function() return DarkRooms end)
+EP_dark_pots:connect_one_way("EP - Dark Pots Pot #5", function() return DarkRooms end)
+EP_dark_pots:connect_one_way("EP - Dark Pots Pot #6", function() return DarkRooms end)
+EP_dark_pots:connect_one_way("EP - Dark Pots Pot #7", function() return DarkRooms end)
+EP_dark_pots:connect_one_way("EP - Dark Pots Pot #8", function() return DarkRooms end)
 
 EP_dark_square_room:connect_two_ways(EP_dark_square_room_1W_door, function() return DarkRooms end)
 EP_dark_square_room_1W_door:connect_two_ways_entrance("", EP_cannonball_room_bridge_E_door, function(keys, Current_Dungeon) print("inside rule for: EP_dark_square_room_1W_door", keys, Current_Dungeon) return Has("smallkey", keys, 0, keys + 1, 1), KDSreturn(keys, keys + 1) end)
@@ -118,6 +163,9 @@ EP_cannonball_room_bridge:connect_two_ways(EP_cannonball_room_bridge_W_door)
 EP_cannonball_room_bridge_W_door:connect_two_ways_entrance("", EP_big_key_chest_room_2E_door)
 EP_big_key_chest_room_2E_door:connect_two_ways(EP_big_key_chest_room)
 
+EP_big_key_chest_room:connect_one_way("EP - Big Key Pot #1")
+EP_big_key_chest_room:connect_one_way("EP - Big Key Pot #2")
+EP_big_key_chest_room:connect_one_way("EP - Big Key Pot #3")
 EP_big_key_chest_room:connect_one_way("EP - Big Key Chest", function() return ALL(DealDamage, CanInteract(EP_big_key_chest_room)) end)
 EP_big_key_chest_room:connect_two_ways(EP_big_key_chest_room_2N_door)
 EP_big_key_chest_room_2N_door:connect_two_ways_entrance_door_stuck("", EP_west_wing_bottom_4S_door, function() print("inside rule for: EP_big_key_chest_room_2N_door", Current_Dungeon) return ALL("bigkey") end, function(keys, Current_Dungeon) print("inside rule for: EP_west_wing_bottom_4S_door", keys, Current_Dungeon) return Has("smallkey", keys, 0, keys + 1, 1), KDSreturn(keys, keys + 1) end)
@@ -128,24 +176,43 @@ EP_main_room_bottom:connect_two_ways(EP_main_room_bottom_N_door)
 EP_main_room_bottom_N_door:connect_two_ways_entrance_door_stuck("", EP_dark_eyegore_room_S_door, function() print("inside rule for: EP_main_room_bottom_N_door", Current_Dungeon) return ALL("bigkey") end, function(keys, Current_Dungeon) print("inside rule for: EP_dark_eyegore_room_S_door", keys, Current_Dungeon) return Has("smallkey", keys, 0, keys + 1, 1), KDSreturn(keys, keys + 1) end )
 EP_dark_eyegore_room_S_door:connect_two_ways(EP_dark_eyegore_room)
 
-EP_dark_eyegore_room:connect_one_way("EP - Dark Eyegore Key Drop", function() return ALL(EnemizerCheck("bow"), DealDamage) end)
+EP_dark_eyegore_room:connect_one_way("EP - Dark Eyegore Key Drop", function() return ALL(DarkRooms, EnemizerCheck("bow"), DealDamage) end)
+EP_dark_eyegore_room:connect_one_way("EP - Darkness Pot #1", function() return DarkRooms end)
+EP_dark_eyegore_room:connect_one_way("EP - Darkness Pot #2", function() return DarkRooms end)
+
 EP_dark_eyegore_room:connect_two_ways(EP_rupee_room, function() return DarkRooms(true) end)
 
 EP_dark_eyegore_room:connect_two_ways(EP_dark_eyegore_room_1N_door, function() return DarkRooms(true) end)
-EP_dark_eyegore_room_1N_door:connect_two_ways_entrance_door_stuck("", EP_false_switches_3N_door, function(keys, Current_Dungeon) print("inside rule for: EP_dark_eyegore_room_1N_door", keys, Current_Dungeon) return Has("smallkey", keys, 0, keys + 1, 2), KDSreturn(keys, keys + 1) end)
-EP_false_switches_3N_door:connect_two_ways(EP_false_switches)
+EP_dark_eyegore_room_1N_door:connect_two_ways_entrance_door_stuck("", EP_attic_start_3N_door, function(keys, Current_Dungeon) print("inside rule for: EP_dark_eyegore_room_1N_door", keys, Current_Dungeon) return Has("smallkey", keys, 0, keys + 1, 2), KDSreturn(keys, keys + 1) end)
+EP_attic_start_3N_door:connect_two_ways(EP_attic_start)
 
-EP_false_switches:connect_two_ways(EP_false_switches_3W_door)
-EP_false_switches_3W_door:connect_two_ways_entrance_door_stuck("", EP_eyegore_switches_4E_door, function() return CanInteract(EP_false_switches) end, function() return CanInteract(EP_eyegore_switches) end)
-EP_eyegore_switches_4E_door:connect_two_ways(EP_eyegore_switches)
+EP_attic_start:connect_one_way("EP - Attic Start Pot #1")
+EP_attic_start:connect_one_way("EP - Attic Start Pot #2")
+EP_attic_start:connect_one_way("EP - Attic Start Pot #3")
+EP_attic_start:connect_one_way("EP - Attic Start Pot #4")
 
-EP_eyegore_switches:connect_two_ways(EP_cannoball_hell, function() return CanInteract(EP_eyegore_switches) end, function() return CanInteract(EP_cannoball_hell) end)
+EP_attic_start:connect_two_ways(EP_attic_start_3W_door)
+EP_attic_start_3W_door:connect_two_ways_entrance_door_stuck("", EP_false_switches_4E_door, function() return CanInteract(EP_attic_start) end, function() return CanInteract(EP_false_switches) end)
+EP_false_switches_4E_door:connect_two_ways(EP_false_switches)
+
+EP_false_switches:connect_one_way("EP - False Switches Pot #1")
+EP_false_switches:connect_one_way("EP - False Switches Pot #2")
+EP_false_switches:connect_two_ways(EP_cannoball_hell, function() return CanInteract(EP_false_switches) end, function() return CanInteract(EP_cannoball_hell) end)
 
 EP_cannoball_hell:connect_two_ways(EP_cannoball_hell_3W_door)
 EP_cannoball_hell_3W_door:connect_two_ways_entrance_door_stuck("", EP_single_eyegore_4E_door, function() return CanInteract(EP_cannoball_hell) end)
 EP_single_eyegore_4E_door:connect_two_ways(EP_single_eyegore)
 
+EP_single_eyegore:connect_one_way("EP - Single Eyegore Pot #7")
+EP_single_eyegore:connect_one_way("EP - Single Eyegore Pot #8")
 EP_single_eyegore:connect_two_ways_entrance_door_stuck("", EP_duo_eyegores, function() return ALL(EnemizerCheck("bow"), DealDamage, CanInteract(EP_single_eyegore)) end)
+
+EP_duo_eyegores:connect_one_way("EP - Duo Eyegores Pot #1")
+EP_duo_eyegores:connect_one_way("EP - Duo Eyegores Pot #2")
+EP_duo_eyegores:connect_one_way("EP - Duo Eyegores Pot #3")
+EP_duo_eyegores:connect_one_way("EP - Duo Eyegores Pot #4")
+EP_duo_eyegores:connect_one_way("EP - Duo Eyegores Pot #5")
+EP_duo_eyegores:connect_one_way("EP - Duo Eyegores Pot #6")
 
 EP_duo_eyegores:connect_two_ways(EP_duo_eyegores_2N_door)
 EP_duo_eyegores_2N_door:connect_one_way_entrance("", EP_boss_room_4S_door, function() return ALL(CanInteract(EP_duo_eyegores), DealDamage, EnemizerCheck("bow")) end)

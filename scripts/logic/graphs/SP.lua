@@ -3,6 +3,7 @@ SP_first_room = alttp_location.new("SP_first_room", "SP First Room", nil, "SP", 
 local SP_hallway_before_first_trench = alttp_location.new("SP_hallway_before_first_trench", "SP ", nil, "SP", true)
 local SP_first_trench = alttp_location.new("SP_first_trench", "SP 1st Trench", nil, "SP", true)
 SP_main_room = alttp_location.new("SP_main_room", "SP Center Room", nil, "SP", true)
+local SP_main_room_north_east_ledge = alttp_location.new("SP_main_room_north_east_ledge", "SP Main Room NE Ledge", nil, "SP", true)
 local SP_roundabout = alttp_location.new("SP_roundabout", "SP Roundabout", nil, "SP", true)
 local SP_second_trench = alttp_location.new("SP_second_trench", "SP 2nd Trench", nil, "SP", true)
 local SP_hallway_after_second_trench = alttp_location.new("SP_hallway_after_second_trench", "SP Hallway After 2nd Tranch", nil, "SP", true)
@@ -94,6 +95,10 @@ SP_first_room_1N_door:connect_two_ways_entrance("", SP_pot_row_1N_door, function
 SP_pot_row_1N_door:connect_two_ways(SP_pot_row)
 
 SP_hallway_before_first_trench:connect_one_way("SP - Pot Row Key")
+SP_hallway_before_first_trench:connect_one_way("SP - Pot Row Pot #1")
+SP_hallway_before_first_trench:connect_one_way("SP - Pot Row Pot #2")
+SP_hallway_before_first_trench:connect_one_way("SP - Pot Row Pot #3")
+
 SP_pot_row:connect_two_ways(SP_pot_row_1W_door)
 SP_pot_row_1W_door:connect_two_ways_entrance("", SP_map_chest_ledge_2E_door, function() return Has("bombs") end)
 SP_map_chest_ledge_2E_door:connect_two_ways(SP_map_chest_ledge)
@@ -104,6 +109,7 @@ SP_pot_row_3W_door:connect_two_ways_entrance("", SP_first_trench_4E_door)
 SP_first_trench_4E_door:connect_two_ways(SP_first_trench)
 
 SP_first_trench:connect_one_way("SP - Tench 1 Pot Key")
+SP_first_trench:connect_one_way("SP - Trench 1 Key Ledge Pot #2")
 SP_first_trench:connect_two_ways(SP_flood_first_trench_room, function(keys, Current_Dungeon)
     return ANY(
         ALL(
@@ -120,8 +126,11 @@ SP_first_trench:connect_two_ways(SP_flood_first_trench_room, function(keys, Curr
 end)
 
 SP_flood_first_trench_room:connect_two_ways(SP_flood_first_trench_room_1W_door)
-SP_flood_first_trench_room_1W_door:connect_two_ways_entrance("", SP_main_room_north_ledge_N_door)
-SP_main_room_north_ledge_N_door:connect_two_ways(SP_main_room_north_ledge)
+SP_flood_first_trench_room_1W_door:connect_two_ways_entrance("", SP_main_room_north_east_ledge_E_door)
+SP_main_room_north_east_ledge_E_door:connect_two_ways(SP_main_room_north_east_ledge)
+
+SP_main_room_north_east_ledge:connect_one_way("SP - Hub Dead Ledge Pot #1")
+SP_main_room_north_east_ledge:connect_one_way("SP - Hub Dead Ledge Pot #1")
 
 SP_first_trench:connect_two_ways(SP_first_trench_3W_door)
 SP_first_trench_3W_door:connect_two_ways_entrance("", SP_main_room_4E_door)
@@ -129,6 +138,10 @@ SP_first_trench_3W_door:connect_two_ways_entrance("", SP_main_room_4E_door)
 SP_main_room_4E_door:connect_two_ways(SP_main_room)
 
 SP_main_room:connect_one_way("SP - Hookshot Pot Key", function() return Has("hookshot") end)
+SP_main_room:connect_one_way("SP - Hub Side Ledges Pot #3", function() return Has("hookshot") end)
+SP_main_room:connect_one_way("SP - Hub Side Ledges Pot #4", function() return Has("hookshot") end)
+SP_main_room:connect_one_way("SP - Hub Side Ledges Pot #5", function() return Has("hookshot") end)
+SP_main_room:connect_one_way("SP - Hub Side Ledges Pot #6", function() return Has("hookshot") end)
 SP_main_room:connect_one_way("SP - Big Chest", function() return Has("bigkey") end)
 
 SP_main_room:connect_two_ways(SP_main_room_S_door)
@@ -136,6 +149,8 @@ SP_main_room_S_door:connect_two_ways_entrance("", SP_roundabout_N_door)
 SP_roundabout_N_door:connect_two_ways(SP_roundabout)
 
 SP_roundabout:connect_one_way("SP - Compass Chest")
+SP_roundabout:connect_one_way("SP - Donut Top Pot #1")
+SP_roundabout:connect_one_way("SP - Donut Top Pot #2")
 
 SP_main_room:connect_two_ways(SP_main_room_1W_door)
 SP_main_room_1W_door:connect_two_ways_entrance("", SP_flood_second_trench_room_2E_door, function(keys, Current_Dungeon)
@@ -156,6 +171,14 @@ SP_main_room_3W_door:connect_two_ways_entrance("", SP_second_trench_4E_door)
 SP_second_trench_4E_door:connect_two_ways(SP_second_trench)
 
 SP_second_trench:connect_one_way("SP - Trench 2 Pot Key")
+SP_second_trench:connect_one_way("SP - Trench 2 Departure Pot #7")
+SP_second_trench:connect_one_way("SP - Trench 2 Pots Pot #8")
+SP_second_trench:connect_one_way("SP - Trench 2 Pots Pot #9")
+SP_second_trench:connect_one_way("SP - Trench 2 Pots Pot #10")
+SP_second_trench:connect_one_way("SP - Trench 2 Pots Pot #11")
+SP_second_trench:connect_one_way("SP - Trench 2 Pots Pot #12")
+SP_second_trench:connect_one_way("SP - Trench 2 Pots Pot #13")
+
 -- SP_flood_second_trench_room:connect_two_ways(SP_second_trench)
 SP_second_trench:connect_two_ways(SP_second_trench_3W_door)
 SP_second_trench_3W_door:connect_two_ways_entrance("", SP_shallow_trench_4E_door)
@@ -165,12 +188,26 @@ SP_shallow_trench:connect_two_ways(SP_shallow_trench_3N_door)
 SP_shallow_trench_3N_door:connect_two_ways_entrance(SP_shallow_water_attic_3N_door)
 SP_shallow_water_attic_3N_door:connect_two_ways(SP_shallow_water_attic)
 
+SP_shallow_water_attic:connect_one_way("SP -Attic Pot #1")
+SP_shallow_water_attic:connect_one_way("SP -Attic Pot #2")
+SP_shallow_water_attic:connect_one_way("SP -Attic Pot #3")
+SP_shallow_water_attic:connect_one_way("SP -Attic Pot #4")
+
 SP_shallow_water_attic:connect_one_way(SP_shallow_trench_big_key_ledge)
+
+SP_shallow_trench_big_key_ledge:connect_one_way("SP - Barrier Ledge Pot #1")
+SP_shallow_trench_big_key_ledge:connect_one_way("SP - Barrier Ledge Pot #2")
+
 SP_shallow_trench_big_key_ledge:connect_two_ways(SP_shallow_trench_big_key_ledge_2E_door)
 SP_big_key_chest_ledge_1W_door:connect_two_ways_entrance("", SP_big_key_chest_ledge_1W_door)
 
 SP_big_key_chest_ledge_1W_door:connect_two_ways(SP_big_key_chest_ledge)
-SP_hallway_after_second_trench:connect_one_way("SP - Big Key Chest")
+SP_big_key_chest_ledge:connect_one_way("SP - Big Key Chest")
+SP_big_key_chest_ledge:connect_one_way("SP - Big Key Ledge Pot #2")
+SP_big_key_chest_ledge:connect_one_way("SP - Big Key Ledge Pot #3")
+SP_big_key_chest_ledge:connect_one_way("SP - Big Key Ledge Pot #4")
+SP_big_key_chest_ledge:connect_one_way("SP - Big Key Ledge Pot #5")
+SP_big_key_chest_ledge:connect_one_way("SP - Big Key Ledge Pot #6")
 
 SP_shallow_trench_big_key_ledge:connect_one_way(SP_shallow_trench)
 
@@ -180,6 +217,10 @@ SP_west_chest_ledge:connect_one_way(SP_shallow_trench)
 
 
 SP_main_room:connect_two_ways_stuck(SP_main_room_north_ledge, function() return Has("hookshot") end)
+
+SP_main_room_north_ledge:connect_one_way("SP - Hub North Ledge Pot #7")
+SP_main_room_north_ledge:connect_one_way("SP - Hub North Ledge Pot #8")
+
 SP_main_room_north_ledge:connect_two_ways(SP_main_room_north_ledge_N_door)
 SP_main_room_north_ledge_N_door:connect_two_ways_entrance("", SP_push_statue_room_S_door, function(keys, Current_Dungeon)
     return ANY(
@@ -196,7 +237,16 @@ SP_main_room_north_ledge_N_door:connect_two_ways_entrance("", SP_push_statue_roo
 end)
 
 SP_push_statue_room_S_door:connect_two_ways(SP_push_statue_room)
+
+SP_push_statue_room:connect_one_way("SP - Push Statue Pot #3")
+SP_push_statue_room:connect_one_way("SP - Push Statue Pot #4")
+SP_push_statue_room:connect_one_way("SP - Push Statue Pot #5")
+
 SP_push_statue_room:connect_two_ways(SP_tiny_hallway)
+
+SP_tiny_hallway:connect_one_way("SP - Shooters Pot #1")
+SP_tiny_hallway:connect_one_way("SP - Shooters Pot #2")
+
 SP_tiny_hallway:connect_two_ways(SP_tiny_hallway_N_door)
 SP_tiny_hallway_N_door:connect_two_ways_entrance("", SP_drain_switch_room_N_door)
 SP_drain_switch_room_N_door:connect_two_ways(SP_drain_switch_left_side)
@@ -206,6 +256,8 @@ SP_push_statue_room:connect_two_ways(SP_S_hallway)
 SP_S_hallway:connect_two_ways(SP_S_hallway_2N_door)
 SP_S_hallway_2N_door:connect_two_ways_entrance("", SP_drain_switch_room_2N_door)
 SP_drain_switch_room_2N_door:connect_two_ways(SP_drain_switch_right_side)
+
+SP_drain_switch_right_side:connect_one_way("SP - Drain Right Pot #1")
 SP_drain_switch_right_side:connect_one_way(SP_drain_switch_left_side)
 
 SP_drain_switch_room:connect_two_ways(SP_basement_shallows_hallway)
@@ -218,12 +270,25 @@ SP_flooded_room_balcony:connect_two_ways(SP_flooded_room, function() return CanR
 
 SP_flooded_room:connect_one_way("SP - Flooded Room Left")
 SP_flooded_room:connect_one_way("SP - Flooded Room Right")
+SP_flooded_room:connect_one_way("SP - Flooded Spot Pot #2")
+SP_flooded_room:connect_one_way("SP - Flooded Spot Pot #3")
 SP_flooded_room:connect_two_ways_stuck(SP_basement_shallows_hallway, function() return CanReach("SP_drain_switch_right_side") end)
 
 SP_basement_shallows_hallway_1N_door:connect_two_ways_entrance("", SP_waterfall_room_3S_door)
 SP_waterfall_room_3S_door:connect_two_ways(SP_waterfall_room)
 
 SP_waterfall_room:connect_one_way("SP - Waterfall Room")
+SP_waterfall_room:connect_one_way("SP - Refill Pot #1")
+SP_waterfall_room:connect_one_way("SP - Refill Pot #2")
+SP_waterfall_room:connect_one_way("SP - Refill Pot #3")
+SP_waterfall_room:connect_one_way("SP - Refill Pot #4")
+SP_waterfall_room:connect_one_way("SP - Refill Pot #5")
+SP_waterfall_room:connect_one_way("SP - Refill Pot #6")
+SP_waterfall_room:connect_one_way("SP - Behind Waterfall Pot #7")
+SP_waterfall_room:connect_one_way("SP - Behind Waterfall Pot #8")
+SP_waterfall_room:connect_one_way("SP - Behind Waterfall Pot #9")
+SP_waterfall_room:connect_one_way("SP - Behind Waterfall Pot #10")
+
 SP_waterfall_room:connect_two_ways(SP_after_waterfall_room)
 SP_after_waterfall_room:connect_two_ways(SP_after_waterfall_room_2N_door)
 
@@ -232,6 +297,17 @@ SP_C_hallway:connect_two_ways_stuck(SP_heavy_current, nil, function() return Has
 
 -- SP_heavy_current:connect_two_ways(SP_I_hallway, function() return Has("bombs") end)
 SP_heavy_current:connect_one_way("SP - Waterway Pot Key", function() return Has("flippers") end)
+SP_heavy_current:connect_two_ways_stuck(SP_I_hallway, function() return ALL("flippers", "bombs") end)
+
+SP_I_hallway:connect_one_way("SP - I Pot #1")
+SP_I_hallway:connect_one_way("SP - I Pot #2")
+SP_I_hallway:connect_one_way("SP - I Pot #3")
+SP_I_hallway:connect_one_way("SP - I Pot #4")
+SP_I_hallway:connect_one_way("SP - I Pot #5")
+SP_I_hallway:connect_one_way("SP - I Pot #6")
+SP_I_hallway:connect_one_way("SP - I Pot #7")
+SP_I_hallway:connect_one_way("SP - I Pot #8")
+
 SP_heavy_current:connect_two_ways_stuck(SP_boss_hallway_ledge, function() return Has("flippers") end)
 SP_boss_hallway_ledge:connect_two_ways(SP_boss_hallway, function(keys, Current_Dungeon)
     return ANY(

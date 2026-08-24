@@ -427,7 +427,7 @@
                     {
                         "name": "Pot #1",
                         "access_rules":["^$CanReach|TR - Twin Pokeys Pot #1"],
-"^$CanReach|TR - Twin Pokeys Pot #1"                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -444,7 +444,7 @@
                     {
                         "name": "Pot #2",
                         "access_rules":["^$CanReach|TR - Twin Pokeys Pot #2"],
-"^$CanReach|TR - Twin Pokeys Pot #2"                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -461,7 +461,7 @@
                     {
                         "name": "Pot #3",
                         "access_rules":["^$CanReach|TR - Twin Pokeys Pot #3"],
-"^$CanReach|TR - Twin Pokeys Pot #3"                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -478,7 +478,7 @@
                     {
                         "name": "Pot #4",
                         "access_rules":["^$CanReach|TR - Twin Pokeys Pot #4"],
-"^$CanReach|TR - Twin Pokeys Pot #4"                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -563,7 +563,7 @@
                     {
                         "name": "Pot #3",
                         "access_rules":["^$CanReach|TR - Torches Ledge Pot #3"],
-"^$CanReach|TR - Torches Ledge Pot #3"                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -580,7 +580,7 @@
                     {
                         "name": "Pot #4",
                         "access_rules":["^$CanReach|TR - Torches Ledge Pot #4"],
-"^$CanReach|TR - Torches Ledge Pot #4"                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -614,6 +614,40 @@
                     {
                         "name": "Pot #2",
                         "access_rules": ["^$CanReach|TR - Main Lobby Pot #2"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Refill Pot #1",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #1",
+                        "access_rules": ["^$CanReach|TR - Refill Pot #1"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
+                        "item_count": 1
+                    }
+                ]
+            },
+            {
+                "name": "Roller Room Pot #1",
+                "chest_unopened_img": "/images/items/close.png",
+                "chest_opened_img": "/images/items/open.png",
+                "overlay_background": "#000000",
+                "access_rules": [
+                    " "
+                ],
+                "sections": [
+                    {
+                        "name": "Pot #1",
+                        "access_rules":["^$CanReach|TR - Roller Room Pot #1"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
@@ -879,7 +913,7 @@
                     {
                         "name": "Pot #5",
                         "access_rules":["^$CanReach|TR - Tongue Pull Pot #5"],
-"^$CanReach|TR - Tongue Pull Pot #5"                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -896,7 +930,7 @@
                     {
                         "name": "Pot #6",
                         "access_rules":["^$CanReach|TR - Tongue Pull Pot #6"],
-"^$CanReach|TR - Tongue Pull Pot #6"                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -913,7 +947,7 @@
                     {
                         "name": "Pot #1",
                         "access_rules":["^$CanReach|TR - Final Abyss Balcony Pot #1"],
-"^$CanReach|TR - Final Abyss Balcony Pot #1"                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -930,7 +964,7 @@
                     {
                         "name": "Pot #2",
                         "access_rules":["^$CanReach|TR - Final Abyss Balcony Pot #2"],
-"^$CanReach|TR - Final Abyss Balcony Pot #2"                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -947,7 +981,7 @@
                     {
                         "name": "Pot #1",
                         "access_rules":["^$CanReach|TR - Dark Ride Ledges Pot #1"],
-"^$CanReach|TR - Dark Ride Ledges Pot #1"                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -964,7 +998,7 @@
                     {
                         "name": "Pot #2",
                         "access_rules":["^$CanReach|TR - Dark Ride Ledges Pot #2"],
-"^$CanReach|TR - Dark Ride Ledges Pot #2"                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -981,7 +1015,7 @@
                     {
                         "name": "Pot #3",
                         "access_rules":["^$CanReach|TR - Dark Ride Ledges Pot #3"],
-"^$CanReach|TR - Dark Ride Ledges Pot #3"                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -998,7 +1032,7 @@
                     {
                         "name": "Pot #4",
                         "access_rules":["^$CanReach|TR - Dark Ride Ledges Pot #4"],
-"^$CanReach|TR - Dark Ride Ledges Pot #4"                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -1015,7 +1049,7 @@
                     {
                         "name": "Pot #5",
                         "access_rules":["^$CanReach|TR - Dark Ride Ledges Pot #5"],
-"^$CanReach|TR - Dark Ride Ledges Pot #5"                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -1032,41 +1066,7 @@
                     {
                         "name": "Pot #6",
                         "access_rules":["^$CanReach|TR - Dark Ride Ledges Pot #6"],
-"^$CanReach|TR - Dark Ride Ledges Pot #6"                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
-                        "item_count": 1
-                    }
-                ]
-            },
-            {
-                "name": "Refill Pot #1",
-                "chest_unopened_img": "/images/items/close.png",
-                "chest_opened_img": "/images/items/open.png",
-                "overlay_background": "#000000",
-                "access_rules": [
-                    " "
-                ],
-                "sections": [
-                    {
-                        "name": "Pot #1",
-                        "access_rules":"["^$CanReach|TR - Refill Pot #1"],
                         "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
-                        "item_count": 1
-                    }
-                ]
-            },
-            {
-                "name": "Roller Room Pot #1",
-                "chest_unopened_img": "/images/items/close.png",
-                "chest_opened_img": "/images/items/open.png",
-                "overlay_background": "#000000",
-                "access_rules": [
-                    " "
-                ],
-                "sections": [
-                    {
-                        "name": "Pot #1",
-                        "access_rules":["^$CanReach|TR - Roller Room Pot #1"],
-"^$CanReach|TR - Roller Room Pot #1"                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -1083,7 +1083,7 @@
                     {
                         "name": "Pot #1",
                         "access_rules":["^$CanReach|TR - Crystal Maze Interior Pot #1"],
-"^$CanReach|TR - Crystal Maze Interior Pot #1"                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -1100,7 +1100,7 @@
                     {
                         "name": "Pot #2",
                         "access_rules":["^$CanReach|TR - Crystal Maze Interior Pot #2"],
-"^$CanReach|TR - Crystal Maze Interior Pot #2"                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -1117,7 +1117,7 @@
                     {
                         "name": "Pot #3",
                         "access_rules":["^$CanReach|TR - Crystal Maze Interior Pot #3"],
-"^$CanReach|TR - Crystal Maze Interior Pot #3"                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -1134,7 +1134,7 @@
                     {
                         "name": "Pot #4",
                         "access_rules":["^$CanReach|TR - Crystal Maze Interior Pot #4"],
-"^$CanReach|TR - Crystal Maze Interior Pot #4"                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -1151,7 +1151,7 @@
                     {
                         "name": "Pot #5",
                         "access_rules":["^$CanReach|TR - Crystal Maze Interior Pot #5"],
-"^$CanReach|TR - Crystal Maze Interior Pot #5"                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -1168,7 +1168,7 @@
                     {
                         "name": "Pot #6",
                         "access_rules":["^$CanReach|TR - Crystal Maze Interior Pot #6"],
-"^$CanReach|TR - Crystal Maze Interior Pot #6"                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -1185,7 +1185,7 @@
                     {
                         "name": "Pot #7",
                         "access_rules":["^$CanReach|TR - Crystal Maze Interior Pot #7"],
-"^$CanReach|TR - Crystal Maze Interior Pot #7"                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]
@@ -1202,7 +1202,7 @@
                     {
                         "name": "Pot #8",
                         "access_rules":["^$CanReach|TR - Crystal Maze Interior Pot #8"],
-"^$CanReach|TR - Crystal Maze Interior Pot #8"                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ]

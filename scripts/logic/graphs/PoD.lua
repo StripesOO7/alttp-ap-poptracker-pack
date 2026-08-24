@@ -92,11 +92,25 @@ PoD_lobby:connect_two_ways(PoD_three_way_room_left, function() return CanInterac
 PoD_lobby:connect_two_ways(PoD_three_way_room_middle, function() return CanInteract(PoD_lobby) end)
 PoD_lobby:connect_two_ways(PoD_three_way_room_right, function() return CanInteract(PoD_lobby) end)
 
+PoD_three_way_room_left:connect_one_way("PoD - Left Cage Pot #1")
+PoD_three_way_room_left:connect_one_way("PoD - Left Cage Pot #2")
+PoD_three_way_room_left:connect_one_way("PoD - Left Cage Pot #3")
+PoD_three_way_room_left:connect_one_way("PoD - Left Cage Pot #4")
+PoD_three_way_room_middle:connect_one_way("PoD - Middle Cage Pot #5")
+PoD_three_way_room_middle:connect_one_way("PoD - Middle Cage Pot #6")
+PoD_three_way_room_right:connect_one_way("PoD - Middle Cage Pot #7")
+PoD_three_way_room_right:connect_one_way("PoD - Middle Cage Pot #8")
+PoD_three_way_room_right:connect_one_way("PoD - Middle Cage Pot #9")
+PoD_three_way_room_right:connect_one_way("PoD - Middle Cage Pot #10")
+
 PoD_three_way_room_left:connect_two_ways(PoD_three_way_room_left_1N_door)
 PoD_three_way_room_left_1N_door:connect_two_ways_entrance("", PoD_shooter_room_1N_door)
 PoD_shooter_room_1N_door:connect_two_ways(PoD_shooter_room)
 
 PoD_shooter_room:connect_one_way("PoD - Shooter Room", function() return CanInteract(PoD_shooter_room) end)
+PoD_shooter_room:connect_one_way("PoD - Shooter Room Pot #1")
+PoD_shooter_room:connect_one_way("PoD - Shooter Room Pot #2")
+PoD_shooter_room:connect_one_way("PoD - Shooter Room Pot #3")
 
 PoD_three_way_room_middle:connect_two_ways(PoD_three_way_room_middle_N_door)
 PoD_three_way_room_middle_N_door:connect_two_ways_entrance("", PoD_big_key_chest_room_S_door, function(keys, Current_Dungeon)
@@ -113,7 +127,8 @@ end)
 PoD_big_key_chest_room_S_door:connect_two_ways(PoD_big_key_chest_room)
 
 PoD_big_key_chest_room:connect_one_way(PoD_basement_ledge, function() return Has("bombs") end)
-PoD_basement_ledge:connect_one_way(PoD_basement_ledge)
+PoD_basement_ledge:connect_one_way("PoD - Basement Ledge Pot #6")
+PoD_basement_ledge:connect_one_way("PoD - Basement Ledge Pot #7")
 PoD_basement_ledge:connect_two_ways(PoD_basement_ledge_N_door)
 
 PoD_basement_ledge_N_door:connect_two_ways_entrance_door_stuck("", PoD_big_key_chest_room_N_door, function(keys, Current_Dungeon)
@@ -125,6 +140,11 @@ PoD_big_key_chest_ledge:connect_one_way("PoD - Big Key Chest")
 PoD_big_key_chest_ledge:connect_one_way(PoD_basement_floor)
 
 PoD_basement_floor:connect_one_way("PoD - Stalfos Basement")
+PoD_basement_floor:connect_one_way("PoD - Stalfos Basement Pot #1")
+PoD_basement_floor:connect_one_way("PoD - Stalfos Basement Pot #2")
+PoD_basement_floor:connect_one_way("PoD - Stalfos Basement Pot #3")
+PoD_basement_floor:connect_one_way("PoD - Stalfos Basement Pot #4")
+PoD_basement_floor:connect_one_way("PoD - Stalfos Basement Pot #5")
 PoD_big_key_chest_room:connect_one_way(PoD_basement_floor)
 
 
@@ -141,6 +161,8 @@ PoD_arena_right_bridge_4S_door:connect_two_ways(PoD_arena_right_bridge)
 PoD_arena_right_bridge:connect_one_way("PoD - Arena Bridge")
 PoD_arena_right_bridge:connect_one_way(PoD_arena_center)
 
+PoD_arena_center:connect_one_way("PoD - Arena Main Pot #1")
+PoD_arena_center:connect_one_way("PoD - Arena Main Pot #2")
 PoD_arena_center:connect_two_ways(PoD_arena_back_bridge, function() return HitRanged end)
 PoD_arena_center:connect_two_ways(PoD_arena_right, function() return HitRanged end)
 PoD_arena_right:connect_two_ways(PoD_arena_right_E_door)
@@ -153,6 +175,10 @@ PoD_three_way_room_right_2N_door:connect_two_ways_entrance(PoD_teleporter_room_2
 PoD_teleporter_room_2N_door:connect_two_ways(PoD_teleporter_room)
 PoD_teleporter_room:connect_two_ways(PoD_bari_hallway, function() return ANY("boots", "bombs") end)
 PoD_bari_hallway:connect_two_ways(PoD_mimic_room, function() return ANY("boots", "bombs") end)
+
+PoD_mimic_room:connect_one_way("PoD - Mimics 1 Pot #1")
+PoD_mimic_room:connect_one_way("PoD - Mimics 1 Pot #2")
+
 PoD_mimic_room:connect_two_ways(PoD_mimic_room_1N_door)
 
 PoD_mimic_room_1N_door:connect_two_ways_entrance_door_stuck("", PoD_conveyor_hallway_3S_door, function(keys, Current_Dungeon) return EnemizerCheck("bow"), keys + 1 end)
@@ -163,6 +189,10 @@ PoD_conveyor_hallway_1N_door:connect_two_ways_entrance("", PoD_switch_room_top_3
 PoD_switch_room_top_3S_door:connect_two_ways(PoD_switch_room_top)
 
 PoD_switch_room_top:connect_one_way("PoD - Map Chest")
+PoD_switch_room_top:connect_one_way("PoD - Map Balcony Pot #7")
+PoD_switch_room_top:connect_one_way("PoD - Map Balcony Pot #8")
+PoD_switch_room_top:connect_one_way("PoD - Map Balcony Pot #9")
+PoD_switch_room_top:connect_one_way("PoD - Map Balcony Pot #10")
 PoD_switch_room_top:connect_two_ways(PoD_switch_room_top_3W_door)
 PoD_switch_room_top_3W_door:connect_two_ways_entrance("", PoD_arena_ledge_4E_door, function() return Has("bombs") end)
 PoD_arena_ledge_4E_door:connect_two_ways(PoD_arena_ledge)
@@ -177,8 +207,12 @@ PoD_arena_back_bridge_1N_door:connect_two_ways_entrance("", PoD_collapsing_bridg
     end
 end)
 PoD_collapsing_bridge_front_2S_door:connect_two_ways(PoD_collapsing_bridge_front)
+PoD_collapsing_bridge_front:connect_one_way("PoD - Falling Bridge Ledge Pot #1")
+PoD_collapsing_bridge_front:connect_one_way("PoD - Falling Bridge Ledge Pot #2")
 PoD_collapsing_bridge_front:connect_two_ways_stuck(PoD_collapsing_bridge_back, nil, function() return ANY("boots", "hookshot") end)
 
+PoD_collapsing_bridge_back:connect_one_way("PoD - Falling Bridge Pot #3")
+PoD_collapsing_bridge_back:connect_one_way("PoD - Falling Bridge Pot #4")
 PoD_collapsing_bridge_back:connect_two_ways(PoD_collapsing_bridge_back_1W_door)
 PoD_collapsing_bridge_back_1W_door:connect_two_ways_entrance("", PoD_dark_maze_2E_door, function(keys, Current_Dungeon)
     return ALL(
@@ -215,6 +249,8 @@ PoD_compass_room:connect_two_ways(PoD_harmless_hellway, function(keys, Current_D
     return Has("smallkey", keys + CountDoneDeadends(1, "@Palace of Darkness/Big Key Chest/Big Key Chest", "@Palace of Darkness/Dark Maze Top/Dark Maze Top", "@Palace of Darkness/Boss/Boss Item"), 6, keys + CountDoneDeadends(1, "@Palace of Darkness/Big Key Chest/Big Key Chest", "@Palace of Darkness/Dark Maze Top/Dark Maze Top", "@Palace of Darkness/Boss/Boss Item"), 6), keys + 1
 end)
 PoD_harmless_hellway:connect_one_way("PoD - Harmless Hellway")
+PoD_harmless_hellway:connect_one_way("PoD - Harmless Hellway Pot #5")
+PoD_harmless_hellway:connect_one_way("PoD - Harmless Hellway Pot #6")
 PoD_harmless_hellway:connect_two_ways(PoD_harmless_hellway_4S_door)
 PoD_harmless_hellway_4S_door:connect_two_ways_entrance_door_stuck("", PoD_arena_back_bridge_2N_door, nil, function() return false end)
 
@@ -222,15 +258,25 @@ PoD_harmless_hellway_4S_door:connect_two_ways_entrance_door_stuck("", PoD_arena_
 PoD_arena_back_bridge:connect_two_ways(PoD_arena_back_bridge_2N_door)
 PoD_switch_room_top:connect_two_ways(PoD_switch_room_bottom, function() return Has("hammer") end)
 
+PoD_switch_room_bottom:connect_one_way("PoD - Sexy Statue Pot #1")
+PoD_switch_room_bottom:connect_one_way("PoD - Sexy Statue Pot #2")
+PoD_switch_room_bottom:connect_one_way("PoD - Sexy Statue Pot #3")
+PoD_switch_room_bottom:connect_one_way("PoD - Sexy Statue Pot #4")
+PoD_switch_room_bottom:connect_one_way("PoD - Sexy Statue Pot #5")
+PoD_switch_room_bottom:connect_one_way("PoD - Sexy Statue Pot #6")
 PoD_switch_room_bottom:connect_two_ways(PoD_switch_room_bottom_N_door)
 PoD_switch_room_bottom_N_door:connect_two_ways_entrance("", PoD_mimics2_3S_door, function() return ALL(EnemizerCheck("bow"), DealDamage) end)
 PoD_mimics2_3S_door:connect_two_ways(PoD_mimics_2)
 
+PoD_mimics_2:connect_one_way("PoD - Mimics 2 Pot #1")
+PoD_mimics_2:connect_one_way("PoD - Mimics 2 Pot #2")
 PoD_mimics_2:connect_two_ways_stuck(PoD_bow_statue)
 PoD_bow_statue:connect_two_ways(PoD_bow_statue_2N_door, function() return Has("bow") end)
 PoD_bow_statue_2N_door:connect_two_ways_entrance("", PoD_dark_pegs_2N_door)
 PoD_dark_pegs_2N_door:connect_two_ways(PoD_dark_pegs)
 
+PoD_dark_pegs:connect_one_way("PoD - Dark Pegs Left Pot #1")
+PoD_dark_pegs:connect_one_way("PoD - Dark Pegs Left Pot #2")
 PoD_dark_pegs:connect_two_ways(PoD_lonely_turtle, function() return ALL("hammer", HitRanged, DarkRooms) end)
 PoD_lonely_turtle:connect_two_ways(PoD_turtle_party)
 PoD_turtle_party:connect_two_ways(PoD_basement_teleporter_A_side, function() return Has("hammer") end)

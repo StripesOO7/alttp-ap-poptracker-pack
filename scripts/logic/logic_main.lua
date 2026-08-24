@@ -264,6 +264,7 @@ end
 ---@param exit string|alttp_location_new_return alttp_location_new_return or code/name
 ---@param rule? function
 function alttp_location:connect_two_ways(exit, rule)
+    -- print(self.name, exit.name)
     -- print(exit.name, self.name)
     self:connect_one_way(exit, rule)
     exit:connect_one_way(self, rule)
