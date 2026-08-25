@@ -133,8 +133,30 @@
                         "access_rules": [
                             "^$CanReach|ToH_boss_room, ^$CanReach|ToH - Boss"
                         ],
-                        "item_count": 1,
-                        "hosted_item": "toh_boss, towerofhera"
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Boss",
+                        "access_rules": [
+                            "^$CanReach|ToH_boss_room, ^$CanReach|ToH - Boss"
+                        ],
+                        "hosted_item": "toh_boss"
+                    },
+                    {
+                        "name": "Dungeon Reward",
+                        "access_rules": [
+                            "^$CanReach|ToH_boss_room, ^$CanReach|ToH - Boss"
+                        ],
+                        "visibility_rules":["boss_prize_shuffle_off"],
+                        "hosted_item": "towerofhera"
+                    },
+                    {
+                        "name": "Dungeon Reward Shuffled",
+                        "access_rules": [
+                            "^$CanReach|ToH_boss_room, ^$CanReach|ToH - Boss"
+                        ],
+                        "visibility_rules":["boss_prize_shuffle_on"],
+                        "hosted_item": "toh_ap_reward"
                     }
                 ],
                 "map_locations": [

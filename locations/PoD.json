@@ -317,8 +317,30 @@
                         "access_rules": [
                             "^$CanReach|PoD - Boss"
                         ],
-                        "item_count": 1,
-                        "hosted_item": "PoD_boss,palaceofdarkness"
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Boss",
+                        "access_rules": [
+                            "^$CanReach|PoD - Boss"
+                        ],
+                        "hosted_item": "PoD_boss"
+                    },
+                    {
+                        "name": "Dungeon Reward",
+                        "access_rules": [
+                            "^$CanReach|PoD - Boss"
+                        ],
+                        "visibility_rules":["boss_prize_shuffle_off"],
+                        "hosted_item": "palaceofdarkness"
+                    },
+                    {
+                        "name": "Dungeon Reward Shuffled",
+                        "access_rules": [
+                            "^$CanReach|PoD - Boss"
+                        ],
+                        "visibility_rules":["boss_prize_shuffle_on"],
+                        "hosted_item": "pod_ap_reward"
                     }
                 ],
                 "map_locations": [

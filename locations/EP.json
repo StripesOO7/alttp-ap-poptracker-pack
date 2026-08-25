@@ -159,8 +159,30 @@
                         "access_rules": [
                             "^$CanReach|EP - Boss, ^$CanReach|EP_boss_room"
                         ],
-                        "item_count": 1,
-                        "hosted_item": "ep_boss, easternpalace"
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Boss",
+                        "access_rules": [
+                            "^$CanReach|EP - Boss, ^$CanReach|EP_boss_room"
+                        ],
+                        "hosted_item": "ep_boss"
+                    },
+                    {
+                        "name": "Dungeon Reward",
+                        "access_rules": [
+                            "^$CanReach|EP - Boss, ^$CanReach|EP_boss_room"
+                        ],
+                        "visibility_rules":["boss_prize_shuffle_off"],
+                        "hosted_item": "easternpalace"
+                    },
+                    {
+                        "name": "Dungeon Reward Shuffled",
+                        "access_rules": [
+                            "^$CanReach|EP - Boss, ^$CanReach|EP_boss_room"
+                        ],
+                        "visibility_rules":["boss_prize_shuffle_on"],
+                        "hosted_item": "ep_ap_reward"
                     }
                 ],
                 "map_locations": [

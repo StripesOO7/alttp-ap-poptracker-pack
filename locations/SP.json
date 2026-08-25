@@ -355,8 +355,30 @@
                         "access_rules": [
                             "^$CanReach|SP - Boss"
                         ],
-                        "item_count": 1,
-                        "hosted_item": "sp_boss, swamppalace"
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Boss",
+                        "access_rules": [
+                            "^$CanReach|SP - Boss"
+                        ],
+                        "hosted_item": "sp_boss"
+                    },
+                    {
+                        "name": "Dungeon Reward",
+                        "access_rules": [
+                            "^$CanReach|SP - Boss"
+                        ],
+                        "visibility_rules":["boss_prize_shuffle_off"],
+                        "hosted_item": "swamppalace"
+                    },
+                    {
+                        "name": "Dungeon Reward Shuffled",
+                        "access_rules": [
+                            "^$CanReach|SP - Boss"
+                        ],
+                        "visibility_rules":["boss_prize_shuffle_on"],
+                        "hosted_item": "sp_ap_reward"
                     }
                 ],
                 "map_locations": [

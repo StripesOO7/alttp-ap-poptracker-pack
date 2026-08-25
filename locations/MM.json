@@ -257,8 +257,30 @@
                         "access_rules": [
                             "^$CanReach|MM - Boss"
                         ],
-                        "item_count": 1,
-                        "hosted_item": "mm_boss, miserymire"
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Boss",
+                        "access_rules": [
+                            "^$CanReach|MM - Boss"
+                        ],
+                        "hosted_item": "mm_boss"
+                    },
+                    {
+                        "name": "Dungeon Reward",
+                        "access_rules": [
+                            "^$CanReach|MM - Boss"
+                        ],
+                        "visibility_rules":["boss_prize_shuffle_off"],
+                        "hosted_item": "miserymire"
+                    },
+                    {
+                        "name": "Dungeon Reward Shuffled",
+                        "access_rules": [
+                            "^$CanReach|MM - Boss"
+                        ],
+                        "visibility_rules":["boss_prize_shuffle_on"],
+                        "hosted_item": "mm_ap_reward"
                     }
                 ],
                 "map_locations": [

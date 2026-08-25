@@ -819,8 +819,30 @@
                         "access_rules": [
                             "^$CanReach|TR - Boss"
                         ],
-                        "item_count": 1,
-                        "hosted_item": "tr_boss, turtlerock"
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Boss",
+                        "access_rules": [
+                            "^$CanReach|TR - Boss"
+                        ],
+                        "hosted_item": "tr_boss"
+                    },
+                    {
+                        "name": "Dungeon Reward",
+                        "access_rules": [
+                            "^$CanReach|TR - Boss"
+                        ],
+                        "visibility_rules":["boss_prize_shuffle_off"],
+                        "hosted_item": "turtlerock"
+                    },
+                    {
+                        "name": "Dungeon Reward Shuffled",
+                        "access_rules": [
+                            "^$CanReach|TR - Boss"
+                        ],
+                        "visibility_rules":["boss_prize_shuffle_on"],
+                        "hosted_item": "tr_ap_reward"
                     }
                 ],
                 "map_locations": [

@@ -1335,8 +1335,30 @@
                         "access_rules": [
                             "^$CanReach|SW - Boss"
                         ],
-                        "item_count": 1,
-                        "hosted_item": "sw_boss, skullwoods"
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Boss",
+                        "access_rules": [
+                            "^$CanReach|SW - Boss"
+                        ],
+                        "hosted_item": "sw_boss"
+                    },
+                    {
+                        "name": "Dungeon Reward",
+                        "access_rules": [
+                            "^$CanReach|SW - Boss"
+                        ],
+                        "visibility_rules":["boss_prize_shuffle_off"],
+                        "hosted_item": "skullwoods"
+                    },
+                    {
+                        "name": "Dungeon Reward Shuffled",
+                        "access_rules": [
+                            "^$CanReach|SW - Boss"
+                        ],
+                        "visibility_rules":["boss_prize_shuffle_on"],
+                        "hosted_item": "sw_ap_reward"
                     }
                 ],
                 "map_locations": [

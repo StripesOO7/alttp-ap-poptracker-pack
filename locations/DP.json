@@ -712,8 +712,30 @@
                         "access_rules": [
                             "^$CanReach|DP_back_boss_room, ^$CanReach|DP - Boss"
                         ],
-                        "item_count": 1,
-                        "hosted_item": "dp_boss, desertpalace"
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Boss",
+                        "access_rules": [
+                            "^$CanReach|DP_back_boss_room, ^$CanReach|DP - Boss"
+                        ],
+                        "hosted_item": "dp_boss"
+                    },
+                    {
+                        "name": "Dungeon Reward",
+                        "access_rules": [
+                            "^$CanReach|DP_back_boss_room, ^$CanReach|DP - Boss"
+                        ],
+                        "visibility_rules":["boss_prize_shuffle_off"],
+                        "hosted_item": "desertpalace"
+                    },
+                    {
+                        "name": "Dungeon Reward Shuffled",
+                        "access_rules": [
+                            "^$CanReach|DP_back_boss_room, ^$CanReach|DP - Boss"
+                        ],
+                        "visibility_rules":["boss_prize_shuffle_on"],
+                        "hosted_item": "dp_ap_reward"
                     }
                 ],
                 "map_locations": [

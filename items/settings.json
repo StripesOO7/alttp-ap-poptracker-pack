@@ -1012,10 +1012,23 @@
     },
     {
         "name": "Boss Prize Shuffle",
-        "type": "toggle",
-        "img": "/images/settings/shuffle_boss_rewards_on.png",
-        "disabled_img": "/images/settings/shuffle_boss_rewards_off.png",
-        "disabled_img_mods": "",
-        "codes": "boss_prize_shuffle"
+        "type": "progressive",
+        "allow_disabled": false,
+        "initial_stage_idx": 0, 
+        "loop": true,
+        "stages":[
+            {
+                "img": "/images/settings/shuffle_boss_rewards_off.png",
+                "inherit_codes": false,
+                "name": "Boss Prize Shuffle Off",
+                "codes": "boss_prize_shuffle, boss_prize_shuffle_off"
+            },
+            {
+                "img": "/images/settings/shuffle_boss_rewards_on.png",
+                "inherit_codes": false,
+                "name": "Boss Prize Shuffle On",
+                "codes": "boss_prize_shuffle, boss_prize_shuffle_on"
+            }
+        ]
     }
 ]

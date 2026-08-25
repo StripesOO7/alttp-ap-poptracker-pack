@@ -549,8 +549,30 @@
                         "access_rules": [
                             "^$CanReach|TT - Boss"
                         ],
-                        "item_count": 1,
-                        "hosted_item": "tt_boss, thievestown"
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Boss",
+                        "access_rules": [
+                            "^$CanReach|TT - Boss"
+                        ],
+                        "hosted_item": "tt_boss"
+                    },
+                    {
+                        "name": "Dungeon Reward",
+                        "access_rules": [
+                            "^$CanReach|TT - Boss"
+                        ],
+                        "visibility_rules":["boss_prize_shuffle_off"],
+                        "hosted_item": "thievestown"
+                    },
+                    {
+                        "name": "Dungeon Reward Shuffled",
+                        "access_rules": [
+                            "^$CanReach|TT - Boss"
+                        ],
+                        "visibility_rules":["boss_prize_shuffle_on"],
+                        "hosted_item": "tt_ap_reward"
                     }
                 ],
                 "map_locations": [

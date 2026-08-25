@@ -283,8 +283,30 @@
                         "access_rules": [
                             "^$CanReach|IP - Boss"
                         ],
-                        "item_count": 1,
-                        "hosted_item": "ip_boss, icepalace"
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Boss",
+                        "access_rules": [
+                            "^$CanReach|IP - Boss"
+                        ],
+                        "hosted_item": "ip_boss"
+                    },
+                    {
+                        "name": "Dungeon Reward",
+                        "access_rules": [
+                            "^$CanReach|IP - Boss"
+                        ],
+                        "visibility_rules":["boss_prize_shuffle_off"],
+                        "hosted_item": "icepalace"
+                    },
+                    {
+                        "name": "Dungeon Reward Shuffled",
+                        "access_rules": [
+                            "^$CanReach|IP - Boss"
+                        ],
+                        "visibility_rules":["boss_prize_shuffle_on"],
+                        "hosted_item": "ip_ap_reward"
                     }
                 ],
                 "map_locations": [
