@@ -1000,6 +1000,7 @@ end
 ---@param key string Name of the key that was used to send the message
 ---@param value table<integer, APhint_message>
 function OnNotifyLaunch(key, value)
+    print(key, Dump_table(value))
     if key == HINTS_ID then
         Tracker.BulkUpdate = true
         for _, hint in ipairs(value) do
@@ -1023,40 +1024,45 @@ function UpdateHints(locationID, status)
     if Highlight then
         -- print(locationID, status)
         local location_table = LOCATION_MAPPING[locationID]
-        for _, location in ipairs(location_table) do
-            if location:sub(1, 1) == "@" then
-                local obj = Tracker:FindObjectForCode(location)  --[[@as LocationSection]]
-                if obj == nil then
-                    print(string.format("No object found for code: %s", location))
-                    return
-                end
-                if obj.ChestCount > 1 then
-                    if HINTS_PRIORITY_LOOKUP[location] == nil then
-                        HINTS_PRIORITY_LOOKUP[location] = {}
+        if location_table then
+            for _, location in ipairs(location_table) do
+                if location and location:sub(1, 1) == "@" then
+                    local obj = Tracker:FindObjectForCode(location)  --[[@as LocationSection]]
+                    if obj == nil then
+                        print(string.format("No object found for code: %s", location))
+                        return
                     end
-                    
-                    HINTS_PRIORITY_LOOKUP[location][locationID] = status
-                    local amount_of_entries = 0
-                    for _, saved_status in pairs(HINTS_PRIORITY_LOOKUP[location]) do
-                        amount_of_entries = amount_of_entries + 1
-                    end
-                    if amount_of_entries > 1 then
-                        local max_status = 0
-                        for _, saved_status in pairs(HINTS_PRIORITY_LOOKUP[location]) do
-                            if HINT_PRIO_MAPPING[max_status] < HINT_PRIO_MAPPING[saved_status] and saved_status ~= 0 and saved_status ~= 100 then
-                                max_status = saved_status
-                            end
+                    if obj.ChestCount > 1 then
+                        if HINTS_PRIORITY_LOOKUP[location] == nil then
+                            HINTS_PRIORITY_LOOKUP[location] = {}
                         end
-                        status = max_status
+                        
+                        HINTS_PRIORITY_LOOKUP[location][locationID] = status
+                        local amount_of_entries = 0
+                        for _, saved_status in pairs(HINTS_PRIORITY_LOOKUP[location]) do
+                            amount_of_entries = amount_of_entries + 1
+                        end
+                        if amount_of_entries > 1 then
+                            local max_status = 0
+                            for _, saved_status in pairs(HINTS_PRIORITY_LOOKUP[location]) do
+                                if HINT_PRIO_MAPPING[max_status] < HINT_PRIO_MAPPING[saved_status] and saved_status ~= 0 and saved_status ~= 100 then
+                                    max_status = saved_status
+                                end
+                            end
+                            status = max_status
+                        end
                     end
-                end
-                if TROLL_PLAYER and HIGHLIGHT_LEVEL[status] == Highlight.Avoid then
-                    obj.Highlight = HIGHLIGHT_LEVEL[30]
-                else
-                    obj.Highlight = HIGHLIGHT_LEVEL[status]
+                    if TROLL_PLAYER and HIGHLIGHT_LEVEL[status] == Highlight.Avoid then
+                        obj.Highlight = HIGHLIGHT_LEVEL[30]
+                    else
+                        obj.Highlight = HIGHLIGHT_LEVEL[status]
+                    end
                 end
             end
+        else
+            print(string.format("Could not find location %s to highlight with status %s", locationID, status))
         end
+
     end
 end
 
