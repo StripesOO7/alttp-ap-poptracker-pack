@@ -987,6 +987,33 @@
             ]
     },
     {
+        "name": "Enemy Drop Shuffle",
+        "type": "progressive",
+        "allow_disabled": false,
+        "loop": true,
+        "stages":
+            [
+                {
+                    "img": "/images/settings/enemy_drop_shuffle_off.png",
+                    "inherit_codes": false,
+                    "name": "Enemy Drop Shuffle off",
+                    "codes": "enemy_drop_shuffle, enemy_drop_shuffle_off"
+                },
+                {
+                    "img": "/images/settings/enemy_drop_shuffle_keys.png",
+                    "inherit_codes": false,
+                    "name": "Enemy Drop Shuffle keys",
+                    "codes": "potshuffle, enemy_drop_shuffle_keys"
+                },
+                {
+                    "img": "/images/settings/enemy_drop_shuffle_underworld.png",
+                    "inherit_codes": false,
+                    "name": "Enemy Drop Shuffle caves",
+                    "codes": "potshuffle, enemy_drop_shuffle_underworld"
+                }
+            ]
+    },
+    {
         "name": "Shuffle Links House",
         "type": "toggle",
         "img": "/images/settings/shuffle_links_house_on.png",

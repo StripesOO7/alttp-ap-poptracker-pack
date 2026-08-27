@@ -240,6 +240,12 @@
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count": 8
+                    },
+                    {
+                        "name": "Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
+                        "item_count": 2
                     }
                 ]
             },
@@ -262,6 +268,12 @@
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count": 1
+                    },
+                    {
+                        "name": "Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
+                        "item_count": 4
                     }
                 ],
                 "map_locations": [
@@ -637,6 +649,12 @@
                             "^$CanReach|Lumberjacks Item"
                         ],
                         "capture_item": true
+                    },
+                    {
+                        "name": "Top Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
+                        "item_count": 4
                     }
                 ],
                 "map_locations": [
@@ -950,6 +968,12 @@
                         "access_rules": [
                             "^$CanReach|Dam_inside, ^$CanReach|Floodgate Chest"
                         ]
+                    },
+                    {
+                        "name": "Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
+                        "item_count": 1
                     }
                 ],
                 "map_locations": [
@@ -1009,6 +1033,12 @@
                         ],
                         "clear_as_group": false,
                         "item_count": 5
+                    },
+                    {
+                        "name": "Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
+                        "item_count": 4
                     }
                 ],
                 "map_locations": [
@@ -1080,6 +1110,23 @@
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count": 4
+                    }
+                ]
+            },
+            {
+                "name": "Good Bee Cave",
+                "access_rules": [
+                    "^$CanReach|Lumberjacks_item",
+                    "^$CanReach|Lumberjacks_cave_inside"
+                ],
+                "sections": [
+                    {
+                        "name": "Fairy Enemies",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules":["enemy_drop_shuffle_underworld"],
+                        "item_count": 2
                     }
                 ]
             },
@@ -1251,6 +1298,12 @@
                         "visibility_rules": [
                             "shop_sanity"
                         ]
+                    },
+                    {
+                        "name": "Fairy Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
+                        "item_count": 4
                     }
                 ],
                 "map_locations": [
@@ -1321,6 +1374,23 @@
                 ]
             },
             {
+                "name": "Bonk Fairy Cave",
+                "access_rules": [
+                    "^$CanReach|Lumberjacks_item",
+                    "^$CanReach|Lumberjacks_cave_inside"
+                ],
+                "sections": [
+                    {
+                        "name": "Fairy Enemies",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules":["enemy_drop_shuffle_underworld"],
+                        "item_count": 4
+                    }
+                ]
+            },
+            {
                 "name": "Sahasrahla's Hut",
                 "access_rules": [
                     "^$CanReach|Sahasralahs_hut_inside"
@@ -1368,6 +1438,23 @@
                         "x": 1655,
                         "y": 795,
                         "size": 32
+                    }
+                ]
+            },
+            {
+                "name": "Long Fairy Cave",
+                "access_rules": [
+                    "^$CanReach|Lumberjacks_item",
+                    "^$CanReach|Lumberjacks_cave_inside"
+                ],
+                "sections": [
+                    {
+                        "name": "Fairy Enemies",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules":["enemy_drop_shuffle_underworld"],
+                        "item_count": 2
                     }
                 ]
             },
@@ -1681,6 +1768,20 @@
                             "^$CanReach|Bumper Cave Item"
                         ],
                         "capture_item": true
+                    },
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
+                        "item_count": 5
+                    },
+                    {
+                        "name": "Bottom Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
+                        "item_count": 3
                     }
                 ],
                 "map_locations": [
@@ -1734,6 +1835,18 @@
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count": 4
+                    },
+                    {
+                        "name": "Front Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
+                        "item_count": 4
+                    },
+                    {
+                        "name": "Back Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
+                        "item_count": 6
                     }
                 ],
                 "map_locations": [
@@ -1771,6 +1884,18 @@
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count": 2
+                    },
+                    {
+                        "name": "West Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
+                        "item_count": 10
+                    },
+                    {
+                        "name": "East Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
+                        "item_count": 10
                     }
                 ]
             },
@@ -1788,6 +1913,18 @@
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count": 6
+                    },
+                    {
+                        "name": "Left Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
+                        "item_count": 5
+                    },
+                    {
+                        "name": "Right Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
+                        "item_count": 7
                     }
                 ]
             },
@@ -1832,6 +1969,18 @@
                         "access_rules": [
                             "^$CanReach|Spec Rock Inside Item"
                         ]
+                    },
+                    {
+                        "name": "Bottom Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
+                        "item_count": 4
+                    },
+                    {
+                        "name": "Fairy Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
+                        "item_count": 3
                     }
                 ],
                 "map_locations": [
@@ -1946,6 +2095,18 @@
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count":2
+                    },
+                    {
+                        "name": "Bottom Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
+                        "item_count": 3
+                    },
+                    {
+                        "name": "Top Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
+                        "item_count": 2
                     }
                 ]
             },
@@ -2017,6 +2178,23 @@
                 ]
             },
             {
+                "name": "Hookshot Fairy Cave",
+                "access_rules": [
+                    "^$CanReach|Lumberjacks_item",
+                    "^$CanReach|Lumberjacks_cave_inside"
+                ],
+                "sections": [
+                    {
+                        "name": "Fairy Enemies",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules":["enemy_drop_shuffle_underworld"],
+                        "item_count": 4
+                    }
+                ]
+            },
+            {
                 "name": "Paradox Cave",
                 "access_rules": [
                     "^$CanReach|Paradox_cave_top_entrance_inside",
@@ -2047,6 +2225,12 @@
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count": 3
+                    },
+                    {
+                        "name": "Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
+                        "item_count": 5
                     }
                 ],
                 "map_locations": [
@@ -2084,6 +2268,12 @@
                         "access_rules": [
                             "^$CanReach|Mimic Cave Chest"
                         ]
+                    },
+                    {
+                        "name": "Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
+                        "item_count": 4
                     }
                 ],
                 "map_locations": [
@@ -2115,6 +2305,18 @@
                         "access_rules": [
                             "^$CanReach|Spiral Cave Item"
                         ]
+                    },
+                    {
+                        "name": "Top Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
+                        "item_count": 5
+                    },
+                    {
+                        "name": "Bottom Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
+                        "item_count": 5
                     }
                 ],
                 "map_locations": [
@@ -2167,6 +2369,12 @@
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 34
+                    },
+                    {
+                        "name": "Front Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
+                        "item_count": 49
                     }
                 ],
                 "map_locations": [
@@ -2220,6 +2428,12 @@
                             ""
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
+                        "item_count": 15
+                    },
+                    {
+                        "name": "Back Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 15
                     },
                     {
@@ -2283,7 +2497,7 @@
                         "access_rules": [
                             "^$OWDungeonChecks|@Eastern Palace/Dark Eyegore Key Drop/Dark Eyegore Key Drop"
                         ],
-                        "visibility_rules": ["key_drop_shuffle"]
+                        "visibility_rules": ["key_drop_shuffle", "enemy_drop_shuffle_keys"]
                     },
                     {
                         "name": "Pot Key Drops",
@@ -2301,6 +2515,12 @@
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 54
+                    },
+                    {
+                        "name": "Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
+                        "item_count": 57
                     },
                     {
                         "name": "Boss Item" ,
@@ -2368,7 +2588,7 @@
                         "access_rules": [
                             "^$OWDungeonChecks|@Agahnim's Tower/Dark Archer Key Drop/Dark Archer Key Drop|@Agahnim's Tower/Circle of Pots Key Drop/Circle of Pots Key Drop"
                         ],
-                        "visibility_rules": ["key_drop_shuffle"]
+                        "visibility_rules": ["key_drop_shuffle", "enemy_drop_shuffle_keys"]
                     },
                     {
                         "name": "Pots",
@@ -2377,6 +2597,12 @@
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 25
+                    },
+                    {
+                        "name": "Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
+                        "item_count": 40
                     },
                     {
                         "name": "Agahnim 1",
@@ -2452,13 +2678,19 @@
                         "item_count": 13
                     },
                     {
+                        "name": "Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
+                        "item_count": 28
+                    },
+                    {
                         "name": "Enemy Key Drops",
                         "access_rules": [
                             "^$OWDungeonChecks|@Hyrule Castle/Map Guard Key Drop/Map Guard Key Drop|@Hyrule Castle/Boomerang Guard Key Drop/Boomerang Guard Key Drop|@Hyrule Castle/Big Key Drop/Big Key Drop"
                         ],
                         "item_count": 3,
                         "clear_as_group": false,
-                        "visibility_rules": ["key_drop_shuffle"]
+                        "visibility_rules": ["key_drop_shuffle", "enemy_drop_shuffle_keys"]
                     }
                 ],
                 "map_locations": [
@@ -2521,13 +2753,19 @@
                         "item_count": 21
                     },
                     {
+                        "name": "Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
+                        "item_count": 47
+                    },
+                    {
                         "name": "Enemy Key Drops",
                         "item_count": 1,
                         "clear_as_group": false,
                         "access_rules": [
                             "^$OWDungeonChecks|@Castle Escape/Key Rat Key Drop/Key Rat Key Drop"
                         ],
-                        "visibility_rules": ["key_drop_shuffle"]
+                        "visibility_rules": ["key_drop_shuffle", "enemy_drop_shuffle_keys"]
                     }
                 ],
                 "map_locations": [
@@ -2626,6 +2864,12 @@
                         "item_count": 37
                     },
                     {
+                        "name": "Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
+                        "item_count": 40
+                    },
+                    {
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules": [
@@ -2688,6 +2932,12 @@
                         "item_count": 15
                     },
                     {
+                        "name": "Leftside Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
+                        "item_count": 34
+                    },
+                    {
                         "name": "Rightside",
                         "access_rules": [
                             "^$OWDungeonChecks|@Ganon's Tower Bottom Right/Hope Room Left/Hope Room Left|@Ganon's Tower Bottom Right/Hope Room Right/Hope Room Right|@Ganon's Tower Bottom Right/Tile Room/Tile Room|@Ganon's Tower Bottom Right/Compass Chest/Compass Chest|@Ganon's Tower Bottom Right/Compass Room Top Right/Compass Room Top Right|@Ganon's Tower Bottom Right/Compass Room Bottom Left/Compass Room Bottom Left|@Ganon's Tower Bottom Right/Compass Room Bottom Right/Compass Room Bottom Right"
@@ -2702,6 +2952,12 @@
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 24
+                    },
+                    {
+                        "name": "Rightside Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
+                        "item_count": 39
                     },
                     {
                         "name": "Big Chest + Ice refight",
@@ -2721,6 +2977,12 @@
                         "item_count": 2
                     },
                     {
+                        "name": "Bottom Center Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
+                        "item_count": 12
+                    },
+                    {
                         "name": "GT Top + Lanmo refight",
                         "access_rules": [
                             "^$OWDungeonChecks|@Ganon's Tower Top/Mini Helmasaur Room Left/Mini Helmasaur Room Left|@Ganon's Tower Top/Mini Helmasaur Room Right/Mini Helmasaur Room Right|@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest"
@@ -2738,6 +3000,12 @@
                         "item_count": 50
                     },
                     {
+                        "name": "Top Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
+                        "item_count": 82
+                    },
+                    {
                         "name": "GT Top Moldorm refight",
                         "access_rules": [
                             "^$OWDungeonChecks|@Ganon's Tower Top/Validation Chest/Validation Chest"
@@ -2753,7 +3021,7 @@
                         "access_rules": [
                             "^$OWDungeonChecks|@Ganon's Tower Top/Mini Helmasaur Key Drop/Mini Helmasaur Key Drop"
                         ],
-                        "visibility_rules": ["key_drop_shuffle"]
+                        "visibility_rules": ["key_drop_shuffle", "enemy_drop_shuffle_keys"]
                     },
                     {
                         "name": "Pot Key Drops",
