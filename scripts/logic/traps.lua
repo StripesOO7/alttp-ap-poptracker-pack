@@ -18,7 +18,7 @@ function TrapUndoItem()
     local item_code = item_id_index[id]
     local item_obj = Tracker:FindObjectForCode(ITEM_MAPPING[item_code][1][1])  --[[@as JsonItem]]
     if item_obj then
-        ItemReset(item_obj.Type, item_obj, item_code)
+        ItemUpdate(item_code, item_obj.Type, nil, id, true)
     end
     MANUAL_CHECKED = true
 end
@@ -32,7 +32,7 @@ function TrapUndoLocation()
             if location then
                 local location_obj = Tracker:FindObjectForCode(location)  --[[@as LocationSection]]
                 if location_obj then
-                    LocationReset(location, location_obj, (Tracker:FindObjectForCode("manual_location_storage")  --[[@as LuaItem]]).ItemState)
+                    LocationUpdate(location_obj, (Tracker:FindObjectForCode("manual_location_storage")  --[[@as LuaItem]]).ItemState, id, true)
                 end
             end
         end

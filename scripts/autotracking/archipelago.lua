@@ -2,6 +2,7 @@ CUR_INDEX = -1
 SLOT_DATA = nil
 SKIP_BOSSSHUFFLE = false
 ALL_LOCATIONS = {}
+REVERSE_ALL_LOCATIONS = {}
 TROLL_PLAYER= false
 DATE_CHECK_PASSED = false
 
@@ -185,13 +186,16 @@ function PreOnClear()
         end
         if #ALL_LOCATIONS > 0 then
             ALL_LOCATIONS = {}
+            REVERSE_ALL_LOCATIONS = {}
         end
-        for _, value in pairs(Archipelago.MissingLocations) do
+        for index, value in pairs(Archipelago.MissingLocations) do
             table.insert(ALL_LOCATIONS, #ALL_LOCATIONS + 1, value)
+            REVERSE_ALL_LOCATIONS[value] = true
         end
 
-        for _, value in pairs(Archipelago.CheckedLocations) do
+        for index, value in pairs(Archipelago.CheckedLocations) do
             table.insert(ALL_LOCATIONS, #ALL_LOCATIONS + 1, value)
+            REVERSE_ALL_LOCATIONS[value] = true
         end
         HINTS_ID = "_read_hints_"..TEAM_NUMBER.."_"..PLAYER_ID
         Archipelago:SetNotify({HINTS_ID})
@@ -238,7 +242,7 @@ end
 ---@param consumable_multiplier integer|nil table of the ItemCode and extra parameters from the Item_Mapping.lua
 ---@param item_id integer AP-ID of the item from ITEM_MAPPING
 ---@param reset boolean|nil flag to update or reset the item false=update, true=reset, nil=update
-local function ItemUpdate(item_code, item_type, consumable_multiplier, item_id, reset)
+function ItemUpdate(item_code, item_type, consumable_multiplier, item_id, reset)
     -- print(item_code, item_type, consumable_multiplier, item_id, reset)
     local item_obj = nil
 
@@ -302,7 +306,7 @@ end
 ---@param custom_storage_item table|nil Reference for the custom LuaItem CachesItems
 ---@param location_id integer AP-ID of the location from LOCATION_MAPPING
 ---@param reset boolean flag to update or reset the item false=update, true=reset, nil=update
-local function LocationUpdate(location_obj, custom_storage_item, location_id, reset)
+function LocationUpdate(location_obj, custom_storage_item, location_id, reset)
     
     ---@cast location_obj LocationSection
     if reset then --reset
@@ -373,6 +377,29 @@ function OnClear(slot_data)
             end
         end
     end
+
+    
+    print(Dump_table(REVERSE_ALL_LOCATIONS))
+    for index, location_array in pairs(LOCATION_MAPPING) do
+        -- print(index, location_array[1], REVERSE_ALL_LOCATIONS[index])
+        if REVERSE_ALL_LOCATIONS[index] == nil then
+            for _, location in pairs(location_array) do
+                if location then
+                    if type(location) == "table" then
+                    else
+                        if location:sub(1, 1) == "@" then
+                            ---@type LocationSection
+                            local location_obj = Tracker:FindObjectForCode(location) --[[@as LocationSection]]
+                            if location_obj then
+                                LocationUpdate(location_obj, custom_storage_item, index, false)
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+
     -- reset items
     for item_ID, item_array in pairs(ITEM_MAPPING) do
         for _, item_pair in pairs(item_array) do
@@ -845,7 +872,7 @@ function AutoFill()
                                 -- print("toggle", settings_name, settings_value)
                                 item.AcquiredCount = settings_value
                             else
-                                -- print("else", settings_name, settings_value)
+                                print("else", settings_name, settings_value)
                                 -- print(k,v,Tracker:FindObjectForCode(slotCodes[k].code).CurrentStage, slotCodes[k].mapping[v])
                                 item.CurrentStage = (slotCodes[settings_name].mappings[index])[settings_value]
                             end
