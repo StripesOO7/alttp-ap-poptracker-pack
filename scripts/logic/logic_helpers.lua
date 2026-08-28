@@ -1287,13 +1287,31 @@ function ChangeERMap()
 end
 
 ---comment
-function ChangeERLayout(code)
-    if Tracker:FindObjectForCode(code).CurrentStage == 0 then
-        Tracker:AddLayouts("layouts/tabs.json")
-        Tracker:AddMaps("maps/er_legend_off.json")
-    else
+function ChangeERLayout()
+    local er_tracking = Tracker:FindObjectForCode("er_tracking").CurrentStage
+    local doors_tracking = Tracker:FindObjectForCode("doors_tracking").CurrentStage
+    local potshuffle = Tracker:FindObjectForCode("potshuffle").CurrentStage
+    local enemy_drop_shuffle = Tracker:FindObjectForCode("enemy_drop_shuffle").CurrentStage
+
+    local er_or_doors = er_tracking > 0 or doors_tracking > 0
+    local enemy_or_pots = potshuffle > 0 or enemy_drop_shuffle > 0
+
+    if er_or_doors and enemy_or_pots then
+        
+        Tracker:AddLayouts("layouts/tabs_er_enemy_pots.json")
+        Tracker:AddMaps("maps/er_legend_on.json")
+
+    elseif er_or_doors then
+        
         Tracker:AddLayouts("layouts/tabs_er.json")
         Tracker:AddMaps("maps/er_legend_on.json")
+    elseif enemy_or_pots then
+        
+        Tracker:AddLayouts("layouts/tabs_enemy_pots.json")
+        Tracker:AddMaps("maps/er_legend_off.json")
+    else
+        Tracker:AddLayouts("layouts/tabs.json")
+        Tracker:AddMaps("maps/er_legend_off.json")
     end
 end
 
@@ -1311,6 +1329,10 @@ function ChangePopupLayout()
     local dmg_class_shuffle = Tracker:FindObjectForCode("dmg_class_shuffle")
     local preserve_melee_dmg_classes = Tracker:FindObjectForCode("preserve_melee_dmg_classes")
     local manual_misc_items_storage = Tracker:FindObjectForCode("manual_misc_items_storage").ItemState
+    local potshuffle = Tracker:FindObjectForCode("potshuffle")
+    local enemy_drop_shuffle = Tracker:FindObjectForCode("enemy_drop_shuffle")
+    local shuffle_links_house = Tracker:FindObjectForCode("shuffle_links_house")
+    local shuffle_tavern = Tracker:FindObjectForCode("shuffle_tavern")
     if version == 2 then --alttpr apworld
         CORE_ALTTP = false
         ALTTP_BETA = false
@@ -1322,13 +1344,22 @@ function ChangePopupLayout()
         doortype_shuffle.IgnoreUserInput = false
         dmg_class_shuffle.IgnoreUserInput = true
         preserve_melee_dmg_classes.IgnoreUserInput = true
+        potshuffle.IgnoreUserInput = false
+        enemy_drop_shuffle.IgnoreUserInput = false
+        shuffle_links_house.IgnoreUserInput = false
+        shuffle_tavern.IgnoreUserInput = false
         if manual_misc_items_storage and manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED] then
+            local room_data = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]
             -- doors_tracking.CurrentStage = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["doors_tracking"] or 0
-            doors_tracking_method.Active = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["doors_tracking_method"] or false
-            lobby_shuffle.Active = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["lobby_shuffle"] or false
-            doortype_shuffle.Active = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["doortype_shuffle"] or false
+            doors_tracking_method.Active = room_data["doors_tracking_method"] or false
+            lobby_shuffle.Active = room_data["lobby_shuffle"] or false
+            doortype_shuffle.Active = room_data["doortype_shuffle"] or false
             -- dmg_class_shuffle.CurrentStage = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["dmg_class_shuffle"] or 0
-            preserve_melee_dmg_classes.Active = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["preserve_melee_dmg_classes"] or false
+            preserve_melee_dmg_classes.Active = room_data["preserve_melee_dmg_classes"] or false
+            potshuffle.CurrentStage = room_data["potshuffle"] or 0
+            enemy_drop_shuffle.CurrentStage = room_data["enemy_drop_shuffle"] or 0
+            shuffle_links_house.Active = room_data["shuffle_links_house"] or false
+            shuffle_tavern.Active = room_data["shuffle_tavern"] or false
         end
         ITEM_MAPPING[182] = nil
         ITEM_MAPPING[183] = nil
@@ -1373,6 +1404,19 @@ function ChangePopupLayout()
 
         preserve_melee_dmg_classes.IgnoreUserInput = false
         preserve_melee_dmg_classes.Active = false
+
+        potshuffle.IgnoreUserInput = true
+        potshuffle.CurrentStage = 0
+
+        enemy_drop_shuffle.IgnoreUserInput = true
+        enemy_drop_shuffle.CurrentStage = 0
+
+        shuffle_links_house.IgnoreUserInput = true
+        shuffle_links_house.Active = false
+
+        shuffle_tavern.IgnoreUserInput = true
+        shuffle_tavern.Active = false
+
         
         ITEM_MAPPING[177] = nil
         ITEM_MAPPING[180] = nil
@@ -1418,6 +1462,19 @@ function ChangePopupLayout()
 
         preserve_melee_dmg_classes.IgnoreUserInput = true
         preserve_melee_dmg_classes.Active = false
+
+        potshuffle.IgnoreUserInput = true
+        potshuffle.CurrentStage = 0
+
+        enemy_drop_shuffle.IgnoreUserInput = true
+        enemy_drop_shuffle.CurrentStage = 0
+
+        shuffle_links_house.IgnoreUserInput = true
+        shuffle_links_house.Active = false
+
+        shuffle_tavern.IgnoreUserInput = true
+        shuffle_tavern.Active = false
+
         
         ITEM_MAPPING[182] = nil
         ITEM_MAPPING[183] = nil

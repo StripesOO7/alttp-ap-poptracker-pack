@@ -1,0 +1,112 @@
+{
+    "tabbed_maps_horizontal": {
+        "type": "tabbed",
+        "tabs": [
+            {
+                "title": "Overworld",
+                "content": {
+                    "type": "map",
+                    "maps": [
+                        "Lightworld",
+                        "Darkworld"
+                    ]
+                }
+            },
+            {
+                "title": "Lightworld Dungeons",
+                "content": {
+                    "type": "layout",
+                    "key": "Light_World_Dungeons"
+                }
+            },
+            {
+                "title": "Darkworld Dungeons",
+                "content": {
+                    "type": "layout",
+                    "key": "Dark_World_Dungeons"
+                }
+            },
+            {
+                "title": "Lightworld Pots+Enemies",
+                "content": {
+                    "type": "layout",
+                    "key": "Light_World_Pots_Enemies"
+                }
+            },
+            {
+                "title": "Darkworld Pots+Enemies",
+                "content": {
+                    "type": "layout",
+                    "key": "Dark_World_Pots_Enemies"
+                }
+            }
+        ]
+    },
+    "tabbed_maps_vertical": {
+        "type": "tabbed",
+        "tabs": [
+            {
+                "title": "Lightworld",
+                "content": {
+                    "type": "map",
+                    "maps": [
+                        "Lightworld"
+                    ]
+                }
+            },
+            {
+                "title": "Darkworld",
+                "content": {
+                    "type": "map",
+                    "maps": [
+                        "Darkworld"
+                    ]
+                }
+            },
+            {
+                "title": "Dungeons",
+                "content": {
+                    "type": "tabbed",
+                    "tabs": [
+                        {
+                            "title": "Lightworld Dungeons",
+                            "content": {
+                                "type": "layout",
+                                "key": "Light_World_Dungeons"
+                            }
+                        },
+                        {
+                            "title": "Darkworld Dungeons",
+                            "content": {
+                                "type": "layout",
+                                "key": "Dark_World_Dungeons"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "title": "Pots+Enemies",
+                "content": {
+                    "type": "tabbed",
+                    "tabs": [
+                        {
+                            "title": "Lightworld Pots+Enemies",
+                            "content": {
+                                "type": "layout",
+                                "key": "Light_World_Pots_Enemies"
+                            }
+                        },
+                        {
+                            "title": "Darkworld Pots+Enemies",
+                            "content": {
+                                "type": "layout",
+                                "key": "Dark_World_Pots_Enemies"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

@@ -457,43 +457,115 @@
             {
                 "title": "Row 1&2",
                 "content": {
-                    "type": "layout",
-                    "key": "Light_World_Dungeons"
+                    "type": "array",
+                    "background": "#11abcdef",
+                    "orientation": "vertical",
+                    "margin": "0,0",
+                    "content": [
+                        {
+                            "type": "layout",
+                            "key": "dmg_table_row1_head"
+                        },
+                        {
+                            "type": "layout",
+                            "key": "dmg_table_row1_body"
+                        }
+                    ]
                 }
             },
             {
                 "title": "Row 3&4",
                 "content": {
-                    "type": "layout",
-                    "key": "Light_World_Dungeons"
+                    "type": "array",
+                    "background": "#11abcdef",
+                    "orientation": "vertical",
+                    "margin": "0,0",
+                    "content": [
+                        {
+                            "type": "layout",
+                            "key": "dmg_table_row2_head"
+                        },
+                        {
+                            "type": "layout",
+                            "key": "dmg_table_row2_body"
+                        }
+                    ]
                 }
             },
             {
                 "title": "Row 5&6",
                 "content": {
-                    "type": "layout",
-                    "key": "Light_World_Dungeons"
+                    "type": "array",
+                    "background": "#11abcdef",
+                    "orientation": "vertical",
+                    "margin": "0,0",
+                    "content": [
+                        {
+                            "type": "layout",
+                            "key": "dmg_table_row3_head"
+                        },
+                        {
+                            "type": "layout",
+                            "key": "dmg_table_row3_body"
+                        }
+                    ]
                 }
             },
             {
                 "title": "Row 7&8",
                 "content": {
-                    "type": "layout",
-                    "key": "Light_World_Dungeons"
+                    "type": "array",
+                    "background": "#11abcdef",
+                    "orientation": "vertical",
+                    "margin": "0,0",
+                    "content": [
+                        {
+                            "type": "layout",
+                            "key": "dmg_table_row4_head"
+                        },
+                        {
+                            "type": "layout",
+                            "key": "dmg_table_row4_body"
+                        }
+                    ]
                 }
             },
             {
                 "title": "Row 9&10",
                 "content": {
-                    "type": "layout",
-                    "key": "Light_World_Dungeons"
+                    "type": "array",
+                    "background": "#11abcdef",
+                    "orientation": "vertical",
+                    "margin": "0,0",
+                    "content": [
+                        {
+                            "type": "layout",
+                            "key": "dmg_table_row5_head"
+                        },
+                        {
+                            "type": "layout",
+                            "key": "dmg_table_row5_body"
+                        }
+                    ]
                 }
             },
             {
                 "title": "Row 11&12",
                 "content": {
-                    "type": "layout",
-                    "key": "Light_World_Dungeons"
+                    "type": "array",
+                    "background": "#11abcdef",
+                    "orientation": "vertical",
+                    "margin": "0,0",
+                    "content": [
+                        {
+                            "type": "layout",
+                            "key": "dmg_table_row6_head"
+                        },
+                        {
+                            "type": "layout",
+                            "key": "dmg_table_row6_body"
+                        }
+                    ]
                 }
             }
         ]

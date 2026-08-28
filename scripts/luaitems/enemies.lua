@@ -10,8 +10,9 @@ function Enemies_scope(scope_name, scope_health, scope_dmg_table, scope_counter)
         local row_counter_horizontal = 1+self:Get("Index")//21
         local row_counter_vertical = 1+(2*self:Get("Index")//24)
         Tracker:UiHint("ActivateTab", "Damage Table")
+        Tracker:UiHint("ActivateTab", "Row "..row_counter_vertical.."&"..(row_counter_vertical+1))
+        Tracker:UiHint("ActivateTab", "Row "..(row_counter_vertical-1).."&"..row_counter_vertical)
         Tracker:UiHint("ActivateTab", "Row "..row_counter_horizontal)
-        Tracker:UiHint("ActivateTab", "Row "..row_counter_vertical.."&"..row_counter_vertical+1)
     end
 
     ---function that get triggered when right clicking a lua items as hosted item or in an itemgrid

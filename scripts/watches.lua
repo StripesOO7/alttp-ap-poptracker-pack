@@ -63,8 +63,12 @@ if Archipelago then
 end
 --ER reduced layout
 ScriptHost:AddWatchForCode("reduce ER map clutter", "reduce_maps", ChangeERMap)
-ScriptHost:AddWatchForCode("remove ER Layout", "er_tracking", ChangeERLayout)
-ScriptHost:AddWatchForCode("remove Doors Layout", "doors_tracking", ChangeERLayout)
+
+-- change layout for ER/Doors or Pots/Enemie drop Shuffle
+ScriptHost:AddWatchForCode("change ER Layout", "er_tracking", ChangeERLayout)
+ScriptHost:AddWatchForCode("change Doors Layout", "doors_tracking", ChangeERLayout)
+ScriptHost:AddWatchForCode("change pots shuffle Layout", "potshuffle", ChangeERLayout)
+ScriptHost:AddWatchForCode("change enenmy drop shuffle Layout", "enemy_drop_shuffle", ChangeERLayout)
 
 ScriptHost:AddWatchForCode("glitches changed", "glitches", UpdateCanInteract)
 
