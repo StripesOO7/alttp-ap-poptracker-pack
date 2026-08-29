@@ -13,7 +13,10 @@
                     "^$CanReach|MM_spike_room"
                 ],
                 "visibility_rules": [
-                    "key_drop_shuffle", "potshuffle_lottery", "potshuffle_dungeons", "potshuffle_keys"
+                    "key_drop_shuffle",
+                    "potshuffle_lottery",
+                    "potshuffle_dungeons",
+                    "potshuffle_keys"
                 ],
                 "sections": [
                     {
@@ -30,6 +33,13 @@
                         "y": 89,
                         "size": 6,
                         "shape": "rect"
+                    },
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 368,
+                        "y": 89,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -39,7 +49,10 @@
                     "^$CanReach|MM_fishbone_room"
                 ],
                 "visibility_rules": [
-                    "key_drop_shuffle", "potshuffle_lottery", "potshuffle_dungeons", "potshuffle_keys"
+                    "key_drop_shuffle",
+                    "potshuffle_lottery",
+                    "potshuffle_dungeons",
+                    "potshuffle_keys"
                 ],
                 "sections": [
                     {
@@ -56,6 +69,13 @@
                         "y": 282,
                         "size": 6,
                         "shape": "rect"
+                    },
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 520,
+                        "y": 282,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -80,6 +100,13 @@
                         "map": "MM",
                         "x": 185,
                         "y": 240,
+                        "size": 6,
+                        "shape": "rect"
+                    },
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 183,
+                        "y": 243,
                         "size": 6,
                         "shape": "rect"
                     }
@@ -301,7 +328,9 @@
                         "access_rules": [
                             "^$CanReach|MM - Boss"
                         ],
-                        "visibility_rules":["boss_prize_shuffle_off"],
+                        "visibility_rules": [
+                            "boss_prize_shuffle_off"
+                        ],
                         "hosted_item": "miserymire"
                     },
                     {
@@ -309,7 +338,9 @@
                         "access_rules": [
                             "^$CanReach|MM - Boss"
                         ],
-                        "visibility_rules":["boss_prize_shuffle_on"],
+                        "visibility_rules": [
+                            "boss_prize_shuffle_on"
+                        ],
                         "hosted_item": "mm_ap_reward"
                     }
                 ],
@@ -325,7 +356,6 @@
             }
         ]
     },
-// doors
     {
         "name": "Misery Mire Doors",
         "chest_unopened_img": "/images/items/closed_Chest.png",
@@ -340,27 +370,39 @@
                 "sections": [
                     {
                         "name": "MM post gap 4N door",
-                        "access_rules": ["^$CanReach|MM_post_gap_4N_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_post_gap_4N_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_post_gap_4N_door"
+                        "hosted_item": "from_MM_post_gap_4N_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -379,27 +421,39 @@
                 "sections": [
                     {
                         "name": "MM wizrobe room 4N door",
-                        "access_rules": ["^$CanReach|MM_wizrobe_room_4N_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_wizrobe_room_4N_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_wizrobe_room_4N_door"
+                        "hosted_item": "from_MM_wizrobe_room_4N_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -418,27 +472,39 @@
                 "sections": [
                     {
                         "name": "MM wizrobe room 2N door",
-                        "access_rules": ["^$CanReach|MM_wizrobe_room_2N_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_wizrobe_room_2N_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_wizrobe_room_2N_door"
+                        "hosted_item": "from_MM_wizrobe_room_2N_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -457,27 +523,39 @@
                 "sections": [
                     {
                         "name": "MM main room 1N door",
-                        "access_rules": ["^$CanReach|MM_main_room_1N_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_main_room_1N_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_main_room_1N_door"
+                        "hosted_item": "from_MM_main_room_1N_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -496,27 +574,39 @@
                 "sections": [
                     {
                         "name": "MM main room 1W door",
-                        "access_rules": ["^$CanReach|MM_main_room_1W_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_main_room_1W_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_main_room_1W_door"
+                        "hosted_item": "from_MM_main_room_1W_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -535,27 +625,39 @@
                 "sections": [
                     {
                         "name": "MM main room 2N door",
-                        "access_rules": ["^$CanReach|MM_main_room_2N_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_main_room_2N_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_main_room_2N_door"
+                        "hosted_item": "from_MM_main_room_2N_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -574,27 +676,39 @@
                 "sections": [
                     {
                         "name": "MM main room 2E door",
-                        "access_rules": ["^$CanReach|MM_main_room_2E_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_main_room_2E_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_main_room_2E_door"
+                        "hosted_item": "from_MM_main_room_2E_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -613,27 +727,39 @@
                 "sections": [
                     {
                         "name": "MM main room E door",
-                        "access_rules": ["^$CanReach|MM_main_room_E_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_main_room_E_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_main_room_E_door"
+                        "hosted_item": "from_MM_main_room_E_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -652,27 +778,39 @@
                 "sections": [
                     {
                         "name": "MM main room 3W door",
-                        "access_rules": ["^$CanReach|MM_main_room_3W_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_main_room_3W_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_main_room_3W_door"
+                        "hosted_item": "from_MM_main_room_3W_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -691,27 +829,39 @@
                 "sections": [
                     {
                         "name": "MM main room 4E door",
-                        "access_rules": ["^$CanReach|MM_main_room_4E_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_main_room_4E_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_main_room_4E_door"
+                        "hosted_item": "from_MM_main_room_4E_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -730,27 +880,39 @@
                 "sections": [
                     {
                         "name": "MM main room 4S door",
-                        "access_rules": ["^$CanReach|MM_main_room_4S_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_main_room_4S_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_main_room_4S_door"
+                        "hosted_item": "from_MM_main_room_4S_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -769,27 +931,39 @@
                 "sections": [
                     {
                         "name": "MM map room top middle 1N door",
-                        "access_rules": ["^$CanReach|MM_map_room_top_middle_1N_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_map_room_top_middle_1N_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_map_room_top_middle_1N_door"
+                        "hosted_item": "from_MM_map_room_top_middle_1N_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -808,27 +982,39 @@
                 "sections": [
                     {
                         "name": "MM map room top_left 1W door",
-                        "access_rules": ["^$CanReach|MM_map_room_top_left_1W_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_map_room_top_left_1W_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_map_room_top_left_1W_door"
+                        "hosted_item": "from_MM_map_room_top_left_1W_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -847,27 +1033,39 @@
                 "sections": [
                     {
                         "name": "MM map room bottom 3W door",
-                        "access_rules": ["^$CanReach|MM_map_room_bottom_3W_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_map_room_bottom_3W_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_map_room_bottom_3W_door"
+                        "hosted_item": "from_MM_map_room_bottom_3W_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -886,27 +1084,39 @@
                 "sections": [
                     {
                         "name": "MM map room center bridge W door",
-                        "access_rules": ["^$CanReach|MM_map_room_center_bridge_W_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_map_room_center_bridge_W_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_map_room_center_bridge_W_door"
+                        "hosted_item": "from_MM_map_room_center_bridge_W_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -925,27 +1135,39 @@
                 "sections": [
                     {
                         "name": "MM conveyor crystal room 4E door",
-                        "access_rules": ["^$CanReach|MM_conveyor_crystal_room_4E_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_conveyor_crystal_room_4E_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_conveyor_crystal_room_4E_door"
+                        "hosted_item": "from_MM_conveyor_crystal_room_4E_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -964,27 +1186,39 @@
                 "sections": [
                     {
                         "name": "MM conveyor crystal room 4S door",
-                        "access_rules": ["^$CanReach|MM_conveyor_crystal_room_4S_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_conveyor_crystal_room_4S_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_conveyor_crystal_room_4S_door"
+                        "hosted_item": "from_MM_conveyor_crystal_room_4S_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1003,27 +1237,39 @@
                 "sections": [
                     {
                         "name": "MM neglected room 2N door",
-                        "access_rules": ["^$CanReach|MM_neglected_room_2N_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_neglected_room_2N_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_neglected_room_2N_door"
+                        "hosted_item": "from_MM_neglected_room_2N_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1042,27 +1288,39 @@
                 "sections": [
                     {
                         "name": "MM four torches tile room 3S door",
-                        "access_rules": ["^$CanReach|MM_four_torches_tile_room_3S_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_four_torches_tile_room_3S_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_four_torches_tile_room_3S_door"
+                        "hosted_item": "from_MM_four_torches_tile_room_3S_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1081,27 +1339,39 @@
                 "sections": [
                     {
                         "name": "MM bomb slug room 3S door",
-                        "access_rules": ["^$CanReach|MM_bomb_slug_room_3S_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_bomb_slug_room_3S_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_bomb_slug_room_3S_door"
+                        "hosted_item": "from_MM_bomb_slug_room_3S_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1120,27 +1390,39 @@
                 "sections": [
                     {
                         "name": "MM spike room 3W door",
-                        "access_rules": ["^$CanReach|MM_spike_room_3W_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_spike_room_3W_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_spike_room_3W_door"
+                        "hosted_item": "from_MM_spike_room_3W_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1159,27 +1441,39 @@
                 "sections": [
                     {
                         "name": "MM spike room 3S door",
-                        "access_rules": ["^$CanReach|MM_spike_room_3S_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_spike_room_3S_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_spike_room_3S_door"
+                        "hosted_item": "from_MM_spike_room_3S_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1198,27 +1492,39 @@
                 "sections": [
                     {
                         "name": "MM 2 torches hidden shooter 4E door",
-                        "access_rules": ["^$CanReach|MM_2_torches_hidden_shooter_4E_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_2_torches_hidden_shooter_4E_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_2_torches_hidden_shooter_4E_door"
+                        "hosted_item": "from_MM_2_torches_hidden_shooter_4E_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1237,27 +1543,39 @@
                 "sections": [
                     {
                         "name": "MM 2 torches hidden shooter 4S door",
-                        "access_rules": ["^$CanReach|MM_2_torches_hidden_shooter_4S_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_2_torches_hidden_shooter_4S_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_2_torches_hidden_shooter_4S_door"
+                        "hosted_item": "from_MM_2_torches_hidden_shooter_4S_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1276,27 +1594,39 @@
                 "sections": [
                     {
                         "name": "MM Big Key Door Room Bridge NS 2N door",
-                        "access_rules": ["^$CanReach|MM_above_spike_room_1N_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_above_spike_room_1N_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_above_spike_room_1N_door"
+                        "hosted_item": "from_MM_above_spike_room_1N_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1315,27 +1645,39 @@
                 "sections": [
                     {
                         "name": "MM above spike room 1N door",
-                        "access_rules": ["^$CanReach|MM_above_spike_room_1W_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_above_spike_room_1W_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_above_spike_room_1W_door"
+                        "hosted_item": "from_MM_above_spike_room_1W_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1354,27 +1696,40 @@
                 "sections": [
                     {
                         "name": "MM above spike room 1W door",
-                        "access_rules": ["^$CanReach|MM - diamon"],
-                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM - diamon"
+                        ],
+                        "visibility_rules": [
+                            "potshuffle_lottery",
+                            "potshuffle_dungeons"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "MM_big_keydoor_room_bridge_NS_2N_door"
+                        "hosted_item": "MM_big_keydoor_room_bridge_NS_2N_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1393,27 +1748,39 @@
                 "sections": [
                     {
                         "name": "MM big key door room N door",
-                        "access_rules": ["^$CanReach|MM_big_keydoor_room_N_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_big_keydoor_room_N_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_big_keydoor_room_N_door"
+                        "hosted_item": "from_MM_big_keydoor_room_N_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1432,27 +1799,39 @@
                 "sections": [
                     {
                         "name": "MM big key door room 2E door",
-                        "access_rules": ["^$CanReach|MM_big_keydoor_room_2E_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_big_keydoor_room_2E_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_big_keydoor_room_2E_door"
+                        "hosted_item": "from_MM_big_keydoor_room_2E_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1471,27 +1850,39 @@
                 "sections": [
                     {
                         "name": "MM bridge right 4S door",
-                        "access_rules": ["^$CanReach|MM_bridge_right_4S_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_bridge_right_4S_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_bridge_right_4S_door"
+                        "hosted_item": "from_MM_bridge_right_4S_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1510,27 +1901,39 @@
                 "sections": [
                     {
                         "name": "MM bridge_middle N door",
-                        "access_rules": ["^$CanReach|MM_bridge_middle_N_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_bridge_middle_N_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_bridge_middle_N_door"
+                        "hosted_item": "from_MM_bridge_middle_N_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1549,27 +1952,39 @@
                 "sections": [
                     {
                         "name": "MM bridge middle S door",
-                        "access_rules": ["^$CanReach|MM_bridge_middle_S_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_bridge_middle_S_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_bridge_middle_S_door"
+                        "hosted_item": "from_MM_bridge_middle_S_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1588,27 +2003,39 @@
                 "sections": [
                     {
                         "name": "MM bridge EW E door",
-                        "access_rules": ["^$CanReach|MM_bridge_EW_E_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_bridge_EW_E_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_bridge_EW_E_door"
+                        "hosted_item": "from_MM_bridge_EW_E_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1627,27 +2054,39 @@
                 "sections": [
                     {
                         "name": "MM bridge EW W door",
-                        "access_rules": ["^$CanReach|MM_bridge_EW_W_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_bridge_EW_W_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_bridge_EW_W_door"
+                        "hosted_item": "from_MM_bridge_EW_W_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1666,27 +2105,39 @@
                 "sections": [
                     {
                         "name": "MM bent bridge W door",
-                        "access_rules": ["^$CanReach|MM_bent_bridge_W_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_bent_bridge_W_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_bent_bridge_W_door"
+                        "hosted_item": "from_MM_bent_bridge_W_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1705,27 +2156,39 @@
                 "sections": [
                     {
                         "name": "MM bent bridge 3S door",
-                        "access_rules": ["^$CanReach|MM_bent_bridge_3S_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_bent_bridge_3S_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_bent_bridge_3S_door"
+                        "hosted_item": "from_MM_bent_bridge_3S_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1744,27 +2207,39 @@
                 "sections": [
                     {
                         "name": "MM fishbone room E door",
-                        "access_rules": ["^$CanReach|MM_fishbone_room_E_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_fishbone_room_E_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_fishbone_room_E_door"
+                        "hosted_item": "from_MM_fishbone_room_E_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1783,27 +2258,39 @@
                 "sections": [
                     {
                         "name": "MM fishbone room 4S door",
-                        "access_rules": ["^$CanReach|MM_fishbone_room_4S_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_fishbone_room_4S_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_fishbone_room_4S_door"
+                        "hosted_item": "from_MM_fishbone_room_4S_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1822,27 +2309,39 @@
                 "sections": [
                     {
                         "name": "MM hourglas room 2N door",
-                        "access_rules": ["^$CanReach|MM_hourglas_room_2N_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_hourglas_room_2N_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_hourglas_room_2N_door"
+                        "hosted_item": "from_MM_hourglas_room_2N_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1861,27 +2360,39 @@
                 "sections": [
                     {
                         "name": "MM hourglas room 4S door",
-                        "access_rules": ["^$CanReach|MM_hourglas_room_4S_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_hourglas_room_4S_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_hourglas_room_4S_door"
+                        "hosted_item": "from_MM_hourglas_room_4S_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1900,27 +2411,39 @@
                 "sections": [
                     {
                         "name": "MM wizzrobe bypass 2E door",
-                        "access_rules": ["^$CanReach|MM_wizzrobe_bypass_2E_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_wizzrobe_bypass_2E_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_wizzrobe_bypass_2E_door"
+                        "hosted_item": "from_MM_wizzrobe_bypass_2E_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1939,27 +2462,39 @@
                 "sections": [
                     {
                         "name": "MM wizzrobe bypass 2N door",
-                        "access_rules": ["^$CanReach|MM_wizzrobe_bypass_2N_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_wizzrobe_bypass_2N_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_wizzrobe_bypass_2N_door"
+                        "hosted_item": "from_MM_wizzrobe_bypass_2N_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1978,27 +2513,39 @@
                 "sections": [
                     {
                         "name": "MM conveyor bomb slug room N door",
-                        "access_rules": ["^$CanReach|MM_conveyor_bomb_slug_room_N_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_conveyor_bomb_slug_room_N_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_conveyor_bomb_slug_room_N_door"
+                        "hosted_item": "from_MM_conveyor_bomb_slug_room_N_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -2017,27 +2564,39 @@
                 "sections": [
                     {
                         "name": "MM conveyor bomb slug room 1N door",
-                        "access_rules": ["^$CanReach|MM_conveyor_bomb_slug_room_1N_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_conveyor_bomb_slug_room_1N_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_conveyor_bomb_slug_room_1N_door"
+                        "hosted_item": "from_MM_conveyor_bomb_slug_room_1N_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -2056,27 +2615,39 @@
                 "sections": [
                     {
                         "name": "MM torches top N door",
-                        "access_rules": ["^$CanReach|MM_torches_top_N_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_torches_top_N_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_torches_top_N_door"
+                        "hosted_item": "from_MM_torches_top_N_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -2095,27 +2666,39 @@
                 "sections": [
                     {
                         "name": "MM dark_ hooters N door",
-                        "access_rules": ["^$CanReach|MM_dark_shooters_N_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_dark_shooters_N_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_dark_shooters_N_door"
+                        "hosted_item": "from_MM_dark_shooters_N_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -2134,27 +2717,39 @@
                 "sections": [
                     {
                         "name": "MM block X 3W door",
-                        "access_rules": ["^$CanReach|MM_block_X_3W_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_block_X_3W_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_block_X_3W_door"
+                        "hosted_item": "from_MM_block_X_3W_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -2173,27 +2768,39 @@
                 "sections": [
                     {
                         "name": "MM tall dark and roomy 4E door",
-                        "access_rules": ["^$CanReach|MM_tall_dark_and_roomy_4E_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_tall_dark_and_roomy_4E_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_tall_dark_and_roomy_4E_door"
+                        "hosted_item": "from_MM_tall_dark_and_roomy_4E_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -2212,27 +2819,39 @@
                 "sections": [
                     {
                         "name": "MM crystal left 3W door",
-                        "access_rules": ["^$CanReach|MM_crystal_left_3W_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_crystal_left_3W_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_crystal_left_3W_door"
+                        "hosted_item": "from_MM_crystal_left_3W_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -2251,27 +2870,39 @@
                 "sections": [
                     {
                         "name": "MM falling foes 4E door",
-                        "access_rules": ["^$CanReach|MM_falling_foes_4E_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_falling_foes_4E_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_falling_foes_4E_door"
+                        "hosted_item": "from_MM_falling_foes_4E_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -2290,27 +2921,39 @@
                 "sections": [
                     {
                         "name": "MM falling foes 2N door",
-                        "access_rules": ["^$CanReach|MM_falling_foes_2N_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_falling_foes_2N_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_falling_foes_2N_door"
+                        "hosted_item": "from_MM_falling_foes_2N_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -2329,27 +2972,39 @@
                 "sections": [
                     {
                         "name": "MM antechamber left 1N door",
-                        "access_rules": ["^$CanReach|MM_antechamber_left_1N_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_antechamber_left_1N_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_antechamber_left_1N_door"
+                        "hosted_item": "from_MM_antechamber_left_1N_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -2368,27 +3023,39 @@
                 "sections": [
                     {
                         "name": "MM antechamber right 2N door",
-                        "access_rules": ["^$CanReach|MM_antechamber_right_2N_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_antechamber_right_2N_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_antechamber_right_2N_door"
+                        "hosted_item": "from_MM_antechamber_right_2N_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -2407,27 +3074,39 @@
                 "sections": [
                     {
                         "name": "MM boss room 3S door",
-                        "access_rules": ["^$CanReach|MM_boss_room_3S_door"],
-                        "visibility_rules": ["doors_enabled"],
-                        "item_size":128,
+                        "access_rules": [
+                            "^$CanReach|MM_boss_room_3S_door"
+                        ],
+                        "visibility_rules": [
+                            "doors_enabled"
+                        ],
                         "clear_as_group": false,
-                        "hosted_item": "from_MM_boss_room_3S_door"
+                        "hosted_item": "from_MM_boss_room_3S_door",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Enemies to kill",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Enemies to kill",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     },
                     {
-                        "name":  "Door Type Shuffle",
-                        "access_rules": [""],
-                        "item_size":128,
+                        "name": "Door Type Shuffle",
+                        "access_rules": [
+                            ""
+                        ],
+                        "visibility_rules": [
+                            ""
+                        ],
                         "clear_as_group": false,
-                        "visibility_rules": [""],
-                        "hosted_item": ""
+                        "hosted_item": "",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -2442,7 +3121,6 @@
             }
         ]
     },
-// pots
     {
         "name": "Misery Mire Pots",
         "chest_unopened_img": "/images/items/close.png",
@@ -2467,6 +3145,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 519,
+                        "y": 144,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -2483,6 +3170,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 539,
+                        "y": 144,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -2501,6 +3197,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 649,
+                        "y": 220,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -2517,6 +3222,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 655,
+                        "y": 220,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -2535,6 +3249,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 661,
+                        "y": 220,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -2551,6 +3274,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 667,
+                        "y": 220,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -2569,6 +3301,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 720,
+                        "y": 156,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -2585,6 +3326,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 788,
+                        "y": 156,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -2603,6 +3353,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 598,
+                        "y": 300,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -2619,6 +3378,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 602,
+                        "y": 304,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -2637,6 +3405,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 606,
+                        "y": 308,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -2653,6 +3430,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 610,
+                        "y": 312,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -2671,6 +3457,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 590,
+                        "y": 340,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -2687,6 +3482,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 594,
+                        "y": 348,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -2705,6 +3509,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 590,
+                        "y": 356,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -2721,6 +3534,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 594,
+                        "y": 363,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -2739,6 +3561,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 574,
+                        "y": 368,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -2755,6 +3586,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 610,
+                        "y": 368,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -2773,6 +3613,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 639,
+                        "y": 368,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -2789,6 +3638,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 175,
+                        "y": 25,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -2807,6 +3665,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 211,
+                        "y": 25,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -2823,6 +3690,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 275,
+                        "y": 41,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -2841,6 +3717,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 303,
+                        "y": 41,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -2857,6 +3742,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 275,
+                        "y": 45,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -2875,6 +3769,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 303,
+                        "y": 45,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -2891,6 +3794,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 275,
+                        "y": 49,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -2909,6 +3821,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 303,
+                        "y": 49,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -2925,6 +3846,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 403,
+                        "y": 89,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -2943,6 +3873,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 403,
+                        "y": 121,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -2959,6 +3898,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 279,
+                        "y": 168,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -2977,6 +3925,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 327,
+                        "y": 193,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -2993,6 +3950,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 295,
+                        "y": 202,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -3011,6 +3977,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 291,
+                        "y": 218,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -3027,6 +4002,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 148,
+                        "y": 282,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -3045,6 +4029,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 140,
+                        "y": 296,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -3061,6 +4054,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 176,
+                        "y": 282,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -3079,6 +4081,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 212,
+                        "y": 282,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -3095,6 +4106,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 176,
+                        "y": 314,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -3113,6 +4133,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 212,
+                        "y": 314,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -3129,6 +4158,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 80,
+                        "y": 316,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -3147,6 +4185,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 80,
+                        "y": 323,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -3163,6 +4210,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 80,
+                        "y": 331,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -3181,6 +4237,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 80,
+                        "y": 338,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -3197,6 +4262,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 80,
+                        "y": 345,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -3215,11 +4289,19 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 80,
+                        "y": 352,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             }
         ]
     },
-// enemies
     {
         "name": "Misery Mire Enemies",
         "chest_unopened_img": "/images/items/close.png",
@@ -3244,6 +4326,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 528,
+                        "y": 144,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3260,6 +4351,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 548,
+                        "y": 153,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -3278,6 +4378,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 514,
+                        "y": 180,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3294,6 +4403,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 545,
+                        "y": 180,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -3312,6 +4430,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 518,
+                        "y": 199,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3328,6 +4455,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 540,
+                        "y": 201,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -3346,6 +4482,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 659,
+                        "y": 189,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3362,6 +4507,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 663,
+                        "y": 202,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -3380,6 +4534,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 787,
+                        "y": 212,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3396,6 +4559,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 786,
+                        "y": 238,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -3414,6 +4586,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 639,
+                        "y": 177,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3430,6 +4611,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 658,
+                        "y": 145,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -3448,6 +4638,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 673,
+                        "y": 182,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3464,6 +4663,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 612,
+                        "y": 211,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -3482,6 +4690,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 585,
+                        "y": 216,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3498,6 +4715,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 600,
+                        "y": 225,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -3516,6 +4742,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 753,
+                        "y": 153,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3532,6 +4767,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 722,
+                        "y": 212,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -3550,6 +4794,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 709,
+                        "y": 223,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3566,6 +4819,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 735,
+                        "y": 224,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -3584,6 +4846,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 257,
+                        "y": 375,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3600,6 +4871,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 264,
+                        "y": 375,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -3618,6 +4898,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 271,
+                        "y": 375,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3634,6 +4923,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 280,
+                        "y": 375,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -3652,6 +4950,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 258,
+                        "y": 386,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3668,6 +4975,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 484,
+                        "y": 96,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -3686,6 +5002,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 512,
+                        "y": 99,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3702,6 +5027,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 514,
+                        "y": 112,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -3720,6 +5054,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 526,
+                        "y": 291,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3736,6 +5079,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 605,
+                        "y": 284,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -3754,6 +5106,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 573,
+                        "y": 304,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3770,6 +5131,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 577,
+                        "y": 325,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -3788,6 +5158,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 575,
+                        "y": 340,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3804,6 +5183,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 606,
+                        "y": 339,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -3822,6 +5210,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 577,
+                        "y": 354,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3838,6 +5235,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 606,
+                        "y": 356,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -3856,6 +5262,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 189,
+                        "y": 38,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3872,6 +5287,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 199,
+                        "y": 44,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -3890,6 +5314,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 182,
+                        "y": 102,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3906,6 +5339,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 198,
+                        "y": 105,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -3924,6 +5366,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 111,
+                        "y": 89,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3940,6 +5391,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 196,
+                        "y": 89,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -3958,6 +5418,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 139,
+                        "y": 97,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3974,6 +5443,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 121,
+                        "y": 112,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -3992,6 +5470,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 148,
+                        "y": 121,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -4008,6 +5495,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 210,
+                        "y": 105,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -4026,6 +5522,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 250,
+                        "y": 34,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -4042,6 +5547,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 258,
+                        "y": 48,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -4060,6 +5574,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 287,
+                        "y": 45,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -4076,6 +5599,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 312,
+                        "y": 35,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -4094,6 +5626,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 332,
+                        "y": 48,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -4110,6 +5651,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 247,
+                        "y": 93,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -4128,6 +5678,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 268,
+                        "y": 93,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -4144,6 +5703,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 243,
+                        "y": 111,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -4162,6 +5730,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 305,
+                        "y": 117,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -4178,6 +5755,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 317,
+                        "y": 110,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -4196,6 +5782,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 263,
+                        "y": 112,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -4212,6 +5807,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 274,
+                        "y": 120,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -4230,6 +5834,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 326,
+                        "y": 111,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -4246,6 +5859,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 336,
+                        "y": 120,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -4264,6 +5886,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 374,
+                        "y": 96,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -4280,6 +5911,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 400,
+                        "y": 97,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -4298,6 +5938,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 382,
+                        "y": 107,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -4314,6 +5963,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 372,
+                        "y": 120,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -4332,6 +5990,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 388,
+                        "y": 119,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -4348,6 +6015,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 385,
+                        "y": 240,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -4366,6 +6042,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 194,
+                        "y": 171,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -4382,6 +6067,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 182,
+                        "y": 223,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -4400,6 +6094,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 197,
+                        "y": 227,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -4416,6 +6119,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 194,
+                        "y": 235,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -4434,6 +6146,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 205,
+                        "y": 248,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -4450,6 +6171,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 297,
+                        "y": 172,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -4468,6 +6198,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 296,
+                        "y": 193,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -4484,6 +6223,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 270,
+                        "y": 209,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -4502,6 +6250,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 307,
+                        "y": 216,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -4518,6 +6275,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 260,
+                        "y": 227,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -4536,6 +6302,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 324,
+                        "y": 225,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -4553,6 +6328,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 257,
+                        "y": 180,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -4569,6 +6353,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 267,
+                        "y": 247,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -4621,6 +6414,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 185,
+                        "y": 290,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -4637,6 +6439,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 208,
+                        "y": 291,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -4655,6 +6466,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 112,
+                        "y": 283,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -4671,6 +6491,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 125,
+                        "y": 292,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -4689,6 +6518,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 114,
+                        "y": 303,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -4705,6 +6543,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 134,
+                        "y": 305,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -4723,6 +6570,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 125,
+                        "y": 312,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -4739,6 +6595,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 202,
+                        "y": 302,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -4757,6 +6622,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 298,
+                        "y": 283,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -4773,6 +6647,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 323,
+                        "y": 291,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -4791,6 +6674,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 340,
+                        "y": 293,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -4807,6 +6699,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 323,
+                        "y": 305,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -4825,6 +6726,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 298,
+                        "y": 314,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -4841,6 +6751,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 327,
+                        "y": 315,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -4859,6 +6778,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 301,
+                        "y": 328,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -4875,6 +6803,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 302,
+                        "y": 343,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -4893,6 +6830,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 311,
+                        "y": 346,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -4909,6 +6855,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "MM - Enemies+Pots",
+                        "x": 336,
+                        "y": 346,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },

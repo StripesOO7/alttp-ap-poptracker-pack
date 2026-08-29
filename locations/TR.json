@@ -57,11 +57,11 @@
             },
             {
                 "name": "Pokey 1 Key Drop",
-                "visibility_rules": [
-                    "key_drop_shuffle"
-                ],
                 "access_rules": [
                     "^$CanReach|TR_poke_1_room"
+                ],
+                "visibility_rules": [
+                    "key_drop_shuffle"
                 ],
                 "sections": [
                     {
@@ -76,6 +76,13 @@
                         "map": "TR",
                         "x": 554,
                         "y": 145,
+                        "size": 6,
+                        "shape": "rect"
+                    },
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 554,
+                        "y": 151,
                         "size": 6,
                         "shape": "rect"
                     }
@@ -129,11 +136,11 @@
             },
             {
                 "name": "Pokey 2 Key Drop",
-                "visibility_rules": [
-                    "key_drop_shuffle"
-                ],
                 "access_rules": [
                     "^$CanReach|TR_poke_2_room"
+                ],
+                "visibility_rules": [
+                    "key_drop_shuffle"
                 ],
                 "sections": [
                     {
@@ -148,6 +155,13 @@
                         "map": "TR",
                         "x": 217,
                         "y": 283,
+                        "size": 6,
+                        "shape": "rect"
+                    },
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 220,
+                        "y": 284,
                         "size": 6,
                         "shape": "rect"
                     }
@@ -417,7 +431,9 @@
                         "access_rules": [
                             "^$CanReach|TR - Boss"
                         ],
-                        "visibility_rules":["boss_prize_shuffle_off"],
+                        "visibility_rules": [
+                            "boss_prize_shuffle_off"
+                        ],
                         "hosted_item": "turtlerock"
                     },
                     {
@@ -425,7 +441,9 @@
                         "access_rules": [
                             "^$CanReach|TR - Boss"
                         ],
-                        "visibility_rules":["boss_prize_shuffle_on"],
+                        "visibility_rules": [
+                            "boss_prize_shuffle_on"
+                        ],
                         "hosted_item": "tr_ap_reward"
                     }
                 ],
@@ -441,7 +459,6 @@
             }
         ]
     },
-// doors
     {
         "name": "Turtle Rock Front Doors",
         "chest_unopened_img": "/images/items/closed_Chest.png",
@@ -464,9 +481,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_main_entrance_post_gap_2N_door"
+                        "hosted_item": "from_TR_main_entrance_post_gap_2N_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -491,9 +508,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_square_travel_room_1N_door"
+                        "hosted_item": "from_TR_square_travel_room_1N_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -518,9 +535,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_square_travel_room_2N_door"
+                        "hosted_item": "from_TR_square_travel_room_2N_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -545,9 +562,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_square_travel_room_2E_door"
+                        "hosted_item": "from_TR_square_travel_room_2E_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -572,9 +589,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_square_travel_room_3S_door"
+                        "hosted_item": "from_TR_square_travel_room_3S_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -599,9 +616,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_square_travel_room_4E_door"
+                        "hosted_item": "from_TR_square_travel_room_4E_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -626,9 +643,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_square_travel_room_4S_door"
+                        "hosted_item": "from_TR_square_travel_room_4S_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -653,9 +670,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_compass_room_1N_door"
+                        "hosted_item": "from_TR_compass_room_1N_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -680,9 +697,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_tile_room_4S_door"
+                        "hosted_item": "from_TR_tile_room_4S_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -707,9 +724,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_torch_puzzle_1W_door"
+                        "hosted_item": "from_TR_torch_puzzle_1W_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -734,9 +751,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_torch_puzzle_1N_door"
+                        "hosted_item": "from_TR_torch_puzzle_1N_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -761,9 +778,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_map_room_3S_door"
+                        "hosted_item": "from_TR_map_room_3S_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -788,9 +805,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_torch_puzzle_deadend_3W_door"
+                        "hosted_item": "from_TR_torch_puzzle_deadend_3W_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -815,9 +832,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_poke_1_room_3S_door"
+                        "hosted_item": "from_TR_poke_1_room_3S_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -842,9 +859,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_chain_chomps_room_1N_door"
+                        "hosted_item": "from_TR_chain_chomps_room_1N_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -869,9 +886,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_pipe_pit_1N_door"
+                        "hosted_item": "from_TR_pipe_pit_1N_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -896,9 +913,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_pipe_pit_1W_door"
+                        "hosted_item": "from_TR_pipe_pit_1W_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -923,9 +940,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_pipe_pit_bottom_left_ledge_3W_door"
+                        "hosted_item": "from_TR_pipe_pit_bottom_left_ledge_3W_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -950,9 +967,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_big_key_room_top_right_2E_door"
+                        "hosted_item": "from_TR_big_key_room_top_right_2E_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -977,9 +994,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_big_key_room_top_left_1W_door"
+                        "hosted_item": "from_TR_big_key_room_top_left_1W_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1004,9 +1021,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_big_key_room_top_left_1N_door"
+                        "hosted_item": "from_TR_big_key_room_top_left_1N_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1031,9 +1048,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_big_key_room_bottom_right_4E_door"
+                        "hosted_item": "from_TR_big_key_room_bottom_right_4E_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1058,9 +1075,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_big_key_room_bottom_right_4S_door"
+                        "hosted_item": "from_TR_big_key_room_bottom_right_4S_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1085,9 +1102,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_big_key_room_bottom_left_3W_door"
+                        "hosted_item": "from_TR_big_key_room_bottom_left_3W_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1112,9 +1129,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_big_key_room_bottom_left_3S_door"
+                        "hosted_item": "from_TR_big_key_room_bottom_left_3S_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1139,9 +1156,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_poke_2_room_2E_door"
+                        "hosted_item": "from_TR_poke_2_room_2E_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1166,9 +1183,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_poke_2_room_4E_door"
+                        "hosted_item": "from_TR_poke_2_room_4E_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1193,9 +1210,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_double_poke_room_1N_door"
+                        "hosted_item": "from_TR_double_poke_room_1N_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1220,9 +1237,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_small_t_hallway_3W_door"
+                        "hosted_item": "from_TR_small_t_hallway_3W_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1247,9 +1264,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_laser_entrance_room_4E_door"
+                        "hosted_item": "from_TR_laser_entrance_room_4E_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1274,9 +1291,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_big_keydoor_room_2N_door"
+                        "hosted_item": "from_TR_big_keydoor_room_2N_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1312,9 +1329,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_pokes_after_bigdoor_3S_door"
+                        "hosted_item": "from_TR_pokes_after_bigdoor_3S_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1339,9 +1356,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_crystalroller_room_1N_door"
+                        "hosted_item": "from_TR_crystalroller_room_1N_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1366,9 +1383,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_travel_maze_1N_door"
+                        "hosted_item": "from_TR_travel_maze_1N_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1393,9 +1410,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_travel_maze_3S_door"
+                        "hosted_item": "from_TR_travel_maze_3S_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1420,9 +1437,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_side_eye_hallway_1N_door"
+                        "hosted_item": "from_TR_side_eye_hallway_1N_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1447,9 +1464,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_side_eye_hallway_3S_door"
+                        "hosted_item": "from_TR_side_eye_hallway_3S_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1474,9 +1491,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_side_eye_hallway_3W_door"
+                        "hosted_item": "from_TR_side_eye_hallway_3W_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1501,9 +1518,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_crystal_maze_N_door"
+                        "hosted_item": "from_TR_crystal_maze_N_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1528,9 +1545,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_crystal_maze_4E_door"
+                        "hosted_item": "from_TR_crystal_maze_4E_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1555,9 +1572,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_pre_boss_pit_S_door"
+                        "hosted_item": "from_TR_pre_boss_pit_S_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1582,9 +1599,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_pre_boss_pit_1N_door"
+                        "hosted_item": "from_TR_pre_boss_pit_1N_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1609,9 +1626,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_eye_bridge_1N_door"
+                        "hosted_item": "from_TR_eye_bridge_1N_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1636,9 +1653,9 @@
                         "visibility_rules": [
                             "doors_enabled"
                         ],
-                        "item_size": 128,
                         "clear_as_group": false,
-                        "hosted_item": "from_TR_boss_room_3S_door"
+                        "hosted_item": "from_TR_boss_room_3S_door",
+                        "item_size": 128
                     }
                 ],
                 "map_locations": [
@@ -1653,7 +1670,6 @@
             }
         ]
     },
-// pots
     {
         "name": "Turtle Rock Front Pots",
         "chest_unopened_img": "/images/items/close.png",
@@ -1678,6 +1694,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 484,
+                        "y": 200,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -1694,6 +1719,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 488,
+                        "y": 200,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -1712,6 +1746,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 492,
+                        "y": 200,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -1728,6 +1771,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 496,
+                        "y": 200,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -1746,6 +1798,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 500,
+                        "y": 200,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -1762,6 +1823,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 400,
+                        "y": 208,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -1780,6 +1850,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 404,
+                        "y": 208,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -1796,6 +1875,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 408,
+                        "y": 208,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -1814,6 +1902,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 459,
+                        "y": 228,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -1830,6 +1927,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 219,
+                        "y": 417,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -1848,6 +1954,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 224,
+                        "y": 417,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -1864,6 +1979,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 228,
+                        "y": 417,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -1882,6 +2006,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 232,
+                        "y": 417,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -1898,6 +2031,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 236,
+                        "y": 417,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -1916,6 +2058,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 273,
+                        "y": 329,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -1932,6 +2083,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 309,
+                        "y": 329,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -1950,6 +2110,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 273,
+                        "y": 361,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -1966,6 +2135,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 309,
+                        "y": 361,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -1984,6 +2162,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 536,
+                        "y": 212,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -2000,6 +2187,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 536,
+                        "y": 284,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -2018,6 +2214,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 664,
+                        "y": 223,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -2034,6 +2239,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 664,
+                        "y": 228,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -2052,6 +2266,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 663,
+                        "y": 272,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -2068,6 +2291,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 663,
+                        "y": 295,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -2086,6 +2318,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 616,
+                        "y": 401,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -2102,6 +2343,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 621,
+                        "y": 401,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             }
@@ -2131,6 +2381,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 285,
+                        "y": 146,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -2147,6 +2406,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 295,
+                        "y": 146,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -2165,6 +2433,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 285,
+                        "y": 158,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -2181,6 +2458,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 295,
+                        "y": 158,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -2199,6 +2485,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 337,
+                        "y": 134,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -2215,6 +2510,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 374,
+                        "y": 134,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -2233,6 +2537,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 46,
+                        "y": 167,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -2249,6 +2562,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 51,
+                        "y": 167,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -2267,6 +2589,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 243,
+                        "y": 71,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -2283,6 +2614,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 243,
+                        "y": 114,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -2301,6 +2641,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 207,
+                        "y": 118,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -2317,6 +2666,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 243,
+                        "y": 118,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -2335,6 +2693,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 243,
+                        "y": 123,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -2351,6 +2718,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 243,
+                        "y": 166,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -2369,6 +2745,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 618,
+                        "y": 92,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -2385,6 +2770,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 682,
+                        "y": 77,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -2403,6 +2797,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 86,
+                        "y": 218,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -2419,6 +2822,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 26,
+                        "y": 238,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -2437,6 +2849,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 58,
+                        "y": 250,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -2453,6 +2874,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 86,
+                        "y": 250,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -2471,6 +2901,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 14,
+                        "y": 266,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -2487,6 +2926,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 78,
+                        "y": 274,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -2505,6 +2953,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 50,
+                        "y": 282,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             },
             {
@@ -2522,11 +2979,19 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 14,
+                        "y": 286,
+                        "size": 6,
+                        "shape": "trapezoid"
+                    }
                 ]
             }
         ]
     },
-// enemies
     {
         "name": "Turtle Rock Front Enemies",
         "chest_unopened_img": "/images/items/close.png",
@@ -2551,6 +3016,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 212,
+                        "y": 201,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -2567,6 +3041,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 219,
+                        "y": 201,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -2585,6 +3068,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 226,
+                        "y": 201,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -2601,6 +3093,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 233,
+                        "y": 201,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -2619,6 +3120,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 216,
+                        "y": 270,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -2635,6 +3145,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 238,
+                        "y": 272,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -2653,6 +3172,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 232,
+                        "y": 289,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -2669,6 +3197,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 426,
+                        "y": 220,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -2687,6 +3224,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 452,
+                        "y": 214,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -2703,6 +3249,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 474,
+                        "y": 222,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -2721,6 +3276,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 414,
+                        "y": 258,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -2737,6 +3301,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 471,
+                        "y": 268,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -2755,6 +3328,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 487,
+                        "y": 276,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -2771,6 +3353,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 295,
+                        "y": 91,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -2789,6 +3380,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 277,
+                        "y": 344,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -2805,6 +3405,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 302,
+                        "y": 344,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -2823,6 +3432,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 291,
+                        "y": 337,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -2839,6 +3457,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 290,
+                        "y": 355,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -2857,6 +3484,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 546,
+                        "y": 85,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -2873,6 +3509,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 562,
+                        "y": 85,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -2891,6 +3536,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 621,
+                        "y": 81,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -2907,6 +3561,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 555,
+                        "y": 141,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -2925,6 +3588,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 556,
+                        "y": 166,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -2941,6 +3613,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 686,
+                        "y": 101,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -2959,6 +3640,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 685,
+                        "y": 132,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -2975,6 +3665,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 561,
+                        "y": 227,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -2993,6 +3692,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 603,
+                        "y": 225,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3009,6 +3717,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 562,
+                        "y": 253,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -3027,6 +3744,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 604,
+                        "y": 245,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3043,6 +3769,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 585,
+                        "y": 263,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -3061,6 +3796,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 563,
+                        "y": 272,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3077,6 +3821,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 616,
+                        "y": 276,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             }
@@ -3106,6 +3859,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 343,
+                        "y": 77,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3122,6 +3884,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 366,
+                        "y": 85,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -3140,6 +3911,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 350,
+                        "y": 95,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3156,6 +3936,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 345,
+                        "y": 146,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -3174,6 +3963,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 364,
+                        "y": 145,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3190,6 +3988,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 355,
+                        "y": 151,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -3208,6 +4015,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 290,
+                        "y": 152,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3224,6 +4040,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 219,
+                        "y": 95,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -3242,6 +4067,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 167,
+                        "y": 115,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3258,6 +4092,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 219,
+                        "y": 143,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -3276,6 +4119,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 65,
+                        "y": 204,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3292,6 +4144,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 62,
+                        "y": 225,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -3310,6 +4171,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 46,
+                        "y": 243,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3326,6 +4196,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 98,
+                        "y": 248,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -3344,6 +4223,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 60,
+                        "y": 267,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3360,6 +4248,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 98,
+                        "y": 289,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -3378,6 +4275,15 @@
                         "visibility_rules": [],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 160,
+                        "y": 267,
+                        "size": 6,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -3394,6 +4300,15 @@
                         "access_rules": [],
                         "visibility_rules": [],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TR - Enemies+Pots",
+                        "x": 156,
+                        "y": 395,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             }
