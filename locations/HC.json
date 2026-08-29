@@ -141,10 +141,7 @@
                 "sections": [
                     {
                         "name": "Pots",
-                        "access_rules": [
-                            ""
-                        ],
-                        "item_count":1
+                       "ref": "@HC/Hyrule Castle/Pots/Pots"
                     }
                 ]
             },
@@ -159,10 +156,7 @@
                 "sections": [
                     {
                         "name": "Enemies",
-                        "access_rules": [
-                            ""
-                        ],
-                        "item_count":1
+                        "ref": "@HC/Hyrule Castle/Enemies/Enemies"
                     }
                 ]
             },
@@ -333,10 +327,7 @@
                 "sections": [
                     {
                         "name": "Pots",
-                        "access_rules": [
-                            ""
-                        ],
-                        "item_count":1
+                        "ref": "@CE/Castle Escape/Pots/Pots"
                     }
                 ]
             },
@@ -351,10 +342,7 @@
                 "sections": [
                     {
                         "name": "Enemies",
-                        "access_rules": [
-                            ""
-                        ],
-                        "item_count":1
+                        "ref": "@CE/Castle Escape/Enemies/Enemies"
                     }
                 ]
             }
