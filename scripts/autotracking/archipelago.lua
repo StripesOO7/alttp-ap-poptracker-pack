@@ -565,15 +565,7 @@ function AutoFill()
     -- mapGlitcheMode = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4} -- noGlitches, minor, overworld, hybrid_major, no_logic
     local mapDarkRoomLogic = {[0]=0, [1]=1, [2]=2, ["none"]=2,["lamp"]=0,["troches"]=1} --lamp, torches, none
     local mapCoreGoal = {
-        [0]=0,
-        [1]=1,
-        [2]=2,
-        [3]=3,
-        [4]=4,
-        [5]=5,
-        [6]=5,
-        [7]=6,
-        [8]=6,
+        [0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=5, [7]=6, [8]=6,
         ["crystals"]=0,
         ["ganon"]=1,
         ["bosses"]=2,
@@ -587,15 +579,7 @@ function AutoFill()
         ["completionist"]=8
     } --slow, fast, AD, ped, ped+ganon, tfh, local_tfh, tfh+ganon, local tfh+ganon
     local mapAlttprGoal = {
-        [0]=0,
-        [1]=1,
-        [2]=2,
-        [3]=3,
-        [4]=4,
-        [5]=5,
-        [6]=5,
-        [7]=7,
-        [8]=8,
+        [0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=5, [7]=7, [8]=8,
         ["crystals"]=0,
         ["ganon"]=1,
         ["bosses"]=2,
@@ -629,7 +613,7 @@ function AutoFill()
     -- mapIncludeWitchhut = {[0]=false, [1]=true} -- false, true
     -- mapShopPriceModifier = {} -- range 0-400
     -- mapShuffleCapacityUpgrades = {[0]=0, [1]=1, [2]=2} -- off, on, combined into one
-    local mapBosses = {[0]=0, [1]=1, [2]=1, [3]=1, [4]=2} -- vanilla, basic, full, chaos, singularity
+    local mapBosses = {[0]=0, [1]=1, [2]=1, [3]=1, [4]=2, ["none"]=0 , ["simple"]=1 , ["full"]=2 , ["random"]=3 } -- vanilla, basic, full, chaos, singularity
     -- mapEnemizer = {[0]=false, [1]=true} -- false, true
     -- mapProgressive = {[0]=0, [1]=1, [2]=2} -- off, grouped,_random, on
     -- mapSwordless = {[0]=false, [1]=true} -- false, true
@@ -688,7 +672,7 @@ function AutoFill()
         [8] = 3
     }
 
-    local mapStages = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=6, [7]=7, [8]=8, ["open"]=1,["inverted"]=2,["standard"]=0}
+    local mapStages = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=6, [7]=7, [8]=8, [9]=9, [10]=10, ["open"]=1,["inverted"]=2,["standard"]=0}
     local mapToggle = {[0]=false, [1]=true, [2]=true,[3]=true,[4]=true,[6]=true} -- false, true
 
     local slotCodes = {
@@ -723,6 +707,8 @@ function AutoFill()
         -- pot_shuffle = {codes={"pot_shuffle"}, mapping, autofill="",=},
         key_drop_shuffle = {codes={"key_drop_shuffle"}, mappings={mapToggle}, autofill="autofill_dungeon_settings",},
         -- key_rings = {codes={"key_drop_shuffle"}, mappings={mapToggle}, autofill="autofill_dungeon_settings",},
+        pot_shuffle  = {codes={"potshuffle"}, mappings={mapStages}, autofill="autofill_modes"},
+        enemy_drop_shuffle = {codes={"enemy_drop_shuffle"}, mappings={mapStages}, autofill="autofill_modes"},
 
         --item logic
         bombless_start = {codes={"bombless"}, mappings={mapToggle}, autofill="autofill_modes",},
@@ -741,6 +727,8 @@ function AutoFill()
 
         --ER/Doors
         entrance_shuffle = {codes={"er_tracking"}, mappings={mapEntranceShuffle}, autofill="autofill_misc",},
+        shuffle_links_house = {codes={"shuffle_links_house"}, mappings={mapToggle}, autofill="autofill_misc",},
+        shuffle_tavern = {codes={"shuffle_tavern"}, mappings={mapToggle}, autofill="autofill_misc",},
         -- doors_shuffle = {codes={"doors_tracking"}, mappings={}, autofill="autofill_misc",},
 
         --goal logic
