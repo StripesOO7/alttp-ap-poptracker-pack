@@ -78,7 +78,7 @@ EP_switch_bridge_N_door:connect_two_ways_entrance_door_stuck("", EP_cannonball_r
 EP_cannonball_room_S_door:connect_two_ways(EP_cannonball_room)
 
 EP_cannonball_room:connect_one_way("EP - Cannonball Chest", function() return CanInteract(EP_cannonball_room) end)
--- EP_cannonball_room:connect_one_way("EP - Cannonball Pot #1", function() return CanInteract(EP_cannonball_room) end)
+EP_cannonball_room:connect_one_way("EP - Cannonball Pot #1", function() return CanInteract(EP_cannonball_room) end)
 -- EP_cannonball_room:connect_one_way("EP - Cannonball Pot #2", function() return CanInteract(EP_cannonball_room) end)
 -- EP_cannonball_room:connect_one_way("EP - Cannonball Pot #3", function() return CanInteract(EP_cannonball_room) end)
 -- EP_cannonball_room:connect_one_way("EP - Cannonball Pot #4", function() return CanInteract(EP_cannonball_room) end)

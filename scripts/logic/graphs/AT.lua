@@ -37,8 +37,8 @@ AT_aga_arena_3S_door = alttp_location.new("AT_aga_arena_3S_door", "AT Aga Arena 
 
 AT_entrance_inside:connect_two_ways(AT_lobby)
 AT_lobby:connect_one_way(AT_golden_guards)
-AT_golden_guards:connect_one_way("AT- Gold Knights Enemy #1", function() return DealDamage end)
--- AT_golden_guards:connect_one_way("AT- Gold Knights Enemy #2", function() return DealDamage end)
+AT_golden_guards:connect_one_way("AT - Gold Knights Enemy #1", function() return DealDamage end)
+-- AT_golden_guards:connect_one_way("AT - Gold Knights Enemy #2", function() return DealDamage end)
 AT_golden_guards:connect_one_way(AT_lobby, function() return DealDamage end)
 
 AT_golden_guards:connect_two_ways(AT_first_chest, function() return DealDamage end)
@@ -96,8 +96,12 @@ AT_dual_statues:connect_one_way("AT - Dual Statues Enemy #7", function() return 
 AT_dual_statues:connect_two_ways_stuck(AT_dark_pits, function() return true end , function() return CanInteract(AT_dark_pits) end)
 
 AT_dark_pits:connect_one_way("AT - Dark Pits Enemy #3", function() return ALL(DarkRooms(true), DealDamage) end)
--- AT_dark_pits:connect_one_way("AT - Dark Pits Enemy #4", function() return ALL(DarkRooms(true), DealDamage) end)
+-- AT_dark_pits:connect_one_way("AT - Dark Pits Enemy #5", function() return ALL(DarkRooms(true), DealDamage) end)
 -- AT_dark_pits:connect_one_way("AT - Dark Pits Enemy #6", function() return ALL(DarkRooms(true), DealDamage) end)
+AT_dark_pits:connect_one_way("AT - Dark Pits Pot #1", function() return CanInteract(AT_catwalk) end)
+-- AT_catwalk:connect_one_way("AT - Dark Pits Pot #2", function() return CanInteract(AT_catwalk) end)
+-- AT_catwalk:connect_one_way("AT - Dark Pits Pot #3", function() return CanInteract(AT_catwalk) end)
+-- AT_catwalk:connect_one_way("AT - Dark Pits Pot #4", function() return CanInteract(AT_catwalk) end)
 
 AT_dark_pits:connect_two_ways(AT_dark_archers, function() return DarkRooms(true) end)
 
@@ -164,10 +168,6 @@ AT_push_statue_down:connect_two_ways(AT_catwalk)
 
 AT_catwalk:connect_one_way("AT - Catwalk Enemy #1", function() return DealDamage end)
 -- AT_catwalk:connect_one_way("AT - Catwalk Enemy #2", function() return DealDamage end)
-AT_catwalk:connect_one_way("AT - Dark Pits Pot #1", function() return CanInteract(AT_catwalk) end)
--- AT_catwalk:connect_one_way("AT - Dark Pits Pot #2", function() return CanInteract(AT_catwalk) end)
--- AT_catwalk:connect_one_way("AT - Dark Pits Pot #3", function() return CanInteract(AT_catwalk) end)
--- AT_catwalk:connect_one_way("AT - Dark Pits Pot #4", function() return CanInteract(AT_catwalk) end)
 
 AT_catwalk:connect_two_ways(AT_catwalk_1N_door)
 AT_catwalk_1N_door:connect_two_ways_entrance("", AT_antechamber_2S_door)

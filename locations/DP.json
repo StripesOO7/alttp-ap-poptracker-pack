@@ -206,7 +206,7 @@
             {
                 "name": "Desert Tiles 1 Pot Key",
                 "access_rules": [
-                    "^$CanReach|DP_back_tile1_room, ^$CanReach|DP - Tile 1 Key Drop"
+                    "^$CanReach|DP_back_tiles1_room, ^$CanReach|DP - Tile 1 Key Drop"
                 ],
                 "visibility_rules": [
                     "key_drop_shuffle",
@@ -3650,7 +3650,7 @@
                 "sections": [
                     {
                         "name": "Enemy #8",
-                        "access_rules": ["^$CanReach|Dp - West Lobby Enemy #8"],
+                        "access_rules": ["^$CanReach|DP - West Lobby Enemy #8"],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
