@@ -1331,8 +1331,10 @@ function ChangePopupLayout()
     local manual_misc_items_storage = Tracker:FindObjectForCode("manual_misc_items_storage").ItemState
     local potshuffle = Tracker:FindObjectForCode("potshuffle")
     local enemy_drop_shuffle = Tracker:FindObjectForCode("enemy_drop_shuffle")
+    local key_drop_shuffle = Tracker:FindObjectForCode("key_drop_shuffle")
     local shuffle_links_house = Tracker:FindObjectForCode("shuffle_links_house")
     local shuffle_tavern = Tracker:FindObjectForCode("shuffle_tavern")
+    local room_data = {}
     if version == 2 then --alttpr apworld
         CORE_ALTTP = false
         ALTTP_BETA = false
@@ -1346,21 +1348,24 @@ function ChangePopupLayout()
         preserve_melee_dmg_classes.IgnoreUserInput = true
         potshuffle.IgnoreUserInput = false
         enemy_drop_shuffle.IgnoreUserInput = false
+        key_drop_shuffle.IgnoreUserInput = true
         shuffle_links_house.IgnoreUserInput = false
         shuffle_tavern.IgnoreUserInput = false
         if manual_misc_items_storage and manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED] then
-            local room_data = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]
-            -- doors_tracking.CurrentStage = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["doors_tracking"] or 0
-            doors_tracking_method.Active = room_data["doors_tracking_method"] or false
-            lobby_shuffle.Active = room_data["lobby_shuffle"] or false
-            doortype_shuffle.Active = room_data["doortype_shuffle"] or false
-            -- dmg_class_shuffle.CurrentStage = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["dmg_class_shuffle"] or 0
-            preserve_melee_dmg_classes.Active = room_data["preserve_melee_dmg_classes"] or false
-            potshuffle.CurrentStage = room_data["potshuffle"] or 0
-            enemy_drop_shuffle.CurrentStage = room_data["enemy_drop_shuffle"] or 0
-            shuffle_links_house.Active = room_data["shuffle_links_house"] or false
-            shuffle_tavern.Active = room_data["shuffle_tavern"] or false
+            room_data = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]
         end
+        -- doors_tracking.CurrentStage = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["doors_tracking"] or 0
+        doors_tracking_method.Active = room_data["doors_tracking_method"] or false
+        lobby_shuffle.Active = room_data["lobby_shuffle"] or false
+        doortype_shuffle.Active = room_data["doortype_shuffle"] or false
+        -- dmg_class_shuffle.CurrentStage = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["dmg_class_shuffle"] or 0
+        preserve_melee_dmg_classes.Active = room_data["preserve_melee_dmg_classes"] or false
+        potshuffle.CurrentStage = room_data["potshuffle"] or 0
+        enemy_drop_shuffle.CurrentStage = room_data["enemy_drop_shuffle"] or 0
+        shuffle_links_house.Active = room_data["shuffle_links_house"] or false
+        shuffle_tavern.Active = room_data["shuffle_tavern"] or false
+        key_drop_shuffle.Active = room_data["key_drop_shuffle"] or false
+
         ITEM_MAPPING[182] = nil
         ITEM_MAPPING[183] = nil
         ITEM_MAPPING[184] = nil
@@ -1417,7 +1422,9 @@ function ChangePopupLayout()
         shuffle_tavern.IgnoreUserInput = true
         shuffle_tavern.Active = false
 
-        
+        key_drop_shuffle.IgnoreUserInput = false
+        key_drop_shuffle.Active = false
+
         ITEM_MAPPING[177] = nil
         ITEM_MAPPING[180] = nil
         ITEM_MAPPING[182] = nil
@@ -1474,6 +1481,9 @@ function ChangePopupLayout()
 
         shuffle_tavern.IgnoreUserInput = true
         shuffle_tavern.Active = false
+
+        key_drop_shuffle.IgnoreUserInput = false
+        key_drop_shuffle.Active = false
 
         
         ITEM_MAPPING[182] = nil
