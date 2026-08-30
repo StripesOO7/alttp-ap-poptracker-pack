@@ -14,12 +14,6 @@ local HC_boomerang_chest_room = alttp_location.new("HC_boomerang_chest_room", "H
 local HC_stairs = alttp_location.new("HC_stairs", "HC Stairs", nil, "HC", true)
 local HC_ball_guard_room = alttp_location.new("HC_ball_guard_room", "HC Cell Guard", nil, "HC", true)
 local HC_zeldas_cell = alttp_location.new("HC_zeldas_cell", "HC Zeldas Cell", nil, "HC", true)
--- CE_stairs =alttp_location.new("", nil, nil, "CE", true)
--- CE_dropdown_entrance =alttp_location.new("", nil, nil, "CE", true)
-local CE_dark_cross = alttp_location.new("CE_dark_cross", "CE ", nil, "CE", true)
-local CE_rat_key_room = alttp_location.new("CE_rat_key_room", "CE ", nil, "CE", true)
-local CE_secret_room = alttp_location.new("CE_secret_room", "CE ", nil, "CE", true)
-local CE_dropdown_room = alttp_location.new("CE_dropdown_room", "CE ", nil, "CE", true)
 
 local HC_north_abyss = alttp_location.new("HC_north_abyss", "HC North abyss")
 local HC_north_abyss_balcony = alttp_location.new("HC_north_abyss_balcony", "HC North Abyss balcony")
@@ -70,6 +64,13 @@ local CE_snake_hall = alttp_location.new("CE_snake_hall", "CE Snake Hall")
 local CE_small_sewers = alttp_location.new("CE_small_sewers", "CE Small Sewers")
 local CE_large_sewers = alttp_location.new("CE_large_sewers", "CE Large Sewers")
 local CE_pulley = alttp_location.new("CE_pulley", "CE Pulley")
+local CE_yet_more_rats = alttp_location.new("CE_yet_more_rats", "CE Yet More Rats")
+-- CE_stairs =alttp_location.new("", nil, nil, "CE", true)
+-- CE_dropdown_entrance =alttp_location.new("", nil, nil, "CE", true)
+local CE_dark_cross = alttp_location.new("CE_dark_cross", "CE ", nil, "CE", true)
+local CE_rat_key_room = alttp_location.new("CE_rat_key_room", "CE ", nil, "CE", true)
+local CE_secret_room = alttp_location.new("CE_secret_room", "CE ", nil, "CE", true)
+local CE_dropdown_room = alttp_location.new("CE_dropdown_room", "CE ", nil, "CE", true)
 
 CE_tapestry_S_door = alttp_location.new("CE_tapestry_S_door", "CE Tapestry S Door", nil, "", true, 65, 760, 760, 2530, 2585, {"Castle Escape Doors", "CE Tapestry S Door", "CE Tapestry S Door"})
 CE_tapestry_N_door = alttp_location.new("CE_tapestry_N_door", "CE Tapestry N Door", nil, "", true, 65, 936, 936, 2075, 2105, {"Castle Escape Doors", "CE Tapestry N Door", "CE Tapestry N Door"})
@@ -88,11 +89,15 @@ CE_pulley_S_door = alttp_location.new("CE_pulley_S_door", "CE Pulley S Door", ni
 CE_yet_more_rats_N_door = alttp_location.new("CE_yet_more_rats_N_door", "CE Yet More Rats N Door", nil, "", true, 2, 1400, 1400, 65, 70, {"Castle Escape Doors", "CE Yet More Rats N Door", "CE Yet More Rats N Door"})
 
 -- local HC_
-Sanctuary_secret_door = alttp_location.new("Sanctuary_secret_door", "Sanctuary Secret Door", nil, "", true, 18, 1272, 1272, 495, 545, {"Sanctuary Doors", "Sanctuary Secret Door", "Sanctuary Secret Door"})
+local Sanctuary_secret_door = alttp_location.new("Sanctuary_secret_door", "Sanctuary Secret Door", nil, "", true, 18, 1272, 1272, 495, 545, {"Sanctuary Doors", "Sanctuary Secret Door", "Sanctuary Secret Door"})
 
 
 
 HC_main_entrance_inside:connect_two_ways(HC_main_hall)
+
+HC_main_hall:connect_one_way("HC - Lobby Enemy #1", function() return DealDamage end)
+-- HC_main_hall:connect_one_way("HC - Lobby Enemy #2", function() return DealDamage end)
+-- HC_main_hall:connect_one_way("HC - Lobby Enemy #3", function() return DealDamage end)
 
 HC_main_hall:connect_two_ways(HC_main_hall_N_door)
 HC_main_hall:connect_two_ways(HC_main_hall_W_door)
@@ -104,14 +109,20 @@ HC_left_wing_lobby_E_door:connect_two_ways(HC_left_wing_lobby)
 HC_main_hall_1W_door:connect_two_ways_entrance("", HC_left_wing_lobby_2E_door)
 HC_left_wing_lobby_2E_door:connect_two_ways(HC_left_wing_lobby)
 
-HC_left_wing_lobby:connect_one_way("HC - West Hall Pot #1")
-HC_left_wing_lobby:connect_one_way("HC - West Hall Pot #2")
+HC_left_wing_lobby:connect_one_way("HC - West Hall Pot #1", function() return CanInteract(HC_left_wing_lobby) end)
+-- HC_left_wing_lobby:connect_one_way("HC - West Hall Pot #2", function() return CanInteract(HC_left_wing_lobby) end)
+HC_left_wing_lobby:connect_one_way("HC - West Hall Enemy #1", function() return DealDamage end)
+-- HC_left_wing_lobby:connect_one_way("HC - West Hall Enemy #2", function() return DealDamage end)
+-- HC_left_wing_lobby:connect_one_way("HC - West Hall Enemy #3", function() return DealDamage end)
+
 HC_left_wing_lobby:connect_two_ways(HC_left_wing_lobby_2N_door)
 HC_left_wing_lobby_2N_door:connect_two_ways_entrance("", HC_left_wing_4S_door)
 HC_left_wing_4S_door:connect_two_ways(HC_left_wing)
 
-HC_left_wing:connect_one_way("HC - West Lobby Pot #1")
-HC_left_wing:connect_one_way("HC - West Lobby Pot #2")
+HC_left_wing:connect_one_way("HC - West Lobby Pot #1", function() return CanInteract(HC_left_wing) end)
+-- HC_left_wing:connect_one_way("HC - West Lobby Pot #2", function() return CanInteract(HC_left_wing) end)
+HC_left_wing:connect_one_way("HC - West Lobby Enemy #1", function() return DealDamage end)
+
 HC_left_wing:connect_two_ways(HC_left_wing_2E_door)
 HC_left_wing_2E_door:connect_two_ways_entrance("", HC_back_wing_1W_door)
 HC_back_wing_1W_door:connect_two_ways(HC_back_wing)
@@ -123,16 +134,24 @@ HC_back_wing_N_door:connect_two_ways_entrance("", HC_map_chest_room_N_door)
 HC_back_wing_2E_door:connect_two_ways_entrance("", HC_right_wing_1W_door)
 HC_right_wing_1W_door:connect_two_ways(HC_right_wing)
 
-HC_right_wing:connect_one_way("HC - East Hall Pot #1")
-HC_right_wing:connect_one_way("HC - East Hall Pot #2")
+HC_right_wing:connect_one_way("HC - East Hall Pot #1", function() return CanInteract(HC_right_wing) end)
+-- HC_right_wing:connect_one_way("HC - East Hall Pot #2", function() return CanInteract(HC_right_wing) end)
+HC_right_wing:connect_one_way("HC - East Hall Enemy #1", function() return DealDamage end)
+-- HC_right_wing:connect_one_way("HC - East Hall Enemy #2", function() return DealDamage end)
+-- HC_right_wing:connect_one_way("HC - East Hall Enemy #3", function() return DealDamage end)
+
 HC_right_wing:connect_two_ways(HC_right_wing_3S_door)
 HC_right_wing_3S_door:connect_two_ways_entrance("", HC_right_wing_lobby_1N_door)
 HC_right_wing_lobby_1N_door:connect_two_ways(HC_right_wing_lobby)
 
-HC_right_wing:connect_one_way("HC - East Lobby Pot #1")
 HC_right_wing:connect_two_ways(HC_right_wing_S_door)
 HC_right_wing_S_door:connect_two_ways_entrance("", HC_right_wing_lobby_N_door)
 HC_right_wing_lobby_N_door:connect_two_ways(HC_right_wing_lobby)
+
+HC_right_wing_lobby:connect_one_way("HC - East Lobby Pot #1", function() return CanInteract(HC_right_wing) end)
+HC_right_wing_lobby:connect_one_way("HC - East Lobby Enemy #1", function() return DealDamage end)
+-- HC_right_wing_lobby:connect_one_way("HC - East Lobby Enemy #2", function() return DealDamage end)
+-- HC_right_wing_lobby:connect_one_way("HC - East Lobby Enemy #3", function() return DealDamage end)
 
 HC_right_wing_lobby:connect_two_ways(HC_right_wing_lobby_3W_door)
 
@@ -146,6 +165,11 @@ HC_main_hall_E_door:connect_two_ways_entrance("", HC_right_wing_lobby_3W_door)
 
 HC_main_hall_N_door:connect_two_ways_entrance("", HC_throne_room_S_door)
 HC_throne_room_S_door:connect_two_ways(HC_throne_room)
+
+HC_throne_room:connect_one_way("HC - Throne Room Enemy #1", function() return DealDamage end)
+-- HC_throne_room:connect_one_way("HC - Throne Room Enemy #2", function() return DealDamage end)
+-- HC_throne_room:connect_one_way("HC - Throne Room Enemy #3", function() return DealDamage end)
+
 HC_throne_room:connect_two_ways(HC_throne_room_N_door)
 HC_throne_room_N_door:connect_two_ways_entrance("", CE_tapestry_S_door)
 
@@ -172,16 +196,25 @@ HC_map_chest_room:connect_two_ways(HC_north_abyss, function(keys, Current_Dungeo
     ), KDSreturn(keys, keys + 1)
 end)
 
+HC_north_abyss:connect_one_way("HC - North Abyss Enemy #2", function() return DealDamage end)
+
 HC_north_abyss:connect_two_ways(HC_north_abyss_S_door)
 HC_north_abyss_S_door:connect_two_ways_entrance("", HC_abyss_catwalk_N_door)
 HC_abyss_catwalk_N_door:connect_two_ways(HC_abyss_catwalk)
 
-HC_abyss_catwalk:connect_one_way("HC - South Abyss Pot #1")
-HC_abyss_catwalk:connect_one_way("HC - South Abyss Pot #2")
-HC_abyss_catwalk:connect_one_way("HC - South Abyss Pot #3")
+HC_abyss_catwalk:connect_one_way("HC - South Abyss Pot #1", function() return CanInteract(HC_abyss_catwalk) end)
+-- HC_abyss_catwalk:connect_one_way("HC - South Abyss Pot #2", function() return CanInteract(HC_abyss_catwalk) end)
+-- HC_abyss_catwalk:connect_one_way("HC - South Abyss Pot #3", function() return CanInteract(HC_abyss_catwalk) end)
+HC_abyss_catwalk:connect_one_way("HC - South Abyss Enemy #1", function() return DealDamage end)
+-- HC_abyss_catwalk:connect_one_way("HC - South Abyss Enemy #2", function() return DealDamage end)
+-- HC_abyss_catwalk:connect_one_way("HC - South Abyss Enemy #3", function() return DealDamage end)
+
 HC_abyss_catwalk:connect_two_ways(HC_abyss_catwalk_3W_door)
 HC_abyss_catwalk_3W_door:connect_two_ways_entrance("", HC_armory_4E_door)
 HC_armory_4E_door:connect_two_ways(HC_armory)
+
+HC_armory:connect_one_way("HC - Guardroom Enemy #1", function() return DealDamage end)
+-- HC_armory:connect_one_way("HC - Guardroom Enemy #2", function() return DealDamage end)
 
 HC_armory:connect_two_ways(HC_armory_1N_door)
 HC_armory:connect_two_ways(HC_armory_2E_door)
@@ -196,6 +229,7 @@ HC_north_abyss_balcony:connect_one_way(HC_north_abyss)
 HC_armory_1N_door:connect_two_ways_entrance_door_stuck("", HC_before_boomerang_chest_room_3S_door, nil, function() return ALL(CanInteract(HC_before_boomerang_chest_room), DealDamage) end)
 HC_before_boomerang_chest_room_3S_door:connect_two_ways(HC_before_boomerang_chest_room)
 
+HC_before_boomerang_chest_room:connect_one_way("HC - Armory Main Enemy #1", function() return DealDamage end)
 HC_before_boomerang_chest_room:connect_two_ways(HC_boomerang_chest_room, function()
     return ANY(
         DealDamage,
@@ -227,9 +261,12 @@ HC_stairs:connect_two_ways(HC_stairs_N_door)
 
 HC_stairs_N_door:connect_two_ways_entrance("", HC_ball_guard_room_1N_door)
 HC_ball_guard_room_1N_door:connect_two_ways(HC_ball_guard_room)
-HC_ball_guard_room:connect_one_way("HC - Cellblock Pot #1")
-HC_ball_guard_room:connect_one_way("HC - Cellblock Pot #2")
-HC_ball_guard_room:connect_one_way("HC - Cellblock Pot #3")
+HC_ball_guard_room:connect_one_way("HC - Cellblock Pot #1", function() return CanInteract(HC_ball_guard_room) end)
+-- HC_ball_guard_room:connect_one_way("HC - Cellblock Pot #2", function() return CanInteract(HC_ball_guard_room) end)
+-- HC_ball_guard_room:connect_one_way("HC - Cellblock Pot #3", function() return CanInteract(HC_ball_guard_room) end)
+HC_ball_guard_room:connect_one_way("HC - Cell Enemy #1", function() return DealDamage end)
+HC_ball_guard_room:connect_one_way("HC - Cellblock Enemy #2", function() return DealDamage end)
+
 HC_ball_guard_room:connect_one_way("HC - Big Key", function()
     return ANY(
         DealDamage,
@@ -248,10 +285,15 @@ CE_tapestry_S_door:connect_two_ways(CE_tapestry, function(keys, Current_Dungeon)
         "standard"
     )
 end)
-CE_tapestry:connect_one_way("CE - Behind Tapestry Pot #1")
-CE_tapestry:connect_one_way("CE - Behind Tapestry Pot #2")
-CE_tapestry:connect_one_way("CE - Behind Tapestry Pot #3")
-CE_tapestry:connect_one_way("CE - Behind Tapestry Pot #4")
+CE_tapestry:connect_one_way("CE - Behind Tapestry Pot #1", function() return CanInteract(CE_tapestry) end)
+-- CE_tapestry:connect_one_way("CE - Behind Tapestry Pot #2", function() return CanInteract(CE_tapestry) end)
+-- CE_tapestry:connect_one_way("CE - Behind Tapestry Pot #3", function() return CanInteract(CE_tapestry) end)
+-- CE_tapestry:connect_one_way("CE - Behind Tapestry Pot #4", function() return CanInteract(CE_tapestry) end)
+CE_tapestry:connect_one_way("CE - Behind Tapestry Enemy #1", function() return DealDamage end)
+-- CE_tapestry:connect_one_way("CE - Behind Tapestry Enemy #2", function() return DealDamage end)
+-- CE_tapestry:connect_one_way("CE - Behind Tapestry Enemy #3", function() return DealDamage end)
+-- CE_tapestry:connect_one_way("CE - Behind Tapestry Enemy #4", function() return DealDamage end)
+
 CE_tapestry:connect_two_ways(CE_tapestry_N_door, function(keys, Current_Dungeon)
     return ANY(
         DarkRooms(true),
@@ -266,6 +308,14 @@ CE_snake_hall_2N_door:connect_two_ways(CE_snake_hall, function(keys, Current_Dun
         "standard"
     )
 end)
+
+CE_snake_hall:connect_one_way("CE - Rope Room Enemy #1", function() return DealDamage end)
+    -- CE_snake_hall:connect_one_way("CE - Rope Room Enemy #2", function() return DealDamage end)
+    -- CE_snake_hall:connect_one_way("CE - Rope Room Enemy #3", function() return DealDamage end)
+    -- CE_snake_hall:connect_one_way("CE - Rope Room Enemy #4", function() return DealDamage end)
+    -- CE_snake_hall:connect_one_way("CE - Rope Room Enemy #5", function() return DealDamage end)
+    -- CE_snake_hall:connect_one_way("CE - Rope Room Enemy #6", function() return DealDamage end)
+
 CE_snake_hall:connect_two_ways(CE_snake_hall_1N_door, function(keys, Current_Dungeon)
     return ANY(
         DarkRooms(true),
@@ -280,7 +330,14 @@ CE_dark_cross_S_door:connect_two_ways(CE_dark_cross, function(keys, Current_Dung
         "standard"
     )
 end)
-CE_dark_cross:connect_one_way("CE - Dark Cross Pot #1")
+
+CE_dark_cross:connect_one_way("CE - Dark Cross Pot #1", function() return CanInteract(CE_dark_cross) end)
+CE_dark_cross:connect_one_way("CE - Dark Cross Enemy #1", function() return DealDamage end)
+-- CE_dark_cross:connect_one_way("CE - Dark Cross Enemy #2", function() return DealDamage end)
+-- CE_dark_cross:connect_one_way("CE - Dark Cross Enemy #3", function() return DealDamage end)
+-- CE_dark_cross:connect_one_way("CE - Dark Cross Enemy #4", function() return DealDamage end)
+-- CE_dark_cross:connect_one_way("CE - Dark Cross Enemy #5", function() return DealDamage end)
+
 CE_dark_cross:connect_one_way("CE - Dark Cross", function() 
     return ALL(
         ANY(
@@ -317,6 +374,15 @@ CE_small_sewers_S_door:connect_two_ways(CE_small_sewers, function(keys, Current_
         "standard"
     )
 end)
+
+CE_small_sewers:connect_one_way("CE - Water Enemy #1", function() return DealDamage end)
+CE_small_sewers:connect_one_way("CE - Water Enemy #2", function() return DealDamage end)
+CE_small_sewers:connect_one_way("CE - Water Enemy #3", function() return DealDamage end)
+CE_small_sewers:connect_one_way("CE - Water Enemy #4", function() return DealDamage end)
+CE_small_sewers:connect_one_way("CE - Water Enemy #5", function() return DealDamage end)
+CE_small_sewers:connect_one_way("CE - Water Enemy #6", function() return DealDamage end)
+CE_small_sewers:connect_one_way("CE - Water Enemy #7", function() return DealDamage end)
+
 CE_small_sewers:connect_one_way(CE_small_sewers_W_door, function(keys, Current_Dungeon)
     return ANY(
         DarkRooms(true),
@@ -332,14 +398,25 @@ CE_large_sewers_E_door:connect_two_ways(CE_large_sewers, function(keys, Current_
     )
 end)
 
-CE_large_sewers:connect_one_way("CE - Dark Aquabats Pot #1")
-CE_large_sewers:connect_one_way("CE - Dark Aquabats Pot #2")
-CE_large_sewers:connect_one_way("CE - Dark Aquabats Pot #3")
-CE_large_sewers:connect_one_way("CE - Dark Aquabats Pot #4")
-CE_large_sewers:connect_one_way("CE - Dark Aquabats Pot #5")
-CE_large_sewers:connect_one_way("CE - Dark Aquabats Pot #6")
+CE_large_sewers:connect_one_way("CE - Dark Aquabats Pot #1", function() return CanInteract(CE_large_sewers) end)
+-- CE_large_sewers:connect_one_way("CE - Dark Aquabats Pot #2", function() return CanInteract(CE_large_sewers) end)
+-- CE_large_sewers:connect_one_way("CE - Dark Aquabats Pot #3", function() return CanInteract(CE_large_sewers) end)
+-- CE_large_sewers:connect_one_way("CE - Dark Aquabats Pot #4", function() return CanInteract(CE_large_sewers) end)
+-- CE_large_sewers:connect_one_way("CE - Dark Aquabats Pot #5", function() return CanInteract(CE_large_sewers) end)
+-- CE_large_sewers:connect_one_way("CE - Dark Aquabats Pot #6", function() return CanInteract(CE_large_sewers) end)
+CE_large_sewers:connect_one_way("CE - Dark Aquabats Enemy #6", function() return DealDamage end)
+-- CE_large_sewers:connect_one_way("CE - Dark Aquabats Enemy #7", function() return DealDamage end)
+-- CE_large_sewers:connect_one_way("CE - Dark Aquabats Enemy #8", function() return DealDamage end)
+-- CE_large_sewers:connect_one_way("CE - Dark Aquabats Enemy #9", function() return DealDamage end)
+-- CE_large_sewers:connect_one_way("CE - Dark Aquabats Enemy #10", function() return DealDamage end)
+-- CE_large_sewers:connect_one_way("CE - Dark Aquabats Enemy #11", function() return DealDamage end)
+
 CE_large_sewers:connect_two_ways(CE_rat_key_room)
 
+CE_rat_key_room:connect_one_way("CE - Key Rat Enemy #2", function() return DealDamage end)
+-- CE_rat_key_room:connect_one_way("CE - Key Rat Enemy #3", function() return DealDamage end)
+-- CE_rat_key_room:connect_one_way("CE - Key Rat Enemy #4", function() return DealDamage end)
+-- CE_rat_key_room:connect_one_way("CE - Key Rat Enemy #5", function() return DealDamage end)
 CE_rat_key_room:connect_one_way("CE - Rat Key Drop", function(keys, Current_Dungeon)
     return ANY(
         ALL(
@@ -350,6 +427,7 @@ CE_rat_key_room:connect_one_way("CE - Rat Key Drop", function(keys, Current_Dung
         "standard"
     ), keys
 end)
+
 CE_rat_key_room:connect_two_ways(CE_rat_key_room_N_door, function(keys, Current_Dungeon)
     return ANY(
         DarkRooms(true),
@@ -372,6 +450,16 @@ CE_rat_key_room_N_door:connect_two_ways_entrance("", CE_dropdown_room_S_door, fu
 end)
 
 CE_dropdown_room_S_door:connect_two_ways(CE_dropdown_room)
+
+CE_dropdown_room:connect_one_way("CE - Rat Path Enemy #1", function() return DealDamage end)
+-- CE_dropdown_room:connect_one_way("CE - Rat Path Enemy #2", function() return DealDamage end)
+-- CE_dropdown_room:connect_one_way("CE - Rat Path Enemy #3", function() return DealDamage end)
+-- CE_dropdown_room:connect_one_way("CE - Rat Path Enemy #4", function() return DealDamage end)
+-- CE_dropdown_room:connect_one_way("CE - Rat Path Enemy #5", function() return DealDamage end)
+-- CE_dropdown_room:connect_one_way("CE - Rat Path Enemy #6", function() return DealDamage end)
+-- CE_dropdown_room:connect_one_way("CE - Rat Path Enemy #7", function() return DealDamage end)
+-- CE_dropdown_room:connect_one_way("CE - Rat Path Enemy #8", function() return DealDamage end)
+
 CE_dropdown_room:connect_two_ways(CE_secret_room, function()
     return ALL(
         ANY(
@@ -381,25 +469,37 @@ CE_dropdown_room:connect_two_ways(CE_secret_room, function()
         CanInteract(CE_dropdown_room)
     )
 end)
+
 CE_secret_room:connect_one_way("CE - Secret Room Left", function() return CanInteract(CE_secret_room) end)
 CE_secret_room:connect_one_way("CE - Secret Room Center", function() return CanInteract(CE_secret_room) end)
 CE_secret_room:connect_one_way("CE - Secret Room Right", function() return CanInteract(CE_secret_room) end)
-CE_secret_room:connect_one_way("CE - Secret Room Pot #1", function() return CanInteract(CE_secret_room) end)
-CE_secret_room:connect_one_way("CE - Secret Room Pot #2", function() return CanInteract(CE_secret_room) end)
-CE_secret_room:connect_one_way("CE - Secret Room Pot #3", function() return CanInteract(CE_secret_room) end)
-CE_secret_room:connect_one_way("CE - Secret Room Pot #4", function() return CanInteract(CE_secret_room) end)
-CE_secret_room:connect_one_way("CE - Secret Room Pot #5", function() return CanInteract(CE_secret_room) end)
-CE_secret_room:connect_one_way("CE - Secret Room Pot #6", function() return CanInteract(CE_secret_room) end)
+CE_secret_room:connect_one_way("CE - Secret Room Pot #1", function() return CanInteract(CE_secret_room) end, function() return CanInteract(CE_secret_room) end)
+-- CE_secret_room:connect_one_way("CE - Secret Room Pot #2", function() return CanInteract(CE_secret_room) end, function() return CanInteract(CE_secret_room) end)
+-- CE_secret_room:connect_one_way("CE - Secret Room Pot #3", function() return CanInteract(CE_secret_room) end, function() return CanInteract(CE_secret_room) end)
+-- CE_secret_room:connect_one_way("CE - Secret Room Pot #4", function() return CanInteract(CE_secret_room) end, function() return CanInteract(CE_secret_room) end)
+-- CE_secret_room:connect_one_way("CE - Secret Room Pot #5", function() return CanInteract(CE_secret_room) end, function() return CanInteract(CE_secret_room) end)
+-- CE_secret_room:connect_one_way("CE - Secret Room Pot #6", function() return CanInteract(CE_secret_room) end, function() return CanInteract(CE_secret_room) end)
 
 CE_secret_room:connect_one_way(CE_dropdown_room_N_door)
-CE_dropdown_room_N_door:connect_two_ways_entrance("", CE_yet_more_rats_N_door)
+CE_dropdown_room_N_door:connect_two_ways_entrance("", CE_yet_more_rats)
 
-CE_yet_more_rats_N_door:connect_one_way("CE - Yet More Rats Pot #1")
-CE_yet_more_rats_N_door:connect_one_way("CE - Yet More Rats Pot #2")
-CE_yet_more_rats_N_door:connect_one_way("CE - Yet More Rats Pot #3")
-CE_yet_more_rats_N_door:connect_one_way("CE - Yet More Rats Pot #4")
-CE_yet_more_rats_N_door:connect_two_ways(CE_pulley)
+CE_yet_more_rats:connect_one_way("CE - Yet More Rats Pot #1", function() return CanInteract(CE_yet_more_rats) end)
+-- CE_yet_more_rats:connect_one_way("CE - Yet More Rats Pot #2", function() return CanInteract(CE_yet_more_rats) end)
+-- CE_yet_more_rats:connect_one_way("CE - Yet More Rats Pot #3", function() return CanInteract(CE_yet_more_rats) end)
+-- CE_yet_more_rats:connect_one_way("CE - Yet More Rats Pot #4", function() return CanInteract(CE_yet_more_rats) end)
+CE_yet_more_rats:connect_one_way("CE - Yet More Rats Enemy #1", function() return DealDamage end)
+-- CE_yet_more_rats:connect_one_way("CE - Yet More Rats Enemy #2", function() return DealDamage end)
+-- CE_yet_more_rats:connect_one_way("CE - Yet More Rats Enemy #3", function() return DealDamage end)
+-- CE_yet_more_rats:connect_one_way("CE - Yet More Rats Enemy #4", function() return DealDamage end)
+-- CE_yet_more_rats:connect_one_way("CE - Yet More Rats Enemy #5", function() return DealDamage end)
+
+CE_yet_more_rats:connect_two_ways(CE_pulley)
+
+CE_pulley:connect_one_way("CE - Pull Switch Enemy #15", function() return DealDamage end)
+-- CE_pulley:connect_one_way("CE - Pull Switch Enemy #16", function() return DealDamage end)
+
 CE_pulley:connect_two_ways(CE_pulley_S_door, function() return CanInteract(CE_pulley) end)
+
 CE_pulley_S_door:connect_one_way_entrance("", Sanctuary_secret_door)
 
 Sanctuary_secret_door:connect_two_ways(Sanctuary_entrance_inside)
