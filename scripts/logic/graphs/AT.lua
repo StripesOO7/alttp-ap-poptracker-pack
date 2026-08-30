@@ -8,6 +8,7 @@ local AT_circle_of_pots = alttp_location.new("AT_circle_of_pots", "AT Circle of 
 local AT_aga1 = alttp_location.new("AT_aga1", "AT Aga1 Arena", nil, "AT", true)
 local AT_pre_curtain = alttp_location.new("AT_pre_curtain", "AT Cutscene Room", nil, "AT", true)
 
+local AT_lone_statue = alttp_location.new("AT_lone_statue", "AT Lone Statue")
 local AT_dark_chargers = alttp_location.new("AT_dark_chargers", "AT Dark Chargers")
 local AT_dual_statues = alttp_location.new("AT_dual_statues", "AT Dual Statues")
 local AT_dark_pits = alttp_location.new("AT_dark_pits", "AT Dark Pits")
@@ -20,7 +21,7 @@ local AT_antechamber = alttp_location.new("AT_antechamber", "AT Antechamber")
 
 -- local AT_Lobby_north_door = alttp_location.new("AT_", "AT Lobby North Door")
 AT_first_chest_2N_door = alttp_location.new("AT_first_chest_2N_door", "AT First Chest 2N Door", nil, "", true, 224, 376, 377, 7195, 7225, {"Agahnim's Tower Doors", "AT First Chest 2N Door", "AT First Chest 2N Door"})
-AT_dark_maze_2N_door = alttp_location.new("AT_dark_maze_2N_door", "AT Dark Maze 2N Door", nil, "", true, 208, 376, 377, 6680, 6710, {"Agahnim's Tower Doors", "AT dark maze 2N door", "AT dark maze 2N door"})
+AT_lone_statue_2N_door = alttp_location.new("AT_lone_statue_2N_door", "AT Lone Statue 2N Door", nil, "", true, 208, 376, 377, 6680, 6710, {"Agahnim's Tower Doors", "AT dark maze 2N door", "AT dark maze 2N door"})
 AT_dark_chargers_4N_door = alttp_location.new("AT_dark_chargers_4N_door", "AT dark chargers 4N Door", nil, "", true, 208, 408, 409, 6945, 6960, {"Agahnim's Tower Doors", "AT dark chargers 4N Door", "AT dark chargers 4N Door"})
 AT_dual_statues_4N_door = alttp_location.new("AT_dual_statues_4N_door", "AT Dual Statues 4N Door", nil, "", true, 192, 408, 409, 6435, 6450, {"Agahnim's Tower Doors", "AT Dual Statues 4N Door", "AT Dual Statues 4N Door"})
 AT_dark_archers_2N_door = alttp_location.new("AT_dark_archers_2N_door", "AT Dark Archers 2N Door", nil, "", true, 192, 376, 377, 6180, 6195, {"Agahnim's Tower Doors", "AT Dark Archers 2N Door", "AT Dark Archers 2N Door"})
@@ -36,26 +37,44 @@ AT_aga_arena_3S_door = alttp_location.new("AT_aga_arena_3S_door", "AT Aga Arena 
 
 AT_entrance_inside:connect_two_ways(AT_lobby)
 AT_lobby:connect_one_way(AT_golden_guards)
+AT_golden_guards:connect_one_way("AT- Gold Knights Enemy #1", function() return DealDamage end)
+-- AT_golden_guards:connect_one_way("AT- Gold Knights Enemy #2", function() return DealDamage end)
 AT_golden_guards:connect_one_way(AT_lobby, function() return DealDamage end)
 
 AT_golden_guards:connect_two_ways(AT_first_chest, function() return DealDamage end)
 
 AT_first_chest:connect_one_way("AT - First Chest", function() return DealDamage end)
+AT_first_chest:connect_one_way("AT - Room 03 Enemy #3", function() return DealDamage end)
+-- AT_first_chest:connect_one_way("AT - Room 03 Enemy #4", function() return DealDamage end)
 AT_first_chest:connect_two_ways(AT_first_chest_2N_door)
 
-AT_first_chest_2N_door:connect_two_ways_entrance("", AT_dark_maze_2N_door, function(keys, Current_Dungeon)
+AT_first_chest_2N_door:connect_two_ways_entrance("", AT_lone_statue_2N_door, function(keys, Current_Dungeon)
     return Has("smallkey", keys + 1, 1, keys + 1, 1), keys + 1
 end)
 
-AT_dark_maze_2N_door:connect_two_ways(AT_dark_maze)
+AT_lone_statue_2N_door:connect_two_ways(AT_lone_statue)
+
+AT_lone_statue:connect_one_way("AT - Lone Statue Enemy #3", function() return DealDamage end)
+-- AT_lone_statue:connect_one_way("AT - Lone Statue Enemy #4", function() return DealDamage end)
+
+AT_lone_statue:connect_two_ways_stuck(AT_dark_maze, nil, function() return ALL(DarkRooms(true), CanInteract(AT_dark_maze)) end)
+
 AT_dark_maze:connect_one_way("AT - Maze Chest", function() return DarkRooms(true) end)
 AT_dark_maze:connect_one_way("AT - Dark Maze Pot #1", function() return DarkRooms(true) end)
-AT_dark_maze:connect_one_way("AT - Dark Maze Pot #2", function() return DarkRooms(true) end)
-AT_dark_maze:connect_one_way("AT - Dark Maze Pot #3", function() return DarkRooms(true) end)
-AT_dark_maze:connect_one_way("AT - Dark Maze Pot #4", function() return DarkRooms(true) end)
-AT_dark_maze:connect_one_way("AT - Dark Maze Pot #5", function() return DarkRooms(true) end)
-AT_dark_maze:connect_one_way("AT - Dark Maze Pot #6", function() return DarkRooms(true) end)
-AT_dark_maze:connect_one_way("AT - Dark Maze Pot #7", function() return DarkRooms(true) end)
+-- AT_dark_maze:connect_one_way("AT - Dark Maze Pot #2", function() return DarkRooms(true) end)
+-- AT_dark_maze:connect_one_way("AT - Dark Maze Pot #3", function() return DarkRooms(true) end)
+-- AT_dark_maze:connect_one_way("AT - Dark Maze Pot #4", function() return DarkRooms(true) end)
+-- AT_dark_maze:connect_one_way("AT - Dark Maze Pot #5", function() return DarkRooms(true) end)
+-- AT_dark_maze:connect_one_way("AT - Dark Maze Pot #6", function() return DarkRooms(true) end)
+-- AT_dark_maze:connect_one_way("AT - Dark Maze Pot #7", function() return DarkRooms(true) end)
+AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #1", function() return ALL(DarkRooms(true), DealDamage) end)
+-- AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #2", function() return ALL(DarkRooms(true), DealDamage) end)
+-- AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #5", function() return ALL(DarkRooms(true), DealDamage) end)
+-- AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #6", function() return ALL(DarkRooms(true), DealDamage) end)
+-- AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #7", function() return ALL(DarkRooms(true), DealDamage) end)
+-- AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #8", function() return ALL(DarkRooms(true), DealDamage) end)
+-- AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #10", function() return ALL(DarkRooms(true), DealDamage) end)
+
 AT_dark_maze:connect_two_ways(AT_dark_chargers, function(keys, Current_Dungeon)
     return ALL(
         DarkRooms(true),
@@ -63,38 +82,70 @@ AT_dark_maze:connect_two_ways(AT_dark_chargers, function(keys, Current_Dungeon)
     ), keys + 1
 end)
 
+AT_dark_chargers:connect_one_way("AT - Dark Chargers Enemy #9", function() return ALL(DarkRooms(true), DealDamage) end)
+-- AT_dark_chargers:connect_one_way("AT - Dark Chargers Enemy #11", function() return ALL(DarkRooms(true), DealDamage) end)
+
 AT_dark_chargers:connect_two_ways(AT_dark_chargers_4N_door)
 AT_dark_chargers_4N_door:connect_two_ways_entrance("", AT_dual_statues_4N_door)
 
 AT_dual_statues_4N_door:connect_two_ways(AT_dual_statues)
+
+AT_dual_statues:connect_one_way("AT - Dual Statues Enemy #7", function() return ALL(DarkRooms(true), DealDamage) end)
+-- AT_dual_statues:connect_one_way("AT - Dual Statues Enemy #8", function() return ALL(DarkRooms(true), DealDamage) end)
+
 AT_dual_statues:connect_two_ways_stuck(AT_dark_pits, function() return true end , function() return CanInteract(AT_dark_pits) end)
+
+AT_dark_pits:connect_one_way("AT - Dark Pits Enemy #3", function() return ALL(DarkRooms(true), DealDamage) end)
+-- AT_dark_pits:connect_one_way("AT - Dark Pits Enemy #4", function() return ALL(DarkRooms(true), DealDamage) end)
+-- AT_dark_pits:connect_one_way("AT - Dark Pits Enemy #6", function() return ALL(DarkRooms(true), DealDamage) end)
+
 AT_dark_pits:connect_two_ways(AT_dark_archers, function() return DarkRooms(true) end)
 
+AT_dark_archers:connect_one_way("AT - Dark Archers Enemy #1", function() return DealDamage end)
 AT_dark_archers:connect_one_way("AT - Dark Archer Key Drop", function() return DealDamage end)
+
 AT_dark_archers:connect_two_ways(AT_dark_archers_2N_door)
 AT_dark_archers_2N_door:connect_two_ways_entrance("", AT_red_spears_2N_door, function(keys, Current_Dungeon)
     return Has("smallkey", keys, 2, keys + 1, 3), KDSreturn( keys, keys + 1)
 end)
 AT_red_spears_2N_door:connect_two_ways(AT_red_spears)
+
+AT_red_spears:connect_one_way("AT - Red Spears Enemy #2", function() return DealDamage end)
+-- AT_red_spears:connect_one_way("AT - Red Spears Enemy #3", function() return DealDamage end)
+-- AT_red_spears:connect_one_way("AT - Red Spears Enemy #4", function() return DealDamage end)
+-- AT_red_spears:connect_one_way("AT - Red Spears Enemy #5", function() return DealDamage end)
+
 AT_red_spears:connect_two_ways(AT_red_guards)
+
+AT_red_guards:connect_one_way("AT - Red Guards Enemy #1", function() return DealDamage end)
+-- AT_red_guards:connect_one_way("AT - Red Guards Enemy #6", function() return DealDamage end)
+
 AT_red_guards:connect_two_ways(AT_circle_of_pots)
 
 AT_circle_of_pots:connect_one_way("AT - Circle of Pots Key Drop", function() return CanInteract(AT_circle_of_pots) end)
 AT_circle_of_pots:connect_one_way("AT - Circle of Pots Pot #1", function() return CanInteract(AT_circle_of_pots) end)
-AT_circle_of_pots:connect_one_way("AT - Circle of Pots Pot #2", function() return CanInteract(AT_circle_of_pots) end)
-AT_circle_of_pots:connect_one_way("AT - Circle of Pots Pot #3", function() return CanInteract(AT_circle_of_pots) end)
-AT_circle_of_pots:connect_one_way("AT - Circle of Pots Pot #4", function() return CanInteract(AT_circle_of_pots) end)
-AT_circle_of_pots:connect_one_way("AT - Circle of Pots Pot #5", function() return CanInteract(AT_circle_of_pots) end)
-AT_circle_of_pots:connect_one_way("AT - Circle of Pots Pot #6", function() return CanInteract(AT_circle_of_pots) end)
-AT_circle_of_pots:connect_one_way("AT - Circle of Pots Pot #7", function() return CanInteract(AT_circle_of_pots) end)
-AT_circle_of_pots:connect_one_way("AT - Circle of Pots Pot #8", function() return CanInteract(AT_circle_of_pots) end)
-AT_circle_of_pots:connect_one_way("AT - Circle of Pots Pot #9", function() return CanInteract(AT_circle_of_pots) end)
-AT_circle_of_pots:connect_one_way("AT - Circle of Pots Pot #10", function() return CanInteract(AT_circle_of_pots) end)
-AT_circle_of_pots:connect_one_way("AT - Circle of Pots Pot #11", function() return CanInteract(AT_circle_of_pots) end)
-AT_circle_of_pots:connect_one_way("AT - Circle of Pots Pot #12", function() return CanInteract(AT_circle_of_pots) end)
-AT_circle_of_pots:connect_one_way("AT - Circle of Pots Pot #13", function() return CanInteract(AT_circle_of_pots) end)
-AT_circle_of_pots:connect_one_way("AT - Circle of Pots Pot #14", function() return CanInteract(AT_circle_of_pots) end)
+-- AT_circle_of_pots:connect_one_way("AT - Circle of Pots Pot #2", function() return CanInteract(AT_circle_of_pots) end)
+-- AT_circle_of_pots:connect_one_way("AT - Circle of Pots Pot #3", function() return CanInteract(AT_circle_of_pots) end)
+-- AT_circle_of_pots:connect_one_way("AT - Circle of Pots Pot #4", function() return CanInteract(AT_circle_of_pots) end)
+-- AT_circle_of_pots:connect_one_way("AT - Circle of Pots Pot #5", function() return CanInteract(AT_circle_of_pots) end)
+-- AT_circle_of_pots:connect_one_way("AT - Circle of Pots Pot #6", function() return CanInteract(AT_circle_of_pots) end)
+-- AT_circle_of_pots:connect_one_way("AT - Circle of Pots Pot #7", function() return CanInteract(AT_circle_of_pots) end)
+-- AT_circle_of_pots:connect_one_way("AT - Circle of Pots Pot #8", function() return CanInteract(AT_circle_of_pots) end)
+-- AT_circle_of_pots:connect_one_way("AT - Circle of Pots Pot #9", function() return CanInteract(AT_circle_of_pots) end)
+-- AT_circle_of_pots:connect_one_way("AT - Circle of Pots Pot #10", function() return CanInteract(AT_circle_of_pots) end)
+-- AT_circle_of_pots:connect_one_way("AT - Circle of Pots Pot #11", function() return CanInteract(AT_circle_of_pots) end)
+-- AT_circle_of_pots:connect_one_way("AT - Circle of Pots Pot #12", function() return CanInteract(AT_circle_of_pots) end)
+-- AT_circle_of_pots:connect_one_way("AT - Circle of Pots Pot #13", function() return CanInteract(AT_circle_of_pots) end)
+-- AT_circle_of_pots:connect_one_way("AT - Circle of Pots Pot #14", function() return CanInteract(AT_circle_of_pots) end)
+AT_circle_of_pots:connect_one_way("AT - Circle of Pots Enemy #8", function() return DealDamage end)
+-- AT_circle_of_pots:connect_one_way("AT - Circle of Pots Enemy #9", function() return DealDamage end)
+-- AT_circle_of_pots:connect_one_way("AT - Circle of Pots Enemy #10", function() return DealDamage end)
+
 AT_circle_of_pots:connect_two_ways(AT_pacifist_run)
+
+AT_pacifist_run:connect_one_way("AT - Pacifist Run Enemy #7", function() return DealDamage end)
+-- AT_pacifist_run:connect_one_way("AT - Pacifist Run Enemy #12", function() return DealDamage end)
+-- AT_pacifist_run:connect_one_way("AT - Pacifist Run Enemy #13", function() return DealDamage end)
 
 AT_pacifist_run:connect_two_ways(AT_pacifist_run_4N_door)
 AT_pacifist_run_4N_door:connect_two_ways_entrance("", AT_push_statue_down_4N_door, function(keys, Current_Dungeon)
@@ -104,7 +155,19 @@ AT_pacifist_run_4N_door:connect_two_ways_entrance("", AT_push_statue_down_4N_doo
 end)
 AT_push_statue_down_4N_door:connect_two_ways(AT_push_statue_down)
 
+AT_push_statue_down:connect_one_way("AT - Push Statue Enemy #3", function() return DealDamage end)
+-- AT_push_statue_down:connect_one_way("AT - Push Statue Enemy #4", function() return DealDamage end)
+-- AT_push_statue_down:connect_one_way("AT - Push Statue Enemy #5", function() return DealDamage end)
+-- AT_push_statue_down:connect_one_way("AT - Push Statue Enemy #6", function() return DealDamage end)
+
 AT_push_statue_down:connect_two_ways(AT_catwalk)
+
+AT_catwalk:connect_one_way("AT - Catwalk Enemy #1", function() return DealDamage end)
+-- AT_catwalk:connect_one_way("AT - Catwalk Enemy #2", function() return DealDamage end)
+AT_catwalk:connect_one_way("AT - Dark Pits Pot #1", function() return CanInteract(AT_catwalk) end)
+-- AT_catwalk:connect_one_way("AT - Dark Pits Pot #2", function() return CanInteract(AT_catwalk) end)
+-- AT_catwalk:connect_one_way("AT - Dark Pits Pot #3", function() return CanInteract(AT_catwalk) end)
+-- AT_catwalk:connect_one_way("AT - Dark Pits Pot #4", function() return CanInteract(AT_catwalk) end)
 
 AT_catwalk:connect_two_ways(AT_catwalk_1N_door)
 AT_catwalk_1N_door:connect_two_ways_entrance("", AT_antechamber_2S_door)
