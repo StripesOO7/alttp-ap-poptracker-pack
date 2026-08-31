@@ -85,7 +85,7 @@
                     "^$CanReach|MM_conveyor_crystal_room"
                 ],
                 "visibility_rules": [
-                    "key_drop_shuffle"
+                    "key_drop_shuffle", "enemy_drop_shuffle_keys"
                 ],
                 "sections": [
                     {
@@ -284,7 +284,7 @@
                 "sections": [
                     {
                         "name": "Pots",
-                        "ref": "@MM/Misery Mire/Pots/Pots"
+                        "ref": "@MM/Misery Mire/Pots"
                     }
                 ]
             },
@@ -299,7 +299,7 @@
                 "sections": [
                     {
                         "name": "Enemies",
-                        "ref": "@MM/Misery Mire/Enemies/Enemies"
+                        "ref": "@MM/Misery Mire/Enemies"
                     }
                 ]
             },
@@ -3141,8 +3141,8 @@
                 "sections": [
                     {
                         "name": "Pot #1",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Falling Foes Pot #1"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3167,8 +3167,8 @@
                 "sections": [
                     {
                         "name": "Pot #2",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Falling Foes Pot #1"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3193,8 +3193,8 @@
                 "sections": [
                     {
                         "name": "Pot #1",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Tall Dark and Roomy Pot #1"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3219,8 +3219,8 @@
                 "sections": [
                     {
                         "name": "Pot #2",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Tall Dark and Roomy Pot #1"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3245,8 +3245,8 @@
                 "sections": [
                     {
                         "name": "Pot #3",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Tall Dark and Roomy Pot #1"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3271,8 +3271,8 @@
                 "sections": [
                     {
                         "name": "Pot #4",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Tall Dark and Roomy Pot #1"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3297,8 +3297,8 @@
                 "sections": [
                     {
                         "name": "Pot #1",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Dark Shooters Pot #1"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3323,8 +3323,8 @@
                 "sections": [
                     {
                         "name": "Pot #3",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Dark Shooters Pot #1"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3349,8 +3349,8 @@
                 "sections": [
                     {
                         "name": "Pot #2",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Fishbone Pot #2"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3375,8 +3375,8 @@
                 "sections": [
                     {
                         "name": "Pot #3",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Fishbone Pot #2"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3401,8 +3401,8 @@
                 "sections": [
                     {
                         "name": "Pot #4",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Fishbone Pot #2"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3427,8 +3427,8 @@
                 "sections": [
                     {
                         "name": "Pot #5",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Fishbone Pot #2"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3453,8 +3453,8 @@
                 "sections": [
                     {
                         "name": "Pot #6",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - South Fish Pot #6"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3479,8 +3479,8 @@
                 "sections": [
                     {
                         "name": "Pot #7",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - South Fish Pot #6"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3505,8 +3505,8 @@
                 "sections": [
                     {
                         "name": "Pot #8",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - South Fish Pot #6"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3531,8 +3531,8 @@
                 "sections": [
                     {
                         "name": "Pot #9",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - South Fish Pot #6"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3557,8 +3557,8 @@
                 "sections": [
                     {
                         "name": "Pot #10",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - South Fish Pot #6"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3583,8 +3583,8 @@
                 "sections": [
                     {
                         "name": "Pot #11",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - South Fish Pot #6"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3609,8 +3609,8 @@
                 "sections": [
                     {
                         "name": "Pot #1",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Left Bridge Pot #1"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3635,8 +3635,8 @@
                 "sections": [
                     {
                         "name": "Pot #1",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Spike Barrier Pot #1"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3661,8 +3661,8 @@
                 "sections": [
                     {
                         "name": "Pot #2",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Spike Barrier Pot #1"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3687,8 +3687,8 @@
                 "sections": [
                     {
                         "name": "Pot #1",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - BK Door Room Pot #1"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3713,8 +3713,8 @@
                 "sections": [
                     {
                         "name": "Pot #2",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - BK Door Room Pot #1"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3739,8 +3739,8 @@
                 "sections": [
                     {
                         "name": "Pot #3",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - BK Door Room Pot #1"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3765,8 +3765,8 @@
                 "sections": [
                     {
                         "name": "Pot #4",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - BK Door Room Pot #1"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3791,8 +3791,8 @@
                 "sections": [
                     {
                         "name": "Pot #5",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - BK Door Room Pot #1"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3817,8 +3817,8 @@
                 "sections": [
                     {
                         "name": "Pot #6",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - BK Door Room Pot #1"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3843,8 +3843,8 @@
                 "sections": [
                     {
                         "name": "Pot #2",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Spikes Pot #2"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3869,8 +3869,8 @@
                 "sections": [
                     {
                         "name": "Pot #3",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Spikes Pot #2"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3895,8 +3895,8 @@
                 "sections": [
                     {
                         "name": "Pot #1",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Hub Switch Pot #1"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3921,8 +3921,8 @@
                 "sections": [
                     {
                         "name": "Pot #2",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Hub Right Pot #2"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3947,8 +3947,8 @@
                 "sections": [
                     {
                         "name": "Pot #3",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Hub Pot #3"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3973,8 +3973,8 @@
                 "sections": [
                     {
                         "name": "Pot #4",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Hub Pot #3"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -3999,8 +3999,8 @@
                 "sections": [
                     {
                         "name": "Pot #1",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Conveyor Barrier Pot #1"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -4025,8 +4025,8 @@
                 "sections": [
                     {
                         "name": "Pot #2",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Conveyor Barrier Pot #1"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -4051,8 +4051,8 @@
                 "sections": [
                     {
                         "name": "Pot #3",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Neglected Room Pot #3"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -4077,8 +4077,8 @@
                 "sections": [
                     {
                         "name": "Pot #4",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Neglected Room Pot #3"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -4103,8 +4103,8 @@
                 "sections": [
                     {
                         "name": "Pot #5",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Neglected Room Pot #3"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -4129,8 +4129,8 @@
                 "sections": [
                     {
                         "name": "Pot #6",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Neglected Room Pot #3"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -4155,8 +4155,8 @@
                 "sections": [
                     {
                         "name": "Pot #1",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Hint Pot #1"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -4181,8 +4181,8 @@
                 "sections": [
                     {
                         "name": "Pot #2",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Hint Pot #1"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -4207,8 +4207,8 @@
                 "sections": [
                     {
                         "name": "Pot #3",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Hint Pot #1"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -4233,8 +4233,8 @@
                 "sections": [
                     {
                         "name": "Pot #4",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Hint Pot #1"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -4259,8 +4259,8 @@
                 "sections": [
                     {
                         "name": "Pot #5",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Hint Pot #1"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -4285,8 +4285,8 @@
                 "sections": [
                     {
                         "name": "Pot #6",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Hint Pot #1"],
+                        "visibility_rules": ["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 1
                     }
                 ],
@@ -4322,8 +4322,8 @@
                 "sections": [
                     {
                         "name": "Enemy #1",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Falling Foes Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -4348,8 +4348,8 @@
                 "sections": [
                     {
                         "name": "Enemy #2",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Falling Foes Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -4374,8 +4374,8 @@
                 "sections": [
                     {
                         "name": "Enemy #4",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Falling Foes Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -4400,8 +4400,8 @@
                 "sections": [
                     {
                         "name": "Enemy #5",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Falling Foes Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -4426,8 +4426,8 @@
                 "sections": [
                     {
                         "name": "Enemy #6",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Falling Foes Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -4452,8 +4452,8 @@
                 "sections": [
                     {
                         "name": "Enemy #7",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Falling Foes Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -4478,8 +4478,8 @@
                 "sections": [
                     {
                         "name": "Enemy #1",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Tall Dark and Roomy Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -4504,8 +4504,8 @@
                 "sections": [
                     {
                         "name": "Enemy #3",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Tall Dark and Roomy Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -4530,8 +4530,8 @@
                 "sections": [
                     {
                         "name": "Enemy #4",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Shooter Rupees Enemy #4"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -4556,8 +4556,8 @@
                 "sections": [
                     {
                         "name": "Enemy #5",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Shooter Rupees Enemy #4"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -4582,8 +4582,8 @@
                 "sections": [
                     {
                         "name": "Enemy #6",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Tall Dark and Roomy Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -4608,8 +4608,8 @@
                 "sections": [
                     {
                         "name": "Enemy #7",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Tall Dark and Roomy Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -4634,8 +4634,8 @@
                 "sections": [
                     {
                         "name": "Enemy #9",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Tall Dark and Roomy Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -4660,8 +4660,8 @@
                 "sections": [
                     {
                         "name": "Enemy #10",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Crystal Right Enemy #10"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -4686,8 +4686,8 @@
                 "sections": [
                     {
                         "name": "Enemy #11",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Crystal Mid Enemy #11"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -4712,8 +4712,8 @@
                 "sections": [
                     {
                         "name": "Enemy #12",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Crystal Right Enemy #10"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -4738,8 +4738,8 @@
                 "sections": [
                     {
                         "name": "Enemy #5",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Dark Shooters Enemy #5"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -4764,8 +4764,8 @@
                 "sections": [
                     {
                         "name": "Enemy #6",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Block X Enemy #6"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -4790,8 +4790,8 @@
                 "sections": [
                     {
                         "name": "Enemy #7",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Block X Enemy #6"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -4816,8 +4816,8 @@
                 "sections": [
                     {
                         "name": "Enemy #8",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Block X Enemy #6"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -4842,8 +4842,8 @@
                 "sections": [
                     {
                         "name": "Enemy #1",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Lobby Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -4868,8 +4868,8 @@
                 "sections": [
                     {
                         "name": "Enemy #2",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Lobby Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -4894,8 +4894,8 @@
                 "sections": [
                     {
                         "name": "Enemy #3",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Lobby Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -4920,8 +4920,8 @@
                 "sections": [
                     {
                         "name": "Enemy #4",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Lobby Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -4946,8 +4946,8 @@
                 "sections": [
                     {
                         "name": "Enemy #5",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Lobby Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -4972,8 +4972,8 @@
                 "sections": [
                     {
                         "name": "Enemy #1",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Antechamber Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -4998,8 +4998,8 @@
                 "sections": [
                     {
                         "name": "Enemy #2",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Antechamber Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5024,8 +5024,8 @@
                 "sections": [
                     {
                         "name": "Enemy #3",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Firesnake Skip Enemy #3"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5050,8 +5050,8 @@
                 "sections": [
                     {
                         "name": "Enemy #2",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Fishbone Enemy #2"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5076,8 +5076,8 @@
                 "sections": [
                     {
                         "name": "Enemy #3",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Fishbone Enemy #2"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5102,8 +5102,8 @@
                 "sections": [
                     {
                         "name": "Enemy #4",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Fishbone Enemy #2"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5128,8 +5128,8 @@
                 "sections": [
                     {
                         "name": "Enemy #5",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - South Fish Enemy #5"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5154,8 +5154,8 @@
                 "sections": [
                     {
                         "name": "Enemy #6",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - South Fish Enemy #5"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5180,8 +5180,8 @@
                 "sections": [
                     {
                         "name": "Enemy #7",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - South Fish Enemy #5"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5206,8 +5206,8 @@
                 "sections": [
                     {
                         "name": "Enemy #8",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - South Fish Enemy #5"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5232,8 +5232,8 @@
                 "sections": [
                     {
                         "name": "Enemy #9",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - South Fish Enemy #5"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5258,8 +5258,8 @@
                 "sections": [
                     {
                         "name": "Enemy #1",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Spike Barrier Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5284,8 +5284,8 @@
                 "sections": [
                     {
                         "name": "Enemy #2",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Spike Barrier Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5310,8 +5310,8 @@
                 "sections": [
                     {
                         "name": "Enemy #3",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Spike Barrier Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5336,8 +5336,8 @@
                 "sections": [
                     {
                         "name": "Enemy #4",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Spike Barrier Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5362,8 +5362,8 @@
                 "sections": [
                     {
                         "name": "Enemy #5",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Square Rail Enemy #5"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5388,8 +5388,8 @@
                 "sections": [
                     {
                         "name": "Enemy #6",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Spike Barrier Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5414,8 +5414,8 @@
                 "sections": [
                     {
                         "name": "Enemy #7",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Square Rail Enemy #5"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5440,8 +5440,8 @@
                 "sections": [
                     {
                         "name": "Enemy #8",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Square Rail Enemy #5"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5466,16 +5466,16 @@
                 "sections": [
                     {
                         "name": "Enemy #9",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Spike Barrier Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "MM - Enemies+Pots",
-                        "x": 148,
-                        "y": 121,
+                        "x": 210,
+                        "y": 105,
                         "size": 6,
                         "shape": "rect"
                     }
@@ -5492,16 +5492,16 @@
                 "sections": [
                     {
                         "name": "Enemy #10",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Square Rail Enemy #5"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
                 "map_locations": [
                     {
                         "map": "MM - Enemies+Pots",
-                        "x": 210,
-                        "y": 105,
+                        "x": 148,
+                        "y": 121,
                         "size": 6,
                         "shape": "rect"
                     }
@@ -5518,8 +5518,8 @@
                 "sections": [
                     {
                         "name": "Enemy #1",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - BK Door Room Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5544,8 +5544,8 @@
                 "sections": [
                     {
                         "name": "Enemy #2",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - BK Door Room Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5570,8 +5570,8 @@
                 "sections": [
                     {
                         "name": "Enemy #3",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - BK Door Room Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5596,8 +5596,8 @@
                 "sections": [
                     {
                         "name": "Enemy #4",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - BK Door Room Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5622,8 +5622,8 @@
                 "sections": [
                     {
                         "name": "Enemy #5",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - BK Door Room Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5648,8 +5648,8 @@
                 "sections": [
                     {
                         "name": "Enemy #6",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Cross Enemy #6"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5674,8 +5674,8 @@
                 "sections": [
                     {
                         "name": "Enemy #7",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Cross Enemy #6"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5700,8 +5700,8 @@
                 "sections": [
                     {
                         "name": "Enemy #8",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Cross Enemy #6"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5726,8 +5726,8 @@
                 "sections": [
                     {
                         "name": "Enemy #9",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Hidden Shooters Enemy #9"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5752,8 +5752,8 @@
                 "sections": [
                     {
                         "name": "Enemy #10",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Hidden Shooters Enemy #9"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5778,8 +5778,8 @@
                 "sections": [
                     {
                         "name": "Enemy #11",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Cross Enemy #6"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5804,8 +5804,8 @@
                 "sections": [
                     {
                         "name": "Enemy #12",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Cross Enemy #6"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5830,8 +5830,8 @@
                 "sections": [
                     {
                         "name": "Enemy #13",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Hidden Shooters Enemy #9"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5856,8 +5856,8 @@
                 "sections": [
                     {
                         "name": "Enemy #14",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Hidden Shooters Enemy #9"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5882,8 +5882,8 @@
                 "sections": [
                     {
                         "name": "Enemy #1",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Spikes Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5908,8 +5908,8 @@
                 "sections": [
                     {
                         "name": "Enemy #2",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Spikes Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5934,8 +5934,8 @@
                 "sections": [
                     {
                         "name": "Enemy #3",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Spikes Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5960,8 +5960,8 @@
                 "sections": [
                     {
                         "name": "Enemy #4",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Spikes Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -5986,8 +5986,8 @@
                 "sections": [
                     {
                         "name": "Enemy #5",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Spikes Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6012,8 +6012,8 @@
                 "sections": [
                     {
                         "name": "Enemy #4",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Compass Room Enemy #4"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6038,8 +6038,8 @@
                 "sections": [
                     {
                         "name": "Enemy #5",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Wizzrobe Bypass Enemy #5"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6064,8 +6064,8 @@
                 "sections": [
                     {
                         "name": "Enemy #6",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Conveyor Crystal Enemy #6"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6090,8 +6090,8 @@
                 "sections": [
                     {
                         "name": "Enemy #9",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Conveyor Crystal Enemy #6"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6116,8 +6116,8 @@
                 "sections": [
                     {
                         "name": "Enemy #10",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Conveyor Crystal Enemy #6"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6142,8 +6142,8 @@
                 "sections": [
                     {
                         "name": "Enemy #12",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Conveyor Crystal Enemy #6"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6168,8 +6168,8 @@
                 "sections": [
                     {
                         "name": "Enemy #1",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Hub Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6194,8 +6194,8 @@
                 "sections": [
                     {
                         "name": "Enemy #2",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Hub Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6220,8 +6220,8 @@
                 "sections": [
                     {
                         "name": "Enemy #3",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Hub Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6246,8 +6246,8 @@
                 "sections": [
                     {
                         "name": "Enemy #4",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Hub Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6272,8 +6272,8 @@
                 "sections": [
                     {
                         "name": "Enemy #5",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Hub Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6298,8 +6298,8 @@
                 "sections": [
                     {
                         "name": "Enemy #6",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Hub Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6324,8 +6324,8 @@
                 "sections": [
                     {
                         "name": "Enemy #7",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Hub Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6350,8 +6350,8 @@
                 "sections": [
                     {
                         "name": "Enemy #8",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Hub Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6376,8 +6376,8 @@
                 "sections": [
                     {
                         "name": "Enemy #7",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Lone Shooter Enemy #7"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ]
@@ -6393,8 +6393,8 @@
                 "sections": [
                     {
                         "name": "Enemy #8",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Lone Shooter Enemy #7"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ]
@@ -6410,8 +6410,8 @@
                 "sections": [
                     {
                         "name": "Enemy #1",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Neglected Room Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6436,8 +6436,8 @@
                 "sections": [
                     {
                         "name": "Enemy #2",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Neglected Room Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6462,8 +6462,8 @@
                 "sections": [
                     {
                         "name": "Enemy #3",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Conveyor Barrier Enemy #3"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6488,8 +6488,8 @@
                 "sections": [
                     {
                         "name": "Enemy #4",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Conveyor Barrier Enemy #3"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6514,8 +6514,8 @@
                 "sections": [
                     {
                         "name": "Enemy #5",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Conveyor Barrier Enemy #3"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6540,8 +6540,8 @@
                 "sections": [
                     {
                         "name": "Enemy #6",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Conveyor Barrier Enemy #3"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6566,8 +6566,8 @@
                 "sections": [
                     {
                         "name": "Enemy #7",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Conveyor Barrier Enemy #3"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6592,8 +6592,8 @@
                 "sections": [
                     {
                         "name": "Enemy #8",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - Neglected Room Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6618,8 +6618,8 @@
                 "sections": [
                     {
                         "name": "Enemy #1",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - 2 Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6644,8 +6644,8 @@
                 "sections": [
                     {
                         "name": "Enemy #2",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - 2 Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6670,8 +6670,8 @@
                 "sections": [
                     {
                         "name": "Enemy #3",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - 2 Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6696,8 +6696,8 @@
                 "sections": [
                     {
                         "name": "Enemy #4",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - 2 Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6722,8 +6722,8 @@
                 "sections": [
                     {
                         "name": "Enemy #5",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - 2 Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6748,8 +6748,8 @@
                 "sections": [
                     {
                         "name": "Enemy #6",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - 2 Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6774,8 +6774,8 @@
                 "sections": [
                     {
                         "name": "Enemy #7",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - 2 Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6800,8 +6800,8 @@
                 "sections": [
                     {
                         "name": "Enemy #8",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - 2 Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6826,8 +6826,8 @@
                 "sections": [
                     {
                         "name": "Enemy #9",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - 2 Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6852,8 +6852,8 @@
                 "sections": [
                     {
                         "name": "Enemy #10",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - 2 Enemy #1"],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ],
@@ -6878,8 +6878,8 @@
                 "sections": [
                     {
                         "name": "Enemy #1",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - "],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ]
@@ -6895,8 +6895,8 @@
                 "sections": [
                     {
                         "name": "Enemy #2",
-                        "access_rules": [],
-                        "visibility_rules": [],
+                        "access_rules": ["^$CanReach|MM - "],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 1
                     }
                 ]

@@ -118,12 +118,31 @@ MM_boss_room_3S_door = alttp_location.new("MM_boss_room_3S_door", "MM boss room 
 
 
 MM_entrance_inside:connect_two_ways(MM_lobby)
+
+MM_lobby:connect_one_way("MM - Lobby Enemy #1", function() return DealDamage end)
+-- MM_lobby:connect_one_way("MM - Lobby Enemy #2", function() return DealDamage end)
+-- MM_lobby:connect_one_way("MM - Lobby Enemy #3", function() return DealDamage end)
+-- MM_lobby:connect_one_way("MM - Lobby Enemy #4", function() return DealDamage end)
+-- MM_lobby:connect_one_way("MM - Lobby Enemy #5", function() return DealDamage end)
+
 MM_lobby:connect_two_ways(MM_pre_gap)
 MM_pre_gap:connect_two_ways(MM_post_gap)
 MM_post_gap:connect_two_ways(MM_post_gap_4N_door)
 
 MM_post_gap_4N_door:connect_two_ways_entrance("", MM_wizrobe_room_4N_door)
 MM_wizrobe_room_4N_door:connect_two_ways(MM_wizrobe_room)
+
+MM_wizrobe_room:connect_one_way("MM - 2 Enemy #1", function() return DealDamage end)
+-- MM_wizrobe_room:connect_one_way("MM - 2 Enemy #2", function() return DealDamage end)
+-- MM_wizrobe_room:connect_one_way("MM - 2 Enemy #3", function() return DealDamage end)
+-- MM_wizrobe_room:connect_one_way("MM - 2 Enemy #4", function() return DealDamage end)
+-- MM_wizrobe_room:connect_one_way("MM - 2 Enemy #5", function() return DealDamage end)
+-- MM_wizrobe_room:connect_one_way("MM - 2 Enemy #6", function() return DealDamage end)
+-- MM_wizrobe_room:connect_one_way("MM - 2 Enemy #7", function() return DealDamage end)
+-- MM_wizrobe_room:connect_one_way("MM - 2 Enemy #8", function() return DealDamage end)
+-- MM_wizrobe_room:connect_one_way("MM - 2 Enemy #9", function() return DealDamage end)
+-- MM_wizrobe_room:connect_one_way("MM - 2 Enemy #10", function() return DealDamage end)
+
 MM_wizrobe_room:connect_two_ways(MM_wizrobe_room_2N_door)
 
 MM_wizrobe_room_2N_door:connect_two_ways_entrance("", MM_main_room_4S_door)
@@ -132,17 +151,33 @@ MM_main_room_4S_door:connect_two_ways(MM_main_room)
 MM_main_room:connect_one_way("MM - Hub Switch Pot #1") --needs switch
 MM_main_room:connect_one_way("MM - Hub Right Pot #2")
 MM_main_room:connect_one_way("MM - Hub Pot #3")
-MM_main_room:connect_one_way("MM - Hub Pot #4")
+-- MM_main_room:connect_one_way("MM - Hub Pot #4")
+MM_main_room:connect_one_way("MM - Hub Enemy #1", function() return DealDamage end)
+-- MM_main_room:connect_one_way("MM - Hub Enemy #2", function() return DealDamage end)
+-- MM_main_room:connect_one_way("MM - Hub Enemy #3", function() return DealDamage end)
+-- MM_main_room:connect_one_way("MM - Hub Enemy #4", function() return DealDamage end)
+-- MM_main_room:connect_one_way("MM - Hub Enemy #5", function() return DealDamage end)
+-- MM_main_room:connect_one_way("MM - Hub Enemy #6", function() return DealDamage end)
+-- MM_main_room:connect_one_way("MM - Hub Enemy #7", function() return DealDamage end)
+-- MM_main_room:connect_one_way("MM - Hub Enemy #8", function() return DealDamage end)
 
 MM_main_room:connect_two_ways(MM_main_room_1N_door)
 MM_main_room_1N_door:connect_two_ways_entrance("", MM_bomb_slug_room_3S_door)
 MM_bomb_slug_room_3S_door:connect_two_ways(MM_bomb_slug_room)
 
+MM_bomb_slug_room:connect_one_way("MM - Cross Enemy #6", function() return DealDamage end)
+-- MM_bomb_slug_room:connect_one_way("MM - Cross Enemy #7", function() return DealDamage end)
+-- MM_bomb_slug_room:connect_one_way("MM - Cross Enemy #8", function() return DealDamage end)
+-- MM_bomb_slug_room:connect_one_way("MM - Cross Enemy #11", function() return DealDamage end)
 
 MM_main_room:connect_two_ways(MM_main_room_1W_door)
 MM_main_room_1W_door:connect_two_ways_entrance("", MM_wizzrobe_bypass_2E_door)
 MM_wizzrobe_bypass_2E_door:connect_two_ways(MM_wizzrobe_bypass)
+
+MM_wizzrobe_bypass:connect_one_way("MM - Wizzrobe Bypass Enemy #5", function() return DealDamage end)
+
 MM_wizzrobe_bypass:connect_two_ways(MM_wizzrobe_bypass_2N_door)
+
 MM_wizzrobe_bypass_2N_door:connect_two_ways_entrance("", MM_hourglas_room_4S_door)
 
 MM_main_room:connect_two_ways(MM_main_room_2E_door)
@@ -152,10 +187,11 @@ MM_map_room_top_left_1W_door:connect_two_ways(MM_map_room_top_left)
 MM_main_room:connect_two_ways(MM_main_room_2N_door)
 MM_main_room_2N_door:connect_two_ways_entrance("", MM_2_torches_hidden_shooter_4S_door)
 MM_2_torches_hidden_shooter_4S_door:connect_two_ways(MM_2_torches_hidden_shooter)
-MM_2_torches_hidden_shooter:connect_two_ways(MM_big_key_door_room_bridge_NS)
-MM_big_key_door_room_bridge_NS:connect_two_ways(MM_big_keydoor_room_bridge_NS_2N_door)
-MM_big_keydoor_room_bridge_NS_2N_door:connect_two_ways_entrance("", MM_bridge_right_4S_door)
-MM_bridge_right_4S_door:connect_two_ways(MM_bridge_right)
+
+MM_2_torches_hidden_shooter:connect_one_way("MM - Hidden Shooters Enemy #9", function() return DealDamage end)
+-- MM_2_torches_hidden_shooter:connect_one_way("MM - Hidden Shooters Enemy #10", function() return DealDamage end)
+-- MM_2_torches_hidden_shooter:connect_one_way("MM - Hidden Shooters Enemy #13", function() return DealDamage end)
+-- MM_2_torches_hidden_shooter:connect_one_way("MM - Hidden Shooters Enemy #14", function() return DealDamage end)
 
 MM_2_torches_hidden_shooter:connect_two_ways_stuck(MM_bomb_slug_room, nil, function() return false end)
 MM_2_torches_hidden_shooter:connect_two_ways(MM_2_torches_hidden_shooter_4E_door)
@@ -173,9 +209,21 @@ end)
 
 MM_spike_room:connect_one_way("MM - Spike Key Drop")
 MM_spike_room:connect_one_way("MM - Spikes Pot #2")
-MM_spike_room:connect_one_way("MM - Spikes Pot #3")
+-- MM_spike_room:connect_one_way("MM - Spikes Pot #3")
+MM_spike_room:connect_one_way("MM - Spikes Enemy #1", function() return DealDamage end)
+-- MM_spike_room:connect_one_way("MM - Spikes Enemy #2", function() return DealDamage end)
+-- MM_spike_room:connect_one_way("MM - Spikes Enemy #3", function() return DealDamage end)
+-- MM_spike_room:connect_one_way("MM - Spikes Enemy #4", function() return DealDamage end)
+-- MM_spike_room:connect_one_way("MM - Spikes Enemy #5", function() return DealDamage end)
 
 MM_spike_room:connect_two_ways(MM_above_spike_room)
+
+MM_above_spike_room:connect_two_ways(MM_big_key_door_room_bridge_NS)
+
+MM_big_key_door_room_bridge_NS:connect_two_ways(MM_big_keydoor_room_bridge_NS_2N_door)
+MM_big_keydoor_room_bridge_NS_2N_door:connect_two_ways_entrance("", MM_bridge_right_4S_door)
+MM_bridge_right_4S_door:connect_two_ways(MM_bridge_right)
+
 MM_spike_room:connect_two_ways(MM_spike_room_3S_door)
 MM_spike_room_3S_door:connect_two_ways_entrance(MM_map_room_top_middle_1N_door)
 MM_map_room_top_middle_1N_door:connect_two_ways(MM_map_room_top_middle)
@@ -184,26 +232,46 @@ MM_map_room_top_middle_1N_door:connect_two_ways(MM_map_room_top_middle)
 MM_main_room:connect_two_ways(MM_main_room_3W_door)
 MM_main_room_3W_door:connect_two_ways_entrance("", MM_conveyor_crystal_room_4E_door)
 MM_conveyor_crystal_room_4E_door:connect_two_ways(MM_conveyor_crystal_room)
+
+MM_conveyor_crystal_room:connect_one_way("MM - Conveyor Crystal Enemy #6", function() return DealDamage end)
+-- MM_conveyor_crystal_room:connect_one_way("MM - Conveyor Crystal Enemy #9", function() return DealDamage end)
+-- MM_conveyor_crystal_room:connect_one_way("MM - Conveyor Crystal Enemy #10", function() return DealDamage end)
+-- MM_conveyor_crystal_room:connect_one_way("MM - Conveyor Crystal Enemy #12", function() return DealDamage end)
+
 MM_conveyor_crystal_room:connect_two_ways(MM_conveyor_crystal_room_4S_door)
 MM_conveyor_crystal_room_4S_door:connect_two_ways_entrance("", MM_neglected_room_2N_door)
 
 MM_neglected_room_2N_door:connect_two_ways(MM_neglected_room)
+
 MM_neglected_room:connect_one_way("MM - Neglected Room Pot #3")
-MM_neglected_room:connect_one_way("MM - Neglected Room Pot #4")
-MM_neglected_room:connect_one_way("MM - Neglected Room Pot #5")
-MM_neglected_room:connect_one_way("MM - Neglected Room Pot #6")
+-- MM_neglected_room:connect_one_way("MM - Neglected Room Pot #4")
+-- MM_neglected_room:connect_one_way("MM - Neglected Room Pot #5")
+-- MM_neglected_room:connect_one_way("MM - Neglected Room Pot #6")
+MM_neglected_room:connect_one_way("MM - Neglected Room Enemy #1", function() return DealDamage end)
+-- MM_neglected_room:connect_one_way("MM - Neglected Room Enemy #2", function() return DealDamage end)
+
 MM_neglected_room:connect_two_ways(MM_chest_view)
 
 MM_conveyor_crystal_room:connect_two_ways(MM_four_torches_tile_room)
 MM_four_torches_tile_room:connect_two_ways(MM_compass_room)
+
+MM_compass_room:connect_one_way("MM - Compass Room Enemy #4", function() return DealDamage end)
+
 MM_compass_room:connect_two_ways(MM_wizzrobe_bypass)
+
 MM_four_torches_tile_room:connect_two_ways(MM_four_torches_tile_room_3S_door)
 
 MM_four_torches_tile_room_3S_door:connect_two_ways_entrance("", MM_conveyor_bomb_slug_room_1N_door)
 MM_conveyor_bomb_slug_room_1N_door:connect_two_ways(MM_conveyor_bomb_slug_room)
 
 MM_conveyor_bomb_slug_room:connect_one_way("MM - Conveyor Barrier Pot #1")
-MM_conveyor_bomb_slug_room:connect_one_way("MM - Conveyor Barrier Pot #2")
+-- MM_conveyor_bomb_slug_room:connect_one_way("MM - Conveyor Barrier Pot #2")
+MM_conveyor_bomb_slug_room:connect_one_way("MM - Conveyor Barrier Enemy #3", function() return DealDamage end)
+-- MM_conveyor_bomb_slug_room:connect_one_way("MM - Conveyor Barrier Enemy #4", function() return DealDamage end)
+-- MM_conveyor_bomb_slug_room:connect_one_way("MM - Conveyor Barrier Enemy #5", function() return DealDamage end)
+-- MM_conveyor_bomb_slug_room:connect_one_way("MM - Conveyor Barrier Enemy #6", function() return DealDamage end)
+-- MM_conveyor_bomb_slug_room:connect_one_way("MM - Conveyor Barrier Enemy #7", function() return DealDamage end)
+-- MM_conveyor_bomb_slug_room:connect_one_way("MM - Conveyor Barrier Enemy #8", function() return DealDamage end)
 
 MM_conveyor_bomb_slug_room:connect_two_ways(MM_conveyor_bomb_slug_room_N_door)
 
@@ -217,16 +285,22 @@ MM_torches_bottom:connect_one_way(MM_big_key_chest_teleporter_room) --drop down
 MM_torches_bottom:connect_two_ways(MM_cutscene_room)
 
 MM_cutscene_room:connect_one_way("MM - Hint Pot #1")
-MM_cutscene_room:connect_one_way("MM - Hint Pot #2")
-MM_cutscene_room:connect_one_way("MM - Hint Pot #3")
-MM_cutscene_room:connect_one_way("MM - Hint Pot #4")
-MM_cutscene_room:connect_one_way("MM - Hint Pot #5")
-MM_cutscene_room:connect_one_way("MM - Hint Pot #6")
+-- MM_cutscene_room:connect_one_way("MM - Hint Pot #2")
+-- MM_cutscene_room:connect_one_way("MM - Hint Pot #3")
+-- MM_cutscene_room:connect_one_way("MM - Hint Pot #4")
+-- MM_cutscene_room:connect_one_way("MM - Hint Pot #5")
+-- MM_cutscene_room:connect_one_way("MM - Hint Pot #6")
 
 MM_cutscene_room:connect_one_way(MM_big_key_chest)
 MM_big_key_chest:connect_one_way(MM_big_key_chest_teleporter_room)
 
 MM_big_key_chest_teleporter_room:connect_one_way(MM_square_rail)
+
+MM_square_rail:connect_one_way("MM - Square Rail Enemy #5", function() return DealDamage end)
+-- MM_square_rail:connect_one_way("MM - Square Rail Enemy #7", function() return DealDamage end)
+-- MM_square_rail:connect_one_way("MM - Square Rail Enemy #8", function() return DealDamage end)
+-- MM_square_rail:connect_one_way("MM - Square Rail Enemy #10", function() return DealDamage end)
+
 MM_square_rail:connect_two_ways(MM_hourglas_room)
 MM_square_rail:connect_two_ways(MM_lonely_teleporter_room)
 
@@ -266,15 +340,23 @@ MM_fishbone_room_E_door:connect_two_ways(MM_fishbone_room)
 
 MM_fishbone_room:connect_one_way("MM - Fishbone Key Drop")
 MM_fishbone_room:connect_one_way("MM - Fishbone Pot #2")
-MM_fishbone_room:connect_one_way("MM - Fishbone Pot #3")
-MM_fishbone_room:connect_one_way("MM - Fishbone Pot #4")
-MM_fishbone_room:connect_one_way("MM - Fishbone Pot #5")
-MM_fishbone_room:connect_one_way("MM - Fishbone Pot #6")
-MM_fishbone_room:connect_one_way("MM - Fishbone Pot #7")
-MM_fishbone_room:connect_one_way("MM - Fishbone Pot #8")
-MM_fishbone_room:connect_one_way("MM - Fishbone Pot #9")
-MM_fishbone_room:connect_one_way("MM - Fishbone Pot #10")
-MM_fishbone_room:connect_one_way("MM - Fishbone Pot #11")
+-- MM_fishbone_room:connect_one_way("MM - Fishbone Pot #3")
+-- MM_fishbone_room:connect_one_way("MM - Fishbone Pot #4")
+-- MM_fishbone_room:connect_one_way("MM - Fishbone Pot #5")
+MM_fishbone_room:connect_one_way("MM - South Fish Pot #6")
+-- MM_fishbone_room:connect_one_way("MM - Fishbone Pot #7")
+-- MM_fishbone_room:connect_one_way("MM - Fishbone Pot #8")
+-- MM_fishbone_room:connect_one_way("MM - Fishbone Pot #9")
+-- MM_fishbone_room:connect_one_way("MM - Fishbone Pot #10")
+-- MM_fishbone_room:connect_one_way("MM - Fishbone Pot #11")
+MM_fishbone_room:connect_one_way("MM - Fishbone Enemy #2", function() return DealDamage end)
+-- MM_fishbone_room:connect_one_way("MM - Fishbone Enemy #3", function() return DealDamage end)
+-- MM_fishbone_room:connect_one_way("MM - Fishbone Enemy #4", function() return DealDamage end)
+MM_fishbone_room:connect_one_way("MM - South Fish Enemy #5", function() return DealDamage end)
+-- MM_fishbone_room:connect_one_way("MM - South Fish Enemy #6", function() return DealDamage end)
+-- MM_fishbone_room:connect_one_way("MM - South Fish Enemy #7", function() return DealDamage end)
+-- MM_fishbone_room:connect_one_way("MM - South Fish Enemy #8", function() return DealDamage end)
+-- MM_fishbone_room:connect_one_way("MM - South Fish Enemy #9", function() return DealDamage end)
 
 MM_fishbone_room:connect_two_ways(MM_fishbone_room_4S_door)
 MM_fishbone_room_4S_door:connect_two_ways_entrance("", MM_hourglas_room_2N_door)
@@ -285,14 +367,29 @@ MM_above_spike_room:connect_two_ways(MM_above_spike_room_1W_door)
 MM_above_spike_room_1W_door:connect_two_ways_entrance("", MM_big_keydoor_room_2E_door)
 MM_big_keydoor_room_2E_door:connect_two_ways(MM_big_key_door_room)
 
+MM_hourglas_room:connect_one_way("MM - Spike Barrier Pot #1")
+MM_hourglas_room:connect_one_way("MM - Spike Barrier Enemy #1", function() return DealDamage end)
+-- MM_hourglas_room:connect_one_way("MM - Spike Barrier Enemy #2", function() return DealDamage end)
+-- MM_hourglas_room:connect_one_way("MM - Spike Barrier Enemy #3", function() return DealDamage end)
+-- MM_hourglas_room:connect_one_way("MM - Spike Barrier Enemy #4", function() return DealDamage end)
+-- MM_hourglas_room:connect_one_way("MM - Spike Barrier Enemy #5", function() return DealDamage end)
+-- MM_hourglas_room:connect_one_way("MM - Spike Barrier Enemy #6", function() return DealDamage end)
+-- MM_hourglas_room:connect_one_way("MM - Spike Barrier Enemy #9", function() return DealDamage end)
+
 MM_hourglas_room:connect_two_ways(MM_hourglas_room_4S_door)
 
 MM_big_key_door_room:connect_one_way("MM - BK Door Room Pot #1")
-MM_big_key_door_room:connect_one_way("MM - BK Door Room Pot #2")
-MM_big_key_door_room:connect_one_way("MM - BK Door Room Pot #3")
-MM_big_key_door_room:connect_one_way("MM - BK Door Room Pot #4")
-MM_big_key_door_room:connect_one_way("MM - BK Door Room Pot #5")
-MM_big_key_door_room:connect_one_way("MM - BK Door Room Pot #6")
+-- MM_big_key_door_room:connect_one_way("MM - BK Door Room Pot #2")
+-- MM_big_key_door_room:connect_one_way("MM - BK Door Room Pot #3")
+-- MM_big_key_door_room:connect_one_way("MM - BK Door Room Pot #4")
+-- MM_big_key_door_room:connect_one_way("MM - BK Door Room Pot #5")
+-- MM_big_key_door_room:connect_one_way("MM - BK Door Room Pot #6")
+MM_big_key_door_room:connect_one_way("MM - BK Door Room Enemy #1", function() return DealDamage end)
+-- MM_big_key_door_room:connect_one_way("MM - BK Door Room Enemy #2", function() return DealDamage end)
+-- MM_big_key_door_room:connect_one_way("MM - BK Door Room Enemy #3", function() return DealDamage end)
+-- MM_big_key_door_room:connect_one_way("MM - BK Door Room Enemy #4", function() return DealDamage end)
+-- MM_big_key_door_room:connect_one_way("MM - BK Door Room Enemy #5", function() return DealDamage end)
+
 MM_big_key_door_room:connect_two_ways(MM_big_keydoor_room_N_door)
 MM_big_keydoor_room_N_door:connect_two_ways_entrance("", MM_bridge_middle_S_door)
 MM_bridge_middle_S_door:connect_two_ways(MM_bridge_middle)
@@ -305,23 +402,48 @@ MM_bridge_middle_N_door:connect_two_ways_entrance("", MM_dark_shooters_N_door)
 MM_dark_shooters_N_door:connect_two_ways(MM_dark_shooters)
 
 MM_dark_shooters:connect_one_way("MM - Dark Shooters Pot #1")
-MM_dark_shooters:connect_one_way("MM - Dark Shooters Pot #3")
+-- MM_dark_shooters:connect_one_way("MM - Dark Shooters Pot #3")
+MM_dark_shooters:connect_one_way("MM - Dark Shooters Enemy #5", function() return DealDamage end)
 
 MM_dark_shooters:connect_two_ways(MM_dark_key_rupees)
 MM_dark_shooters:connect_two_ways(MM_block_X)
+
+MM_block_X:connect_one_way("MM - Block X Enemy #6", function() return DealDamage end)
+-- MM_block_X:connect_one_way("MM - Block X Enemy #7", function() return DealDamage end)
+-- MM_block_X:connect_one_way("MM - Block X Enemy #8", function() return DealDamage end)
+
 MM_block_X:connect_two_ways(MM_block_X_3W_door)
+
+
 
 MM_block_X_3W_door:connect_two_ways_entrance("", MM_tall_dark_and_roomy_4E_door)
 MM_tall_dark_and_roomy_4E_door:connect_two_ways(MM_tall_dark_and_roomy)
 
 MM_tall_dark_and_roomy:connect_one_way("MM - Tall Dark and Roomy Pot #1")
-MM_tall_dark_and_roomy:connect_one_way("MM - Tall Dark and Roomy Pot #2")
-MM_tall_dark_and_roomy:connect_one_way("MM - Tall Dark and Roomy Pot #3")
-MM_tall_dark_and_roomy:connect_one_way("MM - Tall Dark and Roomy Pot #4")
+-- MM_tall_dark_and_roomy:connect_one_way("MM - Tall Dark and Roomy Pot #2")
+-- MM_tall_dark_and_roomy:connect_one_way("MM - Tall Dark and Roomy Pot #3")
+-- MM_tall_dark_and_roomy:connect_one_way("MM - Tall Dark and Roomy Pot #4")
+MM_tall_dark_and_roomy:connect_one_way("MM - Tall Dark and Roomy Enemy #1", function() return DealDamage end)
+-- MM_tall_dark_and_roomy:connect_one_way("MM - Tall Dark and Roomy Enemy #3", function() return DealDamage end)
+-- MM_tall_dark_and_roomy:connect_one_way("MM - Tall Dark and Roomy Enemy #6", function() return DealDamage end)
+-- MM_tall_dark_and_roomy:connect_one_way("MM - Tall Dark and Roomy Enemy #7", function() return DealDamage end)
+-- MM_tall_dark_and_roomy:connect_one_way("MM - Tall Dark and Roomy Enemy #9", function() return DealDamage end)
+
+
 MM_tall_dark_and_roomy:connect_two_ways(MM_shooter_rupees)
+
+MM_shooter_rupees:connect_one_way("MM - Shooter Rupees Enemy #4", function() return DealDamage end)
+-- MM_shooter_rupees:connect_one_way("MM - Shooter Rupees Enemy #5", function() return DealDamage end)
+
 MM_tall_dark_and_roomy:connect_two_ways(MM_crystal_right)
+
+MM_crystal_right:connect_one_way("MM - Crystal Right Enemy #10", function() return DealDamage end)
+-- MM_crystal_right:connect_one_way("MM - Crystal Right Enemy #12", function() return DealDamage end)
+
 MM_crystal_right:connect_two_ways(MM_crystal_middle)
 -- MM_crystal_middle:connect_two_ways(MM_crystal_middle)
+MM_crystal_middle:connect_one_way("MM - Crystal Mid Enemy #11", function() return DealDamage end)
+
 MM_crystal_middle:connect_two_ways(MM_crystal_left)
 
 MM_crystal_left:connect_two_ways(MM_crystal_left_3W_door)
@@ -329,13 +451,27 @@ MM_crystal_left_3W_door:connect_two_ways_entrance("", MM_falling_foes_4E_door)
 MM_falling_foes_4E_door:connect_two_ways(MM_falling_foes)
 
 MM_falling_foes:connect_one_way("MM - Falling Foes Pot #1")
-MM_falling_foes:connect_one_way("MM - Falling Foes Pot #2")
+-- MM_falling_foes:connect_one_way("MM - Falling Foes Pot #2")
+MM_falling_foes:connect_one_way("MM - Falling Foes Enemy #1", function() return DealDamage end)
+-- MM_falling_foes:connect_one_way("MM - Falling Foes Enemy #2", function() return DealDamage end)
+-- MM_falling_foes:connect_one_way("MM - Falling Foes Enemy #4", function() return DealDamage end)
+-- MM_falling_foes:connect_one_way("MM - Falling Foes Enemy #5", function() return DealDamage end)
+-- MM_falling_foes:connect_one_way("MM - Falling Foes Enemy #6", function() return DealDamage end)
+-- MM_falling_foes:connect_one_way("MM - Falling Foes Enemy #7", function() return DealDamage end)
 
 MM_falling_foes:connect_two_ways(MM_falling_foes_2N_door)
 
 MM_falling_foes_2N_door:connect_two_ways_entrance("", MM_antechamber_right_2N_door)
 MM_antechamber_right_2N_door:connect_two_ways(MM_antechamber_right)
+
+MM_antechamber_right:connect_one_way("MM - Antechamber Enemy #1", function() return DealDamage end)
+-- MM_antechamber_right:connect_one_way("MM - Antechamber Enemy #2", function() return DealDamage end)
+MM_antechamber_right:connect_one_way("MM - Firesnake Skip Enemy #3", function() return DealDamage end)
+
 MM_antechamber_right:connect_two_ways(MM_antechamber_left)
+
+-- MM_antechamber_left:connect_one_way("MM - Antechamber Enemy #2", function() return DealDamage end)
+
 MM_antechamber_left:connect_two_ways(MM_antechamber_left_1N_door)
 
 MM_antechamber_left_1N_door:connect_two_ways_entrance("", MM_boss_room_3S_door)
