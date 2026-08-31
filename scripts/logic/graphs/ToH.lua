@@ -45,8 +45,8 @@ ToH_main_room:connect_two_ways(ToH_big_key_chest, function(keys, Current_Dungeon
 
 ToH_main_room:connect_one_way("ToH - Map Chest", function() return CanInteract(ToH_main_room) end)
 ToH_main_room:connect_one_way("ToH - Back Enemy #1", function() return DealDamage end)
-ToH_main_room:connect_one_way("ToH - Back Enemy #5", function() return DealDamage end)
-ToH_main_room:connect_one_way("ToH - Back Enemy #6", function() return DealDamage end)
+-- ToH_main_room:connect_one_way("ToH - Back Enemy #5", function() return DealDamage end)
+-- ToH_main_room:connect_one_way("ToH - Back Enemy #6", function() return DealDamage end)
 
 ToH_main_room:connect_two_ways(ToH_main_room_1N_door)
 ToH_main_room_1N_door:connect_two_ways_entrance("", ToH_tile_room_1N_door)
