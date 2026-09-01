@@ -264,6 +264,8 @@ Dark_desert_fairy_cave_outside:connect_two_ways_entrance("Dark Desert Fairy", Da
 
 Mire_shed_inside:connect_one_way("Mire Shed Left", function() return CanInteract(Mire_shed_inside) end)
 Mire_shed_inside:connect_one_way("Mire Shed Right", function() return CanInteract(Mire_shed_inside) end)
+Mire_shed_inside:connect_one_way("Mire Shed - Enemy #1", function() return DealDamage end)
+Mire_shed_inside:connect_one_way("Mire Shed - Enemy #2", function() return DealDamage end)
 
 
 Mire_area:connect_one_way(Desert_ledge, function()
@@ -688,6 +690,10 @@ Dark_bumper_cave_bottom_ledge:connect_two_ways(Dark_bumper_cave_bottom_outside)
 -- Dark_bumper_cave_bottom_ledge:connect_one_way(Dark_death_mountain_ascent, function() return DarkRooms() end)
 Dark_bumper_cave_bottom_outside:connect_two_ways_entrance("Bumper Cave Bottom", Dark_bumper_cave_bottom_inside, function() return OpenOrStandard() end)
 Dark_bumper_cave_bottom_outside:connect_two_ways_entrance("Old Man Cave Left", Old_man_cave_left_inside, function() return Inverted() end)
+
+Dark_bumper_cave_bottom_inside:connect_one_way("Bumper Cave Bottom - Enemy #1", function() return DealDamage end)
+Dark_bumper_cave_bottom_inside:connect_one_way("Bumper Cave Bottom - Enemy #2", function() return DealDamage end)
+Dark_bumper_cave_bottom_inside:connect_one_way("Bumper Cave Bottom - Enemy #3", function() return DealDamage end)
 
 Dark_bumper_cave_bottom_inside:connect_two_ways(Bumpercave_top_back)
 Bumpercave_top_back:connect_two_ways(Bumpercave_top_front, function()
@@ -1129,6 +1135,17 @@ Hookshot_cave_inside:connect_two_ways(Dark_floating_island_inside, function()
         CanInteract(Hookshot_cave_inside, "bombs")
     )
 end)
+Dark_floating_island_inside:connect_one_way(Hookshot_cave_fairy_pond, function()
+    return ALL(
+        "bombs",
+        CanInteract(Hookshot_cave_inside, "bombs")
+    )
+end)
+
+Hookshot_cave_fairy_pond:connect_one_way("Hookshot Cave Fairy Pond - Enemy #2", function() return DealDamage end)
+Hookshot_cave_fairy_pond:connect_one_way("Hookshot Cave Fairy Pond - Enemy #3", function() return DealDamage end)
+Hookshot_cave_fairy_pond:connect_one_way("Hookshot Cave Fairy Pond - Enemy #4", function() return DealDamage end)
+
 Dark_floating_island_inside:connect_two_ways_entrance("Dark Floating Island", Dark_floating_island_outside)
 
 Dark_floating_island_outside:connect_two_ways(Dark_floating_island)
@@ -1171,6 +1188,10 @@ Hookshot_cave_hook_islands:connect_one_way("Hookshot Cave - Hook Islands Pot #1"
 Hookshot_cave_hook_islands:connect_one_way("Hookshot Cave - Hook Islands Pot #2")
 Hookshot_cave_hook_islands:connect_one_way("Hookshot Cave - Hook Islands Pot #3")
 Hookshot_cave_hook_islands:connect_one_way("Hookshot Cave - Hook Islands Pot #4")
+
+Hookshot_cave_hook_islands:connect_one_way("Hookshot Cave - Hook Islands Enemy #1", function() return DealDamage end)
+Hookshot_cave_hook_islands:connect_one_way("Hookshot Cave - Hook Islands Enemy #2", function() return DealDamage end)
+Hookshot_cave_hook_islands:connect_one_way("Hookshot Cave - Hook Islands Enemy #3", function() return DealDamage end)
 
 Hookshot_cave_inside:connect_one_way("Hookshot Cave - Front Pot #6", function() return CanInteract(Hookshot_cave_inside, "hookshot") end)
 Hookshot_cave_inside:connect_one_way("Hookshot Cave - Middle Pot #1", function() return CanInteract(Hookshot_cave_inside, "hookshot") end)
@@ -1402,6 +1423,12 @@ Superbunny_cave_bottom_outside:connect_two_ways_entrance("Super Bunny Cave Botto
 Superbunny_cave_top_outside:connect_two_ways_entrance("Super Bunny Cave Top Entrance", Superbunny_cave_top_inside)
 
 Superbunny_cave_bottom_inside:connect_one_way(Superbunny_cave_top_inside)
+
+Superbunny_cave_bottom_inside:connect_one_way("Super Bunny Cave Bottom - Enemy #1", function() return DealDamage end)
+Superbunny_cave_bottom_inside:connect_one_way("Super Bunny Cave Bottom - Enemy #2", function() return DealDamage end)
+Superbunny_cave_bottom_inside:connect_one_way("Super Bunny Cave Bottom - Enemy #3", function() return DealDamage end)
+Superbunny_cave_bottom_inside:connect_one_way("Super Bunny Cave Bottom - Enemy #4", function() return DealDamage end)
+
 Superbunny_cave_top_inside:connect_one_way("Super Bunny Cave Chest Top", function() return CanInteract(Superbunny_cave_top_inside) end)
 Superbunny_cave_top_inside:connect_one_way("Super Bunny Cave Chest Bottom", function() return CanInteract(Superbunny_cave_top_inside) end)
 

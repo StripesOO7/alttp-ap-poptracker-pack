@@ -622,8 +622,7 @@
             {
                 "name": "Lumberjack House",
                 "access_rules": [
-                    "^$CanReach|Lumberjacks_item",
-                    "^$CanReach|Lumberjacks_cave_inside"
+                    "^$CanReach|Lumberjacks_house_inside"
                 ],
                 "sections": [
                     {
@@ -1006,8 +1005,7 @@
             {
                 "name": "50 Rupee Cave",
                 "access_rules": [
-                    "^$CanReach|Lumberjacks_item",
-                    "^$CanReach|Lumberjacks_cave_inside"
+                    "^$CanReach|Fifty_rupee_thief_inside"
                 ],
                 "sections": [
                     {
@@ -1099,8 +1097,7 @@
             {
                 "name": "20 Rupee Cave",
                 "access_rules": [
-                    "^$CanReach|Lumberjacks_item",
-                    "^$CanReach|Lumberjacks_cave_inside"
+                    "^$CanReach|Twenty_rupee_thief_inside"
                 ],
                 "sections": [
                     {
@@ -1116,8 +1113,7 @@
             {
                 "name": "Good Bee Cave",
                 "access_rules": [
-                    "^$CanReach|Lumberjacks_item",
-                    "^$CanReach|Lumberjacks_cave_inside"
+                    "^$CanReach|Good_bee_cave_inside"
                 ],
                 "sections": [
                     {
@@ -1376,8 +1372,7 @@
             {
                 "name": "Bonk Fairy Cave",
                 "access_rules": [
-                    "^$CanReach|Lumberjacks_item",
-                    "^$CanReach|Lumberjacks_cave_inside"
+                    "^$CanReach|Links_fairy_fountain_inside"
                 ],
                 "sections": [
                     {
@@ -1444,8 +1439,7 @@
             {
                 "name": "Long Fairy Cave",
                 "access_rules": [
-                    "^$CanReach|Lumberjacks_item",
-                    "^$CanReach|Lumberjacks_cave_inside"
+                    "^$CanReach|Eastern_long_fairy_cave_inside"
                 ],
                 "sections": [
                     {
@@ -2180,8 +2174,7 @@
             {
                 "name": "Hookshot Fairy Cave",
                 "access_rules": [
-                    "^$CanReach|Lumberjacks_item",
-                    "^$CanReach|Lumberjacks_cave_inside"
+                    "^$CanReach|Hookshot_fairy_inside"
                 ],
                 "sections": [
                     {
