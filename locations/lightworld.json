@@ -193,6 +193,15 @@
                         "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count": 3
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 321,
+                        "y": 843,
+                        "size": 32,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -209,6 +218,15 @@
                         "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count": 2
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 100,
+                        "y": 936,
+                        "size": 32,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -224,6 +242,15 @@
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 415,
+                        "y": 967,
+                        "size": 32,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -246,6 +273,15 @@
                         "access_rules": [],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 2
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 54,
+                        "y": 1195,
+                        "size": 32,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -476,6 +512,15 @@
                         "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count": 1
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 321,
+                        "y": 1194,
+                        "size": 32,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -632,6 +677,15 @@
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count": 2
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 673,
+                        "y": 119,
+                        "size": 32,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -1016,6 +1070,15 @@
                         "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count": 10
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 628,
+                        "y": 1919,
+                        "size": 32,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -1108,6 +1171,15 @@
                         "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count": 4
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 1811,
+                        "y": 1576,
+                        "size": 32,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -1123,6 +1195,15 @@
                         ],
                         "visibility_rules":["enemy_drop_shuffle_underworld"],
                         "item_count": 2
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 1835,
+                        "y": 1541,
+                        "size": 32,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -1383,6 +1464,15 @@
                         "visibility_rules":["enemy_drop_shuffle_underworld"],
                         "item_count": 4
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 948,
+                        "y": 1306,
+                        "size": 32,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -1449,6 +1539,15 @@
                         ],
                         "visibility_rules":["enemy_drop_shuffle_underworld"],
                         "item_count": 2
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 1968,
+                        "y": 1404,
+                        "size": 32,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -1891,6 +1990,15 @@
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 10
                     }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 814,
+                        "y": 370,
+                        "size": 32,
+                        "shape": "rect"
+                    }
                 ]
             },
             {
@@ -1919,6 +2027,15 @@
                         "access_rules": [],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 7
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 791,
+                        "y": 272,
+                        "size": 32,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -2070,7 +2187,7 @@
                 ]
             },
             {
-                "name": "Fairy Ascension Cave",
+                "name": "Fairy Ascension Cave Top",
                 "access_rules": [
                 ],
                 "sections": [
@@ -2082,6 +2199,28 @@
                         "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count":2
                     },
+                    {
+                        "name": "Top Enemies",
+                        "access_rules": [],
+                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
+                        "item_count": 2
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 1645,
+                        "y": 234,
+                        "size": 32,
+                        "shape": "rect"
+                    }
+                ]
+            },
+            {
+                "name": "Fairy Ascension Cave Bottom",
+                "access_rules": [
+                ],
+                "sections": [
                     {
                         "name": "Bottom Pots",
                         "access_rules": [
@@ -2095,12 +2234,15 @@
                         "access_rules": [],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 3
-                    },
+                    }
+                ],
+                "map_locations": [
                     {
-                        "name": "Top Enemies",
-                        "access_rules": [],
-                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
-                        "item_count": 2
+                        "map": "Lightworld",
+                        "x": 1645,
+                        "y": 276,
+                        "size": 32,
+                        "shape": "rect"
                     }
                 ]
             },
@@ -2153,9 +2295,10 @@
                 "map_locations": [
                     {
                         "map": "Lightworld",
-                        "x": 1710,
-                        "y": 280,
-                        "size": 32
+                        "x": 1721,
+                        "y": 291,
+                        "size": 32,
+                        "shape": "rect"
                     },
                     {
                         "map": "lightworld_caves_er",
@@ -2184,6 +2327,15 @@
                         ],
                         "visibility_rules":["enemy_drop_shuffle_underworld"],
                         "item_count": 4
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Lightworld",
+                        "x": 1688,
+                        "y": 291,
+                        "size": 32,
+                        "shape": "rect"
                     }
                 ]
             },
