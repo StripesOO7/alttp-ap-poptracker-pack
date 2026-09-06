@@ -185,17 +185,17 @@ end)
 
 Kakariko_snitch_house_left_inside:connect_one_way("Snitch Lady East - Pot #1", function () return CanInteract(Kakariko_snitch_house_left_inside) end)
 Kakariko_snitch_house_left_inside:connect_one_way("Snitch Lady West - Pot #2", function () return CanInteract(Kakariko_snitch_house_left_inside) end)
-Kakariko_snitch_house_right_inside:connect_one_way("Snitch Lady West - Pot #3", function () return CanInteract(Kakariko_snitch_house_right_inside) end)
+-- Kakariko_snitch_house_right_inside:connect_one_way("Snitch Lady West - Pot #3", function () return CanInteract(Kakariko_snitch_house_right_inside) end)
 Kakariko_bombhut_inside:connect_one_way("Bomb Hut - Pot #1", function() return CanInteract(Kakariko_bombhut_inside) end)
-Kakariko_bombhut_inside:connect_one_way("Bomb Hut - Pot #2", function() return CanInteract(Kakariko_bombhut_inside) end)
-Kakariko_bombhut_inside:connect_one_way("Bomb Hut - Pot #3", function() return CanInteract(Kakariko_bombhut_inside) end)
-Kakariko_bombhut_inside:connect_one_way("Bomb Hut - Pot #4", function() return CanInteract(Kakariko_bombhut_inside) end)
-Kakariko_bombhut_inside:connect_one_way("Bomb Hut - Pot #5", function() return CanInteract(Kakariko_bombhut_inside) end)
-Kakariko_bombhut_inside:connect_one_way("Bomb Hut - Pot #6", function() return CanInteract(Kakariko_bombhut_inside) end)
-Kakariko_bombhut_inside:connect_one_way("Bomb Hut - Pot #7", function() return CanInteract(Kakariko_bombhut_inside) end)
-Kakariko_bombhut_inside:connect_one_way("Bomb Hut - Pot #8", function() return CanInteract(Kakariko_bombhut_inside) end)
+-- Kakariko_bombhut_inside:connect_one_way("Bomb Hut - Pot #2", function() return CanInteract(Kakariko_bombhut_inside) end)
+-- Kakariko_bombhut_inside:connect_one_way("Bomb Hut - Pot #3", function() return CanInteract(Kakariko_bombhut_inside) end)
+-- Kakariko_bombhut_inside:connect_one_way("Bomb Hut - Pot #4", function() return CanInteract(Kakariko_bombhut_inside) end)
+-- Kakariko_bombhut_inside:connect_one_way("Bomb Hut - Pot #5", function() return CanInteract(Kakariko_bombhut_inside) end)
+-- Kakariko_bombhut_inside:connect_one_way("Bomb Hut - Pot #6", function() return CanInteract(Kakariko_bombhut_inside) end)
+-- Kakariko_bombhut_inside:connect_one_way("Bomb Hut - Pot #7", function() return CanInteract(Kakariko_bombhut_inside) end)
+-- Kakariko_bombhut_inside:connect_one_way("Bomb Hut - Pot #8", function() return CanInteract(Kakariko_bombhut_inside) end)
 Kakariko_bombhut_inside:connect_one_way("Bomb Hut - Enemy #2", function() return DealDamage end)
-Kakariko_bombhut_inside:connect_one_way("Bomb Hut - Enemy #3", function() return DealDamage end)
+-- Kakariko_bombhut_inside:connect_one_way("Bomb Hut - Enemy #3", function() return DealDamage end)
 
 Kakariko_well_hole_inside:connect_one_way(Kakariko_well_ledge)
 Kakariko_well_ledge:connect_one_way(Kakariko_well_cave_inside)
@@ -208,32 +208,32 @@ end)
 
 Kakariko_well_back:connect_one_way("Kakariko Well - Top")
 Kakariko_well_back:connect_one_way("Kakariko Well - Pot #1")
-Kakariko_well_back:connect_one_way("Kakariko Well - Pot #2")
-Kakariko_well_back:connect_one_way("Kakariko Well - Pot #3")
-Kakariko_well_back:connect_one_way("Kakariko Well - Pot #4")
+-- Kakariko_well_back:connect_one_way("Kakariko Well - Pot #2")
+-- Kakariko_well_back:connect_one_way("Kakariko Well - Pot #3")
+-- Kakariko_well_back:connect_one_way("Kakariko Well - Pot #4")
 
 Kakariko_well_ledge:connect_one_way("Kakariko Well - Left", function() return CanInteract(Kakariko_well_ledge) end) -- can interact as bunny
 Kakariko_well_ledge:connect_one_way("Kakariko Well - Middle", function() return CanInteract(Kakariko_well_ledge) end) -- can interact as bunny
 Kakariko_well_ledge:connect_one_way("Kakariko Well - Right", function() return CanInteract(Kakariko_well_ledge) end) -- can interact as bunny
 Kakariko_well_ledge:connect_one_way("Kakariko Well - Bottom", function() return CanInteract(Kakariko_well_ledge) end) -- can interact as bunny
 Kakariko_well_ledge:connect_one_way("Kakariko Well - Pot #5", function() return CanInteract(Kakariko_well_ledge) end) -- can interact as bunny
-Kakariko_well_ledge:connect_one_way("Kakariko Well - Pot #6", function() return CanInteract(Kakariko_well_ledge) end) -- can interact as bunny
+-- Kakariko_well_ledge:connect_one_way("Kakariko Well - Pot #6", function() return CanInteract(Kakariko_well_ledge) end) -- can interact as bunny
 
 Kakariko_well_cave_inside:connect_one_way("Kakariko Well - Pot #7", function() return CanInteract(Kakariko_well_ledge) end)
-Kakariko_well_cave_inside:connect_one_way("Kakariko Well - Pot #8", function() return CanInteract(Kakariko_well_ledge) end)
+-- Kakariko_well_cave_inside:connect_one_way("Kakariko Well - Pot #8", function() return CanInteract(Kakariko_well_ledge) end)
 
 
 
 Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Top Pot #1", function() return CanInteract(Kakariko_blinds_hideout_inside) end)
-Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Top Pot #2", function() return CanInteract(Kakariko_blinds_hideout_inside) end)
-Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Top Pot #3", function() return CanInteract(Kakariko_blinds_hideout_inside) end)
-Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Top Pot #4", function() return CanInteract(Kakariko_blinds_hideout_inside) end)
+-- Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Top Pot #2", function() return CanInteract(Kakariko_blinds_hideout_inside) end)
+-- Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Top Pot #3", function() return CanInteract(Kakariko_blinds_hideout_inside) end)
+-- Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Top Pot #4", function() return CanInteract(Kakariko_blinds_hideout_inside) end)
 Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Back Pot #1", function() return ALL("bombs", CanInteract(Kakariko_blinds_hideout_inside, "bombs")) end)
-Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Back Pot #2", function() return ALL("bombs", CanInteract(Kakariko_blinds_hideout_inside, "bombs")) end)
-Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Back Pot #3", function() return ALL("bombs", CanInteract(Kakariko_blinds_hideout_inside, "bombs")) end)
-Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Back Pot #4", function() return ALL("bombs", CanInteract(Kakariko_blinds_hideout_inside, "bombs")) end)
-Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Back Pot #5", function() return ALL("bombs", CanInteract(Kakariko_blinds_hideout_inside, "bombs")) end)
-Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Back Pot #6", function() return ALL("bombs", CanInteract(Kakariko_blinds_hideout_inside, "bombs")) end)
+-- Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Back Pot #2", function() return ALL("bombs", CanInteract(Kakariko_blinds_hideout_inside, "bombs")) end)
+-- Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Back Pot #3", function() return ALL("bombs", CanInteract(Kakariko_blinds_hideout_inside, "bombs")) end)
+-- Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Back Pot #4", function() return ALL("bombs", CanInteract(Kakariko_blinds_hideout_inside, "bombs")) end)
+-- Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Back Pot #5", function() return ALL("bombs", CanInteract(Kakariko_blinds_hideout_inside, "bombs")) end)
+-- Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Back Pot #6", function() return ALL("bombs", CanInteract(Kakariko_blinds_hideout_inside, "bombs")) end)
 Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Back", function() return ALL("bombs", CanInteract(Kakariko_blinds_hideout_inside, "bombs")) end)
 Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Far Left", function() return CanInteract(Kakariko_blinds_hideout_inside) end)
 Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Left", function() return CanInteract(Kakariko_blinds_hideout_inside) end)
@@ -241,22 +241,22 @@ Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Right", functi
 Kakariko_blinds_hideout_inside:connect_one_way("Blind's Hideout - Far Right", function() return CanInteract(Kakariko_blinds_hideout_inside) end)
 
 Kakariko_elder_house_right_inside:connect_one_way("Elder House Pot - Pot #1", function () return CanInteract(Kakariko_elder_house_right_inside) end)
-Kakariko_elder_house_right_inside:connect_one_way("Elder House Pot - Pot #2", function () return CanInteract(Kakariko_elder_house_right_inside) end)
-Kakariko_elder_house_right_inside:connect_one_way("Elder House Pot - Pot #3", function () return CanInteract(Kakariko_elder_house_right_inside) end)
+-- Kakariko_elder_house_right_inside:connect_one_way("Elder House Pot - Pot #2", function () return CanInteract(Kakariko_elder_house_right_inside) end)
+-- Kakariko_elder_house_right_inside:connect_one_way("Elder House Pot - Pot #3", function () return CanInteract(Kakariko_elder_house_right_inside) end)
 Kakariko_elder_house_left_inside:connect_two_ways(Kakariko_elder_house_right_inside)
 
 
 Kakariko_chickenhut_inside:connect_one_way("Chicken Hut", function() return ALL("bombs", CanInteract(Kakariko_chickenhut_inside, "bombs")) end)
 Kakariko_chickenhut_inside:connect_one_way("Chicken Hut - Pot #1", function() return CanInteract(Kakariko_chickenhut_inside, "bombs") end)
 Kakariko_chickenhut_inside:connect_one_way("Chicken Hut - Enemy #1", function() return DealDamage end)
-Kakariko_chickenhut_inside:connect_one_way("Chicken Hut - Enemy #2", function() return DealDamage end)
-Kakariko_chickenhut_inside:connect_one_way("Chicken Hut - Enemy #3", function() return DealDamage end)
-Kakariko_chickenhut_inside:connect_one_way("Chicken Hut - Enemy #4", function() return DealDamage end)
+-- Kakariko_chickenhut_inside:connect_one_way("Chicken Hut - Enemy #2", function() return DealDamage end)
+-- Kakariko_chickenhut_inside:connect_one_way("Chicken Hut - Enemy #3", function() return DealDamage end)
+-- Kakariko_chickenhut_inside:connect_one_way("Chicken Hut - Enemy #4", function() return DealDamage end)
 
 
 Kakariko_sick_kid_inside:connect_one_way("Sick Kid", function() return Has("bottle") end) -- can interact as bunny
 Kakariko_sick_kid_inside:connect_one_way("Sick Kid - Pots #1", function() return CanInteract(Kakariko_sick_kid_inside) end) -- can interact as bunny
-Kakariko_sick_kid_inside:connect_one_way("Sick Kid - Pots #2", function() return CanInteract(Kakariko_sick_kid_inside) end) -- can interact as bunny
+-- Kakariko_sick_kid_inside:connect_one_way("Sick Kid - Pots #2", function() return CanInteract(Kakariko_sick_kid_inside) end) -- can interact as bunny
 
 
 
@@ -270,7 +270,7 @@ Kakariko_shop_inside:connect_one_way("Kakariko Shop Right")
 
 Kakariko_backside_pub_inside:connect_one_way("Backside Pub", function() return CanInteract(Kakariko_backside_pub_inside) end)
 Kakariko_backside_pub_inside:connect_one_way("Backside Pub - Pot #1", function() return CanInteract(Kakariko_backside_pub_inside) end)
-Kakariko_backside_pub_inside:connect_one_way("Backside Pub - Pot #2", function() return CanInteract(Kakariko_backside_pub_inside) end)
+-- Kakariko_backside_pub_inside:connect_one_way("Backside Pub - Pot #2", function() return CanInteract(Kakariko_backside_pub_inside) end)
 Kakariko_frontside_pub_inside:connect_one_way("Tavern Front - Pot #3", function() return CanInteract(Kakariko_frontside_pub_inside) end)
 
 
@@ -289,7 +289,7 @@ Dwarf_smiths_inside:connect_one_way("Rescue Dwarf")
 -- end)
 
 Magic_bat_hole_inside:connect_one_way("Magic Bat - Pot #1")
-Magic_bat_hole_inside:connect_one_way("Magic Bat - Pot #2")
+-- Magic_bat_hole_inside:connect_one_way("Magic Bat - Pot #2")
 
 Magic_bat_hole_inside:connect_one_way(Magic_bat_item)
 Magic_bat_hole_inside:connect_one_way(Magic_bat_cave_inside)
@@ -610,19 +610,19 @@ Fifty_rupee_thief_outside:connect_two_ways_entrance("50 Rupee Cave", Fifty_rupee
 Mini_moldorm_cave_outside:connect_two_ways_entrance("Mini Moldorm Cave", Mini_moldorm_cave_inside)
 
 Fifty_rupee_thief_inside:connect_one_way("50 Rupee Cave - Pot #1", function() return CanInteract(Fifty_rupee_thief_inside) end)
-Fifty_rupee_thief_inside:connect_one_way("50 Rupee Cave - Pot #2", function() return CanInteract(Fifty_rupee_thief_inside) end)
-Fifty_rupee_thief_inside:connect_one_way("50 Rupee Cave - Pot #3", function() return CanInteract(Fifty_rupee_thief_inside) end)
-Fifty_rupee_thief_inside:connect_one_way("50 Rupee Cave - Pot #4", function() return CanInteract(Fifty_rupee_thief_inside) end)
-Fifty_rupee_thief_inside:connect_one_way("50 Rupee Cave - Pot #5", function() return CanInteract(Fifty_rupee_thief_inside) end)
-Fifty_rupee_thief_inside:connect_one_way("50 Rupee Cave - Pot #6", function() return CanInteract(Fifty_rupee_thief_inside) end)
-Fifty_rupee_thief_inside:connect_one_way("50 Rupee Cave - Pot #7", function() return CanInteract(Fifty_rupee_thief_inside) end)
-Fifty_rupee_thief_inside:connect_one_way("50 Rupee Cave - Pot #8", function() return CanInteract(Fifty_rupee_thief_inside) end)
-Fifty_rupee_thief_inside:connect_one_way("50 Rupee Cave - Pot #9", function() return CanInteract(Fifty_rupee_thief_inside) end)
-Fifty_rupee_thief_inside:connect_one_way("50 Rupee Cave - Pot #10", function() return CanInteract(Fifty_rupee_thief_inside) end)
+-- Fifty_rupee_thief_inside:connect_one_way("50 Rupee Cave - Pot #2", function() return CanInteract(Fifty_rupee_thief_inside) end)
+-- Fifty_rupee_thief_inside:connect_one_way("50 Rupee Cave - Pot #3", function() return CanInteract(Fifty_rupee_thief_inside) end)
+-- Fifty_rupee_thief_inside:connect_one_way("50 Rupee Cave - Pot #4", function() return CanInteract(Fifty_rupee_thief_inside) end)
+-- Fifty_rupee_thief_inside:connect_one_way("50 Rupee Cave - Pot #5", function() return CanInteract(Fifty_rupee_thief_inside) end)
+-- Fifty_rupee_thief_inside:connect_one_way("50 Rupee Cave - Pot #6", function() return CanInteract(Fifty_rupee_thief_inside) end)
+-- Fifty_rupee_thief_inside:connect_one_way("50 Rupee Cave - Pot #7", function() return CanInteract(Fifty_rupee_thief_inside) end)
+-- Fifty_rupee_thief_inside:connect_one_way("50 Rupee Cave - Pot #8", function() return CanInteract(Fifty_rupee_thief_inside) end)
+-- Fifty_rupee_thief_inside:connect_one_way("50 Rupee Cave - Pot #9", function() return CanInteract(Fifty_rupee_thief_inside) end)
+-- Fifty_rupee_thief_inside:connect_one_way("50 Rupee Cave - Pot #10", function() return CanInteract(Fifty_rupee_thief_inside) end)
 
 Dam_inside:connect_one_way("Floodgate Chest", function() return CanInteract(Dam_inside) end)
 Dam_inside:connect_one_way("Dam - Enemy #1", function() return DealDamage end)
-Dam_inside:connect_one_way("Dam - Enemy #2", function() return DealDamage end)
+-- Dam_inside:connect_one_way("Dam - Enemy #2", function() return DealDamage end)
 
 Mini_moldorm_cave_inside:connect_two_ways(Mini_moldorm_cave_back, function()
     return ALL(
@@ -636,9 +636,9 @@ Mini_moldorm_cave_back:connect_one_way("Mini Moldorm Cave - Generous Guy")
 Mini_moldorm_cave_back:connect_one_way("Mini Moldorm Cave - Right")
 Mini_moldorm_cave_back:connect_one_way("Mini Moldorm Cave - Far Right")
 Mini_moldorm_cave_inside:connect_one_way("Mini Moldorm Cave - Enemy #1", function() return DealDamage end)
-Mini_moldorm_cave_inside:connect_one_way("Mini Moldorm Cave - Enemy #2", function() return DealDamage end)
-Mini_moldorm_cave_inside:connect_one_way("Mini Moldorm Cave - Enemy #3", function() return DealDamage end)
-Mini_moldorm_cave_inside:connect_one_way("Mini Moldorm Cave - Enemy #4", function() return DealDamage end)
+-- Mini_moldorm_cave_inside:connect_one_way("Mini Moldorm Cave - Enemy #2", function() return DealDamage end)
+-- Mini_moldorm_cave_inside:connect_one_way("Mini Moldorm Cave - Enemy #3", function() return DealDamage end)
+-- Mini_moldorm_cave_inside:connect_one_way("Mini Moldorm Cave - Enemy #4", function() return DealDamage end)
 
 
 Dam_area:connect_one_way("Sunken Treasure", function() return CanReach("Floodgate Chest") end)
@@ -796,7 +796,7 @@ Lumberjacks_cave_outside:connect_two_ways_entrance("Lumberjacks Cave", Lumberjac
 Lumberjacks_house_outside:connect_two_ways_entrance("Lumberjacks House", Lumberjacks_house_inside)
 
 Lumberjacks_house_inside:connect_one_way("Lumberjacks House - Pot #1", function() return CanInteract(Lumberjacks_house_inside) end)
-Lumberjacks_house_inside:connect_one_way("Lumberjacks House - Pot #2", function() return CanInteract(Lumberjacks_house_inside) end)
+-- Lumberjacks_house_inside:connect_one_way("Lumberjacks House - Pot #2", function() return CanInteract(Lumberjacks_house_inside) end)
 -- Lumberjacks_area:connect_two_ways_entrance("Light Death Mountain Ascent", Light_death_mountain_ascent, function() return "glove" end)
  -- aga item cave
 
@@ -954,7 +954,7 @@ Icerod_cave_outside:connect_two_ways_entrance("Icerod Cave", Icerod_cave_inside)
 Good_bee_cave_outside:connect_two_ways_entrance("Good Bee Cave", Good_bee_cave_inside)
 
 Good_bee_cave_inside:connect_one_way("Good Bee Cave - Enemy #2", function() return DealDamage() end)
-Good_bee_cave_inside:connect_one_way("Good Bee Cave - Enemy #3", function() return DealDamage() end)
+-- Good_bee_cave_inside:connect_one_way("Good Bee Cave - Enemy #3", function() return DealDamage() end)
 
 Twenty_rupee_thief_outside:connect_two_ways_entrance("Twenty Rupee Cave", Twenty_rupee_thief_inside, function()
     return ALL(
@@ -970,9 +970,9 @@ Light_lake_hylia:connect_two_ways(Upgrade_fairy_island, function()
 end)
 
 Twenty_rupee_thief_inside:connect_one_way("Twenty Rupee Cave - Pot #1", function() return CanInteract(Twenty_rupee_thief_inside) end)
-Twenty_rupee_thief_inside:connect_one_way("Twenty Rupee Cave - Pot #2", function() return CanInteract(Twenty_rupee_thief_inside) end)
-Twenty_rupee_thief_inside:connect_one_way("Twenty Rupee Cave - Pot #3", function() return CanInteract(Twenty_rupee_thief_inside) end)
-Twenty_rupee_thief_inside:connect_one_way("Twenty Rupee Cave - Pot #4", function() return CanInteract(Twenty_rupee_thief_inside) end)
+-- Twenty_rupee_thief_inside:connect_one_way("Twenty Rupee Cave - Pot #2", function() return CanInteract(Twenty_rupee_thief_inside) end)
+-- Twenty_rupee_thief_inside:connect_one_way("Twenty Rupee Cave - Pot #3", function() return CanInteract(Twenty_rupee_thief_inside) end)
+-- Twenty_rupee_thief_inside:connect_one_way("Twenty Rupee Cave - Pot #4", function() return CanInteract(Twenty_rupee_thief_inside) end)
 
 Light_lake_shop_inside:connect_one_way("Lake Hylia Shop - Left")
 Light_lake_shop_inside:connect_one_way("Lake Hylia Shop - Center")
@@ -1056,14 +1056,14 @@ Links_house_outside:connect_two_ways_entrance("Link's House", Big_bomb_shop_insi
 Links_fairy_fountain_outside:connect_two_ways_entrance("Links Fairy", Links_fairy_fountain_inside)
 
 Links_fairy_fountain_inside:connect_one_way("Links Fairy - Enemy #1", function() return DealDamage() end)
-Links_fairy_fountain_inside:connect_one_way("Links Fairy - Enemy #2", function() return DealDamage() end)
-Links_fairy_fountain_inside:connect_one_way("Links Fairy - Enemy #3", function() return DealDamage() end)
-Links_fairy_fountain_inside:connect_one_way("Links Fairy - Enemy #4", function() return DealDamage() end)
+-- Links_fairy_fountain_inside:connect_one_way("Links Fairy - Enemy #2", function() return DealDamage() end)
+-- Links_fairy_fountain_inside:connect_one_way("Links Fairy - Enemy #3", function() return DealDamage() end)
+-- Links_fairy_fountain_inside:connect_one_way("Links Fairy - Enemy #4", function() return DealDamage() end)
 
 Links_house_inside:connect_one_way("Link's House Chest", function() return CanInteract(Links_house_inside) end)
 Links_house_inside:connect_one_way("Link's House - Pot #1", function() return CanInteract(Links_house_inside) end)
-Links_house_inside:connect_one_way("Link's House - Pot #2", function() return CanInteract(Links_house_inside) end)
-Links_house_inside:connect_one_way("Link's House - Pot #3", function() return CanInteract(Links_house_inside) end)
+-- Links_house_inside:connect_one_way("Link's House - Pot #2", function() return CanInteract(Links_house_inside) end)
+-- Links_house_inside:connect_one_way("Link's House - Pot #3", function() return CanInteract(Links_house_inside) end)
 
 Cave45_ledge:connect_two_ways(Cave45_outside)
 Cave45_outside:connect_two_ways_entrance("Cave 45 Inside", Cave45_inside)
@@ -1071,11 +1071,11 @@ Cave45_ledge:connect_one_way(Links_house_area, function() return OpenOrStandard(
 Cave45_ledge:connect_two_ways(Links_house_area, function() return Inverted() end)
 Cave45_inside:connect_one_way("Cave 45", function() return ANY(CanInteract(Cave45_inside), ACCESS_INSPECT) end)
 Cave45_inside:connect_one_way("Cave 45 - Pot #1", function() return CanInteract(Cave45_inside) end)
-Cave45_inside:connect_one_way("Cave 45 - Pot #2", function() return CanInteract(Cave45_inside) end)
-Cave45_inside:connect_one_way("Cave 45 - Pot #3", function() return CanInteract(Cave45_inside) end)
-Cave45_inside:connect_one_way("Cave 45 - Pot #4", function() return CanInteract(Cave45_inside) end)
-Cave45_inside:connect_one_way("Cave 45 - Pot #5", function() return CanInteract(Cave45_inside) end)
-Cave45_inside:connect_one_way("Cave 45 - Pot #6", function() return CanInteract(Cave45_inside) end)
+-- Cave45_inside:connect_one_way("Cave 45 - Pot #2", function() return CanInteract(Cave45_inside) end)
+-- Cave45_inside:connect_one_way("Cave 45 - Pot #3", function() return CanInteract(Cave45_inside) end)
+-- Cave45_inside:connect_one_way("Cave 45 - Pot #4", function() return CanInteract(Cave45_inside) end)
+-- Cave45_inside:connect_one_way("Cave 45 - Pot #5", function() return CanInteract(Cave45_inside) end)
+-- Cave45_inside:connect_one_way("Cave 45 - Pot #6", function() return CanInteract(Cave45_inside) end)
 
 Links_house_area:connect_one_way("Flute Spot", function()
     return ALL(
@@ -1132,9 +1132,9 @@ Eastern_tree_fairy_cave_outside:connect_two_ways_entrance("Eastern Tree Fairy Ca
 Eastern_long_fairy_cave_outside:connect_two_ways_entrance("Eastern Long Fairy Cave", Eastern_long_fairy_cave_inside)
 
 Eastern_long_fairy_cave_inside:connect_one_way("Long Fairy Cave - Enemy #1", function() return DealDamage() end)
-Eastern_long_fairy_cave_inside:connect_one_way("Long Fairy Cave - Enemy #2", function() return DealDamage() end)
-Eastern_long_fairy_cave_inside:connect_one_way("Long Fairy Cave - Enemy #3", function() return DealDamage() end)
-Eastern_long_fairy_cave_inside:connect_one_way("Long Fairy Cave - Enemy #4", function() return DealDamage() end)
+-- Eastern_long_fairy_cave_inside:connect_one_way("Long Fairy Cave - Enemy #2", function() return DealDamage() end)
+-- Eastern_long_fairy_cave_inside:connect_one_way("Long Fairy Cave - Enemy #3", function() return DealDamage() end)
+-- Eastern_long_fairy_cave_inside:connect_one_way("Long Fairy Cave - Enemy #4", function() return DealDamage() end)
 
 Sahasralahs_hut_outside:connect_two_ways_entrance("Sahasralah", Sahasralahs_hut_inside)
 EP_entrance_outside:connect_two_ways_entrance("Eastern Palace Entrance", EP_entrance_inside)
@@ -1143,8 +1143,8 @@ EP_entrance_outside:connect_two_ways_entrance("Eastern Palace Entrance", EP_entr
 
 Sahasralahs_hut_inside:connect_one_way("Sahasralah", function() return Has("greenpendant") end)
 Sahasralahs_hut_inside:connect_one_way("Sahasralah - Pot #1", function() return CanInteract(Sahasralahs_hut_inside) end)
-Sahasralahs_hut_inside:connect_one_way("Sahasralah - Pot #2", function() return CanInteract(Sahasralahs_hut_inside) end)
-Sahasralahs_hut_inside:connect_one_way("Sahasralah - Pot #3", function() return CanInteract(Sahasralahs_hut_inside) end)
+-- Sahasralahs_hut_inside:connect_one_way("Sahasralah - Pot #2", function() return CanInteract(Sahasralahs_hut_inside) end)
+-- Sahasralahs_hut_inside:connect_one_way("Sahasralah - Pot #3", function() return CanInteract(Sahasralahs_hut_inside) end)
 
 Sahasralahs_hut_inside:connect_two_ways(Sahasralahs_hut_back, function()
     return ANY(
@@ -1283,7 +1283,7 @@ Secret_passage_stairs_inside:connect_two_ways(Secret_passage)
 Secret_passage:connect_one_way("Secret Passage", function() return CanInteract(Secret_passage) end)
 Secret_passage:connect_one_way("Link's Uncle")
 Secret_passage:connect_one_way("Secret Passage - Pot #1", function() return CanInteract(Secret_passage) end)
-Secret_passage:connect_one_way("Secret Passage - Pot #2", function() return CanInteract(Secret_passage) end)
+-- Secret_passage:connect_one_way("Secret Passage - Pot #2", function() return CanInteract(Secret_passage) end)
 
 
 -- Witchhut
@@ -1363,23 +1363,23 @@ Old_man_cave_right_outside:connect_two_ways_entrance("Inverted Light Death Mount
 Light_death_mountain_return_right_outside:connect_two_ways_entrance("Light Death Mountain Return Right",Light_death_mountain_return_right_inside)
 
 Light_death_mountain_return_right_inside:connect_one_way("DM Return Cave Right - Pot #1", function() return DarkRooms end)
-Light_death_mountain_return_right_inside:connect_one_way("DM Return Cave Right - Pot #2", function() return DarkRooms end)
+-- Light_death_mountain_return_right_inside:connect_one_way("DM Return Cave Right - Pot #2", function() return DarkRooms end)
 Light_death_mountain_return_right_inside:connect_one_way("DM Return Cave Right - Enemy #1", function() return DealDamage end)
-Light_death_mountain_return_right_inside:connect_one_way("DM Return Cave Right - Enemy #2", function() return DealDamage end)
-Light_death_mountain_return_right_inside:connect_one_way("DM Return Cave Right - Enemy #3", function() return DealDamage end)
-Light_death_mountain_return_right_inside:connect_one_way("DM Return Cave Right - Enemy #4", function() return DealDamage end)
-Light_death_mountain_return_right_inside:connect_one_way("DM Return Cave Right - Enemy #5", function() return DealDamage end)
+-- Light_death_mountain_return_right_inside:connect_one_way("DM Return Cave Right - Enemy #2", function() return DealDamage end)
+-- Light_death_mountain_return_right_inside:connect_one_way("DM Return Cave Right - Enemy #3", function() return DealDamage end)
+-- Light_death_mountain_return_right_inside:connect_one_way("DM Return Cave Right - Enemy #4", function() return DealDamage end)
+-- Light_death_mountain_return_right_inside:connect_one_way("DM Return Cave Right - Enemy #5", function() return DealDamage end)
 Light_death_mountain_return_left_inside:connect_one_way("DM Return Cave Left - Pot #1", function() return DarkRooms end)
-Light_death_mountain_return_left_inside:connect_one_way("DM Return Cave Left - Pot #2", function() return DarkRooms end)
-Light_death_mountain_return_left_inside:connect_one_way("DM Return Cave Left - Pot #3", function() return DarkRooms end)
-Light_death_mountain_return_left_inside:connect_one_way("DM Return Cave Left - Pot #4", function() return DarkRooms end)
+-- Light_death_mountain_return_left_inside:connect_one_way("DM Return Cave Left - Pot #2", function() return DarkRooms end)
+-- Light_death_mountain_return_left_inside:connect_one_way("DM Return Cave Left - Pot #3", function() return DarkRooms end)
+-- Light_death_mountain_return_left_inside:connect_one_way("DM Return Cave Left - Pot #4", function() return DarkRooms end)
 Light_death_mountain_return_left_inside:connect_one_way("DM Return Cave Left - Enemy #1", function() return DealDamage end)
-Light_death_mountain_return_left_inside:connect_one_way("DM Return Cave Left - Enemy #2", function() return DealDamage end)
-Light_death_mountain_return_left_inside:connect_one_way("DM Return Cave Left - Enemy #3", function() return DealDamage end)
-Light_death_mountain_return_left_inside:connect_one_way("DM Return Cave Left - Enemy #4", function() return DealDamage end)
-Light_death_mountain_return_left_inside:connect_one_way("DM Return Cave Left - Enemy #5", function() return DealDamage end)
-Light_death_mountain_return_left_inside:connect_one_way("DM Return Cave Left - Enemy #6", function() return DealDamage end)
-Light_death_mountain_return_left_inside:connect_one_way("DM Return Cave Left - Enemy #7", function() return DealDamage end)
+-- Light_death_mountain_return_left_inside:connect_one_way("DM Return Cave Left - Enemy #2", function() return DealDamage end)
+-- Light_death_mountain_return_left_inside:connect_one_way("DM Return Cave Left - Enemy #3", function() return DealDamage end)
+-- Light_death_mountain_return_left_inside:connect_one_way("DM Return Cave Left - Enemy #4", function() return DealDamage end)
+-- Light_death_mountain_return_left_inside:connect_one_way("DM Return Cave Left - Enemy #5", function() return DealDamage end)
+-- Light_death_mountain_return_left_inside:connect_one_way("DM Return Cave Left - Enemy #6", function() return DealDamage end)
+-- Light_death_mountain_return_left_inside:connect_one_way("DM Return Cave Left - Enemy #7", function() return DealDamage end)
 
 Light_death_mountain_return_right_inside:connect_two_ways(Light_death_mountain_return_left_inside, function() return DarkRooms end)
 
@@ -1387,25 +1387,25 @@ Old_man_cave_right_inside:connect_two_ways(Old_man_cave, function() return DarkR
 
 Old_man_cave:connect_one_way("Old Man Cave Pot - Pot #1", function() return DarkRooms end)
 Old_man_cave:connect_one_way("Old Man Cave - West Enemy #1", function() return DealDamage end)
-Old_man_cave:connect_one_way("Old Man Cave - West Enemy #2", function() return DealDamage end)
-Old_man_cave:connect_one_way("Old Man Cave - West Enemy #3", function() return DealDamage end)
-Old_man_cave:connect_one_way("Old Man Cave - West Enemy #4", function() return DealDamage end)
-Old_man_cave:connect_one_way("Old Man Cave - West Enemy #5", function() return DealDamage end)
-Old_man_cave:connect_one_way("Old Man Cave - West Enemy #6", function() return DealDamage end)
-Old_man_cave:connect_one_way("Old Man Cave - West Enemy #7", function() return DealDamage end)
-Old_man_cave:connect_one_way("Old Man Cave - West Enemy #8", function() return DealDamage end)
-Old_man_cave:connect_one_way("Old Man Cave - West Enemy #9", function() return DealDamage end)
-Old_man_cave:connect_one_way("Old Man Cave - West Enemy #10", function() return DealDamage end)
+-- Old_man_cave:connect_one_way("Old Man Cave - West Enemy #2", function() return DealDamage end)
+-- Old_man_cave:connect_one_way("Old Man Cave - West Enemy #3", function() return DealDamage end)
+-- Old_man_cave:connect_one_way("Old Man Cave - West Enemy #4", function() return DealDamage end)
+-- Old_man_cave:connect_one_way("Old Man Cave - West Enemy #5", function() return DealDamage end)
+-- Old_man_cave:connect_one_way("Old Man Cave - West Enemy #6", function() return DealDamage end)
+-- Old_man_cave:connect_one_way("Old Man Cave - West Enemy #7", function() return DealDamage end)
+-- Old_man_cave:connect_one_way("Old Man Cave - West Enemy #8", function() return DealDamage end)
+-- Old_man_cave:connect_one_way("Old Man Cave - West Enemy #9", function() return DealDamage end)
+-- Old_man_cave:connect_one_way("Old Man Cave - West Enemy #10", function() return DealDamage end)
 Old_man_cave:connect_one_way("Old Man Cave - East Enemy #1", function() return DealDamage end)
-Old_man_cave:connect_one_way("Old Man Cave - East Enemy #2", function() return DealDamage end)
-Old_man_cave:connect_one_way("Old Man Cave - East Enemy #3", function() return DealDamage end)
-Old_man_cave:connect_one_way("Old Man Cave - East Enemy #4", function() return DealDamage end)
-Old_man_cave:connect_one_way("Old Man Cave - East Enemy #5", function() return DealDamage end)
-Old_man_cave:connect_one_way("Old Man Cave - East Enemy #6", function() return DealDamage end)
-Old_man_cave:connect_one_way("Old Man Cave - East Enemy #7", function() return DealDamage end)
-Old_man_cave:connect_one_way("Old Man Cave - East Enemy #8", function() return DealDamage end)
-Old_man_cave:connect_one_way("Old Man Cave - East Enemy #9", function() return DealDamage end)
-Old_man_cave:connect_one_way("Old Man Cave - East Enemy #10", function() return DealDamage end)
+-- Old_man_cave:connect_one_way("Old Man Cave - East Enemy #2", function() return DealDamage end)
+-- Old_man_cave:connect_one_way("Old Man Cave - East Enemy #3", function() return DealDamage end)
+-- Old_man_cave:connect_one_way("Old Man Cave - East Enemy #4", function() return DealDamage end)
+-- Old_man_cave:connect_one_way("Old Man Cave - East Enemy #5", function() return DealDamage end)
+-- Old_man_cave:connect_one_way("Old Man Cave - East Enemy #6", function() return DealDamage end)
+-- Old_man_cave:connect_one_way("Old Man Cave - East Enemy #7", function() return DealDamage end)
+-- Old_man_cave:connect_one_way("Old Man Cave - East Enemy #8", function() return DealDamage end)
+-- Old_man_cave:connect_one_way("Old Man Cave - East Enemy #9", function() return DealDamage end)
+-- Old_man_cave:connect_one_way("Old Man Cave - East Enemy #10", function() return DealDamage end)
 -- Light_death_mountain_ascent_ledge:connect_one_way(Light_death_mountain_ascent, function()
 --     return ALL(
 --         DarkRooms(),
@@ -1513,9 +1513,9 @@ Spec_rock_ledge_entrance_inside:connect_two_ways(Spectacle_rock_inside_bottom)
 Spec_rock_ledge_exit_inside:connect_two_ways(Spectacle_rock_cave)
 
 Spectacle_rock_cave:connect_one_way("Spec Rock - Enemy #1", function() return DealDamage end)
-Spectacle_rock_cave:connect_one_way("Spec Rock - Enemy #2", function() return DealDamage end)
-Spectacle_rock_cave:connect_one_way("Spec Rock - Enemy #3", function() return DealDamage end)
-Spectacle_rock_cave:connect_one_way("Spec Rock - Enemy #4", function() return DealDamage end)
+-- Spectacle_rock_cave:connect_one_way("Spec Rock - Enemy #2", function() return DealDamage end)
+-- Spectacle_rock_cave:connect_one_way("Spec Rock - Enemy #3", function() return DealDamage end)
+-- Spectacle_rock_cave:connect_one_way("Spec Rock - Enemy #4", function() return DealDamage end)
 
 -- UWG
 Spectacle_rock_cave:connect_one_way(PoD_shooter_room, function() 
@@ -1529,10 +1529,10 @@ end) -- kiki skip
 Spectacle_rock_top_drop:connect_one_way(Spectacle_rock_cave)
 Spectacle_rock_top_drop:connect_one_way("Spec Rock Inside Item", function() return ACCESS_INSPECT end)
 Spectacle_rock_inside_bottom:connect_one_way(Spectacle_rock_top_drop)
-Spectacle_rock_inside_bottom:connect_one_way("Spec Rock Bottom - Enemy #1", function() return DealDamage end)
-Spectacle_rock_inside_bottom:connect_one_way("Spec Rock Bottom - Enemy #2", function() return DealDamage end)
-Spectacle_rock_inside_bottom:connect_one_way("Spec Rock Bottom - Enemy #3", function() return DealDamage end)
-Spectacle_rock_inside_bottom:connect_one_way("Spec Rock Bottom - Enemy #4", function() return DealDamage end)
+-- Spectacle_rock_inside_bottom:connect_one_way("Spec Rock Bottom - Enemy #1", function() return DealDamage end)
+-- Spectacle_rock_inside_bottom:connect_one_way("Spec Rock Bottom - Enemy #2", function() return DealDamage end)
+-- Spectacle_rock_inside_bottom:connect_one_way("Spec Rock Bottom - Enemy #3", function() return DealDamage end)
+-- Spectacle_rock_inside_bottom:connect_one_way("Spec Rock Bottom - Enemy #4", function() return DealDamage end)
 
 Spec_rock_ledge_entrance:connect_one_way(Light_death_mountain_left_bottom)
 Spec_rock_ledge_exit:connect_one_way(Light_death_mountain_left_bottom)
@@ -1540,24 +1540,24 @@ Spec_rock_ledge_exit:connect_one_way(Light_death_mountain_left_bottom)
 -- cave mide left lightg DM bottom
 
 Old_man_home_bottom_inside:connect_one_way("Old Man House Pot - Pot #1")
-Old_man_home_bottom_inside:connect_one_way("Old Man House Pot - Pot #2")
+-- Old_man_home_bottom_inside:connect_one_way("Old Man House Pot - Pot #2")
 Old_man_home_bottom_inside:connect_one_way("Old Man House Front - Enemy #1", function() return DealDamage end)
-Old_man_home_bottom_inside:connect_one_way("Old Man House Front - Enemy #2", function() return DealDamage end)
-Old_man_home_bottom_inside:connect_one_way("Old Man House Front - Enemy #3", function() return DealDamage end)
-Old_man_home_bottom_inside:connect_one_way("Old Man House Front - Enemy #4", function() return DealDamage end)
+-- Old_man_home_bottom_inside:connect_one_way("Old Man House Front - Enemy #2", function() return DealDamage end)
+-- Old_man_home_bottom_inside:connect_one_way("Old Man House Front - Enemy #3", function() return DealDamage end)
+-- Old_man_home_bottom_inside:connect_one_way("Old Man House Front - Enemy #4", function() return DealDamage end)
 
 Old_man_home_bottom_inside:connect_two_ways(Old_man_home_top_inside, function() return DarkRooms end)
 
 Old_man_home_top_inside:connect_one_way("Old Man House Back - Pot #1", function() return DarkRooms end)
-Old_man_home_top_inside:connect_one_way("Old Man House Back - Pot #2", function() return DarkRooms end)
-Old_man_home_top_inside:connect_one_way("Old Man House Back - Pot #3", function() return DarkRooms end)
-Old_man_home_top_inside:connect_one_way("Old Man House Back - Pot #4", function() return DarkRooms end)
+-- Old_man_home_top_inside:connect_one_way("Old Man House Back - Pot #2", function() return DarkRooms end)
+-- Old_man_home_top_inside:connect_one_way("Old Man House Back - Pot #3", function() return DarkRooms end)
+-- Old_man_home_top_inside:connect_one_way("Old Man House Back - Pot #4", function() return DarkRooms end)
 Old_man_home_top_inside:connect_one_way("Old Man House Back - Enemy #1", function() return DealDamage end)
-Old_man_home_top_inside:connect_one_way("Old Man House Back - Enemy #2", function() return DealDamage end)
-Old_man_home_top_inside:connect_one_way("Old Man House Back - Enemy #3", function() return DealDamage end)
-Old_man_home_top_inside:connect_one_way("Old Man House Back - Enemy #4", function() return DealDamage end)
-Old_man_home_top_inside:connect_one_way("Old Man House Back - Enemy #5", function() return DealDamage end)
-Old_man_home_top_inside:connect_one_way("Old Man House Back - Enemy #6", function() return DealDamage end)
+-- Old_man_home_top_inside:connect_one_way("Old Man House Back - Enemy #2", function() return DealDamage end)
+-- Old_man_home_top_inside:connect_one_way("Old Man House Back - Enemy #3", function() return DealDamage end)
+-- Old_man_home_top_inside:connect_one_way("Old Man House Back - Enemy #4", function() return DealDamage end)
+-- Old_man_home_top_inside:connect_one_way("Old Man House Back - Enemy #5", function() return DealDamage end)
+-- Old_man_home_top_inside:connect_one_way("Old Man House Back - Enemy #6", function() return DealDamage end)
 
 -- Light_death_mountain_left_top
 
@@ -1671,9 +1671,9 @@ Hookshot_fairy_outside:connect_two_ways_entrance("Hookshot Fairy Cave", Hookshot
 
 Hookshot_fairy_inside:connect_one_way("Hookshot Fairy - Pot #1", function() return ALL(CanInteract(Hookshot_fairy_inside), "hookshot") end)
 Hookshot_fairy_inside:connect_one_way("Hookshot Fairy - Enemy #1", function() return DealDamage() end)
-Hookshot_fairy_inside:connect_one_way("Hookshot Fairy - Enemy #2", function() return DealDamage() end)
-Hookshot_fairy_inside:connect_one_way("Hookshot Fairy - Enemy #3", function() return DealDamage() end)
-Hookshot_fairy_inside:connect_one_way("Hookshot Fairy - Enemy #4", function() return DealDamage() end)
+-- Hookshot_fairy_inside:connect_one_way("Hookshot Fairy - Enemy #2", function() return DealDamage() end)
+-- Hookshot_fairy_inside:connect_one_way("Hookshot Fairy - Enemy #3", function() return DealDamage() end)
+-- Hookshot_fairy_inside:connect_one_way("Hookshot Fairy - Enemy #4", function() return DealDamage() end)
 -- Paradox_cave_bottom:connect_one_way(Paradox_cave_top)
 -- Paradox_cave_bottom:connect_two_ways_entrance("Light Death Mountain Shop", Light_death_mountain_shop, function() return "bombs" end)
 
@@ -1768,38 +1768,38 @@ end)
 Fairy_ascension_cave_top_outside:connect_two_ways_entrance("Fairy Ascention Top Entrance", Fairy_ascension_cave_top_inside)
 Fairy_ascension_cave_top_inside:connect_two_ways(Fairy_ascension_cave_bottom_inside)
 Fairy_ascension_cave_top_inside:connect_one_way("Fairy Ascension Cave Top Pot - Pot #1")
-Fairy_ascension_cave_top_inside:connect_one_way("Fairy Ascension Cave Top Pot - Pot #2")
+-- Fairy_ascension_cave_top_inside:connect_one_way("Fairy Ascension Cave Top Pot - Pot #2")
 Fairy_ascension_cave_top_inside:connect_one_way("Fairy Ascension Cave Top - Enemy #1", function() return DealDamage end)
-Fairy_ascension_cave_top_inside:connect_one_way("Fairy Ascension Cave Top - Enemy #2", function() return DealDamage end)
+-- Fairy_ascension_cave_top_inside:connect_one_way("Fairy Ascension Cave Top - Enemy #2", function() return DealDamage end)
 
 Fairy_ascension_cave_bottom_inside:connect_one_way("Fairy Ascension Cave Bottom Pot - Pot #3")
-Fairy_ascension_cave_bottom_inside:connect_one_way("Fairy Ascension Cave Bottom Pot - Pot #4")
+-- Fairy_ascension_cave_bottom_inside:connect_one_way("Fairy Ascension Cave Bottom Pot - Pot #4")
 Fairy_ascension_cave_bottom_inside:connect_one_way("Fairy Ascension Cave Bottom - Enemy #1", function() return DealDamage end)
-Fairy_ascension_cave_bottom_inside:connect_one_way("Fairy Ascension Cave Bottom - Enemy #2", function() return DealDamage end)
-Fairy_ascension_cave_bottom_inside:connect_one_way("Fairy Ascension Cave Bottom - Enemy #3", function() return DealDamage end)
+-- Fairy_ascension_cave_bottom_inside:connect_one_way("Fairy Ascension Cave Bottom - Enemy #2", function() return DealDamage end)
+-- Fairy_ascension_cave_bottom_inside:connect_one_way("Fairy Ascension Cave Bottom - Enemy #3", function() return DealDamage end)
     
 Spiral_cave_top_inside:connect_one_way(Spiral_cave_bottom_inside)
 
 Spiral_cave_top_inside:connect_one_way("Spiral Cave Top - Enemy #1", function() return DealDamage end)
-Spiral_cave_top_inside:connect_one_way("Spiral Cave Top - Enemy #2", function() return DealDamage end)
-Spiral_cave_top_inside:connect_one_way("Spiral Cave Top - Enemy #3", function() return DealDamage end)
-Spiral_cave_top_inside:connect_one_way("Spiral Cave Top - Enemy #4", function() return DealDamage end)
-Spiral_cave_top_inside:connect_one_way("Spiral Cave Top - Enemy #5", function() return DealDamage end)
+-- Spiral_cave_top_inside:connect_one_way("Spiral Cave Top - Enemy #2", function() return DealDamage end)
+-- Spiral_cave_top_inside:connect_one_way("Spiral Cave Top - Enemy #3", function() return DealDamage end)
+-- Spiral_cave_top_inside:connect_one_way("Spiral Cave Top - Enemy #4", function() return DealDamage end)
+-- Spiral_cave_top_inside:connect_one_way("Spiral Cave Top - Enemy #5", function() return DealDamage end)
 Spiral_cave_top_inside:connect_one_way("Spiral Cave Item", function() return CanInteract(Spiral_cave_top_inside, "sword") end)
 
 Spiral_cave_bottom_inside:connect_one_way("Spiral Cave Bottom - Enemy #1", function() return DealDamage end)
-Spiral_cave_bottom_inside:connect_one_way("Spiral Cave Bottom - Enemy #2", function() return DealDamage end)
-Spiral_cave_bottom_inside:connect_one_way("Spiral Cave Bottom - Enemy #3", function() return DealDamage end)
-Spiral_cave_bottom_inside:connect_one_way("Spiral Cave Bottom - Enemy #4", function() return DealDamage end)
-Spiral_cave_bottom_inside:connect_one_way("Spiral Cave Bottom - Enemy #5", function() return DealDamage end)
+-- Spiral_cave_bottom_inside:connect_one_way("Spiral Cave Bottom - Enemy #2", function() return DealDamage end)
+-- Spiral_cave_bottom_inside:connect_one_way("Spiral Cave Bottom - Enemy #3", function() return DealDamage end)
+-- Spiral_cave_bottom_inside:connect_one_way("Spiral Cave Bottom - Enemy #4", function() return DealDamage end)
+-- Spiral_cave_bottom_inside:connect_one_way("Spiral Cave Bottom - Enemy #5", function() return DealDamage end)
 
 Mimic_cave_ledge:connect_two_ways(Mimic_cave_outside)
 Mimic_cave_outside:connect_two_ways_entrance("Mimic Cave Entrance", Mimic_cave_inside)
 
 Mimic_cave_inside:connect_one_way("Mimic Cave - Enemy #1", function() return DealDamage end)
-Mimic_cave_inside:connect_one_way("Mimic Cave - Enemy #2", function() return DealDamage end)
-Mimic_cave_inside:connect_one_way("Mimic Cave - Enemy #3", function() return DealDamage end)
-Mimic_cave_inside:connect_one_way("Mimic Cave - Enemy #4", function() return DealDamage end)
+-- Mimic_cave_inside:connect_one_way("Mimic Cave - Enemy #2", function() return DealDamage end)
+-- Mimic_cave_inside:connect_one_way("Mimic Cave - Enemy #3", function() return DealDamage end)
+-- Mimic_cave_inside:connect_one_way("Mimic Cave - Enemy #4", function() return DealDamage end)
 Mimic_cave_inside:connect_one_way("Mimic Cave Chest", function()
     return ALL(
         "hammer",
@@ -1856,7 +1856,7 @@ Light_death_mountain_right_top:connect_one_way(Dark_death_mountain_right_top, fu
     )
 end)
 Paradox_cave_bottom_back:connect_one_way("Paradox Cave Bottom Bomb Area - Pot #1", function() return CanInteract(Paradox_cave_bottom_back) end)
-Paradox_cave_bottom_back:connect_one_way("Paradox Cave Bottom Bomb Area - Pot #1", function() return CanInteract(Paradox_cave_bottom_back) end)
+-- Paradox_cave_bottom_back:connect_one_way("Paradox Cave Bottom Bomb Area - Pot #2", function() return CanInteract(Paradox_cave_bottom_back) end)
 Paradox_cave_bottom_back:connect_one_way("Paradox Cave Bottom Left", function() return CanInteract(Paradox_cave_bottom_back) end)
 Paradox_cave_bottom_back:connect_one_way("Paradox Cave Bottom Right", function() return CanInteract(Paradox_cave_bottom_back) end)
 
@@ -1867,11 +1867,11 @@ Paradox_cave_top_back:connect_one_way("Paradox Cave Top Right", function() retur
 Paradox_cave_top_back:connect_one_way("Paradox Cave Top Far Right", function() return CanInteract(Paradox_cave_top_back) end)
 
 Paradox_cave_inside_top:connect_one_way("Paradox Cave Top - Enemy #1", function() return DealDamage end)
-Paradox_cave_inside_top:connect_one_way("Paradox Cave Top - Enemy #2", function() return DealDamage end)
+-- Paradox_cave_inside_top:connect_one_way("Paradox Cave Top - Enemy #2", function() return DealDamage end)
 
 Paradox_cave_top_back:connect_one_way("Paradox Cave Top Chests - Enemy #1", function() return DealDamage end)
-Paradox_cave_top_back:connect_one_way("Paradox Cave Top Chests - Enemy #2", function() return DealDamage end)
-Paradox_cave_top_back:connect_one_way("Paradox Cave Top Chests - Enemy #3", function() return DealDamage end)
+-- Paradox_cave_top_back:connect_one_way("Paradox Cave Top Chests - Enemy #2", function() return DealDamage end)
+-- Paradox_cave_top_back:connect_one_way("Paradox Cave Top Chests - Enemy #3", function() return DealDamage end)
 
 
 

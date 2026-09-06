@@ -434,9 +434,9 @@ Dark_lake_hylia_ledge_hint_outside:connect_two_ways_entrance("Dark Lake Hylia Le
 Dark_lake_hylia_ledge_spike_hint_outside:connect_two_ways_entrance("Dark Lake Hylia Ledge Spike Hint", Dark_lake_hylia_ledge_spike_hint_inside)
 
 Dark_lake_hylia_ledge_spike_hint_inside:connect_one_way("Dark Lake Hylia Ledge Spike Cave - Pot #5", function() return CanInteract(Dark_lake_hylia_ledge_spike_hint_inside) end)
-Dark_lake_hylia_ledge_spike_hint_inside:connect_one_way("Dark Lake Hylia Ledge Spike Cave - Pot #6", function() return CanInteract(Dark_lake_hylia_ledge_spike_hint_inside) end)
-Dark_lake_hylia_ledge_spike_hint_inside:connect_one_way("Dark Lake Hylia Ledge Spike Cave - Pot #7", function() return CanInteract(Dark_lake_hylia_ledge_spike_hint_inside) end)
-Dark_lake_hylia_ledge_spike_hint_inside:connect_one_way("Dark Lake Hylia Ledge Spike Cave - Pot #8", function() return CanInteract(Dark_lake_hylia_ledge_spike_hint_inside) end)
+-- Dark_lake_hylia_ledge_spike_hint_inside:connect_one_way("Dark Lake Hylia Ledge Spike Cave - Pot #6", function() return CanInteract(Dark_lake_hylia_ledge_spike_hint_inside) end)
+-- Dark_lake_hylia_ledge_spike_hint_inside:connect_one_way("Dark Lake Hylia Ledge Spike Cave - Pot #7", function() return CanInteract(Dark_lake_hylia_ledge_spike_hint_inside) end)
+-- Dark_lake_hylia_ledge_spike_hint_inside:connect_one_way("Dark Lake Hylia Ledge Spike Cave - Pot #8", function() return CanInteract(Dark_lake_hylia_ledge_spike_hint_inside) end)
 
 
 
@@ -533,9 +533,9 @@ Peg_cave_outside:connect_two_ways_entrance("Peg Cave", Peg_cave_inside)
 
 Peg_cave_inside:connect_one_way("Peg-Cave Item")
 Peg_cave_inside:connect_one_way("Peg-Cave - Pots #1", function() return CanInteract(Peg_cave_inside) end)
-Peg_cave_inside:connect_one_way("Peg-Cave - Pots #2", function() return CanInteract(Peg_cave_inside) end)
-Peg_cave_inside:connect_one_way("Peg-Cave - Pots #3", function() return CanInteract(Peg_cave_inside) end)
-Peg_cave_inside:connect_one_way("Peg-Cave - Pots #4", function() return CanInteract(Peg_cave_inside) end)
+-- Peg_cave_inside:connect_one_way("Peg-Cave - Pots #2", function() return CanInteract(Peg_cave_inside) end)
+-- Peg_cave_inside:connect_one_way("Peg-Cave - Pots #3", function() return CanInteract(Peg_cave_inside) end)
+-- Peg_cave_inside:connect_one_way("Peg-Cave - Pots #4", function() return CanInteract(Peg_cave_inside) end)
 
 Village_of_the_outcast:connect_two_ways(Helpless_frog, function() return ALL("titans", CanInteract(Village_of_the_outcast)) end)
 
@@ -692,8 +692,8 @@ Dark_bumper_cave_bottom_outside:connect_two_ways_entrance("Bumper Cave Bottom", 
 Dark_bumper_cave_bottom_outside:connect_two_ways_entrance("Old Man Cave Left", Old_man_cave_left_inside, function() return Inverted() end)
 
 Dark_bumper_cave_bottom_inside:connect_one_way("Bumper Cave Bottom - Enemy #1", function() return DealDamage end)
-Dark_bumper_cave_bottom_inside:connect_one_way("Bumper Cave Bottom - Enemy #2", function() return DealDamage end)
-Dark_bumper_cave_bottom_inside:connect_one_way("Bumper Cave Bottom - Enemy #3", function() return DealDamage end)
+-- Dark_bumper_cave_bottom_inside:connect_one_way("Bumper Cave Bottom - Enemy #2", function() return DealDamage end)
+-- Dark_bumper_cave_bottom_inside:connect_one_way("Bumper Cave Bottom - Enemy #3", function() return DealDamage end)
 
 Dark_bumper_cave_bottom_inside:connect_two_ways(Bumpercave_top_back)
 Bumpercave_top_back:connect_two_ways(Bumpercave_top_front, function()
@@ -703,10 +703,10 @@ Bumpercave_top_back:connect_two_ways(Bumpercave_top_front, function()
     )
 end)
 Bumpercave_top_back:connect_one_way("Bumper Cave - Pot #1", function() return CanInteract(Bumpercave_top_back) end)
-Bumpercave_top_back:connect_one_way("Bumper Cave - Pot #2", function() return CanInteract(Bumpercave_top_back) end)
-Bumpercave_top_back:connect_one_way("Bumper Cave - Pot #3", function() return CanInteract(Bumpercave_top_back) end)
-Bumpercave_top_back:connect_one_way("Bumper Cave - Pot #4", function() return CanInteract(Bumpercave_top_back) end)
-Bumpercave_top_back:connect_one_way("Bumper Cave - Pot #5", function() return CanInteract(Bumpercave_top_back) end)
+-- Bumpercave_top_back:connect_one_way("Bumper Cave - Pot #2", function() return CanInteract(Bumpercave_top_back) end)
+-- Bumpercave_top_back:connect_one_way("Bumper Cave - Pot #3", function() return CanInteract(Bumpercave_top_back) end)
+-- Bumpercave_top_back:connect_one_way("Bumper Cave - Pot #4", function() return CanInteract(Bumpercave_top_back) end)
+-- Bumpercave_top_back:connect_one_way("Bumper Cave - Pot #5", function() return CanInteract(Bumpercave_top_back) end)
 
 Bumpercave_top_front:connect_two_ways(Dark_bumper_cave_top_inside)
 
@@ -1143,8 +1143,8 @@ Dark_floating_island_inside:connect_one_way(Hookshot_cave_fairy_pond, function()
 end)
 
 Hookshot_cave_fairy_pond:connect_one_way("Hookshot Cave Fairy Pond - Enemy #2", function() return DealDamage end)
-Hookshot_cave_fairy_pond:connect_one_way("Hookshot Cave Fairy Pond - Enemy #3", function() return DealDamage end)
-Hookshot_cave_fairy_pond:connect_one_way("Hookshot Cave Fairy Pond - Enemy #4", function() return DealDamage end)
+-- Hookshot_cave_fairy_pond:connect_one_way("Hookshot Cave Fairy Pond - Enemy #3", function() return DealDamage end)
+-- Hookshot_cave_fairy_pond:connect_one_way("Hookshot Cave Fairy Pond - Enemy #4", function() return DealDamage end)
 
 Dark_floating_island_inside:connect_two_ways_entrance("Dark Floating Island", Dark_floating_island_outside)
 
@@ -1181,17 +1181,17 @@ Hookshot_cave_hook_islands:connect_one_way("Hookshot Cave Item Top Left")
 Hookshot_cave_hook_islands:connect_one_way("Hookshot Cave Item Bottom Left")
 
 Hookshot_cave_bonk_islands:connect_one_way("Hookshot Cave - Bonk Islands Pot #5")
-Hookshot_cave_bonk_islands:connect_one_way("Hookshot Cave - Bonk Islands Pot #7")
-Hookshot_cave_bonk_islands:connect_one_way("Hookshot Cave - Bonk Islands Pot #8")
+-- Hookshot_cave_bonk_islands:connect_one_way("Hookshot Cave - Bonk Islands Pot #7")
+-- Hookshot_cave_bonk_islands:connect_one_way("Hookshot Cave - Bonk Islands Pot #8")
 
 Hookshot_cave_hook_islands:connect_one_way("Hookshot Cave - Hook Islands Pot #1")
-Hookshot_cave_hook_islands:connect_one_way("Hookshot Cave - Hook Islands Pot #2")
-Hookshot_cave_hook_islands:connect_one_way("Hookshot Cave - Hook Islands Pot #3")
-Hookshot_cave_hook_islands:connect_one_way("Hookshot Cave - Hook Islands Pot #4")
+-- Hookshot_cave_hook_islands:connect_one_way("Hookshot Cave - Hook Islands Pot #2")
+-- Hookshot_cave_hook_islands:connect_one_way("Hookshot Cave - Hook Islands Pot #3")
+-- Hookshot_cave_hook_islands:connect_one_way("Hookshot Cave - Hook Islands Pot #4")
 
 Hookshot_cave_hook_islands:connect_one_way("Hookshot Cave - Hook Islands Enemy #1", function() return DealDamage end)
-Hookshot_cave_hook_islands:connect_one_way("Hookshot Cave - Hook Islands Enemy #2", function() return DealDamage end)
-Hookshot_cave_hook_islands:connect_one_way("Hookshot Cave - Hook Islands Enemy #3", function() return DealDamage end)
+-- Hookshot_cave_hook_islands:connect_one_way("Hookshot Cave - Hook Islands Enemy #2", function() return DealDamage end)
+-- Hookshot_cave_hook_islands:connect_one_way("Hookshot Cave - Hook Islands Enemy #3", function() return DealDamage end)
 
 Hookshot_cave_inside:connect_one_way("Hookshot Cave - Front Pot #6", function() return CanInteract(Hookshot_cave_inside, "hookshot") end)
 Hookshot_cave_inside:connect_one_way("Hookshot Cave - Middle Pot #1", function() return CanInteract(Hookshot_cave_inside, "hookshot") end)
@@ -1261,13 +1261,13 @@ end)
 
 Spike_cave_back:connect_one_way("Spike Cave Chest")
 Spike_cave_back:connect_one_way("Spike Cave - Pots #1")
-Spike_cave_back:connect_one_way("Spike Cave - Pots #2")
-Spike_cave_back:connect_one_way("Spike Cave - Pots #3")
-Spike_cave_back:connect_one_way("Spike Cave - Pots #4")
-Spike_cave_back:connect_one_way("Spike Cave - Pots #5")
-Spike_cave_back:connect_one_way("Spike Cave - Pots #6")
-Spike_cave_back:connect_one_way("Spike Cave - Pots #7")
-Spike_cave_back:connect_one_way("Spike Cave - Pots #8")
+-- Spike_cave_back:connect_one_way("Spike Cave - Pots #2")
+-- Spike_cave_back:connect_one_way("Spike Cave - Pots #3")
+-- Spike_cave_back:connect_one_way("Spike Cave - Pots #4")
+-- Spike_cave_back:connect_one_way("Spike Cave - Pots #5")
+-- Spike_cave_back:connect_one_way("Spike Cave - Pots #6")
+-- Spike_cave_back:connect_one_way("Spike Cave - Pots #7")
+-- Spike_cave_back:connect_one_way("Spike Cave - Pots #8")
 
 Dark_death_mountain_left_bottom:connect_one_way(Dark_death_mountain_left_top, function() return Inverted() end)
 
@@ -1424,11 +1424,13 @@ Superbunny_cave_top_outside:connect_two_ways_entrance("Super Bunny Cave Top Entr
 
 Superbunny_cave_bottom_inside:connect_one_way(Superbunny_cave_top_inside)
 
+Superbunny_cave_bottom_inside:connect_one_way("Super Bunny Cave Bottom - Bottom #1", function() return DealDamage end)
 Superbunny_cave_bottom_inside:connect_one_way("Super Bunny Cave Bottom - Enemy #1", function() return DealDamage end)
-Superbunny_cave_bottom_inside:connect_one_way("Super Bunny Cave Bottom - Enemy #2", function() return DealDamage end)
-Superbunny_cave_bottom_inside:connect_one_way("Super Bunny Cave Bottom - Enemy #3", function() return DealDamage end)
-Superbunny_cave_bottom_inside:connect_one_way("Super Bunny Cave Bottom - Enemy #4", function() return DealDamage end)
+-- Superbunny_cave_bottom_inside:connect_one_way("Super Bunny Cave Bottom - Enemy #2", function() return DealDamage end)
+-- Superbunny_cave_bottom_inside:connect_one_way("Super Bunny Cave Bottom - Enemy #3", function() return DealDamage end)
+-- Superbunny_cave_bottom_inside:connect_one_way("Super Bunny Cave Bottom - Enemy #4", function() return DealDamage end)
 
 Superbunny_cave_top_inside:connect_one_way("Super Bunny Cave Chest Top", function() return CanInteract(Superbunny_cave_top_inside) end)
 Superbunny_cave_top_inside:connect_one_way("Super Bunny Cave Chest Bottom", function() return CanInteract(Superbunny_cave_top_inside) end)
+Superbunny_cave_top_inside:connect_one_way("Super Bunny Cave - Top Pot #1", function() return CanInteract(Superbunny_cave_top_inside) end)
 

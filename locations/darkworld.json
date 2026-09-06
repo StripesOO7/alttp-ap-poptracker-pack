@@ -86,14 +86,16 @@
                     {
                         "name": "Pots",
                         "access_rules": [
-                            ""
+                            "^$CanReach|Bumper Cave - Pot #1"
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count": 5
                     },
                     {
                         "name": "Bottom Enemies",
-                        "access_rules": [],
+                        "access_rules": [
+                            "^$CanReach|Bumper Cave Bottom - Enemy #1"
+                        ],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 3
                     }
@@ -398,7 +400,7 @@
                     {
                         "name": "Pots",
                         "access_rules": [
-                            ""
+                            "^$CanReach|Brewery - Pot #1"
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count": 1
@@ -441,7 +443,7 @@
                     {
                         "name": "Pots",
                         "access_rules": [
-                            ""
+                            "^$CanReach|Peg-Cave - Pots #1"
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count": 4
@@ -651,7 +653,7 @@
                     {
                         "name": "Pots",
                         "access_rules": [
-                            ""
+                            "^$CanReach|Dark Lake Hylia Ledge Spike Cave - Pot #5"
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count": 4
@@ -1000,7 +1002,7 @@
                     {
                         "name": "Pots",
                         "access_rules": [
-                            ""
+                            "^$CanReach|Spike Cave - Pots #1"
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count": 4
@@ -1041,22 +1043,34 @@
                         ]
                     },
                     {
+                        "name": "Pots",
+                        "access_rules": [
+                            "^$CanReach|Old Man House Pot - Pot #1"
+                        ],
+                        "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
+                        "item_count": 2
+                    },
+                    {
                         "name": "Back Pots",
                         "access_rules": [
-                            ""
+                            "^$CanReach|Old Man House Back - Pot #1"
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count": 4
                     },
                     {
                         "name": "Front Enemies",
-                        "access_rules": [],
+                        "access_rules": [
+                            "^$CanReach|Old Man House Front - Enemy #1"
+                        ],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 4
                     },
                     {
                         "name": "Back Enemies",
-                        "access_rules": [],
+                        "access_rules": [
+                            "^$CanReach|Old Man House Back - Enemy #1"
+                        ],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 6
                     }
@@ -1178,22 +1192,50 @@
                         "item_count": 3
                     },
                     {
-                        "name": "Pots",
+                        "name": "Front Pots",
                         "access_rules": [
-                            ""
+                            "^$CanReach|Hookshot Cave - Front Pot #6"
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
-                        "item_count": 8
+                        "item_count": 1
+                    },
+                    {
+                        "name": "Middle Pots",
+                        "access_rules": [
+                            "^$CanReach|Hookshot Cave - Middle Pot #6"
+                        ],
+                        "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
+                        "item_count": 2
+                    },
+                    {
+                        "name": "Bonk Islands Pots",
+                        "access_rules": [
+                            "^$CanReach|Hookshot Cave - Bonk Islands Pot #5"
+                        ],
+                        "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
+                        "item_count": 3
+                    },
+                    {
+                        "name": "Hook Islands Pots",
+                        "access_rules": [
+                            "^$CanReach|Hookshot Cave - Hook Islands Pot #1"
+                        ],
+                        "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
+                        "item_count": 4
                     },
                     {
                         "name": "Enemies",
-                        "access_rules": [],
+                        "access_rules": [
+                            "^$CanReach|Hookshot Cave - Hook Islands Enemy #1"
+                        ],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 3
                     },
                     {
                         "name": "Fairy Enemies",
-                        "access_rules": [],
+                        "access_rules": [
+                            "^$CanReach|Hookshot Cave Fairy Pond - Enemy #2"
+                        ],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 3
                     }
@@ -1236,7 +1278,7 @@
                     {
                         "name": "Top Pots",
                         "access_rules": [
-                            ""
+                            "^$CanReach|Super Bunny Cave - Top Pot #1"
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count": 1
@@ -1244,14 +1286,16 @@
                     {
                         "name": "Bottom Pots",
                         "access_rules": [
-                            ""
+                            "^$CanReach|Super Bunny Cave Bottom - Bottom #1"
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count": 1
                     },
                     {
                         "name": "Bottom Enemies",
-                        "access_rules": [],
+                        "access_rules": [
+                            "^$CanReach|Super Bunny Cave Bottom - Enemy #1"
+                        ],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 4
                     }
@@ -1309,14 +1353,16 @@
                     {
                         "name": "Pots",
                         "access_rules": [
-                            ""
+                            "^$OWDungeonChecks|@Palace of Darkness Pots/Shooter Room Pot #1/Pot #1|@Palace of Darkness Pots/Shooter Room Pot #2/Pot #2|@Palace of Darkness Pots/Shooter Room Pot #3/Pot #3|@Palace of Darkness Pots/Stalfos Basement Pot #1/Pot #1|@Palace of Darkness Pots/Stalfos Basement Pot #2/Pot #2|@Palace of Darkness Pots/Stalfos Basement Pot #3/Pot #3|@Palace of Darkness Pots/Stalfos Basement Pot #4/Pot #4|@Palace of Darkness Pots/Stalfos Basement Pot #5/Pot #5|@Palace of Darkness Pots/Basement Ledge Pot #6/Pot #6|@Palace of Darkness Pots/Basement Ledge Pot #7/Pot #7|@Palace of Darkness Pots/Dark Pegs Left Pot #1/Pot #1|@Palace of Darkness Pots/Dark Pegs Left Pot #2/Pot #2|@Palace of Darkness Pots/Falling Bridge Ledge Pot #1/Pot #1|@Palace of Darkness Pots/Falling Bridge Ledge Pot #2/Pot #2|@Palace of Darkness Pots/Falling Bridge Pot #3/Pot #3|@Palace of Darkness Pots/Falling Bridge Pot #4/Pot #4|@Palace of Darkness Pots/Harmless Hellway Pot #5/Pot #5|@Palace of Darkness Pots/Harmless Hellway Pot #6/Pot #6|@Palace of Darkness Pots/Mimics 2 Pot #1/Pot #1|@Palace of Darkness Pots/Mimics 2 Pot #2/Pot #2|@Palace of Darkness Pots/Arena Main Pot #1/Pot #1|@Palace of Darkness Pots/Arena Main Pot #2/Pot #2|@Palace of Darkness Pots/Sexy Statue Pot #1/Pot #1|@Palace of Darkness Pots/Sexy Statue Pot #2/Pot #2|@Palace of Darkness Pots/Sexy Statue Pot #3/Pot #3|@Palace of Darkness Pots/Sexy Statue Pot #4/Pot #4|@Palace of Darkness Pots/Sexy Statue Pot #5/Pot #5|@Palace of Darkness Pots/Sexy Statue Pot #6/Pot #6|@Palace of Darkness Pots/Map Balcony Pot #7/Pot #7|@Palace of Darkness Pots/Map Balcony Pot #8/Pot #8|@Palace of Darkness Pots/Map Balcony Pot #9/Pot #9|@Palace of Darkness Pots/Map Balcony Pot #10/Pot #10|@Palace of Darkness Pots/Left Cage Pot #1/Pot #1|@Palace of Darkness Pots/Left Cage Pot #2/Pot #2|@Palace of Darkness Pots/Left Cage Pot #3/Pot #3|@Palace of Darkness Pots/Left Cage Pot #4/Pot #4|@Palace of Darkness Pots/Middle Cage Pot #5/Pot #5|@Palace of Darkness Pots/Middle Cage Pot #6/Pot #6|@Palace of Darkness Pots/Middle Cage Pot #7/Pot #7|@Palace of Darkness Pots/Middle Cage Pot #8/Pot #8|@Palace of Darkness Pots/Middle Cage Pot #9/Pot #9|@Palace of Darkness Pots/Middle Cage Pot #10/Pot #10|@Palace of Darkness Pots/Mimics 1 Pot #1/Pot #1|@Palace of Darkness Pots/Mimics 1 Pot #2/Pot #2"
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 44
                     },
                     {
                         "name": "Enemies",
-                        "access_rules": [],
+                        "access_rules": [
+                            "^$OWDungeonChecks|@Palace of Darkness Enemies/Warp Room Enemy #3/Enemy #3|@Palace of Darkness Enemies/Stalfos Basement Enemy #1/Enemy #1|@Palace of Darkness Enemies/Stalfos Basement Enemy #2/Enemy #2|@Palace of Darkness Enemies/Lonely Turtle Enemy #2/Enemy #2|@Palace of Darkness Enemies/Dark Pegs Middle Enemy #3/Enemy #3|@Palace of Darkness Enemies/Dark Pegs Right Enemy #4/Enemy #4|@Palace of Darkness Enemies/Turtle Party Enemy #5/Enemy #5|@Palace of Darkness Enemies/Turtle Party Enemy #6/Enemy #6|@Palace of Darkness Enemies/Turtle Party Enemy #7/Enemy #7|@Palace of Darkness Enemies/Turtle Party Enemy #8/Enemy #8|@Palace of Darkness Enemies/Turtle Party Enemy #9/Enemy #9|@Palace of Darkness Enemies/Turtle Party Enemy #10/Enemy #10|@Palace of Darkness Enemies/Dark Maze Enemy #1/Enemy #1|@Palace of Darkness Enemies/Dark Maze Enemy #2/Enemy #2|@Palace of Darkness Enemies/Dark Maze Enemy #3/Enemy #3|@Palace of Darkness Enemies/Dark Maze Enemy #4/Enemy #4|@Palace of Darkness Enemies/Falling Bridge Mid Enemy #1/Enemy #1|@Palace of Darkness Enemies/Compass Room Enemy #2/Enemy #2|@Palace of Darkness Enemies/Compass Room Enemy #3/Enemy #3|@Palace of Darkness Enemies/Compass Room Enemy #4/Enemy #4|@Palace of Darkness Enemies/Compass Room Enemy #5/Enemy #5|@Palace of Darkness Enemies/Falling Bridge Mid Enemy #6/Enemy #6|@Palace of Darkness Enemies/Harmless Hellway Enemy #7/Enemy #7|@Palace of Darkness Enemies/Harmless Hellway Enemy #8/Enemy #8|@Palace of Darkness Enemies/Harmless Hellway Enemy #9/Enemy #9|@Palace of Darkness Enemies/Harmless Hellway Enemy #10/Enemy #10|@Palace of Darkness Enemies/Bow Statue Left Enemy #3/Enemy #3|@Palace of Darkness Enemies/Mimics 2 Enemy #4/Enemy #4|@Palace of Darkness Enemies/Mimics 2 Enemy #5/Enemy #5|@Palace of Darkness Enemies/Mimics 2 Enemy #6/Enemy #6|@Palace of Darkness Enemies/Arena Main Enemy #1/Enemy #1|@Palace of Darkness Enemies/Arena Main Enemy #2/Enemy #2|@Palace of Darkness Enemies/Arena North Enemy #3/Enemy #3|@Palace of Darkness Enemies/Arena Main Enemy #4/Enemy #4|@Palace of Darkness Enemies/Arena Main Enemy #5/Enemy #5|@Palace of Darkness Enemies/Arena Main Enemy #6/Enemy #6|@Palace of Darkness Enemies/Arena Main Enemy #7/Enemy #7|@Palace of Darkness Enemies/Arena Main Enemy #8/Enemy #8|@Palace of Darkness Enemies/Map Balcony Enemy #3/Enemy #3|@Palace of Darkness Enemies/Fairy Pool Enemy #4/Enemy #4|@Palace of Darkness Enemies/Fairy Pool Enemy #5/Enemy #5|@Palace of Darkness Enemies/Map Balcony Enemy #6/Enemy #6|@Palace of Darkness Enemies/Map Balcony Enemy #7/Enemy #7|@Palace of Darkness Enemies/Fairy Pool Enemy #8/Enemy #8|@Palace of Darkness Enemies/Pit Room Enemy #1/Enemy #1|@Palace of Darkness Enemies/Pit Room Enemy #2/Enemy #2|@Palace of Darkness Enemies/Pit Room Enemy #3/Enemy #3|@Palace of Darkness Enemies/Pit Room Enemy #4/Enemy #4|@Palace of Darkness Enemies/Pit Room Enemy #5/Enemy #5|@Palace of Darkness Enemies/Pit Room Enemy #6/Enemy #6|@Palace of Darkness Enemies/Conveyor Enemy #1/Enemy #1|@Palace of Darkness Enemies/Conveyor Enemy #2/Enemy #2|@Palace of Darkness Enemies/Conveyor Enemy #3/Enemy #3|@Palace of Darkness Enemies/Conveyor Enemy #4/Enemy #4|@Palace of Darkness Enemies/Conveyor Enemy #5/Enemy #5|@Palace of Darkness Enemies/Conveyor Enemy #6/Enemy #6|@Palace of Darkness Enemies/Conveyor Enemy #7/Enemy #7|@Palace of Darkness Enemies/Middle Cage Enemy #1/Enemy #1|@Palace of Darkness Enemies/Left Cage Enemy #2/Enemy #2|@Palace of Darkness Enemies/Middle Cage Enemy #3/Enemy #3|@Palace of Darkness Enemies/Mimics 1 Enemy #1/Enemy #1|@Palace of Darkness Enemies/Warp Hint Enemy #2/Enemy #2|@Palace of Darkness Enemies/Warp Hint Enemy #3/Enemy #3|@Palace of Darkness Enemies/Mimics 1 Enemy #4/Enemy #4|@Palace of Darkness Enemies/Mimics 1 Enemy #5/Enemy #5|@Palace of Darkness Enemies/Jelly Hall Enemy #6/Enemy #6|@Palace of Darkness Enemies/Jelly Hall Enemy #7/Enemy #7|@Palace of Darkness Enemies/Jelly Hall Enemy #8/Enemy #8|@Palace of Darkness Enemies/Dark Alley Enemy #1/Enemy #1|@Palace of Darkness Enemies/Dark Alley Enemy #2/Enemy #2|@Palace of Darkness Enemies/Dark Basement Enemy #3/Enemy #3|@Palace of Darkness Enemies/Dark Basement Enemy #4/Enemy #4|@Palace of Darkness Enemies/Dark Alley Enemy #5/Enemy #5|@Palace of Darkness Enemies/Dark Alley Enemy #6/Enemy #6"
+                        ],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 74
                     },
@@ -1378,14 +1424,16 @@
                     {
                         "name": "Front Pots",
                         "access_rules": [
-                            ""
+                            "^$OWDungeonChecks|@Turtle Rock Front Pots/Pipe Pit Pot #1/Pot #1|@Turtle Rock Front Pots/Pipe Pit Pot #2/Pot #2|@Turtle Rock Front Pots/Pipe Pit Pot #3/Pot #3|@Turtle Rock Front Pots/Pipe Pit Pot #4/Pot #4|@Turtle Rock Front Pots/Pipe Pit Pot #5/Pot #5|@Turtle Rock Front Pots/Pipe Pit Pot #6/Pot #6|@Turtle Rock Front Pots/Pipe Pit Pot #7/Pot #7|@Turtle Rock Front Pots/Pipe Pit Pot #8/Pot #8|@Turtle Rock Front Pots/Pipe Ledge Pot #9/Pot #9|@Turtle Rock Front Pots/Lazy Eyes Pot #1/Pot #1|@Turtle Rock Front Pots/Lazy Eyes Pot #2/Pot #2|@Turtle Rock Front Pots/Lazy Eyes Pot #3/Pot #3|@Turtle Rock Front Pots/Lazy Eyes Pot #4/Pot #4|@Turtle Rock Front Pots/Lazy Eyes Pot #5/Pot #5|@Turtle Rock Front Pots/Twin Pokeys Pot #1/Pot #1|@Turtle Rock Front Pots/Twin Pokeys Pot #2/Pot #2|@Turtle Rock Front Pots/Twin Pokeys Pot #3/Pot #3|@Turtle Rock Front Pots/Twin Pokeys Pot #4/Pot #4|@Turtle Rock Front Pots/Hub Ledges Pot #1/Pot #1|@Turtle Rock Front Pots/Hub Ledges Pot #2/Pot #2|@Turtle Rock Front Pots/Torches Pot #1/Pot #1|@Turtle Rock Front Pots/Torches Pot #2/Pot #2|@Turtle Rock Front Pots/Torches Ledge Pot #3/Pot #3|@Turtle Rock Front Pots/Torches Ledge Pot #4/Pot #4|@Turtle Rock Front Pots/Main Lobby Pot #1/Pot #1|@Turtle Rock Front Pots/Main Lobby Pot #2/Pot #2"
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 26
                     },
                     {
                         "name": "Front Enemies",
-                        "access_rules": [],
+                        "access_rules": [
+                            "^$OWDungeonChecks|@Turtle Rock Front Enemies/Pokey 2 Top Enemy #2/Enemy #2|@Turtle Rock Front Enemies/Pokey 2 Top Enemy #3/Enemy #3|@Turtle Rock Front Enemies/Pokey 2 Top Enemy #4/Enemy #4|@Turtle Rock Front Enemies/Pokey 2 Top Enemy #5/Enemy #5|@Turtle Rock Front Enemies/Pokey 2 Bottom Enemy #6/Enemy #6|@Turtle Rock Front Enemies/Pokey 2 Bottom Enemy #9/Enemy #9|@Turtle Rock Front Enemies/Pokey 2 Bottom Enemy #10/Enemy #10|@Turtle Rock Front Enemies/Pipe Pit Enemy #5/Enemy #5|@Turtle Rock Front Enemies/Pipe Pit Enemy #6/Enemy #6|@Turtle Rock Front Enemies/Pipe Pit Enemy #7/Enemy #7|@Turtle Rock Front Enemies/Pipe Pit Enemy #8/Enemy #8|@Turtle Rock Front Enemies/Pipe Pit Enemy #9/Enemy #9|@Turtle Rock Front Enemies/Pipe Pit Enemy #10/Enemy #10|@Turtle Rock Front Enemies/Dodgers Enemy #3/Enemy #3|@Turtle Rock Front Enemies/Twin Pokeys Enemy #4/Enemy #4|@Turtle Rock Front Enemies/Twin Pokeys Enemy #5/Enemy #5|@Turtle Rock Front Enemies/Twin Pokeys Enemy #6/Enemy #6|@Turtle Rock Front Enemies/Twin Pokeys Enemy #7/Enemy #7|@Turtle Rock Front Enemies/Chain Chomps Top Enemy #1/Enemy #1|@Turtle Rock Front Enemies/Chain Chomps Top Enemy #2/Enemy #2|@Turtle Rock Front Enemies/Refill Enemy #5/Enemy #5|@Turtle Rock Front Enemies/Pokey 1 Enemy #8/Enemy #8|@Turtle Rock Front Enemies/Pokey 1 Enemy #9/Enemy #9|@Turtle Rock Front Enemies/Roller Room Enemy #1/Enemy #1|@Turtle Rock Front Enemies/Roller Room Enemy #2/Enemy #2|@Turtle Rock Front Enemies/Hub Ledges Enemy #1/Enemy #1|@Turtle Rock Front Enemies/Hub Ledges Enemy #2/Enemy #2|@Turtle Rock Front Enemies/Hub Ledges Enemy #3/Enemy #3|@Turtle Rock Front Enemies/Hub Ledges Enemy #4/Enemy #4|@Turtle Rock Front Enemies/Hub Ledges Enemy #5/Enemy #5|@Turtle Rock Front Enemies/Hub Ledges Enemy #6/Enemy #6|@Turtle Rock Front Enemies/Hub Ledges Enemy #7/Enemy #7"
+                        ],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 32
                     },
@@ -1445,14 +1493,16 @@
                     {
                         "name": "Back Pots",
                         "access_rules": [
-                            ""
+                            "^$CanReach|@Turtle Rock Back Pots/Dash Room Pot #1/Pot #1|@Turtle Rock Back Pots/Dash Room Pot #2/Pot #2|@Turtle Rock Back Pots/Dash Room Pot #3/Pot #3|@Turtle Rock Back Pots/Dash Room Pot #4/Pot #4|@Turtle Rock Back Pots/Tongue Pull Pot #5/Pot #5|@Turtle Rock Back Pots/Tongue Pull Pot #6/Pot #6|@Turtle Rock Back Pots/Final Abyss Balcony Pot #1/Pot #1|@Turtle Rock Back Pots/Final Abyss Balcony Pot #2/Pot #2|@Turtle Rock Back Pots/Dark Ride Ledges Pot #1/Pot #1|@Turtle Rock Back Pots/Dark Ride Ledges Pot #2/Pot #2|@Turtle Rock Back Pots/Dark Ride Ledges Pot #3/Pot #3|@Turtle Rock Back Pots/Dark Ride Ledges Pot #4/Pot #4|@Turtle Rock Back Pots/Dark Ride Ledges Pot #5/Pot #5|@Turtle Rock Back Pots/Dark Ride Ledges Pot #6/Pot #6|@Turtle Rock Back Pots/Refill Pot #1/Pot #1|@Turtle Rock Back Pots/Roller Room Pot #1/Pot #1|@Turtle Rock Back Pots/Crystal Maze Interior Pot #1/Pot #1|@Turtle Rock Back Pots/Crystal Maze Interior Pot #2/Pot #2|@Turtle Rock Back Pots/Crystal Maze Interior Pot #3/Pot #3|@Turtle Rock Back Pots/Crystal Maze Interior Pot #4/Pot #4|@Turtle Rock Back Pots/Crystal Maze Interior Pot #5/Pot #5|@Turtle Rock Back Pots/Crystal Maze Interior Pot #6/Pot #6|@Turtle Rock Back Pots/Crystal Maze Interior Pot #7/Pot #7|@Turtle Rock Back Pots/Crystal Maze Interior Pot #8/Pot #8"
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 24
                     },
                     {
                         "name": "Back Enemies",
-                        "access_rules": [],
+                        "access_rules": [
+                            "^$OWDungeonChecks|@Turtle Rock Back Enemies/Rupees Enemy #2/Enemy #2|@Turtle Rock Back Enemies/Rupees Enemy #3/Enemy #3|@Turtle Rock Back Enemies/Rupees Enemy #5/Enemy #5|@Turtle Rock Back Enemies/Crystaroller Middle Enemy #4/Enemy #4|@Turtle Rock Back Enemies/Tongue Pull Enemy #10/Enemy #10|@Turtle Rock Back Enemies/Tongue Pull Enemy #14/Enemy #14|@Turtle Rock Back Enemies/Tongue Pull Enemy #15/Enemy #15|@Turtle Rock Back Enemies/Dash Room Enemy #16/Enemy #16|@Turtle Rock Back Enemies/Dark Ride Ledges Enemy #1/Enemy #1|@Turtle Rock Back Enemies/Dark Ride Ledges Enemy #2/Enemy #2|@Turtle Rock Back Enemies/Dark Ride Ledges Enemy #3/Enemy #3|@Turtle Rock Back Enemies/Crystal Maze Interior Enemy #5/Enemy #5|@Turtle Rock Back Enemies/Crystal Maze Interior Enemy #6/Enemy #6|@Turtle Rock Back Enemies/Crystal Maze Interior Enemy #7/Enemy #7|@Turtle Rock Back Enemies/Crystal Maze Interior Enemy #8/Enemy #8|@Turtle Rock Back Enemies/Crystal Maze Interior Enemy #9/Enemy #9|@Turtle Rock Back Enemies/Crystal Maze Interior Enemy #10/Enemy #10|@Turtle Rock Back Enemies/Dash Bridge Enemy #7/Enemy #7|@Turtle Rock Back Enemies/Eye Bridge Enemy #5/Enemy #5"
+                        ],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 19
                     },
@@ -1562,14 +1612,16 @@
                     {
                         "name": "Front Pots",
                         "access_rules": [
-                            ""
+                            "^$OWDungeonChecks|@Skull Woods Front Pots/Back Drop Pot #1/Pot #1|@Skull Woods Front Pots/Back Drop Pot #2/Pot #2|@Skull Woods Front Pots/Back Drop Pot #3/Pot #3|@Skull Woods Front Pots/X Room Pot #4/Pot #4|@Skull Woods Front Pots/X Room Pot #5/Pot #5|@Skull Woods Front Pots/X Room Pot #6/Pot #6|@Skull Woods Front Pots/X Room Pot #7/Pot #7|@Skull Woods Front Pots/X Room Pot #8/Pot #8|@Skull Woods Front Pots/X Room Pot #9/Pot #9|@Skull Woods Front Pots/X Room Pot #10/Pot #10|@Skull Woods Front Pots/X Room Pot #11/Pot #11|@Skull Woods Front Pots/X Room Pot #12/Pot #12|@Skull Woods Front Pots/X Room Pot #13/Pot #13|@Skull Woods Front Pots/2 West Lobby Pot #15/Pot #15|@Skull Woods Front Pots/Lone Pot Pot #1/Pot #1|@Skull Woods Front Pots/Big Key Pot #2/Pot #2|@Skull Woods Front Pots/Pot Prison Pot #3/Pot #3|@Skull Woods Front Pots/Pot Prison Pot #4/Pot #4|@Skull Woods Front Pots/Pot Prison Pot #5/Pot #5|@Skull Woods Front Pots/Pot Prison Pot #6/Pot #6|@Skull Woods Front Pots/2 East Lobby Pot #7/Pot #7|@Skull Woods Front Pots/2 East Lobby Pot #8/Pot #8|@Skull Woods Front Pots/2 East Lobby Pot #9/Pot #9|@Skull Woods Front Pots/Pull Switch Pot #1/Pot #1|@Skull Woods Front Pots/Pull Switch Pot #2/Pot #2|@Skull Woods Front Pots/Pull Switch Pot #3/Pot #3|@Skull Woods Front Pots/Pull Switch Pot #4/Pot #4|@Skull Woods Front Pots/Pot Circle Pot #5/Pot #5|@Skull Woods Front Pots/Pot Circle Pot #6/Pot #6|@Skull Woods Front Pots/Pot Circle Pot #7/Pot #7|@Skull Woods Front Pots/Pot Circle Pot #8/Pot #8|@Skull Woods Front Pots/Pot Circle Pot #9/Pot #9|@Skull Woods Front Pots/Pot Circle Pot #10/Pot #10|@Skull Woods Front Pots/Pot Circle Pot #11/Pot #11|@Skull Woods Front Pots/Pot Circle Pot #12/Pot #12|@Skull Woods Front Pots/Pot Circle Pot #13/Pot #13|@Skull Woods Front Pots/Pot Circle Pot #14/Pot #14|@Skull Woods Front Pots/Pot Circle Pot #15/Pot #15|@Skull Woods Front Pots/Pot Circle Pot #16/Pot #16|@Skull Woods Front Pots/Left Drop Pot #1/Pot #1|@Skull Woods Front Pots/Left Drop Pot #2/Pot #2|@Skull Woods Front Pots/Left Drop Pot #3/Pot #3|@Skull Woods Front Pots/Left Drop Pot #4/Pot #4|@Skull Woods Front Pots/Left Drop Pot #5/Pot #5|@Skull Woods Front Pots/Left Drop Pot #6/Pot #6|@Skull Woods Front Pots/Compass Room Pot #7/Pot #7|@Skull Woods Front Pots/Compass Room Pot #8/Pot #8|@Skull Woods Front Pots/Compass Room Pot #9/Pot #9|@Skull Woods Front Pots/Compass Room Pot #10/Pot #10|@Skull Woods Front Pots/Compass Room Pot #11/Pot #11|@Skull Woods Front Pots/Pinball Pot #1/Pot #1|@Skull Woods Front Pots/Pinball Pot #2/Pot #2|@Skull Woods Front Pots/Pinball Pot #3/Pot #3|@Skull Woods Front Pots/Pinball Pot #4/Pot #4|@Skull Woods Front Pots/Pinball Pot #5/Pot #5|@Skull Woods Front Pots/Pinball Pot #6/Pot #6|@Skull Woods Front Pots/Pinball Pot #7/Pot #7|@Skull Woods Front Pots/Pinball Pot #8/Pot #8|@Skull Woods Front Pots/Pinball Pot #9/Pot #9|@Skull Woods Front Pots/Pinball Pot #10/Pot #10|@Skull Woods Front Pots/Pinball Pot #11/Pot #11|@Skull Woods Front Pots/Pinball Pot #12/Pot #12|@Skull Woods Front Pots/Pinball Pot #13/Pot #13"
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 67
                     },
                     {
                         "name": "Front Enemies",
-                        "access_rules": [],
+                        "access_rules": [
+                            "^$OWDungeonChecks|@Skull Woods Front Enemies/2 West Lobby Enemy #2/Enemy #2|@Skull Woods Front Enemies/Small Hall Enemy #3/Enemy #3|@Skull Woods Front Enemies/X Room Enemy #4/Enemy #4|@Skull Woods Front Enemies/Back Drop Enemy #5/Enemy #5|@Skull Woods Front Enemies/X Room Enemy #6/Enemy #6|@Skull Woods Front Enemies/X Room Enemy #7/Enemy #7|@Skull Woods Front Enemies/Back Drop Enemy #9/Enemy #9|@Skull Woods Front Enemies/Back Drop Enemy #10/Enemy #10|@Skull Woods Front Enemies/2 West Lobby Enemy #11/Enemy #11|@Skull Woods Front Enemies/Small Hall Enemy #12/Enemy #12|@Skull Woods Front Enemies/Small Hall Enemy #13/Enemy #13|@Skull Woods Front Enemies/Big Key Enemy #1/Enemy #1|@Skull Woods Front Enemies/Big Key Enemy #2/Enemy #2|@Skull Woods Front Enemies/Big Key Enemy #3/Enemy #3|@Skull Woods Front Enemies/Big Key Enemy #4/Enemy #4|@Skull Woods Front Enemies/Big Key Enemy #5/Enemy #5|@Skull Woods Front Enemies/Big Key Enemy #6/Enemy #6|@Skull Woods Front Enemies/2 East Lobby Enemy #8/Enemy #8|@Skull Woods Front Enemies/2 East Lobby Enemy #9/Enemy #9|@Skull Woods Front Enemies/Pot Prison Enemy #10/Enemy #10|@Skull Woods Front Enemies/Pot Prison Enemy #11/Enemy #11|@Skull Woods Front Enemies/Pot Prison Enemy #12/Enemy #12|@Skull Woods Front Enemies/Pot Prison Enemy #13/Enemy #13|@Skull Woods Front Enemies/2 East Lobby Enemy #14/Enemy #14|@Skull Woods Front Enemies/2 East Lobby Enemy #15/Enemy #15|@Skull Woods Front Enemies/2 East Lobby Enemy #16/Enemy #16|@Skull Woods Front Enemies/Big Chest Enemy #1/Enemy #1|@Skull Woods Front Enemies/Big Chest Enemy #2/Enemy #2|@Skull Woods Front Enemies/Map Room Enemy #3/Enemy #3|@Skull Woods Front Enemies/Pot Circle Enemy #4/Enemy #4|@Skull Woods Front Enemies/Pot Circle Enemy #5/Enemy #5|@Skull Woods Front Enemies/Pot Circle Enemy #7/Enemy #7|@Skull Woods Front Enemies/Map Room Enemy #8/Enemy #8|@Skull Woods Front Enemies/1 Lobby Enemy #9/Enemy #9|@Skull Woods Front Enemies/3 Lobby Enemy #1/Enemy #1|@Skull Woods Front Enemies/3 Lobby Enemy #2/Enemy #2|@Skull Woods Front Enemies/East Bridge Enemy #3/Enemy #3|@Skull Woods Front Enemies/East Bridge Enemy #4/Enemy #4|@Skull Woods Front Enemies/East Bridge Enemy #5/Enemy #5|@Skull Woods Front Enemies/3 Lobby Enemy #6/Enemy #6|@Skull Woods Front Enemies/East Bridge Enemy #7/Enemy #7|@Skull Woods Front Enemies/3 Lobby Enemy #8/Enemy #8|@Skull Woods Front Enemies/East Bridge Enemy #9/Enemy #9|@Skull Woods Front Enemies/East Bridge Enemy #10/Enemy #10|@Skull Woods Front Enemies/East Bridge Enemy #11/Enemy #11|@Skull Woods Front Enemies/East Bridge Enemy #12/Enemy #12|@Skull Woods Front Enemies/Left Drop Enemy #1/Enemy #1|@Skull Woods Front Enemies/Left Drop Enemy #2/Enemy #2|@Skull Woods Front Enemies/Left Drop Enemy #3/Enemy #3|@Skull Woods Front Enemies/Left Drop Enemy #4/Enemy #4|@Skull Woods Front Enemies/Compass Room Enemy #5/Enemy #5|@Skull Woods Front Enemies/Left Drop Enemy #6/Enemy #6|@Skull Woods Front Enemies/Left Drop Enemy #7/Enemy #7|@Skull Woods Front Enemies/Compass Room Enemy #8/Enemy #8|@Skull Woods Front Enemies/Left Drop Enemy #9/Enemy #9|@Skull Woods Front Enemies/Compass Room Enemy #10/Enemy #10|@Skull Woods Front Enemies/Pinball Enemy #1/Enemy #1|@Skull Woods Front Enemies/Pinball Enemy #2/Enemy #2|@Skull Woods Front Enemies/Pinball Enemy #3/Enemy #3|@Skull Woods Front Enemies/Pinball Enemy #4/Enemy #4|@Skull Woods Front Enemies/Pinball Enemy #5/Enemy #5|@Skull Woods Front Enemies/Pinball Enemy #7/Enemy #7|@Skull Woods Front Enemies/Pinball Enemy #8/Enemy #8"
+                        ],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 63
                     },
@@ -1622,7 +1674,7 @@
                     {
                         "name": "Back Pots",
                         "access_rules": [
-                            ""
+                            "^$OWDungeonChecks|@Skull Woods Back Pots/Spike Corner Pot #1/Pot #1|@Skull Woods Back Pots/Spike Corner Pot #2/Pot #2|@Skull Woods Back Pots/Final Drop Pot #3/Pot #3|@Skull Woods Back Pots/Final Drop Pot #4/Pot #4|@Skull Woods Back Pots/Torch Room Pot #1/Pot #1|@Skull Woods Back Pots/Torch Room Pot #2/Pot #2|@Skull Woods Back Pots/Star Pits Pot #3/Pot #3|@Skull Woods Back Pots/Star Pits Pot #4/Pot #4|@Skull Woods Back Pots/Star Pits Pot #5/Pot #5|@Skull Woods Back Pots/Star Pits Pot #6/Pot #6|@Skull Woods Back Pots/Star Pits Pot #7/Pot #7|@Skull Woods Back Pots/Star Pits Pot #8/Pot #8|@Skull Woods Back Pots/Star Pits Pot #9/Pot #9|@Skull Woods Back Pots/Star Pits Pot #10/Pot #10|@Skull Woods Back Pots/Star Pits Pot #11/Pot #11|@Skull Woods Back Pots/3 Lobby Pot #1/Pot #1|@Skull Woods Back Pots/3 Lobby Pot #2/Pot #2|@Skull Woods Back Pots/East Bridge Pot #3/Pot #3|@Skull Woods Back Pots/East Bridge Pot #4/Pot #4"
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 15
@@ -1638,7 +1690,9 @@
                     },
                     {
                         "name": "Back Enemies",
-                        "access_rules": [],
+                        "access_rules": [
+                            "^$OWDungeonChecks|@Skull Woods Back Enemies/Spike Corner Enemy #1/Enemy #1|@Skull Woods Back Enemies/Spike Corner Enemy #4/Enemy #4|@Skull Woods Back Enemies/Final Drop Enemy #5/Enemy #5|@Skull Woods Back Enemies/Spike Corner Enemy #6/Enemy #6|@Skull Woods Back Enemies/Final Drop Enemy #7/Enemy #7|@Skull Woods Back Enemies/Vines Enemy #1/Enemy #1|@Skull Woods Back Enemies/Vines Enemy #2/Enemy #2|@Skull Woods Back Enemies/Vines Enemy #3/Enemy #3|@Skull Woods Back Enemies/Vines Enemy #4/Enemy #4|@Skull Woods Back Enemies/Vines Enemy #5/Enemy #5|@Skull Woods Back Enemies/Torch Room Enemy #6/Enemy #6|@Skull Woods Back Enemies/Torch Room Enemy #8/Enemy #8|@Skull Woods Back Enemies/Torch Room Enemy #9/Enemy #9|@Skull Woods Back Enemies/Star Pits Enemy #10/Enemy #10|@Skull Woods Back Enemies/Star Pits Enemy #11/Enemy #11|@Skull Woods Back Enemies/Star Pits Enemy #12/Enemy #12|@Skull Woods Back Enemies/Torch Room Enemy #13/Enemy #13"
+                        ],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 17
                     },
@@ -1699,7 +1753,7 @@
                     {
                         "name": "Pots",
                         "access_rules": [
-                            ""
+                            "^$OWDungeonChecks|@Misery Mire Pots/Falling Foes Pot #1/Pot #1|@Misery Mire Pots/Falling Foes Pot #2/Pot #2|@Misery Mire Pots/Tall Dark and Roomy Pot #1/Pot #1|@Misery Mire Pots/Tall Dark and Roomy Pot #2/Pot #2|@Misery Mire Pots/Tall Dark and Roomy Pot #3/Pot #3|@Misery Mire Pots/Tall Dark and Roomy Pot #4/Pot #4|@Misery Mire Pots/Dark Shooters Pot #1/Pot #1|@Misery Mire Pots/Dark Shooters Pot #3/Pot #3|@Misery Mire Pots/Fishbone Pot #2/Pot #2|@Misery Mire Pots/Fishbone Pot #3/Pot #3|@Misery Mire Pots/Fishbone Pot #4/Pot #4|@Misery Mire Pots/Fishbone Pot #5/Pot #5|@Misery Mire Pots/South Fish Pot #6/Pot #6|@Misery Mire Pots/South Fish Pot #7/Pot #7|@Misery Mire Pots/South Fish Pot #8/Pot #8|@Misery Mire Pots/South Fish Pot #9/Pot #9|@Misery Mire Pots/South Fish Pot #10/Pot #10|@Misery Mire Pots/South Fish Pot #11/Pot #11|@Misery Mire Pots/Left Bridge Pot #1/Pot #1|@Misery Mire Pots/Spike Barrier Pot #1/Pot #1|@Misery Mire Pots/Spike Barrier Pot #2/Pot #2|@Misery Mire Pots/BK Door Room Pot #1/Pot #1|@Misery Mire Pots/BK Door Room Pot #2/Pot #2|@Misery Mire Pots/BK Door Room Pot #3/Pot #3|@Misery Mire Pots/BK Door Room Pot #4/Pot #4|@Misery Mire Pots/BK Door Room Pot #5/Pot #5|@Misery Mire Pots/BK Door Room Pot #6/Pot #6|@Misery Mire Pots/Spikes Pot #2/Pot #2|@Misery Mire Pots/Spikes Pot #3/Pot #3|@Misery Mire Pots/Hub Switch Pot #1/Pot #1|@Misery Mire Pots/Hub Right Pot #2/Pot #2|@Misery Mire Pots/Hub Pot #3/Pot #3|@Misery Mire Pots/Hub Pot #4/Pot #4|@Misery Mire Pots/Conveyor Barrier Pot #1/Pot #1|@Misery Mire Pots/Conveyor Barrier Pot #2/Pot #2|@Misery Mire Pots/Neglected Room Pot #3/Pot #3|@Misery Mire Pots/Neglected Room Pot #4/Pot #4|@Misery Mire Pots/Neglected Room Pot #5/Pot #5|@Misery Mire Pots/Neglected Room Pot #6/Pot #6|@Misery Mire Pots/Hint Pot #1/Pot #1|@Misery Mire Pots/Hint Pot #2/Pot #2|@Misery Mire Pots/Hint Pot #3/Pot #3|@Misery Mire Pots/Hint Pot #4/Pot #4|@Misery Mire Pots/Hint Pot #5/Pot #5|@Misery Mire Pots/Hint Pot #6/Pot #6"
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 45
@@ -1724,7 +1778,9 @@
                     },
                     {
                         "name": "Enemies",
-                        "access_rules": [],
+                        "access_rules": [
+                            "^$OWDungeonChecks|@Misery Mire Enemies/Falling Foes Enemy #1/Enemy #1|@Misery Mire Enemies/Falling Foes Enemy #2/Enemy #2|@Misery Mire Enemies/Falling Foes Enemy #4/Enemy #4|@Misery Mire Enemies/Falling Foes Enemy #5/Enemy #5|@Misery Mire Enemies/Falling Foes Enemy #6/Enemy #6|@Misery Mire Enemies/Falling Foes Enemy #7/Enemy #7|@Misery Mire Enemies/Tall Dark and Roomy Enemy #1/Enemy #1|@Misery Mire Enemies/Tall Dark and Roomy Enemy #3/Enemy #3|@Misery Mire Enemies/Shooter Rupees Enemy #4/Enemy #4|@Misery Mire Enemies/Shooter Rupees Enemy #5/Enemy #5|@Misery Mire Enemies/Tall Dark and Roomy Enemy #6/Enemy #6|@Misery Mire Enemies/Tall Dark and Roomy Enemy #7/Enemy #7|@Misery Mire Enemies/Tall Dark and Roomy Enemy #9/Enemy #9|@Misery Mire Enemies/Crystal Right Enemy #10/Enemy #10|@Misery Mire Enemies/Crystal Mid Enemy #11/Enemy #11|@Misery Mire Enemies/Crystal Right Enemy #12/Enemy #12|@Misery Mire Enemies/Dark Shooters Enemy #5/Enemy #5|@Misery Mire Enemies/Block X Enemy #6/Enemy #6|@Misery Mire Enemies/Block X Enemy #7/Enemy #7|@Misery Mire Enemies/Block X Enemy #8/Enemy #8|@Misery Mire Enemies/Lobby Enemy #1/Enemy #1|@Misery Mire Enemies/Lobby Enemy #2/Enemy #2|@Misery Mire Enemies/Lobby Enemy #3/Enemy #3|@Misery Mire Enemies/Lobby Enemy #4/Enemy #4|@Misery Mire Enemies/Lobby Enemy #5/Enemy #5|@Misery Mire Enemies/Antechamber Enemy #1/Enemy #1|@Misery Mire Enemies/Antechamber Enemy #2/Enemy #2|@Misery Mire Enemies/Firesnake Skip Enemy #3/Enemy #3|@Misery Mire Enemies/Fishbone Enemy #2/Enemy #2|@Misery Mire Enemies/Fishbone Enemy #3/Enemy #3|@Misery Mire Enemies/Fishbone Enemy #4/Enemy #4|@Misery Mire Enemies/South Fish Enemy #5/Enemy #5|@Misery Mire Enemies/South Fish Enemy #6/Enemy #6|@Misery Mire Enemies/South Fish Enemy #7/Enemy #7|@Misery Mire Enemies/South Fish Enemy #8/Enemy #8|@Misery Mire Enemies/South Fish Enemy #9/Enemy #9|@Misery Mire Enemies/Spike Barrier Enemy #1/Enemy #1|@Misery Mire Enemies/Spike Barrier Enemy #2/Enemy #2|@Misery Mire Enemies/Spike Barrier Enemy #3/Enemy #3|@Misery Mire Enemies/Spike Barrier Enemy #4/Enemy #4|@Misery Mire Enemies/Square Rail Enemy #5/Enemy #5|@Misery Mire Enemies/Spike Barrier Enemy #6/Enemy #6|@Misery Mire Enemies/Square Rail Enemy #7/Enemy #7|@Misery Mire Enemies/Square Rail Enemy #8/Enemy #8|@Misery Mire Enemies/Spike Barrier Enemy #9/Enemy #9|@Misery Mire Enemies/Square Rail Enemy #10/Enemy #10|@Misery Mire Enemies/BK Door Room Enemy #1/Enemy #1|@Misery Mire Enemies/BK Door Room Enemy #2/Enemy #2|@Misery Mire Enemies/BK Door Room Enemy #3/Enemy #3|@Misery Mire Enemies/BK Door Room Enemy #4/Enemy #4|@Misery Mire Enemies/BK Door Room Enemy #5/Enemy #5|@Misery Mire Enemies/Cross Enemy #6/Enemy #6|@Misery Mire Enemies/Cross Enemy #7/Enemy #7|@Misery Mire Enemies/Cross Enemy #8/Enemy #8|@Misery Mire Enemies/Hidden Shooters Enemy #9/Enemy #9|@Misery Mire Enemies/Hidden Shooters Enemy #10/Enemy #10|@Misery Mire Enemies/Cross Enemy #11/Enemy #11|@Misery Mire Enemies/Cross Enemy #12/Enemy #12|@Misery Mire Enemies/Hidden Shooters Enemy #13/Enemy #13|@Misery Mire Enemies/Hidden Shooters Enemy #14/Enemy #14|@Misery Mire Enemies/Spikes Enemy #1/Enemy #1|@Misery Mire Enemies/Spikes Enemy #2/Enemy #2|@Misery Mire Enemies/Spikes Enemy #3/Enemy #3|@Misery Mire Enemies/Spikes Enemy #4/Enemy #4|@Misery Mire Enemies/Spikes Enemy #5/Enemy #5|@Misery Mire Enemies/Compass Room Enemy #4/Enemy #4|@Misery Mire Enemies/Wizzrobe Bypass Enemy #5/Enemy #5|@Misery Mire Enemies/Conveyor Crystal Enemy #6/Enemy #6|@Misery Mire Enemies/Conveyor Crystal Enemy #9/Enemy #9|@Misery Mire Enemies/Conveyor Crystal Enemy #10/Enemy #10|@Misery Mire Enemies/Conveyor Crystal Enemy #12/Enemy #12|@Misery Mire Enemies/Hub Enemy #1/Enemy #1|@Misery Mire Enemies/Hub Enemy #2/Enemy #2|@Misery Mire Enemies/Hub Enemy #3/Enemy #3|@Misery Mire Enemies/Hub Enemy #4/Enemy #4|@Misery Mire Enemies/Hub Enemy #5/Enemy #5|@Misery Mire Enemies/Hub Enemy #6/Enemy #6|@Misery Mire Enemies/Hub Enemy #7/Enemy #7|@Misery Mire Enemies/Hub Enemy #8/Enemy #8|@Misery Mire Enemies/Lone Shooter Enemy #7/Enemy #7|@Misery Mire Enemies/Lone Shooter Enemy #8/Enemy #8|@Misery Mire Enemies/Neglected Room Enemy #1/Enemy #1|@Misery Mire Enemies/Neglected Room Enemy #2/Enemy #2|@Misery Mire Enemies/Conveyor Barrier Enemy #3/Enemy #3|@Misery Mire Enemies/Conveyor Barrier Enemy #4/Enemy #4|@Misery Mire Enemies/Conveyor Barrier Enemy #5/Enemy #5|@Misery Mire Enemies/Conveyor Barrier Enemy #6/Enemy #6|@Misery Mire Enemies/Conveyor Barrier Enemy #7/Enemy #7|@Misery Mire Enemies/Neglected Room Enemy #8/Enemy #8|@Misery Mire Enemies/2 Enemy #1/Enemy #1|@Misery Mire Enemies/2 Enemy #2/Enemy #2|@Misery Mire Enemies/2 Enemy #3/Enemy #3|@Misery Mire Enemies/2 Enemy #4/Enemy #4|@Misery Mire Enemies/2 Enemy #5/Enemy #5|@Misery Mire Enemies/2 Enemy #6/Enemy #6|@Misery Mire Enemies/2 Enemy #7/Enemy #7|@Misery Mire Enemies/2 Enemy #8/Enemy #8|@Misery Mire Enemies/2 Enemy #9/Enemy #9|@Misery Mire Enemies/2 Enemy #10/Enemy #10"
+                        ],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 101
                     },
@@ -1788,7 +1844,7 @@
                     {
                         "name": "Pots",
                         "access_rules": [
-                            ""
+                            "^$OWDungeonChecks|@Swamp Palace Pots/I Pot #1/Pot #1|@Swamp Palace Pots/I Pot #2/Pot #2|@Swamp Palace Pots/I Pot #3/Pot #3|@Swamp Palace Pots/I Pot #4/Pot #4|@Swamp Palace Pots/I Pot #5/Pot #5|@Swamp Palace Pots/I Pot #6/Pot #6|@Swamp Palace Pots/I Pot #7/Pot #7|@Swamp Palace Pots/I Pot #8/Pot #8|@Swamp Palace Pots/Shooters Pot #1/Pot #1|@Swamp Palace Pots/Shooters Pot #2/Pot #2|@Swamp Palace Pots/Push Statue Pot #3/Pot #3|@Swamp Palace Pots/Push Statue Pot #4/Pot #4|@Swamp Palace Pots/Push Statue Pot #5/Pot #5|@Swamp Palace Pots/Barrier Ledge Pot #1/Pot #1|@Swamp Palace Pots/Barrier Ledge Pot #2/Pot #2|@Swamp Palace Pots/Big Key Ledge Pot #2/Pot #2|@Swamp Palace Pots/Big Key Ledge Pot #3/Pot #3|@Swamp Palace Pots/Big Key Ledge Pot #4/Pot #4|@Swamp Palace Pots/Big Key Ledge Pot #5/Pot #5|@Swamp Palace Pots/Big Key Ledge Pot #6/Pot #6|@Swamp Palace Pots/Trench 2 Departure Pot #7/Pot #7|@Swamp Palace Pots/Trench 2 Pots Pot #8/Pot #8|@Swamp Palace Pots/Trench 2 Pots Pot #9/Pot #9|@Swamp Palace Pots/Trench 2 Pots Pot #10/Pot #10|@Swamp Palace Pots/Trench 2 Pots Pot #11/Pot #11|@Swamp Palace Pots/Trench 2 Pots Pot #12/Pot #12|@Swamp Palace Pots/Trench 2 Pots Pot #13/Pot #13|@Swamp Palace Pots/Hub Dead Ledge Pot #1/Pot #1|@Swamp Palace Pots/Hub Dead Ledge Pot #2/Pot #2|@Swamp Palace Pots/Hub Side Ledges Pot #3/Pot #3|@Swamp Palace Pots/Hub Side Ledges Pot #4/Pot #4|@Swamp Palace Pots/Hub Side Ledges Pot #6/Pot #6|@Swamp Palace Pots/Hub North Ledge Pot #7/Pot #7|@Swamp Palace Pots/Hub North Ledge Pot #8/Pot #8|@Swamp Palace Pots/Trench 1 Key Ledge Pot #2/Pot #2|@Swamp Palace Pots/Pot Row Pot #1/Pot #1|@Swamp Palace Pots/Pot Row Pot #2/Pot #2|@Swamp Palace Pots/Pot Row Pot #3/Pot #3|@Swamp Palace Pots/Donut Top Pot #1/Pot #1|@Swamp Palace Pots/Donut Bottom Pot #2/Pot #2|@Swamp Palace Pots/Attic Pot #1/Pot #1|@Swamp Palace Pots/Attic Pot #2/Pot #2|@Swamp Palace Pots/Attic Pot #3/Pot #3|@Swamp Palace Pots/Attic Pot #4/Pot #4|@Swamp Palace Pots/Refill Pot #1/Pot #1|@Swamp Palace Pots/Refill Pot #2/Pot #2|@Swamp Palace Pots/Refill Pot #3/Pot #3|@Swamp Palace Pots/Refill Pot #4/Pot #4|@Swamp Palace Pots/Refill Pot #5/Pot #5|@Swamp Palace Pots/Refill Pot #6/Pot #6|@Swamp Palace Pots/Behind Waterfall Pot #7/Pot #7|@Swamp Palace Pots/Behind Waterfall Pot #8/Pot #8|@Swamp Palace Pots/Behind Waterfall Pot #9/Pot #9|@Swamp Palace Pots/Behind Waterfall Pot #10/Pot #10|@Swamp Palace Pots/Drain Right Pot #1/Pot #1|@Swamp Palace Pots/Flooded Spot Pot #2/Pot #2|@Swamp Palace Pots/Flooded Spot Pot #3/Pot #3"
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 57
@@ -1804,7 +1860,9 @@
                     },
                     {
                         "name": "Enemies",
-                        "access_rules": [],
+                        "access_rules": [
+                            "^$OWDungeonChecks|@Swamp Palace Enemies/C Enemy #1/Enemy #1|@Swamp Palace Enemies/C Enemy #2/Enemy #2|@Swamp Palace Enemies/C Enemy #3/Enemy #3|@Swamp Palace Enemies/I Enemy #4/Enemy #4|@Swamp Palace Enemies/Waterway Enemy #5/Enemy #5|@Swamp Palace Enemies/Waterway Enemy #6/Enemy #6|@Swamp Palace Enemies/Waterway Enemy #7/Enemy #7|@Swamp Palace Enemies/Right Elbow Enemy #2/Enemy #2|@Swamp Palace Enemies/Shooters Enemy #3/Enemy #3|@Swamp Palace Enemies/Shooters Enemy #4/Enemy #4|@Swamp Palace Enemies/Shooters Enemy #5/Enemy #5|@Swamp Palace Enemies/Push Statue Enemy #9/Enemy #9|@Swamp Palace Enemies/Push Statue Enemy #10/Enemy #10|@Swamp Palace Enemies/Push Statue Enemy #11/Enemy #11|@Swamp Palace Enemies/Push Statue Enemy #12/Enemy #12|@Swamp Palace Enemies/Entrance Enemy #1/Enemy #1|@Swamp Palace Enemies/Entrance Enemy #2/Enemy #2|@Swamp Palace Enemies/Entrance Enemy #3/Enemy #3|@Swamp Palace Enemies/Entrance Enemy #4/Enemy #4|@Swamp Palace Enemies/Entrance Enemy #5/Enemy #5|@Swamp Palace Enemies/West Shallows Enemy #1/Enemy #1|@Swamp Palace Enemies/West Shallows Enemy #2/Enemy #2|@Swamp Palace Enemies/West Shallows Enemy #3/Enemy #3|@Swamp Palace Enemies/West Shallows Enemy #4/Enemy #4|@Swamp Palace Enemies/West Block Path Enemy #5/Enemy #5|@Swamp Palace Enemies/West Shallows Enemy #6/Enemy #6|@Swamp Palace Enemies/West Shallows Enemy #7/Enemy #7|@Swamp Palace Enemies/Crystal Switch Outer Enemy #3/Enemy #3|@Swamp Palace Enemies/Crystal Switch Outer Enemy #4/Enemy #4|@Swamp Palace Enemies/Crystal Switch Outer Enemy #5/Enemy #5|@Swamp Palace Enemies/Trench 2 Departure Enemy #6/Enemy #6|@Swamp Palace Enemies/Trench 2 Pots Enemy #7/Enemy #7|@Swamp Palace Enemies/Trench 2 Pots Enemy #8/Enemy #8|@Swamp Palace Enemies/Trench 2 Pots Enemy #10/Enemy #10|@Swamp Palace Enemies/Trench 2 Pots Enemy #11/Enemy #11|@Swamp Palace Enemies/Hub Enemy #2/Enemy #2|@Swamp Palace Enemies/Hub Enemy #3/Enemy #3|@Swamp Palace Enemies/Hub Enemy #4/Enemy #4|@Swamp Palace Enemies/Hub Enemy #6/Enemy #6|@Swamp Palace Enemies/Hub Enemy #8/Enemy #8|@Swamp Palace Enemies/Hub Enemy #9/Enemy #9|@Swamp Palace Enemies/Hammer Switch Enemy #2/Enemy #2|@Swamp Palace Enemies/Map Ledge Enemy #3/Enemy #3|@Swamp Palace Enemies/Map Ledge Enemy #4/Enemy #4|@Swamp Palace Enemies/Hammer Switch Enemy #5/Enemy #5|@Swamp Palace Enemies/Trench 1 Approach Enemy #6/Enemy #6|@Swamp Palace Enemies/Trench 1 Approach Enemy #7/Enemy #7|@Swamp Palace Enemies/Trench 1 Approach Enemy #8/Enemy #8|@Swamp Palace Enemies/Trench 1 Approach Enemy #10/Enemy #10|@Swamp Palace Enemies/Pot Row Enemy #1/Enemy #1|@Swamp Palace Enemies/Pot Row Enemy #2/Enemy #2|@Swamp Palace Enemies/Pot Row Enemy #3/Enemy #3|@Swamp Palace Enemies/Pot Row Enemy #4/Enemy #4|@Swamp Palace Enemies/Pot Row Enemy #5/Enemy #5|@Swamp Palace Enemies/Pot Row Enemy #6/Enemy #6|@Swamp Palace Enemies/Pot Row Enemy #7/Enemy #7|@Swamp Palace Enemies/Donut Top Enemy #1/Enemy #1|@Swamp Palace Enemies/Donut Bottom Enemy #3/Enemy #3|@Swamp Palace Enemies/Donut Bottom Enemy #5/Enemy #5|@Swamp Palace Enemies/Attic Enemy #1/Enemy #1|@Swamp Palace Enemies/Attic Enemy #2/Enemy #2|@Swamp Palace Enemies/Attic Enemy #3/Enemy #3|@Swamp Palace Enemies/Attic Enemy #4/Enemy #4|@Swamp Palace Enemies/Attic Enemy #5/Enemy #5|@Swamp Palace Enemies/Attic Enemy #6/Enemy #6|@Swamp Palace Enemies/Attic Enemy #7/Enemy #7|@Swamp Palace Enemies/Attic Enemy #8/Enemy #8|@Swamp Palace Enemies/Refill Enemy #1/Enemy #1|@Swamp Palace Enemies/Behind Waterfall Enemy #3/Enemy #3|@Swamp Palace Enemies/Behind Waterfall Enemy #4/Enemy #4|@Swamp Palace Enemies/Waterfall Room Enemy #5/Enemy #5|@Swamp Palace Enemies/Waterfall Room Enemy #7/Enemy #7|@Swamp Palace Enemies/Waterfall Room Enemy #8/Enemy #8|@Swamp Palace Enemies/Waterfall Room Enemy #9/Enemy #9|@Swamp Palace Enemies/Waterfall Room Enemy #10/Enemy #10|@Swamp Palace Enemies/Waterfall Room Enemy #12/Enemy #12|@Swamp Palace Enemies/Basement Shallows Enemy #2/Enemy #2|@Swamp Palace Enemies/Basement Shallows Enemy #3/Enemy #3|@Swamp Palace Enemies/Basement Shallows Enemy #4/Enemy #4|@Swamp Palace Enemies/Flooded Room Enemy #5/Enemy #5|@Swamp Palace Enemies/Flooded Room Enemy #7/Enemy #7"
+                        ],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 81
                     },
@@ -1865,7 +1923,7 @@
                     {
                         "name": "Pots",
                         "access_rules": [
-                            ""
+                            "^$OWDungeonChecks|@Ice Palace Pots/Bomb Drop Pot #1/Pot #1|@Ice Palace Pots/Pengator Switch Pot #1/Pot #1|@Ice Palace Pots/Pengator Switch Pot #2/Pot #2|@Ice Palace Pots/Big Key Pot #3/Pot #3|@Ice Palace Pots/Big Key Pot #4/Pot #4|@Ice Palace Pots/Stalfos Hint Pot #1/Pot #1|@Ice Palace Pots/Stalfos Hint Pot #2/Pot #2|@Ice Palace Pots/Stalfos Hint Pot #3/Pot #3|@Ice Palace Pots/Stalfos Hint Pot #4/Pot #4|@Ice Palace Pots/Hammer Block Pot #1/Pot #1|@Ice Palace Pots/Hammer Block Pot #2/Pot #2|@Ice Palace Pots/Hammer Block Pot #3/Pot #3|@Ice Palace Pots/Hammer Block Pot #4/Pot #4|@Ice Palace Pots/Hammer Block Pot #5/Pot #5|@Ice Palace Pots/Hammer Block Pot #6/Pot #6|@Ice Palace Pots/Bomb Jump Catwalk Pot #1/Pot #1|@Ice Palace Pots/Bomb Jump Catwalk Pot #2/Pot #2|@Ice Palace Pots/Bomb Jump Catwalk Pot #3/Pot #3|@Ice Palace Pots/Bomb Jump Catwalk Pot #4/Pot #4|@Ice Palace Pots/Narrow Corridor Pot #5/Pot #5|@Ice Palace Pots/Falling Square Pot #1/Pot #1|@Ice Palace Pots/Falling Square Pot #2/Pot #2|@Ice Palace Pots/Falling Square Pot #3/Pot #3|@Ice Palace Pots/Falling Square Pot #4/Pot #4|@Ice Palace Pots/Spike Room Pot #1/Pot #1|@Ice Palace Pots/Tall Hint Pot #1/Pot #1|@Ice Palace Pots/Tall Hint Pot #2/Pot #2|@Ice Palace Pots/Tall Hint Pot #3/Pot #3|@Ice Palace Pots/Tall Hint Pot #4/Pot #4|@Ice Palace Pots/Lonely Freezor Pot #1/Pot #1|@Ice Palace Pots/Lonely Freezor Pot #2/Pot #2|@Ice Palace Pots/Many Pots Pot #1/Pot #1|@Ice Palace Pots/Many Pots Pot #2/Pot #2|@Ice Palace Pots/Many Pots Pot #3/Pot #3|@Ice Palace Pots/Many Pots Pot #4/Pot #4|@Ice Palace Pots/Many Pots Pot #6/Pot #6|@Ice Palace Pots/Many Pots Pot #7/Pot #7|@Ice Palace Pots/Many Pots Pot #8/Pot #8|@Ice Palace Pots/Many Pots Pot #9/Pot #9|@Ice Palace Pots/Many Pots Pot #10/Pot #10|@Ice Palace Pots/Many Pots Pot #11/Pot #11|@Ice Palace Pots/Many Pots Pot #12/Pot #12|@Ice Palace Pots/Many Pots Pot #13/Pot #13|@Ice Palace Pots/Many Pots Pot #14/Pot #14|@Ice Palace Pots/Many Pots Pot #15/Pot #15|@Ice Palace Pots/Many Pots Pot #16/Pot #16|@Ice Palace Pots/Switch Room Pot #1/Pot #1|@Ice Palace Pots/Refill Pot #1/Pot #1|@Ice Palace Pots/Refill Pot #2/Pot #2|@Ice Palace Pots/Refill Pot #3/Pot #3|@Ice Palace Pots/Refill Pot #4/Pot #4|@Ice Palace Pots/Refill Pot #5/Pot #5|@Ice Palace Pots/Refill Pot #6/Pot #6|@Ice Palace Pots/Antechamber Pot #1/Pot #1|@Ice Palace Pots/Antechamber Pot #2/Pot #2|@Ice Palace Pots/Antechamber Pot #3/Pot #3|@Ice Palace Pots/Antechamber Pot #4/Pot #4"
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 58
@@ -1890,7 +1948,9 @@
                     },
                     {
                         "name": "Enemies",
-                        "access_rules": [],
+                        "access_rules": [
+                            "^$OWDungeonChecks|@Ice Palace Pots/Iced T Pot #1/Pot #1|@Ice Palace Enemies/Lobby Enemy #1/Enemy #1|@Ice Palace Enemies/Jelly Key Enemy #2/Enemy #2|@Ice Palace Enemies/Jelly Key Enemy #3/Enemy #3|@Ice Palace Enemies/Bomb Drop/Top Enemy #2/Enemy #2|@Ice Palace Enemies/Bomb Drop/Top Enemy #3/Enemy #3|@Ice Palace Enemies/Bomb Drop Enemy #4/Enemy #4|@Ice Palace Enemies/Bomb Drop Enemy #5/Enemy #5|@Ice Palace Enemies/Floor Switch Enemy #6/Enemy #6|@Ice Palace Enemies/Floor Switch Enemy #7/Enemy #7|@Ice Palace Enemies/Pengator Switch Enemy #1/Enemy #1|@Ice Palace Enemies/Pengator Switch Enemy #2/Enemy #2|@Ice Palace Enemies/Pengator Switch Enemy #3/Enemy #3|@Ice Palace Enemies/Pengator Switch Enemy #4/Enemy #4|@Ice Palace Enemies/Pengator Switch Enemy #5/Enemy #5|@Ice Palace Enemies/Pengator Switch Enemy #6/Enemy #6|@Ice Palace Enemies/Pengator Switch Enemy #7/Enemy #7|@Ice Palace Enemies/Pengator Switch Enemy #8/Enemy #8|@Ice Palace Enemies/Compass Room Enemy #1/Enemy #1|@Ice Palace Enemies/Compass Room Enemy #2/Enemy #2|@Ice Palace Enemies/Compass Room Enemy #3/Enemy #3|@Ice Palace Enemies/Compass Room Enemy #4/Enemy #4|@Ice Palace Enemies/Compass Room Enemy #5/Enemy #5|@Ice Palace Enemies/Compass Room Enemy #6/Enemy #6|@Ice Palace Enemies/Stalfos Hint Enemy #2/Enemy #2|@Ice Palace Enemies/Stalfos Hint Enemy #3/Enemy #3|@Ice Palace Enemies/Conveyor Enemy #4/Enemy #4|@Ice Palace Enemies/Conveyor Enemy #5/Enemy #5|@Ice Palace Enemies/Conveyor Enemy #7/Enemy #7|@Ice Palace Enemies/Conveyor Enemy #8/Enemy #8|@Ice Palace Enemies/Conveyor Enemy #9/Enemy #9|@Ice Palace Enemies/Conveyor Enemy #11/Enemy #11|@Ice Palace Enemies/Conveyor Enemy #12/Enemy #12|@Ice Palace Enemies/Right H Enemy #2/Enemy #2|@Ice Palace Enemies/Hammer Block Enemy #4/Enemy #4|@Ice Palace Enemies/Hammer Block Enemy #5/Enemy #5|@Ice Palace Enemies/Narrow Corridor Enemy #1/Enemy #1|@Ice Palace Enemies/Narrow Corridor Enemy #2/Enemy #2|@Ice Palace Enemies/Narrow Corridor Enemy #3/Enemy #3|@Ice Palace Enemies/Bomb Jump Catwalk Enemy #4/Enemy #4|@Ice Palace Enemies/Fairy Enemy #1/Enemy #1|@Ice Palace Enemies/Fairy Enemy #2/Enemy #2|@Ice Palace Enemies/Fairy Enemy #3/Enemy #3|@Ice Palace Enemies/Falling Square Enemy #2/Enemy #2|@Ice Palace Enemies/Falling Square Enemy #3/Enemy #3|@Ice Palace Enemies/Spike Cross Enemy #4/Enemy #4|@Ice Palace Enemies/Firebar Enemy #5/Enemy #5|@Ice Palace Enemies/Spike Room Enemy #1/Enemy #1|@Ice Palace Enemies/Spike Room Enemy #2/Enemy #2|@Ice Palace Enemies/Spike Room Enemy #3/Enemy #3|@Ice Palace Enemies/Pengator Trap Enemy #1/Enemy #1|@Ice Palace Enemies/Pengator Trap Enemy #2/Enemy #2|@Ice Palace Enemies/Pengator Trap Enemy #3/Enemy #3|@Ice Palace Enemies/Pengator Trap Enemy #4/Enemy #4|@Ice Palace Enemies/Pengator Trap Enemy #5/Enemy #5|@Ice Palace Enemies/Tall Hint Enemy #1/Enemy #1|@Ice Palace Enemies/Tall Hint Enemy #2/Enemy #2|@Ice Palace Enemies/Tall Hint Enemy #3/Enemy #3|@Ice Palace Enemies/Freezors Enemy #4/Enemy #4|@Ice Palace Enemies/Freezors Enemy #5/Enemy #5|@Ice Palace Enemies/Tall Hint Enemy #6/Enemy #6|@Ice Palace Enemies/Tall Hint Enemy #7/Enemy #7|@Ice Palace Enemies/Hookshot Ledge Enemy #1/Enemy #1|@Ice Palace Enemies/Hookshot Ledge Enemy #2/Enemy #2|@Ice Palace Enemies/Hookshot Ledge Enemy #3/Enemy #3|@Ice Palace Enemies/Hookshot Ledge Enemy #4/Enemy #4|@Ice Palace Enemies/Spikeball Enemy #5/Enemy #5|@Ice Palace Enemies/Spikeball Enemy #6/Enemy #6|@Ice Palace Enemies/Spikeball Enemy #7/Enemy #7|@Ice Palace Enemies/Spikeball Enemy #8/Enemy #8|@Ice Palace Enemies/Lonely Freezor Enemy #1/Enemy #1|@Ice Palace Enemies/Lonely Freezor Enemy #2/Enemy #2|@Ice Palace Enemies/Lonely Freezor Enemy #3/Enemy #3|@Ice Palace Enemies/Lonely Freezor Enemy #4/Enemy #4|@Ice Palace Enemies/Lonely Freezor Enemy #5/Enemy #5|@Ice Palace Enemies/Lonely Freezor Enemy #6/Enemy #6|@Ice Palace Enemies/Lonely Freezor Enemy #7/Enemy #7|@Ice Palace Enemies/Lonely Freezor Enemy #8/Enemy #8|@Ice Palace Enemies/Backwards Room Enemy #1/Enemy #1|@Ice Palace Enemies/Backwards Room Enemy #2/Enemy #2|@Ice Palace Enemies/Backwards Room Enemy #3/Enemy #3|@Ice Palace Enemies/Backwards Room Enemy #4/Enemy #4|@Ice Palace Enemies/Crystal Left Enemy #5/Enemy #5|@Ice Palace Enemies/Many Pots Enemy #1/Enemy #1|@Ice Palace Enemies/Many Pots Enemy #2/Enemy #2|@Ice Palace Enemies/Many Pots Enemy #3/Enemy #3|@Ice Palace Enemies/Many Pots Enemy #4/Enemy #4|@Ice Palace Enemies/Many Pots Enemy #5/Enemy #5|@Ice Palace Enemies/Many Pots Enemy #6/Enemy #6|@Ice Palace Enemies/Iced T Enemy #1/Enemy #1|@Ice Palace Enemies/Iced T Enemy #2/Enemy #2|@Ice Palace Enemies/Catwalk Enemy #1/Enemy #1|@Ice Palace Enemies/Anti-Fairy Enemy #1/Enemy #1|@Ice Palace Enemies/Switch Room Enemy #2/Enemy #2|@Ice Palace Enemies/Switch Room Enemy #3/Enemy #3|@Ice Palace Enemies/Switch Room Enemy #4/Enemy #4|@Ice Palace Enemies/Switch Room Enemy #5/Enemy #5|@Ice Palace Enemies/Switch Room Enemy #6/Enemy #6|@Ice Palace Enemies/Switch Room Enemy #7/Enemy #7|@Ice Palace Enemies/Refill Enemy #2/Enemy #2|@Ice Palace Enemies/Antechamber Enemy #1/Enemy #1|@Ice Palace Enemies/Antechamber Enemy #2/Enemy #2|@Ice Palace Enemies/Antechamber Enemy #3/Enemy #3|@Ice Palace Enemies/Antechamber Enemy #4/Enemy #4|@Ice Palace Enemies/Antechamber Enemy #5/Enemy #5|@Ice Palace Enemies/Antechamber Enemy #6/Enemy #6|@Ice Palace Enemies/Antechamber Enemy #7/Enemy #7|@Ice Palace Enemies/Antechamber Enemy #8/Enemy #8"
+                        ],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 107
                     },
@@ -1951,14 +2011,16 @@
                     {
                         "name": "Front Pots",
                         "access_rules": [
-                            ""
+                            "^$OWDungeonChecks|@Thieves Town Front Pots/Pot Alcove Bottom Pot #13/Pot #13|@Thieves Town Front Pots/Pot Alcove Bottom Pot #14/Pot #14|@Thieves Town Front Pots/Ambush Pot #1/Pot #1|@Thieves Town Front Pots/Ambush Pot #2/Pot #2|@Thieves Town Front Pots/Ambush Pot #3/Pot #3|@Thieves Town Front Pots/Ambush Pot #4/Pot #4|@Thieves Town Front Pots/Rail Ledge Pot #1/Pot #1|@Thieves Town Front Pots/Rail Ledge Pot #2/Pot #2|@Thieves Town Front Pots/BK Corner Pot #3/Pot #3|@Thieves Town Front Pots/BK Corner Pot #4/Pot #4|@Thieves Town Front Pots/Lobby Pot #1/Pot #1|@Thieves Town Front Pots/Lobby Pot #2/Pot #2|@Thieves Town Front Pots/Lobby Pot #3/Pot #3|@Thieves Town Front Pots/Lobby Pot #4/Pot #4|@Thieves Town Front Pots/Compass Room Pot #1/Pot #1|@Thieves Town Front Pots/Compass Room Pot #2/Pot #2|@Thieves Town Front Pots/Compass Room Pot #3/Pot #3|@Thieves Town Front Pots/Compass Room Pot #4/Pot #4"
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 18
                     },
                     {
                         "name": "Front Enemies",
-                        "access_rules": [],
+                        "access_rules": [
+                            "^$OWDungeonChecks|@Thieves Town Front Enemies/Ambush Enemy #1/Enemy #1|@Thieves Town Front Enemies/Ambush Enemy #2/Enemy #2|@Thieves Town Front Enemies/Ambush Enemy #3/Enemy #3|@Thieves Town Front Enemies/Ambush Enemy #4/Enemy #4|@Thieves Town Front Enemies/Ambush Enemy #5/Enemy #5|@Thieves Town Front Enemies/Ambush Enemy #6/Enemy #6|@Thieves Town Front Enemies/Ambush Enemy #7/Enemy #7|@Thieves Town Front Enemies/Ambush Enemy #8/Enemy #8|@Thieves Town Front Enemies/Ambush Enemy #9/Enemy #9|@Thieves Town Front Enemies/Ambush Enemy #10/Enemy #10|@Thieves Town Front Enemies/Ambush Enemy #11/Enemy #11|@Thieves Town Front Enemies/Ambush Enemy #12/Enemy #12|@Thieves Town Front Enemies/BK Corner Enemy #1/Enemy #1|@Thieves Town Front Enemies/BK Corner Enemy #2/Enemy #2|@Thieves Town Front Enemies/BK Corner Enemy #3/Enemy #3|@Thieves Town Front Enemies/BK Corner Enemy #4/Enemy #4|@Thieves Town Front Enemies/BK Corner Enemy #5/Enemy #5|@Thieves Town Front Enemies/BK Corner Enemy #6/Enemy #6|@Thieves Town Front Enemies/BK Corner Enemy #7/Enemy #7|@Thieves Town Front Enemies/BK Corner Enemy #8/Enemy #8|@Thieves Town Front Enemies/BK Corner Enemy #9/Enemy #9|@Thieves Town Front Enemies/BK Corner Enemy #10/Enemy #10|@Thieves Town Front Enemies/BK Corner Enemy #11/Enemy #11|@Thieves Town Front Enemies/BK Corner Enemy #12/Enemy #12|@Thieves Town Front Enemies/BK Corner Enemy #13/Enemy #13|@Thieves Town Front Enemies/BK Corner Enemy #14/Enemy #14|@Thieves Town Front Enemies/Lobby Enemy #1/Enemy #1|@Thieves Town Front Enemies/Lobby Enemy #2/Enemy #2|@Thieves Town Front Enemies/Lobby Enemy #3/Enemy #3|@Thieves Town Front Enemies/Lobby Enemy #4/Enemy #4|@Thieves Town Front Enemies/Lobby Enemy #5/Enemy #5|@Thieves Town Front Enemies/Lobby Enemy #6/Enemy #6|@Thieves Town Front Enemies/Lobby Enemy #7/Enemy #7|@Thieves Town Front Enemies/Compass Room Enemy #1/Enemy #1|@Thieves Town Front Enemies/Compass Room Enemy #2/Enemy #2|@Thieves Town Front Enemies/Compass Room Enemy #3/Enemy #3|@Thieves Town Front Enemies/Compass Room Enemy #4/Enemy #4|@Thieves Town Front Enemies/Compass Room Enemy #5/Enemy #5|@Thieves Town Front Enemies/Compass Room Enemy #6/Enemy #6|@Thieves Town Front Enemies/Compass Room Enemy #7/Enemy #7|@Thieves Town Front Enemies/Compass Room Enemy #8/Enemy #8|@Thieves Town Front Enemies/Compass Room Enemy #9/Enemy #9|@Thieves Town Front Enemies/Compass Room Enemy #10/Enemy #10|@Thieves Town Enemies/Compass Room Enemy #11/Enemy #11"
+                        ],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 44
                     },
@@ -1973,14 +2035,16 @@
                     {
                         "name": "Back Pots",
                         "access_rules": [
-                            ""
+                            "^$OWDungeonChecks|@Thieves Town Back Pots/Basement Block Pot #1/Pot #1|@Thieves Town Back Pots/Basement Block Pot #2/Pot #2|@Thieves Town Back Pots/Blinds Cell Interior Pot #3/Pot #3|@Thieves Town Back Pots/Blinds Cell Interior Pot #4/Pot #4|@Thieves Town Back Pots/Blinds Cell Interior Pot #5/Pot #5|@Thieves Town Back Pots/Blinds Cell Interior Pot #6/Pot #6|@Thieves Town Back Pots/Attic Hint Pot #1/Pot #1|@Thieves Town Back Pots/Attic Hint Pot #2/Pot #2|@Thieves Town Back Pots/Attic Hint Pot #3/Pot #3|@Thieves Town Back Pots/Attic Switch Pot #4/Pot #4|@Thieves Town Back Pots/Attic Switch Pot #5/Pot #5|@Thieves Town Back Pots/Attic Switch Pot #6/Pot #6|@Thieves Town Back Pots/Attic Switch Pot #7/Pot #7|@Thieves Town Back Pots/Attic Window Pot #1/Pot #1|@Thieves Town Back Pots/Attic Window Pot #2/Pot #2|@Thieves Town Back Pots/Hallway Pot #1/Pot #1|@Thieves Town Back Pots/Conveyor Maze Pot #3/Pot #3|@Thieves Town Back Pots/Conveyor Maze Pot #4/Pot #4|@Thieves Town Back Pots/Conveyor Maze Pot #5/Pot #5|@Thieves Town Back Pots/Conveyor Maze Pot #6/Pot #6|@Thieves Town Back Pots/Pot Alcove Mid Pot #7/Pot #7|@Thieves Town Back Pots/Pot Alcove Mid Pot #8/Pot #8|@Thieves Town Back Pots/Pot Alcove Mid Pot #9/Pot #9|@Thieves Town Back Pots/Pot Alcove Mid Pot #10/Pot #10|@Thieves Town Back Pots/Pot Alcove Top Pot #11/Pot #11|@Thieves Town Back Pots/Pot Alcove Top Pot #12/Pot #12"
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 26
                     },
                     {
                         "name": "Back Enemies",
-                        "access_rules": [],
+                        "access_rules": [
+                            "^$OWDungeonChecks|@Thieves Town Back Enemies/Trap Enemy #1/Enemy #1|@Thieves Town Back Enemies/Trap Enemy #2/Enemy #2|@Thieves Town Back Enemies/Trap Enemy #3/Enemy #3|@Thieves Town Back Enemies/Trap Enemy #4/Enemy #4|@Thieves Town Back Enemies/Conveyor Bridge Enemy #5/Enemy #5|@Thieves Town Back Enemies/Trap Enemy #6/Enemy #6|@Thieves Town Back Enemies/Conveyor Bridge Enemy #7/Enemy #7|@Thieves Town Back Enemies/Conveyor Bridge Enemy #9/Enemy #9|@Thieves Town Back Enemies/Basement Block Enemy #2/Enemy #2|@Thieves Town Back Enemies/Basement Block Enemy #3/Enemy #3|@Thieves Town Back Enemies/Basement Block Enemy #4/Enemy #4|@Thieves Town Back Enemies/Blinds Cell Interior Enemy #5/Enemy #5|@Thieves Town Back Enemies/Blinds Cell Interior Enemy #6/Enemy #6|@Thieves Town Back Enemies/Blinds Cell Interior Enemy #7/Enemy #7|@Thieves Town Back Enemies/Blinds Cell Interior Enemy #8/Enemy #8|@Thieves Town Back Enemies/Blinds Cell Enemy #9/Enemy #9|@Thieves Town Back Enemies/Blinds Cell Enemy #10/Enemy #10|@Thieves Town Back Enemies/Lonely Zazak Enemy #11/Enemy #11|@Thieves Town Back Enemies/Attic Hint Enemy #1/Enemy #1|@Thieves Town Back Enemies/Attic Hint Enemy #3/Enemy #3|@Thieves Town Back Enemies/Attic Hint Enemy #4/Enemy #4|@Thieves Town Back Enemies/Cricket Hall Left Enemy #5/Enemy #5|@Thieves Town Back Enemies/Cricket Hall Left Enemy #6/Enemy #6|@Thieves Town Back Enemies/Attic Enemy #7/Enemy #7|@Thieves Town Back Enemies/Attic Window Enemy #1/Enemy #1|@Thieves Town Back Enemies/Cricket Hall Right Enemy #2/Enemy #2|@Thieves Town Back Enemies/Cricket Hall Right Enemy #3/Enemy #3|@Thieves Town Back Enemies/Attic Window Enemy #4/Enemy #4|@Thieves Town Back Enemies/Attic Window Enemy #5/Enemy #5|@Thieves Town Back Enemies/Spike Switch Enemy #2/Enemy #2|@Thieves Town Back Enemies/Spike Switch Enemy #3/Enemy #3|@Thieves Town Back Enemies/Spike Switch Enemy #4/Enemy #4|@Thieves Town Back Enemies/Spike Switch Enemy #5/Enemy #5|@Thieves Town Back Enemies/Spike Switch Enemy #6/Enemy #6|@Thieves Town Back Enemies/Spike Switch Enemy #7/Enemy #7|@Thieves Town Back Enemies/Spike Switch Enemy #8/Enemy #8|@Thieves Town Back Enemies/Triple Bypass Enemy #1/Enemy #1|@Thieves Town Back Enemies/Hellway Enemy #2/Enemy #2|@Thieves Town Back Enemies/Triple Bypass Enemy #3/Enemy #3|@Thieves Town Back Enemies/Triple Bypass Enemy #4/Enemy #4|@Thieves Town Back Enemies/Hellway Enemy #5/Enemy #5|@Thieves Town Back Enemies/Hellway Enemy #6/Enemy #6|@Thieves Town Back Enemies/Hellway Enemy #7/Enemy #7|@Thieves Town Back Enemies/Hellway Enemy #8/Enemy #8|@Thieves Town Back Enemies/Spike Track Enemy #9/Enemy #9|@Thieves Town Back Enemies/Spike Track Enemy #10/Enemy #10|@Thieves Town Back Enemies/Spike Track Enemy #11/Enemy #11|@Thieves Town Back Enemies/Conveyor Maze Enemy #1/Enemy #1|@Thieves Town Back Enemies/Conveyor Maze Enemy #2/Enemy #2|@Thieves Town Back Enemies/Conveyor Maze Enemy #3/Enemy #3|@Thieves Town Back Enemies/Conveyor Maze Enemy #4/Enemy #4|@Thieves Town Back Enemies/Conveyor Maze Enemy #5/Enemy #5|@Thieves Town Back Enemies/Conveyor Maze Enemy #6/Enemy #6|@Thieves Town Back Enemies/Hallway Enemy #7/Enemy #7|@Thieves Town Back Enemies/Hallway Enemy #8/Enemy #8|@Thieves Town Back Enemies/Hallway Enemy #9/Enemy #9|@Thieves Town Back Enemies/Pot Alcove Mid Enemy #10/Enemy #10|@Thieves Town Back Enemies/Pot Alcove Mid Enemy #11/Enemy #11|@Thieves Town Back Enemies/Pot Alcove Mid Enemy #12/Enemy #12"
+                        ],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 59
                     },
@@ -2055,14 +2119,16 @@
                     {
                         "name": "Leftside Pots",
                         "access_rules": [
-                            ""
+                            "^$OWDungeonChecks|@Ganon's Tower Bottom Left Pots/Firesnake Room Pot #1/Pot #1|@Ganon's Tower Bottom Left Pots/Firesnake Room Pot #2/Pot #2|@Ganon's Tower Bottom Left Pots/Firesnake Room Pot #3/Pot #3|@Ganon's Tower Bottom Left Pots/Warp Maze Pot Rail Pot #4/Pot #4|@Ganon's Tower Bottom Left Pots/Conveyor Cross Pot #1/Pot #1|@Ganon's Tower Bottom Left Pots/Hookshot South Platform Pot #3/Pot #3|@Ganon's Tower Bottom Left Pots/Hookshot South Platform Pot #4/Pot #4|@Ganon's Tower Bottom Left Pots/Hookshot Mid Platform Pot #5/Pot #5|@Ganon's Tower Bottom Left Pots/Map Room Pot #6/Pot #6|@Ganon's Tower Bottom Left Pots/Map Room Pot #7/Pot #7|@Ganon's Tower Bottom Left Pots/Hope Room Pot #1/Pot #1|@Ganon's Tower Bottom Left Pots/Hope Room Pot #2/Pot #2|@Ganon's Tower Bottom Left Pots/Bobs Room Pot #3/Pot #3|@Ganon's Tower Bottom Left Pots/Bobs Room Pot #4/Pot #4|@Ganon's Tower Bottom Left Pots/Bobs Room Pot #5/Pot #5|@Ganon's Tower Bottom Left Pots/Bobs Room Pot #6/Pot #6|@Ganon's Tower Bottom Left Pots/Bobs Room Pot #7/Pot #7|@Ganon's Tower Bottom Left Pots/Double Switch Pot Corners Pot #1/Pot #1|@Ganon's Tower Bottom Left Pots/Warp Maze Mid Section Pot #3/Pot #3|@Ganon's Tower Bottom Left Pots/Warp Maze Mid Section Pot #4/Pot #4|@Ganon's Tower Bottom Left Pots/Crystal Conveyor Left Pot #1/Pot #1|@Ganon's Tower Bottom Left Pots/Crystal Conveyor Left Pot #2/Pot #2|@Ganon's Tower Bottom Left Pots/Compass Room Pot #3/Pot #3|@Ganon's Tower Bottom Left Pots/Compass Room Pot #4/Pot #4"
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 24
                     },
                     {
                         "name": "Leftside Enemies",
-                        "access_rules": [],
+                        "access_rules": [
+                            "^$OWDungeonChecks|@Ganon's Tower Leftside Enemies/Bobs Torch Enemy #7/Enemy #7|@Ganon's Tower Leftside Enemies/Bobs Torch Enemy #9/Enemy #9|@Ganon's Tower Leftside Enemies/Bobs Torch Enemy #10/Enemy #10|@Ganon's Tower Leftside Enemies/Conveyor Cross Enemy #1/Enemy #1|@Ganon's Tower Leftside Enemies/Conveyor Cross Enemy #4/Enemy #4|@Ganon's Tower Leftside Enemies/DMs Room Enemy #3/Enemy #3|@Ganon's Tower Leftside Enemies/DMs Room Enemy #4/Enemy #4|@Ganon's Tower Leftside Enemies/DMs Room Enemy #5/Enemy #5|@Ganon's Tower Leftside Enemies/DMs Room Enemy #6/Enemy #6|@Ganon's Tower Leftside Enemies/DMs Room Enemy #9/Enemy #9|@Ganon's Tower Leftside Enemies/DMs Room Enemy #10/Enemy #10|@Ganon's Tower Leftside Enemies/DMs Room Enemy #11/Enemy #11|@Ganon's Tower Leftside Enemies/Hookshot South Platform Enemy #2/Enemy #2|@Ganon's Tower Leftside Enemies/Hookshot South Platform Enemy #3/Enemy #3|@Ganon's Tower Leftside Enemies/Hookshot Mid Platform Enemy #5/Enemy #5|@Ganon's Tower Leftside Enemies/Hookshot South Platform Enemy #6/Enemy #6|@Ganon's Tower Leftside Enemies/Map Room Enemy #7/Enemy #7|@Ganon's Tower Leftside Enemies/Map Room Enemy #8/Enemy #8|@Ganon's Tower Leftside Enemies/Firesnake Room Enemy #1/Enemy #1|@Ganon's Tower Leftside Enemies/Firesnake Room Enemy #2/Enemy #2|@Ganon's Tower Leftside Enemies/Firesnake Room Enemy #3/Enemy #3|@Ganon's Tower Leftside Enemies/Firesnake Room Enemy #4/Enemy #4|@Ganon's Tower Leftside Enemies/Randomizer Room Enemy #1/Enemy #1|@Ganon's Tower Leftside Enemies/Randomizer Room Enemy #6/Enemy #6|@Ganon's Tower Leftside Enemies/Spike Crystal Right Enemy #4/Enemy #4|@Ganon's Tower Leftside Enemies/Spike Crystal Right Enemy #5/Enemy #5|@Ganon's Tower Leftside Enemies/Spike Crystal Right Enemy #6/Enemy #6|@Ganon's Tower Leftside Enemies/Spike Crystal Right Enemy #8/Enemy #8|@Ganon's Tower Leftside Enemies/Spike Crystal Right Enemy #9/Enemy #9|@Ganon's Tower Leftside Enemies/Spike Crystal Right Enemy #10/Enemy #10|@Ganon's Tower Leftside Enemies/Spike Crystal Right Enemy #11/Enemy #11|@Ganon's Tower Leftside Enemies/Warp Maze/Main Rails Enemy #10/Enemy #10|@Ganon's Tower Leftside Enemies/Warp Maze/Pit Section Enemy #12/Enemy #12|@Ganon's Tower Leftside Enemies/Warp Maze/Pit Section Enemy #13/Enemy #13"
+                        ],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 34
                     },
@@ -2077,14 +2143,16 @@
                     {
                         "name": "Rightside Pots",
                         "access_rules": [
-                            ""
+                            "^$OWDungeonChecks|@Ganon's Tower Bottom Right Pots/Conveyor Star Pits Pot #1/Pot #1|@Ganon's Tower Bottom Right Pots/Conveyor Star Pits Pot #2/Pot #2|@Ganon's Tower Bottom Right Pots/Conveyor Star Pits Pot #3/Pot #3|@Ganon's Tower Bottom Right Pots/Conveyor Star Pits Pot #4/Pot #4|@Ganon's Tower Bottom Right Pots/Falling Bridge Pot #1/Pot #1|@Ganon's Tower Bottom Right Pots/Falling Bridge Pot #2/Pot #2|@Ganon's Tower Bottom Right Pots/Falling Bridge Pot #3/Pot #3|@Ganon's Tower Bottom Right Pots/Falling Bridge Pot #4/Pot #4|@Ganon's Tower Bottom Right Pots/Speed Torch Upper Pot #1/Pot #1|@Ganon's Tower Bottom Right Pots/Speed Torch Upper Pot #2/Pot #2|@Ganon's Tower Bottom Right Pots/Pots n Blocks Pot #3/Pot #3|@Ganon's Tower Bottom Right Pots/Pots n Blocks Pot #4/Pot #4|@Ganon's Tower Bottom Right Pots/Pots n Blocks Pot #5/Pot #5|@Ganon's Tower Bottom Right Pots/Petting Zoo Pot #5/Pot #5|@Ganon's Tower Bottom Right Pots/Petting Zoo Pot #6/Pot #6"
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 15
                     },
                     {
                         "name": "Rightside Enemies",
-                        "access_rules": [],
+                        "access_rules": [
+                            "^$OWDungeonChecks|@Ganon's Tower Rightside Enemies/Hope Room Enemy #1/Enemy #1|@Ganon's Tower Rightside Enemies/Hope Room Enemy #8/Enemy #8|@Ganon's Tower Rightside Enemies/Tile Room Enemy #2/Enemy #2|@Ganon's Tower Rightside Enemies/Tile Room Enemy #3/Enemy #3|@Ganon's Tower Rightside Enemies/Tile Room Enemy #4/Enemy #4|@Ganon's Tower Rightside Enemies/Tile Room Enemy #5/Enemy #5|@Ganon's Tower Rightside Enemies/Petting Zoo Enemy #5/Enemy #5|@Ganon's Tower Rightside Enemies/Petting Zoo Enemy #6/Enemy #6|@Ganon's Tower Rightside Enemies/Petting Zoo Enemy #7/Enemy #7|@Ganon's Tower Rightside Enemies/Petting Zoo Enemy #8/Enemy #8|@Ganon's Tower Rightside Enemies/Petting Zoo Enemy #9/Enemy #9|@Ganon's Tower Rightside Enemies/Petting Zoo Enemy #11/Enemy #11|@Ganon's Tower Rightside Enemies/Speed Torch Upper Enemy #6/Enemy #6|@Ganon's Tower Rightside Enemies/Speed Torch Enemy #8/Enemy #8|@Ganon's Tower Rightside Enemies/Speed Torch Enemy #9/Enemy #9|@Ganon's Tower Rightside Enemies/Speed Torch Enemy #11/Enemy #11|@Ganon's Tower Rightside Enemies/Speed Torch Enemy #12/Enemy #12|@Ganon's Tower Rightside Enemies/Speed Torch Enemy #13/Enemy #13|@Ganon's Tower Rightside Enemies/Pots n Blocks Enemy #10/Enemy #10|@Ganon's Tower Rightside Enemies/Crystal Conveyor Left Enemy #3/Enemy #3|@Ganon's Tower Rightside Enemies/Crystal Conveyor Enemy #4/Enemy #4|@Ganon's Tower Rightside Enemies/Crystal Conveyor Corner Enemy #6/Enemy #6|@Ganon's Tower Rightside Enemies/Compass Room Enemy #2/Enemy #2|@Ganon's Tower Rightside Enemies/Compass Room Enemy #5/Enemy #5|@Ganon's Tower Rightside Enemies/Conveyor Star Pits Enemy #1/Enemy #1|@Ganon's Tower Rightside Enemies/Conveyor Star Pits Enemy #2/Enemy #2|@Ganon's Tower Rightside Enemies/Falling Bridge Enemy #2/Enemy #2|@Ganon's Tower Rightside Enemies/Falling Bridge Enemy #3/Enemy #3|@Ganon's Tower Rightside Enemies/Falling Bridge Enemy #4/Enemy #4|@Ganon's Tower Rightside Enemies/Falling Bridge Enemy #5/Enemy #5|@Ganon's Tower Rightside Enemies/Hidden Star Enemy #7/Enemy #7|@Ganon's Tower Rightside Enemies/Hidden Star Enemy #8/Enemy #8|@Ganon's Tower Rightside Enemies/Invisible Catwalk Enemy #1/Enemy #1|@Ganon's Tower Rightside Enemies/Invisible Catwalk Enemy #2/Enemy #2|@Ganon's Tower Rightside Enemies/Invisible Catwalk Enemy #3/Enemy #3|@Ganon's Tower Rightside Enemies/Invisible Catwalk Enemy #4/Enemy #4|@Ganon's Tower Rightside Enemies/Invisible Catwalk Enemy #5/Enemy #5|@Ganon's Tower Rightside Enemies/Invisible Catwalk Enemy #6/Enemy #6|@Ganon's Tower Rightside Enemies/Invisible Catwalk Enemy #7/Enemy #7"
+                        ],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 39
                     },
@@ -2100,14 +2168,16 @@
                     {
                         "name": "Bottom Center Pots",
                         "access_rules": [
-                            ""
+                            "^$OWDungeonChecks|@Ganon's Tower Bottom Center Pots/Invisible Catwalk Pot #1/Pot #1|@Ganon's Tower Bottom Center Pots/Invisible Catwalk Pot #2/Pot #2"
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 2
                     },
                     {
                         "name": "Bottom Center Enemies",
-                        "access_rules": [],
+                        "access_rules": [
+                            "^$OWDungeonChecks|@Ganon's Tower Bottom Center Enemies/Invisible Bridges Enemy #7/Enemy #7|@Ganon's Tower Bottom Center Enemies/Invisible Bridges Enemy #8/Enemy #8|@Ganon's Tower Bottom Center Enemies/Invisible Bridges Enemy #9/Enemy #9|@Ganon's Tower Bottom Center Enemies/Big Chest Enemy #11/Enemy #11|@Ganon's Tower Bottom Center Enemies/Big Chest Enemy #14/Enemy #14|@Ganon's Tower Bottom Center Enemies/Bobs Room Enemy #12/Enemy #12|@Ganon's Tower Bottom Center Enemies/Bobs Room Enemy #13/Enemy #13|@Ganon's Tower Bottom Center Enemies/Bobs Room Enemy #15/Enemy #15|@Ganon's Tower Bottom Center Enemies/Fairy Abyss Enemy #8/Enemy #8|@Ganon's Tower Bottom Center Enemies/Fairy Abyss Enemy #9/Enemy #9|@Ganon's Tower Bottom Center Enemies/Fairy Abyss Enemy #10/Enemy #10|@Ganon's Tower Bottom Center Enemies/Fairy Abyss Enemy #11/Enemy #11"
+                        ],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 12
                     },
@@ -2123,14 +2193,16 @@
                     {
                         "name": "Top Pots",
                         "access_rules": [
-                            ""
+                            "^$OWDungeonChecks|@Ganon's Tower Top Pots/Mini Helmasaur Room Pot #1/Pot #1|@Ganon's Tower Top Pots/Mini Helmasaur Room Pot #2/Pot #2|@Ganon's Tower Top Pots/Crystal Inner Circle Pot #3/Pot #3|@Ganon's Tower Top Pots/Crystal Inner Circle Pot #4/Pot #4|@Ganon's Tower Top Pots/Crystal Inner Circle Pot #5/Pot #5|@Ganon's Tower Top Pots/Crystal Inner Circle Pot #6/Pot #6|@Ganon's Tower Top Pots/Crystal Inner Circle Pot #7/Pot #7|@Ganon's Tower Top Pots/Hidden Spikes Pot #1/Pot #1|@Ganon's Tower Top Pots/Hidden Spikes Pot #2/Pot #2|@Ganon's Tower Top Pots/Hidden Spikes Pot #3/Pot #3|@Ganon's Tower Top Pots/Refill Pot #1/Pot #1|@Ganon's Tower Top Pots/Refill Pot #2/Pot #2|@Ganon's Tower Top Pots/Refill Pot #3/Pot #3|@Ganon's Tower Top Pots/Refill Pot #4/Pot #4|@Ganon's Tower Top Pots/Refill Pot #5/Pot #5|@Ganon's Tower Top Pots/Refill Pot #6/Pot #6|@Ganon's Tower Top Pots/Refill Pot #7/Pot #7|@Ganon's Tower Top Pots/Refill Pot #8/Pot #8|@Ganon's Tower Top Pots/Gauntlet 2 Pot #1/Pot #1|@Ganon's Tower Top Pots/Gauntlet 2 Pot #2/Pot #2|@Ganon's Tower Top Pots/Gauntlet 2 Pot #3/Pot #3|@Ganon's Tower Top Pots/Gauntlet 2 Pot #4/Pot #4|@Ganon's Tower Top Pots/Gauntlet 3 Pot #5/Pot #5|@Ganon's Tower Top Pots/Gauntlet 3 Pot #6/Pot #6|@Ganon's Tower Top Pots/Gauntlet 3 Pot #7/Pot #7|@Ganon's Tower Top Pots/Gauntlet 3 Pot #8/Pot #8|@Ganon's Tower Top Pots/Crystal Paths Pot #1/Pot #1|@Ganon's Tower Top Pots/Crystal Paths Pot #2/Pot #2|@Ganon's Tower Top Pots/Crystal Paths Pot #3/Pot #3|@Ganon's Tower Top Pots/Crystal Paths Pot #4/Pot #4|@Ganon's Tower Top Pots/Crystal Paths Pot #5/Pot #5|@Ganon's Tower Top Pots/Crystal Paths Pot #6/Pot #6|@Ganon's Tower Top Pots/Mimics 2 Pot #7/Pot #7|@Ganon's Tower Top Pots/Mimics 2 Pot #8/Pot #8|@Ganon's Tower Top Pots/Quad Pot Pot #1/Pot #1|@Ganon's Tower Top Pots/Quad Pot Pot #2/Pot #2|@Ganon's Tower Top Pots/Quad Pot Pot #3/Pot #3|@Ganon's Tower Top Pots/Quad Pot Pot #4/Pot #4|@Ganon's Tower Top Pots/Gauntlet 5 Pot #1/Pot #1|@Ganon's Tower Top Pots/Gauntlet 5 Pot #2/Pot #2|@Ganon's Tower Top Pots/Gauntlet 5 Pot #3/Pot #3|@Ganon's Tower Top Pots/Gauntlet 5 Pot #4/Pot #4|@Ganon's Tower Top Pots/Torch Cross Pot #1/Pot #1|@Ganon's Tower Top Pots/Torch Cross Pot #2/Pot #2|@Ganon's Tower Top Pots/Torch Cross Pot #3/Pot #3|@Ganon's Tower Top Pots/Torch Cross Pot #4/Pot #4|@Ganon's Tower Top Pots/Torch Cross Pot #5/Pot #5|@Ganon's Tower Top Pots/Torch Cross Pot #6/Pot #6|@Ganon's Tower Top Pots/Staredown Pot #7/Pot #7|@Ganon's Tower Top Pots/Staredown Pot #8/Pot #8"
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 50
                     },
                     {
                         "name": "Top Enemies",
-                        "access_rules": [],
+                        "access_rules": [
+                            "^$OWDungeonChecks|@Ganon's Tower Top Enemies/Crystal Paths Enemy #3/Enemy #3|@Ganon's Tower Top Enemies/Crystal Paths Enemy #4/Enemy #4|@Ganon's Tower Top Enemies/Crystal Paths Enemy #5/Enemy #5|@Ganon's Tower Top Enemies/Mimics 1 Enemy #6/Enemy #6|@Ganon's Tower Top Enemies/Mimics 1 Enemy #7/Enemy #7|@Ganon's Tower Top Enemies/Mimics 1 Enemy #8/Enemy #8|@Ganon's Tower Top Enemies/Mimics 1 Enemy #9/Enemy #9|@Ganon's Tower Top Enemies/Mimics 1 Enemy #10/Enemy #10|@Ganon's Tower Top Enemies/Mimics 2 Enemy #11/Enemy #11|@Ganon's Tower Top Enemies/Mimics 2 Enemy #12/Enemy #12|@Ganon's Tower Top Enemies/Mimics 2 Enemy #13/Enemy #13|@Ganon's Tower Top Enemies/Mimics 2 Enemy #14/Enemy #14|@Ganon's Tower Top Enemies/Hidden Spikes Enemy #3/Enemy #3|@Ganon's Tower Top Enemies/Hidden Spikes Enemy #4/Enemy #4|@Ganon's Tower Top Enemies/Hidden Spikes Enemy #5/Enemy #5|@Ganon's Tower Top Enemies/Hidden Spikes Enemy #6/Enemy #6|@Ganon's Tower Top Enemies/Hidden Spikes Enemy #7/Enemy #7|@Ganon's Tower Top Enemies/Hidden Spikes Enemy #8/Enemy #8|@Ganon's Tower Top Enemies/Hidden Spikes Enemy #9/Enemy #9|@Ganon's Tower Top Enemies/Dashing Bridge Enemy #11/Enemy #11|@Ganon's Tower Top Enemies/Dashing Bridge Enemy #12/Enemy #12|@Ganon's Tower Top Enemies/Refill Enemy #4/Enemy #4|@Ganon's Tower Top Enemies/Refill Enemy #5/Enemy #5|@Ganon's Tower Top Enemies/Gauntlet 1 Enemy #4/Enemy #4|@Ganon's Tower Top Enemies/Gauntlet 1 Enemy #5/Enemy #5|@Ganon's Tower Top Enemies/Gauntlet 1 Enemy #6/Enemy #6|@Ganon's Tower Top Enemies/Gauntlet 1 Enemy #7/Enemy #7|@Ganon's Tower Top Enemies/Gauntlet 2 Enemy #1/Enemy #1|@Ganon's Tower Top Enemies/Gauntlet 2 Enemy #2/Enemy #2|@Ganon's Tower Top Enemies/Gauntlet 2 Enemy #3/Enemy #3|@Ganon's Tower Top Enemies/Gauntlet 2 Enemy #8/Enemy #8|@Ganon's Tower Top Enemies/Gauntlet 3 Enemy #9/Enemy #9|@Ganon's Tower Top Enemies/Gauntlet 3 Enemy #10/Enemy #10|@Ganon's Tower Top Enemies/Gauntlet 3 Enemy #11/Enemy #11|@Ganon's Tower Top Enemies/Gauntlet 3 Enemy #12/Enemy #12|@Ganon's Tower Top Enemies/Gauntlet 3 Enemy #13/Enemy #13|@Ganon's Tower Top Enemies/Gauntlet 4 Enemy #1/Enemy #1|@Ganon's Tower Top Enemies/Gauntlet 4 Enemy #2/Enemy #2|@Ganon's Tower Top Enemies/Gauntlet 4 Enemy #3/Enemy #3|@Ganon's Tower Top Enemies/Gauntlet 4 Enemy #4/Enemy #4|@Ganon's Tower Top Enemies/Gauntlet 5 Enemy #5/Enemy #5|@Ganon's Tower Top Enemies/Gauntlet 5 Enemy #6/Enemy #6|@Ganon's Tower Top Enemies/Gauntlet 5 Enemy #7/Enemy #7|@Ganon's Tower Top Enemies/Gauntlet 5 Enemy #8/Enemy #8|@Ganon's Tower Top Enemies/Gauntlet 5 Enemy #9/Enemy #9|@Ganon's Tower Top Enemies/Beam Dash Enemy #4/Enemy #4|@Ganon's Tower Top Enemies/Lanmolas 2 Enemy #1/Enemy #1|@Ganon's Tower Top Enemies/Lanmolas 2 Enemy #2/Enemy #2|@Ganon's Tower Top Enemies/Lanmolas 2 Enemy #3/Enemy #3|@Ganon's Tower Top Enemies/Lanmolas 2 Enemy #5/Enemy #5|@Ganon's Tower Top Enemies/Wizzrobes 1 Enemy #3/Enemy #3|@Ganon's Tower Top Enemies/Wizzrobes 1 Enemy #4/Enemy #4|@Ganon's Tower Top Enemies/Wizzrobes 1 Enemy #8/Enemy #8|@Ganon's Tower Top Enemies/Wizzrobes 2 Enemy #1/Enemy #1|@Ganon's Tower Top Enemies/Wizzrobes 2 Enemy #2/Enemy #2|@Ganon's Tower Top Enemies/Wizzrobes 2 Enemy #5/Enemy #5|@Ganon's Tower Top Enemies/Wizzrobes 2 Enemy #6/Enemy #6|@Ganon's Tower Top Enemies/Wizzrobes 2 Enemy #7/Enemy #7|@Ganon's Tower Top Enemies/Conveyor Bridge Enemy #1/Enemy #1|@Ganon's Tower Top Enemies/Conveyor Bridge Enemy #2/Enemy #2|@Ganon's Tower Top Enemies/Conveyor Bridge Enemy #3/Enemy #3|@Ganon's Tower Top Enemies/Conveyor Bridge Enemy #4/Enemy #4|@Ganon's Tower Top Enemies/Torch Cross Enemy #1/Enemy #1|@Ganon's Tower Top Enemies/Falling Torches Enemy #10/Enemy #10|@Ganon's Tower Top Enemies/Falling Torches Enemy #11/Enemy #11|@Ganon's Tower Top Enemies/Mini Helmasaur Room Enemy #4/Enemy #4|@Ganon's Tower Top Enemies/Mini Helmasaur Room Enemy #5/Enemy #5|@Ganon's Tower Top Enemies/Mini Helmasaur Room Enemy #6/Enemy #6|@Ganon's Tower Top Enemies/Bomb Conveyor Enemy #7/Enemy #7|@Ganon's Tower Top Enemies/Bomb Conveyor Enemy #8/Enemy #8|@Ganon's Tower Top Enemies/Crystal Inner Circle Enemy #12/Enemy #12|@Ganon's Tower Top Enemies/Crystal Inner Circle Enemy #13/Enemy #13|@Ganon's Tower Top Enemies/Crystal Inner Circle Enemy #14/Enemy #14|@Ganon's Tower Top Enemies/Moldorm Pit Enemy #2/Enemy #2|@Ganon's Tower Top Enemies/Frozen Over Enemy #1/Enemy #1|@Ganon's Tower Top Enemies/Frozen Over Enemy #2/Enemy #2|@Ganon's Tower Top Enemies/Frozen Over Enemy #3/Enemy #3|@Ganon's Tower Top Enemies/Frozen Over Enemy #4/Enemy #4|@Ganon's Tower Top Enemies/Frozen Over Enemy #5/Enemy #5|@Ganon's Tower Top Enemies/Frozen Over Enemy #6/Enemy #6|@Ganon's Tower Top Enemies/Frozen Over Enemy #7/Enemy #7|@Ganon's Tower Top Enemies/Frozen Over Enemy #8/Enemy #8"
+                        ],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 82
                     },
@@ -2231,14 +2303,16 @@
                     {
                         "name": "Pots",
                         "access_rules": [
-                            ""
+                            "^$OWDungeonChecks|@Agahnim's Tower Pots/Circle of Pots Pot #1/Pot #1|@Agahnim's Tower Pots/Circle of Pots Pot #2/Pot #2|@Agahnim's Tower Pots/Circle of Pots Pot #3/Pot #3|@Agahnim's Tower Pots/Circle of Pots Pot #4/Pot #4|@Agahnim's Tower Pots/Circle of Pots Pot #5/Pot #5|@Agahnim's Tower Pots/Circle of Pots Pot #6/Pot #6|@Agahnim's Tower Pots/Circle of Pots Pot #7/Pot #7|@Agahnim's Tower Pots/Circle of Pots Pot #8/Pot #8|@Agahnim's Tower Pots/Circle of Pots Pot #9/Pot #9|@Agahnim's Tower Pots/Circle of Pots Pot #10/Pot #10|@Agahnim's Tower Pots/Circle of Pots Pot #11/Pot #11|@Agahnim's Tower Pots/Circle of Pots Pot #12/Pot #12|@Agahnim's Tower Pots/Circle of Pots Pot #13/Pot #13|@Agahnim's Tower Pots/Circle of Pots Pot #14/Pot #14|@Agahnim's Tower Pots/Dark Pits Pot #1/Pot #1|@Agahnim's Tower Pots/Dark Pits Pot #2/Pot #2|@Agahnim's Tower Pots/Dark Pits Pot #3/Pot #3|@Agahnim's Tower Pots/Dark Pits Pot #4/Pot #4|@Agahnim's Tower Pots/Dark Maze Pot #1/Pot #1|@Agahnim's Tower Pots/Dark Maze Pot #2/Pot #2|@Agahnim's Tower Pots/Dark Maze Pot #3/Pot #3|@Agahnim's Tower Pots/Dark Maze Pot #4/Pot #4|@Agahnim's Tower Pots/Dark Maze Pot #5/Pot #5|@Agahnim's Tower Pots/Dark Maze Pot #6/Pot #6|@Agahnim's Tower Pots/Dark Maze Pot #7/Pot #7"
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count":25
                     },
                     {
                         "name": "Enemies",
-                        "access_rules": [],
+                        "access_rules": [
+                            "^$OWDungeonChecks|@Agahnim's Tower Enemies/Catwalk Enemy #1/Enemy #1|@Agahnim's Tower Enemies/Catwalk Enemy #2/Enemy #2|@Agahnim's Tower Enemies/Push Statue Enemy #3/Enemy #3|@Agahnim's Tower Enemies/Push Statue Enemy #4/Enemy #4|@Agahnim's Tower Enemies/Push Statue Enemy #5/Enemy #5|@Agahnim's Tower Enemies/Push Statue Enemy #6/Enemy #6|@Agahnim's Tower Enemies/Red Guards Enemy #1/Enemy #1|@Agahnim's Tower Enemies/Red Spears Enemy #2/Enemy #2|@Agahnim's Tower Enemies/Red Spears Enemy #3/Enemy #3|@Agahnim's Tower Enemies/Red Spears Enemy #4/Enemy #4|@Agahnim's Tower Enemies/Red Spears Enemy #5/Enemy #5|@Agahnim's Tower Enemies/Red Guards Enemy #6/Enemy #6|@Agahnim's Tower Enemies/Pacifist Run Enemy #7/Enemy #7|@Agahnim's Tower Enemies/Circle of Pots Enemy #8/Enemy #8|@Agahnim's Tower Enemies/Circle of Pots Enemy #9/Enemy #9|@Agahnim's Tower Enemies/Circle of Pots Enemy #10/Enemy #10|@Agahnim's Tower Enemies/Pacifist Run Enemy #12/Enemy #12|@Agahnim's Tower Enemies/Pacifist Run Enemy #13/Enemy #13|@Agahnim's Tower Enemies/Dark Archers Enemy #1/Enemy #1|@Agahnim's Tower Enemies/Dark Archers Enemy #2/Enemy #2|@Agahnim's Tower Enemies/Dark Pits Enemy #3/Enemy #3|@Agahnim's Tower Enemies/Dark Pits Enemy #5/Enemy #5|@Agahnim's Tower Enemies/Dark Pits Enemy #6/Enemy #6|@Agahnim's Tower Enemies/Dual Statues Enemy #7/Enemy #7|@Agahnim's Tower Enemies/Dual Statues Enemy #8/Enemy #8|@Agahnim's Tower Enemies/Dark Maze Enemy #1/Enemy #1|@Agahnim's Tower Enemies/Dark Maze Enemy #2/Enemy #2|@Agahnim's Tower Enemies/Lone Statue Enemy #3/Enemy #3|@Agahnim's Tower Enemies/Lone Statue Enemy #4/Enemy #4|@Agahnim's Tower Enemies/Dark Maze Enemy #5/Enemy #5|@Agahnim's Tower Enemies/Dark Maze Enemy #6/Enemy #6|@Agahnim's Tower Enemies/Dark Maze Enemy #7/Enemy #7|@Agahnim's Tower Enemies/Dark Maze Enemy #8/Enemy #8|@Agahnim's Tower Enemies/Dark Chargers Enemy #9/Enemy #9|@Agahnim's Tower Enemies/Dark Maze Enemy #10/Enemy #10|@Agahnim's Tower Enemies/Dark Chargers Enemy #11/Enemy #11|@Agahnim's Tower Enemies/Gold Knights Enemy #1/Enemy #1|@Agahnim's Tower Enemies/Gold Knights Enemy #2/Enemy #2|@Agahnim's Tower Enemies/Room 03 Enemy #3/Enemy #3|@Agahnim's Tower Enemies/Room 03 Enemy #4/Enemy #4"
+                        ],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 40
                     },
