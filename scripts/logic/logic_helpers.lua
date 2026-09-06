@@ -1,4 +1,4 @@
-KEY_DROP_SHUFFLE_STATE = Tracker:FindObjectForCode("key_drop_shuffle").Active
+KEY_DROP_SHUFFLE_STATE = Tracker:FindObjectForCode("key_drop_shuffle").Active or Tracker:FindObjectForCode("key_drop_shuffle").Active or Tracker:FindObjectForCode("key_drop_shuffle").Active
 SMALL_KEY_STAGE = 0
 
 
@@ -996,17 +996,22 @@ end
 ---if the KDS setting is changed this functoin is used to change the max amount of keys being obtainable for each
 --dungeon. previously loaded a second layout
 function KeyDropLayoutChange()
-    local ignore_key_amounts = Tracker:FindObjectForCode("doors_enabled").Active or Tracker:FindObjectForCode("key_drop_shuffle").Active
-    if Tracker:FindObjectForCode("doors_enabled").Active then
+    local potshuffle_keys = Tracker:ProviderCountForCode("potshuffle_keys") > 0
+    local enemy_drop_shuffle_keys = Tracker:ProviderCountForCode("enemy_drop_shuffle_keys") > 0
+    local doors_enabled = Tracker:FindObjectForCode("doors_enabled").Active
+    local key_drop_shuffle = Tracker:FindObjectForCode("key_drop_shuffle").Active
+    
+    local ignore_key_amounts = potshuffle_keys or enemy_drop_shuffle_keys or doors_enabled or key_drop_shuffle
+    if doors_enabled then
         for dungeon, default in pairs(SMALLKEYDEFAULTS[KEY_DROP_SHUFFLE_STATE]) do
             Tracker:FindObjectForCode(dungeon).MaxCount = 30
         end
     else
-        KEY_DROP_SHUFFLE_STATE = Tracker:FindObjectForCode("key_drop_shuffle").Active
         for dungeon, default in pairs(SMALLKEYDEFAULTS[KEY_DROP_SHUFFLE_STATE]) do
             Tracker:FindObjectForCode(dungeon).MaxCount = default
         end
     end
+    KEY_DROP_SHUFFLE_STATE = potshuffle_keys or enemy_drop_shuffle_keys or doors_enabled or key_drop_shuffle
 end
 
 ---helper function to check the set TT boss and thus decide if bombing the top floor of TT is needed to beat the boss
