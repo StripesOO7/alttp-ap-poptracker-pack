@@ -221,7 +221,7 @@
                 ]
             },
             {
-                "name": "Snitch House (West)",
+                "name": "Snitch Lady (West)",
                 "access_rules": [
                     ""
                 ],
@@ -246,7 +246,7 @@
                 ]
             },
             {
-                "name": "Snitch House (East)",
+                "name": "Snitch Lady (East)",
                 "access_rules": [
                     ""
                 ],
@@ -1791,6 +1791,13 @@
                         "access_rules": [
                             "^$CanReach|Graveyard Ledge Item"
                         ]
+                    },
+                    {
+                        "name": "Pots",
+                        "access_rules": [
+                            "^$CanReach|Graveyard Ledge - Pots #7"
+                        ],
+                        "item_count": 8
                     }
                 ],
                 "map_locations": [

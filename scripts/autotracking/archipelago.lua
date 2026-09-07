@@ -360,6 +360,7 @@ function OnClear(slot_data)
         for _, location in pairs(location_array) do
             if location then
                 if type(location) == "table" then
+                    print("found item table in location mapping for Id: "..location_ID)
                     local item_code, item_type, consumable_multiplies = table.unpack(location)
                     ItemUpdate(item_code, item_type, consumable_multiplies, location_ID, true)
                 else
@@ -370,6 +371,7 @@ function OnClear(slot_data)
                             LocationUpdate(location_obj, custom_storage_item, location_ID, true)
                         end
                     else
+                        print("found item table in location mapping for Id: "..location_ID)
                         ---@cast location JsonItem
                         ItemUpdate(location, nil, nil, location_ID, true)
                     end

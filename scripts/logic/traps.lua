@@ -16,9 +16,9 @@ function TrapUndoItem()
     MANUAL_CHECKED = false
     local id = math.random(#item_id_index)
     local item_code = item_id_index[id]
-    local item_obj = Tracker:FindObjectForCode(ITEM_MAPPING[item_code][1][1])  --[[@as JsonItem]]
-    if item_obj then
-        ItemUpdate(item_code, item_obj.Type, nil, id, true)
+    -- local item_obj = Tracker:FindObjectForCode(ITEM_MAPPING[item_code][1][1])  --[[@as JsonItem]]
+    if item_code then
+        ItemUpdate(item_code, nil, nil, id, true)
     end
     MANUAL_CHECKED = true
 end

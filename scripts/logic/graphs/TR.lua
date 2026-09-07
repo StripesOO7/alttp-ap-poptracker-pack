@@ -242,7 +242,7 @@ TR_double_poke_room:connect_one_way("TR - Twin Pokeys Pot #1")
 -- TR_double_poke_room:connect_one_way("TR - Twin Pokeys Pot #2")
 -- TR_double_poke_room:connect_one_way("TR - Twin Pokeys Pot #3")
 -- TR_double_poke_room:connect_one_way("TR - Twin Pokeys Pot #4")
--- TR_double_poke_room:connect_one_way("TR - Dodgers Enemy #3", function() return DealDamage end)
+TR_double_poke_room:connect_one_way("TR - Dodgers Enemy #3", function() return DealDamage end)
 TR_double_poke_room:connect_one_way("TR - Twin Pokeys Enemy #4", function() return DealDamage end)
 -- TR_double_poke_room:connect_one_way("TR - Twin Pokeys Enemy #5", function() return DealDamage end)
 -- TR_double_poke_room:connect_one_way("TR - Twin Pokeys Enemy #6", function() return DealDamage end)
@@ -327,7 +327,7 @@ TR_rupee_room:connect_one_way("TR - Rupees Enemy #2", function() return DealDama
 
 TR_pokes_after_big_door:connect_two_ways(TR_crystalroller_room)
 
-TR_crystalroller_room:connect_one_way("TR - Dodgers Enemy #3", function() return DealDamage end)
+TR_crystalroller_room:connect_one_way("TR - Crystalroller Middle Enemy #4", function() return DealDamage end)
 
 TR_crystalroller_room:connect_two_ways(TR_crystalroller_room_1N_door)
 

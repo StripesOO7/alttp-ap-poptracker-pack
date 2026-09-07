@@ -175,6 +175,7 @@ TT_front_bottom_right:connect_one_way("TT - Compass Room Enemy #1", function() r
 -- TT_front_bottom_right:connect_one_way("TT - Compass Room Enemy #8", function() return DealDamage end)
 -- TT_front_bottom_right:connect_one_way("TT - Compass Room Enemy #9", function() return DealDamage end)
 -- TT_front_bottom_right:connect_one_way("TT - Compass Room Enemy #10", function() return DealDamage end)
+-- TT_front_bottom_right:connect_one_way("TT - Compass Room Enemy #11", function() return DealDamage end)
 TT_front_bottom_right:connect_one_way("TT - Compass Chest")
 
 TT_front_bottom_right:connect_two_ways(TT_front_bottom_right_W_door)
@@ -215,8 +216,8 @@ TT_pot_alcove:connect_one_way("TT - Pot Alcove Mid Pot #7")
 -- TT_pot_alcove:connect_one_way("TT - Pot Alcove Mid Pot #9")
 -- TT_pot_alcove:connect_one_way("TT - Pot Alcove Mid Pot #10")
 TT_pot_alcove:connect_one_way("TT - Pot Alcove Mid Enemy #10", function() return DealDamage end)
-TT_pot_alcove:connect_one_way("TT - Pot Alcove Mid Enemy #11", function() return DealDamage end)
-TT_pot_alcove:connect_one_way("TT - Pot Alcove Mid Enemy #12", function() return DealDamage end)
+-- TT_pot_alcove:connect_one_way("TT - Pot Alcove Mid Enemy #11", function() return DealDamage end)
+-- TT_pot_alcove:connect_one_way("TT - Pot Alcove Mid Enemy #12", function() return DealDamage end)
 
 TT_pot_alcove:connect_two_ways(TT_pot_alcove_3W_door)
 TT_pot_alcove:connect_two_ways(TT_blue_blocks_room)

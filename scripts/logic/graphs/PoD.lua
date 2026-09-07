@@ -117,7 +117,7 @@ PoD_shooter_room:connect_one_way("PoD - Shooter Room", function() return CanInte
 PoD_shooter_room:connect_one_way("PoD - Shooter Room Pot #1")
 -- PoD_shooter_room:connect_one_way("PoD - Shooter Room Pot #2")
 -- PoD_shooter_room:connect_one_way("PoD - Shooter Room Pot #3")
-PoD_shooter_room:connect_one_way("PoD - ", function() return DealDamage end)
+-- PoD_shooter_room:connect_one_way("PoD - ", function() return DealDamage end)
 
 PoD_three_way_room_middle:connect_two_ways(PoD_three_way_room_middle_N_door)
 PoD_three_way_room_middle_N_door:connect_two_ways_entrance("", PoD_big_key_chest_room_S_door, function(keys, Current_Dungeon)
@@ -349,8 +349,8 @@ PoD_harmless_hellway_4S_door:connect_two_ways_entrance_door_stuck("", PoD_arena_
 
 PoD_arena_back_bridge:connect_two_ways(PoD_arena_back_bridge_2N_door)
 
-PoD_switch_room_top:connect_one_way("PoD - ") --pots
-PoD_switch_room_top:connect_one_way("PoD - ", function() return DealDamage end)
+-- PoD_switch_room_top:connect_one_way("PoD - ") --pots
+-- PoD_switch_room_top:connect_one_way("PoD - ", function() return DealDamage end)
 
 PoD_switch_room_top:connect_two_ways(PoD_switch_room_bottom, function() return Has("hammer") end)
 
@@ -360,7 +360,7 @@ PoD_switch_room_bottom:connect_one_way("PoD - Sexy Statue Pot #1")
 -- PoD_switch_room_bottom:connect_one_way("PoD - Sexy Statue Pot #4")
 -- PoD_switch_room_bottom:connect_one_way("PoD - Sexy Statue Pot #5")
 -- PoD_switch_room_bottom:connect_one_way("PoD - Sexy Statue Pot #6")
-PoD_switch_room_bottom:connect_one_way("PoD - ", function() return DealDamage end)
+-- PoD_switch_room_bottom:connect_one_way("PoD - ", function() return DealDamage end)
 
 PoD_switch_room_bottom:connect_two_ways(PoD_switch_room_bottom_N_door)
 PoD_switch_room_bottom_N_door:connect_two_ways_entrance("", PoD_mimics2_3S_door, function() return ALL(EnemizerCheck("bow"), DealDamage) end)

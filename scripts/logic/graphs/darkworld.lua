@@ -265,7 +265,7 @@ Dark_desert_fairy_cave_outside:connect_two_ways_entrance("Dark Desert Fairy", Da
 Mire_shed_inside:connect_one_way("Mire Shed Left", function() return CanInteract(Mire_shed_inside) end)
 Mire_shed_inside:connect_one_way("Mire Shed Right", function() return CanInteract(Mire_shed_inside) end)
 Mire_shed_inside:connect_one_way("Mire Shed - Enemy #1", function() return DealDamage end)
-Mire_shed_inside:connect_one_way("Mire Shed - Enemy #2", function() return DealDamage end)
+-- Mire_shed_inside:connect_one_way("Mire Shed - Enemy #2", function() return DealDamage end)
 
 
 Mire_area:connect_one_way(Desert_ledge, function()

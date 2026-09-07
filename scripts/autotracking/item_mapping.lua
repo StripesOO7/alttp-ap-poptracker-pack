@@ -201,9 +201,11 @@ ITEM_MAPPING = {
 }
 
 JSON_ITEMS = {}
-for _, item in pairs(ITEM_MAPPING) do
-    for _, item_code in pairs(item[1]) do
-        if item_code and item[2] then
+for _, item_array in pairs(ITEM_MAPPING) do
+    for _, item in pairs(item_array) do
+        local item_code = item[1]
+        local item_type = item[2]
+        if item_code and item_type then
             local item_obj = Tracker:FindObjectForCode(item_code) --[[@as JsonItem]]
             if item_obj then
                 JSON_ITEMS[item_code] = item_obj
