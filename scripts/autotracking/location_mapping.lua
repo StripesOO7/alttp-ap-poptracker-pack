@@ -3,16 +3,16 @@
 LOCATION_MAPPING = {
 ---
 
-	[50942] = {"@Eastern Palace/Prize"},
-	[50943] = {"@Desert Palace/Prize"},
-	[50950] = {"@Tower of Hera/Prize"},
-	[50946] = {"@Palace of Darkness/Prize"},
-	[50945] = {"@Swamp Palace/Prize"},
-	[50948] = {"@Skull Woods/Prize"},
-	[50951] = {"@Thieves Town/Prize"},
-	[50949] = {"@Ice Palace/Prize"},
-	[50947] = {"@Misery Mire/Prize"},
-	[50952] = {"@Turtle Rock/Prize"},
+	[50942] = {"@Eastern Palace/Boss/Dungeon Reward Shuffled"},--{"@Eastern Palace/Prize"},
+	[50943] = {"@Desert Palace Back/Boss/Dungeon Reward Shuffled"},--{"@Desert Palace/Prize"},
+	[50950] = {"@Tower of Hera/Boss/Dungeon Reward Shuffled"},--{"@Tower of Hera/Prize"},
+	[50946] = {"@Palace of Darkness/Boss/Dungeon Reward Shuffled"},--{"@Palace of Darkness/Prize"},
+	[50945] = {"@Swamp Palace/Boss/Dungeon Reward Shuffled"},--{"@Swamp Palace/Prize"},
+	[50948] = {"@Skull Woods Back/Boss/Dungeon Reward Shuffled"},--{"@Skull Woods/Prize"},
+	[50951] = {"@Thieves Town Back/Boss/Dungeon Reward Shuffled"},--{"@Thieves Town/Prize"},
+	[50949] = {"@Ice Palace/Boss/Dungeon Reward Shuffled"},--{"@Ice Palace/Prize"},
+	[50947] = {"@Misery Mire/Boss/Dungeon Reward Shuffled"},--{"@Misery Mire/Prize"},
+	[50952] = {"@Turtle Rock Back/Boss/Dungeon Reward Shuffled"},--{"@Turtle Rock/Prize"},
 
 ---
 

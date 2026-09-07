@@ -563,7 +563,7 @@ function AutoFill()
         print("its fucked")
         return
     end
-    -- print(Dump_table(SLOT_DATA))
+    print(Dump_table(SLOT_DATA))
     -- mapGlitcheMode = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4} -- noGlitches, minor, overworld, hybrid_major, no_logic
     local mapDarkRoomLogic = {[0]=0, [1]=1, [2]=2, ["none"]=2,["lamp"]=0,["troches"]=1} --lamp, torches, none
     local mapCoreGoal = {
@@ -875,12 +875,12 @@ function AutoFill()
             for _, medallion in pairs({"bombos", "ether", "quake"}) do
                 Tracker:FindObjectForCode(medallion).CurrentStage = 0
             end
-            local slot_data_medallions = SLOT_DATA["medalions"]["1"]
+            local slot_data_medallions = SLOT_DATA["medallions"]["1"]
             if slot_data_medallions["Misery Mire"] == slot_data_medallions["Turtle Rock"] then
-                Tracker:FindObjectForCode(mapMedallions[slot_data_medallions["Misery Mire"].lower()]).CurrentStage = 3
+                Tracker:FindObjectForCode(string.lower(mapMedallions[slot_data_medallions["Misery Mire"]])).CurrentStage = 3
             else
-                Tracker:FindObjectForCode(mapMedallions[slot_data_medallions["Misery Mire"].lower()]).CurrentStage = 2
-                Tracker:FindObjectForCode(mapMedallions[slot_data_medallions["Turtle Rock"].lower()]).CurrentStage = 1
+                Tracker:FindObjectForCode(string.lower(mapMedallions[slot_data_medallions["Misery Mire"]])).CurrentStage = 2
+                Tracker:FindObjectForCode(string.lower(mapMedallions[slot_data_medallions["Turtle Rock"]])).CurrentStage = 1
             end
         end
         
@@ -966,18 +966,27 @@ end
 
 ---function to check if goal conditions are meet and in turn lights up the goal item
 function GoalCheck()
+    
     if SLOT_DATA ~= nil  and (Tracker:FindObjectForCode("autofill_goal_reqs") --[[@as JsonItem]]).Active then
         local goal = Tracker:FindObjectForCode("goal")  --[[@as JsonItem]]
         local ganon = Tracker:FindObjectForCode("ganon_killable")  --[[@as JsonItem]]
         local triforce = Tracker:FindObjectForCode("triforce_pieces_needed")  --[[@as JsonItem]]
         local goal_stage = goal.CurrentStage
         if goal_stage == 3 or
-        goal_stage == 5 or
-        goal_stage == 6 then
+            goal_stage == 5 or
+            goal_stage == 6 then
             ganon.AcquiredCount=0
-            triforce.AcquiredCount=SLOT_DATA["triforce_pieces_required"]
+            if SLOT_DATA["settings"] then
+                triforce.AcquiredCount=SLOT_DATA["settings"]["1"]["triforce_goal"]
+            else
+                triforce.AcquiredCount=SLOT_DATA["triforce_pieces_required"]
+            end
         else
-            ganon.AcquiredCount=SLOT_DATA["crystals_needed_for_ganon"]
+            if SLOT_DATA["settings"] then
+                ganon.AcquiredCount=#SLOT_DATA["settings"]["1"]["crystals_ganon"]
+            else
+                ganon.AcquiredCount=SLOT_DATA["crystals_needed_for_ganon"]
+            end
             triforce.AcquiredCount=0
         end
     end
