@@ -673,6 +673,21 @@ function AutoFill()
         [7] = 2,
         [8] = 3
     }
+    local mapEnemyDropShuffle = {
+        ["none"] = 0,
+        ["off"] = 0,
+        ["keys"] = 1,
+        ["underworld"] = 2,
+    }
+    local mapPotDropShuffle = {
+        ["none"] = 0,
+        ["off"] = 0,
+        ["keys"] = 1,
+        ["caves"] = 2,
+        ["keyscaves"] = 3,
+        ["dungeons"] = 4,
+        ["lottery"] = 5,
+    }
 
     local mapStages = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=6, [7]=7, [8]=8, [9]=9, [10]=10, ["open"]=1,["inverted"]=2,["standard"]=0}
     local mapToggle = {[0]=false, [1]=true, [2]=true,[3]=true,[4]=true,[6]=true} -- false, true
@@ -709,8 +724,9 @@ function AutoFill()
         -- pot_shuffle = {codes={"pot_shuffle"}, mapping, autofill="",=},
         key_drop_shuffle = {codes={"key_drop_shuffle"}, mappings={mapToggle}, autofill="autofill_dungeon_settings",},
         -- key_rings = {codes={"key_drop_shuffle"}, mappings={mapToggle}, autofill="autofill_dungeon_settings",},
-        pot_shuffle  = {codes={"potshuffle"}, mappings={mapStages}, autofill="autofill_modes"},
-        enemy_drop_shuffle = {codes={"enemy_drop_shuffle"}, mappings={mapStages}, autofill="autofill_modes"},
+        pottery  = {codes={"potshuffle"}, mappings={mapPotDropShuffle}, autofill="autofill_modes"},
+        pot_shuffle  = {codes={"potshuffle"}, mappings={mapPotDropShuffle}, autofill="autofill_modes"},
+        enemy_drop_shuffle = {codes={"enemy_drop_shuffle"}, mappings={mapEnemyDropShuffle}, autofill="autofill_modes"},
 
         --item logic
         bombless_start = {codes={"bombless"}, mappings={mapToggle}, autofill="autofill_modes",},

@@ -34,9 +34,6 @@ function OnFrameHandler()
     -- stuff
     ScriptHost:AddWatchForCode("StateChanged", "*", StateChanged)
     ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", LocationHandler)
-    ChangeERMap()
-    ChangeERLayout()
-    ChangePopupLayout()
     for enemy_number=0, #DEFAULT_ENEMY_DAMAGE_TABLE-1 do 
         for dmg_class_index=0, 15 do
             ScriptHost:AddWatchForCode("handler for dmg class: "..enemy_number.."_"..dmg_class_index, enemy_number.."_"..dmg_class_index, ChangeDmgClassProperty)
@@ -48,4 +45,7 @@ function OnFrameHandler()
     -- ChangePopupLayout()
 end
 require("scripts.watches")
+ChangeERMap()
+ChangeERLayout()
+ChangePopupLayout()
 ScriptHost:AddOnFrameHandler("load handler", OnFrameHandler)
