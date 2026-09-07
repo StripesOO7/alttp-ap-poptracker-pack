@@ -72,6 +72,6 @@ Dungeon_key_mapping = {
     ["TR_laser_entrance_inside"] = "tr",
     ["TR_main_entrance_outside"] = "tr",
     ["TR_main_entrance_inside"] = "tr",
-    ["TT_entrance_outside"] = "tr",
-    ["TT_entrance_inside"] = "tr",
+    ["TT_entrance_outside"] = "tt",
+    ["TT_entrance_inside"] = "tt",
 }
