@@ -79,6 +79,20 @@ ScriptHost:AddWatchForCode("Enable/Disable Route Mode", "route_mode", ChangeRout
 -- ScriptHost:AddWatchForCode("Selected Game Version Change", "selected_game", ChangeGameVersion)
 ScriptHost:AddWatchForCode("Change Settings-PopUp Layout for selected Game Version", "selected_game", ChangePopupLayout)
 
+-- function AddWatchesAfterInit()
+--     ScriptHost:AddWatchForCode("ER_Setting_Changed", "er_full", EmptyERLocationTargets)
+--     ScriptHost:AddWatchForCode("Doors_Setting_Changed", "doors_vanilla", EmptyDoorsTargets)
+--     -- ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", LocationHandler)
+--     ScriptHost:AddWatchForCode("keydropshuffle handler", "key_drop_shuffle", KeyDropLayoutChange)
+--     ScriptHost:AddWatchForCode("doors_enabled handler", "doors_enabled", KeyDropLayoutChange)
+--     ScriptHost:AddWatchForCode("boss handler", "boss_shuffle", BossShuffle)
+--     ScriptHost:AddWatchForCode("set smallkey stage global", "small_keys", SetSmallKeyGlobal)
+
+--     ScriptHost:AddWatchForCode("dmg class shuffle handler", "dmg_class_shuffle", SetDmgClassShuffle)
+--     ScriptHost:AddWatchForCode("preserve melee handler", "preserve_melee_dmg_classes", SetDmgClassShuffle)
+--     ScriptHost:AddWatchForCode("Change Settings-PopUp Layout for selected Game Version", "selected_game", ChangePopupLayout)
+-- end
+
 
 -- ScriptHost:AddWatchForCode("change Settings-PopUp Layout", "selected_game", SetGlobals)
 -- ScriptHost:AddWatchForCode("change Settings-PopUp Layout", "selected_game", SetGlobals)

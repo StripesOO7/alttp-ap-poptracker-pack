@@ -44,6 +44,8 @@ function OnFrameHandler()
     end
     ForceUpdate()
     CanKillUpdate()
+    -- AddWatchesAfterInit()
+    -- ChangePopupLayout()
 end
 require("scripts.watches")
 ScriptHost:AddOnFrameHandler("load handler", OnFrameHandler)
