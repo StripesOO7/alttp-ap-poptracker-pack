@@ -352,7 +352,7 @@ function UpdateEntrances(segment, mainModuleIdx)
     current_coords_x = segment:ReadUInt16(0x7e0022)
     local sub_module_state = segment:ReadUInt8(0x7e0011)
 
-    if mainModuleIdx > 0x05 and mainModuleIdx < 0x0E then --0x0e ==14 == pause menu
+    if mainModuleIdx > 0x05 and (mainModuleIdx < 0x0E or mainModuleIdx == 0x0F or mainModuleIdx == 0x11) then --0x0e ==14 == pause menu
         -- print("-------------------------------------------------")
         New_ow_room = segment:ReadUInt16(0x7e008a)
         New_dungeon_room = segment:ReadUInt16(0x7e00a0)
