@@ -451,6 +451,8 @@ end)
 
 CE_dropdown_room_S_door:connect_two_ways(CE_dropdown_room)
 
+CE_dropdown_entrance_inside:connect_one_way(CE_dropdown_room)
+
 CE_dropdown_room:connect_one_way("CE - Rat Path Enemy #1", function() return DealDamage end)
 -- CE_dropdown_room:connect_one_way("CE - Rat Path Enemy #2", function() return DealDamage end)
 -- CE_dropdown_room:connect_one_way("CE - Rat Path Enemy #3", function() return DealDamage end)

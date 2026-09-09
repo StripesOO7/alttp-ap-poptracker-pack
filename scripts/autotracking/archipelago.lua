@@ -726,6 +726,7 @@ function AutoFill()
         -- key_rings = {codes={"key_drop_shuffle"}, mappings={mapToggle}, autofill="autofill_dungeon_settings",},
         pottery  = {codes={"potshuffle"}, mappings={mapPotDropShuffle}, autofill="autofill_modes"},
         pot_shuffle  = {codes={"potshuffle"}, mappings={mapPotDropShuffle}, autofill="autofill_modes"},
+        dropshuffle = {codes={"enemy_drop_shuffle"}, mappings={mapEnemyDropShuffle}, autofill="autofill_modes"},
         enemy_drop_shuffle = {codes={"enemy_drop_shuffle"}, mappings={mapEnemyDropShuffle}, autofill="autofill_modes"},
 
         --item logic
