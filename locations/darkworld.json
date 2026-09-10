@@ -774,13 +774,13 @@
             {
                 "name": "PoD Hint",
                 "access_rules":[
-                    ""
+                    // "^$CanReach|PoD_hint_house_inside"
                 ],
                 "sections": [
                     {
                         "name": "Pots",
                         "access_rules":[
-                            ""
+                            "^$CanReach|PoD Hint - Pot #1"
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_caves"],
                         "item_count":4
