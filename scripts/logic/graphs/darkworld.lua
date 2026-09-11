@@ -1003,9 +1003,9 @@ PoD_east_darkworld_hint_outside:connect_two_ways_entrance("PoD Teleporter Cave",
 
 -- PoD_entrance_outside:connect_two_ways_entrance("Palace of Darkness Entrance", PoD_entrance_inside)
 PoD_hint_house_inside:connect_one_way("PoD Hint - Pot #1", function() return CanInteract(PoD_hint_house_inside) end)
-PoD_hint_house_inside:connect_one_way("PoD Hint - Pot #2", function() return CanInteract(PoD_hint_house_inside) end)
-PoD_hint_house_inside:connect_one_way("PoD Hint - Pot #3", function() return CanInteract(PoD_hint_house_inside) end)
-PoD_hint_house_inside:connect_one_way("PoD Hint - Pot #4", function() return CanInteract(PoD_hint_house_inside) end)
+-- PoD_hint_house_inside:connect_one_way("PoD Hint - Pot #2", function() return CanInteract(PoD_hint_house_inside) end)
+-- PoD_hint_house_inside:connect_one_way("PoD Hint - Pot #3", function() return CanInteract(PoD_hint_house_inside) end)
+-- PoD_hint_house_inside:connect_one_way("PoD Hint - Pot #4", function() return CanInteract(PoD_hint_house_inside) end)
 
 
 

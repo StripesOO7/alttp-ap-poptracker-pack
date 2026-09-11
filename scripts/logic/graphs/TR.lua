@@ -225,7 +225,7 @@ TR_big_key_room_bottom_left_3W_door:connect_two_ways(TR_big_key_room_bottom_left
 TR_big_key_room_bottom_left:connect_two_ways(TR_big_key_chest_island)
 
 TR_big_key_chest_island:connect_one_way("TR - Big Key Chest", function() return CanInteract(TR_big_key_chest_island) end)
-TR_big_key_chest_island:connect_two_ways(TR_big_key_room_bottom_left)
+TR_big_key_chest_island:connect_two_ways(TR_big_key_room_bottom_right)
 
 TR_big_key_room_bottom_right:connect_two_ways(TR_big_key_room_bottom_right_4E_door)
 TR_big_key_room_bottom_right_4E_door:connect_two_ways_entrance_door_stuck("", TR_pipe_pit_bottom_left_ledge_3W_door)
