@@ -987,6 +987,30 @@
                         "size": 32
                     }
                 ]
+            },
+            {
+                "name": "Mire Hint",
+                "access_rules": [
+                    "^$CanReach|Dark_desert_hint_inside"
+                ],
+                "sections": [
+                    {
+                        "name": "Pots",
+                        "access_rules":[
+                            "^$CanReach|Mire Hint - Pot #1"
+                        ],
+                        "clear_as_group": false,
+                        "item_count": 6
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "Darkworld",
+                        "x": 400,
+                        "y": 1658,
+                        "size": 32
+                    }
+                ]
             }
         ]
     },
@@ -1761,7 +1785,7 @@
                     {
                         "name": "Pots",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Misery Mire Pots/Falling Foes Pot #1/Pot #1|@Misery Mire Pots/Falling Foes Pot #2/Pot #2|@Misery Mire Pots/Tall Dark and Roomy Pot #1/Pot #1|@Misery Mire Pots/Tall Dark and Roomy Pot #2/Pot #2|@Misery Mire Pots/Tall Dark and Roomy Pot #3/Pot #3|@Misery Mire Pots/Tall Dark and Roomy Pot #4/Pot #4|@Misery Mire Pots/Dark Shooters Pot #1/Pot #1|@Misery Mire Pots/Dark Shooters Pot #3/Pot #3|@Misery Mire Pots/Fishbone Pot #2/Pot #2|@Misery Mire Pots/Fishbone Pot #3/Pot #3|@Misery Mire Pots/Fishbone Pot #4/Pot #4|@Misery Mire Pots/Fishbone Pot #5/Pot #5|@Misery Mire Pots/South Fish Pot #6/Pot #6|@Misery Mire Pots/South Fish Pot #7/Pot #7|@Misery Mire Pots/South Fish Pot #8/Pot #8|@Misery Mire Pots/South Fish Pot #9/Pot #9|@Misery Mire Pots/South Fish Pot #10/Pot #10|@Misery Mire Pots/South Fish Pot #11/Pot #11|@Misery Mire Pots/Left Bridge Pot #1/Pot #1|@Misery Mire Pots/Spike Barrier Pot #1/Pot #1|@Misery Mire Pots/Spike Barrier Pot #2/Pot #2|@Misery Mire Pots/BK Door Room Pot #1/Pot #1|@Misery Mire Pots/BK Door Room Pot #2/Pot #2|@Misery Mire Pots/BK Door Room Pot #3/Pot #3|@Misery Mire Pots/BK Door Room Pot #4/Pot #4|@Misery Mire Pots/BK Door Room Pot #5/Pot #5|@Misery Mire Pots/BK Door Room Pot #6/Pot #6|@Misery Mire Pots/Spikes Pot #2/Pot #2|@Misery Mire Pots/Spikes Pot #3/Pot #3|@Misery Mire Pots/Hub Switch Pot #1/Pot #1|@Misery Mire Pots/Hub Right Pot #2/Pot #2|@Misery Mire Pots/Hub Pot #3/Pot #3|@Misery Mire Pots/Hub Pot #4/Pot #4|@Misery Mire Pots/Conveyor Barrier Pot #1/Pot #1|@Misery Mire Pots/Conveyor Barrier Pot #2/Pot #2|@Misery Mire Pots/Neglected Room Pot #3/Pot #3|@Misery Mire Pots/Neglected Room Pot #4/Pot #4|@Misery Mire Pots/Neglected Room Pot #5/Pot #5|@Misery Mire Pots/Neglected Room Pot #6/Pot #6|@Misery Mire Pots/Hint Pot #1/Pot #1|@Misery Mire Pots/Hint Pot #2/Pot #2|@Misery Mire Pots/Hint Pot #3/Pot #3|@Misery Mire Pots/Hint Pot #4/Pot #4|@Misery Mire Pots/Hint Pot #5/Pot #5|@Misery Mire Pots/Hint Pot #6/Pot #6"
+                            "^$OWDungeonChecks|@Misery Mire Pots/Falling Foes Pot #1/Pot #1|@Misery Mire Pots/Falling Foes Pot #2/Pot #2|@Misery Mire Pots/Tall Dark and Roomy Pot #1/Pot #1|@Misery Mire Pots/Tall Dark and Roomy Pot #2/Pot #2|@Misery Mire Pots/Tall Dark and Roomy Pot #3/Pot #3|@Misery Mire Pots/Tall Dark and Roomy Pot #4/Pot #4|@Misery Mire Pots/Dark Shooters Pot #1/Pot #1|@Misery Mire Pots/Dark Shooters Pot #3/Pot #3|@Misery Mire Pots/Fishbone Pot #2/Pot #2|@Misery Mire Pots/Fishbone Pot #3/Pot #3|@Misery Mire Pots/Fishbone Pot #4/Pot #4|@Misery Mire Pots/Fishbone Pot #5/Pot #5|@Misery Mire Pots/South Fish Pot #6/Pot #6|@Misery Mire Pots/South Fish Pot #7/Pot #7|@Misery Mire Pots/South Fish Pot #8/Pot #8|@Misery Mire Pots/South Fish Pot #9/Pot #9|@Misery Mire Pots/South Fish Pot #10/Pot #10|@Misery Mire Pots/South Fish Pot #11/Pot #11|@Misery Mire Pots/Left Bridge Pot #1/Pot #1|@Misery Mire Pots/Spike Barrier Pot #1/Pot #1|@Misery Mire Pots/Spike Barrier Pot #2/Pot #2|@Misery Mire Pots/BK Door Room Pot #1/Pot #1|@Misery Mire Pots/BK Door Room Pot #2/Pot #2|@Misery Mire Pots/BK Door Room Pot #3/Pot #3|@Misery Mire Pots/BK Door Room Pot #4/Pot #4|@Misery Mire Pots/BK Door Room Pot #5/Pot #5|@Misery Mire Pots/BK Door Room Pot #6/Pot #6|@Misery Mire Pots/Spikes Pot #2/Pot #2|@Misery Mire Pots/Spikes Pot #3/Pot #3|@Misery Mire Pots/Hub Switch Pot #1/Pot #1|@Misery Mire Pots/Hub Right Pot #2/Pot #2|@Misery Mire Pots/Hub Pot #3/Pot #3|@Misery Mire Pots/Hub Pot #4/Pot #4|@Misery Mire Pots/Conveyor Barrier Pot #1/Pot #1|@Misery Mire Pots/Conveyor Barrier Pot #2/Pot #2|@Misery Mire Pots/Neglected Room Pot #3/Pot #3|@Misery Mire Pots/Neglected Room Pot #4/Pot #4|@Misery Mire Pots/Neglected Room Pot #5/Pot #5|@Misery Mire Pots/Neglected Room Pot #6/Pot #6"
                         ],
                         "visibility_rules":["potshuffle_lottery", "potshuffle_dungeons"],
                         "item_count": 45

@@ -265,6 +265,14 @@ Dark_desert_fairy_cave_outside:connect_two_ways_entrance("Dark Desert Fairy", Da
 Mire_shed_inside:connect_one_way("Mire Shed Left", function() return CanInteract(Mire_shed_inside) end)
 Mire_shed_inside:connect_one_way("Mire Shed Right", function() return CanInteract(Mire_shed_inside) end)
 Mire_shed_inside:connect_one_way("Mire Shed - Enemy #1", function() return DealDamage end)
+
+Dark_desert_hint_inside:connect_one_way(Dark_desert_hint_back, function() return ALL("bombs", CanInteract(Dark_desert_hint_inside)) end)
+Dark_desert_hint_inside:connect_one_way("Mire Hint - Pot #1")
+-- Dark_desert_hint_inside:connect_one_way("Mire Hint - Pot #2")
+-- Dark_desert_hint_inside:connect_one_way("Mire Hint - Pot #3")
+-- Dark_desert_hint_inside:connect_one_way("Mire Hint - Pot #4")
+-- Dark_desert_hint_inside:connect_one_way("Mire Hint - Pot #5")
+-- Dark_desert_hint_inside:connect_one_way("Mire Hint - Pot #6")
 -- Mire_shed_inside:connect_one_way("Mire Shed - Enemy #2", function() return DealDamage end)
 
 
