@@ -996,12 +996,12 @@ end
 ---if the KDS setting is changed this functoin is used to change the max amount of keys being obtainable for each
 --dungeon. previously loaded a second layout
 function KeyDropLayoutChange()
-    local potshuffle_keys = Tracker:ProviderCountForCode("potshuffle_keys") > 0
+    local potsanity_keys = Tracker:ProviderCountForCode("potsanity_keys") > 0
     local enemy_drop_shuffle_keys = Tracker:ProviderCountForCode("enemy_drop_shuffle_keys") > 0
     local doors_enabled = Tracker:FindObjectForCode("doors_enabled").Active
     local key_drop_shuffle = Tracker:FindObjectForCode("key_drop_shuffle").Active
     
-    local ignore_key_amounts = potshuffle_keys or enemy_drop_shuffle_keys or doors_enabled or key_drop_shuffle
+    local ignore_key_amounts = potsanity_keys or enemy_drop_shuffle_keys or doors_enabled or key_drop_shuffle
     if doors_enabled then
         for dungeon, default in pairs(SMALLKEYDEFAULTS[KEY_DROP_SHUFFLE_STATE]) do
             Tracker:FindObjectForCode(dungeon).MaxCount = 30
@@ -1011,7 +1011,7 @@ function KeyDropLayoutChange()
             Tracker:FindObjectForCode(dungeon).MaxCount = default
         end
     end
-    KEY_DROP_SHUFFLE_STATE = potshuffle_keys or enemy_drop_shuffle_keys or doors_enabled or key_drop_shuffle
+    KEY_DROP_SHUFFLE_STATE = potsanity_keys or enemy_drop_shuffle_keys or doors_enabled or key_drop_shuffle
 end
 
 ---helper function to check the set TT boss and thus decide if bombing the top floor of TT is needed to beat the boss
@@ -1295,11 +1295,11 @@ end
 function ChangeERLayout()
     local er_tracking = Tracker:FindObjectForCode("er_tracking").CurrentStage
     local doors_tracking = Tracker:FindObjectForCode("doors_tracking").CurrentStage
-    local potshuffle = Tracker:FindObjectForCode("potshuffle").CurrentStage
+    local potsanity = Tracker:FindObjectForCode("potsanity").CurrentStage
     local enemy_drop_shuffle = Tracker:FindObjectForCode("enemy_drop_shuffle").CurrentStage
 
     local er_or_doors = er_tracking > 0 or doors_tracking > 0
-    local enemy_or_pots = potshuffle > 0 or enemy_drop_shuffle > 0
+    local enemy_or_pots = potsanity > 0 or enemy_drop_shuffle > 0
 
     if er_or_doors and enemy_or_pots then
         
@@ -1334,7 +1334,7 @@ function ChangePopupLayout()
     local dmg_class_shuffle = Tracker:FindObjectForCode("dmg_class_shuffle")
     local preserve_melee_dmg_classes = Tracker:FindObjectForCode("preserve_melee_dmg_classes")
     local manual_misc_items_storage = Tracker:FindObjectForCode("manual_misc_items_storage").ItemState
-    local potshuffle = Tracker:FindObjectForCode("potshuffle")
+    local potsanity = Tracker:FindObjectForCode("potsanity")
     local enemy_drop_shuffle = Tracker:FindObjectForCode("enemy_drop_shuffle")
     local key_drop_shuffle = Tracker:FindObjectForCode("key_drop_shuffle")
     local shuffle_links_house = Tracker:FindObjectForCode("shuffle_links_house")
@@ -1351,7 +1351,7 @@ function ChangePopupLayout()
         doortype_shuffle.IgnoreUserInput = false
         dmg_class_shuffle.IgnoreUserInput = true
         preserve_melee_dmg_classes.IgnoreUserInput = true
-        potshuffle.IgnoreUserInput = false
+        potsanity.IgnoreUserInput = false
         enemy_drop_shuffle.IgnoreUserInput = false
         key_drop_shuffle.IgnoreUserInput = true
         shuffle_links_house.IgnoreUserInput = false
@@ -1365,7 +1365,7 @@ function ChangePopupLayout()
         doortype_shuffle.Active = room_data["doortype_shuffle"] or false
         -- dmg_class_shuffle.CurrentStage = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]["dmg_class_shuffle"] or 0
         preserve_melee_dmg_classes.Active = room_data["preserve_melee_dmg_classes"] or false
-        potshuffle.CurrentStage = room_data["potshuffle"] or 0
+        potsanity.CurrentStage = room_data["potsanity"] or 0
         enemy_drop_shuffle.CurrentStage = room_data["enemy_drop_shuffle"] or 0
         shuffle_links_house.Active = room_data["shuffle_links_house"] or false
         shuffle_tavern.Active = room_data["shuffle_tavern"] or false
@@ -1415,8 +1415,8 @@ function ChangePopupLayout()
         preserve_melee_dmg_classes.IgnoreUserInput = false
         preserve_melee_dmg_classes.Active = false
 
-        potshuffle.IgnoreUserInput = true
-        potshuffle.CurrentStage = 0
+        potsanity.IgnoreUserInput = true
+        potsanity.CurrentStage = 0
 
         enemy_drop_shuffle.IgnoreUserInput = true
         enemy_drop_shuffle.CurrentStage = 0
@@ -1475,8 +1475,8 @@ function ChangePopupLayout()
         preserve_melee_dmg_classes.IgnoreUserInput = true
         preserve_melee_dmg_classes.Active = false
 
-        potshuffle.IgnoreUserInput = true
-        potshuffle.CurrentStage = 0
+        potsanity.IgnoreUserInput = true
+        potsanity.CurrentStage = 0
 
         enemy_drop_shuffle.IgnoreUserInput = true
         enemy_drop_shuffle.CurrentStage = 0

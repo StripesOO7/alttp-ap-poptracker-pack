@@ -710,7 +710,7 @@ function AutoFill()
         compass_shuffle = {codes={"compass", "compass_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings",},
         map_shuffle = {codes={"map", "maps_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings",},
         boss_shuffle = {codes={"boss_shuffle"}, mappings={mapBosses}, autofill="autofill_dungeon_settings",},
-        boss_prize_shuffle = {codes={"boss_prize_shuffle"}, mappings={mapToggle}, autofill="autofill_dungeon_settings",},
+        boss_prize_shuffle = {codes={"boss_prize_shuffle"}, mappings={mapStages}, autofill="autofill_dungeon_settings",},
         randomize_puzzles = {codes={"room_puzzle_shuffle"}, mappings={mapToggle}, autofill="autofill_dungeon_settings",},
         
         -- progressive = {codes={"progressive_items"}, mappings={mapStages}, autofill="",},
@@ -724,8 +724,8 @@ function AutoFill()
         -- pot_shuffle = {codes={"pot_shuffle"}, mapping, autofill="",=},
         key_drop_shuffle = {codes={"key_drop_shuffle"}, mappings={mapToggle}, autofill="autofill_dungeon_settings",},
         -- key_rings = {codes={"key_drop_shuffle"}, mappings={mapToggle}, autofill="autofill_dungeon_settings",},
-        pottery  = {codes={"potshuffle"}, mappings={mapPotDropShuffle}, autofill="autofill_modes"},
-        pot_shuffle  = {codes={"potshuffle"}, mappings={mapPotDropShuffle}, autofill="autofill_modes"},
+        pottery  = {codes={"potsanity"}, mappings={mapPotDropShuffle}, autofill="autofill_modes"},
+        potsanity  = {codes={"potsanity"}, mappings={mapPotDropShuffle}, autofill="autofill_modes"},
         dropshuffle = {codes={"enemy_drop_shuffle"}, mappings={mapEnemyDropShuffle}, autofill="autofill_modes"},
         enemy_drop_shuffle = {codes={"enemy_drop_shuffle"}, mappings={mapEnemyDropShuffle}, autofill="autofill_modes"},
 
@@ -832,6 +832,7 @@ function AutoFill()
         -- // ["key_logic_algorithm"] = partial,
         local slot_data_alttpr = SLOT_DATA["settings"]["1"]
         for settings_name , settings_value in pairs(slot_data_alttpr) do
+            print(settings_name , settings_value)
             if type(settings_value) == "table" then
                 if settings_name == "bosses" then
                     if Tracker:FindObjectForCode("autofill_dungeon_settings").Active then
