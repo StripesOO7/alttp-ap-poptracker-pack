@@ -716,14 +716,14 @@ function AutoFill()
         crystals_needed_for_ganon = {codes={"ganon_killable"}, mappings={nil}, autofill="autofill_goal_reqs", default={7}},
         triforce_pieces_required = {codes={"triforce_pieces_needed"}, mappings={nil}, autofill="autofill_goal_reqs", default={0}},
         open_pyramid = {codes={"pyramid_state"}, mappings={mapStages}, autofill="autofill_goal_reqs", default={0}},
-        -- triforce_pieces_mode = {codes={""}, mapping, autofill="",=default=0},
-        -- triforce_pieces_percentage = {codes={""}, mapping, autofill="",=default=0},
-        -- triforce_pieces_available = {codes={"triforce_pieces_needed", mapping, autofill="",=default=0},
+        -- triforce_pieces_mode = {codes={""}, mapping, autofill="",=default={0}},
+        -- triforce_pieces_percentage = {codes={""}, mapping, autofill="",=default={0}},
+        -- triforce_pieces_available = {codes={"triforce_pieces_needed", mapping, autofill="",=default={0}},
         -- triforce_pieces_extra = {codes={""}, mapping, autofill="", default={0}}
 
         --dungeon
         big_key_shuffle = {codes={"big_keys", "bigkeys_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings", default={false, 0}},
-        small_key_shuffle = {codes={"small_keys", "smallkeys_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings", default={false, 0}},
+        small_key_shuffle = {codes={"small_keys", "smallkeys_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings", default={0, 0}},
         compass_shuffle = {codes={"compass", "compass_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings", default={false, 0}},
         map_shuffle = {codes={"map", "maps_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings", default={false, 0}},
         boss_shuffle = {codes={"boss_shuffle"}, mappings={mapBosses}, autofill="autofill_dungeon_settings", default={0}},
@@ -733,12 +733,12 @@ function AutoFill()
         -- progressive = {codes={"progressive_items"}, mappings={mapStages}, autofill="", default={0}},
 
         --item modes
-        -- retro_bow = {codes={""}, mapping, autofill="",=default=0},
+        -- retro_bow = {codes={""}, mapping, autofill="",=default={0}},
         retro_caves = {codes={"retro_caves"}, mappings={mapToggle}, autofill="autofill_modes", default={false}},
         item_functionality = {codes={"item_mode"}, mappings={mapStages}, autofill="autofill_modes", default={1}},
 
         --pots and keydrops
-        -- pot_shuffle = {codes={"pot_shuffle"}, mapping, autofill="",=default=0},
+        -- pot_shuffle = {codes={"pot_shuffle"}, mapping, autofill="",=default={0}},
         key_drop_shuffle = {codes={"key_drop_shuffle"}, mappings={mapToggle}, autofill="autofill_dungeon_settings", default={false}},
         -- key_rings_list = {codes={}, mappings={mapKeyRings}, autofill="autofill_dungeon_settings", default={0}},
         pottery  = {codes={"potsanity"}, mappings={mapPotDropShuffle}, autofill="autofill_modes", default={0}},
@@ -748,7 +748,7 @@ function AutoFill()
 
         --item logic
         bombless_start = {codes={"bombless"}, mappings={mapToggle}, autofill="autofill_modes", default={false}},
-        dark_room_logic = {codes={"dark_mode"}, mappings={mapDarkRoomLogic}, autofill="autofill_modes", default={false}},
+        dark_room_logic = {codes={"dark_mode"}, mappings={mapDarkRoomLogic}, autofill="autofill_modes", default={0}},
         swordless = {codes={"swordless"}, mappings={mapToggle}, autofill="autofill_modes", default={false}},
 
         --shops
