@@ -380,8 +380,10 @@ function OnClear(slot_data)
         end
     end
 
-    
-    print(Dump_table(REVERSE_ALL_LOCATIONS))
+    -- print(Dump_table(REVERSE_ALL_LOCATIONS))
+
+
+    -- unmark if not in location list
     for index, location_array in pairs(LOCATION_MAPPING) do
         -- print(index, location_array[1], REVERSE_ALL_LOCATIONS[index])
         if REVERSE_ALL_LOCATIONS[index] == nil then
@@ -709,72 +711,72 @@ function AutoFill()
 
     local slotCodes = {
         --goal 
-        crystals_needed_for_gt = {codes={"gt_access"}, mappings={nil}, autofill="autofill_goal_reqs",},
-        dungeons_needed_for_ganon = {codes={"gt_access"}, mappings={nil}, autofill="autofill_goal_reqs",},
-        crystals_needed_for_ganon = {codes={"ganon_killable"}, mappings={nil}, autofill="autofill_goal_reqs",},
-        triforce_pieces_required = {codes={"triforce_pieces_needed"}, mappings={nil}, autofill="autofill_goal_reqs",},
-        open_pyramid = {codes={"pyramid_state"}, mappings={mapStages}, autofill="autofill_goal_reqs",},
-        -- triforce_pieces_mode = {codes={""}, mapping, autofill="",=},
-        -- triforce_pieces_percentage = {codes={""}, mapping, autofill="",=},
-        -- triforce_pieces_available = {codes={"triforce_pieces_needed", mapping, autofill="",=},
-        -- triforce_pieces_extra = {codes={""}, mapping, autofill="",=}
+        crystals_needed_for_gt = {codes={"gt_access"}, mappings={nil}, autofill="autofill_goal_reqs", default={7}},
+        dungeons_needed_for_ganon = {codes={"gt_access"}, mappings={nil}, autofill="autofill_goal_reqs", default={7}},
+        crystals_needed_for_ganon = {codes={"ganon_killable"}, mappings={nil}, autofill="autofill_goal_reqs", default={7}},
+        triforce_pieces_required = {codes={"triforce_pieces_needed"}, mappings={nil}, autofill="autofill_goal_reqs", default={0}},
+        open_pyramid = {codes={"pyramid_state"}, mappings={mapStages}, autofill="autofill_goal_reqs", default={0}},
+        -- triforce_pieces_mode = {codes={""}, mapping, autofill="",=default=0},
+        -- triforce_pieces_percentage = {codes={""}, mapping, autofill="",=default=0},
+        -- triforce_pieces_available = {codes={"triforce_pieces_needed", mapping, autofill="",=default=0},
+        -- triforce_pieces_extra = {codes={""}, mapping, autofill="", default={0}}
 
         --dungeon
-        big_key_shuffle = {codes={"big_keys", "bigkeys_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings",},
-        small_key_shuffle = {codes={"small_keys", "smallkeys_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings",},
-        compass_shuffle = {codes={"compass", "compass_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings",},
-        map_shuffle = {codes={"map", "maps_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings",},
-        boss_shuffle = {codes={"boss_shuffle"}, mappings={mapBosses}, autofill="autofill_dungeon_settings",},
-        boss_prize_shuffle = {codes={"boss_prize_shuffle"}, mappings={mapStages}, autofill="autofill_dungeon_settings",},
-        randomize_puzzles = {codes={"room_puzzle_shuffle"}, mappings={mapToggle}, autofill="autofill_dungeon_settings",},
+        big_key_shuffle = {codes={"big_keys", "bigkeys_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings", default={false, 0}},
+        small_key_shuffle = {codes={"small_keys", "smallkeys_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings", default={false, 0}},
+        compass_shuffle = {codes={"compass", "compass_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings", default={false, 0}},
+        map_shuffle = {codes={"map", "maps_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings", default={false, 0}},
+        boss_shuffle = {codes={"boss_shuffle"}, mappings={mapBosses}, autofill="autofill_dungeon_settings", default={0}},
+        boss_prize_shuffle = {codes={"boss_prize_shuffle"}, mappings={mapStages}, autofill="autofill_dungeon_settings", default={0}},
+        randomize_puzzles = {codes={"room_puzzle_shuffle"}, mappings={mapToggle}, autofill="autofill_dungeon_settings", default={false}},
         
-        -- progressive = {codes={"progressive_items"}, mappings={mapStages}, autofill="",},
+        -- progressive = {codes={"progressive_items"}, mappings={mapStages}, autofill="", default={0}},
 
         --item modes
-        -- retro_bow = {codes={""}, mapping, autofill="",=},
-        retro_caves = {codes={"retro_caves"}, mappings={mapToggle}, autofill="autofill_modes",},
-        item_functionality = {codes={"item_mode"}, mappings={mapStages}, autofill="autofill_modes",},
+        -- retro_bow = {codes={""}, mapping, autofill="",=default=0},
+        retro_caves = {codes={"retro_caves"}, mappings={mapToggle}, autofill="autofill_modes", default={false}},
+        item_functionality = {codes={"item_mode"}, mappings={mapStages}, autofill="autofill_modes", default={1}},
 
         --pots and keydrops
-        -- pot_shuffle = {codes={"pot_shuffle"}, mapping, autofill="",=},
-        key_drop_shuffle = {codes={"key_drop_shuffle"}, mappings={mapToggle}, autofill="autofill_dungeon_settings",},
-        -- key_rings_list = {codes={}, mappings={mapKeyRings}, autofill="autofill_dungeon_settings",},
-        pottery  = {codes={"potsanity"}, mappings={mapPotDropShuffle}, autofill="autofill_modes"},
-        potsanity  = {codes={"potsanity"}, mappings={mapPotDropShuffle}, autofill="autofill_modes"},
-        dropshuffle = {codes={"enemy_drop_shuffle"}, mappings={mapEnemyDropShuffle}, autofill="autofill_modes"},
-        enemy_drop_shuffle = {codes={"enemy_drop_shuffle"}, mappings={mapEnemyDropShuffle}, autofill="autofill_modes"},
+        -- pot_shuffle = {codes={"pot_shuffle"}, mapping, autofill="",=default=0},
+        key_drop_shuffle = {codes={"key_drop_shuffle"}, mappings={mapToggle}, autofill="autofill_dungeon_settings", default={false}},
+        -- key_rings_list = {codes={}, mappings={mapKeyRings}, autofill="autofill_dungeon_settings", default={0}},
+        pottery  = {codes={"potsanity"}, mappings={mapPotDropShuffle}, autofill="autofill_modes", default={0}},
+        potsanity  = {codes={"potsanity"}, mappings={mapPotDropShuffle}, autofill="autofill_modes", default={0}},
+        dropshuffle = {codes={"enemy_drop_shuffle"}, mappings={mapEnemyDropShuffle}, autofill="autofill_modes", default={0}},
+        enemy_drop_shuffle = {codes={"enemy_drop_shuffle"}, mappings={mapEnemyDropShuffle}, autofill="autofill_modes", default={0}},
 
         --item logic
-        bombless_start = {codes={"bombless"}, mappings={mapToggle}, autofill="autofill_modes",},
-        dark_room_logic = {codes={"dark_mode"}, mappings={mapDarkRoomLogic}, autofill="autofill_modes",},
-        swordless = {codes={"swordless"}, mappings={mapToggle}, autofill="autofill_modes",},
+        bombless_start = {codes={"bombless"}, mappings={mapToggle}, autofill="autofill_modes", default={false}},
+        dark_room_logic = {codes={"dark_mode"}, mappings={mapDarkRoomLogic}, autofill="autofill_modes", default={false}},
+        swordless = {codes={"swordless"}, mappings={mapToggle}, autofill="autofill_modes", default={false}},
 
         --shops
-        shop_item_slots = {codes={"shop_sanity"}, mappings={nil}, autofill="autofill_sanities",},
-        -- randomize_shop_inventories = {codes={""}, mappings={mapToggle}, autofill="autofill_sanities",},
-        -- shuffle_shop_inventories = {codes={""}, mappings={mapToggle}, autofill="autofill_sanities",},
-        shuffle_capacity_upgrades = {codes={"shop_shuffle_capacity"}, mappings={mapToggle}, autofill="autofill_misc",},
-        include_witch_hut = {codes={"shop_include_witchhut"}, mappings={mapToggle}, autofill="autofill_modes",},
-        randomize_cost_types = {codes={"shuffle_cost_type"}, mappings={mapToggle}, autofill="autofill_modes",},
-        shuffle_prizes = {codes={"shuffle_cost_type"}, mappings={mapToggle}, autofill="autofill_modes",},
+        shop_item_slots = {codes={"shop_sanity"}, mappings={nil}, autofill="autofill_sanities", default={false}},
+        -- randomize_shop_inventories = {codes={""}, mappings={mapToggle}, autofill="autofill_sanities", default={0}},
+        -- shuffle_shop_inventories = {codes={""}, mappings={mapToggle}, autofill="autofill_sanities", default={0}},
+        shuffle_capacity_upgrades = {codes={"shop_shuffle_capacity"}, mappings={mapToggle}, autofill="autofill_misc", default={false}},
+        include_witch_hut = {codes={"shop_include_witchhut"}, mappings={mapToggle}, autofill="autofill_modes", default={false}},
+        randomize_cost_types = {codes={"shuffle_cost_type"}, mappings={mapToggle}, autofill="autofill_modes", default={false}},
+        shuffle_prizes = {codes={"shuffle_cost_type"}, mappings={mapToggle}, autofill="autofill_modes", default={false}},
         -- shuffle_prizes
 
         --ER/Doors
-        entrance_shuffle = {codes={"er_tracking"}, mappings={mapEntranceShuffle}, autofill="autofill_misc",},
-        shuffle_links_house = {codes={"shuffle_links_house"}, mappings={mapToggle}, autofill="autofill_misc",},
-        shuffle_tavern = {codes={"shuffle_tavern"}, mappings={mapToggle}, autofill="autofill_misc",},
-        -- doors_shuffle = {codes={"doors_tracking"}, mappings={}, autofill="autofill_misc",},
+        entrance_shuffle = {codes={"er_tracking"}, mappings={mapEntranceShuffle}, autofill="autofill_misc", default={0}},
+        shuffle_links_house = {codes={"shuffle_links_house"}, mappings={mapToggle}, autofill="autofill_misc", default={false}},
+        shuffle_tavern = {codes={"shuffle_tavern"}, mappings={mapToggle}, autofill="autofill_misc", default={false}},
+        doors_shuffle = {codes={"doors_tracking"}, mappings={}, autofill="autofill_misc", default={0}},
 
         --goal logic
-        goal = {codes={"goal"}, mappings={mapCoreGoal}, autofill="autofill_goal_reqs",},
-        mode = {codes={"start_option"}, mappings={mapStages}, autofill="autofill_modes",},
-        glitches_required = {codes={"glitches"}, mappings={mapStages}, autofill="autofill_modes",},
+        goal = {codes={"goal"}, mappings={mapCoreGoal}, autofill="autofill_goal_reqs", default={0}},
+        mode = {codes={"start_option"}, mappings={mapStages}, autofill="autofill_modes", default={1}},
+        glitches_required = {codes={"glitches"}, mappings={mapStages}, autofill="autofill_modes", default={0}},
 
         -- misc logic
-        enemy_shuffle = {codes={"enemizer"}, mappings={mapToggle}, autofill="autofill_misc",},
-        killable_thieves = {codes={"killable_thieves"}, mappings={mapToggle}, autofill="autofill_misc",},
-        randomize_damage_classes = {codes={"dmg_class_shuffle"}, mappings={mapStages}, autofill="autofill_misc",},
-        preserve_melee_damage_classes = {codes={"preserve_melee_dmg_classes"}, mappings={mapToggle}, autofill="autofill_misc",},
+        enemy_shuffle = {codes={"enemizer"}, mappings={mapToggle}, autofill="autofill_misc", default={false}},
+        killable_thieves = {codes={"killable_thieves"}, mappings={mapToggle}, autofill="autofill_misc", default={false}},
+        randomize_damage_classes = {codes={"dmg_class_shuffle"}, mappings={mapStages}, autofill="autofill_misc", default={0}},
+        preserve_melee_damage_classes = {codes={"preserve_melee_dmg_classes"}, mappings={mapToggle}, autofill="autofill_misc", default={false}},
     }
 
     -- print(Dump_table(SLOT_DATA))
@@ -977,11 +979,24 @@ function AutoFill()
                                 -- print(k,v,Tracker:FindObjectForCode(slotCodes[k].code).CurrentStage, slotCodes[k].mapping[v])
                                 item.CurrentStage = (slotCodes[settings_name].mappings[index])[settings_value]
                             end
+                        else
+                            local item = Tracker:FindObjectForCode((slotCodes[settings_name].codes)[index]) --[[@as JsonItem]]
+                            if item.Type == "toggle" then
+                                -- print("toggle", settings_name, settings_value)
+                                item.Active = slotCodes[settings_name].default[index]
+                            elseif item.Type == "consumable" or slotCodes[settings_name].mappings[index] == nil then
+                                -- print("toggle", settings_name, settings_value)
+                                item.AcquiredCount = slotCodes[settings_name].default[index]
+                            else
+                                -- print("else", settings_name, settings_value)
+                                -- print(k,v,Tracker:FindObjectForCode(slotCodes[k].code).CurrentStage, slotCodes[k].mapping[v])
+                                item.CurrentStage = slotCodes[settings_name].default[index]
+                            end
                         end
                     end
-                else
+            --     else
                     
-            print(settings_name , settings_value)
+            -- print(settings_name , settings_value)
                 end
             end
         end

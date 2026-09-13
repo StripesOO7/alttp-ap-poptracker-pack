@@ -1404,8 +1404,18 @@
                         "access_rules": [
                             "^$OWDungeonChecks|@Palace of Darkness/Boss/Boss Item"
                         ],
+                        "visibility_rules": ["boss_prize_shuffle_off"],
                         "item_count": 1,
                         "hosted_item": "pod_boss, palaceofdarkness"
+                    },
+                    {
+                        "name": "Boss Item (Prize Shuffle)" ,
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "^$OWDungeonChecks|@Palace of Darkness/Boss/Boss Item"
+                        ],
+                        "visibility_rules": ["boss_prize_shuffle_on"],
+                        "hosted_item": "pod_boss, pod_ap_reward"
                     }
                 ],
                 "map_locations": [
@@ -1544,7 +1554,20 @@
                         "access_rules": [
                             "^$OWDungeonChecks|@Turtle Rock Back/Boss/Boss Item"
                         ],
-                        "item_count": 1
+                        
+                        "visibility_rules": ["boss_prize_shuffle_off"],
+                        "item_count": 1,
+                        "hosted_item": "tr_boss, turtlerock"
+                    },
+                    {
+                        "name": "Boss Item (Prize Shuffle)",
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "^$OWDungeonChecks|@Turtle Rock Back/Boss/Boss Item"
+                        ],
+                        
+                        "visibility_rules": ["boss_prize_shuffle_on"],
+                        "hosted_item": "tr_boss, tr_ap_reward"
                     }
                 ],
                 "map_locations": [
@@ -1734,8 +1757,18 @@
                         "access_rules": [
                             "^$OWDungeonChecks|@Skull Woods Back/Boss/Boss Item"
                         ],
+                        "visibility_rules": ["boss_prize_shuffle_off"],
                         "item_count": 1,
                         "hosted_item": "sw_boss, skullwoods"
+                    },
+                    {
+                        "name": "Boss Item (Prize Shuffle)" ,
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "^$OWDungeonChecks|@Skull Woods Back/Boss/Boss Item"
+                        ],
+                        "visibility_rules": ["boss_prize_shuffle_on"],
+                        "hosted_item": "sw_boss, sw_ap_reward"
                     }
                 ],
                 "map_locations": [
@@ -1822,8 +1855,18 @@
                         "access_rules": [
                             "^$OWDungeonChecks|@Misery Mire/Boss/Boss Item"
                         ],
+                        "visibility_rules": ["boss_prize_shuffle_off"],
                         "item_count": 1,
                         "hosted_item": "mm_boss, miserymire"
+                    },
+                    {
+                        "name": "Boss Item (Prize Shuffle)" ,
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "^$OWDungeonChecks|@Misery Mire/Boss/Boss Item"
+                        ],
+                        "visibility_rules": ["boss_prize_shuffle_on"],
+                        "hosted_item": "mm_boss, mm_ap_reward"
                     }
                 ],
                 "map_locations": [
@@ -1904,8 +1947,18 @@
                         "access_rules": [
                             "^$OWDungeonChecks|@Swamp Palace/Boss/Boss Item"
                         ],
+                        "visibility_rules": ["boss_prize_shuffle_off"],
                         "item_count": 1,
                         "hosted_item": "sp_boss, swamppalace"
+                    },
+                    {
+                        "name": "Boss Item (Prize Shuffle)" ,
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "^$OWDungeonChecks|@Swamp Palace/Boss/Boss Item"
+                        ],
+                        "visibility_rules": ["boss_prize_shuffle_on"],
+                        "hosted_item": "sp_boss, sp_ap_reward"
                     }
                 ],
                 "map_locations": [
@@ -1992,8 +2045,18 @@
                         "access_rules": [
                             "^$OWDungeonChecks|@Ice Palace/Boss/Boss Item"
                         ],
+                        "visibility_rules": ["boss_prize_shuffle_off"],
                         "item_count": 1,
                         "hosted_item": "ip_boss, icepalace"
+                    },
+                    {
+                        "name": "Boss Item (Prize Shuffle)" ,
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "^$OWDungeonChecks|@Ice Palace/Boss/Boss Item"
+                        ],
+                        "visibility_rules": ["boss_prize_shuffle_on"],
+                        "hosted_item": "ip_boss, ip_ap_reward"
                     }
                 ],
                 "map_locations": [
@@ -2095,8 +2158,18 @@
                         "access_rules": [
                             "^$OWDungeonChecks|@Thieves Town Back/Boss/Boss Item"
                         ],
+                        "visibility_rules": ["boss_prize_shuffle_off"],
                         "item_count": 1,
                         "hosted_item": "tt_boss, thievestown"
+                    },
+                    {
+                        "name": "Boss Item (Prize Shuffle)",
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "^$OWDungeonChecks|@Thieves Town Back/Boss/Boss Item"
+                        ],
+                        "visibility_rules": ["boss_prize_shuffle_on"],
+                        "hosted_item": "tt_boss, tt_ap_reward"
                     },
                     {
                         "name": "Hyrule Hymn o7",

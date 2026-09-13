@@ -2679,9 +2679,19 @@
                         "access_rules": [
                             "^$OWDungeonChecks|@Desert Palace Back/Boss/Boss Item"
                         ],
-                        "clear_as_group": true,
+                        "visibility_rules": ["boss_prize_shuffle_off"],
+                        "clear_as_group": false,
                         "item_count": 1,
                         "hosted_item": "dp_boss, desertpalace"
+                    },
+                    {
+                        "name": "Boss Item (Prize Shuffle)" ,
+                        "access_rules": [
+                            "^$OWDungeonChecks|@Desert Palace Back/Boss/Boss Item"
+                        ],
+                        "visibility_rules": ["boss_prize_shuffle_on"],
+                        "clear_as_group": false,
+                        "hosted_item": "dp_boss, dp_ap_reward"
                     }
                 ],
                 "map_locations": [
@@ -2768,8 +2778,18 @@
                         "access_rules": [
                             "^$OWDungeonChecks|@Eastern Palace/Boss/Boss Item"
                         ],
+                        "visibility_rules": ["boss_prize_shuffle_off"],
                         "item_count": 1,
                         "hosted_item": "ep_boss, easternpalace"
+                    },
+                    {
+                        "name": "Boss Item (Prize Shuffle)" ,
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "^$OWDungeonChecks|@Eastern Palace/Boss/Boss Item"
+                        ],
+                        "visibility_rules": ["boss_prize_shuffle_on"],
+                        "hosted_item": "ep_boss, ep_ap_reward"
                     }
                 ],
                 "map_locations": [
@@ -3123,8 +3143,18 @@
                         "access_rules": [
                             "^$OWDungeonChecks|@Tower of Hera/Boss/Boss Item"
                         ],
+                        "visibility_rules": ["boss_prize_shuffle_off"],
                         "item_count": 1,
                         "hosted_item": "toh_boss, towerofhera"
+                    },
+                    {
+                        "name": "Boss Item (Prize Shuffle)" ,
+                        "clear_as_group": false,
+                        "access_rules": [
+                            "^$OWDungeonChecks|@Tower of Hera/Boss/Boss Item"
+                        ],
+                        "visibility_rules": ["boss_prize_shuffle_on"],
+                        "hosted_item": "toh_boss, toh_ap_reward"
                     }
                 ],
                 "map_locations": [

@@ -43,7 +43,8 @@ ScriptHost:AddWatchForCode("settings bigkeys_setting", "bigkeys_setting", GiveAl
 --     ScriptHost:AddWatchForCode("settings " .. small_key_ring, small_key_ring, ChangeKeySprite)
 -- end
 
-
+ScriptHost:AddWatchForCode("shuffled_rewards", "boss_prize_shuffle", SetDungeonRewards)
+SetDungeonRewards()
 ScriptHost:AddWatchForCode("set shop cost-type", "shuffle_cost_type", SetCostType)
 ScriptHost:AddWatchForCode("set shop default inventory", "shop_sanity", SetShopInventory)
 ScriptHost:AddWatchForCode("set prize shuffles", "prize_shuffle", SetPrizeShuffle)

@@ -1203,6 +1203,43 @@ local shop_default_mapping = {
     [33] = 8
 }
 
+--- Set dungeon rewards to be fixed or shuffled based on the "boss_prize_shuffle" setting.
+function SetDungeonRewards()
+    MANUAL_CHECKED = false
+    local dungeon_reward_defaults = {
+        ["easternpalace"] = 4,
+        ["desertpalace"] = 3,
+        ["towerofhera"] = 3,
+        ["palaceofdarkness"] = 1,
+        ["swamppalace"] = 1,
+        ["skullwoods"] = 1,
+        ["thievestown"] =1 ,
+        ["icepalace"] = 2,
+        ["miserymire"] = 2,
+        ["turtlerock"] = 1,
+    }
+    local dungeon_prize_shuffle = Tracker:ProviderCountForCode("boss_prize_shuffle_on")
+    if dungeon_prize_shuffle > 0 then --active
+        for dungeon_reward, stage in pairs(dungeon_reward_defaults) do
+            Tracker:FindObjectForCode(dungeon_reward).CurrentStage = stage
+        end
+    else --inactive
+        if PLAYER_ID > -1 then
+            AutoFill()
+        else
+            local location_storage = Tracker:FindObjectForCode("manual_misc_items_storage").ItemState
+            for dungeon_reward, _ in pairs(dungeon_reward_defaults) do
+                if location_storage and location_storage.MANUAL_LOCATIONS["default"][dungeon_reward] then
+                    Tracker:FindObjectForCode(dungeon_reward).CurrentStage = location_storage.MANUAL_LOCATIONS["default"][dungeon_reward]
+                else
+                    Tracker:FindObjectForCode(dungeon_reward).CurrentStage = 0
+                end
+            end
+        end
+    end
+    MANUAL_CHECKED = true
+end
+
 ---comment
 function SetCostType()
     local active = Tracker:FindObjectForCode("shuffle_cost_type").Active
@@ -1359,6 +1396,17 @@ function ChangePopupLayout()
         shuffle_tavern.Active = room_data["shuffle_tavern"] or false
         key_drop_shuffle.Active = room_data["key_drop_shuffle"] or false
 
+        LOCATION_MAPPING[1573201] = {"@DP Back/Desert Palace Back/Boss Item (Prize Shuffle)","@Desert Palace Back/Boss/Boss Item", "dp_boss"}
+        LOCATION_MAPPING[1573200] = {"@EP/Eastern Palace/Boss Item (Prize Shuffle)","@Eastern Palace/Boss/Boss Item","ep_boss"}
+        LOCATION_MAPPING[1573202] = {"@ToH/Tower of Hera/Boss Item (Prize Shuffle)","@Tower of Hera/Boss/Boss Item","toh_boss"}
+        LOCATION_MAPPING[1573204] = {"@SP/Swamp Palace/Boss Item (Prize Shuffle)","@Swamp Palace/Boss/Boss Item","sp_boss"}
+        LOCATION_MAPPING[1573206] = {"@TT/Thieves Town/Boss Item (Prize Shuffle)","@Thieves Town Back/Boss/Boss Item","tt_boss"}
+        LOCATION_MAPPING[1573205] = {"@SW/Skull Woods Back/Boss Item (Prize Shuffle)","@Skull Woods Back/Boss/Boss Item","sw_boss"}
+        LOCATION_MAPPING[1573207] = {"@IP/Ice Palace/Boss Item (Prize Shuffle)","@Ice Palace/Boss/Boss Item","ip_boss"}
+        LOCATION_MAPPING[1573208] = {"@MM/Misery Mire/Boss Item (Prize Shuffle)","@Misery Mire/Boss/Boss Item","mm_boss"}
+        LOCATION_MAPPING[1573209] = {"@TR/Turtle Rock Back/Boss Item (Prize Shuffle)","@Turtle Rock Back/Boss/Boss Item","tr_boss"}
+        LOCATION_MAPPING[1573203] = {"@PoD/Palace of Darkness/Boss Item (Prize Shuffle)","@Palace of Darkness/Boss/Boss Item","pod_boss"}
+
         ITEM_MAPPING[182] = nil
         ITEM_MAPPING[183] = nil
         ITEM_MAPPING[184] = nil
@@ -1417,6 +1465,17 @@ function ChangePopupLayout()
 
         key_drop_shuffle.IgnoreUserInput = false
         key_drop_shuffle.Active = false
+
+        LOCATION_MAPPING[1573201] = {"@DP Back/Desert Palace Back/Boss Item (Prize Shuffle)","@Desert Palace Back/Boss/Boss Item", "dp_boss"}
+        LOCATION_MAPPING[1573200] = {"@EP/Eastern Palace/Boss Item (Prize Shuffle)","@Eastern Palace/Boss/Boss Item","ep_boss"}
+        LOCATION_MAPPING[1573202] = {"@ToH/Tower of Hera/Boss Item (Prize Shuffle)","@Tower of Hera/Boss/Boss Item","toh_boss"}
+        LOCATION_MAPPING[1573204] = {"@SP/Swamp Palace/Boss Item (Prize Shuffle)","@Swamp Palace/Boss/Boss Item","sp_boss"}
+        LOCATION_MAPPING[1573206] = {"@TT/Thieves Town/Boss Item (Prize Shuffle)","@Thieves Town Back/Boss/Boss Item","tt_boss"}
+        LOCATION_MAPPING[1573205] = {"@SW/Skull Woods Back/Boss Item (Prize Shuffle)","@Skull Woods Back/Boss/Boss Item","sw_boss"}
+        LOCATION_MAPPING[1573207] = {"@IP/Ice Palace/Boss Item (Prize Shuffle)","@Ice Palace/Boss/Boss Item","ip_boss"}
+        LOCATION_MAPPING[1573208] = {"@MM/Misery Mire/Boss Item (Prize Shuffle)","@Misery Mire/Boss/Boss Item","mm_boss"}
+        LOCATION_MAPPING[1573209] = {"@TR/Turtle Rock Back/Boss Item (Prize Shuffle)","@Turtle Rock Back/Boss/Boss Item","tr_boss"}
+        LOCATION_MAPPING[1573203] = {"@PoD/Palace of Darkness/Boss Item (Prize Shuffle)","@Palace of Darkness/Boss/Boss Item","pod_boss"}
 
         ITEM_MAPPING[177] = nil
         ITEM_MAPPING[180] = nil
@@ -1478,6 +1537,16 @@ function ChangePopupLayout()
         key_drop_shuffle.IgnoreUserInput = false
         key_drop_shuffle.Active = false
 
+        LOCATION_MAPPING[1573201] = {"@DP Back/Desert Palace Back/Boss Item","@Desert Palace Back/Boss/Boss Item", "dp_boss", "desertpalace"}
+        LOCATION_MAPPING[1573200] = {"@EP/Eastern Palace/Boss Item","@Eastern Palace/Boss/Boss Item","ep_boss","easternpalace"}
+        LOCATION_MAPPING[1573202] = {"@ToH/Tower of Hera/Boss Item","@Tower of Hera/Boss/Boss Item","toh_boss","towerofhera"}
+        LOCATION_MAPPING[1573204] = {"@SP/Swamp Palace/Boss Item","@Swamp Palace/Boss/Boss Item","sp_boss","swamppalace"}
+        LOCATION_MAPPING[1573206] = {"@TT/Thieves Town/Boss Item","@Thieves Town Back/Boss/Boss Item","tt_boss","thievestown"}
+        LOCATION_MAPPING[1573205] = {"@SW/Skull Woods Back/Boss Item","@Skull Woods Back/Boss/Boss Item","sw_boss","skullwoods"}
+        LOCATION_MAPPING[1573207] = {"@IP/Ice Palace/Boss Item","@Ice Palace/Boss/Boss Item","ip_boss","icepalace"}
+        LOCATION_MAPPING[1573208] = {"@MM/Misery Mire/Boss Item","@Misery Mire/Boss/Boss Item","mm_boss","miserymire"}
+        LOCATION_MAPPING[1573209] = {"@TR/Turtle Rock Back/Boss Item","@Turtle Rock Back/Boss/Boss Item","tr_boss","turtlerock"}
+        LOCATION_MAPPING[1573203] = {"@PoD/Palace of Darkness/Boss Item","@Palace of Darkness/Boss/Boss Item","pod_boss","palaceofdarkness"}
         
         ITEM_MAPPING[182] = nil
         ITEM_MAPPING[183] = nil
