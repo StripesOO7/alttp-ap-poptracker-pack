@@ -563,7 +563,7 @@ function AutoFill()
         print("its fucked")
         return
     end
-    print(Dump_table(SLOT_DATA))
+    -- print(Dump_table(SLOT_DATA))
     -- mapGlitcheMode = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4} -- noGlitches, minor, overworld, hybrid_major, no_logic
     local mapDarkRoomLogic = {[0]=0, [1]=1, [2]=2, ["none"]=2,["lamp"]=0,["troches"]=1} --lamp, torches, none
     local mapCoreGoal = {
@@ -637,6 +637,21 @@ function AutoFill()
         ["Ganons Tower - top"] = {"gt_boss",},
         ["Ganons Tower - bottom"] = {"gt_ice",},
         ["Ganons Tower - middle"] = {"gt_lanmo"},
+    }
+    local mapKeyRings = {
+        ["Eastern Palace"] = "EP_keyring_setting",
+        ["Desert Palace"] = "DP_keyring_setting",
+        ["Tower of Hera"] = "ToH_keyring_setting",
+        ["Hyrule Castle"] = "HC_keyring_setting",
+        ["Agahnim\'s Tower"] = "AT_keyring_setting",
+        ["Palace of Darkness"] = "PoD_keyring_setting",
+        ["Swamp Palace"] = "SP_keyring_setting",
+        ["Skull Woods"] = "SW_keyring_setting",
+        ["Thieves\' Town"] = "TT_keyring_setting",
+        ["Ice Palace"] = "IP_keyring_setting",
+        ["Misery Mire"] = "MM_keyring_setting",
+        ["Turtle Rock"] = "TR_keyring_setting",
+        ["Ganon\'s Tower"] = "GT_keyring_setting",
     }
     local mapBoss = {
         ["Armos Knights"] = 1,
@@ -723,7 +738,7 @@ function AutoFill()
         --pots and keydrops
         -- pot_shuffle = {codes={"pot_shuffle"}, mapping, autofill="",=},
         key_drop_shuffle = {codes={"key_drop_shuffle"}, mappings={mapToggle}, autofill="autofill_dungeon_settings",},
-        -- key_rings = {codes={"key_drop_shuffle"}, mappings={mapToggle}, autofill="autofill_dungeon_settings",},
+        -- key_rings_list = {codes={}, mappings={mapKeyRings}, autofill="autofill_dungeon_settings",},
         pottery  = {codes={"potsanity"}, mappings={mapPotDropShuffle}, autofill="autofill_modes"},
         potsanity  = {codes={"potsanity"}, mappings={mapPotDropShuffle}, autofill="autofill_modes"},
         dropshuffle = {codes={"enemy_drop_shuffle"}, mappings={mapEnemyDropShuffle}, autofill="autofill_modes"},
@@ -917,16 +932,21 @@ function AutoFill()
                     for dungeon, reward in pairs(settings_value) do
                         Tracker:FindObjectForCode(mapDungeon[dungeon][2]).CurrentStage = mapRewards[reward]
                     end
-                -- elseif settings_name == "key_rings_list" then
-                --     for dungeon, reward in pairs(settings_value) do
-                --         print(dungeon, reward)
-                --         print(Dump_table(mapDungeon))
-                --         print(Dump_table(mapDungeon[reward]))
-                --         print(mapDungeon[reward][2])
-                --         print(Dump_table(mapRewards[reward]))
-                --         print(mapRewards[reward])
-                --         Tracker:FindObjectForCode(mapDungeon[dungeon][2]).CurrentStage = mapRewards[reward]
-                --     end
+                elseif settings_name == "key_rings_list" then
+                    -- print(Dump_table(SLOT_DATA["key_rings_list"]))
+                    for _, keyring_setting in pairs(mapKeyRings) do
+                        Tracker:FindObjectForCode(keyring_setting).Active = false
+                    end
+
+                    for _, dungeon in pairs(settings_value) do
+                        -- print(dungeon, reward)
+                        -- print(Dump_table(mapDungeon))
+                        -- print(Dump_table(mapDungeon[reward]))
+                        -- print(mapDungeon[reward][2])
+                        -- print(Dump_table(mapRewards[reward]))
+                        -- print(mapRewards[reward])
+                        Tracker:FindObjectForCode(mapKeyRings[dungeon]).Active = true
+                    end
                 
                 end
             else

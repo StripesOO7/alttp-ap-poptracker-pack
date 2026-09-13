@@ -3,6 +3,8 @@ ScriptHost:AddWatchForCode("ER_Setting_Changed", "er_full", EmptyERLocationTarge
 ScriptHost:AddWatchForCode("Doors_Setting_Changed", "doors_vanilla", EmptyDoorsTargets)
 -- ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", LocationHandler)
 ScriptHost:AddWatchForCode("keydropshuffle handler", "key_drop_shuffle", KeyDropLayoutChange)
+ScriptHost:AddWatchForCode("potsanity key handler", "potsanity_keys", KeyDropLayoutChange)
+ScriptHost:AddWatchForCode("enemy drop key handler", "enemy_drop_shuffle_keys", KeyDropLayoutChange)
 ScriptHost:AddWatchForCode("doors_enabled handler", "doors_enabled", KeyDropLayoutChange)
 ScriptHost:AddWatchForCode("boss handler", "boss_shuffle", BossShuffle)
 ScriptHost:AddWatchForCode("set smallkey stage global", "small_keys", SetSmallKeyGlobal)
@@ -32,6 +34,14 @@ ScriptHost:AddWatchForCode("settings maps_setting", "maps_setting", GiveAll)
 ScriptHost:AddWatchForCode("settings compass_shuffle", "compass_setting", GiveAll)
 ScriptHost:AddWatchForCode("settings smallkeys_setting", "smallkeys_setting", GiveAll)
 ScriptHost:AddWatchForCode("settings bigkeys_setting", "bigkeys_setting", GiveAll)
+
+-- for _, small_key_ring in pairs(
+--     {
+--         "EP_keyring_setting","DP_keyring_setting","ToH_keyring_setting","HC_keyring_setting","AT_keyring_setting","PoD_keyring_setting","TT_keyring_setting","SW_keyring_setting","SP_keyring_setting","IP_keyring_setting","MM_keyring_setting","TR_keyring_setting","GT_keyring_setting"
+--     }
+-- ) do
+--     ScriptHost:AddWatchForCode("settings " .. small_key_ring, small_key_ring, ChangeKeySprite)
+-- end
 
 
 ScriptHost:AddWatchForCode("set shop cost-type", "shuffle_cost_type", SetCostType)

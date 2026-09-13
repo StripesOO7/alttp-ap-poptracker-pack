@@ -18,37 +18,21 @@ local bool_to_accesslvl = {
     [false] = ACCESS_NONE
 }
 
-SMALLKEYDEFAULTS = {
-    [true] = {
-        ["ep_smallkey"] = 2, -- ep_smallkey 162
-        ["dp_smallkey"] = 4, -- dp_smallkey 163
-        ["toh_smallkey"] = 1, -- toh_smallkey 170
-        ["hc_smallkey"] = 4, -- hc_smallkey 160
-        ["at_smallkey"] = 4, -- at_smallkey 164
-        ["pod_smallkey"] = 6, -- pod_smallkey 166
-        ["tt_smallkey"] = 3, -- tt_smallkey 171
-        ["sw_smallkey"] = 5, -- sw_smallkey 168
-        ["sp_smallkey"] = 6, -- sp_smallkey 165
-        ["ip_smallkey"] = 6, -- ip_smallkey 169
-        ["mm_smallkey"] = 6, -- mm_smallkey 167
-        ["tr_smallkey"] = 6, -- tr_smallkey 172
-        ["gt_smallkey"] = 8, -- gt_smallkey 173
-    },
-    [false] = {
-        ["ep_smallkey"] = 0,-- ep_smallkey 162
-        ["dp_smallkey"] = 1,-- dp_smallkey 163
-        ["toh_smallkey"] = 1,-- toh_smallkey 170
-        ["hc_smallkey"] = 1,-- hc_smallkey 160
-        ["at_smallkey"] = 2,-- at_smallkey 164
-        ["pod_smallkey"] = 6,-- pod_smallkey 166
-        ["tt_smallkey"] = 1,-- tt_smallkey 171
-        ["sw_smallkey"] = 3,-- sw_smallkey 168
-        ["sp_smallkey"] = 1,-- sp_smallkey 165
-        ["ip_smallkey"] = 2,-- ip_smallkey 169
-        ["mm_smallkey"] = 3,-- mm_smallkey 167
-        ["tr_smallkey"] = 4,-- tr_smallkey 172
-        ["gt_smallkey"] = 4,-- gt_smallkey 173
-    }
+--- {base, kds, enemy_keys, pot_keys}
+SMALLKEYDEFAULTS = { --
+        ["ep_smallkey"] = {0,2,1,1},-- ep_smallkey 162
+        ["dp_smallkey"] = {1,4,0,3},-- dp_smallkey 163
+        ["toh_smallkey"] = {1,1,0,0},-- toh_smallkey 170
+        ["hc_smallkey"] = {1,4,3,0},-- hc_smallkey 160
+        ["at_smallkey"] = {2,4,2,0},-- at_smallkey 164
+        ["pod_smallkey"] = {6,6,0,0},-- pod_smallkey 166
+        ["tt_smallkey"] = {1,3,0,2},-- tt_smallkey 171
+        ["sw_smallkey"] = {3,5,1,1},-- sw_smallkey 168
+        ["sp_smallkey"] = {1,6,0,5},-- sp_smallkey 165
+        ["ip_smallkey"] = {2,6,2,2},-- ip_smallkey 169
+        ["mm_smallkey"] = {3,6,1,2},-- mm_smallkey 167
+        ["tr_smallkey"] = {4,6,2,0},-- tr_smallkey 172
+        ["gt_smallkey"] = {4,8,1,3},-- gt_smallkey 173
 }
 
 ---function to build a pretty-printable representation of a provided table
@@ -1001,17 +985,21 @@ function KeyDropLayoutChange()
     local doors_enabled = Tracker:FindObjectForCode("doors_enabled").Active
     local key_drop_shuffle = Tracker:FindObjectForCode("key_drop_shuffle").Active
     
-    local ignore_key_amounts = potsanity_keys or enemy_drop_shuffle_keys or doors_enabled or key_drop_shuffle
+    -- local ignore_key_amounts =  doors_enabled
     if doors_enabled then
-        for dungeon, default in pairs(SMALLKEYDEFAULTS[KEY_DROP_SHUFFLE_STATE]) do
+        for dungeon, key_table in pairs(SMALLKEYDEFAULTS) do
             Tracker:FindObjectForCode(dungeon).MaxCount = 30
         end
     else
-        for dungeon, default in pairs(SMALLKEYDEFAULTS[KEY_DROP_SHUFFLE_STATE]) do
-            Tracker:FindObjectForCode(dungeon).MaxCount = default
+        for dungeon, key_table in pairs(SMALLKEYDEFAULTS) do
+            if key_drop_shuffle then
+                Tracker:FindObjectForCode(dungeon).MaxCount = key_table[2]
+            else
+                Tracker:FindObjectForCode(dungeon).MaxCount = key_table[1] + (enemy_drop_shuffle_keys and key_table[3] or 0) + (potsanity_keys and key_table[4] or 0)
+            end
         end
     end
-    KEY_DROP_SHUFFLE_STATE = potsanity_keys or enemy_drop_shuffle_keys or doors_enabled or key_drop_shuffle
+    KEY_DROP_SHUFFLE_STATE = potsanity_keys or enemy_drop_shuffle_keys or key_drop_shuffle or doors_enabled
 end
 
 ---helper function to check the set TT boss and thus decide if bombing the top floor of TT is needed to beat the boss
