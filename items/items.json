@@ -1,23 +1,65 @@
 [
+    // {
+    //     "name": "Bow",
+    //     "type": "progressive_toggle",
+    //     "initial_quantity": 30,
+    //     "min_quantity": 30,
+    //     "max_quantity": 70,
+    //     "increment": 5,
+    //     "stages": [
+    //         {
+    //             "img": "/images/items/Bow+Arrows.png",
+    //             "codes": "bow, weapon, bow+arrow, bowandarrows"
+    //         },
+    //         {
+    //             "img": "/images/items/bowandsilverarrow.png",
+    //             "codes": "bow+silvers",
+    //             "disabled_img": "/images/items/bowandsilverarrowdisabled.png",
+    //             "disabled_img_mods": "none"
+    //         }
+    //     ]
+    // },
     {
-        "name": "Bow",
-        "type": "progressive_toggle",
-        "initial_quantity": 30,
-        "min_quantity": 30,
-        "max_quantity": 70,
-        "increment": 5,
-        "stages": [
+        "name": "Normal Bow",
+        "type": "toggle",
+        "img": "/images/items/Bow+Arrows.png",
+        "codes": "bow+arrow"
+    },
+    {
+        "name": "Silver Arrows",
+        "type": "toggle",
+        "img": "/images/items/bowandsilverarrow.png",
+        "codes": "bow+silvers"
+    },
+    {
+        "name": "Bows",
+        "type": "composite_toggle",
+        "item_left": "bow+arrow",
+        "item_right": "bow+silvers",
+        "images": [
             {
+                "left": false, "right": false,
                 "img": "/images/items/Bow+Arrows.png",
-                "codes": "bow, weapon, bow+arrow, bowandarrows"
+                "img_mods": "@disabled",
+                "codes": "no_bow"
             },
             {
+                "left": true, "right": false,
+                "img": "/images/items/Bow+Arrows.png",
+                "codes": "normal_bow"
+            },
+            {
+                "left": false, "right": true,
+                "img": "/images/items/bowandsilverarrowdisabled.png",
+                "codes": "silver+_arrows"
+            },
+            {
+                "left": true, "right": true,
                 "img": "/images/items/bowandsilverarrow.png",
-                "codes": "bow+silvers",
-                "disabled_img": "/images/items/bowandsilverarrowdisabled.png",
-                "disabled_img_mods": "none"
+                "codes": "silver_bow"
             }
-        ]
+        ],
+        "codes": "bow, weapon"
     },
     {
         "name": "Blue Boomerang",

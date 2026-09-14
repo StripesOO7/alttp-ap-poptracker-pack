@@ -7,6 +7,7 @@ TROLL_PLAYER= false
 DATE_CHECK_PASSED = false
 
 MANUAL_CHECKED = true
+MANUAL_TRACKING_ENEMY = false
 ROOM_SEED = "default"
 
 local FIRSTSTAGE = {
@@ -278,6 +279,25 @@ function ItemUpdate(item_code, item_type, consumable_multiplier, item_id, reset)
         (item_obj.AcquiredCount + item_obj.Increment * (consumable_multiplier or 1))
     elseif ({["combined_consumable"] = true, ["keyring"] = true})[item_type] then
         item_obj.AcquiredCount = reset and (item_obj.MinCount or 0) or item_obj.MaxCount
+    elseif item_type == "composite_toggle" then
+        if item_id == 100 or item_id == 101 then
+            local bow_and_arrow = Tracker:FindObjectForCode("bow+arrow")
+            local bow_and_silvers = Tracker:FindObjectForCode("bow+silvers")
+            if not (bow_and_arrow and bow_and_silvers) then
+                error("no individual bow items found")
+            end
+            if reset then
+                bow_and_arrow.Active = false
+                bow_and_silvers.Active = false
+                
+            else
+                if bow_and_arrow.Active then
+                    bow_and_silvers.Active = true
+                else
+                    bow_and_arrow.Active = true
+                end
+            end
+        end
     elseif item_type == "split_toggle" then
         if reset then
             item_obj.CurrentStage = reset and 0 or (item_obj.CurrentStage + 1)

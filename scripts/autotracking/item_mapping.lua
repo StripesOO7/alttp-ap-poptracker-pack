@@ -2,11 +2,11 @@
 -- first value is the code of the target item and the second is the item type (currently only "toggle"}, "progressive"}, ""and "toggle"}, ""but feel free to expand for your needs!)
 -- here are the SM items as an example: https://github.com/Cyb3RGER/sm_ap_tracker/blob/main/scripts/autotracking/item_mapping.lua
 ITEM_MAPPING = {
-[11]   =   {{"bow", "split_toggle"}}, -- bow+arrow
-[100]   =   {{"bow", "progressive"}},
-[101]   =   {{"bow", "progressive"}},
-[88]   =   {{"bow", "split_toggle"}}, --Silver Arrows
-[59]   =   {{"bow", "split_toggle"}}, -- bow+silvers
+[11]   =   {{"bow+arrow", "toggle"}}, -- bow+arrow
+[100]   =   {{"bow", "composite_toggle"}}, --progressive bow
+[101]   =   {{"bow", "composite_toggle"}}, --progressive bow alt
+[88]   =   {{"bow+silvers", "toggle"}}, --Silver Arrows
+[59]   =   {{"bow+arrow", "toggle"}, {"bow+silvers", "toggle"}}, -- bow+silvers directly stage 2
 [29]   =   {{"book", "toggle"}},
 [9]   =    {{"hammer", "toggle"}},
 [10]   =   {{"hookshot", "toggle"}},
