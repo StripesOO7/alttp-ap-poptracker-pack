@@ -275,8 +275,20 @@ function ItemUpdate(item_code, item_type, consumable_multiplier, item_id, reset)
         item_obj.CurrentStage = reset and 0 or (item_obj.CurrentStage + 1)
         -- item_obj.Active = not reset
     elseif item_type == "consumable" then
-        item_obj.AcquiredCount = reset and (item_obj.MinCount or 0) or
-        (item_obj.AcquiredCount + item_obj.Increment * (consumable_multiplier or 1))
+        if reset then
+            -- if ({[11] = true,[100] = true,[101] = true,[88] = true,[59] = true})[item_id] then --base bow capacity
+            if item_id == 83 or item_id == 84 then
+                item_obj.AcquiredCount = 30
+            else
+                item_obj.AcquiredCount = item_obj.MinCount or 0
+            end
+        else
+            if item_id == 83 or item_id == 84 then -- bow capacity increase
+                item_obj.AcquiredCount = item_obj.AcquiredCount + 5 * (consumable_multiplier or 1)
+            else
+                item_obj.AcquiredCount = item_obj.AcquiredCount + item_obj.Increment * (consumable_multiplier or 1)
+            end
+        end
     elseif ({["combined_consumable"] = true, ["keyring"] = true})[item_type] then
         item_obj.AcquiredCount = reset and (item_obj.MinCount or 0) or item_obj.MaxCount
     elseif item_type == "composite_toggle" then
@@ -461,7 +473,7 @@ function OnClear(slot_data)
     SLOT_DATA = slot_data
 
     AutoFill()
-    Bombless()
+    -- Bombless()
     if SKIP_BOSSSHUFFLE == false then
         BossShuffle()
     end

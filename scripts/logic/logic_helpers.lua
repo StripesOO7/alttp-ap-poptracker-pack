@@ -1218,7 +1218,7 @@ function SetDungeonRewards()
         ["miserymire"] = 2,
         ["turtlerock"] = 1,
     }
-    local dungeon_prize_shuffle = Tracker:ProviderCountForCode("boss_prize_shuffle_on")
+    local dungeon_prize_shuffle = Tracker:FindObjectForCode("boss_prize_shuffle_on").CurrentStage
     if dungeon_prize_shuffle > 0 then --active
         for dungeon_reward, stage in pairs(dungeon_reward_defaults) do
             Tracker:FindObjectForCode(dungeon_reward).CurrentStage = stage
@@ -1364,6 +1364,7 @@ function ChangePopupLayout()
     local key_drop_shuffle = Tracker:FindObjectForCode("key_drop_shuffle")
     local shuffle_links_house = Tracker:FindObjectForCode("shuffle_links_house")
     local shuffle_tavern = Tracker:FindObjectForCode("shuffle_tavern")
+    local triforce_pieces_needed = Tracker:FindObjectForCode("triforce_pieces_needed")
     local room_data = {}
     if version == 2 then --alttpr apworld
         CORE_ALTTP = false
@@ -1381,6 +1382,7 @@ function ChangePopupLayout()
         key_drop_shuffle.IgnoreUserInput = true
         shuffle_links_house.IgnoreUserInput = false
         shuffle_tavern.IgnoreUserInput = false
+        triforce_pieces_needed.MaxCount = 850
         if manual_misc_items_storage and manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED] then
             room_data = manual_misc_items_storage.MANUAL_LOCATIONS[ROOM_SEED]
         end
@@ -1465,6 +1467,8 @@ function ChangePopupLayout()
 
         key_drop_shuffle.IgnoreUserInput = false
         key_drop_shuffle.Active = false
+        
+        triforce_pieces_needed.MaxCount = 90
 
         LOCATION_MAPPING[1573201] = {"@DP Back/Desert Palace Back/Boss Item (Prize Shuffle)","@Desert Palace Back/Boss/Boss Item", "dp_boss"}
         LOCATION_MAPPING[1573200] = {"@EP/Eastern Palace/Boss Item (Prize Shuffle)","@Eastern Palace/Boss/Boss Item","ep_boss"}
@@ -1536,6 +1540,8 @@ function ChangePopupLayout()
 
         key_drop_shuffle.IgnoreUserInput = false
         key_drop_shuffle.Active = false
+        
+        triforce_pieces_needed.MaxCount = 90
 
         LOCATION_MAPPING[1573201] = {"@DP Back/Desert Palace Back/Boss Item","@Desert Palace Back/Boss/Boss Item", "dp_boss", "desertpalace"}
         LOCATION_MAPPING[1573200] = {"@EP/Eastern Palace/Boss Item","@Eastern Palace/Boss/Boss Item","ep_boss","easternpalace"}
