@@ -40,7 +40,6 @@ Dark_desert_hint_outside = alttp_location.new("Dark_desert_hint_outside", "Dark 
 Dark_floating_island = alttp_location.new("Dark_floating_island", "Dark Floating Island", "dark", "Darkworld OW", false)
 Dark_floating_island_inside = alttp_location.new("Dark_floating_island_inside", "Dark Floating Island (Inside)", nil, "Darkworld caves", false, 44, 6264, nil, 1496, 1524, {"Dark Death Mountain - Insides", "Dark Floating Island", "Dark Floating Island"}, "connector")
 Dark_floating_island_outside = alttp_location.new("Dark_floating_island_outside", "Dark Floating Island (OW)", "dark", "Darkworld OW", false, 69, 3272, nil, 50, 56, {"Dark Death Mountain - Entrances", "Dark Floating Island", "Dark Floating Island"})
-Dark_flute_map = alttp_location.new("Dark_flute_map", "Dark Flute Map", "dark", "Darkworld OW", false)
 Dark_icerod_area = alttp_location.new("Dark_icerod_area", "Dark Icerod Area (OW)", "dark", "Darkworld OW", false)
 Dark_lake_hylia = alttp_location.new("Dark_lake_hylia", "Dark Lake Hylia Area (OW)", "dark", "Darkworld OW", false)
 Dark_lake_hylia_fairy_inside = alttp_location.new("Dark_lake_hylia_fairy_inside", "Dark Lake Fairy (Inside)", nil, "Darkworld caves", false, 277, 2936, nil, 9176, 9204, {"PoD Area - Insides", "Dark Lake Hylia Fairy", "Dark Lake Hylia Fairy"}, "deadend")
@@ -118,3 +117,14 @@ Swamp_area = alttp_location.new("Swamp_area", "Swamp Area (OW)", "dark", "Darkwo
 TR_eye_bridge_entrance_ledge = alttp_location.new("TR_eye_bridge_entrance_ledge", "TR Eyebridge LEdge (OW)", "dark", "Darkworld OW", false)
 Turtle_rock_ledge = alttp_location.new("Turtle_rock_ledge", "TR Ledge (OW)", "dark", "Darkworld OW", false)
 Village_of_the_outcast = alttp_location.new("Village_of_the_outcast", "DArk Village (OW)", "dark", "Darkworld OW", false)
+
+
+Dark_flute_map = alttp_location.new("Dark_flute_map", "Dark Flute Map", "dark", "Darkworld OW", false)
+Dark_flute_spot_1 = alttp_location.new("Dark_flute_spot_1", "Dark Flute Spot 1", "dark", "Darkworld OW", false)
+Dark_flute_spot_2 = alttp_location.new("Dark_flute_spot_2", "Dark Flute Spot 2", "dark", "Darkworld OW", false)
+Dark_flute_spot_3 = alttp_location.new("Dark_flute_spot_3", "Dark Flute Spot 3", "dark", "Darkworld OW", false)
+Dark_flute_spot_4 = alttp_location.new("Dark_flute_spot_4", "Dark Flute Spot 4", "dark", "Darkworld OW", false)
+Dark_flute_spot_5 = alttp_location.new("Dark_flute_spot_5", "Dark Flute Spot 5", "dark", "Darkworld OW", false)
+Dark_flute_spot_6 = alttp_location.new("Dark_flute_spot_6", "Dark Flute Spot 6", "dark", "Darkworld OW", false)
+Dark_flute_spot_7 = alttp_location.new("Dark_flute_spot_7", "Dark Flute Spot 7", "dark", "Darkworld OW", false)
+Dark_flute_spot_8 = alttp_location.new("Dark_flute_spot_8", "Dark Flute Spot 8", "dark", "Darkworld OW", false)

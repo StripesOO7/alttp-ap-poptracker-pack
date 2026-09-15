@@ -21,6 +21,7 @@ local accessLVL= {
 PLAYER_ID = -1
 TEAM_NUMBER = -1
 local ER_STATE = false
+local FLUTE_SHUFFLE_STATE = false
 ER_STAGE = 0
 local DOORS_STATE = false
 DOORS_STAGE = 0
@@ -394,6 +395,22 @@ function alttp_location:discover(accessibility, keys, worldstate)
             local location_name = self.name
             -- if (string.sub(exit_name, -7,-1) == "_inside" and string.sub(location_name, -8,-1) == "_outside") or
             -- (string.sub(location_name, -7,-1) == "_inside" and string.sub(exit_name, -8,-1) == "_outside") then
+            if FLUTE_SHUFFLE_STATE and self.side == "flutespot" then
+                
+                local temp
+                temp = NAMED_ER_CONNECTIONS["from_" .. location_name]
+                if temp ~= nil and temp.side == "flutetarget" then
+                    temp = temp.ItemState
+                    if temp.Target ~= nil then
+                        location = NAMED_LOCATIONS[temp.TargetBaseName]
+                        -- print("exit connection is fucked")
+                        -- return
+                    end
+                else
+                    location = Empty_location
+                end
+            end
+
             if ER_STATE then
                 if (exit[1].side == "inside" and self.side == "outside") then
                     -- print("type1")
@@ -831,6 +848,14 @@ function SetDmgClassShuffle()
     MANUAL_CHECKED = true
     --set and empty dmg class values based on setting similar to ER
 end
+
+
+---reset flute spots
+function ResetFluteSpots()
+    local flute_shuffle = Tracker:FindObjectForCode("flute_shuffle") --[[@as JsonItem]]
+    FLUTE_SHUFFLE_STATE = flute_shuffle.CurrentStage > 0
+end
+
 
 ---functio to set and reset all connections to their base state or ER-stage defined defaults
 function EmptyERLocationTargets()

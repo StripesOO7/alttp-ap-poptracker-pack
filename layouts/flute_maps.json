@@ -1,0 +1,40 @@
+{
+    "flute_spots_horizontal": {
+        "type": "tabbed",
+        "tabs": [
+            {
+                "title": "Overworld",
+                "content": {
+                    "type": "map",
+                    "maps": [
+                        "Lightworld_flute_spots",
+                        "Darkworld_flute_spots"
+                    ]
+                }
+            }
+        ]
+    },
+    "flute_spots_vertical": {
+        "type": "tabbed",
+        "tabs": [
+            {
+                "title": "Lightworld",
+                "content": {
+                    "type": "map",
+                    "maps": [
+                        "Lightworld_flute_spots"
+                    ]
+                }
+            },
+            {
+                "title": "Darkworld",
+                "content": {
+                    "type": "map",
+                    "maps": [
+                        "Darkworld_flute_spots"
+                    ]
+                }
+            }
+        ]
+    }
+}

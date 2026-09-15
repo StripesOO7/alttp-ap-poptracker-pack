@@ -1688,9 +1688,56 @@ NAMED_DOORS_ENTRANCES = {
     ["from_TT_big_pot_hall_4W_door"] = true,
     ["to_TT_big_pot_hall_4W_door"] = true,
 }
+
 NAMED_DOORS_CONNECTIONS = {}
 
 NAMED_ER_CONNECTIONS = {}
+
+--  flute spots {LW, DW, default}
+FLUTE_SPOTS_CONNECTIONS = {
+    [0] = {"from_Lost_woods_flute_target", "from_Skull_woods_area_flute_target", false}, --right side
+    [2] = {"from_Lumberjacks_area_flute_target", "from_Dark_lumpberjacks_flute_target", false}, 
+    [3] = {"from_Light_death_mountain_left_bottom_flute_target", "from_Dark_death_mountain_left_bottom_flute_target", true},
+    [5] = {"from_Light_death_mountain_right_bottom_flute_target", "from_Dark_death_mountain_right_bottom_flute_target", false},
+    [7] = {"from_Light_death_mountain_right_top_flute_target", "from_Dark_death_mountain_right_top_flute_target", false},
+    [10] = {"from_Lumberjacks_area_flute_target", "from_Dark_lumpberjacks_flute_target", false}, --bumper cave
+    [15] = {"from_Zora_river_flute_target", "from_Catfish_area_flute_target", false},
+    [16] = {"from_Lost_woods_flute_target", "from_Skull_woods_area_flute_target", false}, --left side
+    [17] = {"from_Kakariko_village_flute_target", "from_Village_of_the_outcast_flute_target", false}, --fortune teller
+    [18] = {"from_Sanctuary_area_flute_target", "from_Dark_chapel_area_flute_target", false}, --sanc pond
+    [19] = {"from_Sanctuary_area_flute_target", "from_Dark_chapel_area_flute_target", false}, --sanc
+    [20] = {"from_Sanctuary_area_flute_target", "from_Dark_chapel_area_flute_target", false}, --graveyard
+    [21] = {"from_Sanctuary_area_flute_target", "from_Dark_chapel_area_flute_target", false}, --north fairy
+    [22] = {"from_Witchhut_flute_target", "from_Dark_potion_shop_area_flute_target", true},
+    [23] = {"from_Zora_river_flute_target", "from_Catfish_area_flute_target", false}, --right of the stone
+    [24] = {"from_Kakariko_village_flute_target", "from_Village_of_the_outcast_flute_target", true},
+    [26] = {"from_Sanctuary_area_flute_target", "from_Dark_chapel_area_flute_target", false}, --red shield shop
+    [27] = {"from_Hyrule_castle_area_flute_target", "from_Pyramid_area_flute_target", false}, --inside courtyard
+    [29] = {"from_Eastern_palace_area_flute_target", "from_PoD_area_flute_target", false}, --right of wooden bridge
+    [30] = {"from_Eastern_palace_area_flute_target", "from_PoD_area_flute_target", false}, 
+    [34] = {"from_Kakariko_village_flute_target", "from_Hammer_peg_field_flute_target", false}, --hammer pegs/smiths
+    [37] = {"from_Eastern_palace_area_flute_target", "from_PoD_area_flute_target", false}, --many rocks
+    [40] = {"from_South_of_village_flute_target", "from_South_of_Village_of_the_outcast_flute_target", false}, --race/digging
+    [41] = {"from_Kakariko_village_flute_target", "from_Village_of_the_outcast_flute_target", false}, --froggy
+    [42] = {"from_Links_house_area_flute_target", "from_Stumpy_flute_target", false}, --flute boy/stumpy
+    [43] = {"from_Links_house_area_flute_target", "from_Big_bomb_shop_area_flute_target", false}, --bonk rocks left
+    [44] = {"from_Links_house_area_flute_target", "from_Big_bomb_shop_area_flute_target", true},
+    [45] = {"from_Links_house_area_flute_target", "from_Big_bomb_shop_area_flute_target", false}, --bridge right below
+    [46] = {"from_Eastern_palace_area_flute_target", "from_PoD_area_flute_target", false}, --tree line
+    [47] = {"from_Eastern_palace_area_flute_target", "from_PoD_area_flute_target", true}, --eastern teleporter
+    [48] = {"from_Teleporter_at_Desert_ledge_flute_target", "from_Mire_ledge_flute_target", true},
+    [50] = {"from_Links_house_area_flute_target", "from_Big_bomb_shop_area_flute_target", false}, --below stumpy
+    [51] = {"from_Dam_area_flute_target", "from_Swamp_area_flute_target", false},
+    [52] = {"from_Dam_area_flute_target", "from_Swamp_area_flute_target", false}, --statues
+    [53] = {"from_Light_lake_hylia_flute_target", "from_Swamp_area_flute_target", false}, --lake southeast shore
+    -- [54] "from_"=_flute_target "from_"{,_flute_target , false},
+    [54] = {"from_Light_lake_hylia_flute_target", "from_Dark_icerod_area_flute_target", false}, --icerod cave
+    [58] = {"from_Dam_area_flute_target", "from_Swamp_area_flute_target", false}, --dam desert connector
+    [59] = {"from_Dam_area_flute_target", "from_Swamp_area_flute_target", true},
+    [60] = {"from_Dam_area_flute_target", "from_Swamp_area_flute_target", false}, --screen between dam and mini-moldorm
+    [63] = {"from_Light_lake_hylia_flute_target", "from_Dark_icerod_area_flute_target", true},
+}
+
     ---function to create all ER lua items for poptracker
     -- -@return integer --completely useless
 function CreateLuaItems()
@@ -1712,6 +1759,12 @@ function CreateLuaItems()
         elseif string.sub(location.name, -5,-1) == "_door" then
             NAMED_DOORS_CONNECTIONS["from_" .. location.name] = Doors_locations_scope("From", location)
             NAMED_DOORS_CONNECTIONS["to_" .. location.name] = Doors_locations_scope("To", location)
+        elseif string.sub(location.name, -12,-3) == "flute_spot" then
+            NAMED_DOORS_CONNECTIONS["from_" .. location.name] = ER_locations_scope("From", location, "flutespot")
+            NAMED_DOORS_CONNECTIONS["to_" .. location.name] = ER_locations_scope("To", location, "flutespot")
+        elseif string.sub(location.name, -12,-1) == "flute_target" then
+            NAMED_DOORS_CONNECTIONS["from_" .. location.name] = ER_locations_scope("From", location, "flutetarget")
+            NAMED_DOORS_CONNECTIONS["to_" .. location.name] = ER_locations_scope("To", location, "flutetarget")
         end
     end
 end

@@ -1148,5 +1148,26 @@
         "img": "/images/settings/gt_keyring_on.png",
         "disabled_img": "/images/settings/gt_keyring_off.png",
         "codes": "GT_keyring_setting"
-    }
+    },
+    {
+        "name": "Shuffle flute destinations",
+        "type": "progressive",
+        "allow_disabled": false,
+        "initial_stage_idx": 0, 
+        "loop": true,
+        "stages":[
+            {
+                "img": "/images/settings/flute_shuffle_off.png",
+                "inherit_codes": false,
+                "name": "Shuffle flute destinations Off",
+                "codes": "flute_shuffle, flute_shuffle_off"
+            },
+            {
+                "img": "/images/settings/flute_shuffle_on.png",
+                "inherit_codes": false,
+                "name": "Shuffle flute destinations On",
+                "codes": "flute_shuffle, flute_shuffle_on"
+            }
+        ]
+    },
 ]

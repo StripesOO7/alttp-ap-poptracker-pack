@@ -7,7 +7,9 @@ TROLL_PLAYER= false
 DATE_CHECK_PASSED = false
 
 MANUAL_CHECKED = true
-MANUAL_TRACKING_ENEMY = false
+MANUAL_TRACKING_ENEMIES = false
+SELECTED_ENEMY = nil
+
 ROOM_SEED = "default"
 
 local FIRSTSTAGE = {
@@ -805,6 +807,7 @@ function AutoFill()
         glitches_required = {codes={"glitches"}, mappings={mapStages}, autofill="autofill_modes", default={0}},
 
         -- misc logic
+        flute_shuffle = {codes={"flute_shuffle"}, mappings={mapStages}, autofill="autofill_misc", default={0}},
         enemy_shuffle = {codes={"enemizer"}, mappings={mapToggle}, autofill="autofill_misc", default={false}},
         killable_thieves = {codes={"killable_thieves"}, mappings={mapToggle}, autofill="autofill_misc", default={false}},
         randomize_damage_classes = {codes={"dmg_class_shuffle"}, mappings={mapStages}, autofill="autofill_misc", default={0}},

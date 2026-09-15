@@ -178,7 +178,6 @@ Light_death_mountain_shop_inside = alttp_location.new("Light_death_mountain_shop
 Light_death_mountain_shop_outside = alttp_location.new("Light_death_mountain_shop_outside", "Light DM Shop (OW)", "light", "Lightworld OW", false)
 -- Light_eyebridge_fairy_inside = alttp_location.new("Light_eyebridge_fairy_inside", "Light Eyebridge Ledge", nil, false, 237, 7032, 7640, 7669, "deadend")
 -- Light_eyebridge_fairy_outside = alttp_location.new("Light_eyebridge_fairy_outside", "Light Eyebridge Ledge", "light", false, 5, 3352, 458)
-Light_flute_map = alttp_location.new("Light_flute_map", "Light Flute Map", "light", "Lightworld OW", false)
 Light_hype_fairy_inside = alttp_location.new("Light_hype_fairy_inside", "Light Hype Fairy (Inside)", nil, "Lightworld caves", false, 277, 2936, nil, 9176, 9205, {"Dam - Insides", "Light Hype Fairy", "Light Hype Fairy"}, "deadend")
 Light_hype_fairy_outside = alttp_location.new("Light_hype_fairy_outside", "Light Hype Fairy (OW)", "light", "Lightworld OW", false, 52, 2440, nil, 3159, 3176, {"Dam - Entrances", "Light Hype Fairy", "Light Hype Fairy"})
 Light_lake_fortune_inside = alttp_location.new("Light_lake_fortune_inside", "Lake Fortune (Inside)", nil, "Lightworld caves", false, 290, 1144, nil, 9688, 9717, {"Lake Hylia - Insides", "Lake Hylia Fortune Teller", "Lake Hylia Fortune Teller"}, "deadend")
@@ -298,5 +297,16 @@ Waterfall_fairy_inside = alttp_location.new("Waterfall_fairy_inside", "Waterfall
 Waterfall_fairy_outside = alttp_location.new("Waterfall_fairy_outside", "Waterfall Fairy (OW)", "light", "Lightworld OW", false, 15, 3680, nil, 517, 536, {"Light Death Mountain - Entrances", "Waterfall of Wishing", "Waterfall of Wishing"})
 Witchhut = alttp_location.new("Witchhut", "Witchhut Area (OW)", nil, "Lightworld OW", false)
 Zora_river = alttp_location.new("Zora_river", "Zora River (OW)", "light", "Lightworld OW", false)
+
+Light_flute_map = alttp_location.new("Light_flute_map", "Light Flute Map", "light", "Lightworld OW", false)
+Light_flute_spot_1 = alttp_location.new("Light_flute_spot_1", "Light Flute Spot 1", "light", "Lightworld OW", false)
+Light_flute_spot_2 = alttp_location.new("Light_flute_spot_2", "Light Flute Spot 2", "light", "Lightworld OW", false)
+Light_flute_spot_3 = alttp_location.new("Light_flute_spot_3", "Light Flute Spot 3", "light", "Lightworld OW", false)
+Light_flute_spot_4 = alttp_location.new("Light_flute_spot_4", "Light Flute Spot 4", "light", "Lightworld OW", false)
+Light_flute_spot_5 = alttp_location.new("Light_flute_spot_5", "Light Flute Spot 5", "light", "Lightworld OW", false)
+Light_flute_spot_6 = alttp_location.new("Light_flute_spot_6", "Light Flute Spot 6", "light", "Lightworld OW", false)
+Light_flute_spot_7 = alttp_location.new("Light_flute_spot_7", "Light Flute Spot 7", "light", "Lightworld OW", false)
+Light_flute_spot_8 = alttp_location.new("Light_flute_spot_8", "Light Flute Spot 8", "light", "Lightworld OW", false)
+
 
 Empty_location = alttp_location.new("Empty_location", "Empty_location", "light", "", false)

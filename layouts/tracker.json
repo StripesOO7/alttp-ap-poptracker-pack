@@ -1,4 +1,4 @@
-﻿    {
+﻿{
     "tracker_default": {
         "type": "container",
         // "background": "#00000000",
@@ -17,6 +17,13 @@
                     "content": {
                         "type": "layout",
                         "key": "dmg_table_vertical"
+                    }
+                },
+                {
+                    "title": "Flute Spots",
+                    "content": {
+                        "type": "layout",
+                        "key": "flute_spots_vertical"
                     }
                 }
             ]
@@ -41,159 +48,13 @@
                         "type": "layout",
                         "key": "dmg_table_horizontal"
                     }
-                }
-            ]
-        }
-    },
-    "vertical_layout": {
-        "type": "dock",
-        "dropshadow": true,
-        "content": [
-            {
-                "type": "dock",
-                "dock": "left",
-                "v_alignment": "stretch",
-                "content": [
-                    {
-                        "type": "group",
-                        "header": "Items",
-                        "dock": "top",
-                        "content": {
-                            "type": "layout",
-                            "key": "shared_item_grid_vertical"
-                        }
-                    },
-                    {
-                        "type": "array",
-                        "orientation": "horizontal",
-                        "margin": "0,0",
-                        "content": [
-                            {
-                                "type": "group",
-                                "header": "Settings",
-                                // "dock": "left",
-                                "margin": "0,0,3,0",
-                                "content": {
-                                    "type": "layout",
-                                    "h_alignment": "center",
-                                    "v_alignment": "center",
-                                    "key": "setting_grid_horizontal"
-                                }
-                            },
-                            {
-                                "type": "group",
-                                "header": "Pulltree Drops",
-                                // "dock": "left",
-                                "content": {
-                                    "type": "layout",
-                                    "key": "pulltree_drops_horizontal"
-                                }
-                            },
-                            {
-                                "type": "group",
-                                "header": "Hoarder +\nStun Drops",
-                                // "dock": "left",
-                                "content": {
-                                    "type": "layout",
-                                    "key": "hoarder_drops_horizontal"
-                                }
-                            }
-                        ]
-                    },
-                    {
-                        "type": "group",
-                        "header": "ER Legend",
-                        "dock": "top",
-                        "content": {
-                            "type": "map",
-                            "maps": ["er_legend"]
-                        }
-                    }
-                ]
-            },
-            {
-                "type": "dock",
-                "content": [
-                    {
-                        "type": "layout",
-                        "key": "tabbed_maps_vertical"
-                    }
-                ]
-            }
-        ]
-    },
-    "horizontal_layout": {
-        "type": "container",
-        "background": "#00000000",
-        "content": {
-            "type": "dock",
-            "dropshadow": true,
-            "content": [
-                {
-                    "type": "dock",
-                    "dock": "bottom",
-                    "content": [
-                        {
-                            "type": "group",
-                            "header": "Items",
-                            "dock": "left",
-                            "margin": "0,0,3,0",
-                            "content": {
-                                "type": "layout",
-                                "h_alignment": "center",
-                                "v_alignment": "center",
-                                "key": "shared_item_grid_horizontal"
-                            }
-                        },
-                        {
-                            "type": "group",
-                            "header": "Settings",
-                            "dock": "left",
-                            "margin": "0,0,3,0",
-                            "content": {
-                                "type": "layout",
-                                "h_alignment": "center",
-                                "v_alignment": "center",
-                                "key": "setting_grid_horizontal"
-                            }
-                        },
-                        {
-                            "type": "group",
-                            "header": "Pulltree Drops",
-                            "dock": "left",
-                            "content": {
-                                "type": "layout",
-                                "key": "pulltree_drops_horizontal"
-                            }
-                        },
-                        {
-                            "type": "group",
-                            "header": "Hoarder + Stun Drops",
-                            "dock": "left",
-                            "content": {
-                                "type": "layout",
-                                "key": "hoarder_drops_horizontal"
-                            }
-                        },
-                        {
-                            "type": "group",
-                            "header": "ER Legend",
-                            "dock": "left",
-                            "content": {
-                                "type": "map",
-                                "maps": ["er_legend"]
-                            }
-                        }
-                    ]
                 },
                 {
-                    "type": "dock",
-                    "content": [
-                        {
-                            "type": "layout",
-                            "key": "tabbed_maps_horizontal"
-                        }
-                    ]
+                    "title": "Flute Spots",
+                    "content": {
+                        "type": "layout",
+                        "key": "flute_spots_horizontal"
+                    }
                 }
             ]
         }
