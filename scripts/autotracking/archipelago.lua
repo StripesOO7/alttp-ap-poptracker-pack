@@ -1048,7 +1048,7 @@ function AutoFill()
         end
 
     end
-
+    KeyDropLayoutChange()
     GoalCheck()
 end
 
