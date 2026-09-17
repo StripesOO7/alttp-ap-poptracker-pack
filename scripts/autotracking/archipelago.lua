@@ -273,6 +273,8 @@ function ItemUpdate(item_code, item_type, consumable_multiplier, item_id, reset)
             end
         end
         item_obj.Active = not reset --reset and false or true
+    elseif item_type == "dungeon_reward" then
+        item_obj.Active = not reset
     elseif ({["progressive"] = true, ["progressive_toggle"] = true})[item_type] then
         item_obj.CurrentStage = reset and 0 or (item_obj.CurrentStage + 1)
         -- item_obj.Active = not reset
@@ -472,8 +474,7 @@ function OnClear(slot_data)
     --     print(k, v)
     -- end
 
-    SLOT_DATA = slot_data
-
+    SLOT_DATA = SLOT_DATA
     AutoFill()
     -- Bombless()
     if SKIP_BOSSSHUFFLE == false then
@@ -595,6 +596,7 @@ end
 
 ---function to handle conversion of SLOT_DATA values into states for setting-items
 function AutoFill()
+    KeyDropLayoutChange()
     if SLOT_DATA == nil  then
         print("its fucked")
         return

@@ -73,17 +73,17 @@ LOCATION_MAPPING = {
     [59830]     =   {"@DP/Desert Palace/Dungeon Chest","@Desert Palace/Map Chest/Map Chest"},
     [59851]     =   {"@DP/Desert Palace/Dungeon Chest","@Desert Palace/Compass Chest/Compass Chest"},
     [59842]     =   {"@DP/Desert Palace/Dungeon Chest","@Desert Palace/Big Key Chest/Big Key Chest"},
-    [1573201]   =   {"@DP Back/Desert Palace Back/Boss Item","@Desert Palace Back/Boss/Boss Item", "dp_boss", "desertpalace"},
-    [1573269]   =   {"dp_ap_reward","@Desert Palace Back/Boss/Dungeon Reward Shuffled","desertpalace"},
-    [50942]     =   {"dp_ap_reward","@Desert Palace Back/Boss/Dungeon Reward Shuffled","desertpalace"},--{"@Eastern Palace/Prize"},
+    [1573201]   =   {"@DP Back/Desert Palace Back/Boss Item","@Desert Palace Back/Boss/Boss Item", {"dp_boss", "dungeon_reward"}, {"desertpalace", "dungeon_reward"}},
+    [1573269]   =   {"dp_ap_reward","@Desert Palace Back/Boss/Dungeon Reward Shuffled",{"desertpalace", "dungeon_reward"}}, --beta prize
+    [50942]     =   {"dp_ap_reward","@Desert Palace Back/Boss/Dungeon Reward Shuffled",{"desertpalace", "dungeon_reward"}},--{"@Eastern Palace/Prize"},
     [59767]     =   {"@EP/Eastern Palace/Dungeon Chest","@Eastern Palace/Compass Chest/Compass Chest"},
     [59773]     =   {"@EP/Eastern Palace/Dungeon Chest","@Eastern Palace/Big Chest/Big Chest"},
     [59827]     =   {"@EP/Eastern Palace/Dungeon Chest","@Eastern Palace/Cannonball Chest/Cannonball Chest"},
     [59833]     =   {"@EP/Eastern Palace/Dungeon Chest","@Eastern Palace/Big Key Chest/Big Key Chest"},
     [59893]     =   {"@EP/Eastern Palace/Dungeon Chest","@Eastern Palace/Map Chest/Map Chest"},
-    [1573200]   =   {"@EP/Eastern Palace/Boss Item","@Eastern Palace/Boss/Boss Item","ep_boss","easternpalace"},
-    [1573270]   =   {"ep_ap_reward","@Eastern Palace/Boss/Dungeon Reward Shuffled","easternpalace"},
-    [50943]     =   {"ep_ap_reward","@Eastern Palace/Boss/Dungeon Reward Shuffled","easternpalace"},--{"@Desert Palace/Prize"},
+    [1573200]   =   {"@EP/Eastern Palace/Boss Item","@Eastern Palace/Boss/Boss Item",{"ep_boss", "dungeon_reward"},{"easternpalace", "dungeon_reward"}},
+    [1573270]   =   {"ep_ap_reward","@Eastern Palace/Boss/Dungeon Reward Shuffled",{"easternpalace", "dungeon_reward"}},
+    [50943]     =   {"ep_ap_reward","@Eastern Palace/Boss/Dungeon Reward Shuffled",{"easternpalace", "dungeon_reward"}},--{"@Desert Palace/Prize"},
     [166320]    =   {"@Lightworld/Master Sword Pedestal/Pedestal"},
     [59764]     =   {"@HC/Hyrule Castle/Boomerang Chest","@Hyrule Castle/Boomerang Chest/Boomerang Chest"},
     [60172]     =   {"@HC/Hyrule Castle/Map Chest","@Hyrule Castle/Map Chest/Map Chest"},
@@ -112,9 +112,9 @@ LOCATION_MAPPING = {
     [59878]     =   {"@ToH/Tower of Hera/Lower","@Tower of Hera/Big Key Chest/Big Key Chest"},
     [59899]     =   {"@ToH/Tower of Hera/Upper","@Tower of Hera/Compass Chest/Compass Chest"},
     [59896]     =   {"@ToH/Tower of Hera/Upper","@Tower of Hera/Big Chest/Big Chest"},
-    [1573202]   =   {"@ToH/Tower of Hera/Boss Item","@Tower of Hera/Boss/Boss Item","toh_boss","towerofhera"},
-    [1573271]   =   {"toh_ap_reward","@Tower of Hera/Boss/Dungeon Reward Shuffled","towerofhera"},
-    [50950]     =   {"toh_ap_reward","@Tower of Hera/Boss/Dungeon Reward Shuffled","towerofhera"},--{"@Tower of Hera/Prize"},
+    [1573202]   =   {"@ToH/Tower of Hera/Boss Item","@Tower of Hera/Boss/Boss Item",{"toh_boss", "dungeon_reward"},{"towerofhera", "dungeon_reward"}},
+    [1573271]   =   {"toh_ap_reward","@Tower of Hera/Boss/Dungeon Reward Shuffled",{"towerofhera", "dungeon_reward"}},
+    [50950]     =   {"toh_ap_reward","@Tower of Hera/Boss/Dungeon Reward Shuffled",{"towerofhera", "dungeon_reward"}},--{"@Tower of Hera/Prize"},
     [1573191]   =   {"@Darkworld Right/Pyramid Ledge/Pyramid Ledge Item"},
     [975237]    =   {"@Darkworld Right/Catfish/Catfish Item"},
     [209095]    =   {"@Darkworld Bottom/Stumpy/Stumpy"},
@@ -152,9 +152,9 @@ LOCATION_MAPPING = {
     [60073]     =   {"@SP/Swamp Palace/Dungeon Chest","@Swamp Palace/Flooded Room Left/Flooded Room Left"},
     [60076]     =   {"@SP/Swamp Palace/Dungeon Chest","@Swamp Palace/Flooded Room Right/Flooded Room Right"},
     [60079]     =   {"@SP/Swamp Palace/Dungeon Chest","@Swamp Palace/Waterfall Room/Waterfall Room"},
-    [1573204]   =   {"@SP/Swamp Palace/Boss Item","@Swamp Palace/Boss/Boss Item","sp_boss","swamppalace"},
-    [1573272]   =   {"sp_ap_reward","@Swamp Palace/Boss/Dungeon Reward Shuffled","swamppalace"},
-    [50945]     =   {"sp_ap_reward","@Swamp Palace/Boss/Dungeon Reward Shuffled","swamppalace"},--{"@Swamp Palace/Prize"},
+    [1573204]   =   {"@SP/Swamp Palace/Boss Item","@Swamp Palace/Boss/Boss Item",{"sp_boss", "dungeon_reward"},{"swamppalace", "dungeon_reward"}},
+    [1573272]   =   {"sp_ap_reward","@Swamp Palace/Boss/Dungeon Reward Shuffled",{"swamppalace", "dungeon_reward"}},
+    [50945]     =   {"sp_ap_reward","@Swamp Palace/Boss/Dungeon Reward Shuffled",{"swamppalace", "dungeon_reward"}},--{"@Swamp Palace/Prize"},
     [59908]     =   {"@TT/Thieves Town/Front","@Thieves Town Front/Big Key Chest/Big Key Chest"},
     [59905]     =   {"@TT/Thieves Town/Front","@Thieves Town Front/Map Chest/Map Chest"},
     [59911]     =   {"@TT/Thieves Town/Front","@Thieves Town Front/Compass Chest/Compass Chest"},
@@ -162,9 +162,9 @@ LOCATION_MAPPING = {
     [59917]     =   {"@TT/Thieves Town/Back","@Thieves Town Back/Attic/Attic"},
     [59920]     =   {"@TT/Thieves Town/Back","@Thieves Town Back/Big Chest/Big Chest"},
     [59923]     =   {"@TT/Thieves Town/Back","@Thieves Town Back/Blind's Cell/Blind's Cell"},
-    [1573206]   =   {"@TT/Thieves Town/Boss Item","@Thieves Town Back/Boss/Boss Item","tt_boss","thievestown"},
-    [1573273]   =   {"tt_ap_reward","@Thieves Town Back/Boss/Dungeon Reward Shuffled","thievestown"},
-    [50951]     =   {"tt_ap_reward","@Thieves Town Back/Boss/Dungeon Reward Shuffled","thievestown"},--{"@Thieves Town/Prize"},
+    [1573206]   =   {"@TT/Thieves Town/Boss Item","@Thieves Town Back/Boss/Boss Item",{"tt_boss", "dungeon_reward"},{"thievestown", "dungeon_reward"}},
+    [1573273]   =   {"tt_ap_reward","@Thieves Town Back/Boss/Dungeon Reward Shuffled",{"thievestown", "dungeon_reward"}},
+    [50951]     =   {"tt_ap_reward","@Thieves Town Back/Boss/Dungeon Reward Shuffled",{"thievestown", "dungeon_reward"}},--{"@Thieves Town/Prize"},
     [59794]     =   {"@SW/Skull Woods Front/Dungeon Chest","@Skull Woods Front/Compass Chest/Compass Chest"},
     [59803]     =   {"@SW/Skull Woods Front/Dungeon Chest","@Skull Woods Front/Map Chest/Map Chest"},
     [59800]     =   {"@SW/Skull Woods Front/Dungeon Chest","@Skull Woods Front/Big Chest/Big Chest"},
@@ -172,9 +172,9 @@ LOCATION_MAPPING = {
     [59848]     =   {"@SW/Skull Woods Front/Dungeon Chest","@Skull Woods Front/Pinball Room/Pinball Room"},
     [59806]     =   {"@SW/Skull Woods Front/Dungeon Chest","@Skull Woods Front/Big Key Chest/Big Key Chest"},
     [59902]     =   {"@SW/Skull Woods Back/Dungeon Chest","@Skull Woods Back/Bridge Room/Bridge Room"},
-    [1573205]   =   {"@SW/Skull Woods Back/Boss Item","@Skull Woods Back/Boss/Boss Item","sw_boss","skullwoods"},
-    [1573275]   =   {"sw_ap_reward","@Skull Woods Back/Boss/Dungeon Reward Shuffled","skullwoods"},
-    [50948]     =   {"sw_ap_reward","@Skull Woods Back/Boss/Dungeon Reward Shuffled","skullwoods"},--{"@Skull Woods/Prize"},
+    [1573205]   =   {"@SW/Skull Woods Back/Boss Item","@Skull Woods Back/Boss/Boss Item",{"sw_boss", "dungeon_reward"},{"skullwoods", "dungeon_reward"}},
+    [1573275]   =   {"sw_ap_reward","@Skull Woods Back/Boss/Dungeon Reward Shuffled",{"skullwoods", "dungeon_reward"}},
+    [50948]     =   {"sw_ap_reward","@Skull Woods Back/Boss/Dungeon Reward Shuffled",{"skullwoods", "dungeon_reward"}},--{"@Skull Woods/Prize"},
     [59860]     =   {"@IP/Ice Palace/Dungeon Chest","@Ice Palace/Compass Chest/Compass Chest"},
     [59797]     =   {"@IP/Ice Palace/Dungeon Chest","@Ice Palace/Freezor Chest/Freezor Chest"},
     [59818]     =   {"@IP/Ice Palace/Dungeon Chest","@Ice Palace/Big Chest/Big Chest"},
@@ -182,9 +182,9 @@ LOCATION_MAPPING = {
     [59872]     =   {"@IP/Ice Palace/Dungeon Chest","@Ice Palace/Spike Room/Spike Room"},
     [59812]     =   {"@IP/Ice Palace/Dungeon Chest","@Ice Palace/Big Key Chest/Big Key Chest"},
     [59869]     =   {"@IP/Ice Palace/Dungeon Chest","@Ice Palace/Map Chest/Map Chest"},
-    [1573207]   =   {"@IP/Ice Palace/Boss Item","@Ice Palace/Boss/Boss Item","ip_boss","icepalace"},
-    [1573274]   =   {"ip_ap_reward","@Ice Palace/Boss/Dungeon Reward Shuffled","icepalace"},
-    [50949]     =   {"ip_ap_reward","@Ice Palace/Boss/Dungeon Reward Shuffled","icepalace"},--{"@Ice Palace/Prize"},
+    [1573207]   =   {"@IP/Ice Palace/Boss Item","@Ice Palace/Boss/Boss Item",{"ip_boss", "dungeon_reward"},{"icepalace", "dungeon_reward"}},
+    [1573274]   =   {"ip_ap_reward","@Ice Palace/Boss/Dungeon Reward Shuffled",{"icepalace", "dungeon_reward"}},
+    [50949]     =   {"ip_ap_reward","@Ice Palace/Boss/Dungeon Reward Shuffled",{"icepalace", "dungeon_reward"}},--{"@Ice Palace/Prize"},
     [60007]     =   {"@MM/Misery Mire/Dungeon Chest","@Misery Mire/Big Chest/Big Chest"},
     [60010]     =   {"@MM/Misery Mire/Dungeon Chest","@Misery Mire/Map Chest/Map Chest"},
     [59998]     =   {"@MM/Misery Mire/Dungeon Chest","@Misery Mire/Main Lobby/Main Lobby"},
@@ -192,9 +192,9 @@ LOCATION_MAPPING = {
     [59866]     =   {"@MM/Misery Mire/Dungeon Chest","@Misery Mire/Spike Chest/Spike Chest"},
     [60004]     =   {"@MM/Misery Mire/Dungeon Chest","@Misery Mire/Compass Chest/Compass Chest"},
     [60013]     =   {"@MM/Misery Mire/Dungeon Chest","@Misery Mire/Big Key Chest/Big Key Chest"},
-    [1573208]   =   {"@MM/Misery Mire/Boss Item","@Misery Mire/Boss/Boss Item","mm_boss","miserymire"},
-    [1573276]   =   {"mm_ap_reward","@Misery Mire/Boss/Dungeon Reward Shuffled","miserymire"},
-    [50947]     =   {"mm_ap_reward","@Misery Mire/Boss/Dungeon Reward Shuffled","miserymire"},--{"@Misery Mire/Prize"},
+    [1573208]   =   {"@MM/Misery Mire/Boss Item","@Misery Mire/Boss/Boss Item",{"mm_boss", "dungeon_reward"},{"miserymire", "dungeon_reward"}},
+    [1573276]   =   {"mm_ap_reward","@Misery Mire/Boss/Dungeon Reward Shuffled",{"miserymire", "dungeon_reward"}},
+    [50947]     =   {"mm_ap_reward","@Misery Mire/Boss/Dungeon Reward Shuffled",{"miserymire", "dungeon_reward"}},--{"@Misery Mire/Prize"},
     [59938]     =   {"@TR/Turtle Rock Front/Dungeon Chest","@Turtle Rock Front/Compass Chest/Compass Chest"},
     [59932]     =   {"@TR/Turtle Rock Front/Dungeon Chest","@Turtle Rock Front/Map Chest/Map Chest"},
     [59935]     =   {"@TR/Turtle Rock Front/Dungeon Chest","@Turtle Rock Front/Roller Room Right/Roller Room Right"},
@@ -206,9 +206,9 @@ LOCATION_MAPPING = {
     [59950]     =   {"@TR/Turtle Rock Back/Dungeon Chest","@Turtle Rock Back/Eye Bridge Bottom Right/Eye Bridge Bottom Right"},
     [59947]     =   {"@TR/Turtle Rock Back/Dungeon Chest","@Turtle Rock Back/Eye Bridge Top Left/Eye Bridge Top Left"},
     [59944]     =   {"@TR/Turtle Rock Back/Dungeon Chest","@Turtle Rock Back/Eye Bridge Top Right/Eye Bridge Top Right"},
-    [1573209]   =   {"@TR/Turtle Rock Back/Boss Item","@Turtle Rock Back/Boss/Boss Item","tr_boss","turtlerock"},
-    [1573277]   =   {"tr_ap_reward","@Turtle Rock Back/Boss/Dungeon Reward Shuffled","turtlerock"},
-    [50952]     =   {"tr_ap_reward","@Turtle Rock Back/Boss/Dungeon Reward Shuffled","turtlerock"},--{"@Turtle Rock/Prize"},
+    [1573209]   =   {"@TR/Turtle Rock Back/Boss Item","@Turtle Rock Back/Boss/Boss Item",{"tr_boss", "dungeon_reward"},{"turtlerock", "dungeon_reward"}},
+    [1573277]   =   {"tr_ap_reward","@Turtle Rock Back/Boss/Dungeon Reward Shuffled",{"turtlerock", "dungeon_reward"}},
+    [50952]     =   {"tr_ap_reward","@Turtle Rock Back/Boss/Dungeon Reward Shuffled",{"turtlerock", "dungeon_reward"}},--{"@Turtle Rock/Prize"},
     [59995]     =   {"@PoD/Palace of Darkness/Dungeon Chest","@Palace of Darkness/Shooter Room/Shooter Room"},
     [59965]     =   {"@PoD/Palace of Darkness/Dungeon Chest","@Palace of Darkness/The Arena Bridge/Bridge"},
     [59977]     =   {"@PoD/Palace of Darkness/Dungeon Chest","@Palace of Darkness/Stalfos Basement/Stalfos Basement"},
@@ -222,9 +222,9 @@ LOCATION_MAPPING = {
     [59992]     =   {"@PoD/Palace of Darkness/Dungeon Chest","@Palace of Darkness/Dark Maze Bottom/Dark Maze Bottom"},
     [59968]     =   {"@PoD/Palace of Darkness/Dungeon Chest","@Palace of Darkness/Big Chest/Big Chest"},
     [59974]     =   {"@PoD/Palace of Darkness/Dungeon Chest","@Palace of Darkness/Harmless Hellway/Harmless Hellway"},
-    [1573203]   =   {"@PoD/Palace of Darkness/Boss Item","@Palace of Darkness/Boss/Boss Item","pod_boss","palaceofdarkness"},
-    [1573278]   =   {"pod_ap_reward","@Palace of Darkness/Boss/Dungeon Reward Shuffled","palaceofdarkness"},
-    [50946]     =   {"pod_ap_reward","@Palace of Darkness/Boss/Dungeon Reward Shuffled","palaceofdarkness"},--{"@Palace of Darkness/Prize"},
+    [1573203]   =   {"@PoD/Palace of Darkness/Boss Item","@Palace of Darkness/Boss/Boss Item",{"pod_boss", "dungeon_reward"},{"palaceofdarkness", "dungeon_reward"}},
+    [1573278]   =   {"pod_ap_reward","@Palace of Darkness/Boss/Dungeon Reward Shuffled",{"palaceofdarkness", "dungeon_reward"}},
+    [50946]     =   {"pod_ap_reward","@Palace of Darkness/Boss/Dungeon Reward Shuffled",{"palaceofdarkness", "dungeon_reward"}},--{"@Palace of Darkness/Prize"},
     [1573217]   =   {"@GT/Ganon's Tower/Leftside","@Ganon's Tower Bottom Left/Bob's Torch/Bob's Torch","@GT-inverted/Ganon's Tower/Leftside"},
     [60121]     =   {"@GT/Ganon's Tower/Rightside","@Ganon's Tower Bottom Right/Hope Room Left/Hope Room Left","@GT-inverted/Ganon's Tower/Rightside"},
     [60124]     =   {"@GT/Ganon's Tower/Rightside","@Ganon's Tower Bottom Right/Hope Room Right/Hope Room Right","@GT-inverted/Ganon's Tower/Rightside"},
@@ -2470,11 +2470,16 @@ LOCATION_MAPPING = {
 
 
 JSON_LOCATIONS = {}
-for _, location_array in pairs(LOCATION_MAPPING) do
+for location_ID, location_array in pairs(LOCATION_MAPPING) do
     for _, location in pairs(location_array) do
         if location then
-            local location_obj = Tracker:FindObjectForCode(location) --[[@as LocationSection]]
-            JSON_LOCATIONS[location] = location_obj
+            if type(location) == "table" then
+                    print("found item table in location mapping for Id: "..location_ID)
+            else
+
+                local location_obj = Tracker:FindObjectForCode(location) --[[@as LocationSection]]
+                JSON_LOCATIONS[location] = location_obj
+            end
         end
     end
 end

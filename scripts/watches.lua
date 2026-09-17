@@ -7,7 +7,6 @@ ScriptHost:AddWatchForCode("keydropshuffle handler", "key_drop_shuffle", KeyDrop
 ScriptHost:AddWatchForCode("potsanity key handler", "potsanity_keys", KeyDropLayoutChange)
 ScriptHost:AddWatchForCode("enemy drop key handler", "enemy_drop_shuffle_keys", KeyDropLayoutChange)
 ScriptHost:AddWatchForCode("doors_enabled handler", "doors_enabled", KeyDropLayoutChange)
-ScriptHost:AddWatchForCode("boss handler", "boss_shuffle", BossShuffle)
 ScriptHost:AddWatchForCode("set smallkey stage global", "small_keys", SetSmallKeyGlobal)
 
 ScriptHost:AddWatchForCode("dmg class shuffle handler", "dmg_class_shuffle", SetDmgClassShuffle)
@@ -35,6 +34,7 @@ ScriptHost:AddWatchForCode("settings maps_setting", "maps_setting", GiveAll)
 ScriptHost:AddWatchForCode("settings compass_shuffle", "compass_setting", GiveAll)
 ScriptHost:AddWatchForCode("settings smallkeys_setting", "smallkeys_setting", GiveAll)
 ScriptHost:AddWatchForCode("settings bigkeys_setting", "bigkeys_setting", GiveAll)
+ScriptHost:AddWatchForCode("boss handler", "boss_shuffle", BossShuffle)
 
 -- for _, small_key_ring in pairs(
 --     {
