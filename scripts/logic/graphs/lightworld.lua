@@ -20,7 +20,7 @@
 -- AccessibilityLevel.Cleared
 
 
-
+--- flute stuff
 
 Light_flute_map:connect_one_way(Light_flute_spot_1)
 Light_flute_map:connect_one_way(Light_flute_spot_2)
@@ -81,6 +81,7 @@ Dam_area_flute_target:connect_one_way(Dam_area)
 Dam_area_flute_target:connect_one_way(Dam_area)
 Light_lake_hylia_flute_target:connect_one_way(Light_lake_hylia)
 
+--- teleporters
 
 Teleporter_at_kakariko_village:connect_one_way(Teleporter_at_village_of_the_outcast, function() return Has("glove") end)
 
@@ -98,7 +99,8 @@ Teleporter_at_dam:connect_one_way(Teleporter_at_swamp, function() return Has("gl
 Teleporter_at_upgrade_fairy:connect_one_way(Teleporter_at_ice_palace, function() return ALL("titans", OpenOrStandard)  end)
 
 
---
+--- normal logic
+
 Lightworld_spawns:connect_one_way(Light_spawn_sanctuary)
 Lightworld_spawns:connect_one_way(Light_spawn_Links_house_area)
 Lightworld_spawns:connect_one_way(Light_spawn_old_man, function() return CanReach("Old_man_cave_right_inside") end) --rescued old man

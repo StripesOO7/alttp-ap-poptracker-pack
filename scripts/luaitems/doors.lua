@@ -1760,11 +1760,11 @@ function CreateLuaItems()
             NAMED_DOORS_CONNECTIONS["from_" .. location.name] = Doors_locations_scope("From", location)
             NAMED_DOORS_CONNECTIONS["to_" .. location.name] = Doors_locations_scope("To", location)
         elseif string.sub(location.name, -12,-3) == "flute_spot" then
-            NAMED_DOORS_CONNECTIONS["from_" .. location.name] = ER_locations_scope("From", location, "flutespot")
-            NAMED_DOORS_CONNECTIONS["to_" .. location.name] = ER_locations_scope("To", location, "flutespot")
+            NAMED_DOORS_CONNECTIONS["from_" .. location.name] = Flute_locations_scope("From", location, "flutespot")
+            NAMED_DOORS_CONNECTIONS["to_" .. location.name] = Flute_locations_scope("To", location, "flutespot")
         elseif string.sub(location.name, -12,-1) == "flute_target" then
-            NAMED_DOORS_CONNECTIONS["from_" .. location.name] = ER_locations_scope("From", location, "flutetarget")
-            NAMED_DOORS_CONNECTIONS["to_" .. location.name] = ER_locations_scope("To", location, "flutetarget")
+            NAMED_DOORS_CONNECTIONS["from_" .. location.name] = Flute_locations_scope("From", location, "flutetarget")
+            NAMED_DOORS_CONNECTIONS["to_" .. location.name] = Flute_locations_scope("To", location, "flutetarget")
         end
     end
 end

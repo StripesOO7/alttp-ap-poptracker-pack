@@ -7,6 +7,7 @@ Manual_Storage_Cache_scope("manual_dmg_class_storage")
 
 require("scripts.luaitems.utils")
 require("scripts.luaitems.ER_locations")
+require("scripts.luaitems.Flute_locations")
 require("scripts.luaitems.Doors_locations")
 require("scripts.luaitems.doors")
 -- require("scripts.luaitems.damage_classes")

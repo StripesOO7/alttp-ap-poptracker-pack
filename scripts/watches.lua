@@ -1,6 +1,7 @@
 --logic main
 ScriptHost:AddWatchForCode("ER_Setting_Changed", "er_full", EmptyERLocationTargets)
 ScriptHost:AddWatchForCode("Doors_Setting_Changed", "doors_vanilla", EmptyDoorsTargets)
+ScriptHost:AddWatchForCode("flute_shuffle changed", "flute_shuffle", ResetFluteSpots)
 -- ScriptHost:AddOnLocationSectionChangedHandler("location_section_change_handler", LocationHandler)
 ScriptHost:AddWatchForCode("keydropshuffle handler", "key_drop_shuffle", KeyDropLayoutChange)
 ScriptHost:AddWatchForCode("potsanity key handler", "potsanity_keys", KeyDropLayoutChange)

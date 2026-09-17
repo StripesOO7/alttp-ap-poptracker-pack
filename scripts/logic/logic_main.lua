@@ -854,6 +854,28 @@ end
 function ResetFluteSpots()
     local flute_shuffle = Tracker:FindObjectForCode("flute_shuffle") --[[@as JsonItem]]
     FLUTE_SHUFFLE_STATE = flute_shuffle.CurrentStage > 0
+    local counter = 1
+    if FLUTE_SHUFFLE_STATE then
+        for i=1, 8 do
+            print(i)
+            _UnsetFluteLocationOptions((Tracker:FindObjectForCode"Light_flute_spot_"..i)--[[@as LuaItem]])
+        end
+    else
+
+        for _, spot_array in pairs(FLUTE_SPOTS_CONNECTIONS) do
+            if spot_array[3] then
+                print(counter, Dump_table(spot_array))
+                local spot = (Tracker:FindObjectForCode("Light_flute_spot_"..tostring(counter))--[[@as LuaItem]])
+                local lw_destination = (Tracker:FindObjectForCode(spot_array[1])--[[@as LuaItem]])
+                local dw_destination = (Tracker:FindObjectForCode(spot_array[2])--[[@as LuaItem]])
+                _SetFluteLocationOptions(spot, lw_destination)
+                _SetFluteLocationOptions(lw_destination, spot)
+                _SetFluteLocationOptions(spot, dw_destination)
+                _SetFluteLocationOptions(dw_destination, spot)
+                counter = counter + 1
+            end
+        end
+    end
 end
 
 

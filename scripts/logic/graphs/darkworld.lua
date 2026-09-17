@@ -22,7 +22,7 @@
 
 --
 
-
+---flute stuff
 
 Dark_flute_map:connect_one_way(Dark_flute_spot_1)
 Dark_flute_map:connect_one_way(Dark_flute_spot_2)
@@ -84,6 +84,7 @@ Swamp_area_flute_target:connect_one_way(Swamp_area)
 Swamp_area_flute_target:connect_one_way(Swamp_area)
 Dark_icerod_area_flute_target:connect_one_way(Dark_icerod_area)
 
+---teleporters
 
 Teleporter_at_village_of_the_outcast:connect_one_way(Teleporter_at_kakariko_village, function()
     return ALL(
@@ -123,6 +124,7 @@ end)
 Teleporter_at_ice_palace:connect_one_way(Teleporter_at_upgrade_fairy, function() return Inverted() end)
 
 
+---noraml logic
 
 Darkworld_spawns:connect_one_way(Dark_spawn_links_house)
 Darkworld_spawns:connect_one_way(Dark_spawn_Dark_chapel)
