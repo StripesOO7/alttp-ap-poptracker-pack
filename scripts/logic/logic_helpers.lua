@@ -1320,25 +1320,13 @@ end
 function ChangeERLayout()
     local er_tracking = Tracker:FindObjectForCode("er_tracking").CurrentStage
     local doors_tracking = Tracker:FindObjectForCode("doors_tracking").CurrentStage
-    local potsanity = Tracker:FindObjectForCode("potsanity").CurrentStage
-    local enemy_drop_shuffle = Tracker:FindObjectForCode("enemy_drop_shuffle").CurrentStage
 
     local er_or_doors = er_tracking > 0 or doors_tracking > 0
-    local enemy_or_pots = potsanity > 0 or enemy_drop_shuffle > 0
 
-    if er_or_doors and enemy_or_pots then
-        
-        Tracker:AddLayouts("layouts/tabs_er_enemy_pots.json")
-        Tracker:AddMaps("maps/er_legend_on.json")
-
-    elseif er_or_doors then
+    if er_or_doors then
         
         Tracker:AddLayouts("layouts/tabs_er.json")
         Tracker:AddMaps("maps/er_legend_on.json")
-    elseif enemy_or_pots then
-        
-        Tracker:AddLayouts("layouts/tabs_enemy_pots.json")
-        Tracker:AddMaps("maps/er_legend_off.json")
     else
         Tracker:AddLayouts("layouts/tabs.json")
         Tracker:AddMaps("maps/er_legend_off.json")
