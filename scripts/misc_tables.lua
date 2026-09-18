@@ -1,3 +1,119 @@
+--- table of items to definitely store in the pseudo-cache LuaItems
+MISC_MANUAL_ITEMS = {
+    "easternpalace",
+    "desertpalace",
+    "towerofhera",
+    "palaceofdarkness",
+    "swamppalace",
+    "skullwoods",
+    "thievestown",
+    "icepalace",
+    "miserymire",
+    "turtlerock",
+    "ep_boss",
+    "dp_boss",
+    "toh_boss",
+    "pod_boss",
+    "sp_boss",
+    "sw_boss",
+    "tt_boss",
+    "ip_boss",
+    "mm_boss",
+    "tr_boss",
+    "gt_lanmo",
+    "gt_ice",
+    "gt_boss",
+    "aga1",
+    "aga2",
+    "default_shop_item_1",
+    "default_shop_item_2",
+    "default_shop_item_3",
+    "default_shop_item_4",
+    "default_shop_item_5",
+    "default_shop_item_6",
+    "default_shop_item_7",
+    "default_shop_item_8",
+    "default_shop_item_9",
+    "default_shop_item_10",
+    "default_shop_item_11",
+    "default_shop_item_12",
+    "default_shop_item_13",
+    "default_shop_item_14",
+    "default_shop_item_15",
+    "default_shop_item_16",
+    "default_shop_item_17",
+    "default_shop_item_18",
+    "default_shop_item_19",
+    "default_shop_item_20",
+    "default_shop_item_21",
+    "default_shop_item_22",
+    "default_shop_item_23",
+    "default_shop_item_24",
+    "default_shop_item_25",
+    "default_shop_item_26",
+    "default_shop_item_27",
+    "default_shop_item_28",
+    "default_shop_item_29",
+    "default_shop_item_30",
+    "default_shop_item_31",
+    "default_shop_item_32",
+    "default_shop_item_33",
+    "default_shop_prizes_1",
+    "default_shop_prizes_2",
+    "default_shop_prizes_3",
+    "default_shop_prizes_4",
+    "default_shop_prizes_5",
+    "default_shop_prizes_6",
+    "default_shop_prizes_7",
+    "default_shop_prizes_8",
+    "default_shop_prizes_9",
+    "default_shop_prizes_10",
+    "default_shop_prizes_11",
+    "default_shop_prizes_12",
+    "default_shop_prizes_13",
+    "default_shop_prizes_14",
+    "default_shop_prizes_15",
+    "default_shop_prizes_16",
+    "default_shop_prizes_17",
+    "default_shop_prizes_18",
+    "default_shop_prizes_19",
+    "default_shop_prizes_20",
+    "default_shop_prizes_21",
+    "default_shop_prizes_22",
+    "default_shop_prizes_23",
+    "default_shop_prizes_24",
+    "default_shop_prizes_25",
+    "default_shop_prizes_26",
+    "default_shop_prizes_27",
+    "default_shop_prizes_28",
+    "default_shop_prizes_29",
+    "default_shop_prizes_30",
+    "default_shop_prizes_31",
+    "default_shop_prizes_32",
+    "default_shop_prizes_33"
+}
+
+--- {base, kds, enemy_keys, pot_keys}
+SMALLKEYDEFAULTS = { --
+        ["ep_smallkey"] = {0,2,1,1},-- ep_smallkey 162
+        ["dp_smallkey"] = {1,4,0,3},-- dp_smallkey 163
+        ["toh_smallkey"] = {1,1,0,0},-- toh_smallkey 170
+        ["hc_smallkey"] = {1,4,3,0},-- hc_smallkey 160
+        ["at_smallkey"] = {2,4,2,0},-- at_smallkey 164
+        ["pod_smallkey"] = {6,6,0,0},-- pod_smallkey 166
+        ["tt_smallkey"] = {1,3,0,2},-- tt_smallkey 171
+        ["sw_smallkey"] = {3,5,1,1},-- sw_smallkey 168
+        ["sp_smallkey"] = {1,6,0,5},-- sp_smallkey 165
+        ["ip_smallkey"] = {2,6,2,2},-- ip_smallkey 169
+        ["mm_smallkey"] = {3,6,1,2},-- mm_smallkey 167
+        ["tr_smallkey"] = {4,6,2,0},-- tr_smallkey 172
+        ["gt_smallkey"] = {4,8,1,3},-- gt_smallkey 173
+}
+
+
+
+
+
 PoD_Dungeon_Chest = {
     "@Palace of Darkness/Shooter Room/Shooter Room",
     "@Palace of Darkness/The Arena Bridge/Bridge",

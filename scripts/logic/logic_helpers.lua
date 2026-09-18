@@ -18,23 +18,6 @@ local bool_to_accesslvl = {
     [false] = ACCESS_NONE
 }
 
---- {base, kds, enemy_keys, pot_keys}
-SMALLKEYDEFAULTS = { --
-        ["ep_smallkey"] = {0,2,1,1},-- ep_smallkey 162
-        ["dp_smallkey"] = {1,4,0,3},-- dp_smallkey 163
-        ["toh_smallkey"] = {1,1,0,0},-- toh_smallkey 170
-        ["hc_smallkey"] = {1,4,3,0},-- hc_smallkey 160
-        ["at_smallkey"] = {2,4,2,0},-- at_smallkey 164
-        ["pod_smallkey"] = {6,6,0,0},-- pod_smallkey 166
-        ["tt_smallkey"] = {1,3,0,2},-- tt_smallkey 171
-        ["sw_smallkey"] = {3,5,1,1},-- sw_smallkey 168
-        ["sp_smallkey"] = {1,6,0,5},-- sp_smallkey 165
-        ["ip_smallkey"] = {2,6,2,2},-- ip_smallkey 169
-        ["mm_smallkey"] = {3,6,1,2},-- mm_smallkey 167
-        ["tr_smallkey"] = {4,6,2,0},-- tr_smallkey 172
-        ["gt_smallkey"] = {4,8,1,3},-- gt_smallkey 173
-}
-
 ---function to build a pretty-printable representation of a provided table
 ---@param o table
 ---@param depth integer?
@@ -673,101 +656,6 @@ function EnemizerCheck(item)
     return Tracker:FindObjectForCode("enemizer").Active or Tracker:FindObjectForCode(item).Active
 end
 
---- table of items to definitely store in the pseudo-cache LuaItems
-MISC_MANUAL_ITEMS = {
-    "easternpalace",
-    "desertpalace",
-    "towerofhera",
-    "palaceofdarkness",
-    "swamppalace",
-    "skullwoods",
-    "thievestown",
-    "icepalace",
-    "miserymire",
-    "turtlerock",
-    "ep_boss",
-    "dp_boss",
-    "toh_boss",
-    "pod_boss",
-    "sp_boss",
-    "sw_boss",
-    "tt_boss",
-    "ip_boss",
-    "mm_boss",
-    "tr_boss",
-    "gt_lanmo",
-    "gt_ice",
-    "gt_boss",
-    "aga1",
-    "aga2",
-    "default_shop_item_1",
-    "default_shop_item_2",
-    "default_shop_item_3",
-    "default_shop_item_4",
-    "default_shop_item_5",
-    "default_shop_item_6",
-    "default_shop_item_7",
-    "default_shop_item_8",
-    "default_shop_item_9",
-    "default_shop_item_10",
-    "default_shop_item_11",
-    "default_shop_item_12",
-    "default_shop_item_13",
-    "default_shop_item_14",
-    "default_shop_item_15",
-    "default_shop_item_16",
-    "default_shop_item_17",
-    "default_shop_item_18",
-    "default_shop_item_19",
-    "default_shop_item_20",
-    "default_shop_item_21",
-    "default_shop_item_22",
-    "default_shop_item_23",
-    "default_shop_item_24",
-    "default_shop_item_25",
-    "default_shop_item_26",
-    "default_shop_item_27",
-    "default_shop_item_28",
-    "default_shop_item_29",
-    "default_shop_item_30",
-    "default_shop_item_31",
-    "default_shop_item_32",
-    "default_shop_item_33",
-    "default_shop_prizes_1",
-    "default_shop_prizes_2",
-    "default_shop_prizes_3",
-    "default_shop_prizes_4",
-    "default_shop_prizes_5",
-    "default_shop_prizes_6",
-    "default_shop_prizes_7",
-    "default_shop_prizes_8",
-    "default_shop_prizes_9",
-    "default_shop_prizes_10",
-    "default_shop_prizes_11",
-    "default_shop_prizes_12",
-    "default_shop_prizes_13",
-    "default_shop_prizes_14",
-    "default_shop_prizes_15",
-    "default_shop_prizes_16",
-    "default_shop_prizes_17",
-    "default_shop_prizes_18",
-    "default_shop_prizes_19",
-    "default_shop_prizes_20",
-    "default_shop_prizes_21",
-    "default_shop_prizes_22",
-    "default_shop_prizes_23",
-    "default_shop_prizes_24",
-    "default_shop_prizes_25",
-    "default_shop_prizes_26",
-    "default_shop_prizes_27",
-    "default_shop_prizes_28",
-    "default_shop_prizes_29",
-    "default_shop_prizes_30",
-    "default_shop_prizes_31",
-    "default_shop_prizes_32",
-    "default_shop_prizes_33"
-}
-
 ---comment
 function ChangeRouteMode()
     ROUTE_MODE = Tracker:FindObjectForCode("route_mode").Active
@@ -1207,6 +1095,7 @@ local shop_default_mapping = {
 --- Set dungeon rewards to be fixed or shuffled based on the "boss_prize_shuffle" setting.
 function SetDungeonRewards()
     MANUAL_CHECKED = false
+    ScriptHost:RemoveWatchForCode("StateChanged")
     local dungeon_reward_defaults = {
         ["easternpalace"] = 4,
         ["desertpalace"] = 3,
@@ -1246,7 +1135,7 @@ function SetDungeonRewards()
             AutoFill()
         else
             local location_storage = Tracker:FindObjectForCode("manual_misc_items_storage").ItemState
-            print(Dump_table(location_storage))
+            -- print(Dump_table(location_storage))
             for dungeon_reward, _ in pairs(dungeon_reward_defaults) do
                 if location_storage and location_storage.MANUAL_LOCATIONS[ROOM_SEED][dungeon_reward] then
                     Tracker:FindObjectForCode(dungeon_reward).CurrentStage = location_storage.MANUAL_LOCATIONS[ROOM_SEED][dungeon_reward]
@@ -1261,6 +1150,7 @@ function SetDungeonRewards()
         end
     end
     MANUAL_CHECKED = true
+    ScriptHost:AddWatchForCode("StateChanged", "*", StateChanged)
 end
 
 ---comment
@@ -1424,7 +1314,7 @@ function ChangePopupLayout()
         LOCATION_MAPPING[1573209] = {"@TR/Turtle Rock Back/Boss Item (Prize Shuffle)","@Turtle Rock Back/Boss/Boss Item",{"tr_boss", "dungeon_reward"}}
         LOCATION_MAPPING[1573203] = {"@PoD/Palace of Darkness/Boss Item (Prize Shuffle)","@Palace of Darkness/Boss/Boss Item",{"pod_boss", "dungeon_reward"}}
 
-        --alttpr
+        --alttpr keydrop locations
         LOCATION_MAPPING[1310775] = nil
         LOCATION_MAPPING[1310772] = nil
         LOCATION_MAPPING[1310733] = nil
@@ -1459,7 +1349,7 @@ function ChangePopupLayout()
         LOCATION_MAPPING[1310778] = nil
         LOCATION_MAPPING[1310751] = nil
 
-        --core/beta
+        --core/beta keydrop locations
         LOCATION_MAPPING[646016] = {"@CE/Castle Escape/Enemy Key Drops","@Castle Escape/Key Rat Key Drop/Key Rat Key Drop"}
         LOCATION_MAPPING[647684] = {"@HC/Hyrule Castle/Enemy Key Drops","@Hyrule Castle/Boomerang Guard Key Drop/Boomerang Guard Key Drop"}
         LOCATION_MAPPING[647692] = {"@HC/Hyrule Castle/Enemy Key Drops","@Hyrule Castle/Map Guard Key Drop/Map Guard Key Drop"}
@@ -1569,7 +1459,7 @@ function ChangePopupLayout()
         LOCATION_MAPPING[1573209] = {"@TR/Turtle Rock Back/Boss Item (Prize Shuffle)","@Turtle Rock Back/Boss/Boss Item",{"tr_boss", "dungeon_reward"}}
         LOCATION_MAPPING[1573203] = {"@PoD/Palace of Darkness/Boss Item (Prize Shuffle)","@Palace of Darkness/Boss/Boss Item","pod_boss"}
 
-        --alltpr
+        --alltpr keydrop locations
         LOCATION_MAPPING[1310775] = {"@HC/Hyrule Castle/Enemy Key Drops","@Hyrule Castle/Map Guard Key Drop/Map Guard Key Drop"}
         LOCATION_MAPPING[1310772] = {"@HC/Hyrule Castle/Enemy Key Drops","@Hyrule Castle/Boomerang Guard Key Drop/Boomerang Guard Key Drop"}
         LOCATION_MAPPING[1310733] = {"@CE/Castle Escape/Enemy Key Drops","@Castle Escape/Key Rat Key Drop/Key Rat Key Drop"}
@@ -1604,7 +1494,7 @@ function ChangePopupLayout()
         LOCATION_MAPPING[1310778] = {"@GT/Ganon's Tower/Pot Key Drops","@GT-inverted/Ganon's Tower/Pot Key Drops","@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key"}
         LOCATION_MAPPING[1310751] = {"@GT/Ganon's Tower/Enemy Key Drops","@GT-inverted/Ganon's Tower/Enemy Key Drops","@Ganon's Tower Top/Mini Helmasaur Key Drop/Mini Helmasaur Key Drop"}
 
-        --core/beta
+        --core/beta keydrop locations
         LOCATION_MAPPING[646016] = nil
         LOCATION_MAPPING[647684] = nil
         LOCATION_MAPPING[647692] = nil
@@ -1715,7 +1605,7 @@ function ChangePopupLayout()
         LOCATION_MAPPING[1573209] = {"@TR/Turtle Rock Back/Boss Item","@Turtle Rock Back/Boss/Boss Item",{"tr_boss", "dungeon_reward"},{"turtlerock", "dungeon_reward"}}
         LOCATION_MAPPING[1573203] = {"@PoD/Palace of Darkness/Boss Item","@Palace of Darkness/Boss/Boss Item","pod_boss",{"palaceofdarkness", "dungeon_reward"}}
 
-        --alltpr
+        --alltpr keydrop locations
         LOCATION_MAPPING[1310775] = {"@HC/Hyrule Castle/Enemy Key Drops","@Hyrule Castle/Map Guard Key Drop/Map Guard Key Drop"}
         LOCATION_MAPPING[1310772] = {"@HC/Hyrule Castle/Enemy Key Drops","@Hyrule Castle/Boomerang Guard Key Drop/Boomerang Guard Key Drop"}
         LOCATION_MAPPING[1310733] = {"@CE/Castle Escape/Enemy Key Drops","@Castle Escape/Key Rat Key Drop/Key Rat Key Drop"}
@@ -1750,7 +1640,7 @@ function ChangePopupLayout()
         LOCATION_MAPPING[1310778] = {"@GT/Ganon's Tower/Pot Key Drops","@GT-inverted/Ganon's Tower/Pot Key Drops","@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key"}
         LOCATION_MAPPING[1310751] = {"@GT/Ganon's Tower/Enemy Key Drops","@GT-inverted/Ganon's Tower/Enemy Key Drops","@Ganon's Tower Top/Mini Helmasaur Key Drop/Mini Helmasaur Key Drop"}
 
-        --core/beta
+        --core/beta keydrop locations
         LOCATION_MAPPING[646016] = nil
         LOCATION_MAPPING[647684] = nil
         LOCATION_MAPPING[647692] = nil
