@@ -2591,7 +2591,7 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules":[
-                            "^$OWDungeonChecks|@Desert Palace/Big Chest/Big Chest|@Desert Palace/Torch/Torch|@Desert Palace/Compass Chest/Compass Chest|@Desert Palace/Map Chest/Map Chest|@Desert Palace/Big Key Chest/Big Key Chest"
+                            "^$OWDungeonChecks|DP_Front_Dungeon_Chest"
                         ],
                         "clear_as_group": false,
                         "item_count": 5
@@ -2599,7 +2599,7 @@
                     {
                         "name": "Front Pots",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Desert Palace Front Pots/Circle of Pots Pot #1/Pot #1|@Desert Palace Front Pots/Circle of Pots Pot #2/Pot #2|@Desert Palace Front Pots/Circle of Pots Pot #3/Pot #3|@Desert Palace Front Pots/Circle of Pots Pot #4/Pot #4|@Desert Palace Front Pots/Circle of Pots Pot #5/Pot #5|@Desert Palace Front Pots/Circle of Pots Pot #6/Pot #6|@Desert Palace Front Pots/Circle of Pots Pot #7/Pot #7|@Desert Palace Front Pots/Circle of Pots Pot #8/Pot #8|@Desert Palace Front Pots/Circle of Pots Pot #9/Pot #9|@Desert Palace Front Pots/Circle of Pots Pot #10/Pot #10|@Desert Palace Front Pots/Map Room Pot #1/Pot #1|@Desert Palace Front Pots/Map Room Pot #2/Pot #2|@Desert Palace Front Pots/Map Room Pot #3/Pot #3|@Desert Palace Front Pots/Map Room Pot #4/Pot #4|@Desert Palace Front Pots/Map Room Pot #5/Pot #5|@Desert Palace Front Pots/Map Room Pot #6/Pot #6|@Desert Palace Front Pots/Map Room Pot #7/Pot #7|@Desert Palace Front Pots/Arrow Pot Corner Pot #1/Pot #1|@Desert Palace Front Pots/Arrow Pot Corner Pot #2/Pot #2|@Desert Palace Front Pots/Arrow Pot Corner Pot #3/Pot #3|@Desert Palace Front Pots/West Wing Pot #1/Pot #1|@Desert Palace Front Pots/West Wing Pot #2/Pot #2|@Desert Palace Front Pots/West Wing Pot #3/Pot #3|@Desert Palace Front Pots/West Wing Pot #4/Pot #4|@Desert Palace Front Pots/Main Lobby Pot #1/Pot #1|@Desert Palace Front Pots/Main Lobby Pot #2/Pot #2|@Desert Palace Front Pots/Main Lobby Pot #3/Pot #3|@Desert Palace Front Pots/Main Lobby Pot #4/Pot #4|@Desert Palace Front Pots/Main Lobby Pot #5/Pot #5|@Desert Palace Front Pots/Main Lobby Pot #6/Pot #6|@Desert Palace Front Pots/Main Lobby Pot #7/Pot #7|@Desert Palace Front Pots/Main Lobby Pot #8/Pot #8|@Desert Palace Front Pots/East Wing Pot #1/Pot #1|@Desert Palace Front Pots/East Wing Pot #2/Pot #2"
+                            "^$OWDungeonChecks|DP_Front_Pots"
                         ],
                         "visibility_rules":["potsanity_lottery", "potsanity_dungeons"],
                         "item_count": 34
@@ -2607,7 +2607,7 @@
                     {
                         "name": "Front Enemies",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Desert Palace Front Enemies/Sandworm Corner Enemy #1/Enemy #1|@Desert Palace Front Enemies/Bonk Torch Enemy #2/Enemy #2|@Desert Palace Front Enemies/Sandworm Corner Enemy #3/Enemy #3|@Desert Palace Front Enemies/Sandworm Corner Enemy #4/Enemy #4|@Desert Palace Front Enemies/Circle of Pots Enemy #5/Enemy #5|@Desert Palace Front Enemies/Sandworm Corner Enemy #6/Enemy #6|@Desert Palace Front Enemies/North Hall Enemy #1/Enemy #1|@Desert Palace Front Enemies/North Hall Enemy #2/Enemy #2|@Desert Palace Front Enemies/Map Room Enemy #3/Enemy #3|@Desert Palace Front Enemies/Map Room Enemy #4/Enemy #4|@Desert Palace Front Enemies/Map Room Enemy #5/Enemy #5|@Desert Palace Front Enemies/Map Room Enemy #6/Enemy #6|@Desert Palace Front Enemies/Dead End Enemy #7/Enemy #7|@Desert Palace Front Enemies/Dead End Enemy #8/Enemy #8|@Desert Palace Front Enemies/Trap Room Enemy #1/Enemy #1|@Desert Palace Front Enemies/Arrow Pot Corner Enemy #2/Enemy #2|@Desert Palace Front Enemies/Trap Room Enemy #3/Enemy #3|@Desert Palace Front Enemies/Trap Room Enemy #4/Enemy #4|@Desert Palace Front Enemies/Trap Room Enemy #5/Enemy #5|@Desert Palace Front Enemies/Trap Room Enemy #6/Enemy #6|@Desert Palace Front Enemies/Arrow Pot Corner Enemy #9/Enemy #9|@Desert Palace Front Enemies/Arrow Pot Corner Enemy #10/Enemy #10|@Desert Palace Front Enemies/West Wing Enemy #1/Enemy #1|@Desert Palace Front Enemies/West Wing Enemy #2/Enemy #2|@Desert Palace Front Enemies/West Wing Enemy #3/Enemy #3|@Desert Palace Front Enemies/Fairy Fountain Enemy #4/Enemy #4|@Desert Palace Front Enemies/Fairy Fountain Enemy #5/Enemy #5|@Desert Palace Front Enemies/West Wing Enemy #6/Enemy #6|@Desert Palace Front Enemies/West Wing Enemy #7/Enemy #7|@Desert Palace Front Enemies/West Lobby Enemy #8/Enemy #8|@Desert Palace Front Enemies/West Wing Enemy #9/Enemy #9|@Desert Palace Front Enemies/West Wing Enemy #10/Enemy #10|@Desert Palace Front Enemies/Left Alcove Enemy #1/Enemy #1|@Desert Palace Front Enemies/Right Alcove Enemy #2/Enemy #2|@Desert Palace Front Enemies/Main Lobby Enemy #3/Enemy #3|@Desert Palace Front Enemies/Main Lobby Enemy #4/Enemy #4|@Desert Palace Front Enemies/Main Lobby Enemy #5/Enemy #5|@Desert Palace Front Enemies/Main Lobby Enemy #6/Enemy #6|@Desert Palace Front Enemies/Main Lobby Enemy #7/Enemy #7|@Desert Palace Front Enemies/East Wing Enemy #1/Enemy #1|@Desert Palace Front Enemies/East Wing Enemy #2/Enemy #2|@Desert Palace Front Enemies/Compass Room Enemy #3/Enemy #3|@Desert Palace Front Enemies/Compass Room Enemy #4/Enemy #4|@Desert Palace Front Enemies/Compass Room Enemy #5/Enemy #5|@Desert Palace Front Enemies/Compass Room Enemy #6/Enemy #6|@Desert Palace Front Enemies/East Wing Enemy #7/Enemy #7|@Desert Palace Front Enemies/East Wing Enemy #8/Enemy #8|@Desert Palace Front Enemies/East Lobby Enemy #9/Enemy #9|@Desert Palace Front Enemies/East Wing Enemy #10/Enemy #10"
+                            "^$OWDungeonChecks|DP_Front_Enemies"
                         ],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 49
@@ -2652,7 +2652,7 @@
                     {
                         "name": "Pot Key Drops",
                         "access_rules":[
-                            "^$OWDungeonChecks|@Desert Palace Back/Desert Tiles 1 Pot Key/Desert Tiles 1 Pot Key|@Desert Palace Back/Beamos Hall Pot Key/Beamos Hall Pot Key|@Desert Palace Back/Desert Tiles 2 Pot Key/Desert Tiles 2 Pot Key"
+                            "^$OWDungeonChecks|DP_Back_Pot_Key_Drops"
                         ],
                         "item_count": 3,
                         "clear_as_group": false,
@@ -2661,7 +2661,7 @@
                     {
                         "name": "Back Pots",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Desert Palace Back Pots/Wall Slide Pot #1/Pot #1|@Desert Palace Back Pots/Wall Slide Pot #2/Pot #2|@Desert Palace Back Pots/Wall Slide Pot #3/Pot #3|@Desert Palace Back Pots/Wall Slide Pot #4/Pot #4|@Desert Palace Back Pots/Tiles 2 Pot #5/Pot #5|@Desert Palace Back Pots/Tiles 2 Pot #6/Pot #6|@Desert Palace Back Pots/Tiles 2 Pot #7/Pot #7|@Desert Palace Back Pots/Beamos Hall Pot #1/Pot #1|@Desert Palace Back Pots/Beamos Hall Pot #2/Pot #2|@Desert Palace Back Pots/Beamos Hall Pot #4/Pot #4|@Desert Palace Back Pots/Tiles 1 Pot #1/Pot #1|@Desert Palace Back Pots/Tiles 1 Pot #2/Pot #2|@Desert Palace Back Pots/Tiles 1 Pot #3/Pot #3|@Desert Palace Back Pots/Tiles 1 Pot #4/Pot #4|@Desert Palace Back Pots/Tiles 1 Pot #5/Pot #5"
+                            "^$OWDungeonChecks|DP_Back_Pots"
                         ],
                         "visibility_rules":["potsanity_lottery", "potsanity_dungeons"],
                         "item_count": 15
@@ -2669,7 +2669,7 @@
                     {
                         "name": "Back Enemies",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Desert Palace Back Enemies/Wall Slide Enemy #1/Enemy #1|@Desert Palace Back Enemies/Beamos Hall Enemy #1/Enemy #1|@Desert Palace Back Enemies/Beamos Hall Enemy #2/Enemy #2|@Desert Palace Back Enemies/Beamos Hall Enemy #3/Enemy #3|@Desert Palace Back Enemies/Beamos Hall Enemy #4/Enemy #4|@Desert Palace Back Enemies/Beamos Hall Enemy #5/Enemy #5|@Desert Palace Back Enemies/Four Statues Enemy #6/Enemy #6|@Desert Palace Back Enemies/Four Statues Enemy #7/Enemy #7|@Desert Palace Back Enemies/Beamos Hall Enemy #8/Enemy #8|@Desert Palace Back Enemies/Four Statues Enemy #9/Enemy #9|@Desert Palace Back Enemies/Four Statues Enemy #10/Enemy #10|@Desert Palace Back Enemies/Four Statues Enemy #11/Enemy #11|@Desert Palace Back Enemies/Beamos Hall Enemy #12/Enemy #12|@Desert Palace Back Enemies/Beamos Hall Enemy #13/Enemy #13|@Desert Palace Back Enemies/Back Lobby Enemy #2/Enemy #2"
+                            "^$OWDungeonChecks|DP_Back_Enemies"
                         ],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 15
@@ -2677,7 +2677,7 @@
                     {
                         "name": "Boss Item" ,
                         "access_rules": [
-                            "^$OWDungeonChecks|@Desert Palace Back/Boss/Boss Item"
+                            "^$OWDungeonChecks|DP_Back_Boss_Item"
                         ],
                         "visibility_rules": ["boss_prize_shuffle_off"],
                         "clear_as_group": false,
@@ -2687,7 +2687,7 @@
                     {
                         "name": "Boss Item (Prize Shuffle)" ,
                         "access_rules": [
-                            "^$OWDungeonChecks|@Desert Palace Back/Boss/Boss Item"
+                            "^$OWDungeonChecks|DP_Back_Boss_Item"
                         ],
                         "visibility_rules": ["boss_prize_shuffle_on"],
                         "clear_as_group": false,
@@ -2733,7 +2733,7 @@
                     {
                         "name": "Dungeon Chest" ,
                         "access_rules": [
-                            "^$OWDungeonChecks|@Eastern Palace/Big Chest/Big Chest|@Eastern Palace/Cannonball Chest/Cannonball Chest|@Eastern Palace/Big Key Chest/Big Key Chest|@Eastern Palace/Map Chest/Map Chest|@Eastern Palace/Compass Chest/Compass Chest"
+                            "^$OWDungeonChecks|EP_Dungeon_Chest"
                         ],
                         "clear_as_group": false,
                         "item_count": 5
@@ -2743,7 +2743,7 @@
                         "item_count": 1,
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$OWDungeonChecks|@Eastern Palace/Dark Eyegore Key Drop/Dark Eyegore Key Drop"
+                            "^$OWDungeonChecks|EP_Enemy_Key_Drops"
                         ],
                         "visibility_rules": ["key_drop_shuffle", "enemy_drop_shuffle_keys"]
                     },
@@ -2752,14 +2752,14 @@
                         "item_count": 1,
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$OWDungeonChecks|@Eastern Palace/Dark Square Pot Key/Dark Square Pot Key"
+                            "^$OWDungeonChecks|EP_Pot_Key_Drops"
                         ],
                         "visibility_rules": ["key_drop_shuffle", "potsanity_keys", "potsanity_dungeons"]
                     },
                     {
                         "name": "Pots",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Eastern Palace Pots/Darkness Pot #1/Pot #1|@Eastern Palace Pots/Darkness Pot #2/Pot #2|@Eastern Palace Pots/Stalfos Spawn Pot #1/Pot #1|@Eastern Palace Pots/Stalfos Spawn Pot #2/Pot #2|@Eastern Palace Pots/Stalfos Spawn Pot #3/Pot #3|@Eastern Palace Pots/Stalfos Spawn Pot #4/Pot #4|@Eastern Palace Pots/Stalfos Spawn Pot #5/Pot #5|@Eastern Palace Pots/Courtyard Pot #1/Pot #1|@Eastern Palace Pots/Courtyard Pot #2/Pot #2|@Eastern Palace Pots/Courtyard Pot #3/Pot #3|@Eastern Palace Pots/Courtyard Pot #4/Pot #4|@Eastern Palace Pots/Courtyard Ledge Pot #5/Pot #5|@Eastern Palace Pots/Courtyard Ledge Pot #6/Pot #6|@Eastern Palace Pots/Courtyard Ledge Pot #7/Pot #7|@Eastern Palace Pots/Courtyard Ledge Pot #8/Pot #8|@Eastern Palace Pots/Pot Switch Pot #1/Pot #1|@Eastern Palace Pots/Pot Switch Pot #2/Pot #2|@Eastern Palace Pots/Pot Switch Pot #3/Pot #3|@Eastern Palace Pots/Pot Switch Pot #4/Pot #4|@Eastern Palace Pots/Pot Switch Pot #5/Pot #5|@Eastern Palace Pots/Map Balcony Pot #6/Pot #6|@Eastern Palace Pots/Map Balcony Pot #7/Pot #7|@Eastern Palace Pots/Map Balcony Pot #8/Pot #8|@Eastern Palace Pots/Big Key Pot #1/Pot #1|@Eastern Palace Pots/Big Key Pot #2/Pot #2|@Eastern Palace Pots/Big Key Pot #3/Pot #3|@Eastern Palace Pots/Cannonball Pot #1/Pot #1|@Eastern Palace Pots/Cannonball Pot #2/Pot #2|@Eastern Palace Pots/Cannonball Pot #3/Pot #3|@Eastern Palace Pots/Cannonball Pot #4/Pot #4|@Eastern Palace Pots/Dark Pots Pot #1/Pot #1|@Eastern Palace Pots/Dark Pots Pot #2/Pot #2|@Eastern Palace Pots/Dark Pots Pot #3/Pot #3|@Eastern Palace Pots/Dark Pots Pot #4/Pot #4|@Eastern Palace Pots/Dark Pots Pot #6/Pot #6|@Eastern Palace Pots/Dark Pots Pot #7/Pot #7|@Eastern Palace Pots/Dark Pots Pot #8/Pot #8|@Eastern Palace Pots/Lobby Pot #1/Pot #1|@Eastern Palace Pots/Lobby Pot #2/Pot #2|@Eastern Palace Pots/Lobby Pot #3/Pot #3|@Eastern Palace Pots/Duo Eyegores Pot #1/Pot #1|@Eastern Palace Pots/Duo Eyegores Pot #2/Pot #2|@Eastern Palace Pots/Duo Eyegores Pot #3/Pot #3|@Eastern Palace Pots/Duo Eyegores Pot #4/Pot #4|@Eastern Palace Pots/Duo Eyegores Pot #5/Pot #5|@Eastern Palace Pots/Duo Eyegores Pot #6/Pot #6|@Eastern Palace Pots/Single Eyegore Pot #7/Pot #7|@Eastern Palace Pots/Single Eyegore Pot #8/Pot #8|@Eastern Palace Pots/False Switches Pot #1/Pot #1|@Eastern Palace Pots/False Switches Pot #2/Pot #2|@Eastern Palace Pots/Attic Start Pot #1/Pot #1|@Eastern Palace Pots/Attic Start Pot #2/Pot #2|@Eastern Palace Pots/Attic Start Pot #3/Pot #3|@Eastern Palace Pots/Attic Start Pot #4/Pot #4"
+                            "^$OWDungeonChecks|EP_Pots"
                         ],
                         "visibility_rules":["potsanity_lottery", "potsanity_dungeons"],
                         "item_count": 54
@@ -2767,7 +2767,7 @@
                     {
                         "name": "Enemies",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Eastern Palace Enemies/Fairies Enemy #1/Enemy #1|@Eastern Palace Enemies/Fairies Enemy #2/Enemy #2|@Eastern Palace Enemies/Rupees Enemy #1/Enemy #1|@Eastern Palace Enemies/Rupees Enemy #2/Enemy #2|@Eastern Palace Enemies/Darkness Enemy #3/Enemy #3|@Eastern Palace Enemies/Darkness Enemy #5/Enemy #5|@Eastern Palace Enemies/Darkness Enemy #6/Enemy #6|@Eastern Palace Enemies/Darkness Enemy #7/Enemy #7|@Eastern Palace Enemies/Darkness Enemy #8/Enemy #8|@Eastern Palace Enemies/Darkness Enemy #9/Enemy #9|@Eastern Palace Enemies/Darkness Enemy #10/Enemy #10|@Eastern Palace Enemies/West Wing Enemy #1/Enemy #1|@Eastern Palace Enemies/West Wing Enemy #2/Enemy #2|@Eastern Palace Enemies/West Wing Enemy #3/Enemy #3|@Eastern Palace Enemies/West Wing Enemy #4/Enemy #4|@Eastern Palace Enemies/Courtyard Enemy #1/Enemy #1|@Eastern Palace Enemies/Courtyard Enemy #2/Enemy #2|@Eastern Palace Enemies/Courtyard Enemy #7/Enemy #7|@Eastern Palace Enemies/Courtyard Enemy #8/Enemy #8|@Eastern Palace Enemies/Pot Switch Enemy #1/Enemy #1|@Eastern Palace Enemies/East Wing Enemy #2/Enemy #2|@Eastern Palace Enemies/East Wing Enemy #3/Enemy #3|@Eastern Palace Enemies/East Wing Enemy #4/Enemy #4|@Eastern Palace Enemies/East Wing Enemy #5/Enemy #5|@Eastern Palace Enemies/East Wing Enemy #6/Enemy #6|@Eastern Palace Enemies/Big Key Enemy #1/Enemy #1|@Eastern Palace Enemies/Big Key Enemy #2/Enemy #2|@Eastern Palace Enemies/Big Key Enemy #3/Enemy #3|@Eastern Palace Enemies/Big Key Enemy #4/Enemy #4|@Eastern Palace Enemies/Big Key Enemy #5/Enemy #5|@Eastern Palace Enemies/Big Key Enemy #6/Enemy #6|@Eastern Palace Enemies/Dark Pots Enemy #1/Enemy #1|@Eastern Palace Enemies/Dark Square Enemy #2/Enemy #2|@Eastern Palace Enemies/Dark Pots Enemy #3/Enemy #3|@Eastern Palace Enemies/Dark Square Enemy #4/Enemy #4|@Eastern Palace Enemies/Dark Square Enemy #5/Enemy #5|@Eastern Palace Enemies/Dark Pots Enemy #6/Enemy #6|@Eastern Palace Enemies/Dark Square Enemy #7/Enemy #7|@Eastern Palace Enemies/Lobby Bridge Enemy #1/Enemy #1|@Eastern Palace Enemies/Lobby Bridge Enemy #2/Enemy #2|@Eastern Palace Enemies/Lobby Bridge Enemy #3/Enemy #3|@Eastern Palace Enemies/Duo Eyegores Enemy #1/Enemy #1|@Eastern Palace Enemies/Duo Eyegores Enemy #2/Enemy #2|@Eastern Palace Enemies/Duo Eyegores Enemy #3/Enemy #3|@Eastern Palace Enemies/Duo Eyegores Enemy #4/Enemy #4|@Eastern Palace Enemies/Duo Eyegores Enemy #5/Enemy #5|@Eastern Palace Enemies/Duo Eyegores Enemy #6/Enemy #6|@Eastern Palace Enemies/Duo Eyegores Enemy #7/Enemy #7|@Eastern Palace Enemies/Duo Eyegores Enemy #8/Enemy #8|@Eastern Palace Enemies/Single Eyegore Enemy #9/Enemy #9|@Eastern Palace Enemies/Single Eyegore Enemy #10/Enemy #10|@Eastern Palace Enemies/Single Eyegore Enemy #11/Enemy #11|@Eastern Palace Enemies/False Switches Enemy #2/Enemy #2|@Eastern Palace Enemies/False Switches Enemy #3/Enemy #3|@Eastern Palace Enemies/False Switches Enemy #4/Enemy #4|@Eastern Palace Enemies/Attic Start Enemy #1/Enemy #1|@Eastern Palace Enemies/Attic Start Enemy #2/Enemy #2"
+                            "^$OWDungeonChecks|EP_Enemies"
                         ],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 57
@@ -2776,7 +2776,7 @@
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$OWDungeonChecks|@Eastern Palace/Boss/Boss Item"
+                            "^$OWDungeonChecks|EP_Boss_Item"
                         ],
                         "visibility_rules": ["boss_prize_shuffle_off"],
                         "item_count": 1,
@@ -2786,7 +2786,7 @@
                         "name": "Boss Item (Prize Shuffle)" ,
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$OWDungeonChecks|@Eastern Palace/Boss/Boss Item"
+                            "^$OWDungeonChecks|EP_Boss_Item"
                         ],
                         "visibility_rules": ["boss_prize_shuffle_on"],
                         "hosted_item": "ep_boss, ep_ap_reward"
@@ -2832,13 +2832,13 @@
                     {
                         "name": "Front",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Agahnim's Tower/Front/Front"
+                            "^$OWDungeonChecks|AT_Dungeon_Front"
                         ]
                     },
                     {
                         "name": "Maze Chest",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Agahnim's Tower/Maze Chest/Maze Chest"
+                            "^$OWDungeonChecks|AT_Dungeon_Maze"
                         ]
                     },
                     {
@@ -2846,14 +2846,14 @@
                         "item_count": 2,
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$OWDungeonChecks|@Agahnim's Tower/Dark Archer Key Drop/Dark Archer Key Drop|@Agahnim's Tower/Circle of Pots Key Drop/Circle of Pots Key Drop"
+                            "^$OWDungeonChecks|AT_Enemy_Key_Drops"
                         ],
                         "visibility_rules": ["key_drop_shuffle", "enemy_drop_shuffle_keys"]
                     },
                     {
                         "name": "Pots",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Agahnim's Tower Pots/Circle of Pots Pot #1/Pot #1|@Agahnim's Tower Pots/Circle of Pots Pot #2/Pot #2|@Agahnim's Tower Pots/Circle of Pots Pot #3/Pot #3|@Agahnim's Tower Pots/Circle of Pots Pot #4/Pot #4|@Agahnim's Tower Pots/Circle of Pots Pot #5/Pot #5|@Agahnim's Tower Pots/Circle of Pots Pot #6/Pot #6|@Agahnim's Tower Pots/Circle of Pots Pot #7/Pot #7|@Agahnim's Tower Pots/Circle of Pots Pot #8/Pot #8|@Agahnim's Tower Pots/Circle of Pots Pot #9/Pot #9|@Agahnim's Tower Pots/Circle of Pots Pot #10/Pot #10|@Agahnim's Tower Pots/Circle of Pots Pot #11/Pot #11|@Agahnim's Tower Pots/Circle of Pots Pot #12/Pot #12|@Agahnim's Tower Pots/Circle of Pots Pot #13/Pot #13|@Agahnim's Tower Pots/Circle of Pots Pot #14/Pot #14|@Agahnim's Tower Pots/Dark Pits Pot #1/Pot #1|@Agahnim's Tower Pots/Dark Pits Pot #2/Pot #2|@Agahnim's Tower Pots/Dark Pits Pot #3/Pot #3|@Agahnim's Tower Pots/Dark Pits Pot #4/Pot #4|@Agahnim's Tower Pots/Dark Maze Pot #1/Pot #1|@Agahnim's Tower Pots/Dark Maze Pot #2/Pot #2|@Agahnim's Tower Pots/Dark Maze Pot #3/Pot #3|@Agahnim's Tower Pots/Dark Maze Pot #4/Pot #4|@Agahnim's Tower Pots/Dark Maze Pot #5/Pot #5|@Agahnim's Tower Pots/Dark Maze Pot #6/Pot #6|@Agahnim's Tower Pots/Dark Maze Pot #7/Pot #7"
+                            "^$OWDungeonChecks|AT_Pots"
                         ],
                         "visibility_rules":["potsanity_lottery", "potsanity_dungeons"],
                         "item_count": 25
@@ -2861,7 +2861,7 @@
                     {
                         "name": "Enemies",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Agahnim's Tower Enemies/Catwalk Enemy #1/Enemy #1|@Agahnim's Tower Enemies/Catwalk Enemy #2/Enemy #2|@Agahnim's Tower Enemies/Push Statue Enemy #3/Enemy #3|@Agahnim's Tower Enemies/Push Statue Enemy #4/Enemy #4|@Agahnim's Tower Enemies/Push Statue Enemy #5/Enemy #5|@Agahnim's Tower Enemies/Push Statue Enemy #6/Enemy #6|@Agahnim's Tower Enemies/Red Guards Enemy #1/Enemy #1|@Agahnim's Tower Enemies/Red Spears Enemy #2/Enemy #2|@Agahnim's Tower Enemies/Red Spears Enemy #3/Enemy #3|@Agahnim's Tower Enemies/Red Spears Enemy #4/Enemy #4|@Agahnim's Tower Enemies/Red Spears Enemy #5/Enemy #5|@Agahnim's Tower Enemies/Red Guards Enemy #6/Enemy #6|@Agahnim's Tower Enemies/Pacifist Run Enemy #7/Enemy #7|@Agahnim's Tower Enemies/Circle of Pots Enemy #8/Enemy #8|@Agahnim's Tower Enemies/Circle of Pots Enemy #9/Enemy #9|@Agahnim's Tower Enemies/Circle of Pots Enemy #10/Enemy #10|@Agahnim's Tower Enemies/Pacifist Run Enemy #12/Enemy #12|@Agahnim's Tower Enemies/Pacifist Run Enemy #13/Enemy #13|@Agahnim's Tower Enemies/Dark Archers Enemy #1/Enemy #1|@Agahnim's Tower Enemies/Dark Archers Enemy #2/Enemy #2|@Agahnim's Tower Enemies/Dark Pits Enemy #3/Enemy #3|@Agahnim's Tower Enemies/Dark Pits Enemy #5/Enemy #5|@Agahnim's Tower Enemies/Dark Pits Enemy #6/Enemy #6|@Agahnim's Tower Enemies/Dual Statues Enemy #7/Enemy #7|@Agahnim's Tower Enemies/Dual Statues Enemy #8/Enemy #8|@Agahnim's Tower Enemies/Dark Maze Enemy #1/Enemy #1|@Agahnim's Tower Enemies/Dark Maze Enemy #2/Enemy #2|@Agahnim's Tower Enemies/Lone Statue Enemy #3/Enemy #3|@Agahnim's Tower Enemies/Lone Statue Enemy #4/Enemy #4|@Agahnim's Tower Enemies/Dark Maze Enemy #5/Enemy #5|@Agahnim's Tower Enemies/Dark Maze Enemy #6/Enemy #6|@Agahnim's Tower Enemies/Dark Maze Enemy #7/Enemy #7|@Agahnim's Tower Enemies/Dark Maze Enemy #8/Enemy #8|@Agahnim's Tower Enemies/Dark Chargers Enemy #9/Enemy #9|@Agahnim's Tower Enemies/Dark Maze Enemy #10/Enemy #10|@Agahnim's Tower Enemies/Dark Chargers Enemy #11/Enemy #11|@Agahnim's Tower Enemies/Gold Knights Enemy #1/Enemy #1|@Agahnim's Tower Enemies/Gold Knights Enemy #2/Enemy #2|@Agahnim's Tower Enemies/Room 03 Enemy #3/Enemy #3|@Agahnim's Tower Enemies/Room 03 Enemy #4/Enemy #4"
+                            "^$OWDungeonChecks|AT_Enemies"
                         ],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 40
@@ -2869,7 +2869,7 @@
                     {
                         "name": "Agahnim 1",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Agahnim's Tower/Agahnim 1/Agahnim 1"
+                            "^$OWDungeonChecks|AT_Boss_Item"
                         ],
                         "hosted_item": "aga1"
                     }
@@ -2915,26 +2915,26 @@
                     {
                         "name": "Map Chest",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Hyrule Castle/Map Chest/Map Chest"
+                            "^$OWDungeonChecks|HC_Dungeon_Map"
                         ],
                         "item_count": 1
                     },
                     {
                         "name": "Boomerang Chest",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Hyrule Castle/Boomerang Chest/Boomerang Chest"
+                            "^$OWDungeonChecks|HC_Dungeon_Boomerang"
                         ]
                     },
                     {
                         "name": "Zelda's Chest",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Hyrule Castle/Zelda's Chest/Zelda's Chest"
+                            "^$OWDungeonChecks|HC_Dungeon_Zelda"
                         ]
                     },
                     {
                         "name": "Pots",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Hyrule Castle Pots/West Hall Pot #1/Pot #1|@Hyrule Castle Pots/West Hall Pot #2/Pot #2|@Hyrule Castle Pots/East Hall Pot #1/Pot #1|@Hyrule Castle Pots/East Hall Pot #2/Pot #2|@Hyrule Castle Pots/West Lobby Pot #1/Pot #1|@Hyrule Castle Pots/West Lobby Pot #2/Pot #2|@Hyrule Castle Pots/East Lobby Pot #1/Pot #1|@Hyrule Castle Pots/Cellblock Pot #1/Pot #1|@Hyrule Castle Pots/Cellblock Pot #2/Pot #2|@Hyrule Castle Pots/Cellblock Pot #3/Pot #3|@Hyrule Castle Pots/South Abyss Pot #1/Pot #1|@Hyrule Castle Pots/South Abyss Pot #2/Pot #2|@Hyrule Castle Pots/South Abyss Pot #3/Pot #3"
+                            "^$OWDungeonChecks|HC_Pots"
                         ],
                         "visibility_rules":["potsanity_lottery", "potsanity_dungeons"],
                         "item_count": 13
@@ -2942,7 +2942,7 @@
                     {
                         "name": "Enemies",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Hyrule Castle Enemies/West Hall Enemy #1/Enemy #1|@Hyrule Castle Enemies/West Hall Enemy #2/Enemy #2|@Hyrule Castle Enemies/West Hall Enemy #3/Enemy #3|@Hyrule Castle Enemies/Throne Room Enemy #1/Enemy #1|@Hyrule Castle Enemies/Throne Room Enemy #2/Enemy #2|@Hyrule Castle Enemies/Throne Room Enemy #3/Enemy #3|@Hyrule Castle Enemies/East Hall Enemy #1/Enemy #1|@Hyrule Castle Enemies/East Hall Enemy #2/Enemy #2|@Hyrule Castle Enemies/East Hall Enemy #3/Enemy #3|@Hyrule Castle Enemies/Secret Entrance Enemy #1/Enemy #1|@Hyrule Castle Enemies/Secret Entrance Enemy #2/Enemy #2|@Hyrule Castle Enemies/Secret Entrance Enemy #3/Enemy #3|@Hyrule Castle Enemies/West Lobby Enemy #1/Enemy #1|@Hyrule Castle Enemies/Lobby Enemy #1/Enemy #1|@Hyrule Castle Enemies/Lobby Enemy #2/Enemy #2|@Hyrule Castle Enemies/Lobby Enemy #3/Enemy #3|@Hyrule Castle Enemies/East Lobby Enemy #1/Enemy #1|@Hyrule Castle Enemies/East Lobby Enemy #2/Enemy #2|@Hyrule Castle Enemies/East Lobby Enemy #3/Enemy #3|@Hyrule Castle Enemies/Armory Main Enemy #1/Enemy #1|@Hyrule Castle Enemies/North Abyss Enemy #2/Enemy #2|@Hyrule Castle Enemies/Cell Enemy #1/Enemy #1|@Hyrule Castle Enemies/Cellblock Enemy #2/Enemy #2|@Hyrule Castle Enemies/Guardroom Enemy #1/Enemy #1|@Hyrule Castle Enemies/Guardroom Enemy #2/Enemy #2|@Hyrule Castle Enemies/South Abyss Enemy #1/Enemy #1|@Hyrule Castle Enemies/South Abyss Enemy #2/Enemy #2|@Hyrule Castle Enemies/South Abyss Enemy #3/Enemy #3"
+                            "^$OWDungeonChecks|HC_Enemies"
                         ],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 28
@@ -2950,7 +2950,7 @@
                     {
                         "name": "Enemy Key Drops",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Hyrule Castle/Map Guard Key Drop/Map Guard Key Drop|@Hyrule Castle/Boomerang Guard Key Drop/Boomerang Guard Key Drop|@Hyrule Castle/Big Key Drop/Big Key Drop"
+                            "^$OWDungeonChecks|HC_Enemy_Key_Drops"
                         ],
                         "item_count": 3,
                         "clear_as_group": false,
@@ -2998,20 +2998,20 @@
                     {
                         "name": "Dark Cross",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Castle Escape/Dark Cross/Dark Cross"
+                            "^$OWDungeonChecks|CE_Dungeon_Dark_Cross"
                         ]
                     },
                     {
                         "name": "Secret Room",
                         "item_count": 3,
                         "access_rules": [
-                            "^$OWDungeonChecks|@Castle Escape/Secret Passage Left/Secret Passage Left|@Castle Escape/Secret Passage Middle/Secret Passage Middle|@Castle Escape/Secret Passage Right/Secret Passage Right"
+                            "^$OWDungeonChecks|CE_Dungeon_Secret_Room"
                         ]
                     },
                     {
                         "name": "Pots",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Castle Escape Pots/Yet More Rats Pot #1/Pot #1|@Castle Escape Pots/Yet More Rats Pot #2/Pot #2|@Castle Escape Pots/Yet More Rats Pot #3/Pot #3|@Castle Escape Pots/Yet More Rats Pot #4/Pot #4|@Castle Escape Pots/Secret Room Pot #1/Pot #1|@Castle Escape Pots/Secret Room Pot #2/Pot #2|@Castle Escape Pots/Secret Room Pot #3/Pot #3|@Castle Escape Pots/Secret Room Pot #4/Pot #4|@Castle Escape Pots/Secret Room Pot #5/Pot #5|@Castle Escape Pots/Secret Room Pot #6/Pot #6|@Castle Escape Pots/Dark Aquabats Pot #1/Pot #1|@Castle Escape Pots/Dark Aquabats Pot #2/Pot #2|@Castle Escape Pots/Dark Aquabats Pot #3/Pot #3|@Castle Escape Pots/Dark Aquabats Pot #4/Pot #4|@Castle Escape Pots/Dark Aquabats Pot #5/Pot #5|@Castle Escape Pots/Dark Aquabats Pot #6/Pot #6|@Castle Escape Pots/Dark Cross Pot #1/Pot #1|@Castle Escape Pots/Behind Tapestry Pot #1/Pot #1|@Castle Escape Pots/Behind Tapestry Pot #2/Pot #2|@Castle Escape Pots/Behind Tapestry Pot #3/Pot #3|@Castle Escape Pots/Behind Tapestry Pot #4/Pot #4"
+                            "^$OWDungeonChecks|CE_Pots"
                         ],
                         "visibility_rules":["potsanity_lottery", "potsanity_dungeons"],
                         "item_count": 21
@@ -3019,7 +3019,7 @@
                     {
                         "name": "Enemies",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Castle Escape Enemies/Yet More Rats Enemy #1/Enemy #1|@Castle Escape Enemies/Yet More Rats Enemy #2/Enemy #2|@Castle Escape Enemies/Yet More Rats Enemy #3/Enemy #3|@Castle Escape Enemies/Yet More Rats Enemy #4/Enemy #4|@Castle Escape Enemies/Yet More Rats Enemy #5/Enemy #5|@Castle Escape Enemies/Pull Switch Enemy #15/Enemy #15|@Castle Escape Enemies/Pull Switch Enemy #16/Enemy #16|@Castle Escape Enemies/Rat Path Enemy #1/Enemy #1|@Castle Escape Enemies/Rat Path Enemy #2/Enemy #2|@Castle Escape Enemies/Rat Path Enemy #3/Enemy #3|@Castle Escape Enemies/Rat Path Enemy #4/Enemy #4|@Castle Escape Enemies/Rat Path Enemy #5/Enemy #5|@Castle Escape Enemies/Rat Path Enemy #6/Enemy #6|@Castle Escape Enemies/Rat Path Enemy #7/Enemy #7|@Castle Escape Enemies/Rat Path Enemy #8/Enemy #8|@Castle Escape Enemies/Key Rat Enemy #2/Enemy #2|@Castle Escape Enemies/Key Rat Enemy #3/Enemy #3|@Castle Escape Enemies/Key Rat Enemy #4/Enemy #4|@Castle Escape Enemies/Key Rat Enemy #5/Enemy #5|@Castle Escape Enemies/Dark Aquabats Enemy #6/Enemy #6|@Castle Escape Enemies/Dark Aquabats Enemy #7/Enemy #7|@Castle Escape Enemies/Dark Aquabats Enemy #8/Enemy #8|@Castle Escape Enemies/Dark Aquabats Enemy #9/Enemy #9|@Castle Escape Enemies/Dark Aquabats Enemy #10/Enemy #10|@Castle Escape Enemies/Dark Aquabats Enemy #11/Enemy #11|@Castle Escape Enemies/Water Enemy #1/Enemy #1|@Castle Escape Enemies/Water Enemy #2/Enemy #2|@Castle Escape Enemies/Water Enemy #3/Enemy #3|@Castle Escape Enemies/Water Enemy #4/Enemy #4|@Castle Escape Enemies/Water Enemy #5/Enemy #5|@Castle Escape Enemies/Water Enemy #6/Enemy #6|@Castle Escape Enemies/Water Enemy #7/Enemy #7|@Castle Escape Enemies/Dark Cross Enemy #1/Enemy #1|@Castle Escape Enemies/Dark Cross Enemy #2/Enemy #2|@Castle Escape Enemies/Dark Cross Enemy #3/Enemy #3|@Castle Escape Enemies/Dark Cross Enemy #4/Enemy #4|@Castle Escape Enemies/Dark Cross Enemy #5/Enemy #5|@Castle Escape Enemies/Behind Tapestry Enemy #1/Enemy #1|@Castle Escape Enemies/Behind Tapestry Enemy #2/Enemy #2|@Castle Escape Enemies/Behind Tapestry Enemy #3/Enemy #3|@Castle Escape Enemies/Behind Tapestry Enemy #4/Enemy #4|@Castle Escape Enemies/Rope Room Enemy #1/Enemy #1|@Castle Escape Enemies/Rope Room Enemy #2/Enemy #2|@Castle Escape Enemies/Rope Room Enemy #3/Enemy #3|@Castle Escape Enemies/Rope Room Enemy #4/Enemy #4|@Castle Escape Enemies/Rope Room Enemy #5/Enemy #5|@Castle Escape Enemies/Rope Room Enemy #6/Enemy #6"
+                            "^$OWDungeonChecks|CE_Enemies"
                         ],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 47
@@ -3029,7 +3029,7 @@
                         "item_count": 1,
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$OWDungeonChecks|@Castle Escape/Key Rat Key Drop/Key Rat Key Drop"
+                            "^$OWDungeonChecks|CE_Enemy_Key_Drops"
                         ],
                         "visibility_rules": ["key_drop_shuffle", "enemy_drop_shuffle_keys"]
                     }
@@ -3065,7 +3065,7 @@
                     {
                         "name": "Sanctuary Chest",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Sanctuary/Sanctuary Chest/Sanctuary Chest"
+                            "^$OWDungeonChecks|Sanc_Chest"
                         ]
                     }
                 ],
@@ -3108,7 +3108,7 @@
                     {
                         "name": "Lower" ,
                         "access_rules": [
-                            "^$OWDungeonChecks|@Tower of Hera/Basement Cage/Basement Cage|@Tower of Hera/Map Chest/Map Chest|@Tower of Hera/Big Key Chest/Big Key Chest"
+                            "^$OWDungeonChecks|ToH_Lower"
                         ],
                         "clear_as_group": false,
                         "item_count": 3
@@ -3117,14 +3117,14 @@
                         "name": "Upper" ,
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$OWDungeonChecks|@Tower of Hera/Compass Chest/Compass Chest|@Tower of Hera/Big Chest/Big Chest"
+                            "^$OWDungeonChecks|ToH_Upper"
                         ],
                         "item_count": 2
                     },
                     {
                         "name": "Pots",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Tower of Hera Pots/5F Pot Block Pot #1/Pot #1|@Tower of Hera Pots/5F Pot Block Pot #2/Pot #2|@Tower of Hera Pots/5F Pot Block Pot #3/Pot #3|@Tower of Hera Pots/5F Pot Block Pot #4/Pot #4|@Tower of Hera Pots/5F Pot Block Pot #5/Pot #5|@Tower of Hera Pots/5F Pot Block Pot #6/Pot #6|@Tower of Hera Pots/5F Pot Block Pot #7/Pot #7|@Tower of Hera Pots/5F Pot Block Pot #8/Pot #8|@Tower of Hera Pots/5F Pot Block Pot #9/Pot #9|@Tower of Hera Pots/5F Pot Block Pot #10/Pot #10|@Tower of Hera Pots/5F Pot Block Pot #11/Pot #11|@Tower of Hera Pots/5F Pot Block Pot #12/Pot #12|@Tower of Hera Pots/4F Pot #1/Pot #1|@Tower of Hera Pots/4F Pot #2/Pot #2|@Tower of Hera Pots/4F Pot #3/Pot #3|@Tower of Hera Pots/4F Pot #4/Pot #4|@Tower of Hera Pots/4F Pot #5/Pot #5|@Tower of Hera Pots/4F Pot #6/Pot #6|@Tower of Hera Pots/4F Pot #7/Pot #7|@Tower of Hera Pots/4F Pot #8/Pot #8|@Tower of Hera Pots/4F Pot #9/Pot #9|@Tower of Hera Pots/4F Pot #10/Pot #10|@Tower of Hera Pots/4F Pot #11/Pot #11|@Tower of Hera Pots/4F Pot #12/Pot #12|@Tower of Hera Pots/4F Pot #13/Pot #13|@Tower of Hera Pots/4F Pot #14/Pot #14|@Tower of Hera Pots/4F Pot #15/Pot #15|@Tower of Hera Pots/Beetles Pot #1/Pot #1|@Tower of Hera Pots/Beetles Pot #2/Pot #2|@Tower of Hera Pots/Tile Room Pot #1/Pot #1|@Tower of Hera Pots/Tile Room Pot #2/Pot #2|@Tower of Hera Pots/Tile Room Pot #3/Pot #3|@Tower of Hera Pots/Tile Room Pot #4/Pot #4|@Tower of Hera Pots/Tile Room Pot #5/Pot #5|@Tower of Hera Pots/Tile Room Pot #6/Pot #6|@Tower of Hera Pots/Torches Pot #7/Pot #7|@Tower of Hera Pots/Torches Pot #8/Pot #8"
+                            "^$OWDungeonChecks|ToH_Pots"
                         ],
                         "visibility_rules":["potsanity_lottery", "potsanity_dungeons"],
                         "item_count": 37
@@ -3132,7 +3132,7 @@
                     {
                         "name": "Enemies",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Tower of Hera Enemies/5F Enemy #1/Enemy #1|@Tower of Hera Enemies/5F Enemy #2/Enemy #2|@Tower of Hera Enemies/5F Enemy #3/Enemy #3|@Tower of Hera Enemies/5F Enemy #4/Enemy #4|@Tower of Hera Enemies/5F Enemy #5/Enemy #5|@Tower of Hera Enemies/5F Enemy #6/Enemy #6|@Tower of Hera Enemies/5F Enemy #7/Enemy #7|@Tower of Hera Enemies/5F Enemy #8/Enemy #8|@Tower of Hera Enemies/5F Enemy #9/Enemy #9|@Tower of Hera Enemies/4F Enemy #1/Enemy #1|@Tower of Hera Enemies/4F Enemy #2/Enemy #2|@Tower of Hera Enemies/4F Enemy #3/Enemy #3|@Tower of Hera Enemies/4F Enemy #4/Enemy #4|@Tower of Hera Enemies/Big Chest Landing Enemy #5/Enemy #5|@Tower of Hera Enemies/4F Enemy #6/Enemy #6|@Tower of Hera Enemies/4F Enemy #7/Enemy #7|@Tower of Hera Enemies/Startile Wide Enemy #3/Enemy #3|@Tower of Hera Enemies/Startile Wide Enemy #4/Enemy #4|@Tower of Hera Enemies/Startile Wide Enemy #5/Enemy #5|@Tower of Hera Enemies/Startile Wide Enemy #6/Enemy #6|@Tower of Hera Enemies/Startile Corner Enemy #7/Enemy #7|@Tower of Hera Enemies/Beetles Enemy #8/Enemy #8|@Tower of Hera Enemies/Beetles Enemy #9/Enemy #9|@Tower of Hera Enemies/Startile Corner Enemy #10/Enemy #10|@Tower of Hera Enemies/Beetles Enemy #11/Enemy #11|@Tower of Hera Enemies/Startile Corner Enemy #12/Enemy #12|@Tower of Hera Enemies/Back Enemy #1/Enemy #1|@Tower of Hera Enemies/Back Enemy #5/Enemy #5|@Tower of Hera Enemies/Back Enemy #6/Enemy #6|@Tower of Hera Enemies/Tridorm Enemy #1/Enemy #1|@Tower of Hera Enemies/Tridorm Enemy #2/Enemy #2|@Tower of Hera Enemies/Tridorm Enemy #3/Enemy #3|@Tower of Hera Enemies/Basement Cage Enemy #4/Enemy #4|@Tower of Hera Enemies/Basement Cage Enemy #9/Enemy #9|@Tower of Hera Enemies/Torches Enemy #10/Enemy #10|@Tower of Hera Enemies/Basement Cage Enemy #11/Enemy #11|@Tower of Hera Enemies/Basement Cage Enemy #12/Enemy #12|@Tower of Hera Enemies/Torches Enemy #13/Enemy #13|@Tower of Hera Enemies/Fairies Enemy #1/Enemy #1|@Tower of Hera Enemies/Fairies Enemy #2/Enemy #2"
+                            "^$OWDungeonChecks|ToH_Enemies"
                         ],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 40
@@ -3141,7 +3141,7 @@
                         "name": "Boss Item" ,
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$OWDungeonChecks|@Tower of Hera/Boss/Boss Item"
+                            "^$OWDungeonChecks|ToH_Boss_Item"
                         ],
                         "visibility_rules": ["boss_prize_shuffle_off"],
                         "item_count": 1,
@@ -3151,7 +3151,7 @@
                         "name": "Boss Item (Prize Shuffle)" ,
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$OWDungeonChecks|@Tower of Hera/Boss/Boss Item"
+                            "^$OWDungeonChecks|ToH_Boss_Item"
                         ],
                         "visibility_rules": ["boss_prize_shuffle_on"],
                         "hosted_item": "toh_boss, toh_ap_reward"
@@ -3197,14 +3197,14 @@
                         "name": "Leftside",
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$OWDungeonChecks|@Ganon's Tower Bottom Left/Bob's Torch/Bob's Torch|@Ganon's Tower Bottom Left/DMs Room Top Left/DMs Room Top Left|@Ganon's Tower Bottom Left/DMs Room Top Right/DMs Room Top Right|@Ganon's Tower Bottom Left/DMs Room Bottom Left/DMs Room Bottom Left|@Ganon's Tower Bottom Left/DMs Room Bottom Right/DMs Room Bottom Right|@Ganon's Tower Bottom Left/Map Chest/Map Chest|@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room|@Ganon's Tower Bottom Left/Randomizer Room Top Left/Randomizer Room Top Left|@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right|@Ganon's Tower Bottom Left/Randomizer Room Bottom Left/Randomizer Room Bottom Left|@Ganon's Tower Bottom Left/Randomizer Room Bottom Right/Randomizer Room Bottom Right"
+                            "^$OWDungeonChecks|GT_Left_Dungeon_Chest"
                         ],
                         "item_count": 11
                     },
                     {
                         "name": "Leftside Pots",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Ganon's Tower Bottom Left Pots/Firesnake Room Pot #1/Pot #1|@Ganon's Tower Bottom Left Pots/Firesnake Room Pot #2/Pot #2|@Ganon's Tower Bottom Left Pots/Firesnake Room Pot #3/Pot #3|@Ganon's Tower Bottom Left Pots/Warp Maze Pot Rail Pot #4/Pot #4|@Ganon's Tower Bottom Left Pots/Conveyor Cross Pot #1/Pot #1|@Ganon's Tower Bottom Left Pots/Hookshot South Platform Pot #3/Pot #3|@Ganon's Tower Bottom Left Pots/Hookshot South Platform Pot #4/Pot #4|@Ganon's Tower Bottom Left Pots/Hookshot Mid Platform Pot #5/Pot #5|@Ganon's Tower Bottom Left Pots/Map Room Pot #6/Pot #6|@Ganon's Tower Bottom Left Pots/Map Room Pot #7/Pot #7|@Ganon's Tower Bottom Left Pots/Hope Room Pot #1/Pot #1|@Ganon's Tower Bottom Left Pots/Hope Room Pot #2/Pot #2|@Ganon's Tower Bottom Left Pots/Bobs Room Pot #3/Pot #3|@Ganon's Tower Bottom Left Pots/Bobs Room Pot #4/Pot #4|@Ganon's Tower Bottom Left Pots/Bobs Room Pot #5/Pot #5|@Ganon's Tower Bottom Left Pots/Bobs Room Pot #6/Pot #6|@Ganon's Tower Bottom Left Pots/Bobs Room Pot #7/Pot #7|@Ganon's Tower Bottom Left Pots/Double Switch Pot Corners Pot #1/Pot #1|@Ganon's Tower Bottom Left Pots/Warp Maze Mid Section Pot #3/Pot #3|@Ganon's Tower Bottom Left Pots/Warp Maze Mid Section Pot #4/Pot #4|@Ganon's Tower Bottom Left Pots/Crystal Conveyor Left Pot #1/Pot #1|@Ganon's Tower Bottom Left Pots/Crystal Conveyor Left Pot #2/Pot #2|@Ganon's Tower Bottom Left Pots/Compass Room Pot #3/Pot #3|@Ganon's Tower Bottom Left Pots/Compass Room Pot #4/Pot #4"
+                            "^$OWDungeonChecks|GT_Left_Pots"
                         ],
                         "visibility_rules":["potsanity_lottery", "potsanity_dungeons"],
                         "item_count": 15
@@ -3212,7 +3212,7 @@
                     {
                         "name": "Leftside Enemies",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Ganon's Tower Leftside Enemies/Bobs Torch Enemy #7/Enemy #7|@Ganon's Tower Leftside Enemies/Bobs Torch Enemy #9/Enemy #9|@Ganon's Tower Leftside Enemies/Bobs Torch Enemy #10/Enemy #10|@Ganon's Tower Leftside Enemies/Conveyor Cross Enemy #1/Enemy #1|@Ganon's Tower Leftside Enemies/Conveyor Cross Enemy #4/Enemy #4|@Ganon's Tower Leftside Enemies/DMs Room Enemy #3/Enemy #3|@Ganon's Tower Leftside Enemies/DMs Room Enemy #4/Enemy #4|@Ganon's Tower Leftside Enemies/DMs Room Enemy #5/Enemy #5|@Ganon's Tower Leftside Enemies/DMs Room Enemy #6/Enemy #6|@Ganon's Tower Leftside Enemies/DMs Room Enemy #9/Enemy #9|@Ganon's Tower Leftside Enemies/DMs Room Enemy #10/Enemy #10|@Ganon's Tower Leftside Enemies/DMs Room Enemy #11/Enemy #11|@Ganon's Tower Leftside Enemies/Hookshot South Platform Enemy #2/Enemy #2|@Ganon's Tower Leftside Enemies/Hookshot South Platform Enemy #3/Enemy #3|@Ganon's Tower Leftside Enemies/Hookshot Mid Platform Enemy #5/Enemy #5|@Ganon's Tower Leftside Enemies/Hookshot South Platform Enemy #6/Enemy #6|@Ganon's Tower Leftside Enemies/Map Room Enemy #7/Enemy #7|@Ganon's Tower Leftside Enemies/Map Room Enemy #8/Enemy #8|@Ganon's Tower Leftside Enemies/Firesnake Room Enemy #1/Enemy #1|@Ganon's Tower Leftside Enemies/Firesnake Room Enemy #2/Enemy #2|@Ganon's Tower Leftside Enemies/Firesnake Room Enemy #3/Enemy #3|@Ganon's Tower Leftside Enemies/Firesnake Room Enemy #4/Enemy #4|@Ganon's Tower Leftside Enemies/Randomizer Room Enemy #1/Enemy #1|@Ganon's Tower Leftside Enemies/Randomizer Room Enemy #6/Enemy #6|@Ganon's Tower Leftside Enemies/Spike Crystal Right Enemy #4/Enemy #4|@Ganon's Tower Leftside Enemies/Spike Crystal Right Enemy #5/Enemy #5|@Ganon's Tower Leftside Enemies/Spike Crystal Right Enemy #6/Enemy #6|@Ganon's Tower Leftside Enemies/Spike Crystal Right Enemy #8/Enemy #8|@Ganon's Tower Leftside Enemies/Spike Crystal Right Enemy #9/Enemy #9|@Ganon's Tower Leftside Enemies/Spike Crystal Right Enemy #10/Enemy #10|@Ganon's Tower Leftside Enemies/Spike Crystal Right Enemy #11/Enemy #11|@Ganon's Tower Leftside Enemies/Warp Maze Main Rails Enemy #10/Enemy #10|@Ganon's Tower Leftside Enemies/Warp Maze Pit Section Enemy #12/Enemy #12|@Ganon's Tower Leftside Enemies/Warp Maze Pit Section Enemy #13/Enemy #13"
+                            "^$OWDungeonChecks|GT_Left_Enemies"
                         ],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 34
@@ -3220,7 +3220,7 @@
                     {
                         "name": "Rightside",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Ganon's Tower Bottom Right/Hope Room Left/Hope Room Left|@Ganon's Tower Bottom Right/Hope Room Right/Hope Room Right|@Ganon's Tower Bottom Right/Tile Room/Tile Room|@Ganon's Tower Bottom Right/Compass Chest/Compass Chest|@Ganon's Tower Bottom Right/Compass Room Top Right/Compass Room Top Right|@Ganon's Tower Bottom Right/Compass Room Bottom Left/Compass Room Bottom Left|@Ganon's Tower Bottom Right/Compass Room Bottom Right/Compass Room Bottom Right"
+                            "^$OWDungeonChecks|GT_Right_Dungeon_Chest"
                         ],
                         "clear_as_group": false,
                         "item_count": 7
@@ -3228,7 +3228,7 @@
                     {
                         "name": "Rightside Pots",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Ganon's Tower Bottom Right Pots/Conveyor Star Pits Pot #1/Pot #1|@Ganon's Tower Bottom Right Pots/Conveyor Star Pits Pot #2/Pot #2|@Ganon's Tower Bottom Right Pots/Conveyor Star Pits Pot #3/Pot #3|@Ganon's Tower Bottom Right Pots/Conveyor Star Pits Pot #4/Pot #4|@Ganon's Tower Bottom Right Pots/Falling Bridge Pot #1/Pot #1|@Ganon's Tower Bottom Right Pots/Falling Bridge Pot #2/Pot #2|@Ganon's Tower Bottom Right Pots/Falling Bridge Pot #3/Pot #3|@Ganon's Tower Bottom Right Pots/Falling Bridge Pot #4/Pot #4|@Ganon's Tower Bottom Right Pots/Speed Torch Upper Pot #1/Pot #1|@Ganon's Tower Bottom Right Pots/Speed Torch Upper Pot #2/Pot #2|@Ganon's Tower Bottom Right Pots/Pots n Blocks Pot #3/Pot #3|@Ganon's Tower Bottom Right Pots/Pots n Blocks Pot #4/Pot #4|@Ganon's Tower Bottom Right Pots/Pots n Blocks Pot #5/Pot #5|@Ganon's Tower Bottom Right Pots/Petting Zoo Pot #5/Pot #5|@Ganon's Tower Bottom Right Pots/Petting Zoo Pot #6/Pot #6"
+                            "^$OWDungeonChecks|GT_Right_Pots"
                         ],
                         "visibility_rules":["potsanity_lottery", "potsanity_dungeons"],
                         "item_count": 24
@@ -3236,7 +3236,7 @@
                     {
                         "name": "Rightside Enemies",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Ganon's Tower Rightside Enemies/Hope Room Enemy #1/Enemy #1|@Ganon's Tower Rightside Enemies/Hope Room Enemy #8/Enemy #8|@Ganon's Tower Rightside Enemies/Tile Room Enemy #2/Enemy #2|@Ganon's Tower Rightside Enemies/Tile Room Enemy #3/Enemy #3|@Ganon's Tower Rightside Enemies/Tile Room Enemy #4/Enemy #4|@Ganon's Tower Rightside Enemies/Tile Room Enemy #5/Enemy #5|@Ganon's Tower Rightside Enemies/Petting Zoo Enemy #5/Enemy #5|@Ganon's Tower Rightside Enemies/Petting Zoo Enemy #6/Enemy #6|@Ganon's Tower Rightside Enemies/Petting Zoo Enemy #7/Enemy #7|@Ganon's Tower Rightside Enemies/Petting Zoo Enemy #8/Enemy #8|@Ganon's Tower Rightside Enemies/Petting Zoo Enemy #9/Enemy #9|@Ganon's Tower Rightside Enemies/Petting Zoo Enemy #11/Enemy #11|@Ganon's Tower Rightside Enemies/Speed Torch Upper Enemy #6/Enemy #6|@Ganon's Tower Rightside Enemies/Speed Torch Enemy #8/Enemy #8|@Ganon's Tower Rightside Enemies/Speed Torch Enemy #9/Enemy #9|@Ganon's Tower Rightside Enemies/Speed Torch Enemy #11/Enemy #11|@Ganon's Tower Rightside Enemies/Speed Torch Enemy #12/Enemy #12|@Ganon's Tower Rightside Enemies/Speed Torch Enemy #13/Enemy #13|@Ganon's Tower Rightside Enemies/Pots n Blocks Enemy #10/Enemy #10|@Ganon's Tower Rightside Enemies/Crystal Conveyor Left Enemy #3/Enemy #3|@Ganon's Tower Rightside Enemies/Crystal Conveyor Enemy #4/Enemy #4|@Ganon's Tower Rightside Enemies/Crystal Conveyor Corner Enemy #6/Enemy #6|@Ganon's Tower Rightside Enemies/Compass Room Enemy #2/Enemy #2|@Ganon's Tower Rightside Enemies/Compass Room Enemy #5/Enemy #5|@Ganon's Tower Rightside Enemies/Conveyor Star Pits Enemy #1/Enemy #1|@Ganon's Tower Rightside Enemies/Conveyor Star Pits Enemy #2/Enemy #2|@Ganon's Tower Rightside Enemies/Falling Bridge Enemy #2/Enemy #2|@Ganon's Tower Rightside Enemies/Falling Bridge Enemy #3/Enemy #3|@Ganon's Tower Rightside Enemies/Falling Bridge Enemy #4/Enemy #4|@Ganon's Tower Rightside Enemies/Falling Bridge Enemy #5/Enemy #5|@Ganon's Tower Rightside Enemies/Hidden Star Enemy #7/Enemy #7|@Ganon's Tower Rightside Enemies/Hidden Star Enemy #8/Enemy #8|@Ganon's Tower Rightside Enemies/Invisible Catwalk Enemy #1/Enemy #1|@Ganon's Tower Rightside Enemies/Invisible Catwalk Enemy #2/Enemy #2|@Ganon's Tower Rightside Enemies/Invisible Catwalk Enemy #3/Enemy #3|@Ganon's Tower Rightside Enemies/Invisible Catwalk Enemy #4/Enemy #4|@Ganon's Tower Rightside Enemies/Invisible Catwalk Enemy #5/Enemy #5|@Ganon's Tower Rightside Enemies/Invisible Catwalk Enemy #6/Enemy #6|@Ganon's Tower Rightside Enemies/Invisible Catwalk Enemy #7/Enemy #7"
+                            "^$OWDungeonChecks|GT_Right_Enemies"
                         ],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 39
@@ -3245,7 +3245,7 @@
                         "name": "Big Chest + Ice refight",
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$OWDungeonChecks|@Ganon's Tower Bottom Refight/Bob's Chest/Bob's Chest|@Ganon's Tower Bottom Refight/Big Chest/Big Chest|@Ganon's Tower Bottom Refight/Big Key Room Left/Big Key Room Left|@Ganon's Tower Bottom Refight/Big Key Room Right/Big Key Room Right|@Ganon's Tower Bottom Refight/Big Key Chest/Big Key Chest"
+                            "^$OWDungeonChecks|GT_Center_Dungeon_Chest"
                         ],
                         "item_count": 5,
                         "hosted_item": "gt_ice"
@@ -3253,7 +3253,7 @@
                     {
                         "name": "Bottom Center Pots",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Ganon's Tower Bottom Center Pots/Invisible Catwalk Pot #1/Pot #1|@Ganon's Tower Bottom Center Pots/Invisible Catwalk Pot #2/Pot #2"
+                            "^$OWDungeonChecks|GT_Center_Pots"
                         ],
                         "visibility_rules":["potsanity_lottery", "potsanity_dungeons"],
                         "item_count": 2
@@ -3261,7 +3261,7 @@
                     {
                         "name": "Bottom Center Enemies",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Ganon's Tower Bottom Center Enemies/Invisible Bridges Enemy #7/Enemy #7|@Ganon's Tower Bottom Center Enemies/Invisible Bridges Enemy #8/Enemy #8|@Ganon's Tower Bottom Center Enemies/Invisible Bridges Enemy #9/Enemy #9|@Ganon's Tower Bottom Center Enemies/Big Chest Enemy #11/Enemy #11|@Ganon's Tower Bottom Center Enemies/Big Chest Enemy #14/Enemy #14|@Ganon's Tower Bottom Center Enemies/Bobs Room Enemy #12/Enemy #12|@Ganon's Tower Bottom Center Enemies/Bobs Room Enemy #13/Enemy #13|@Ganon's Tower Bottom Center Enemies/Bobs Room Enemy #15/Enemy #15|@Ganon's Tower Bottom Center Enemies/Fairy Abyss Enemy #8/Enemy #8|@Ganon's Tower Bottom Center Enemies/Fairy Abyss Enemy #9/Enemy #9|@Ganon's Tower Bottom Center Enemies/Fairy Abyss Enemy #10/Enemy #10|@Ganon's Tower Bottom Center Enemies/Fairy Abyss Enemy #11/Enemy #11"
+                            "^$OWDungeonChecks|GT_Center_Enemies"
                         ],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 12
@@ -3269,7 +3269,7 @@
                     {
                         "name": "GT Top + Lanmo refight",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Ganon's Tower Top/Mini Helmasaur Room Left/Mini Helmasaur Room Left|@Ganon's Tower Top/Mini Helmasaur Room Right/Mini Helmasaur Room Right|@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest"
+                            "^$OWDungeonChecks|GT_Top_Dungeon_Chest"
                         ],
                         "clear_as_group": false,
                         "item_count": 3,
@@ -3278,7 +3278,7 @@
                     {
                         "name": "Top Pots",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Ganon's Tower Top Pots/Mini Helmasaur Room Pot #1/Pot #1|@Ganon's Tower Top Pots/Mini Helmasaur Room Pot #2/Pot #2|@Ganon's Tower Top Pots/Crystal Inner Circle Pot #3/Pot #3|@Ganon's Tower Top Pots/Crystal Inner Circle Pot #4/Pot #4|@Ganon's Tower Top Pots/Crystal Inner Circle Pot #5/Pot #5|@Ganon's Tower Top Pots/Crystal Inner Circle Pot #6/Pot #6|@Ganon's Tower Top Pots/Crystal Inner Circle Pot #7/Pot #7|@Ganon's Tower Top Pots/Hidden Spikes Pot #1/Pot #1|@Ganon's Tower Top Pots/Hidden Spikes Pot #2/Pot #2|@Ganon's Tower Top Pots/Hidden Spikes Pot #3/Pot #3|@Ganon's Tower Top Pots/Refill Pot #1/Pot #1|@Ganon's Tower Top Pots/Refill Pot #2/Pot #2|@Ganon's Tower Top Pots/Refill Pot #3/Pot #3|@Ganon's Tower Top Pots/Refill Pot #4/Pot #4|@Ganon's Tower Top Pots/Refill Pot #5/Pot #5|@Ganon's Tower Top Pots/Refill Pot #6/Pot #6|@Ganon's Tower Top Pots/Refill Pot #7/Pot #7|@Ganon's Tower Top Pots/Refill Pot #8/Pot #8|@Ganon's Tower Top Pots/Gauntlet 2 Pot #1/Pot #1|@Ganon's Tower Top Pots/Gauntlet 2 Pot #2/Pot #2|@Ganon's Tower Top Pots/Gauntlet 2 Pot #3/Pot #3|@Ganon's Tower Top Pots/Gauntlet 2 Pot #4/Pot #4|@Ganon's Tower Top Pots/Gauntlet 3 Pot #5/Pot #5|@Ganon's Tower Top Pots/Gauntlet 3 Pot #6/Pot #6|@Ganon's Tower Top Pots/Gauntlet 3 Pot #7/Pot #7|@Ganon's Tower Top Pots/Gauntlet 3 Pot #8/Pot #8|@Ganon's Tower Top Pots/Crystal Paths Pot #1/Pot #1|@Ganon's Tower Top Pots/Crystal Paths Pot #2/Pot #2|@Ganon's Tower Top Pots/Crystal Paths Pot #3/Pot #3|@Ganon's Tower Top Pots/Crystal Paths Pot #4/Pot #4|@Ganon's Tower Top Pots/Crystal Paths Pot #5/Pot #5|@Ganon's Tower Top Pots/Crystal Paths Pot #6/Pot #6|@Ganon's Tower Top Pots/Mimics 2 Pot #7/Pot #7|@Ganon's Tower Top Pots/Mimics 2 Pot #8/Pot #8|@Ganon's Tower Top Pots/Quad Pot Pot #1/Pot #1|@Ganon's Tower Top Pots/Quad Pot Pot #2/Pot #2|@Ganon's Tower Top Pots/Quad Pot Pot #3/Pot #3|@Ganon's Tower Top Pots/Quad Pot Pot #4/Pot #4|@Ganon's Tower Top Pots/Gauntlet 5 Pot #1/Pot #1|@Ganon's Tower Top Pots/Gauntlet 5 Pot #2/Pot #2|@Ganon's Tower Top Pots/Gauntlet 5 Pot #3/Pot #3|@Ganon's Tower Top Pots/Gauntlet 5 Pot #4/Pot #4|@Ganon's Tower Top Pots/Torch Cross Pot #1/Pot #1|@Ganon's Tower Top Pots/Torch Cross Pot #2/Pot #2|@Ganon's Tower Top Pots/Torch Cross Pot #3/Pot #3|@Ganon's Tower Top Pots/Torch Cross Pot #4/Pot #4|@Ganon's Tower Top Pots/Torch Cross Pot #5/Pot #5|@Ganon's Tower Top Pots/Torch Cross Pot #6/Pot #6|@Ganon's Tower Top Pots/Staredown Pot #7/Pot #7|@Ganon's Tower Top Pots/Staredown Pot #8/Pot #8"
+                            "^$OWDungeonChecks|GT_Top_Pots"
                         ],
                         "visibility_rules":["potsanity_lottery", "potsanity_dungeons"],
                         "item_count": 50
@@ -3286,7 +3286,7 @@
                     {
                         "name": "Top Enemies",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Ganon's Tower Top Enemies/Crystal Paths Enemy #3/Enemy #3|@Ganon's Tower Top Enemies/Crystal Paths Enemy #4/Enemy #4|@Ganon's Tower Top Enemies/Crystal Paths Enemy #5/Enemy #5|@Ganon's Tower Top Enemies/Mimics 1 Enemy #6/Enemy #6|@Ganon's Tower Top Enemies/Mimics 1 Enemy #7/Enemy #7|@Ganon's Tower Top Enemies/Mimics 1 Enemy #8/Enemy #8|@Ganon's Tower Top Enemies/Mimics 1 Enemy #9/Enemy #9|@Ganon's Tower Top Enemies/Mimics 1 Enemy #10/Enemy #10|@Ganon's Tower Top Enemies/Mimics 2 Enemy #11/Enemy #11|@Ganon's Tower Top Enemies/Mimics 2 Enemy #12/Enemy #12|@Ganon's Tower Top Enemies/Mimics 2 Enemy #13/Enemy #13|@Ganon's Tower Top Enemies/Mimics 2 Enemy #14/Enemy #14|@Ganon's Tower Top Enemies/Hidden Spikes Enemy #3/Enemy #3|@Ganon's Tower Top Enemies/Hidden Spikes Enemy #4/Enemy #4|@Ganon's Tower Top Enemies/Hidden Spikes Enemy #5/Enemy #5|@Ganon's Tower Top Enemies/Hidden Spikes Enemy #6/Enemy #6|@Ganon's Tower Top Enemies/Hidden Spikes Enemy #7/Enemy #7|@Ganon's Tower Top Enemies/Hidden Spikes Enemy #8/Enemy #8|@Ganon's Tower Top Enemies/Hidden Spikes Enemy #9/Enemy #9|@Ganon's Tower Top Enemies/Dashing Bridge Enemy #11/Enemy #11|@Ganon's Tower Top Enemies/Dashing Bridge Enemy #12/Enemy #12|@Ganon's Tower Top Enemies/Refill Enemy #4/Enemy #4|@Ganon's Tower Top Enemies/Refill Enemy #5/Enemy #5|@Ganon's Tower Top Enemies/Gauntlet 1 Enemy #4/Enemy #4|@Ganon's Tower Top Enemies/Gauntlet 1 Enemy #5/Enemy #5|@Ganon's Tower Top Enemies/Gauntlet 1 Enemy #6/Enemy #6|@Ganon's Tower Top Enemies/Gauntlet 1 Enemy #7/Enemy #7|@Ganon's Tower Top Enemies/Gauntlet 2 Enemy #1/Enemy #1|@Ganon's Tower Top Enemies/Gauntlet 2 Enemy #2/Enemy #2|@Ganon's Tower Top Enemies/Gauntlet 2 Enemy #3/Enemy #3|@Ganon's Tower Top Enemies/Gauntlet 2 Enemy #8/Enemy #8|@Ganon's Tower Top Enemies/Gauntlet 3 Enemy #9/Enemy #9|@Ganon's Tower Top Enemies/Gauntlet 3 Enemy #10/Enemy #10|@Ganon's Tower Top Enemies/Gauntlet 3 Enemy #11/Enemy #11|@Ganon's Tower Top Enemies/Gauntlet 3 Enemy #12/Enemy #12|@Ganon's Tower Top Enemies/Gauntlet 3 Enemy #13/Enemy #13|@Ganon's Tower Top Enemies/Gauntlet 4 Enemy #1/Enemy #1|@Ganon's Tower Top Enemies/Gauntlet 4 Enemy #2/Enemy #2|@Ganon's Tower Top Enemies/Gauntlet 4 Enemy #3/Enemy #3|@Ganon's Tower Top Enemies/Gauntlet 4 Enemy #4/Enemy #4|@Ganon's Tower Top Enemies/Gauntlet 5 Enemy #5/Enemy #5|@Ganon's Tower Top Enemies/Gauntlet 5 Enemy #6/Enemy #6|@Ganon's Tower Top Enemies/Gauntlet 5 Enemy #7/Enemy #7|@Ganon's Tower Top Enemies/Gauntlet 5 Enemy #8/Enemy #8|@Ganon's Tower Top Enemies/Gauntlet 5 Enemy #9/Enemy #9|@Ganon's Tower Top Enemies/Beam Dash Enemy #4/Enemy #4|@Ganon's Tower Top Enemies/Lanmolas 2 Enemy #1/Enemy #1|@Ganon's Tower Top Enemies/Lanmolas 2 Enemy #2/Enemy #2|@Ganon's Tower Top Enemies/Lanmolas 2 Enemy #3/Enemy #3|@Ganon's Tower Top Enemies/Lanmolas 2 Enemy #5/Enemy #5|@Ganon's Tower Top Enemies/Wizzrobes 1 Enemy #3/Enemy #3|@Ganon's Tower Top Enemies/Wizzrobes 1 Enemy #4/Enemy #4|@Ganon's Tower Top Enemies/Wizzrobes 1 Enemy #8/Enemy #8|@Ganon's Tower Top Enemies/Wizzrobes 2 Enemy #1/Enemy #1|@Ganon's Tower Top Enemies/Wizzrobes 2 Enemy #2/Enemy #2|@Ganon's Tower Top Enemies/Wizzrobes 2 Enemy #5/Enemy #5|@Ganon's Tower Top Enemies/Wizzrobes 2 Enemy #6/Enemy #6|@Ganon's Tower Top Enemies/Wizzrobes 2 Enemy #7/Enemy #7|@Ganon's Tower Top Enemies/Conveyor Bridge Enemy #1/Enemy #1|@Ganon's Tower Top Enemies/Conveyor Bridge Enemy #2/Enemy #2|@Ganon's Tower Top Enemies/Conveyor Bridge Enemy #3/Enemy #3|@Ganon's Tower Top Enemies/Conveyor Bridge Enemy #4/Enemy #4|@Ganon's Tower Top Enemies/Torch Cross Enemy #1/Enemy #1|@Ganon's Tower Top Enemies/Falling Torches Enemy #10/Enemy #10|@Ganon's Tower Top Enemies/Falling Torches Enemy #11/Enemy #11|@Ganon's Tower Top Enemies/Mini Helmasaur Room Enemy #4/Enemy #4|@Ganon's Tower Top Enemies/Mini Helmasaur Room Enemy #5/Enemy #5|@Ganon's Tower Top Enemies/Mini Helmasaur Room Enemy #6/Enemy #6|@Ganon's Tower Top Enemies/Bomb Conveyor Enemy #7/Enemy #7|@Ganon's Tower Top Enemies/Bomb Conveyor Enemy #8/Enemy #8|@Ganon's Tower Top Enemies/Crystal Inner Circle Enemy #12/Enemy #12|@Ganon's Tower Top Enemies/Crystal Inner Circle Enemy #13/Enemy #13|@Ganon's Tower Top Enemies/Crystal Inner Circle Enemy #14/Enemy #14|@Ganon's Tower Top Enemies/Moldorm Pit Enemy #2/Enemy #2|@Ganon's Tower Top Enemies/Frozen Over Enemy #1/Enemy #1|@Ganon's Tower Top Enemies/Frozen Over Enemy #2/Enemy #2|@Ganon's Tower Top Enemies/Frozen Over Enemy #3/Enemy #3|@Ganon's Tower Top Enemies/Frozen Over Enemy #4/Enemy #4|@Ganon's Tower Top Enemies/Frozen Over Enemy #5/Enemy #5|@Ganon's Tower Top Enemies/Frozen Over Enemy #6/Enemy #6|@Ganon's Tower Top Enemies/Frozen Over Enemy #7/Enemy #7|@Ganon's Tower Top Enemies/Frozen Over Enemy #8/Enemy #8"
+                            "^$OWDungeonChecks|GT_Top_Enemies"
                         ],
                         "visibility_rules": ["enemy_drop_shuffle_underworld"],
                         "item_count": 82
@@ -3294,7 +3294,7 @@
                     {
                         "name": "GT Top Moldorm refight",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Ganon's Tower Top/Validation Chest/Validation Chest"
+                            "^$OWDungeonChecks|GT_Top_Moldorm"
                         ],
                         "clear_as_group": false,
                         "item_count": 1,
@@ -3305,7 +3305,7 @@
                         "item_count": 1,
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$OWDungeonChecks|@Ganon's Tower Top/Mini Helmasaur Key Drop/Mini Helmasaur Key Drop"
+                            "^$OWDungeonChecks|GT_Enemy_Key_Drops"
                         ],
                         "visibility_rules": ["key_drop_shuffle", "enemy_drop_shuffle_keys"]
                     },
@@ -3314,14 +3314,14 @@
                         "item_count": 3,
                         "clear_as_group": false,
                         "access_rules": [
-                            "^$OWDungeonChecks|@Ganon's Tower Bottom Left/Conveyor Cross Pot Key/Conveyor Cross Pot Key|@Ganon's Tower Bottom Left/Double Switch Pot Key/Double Switch Pot Key|@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key"
+                            "^$OWDungeonChecks|GT_Pot_Key_Drops"
                         ],
                         "visibility_rules": ["key_drop_shuffle", "potsanity_keys", "potsanity_dungeons"]
                     },
                     {
                         "name": "GT Top Agahnim 2",
                         "access_rules": [
-                            "^$OWDungeonChecks|@Ganon's Tower Top/Agahnim 2/Agahnim 2"
+                            "^$OWDungeonChecks|GT_Top_Boss"
                         ],
                         "clear_as_group": false,
                         "hosted_item": "aga2"

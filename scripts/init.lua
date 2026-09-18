@@ -1,6 +1,7 @@
 local variant = Tracker.ActiveVariantUID
 
 -- Items
+require("scripts.misc_tables")
 require("scripts.items_import")
 require("scripts.autotracking.item_mapping")
 -- Locations

@@ -275,7 +275,8 @@ end
 ---@param ... unknown
 ---@return integer
 function OWDungeonChecks(...)
-    local locations = { ... }
+    -- local locations = { ... }
+    local locations = _G[...]
     local availale = 0
     local access_check = 0
     local sequence_breakable = 0
