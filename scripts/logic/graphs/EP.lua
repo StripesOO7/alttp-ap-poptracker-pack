@@ -281,7 +281,7 @@ EP_duo_eyegores:connect_one_way("EP - Duo Eyegores Enemy #1", function() return 
 -- EP_duo_eyegores:connect_one_way("EP - Duo Eyegores Enemy #8", function() return DealDamage end)
 
 EP_duo_eyegores:connect_two_ways(EP_duo_eyegores_2N_door)
-EP_duo_eyegores_2N_door:connect_one_way_entrance("", EP_boss_room_4S_door, function() return ALL(CanInteract(EP_duo_eyegores), DealDamage, EnemizerCheck("bow")) end)
+EP_duo_eyegores_2N_door:connect_two_ways_entrance("", EP_boss_room_4S_door, function() return ALL(CanInteract(EP_duo_eyegores), DealDamage, EnemizerCheck("bow")) end, nil)
 EP_boss_room_4S_door:connect_two_ways(EP_boss_room)
 
 EP_boss_room:connect_one_way("EP - Boss", function() return GetBossRef("ep_boss") end)

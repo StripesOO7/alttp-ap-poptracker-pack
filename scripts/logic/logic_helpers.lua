@@ -1395,16 +1395,16 @@ function ChangePopupLayout()
         ITEM_MAPPING[190] = nil
         ITEM_MAPPING[191] = nil
 
-        ITEM_MAPPING[177] = {{"crystal1", "toggle"}}
-        ITEM_MAPPING[180] = {{"crystal2", "toggle"}}
-        ITEM_MAPPING[182] = {{"crystal3", "toggle"}}
-        ITEM_MAPPING[181] = {{"crystal4", "toggle"}}
-        ITEM_MAPPING[178] = {{"crystal5", "toggle"}}
-        ITEM_MAPPING[176] = {{"crystal6", "toggle"}}
-        ITEM_MAPPING[179] = {{"crystal7", "toggle"}}
-        ITEM_MAPPING[55] = {{"greenpendant", "toggle"}}
-        ITEM_MAPPING[57] = {{"bluependant", "toggle"}}
-        ITEM_MAPPING[56] = {{"redpendant", "toggle"}}
+        ITEM_MAPPING[177] = {{"palaceofdarkness", "dungeon_reward"}}
+        ITEM_MAPPING[180] = {{"swamppalace", "dungeon_reward"}}
+        ITEM_MAPPING[182] = {{"skullwoods", "dungeon_reward"}}
+        ITEM_MAPPING[181] = {{"thievestown", "dungeon_reward"}}
+        ITEM_MAPPING[178] = {{"icepalace", "dungeon_reward"}}
+        ITEM_MAPPING[176] = {{"miserymire", "dungeon_reward"}}
+        ITEM_MAPPING[179] = {{"turtlerock", "dungeon_reward"}}
+        ITEM_MAPPING[55] = {{"easternpalace", "dungeon_reward"}}
+        ITEM_MAPPING[57] = {{"desertpalace", "dungeon_reward"}}
+        ITEM_MAPPING[56] = {{"towerofhera", "dungeon_reward"}}
     elseif version == 1 then --core beta
         CORE_ALTTP = false
         ALTTP_BETA = true

@@ -598,12 +598,11 @@ end
 
 ---function to handle conversion of SLOT_DATA values into states for setting-items
 function AutoFill()
-    KeyDropLayoutChange()
     if SLOT_DATA == nil  then
         print("its fucked")
         return
     end
-    print(Dump_table(SLOT_DATA))
+    -- print(Dump_table(SLOT_DATA))
     -- mapGlitcheMode = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4} -- noGlitches, minor, overworld, hybrid_major, no_logic
     local mapDarkRoomLogic = {[0]=0, [1]=1, [2]=2, ["none"]=2,["lamp"]=0,["troches"]=1} --lamp, torches, none
     local mapCoreGoal = {
@@ -964,7 +963,7 @@ function AutoFill()
         end
         if Tracker:ProviderCountForCode("flute_shuffle_on") > 0 then
             for i=1, 8 do
-                print(i)
+                -- print(i)
                 _UnsetFluteLocationOptions((Tracker:FindObjectForCode("from_Light_flute_spot_"..i)--[[@as LuaItem]]))
                 _UnsetFluteLocationOptions((Tracker:FindObjectForCode("from_Dark_flute_spot_"..i)--[[@as LuaItem]]))
             end
@@ -974,7 +973,7 @@ function AutoFill()
             end
             local slot_data_flute_spots = SLOT_DATA["ow-flutespots"]["1"]["force"]
             for spot_index, destination_index in pairs(slot_data_flute_spots) do
-                print(spot_index, destination_index)
+                -- print(spot_index, destination_index)
                 local lw_spot_item = (Tracker:FindObjectForCode("from_Light_flute_spot_"..spot_index)) --[[@as LuaItem]]
                 local dw_spot_item = (Tracker:FindObjectForCode("from_Dark_flute_spot_"..spot_index)) --[[@as LuaItem]]
                 local lw_dest_item = (Tracker:FindObjectForCode(FLUTE_SPOTS_CONNECTIONS[destination_index][1])) --[[@as LuaItem]]

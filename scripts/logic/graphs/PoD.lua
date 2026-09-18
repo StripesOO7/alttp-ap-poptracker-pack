@@ -408,9 +408,9 @@ PoD_dark_inner_basement:connect_one_way("PoD - Dark Alley Enemy #1", function() 
 -- PoD_dark_inner_basement:connect_one_way("PoD - Dark Alley Enemy #6", function() return DealDamage end)
 
 PoD_dark_inner_basement:connect_two_ways(PoD_dark_inner_basement_2N_door)
-PoD_dark_inner_basement_2N_door:connect_one_way_entrance("", PoD_boss_room_4S_door)
+PoD_dark_inner_basement_2N_door:connect_one_way_entrance("", PoD_boss_room_4S_door, function() return ALL(DarkRooms, Has("bigkey")) end)
 
-PoD_boss_room_4S_door:connect_two_ways(PoD_boss_room, function() return DarkRooms end)
+PoD_boss_room_4S_door:connect_two_ways(PoD_boss_room)
 PoD_boss_room:connect_one_way("PoD - Boss", function() return GetBossRef("Pod_boss") end)
 
 
