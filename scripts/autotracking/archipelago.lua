@@ -203,6 +203,8 @@ function PreOnClear()
         HINTS_ID = "_read_hints_"..TEAM_NUMBER.."_"..PLAYER_ID
         Archipelago:SetNotify({HINTS_ID})
         Archipelago:Get({HINTS_ID})
+        ChangeGameVersion(version_name)
+        ChangePopupLayout()
     end
 
 
