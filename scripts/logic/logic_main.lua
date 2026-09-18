@@ -157,6 +157,10 @@ function alttp_location.new(name, shortname, origin, map, inside_dungeon, room, 
         self.side = "outside"
     elseif string.find(self.name, "_door") then
         self.side = "door"
+    elseif string.find(self.name, "_flute_spot_") then
+        self.side = "flutespot"
+    elseif string.find(self.name, "_flute_destination_") then
+        self.side = "flutetarget"
     else
         self.side = ""
     end
@@ -399,7 +403,7 @@ function alttp_location:discover(accessibility, keys, worldstate)
                 
                 local temp
                 temp = NAMED_ER_CONNECTIONS["from_" .. location_name]
-                if temp ~= nil and temp.side == "flutetarget" then
+                if temp ~= nil then
                     temp = temp.ItemState
                     if temp.Target ~= nil then
                         location = NAMED_LOCATIONS[temp.TargetBaseName]
@@ -858,21 +862,29 @@ function ResetFluteSpots()
     if FLUTE_SHUFFLE_STATE then
         for i=1, 8 do
             print(i)
-            _UnsetFluteLocationOptions((Tracker:FindObjectForCode"Light_flute_spot_"..i)--[[@as LuaItem]])
+            _UnsetFluteLocationOptions((Tracker:FindObjectForCode("Light_flute_spot_"..i)--[[@as LuaItem]]))
+            _UnsetFluteLocationOptions((Tracker:FindObjectForCode("Dark_flute_spot_"..i)--[[@as LuaItem]]))
+        end
+        for _, dest_array in pairs(FLUTE_SPOTS_CONNECTIONS) do
+            _UnsetFluteLocationOptions(Tracker:FindObjectForCode(dest_array[1]) --[[@as LuaItem]])
+            _UnsetFluteLocationOptions(Tracker:FindObjectForCode(dest_array[2]) --[[@as LuaItem]])
         end
     else
 
         for _, spot_array in pairs(FLUTE_SPOTS_CONNECTIONS) do
+            local lw_spot = (Tracker:FindObjectForCode("Light_flute_spot_"..tostring(counter))--[[@as LuaItem]])
+            local dw_spot = (Tracker:FindObjectForCode("Dark_flute_spot_"..tostring(counter))--[[@as LuaItem]])
+            local lw_destination = (Tracker:FindObjectForCode(spot_array[1])--[[@as LuaItem]])
+            local dw_destination = (Tracker:FindObjectForCode(spot_array[2])--[[@as LuaItem]])
             if spot_array[3] then
-                print(counter, Dump_table(spot_array))
-                local spot = (Tracker:FindObjectForCode("Light_flute_spot_"..tostring(counter))--[[@as LuaItem]])
-                local lw_destination = (Tracker:FindObjectForCode(spot_array[1])--[[@as LuaItem]])
-                local dw_destination = (Tracker:FindObjectForCode(spot_array[2])--[[@as LuaItem]])
-                _SetFluteLocationOptions(spot, lw_destination)
-                _SetFluteLocationOptions(lw_destination, spot)
-                _SetFluteLocationOptions(spot, dw_destination)
-                _SetFluteLocationOptions(dw_destination, spot)
+                _SetFluteLocationOptions(lw_spot, lw_destination)
+                _SetFluteLocationOptions(lw_destination, lw_spot)
+                _SetFluteLocationOptions(dw_spot, dw_destination)
+                _SetFluteLocationOptions(dw_destination, dw_spot)
                 counter = counter + 1
+            else
+                _UnsetFluteLocationOptions(lw_destination)
+                _UnsetFluteLocationOptions(dw_destination)
             end
         end
     end
