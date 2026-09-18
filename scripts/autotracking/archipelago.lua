@@ -391,7 +391,7 @@ function OnClear(slot_data)
     ScriptHost:RemoveWatchForCode("StateChanged")
     -- ScriptHost:RemoveOnLocationSectionHandler("location_section_change_handler")
     ScriptHost:RemoveOnLocationSectionChangedHandler("location_section_change_handler")
-    --SLOT_DATA = slot_data
+    SLOT_DATA = slot_data
     CUR_INDEX = -1
     -- reset locations
     for location_ID, location_array in pairs(LOCATION_MAPPING) do
@@ -603,7 +603,7 @@ function AutoFill()
         print("its fucked")
         return
     end
-    -- print(Dump_table(SLOT_DATA))
+    print(Dump_table(SLOT_DATA))
     -- mapGlitcheMode = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4} -- noGlitches, minor, overworld, hybrid_major, no_logic
     local mapDarkRoomLogic = {[0]=0, [1]=1, [2]=2, ["none"]=2,["lamp"]=0,["troches"]=1} --lamp, torches, none
     local mapCoreGoal = {
@@ -743,6 +743,11 @@ function AutoFill()
         ["dungeons"] = 4,
         ["lottery"] = 5,
     }
+    local mapOWFluteShuffle = {
+        ["vanilla"] = 0,
+        ["balanced"] = 1,
+        ["random"] = 2,
+    }
 
     local mapStages = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=6, [7]=7, [8]=8, [9]=9, [10]=10, ["open"]=1,["inverted"]=2,["standard"]=0}
     local mapToggle = {[0]=false, [1]=true, [2]=true,[3]=true,[4]=true,[6]=true} -- false, true
@@ -811,7 +816,7 @@ function AutoFill()
         glitches_required = {codes={"glitches"}, mappings={mapStages}, autofill="autofill_modes", default={0}},
 
         -- misc logic
-        flute_shuffle = {codes={"flute_shuffle"}, mappings={mapStages}, autofill="autofill_misc", default={0}},
+        ow_fluteshuffle = {codes={"flute_shuffle"}, mappings={mapOWFluteShuffle}, autofill="autofill_misc", default={0}},
         enemy_shuffle = {codes={"enemizer"}, mappings={mapToggle}, autofill="autofill_misc", default={false}},
         killable_thieves = {codes={"killable_thieves"}, mappings={mapToggle}, autofill="autofill_misc", default={false}},
         randomize_damage_classes = {codes={"dmg_class_shuffle"}, mappings={mapStages}, autofill="autofill_misc", default={0}},
@@ -955,6 +960,30 @@ function AutoFill()
             else
                 Tracker:FindObjectForCode(string.lower(mapMedallions[slot_data_medallions["Misery Mire"]])).CurrentStage = 2
                 Tracker:FindObjectForCode(string.lower(mapMedallions[slot_data_medallions["Turtle Rock"]])).CurrentStage = 1
+            end
+        end
+        if Tracker:ProviderCountForCode("flute_shuffle_on") > 0 then
+            for i=1, 8 do
+                print(i)
+                _UnsetFluteLocationOptions((Tracker:FindObjectForCode("from_Light_flute_spot_"..i)--[[@as LuaItem]]))
+                _UnsetFluteLocationOptions((Tracker:FindObjectForCode("from_Dark_flute_spot_"..i)--[[@as LuaItem]]))
+            end
+            for _, dest_array in pairs(FLUTE_SPOTS_CONNECTIONS) do
+                _UnsetFluteLocationOptions(Tracker:FindObjectForCode(dest_array[1]) --[[@as LuaItem]])
+                _UnsetFluteLocationOptions(Tracker:FindObjectForCode(dest_array[2]) --[[@as LuaItem]])
+            end
+            local slot_data_flute_spots = SLOT_DATA["ow-flutespots"]["1"]["force"]
+            for spot_index, destination_index in pairs(slot_data_flute_spots) do
+                print(spot_index, destination_index)
+                local lw_spot_item = (Tracker:FindObjectForCode("from_Light_flute_spot_"..spot_index)) --[[@as LuaItem]]
+                local dw_spot_item = (Tracker:FindObjectForCode("from_Dark_flute_spot_"..spot_index)) --[[@as LuaItem]]
+                local lw_dest_item = (Tracker:FindObjectForCode(FLUTE_SPOTS_CONNECTIONS[destination_index][1])) --[[@as LuaItem]]
+                local dw_dest_item = (Tracker:FindObjectForCode(FLUTE_SPOTS_CONNECTIONS[destination_index][2])) --[[@as LuaItem]]
+                _SetFluteLocationOptions(lw_spot_item, lw_dest_item)
+                _SetFluteLocationOptions(lw_dest_item, lw_spot_item)
+                
+                _SetFluteLocationOptions(dw_spot_item, dw_dest_item)
+                _SetFluteLocationOptions(dw_dest_item, dw_spot_item)
             end
         end
         

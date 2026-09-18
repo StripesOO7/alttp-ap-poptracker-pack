@@ -299,14 +299,14 @@ Witchhut = alttp_location.new("Witchhut", "Witchhut Area (OW)", nil, "Lightworld
 Zora_river = alttp_location.new("Zora_river", "Zora River (OW)", "light", "Lightworld OW", false)
 
 Light_flute_map = alttp_location.new("Light_flute_map", "Light Flute Map", "light", "Lightworld OW", false)
-Light_flute_spot_1 = alttp_location.new("Light_flute_spot_1", "Light Flute Spot 1", "light", "Lightworld OW", false)
-Light_flute_spot_2 = alttp_location.new("Light_flute_spot_2", "Light Flute Spot 2", "light", "Lightworld OW", false)
-Light_flute_spot_3 = alttp_location.new("Light_flute_spot_3", "Light Flute Spot 3", "light", "Lightworld OW", false)
-Light_flute_spot_4 = alttp_location.new("Light_flute_spot_4", "Light Flute Spot 4", "light", "Lightworld OW", false)
-Light_flute_spot_5 = alttp_location.new("Light_flute_spot_5", "Light Flute Spot 5", "light", "Lightworld OW", false)
-Light_flute_spot_6 = alttp_location.new("Light_flute_spot_6", "Light Flute Spot 6", "light", "Lightworld OW", false)
-Light_flute_spot_7 = alttp_location.new("Light_flute_spot_7", "Light Flute Spot 7", "light", "Lightworld OW", false)
-Light_flute_spot_8 = alttp_location.new("Light_flute_spot_8", "Light Flute Spot 8", "light", "Lightworld OW", false)
+Light_flute_spot_1 = alttp_location.new("Light_flute_spot_1", "Light Flute Spot 1", "light", "Lightworld OW", false, nil, nil, nil, nil, nil, {"Lightworld Flute Spots", "Lightworld Markers", "From Light_flute_spot_1"}, "connector")
+Light_flute_spot_2 = alttp_location.new("Light_flute_spot_2", "Light Flute Spot 2", "light", "Lightworld OW", false, nil, nil, nil, nil, nil, {"Lightworld Flute Spots", "Lightworld Markers", "From Light_flute_spot_2"}, "connector")
+Light_flute_spot_3 = alttp_location.new("Light_flute_spot_3", "Light Flute Spot 3", "light", "Lightworld OW", false, nil, nil, nil, nil, nil, {"Lightworld Flute Spots", "Lightworld Markers", "From Light_flute_spot_3"}, "connector")
+Light_flute_spot_4 = alttp_location.new("Light_flute_spot_4", "Light Flute Spot 4", "light", "Lightworld OW", false, nil, nil, nil, nil, nil, {"Lightworld Flute Spots", "Lightworld Markers", "From Light_flute_spot_4"}, "connector")
+Light_flute_spot_5 = alttp_location.new("Light_flute_spot_5", "Light Flute Spot 5", "light", "Lightworld OW", false, nil, nil, nil, nil, nil, {"Lightworld Flute Spots", "Lightworld Markers", "From Light_flute_spot_5"}, "connector")
+Light_flute_spot_6 = alttp_location.new("Light_flute_spot_6", "Light Flute Spot 6", "light", "Lightworld OW", false, nil, nil, nil, nil, nil, {"Lightworld Flute Spots", "Lightworld Markers", "From Light_flute_spot_6"}, "connector")
+Light_flute_spot_7 = alttp_location.new("Light_flute_spot_7", "Light Flute Spot 7", "light", "Lightworld OW", false, nil, nil, nil, nil, nil, {"Lightworld Flute Spots", "Lightworld Markers", "From Light_flute_spot_7"}, "connector")
+Light_flute_spot_8 = alttp_location.new("Light_flute_spot_8", "Light Flute Spot 8", "light", "Lightworld OW", false, nil, nil, nil, nil, nil, {"Lightworld Flute Spots", "Lightworld Markers", "From Light_flute_spot_8"}, "connector")
 
 
 Empty_location = alttp_location.new("Empty_location", "Empty_location", "light", "", false)

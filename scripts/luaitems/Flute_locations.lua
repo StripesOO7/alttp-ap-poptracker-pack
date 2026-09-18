@@ -87,11 +87,9 @@ function Flute_locations_scope(scope_direction, scope_location_obj, scope_side)
     function MarkFirstERConnectionPart(location, highlight)
         local source_location
         local location_itemstate = location.ItemState  --[[@as ERItemState]]
-        if ER_STAGE < 3 then
-            source_location = "@"..table.concat(location_itemstate.CorrespondingLocationSection, "/")
-        else
-            source_location = "@"..location_itemstate.CorrespondingLocationSection[1].."/"..location_itemstate.CorrespondingLocationSection[2].."/From".." "..location_itemstate.CorrespondingLocationSection[3]
-        end
+
+        source_location = "@"..table.concat(location_itemstate.CorrespondingLocationSection, "/")
+        
         Tracker:FindObjectForCode(source_location).Highlight = highlight
     end
 
@@ -101,56 +99,19 @@ function Flute_locations_scope(scope_direction, scope_location_obj, scope_side)
     local function OnLeftClickFunc(self)
         local self_itemstate =  self.ItemState --[[@as ERItemState]]
         if not ROUTE_MODE then
-            if ER_STAGE < 3 then --off, dungeons, full
-                if ENTRANCE_SELECTED then -- ENTRANCE_SELECTED ~= nil
-                    if self_itemstate.Target then -- attempt of new connection to already existing connection (how to handle that?)
-                        _LeftClickUnmarkHelper(self_itemstate.TargetBaseName, ENTRANCE_SELECTED)
-                    end
-                    -- second step of normal new connection
-                    _LeftClickMarkHelper(ENTRANCE_SELECTED, self_itemstate.BaseName)
-                    MarkFirstERConnectionPart(NAMED_ER_CONNECTIONS[self_itemstate.Target]--[[@as LuaItem]], Highlight.None)
-                    ENTRANCE_SELECTED = nil
-                else -- ENTRANCE_SELECTED == nil
-                    MarkFirstERConnectionPart(self, Highlight.NoPriority)
-                    ENTRANCE_SELECTED = self_itemstate.BaseName
-                    if self_itemstate.Target then -- retarget a connection to new target location
-                        _LeftClickUnmarkHelper(self_itemstate.TargetBaseName, ENTRANCE_SELECTED)
-                    end
+            if ENTRANCE_SELECTED then -- ENTRANCE_SELECTED ~= nil
+                if self_itemstate.Target then -- attempt of new connection to already existing connection (how to handle that?)
+                    _LeftClickUnmarkHelper(self_itemstate.TargetBaseName, ENTRANCE_SELECTED)
                 end
-            else -- insanity
-                local target_entrance
-                if ENTRANCE_SELECTED then -- ENTRANCE_SELECTED ~= nil
-                    if string.find(ENTRANCE_SELECTED, "from_") then
-                        self = NAMED_ER_CONNECTIONS["to_" .. self_itemstate.BaseName] --[[@as LuaItem]]
-                    else
-                        self = NAMED_ER_CONNECTIONS["from_" .. self_itemstate.BaseName] --[[@as LuaItem]]
-                    end
-                    if self_itemstate.Target then -- attempt of new connection to already existing connection (how to handle that?)
-                        target_entrance = NAMED_ER_CONNECTIONS[self_itemstate.Target] --[[@as LuaItem]]
-                        if target_entrance ~= nil then
-                            _UnsetFluteLocationOptions(target_entrance)
-                            _UnsetFluteLocationOptions(self)
-                        end
-                    end
-
-                    -- second step of normal new connection
-                    target_entrance = NAMED_ER_CONNECTIONS[ENTRANCE_SELECTED] --[[@as LuaItem]]
-                    MarkFirstERConnectionPart(target_entrance, Highlight.None)
-                    if target_entrance ~= nil then
-                        _SetFluteLocationOptions(self, target_entrance)
-                        _SetFluteLocationOptions(target_entrance, self)
-                    end
-                    ENTRANCE_SELECTED = nil
-                else -- ENTRANCE_SELECTED == nil
-                    MarkFirstERConnectionPart(self, Highlight.Priority)
-                    ENTRANCE_SELECTED = self.Name
-                    if self.ItemState.Target then -- retarget a connection to new target location
-                        target_entrance = NAMED_ER_CONNECTIONS[self_itemstate.Target] --[[@as LuaItem]]
-                        if target_entrance ~= nil then
-                            _UnsetFluteLocationOptions(target_entrance)
-                            _UnsetFluteLocationOptions(self)
-                        end
-                    end
+                -- second step of normal new connection
+                _LeftClickMarkHelper(ENTRANCE_SELECTED, self_itemstate.BaseName)
+                MarkFirstERConnectionPart(NAMED_ER_CONNECTIONS[self_itemstate.Target]--[[@as LuaItem]], Highlight.None)
+                ENTRANCE_SELECTED = nil
+            else -- ENTRANCE_SELECTED == nil
+                MarkFirstERConnectionPart(self, Highlight.NoPriority)
+                ENTRANCE_SELECTED = self_itemstate.BaseName
+                if self_itemstate.Target then -- retarget a connection to new target location
+                    _LeftClickUnmarkHelper(self_itemstate.TargetBaseName, ENTRANCE_SELECTED)
                 end
             end
         else
@@ -175,31 +136,20 @@ function Flute_locations_scope(scope_direction, scope_location_obj, scope_side)
             ENTRANCE_SELECTED = nil
         end
         if not ROUTE_MODE then
-            if ER_STAGE < 3 then -- off, dungeons, full
-                if self_itemstate.Target ~= nil then
-                    local target_from = NAMED_ER_CONNECTIONS["from_" .. self_itemstate.TargetBaseName] --[[@as LuaItem]]
-                    local target_to = NAMED_ER_CONNECTIONS["to_" .. self_itemstate.TargetBaseName] --[[@as LuaItem]]
-                    local source_from = NAMED_ER_CONNECTIONS["from_" .. self_itemstate.BaseName] --[[@as LuaItem]]
-                    local source_to = NAMED_ER_CONNECTIONS["to_" .. self_itemstate.BaseName] --[[@as LuaItem]]
-                    if target_from ~= nil then
-                        _UnsetFluteLocationOptions(target_from)
-                        _UnsetFluteLocationOptions(source_to)
-                    end
-                    if target_to ~= nil then
-                        _UnsetFluteLocationOptions(target_to)
-                        _UnsetFluteLocationOptions(source_from)
-                    end
-                    ForceUpdate()
+            if self_itemstate.Target ~= nil then
+                local target_from = NAMED_ER_CONNECTIONS["from_" .. self_itemstate.TargetBaseName] --[[@as LuaItem]]
+                local target_to = NAMED_ER_CONNECTIONS["to_" .. self_itemstate.TargetBaseName] --[[@as LuaItem]]
+                local source_from = NAMED_ER_CONNECTIONS["from_" .. self_itemstate.BaseName] --[[@as LuaItem]]
+                local source_to = NAMED_ER_CONNECTIONS["to_" .. self_itemstate.BaseName] --[[@as LuaItem]]
+                if target_from ~= nil then
+                    _UnsetFluteLocationOptions(target_from)
+                    _UnsetFluteLocationOptions(source_to)
                 end
-            else -- insanity
-                if self_itemstate.Target ~= nil then
-                    local target = NAMED_ER_CONNECTIONS[self_itemstate.Target] --[[@as LuaItem]]
-                    if target ~= nil then
-                        _UnsetFluteLocationOptions(target)
-                        _UnsetFluteLocationOptions(self)
-                    end
-                    ForceUpdate()
+                if target_to ~= nil then
+                    _UnsetFluteLocationOptions(target_to)
+                    _UnsetFluteLocationOptions(source_from)
                 end
+                ForceUpdate()
             end
         end
     end
@@ -226,13 +176,10 @@ function Flute_locations_scope(scope_direction, scope_location_obj, scope_side)
         local target = NAMED_ER_CONNECTIONS[source_ItemState.Target] --[[@as LuaItem]]
 
         local target_ItemState = target.ItemState --[[@as ERItemState]]
-        if ER_STAGE == 3 then
-            source_location = "@"..source_ItemState.CorrespondingLocationSection[1].."/"..source_ItemState.CorrespondingLocationSection[2].."/"..target_ItemState.Direction.." "..source_ItemState.CorrespondingLocationSection[3]
-            target_location = "@"..target_ItemState.CorrespondingLocationSection[1].."/"..target_ItemState.CorrespondingLocationSection[2].."/"..source_ItemState.Direction.." "..target_ItemState.CorrespondingLocationSection[3]
-        else
-            source_location = "@"..table.concat(source_ItemState.CorrespondingLocationSection, "/")
-            target_location = "@"..table.concat(target_ItemState.CorrespondingLocationSection, "/")
-        end
+        
+        source_location = "@"..table.concat(source_ItemState.CorrespondingLocationSection, "/")
+        target_location = "@"..table.concat(target_ItemState.CorrespondingLocationSection, "/")
+
         HIGHLIGHT_SOURCE = Tracker:FindObjectForCode(source_location) --[[@as LocationSection]] --location/section
         HIGHLIGHT_SOURCE.Highlight = Highlight.Avoid
         HIGHLIGHT_TARGET = Tracker:FindObjectForCode(target_location) --[[@as LocationSection]] --location/section
@@ -412,7 +359,7 @@ function Flute_locations_scope(scope_direction, scope_location_obj, scope_side)
         } --[[@as table<string, any>]]
         self.PotentialCodes = {Code, Basename}
 
-        local Code = string.lower(direction) .. "_" .. location_obj.name
+        local code = string.lower(direction) .. "_" .. location_obj.name
 
         if location_obj.deadEndOrDungeonOrConnector == "deadend" then
             self.ItemState.IsDeadEnd = true

@@ -173,7 +173,7 @@ PoD_Pots = {
     "@Palace of Darkness Pots/Middle Cage Pot #9/Pot #9",
     "@Palace of Darkness Pots/Middle Cage Pot #10/Pot #10",
     "@Palace of Darkness Pots/Mimics 1 Pot #1/Pot #1",
-    "@Palace of Darkness Pots/Mimics 1 Pot #2/Pot #2}",
+    "@Palace of Darkness Pots/Mimics 1 Pot #2/Pot #2",
 }
 PoD_Enemies = {
     "@Palace of Darkness Enemies/Warp Room Enemy #3/Enemy #3",
