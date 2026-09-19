@@ -150,12 +150,12 @@ TT_front_top_right:connect_one_way("TT - BK Corner Enemy #1", function() return 
 TT_front_top_right_rail_ledge:connect_two_ways(TT_front_top_right_rail_ledge_1N_door)
 TT_front_top_right:connect_two_ways(TT_front_top_right_S_door)
 TT_front_top_right:connect_two_ways(TT_front_top_right_3S_door)
-TT_front_top_right:connect_two_ways(TT_front_top_right_2N_door)
+TT_front_top_right:connect_two_ways(TT_front_top_right_2N_door, function() return Has("bigkey") end)
 
 TT_front_top_right_S_door:connect_two_ways_entrance("", TT_front_bottom_right_1N_door)
 TT_front_top_right_3S_door:connect_two_ways_entrance("", TT_front_bottom_right_N_door)
-TT_front_top_right_rail_ledge_1N_door:connect_two_ways_entrance("", TT_back_hallway_4S_door, function() return ALL("bigkey", CanInteract(TT_front_top_right)) end)
-TT_front_top_right_2N_door:connect_two_ways_entrance("", TT_pot_alcove_deadend_3S_door)
+TT_front_top_right_rail_ledge_1N_door:connect_two_ways_entrance("", TT_pot_alcove_deadend_3S_door)
+TT_front_top_right_2N_door:connect_two_ways_entrance("", TT_back_hallway_4S_door)
 
 TT_front_bottom_right_1N_door:connect_two_ways(TT_front_bottom_right)
 TT_front_bottom_right_N_door:connect_two_ways(TT_front_bottom_right)

@@ -399,7 +399,7 @@ function alttp_location:discover(accessibility, keys, worldstate)
             local location_name = self.name
             -- if (string.sub(exit_name, -7,-1) == "_inside" and string.sub(location_name, -8,-1) == "_outside") or
             -- (string.sub(location_name, -7,-1) == "_inside" and string.sub(exit_name, -8,-1) == "_outside") then
-            if FLUTE_SHUFFLE_STATE and self.side == "flutespot" then
+            if self.side == "flutespot" then
                 
                 local temp
                 temp = NAMED_ER_CONNECTIONS["from_" .. location_name]

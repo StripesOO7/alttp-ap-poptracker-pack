@@ -161,7 +161,7 @@ function Has(item, noKDS_amount, noKDS_amountInLogic, KDS_amount, KDS_amountInLo
         CachedValues[string_args] = ACCESS_NORMAL
         return ACCESS_NORMAL
     end
-    if item == "smallkey"  or  item == "bigkey" then
+    if item == "smallkey" or item == "bigkey" then
         item = Current_Dungeon.."_"..item
     end
     if KEY_DROP_SHUFFLE_STATE then
