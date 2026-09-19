@@ -614,6 +614,7 @@ function AutoFill()
         ["ganonpedestal"]=4,
         ["triforcehunt"]=5,
         ["ganontriforcehunt"]=6,
+        ["ganonhunt"]=6,
         ["localtriforcehunt"]=5,
         ["localganontriforcehunt"]=6,
         ["trinity"]=7,
