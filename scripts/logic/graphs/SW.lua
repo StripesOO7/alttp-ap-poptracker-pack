@@ -302,7 +302,7 @@ SW_vines_room:connect_one_way("SW - Vines Enemy #1", function() return DealDamag
 -- SW_vines_room:connect_one_way("SW - Vines Enemy #5", function() return DealDamage end)
 
 SW_vines_room:connect_two_ways(SW_vines_room_1N_door)
-SW_vines_room_1N_door:connect_two_ways_entrance("", SW_back_spike_corner_room_3S_door)
+SW_vines_room_1N_door:connect_two_ways_entrance_door_stuck("", SW_back_spike_corner_room_3S_door, function() return CanRemoveCurtains end, function() return false end)
 SW_back_spike_corner_room_3S_door:connect_one_way(SW_back_spike_corner_room)
 
 SW_back_spike_corner_room:connect_one_way("SW - Spike Corner Key Drop")

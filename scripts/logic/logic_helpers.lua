@@ -652,8 +652,11 @@ function EnemizerCheck(item)
     if CachedValues["EnemizerCheck"..tostring(item)] then
         return CachedValues["EnemizerCheck"..tostring(item)]
     end
-    CachedValues["EnemizerCheck"..tostring(item)] = Tracker:FindObjectForCode("enemizer").Active or Tracker:FindObjectForCode(item).Active
-    return Tracker:FindObjectForCode("enemizer").Active or Tracker:FindObjectForCode(item).Active
+    print(Tracker:FindObjectForCode("enemizer").Active)
+    print(Tracker:ProviderCountForCode(item) > 0)
+    print(Tracker:FindObjectForCode("enemizer").Active or Tracker:ProviderCountForCode(item) > 0)
+    CachedValues["EnemizerCheck"..tostring(item)] = Tracker:FindObjectForCode("enemizer").Active or Tracker:ProviderCountForCode(item) > 0
+    return Tracker:FindObjectForCode("enemizer").Active or Tracker:ProviderCountForCode(item) > 0
 end
 
 ---comment
@@ -869,6 +872,7 @@ end
 ---if the KDS setting is changed this functoin is used to change the max amount of keys being obtainable for each
 --dungeon. previously loaded a second layout
 function KeyDropLayoutChange()
+    MANUAL_CHECKED = false
     local potsanity_keys = Tracker:ProviderCountForCode("potsanity_keys") > 0
     local enemy_drop_shuffle_keys = Tracker:ProviderCountForCode("enemy_drop_shuffle_keys") > 0
     local doors_enabled = Tracker:FindObjectForCode("doors_enabled").Active
@@ -889,6 +893,7 @@ function KeyDropLayoutChange()
         end
     end
     KEY_DROP_SHUFFLE_STATE = potsanity_keys or enemy_drop_shuffle_keys or key_drop_shuffle or doors_enabled
+    MANUAL_CHECKED = true
 end
 
 ---helper function to check the set TT boss and thus decide if bombing the top floor of TT is needed to beat the boss
@@ -1252,6 +1257,7 @@ ALTTP_BETA = false
 ALTTPR = false
 ---comment
 function ChangePopupLayout()
+    MANUAL_CHECKED = false
     local version = Tracker:FindObjectForCode("selected_game").CurrentStage
     local doors_tracking = Tracker:FindObjectForCode("doors_tracking")
     local doors_tracking_method = Tracker:FindObjectForCode("doors_tracking_method")
@@ -1698,6 +1704,7 @@ function ChangePopupLayout()
         ITEM_MAPPING[56] = nil
     end
     ChangeGameVersion(version)
+    MANUAL_CHECKED =true
 end
 
 local DMG_class_items_lookup = {

@@ -168,10 +168,10 @@ EP_east_wing_bottom:connect_two_ways(EP_east_wing_bottom_3S_door)
 EP_east_wing_bottom_3S_door:connect_two_ways_entrance_door_stuck("", EP_dark_square_room_1N_door, nil, function() return DarkRooms end)
 EP_dark_square_room_1N_door:connect_two_ways(EP_dark_square_room)
 
-EP_dark_square_room:connect_one_way("EP - Dark Square Enemy #2", function() return DealDamage end)
--- EP_dark_square_room:connect_one_way("EP - Dark Square Enemy #4", function() return DealDamage end)
--- EP_dark_square_room:connect_one_way("EP - Dark Square Enemy #5", function() return DealDamage end)
--- EP_dark_square_room:connect_one_way("EP - Dark Square Enemy #7", function() return DealDamage end)
+EP_dark_square_room:connect_one_way("EP - Dark Square Enemy #2", function() return ALL(DarkRooms, DealDamage) end)
+-- EP_dark_square_room:connect_one_way("EP - Dark Square Enemy #4", function() return ALL(DarkRooms, DealDamage) end)
+-- EP_dark_square_room:connect_one_way("EP - Dark Square Enemy #5", function() return ALL(DarkRooms, DealDamage) end)
+-- EP_dark_square_room:connect_one_way("EP - Dark Square Enemy #7", function() return ALL(DarkRooms, DealDamage) end)
 EP_dark_square_room:connect_two_ways(EP_dark_pots, function() return DarkRooms end)
 
 EP_dark_pots:connect_one_way("EP - Dark Square Key Drop", function() return DarkRooms end)
@@ -216,9 +216,9 @@ EP_main_room_bottom_N_door:connect_two_ways_entrance_door_stuck("", EP_dark_eyeg
 EP_dark_eyegore_room_S_door:connect_two_ways(EP_dark_eyegore_room)
 
 EP_dark_eyegore_room:connect_one_way("EP - Dark Eyegore Key Drop", function() return ALL(DarkRooms, EnemizerCheck("bow"), DealDamage) end) --enemy4
-EP_dark_eyegore_room:connect_one_way("EP - Darkness Pot #1", function() return DarkRooms end)
+EP_dark_eyegore_room:connect_one_way("EP - Darkness Pot #1", function() return ALL(DarkRooms, DarkRooms) end)
 -- EP_dark_eyegore_room:connect_one_way("EP - Darkness Pot #2", function() return DarkRooms end)
-EP_dark_eyegore_room:connect_one_way("EP - Darkness Enemy #3", function() return DealDamage end)
+EP_dark_eyegore_room:connect_one_way("EP - Darkness Enemy #3", function() return ALL(DarkRooms, DealDamage) end)
 -- EP_dark_eyegore_room:connect_one_way("EP - Darkness Enemy #5", function() return DealDamage end)
 -- EP_dark_eyegore_room:connect_one_way("EP - Darkness Enemy #6", function() return DealDamage end)
 -- EP_dark_eyegore_room:connect_one_way("EP - Darkness Enemy #7", function() return DealDamage end)

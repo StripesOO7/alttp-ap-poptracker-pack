@@ -750,7 +750,7 @@ function AutoFill()
     }
 
     local mapStages = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=6, [7]=7, [8]=8, [9]=9, [10]=10, ["open"]=1,["inverted"]=2,["standard"]=0}
-    local mapToggle = {[0]=false, [1]=true, [2]=true,[3]=true,[4]=true,[6]=true} -- false, true
+    local mapToggle = {[0]=false, [1]=true, [2]=true,[3]=true,[4]=true,[6]=true, ["true"]=true, ["false"]=false} -- false, true
 
     local slotCodes = {
         --goal 

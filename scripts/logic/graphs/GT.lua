@@ -175,9 +175,6 @@ GT_bottom_conveyor_cross_room:connect_one_way("GT - Conveyor Cross Enemy #1", fu
 
 GT_bottom_conveyor_cross_room:connect_two_ways_stuck(GT_bottom_bonk_pit_room_east, function() return Has("hammer") end, function() return Has("hookshot") end)
 
-GT_bottom_bonk_pit_room_east:connect_one_way("GT - Hookshot Mid Platform Pot #5")
-GT_bottom_bonk_pit_room_east:connect_one_way("GT - Hookshot Mid Platform Enemy #5", function() return DealDamage end)
-
 GT_bottom_bonk_pit_room_east:connect_two_ways(GT_bottom_bonk_pit_room_top, function() 
     return ANY(
         Has("hookshot"),
@@ -193,6 +190,9 @@ GT_bottom_bonk_pit_room_east:connect_two_ways(GT_bottom_bonk_pit_room_bottom, fu
         "boots"
     )
 end)
+
+GT_bottom_bonk_pit_room_bottom:connect_one_way("GT - Hookshot Mid Platform Enemy #5", function() return DealDamage end)
+GT_bottom_bonk_pit_room_top:connect_one_way("GT - Hookshot Mid Platform Pot #5")
 
 GT_bottom_bonk_pit_room_top:connect_two_ways(GT_bottom_bonk_pit_room_1N_door)
 GT_bottom_bonk_pit_room_1N_door:connect_two_ways_entrance("", GT_bottom_dm_room_3S_door)
@@ -217,7 +217,7 @@ GT_bottom_bonk_pit_room_bottom:connect_one_way("GT - Hookshot South Platform Ene
 -- GT_bottom_bonk_pit_room_bottom:connect_one_way("GT - Hookshot South Platform Enemy #5", function() return DealDamage end)
 -- GT_bottom_bonk_pit_room_bottom:connect_one_way("GT - Hookshot South Platform Enemy #6", function() return DealDamage end)
 
-GT_bottom_bonk_pit_room_bottom:connect_two_ways(GT_bottom_bonk_pit_room_3S_door, function() return ALL(DealDamage, HitRanged) end)
+GT_bottom_bonk_pit_room_bottom:connect_two_ways(GT_bottom_bonk_pit_room_3S_door, function() return ALL(DealDamage, ANY("bombs", "redboomerang", "somaria")) end)
 GT_bottom_bonk_pit_room_3S_door:connect_two_ways(GT_bottom_map_room, function(keys, Current_Dungeon)
     return ALL(
         Has("smallkey", keys + CountDoneDeadends(0, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 4, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 8)
@@ -236,7 +236,19 @@ GT_bottom_double_switch_room_1N_door:connect_two_ways(GT_bottom_double_switch_ro
 GT_bottom_double_switch_room:connect_one_way("GT - Double Switch Pot Key")
 GT_bottom_double_switch_room:connect_one_way("GT - Double Switch Pot Corners Pot #1")
 
-GT_bottom_double_switch_room:connect_two_ways(GT_bottom_after_double_switch_room)
+GT_bottom_double_switch_room:connect_two_ways(GT_bottom_after_double_switch_room, function(keys, Current_Dungeon) 
+    return ALL(
+        ANY(
+            "bombs",
+            ALL(
+                "hookshot",
+                "redboomerang"
+            ),
+            "somaria"
+        ),
+        Has("smallkey", keys + CountDoneDeadends(0, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 3, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 5)
+    ), KDSreturn(keys, keys + 1)
+end)
 
 GT_bottom_after_double_switch_room:connect_one_way("GT - Spike Crystal Right Enemy #4", function() return DealDamage end)
 -- GT_bottom_after_double_switch_room:connect_one_way("GT - Spike Crystal Right Enemy #5", function() return DealDamage end)
@@ -249,14 +261,14 @@ GT_bottom_after_double_switch_room:connect_one_way("GT - Spike Crystal Right Ene
 GT_bottom_after_double_switch_room:connect_two_ways(GT_bottom_firesnake_room_before_pit)
 
 GT_bottom_firesnake_room_before_pit:connect_two_ways(GT_bottom_firesnake_room_after_pit, function() return Has("hookshot") end)
-GT_bottom_firesnake_room_after_pit:connect_one_way("GT - Firesnake Room")
-GT_bottom_firesnake_room_after_pit:connect_one_way("GT - Firesnake Room Pot #1")
--- GT_bottom_firesnake_room_after_pit:connect_one_way("GT - Firesnake Room Pot #2")
--- GT_bottom_firesnake_room_after_pit:connect_one_way("GT - Firesnake Room Pot #3")
-GT_bottom_firesnake_room_after_pit:connect_one_way("GT - Firesnake Room Enemy #1", function() return DealDamage end)
--- GT_bottom_firesnake_room_after_pit:connect_one_way("GT - Firesnake Room Enemy #2", function() return DealDamage end)
--- GT_bottom_firesnake_room_after_pit:connect_one_way("GT - Firesnake Room Enemy #3", function() return DealDamage end)
--- GT_bottom_firesnake_room_after_pit:connect_one_way("GT - Firesnake Room Enemy #4", function() return DealDamage end)
+GT_bottom_firesnake_room_before_pit:connect_one_way("GT - Firesnake Room")
+GT_bottom_firesnake_room_before_pit:connect_one_way("GT - Firesnake Room Pot #1")
+-- GT_bottom_firesnake_room_before_pit:connect_one_way("GT - Firesnake Room Pot #2")
+-- GT_bottom_firesnake_room_before_pit:connect_one_way("GT - Firesnake Room Pot #3")
+GT_bottom_firesnake_room_before_pit:connect_one_way("GT - Firesnake Room Enemy #1", function() return DealDamage end)
+-- GT_bottom_firesnake_room_before_pit:connect_one_way("GT - Firesnake Room Enemy #2", function() return DealDamage end)
+-- GT_bottom_firesnake_room_before_pit:connect_one_way("GT - Firesnake Room Enemy #3", function() return DealDamage end)
+-- GT_bottom_firesnake_room_before_pit:connect_one_way("GT - Firesnake Room Enemy #4", function() return DealDamage end)
 
 GT_bottom_firesnake_room_after_pit:connect_two_ways(GT_bottom_teleporter_puzzle_room_A_side, function(keys, Current_Dungeon) return Has("smallkey", keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 4, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 8), keys + 1 end)
 
@@ -302,6 +314,8 @@ GT_bottom_invisibile_bonk_room:connect_two_ways(GT_bottom_invisibile_bonk_room_1
 GT_bottom_invisibile_bonk_room_1N_door:connect_two_ways_entrance("", GT_bottom_big_chest_room_3S_door)
 GT_bottom_big_chest_room_3S_door:connect_two_ways(GT_bottom_big_chest_room)
 
+GT_bottom_big_chest_room:connect_one_way("GT - Big Chest Enemy #11", function() return DealDamage end)
+-- GT_bottom_big_chest_room:connect_one_way("GT - Big Chest Enemy #14", function() return DealDamage end)
 GT_bottom_big_chest_room:connect_one_way("GT - Big Chest", function() return Has("bigkey") end)
 GT_bottom_big_chest_room:connect_one_way(GT_bottom_bobs_torch)
 
@@ -324,8 +338,6 @@ GT_bottom_above_ice_fight:connect_one_way(GT_bottom_ice_fight, function() return
 
 GT_bottom_ice_fight:connect_two_ways(GT_bottom_big_key_room, function() return GetBossRef("gt_ice") end)
 
-GT_bottom_big_key_room:connect_one_way("GT - Big Chest Enemy #11", function() return DealDamage end)
--- GT_bottom_big_key_room:connect_one_way("GT - Big Chest Enemy #14", function() return DealDamage end)
 GT_bottom_big_key_room:connect_one_way("GT - Big Key Chest")
 GT_bottom_big_key_room:connect_one_way("GT - Big Key Room Left")
 GT_bottom_big_key_room:connect_one_way("GT - Big Key Room Right")
@@ -367,7 +379,9 @@ GT_bottom_tile_room:connect_one_way("GT - Tile Room Enemy #2", function() return
 -- GT_bottom_tile_room:connect_one_way("GT - Tile Room Enemy #4", function() return DealDamage end)
 -- GT_bottom_tile_room:connect_one_way("GT - Tile Room Enemy #5", function() return DealDamage end)
 
-GT_bottom_tile_room:connect_two_ways(GT_bottom_torch_puzzle)
+GT_bottom_tile_room:connect_two_ways(GT_bottom_torch_puzzle, function(keys, Current_Dungeon) 
+    return Has("smallkey", keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 3, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room", "@Ganon's Tower Bottom Left/Map Chest/Map Chest", "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 7), keys + 1
+end)
 
 GT_bottom_torch_puzzle:connect_two_ways(GT_bottom_torch_puzzle_2N_door)
 GT_bottom_torch_puzzle_2N_door:connect_two_ways_entrance("", GT_bottom_teleporter_puzzle_room_A_side_deadend_4S_door)
@@ -528,7 +542,7 @@ GT_top_cannonball_bridge_1W_door:connect_two_ways(GT_top_cannonball_bridge)
 -- GT_top_cannonball_bridge:connect_one_way("GT - Dashing Bridge Enemy #11", function() return DealDamage end)
 -- GT_top_cannonball_bridge:connect_one_way("GT - Dashing Bridge Enemy #12", function() return DealDamage end)
 
-GT_top_cannonball_bridge:connect_two_ways(GT_top_refill_room) -- todo
+GT_top_cannonball_bridge:connect_two_ways_stuck(GT_top_refill_room, function() return ANY("boots", "bombs") end, function() return ANY("bombs", "hookshot") end) -- todo
 
 GT_top_refill_room:connect_one_way("GT - Refill Pot #1")
 -- GT_top_refill_room:connect_one_way("GT - Refill Pot #2")
@@ -686,10 +700,8 @@ GT_top_mini_helmasaur_room:connect_one_way("GT - Mini Helmasaur Room Enemy #4", 
 -- GT_top_mini_helmasaur_room:connect_one_way("GT - Mini Helmasaur Room Enemy #6", function() return DealDamage end)
 
 GT_top_mini_helmasaur_room:connect_two_ways(GT_top_bomb_conveyor, function(keys, Current_Dungeon)
-    return ALL(
-        Has("smallkey", keys + CountDoneDeadends(0, "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 3, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room", "@Ganon's Tower Bottom Left/Map Chest/Map Chest", "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 7),
-        "bombs"
-    ), KDSreturn(keys + 0 , keys + 1 )
+    return Has("smallkey", keys + CountDoneDeadends(0, "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 3, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Left/Firesnake Room/Firesnake Room", "@Ganon's Tower Bottom Left/Map Chest/Map Chest", "@Ganon's Tower Bottom Left/Randomizer Room Top Right/Randomizer Room Top Right", "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 7
+    ), KDSreturn(keys , keys + 1)
 end)
 
 GT_top_bomb_conveyor:connect_one_way("GT - Bomb Conveyor Enemy #7", function() return DealDamage end)

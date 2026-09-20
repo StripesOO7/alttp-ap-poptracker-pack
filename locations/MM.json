@@ -1013,7 +1013,7 @@
                 "map_locations": [
                     {
                         "map": "MM",
-                        "x": 386,
+                        "x": 321,
                         "y": 20,
                         "size": 8,
                         "shape": "diamond"
@@ -1040,8 +1040,8 @@
                 "map_locations": [
                     {
                         "map": "MM",
-                        "x": 367,
-                        "y": 42,
+                        "x": 386,
+                        "y": 20,
                         "size": 8,
                         "shape": "diamond"
                     }
@@ -1057,8 +1057,7 @@
                             "^$CanReach|MM - diamon"
                         ],
                         "visibility_rules": [
-                            "potsanity_lottery",
-                            "potsanity_dungeons"
+                            "doors_enabled"
                         ],
                         "clear_as_group": false,
                         "hosted_item": "MM_big_keydoor_room_bridge_NS_2N_door",
@@ -1068,8 +1067,8 @@
                 "map_locations": [
                     {
                         "map": "MM",
-                        "x": 321,
-                        "y": 20,
+                        "x": 367,
+                        "y": 42,
                         "size": 8,
                         "shape": "diamond"
                     }

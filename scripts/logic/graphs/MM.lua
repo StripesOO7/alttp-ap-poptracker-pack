@@ -126,7 +126,7 @@ MM_lobby:connect_one_way("MM - Lobby Enemy #1", function() return DealDamage end
 -- MM_lobby:connect_one_way("MM - Lobby Enemy #5", function() return DealDamage end)
 
 MM_lobby:connect_two_ways(MM_pre_gap)
-MM_pre_gap:connect_two_ways(MM_post_gap)
+MM_pre_gap:connect_two_ways(MM_post_gap, function() return ANY("boots", "hookshot") end)
 MM_post_gap:connect_two_ways(MM_post_gap_4N_door)
 
 MM_post_gap_4N_door:connect_two_ways_entrance("", MM_wizrobe_room_4N_door)
@@ -145,7 +145,7 @@ MM_wizrobe_room:connect_one_way("MM - 2 Enemy #1", function() return DealDamage 
 
 MM_wizrobe_room:connect_two_ways(MM_wizrobe_room_2N_door)
 
-MM_wizrobe_room_2N_door:connect_two_ways_entrance("", MM_main_room_4S_door)
+MM_wizrobe_room_2N_door:connect_two_ways_entrance("", MM_main_room_4S_door, function() return DealDamage end)
 MM_main_room_4S_door:connect_two_ways(MM_main_room)
 
 MM_main_room:connect_one_way("MM - Hub Switch Pot #1") --needs switch
@@ -181,7 +181,13 @@ MM_wizzrobe_bypass:connect_two_ways(MM_wizzrobe_bypass_2N_door)
 MM_wizzrobe_bypass_2N_door:connect_two_ways_entrance("", MM_hourglas_room_4S_door)
 
 MM_main_room:connect_two_ways(MM_main_room_2E_door)
-MM_main_room_2E_door:connect_two_ways_entrance("", MM_map_room_top_left_1W_door)
+MM_main_room_2E_door:connect_two_ways_entrance("", MM_map_room_top_left_1W_door, function(keys, Current_Dungeon)
+    if CanReachCrystalSwitches() >= 5 then
+        return Has("smallkey", keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest"), 2, keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key"), 2), keys
+    else
+        return Has("smallkey", keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest"), 2, keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key"), 4), keys + 1
+    end
+end)
 MM_map_room_top_left_1W_door:connect_two_ways(MM_map_room_top_left)
 
 MM_main_room:connect_two_ways(MM_main_room_2N_door)
@@ -216,7 +222,16 @@ MM_spike_room:connect_one_way("MM - Spikes Enemy #1", function() return DealDama
 -- MM_spike_room:connect_one_way("MM - Spikes Enemy #4", function() return DealDamage end)
 -- MM_spike_room:connect_one_way("MM - Spikes Enemy #5", function() return DealDamage end)
 
-MM_spike_room:connect_two_ways(MM_above_spike_room)
+MM_spike_room:connect_two_ways(MM_above_spike_room, function(keys, Current_Dungeon)
+    return Has("smallkey", keys + CountDoneDeadends(0, "@Misery Mire/Compass Chest/Compass Chest"), 2, keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key"), 5), KDSreturn(keys, keys + 1)
+end)
+
+MM_spike_room:connect_one_way("MM - Spike Chest", function()
+    return ANY(
+        CalcHealth() > 3,
+        Has("invincibility")
+    )
+end)
 
 MM_above_spike_room:connect_two_ways(MM_big_key_door_room_bridge_NS)
 
@@ -230,7 +245,13 @@ MM_map_room_top_middle_1N_door:connect_two_ways(MM_map_room_top_middle)
 
 
 MM_main_room:connect_two_ways(MM_main_room_3W_door)
-MM_main_room_3W_door:connect_two_ways_entrance("", MM_conveyor_crystal_room_4E_door)
+MM_main_room_3W_door:connect_two_ways_entrance("", MM_conveyor_crystal_room_4E_door, function(keys, Current_Dungeon) 
+    if Has("bigkey") then
+        return Has("smallkey", keys + 0, 2, keys + CountDoneDeadends(1, "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key", "@Misery Mire/Boss/Boss Item"), 4), KDSreturn(keys, keys + 1)
+    else
+        return Has("smallkey", keys + 0, 2, keys + CountDoneDeadends(1, "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key"), 3), KDSreturn(keys, keys + 1)
+    end
+end)
 MM_conveyor_crystal_room_4E_door:connect_two_ways(MM_conveyor_crystal_room)
 
 MM_conveyor_crystal_room:connect_one_way("MM - Conveyor Crystal Enemy #6", function() return DealDamage end)
@@ -252,12 +273,18 @@ MM_neglected_room:connect_one_way("MM - Neglected Room Enemy #1", function() ret
 
 MM_neglected_room:connect_two_ways(MM_chest_view)
 
-MM_conveyor_crystal_room:connect_two_ways(MM_four_torches_tile_room)
-MM_four_torches_tile_room:connect_two_ways(MM_compass_room)
+MM_conveyor_crystal_room:connect_two_ways(MM_four_torches_tile_room, function(keys, Current_Dungeon)
+    if Has("bigkey") then
+        return Has("smallkey", keys + CountDoneDeadends(0, "@Misery Mire/Boss/Boss Item"), 3, keys + CountDoneDeadends(1, "@Misery Mire/Boss/Boss Item"), 6), KDSreturn(keys, keys + 1)
+    else
+        return Has("smallkey", keys + CountDoneDeadends(0, "@Misery Mire/Boss/Boss Item"), 2, keys + CountDoneDeadends(1, "@Misery Mire/Boss/Boss Item"), 5), KDSreturn(keys, keys + 1)
+    end
+end)
+MM_four_torches_tile_room:connect_two_ways(MM_compass_room, function() return Has("firesource") end)
 
 MM_compass_room:connect_one_way("MM - Compass Room Enemy #4", function() return DealDamage end)
 
-MM_compass_room:connect_two_ways(MM_wizzrobe_bypass)
+MM_compass_room:connect_one_way(MM_wizzrobe_bypass)
 
 MM_four_torches_tile_room:connect_two_ways(MM_four_torches_tile_room_3S_door)
 
@@ -282,7 +309,7 @@ MM_torches_top:connect_one_way(MM_conveyor_bomb_slug_room) --drop down
 MM_torches_top:connect_two_ways(MM_torches_bottom)
 
 MM_torches_bottom:connect_one_way(MM_big_key_chest_teleporter_room) --drop down
-MM_torches_bottom:connect_two_ways(MM_cutscene_room)
+MM_torches_bottom:connect_two_ways(MM_cutscene_room, function() return Has("firesource") end)
 
 MM_cutscene_room:connect_one_way("MM - Hint Pot #1")
 -- MM_cutscene_room:connect_one_way("MM - Hint Pot #2")
@@ -302,7 +329,7 @@ MM_square_rail:connect_one_way("MM - Square Rail Enemy #5", function() return De
 -- MM_square_rail:connect_one_way("MM - Square Rail Enemy #10", function() return DealDamage end)
 
 MM_square_rail:connect_two_ways(MM_hourglas_room)
-MM_square_rail:connect_two_ways(MM_lonely_teleporter_room)
+MM_square_rail:connect_two_ways(MM_lonely_teleporter_room, function() return Has("bigkey") end)
 
 MM_lonely_teleporter_room:connect_one_way(MM_big_key_door_room)
 
@@ -359,7 +386,13 @@ MM_fishbone_room:connect_one_way("MM - South Fish Enemy #5", function() return D
 -- MM_fishbone_room:connect_one_way("MM - South Fish Enemy #9", function() return DealDamage end)
 
 MM_fishbone_room:connect_two_ways(MM_fishbone_room_4S_door)
-MM_fishbone_room_4S_door:connect_two_ways_entrance("", MM_hourglas_room_2N_door)
+MM_fishbone_room_4S_door:connect_two_ways_entrance("", MM_hourglas_room_2N_door, function(keys, Current_Dungeon)
+    if Has("bigkey") then
+        return Has("smallkey", keys + CountDoneDeadends(0, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Boss/Boss Item"), 2, keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop", "@Misery Mire/Boss/Boss Item", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key"), 5), KDSreturn(keys, keys + 1)
+    else
+        return Has("smallkey", keys + CountDoneDeadends(0, "@Misery Mire/Compass Chest/Compass Chest"), 2, keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key"), 4), KDSreturn(keys, keys + 1)
+    end
+end)
 
 MM_hourglas_room_2N_door:connect_two_ways(MM_hourglas_room)
 
@@ -391,7 +424,7 @@ MM_big_key_door_room:connect_one_way("MM - BK Door Room Enemy #1", function() re
 -- MM_big_key_door_room:connect_one_way("MM - BK Door Room Enemy #5", function() return DealDamage end)
 
 MM_big_key_door_room:connect_two_ways(MM_big_keydoor_room_N_door)
-MM_big_keydoor_room_N_door:connect_two_ways_entrance("", MM_bridge_middle_S_door)
+MM_big_keydoor_room_N_door:connect_two_ways_entrance("", MM_bridge_middle_S_door, function() return Has("bigkey") end)
 MM_bridge_middle_S_door:connect_two_ways(MM_bridge_middle)
 
 MM_bridge_middle:connect_one_way("MM - Left Bridge Pot #1")
@@ -405,10 +438,16 @@ MM_dark_shooters:connect_one_way("MM - Dark Shooters Pot #1")
 -- MM_dark_shooters:connect_one_way("MM - Dark Shooters Pot #3")
 MM_dark_shooters:connect_one_way("MM - Dark Shooters Enemy #5", function() return DealDamage end)
 
-MM_dark_shooters:connect_two_ways(MM_dark_key_rupees)
-MM_dark_shooters:connect_two_ways(MM_block_X)
+MM_dark_shooters:connect_two_ways(MM_dark_key_rupees, function(keys, Current_Dungeon)
+    if Has("bigkey") then
+        return Has("smallkey", keys + CountDoneDeadends(0, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Boss/Boss Item"), 2, keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop", "@Misery Mire/Boss/Boss Item", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key"), 5), KDSreturn(keys, keys + 1)
+    else
+        return Has("smallkey", keys + CountDoneDeadends(0, "@Misery Mire/Compass Chest/Compass Chest"), 2, keys + CountDoneDeadends(1, "@Misery Mire/Compass Chest/Compass Chest", "@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop", "@Misery Mire/Fishbone Pot Key/Fishbone Pot Key"), 4), KDSreturn(keys, keys + 1)
+    end
+end)
+MM_dark_shooters:connect_two_ways(MM_block_X, function() return Has("somaria") end)
 
-MM_block_X:connect_one_way("MM - Block X Large Block", function() return ALL(CanInteract(MM_block_X), "gloves") end)
+MM_block_X:connect_one_way("MM - Block X Large Block", function() return ALL(CanInteract(MM_block_X), "glove") end)
 MM_block_X:connect_one_way("MM - Block X Enemy #6", function() return DealDamage end)
 -- MM_block_X:connect_one_way("MM - Block X Enemy #7", function() return DealDamage end)
 -- MM_block_X:connect_one_way("MM - Block X Enemy #8", function() return DealDamage end)
@@ -431,12 +470,12 @@ MM_tall_dark_and_roomy:connect_one_way("MM - Tall Dark and Roomy Enemy #1", func
 -- MM_tall_dark_and_roomy:connect_one_way("MM - Tall Dark and Roomy Enemy #9", function() return DealDamage end)
 
 
-MM_tall_dark_and_roomy:connect_two_ways(MM_shooter_rupees)
+MM_tall_dark_and_roomy:connect_two_ways(MM_shooter_rupees, function() return Has("bombs") end)
 
 MM_shooter_rupees:connect_one_way("MM - Shooter Rupees Enemy #4", function() return DealDamage end)
 -- MM_shooter_rupees:connect_one_way("MM - Shooter Rupees Enemy #5", function() return DealDamage end)
 
-MM_tall_dark_and_roomy:connect_two_ways(MM_crystal_right)
+MM_tall_dark_and_roomy:connect_two_ways(MM_crystal_right, function() return HitRanged end)
 
 MM_crystal_right:connect_one_way("MM - Crystal Right Enemy #10", function() return DealDamage end)
 -- MM_crystal_right:connect_one_way("MM - Crystal Right Enemy #12", function() return DealDamage end)
@@ -445,7 +484,7 @@ MM_crystal_right:connect_two_ways(MM_crystal_middle)
 -- MM_crystal_middle:connect_two_ways(MM_crystal_middle)
 MM_crystal_middle:connect_one_way("MM - Crystal Mid Enemy #11", function() return DealDamage end)
 
-MM_crystal_middle:connect_two_ways(MM_crystal_left)
+MM_crystal_middle:connect_two_ways(MM_crystal_left, function() return Has("bombs") end)
 
 MM_crystal_left:connect_two_ways(MM_crystal_left_3W_door)
 MM_crystal_left_3W_door:connect_two_ways_entrance("", MM_falling_foes_4E_door)
@@ -475,7 +514,7 @@ MM_antechamber_right:connect_two_ways(MM_antechamber_left)
 
 MM_antechamber_left:connect_two_ways(MM_antechamber_left_1N_door)
 
-MM_antechamber_left_1N_door:connect_two_ways_entrance("", MM_boss_room_3S_door)
+MM_antechamber_left_1N_door:connect_two_ways_entrance("", MM_boss_room_3S_door, function() return Has("bigkey") end)
 MM_boss_room_3S_door:connect_two_ways(MM_boss_room)
 
 
@@ -489,7 +528,7 @@ MM_map_room_top_left:connect_one_way("MM - Map Chest")
 MM_bridge_right:connect_one_way("MM - Bridge Chest")
 
 
-MM_conveyor_crystal_room:connect_one_way("MM - Conveyor Crystal Key Drop")
+MM_conveyor_crystal_room:connect_one_way("MM - Conveyor Crystal Key Drop", function() return DealDamage end)
 
 MM_compass_room:connect_one_way("MM - Comapss Chest")
 

@@ -629,6 +629,7 @@ MM_Pots = {
     "@Misery Mire Pots/Neglected Room Pot #4/Pot #4",
     "@Misery Mire Pots/Neglected Room Pot #5/Pot #5",
     "@Misery Mire Pots/Neglected Room Pot #6/Pot #6",
+    "@Misery Mire Pots/Block X Pot/Large Block",
 }
 MM_Pot_Key_Drops = {
     "@Misery Mire/Spikes Pot Key/Spikes Pot Key",
@@ -1092,6 +1093,7 @@ IP_Enemies = {
     "@Ice Palace Enemies/Antechamber Enemy #6/Enemy #6",
     "@Ice Palace Enemies/Antechamber Enemy #7/Enemy #7",
     "@Ice Palace Enemies/Antechamber Enemy #8/Enemy #8",
+    "@Ice Palace Pots/Hammer Block/Large Block",
 }
 IP_Boss_Item = {
     "@Ice Palace/Boss/Boss Item"
@@ -1204,6 +1206,8 @@ TT_Back_Pots = {
     "@Thieves Town Back Pots/Pot Alcove Mid Pot #10/Pot #10",
     "@Thieves Town Back Pots/Pot Alcove Top Pot #11/Pot #11",
     "@Thieves Town Back Pots/Pot Alcove Top Pot #12/Pot #12",
+    "@Thieves Town Back Pots/Conveyor Bridge/Large Block",
+    "@Thieves Town Back Pots/Basement Block/Large Block",
 }
 TT_Back_Pot_Key_Drops = {
     "@Thieves Town Back/Hallway Pot Key/Hallway Pot Key",

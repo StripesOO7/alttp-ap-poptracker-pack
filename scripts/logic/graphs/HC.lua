@@ -187,12 +187,12 @@ HC_map_chest_room:connect_one_way("HC - Map Guard Key Drop", function()
     )
 end)
 HC_map_chest_room:connect_two_ways(HC_north_abyss, function(keys, Current_Dungeon)
-    return ALL(
-        ANY(
+    return ANY(
+        ALL(
             "standard",
-            Has("smallkey", keys, 0, keys + 1, 3)
+            CanInteract(HC_map_chest_room)
         ),
-        CanInteract(HC_map_chest_room)
+        Has("smallkey", keys, 0, keys + 1, 3)
     ), KDSreturn(keys, keys + 1)
 end)
 

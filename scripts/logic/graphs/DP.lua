@@ -206,7 +206,7 @@ DP_east_wing:connect_one_way("DP - East Wing Pot #1")
 -- DP_east_wing:connect_one_way("DP - East Wing Pot #2")
 
 DP_east_wing:connect_two_ways(DP_compass_room, function(keys, Current_Dungeon)
-    if not Tracker:FindObjectForCode("key_drop_shuffle").Active then
+    if not KEY_DROP_SHUFFLE_STATE then
         return ALL(
             Has("smallkey", keys + CountDoneDeadends(0, "@Desert Palace Back/Boss/Boss Item"), 1, keys + CountDoneDeadends(1, "@Desert Palace Back/Boss/Boss Item", "@Desert Palace Back/Beamos Hall Pot Key/Beamos Hall Pot Key", "@Desert Palace Back/Desert Tiles 2 Pot Key/Desert Tiles 2 Pot Key"), 4),
             "boots",
@@ -261,7 +261,7 @@ DP_back_tiles1_room:connect_two_ways(DP_back_tiles1_room_1N_door)
 DP_back_tiles1_room_1N_door:connect_two_ways_entrance_door_stuck("", DP_back_bridge_room_1N_door, function(keys, Current_Dungeon)
     return Has("smallkey", keys + CountDoneDeadends(0, "@Desert Palace/Compass Chest/Compass Chest"), 1, keys + CountDoneDeadends(1, "@Desert Palace/Compass Chest/Compass Chest"), 2), KDSreturn(keys, keys + 1)
 end)
-DP_back_tiles1_room_1N_door:connect_two_ways(DP_back_bridge_room)
+DP_back_bridge_room_1N_door:connect_two_ways(DP_back_bridge_room)
 
 DP_back_bridge_room:connect_two_ways_stuck(DP_back_four_statues, nil, function() return ALL(DealDamage, CanInteract(DP_back_four_statues) ) end)
 
@@ -310,7 +310,7 @@ DP_back_torch_room:connect_one_way("DP - Wall Slide Pot #1")
 
 DP_back_torch_room:connect_two_ways(DP_back_torch_room_1N_door)
 DP_back_torch_room_1N_door:connect_two_ways(DP_back_boss_room_3S_door, function(keys, Current_Dungeon)
-    if Tracker:FindObjectForCode("key_drop_shuffle").Active then
+    if KEY_DROP_SHUFFLE_STATE then
         return ALL(
             "firesource",
             "bigkey"

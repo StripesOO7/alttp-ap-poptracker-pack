@@ -106,7 +106,7 @@ IP_jelly_room:connect_one_way("IP - Jelly Key Enemy #2", function() return DealD
 -- IP_jelly_room:connect_one_way("IP - Jelly Key Enemy #3", function() return DealDamage end)
 
 IP_jelly_room:connect_two_ways(IP_jelly_room_3N_door)
-IP_jelly_room_3N_door:connect_two_ways_entrance("", IP_floor_switch_3N_door)
+IP_jelly_room_3N_door:connect_two_ways_entrance("", IP_floor_switch_3N_door, function(keys, Current_Dungeon) return Has("smallkey", keys, 0, keys + 1, 1), KDSreturn(keys, keys + 1) end)
 IP_floor_switch_3N_door:connect_two_ways(IP_floor_switch)
 
 IP_floor_switch:connect_one_way("IP - Floor Switch Enemy #6", function() return DealDamage end)
@@ -412,7 +412,7 @@ IP_spike_room_right_3N_door:connect_two_ways_entrance("", IP_map_room_3N_door)
 IP_map_room_3N_door:connect_two_ways(IP_map_room)
 
 
-IP_map_room:connect_one_way("IP - Hammer Block Large Block", function() return ALL(CanInteract(IP_map_room), "gloves") end)
+IP_map_room:connect_one_way("IP - Hammer Block Large Block", function() return ALL(CanInteract(IP_map_room), "glove") end)
 IP_map_room:connect_one_way("IP - Hammer Block Pot #1")
 -- IP_map_room:connect_one_way("IP - Hammer Block Pot #2")
 -- IP_map_room:connect_one_way("IP - Hammer Block Pot #3")

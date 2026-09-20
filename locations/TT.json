@@ -161,13 +161,6 @@
                     }
                 ],
                 "map_locations": [
-                    // {
-                    //     "map": "TT",
-                    //     "x": 500,
-                    //     "y": 145,
-                    //     "size": 6,
-                    //     "shape": "rect"
-                    // },
                     {
                         "map": "TT",
                         "x": 500,
@@ -197,13 +190,6 @@
                     }
                 ],
                 "map_locations": [
-                    // {
-                    //     "map": "TT",
-                    //     "x": 291,
-                    //     "y": 98,
-                    //     "size": 6,
-                    //     "shape": "rect"
-                    // },
                     {
                         "map": "TT",
                         "x": 290,
@@ -2863,13 +2849,22 @@
                     {
                         "name": "Large Block",
                         "access_rules": [
-                            "^$CanReach|TT - Pot Alcove Top Pot #11"
+                            "^$CanReach|TT - Conveyor Bridge Large Block"
                         ],
                         "visibility_rules": [
                             "potsanity_lottery",
                             "potsanity_dungeons"
                         ],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 616,
+                        "y": 162,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             },
@@ -2885,13 +2880,22 @@
                     {
                         "name": "Large Block",
                         "access_rules": [
-                            "^$CanReach|TT - Pot Alcove Top Pot #11"
+                            "^$CanReach|TT - Basement Block Large Block"
                         ],
                         "visibility_rules": [
                             "potsanity_lottery",
                             "potsanity_dungeons"
                         ],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 695,
+                        "y": 162,
+                        "size": 6,
+                        "shape": "trapezoid"
                     }
                 ]
             }
@@ -4765,6 +4769,15 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1
+                    }
+                ],
+                "map_locations": [
+                    {
+                        "map": "TT",
+                        "x": 705,
+                        "y": 241,
+                        "size": 6,
+                        "shape": "rect"
                     }
                 ]
             },

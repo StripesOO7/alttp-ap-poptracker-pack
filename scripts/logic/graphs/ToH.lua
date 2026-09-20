@@ -41,7 +41,7 @@ ToH_entrance_inside:connect_two_ways(ToH_main_room, function()
         )
     )
 end)
-ToH_main_room:connect_two_ways(ToH_big_key_chest, function(keys, Current_Dungeon) return ALL(Has("smallkey", keys + 1, 1, keys + 1, 1), CanInteract(ToH_main_room)), keys + 1 end)
+-- ToH_main_room:connect_two_ways(ToH_big_key_chest)
 
 ToH_main_room:connect_one_way("ToH - Map Chest", function() return CanInteract(ToH_main_room) end)
 ToH_main_room:connect_one_way("ToH - Back Enemy #1", function() return DealDamage end)
@@ -49,7 +49,7 @@ ToH_main_room:connect_one_way("ToH - Back Enemy #1", function() return DealDamag
 -- ToH_main_room:connect_one_way("ToH - Back Enemy #6", function() return DealDamage end)
 
 ToH_main_room:connect_two_ways(ToH_main_room_1N_door)
-ToH_main_room_1N_door:connect_two_ways_entrance("", ToH_tile_room_1N_door)
+ToH_main_room_1N_door:connect_two_ways_entrance_door_stuck("", ToH_tile_room_1N_door, function(keys, Current_Dungeon) return ALL(Has("smallkey", keys + 1, 1, keys + 1, 1), CanInteract(ToH_main_room)), keys + 1 end)
 ToH_tile_room_1N_door:connect_two_ways(ToH_tile_room)
 
 ToH_tile_room:connect_one_way("ToH - Tile Room Pot #1")

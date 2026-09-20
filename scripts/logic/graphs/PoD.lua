@@ -200,7 +200,7 @@ PoD_switch_room_bottom_W_door:connect_two_ways(PoD_switch_room_bottom)
 
 
 PoD_three_way_room_right:connect_two_ways(PoD_three_way_room_right_2N_door)
-PoD_three_way_room_right_2N_door:connect_two_ways_entrance(PoD_teleporter_room_2N_door)
+PoD_three_way_room_right_2N_door:connect_two_ways_entrance("", PoD_teleporter_room_2N_door)
 PoD_teleporter_room_2N_door:connect_two_ways(PoD_teleporter_room)
 
 PoD_teleporter_room:connect_one_way("PoD - Warp Room Enemy #3", function() return DealDamage end)
@@ -226,7 +226,7 @@ PoD_mimic_room:connect_one_way("PoD - Mimics 1 Enemy #1", function() return Deal
 
 PoD_mimic_room:connect_two_ways(PoD_mimic_room_1N_door)
 
-PoD_mimic_room_1N_door:connect_two_ways_entrance_door_stuck("", PoD_conveyor_hallway_3S_door, function(keys, Current_Dungeon) return EnemizerCheck("bow"), keys + 1 end)
+PoD_mimic_room_1N_door:connect_two_ways_entrance_door_stuck("", PoD_conveyor_hallway_3S_door, function(keys, Current_Dungeon) return EnemizerCheck("bow"), keys end)
 PoD_conveyor_hallway_3S_door:connect_two_ways(PoD_conveyor_hallway)
 
 PoD_conveyor_hallway:connect_one_way("PoD - Conveyor Enemy #1", function() return DealDamage end)
@@ -385,7 +385,7 @@ PoD_dark_pegs:connect_one_way("PoD - Dark Pegs Left Pot #1")
 PoD_dark_pegs:connect_one_way("PoD - Dark Pegs Middle Enemy #3", function() return DealDamage end)
 PoD_dark_pegs:connect_one_way("PoD - Dark Pegs Right Enemy #4", function() return DealDamage end)
 
-PoD_dark_pegs:connect_two_ways(PoD_lonely_turtle, function() return ALL("hammer", HitRanged, DarkRooms) end)
+PoD_dark_pegs:connect_two_ways(PoD_lonely_turtle, function(keys, Current_Dungeon) return ALL("hammer", HitRanged, DarkRooms, "smallkey"), keys + 1 end)
 
 PoD_lonely_turtle:connect_one_way("PoD - Lonely Turtle Enemy #2", function() return DealDamage end)
 
