@@ -150,7 +150,7 @@ IP_bomb_dropdown:connect_one_way("IP - Bomb Drop Enemy #2", function() return De
 -- IP_bomb_dropdown:connect_one_way("IP - Bomb Drop Enemy #4", function() return DealDamage end)
 -- IP_bomb_dropdown:connect_one_way("IP - Bomb Drop Enemy #5", function() return DealDamage end)
 
-IP_bomb_dropdown:connect_one_way(IP_Stalfos_trap)
+IP_bomb_dropdown:connect_one_way(IP_Stalfos_trap, function() return Has("bombs") end)
 
 IP_Stalfos_trap:connect_one_way("IP - Stalfos Hint Pot #1")
 -- IP_Stalfos_trap:connect_one_way("IP - Stalfos Hint Pot #2")
@@ -159,9 +159,9 @@ IP_Stalfos_trap:connect_one_way("IP - Stalfos Hint Pot #1")
 IP_Stalfos_trap:connect_one_way("IP - Stalfos Hint Enemy #2", function() return DealDamage end)
 -- IP_Stalfos_trap:connect_one_way("IP - Stalfos Hint Enemy #3", function() return DealDamage end)
 
-IP_Stalfos_trap:connect_two_ways(IP_conveyor_room)
+IP_Stalfos_trap:connect_two_ways(IP_conveyor_room, function() return DealDamage end)
 
-IP_conveyor_room:connect_one_way("IP - Conveyor Key Drop", function() return DealDamage() end)
+IP_conveyor_room:connect_one_way("IP - Conveyor Key Drop", function() return DealDamage end)
 IP_conveyor_room:connect_one_way("IP - Conveyor Enemy #4", function() return DealDamage end)
 -- IP_conveyor_room:connect_one_way("IP - Conveyor Enemy #5", function() return DealDamage end)
 -- IP_conveyor_room:connect_one_way("IP - Conveyor Enemy #7", function() return DealDamage end)
@@ -171,7 +171,7 @@ IP_conveyor_room:connect_one_way("IP - Conveyor Enemy #4", function() return Dea
 -- IP_conveyor_room:connect_one_way("IP - Conveyor Enemy #12", function() return DealDamage end)
 
 IP_conveyor_room:connect_two_ways(IP_conveyor_room_3S_door)
-IP_conveyor_room_3S_door:connect_two_ways_entrance("", IP_firebar_or_bomb_jump_1N_door)
+IP_conveyor_room_3S_door:connect_two_ways_entrance("", IP_firebar_or_bomb_jump_1N_door, function(keys, Current_Dungeon) return Has("smallkey", keys, 0, keys + 1, 2), KDSreturn(keys, keys + 1) end)
 IP_firebar_or_bomb_jump_1N_door:connect_two_ways(IP_firebar_or_bomb_jump)
 
 IP_firebar_or_bomb_jump:connect_one_way("IP - Bomb Jump Catwalk Pot #1")
@@ -199,12 +199,12 @@ IP_sliding_penguins:connect_one_way("IP - Pengator Trap Enemy #1", function() re
 
 IP_sliding_penguins:connect_two_ways(IP_sliding_penguins_N_door)
 
-IP_sliding_penguins_N_door:connect_two_ways_entrance("", IP_spike_cross_4S_door)
+IP_sliding_penguins_N_door:connect_two_ways_entrance("", IP_spike_cross_4S_door, function() return DealDamage end)
 IP_spike_cross_4S_door:connect_two_ways(IP_spike_cross)
 
 IP_spike_cross:connect_one_way("IP - Spike Cross Enemy #4", function() return DealDamage end)
 
-IP_spike_cross:connect_two_ways(IP_falling_floor)
+IP_spike_cross:connect_one_way(IP_falling_floor)
 
 IP_falling_floor:connect_one_way("IP - Falling Square Pot #1")
 -- IP_falling_floor:connect_one_way("IP - Falling Square Pot #2")
@@ -235,7 +235,7 @@ end)
 IP_freezor_room:connect_one_way("IP - Freezors Enemy #4", function() return DealDamage end)
 -- IP_freezor_room:connect_one_way("IP - Freezors Enemy #5", function() return DealDamage end)
 
-IP_freezor_room:connect_one_way(IP_big_chest_room_left)
+IP_freezor_room:connect_one_way(IP_big_chest_room_left, function() return Has("bombs") end)
 IP_freezor_room:connect_one_way(IP_big_chest_room_right)
 
 IP_big_chest_room_left:connect_one_way("IP - Big Chest", function() return Has("bigkey") end)
@@ -256,15 +256,14 @@ IP_pre_boss_hold_switch:connect_one_way("IP - Switch Room Enemy #2", function() 
 -- IP_pre_boss_hold_switch:connect_one_way("IP - Switch Room Enemy #7", function() return DealDamage end)
 
 IP_pre_boss_hold_switch:connect_two_ways(IP_anti_fairy_2_pots)
-IP_pre_boss_hold_switch:connect_two_ways(IP_refill)
 
-IP_refill:connect_one_way("IP - Refill Pot #1")
--- IP_refill:connect_one_way("IP - Refill Pot #2")
--- IP_refill:connect_one_way("IP - Refill Pot #3")
--- IP_refill:connect_one_way("IP - Refill Pot #4")
--- IP_refill:connect_one_way("IP - Refill Pot #5")
--- IP_refill:connect_one_way("IP - Refill Pot #6")
-IP_refill:connect_one_way("IP - Refill Enemy #2", function() return DealDamage end)
+IP_pre_boss_refill:connect_one_way("IP - Refill Pot #1")
+-- IP_pre_boss_refill:connect_one_way("IP - Refill Pot #2")
+-- IP_pre_boss_refill:connect_one_way("IP - Refill Pot #3")
+-- IP_pre_boss_refill:connect_one_way("IP - Refill Pot #4")
+-- IP_pre_boss_refill:connect_one_way("IP - Refill Pot #5")
+-- IP_pre_boss_refill:connect_one_way("IP - Refill Pot #6")
+IP_pre_boss_refill:connect_one_way("IP - Refill Enemy #2", function() return DealDamage end)
 
 IP_anti_fairy_2_pots:connect_one_way("IP - Anti-Fairy Enemy #1", function() return DealDamage end)
 
@@ -277,7 +276,19 @@ IP_backwards_room:connect_one_way("IP - Backwards Room Enemy #1", function() ret
 -- IP_backwards_room:connect_one_way("IP - Backwards Room Enemy #3", function() return DealDamage end)
 -- IP_backwards_room:connect_one_way("IP - Backwards Room Enemy #4", function() return DealDamage end)
 
-IP_backwards_room:connect_two_ways(IP_crystal_switch_right)
+IP_backwards_room:connect_two_ways_stuck(IP_crystal_switch_right, function(keys, Current_Dungeon)
+    if Tracker:FindObjectForCode("hookshot").Active then
+        return ALL(
+            Has("smallkey", keys + 1, 2, keys + 1, 5),
+            "bigkey"
+        ), keys + 1
+    else
+        return ALL(
+            Has("smallkey", keys + 1, 2, keys + 1, 6),
+            "bigkey"
+        ), keys + 1
+    end
+end, function() return Has("bigkey") end)
 IP_backwards_room:connect_two_ways(IP_fairy_dropdown)
 
 IP_fairy_dropdown:connect_one_way("IP - Fairy Enemy #1", function() return DealDamage end)
@@ -287,7 +298,19 @@ IP_fairy_dropdown:connect_one_way("IP - Fairy Enemy #1", function() return DealD
 IP_fairy_dropdown:connect_one_way(IP_anti_fairy_2_pots)
 
 IP_pre_boss_hold_switch:connect_two_ways(IP_pre_boss_hold_switch_4E_door)
-IP_pre_boss_hold_switch_4E_door:connect_two_ways_entrance("", IP_pre_boss_refill_3W_door)
+IP_pre_boss_hold_switch_4E_door:connect_two_ways_entrance("", IP_pre_boss_refill_3W_door, function(keys, Current_Dungeon)
+    if Tracker:FindObjectForCode("hookshot").Active then
+        return ALL(
+            Has("smallkey", keys + 1, 2, keys + 1, 5),
+            "bigkey"
+        ), keys + 1
+    else
+        return ALL(
+            Has("smallkey", keys + 1, 2, keys + 1, 6),
+            "bigkey"
+        ), keys + 1
+    end
+end)
 IP_pre_boss_refill_3W_door:connect_two_ways(IP_pre_boss_refill)
 
 IP_pre_boss_hold_switch:connect_two_ways(IP_pre_boss_hold_switch_4E_door)
@@ -296,7 +319,7 @@ IP_boss_antechamber_2N_door:connect_two_ways(IP_boss_antechamber)
 
 IP_crystal_switch_left:connect_two_ways(IP_crystal_switch_right)
 IP_crystal_switch_right:connect_two_ways(IP_crystal_switch_right_4E_door)
-IP_crystal_switch_right_4E_door:connect_two_ways_entrance(IP_many_pots_room_3W_door)
+IP_crystal_switch_right_4E_door:connect_two_ways_entrance("", IP_many_pots_room_3W_door)
 
 IP_many_pots_room_3W_door:connect_two_ways(IP_many_pots_room)
 
@@ -334,15 +357,14 @@ IP_ice_catwalk:connect_one_way("IP - Catwalk Enemy #1", function() return DealDa
 IP_ice_catwalk:connect_two_ways(IP_ice_catwalk_1W_door)
 
 IP_ice_catwalk_1W_door:connect_two_ways_entrance("", IP_iced_t_room_2E_door)
+IP_iced_t_room_2E_door:connect_two_ways(IP_iced_t_room)
 
 IP_iced_t_room:connect_one_way("IP - Iced T Chest")
 IP_iced_t_room:connect_one_way("IP - Iced T Pot #1")
 IP_iced_t_room:connect_one_way("IP - Iced T Enemy #1", function() return DealDamage end)
 -- IP_iced_t_room:connect_one_way("IP - Iced T Enemy #2", function() return DealDamage end)
 
-IP_iced_t_room_2E_door:connect_two_ways(IP_iced_t_room)
 IP_iced_t_room:connect_two_ways(IP_iced_t_room_2N_door)
-
 IP_iced_t_room_2N_door:connect_two_ways_entrance("", IP_lonely_freezor_1N_door)
 IP_lonely_freezor_1N_door:connect_two_ways(IP_lonely_freezor)
 
@@ -358,8 +380,13 @@ IP_lonely_freezor:connect_one_way("IP - Lonely Freezor Enemy #1", function() ret
 -- IP_lonely_freezor:connect_one_way("IP - Lonely Freezor Enemy #8", function() return DealDamage end)
 
 IP_lonely_freezor:connect_two_ways(IP_lonely_freezor_N_door)
-
-IP_lonely_freezor_N_door:connect_two_ways_entrance("", IP_ice_hallway_3S_door)
+IP_lonely_freezor_N_door:connect_two_ways_entrance("", IP_ice_hallway_3S_door, function(keys, Current_Dungeon)
+    if Tracker:FindObjectForCode("hookshot").Active then
+        return Has("smallkey", keys + 1, 2, keys + 1, 4), keys + 1
+    else
+        return Has("smallkey", keys + 1, 2, keys + 1, 6), keys + 1
+    end
+end)
 IP_ice_hallway_3S_door:connect_two_ways(IP_ice_hallway)
 
 IP_ice_hallway:connect_one_way("IP - Tall Hint Pot #1")
@@ -372,7 +399,7 @@ IP_ice_hallway:connect_one_way("IP - Tall Hint Enemy #1", function() return Deal
 -- IP_ice_hallway:connect_one_way("IP - Tall Hint Enemy #7", function() return DealDamage end)
 
 IP_ice_hallway:connect_two_ways(IP_ice_hallway_2E_door)
-IP_ice_hallway_2E_door:connect_two_ways_entrance("", IP_hookshot_pit_1W_door)
+IP_ice_hallway_2E_door:connect_one_way_entrance("", IP_hookshot_pit_1W_door)
 IP_hookshot_pit_1W_door:connect_one_way(IP_hookshot_pit)
 
 IP_hookshot_pit:connect_one_way("IP - Hookshot Ledge Enemy #1", function() return DealDamage end)
@@ -380,7 +407,7 @@ IP_hookshot_pit:connect_one_way("IP - Hookshot Ledge Enemy #1", function() retur
 -- IP_hookshot_pit:connect_one_way("IP - Hookshot Ledge Enemy #3", function() return DealDamage end)
 -- IP_hookshot_pit:connect_one_way("IP - Hookshot Ledge Enemy #4", function() return DealDamage end)
 
-IP_hookshot_pit:connect_two_ways(IP_big_spikeballs)
+IP_hookshot_pit:connect_two_ways(IP_big_spikeballs, function() return Has("hookshot") end)
 
 IP_big_spikeballs:connect_one_way("IP - Spikeball Enemy #5", function() return DealDamage end)
 -- IP_big_spikeballs:connect_one_way("IP - Spikeball Enemy #6", function() return DealDamage end)
@@ -395,7 +422,13 @@ IP_spike_room_left_3N_door:connect_two_ways(IP_spike_room_left)
 IP_ice_hallway:connect_two_ways(IP_big_chest_room_right)
 
 IP_spike_cross:connect_two_ways(IP_spike_cross_4E_door)
-IP_spike_cross_4E_door:connect_two_ways_entrance("", IP_spike_room_left_3W_door)
+IP_spike_cross_4E_door:connect_two_ways_entrance("", IP_spike_room_left_3W_door, function(keys, Current_Dungeon)
+    if Tracker:FindObjectForCode("hookshot").Active then
+        return Has("smallkey", keys + 1, 2, keys + 1, 4), keys + 1
+    else
+        return Has("smallkey", keys + 1, 2, keys + 1, 6), keys + 1
+    end
+end)
 IP_spike_room_left_3W_door:connect_two_ways(IP_spike_room_left)
 
 IP_spike_room_left:connect_two_ways(IP_spike_room_right)
@@ -412,8 +445,8 @@ IP_spike_room_right_3N_door:connect_two_ways_entrance("", IP_map_room_3N_door)
 IP_map_room_3N_door:connect_two_ways(IP_map_room)
 
 
-IP_map_room:connect_one_way("IP - Hammer Block Large Block", function() return ALL(CanInteract(IP_map_room), "glove") end)
-IP_map_room:connect_one_way("IP - Hammer Block Pot #1")
+IP_map_room:connect_one_way("IP - Hammer Block Large Block", function() return ALL("hammer", "glove") end)
+IP_map_room:connect_one_way("IP - Hammer Block Pot #1", function() return ALL("hammer", "glove") end)
 -- IP_map_room:connect_one_way("IP - Hammer Block Pot #2")
 -- IP_map_room:connect_one_way("IP - Hammer Block Pot #3")
 -- IP_map_room:connect_one_way("IP - Hammer Block Pot #4")

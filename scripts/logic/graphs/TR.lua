@@ -311,7 +311,7 @@ TR_pokes_after_big_door:connect_one_way("TR - Dash Room Pot #1")
 -- TR_pokes_after_big_door:connect_one_way("TR - Dash Room Pot #4")
 TR_pokes_after_big_door:connect_one_way("TR - Dash Room Enemy #16", function() return DealDamage end)
 
-TR_pokes_after_big_door:connect_two_ways(TR_snake_trap_room)
+TR_pokes_after_big_door:connect_two_ways(TR_snake_trap_room, function() return ANY("boots", "bombs") end)
 
 TR_snake_trap_room:connect_one_way("TR - Tongue Pull Pot #5")
 TR_snake_trap_room:connect_one_way("TR - Tongue Pull Pot #6")
@@ -325,7 +325,7 @@ TR_rupee_room:connect_one_way("TR - Rupees Enemy #2", function() return DealDama
 -- TR_rupee_room:connect_one_way("TR - Rupees Enemy #3", function() return DealDamage end)
 -- TR_rupee_room:connect_one_way("TR - Rupees Enemy #5", function() return DealDamage end)
 
-TR_pokes_after_big_door:connect_two_ways(TR_crystalroller_room)
+TR_pokes_after_big_door:connect_two_ways(TR_crystalroller_room, function() return ANY("boots", "bombs") end)
 
 TR_crystalroller_room:connect_one_way("TR - Crystalroller Middle Enemy #4", function() return DealDamage end)
 
@@ -347,12 +347,12 @@ TR_travel_maze:connect_one_way("TR - Dark Ride Ledges Pot #1", function() return
 -- TR_travel_maze:connect_one_way("TR - Dark Ride Ledges Pot #4", function() return ALL("somaria", DarkRooms) end)
 -- TR_travel_maze:connect_one_way("TR - Dark Ride Ledges Pot #5", function() return ALL("somaria", DarkRooms) end)
 -- TR_travel_maze:connect_one_way("TR - Dark Ride Ledges Pot #6", function() return ALL("somaria", DarkRooms) end)
-TR_travel_maze:connect_one_way("TR - Dark Ride Ledges Enemy #1", function() return DealDamage end)
+TR_travel_maze:connect_one_way("TR - Dark Ride Ledges Enemy #1", function() return ALL(DealDamage, DarkRooms, "somaria") end)
 -- TR_travel_maze:connect_one_way("TR - Dark Ride Ledges Enemy #2", function() return DealDamage end)
 -- TR_travel_maze:connect_one_way("TR - Dark Ride Ledges Enemy #3", function() return DealDamage end)
 
 TR_travel_maze:connect_two_ways(TR_travel_maze_3S_door)
-TR_travel_maze_3S_door:connect_two_ways_entrance_door_stuck("", TR_side_eye_hallway_1N_door)
+TR_travel_maze_3S_door:connect_two_ways_entrance_door_stuck("", TR_side_eye_hallway_1N_door, function() return ALL(DarkRooms, "somaria") end)
 TR_side_eye_hallway_1N_door:connect_two_ways(TR_side_eye_hallway)
 
 TR_side_eye_hallway:connect_one_way("TR - Dash Bridge Enemy #7", function() return DealDamage end)

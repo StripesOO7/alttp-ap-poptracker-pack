@@ -198,7 +198,7 @@
             {
                 "name": "Spike Room",
                 "access_rules": [
-                    "^$CanReach|IP_spike_room"
+                    "^$CanReach|IP_spike_room_left"
                 ],
                 "sections": [
                     {
@@ -267,7 +267,7 @@
             {
                 "name": "Big Key Chest",
                 "access_rules": [
-                    "^$CanReach|IP_big_key_room"
+                    "^$CanReach|IP_big_key_room_right"
                 ],
                 "sections": [
                     {
@@ -290,7 +290,7 @@
             {
                 "name": "Big Chest",
                 "access_rules": [
-                    "^$CanReach|IP_big_chest_room"
+                    "^$CanReach|IP_big_chest_room_left"
                 ],
                 "sections": [
                     {
@@ -404,7 +404,7 @@
             {
                 "name": "IP Jelly Room 3N Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -457,7 +457,7 @@
             {
                 "name": "IP Floor Switch 3N Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -510,7 +510,7 @@
             {
                 "name": "IP Push Cross 4S Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -563,7 +563,7 @@
             {
                 "name": "IP Push Cross 4E Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -616,7 +616,7 @@
             {
                 "name": "IP Compass Room 2N Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -669,7 +669,7 @@
             {
                 "name": "IP Sliding Switch Room 3W Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -722,7 +722,7 @@
             {
                 "name": "IP Big Key Room Right 4N Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -775,7 +775,7 @@
             {
                 "name": "IP Conveyor Room 3S Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -828,7 +828,7 @@
             {
                 "name": "IP Firebar or Bomb Jump 1N Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -881,7 +881,7 @@
             {
                 "name": "IP Narrow Corridor 2N Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -934,7 +934,7 @@
             {
                 "name": "IP Sliding Penguins N Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -987,7 +987,7 @@
             {
                 "name": "IP Sliding Penguins 3N Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -1040,7 +1040,7 @@
             {
                 "name": "IP Spike Cross 4S Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -1093,7 +1093,7 @@
             {
                 "name": "IP Spike Cross 4E Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -1146,7 +1146,7 @@
             {
                 "name": "IP Sliding Firebar 3S Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -1199,7 +1199,7 @@
             {
                 "name": "IP Spike Room Left 3W Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -1252,7 +1252,7 @@
             {
                 "name": "IP Spike Room Left 3N Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -1305,7 +1305,7 @@
             {
                 "name": "IP Spike Room Right 3N Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -1358,7 +1358,7 @@
             {
                 "name": "IP Freezor Room 3S Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -1411,7 +1411,7 @@
             {
                 "name": "IP Ice Hallway 3S Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -1464,7 +1464,7 @@
             {
                 "name": "IP Ice Hallway 2E Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -1517,7 +1517,7 @@
             {
                 "name": "IP Big Spikeballs 4N Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -1570,7 +1570,7 @@
             {
                 "name": "IP Bomb Slugs N Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -1623,7 +1623,7 @@
             {
                 "name": "IP Bomb Slugs 2N Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -1676,7 +1676,7 @@
             {
                 "name": "IP Crystal Switch Right 4E Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -1729,7 +1729,7 @@
             {
                 "name": "IP Anti Fairy 2 Pots 1N Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -1782,7 +1782,7 @@
             {
                 "name": "IP Pre Boss Hold Switch 4S Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -1835,7 +1835,7 @@
             {
                 "name": "IP Pre Boss Hold Switch 4E Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -1888,7 +1888,7 @@
             {
                 "name": "IP Pre Boss Refill 3W Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -1941,7 +1941,7 @@
             {
                 "name": "IP Backwards Room 2N Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -1994,7 +1994,7 @@
             {
                 "name": "IP Many Pots Room 3W Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -2047,7 +2047,7 @@
             {
                 "name": "IP Many Pots Room 3S Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -2100,7 +2100,7 @@
             {
                 "name": "IP Ice Catwalk 1N Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -2153,7 +2153,7 @@
             {
                 "name": "IP Ice Catwalk 1W Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -2206,7 +2206,7 @@
             {
                 "name": "IP Iced T Room 2N Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -2259,7 +2259,7 @@
             {
                 "name": "IP Iced T Room 2E Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -2312,7 +2312,7 @@
             {
                 "name": "IP Map Room 3N Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -2365,7 +2365,7 @@
             {
                 "name": "IP Tongue Pull 4N Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -2418,7 +2418,7 @@
             {
                 "name": "IP Boss Antechamber 2N Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -2471,7 +2471,7 @@
             {
                 "name": "IP Lonely Freezor 1N Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -2524,7 +2524,7 @@
             {
                 "name": "IP Lonely Freezor N Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
@@ -2577,7 +2577,7 @@
             {
                 "name": "IP Hookshot Pit 1W Door",
                 "access_rules": [
-                    "^$CanReach|IP - "
+                    // "^$CanReach|IP - "
                 ],
                 "sections": [
                     {
