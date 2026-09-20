@@ -1554,7 +1554,7 @@ Old_man_home_top_outside:connect_two_ways_entrance("Old Man Cave Backside", Old_
 -- -- Light_death_mountain_left_bottom:connect_one_way(Light_death_mountain_left_top)
 
 
-Spec_rock_top_entrance_inside:connect_one_way(Spectacle_rock_top_drop)
+Spec_rock_top_entrance_inside:connect_one_way(Spectacle_rock_top_drop_front)
 
 Spec_rock_ledge_entrance:connect_two_ways(Spec_rock_ledge_entrance_outside)
 Spec_rock_ledge_exit:connect_two_ways(Spec_rock_ledge_exit_outside)
@@ -1579,9 +1579,12 @@ Spectacle_rock_cave:connect_one_way(PoD_shooter_room, function()
 end) -- kiki skip
 -- UWG
 
-Spectacle_rock_top_drop:connect_one_way(Spectacle_rock_cave)
-Spectacle_rock_top_drop:connect_one_way("Spec Rock Inside Item", function() return ACCESS_INSPECT end)
-Spectacle_rock_inside_bottom:connect_one_way(Spectacle_rock_top_drop)
+Spectacle_rock_top_drop_front:connect_one_way(Spectacle_rock_cave)
+Spectacle_rock_top_drop_front:connect_one_way("Spec Rock Inside Item", function() return ACCESS_INSPECT end)
+
+Spectacle_rock_inside_bottom:connect_one_way(Spectacle_rock_top_drop_back)
+Spectacle_rock_top_drop_back:connect_one_way(Spectacle_rock_cave)
+Spectacle_rock_top_drop_back:connect_one_way("Spec Rock Inside Item")
 -- Spectacle_rock_inside_bottom:connect_one_way("Spec Rock Bottom - Enemy #1", function() return DealDamage end)
 -- Spectacle_rock_inside_bottom:connect_one_way("Spec Rock Bottom - Enemy #2", function() return DealDamage end)
 -- Spectacle_rock_inside_bottom:connect_one_way("Spec Rock Bottom - Enemy #3", function() return DealDamage end)
