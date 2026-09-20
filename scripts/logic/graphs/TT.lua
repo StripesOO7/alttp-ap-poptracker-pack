@@ -313,6 +313,7 @@ TT_square_conveyor_room_1N_door:connect_two_ways_entrance("", TT_big_block_basem
 
 TT_big_block_basement_N_door:connect_two_ways(TT_big_block_basement)
 
+TT_big_block_basement:connect_one_way("TT - Basement Block Large Block", function() return ALL(CanInteract(TT_big_block_basement), "gloves") end)
 TT_big_block_basement:connect_one_way("TT - Basement Block Pot #1")
 -- TT_big_block_basement:connect_one_way("TT - Basement Block Pot #2")
 TT_big_block_basement:connect_one_way("TT - Basement Block Enemy #2", function() return DealDamage end)
@@ -324,6 +325,7 @@ TT_big_block_basement:connect_two_ways(TT_big_pot_hall, function() return Has("g
 TT_big_block_basement_1W_door:connect_two_ways_entrance_door_stuck("", TT_conveyor_catwalk_2E_door, function() return DealDamage end)
 TT_conveyor_catwalk_2E_door:connect_two_ways(TT_conveyor_catwalk)
 
+TT_conveyor_catwalk:connect_one_way("TT - Conveyor Bridge Large Block", function() return ALL(CanInteract(TT_conveyor_catwalk), "gloves") end)
 TT_conveyor_catwalk:connect_one_way("TT - Conveyor Bridge Enemy #5", function() return DealDamage end)
 -- TT_conveyor_catwalk:connect_one_way("TT - Conveyor Bridge Enemy #7", function() return DealDamage end)
 -- TT_conveyor_catwalk:connect_one_way("TT - Conveyor Bridge Enemy #9", function() return DealDamage end)

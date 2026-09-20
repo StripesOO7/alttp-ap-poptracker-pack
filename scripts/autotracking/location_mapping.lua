@@ -779,10 +779,10 @@ LOCATION_MAPPING = {
     [41902516] = {"@IP/Ice Palace/Pots", "@Ice Palace Pots/Antechamber Pot #3/Pot #3"},--, "@Ice Palace/Pots/Antechamber"},
     [58679732] = {"@IP/Ice Palace/Pots", "@Ice Palace Pots/Antechamber Pot #4/Pot #4"},--, "@Ice Palace/Pots/Antechamber"},
     [8348020] = {"@IP/Ice Palace/Pots", "@Ice Palace Pots/Iced T Pot #1/Pot #1"},--, "@Ice Palace/Enemies/Iced T"},
+    [92234164] = {"@IP/Ice Palace/Pots", "@Ice Palace Pots/Hammer Block/Large Block"},
 
     [75456854] = {"@IP/Ice Palace/Pot Key Drops","@Ice Palace/Many Pots Pot Key/Many Pots Pot Key"},
     [109011094] = {"@IP/Ice Palace/Pot Key Drops","@Ice Palace/Hammer Block Key Drop/Hammer Block Key Drop"},
-    -- [92234164] = {"@Ice Antechamber Large Block"},
     [645665] = {"@IP/Ice Palace/Enemy Key Drops","@Ice Palace/Jelly Key Drop/Jelly Key Drop"},
     [646664] = {"@IP/Ice Palace/Enemy Key Drops","@Ice Palace/Conveyor Key Drop/Conveyor Key Drop"},
     
@@ -912,6 +912,8 @@ LOCATION_MAPPING = {
     [159342992] = {"@TT/Thieves Town/Back Pots", "@Thieves Town Back Pots/Pot Alcove Mid Pot #10/Pot #10"},--, "@Thieves Town Back/Pots/Pot Alcove Mid"},
     [176120208] = {"@TT/Thieves Town/Back Pots", "@Thieves Town Back Pots/Pot Alcove Top Pot #11/Pot #11"},--, "@Thieves Town Back/Pots/Pot Alcove Top"},
     [192897424] = {"@TT/Thieves Town/Back Pots", "@Thieves Town Back Pots/Pot Alcove Top Pot #12/Pot #12"},--, "@Thieves Town Back/Pots/Pot Alcove Top"},
+    [8347808] = {"@TT/Thieves Town/Back Pots", "@Thieves Town Back Pots/Conveyor Bridge/Large Block"},
+    [109011106] = {"@TT/Thieves Town/Back Pots", "@Thieves Town Back Pots/Basement Block Block/Large Block"},
     
     [209674640] = {"@TT/Thieves Town/Front Pots", "@Thieves Town Front Pots/Pot Alcove Bottom Pot #13/Pot #13"},--, "@Thieves Town Front/Pots/Pot Alcove Bottom"},
     [226451856] = {"@TT/Thieves Town/Front Pots", "@Thieves Town Front Pots/Pot Alcove Bottom Pot #14/Pot #14"},--, "@Thieves Town Front/Pots/Pot Alcove Bottom"},
@@ -934,8 +936,6 @@ LOCATION_MAPPING = {
 
     [25125264] = {"@TT/Thieves Town/Pot Key Drops","@Thieves Town Back/Hallway Pot Key/Hallway Pot Key"},
     [8348014] = {"@TT/Thieves Town/Pot Key Drops","@Thieves Town Back/Spike Switch Pot Key/Spike Switch Pot Key"},
-    -- [8347808] = {"@Thieves Town/Conveyor/Bridge Large Block"},
-    -- [109011106] = {"@Thieves Town/Basement/Block Large Block"},
     --SW
     [8347786] = {"@SW/Skull Woods Back/Back Pots", "@Skull Woods Back Pots/Spike Corner Pot #1/Pot #1"},--, "@Skull Woods Back/Pots/Spike Corner"},
     [25125002] = {"@SW/Skull Woods Back/Back Pots", "@Skull Woods Back Pots/Spike Corner Pot #2/Pot #2"},--, "@Skull Woods Back/Pots/Spike Corner"},
@@ -1063,7 +1063,7 @@ LOCATION_MAPPING = {
     [58679738] = {"@MM/Misery Mire/Pots", "@Misery Mire Pots/Neglected Room Pot #4/Pot #4"},--, "@Misery Mire/Pots/Neglected Room"},
     [75456954] = {"@MM/Misery Mire/Pots", "@Misery Mire Pots/Neglected Room Pot #5/Pot #5"},--, "@Misery Mire/Pots/Neglected Room"},
     [92234170] = {"@MM/Misery Mire/Pots", "@Misery Mire Pots/Neglected Room Pot #6/Pot #6"},--, "@Misery Mire/Pots/Neglected Room"},
-    -- [25125182] = {"@Misery Mire/Block/X Large Block"},
+    [25125182] = {"@MM/Misery Mire/Pots", "@Misery Mire Pots/Block X Pot/Large Block"},
     [8347994] = {"@MM/Misery Mire/Pot Key Drops","@Misery Mire/Fishbone Pot Key/Fishbone Pot Key"},
     [8348030] = {"@MM/Misery Mire/Pot Key Drops","@Misery Mire/Spikes Pot Key/Spikes Pot Key"},
     [649211] = {"@MM/Misery Mire/Enemy Key Drops","@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop"},
@@ -1260,7 +1260,7 @@ LOCATION_MAPPING = {
     -- [2800627] = {"@Hype Cave Statue"},
     -- [2800633] = {"@Cold Fairy Statue"},
     
-    -- [142565958] = {"@Spike Cave Large Block"},
+    [142565958] = {"@Dark Death Mountain Left/Spike Cave/Large Block"},
 
 	[209686540] = {"@None Enemy #13"},
 	[226463756] = {"@None Enemy #14"},

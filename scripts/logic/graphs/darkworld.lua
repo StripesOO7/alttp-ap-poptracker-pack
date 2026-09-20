@@ -1320,6 +1320,7 @@ Spike_cave_inside:connect_two_ways(Spike_cave_back, function()
 end)
 
 Spike_cave_back:connect_one_way("Spike Cave Chest")
+Spike_cave_back:connect_one_way("Spike Cave - Large Block")
 Spike_cave_back:connect_one_way("Spike Cave - Pots #1")
 -- Spike_cave_back:connect_one_way("Spike Cave - Pots #2")
 -- Spike_cave_back:connect_one_way("Spike Cave - Pots #3")

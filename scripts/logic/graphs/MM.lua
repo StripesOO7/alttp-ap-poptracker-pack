@@ -408,6 +408,7 @@ MM_dark_shooters:connect_one_way("MM - Dark Shooters Enemy #5", function() retur
 MM_dark_shooters:connect_two_ways(MM_dark_key_rupees)
 MM_dark_shooters:connect_two_ways(MM_block_X)
 
+MM_block_X:connect_one_way("MM - Block X Large Block", function() return ALL(CanInteract(MM_block_X), "gloves") end)
 MM_block_X:connect_one_way("MM - Block X Enemy #6", function() return DealDamage end)
 -- MM_block_X:connect_one_way("MM - Block X Enemy #7", function() return DealDamage end)
 -- MM_block_X:connect_one_way("MM - Block X Enemy #8", function() return DealDamage end)

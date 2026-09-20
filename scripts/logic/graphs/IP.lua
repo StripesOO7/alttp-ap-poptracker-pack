@@ -412,6 +412,7 @@ IP_spike_room_right_3N_door:connect_two_ways_entrance("", IP_map_room_3N_door)
 IP_map_room_3N_door:connect_two_ways(IP_map_room)
 
 
+IP_map_room:connect_one_way("IP - Hammer Block Large Block", function() return ALL(CanInteract(IP_map_room), "gloves") end)
 IP_map_room:connect_one_way("IP - Hammer Block Pot #1")
 -- IP_map_room:connect_one_way("IP - Hammer Block Pot #2")
 -- IP_map_room:connect_one_way("IP - Hammer Block Pot #3")
