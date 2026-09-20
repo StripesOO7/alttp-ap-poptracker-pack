@@ -856,6 +856,7 @@ end
 
 ---reset flute spots
 function ResetFluteSpots()
+    MANUAL_CHECKED = false
     local flute_shuffle = Tracker:FindObjectForCode("flute_shuffle") --[[@as JsonItem]]
     FLUTE_SHUFFLE_STATE = flute_shuffle.CurrentStage > 0
     local counter = 1
@@ -888,6 +889,7 @@ function ResetFluteSpots()
             end
         end
     end
+    MANUAL_CHECKED = true
 end
 
 
