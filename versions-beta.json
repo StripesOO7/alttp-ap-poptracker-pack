@@ -1,26 +1,19 @@
 {
 	"versions": [
 		{
-			"package_version": "0.5.2-beta1",
-			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.5.1/alttp-ap-tracker-v0.5.1.zip",
+			"package_version": "0.5.2-beta9",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.5.2-beta9/alttp-ap-tracker-v0.5.2-beta-9.zip",
 			"sha256": "0fec704050d51db22703576e821b82f26bc162d3b3f942db38048f037c3eca66",
 			"changelog": [
-				"bugfixes for ER and some other logic issues",
+				"first public release of the updated tracker for the AP core beta and alttpr OWR apworld.",
 				"",
-				"# fixed ER stuff:",
-				"- fix ER connection in inverted for pyramid hole being in castle courtyard",
+				"pots and enemies are all places.",
+				"enemies dont have any logic to them besides having a weapon.",
+				"doors is working but dont expect the logic to work properly. This still needs some time and other things to be worked out before that can be finished",
 				"",
-				"# fixed logic:",
-				"- add spiral cave top ledge as graph node to fix the missing mirror link connection",
-				"- changed some of the hint colors and their priorities for how they are shown",
+				"dmg class shuffle is trackable but has no affect to the packs logic",
 				"",
-				"# added:",
-				"- internal code cleanup to not use Archipelago functions in non AP variant",
-				"- fix CE entracnce marker in normal dungeon map",
-				"- made the canFinish function work again for non slow or fast ganon goals",
-				"- changes pyramid state item from on/off to represent all 4 stages",
-				"- diable route mode for race variant",
-				""
+				"enemy shuffle, door type rando and room puzzle shuffle is not accounted for in the logic for now"
 			]
 		},
 		{
