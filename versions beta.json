@@ -1,0 +1,782 @@
+{
+	"versions": [
+		{
+			"package_version": "0.5.2-beta1",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.5.1/alttp-ap-tracker-v0.5.1.zip",
+			"sha256": "0fec704050d51db22703576e821b82f26bc162d3b3f942db38048f037c3eca66",
+			"changelog": [
+				"bugfixes for ER and some other logic issues",
+				"",
+				"# fixed ER stuff:",
+				"- fix ER connection in inverted for pyramid hole being in castle courtyard",
+				"",
+				"# fixed logic:",
+				"- add spiral cave top ledge as graph node to fix the missing mirror link connection",
+				"- changed some of the hint colors and their priorities for how they are shown",
+				"",
+				"# added:",
+				"- internal code cleanup to not use Archipelago functions in non AP variant",
+				"- fix CE entracnce marker in normal dungeon map",
+				"- made the canFinish function work again for non slow or fast ganon goals",
+				"- changes pyramid state item from on/off to represent all 4 stages",
+				"- diable route mode for race variant",
+				""
+			]
+		},
+		{
+			"package_version": "0.5.1",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.5.1/alttp-ap-tracker-v0.5.1.zip",
+			"sha256": "0fec704050d51db22703576e821b82f26bc162d3b3f942db38048f037c3eca66",
+			"changelog": [
+				"bugfixes for ER and some other logic issues",
+				"",
+				"# fixed ER stuff:",
+				"- fix ER connection in inverted for pyramid hole being in castle courtyard",
+				"",
+				"# fixed logic:",
+				"- add spiral cave top ledge as graph node to fix the missing mirror link connection",
+				"- changed some of the hint colors and their priorities for how they are shown",
+				"",
+				"# added:",
+				"- internal code cleanup to not use Archipelago functions in non AP variant",
+				"- fix CE entracnce marker in normal dungeon map",
+				"- made the canFinish function work again for non slow or fast ganon goals",
+				"- changes pyramid state item from on/off to represent all 4 stages",
+				"- diable route mode for race variant",
+				""
+			]
+		},
+		{
+			"package_version": "0.5.0",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.5.0/alttp-ap-tracker-v0.5.0.zip",
+			"sha256": "419a92034d7babae7d7bb1ad38d9fe6d01847c569a3e52d12a7345dd9546dd06",
+			"changelog": [
+				"bugfixes for ER and some other logic issues",
+				"",
+				"# fixed ER stuff:",
+				"- drop downs are no longer considered as randomized entrances in dungeons ER-mode",
+				"",
+				"# fixed logic:",
+				"- Bombos table was wrongfully checkign for non-bunny state although bunny can interact with the tablet",
+				"- changed some of the hint colors and their priorities for how they are shown",
+				"- old man cave west did not properly set the connection to jump down the ledge which caused this entrance to not put the rest of light world into logic in ER when exiting there",
+				"- fixed pyramid fairy checking for access to pyramid area in json before turning available",
+				"- fix auto map switching behavior for the back hallway of HC",
+				"- fix icerod being a viable weapon to pass the first wizrobe room in Misery Mire",
+				"",
+				"# added:",
+				"- Adds Race mode Variant for ALTTPR Race Community that disables interacting with ER autotracking and auto map-switching and forces them to be OFF/MANUAL",
+				"- small keys for KDS on/off are now handled internally as the same item and not 2 separate ones. this just makes internal code a bit cleaner",
+				"- made some preparations for keyrings, and dungeon prizes outside of boss rooms",
+				"- cleaned up some code and added massive amounts of type hints and function parameter classifications. thanks to @OmegaZeron for helping there and pushing me to do this",
+				"- ER legend is now only visible when in any ER state that is not OFF",
+				"- add cost-type and inventory to upgrade fairy",
+				"",
+				"# clarification:",
+				"- the prior assumption that insanity ER can cause multiple interior exits to lead to 1 exterior door was not confirmed by generting 43k seeds and looking at the ER list in the spoiler log"
+			]
+		},
+		{
+			"package_version": "0.4.6",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.4.6/alttp-ap-tracker-v0.4.6.zip",
+			"sha256": "dd9d7829a099c627b103f1a9e55e137d889273a4f2d7c3b91608415ea0cf8d43",
+			"changelog": [
+				"bugfixes for ER and some other logic issues",
+				"",
+				"# fixed ER stuff:",
+				"",
+				"# fixed logic:",
+				"- key logig for MM fixed (hopefully)",
+				"- fixed switched side for checks in GT DMs Room ",
+				"- maybe fix frog+purple chest logic",
+				"- changed KDS to default on",
+				"",
+				"# added:",
+				"",
+				"# known issue:",
+				"- insanity ER not properly respecting that multiple interiors can exit the same exterior"
+			]
+		},
+		{
+			"package_version": "0.4.5",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.4.5/alttp-ap-tracker-v0.4.5.zip",
+			"sha256": "a956b800688a2656f2bf702d89ee968d1e6b8405e72737957470e2f3e44e37e0",
+			"changelog": [
+				"bugfixes for ER and some other logic issues",
+				"",
+				"# fixed ER stuff:",
+				"- fixed image not showing for fairy ascention cave",
+				"",
+				"# fixed logic:",
+				"- fix connection internally between fairy ascention cave top and bottom",
+				"- fix worldstate not properly being reset for some connections when manually switching to the desired mode",
+				"- fix aga1 in inverted causing rightside darkworld to be accessible because if false double warp",
+				"- rename pyramid to pyramid area for route mode",
+				"",
+				"# added:",
+				"- make highlights use the item classification for highlights if its an unspecified hint",
+				"- adds trap.lua from future shenanigans",
+				"",
+				"# known issue:",
+				"- insanity ER not properly respecting that multiple interiors can exit the same exterior"
+			]
+		},
+		{
+			"package_version": "0.4.4",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.4.4/alttp-ap-tracker-v0.4.4.zip",
+			"sha256": "47f2d8a0453e6af980730659916fd9bc4ecfc2536a922436ed8e4249c7908993",
+			"changelog": [
+				"bugfixes for ER and some other logic issues",
+				"",
+				"# fixed ER stuff:",
+				"",
+				"",
+				"# fixed logic:",
+				"- fixed connections to cave45 in inverted",
+				"- fixed mirror connection between bumpercave and dm return cave ledges",
+				"- fix superbunny being considered in logic for superbunny cave or kakariko well depending on world mode",
+				"- fixes map switching for highlighting entrances",
+				"- fix some route mode path texts",
+				"- fix missing aga1 check for inverted teleporter behind big bomb shop",
+				"- hopefully fix retro caves",
+				"",
+				"# added:",
+				"- hides Entrances adn route tab when ER is not enabled",
+				"- addes setting to remove certain useless rooms from the ER map to make ot more legible",
+				"- tracking of bottle refills for waterfall and pyramid fairy was somehow missed to be shown, fixed now",
+				""
+			]
+		},
+		{
+			"package_version": "0.4.3",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.4.3/alttp-ap-tracker-v0.4.3.zip",
+			"sha256": "2d61282b63bbb2ea3cd0854df15a1df6b888978fed64cedf584562806c973cf9",
+			"changelog": [
+				"Mainly getting minor bigfixes out before the january 2026 Big-Async starts",
+				"",
+				"bugfixes for ER and some other logic issues",
+				"",
+				"# fixed ER stuff:",
+				"",
+				"",
+				"# fixed logic:",
+				"- TR traversal- and keylogic should not match the apworld way more closely than before. still not a 1:1",
+				"- adds items functionality into the settings popup as a setting to track",
+				"- updates the README with a tutorial on how-to use the ER tracking side of things alongside the 'Route Mode'",
+				"- adds Spike Cave Logic to match worlds logic with magic use and needing cape or byrna",
+				"- fixed floating island mirror connection being a 2 way connection regardless of world setting. this got split so each world-mode only has a one way in the correct direction",
+				"- fixed DM exit of 'old man rescue cave' being internally set as a one way thus making it impossible to leave light DM for the tracker",
+				"",
+				"# added:",
+				""
+			]
+		},
+		{
+			"package_version": "0.4.2",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.4.2/alttp-ap-tracker-v0.4.2.zip",
+			"sha256": "918302bbb76e2e4fa04074691e6a716cd8f73add9ed5fc845d49ca7a91a7efac",
+			"changelog": [
+				"bugfixes for ER and some other logic issues",
+				"",
+				"# fixed ER stuff:",
+				"- fixed legend coloring, grey now is always visible and not only when ER is enabled",
+				"- fix Kakariko <-> bombhut connection tht showed kak as available when it wasnt if you exit bombhut as bunny",
+				"- changed how coloring of deadends work if they stil have check to be obtained behind them. they are now marked as connectors instead until everything is collected",
+				"",
+				"# fixed logic:",
+				"- canSwin function for IP and Hobo was broken",
+				"- ToH Bassement cage was unreachable",
+				"- fix price shuffle not being marked properly when its vanilla",
+				"- fixed old man cave being marked as a one-way only accessible coming from light DM but not being able to enter DM",
+				"",
+				"# added:",
+				"- when marking entrances manually the selected entracne now gets highlighted to indicate the ineraction happened",
+				"- added a route calculation feature and displays the shortest route (without considering s&q)",
+				"- added underworld glitched connections",
+				"",
+				"# new features that other packs may also implement in the future:",
+				"- ",
+				""
+			]
+		},
+		{
+			"package_version": "0.4.1",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.4.1/alttp-ap-tracker-v0.4.1.zip",
+			"sha256": "bf2755f52b2b212faa64c632abbf8e041616a3260c9d938d247c1ac901398aee",
+			"changelog": [
+				"bugfixes for ER and some other logic issues",
+				"",
+				"# fixed ER stuff:",
+				"- moved witchhut item sqqaure to not overlap with the entrance diamond",
+				"- addes entrance dimaonds to the interior/detailed dungeon maps",
+				"- fixed some location not being properly highlighted when middle clicked",
+				"",
+				"# fixed logic:",
+				"- fixed missing connector color definition for floating island and sanctuary",
+				"- fixed access rules for twin brothers connection",
+				"- fix TT and graveyard ledge rules",
+				"- fixed EP big chest key logic",
+				"- fixed a bunch of interaction checks. the old system was not useable with glichtes",
+				"- fixed blinds hideout rules",
+				"- fixed duingeon connections not being properly reapplied from 'cache' on reconnnect",
+				"- fixed some auto map switching mistakes",
+				"- fixed light DM shop discovery via AP was off by 1 in the location IDs so it showed the wrong checks",
+				"",
+				"# added:",
+				"- Minor and OWG glitches connections for the overworld should now be considered in the logic (but I really really did not tested that xD)",
+				"- those mainly are just overworld connections that require boots clips OR mirror offsets",
+				"- added 'persistant' storage for ",
+				"- added dungeon bunny revival into logic",
+				"",
+				"# new features that other packs may also implement in the future:",
+				"- added persistent manual storage for dungeon rewards and boss selection as well as shop inventory and prizes",
+				""
+			]
+		},
+		{
+			"package_version": "0.4.0",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.4.0/alttp-ap-tracker-v0.4.0.zip",
+			"sha256": "594ff4007f97c511669bc5622db7db06efcf7e8524cbe5f53ab66375ea695ce0",
+			"changelog": [
+				"bugfixes for ER and some other logic issues",
+				"",
+				"# fixed ER stuff:",
+				"- added some internal connections to beter reflect game state. i.e the stairs leading into DP where you can also mirror to from MM",
+				"- fix drop missing on the ER map when not in insanity ER",
+				"",
+				"# fixed logic:",
+				"- fixed GT bottom right access rules for map room/firesnake room/double switch room area",
+				"- fixed Cave45 outside ledge being connected back to the dark would when it was intended as a 1way connection in open/standard mode",
+				"",
+				"",
+				"# added:",
+				"- upon suggestion i added a color coded legend for entrances and color them accordingly so that the entrances are more easily distinguishable",
+				"- also added all normal location checks into the ER map so that one does not need to switch between them anymore",
+				"- auto tab switching now goes back to Entrances tab when ER is active instead of going to the normal overworld map",
+				"",
+				"# new features that other packs may also implement in the future:",
+				"- persistent manual markings for locations AND entrances",
+				"  -  prior to this upon reconnecting or connecting to another seed/room ER data and manually marked locations (shops, seen but wont collect, hinted as useless) would get reset. new there is a storage build in that recovers that data on reconnect for up to 10 seeds. If that limit gets reach the oldest added one gets erased from memory"
+			]
+		},
+		{
+			"package_version": "0.3.5",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.3.5/alttp-ap-tracker-v0.3.5.zip",
+			"sha256": "dd02b5a73e558145e222a6667a07d7e231f0a452dabb16e8e302830239f31ba7",
+			"changelog": [
+				"bugfixes for ER and some other logic issues",
+				"",
+				"# fixed ER stuff:",
+				"- fixed accessibility for all the entrances where you can be stuck after leaving them. before it assumed you can go both ways",
+				"- autofill master sword meadow and backside pub connections",
+				"- rename ER Simple to ER dungeons to better reflect what is being tracked and what not",
+				"- makes non-insanity easier to mark by removing the second door and handle that internally",
+				"- insanity ER will respect the first entrance type (entrance/exit) you select and connect it to the opposite one automatically regardless of whats being clicked on",
+				"- more location updates for autotracking entrances thanks to @Sirheavens",
+				"",
+				"# fixed logic:",
+				"",
+				"- general cleanup of some function",
+				"- fixed logic evaluation exceeding poptrackers set limits",
+				"- fix IP boss key requirements. set to 6 small keys now",
+				"- properly reset medallions when connecting to a new slot",
+				"- speed up connecting by not calling an updated after each change",
+				"",
+				"added:",
+				"- enabled insanity ER",
+				"- shops now show their default inventory OR you can set the shuffled inventory and prices",
+				"- thanks to Dessyreqt for letting me use their images for pull tree, hoarder crab and stun prices",
+				"- setting 'open pyramid' should now be available and should mark the availability of pyramid hole depending on the goal"
+			]
+		},
+		{
+			"package_version": "0.3.4",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.3.4/alttp-ap-tracker-v0.3.4.zip",
+			"sha256": "f932ed276564a3a6d4e9c0a4f0bb2b4f7499bd6b025c7442ec0a554b506e978b",
+			"changelog": [
+				"bugfixes for ER and some other logic issues",
+				"",
+				"# fixed ER stuff:",
+				"- big thanks to @Sirheavens for help with our combined work in changing how the auto ER tracking works and re-getting all the coords for all entrances",
+				"- fixed reachability of Kings Tomb entrance. ",
+				"- fixed logic for exiting GT falsely checking for the crystal setting",
+				"- more drop downs are now included in the simple ER setting because depending on soime settings these can be random to for the Ganon and Castle escape drop downs. ",
+				"- fix SP entrance not showing accessible if it should",
+				"- TR Laser room (not bridge) outside and inside where switched in ER autotracking",
+				"- lost woods entrances now also should get tracked properly",
+				"",
+				"# fixed logic:",
+				"",
+				"- fixed how dark rooms are evaluated in terms of what tools are needed to traverse. ",
+				"- shops are now 3 locations instead of 1 combined. this makes it possible to show only the randomized slots instead of all-or-nothing",
+				"- Major fix to the worlds state attribute that mainly caused problems with ER but also in non ER modes",
+				"- Massively reduced the amount of function calls for each frame. This was WAY too high and thus caused the UI to freeze and no longer update. thanks to @OmegaZeron :tm: for helping and discussing every little possibility to save stuff here.",
+				"- TR Eye-bridge Checks apparently require invincibility so logic got updated there.",
+				"- Auto-Fill options got updated popup text to hopefully better describe whats updated with them active",
+				"- dungeon items get properly set when set to 'start with' or 'universal' for small keys",
+				"- fixed hints breaking the tracker when they are on locations that have item codes alongside them because i forgor thats a possibility that needs extra handling",
+				"- ER-tracking Manual/Automatic actually does something now. ",
+				"",
+				"added:",
+				"- in a crossed scenario checks from the other world should now properly keep your current state in mind so that checks properly show as in-/accessible with considering bunny state"
+			]
+		},
+		{
+			"package_version": "0.3.3",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.3.3/alttp-ap-tracker-v0.3.3.zip",
+			"sha256": "044be6ba85b9b2aab4ed30935039c684e1f35f26824698ed710ebd1ab161cad1",
+			"changelog": [
+				"bugfixes for ER and some other logic issues",
+				"",
+				"fixed ER stuff:",
+				"- backside pub reachablility",
+				"- Old man house (dm spawn outside) was not connected and thus reachable",
+				"- fixed typo in potionshop inside",
+				"- changed coords for autotracking mostly for drop downs anf stairs so they track properly",
+				"- fairy ascection bottom entrance did not check for gloves",
+				"",
+				"fixed logic:",
+				"- spec rock inside chekcing for pearl in inverted was removed",
+				"- connected item logic for old man to access to the proper region. the cave itself and not the ledge you enter from vanilla",
+				"- lighting up the goal item never really worked, that should be fixed now",
+				"- maybe  bomb tracking combines with bombless start being on or off is finally fixed?????",
+				"",
+				"added:",
+				"- in a crossed scenario checks from the other world should now properly keep your current state in mind so that checks properly show as in-/accessible with considering bunny state"
+			]
+		},
+		{
+			"package_version": "0.3.2",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.3.2/alttp-ap-tracker-v0.3.2.zip",
+			"sha256": "346bc438be7e6fe950ffe0cfe646f4d9bd324abda6ba0c43d365fb8428af302c",
+			"changelog": [
+				"bugfixes for ER and some other logic issues",
+				"",
+				"fixed:",
+				"- paradox cave pathing got more granular to fix some pathing issues to some exits and within",
+				"- some locations where missplaced",
+				"- updated the settings pop-up",
+				"- made auto fill settings moire granular. explanaitions will be added later",
+				"- made vanilla bosses also reflect on the icons in the bottom instead of showing just the ?",
+				"",
+				"added:",
+				"- hint glowing on locations. Locations get a slight glow around them when the have a hint associated with them and remove it when hint is collected.",
+				"- full auto ER tracking (if entrances are too close to each other they might cause issues with which entrances is linked to which exit)"
+			]
+		},
+		{
+			"package_version": "0.3.1",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.3.1/alttp-ap-tracker-v0.3.1.zip",
+			"sha256": "cc5144369b3196ff263eb1ba8ecf10efc33eabe20fcecd668d20bc29313293cb",
+			"changelog": [
+				"More or less a hotfix for various bugs in 0.3.0",
+				"",
+				"fixed:",
+				"- fix auto tabbing not working because of restructure of map layouts",
+				"- fix aga1 not being tracked properly via SNEs memory watch",
+				"- hopefully fully fix bombless start issue with bombcounts (probably not fully fixed)",
+				"- fixed logic/pathing for paradox cave",
+				"- fix HC first key guard being available without a means to kill him in inverted",
+				"- fixed swamp palace being available without being able to pull the lever in dam in inverted",
+				"- fixed switched up rooms in Mire caves map (fairy and hint where swapped in the caves map)",
+				"- fixed TR eye bridge access and showing checks available accordingly for inverted",
+				"",
+				"added:",
+				"- added more checks for intractability in light and dark world. use mainly for ER ",
+				"- dynamically mark entrances as green (reachable) or red (unreachable) basend an your current available wolrd-graph",
+				"- added preparations for auto ER tracking based in ingame coords and room numbers",
+				"- added mirror logic from pyramid <-> HC top access for their respective use cases "
+			]
+		},
+		{
+			"package_version": "0.3.0",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.3.0/alttp-ap-tracker-v0.3.0.zip",
+			"sha256": "500e9356bbc3088d6adb8324b9697bdb153eaf4d7ffdf37f748a72fc5aee8286",
+			"changelog": [
+				"# BIG NEWS",
+				"Entrance Randomization is now track-able via the Entrances Tab and enabling 'simple' or 'full' ER in the Settings Pop-Up",
+				"- added custom LuaItems for taking care of tracking it. **THANKS to [Mysteryem](https://github.com/Mysteryem) for giving me access to their implementation in the wind waker Pack and thus their LuaItem solution to learn from**",
+				"- created images to be displayed on every location",
+				"- created a new 'sub-map' for light- and darkworld caves and arranged them to be roughly in line with the overworld layout",
+				"- ER location can be reset manually by right clicking 1-2 times or using the full reset in the Settings Pop-Up",
+				"## to-do for ER",
+				"- create logic to make only reachable entrances be green and the rest red to make it easier to see where you can go etc.",
+				"## fixed",
+				"- fixes a bunch of locations that should have been blue (scout-able) at various stages throughout your run not being blue. these include:",
+				"  - Lumberjacks Tree",
+				"  - Lost woods hideout (only with ER)",
+				"  - Lake Hylia Item",
+				"  - Spec Rock outside ",
+				"  - Spec Rock inside (only with ER)",
+				"  - floating island",
+				"- also fixed the tablets and pedestal showing as scout-able without the book. ",
+				"- Swamp palace showed its first chest being available without mirror in the detailed map view. this should not have been the case and is now displaying properly, even according to ER being on or not",
+				"- GT Firesneak room was accessible without hookshot but only boots. thats wrong and is now fixed to require hookshot. ",
+				"- missed that flippers and hookshot are a viable way to reach east darkworld from pyramid without the need of gloves or hammer",
+				"## hopefull fixed but not tested",
+				"- Tracking Aga1 defeat via SNI connection and its memory address ",
+				"- go mode function was faulty. might now even work and light up the go mode icon if everything is set correctly (dungeon rewards are still manually set)"
+			]
+		},
+		{
+			"package_version": "0.2.8",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.2.8/alttp-ap-tracker-v0.2.8.zip",
+			"sha256": "65bf1cff4f6c3b3f15ff02fe3bd6f17eb43092c3542dbbd7c4f309d34e078b20",
+			"changelog": [
+				"- SNES offline tracking issues:",
+				"  - Desert Palace Torch was not tracked correct via memory-address",
+				"  - GT Torch was not tracked correct via memory-address",
+				"  - GT Big Chest was not tracked correct via memory-address",
+				"- Location names got changed in a previous update but he SNES only variant was not updated. thats now fixed:",
+				"  - Spec Rock outside and inside",
+				"  - Hookshot Cave the 3 true hoohshot-only chests "
+			]
+		},
+		{
+			"package_version": "0.2.7",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.2.7/alttp-ap-tracker-v0.2.7.zip",
+			"sha256": "ca143a0e5ac001890f0f0ed3bfa1f251f8be221dd40d1c584b81301aef2796b0",
+			"changelog": [
+				"- fixed typo in setting \"include witchhut\"",
+				"- fixed a wrong connection causing a possible way from pod-area/dark icerod area big bombshop etc with only flippers",
+				"- capacity fairy now is not tied to \"shopsanity\" but \"shop_shuffle_capacity\"",
+				"- made dungeon key logic somewhat live-adjusting. to more accurately show whats currently in logic and what not. (TR currently only vanilla routing implemented inverted and glitched coming from the other entrances comes next)",
+				"- manually updating/clicking off locations now instantly forces a logic update without needing to toggle an item. ",
+				"- fixed pyramid fairy inverted logic missing the mirror as requirement.",
+				"- fixed GT right only considering hookshot as way to logically pass the room but boots work too. ",
+				"- changed dungeon tab ordering to be inline with order down in the key/map/compass section",
+				"to-do:",
+				"- change shop to only show the number of actual randomized slots for each shop",
+				"- fix more inverted stuff probably",
+				"- add more logic options",
+				"sometime later",
+				"- add ER",
+				"- autotrack entrances"
+			]
+		},
+		{
+			"package_version": "0.2.6",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.2.6/alttp-ap-tracker-v0.2.6.zip",
+			"sha256": "00ce774826cbda7b5f8997abbd4f103b561e4438170cda14dc1e16a0dc19310b",
+			"changelog": [
+				"sorry for the long wait time between this and the last update.",
+				"fixed:",
+				"- fixed a bunch of logic in inverted including:",
+				"-  bumpercave",
+				"- climbing DM",
+				"- added missing titans requirement for TR teleporter",
+				"- fixed SP only looking for flippers for the first chest but lets you go deeper without them",
+				"- fixed GT randomizer room naming/positions",
+				"- remove medallions from deal damage calculations because they miss marked stuff as beatable if you could not even use them",
+				"- adds mirror connection from digging game to maze race",
+				"- added missing bombs requirements for graveyard ledge, DM cave shop and the 2 paradox cave lower chests",
+				"- fixed marking of scoutable locations on the map to mark them properly and not as available",
+				"to-do:",
+				"- change shop to only show the number of actual randomized slots for each shop",
+				"- fix more inverted stuff probably",
+				"- add more logic options",
+				"sometime later",
+				"- add ER",
+				"- autotrack entrances"
+			]
+		},
+		{
+			"package_version": "0.2.5",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.2.5/alttp-ap-tracker-v0.2.5.zip",
+			"sha256": "ccf90f707eec45939446d139c2d36ec78b805955919dd9325fe3cebd9274fc25",
+			"changelog": [
+				"- fixed locations behind sequencebreaks being shown as normally accessible",
+				"- adds single capacity upgrade introduced in 0.4.5 that got missed",
+				"- fixed connection issue from pod area to big bomb shop area",
+				"- fixed some inverted connetors missing such as desert->mire area or dark DM stairs",
+				"- removed duplicate medallio mapping",
+				"- fixed misspelling of AP in the pack name",
+				"- internal functions overhaul of some sort....neds to be done further",
+				"- fixed catfish needing titans instead of power gloves",
+				"- fixed paradox cave nameing and rules",
+				"- fixes SP key requirements for after second trench",
+				"- added new rules system to rescue dwarf"
+			]
+		},
+		{
+			"package_version": "0.2.4",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.2.4/alttp-ap-tracker-v0.2.4.zip",
+			"sha256": "c70d57f7d768daae144b3281a8ad31ef47f367e6cb9336783b10b8ffc706ea23",
+			"changelog": [
+				"- Thanks to Black Sliver a first verison of logic-resolution-fix is in here.",
+				"- nothing else but this. but should fix the locations turning red randomly issue"
+			]
+		},
+		{
+			"package_version": "0.2.3",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.2.3/alttp-ap-tracker-v0.2.3.zip",
+			"sha256": "a503efec6ce668c1bc8615670b8704a282c68014552985a339d31f09f8e888b2",
+			"changelog": [
+				"- fixed checks turning red when certain items where collected",
+				"- fixed universal keys image missing",
+				"- combined connection handling for almost every option. so no more 2 files for <=0.4.4 and 0.4.5.",
+				"- whichhut and capacity upgrade ar to toggle manually",
+				"- changes default option for 'startMode' from 'standard' to 'open'"
+			]
+		},
+		{
+			"package_version": "0.2.2",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.2.2/alttp-ap-tracker-v0.2.2.zip",
+			"sha256": "910cd467a8c76c62f00e1427f53c5bd43cc8fc37545cd5bf152587f022161f14",
+			"changelog": [
+				"- hopefully added better handling for bunny walking state",
+				"- hopefully added universal keys support",
+				"- changed autotracking mapping to default to 0.4.5 options"
+			]
+		},
+		{
+			"package_version": "0.2.1",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.2.1/alttp-ap-tracker-v0.2.1.zip",
+			"sha256": "07d6800b2e261d0a8d784c2b70f11de040ed12ffebaa9c01d18bdafa94785e79",
+			"changelog": [
+				"- fixed multiple missen access rules",
+				"- added forgotten IP logic",
+				"- added a check to almost every location that checks for bunny access. for after defeating aga1 without moonpearl, swim stuff might be not correct",
+				"- added missed RETRO CAVES setting to popup",
+				"- fixed pyramid fairy access"
+			]
+		},
+		{
+			"package_version": "0.2.0",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.2.0/alttp-ap-tracker-v0.2.0.zip",
+			"sha256": "a02319d7be8620b19ea8651e60d9665c8ac2be4ce913fdbda43237f241cb3710",
+			"changelog": [
+				"- major internal rework",
+				"- prepared the pack for future ER compatability",
+				"- moved most of the option into the settings popup to clean up the UI",
+				"- added a setting for AUTO-TAB switching from Overworld to Dungeon and back...horizontal layout can be bugged for that",
+				"- fixed many wrongly designed acces rules",
+
+				"TODO:",
+				"- add glitches logic rules",
+				"- propperly connect aga1 to light world as bunny if there is no moon pearl",
+
+				"Many thanks to Ishigh1 and Keseph for the help"
+			]
+		},
+		{
+			"package_version": "0.1.3",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.1.3/alttp-ap-tracker-v0.1.3.zip",
+			"sha256": "3d4f14d2f00e35b70b3f17a95cf118557e348d8f40de9acc94a185bb72995b65",
+			"changelog": [
+				"- hotfix for 0.1.2:",
+
+				"- fixed medallions nit being tracked and typo accessrule for EP in the overworld"
+			]
+		},
+		{
+			"package_version": "0.1.2",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.1.2/alttp-ap-tracker-v0.1.2.zip",
+			"sha256": "cf12b091c23c37afa5c8919575ed453d3de3962f4ccc2c798f86a076a055c408",
+			"changelog": [
+				"- clean up",
+				"- mostly fixes regarding keydrop shuffle and access_rules. specific changes should be listed here https://github.com/StripesOO7/alttp-ap-poptracker-pack/compare/v0.1.1...v0.1.2)",
+				"- hopefully fixed a bug where normal bow whould be displayed as silvers",
+				"- changed shop_sanity to activate with the right option. hopefully keydrop shuffle is also auto enabled (not tested)"
+			]
+		},
+		{
+			"package_version": "0.1.1",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.1.1/alttp-ap-tracker-v0.1.1.zip",
+			"sha256": "ff1b2f3c70e85b933560179b6dd207b96f1beaa47ae6fd00889d6988412c3d2e",
+			"changelog": [
+				"- fixed mixed up tracking of MM big chest and Map chest in SNES Tracking",
+				"- fixed typo in Zoras Domain + others",
+				"- fixed access rules for Darkworld left-side when only having hookshot and right-side Darkworld access",
+				"- fixed broken settings-autofill because of the smallkey-settings change from v0.1...it crashed when encountering the smallkey_shuffle option and did not track anything after that",
+				"- fixed Medallions changing state when reconnecting without reset or just toggeling the autofill-setting on and off",
+				
+				"- split Dark- and Lightworld Maps into their own tabs for vertical view, so images are bigger",
+				"- added marking MM and TR as available when having all 3 Medallions but not having them marked"
+			]
+		},
+		{
+			"package_version": "0.1",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.1/alttp-ap-tracker-v0.1.zip",
+			"sha256": "b2518d2226292d5527152f12e12d8cd4c0260e8fd849a24717fc10f73bea49c4",
+			"changelog": [
+				"- added Keydropshuffle as option to select and adjusted the Key-requiremts accordingly",
+				"- split small+big key icon as well as map+compass icon into separat toggles",
+				"- added universal keys as option to select (indicated wit a 'u' next to the small-key settings-icon",
+				"- non-progressive items should get tracked properly",
+				"- added 'retro caves' to the map --> they need to be marked of manually",
+				"(retro caves as option is in the settings popup next to settings-autofill)",
+				"- fixed typos for some locations and accesrules",
+				"- fixed access rule for specrock item --> does not need moon pearl in inverted",
+				"- fixed wrong changing of state for medallions when only reconnecting to AP with autofill on and without reset",
+				"- fixed swapped PoD arena bridge and ledge chest tracking for SNES-tracking"
+			]
+		},
+		{
+			"package_version": "0.0.6.9",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.0.6.9/alttp-ap-tracker-v0.0.6.9.zip",
+			"sha256": "44743f24e6f10f08d80c27ec8823ece2a85a87ac798e588ee394064e27349caa",
+			"changelog": [
+				"- nice",
+				"- logic fixed for Desert Palace Backentrance access",
+				"- corrected name of 'Magic Bat' check",
+				"- bunch of small changes to account for the duplicate smallkeys with and without _drop in the name",
+				"- removed the keydrop variants becuase got to work within one variant. only distinction again is the connection method",
+				"- layout change now works and changes when keydropshuffle is de-/actived",
+				"- fixed Spwam Palace Logic, Hammer was not considered needed in inverted glitchless setting",
+				
+				"- changed rules for purple chests access but not really tested.",
+
+				"-keydrop_shuffle should already work"
+			]
+		},
+		{
+			"package_version": "0.0.6.1",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.0.6.1/alttp-ap-tracker-v0.0.6.1.zip",
+			"sha256": "f75d6941a6b751eca5ca8521e68463e655c07ac67e260be5c8900df96d25808d",
+			"changelog": [
+				"- mostly logic fixes",
+				"- settings auto-tracking can now be enabled without reconnecting the tracker." 
+			]
+		},
+		{
+			"package_version": "0.0.6.0",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.0.6.0/alttp-ap-tracker-v0.0.6.0.zip",
+			"sha256": "badfce8227265c980914467dcdbe3ce1da9937c84d302634ab2bbe322c736019",
+			"changelog": [
+				"- Split into multiple variants to avoid interferane of AP and SNES scripts while tracking. When AP variants are choosen the SNES will be visible but the script does not get loaded!!!",
+				"- STIL NO autrotracking of settings in SNES variants",
+				"- multiple logic fixes for all modi",
+				"- improvements to SNES 'offline' Tracking",
+				"- added the possiblity to track key under pots or dropped from enemies. But ONLY via SNES interface!!",
+				"- keydrop locations can be made visible in the AP variants but are NOT marked of automatically!!!",
+				"- added a small sleep timer for SNES script to prevent location/item overrides on save&quit. DOWNSIDE is that the script may load and 'hang' for 2-3 at first -/reconnects",
+				"- added MINOR and OVERWORLD glitched logic. some things/tricks may be missing. please report them",
+				"- current glichtes are: waterwalk, fakeflipper, hera-pot, hammerless swamp, ice place mirror warp, hera/gt screen wrap, corner/slope clips",
+				"- NEITHER ice breaker nor IP bombjump are implemented into IP logic",
+				"- Bunny rivivals are NOT concidered 'in Logic'",
+				"- Spike Cave checks for hearthcount or availability of bottles and 'cane of byrna' or 'magic cape' including potions or fairies....14+ hearts is the threshold",
+				"- TR access and internal logic is stil WIP and may missreport availability or lack there off",
+				"- Flute is now considered ACTIVE uppon receiving"
+			]
+		},
+		{
+			"package_version": "0.0.5.1",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.0.5.1/alttp-ap-tracker-v0.0.5.1.zip",
+			"sha256": "48a72a3eea64d184c4471a19405c386daa0e1403e842912a743708cd23d5953d",
+			"changelog": [
+				"- improvements to inverted logic",
+				"- improvements to SNES 'offline' Tracking"
+			]
+		},
+		{
+			"package_version": "0.0.5",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.0.5/alttp-ap-tracker-v0.0.5.zip",
+			"sha256": "636fbe098b65ed43e6368eafdab8de119772b098256491288c723535eb5bac37",
+			"changelog": [
+				"- improvements to inverted logic",
+				"- SNES 'offline' Tracking support"
+			]
+		},
+		{
+			"package_version": "0.0.4.1",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.0.4.1/alttp-ap-tracker-v0.0.4.1.zip",
+			"sha256": "49a6efb6cfea2acbbb0929753af21026cf5126eaf2d6d91ba203cb777a8805e1",
+			"changelog": [
+				"- inverted logic fixes"
+			]
+		},
+		{
+			"package_version": "0.0.4",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.0.4/alttp-ap-tracker-v0.0.4.zip",
+			"sha256": "1dff8f8e89346f4e18e987c58e029db9ad8da3be3356c73f63ca30ce1b95d640",
+			"changelog": [
+				"- improved inverted logic"
+			]
+		},
+		{
+			"package_version": "0.0.3.1",
+			"download_url": "https://github.com/StripesOO7/alttp-ap-poptracker-pack/releases/download/v0.0.3.1/alttp-ap-tracker-v0.0.3.1.zip",
+			"sha256": "06c9c073899947286abada2022e92d7b2260d37ef6a2b9f71c36c1386de160bc",
+			"changelog": [
+				"- auto fetching of medelion enabled (setting to turn off will come later)",
+				"- fixed purple chest availability (initial idea did not work)",
+				"- fixed heartpiece display count",
+				"- fixed spike cave availability, (added hammer need)",
+				"- fixed swamp palace (missed mirror for one rule)"
+			]
+		},
+		{
+			"package_version": "0.0.3",
+			"download_url": "https://codeload.github.com/StripesOO7/alttp-ap-poptracker-pack/zip/refs/tags/v0.0.3",
+			"sha256": "4be445e4b57242872e579b26c9a3c48f67556bee73b80281628b0d39a981de63",
+			"changelog": [
+				"updates:",
+				  "- dark room logic",
+				  "- visual changes on in_dungeon maps if small-/bigkeys and maps/compasses are vanilla or shuffled",
+				  "- map/compass/bigkey gets displayed in overwold for every dungeon",
+				  "- go mode should activate correctly....updates state only when location gets checked or item gets revceived",
+				  
+				"current working settings:",
+				  "- changing starting options between 'open', 'inverted' and 'standard'",
+				  "- tracking of Dungon-bosses and if they are beatable",
+				  "- almost every check should get tracked",
+				  "- basic, glitchless logic for 'open' and 'inverted'",
+				  "- shop-sanity",
+				  "- auto-tracking",
+				  "- added missing locations",
+				  "- in dungeon tracking improved",
+				  "- added goal tracking",
+
+
+				"not working:",
+				  "- autotracking for flute activation, Agahnim 1 and 2 defeated and the GT refights not working",
+				  "- any glitch settings",
+
+				"known issues:",
+				  "- purple chest showing falsely accessible when check on smiths gets collected"
+			]
+		},
+		{
+			"package_version": "0.0.2",
+			"download_url": "https://codeload.github.com/StripesOO7/alttp-ap-poptracker-pack/zip/refs/tags/v0.0.2",
+			"sha256": "1a647d4c84285acec5c03ff6892de74392ac202ea948f65d7aa5880fa2563516",
+			"changelog": [
+				"updates:",
+				  "- auto-tracking",
+				  "- added missing locations",
+				  "- in dungeon tracking improved ",
+				  "- added goal tracking",
+
+				  "current working settings:",
+				  "- changing starting options between 'open', 'inverted' and 'standard'",
+				  "- tracking of Dungon-bosses and if they are beatable",
+				  "- almost every check should get tracked",
+				  "- basic, glitchless logic for 'open' and 'inverted'",
+				  "- shop-sanity",
+
+				  "not working:",
+				  "- autotracking for flute activation, Agahnim 1 and 2 defeated and the GT refights not working",
+				  "- any glitch settings",
+				  "- big-/smallkey, map and compass shuffle option not implemented (current assumption is full-shuffle for everyone of those"
+			]
+		}
+	]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
