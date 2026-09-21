@@ -280,7 +280,15 @@ local multi_purpose_room_table = {
                             FORTUNE_FOUND = FORTUNE_FOUND + 1
                             return FORTUNE_FOUND
                             end,
+    ["Kakariko_fortune_inside"] = function()
+                            FORTUNE_FOUND = FORTUNE_FOUND + 1
+                            return FORTUNE_FOUND
+                            end,
     ["Dam_desert_fairy"] = function()
+                            FAIRYS_FOUND = FAIRYS_FOUND + 1
+                            return FAIRYS_FOUND
+                            end,
+    ["Dam_desert_fairy_inside"] = function()
                             FAIRYS_FOUND = FAIRYS_FOUND + 1
                             return FAIRYS_FOUND
                             end
@@ -368,19 +376,25 @@ function UpdateEntrances(segment, mainModuleIdx)
         -- print("y cord :", segment:ReadUInt16(0x7e0020))
         current_coords_y = segment:ReadUInt16(0x7e0020)
         local shop_offset = segment:ReadUInt8(0x7f506C)
-        -- print("-------------------------------------------------")
-        -- print("Current Room Index: ", New_dungeon_room)
-        -- print("Current OW   Index: ", New_ow_room)
+        -- local shop_offset_alttpr = segment:ReadUInt8(0x7f64B8)
+        if Tracker:FindObjectForCode("extra_prints").Active then
+            print("-------------------------------------------------")
+            print("x cord :", segment:ReadUInt16(0x7e0022))
+            print("y cord :", segment:ReadUInt16(0x7e0020))
+            print("Current Room Index: ", New_dungeon_room)
+            print("Current OW   Index: ", New_ow_room)
 
-        -- print("mainModuleIdx:   ", mainModuleIdx)
-        -- print("sub_module_state:", sub_module_state)
-        -- print("b0_module_state:", segment:ReadUInt8(0x7e00b0))
-        -- print("b1_module_state:", segment:ReadUInt8(0x7e00b1))
-        -- print("shop_offset: ", shop_offset)
+            print("mainModuleIdx:   ", mainModuleIdx)
+            print("sub_module_state:", sub_module_state)
+            print("b0_module_state:", segment:ReadUInt8(0x7e00b0))
+            print("b1_module_state:", segment:ReadUInt8(0x7e00b1))
+            print("shop_offset: ", shop_offset)
+            -- print("shop_offset_alttpr: ", shop_offset_alttpr)
 
 
 
-        -- print("------------------------------------------")
+            print("------------------------------------------")
+        end
         -- print(Dump_table(OVERWORLD_MAPPING[current_coords_x][current_coords_y][New_ow_room]))
         -- print(Dump_table(CAVES_MAPPING[current_coords_x][current_coords_y][New_dungeon_room]))
         -- print("------------------------------------------")
@@ -401,7 +415,7 @@ function UpdateEntrances(segment, mainModuleIdx)
         --- this if checks if a are in a transition state of walking up/down a stair entrance, falling into a hole or
         --  walking into a normal door. 0x0F door, 0x08 stair upvalue, 0x06 stair down, 0x11 falling iirc
         local mainModuleLookup = {
-            [0x0F] = "door",
+            [0x0F] = "door", --15
             [0x08] = "stair_up",
             [0x06] = "stair_down",
             [0x11] = "falling"
@@ -417,6 +431,22 @@ function UpdateEntrances(segment, mainModuleIdx)
             -- [0x03] = "falling"
         }
         if mainModuleLookup[mainModuleIdx] ~= nil  then
+            -- print("-------------------------------------------------")
+
+            -- print("prev x cord :", previous_x_coords)
+            -- print("prev y cord :", previous_y_coords)
+            -- print("prev room :", previous_dungeon_room)
+
+            -- print("current x cord :", segment:ReadUInt16(0x7e0022))
+            -- print("current y cord :", segment:ReadUInt16(0x7e0020))
+            -- -- print("-------------------------------------------------")
+            -- print("Current Room Index: ", New_dungeon_room)
+            -- print("Current OW   Index: ", New_ow_room)
+            -- -- end
+            -- print("mainModuleIdx:   ", mainModuleIdx)
+            -- print("sub_module_state:", sub_module_state)
+            
+            -- print("-------------------------------------------------")
 
             local temp_room = ENTRANCE_MAPPING[current_room]
             local temp_room_x
@@ -446,8 +476,8 @@ function UpdateEntrances(segment, mainModuleIdx)
                             local new_door_name = current_door[1]
                             if multi_purpose_room_table[current_room] ~= nil then
                                 local multi_purpose_room = multi_purpose_room_table[current_room]
-                                if type(multi_purpose_room) == "function" then
-                                    new_door_name = current_door[multi_purpose_room_table[current_room]()]
+                                if type(multi_purpose_room) == "function" or multi_purpose_room[shop_offset] == nil then
+                                    new_door_name = current_door[multi_purpose_room_table[door_name]()]
                                 elseif  type(multi_purpose_room) == "table" then
                                     new_door_name = multi_purpose_room[shop_offset]
                                 end

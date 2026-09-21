@@ -638,7 +638,7 @@ function AutoFill()
     -- mapTriforcePiecesAvailable = {} --range 1-850
     -- mapTriforcePiecesRequiered = {} --range 1-850
     local mapDungeonItem = {[0]=0, [1]=1, [2]=1, [3]=1, [4]=1, [5]=2, [6]=0} --og dungeon, own dungeons,
-    local mapDungeonItemSetting = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=6, [6]=5, ["false"] = 0, ["true"] = 4} --og dungeon, own dungeons,
+    local mapDungeonItemSetting = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=6, [6]=5, ["none"] = 0, ["wild"] = 4} --og dungeon, own dungeons,
     -- mapStartMode = {[0]=0, [1]=1, [2]=2} --standard, open, Inverted
     -- mapItemPool = {[0]=0, [1]=1, [2]=2, [3]=3} --easy, normal. hard, expert
     -- mapItemFunctionality = {[0]=0, [1]=1, [2]=2, [3]=3} --easy, normal. hard, expert

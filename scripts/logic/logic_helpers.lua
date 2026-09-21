@@ -1314,7 +1314,7 @@ function ChangePopupLayout()
         LOCATION_MAPPING[1573202] = {"@ToH/Tower of Hera/Boss Item (Prize Shuffle)","@Tower of Hera/Boss/Boss Item",{"toh_boss", "dungeon_reward"}}
         LOCATION_MAPPING[1573204] = {"@SP/Swamp Palace/Boss Item (Prize Shuffle)","@Swamp Palace/Boss/Boss Item",{"sp_boss", "dungeon_reward"}}
         LOCATION_MAPPING[1573206] = {"@TT/Thieves Town/Boss Item (Prize Shuffle)","@Thieves Town Back/Boss/Boss Item",{"tt_boss", "dungeon_reward"}}
-        LOCATION_MAPPING[1573205] = {"@SW/Skull Woods Back/Boss Item (Prize Shuffle)","@Skull Woods Back/Boss/Boss Item","sw_boss"}
+        LOCATION_MAPPING[1573205] = {"@SW/Skull Woods Back/Boss Item (Prize Shuffle)","@Skull Woods Back/Boss/Boss Item",{"sw_boss", "dungeon_reward"}}
         LOCATION_MAPPING[1573207] = {"@IP/Ice Palace/Boss Item (Prize Shuffle)","@Ice Palace/Boss/Boss Item",{"ip_boss", "dungeon_reward"}}
         LOCATION_MAPPING[1573208] = {"@MM/Misery Mire/Boss Item (Prize Shuffle)","@Misery Mire/Boss/Boss Item",{"mm_boss", "dungeon_reward"}}
         LOCATION_MAPPING[1573209] = {"@TR/Turtle Rock Back/Boss Item (Prize Shuffle)","@Turtle Rock Back/Boss/Boss Item",{"tr_boss", "dungeon_reward"}}
@@ -1390,7 +1390,7 @@ function ChangePopupLayout()
         LOCATION_MAPPING[8348030] = {"@MM/Misery Mire/Pot Key Drops","@Misery Mire/Spikes Pot Key/Spikes Pot Key"}
         LOCATION_MAPPING[649211] = {"@MM/Misery Mire/Enemy Key Drops","@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop"}
 
-        ITEM_MAPPING[182] = nil
+        -- ITEM_MAPPING[182] = nil
         ITEM_MAPPING[183] = nil
         ITEM_MAPPING[184] = nil
         ITEM_MAPPING[185] = nil
@@ -1459,11 +1459,11 @@ function ChangePopupLayout()
         LOCATION_MAPPING[1573202] = {"@ToH/Tower of Hera/Boss Item (Prize Shuffle)","@Tower of Hera/Boss/Boss Item",{"toh_boss", "dungeon_reward"}}
         LOCATION_MAPPING[1573204] = {"@SP/Swamp Palace/Boss Item (Prize Shuffle)","@Swamp Palace/Boss/Boss Item",{"sp_boss", "dungeon_reward"}}
         LOCATION_MAPPING[1573206] = {"@TT/Thieves Town/Boss Item (Prize Shuffle)","@Thieves Town Back/Boss/Boss Item",{"tt_boss", "dungeon_reward"}}
-        LOCATION_MAPPING[1573205] = {"@SW/Skull Woods Back/Boss Item (Prize Shuffle)","@Skull Woods Back/Boss/Boss Item","sw_boss"}
+        LOCATION_MAPPING[1573205] = {"@SW/Skull Woods Back/Boss Item (Prize Shuffle)","@Skull Woods Back/Boss/Boss Item",{"sw_boss", "dungeon_reward"}}
         LOCATION_MAPPING[1573207] = {"@IP/Ice Palace/Boss Item (Prize Shuffle)","@Ice Palace/Boss/Boss Item",{"ip_boss", "dungeon_reward"}}
         LOCATION_MAPPING[1573208] = {"@MM/Misery Mire/Boss Item (Prize Shuffle)","@Misery Mire/Boss/Boss Item",{"mm_boss", "dungeon_reward"}}
         LOCATION_MAPPING[1573209] = {"@TR/Turtle Rock Back/Boss Item (Prize Shuffle)","@Turtle Rock Back/Boss/Boss Item",{"tr_boss", "dungeon_reward"}}
-        LOCATION_MAPPING[1573203] = {"@PoD/Palace of Darkness/Boss Item (Prize Shuffle)","@Palace of Darkness/Boss/Boss Item","pod_boss"}
+        LOCATION_MAPPING[1573203] = {"@PoD/Palace of Darkness/Boss Item (Prize Shuffle)","@Palace of Darkness/Boss/Boss Item",{"pod_boss", "dungeon_reward"}}
 
         --alltpr keydrop locations
         LOCATION_MAPPING[1310775] = {"@HC/Hyrule Castle/Enemy Key Drops","@Hyrule Castle/Map Guard Key Drop/Map Guard Key Drop"}
@@ -1537,7 +1537,7 @@ function ChangePopupLayout()
 
         ITEM_MAPPING[177] = nil
         ITEM_MAPPING[180] = nil
-        ITEM_MAPPING[182] = nil
+        -- ITEM_MAPPING[182] = nil
         ITEM_MAPPING[181] = nil
         ITEM_MAPPING[178] = nil
         ITEM_MAPPING[176] = nil
