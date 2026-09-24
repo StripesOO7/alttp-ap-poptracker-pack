@@ -1549,16 +1549,16 @@ function ChangePopupLayout()
         ITEM_MAPPING[57] = nil
         ITEM_MAPPING[56] = nil
 
-        ITEM_MAPPING[182] = {{"red_pendant", "toggle"}}
-        ITEM_MAPPING[183] = {{"blue_pendant", "toggle"}}
-        ITEM_MAPPING[184] = {{"green_pendant", "toggle"}}
-        ITEM_MAPPING[185] = {{"blue_crystal", "toggle"}}
-        ITEM_MAPPING[186] = {{"blue_crystal", "toggle"}}
-        ITEM_MAPPING[187] = {{"blue_crystal", "toggle"}}
-        ITEM_MAPPING[188] = {{"blue_crystal", "toggle"}}
-        ITEM_MAPPING[189] = {{"red_crystal", "toggle"}}
-        ITEM_MAPPING[190] = {{"red_crystal", "toggle"}}
-        ITEM_MAPPING[191] = {{"blue_crystal", "toggle"}}
+        ITEM_MAPPING[182] = {{"easternpalace", "dungeon_reward"}}
+        ITEM_MAPPING[183] = {{"desertpalace", "dungeon_reward"}}
+        ITEM_MAPPING[184] = {{"towerofhera", "dungeon_reward"}}
+        ITEM_MAPPING[185] = {{"palaceofdarkness", "dungeon_reward"}}
+        ITEM_MAPPING[186] = {{"swamppalace", "dungeon_reward"}}
+        ITEM_MAPPING[187] = {{"skullwoods", "dungeon_reward"}}
+        ITEM_MAPPING[188] = {{"thievestown", "dungeon_reward"}}
+        ITEM_MAPPING[189] = {{"icepalace", "dungeon_reward"}}
+        ITEM_MAPPING[190] = {{"miserymire", "dungeon_reward"}}
+        ITEM_MAPPING[191] = {{"turtlerock", "dungeon_reward"}}
 
     else --core
         CORE_ALTTP = true
