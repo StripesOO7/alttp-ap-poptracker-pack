@@ -1,5 +1,5 @@
 function Enemy_tracking_scope(scope_room_id, scope_counter, scope_code, scope_enemy_id) --code = room_id..counter
-    local Code = scope_code
+    local Code = scope_code.."enemy"
     local Basename = scope_code.."_lua"
 
     local default_unkown_img = ImageReference:FromPackRelativePath("images/items/unknown.png")
