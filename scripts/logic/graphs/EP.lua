@@ -188,7 +188,13 @@ EP_dark_pots:connect_one_way("EP - Dark Pots Enemy #1", function() return DealDa
 -- EP_dark_pots:connect_one_way("EP - Dark Pots Enemy #6", function() return DealDamage end)
 
 EP_dark_square_room:connect_two_ways(EP_dark_square_room_1W_door, function() return DarkRooms end)
-EP_dark_square_room_1W_door:connect_two_ways_entrance("", EP_cannonball_room_bridge_E_door, function(keys, Current_Dungeon) print("inside rule for: EP_dark_square_room_1W_door", keys, Current_Dungeon) return Has("smallkey", keys, 0, keys + 1, 1), KDSreturn(keys, keys + 1) end)
+EP_dark_square_room_1W_door:connect_two_ways_entrance("", EP_cannonball_room_bridge_E_door, function(keys, Current_Dungeon) 
+    if Has("bigkey") then
+        return Has("smallkey", keys, 0, keys + 1, 2), KDSreturn(keys, keys + 1)
+    else
+        return Has("smallkey", keys, 0, keys + 1, 1), KDSreturn(keys, keys + 1)
+    end
+end)
 EP_cannonball_room_bridge_E_door:connect_two_ways(EP_cannonball_room_bridge)
 
 EP_cannonball_room_bridge:connect_two_ways(EP_cannonball_room_bridge_W_door)
@@ -207,12 +213,12 @@ EP_big_key_chest_room:connect_one_way("EP - Big Key Enemy #1", function() return
 
 EP_big_key_chest_room:connect_one_way("EP - Big Key Chest", function() return ALL(DealDamage, CanInteract(EP_big_key_chest_room)) end)
 EP_big_key_chest_room:connect_two_ways(EP_big_key_chest_room_2N_door)
-EP_big_key_chest_room_2N_door:connect_two_ways_entrance_door_stuck("", EP_west_wing_bottom_4S_door, function() print("inside rule for: EP_big_key_chest_room_2N_door", Current_Dungeon) return ALL("bigkey") end, function(keys, Current_Dungeon) print("inside rule for: EP_west_wing_bottom_4S_door", keys, Current_Dungeon) return Has("smallkey", keys, 0, keys + 1, 1), KDSreturn(keys, keys + 1) end)
+EP_big_key_chest_room_2N_door:connect_two_ways_entrance_door_stuck("", EP_west_wing_bottom_4S_door, function() return ALL("bigkey") end, function(keys, Current_Dungeon) return false end)--Has("smallkey", keys, 0, keys + 1, 1), KDSreturn(keys, keys + 1) end)
 EP_west_wing_bottom_4S_door:connect_one_way(EP_west_wing_bottom)
 
 
 EP_main_room_bottom:connect_two_ways(EP_main_room_bottom_N_door)
-EP_main_room_bottom_N_door:connect_two_ways_entrance_door_stuck("", EP_dark_eyegore_room_S_door, function() print("inside rule for: EP_main_room_bottom_N_door", Current_Dungeon) return ALL("bigkey") end, function(keys, Current_Dungeon) print("inside rule for: EP_dark_eyegore_room_S_door", keys, Current_Dungeon) return Has("smallkey", keys, 0, keys + 1, 1), KDSreturn(keys, keys + 1) end )
+EP_main_room_bottom_N_door:connect_two_ways_entrance_door_stuck("", EP_dark_eyegore_room_S_door, function() return ALL("bigkey") end, function(keys, Current_Dungeon) return Has("smallkey", keys, 0, keys + 1, 1), KDSreturn(keys, keys + 1) end )
 EP_dark_eyegore_room_S_door:connect_two_ways(EP_dark_eyegore_room)
 
 EP_dark_eyegore_room:connect_one_way("EP - Dark Eyegore Key Drop", function() return ALL(DarkRooms, EnemizerCheck("bow"), DealDamage) end) --enemy4
@@ -232,7 +238,7 @@ EP_rupee_room:connect_one_way("EP - Rupees Enemy #1", function() return DealDama
 -- EP_rupee_room:connect_one_way("EP - Rupees Enemy #2", function() return DealDamage end)
 
 EP_dark_eyegore_room:connect_two_ways(EP_dark_eyegore_room_1N_door, function() return DarkRooms(true) end)
-EP_dark_eyegore_room_1N_door:connect_two_ways_entrance_door_stuck("", EP_attic_start_3N_door, function(keys, Current_Dungeon) print("inside rule for: EP_dark_eyegore_room_1N_door", keys, Current_Dungeon) return Has("smallkey", keys, 0, keys + 1, 2), KDSreturn(keys, keys + 1) end)
+EP_dark_eyegore_room_1N_door:connect_two_ways_entrance_door_stuck("", EP_attic_start_3N_door, function(keys, Current_Dungeon) return Has("smallkey", keys, 0, keys + 1, 2), KDSreturn(keys, keys + 1) end)
 EP_attic_start_3N_door:connect_two_ways(EP_attic_start)
 
 EP_attic_start:connect_one_way("EP - Attic Start Pot #1")
