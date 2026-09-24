@@ -51,6 +51,8 @@ ScriptHost:AddWatchForCode("set shop cost-type", "shuffle_cost_type", SetCostTyp
 ScriptHost:AddWatchForCode("set shop default inventory", "shop_sanity", SetShopInventory)
 ScriptHost:AddWatchForCode("set prize shuffles", "prize_shuffle", SetPrizeShuffle)
 SetPrizeShuffle()
+ScriptHost:AddWatchForCode("set enemizer", "enemizer", SetEnemizer)
+SetEnemizer()
 
 
 ScriptHost:AddWatchForCode("set all autofill", "autofill_all_settings", SetAllAutoFill)

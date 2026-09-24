@@ -1,7 +1,15 @@
-function Enemy_tracking_scope(scope_name, scope_health, scope_dmg_table, scope_counter)
+function Enemy_tracking_scope(scope_room_id, scope_counter, scope_code, scope_enemy_id) --code = room_id..counter
+    local Code = scope_code
+    local Basename = scope_code.."_lua"
+
+    local default_unkown_img = ImageReference:FromPackRelativePath("images/items/unknown.png")
+    local defaultReferenceEnemy = Tracker:FindObjectForCode("enemy_"..scope_enemy_id) --[[@as LuaItem]]
     
-    local Code = "enemy_"..scope_counter
-    local Basename = scope_name.."_lua"
+    local defaultReferenceEnemy_code = string.gsub(defaultReferenceEnemy.Name, " ", "_")
+    defaultReferenceEnemy_code = string.gsub(defaultReferenceEnemy_code, "%(", "")
+    defaultReferenceEnemy_code = string.gsub(defaultReferenceEnemy_code, "%)", "")
+
+    ENEMY_ROOM_MAPPING[Basename] = defaultReferenceEnemy_code
 
     ---function that get triggered when left clicking a lua items as hosted item or in an itemgrid
     ---will select 2 LuaItems and connect them to be traversable in the graph
@@ -11,6 +19,7 @@ function Enemy_tracking_scope(scope_name, scope_health, scope_dmg_table, scope_c
             MANUAL_TRACKING_ENEMIES = true
             SELECTED_ENEMY = self
             Tracker:UiHint("ActivateTab", "Damage Table")
+            Tracker:UiHint("ActivateTab", "Overview")
         end
     end
 
@@ -19,8 +28,20 @@ function Enemy_tracking_scope(scope_name, scope_health, scope_dmg_table, scope_c
     ---specific to ER LuaItems
     ---@param self LuaItem
     local function OnRightClickFunc(self)
-        Tracker:UiHint("ActivateTab", "Damage Table")
-        Tracker:UiHint("ActivateTab", "Overview")
+        if ENEMIZER then
+            self.Icon = default_unkown_img
+            self.Name = "unknown"
+            self.ItemState.EnemyRefCode = nil
+            self.ItemState.EnemyRefItem = nil
+            ENEMY_ROOM_MAPPING[Basename] = "unkown"
+        else
+            
+            self.Icon = defaultReferenceEnemy.Icon
+            self.Name = defaultReferenceEnemy.Name
+            self.ItemState.EnemyRefCode = self.ItemState.EnemyRefDefaultCode
+            self.ItemState.EnemyRefItem = self.ItemState.EnemyRefDefaultItem
+            ENEMY_ROOM_MAPPING[Basename] = defaultReferenceEnemy_code
+        end
     end
 
     ---function that get triggered when middle clicking a lua items as hosted item or in an itemgrid
@@ -63,13 +84,13 @@ function Enemy_tracking_scope(scope_name, scope_health, scope_dmg_table, scope_c
         return {
             Name = self.Name,
             Icon = self.Icon,
-            Health = self:Get("Health"),
-            Default_damage_table = self.ItemState.Default_damage_table,
-            Damage_table = self.ItemState.Damage_table,
-            Index = self:Get("Index"),
-            Code = self:Get("Code"),
-            SpecialEffect = self:Get("SpecialEffect"),
-            Invulnerable = self:Get("Invulnerable"),
+            Code = self.ItemState.Code,
+            EnemyRefItem = self.ItemState.EnemyRefItem,
+            EnemyRefCode = self.ItemState.EnemyRefCode,
+            EnemyRefItemDefault = self.ItemState.EnemyRefItemDefault,
+            EnemyRefCodeDefault = self.ItemState.EnemyRefCodeDefault,
+            Originpath = self.ItemState.Originpath,
+            last_enemy_mapping = ENEMY_ROOM_MAPPING[Basename],
         }
         -- print("SaveFunc")
     end
@@ -81,19 +102,13 @@ function Enemy_tracking_scope(scope_name, scope_health, scope_dmg_table, scope_c
         if data ~= nil and self.Name == data.Name then
             self.Name = data.Name
             self.Icon = data.Icon
-            self:Set("Health", data.Health)
-            self.ItemState.Default_damage_table = data.Default_damage_table
-            self.ItemState.Damage_table = data.Damage_table
-            self:Set("Index", data.Index)
-            self:Set("Code", data.Code)
-            self:Set("SpecialEffect", data.SpecialEffect)
-            self:Set("Invulnerable", data.Invulnerable)
-            if data.BadgeText ~= nil then
-                self.BadgeText = data.BadgeText
-                self.BadgeTextColor = "#abcdef"
-                self:SetOverlayFontSize(10)
-                self:SetOverlayAlign("left")
-            end
+            self.ItemState.Code = data.Code
+            self.ItemState.EnemyRefItem = data.EnemyRefItem
+            self.ItemState.EnemyRefCode = data.EnemyRefCode
+            self.ItemState.EnemyRefItemDefault = data.EnemyRefItemDefault
+            self.ItemState.EnemyRefCodeDefault = data.EnemyRefCodeDefault
+            self.ItemState.Originpath = data.Originpath
+            ENEMY_ROOM_MAPPING[Basename] = data.last_enemy_mapping
         else
             -- print("skipped laoding")
         end
@@ -114,72 +129,30 @@ function Enemy_tracking_scope(scope_name, scope_health, scope_dmg_table, scope_c
     local function Type()
     end
 
-    local reverse_dmg_list = {
-        [255] = 2, --stun
-        [254] = 3, --freeze
-        [253] = 4, --burn 
-        [252] = 2, --stun
-        [251] = 2, --stun
-        [250] = 5, --transform slime 
-        [249] = 6, --fransform fairy
-        [0] = 7, --immune
-    }
 
     ---function to create ER LuaItems in their default state
-    ---@param name string
-    ---@param health integer
-    ---@param dmg_table integer[]
+    ---@param room_id integer
     ---@param counter integer
+    ---@param code string
+    ---@param enemy_id integer
     ---@return LuaItem
-    function CreateLuaEnemeyClass(name, health, dmg_table, counter)
+    function CreateLuaEnemeyTracking(room_id, counter, code, enemy_id)
         local self = ScriptHost:CreateLuaItem()
         -- self.Type = "custom"
-        self.Name = name
-        self.Icon = ImageReference:FromPackRelativePath("images/enemies/" .. string.lower(name) .. ".png")
+        self.Name = defaultReferenceEnemy.Name
+        self.Icon = defaultReferenceEnemy.Icon
         -- -@type ItemState
         self.ItemState = {
-            Health = health,
-            RAW_damage_table = {table.unpack(dmg_table)},
-            Default_damage_table = {},
-            Damage_table = {},
-            Index = counter,
-            Code = "enemy_"..counter,
-            Invulnerable = nil,
-            SpecialEffect = nil,
-            
+            EnemyRefItem = nil,
+            EnemyRefCode = nil,
+            EnemyRefItemDefault = defaultReferenceEnemy,
+            EnemyRefCodeDefault = "enemy_"..enemy_id,
+            Code = code,
+            Originpath = ROOM_LOOKUPTABLE[room_id]
         } --[[@as table<string, any>]]
 
         self.PotentialCodes = {Code, Basename}
-
-        local invulnerable = health == 255
-        self:Set("Invulnerable", invulnerable)
-        -- local stun = {255, 251}
-        -- local freeze = {254}
-        -- local burn = {253}
-        -- local transform_slime = {250}
-        -- local transform_fairy = {249}
-        self:Set("SpecialEffect", nil)
-
-        NAMED_ENEMIES[name] = self
-        for i=1,16 do
-            local dmg_class_item = Tracker:FindObjectForCode(scope_counter.."_"..i-1)
-            -- REVERSE_DMG_CLASSES[scope_counter.."_"..i-1] = Basename
-            if invulnerable then
-                -- dmg_class_item.CurrentStage = 7
-                self.ItemState.Default_damage_table[i] = 7
-                self.ItemState.Damage_table[i] = 7
-            elseif reverse_dmg_list[dmg_table[i]] then
-                self.ItemState.Default_damage_table[i] = reverse_dmg_list[dmg_table[i]]
-                self.ItemState.Damage_table[i] = reverse_dmg_list[dmg_table[i]]
-            else
-                self.ItemState.Default_damage_table[i] = 1
-                self.ItemState.Damage_table[i] = 1
-            end
-            dmg_class_item.CurrentStage = self.ItemState.Damage_table[i]
-        end 
-        -- for i=0,15 do
-        --     ScriptHost:AddWatchForCode("handler for dmg class: "..scope_counter.."_"..i, scope_counter.."_"..i, ChangeDmgClassProperty)
-        -- end
+        ENEMY_ROOM_MAPPING[Basename] = defaultReferenceEnemy_code
 
         self.BadgeTextColor = "#abcdef"
         self:SetOverlayFontSize(10)
@@ -200,149 +173,8 @@ function Enemy_tracking_scope(scope_name, scope_health, scope_dmg_table, scope_c
         return self
     end
 
-    return CreateLuaEnemeyClass(scope_name, scope_health, scope_dmg_table, scope_counter)
+    return CreateLuaEnemeyTracking(scope_room_id, scope_counter, scope_code, scope_enemy_id)
 end
-
-
----@type table<string, enemy_table>
-DEFAULT_ENEMY_DAMAGE_TABLE = {
-    {{["alttpr"] = {[21] = true}}, "Anti-Fairy", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 249, 0, 0, 0, 0, 0}, --1 --"enemy_0",
-    {{["alttpr"] = {[70] = true}}, "Blue Archer", 6, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 253, 254, 253, 254, 250}, --"enemy_1",
-    {{["alttpr"] = {[71] = true}}, "Green Archer", 4, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 253, 8, 253, 64, 250}, --"enemy_2",
-    {{["alttpr"] = {[81] = true}}, "Armos", 8, 255, 2, 4, 8, 16, 16, 64, 255, 4, 100, 0, 8, 254, 253, 16, 25}, --"enemy_3",
-    {{["alttpr"] = {[141] = true}}, "Arrgi", 8, 0, 0, 4, 8, 16, 16, 0, 0, 4, 100, 0, 8, 8, 0, 0, 0}, --"enemy_4",
-    {{["alttpr"] = {[157] = true}}, "Babusu", 4, 0, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 64, 253, 64, 64}, --"enemy_5",
-    -- {{80}, "Ball", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, --"",
-    {{["alttpr"] = {[106] = true}}, "Ball and Chain Soldier", 16, 251, 2, 2, 8, 16, 16, 4, 255, 4, 100, 0, 253, 0, 253, 254, 250}, --"enemy_6",
-    -- {{}, "Bari", 2, 0, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 64, 253, 64, 255},
-    {{["alttpr"] = {[36] = true}}, "Blue Bari", 2, 0, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 64, 253, 64, 255}, --"enemy_7",
-    {{["alttpr"] = {[35] = true}}, "Red Bari", 2, 0, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 64, 253, 64, 255}, --"enemy_8",
-    {{["alttpr"] = {[97] = true}}, "Beamos", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, --"enemy_9",
-    {{["alttpr"] = {[121] = true}}, "Bee", 0, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 249, 8, 8, 16, 16, 32}, --"enemy_10",
-    {{["alttpr"] = {}}, "Biri", 2, 0, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 64, 253, 64, 255}, --"enemy_11",
-    {{["alttpr"] = {[138] = true}}, "Blade Trap", 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, --"enemy_12",
-    -- {{}, "Blazing Bat", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, --"",
-    {{["alttpr"] = {[74] = true}}, "Bomb Knight", 8, 255, 2, 3, 4, 16, 16, 4, 255, 4, 100, 0, 253, 254, 253, 254, 250}, --"enemy_13",
-    -- {{}, "Bone Cucco", 255, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 8, 8, 0, 0, 0}, --"",
-    {{["alttpr"] = {[244] = true}}, "Boulder", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, --"enemy_14",
-    {{["alttpr"] = {[147] = true}}, "Bumper", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, --"enemy_15",
-    {{["alttpr"] = {[109] = true}}, "Buzz", 8, 255, 2, 4, 8, 16, 16, 4, 64, 4, 100, 250, 253, 254, 253, 254, 250}, --"enemy_16",
-    {{["alttpr"] = {[13] = true}}, "Buzz Blob", 3, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 249, 253, 254, 253, 254, 255}, --"enemy_17"
-    {{["alttpr"] = {[202] = true}}, "Chain Chomp", 5, 251, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, --"enemy_18",
-    {{["alttpr"] = {[111] = true}}, "Chasupa", 4, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 254, 253, 254, 255}, --"enemy_19",
-    {{["alttpr"] = {[0] = true}}, "Crow", 4, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 254, 253, 254, 32}, --"enemy_20",
-    {{["alttpr"] = {[11] = true}}, "Cucco", 255, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 8, 8, 0, 0, 0}, --"enemy_21",
-    -- {{}, "Cukeman", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, --"",
-    {{["alttpr"] = {[39] = true}}, "Deadrock", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, --"enemy_22",
-    {{["alttpr"] = {[100] = true}}, "Devalant", 4, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 64, 8, 64, 16, 64}, --"enemy_23",
-    -- {{100}, "Blue Devalant", 4, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 64, 8, 64, 16, 64}, --"",
-    -- {{100}, "Red Devalant", 4, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 64, 8, 64, 16, 64}, --"",
-    {{["alttpr"] = {[131] = true}}, "Green Eyegore", 16, 0, 2, 4, 64, 64, 16, 64, 0, 4, 24, 0, 0, 0, 0, 0, 0}, --"enemy_24",
-    {{["alttpr"] = {[132] = true}}, "Red Eyegore", 8, 0, 0, 0, 0, 0, 0, 4, 0, 0, 100, 0, 0, 0, 0, 0, 0}, --"enemy_25",
-    {{["alttpr"] = {[198] = true}}, "Fireball Cannon", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, --"enemy_26",
-    -- {{}, "Flying Tile", 0, 1, 2, 4, 64, 16, 16, 4, 64, 4, 100, 0, 253, 8, 253, 64, 255}, --"",
-    {{["alttpr"] = {[161] = true}}, "Freezor", 16, 0, 0, 0, 0, 16, 16, 0, 0, 0, 0, 0, 253, 0, 253, 0, 0}, --"enemy_27",
-    {{["alttpr"] = {[76] = true}}, "Geldman", 4, 1, 2, 4, 8, 16, 16, 64, 255, 4, 100, 0, 64, 8, 64, 16, 255}, --"enemy_28",
-    {{["alttpr"] = {[80] = true}}, "Giant Ball", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, --"enemy_29",
-    {{["alttpr"] = {[138] = true}}, "Giant Blade Trap", 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, --"enemy_30",
-    {{["alttpr"] = {[139] = true}}, "Gibdo", 32, 255, 2, 4, 8, 16, 16, 0, 0, 4, 100, 0, 253, 254, 253, 254, 255}, --"enemy_31",
-    {{["alttpr"] = {[195] = true}}, "Gibo", 8, 0, 2, 4, 8, 16, 16, 16, 0, 4, 100, 0, 0, 0, 0, 0, 0}, --"enemy_32",
-    {{["alttpr"] = {[178] = true}}, "Golden Bee", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, --"enemy_33",
-    {{["alttpr"] = {[239] = true}}, "Green Goriya", 16, 0, 2, 4, 64, 64, 16, 64, 0, 4, 24, 0, 0, 0, 0, 0, 0}, --"enemy_34",
-    {{["alttpr"] = {[240] = true}}, "Red Goriya", 8, 0, 0, 0, 0, 0, 0, 4, 0, 0, 100, 0, 0, 0, 0, 0, 0}, --"enemy_35"
-    {{["alttpr"] = {[126] = true, [127] = true}}, "Guruguru Bar", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, --"enemy_36",
-    {{["alttpr"] = {[38] = true}}, "Blue Hardhat Beetle", 6, 0, 2, 4, 8, 16, 16, 0, 255, 255, 100, 0, 0, 0, 253, 254, 255}, --"enemy_37",
-    {{["alttpr"] = {[38] = true}}, "Red Hardhat Beetle", 32, 0, 2, 4, 8, 16, 16, 0, 255, 255, 100, 0, 0, 0, 253, 254, 255}, --"enemy_38",
-    {{["alttpr"] = {[24] = true}}, "Mini Helmasaur", 4, 0, 2, 4, 8, 16, 16, 4, 255, 64, 100, 250, 0, 0, 253, 254, 250}, --"enemy_39",
-    {{["alttpr"] = {[17] = true}}, "Hinox", 20, 252, 2, 4, 8, 16, 64, 4, 0, 64, 100, 0, 8, 254, 253, 254, 250}, --"enemy_40",
-    {{["alttpr"] = {[23] = true}}, "Bush Hoarder", 2, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 64, 64, 64, 64, 250}, --"enemy_41",
-    {{["alttpr"] = {[62] = true}}, "Stone Hoarder", 2, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 8, 64, 64, 64, 250}, --"enemy_42",
-    {{["alttpr"] = {[199] = true}}, "Hokkubokku", 32, 0, 2, 4, 8, 16, 16, 4, 0, 4, 24, 0, 253, 8, 253, 254, 255}, --"enemy_43",
-    {{["alttpr"] = {[129] = true}}, "Hover", 4, 0, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 254, 253, 16, 64}, --"enemy_44",
-    {{["alttpr"] = {[25] = true}}, "Hyu", 8, 1, 2, 4, 64, 16, 16, 4, 64, 4, 100, 0, 253, 8, 253, 64, 255}, --"enemy_45",
-    {{["alttpr"] = {[111] = true}}, "Keese", 1, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 254, 253, 254, 255}, --"enemy_46",
-    {{["alttpr"] = {[134] = true}}, "Kodongo", 0, 0, 2, 4, 8, 16, 16, 4, 0, 0, 100, 0, 253, 254, 253, 254, 250}, --"enemy_47",
-    -- {{134}, "Green Kodongo", 0, 0, 2, 4, 8, 16, 16, 4, 0, 0, 100, 0, 253, 254, 253, 254, 250}, --"",
-    -- {{}, "Red Kodongo", 0, 0, 2, 4, 8, 16, 16, 4, 0, 0, 100, 0, 253, 254, 253, 254, 250}, --"",
-    {{["alttpr"] = {[85] = true}}, "Ku", 8, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 253, 8, 253, 64, 32}, --"enemy_48",
-    {{["alttpr"] = {[154] = true}}, "Kyameron", 4, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 64, 254, 64, 254, 32}, --"enemy_49",
-    {{["alttpr"] = {[0] = true}}, "Kyune", 8, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 254, 253, 254, 32}, --"enemy_50",
-    {{["alttpr"] = {[149] = true, [150] = true, [151] = true, [152] = true}}, "Laser Eye", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, --"enemy_51",
-    {{["alttpr"] = {[113] = true}}, "Leever", 4, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 253, 254, 253, 254, 64}, --"enemy_52",
-    -- {{113}, "Green Leever", 4, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 253, 254, 253, 254, 64}, --"",
-    -- {{113}, "Purple Leever", 4, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 253, 254, 253, 254, 64}, --"",
-    -- {{}, "Like Like", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, --"",
-    {{["alttpr"] = {[208] = true}}, "Lynel", 24, 0, 0, 0, 8, 16, 16, 0, 0, 0, 24, 0, 0, 0, 0, 0, 0}, --"enemy_53"
-    {{["alttpr"] = {[197] = true}}, "Medusa", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, --"enemy_54",
-    {{["alttpr"] = {[24] = true}}, "Mini-Moldorm", 3, 0, 2, 4, 8, 16, 16, 4, 64, 4, 100, 250, 253, 8, 253, 16, 250}, --"enemy_55",
-    {{["alttpr"] = {[66] = true}}, "Moblin", 4, 255, 2, 4, 8, 16, 16, 4, 255, 64, 100, 250, 253, 254, 253, 254, 250}, --"enemy_56",
-    {{["alttpr"] = {[15] = true}}, "Octoballoon", 2, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 8, 253, 16, 64}, --"enemy_57",
-    {{["alttpr"] = {[8] = true}}, "Octorok", 2, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 253, 254, 253, 254, 250}, --"enemy_58",
-    {{["alttpr"] = {[153] = true}}, "Pengator", 16, 1, 2, 4, 8, 16, 16, 4, 64, 64, 100, 0, 8, 0, 253, 254, 64}, --"enemy_59",
-    {{["alttpr"] = {[170] = true}}, "Pikit", 12, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 253, 8, 253, 254, 255}, --"enemy_60",
-    {{["alttpr"] = {[196] = true}}, "Pikku", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, --"enemy_61",
-    {{["alttpr"] = {[148] = true}}, "Pirogusu", 2, 1, 2, 4, 64, 16, 16, 4, 64, 4, 100, 0, 253, 8, 253, 64, 255}, --"enemy_62",
-    {{["alttpr"] = {[25] = true}}, "Poe", 8, 1, 2, 4, 64, 16, 16, 4, 64, 4, 100, 0, 253, 8, 253, 64, 255}, --"enemy_63",
-    {{["alttpr"] = {[78] = true, 79}}, "Popo", 2, 255, 2, 4, 8, 16, 16, 4, 64, 4, 100, 250, 253, 254, 253, 254, 250}, --"enemy_64",
-    {{["alttpr"] = {[209] = true}}, "Rabbit_Beam", 64, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 249, 0, 0, 64, 64, 64}, --"enemy_65",
-    {{["alttpr"] = {[109] = true}}, "Rat", 2, 255, 2, 4, 8, 16, 16, 4, 64, 4, 100, 250, 253, 254, 253, 254, 250}, --"enemy_66",
-    {{["alttpr"] = {[85] = true}}, "River Zora", 8, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 253, 8, 253, 64, 32}, --"enemy_67",
-    {{["alttpr"] = {[86] = true}}, "River Zora Walking", 8, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 253, 8, 253, 64, 32}, --"enemy_68",
-    {{["alttpr"] = {[34] = true}}, "Ropa", 8, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 253, 254, 253, 254, 250}, --"enemy_69",
-    {{["alttpr"] = {[110] = true}}, "Rope", 4, 255, 2, 4, 8, 16, 16, 4, 64, 4, 100, 250, 253, 254, 253, 254, 250}, --"enemy_70",
-    {{["alttpr"] = {[88] = true}}, "Sand Crab", 2, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 8, 254, 253, 254, 250}, --"enemy_71",
-    {{["alttpr"] = {[8] = true}}, "Slarok", 4, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 253, 254, 253, 254, 250}, --"enemy_72",
-    -- {{}, "Slime", 0, 255, 2, 4, 8, 16, 16, 4, 64, 64, 100, 0, 253, 254, 253, 254, 64}, --"",
-    {{["alttpr"] = {[32] = true}}, "Sluggula", 8, 255, 2, 4, 8, 16, 16, 4, 255, 0, 100, 250, 253, 254, 253, 254, 250}, --"enemy_73"
-    {{["alttpr"] = {[14] = true}}, "Snap Dragon", 12, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 253, 254, 253, 254, 250}, --"enemy_74",
-    {{["alttpr"] = {[75] = true}}, "Green Soldier", 4, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 253, 254, 253, 254, 250}, --"enemy_75",
-    {{["alttpr"] = {[91] = true,92}}, "Spark", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 253, 0, 255}, --"enemy_76",
-    {{["alttpr"] = {[72] = true}}, "Spear Knight", 8, 255, 2, 3, 4, 16, 16, 4, 255, 4, 100, 0, 253, 0, 253, 254, 250}, --"enemy_77",
-    {{["alttpr"] = {[67] = true}}, "Green Spear Soldier", 4, 255, 2, 3, 4, 16, 16, 4, 255, 4, 100, 0, 253, 0, 253, 254, 250}, --"enemy_78",
-    {{["alttpr"] = {[69] = true}}, "Red Spear Soldier", 8, 255, 2, 3, 4, 16, 16, 4, 255, 4, 100, 0, 253, 0, 253, 254, 250}, --"enemy_79",
-    {{["alttpr"] = {[73] = true}}, "Red Bush Soldier", 8, 255, 2, 3, 4, 16, 16, 4, 255, 4, 100, 0, 253, 0, 253, 254, 250}, --"enemy_80",
-    {{["alttpr"] = {[93] = true,94,95,96}}, "Spiked Roller", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, --"enemy_81",
-    {{["alttpr"] = {[110] = true}}, "Stal", 4, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 8, 8, 16, 64, 250}, --"enemy_82",
-    {{["alttpr"] = {[167] = true}}, "Stalfos", 4, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 253, 64, 253, 64, 250}, --"enemy_83",
-    -- {{167}, "Blue Stalfos", 4, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 253, 64, 253, 64, 250}, --"",
-    -- {{167}, "Gray Stalfos", 4, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 253, 64, 253, 64, 250}, --"",
-    -- {{167}, "Red Stalfos", 4, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 253, 64, 253, 64, 250}, --"",
-    {{["alttpr"] = {[133] = true}}, "Yellow Stalfos", 4, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 253, 64, 253, 64, 250}, --"enemy_84",
-    {{["alttpr"] = {[124] = true}}, "Orange Stalfos Head", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, --"enemy_85",
-    -- {{167}, "Green Stalfos Head", 4, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 253, 64, 253, 64, 250}, --"",
-    {{["alttpr"] = {[145] = true}}, "Stalfos Knight", 64, 1, 2, 4, 8, 16, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, --"enemy_86",
-    {{["alttpr"] = {[110] = true}}, "Stalrope", 8, 255, 2, 4, 8, 16, 16, 4, 64, 4, 100, 250, 253, 254, 253, 254, 250}, --"enemy_87",
-    {{["alttpr"] = {[207] = true}}, "Swamola", 16, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 8, 8, 16, 64, 32}, --"enemy_88",
-    {{["alttpr"] = {[68] = true}}, "Sword Knight", 6, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 253, 0, 253, 254, 250}, --"enemy_89",
-    {{["alttpr"] = {[65] = true}}, "Blue Sword Soldier", 6, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 253, 8, 253, 254, 250}, --"enemy_90",
-    {{["alttpr"] = {[66] = true}}, "Green Sword Soldier", 4, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 253, 254, 253, 254, 250}, --"enemy_91"
-    {{["alttpr"] = {[65] = true}}, "Blue Taros", 6, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 253, 8, 253, 254, 250}, --"enemy_92",
-    {{["alttpr"] = {[69] = true}}, "Red Taros", 8, 255, 2, 3, 4, 16, 16, 4, 255, 4, 100, 0, 253, 0, 253, 254, 250}, --"enemy_93",
-    {{["alttpr"] = {[201] = true}}, "Tektite", 8, 251, 2, 4, 8, 16, 16, 16, 0, 64, 100, 0, 253, 254, 253, 254, 250}, --"enemy_94",
-    -- {{201}, "Blue Tektite", 8, 251, 2, 4, 8, 16, 16, 16, 0, 64, 100, 0, 253, 254, 253, 254, 250}, --"",
-    -- {{201}, "Red Tektite", 8, 251, 2, 4, 8, 16, 16, 16, 0, 64, 100, 0, 253, 254, 253, 254, 250}, --"",
-    {{["alttpr"] = {[142] = true}}, "Terrorpin", 8, 1, 2, 4, 8, 16, 16, 4, 255, 64, 100, 0, 8, 254, 64, 254, 255}, --"enemy_95",
-    {{["alttpr"] = {[196] = true}}, "Thief", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, --"enemy_96",
-    {{["alttpr"] = {[77] = true}}, "Toppo", 2, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 253, 64, 253, 64, 255}, --"enemy_97",
-    {{["alttpr"] = {[1] = true}}, "Vulture", 6, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 254, 253, 254, 32}, --"enemy_98",
-    {{["alttpr"] = {[102] = true, [103] = true, [104] = true, [105] = true}}, "Wall Turret", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, --"enemy_99",
-    {{["alttpr"] = {[144] = true}}, "Wallmaster", 8, 1, 2, 4, 8, 16, 16, 4, 0, 4, 100, 0, 253, 8, 253, 16, 64}, --"enemy_100",
-    {{["alttpr"] = {[128] = true}}, "Winder", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, --"enemy_101",
-    {{["alttpr"] = {[155] = true}}, "Wizzrobe", 2, 0, 2, 4, 8, 16, 16, 4, 0, 0, 100, 0, 8, 8, 64, 16, 64}, --"enemy_102",
-    -- {{155}, "Green Wizzrobe", 2, 0, 2, 4, 8, 16, 16, 4, 0, 0, 100, 0, 8, 8, 64, 16, 64}, --"",
-    -- {{155}, "Purple Wizzrobe", 2, 0, 2, 4, 8, 16, 16, 4, 0, 0, 100, 0, 8, 8, 64, 16, 64}, --"",
-    {{["alttpr"] = {[165] = true}}, "Blue Zazak", 4, 255, 2, 4, 8, 16, 16, 4, 255, 64, 100, 0, 253, 254, 253, 254, 255}, --"enemy_103",
-    {{["alttpr"] = {[166] = true}}, "Red Zazak", 8, 255, 2, 4, 8, 16, 16, 4, 255, 64, 100, 0, 253, 254, 253, 254, 255}, --"enemy_104",
-    {{["alttpr"] = {[168] = true}}, "Green Zirro", 4, 0, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 254, 253, 254, 32}, --"enemy_105",
-    {{["alttpr"] = {[169] = true}}, "Blue Zirro", 8, 0, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 254, 253, 254, 32}, --"enemy_106",
-    {{["alttpr"] = {[143] = true}}, "Zol", 4, 255, 2, 4, 8, 16, 16, 4, 64, 64, 100, 0, 253, 254, 253, 254, 64}, --"enemy_107",
-    -- {{143}, "Dark Green Zol", 4, 255, 2, 4, 8, 16, 16, 4, 64, 64, 100, 0, 253, 254, 253, 254, 64}, --"",
-    -- {{143}, "Green Zol", 4, 255, 2, 4, 8, 16, 16, 4, 64, 64, 100, 0, 253, 254, 253, 254, 64}, --"",
-    -- {{143}, "Red Zol", 4, 255, 2, 4, 8, 16, 16, 4, 64, 64, 100, 0, 253, 254, 253, 254, 64}, --"",
-    -- {{143}, "Yellow Zol", 4, 255, 2, 4, 8, 16, 16, 4, 64, 64, 100, 0, 253, 254, 253, 254, 64}, --""
-    {{["alttpr"] = {[156] = true}}, "Zoro", 4, 0, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 64, 253, 64, 64}, --"enemy_108"
-    --- maybe add bosses here later
-}
 
 ALL_ENEMIES = {
     [1310775] = {"@HC/Hyrule Castle/Enemy Key Drops","@Hyrule Castle/Map Guard Key Drop/Map Guard Key Drop"},
@@ -373,21 +205,21 @@ ALL_ENEMIES = {
     [646596] = {"@GT/Ganon's Tower/Enemy Key Drops","@GT-inverted/Ganon's Tower/Enemy Key Drops","@Ganon's Tower Top/Mini Helmasaur Key Drop/Mini Helmasaur Key Drop"},
     [646516] = {"@SW/Skull Woods Back/Enemy Key Drops","@Skull Woods Back/Spike Corner Key Drop/Spike Corner Key Drop"},
     [649211] = {"@MM/Misery Mire/Enemy Key Drops","@Misery Mire/Conveyor Crystal Key Drop/Conveyor Crystal Key Drop"},
-    [209686540] = {"@None Enemy #13"},
-    [226463756] = {"@None Enemy #14"},
-    [8360526] = {"@None Enemy #1"},
-    [109023618] = {"@None Enemy #7"},
-    [125800842] = {"@None Enemy #8"},
-    [25137732] = {"@None Enemy #2"},
-    [41914886] = {"@None Enemy #3"},
-    [58692062] = {"@None Enemy #4"},
-    [75469388] = {"@None Enemy #5"},
-    [92246570] = {"@None Enemy #6"},
-    [142577994] = {"@None Enemy #9"},
-    [159355210] = {"@None Enemy #10"},
-    [176132108] = {"@None Enemy #11"},
-    [192909324] = {"@None Enemy #12"},
-    [260018456] = {"@None Enemy #16"},
+    -- [209686540] = {"@None Enemy #13"},
+    -- [226463756] = {"@None Enemy #14"},
+    -- [8360526] = {"@None Enemy #1"},
+    -- [109023618] = {"@None Enemy #7"},
+    -- [125800842] = {"@None Enemy #8"},
+    -- [25137732] = {"@None Enemy #2"},
+    -- [41914886] = {"@None Enemy #3"},
+    -- [58692062] = {"@None Enemy #4"},
+    -- [75469388] = {"@None Enemy #5"},
+    -- [92246570] = {"@None Enemy #6"},
+    -- [142577994] = {"@None Enemy #9"},
+    -- [159355210] = {"@None Enemy #10"},
+    -- [176132108] = {"@None Enemy #11"},
+    -- [192909324] = {"@None Enemy #12"},
+    -- [260018456] = {"@None Enemy #16"},
     [8359940] = {"@Castle Escape Enemies/Yet More Rats Enemy #1/Enemy #1"},--, "@Castle Escape/Enemies/Yet More Rats"},
     [25137156] = {"@Castle Escape Enemies/Yet More Rats Enemy #2/Enemy #2"},--, "@Castle Escape/Enemies/Yet More Rats"},
     [41914372] = {"@Castle Escape Enemies/Yet More Rats Enemy #3/Enemy #3"},--, "@Castle Escape/Enemies/Yet More Rats"},
@@ -1550,6 +1382,2138 @@ ALL_ENEMIES = {
     [58692172] = {"@Lightworld/Bonk Fairy Cave/Fairy Enemies"},--, "@Bonk Fairy Pool Enemy #4", "@Bonk Fairy Pool Enemies"},
 }
 
+DEFAULT_DUNGEON_ROOM_ENEMIES = {
+    [0] = {
+        214,
+    },
+    [1] = {
+
+    },
+    [10] = {
+        142,
+        142,
+        261,
+        261,
+        279,
+        261,
+        261,
+    },
+    [100] = {
+        111,
+        6,
+        111,
+        209,
+        109,
+        109,
+        109,
+        262,
+        262,
+        262,
+        262,
+        262,
+        262,
+    },
+    [101] = {
+        109,
+        109,
+        109,
+        109,
+        109,
+    },
+    [102] = {
+        129,
+        272,
+        36,
+        36,
+        55,
+        272,
+        154,
+        129,
+        129,
+        129,
+        273,
+        129,
+    },
+    [103] = {
+        147,
+        36,
+        36,
+        38,
+        38,
+        38,
+        38,
+        126,
+        127,
+        38,
+    },
+    [104] = {
+        147,
+        147,
+        147,
+        147,
+        139,
+        265,
+        139,
+        139,
+    },
+    [105] = {
+
+    },
+    [106] = {
+        142,
+        142,
+        21,
+        21,
+        142,
+        142,
+    },
+    [107] = {
+        30,
+        30,
+        131,
+        132,
+        21,
+        28,
+        132,
+        138,
+        138,
+        132,
+        132,
+        97,
+        97,
+        132,
+    },
+    [108] = {
+        84,
+        84,
+        84,
+        209,
+        197,
+    },
+    [109] = {
+        166,
+        97,
+        97,
+        166,
+        197,
+        97,
+        167,
+        166,
+        92,
+    },
+    [11] = {
+        30,
+        142,
+        142,
+        142,
+        142,
+        142,
+        142,
+        142,
+        142,
+        142,
+    },
+    [110] = {
+        153,
+        153,
+        153,
+        153,
+        153,
+    },
+    [111] = {
+
+    },
+    [112] = {
+
+    },
+    [113] = {
+        66,
+        65,
+        228,
+    },
+    [114] = {
+        65,
+        228,
+        65,
+    },
+    [115] = {
+        100,
+        97,
+        113,
+        113,
+        97,
+        113,
+        59,
+    },
+    [116] = {
+        100,
+        100,
+        131,
+        131,
+        113,
+        113,
+        113,
+        113,
+    },
+    [117] = {
+        100,
+        100,
+        113,
+        113,
+        113,
+        113,
+        102,
+        103,
+        113,
+        113,
+    },
+    [118] = {
+        33,
+        129,
+        154,
+        129,
+        143,
+        275,
+        36,
+    },
+    [119] = {
+        24,
+        30,
+        30,
+        30,
+        134,
+        134,
+    },
+    [12] = {
+
+    },
+    [120] = {
+
+    },
+    [121] = {
+
+    },
+    [122] = {
+
+    },
+    [123] = {
+        36,
+        36,
+        198,
+        167,
+        167,
+        198,
+        28,
+        38,
+        167,
+        198,
+        198,
+    },
+    [124] = {
+        24,
+        127,
+        138,
+        126,
+        38,
+        36,
+        267,
+    },
+    [125] = {
+        128,
+        128,
+        128,
+        128,
+        167,
+        198,
+        128,
+        19,
+        35,
+        128,
+        38,
+    },
+    [126] = {
+        147,
+        127,
+        153,
+        161,
+        161,
+        153,
+        127,
+    },
+    [127] = {
+        35,
+        35,
+        35,
+        35,
+        125,
+        125,
+        125,
+        125,
+    },
+    [128] = {
+        118,
+        66,
+        106,
+        228,
+    },
+    [129] = {
+        66,
+        66,
+    },
+    [13] = {
+        122,
+    },
+    [130] = {
+        65,
+        65,
+        65,
+    },
+    [131] = {
+        99,
+        99,
+        113,
+        227,
+        227,
+        113,
+        113,
+        97,
+        113,
+        113,
+    },
+    [132] = {
+        113,
+        113,
+        97,
+        113,
+        113,
+        113,
+        113,
+    },
+    [133] = {
+        99,
+        100,
+        79,
+        79,
+        79,
+        97,
+        113,
+        113,
+        97,
+        113,
+    },
+    [134] = {
+
+    },
+    [135] = {
+        24,
+        24,
+        24,
+        24,
+        276,
+        30,
+        30,
+        30,
+        167,
+        167,
+        167,
+        228,
+        167,
+    },
+    [136] = {
+
+    },
+    [137] = {
+        227,
+        227,
+    },
+    [138] = {
+
+    },
+    [139] = {
+        147,
+        30,
+        30,
+        36,
+        138,
+        167,
+        126,
+        127,
+    },
+    [14] = {
+        161,
+        36,
+        36,
+        36,
+        228,
+    },
+    [140] = {
+        6,
+        282,
+        282,
+        282,
+        282,
+        282,
+        91,
+        138,
+        167,
+        167,
+        128,
+        91,
+        21,
+        128,
+        21,
+        59,
+    },
+    [141] = {
+        276,
+        198,
+        21,
+        209,
+        198,
+        139,
+        265,
+        138,
+        167,
+        126,
+        36,
+        197,
+        36,
+    },
+    [142] = {
+        161,
+        143,
+        209,
+        143,
+        143,
+        143,
+        143,
+        143,
+    },
+    [143] = {
+
+    },
+    [144] = {
+        189,
+    },
+    [145] = {
+        30,
+        138,
+        264,
+        197,
+        209,
+        21,
+        21,
+    },
+    [146] = {
+        30,
+        30,
+        21,
+        197,
+        21,
+        197,
+        198,
+        278,
+        138,
+        21,
+        167,
+        21,
+    },
+    [147] = {
+        197,
+        197,
+        197,
+        197,
+        143,
+        167,
+        167,
+        21,
+    },
+    [148] = {
+
+    },
+    [149] = {
+        67,
+        67,
+        67,
+        67,
+        267,
+    },
+    [15] = {
+
+    },
+    [150] = {
+        126,
+        150,
+        150,
+        150,
+        150,
+    },
+    [151] = {
+        277,
+    },
+    [152] = {
+        143,
+        143,
+        143,
+        143,
+        143,
+    },
+    [153] = {
+        21,
+        21,
+        131,
+        131,
+        228,
+        78,
+        78,
+        79,
+        79,
+        79,
+        79,
+    },
+    [154] = {
+
+    },
+    [155] = {
+        30,
+        30,
+        30,
+        138,
+        138,
+        138,
+        198,
+        138,
+        138,
+        138,
+        138,
+        38,
+        38,
+    },
+    [156] = {
+        38,
+        19,
+        38,
+        38,
+        38,
+        38,
+        128,
+    },
+    [157] = {
+        30,
+        38,
+        139,
+        139,
+        38,
+        139,
+        36,
+        36,
+        36,
+    },
+    [158] = {
+        35,
+        35,
+        145,
+        35,
+        161,
+    },
+    [159] = {
+        157,
+        157,
+        157,
+        157,
+        21,
+        126,
+    },
+    [16] = {
+
+    },
+    [160] = {
+        197,
+        21,
+        128,
+    },
+    [161] = {
+        30,
+        91,
+        91,
+        155,
+        197,
+        197,
+        167,
+        209,
+        167,
+    },
+    [162] = {
+
+    },
+    [163] = {
+
+    },
+    [164] = {
+        203,
+        204,
+        205,
+    },
+    [165] = {
+        155,
+        155,
+        155,
+        155,
+        138,
+        155,
+        155,
+        155,
+        151,
+        151,
+        67,
+        65,
+    },
+    [166] = {
+        277,
+        21,
+    },
+    [167] = {
+        227,
+        227,
+    },
+    [168] = {
+        167,
+        167,
+        167,
+        167,
+        280,
+    },
+    [169] = {
+        131,
+        131,
+        261,
+        261,
+        261,
+        261,
+        167,
+        167,
+    },
+    [17] = {
+        109,
+        109,
+        111,
+        111,
+        109,
+        109,
+        109,
+        109,
+    },
+    [170] = {
+        21,
+        79,
+        167,
+        167,
+        167,
+        79,
+    },
+    [171] = {
+        30,
+        138,
+        138,
+        138,
+        143,
+        138,
+        138,
+        138,
+    },
+    [172] = {
+        206,
+    },
+    [173] = {
+
+    },
+    [174] = {
+        36,
+        36,
+    },
+    [175] = {
+        126,
+    },
+    [176] = {
+        67,
+        111,
+        111,
+        72,
+        72,
+        67,
+        106,
+        111,
+        111,
+        67,
+        67,
+        228,
+        68,
+        72,
+    },
+    [177] = {
+        197,
+        197,
+        138,
+        138,
+        155,
+        125,
+        198,
+        155,
+        21,
+        155,
+    },
+    [178] = {
+        155,
+        209,
+        21,
+        209,
+        21,
+        32,
+        32,
+        21,
+        197,
+        197,
+        32,
+        32,
+        78,
+        78,
+    },
+    [179] = {
+        167,
+        167,
+        97,
+        198,
+        167,
+    },
+    [18] = {
+        115,
+        118,
+    },
+    [180] = {
+
+    },
+    [181] = {
+        126,
+        126,
+        126,
+    },
+    [182] = {
+        202,
+        202,
+        30,
+        30,
+        227,
+        199,
+        228,
+        276,
+        143,
+        143,
+    },
+    [183] = {
+        95,
+        93,
+    },
+    [184] = {
+        78,
+        78,
+        130,
+        131,
+        167,
+        167,
+    },
+    [185] = {
+        259,
+    },
+    [186] = {
+        167,
+        21,
+        167,
+        21,
+        79,
+        167,
+        79,
+    },
+    [187] = {
+        166,
+        195,
+        166,
+        195,
+        21,
+        195,
+        128,
+        195,
+        195,
+        21,
+        195,
+    },
+    [188] = {
+        165,
+        167,
+        138,
+        166,
+        138,
+        165,
+        167,
+        167,
+        167,
+        165,
+        128,
+        166,
+    },
+    [189] = {
+
+    },
+    [19] = {
+        30,
+        21,
+        21,
+        21,
+        21,
+        124,
+        199,
+        228,
+        150,
+        124,
+        209,
+    },
+    [190] = {
+        21,
+        161,
+        36,
+        36,
+        145,
+        36,
+        36,
+    },
+    [191] = {
+        30,
+        209,
+    },
+    [192] = {
+        65,
+        70,
+        65,
+        70,
+        228,
+        65,
+        65,
+        70,
+        65,
+    },
+    [193] = {
+        30,
+        197,
+        197,
+        167,
+        167,
+        124,
+        197,
+        276,
+        21,
+        198,
+        36,
+        228,
+        124,
+    },
+    [194] = {
+        128,
+        128,
+        197,
+        91,
+        91,
+        209,
+        128,
+        91,
+    },
+    [195] = {
+        197,
+        150,
+        149,
+        150,
+        149,
+        267,
+        21,
+        197,
+    },
+    [196] = {
+        30,
+        30,
+        30,
+        30,
+        199,
+        21,
+        19,
+        19,
+        21,
+        21,
+    },
+    [197] = {
+        150,
+        149,
+        150,
+        149,
+        150,
+        149,
+        19,
+        150,
+    },
+    [198] = {
+        167,
+        167,
+        36,
+        36,
+        124,
+        36,
+        36,
+    },
+    [199] = {
+
+    },
+    [2] = {
+        109,
+        109,
+        109,
+        109,
+        109,
+        262,
+        262,
+        262,
+        262,
+        262,
+        262,
+        262,
+        6,
+        4,
+        109,
+        109,
+    },
+    [20] = {
+        176,
+        175,
+        174,
+        174,
+        174,
+        174,
+        176,
+        177,
+        176,
+        177,
+    },
+    [200] = {
+        83,
+        83,
+        83,
+        83,
+        83,
+        83,
+        281,
+    },
+    [201] = {
+        79,
+        79,
+        79,
+    },
+    [202] = {
+
+    },
+    [203] = {
+        209,
+        128,
+        165,
+        143,
+        91,
+        143,
+        167,
+        166,
+        166,
+        143,
+        143,
+        209,
+    },
+    [204] = {
+        128,
+        209,
+        165,
+        91,
+        143,
+        166,
+        165,
+        128,
+        143,
+        91,
+        91,
+        166,
+        143,
+        209,
+    },
+    [205] = {
+
+    },
+    [206] = {
+        35,
+        35,
+        4,
+        28,
+        36,
+        36,
+        36,
+        36,
+    },
+    [207] = {
+
+    },
+    [208] = {
+        111,
+        65,
+        111,
+        68,
+        111,
+        111,
+        65,
+        65,
+        68,
+        111,
+        68,
+    },
+    [209] = {
+        97,
+        97,
+        155,
+        35,
+        198,
+        32,
+        32,
+        32,
+    },
+    [21] = {
+        174,
+        174,
+        175,
+        177,
+        143,
+        143,
+        21,
+        199,
+        21,
+        21,
+    },
+    [210] = {
+        155,
+        78,
+        155,
+        155,
+        97,
+        78,
+        78,
+        155,
+        78,
+        78,
+    },
+    [211] = {
+
+    },
+    [212] = {
+
+    },
+    [213] = {
+        150,
+        149,
+        150,
+        149,
+        38,
+    },
+    [214] = {
+        151,
+        197,
+        197,
+    },
+    [215] = {
+
+    },
+    [216] = {
+        132,
+        132,
+        79,
+        79,
+        79,
+        79,
+        78,
+        78,
+        132,
+        167,
+        167,
+    },
+    [217] = {
+        258,
+        131,
+        131,
+        131,
+    },
+    [218] = {
+        21,
+        21,
+    },
+    [219] = {
+        209,
+        91,
+        166,
+        165,
+        143,
+        128,
+        165,
+    },
+    [22] = {
+        143,
+        143,
+        36,
+        143,
+        129,
+        129,
+        129,
+    },
+    [220] = {
+        165,
+        92,
+        166,
+        143,
+        143,
+        209,
+        166,
+        165,
+        128,
+        128,
+        143,
+    },
+    [221] = {
+
+    },
+    [222] = {
+        163,
+        164,
+        162,
+    },
+    [223] = {
+        24,
+        24,
+    },
+    [224] = {
+        106,
+        106,
+        68,
+        68,
+    },
+    [225] = {
+        235,
+        41,
+    },
+    [226] = {
+        227,
+        227,
+        227,
+        227,
+        235,
+    },
+    [227] = {
+        58,
+    },
+    [228] = {
+        111,
+        111,
+        111,
+        173,
+    },
+    [229] = {
+        111,
+        111,
+        111,
+        111,
+        111,
+        111,
+    },
+    [23] = {
+        147,
+        147,
+        147,
+        38,
+        38,
+        126,
+        38,
+        38,
+        38,
+    },
+    [230] = {
+        111,
+        111,
+        111,
+        111,
+        111,
+    },
+    [231] = {
+        111,
+        111,
+        111,
+        111,
+        111,
+        111,
+        111,
+    },
+    [232] = {
+        38,
+        38,
+        38,
+        38,
+    },
+    [233] = {
+
+    },
+    [234] = {
+        235,
+    },
+    [235] = {
+        147,
+    },
+    [236] = {
+
+    },
+    [237] = {
+
+    },
+    [238] = {
+        24,
+        24,
+        24,
+        36,
+        36,
+    },
+    [239] = {
+        24,
+        24,
+        24,
+        30,
+    },
+    [24] = {
+
+    },
+    [240] = {
+        111,
+        111,
+        111,
+        111,
+        111,
+        111,
+        111,
+        111,
+        173,
+        111,
+    },
+    [241] = {
+        111,
+        111,
+        111,
+        111,
+        111,
+        111,
+        111,
+        111,
+        111,
+        111,
+    },
+    [242] = {
+
+    },
+    [243] = {
+        120,
+    },
+    [244] = {
+        50,
+    },
+    [245] = {
+        50,
+    },
+    [246] = {
+
+    },
+    [247] = {
+
+    },
+    [248] = {
+
+    },
+    [249] = {
+        24,
+        24,
+        24,
+        24,
+    },
+    [25] = {
+        134,
+        134,
+        134,
+        134,
+    },
+    [250] = {
+        227,
+        227,
+        227,
+    },
+    [251] = {
+        147,
+        38,
+        38,
+    },
+    [252] = {
+
+    },
+    [253] = {
+        24,
+        36,
+        227,
+        227,
+        36,
+    },
+    [254] = {
+        24,
+        24,
+        24,
+        36,
+        36,
+    },
+    [255] = {
+        187,
+    },
+    [256] = {
+        187,
+    },
+    [257] = {
+        51,
+    },
+    [258] = {
+        31,
+    },
+    [259] = {
+        188,
+        41,
+        53,
+    },
+    [26] = {
+        19,
+        142,
+        142,
+        142,
+        142,
+        19,
+        138,
+        138,
+        28,
+        138,
+        267,
+    },
+    [260] = {
+        115,
+    },
+    [261] = {
+        22,
+    },
+    [262] = {
+        187,
+    },
+    [263] = {
+        59,
+        109,
+        109,
+    },
+    [264] = {
+        11,
+        11,
+        11,
+        11,
+    },
+    [265] = {
+        233,
+    },
+    [266] = {
+        22,
+    },
+    [267] = {
+        6,
+        282,
+        282,
+        282,
+        282,
+        4,
+        21,
+    },
+    [268] = {
+        227,
+        227,
+        227,
+        227,
+        131,
+        131,
+        131,
+        131,
+    },
+    [269] = {
+        91,
+        92,
+    },
+    [27] = {
+        30,
+        56,
+        138,
+        132,
+        131,
+        131,
+    },
+    [270] = {
+        40,
+        40,
+    },
+    [271] = {
+        187,
+    },
+    [272] = {
+        187,
+    },
+    [273] = {
+        101,
+    },
+    [274] = {
+        40,
+        187,
+    },
+    [275] = {
+
+    },
+    [276] = {
+        114,
+        40,
+    },
+    [277] = {
+        200,
+        227,
+        227,
+        227,
+        227,
+        114,
+    },
+    [278] = {
+        114,
+    },
+    [279] = {
+
+    },
+    [28] = {
+        83,
+        83,
+        83,
+        83,
+        83,
+        83,
+        281,
+        227,
+        227,
+        227,
+        227,
+    },
+    [280] = {
+        187,
+    },
+    [281] = {
+        41,
+    },
+    [282] = {
+        40,
+    },
+    [283] = {
+        235,
+        235,
+    },
+    [284] = {
+        181,
+    },
+    [285] = {
+
+    },
+    [286] = {
+        227,
+        227,
+        227,
+        227,
+        187,
+    },
+    [287] = {
+        187,
+    },
+    [288] = {
+        178,
+        227,
+        227,
+    },
+    [289] = {
+        26,
+    },
+    [29] = {
+
+    },
+    [290] = {
+        49,
+        49,
+    },
+    [291] = {
+        24,
+        24,
+        24,
+        24,
+        187,
+    },
+    [292] = {
+        187,
+    },
+    [293] = {
+        187,
+    },
+    [294] = {
+        227,
+        227,
+        227,
+        227,
+        235,
+    },
+    [295] = {
+        235,
+    },
+    [3] = {
+
+    },
+    [30] = {
+        30,
+        35,
+        35,
+        35,
+        35,
+        143,
+        143,
+    },
+    [31] = {
+        153,
+        153,
+        21,
+        209,
+        153,
+        153,
+        153,
+        153,
+    },
+    [32] = {
+        122,
+    },
+    [33] = {
+        109,
+        228,
+        111,
+        111,
+        109,
+        109,
+        109,
+        111,
+        111,
+        109,
+        109,
+        109,
+    },
+    [34] = {
+        109,
+        109,
+        109,
+        109,
+        109,
+        109,
+        109,
+    },
+    [35] = {
+        151,
+        151,
+        151,
+        151,
+        151,
+    },
+    [36] = {
+        197,
+        197,
+        96,
+        199,
+        197,
+        199,
+        209,
+    },
+    [37] = {
+
+    },
+    [38] = {
+        197,
+        35,
+        35,
+        167,
+        167,
+        197,
+        28,
+        198,
+        35,
+        154,
+        36,
+        128,
+    },
+    [39] = {
+        24,
+        24,
+        24,
+        24,
+        91,
+        134,
+        134,
+    },
+    [4] = {
+        30,
+        93,
+        96,
+        95,
+        95,
+        278,
+        4,
+        6,
+        282,
+        143,
+        282,
+        282,
+        282,
+        143,
+        143,
+        199,
+    },
+    [40] = {
+        154,
+        129,
+        129,
+        129,
+        138,
+    },
+    [41] = {
+        136,
+    },
+    [42] = {
+        30,
+        147,
+        38,
+        38,
+        38,
+        38,
+        38,
+        38,
+    },
+    [43] = {
+        30,
+        28,
+        35,
+        227,
+        227,
+        35,
+        35,
+        227,
+    },
+    [44] = {
+        200,
+        227,
+        227,
+        227,
+    },
+    [45] = {
+
+    },
+    [46] = {
+        153,
+        153,
+        153,
+        153,
+        153,
+        153,
+    },
+    [47] = {
+
+    },
+    [48] = {
+        193,
+    },
+    [49] = {
+        30,
+        30,
+        38,
+        38,
+        38,
+        38,
+        38,
+        38,
+        38,
+        38,
+        38,
+        38,
+    },
+    [5] = {
+
+    },
+    [50] = {
+        111,
+        110,
+        111,
+        110,
+        110,
+    },
+    [51] = {
+        84,
+        84,
+        84,
+    },
+    [52] = {
+        129,
+        129,
+        154,
+        128,
+        143,
+        36,
+        167,
+    },
+    [53] = {
+        30,
+        33,
+        35,
+        138,
+        167,
+        143,
+        167,
+        128,
+        198,
+        36,
+        167,
+    },
+    [54] = {
+        274,
+        129,
+        129,
+        197,
+        272,
+        154,
+        273,
+        129,
+        129,
+        275,
+        275,
+    },
+    [55] = {
+        33,
+        167,
+        143,
+        143,
+        167,
+        128,
+        167,
+        36,
+        198,
+        35,
+    },
+    [56] = {
+        129,
+        129,
+        154,
+        197,
+        154,
+        154,
+        129,
+    },
+    [57] = {
+        24,
+        265,
+        139,
+        228,
+        19,
+        138,
+        38,
+        138,
+    },
+    [58] = {
+        142,
+        142,
+        197,
+        36,
+        36,
+        197,
+    },
+    [59] = {
+        138,
+        35,
+        138,
+        36,
+        138,
+        36,
+        138,
+    },
+    [6] = {
+        140,
+        141,
+        141,
+        141,
+        141,
+        141,
+        141,
+        141,
+        141,
+        141,
+        141,
+        141,
+        141,
+        141,
+    },
+    [60] = {
+        38,
+        36,
+        36,
+    },
+    [61] = {
+        30,
+        30,
+        19,
+        228,
+        19,
+        197,
+        197,
+        138,
+        125,
+        266,
+        92,
+        91,
+        91,
+        209,
+        21,
+    },
+    [62] = {
+        30,
+        145,
+        145,
+        157,
+        157,
+        263,
+        157,
+        157,
+        36,
+        36,
+        228,
+        36,
+        36,
+    },
+    [63] = {
+        4,
+        145,
+        4,
+        145,
+        209,
+    },
+    [64] = {
+        65,
+        65,
+        28,
+        67,
+        70,
+        70,
+    },
+    [65] = {
+        109,
+        109,
+        109,
+        109,
+    },
+    [66] = {
+        110,
+        110,
+        110,
+        110,
+        110,
+        110,
+    },
+    [67] = {
+        132,
+        276,
+    },
+    [68] = {
+        147,
+        147,
+        36,
+        36,
+        143,
+        36,
+        35,
+        266,
+        36,
+    },
+    [69] = {
+        183,
+        166,
+        165,
+        167,
+        209,
+        165,
+        165,
+        165,
+        143,
+        166,
+        166,
+    },
+    [7] = {
+        9,
+    },
+    [70] = {
+        129,
+        273,
+        129,
+        273,
+        129,
+    },
+    [71] = {
+
+    },
+    [72] = {
+
+    },
+    [73] = {
+        24,
+        24,
+        24,
+        209,
+        139,
+        139,
+        265,
+        139,
+        139,
+        36,
+        35,
+        36,
+        139,
+    },
+    [74] = {
+        28,
+        19,
+        19,
+    },
+    [75] = {
+        132,
+        21,
+        21,
+        131,
+        131,
+        36,
+        36,
+        36,
+    },
+    [76] = {
+        147,
+        147,
+        19,
+        19,
+        19,
+        19,
+        19,
+        138,
+    },
+    [77] = {
+        9,
+    },
+    [78] = {
+        143,
+        143,
+        143,
+        126,
+    },
+    [79] = {
+        227,
+        227,
+        227,
+    },
+    [8] = {
+        200,
+    },
+    [80] = {
+        66,
+        75,
+        75,
+    },
+    [81] = {
+        238,
+        65,
+        65,
+    },
+    [82] = {
+        66,
+        75,
+        75,
+    },
+    [83] = {
+        78,
+        97,
+        79,
+        79,
+        97,
+        78,
+        78,
+        78,
+        97,
+        78,
+        78,
+        97,
+        78,
+    },
+    [84] = {
+        154,
+        129,
+        197,
+        126,
+        129,
+        154,
+        129,
+        154,
+    },
+    [85] = {
+        115,
+        75,
+        75,
+    },
+    [86] = {
+        266,
+        147,
+        147,
+        19,
+        38,
+        19,
+        19,
+        265,
+        38,
+        138,
+        38,
+        128,
+        38,
+    },
+    [87] = {
+        209,
+        35,
+        138,
+        167,
+        167,
+        139,
+        265,
+        139,
+        139,
+        139,
+        139,
+        167,
+        139,
+        36,
+        36,
+        28,
+    },
+    [88] = {
+        24,
+        24,
+        147,
+        19,
+        91,
+        4,
+        38,
+        38,
+        35,
+    },
+    [89] = {
+        24,
+        24,
+        147,
+        147,
+        138,
+        128,
+        138,
+        91,
+        209,
+        139,
+        139,
+        139,
+    },
+    [9] = {
+        197,
+        197,
+        21,
+    },
+    [90] = {
+        146,
+    },
+    [91] = {
+        30,
+        30,
+        138,
+        131,
+        132,
+        138,
+        138,
+        138,
+        138,
+    },
+    [92] = {
+        104,
+        105,
+        105,
+        227,
+        227,
+    },
+    [93] = {
+        167,
+        97,
+        167,
+        166,
+        167,
+        165,
+        167,
+        167,
+        97,
+        165,
+        165,
+        165,
+        97,
+    },
+    [94] = {
+        266,
+        197,
+        197,
+        125,
+        126,
+    },
+    [95] = {
+        36,
+        36,
+        36,
+    },
+    [96] = {
+        65,
+    },
+    [97] = {
+        66,
+        75,
+        75,
+    },
+    [98] = {
+        65,
+        66,
+        66,
+    },
+    [99] = {
+        276,
+        97,
+    }
+}
+
 
 
 -- ---@type table<string, enemy_table>
@@ -1567,13 +3531,20 @@ ALL_ENEMIES = {
 --     DEFAULT_ENEMY_DAMAGE_TABLE[enemy_name] = dmg_table
 -- end
 
-local counter = -1
+local counter = 0
 Tracker.BulkUpdate = true
 MANUAL_CHECKED = false
-for _, enemy in pairs(DEFAULT_ENEMY_DAMAGE_TABLE) do
-    counter = counter+1
-    -- Enemy_tracking_scope(enemy[1], enemy[2], {table.unpack(enemy, 3)}, counter)
+for room_id, enemy_table in pairs(DEFAULT_DUNGEON_ROOM_ENEMIES) do
+    counter = 0
+    for _, enemy_id in pairs(enemy_table) do
+        if NAMED_INDICES[enemy_id] then
+            counter = counter+1
+            local code = room_id.."_"..counter
+            Enemy_tracking_scope(room_id, counter, code, enemy_id)
+        else
+            print("skipped enemy: "..enemy_id.." in room: "..room_id)
+        end
+    end
 end
 MANUAL_CHECKED = true
 Tracker.BulkUpdate = false
-

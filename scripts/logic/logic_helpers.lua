@@ -13,6 +13,8 @@ GAMEVERISON = Tracker:FindObjectForCode("selected_game")
 GAMEVERSION_NAME = "Core AlttP"
 GAMEVERSION_STAGE = 0
 
+ENEMIZER = false
+
 local bool_to_accesslvl = {
     [true] = ACCESS_NORMAL,
     [false] = ACCESS_NONE
@@ -645,6 +647,10 @@ function SpikeCaveMagicLogic(needed_magic)
     return math.floor(basemagic) >= needed_magic
 end
 
+function SetEnemizer()
+    ENEMIZER = Tracker:FindObjectForCode("enemizer").Active
+end
+
 ---comment
 ---@param item any
 ---@return boolean
@@ -652,11 +658,8 @@ function EnemizerCheck(item)
     if CachedValues["EnemizerCheck"..tostring(item)] then
         return CachedValues["EnemizerCheck"..tostring(item)]
     end
-    print(Tracker:FindObjectForCode("enemizer").Active)
-    print(Tracker:ProviderCountForCode(item) > 0)
-    print(Tracker:FindObjectForCode("enemizer").Active or Tracker:ProviderCountForCode(item) > 0)
-    CachedValues["EnemizerCheck"..tostring(item)] = Tracker:FindObjectForCode("enemizer").Active or Tracker:ProviderCountForCode(item) > 0
-    return Tracker:FindObjectForCode("enemizer").Active or Tracker:ProviderCountForCode(item) > 0
+    CachedValues["EnemizerCheck"..tostring(item)] = ENEMIZER or Tracker:ProviderCountForCode(item) > 0
+    return ENEMIZER or Tracker:ProviderCountForCode(item) > 0
 end
 
 ---comment
@@ -1733,7 +1736,11 @@ function CanKillUpdate()
         local enemy = (Tracker:FindObjectForCode(enemy_name.."_lua") --[[@as LuaItem]]).ItemState
         if enemy then
             for i=1,16 do
-                if enemy.Damage_table[i] < 7 and ANY(table.unpack(DMG_class_items_lookup[i])) > 0 then
+                if enemy.Damage_table[i] < 7 and (
+                    ANY(table.unpack(DMG_class_items_lookup[i])) > 0
+                    or 
+                    (#enemy.Mendatory_items > 0 and ANY(table.unpack(enemy.Mendatory_items)) > 0)
+                ) then
                     ENEMY_KILLABLE[enemy_name] = true
                     break
                 else
@@ -1748,6 +1755,12 @@ function CanKillUpdate()
 end
 
 function CanKill(enemy_name)
+    local enemy_ref = ENEMY_ROOM_MAPPING[enemy_name]
+    if enemy_ref == "unknown" then
+        return ACCESS_NORMAL
+    else
+        return ENEMY_KILLABLE[enemy_ref] and ACCESS_NORMAL or ACCESS_NONE
+    end
     -- print(Dump_table(ENEMY_KILLABLE))
     -- print(enemy_name, ENEMY_KILLABLE[enemy_name])
     -- print(Dump_table(Tracker:FindObjectForCode("Green Archer_lua").ItemState))

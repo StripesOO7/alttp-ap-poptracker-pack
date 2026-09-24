@@ -34,6 +34,7 @@ ENTRANCE_MAPPING = {} -- structure --> ENTRANCE_MAPPING[<roomnumber>][<x-coord>]
 ---@type table< integer, table< integer, table< integer, {[1]:string, [2]: string?}? >? >? >
 DOORS_MAPPING = {} -- structure --> DOORS_MAPPING[<roomnumber>][<x-coord>][<y-coord>] = location name
 NAMED_ENEMIES = {}
+NAMED_INDICES = {}
 NAMED_DMG_CLASSES = {}
 Current_Dungeon = nil
 
