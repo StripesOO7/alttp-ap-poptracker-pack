@@ -37,15 +37,15 @@ AT_aga_arena_3S_door = alttp_location.new("AT_aga_arena_3S_door", "AT Aga Arena 
 
 AT_entrance_inside:connect_two_ways(AT_lobby)
 AT_lobby:connect_one_way(AT_golden_guards)
-AT_golden_guards:connect_one_way("AT - Gold Knights Enemy #1", function() return DealDamage end)
--- AT_golden_guards:connect_one_way("AT - Gold Knights Enemy #2", function() return DealDamage end)
+AT_golden_guards:connect_one_way("AT - Gold Knights Enemy #1", function() return CanKill("224_1_enemy") end)
+AT_golden_guards:connect_one_way("AT - Gold Knights Enemy #2", function() return CanKill("224_2_enemy") end)
 AT_golden_guards:connect_one_way(AT_lobby, function() return DealDamage end)
 
 AT_golden_guards:connect_two_ways(AT_first_chest, function() return DealDamage end)
 
 AT_first_chest:connect_one_way("AT - First Chest", function() return DealDamage end)
 AT_first_chest:connect_one_way("AT - Room 03 Enemy #3", function() return DealDamage end)
--- AT_first_chest:connect_one_way("AT - Room 03 Enemy #4", function() return DealDamage end)
+AT_first_chest:connect_one_way("AT - Room 03 Enemy #4", function() return DealDamage end)
 AT_first_chest:connect_two_ways(AT_first_chest_2N_door)
 
 AT_first_chest_2N_door:connect_two_ways_entrance("", AT_lone_statue_2N_door, function(keys, Current_Dungeon)
@@ -68,12 +68,12 @@ AT_dark_maze:connect_one_way("AT - Dark Maze Pot #1", function() return DarkRoom
 -- AT_dark_maze:connect_one_way("AT - Dark Maze Pot #6", function() return DarkRooms(true) end)
 -- AT_dark_maze:connect_one_way("AT - Dark Maze Pot #7", function() return DarkRooms(true) end)
 AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #1", function() return ALL(DarkRooms(true), DealDamage) end)
--- AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #2", function() return ALL(DarkRooms(true), DealDamage) end)
--- AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #5", function() return ALL(DarkRooms(true), DealDamage) end)
--- AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #6", function() return ALL(DarkRooms(true), DealDamage) end)
--- AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #7", function() return ALL(DarkRooms(true), DealDamage) end)
--- AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #8", function() return ALL(DarkRooms(true), DealDamage) end)
--- AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #10", function() return ALL(DarkRooms(true), DealDamage) end)
+AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #2", function() return ALL(DarkRooms(true), DealDamage) end)
+AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #5", function() return ALL(DarkRooms(true), DealDamage) end)
+AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #6", function() return ALL(DarkRooms(true), DealDamage) end)
+AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #7", function() return ALL(DarkRooms(true), DealDamage) end)
+AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #8", function() return ALL(DarkRooms(true), DealDamage) end)
+AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #10", function() return ALL(DarkRooms(true), DealDamage) end)
 
 AT_dark_maze:connect_two_ways(AT_dark_chargers, function(keys, Current_Dungeon)
     return ALL(

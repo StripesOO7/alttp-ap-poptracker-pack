@@ -24,7 +24,7 @@ function Enemies_scope(scope_enemy_index, scope_mendatory_items, scope_name, sco
             SELECTED_ENEMY.Name = self.Name
             SELECTED_ENEMY.ItemState.EnemyRefCode = Code
             SELECTED_ENEMY.ItemState.EnemyRefItem = self
-            ENEMY_ROOM_MAPPING[SELECTED_ENEMY.ItemState.Code.."_lua"] = scope_name_code
+            ENEMY_ROOM_MAPPING[SELECTED_ENEMY.ItemState.Code.."_enemy"] = scope_name_code
             for _, uihint in pairs(SELECTED_ENEMY.ItemState.Originpath) do
                 Tracker:UiHint("ActivateTab", uihint)
             end

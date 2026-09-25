@@ -38,7 +38,9 @@ NAMED_INDICES = {}
 NAMED_DMG_CLASSES = {}
 Current_Dungeon = nil
 
-ENEMY_KILLABLE = {}
+ENEMY_KILLABLE = {
+    ["unknown"] = true
+}
 REVERSE_DMG_CLASSES = {}
 
 
@@ -605,6 +607,7 @@ function StateChanged()
     end
     ClearCache()
     UpdateCanInteract()
+    CanKillUpdate()
     stale = true
 end
 

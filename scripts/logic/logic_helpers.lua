@@ -1729,6 +1729,16 @@ local DMG_class_items_lookup = {
     [16] = {"quake"},
 }
 
+local allowed_dmg_table_values = {
+    [0]=true,
+    [1]=true,
+    [2]=false,
+    [3]=false,
+    [4]=true,
+    [5]=false,
+    [6]=true,
+    [7]=false,
+}
 function CanKillUpdate()
     -- print(Dump_table(NAMED_ENEMIES))
     for enemy_name, _ in pairs(NAMED_ENEMIES) do
@@ -1736,7 +1746,7 @@ function CanKillUpdate()
         local enemy = (Tracker:FindObjectForCode(enemy_name.."_lua") --[[@as LuaItem]]).ItemState
         if enemy then
             for i=1,16 do
-                if enemy.Damage_table[i] < 7 and (
+                if allowed_dmg_table_values[enemy.Damage_table[i]] and (
                     ANY(table.unpack(DMG_class_items_lookup[i])) > 0
                     or 
                     (#enemy.Mendatory_items > 0 and ANY(table.unpack(enemy.Mendatory_items)) > 0)
@@ -1749,22 +1759,28 @@ function CanKillUpdate()
             end
         
         else
-            error("No enemy found for name: ".. enemy_name.."_lua")
+            error("No enemy found for name: ".. enemy_name.."_enemy")
         end
     end
 end
 
-function CanKill(enemy_name)
-    local enemy_ref = ENEMY_ROOM_MAPPING[enemy_name]
-    if enemy_ref == "unknown" then
-        return ACCESS_NORMAL
-    else
-        return ENEMY_KILLABLE[enemy_ref] and ACCESS_NORMAL or ACCESS_NONE
+function CanKill(...)
+    local enemy_list = { ... }
+    local access = ACCESS_NORMAL
+    for _, enemy_name in pairs(enemy_list) do 
+        local enemy_ref = ENEMY_ROOM_MAPPING[enemy_name]
+        if ENEMY_KILLABLE[enemy_ref] then
+            access = ACCESS_NORMAL
+        else
+            access = ACCESS_NONE
+            -- break
+        end
+        -- print(Dump_table(ENEMY_KILLABLE))
+        -- print(enemy_name, ENEMY_KILLABLE[enemy_name])
+        -- print(Dump_table(Tracker:FindObjectForCode("Green Archer_lua").ItemState))
+        -- return ENEMY_KILLABLE[enemy_name] and ACCESS_NORMAL or ACCESS_NONE
     end
-    -- print(Dump_table(ENEMY_KILLABLE))
-    -- print(enemy_name, ENEMY_KILLABLE[enemy_name])
-    -- print(Dump_table(Tracker:FindObjectForCode("Green Archer_lua").ItemState))
-    return ENEMY_KILLABLE[enemy_name] and ACCESS_NORMAL or ACCESS_NONE
+    return access
 end
 
 -- ScriptHost:AddWatchForCode("settings maps_setting", "maps_setting", GiveAll)
