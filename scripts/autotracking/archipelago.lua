@@ -986,6 +986,47 @@ function AutoFill()
                 _SetFluteLocationOptions(dw_dest_item, dw_spot_item)
             end
         end
+        print("start enemy rando assignemnt")
+        for room_id, enemy_table in pairs(SLOT_DATA["enemies"]["1"]["Underworld"]) do
+            local counter = 0
+            for enemy_table_index=0,20 do
+                local enemy_target_id = enemy_table[tostring(enemy_table_index)]
+                if enemy_target_id and NAMED_INDICES[enemy_target_id] then
+                    counter  = counter + 1
+                    local adjusted_enemy_index = enemy_table_index+1
+                    -- print("NAMED_INDICES[enemy_target]", enemy_target_id, NAMED_INDICES[enemy_target_id])
+                    -- print("enemy_index, adjusted_enemy_index, counter", enemy_table_index, adjusted_enemy_index, counter)
+                    -- print("room_id_counter_enemy: ", room_id.."_"..counter.."_enemy")
+                    
+                    local enemy_tracking_item = Tracker:FindObjectForCode(room_id.."_"..counter.."_enemy") --[[@as LuaItem]]
+                    local target_enemy_item =  Tracker:FindObjectForCode("enemy_"..enemy_target_id) --[[@as LuaItem]]
+                    if not enemy_tracking_item then
+                        print("did not find item for:",  room_id, counter, room_id.."_"..counter.."_enemy")
+                        goto continue
+                    end
+                    if not target_enemy_item then
+                        print("did not find item for:", enemy_target_id, "enemy_"..enemy_target_id)
+                        goto continue
+                    end
+
+                    local scope_name_code = string.gsub(target_enemy_item.Name, " ", "_")
+                    scope_name_code = string.gsub(scope_name_code, "%(", "")
+                    scope_name_code = string.gsub(scope_name_code, "%)", "")
+
+                    enemy_tracking_item.Name = target_enemy_item.Name
+                    enemy_tracking_item.Icon = target_enemy_item.Icon
+                    enemy_tracking_item.ItemState.EnemyRefCode = target_enemy_item.ItemState.Code
+                    enemy_tracking_item.ItemState.EnemyRefItem = target_enemy_item
+                    ENEMY_ROOM_MAPPING[enemy_tracking_item.ItemState.Code.."_enemy"] = scope_name_code
+                    
+                    ::continue::
+                -- else
+                --     break
+                end
+            end
+        end
+        
+        print("done enemy rando assignemnt")
         
     else --core/beta slotdata
         for settings_name , settings_value in pairs(SLOT_DATA) do
@@ -1080,6 +1121,49 @@ function AutoFill()
             end
         end
 
+        -- for room_id, room_table in pairs(SLOT_DATA["ut_enemy_shuffle"]["randomized_dungeon_rooms"]) do
+        --     local counter = 0
+        --     local enemy_table = room_table["sprites"]
+        --     for enemy_table_index=0,20 do
+        --         local enemy_target_table = enemy_table[enemy_table_index]
+        --         local enemy_target_id = nil
+        --         if enemy_target_table then
+        --             enemy_target_id = enemy_target_table["sprite_id"]
+        --         end
+        --         if enemy_target_id and NAMED_INDICES[enemy_target_id] then
+        --             counter  = counter + 1
+        --             local adjusted_enemy_index = tonumber(enemy_table_index)
+        --             print("NAMED_INDICES[enemy_target]", enemy_target_id, NAMED_INDICES[enemy_target_id])
+        --             print("enemy_index, adjusted_enemy_index, counter", enemy_table_index, adjusted_enemy_index, counter)
+        --             print("room_id_counter_enemy: ", room_id.."_"..counter.."_enemy")
+                    
+        --             local enemy_tracking_item = Tracker:FindObjectForCode(room_id.."_"..counter.."_enemy") --[[@as LuaItem]]
+        --             local target_enemy_item =  Tracker:FindObjectForCode("enemy_"..enemy_target_id) --[[@as LuaItem]]
+        --             if not enemy_tracking_item then
+        --                 print("did not find item for:",  room_id, counter, room_id.."_"..counter.."_enemy")
+        --                 goto continue
+        --             end
+        --             if not target_enemy_item then
+        --                 print("did not find item for:", enemy_target_id, "enemy_"..enemy_target_id)
+        --                 goto continue
+        --             end
+
+        --             local scope_name_code = string.gsub(target_enemy_item.Name, " ", "_")
+        --             scope_name_code = string.gsub(scope_name_code, "%(", "")
+        --             scope_name_code = string.gsub(scope_name_code, "%)", "")
+
+        --             enemy_tracking_item.Name = target_enemy_item.Name
+        --             enemy_tracking_item.Icon = target_enemy_item.Icon
+        --             enemy_tracking_item.ItemState.EnemyRefCode = target_enemy_item.ItemState.Code
+        --             enemy_tracking_item.ItemState.EnemyRefItem = target_enemy_item
+        --             ENEMY_ROOM_MAPPING[enemy_tracking_item.ItemState.Code.."_enemy"] = scope_name_code
+                    
+        --             ::continue::
+        --         else
+        --             break
+        --         end
+        --     end
+        -- end
     end
     KeyDropLayoutChange()
     GoalCheck()
