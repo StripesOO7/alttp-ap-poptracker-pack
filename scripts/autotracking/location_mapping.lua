@@ -913,7 +913,7 @@ LOCATION_MAPPING = {
     [176120208] = {"@TT/Thieves Town/Back Pots", "@Thieves Town Back Pots/Pot Alcove Top Pot #11/Pot #11"},--, "@Thieves Town Back/Pots/Pot Alcove Top"},
     [192897424] = {"@TT/Thieves Town/Back Pots", "@Thieves Town Back Pots/Pot Alcove Top Pot #12/Pot #12"},--, "@Thieves Town Back/Pots/Pot Alcove Top"},
     [8347808] = {"@TT/Thieves Town/Back Pots", "@Thieves Town Back Pots/Conveyor Bridge/Large Block"},
-    [109011106] = {"@TT/Thieves Town/Back Pots", "@Thieves Town Back Pots/Basement Block Block/Large Block"},
+    [109011106] = {"@TT/Thieves Town/Back Pots", "@Thieves Town Back Pots/Basement Block/Large Block"},
     
     [209674640] = {"@TT/Thieves Town/Front Pots", "@Thieves Town Front Pots/Pot Alcove Bottom Pot #13/Pot #13"},--, "@Thieves Town Front/Pots/Pot Alcove Bottom"},
     [226451856] = {"@TT/Thieves Town/Front Pots", "@Thieves Town Front Pots/Pot Alcove Bottom Pot #14/Pot #14"},--, "@Thieves Town Front/Pots/Pot Alcove Bottom"},

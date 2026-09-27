@@ -39,13 +39,13 @@ AT_entrance_inside:connect_two_ways(AT_lobby)
 AT_lobby:connect_one_way(AT_golden_guards)
 AT_golden_guards:connect_one_way("AT - Gold Knights Enemy #1", function() return CanKill("224_1_enemy") end)
 AT_golden_guards:connect_one_way("AT - Gold Knights Enemy #2", function() return CanKill("224_2_enemy") end)
-AT_golden_guards:connect_one_way(AT_lobby, function() return DealDamage end)
+AT_golden_guards:connect_one_way(AT_lobby, function() return ALL(CanKill("224_1_enemy", "224_2_enemy")) end)
 
-AT_golden_guards:connect_two_ways(AT_first_chest, function() return DealDamage end)
+AT_golden_guards:connect_two_ways(AT_first_chest, function() return ALL(CanKill("224_1_enemy", "224_2_enemy")) end)
 
-AT_first_chest:connect_one_way("AT - First Chest", function() return DealDamage end)
-AT_first_chest:connect_one_way("AT - Room 03 Enemy #3", function() return DealDamage end)
-AT_first_chest:connect_one_way("AT - Room 03 Enemy #4", function() return DealDamage end)
+AT_first_chest:connect_one_way("AT - First Chest", function() return ALL(CanKill("224_3_enemy", "224_4_enemy")) end)
+AT_first_chest:connect_one_way("AT - Room 03 Enemy #3", function() return CanKill("224_3_enemy") end)
+AT_first_chest:connect_one_way("AT - Room 03 Enemy #4", function() return CanKill("224_4_enemy") end)
 AT_first_chest:connect_two_ways(AT_first_chest_2N_door)
 
 AT_first_chest_2N_door:connect_two_ways_entrance("", AT_lone_statue_2N_door, function(keys, Current_Dungeon)
@@ -54,8 +54,8 @@ end)
 
 AT_lone_statue_2N_door:connect_two_ways(AT_lone_statue)
 
-AT_lone_statue:connect_one_way("AT - Lone Statue Enemy #3", function() return DealDamage end)
--- AT_lone_statue:connect_one_way("AT - Lone Statue Enemy #4", function() return DealDamage end)
+AT_lone_statue:connect_one_way("AT - Lone Statue Enemy #3", function() return CanKill("208_3_enemy") end)
+AT_lone_statue:connect_one_way("AT - Lone Statue Enemy #4", function() return CanKill("208_4_enemy") end)
 
 AT_lone_statue:connect_two_ways_stuck(AT_dark_maze, nil, function() return ALL(DarkRooms(true), CanInteract(AT_dark_maze)) end)
 
@@ -67,13 +67,13 @@ AT_dark_maze:connect_one_way("AT - Dark Maze Pot #1", function() return DarkRoom
 -- AT_dark_maze:connect_one_way("AT - Dark Maze Pot #5", function() return DarkRooms(true) end)
 -- AT_dark_maze:connect_one_way("AT - Dark Maze Pot #6", function() return DarkRooms(true) end)
 -- AT_dark_maze:connect_one_way("AT - Dark Maze Pot #7", function() return DarkRooms(true) end)
-AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #1", function() return ALL(DarkRooms(true), DealDamage) end)
-AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #2", function() return ALL(DarkRooms(true), DealDamage) end)
-AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #5", function() return ALL(DarkRooms(true), DealDamage) end)
-AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #6", function() return ALL(DarkRooms(true), DealDamage) end)
-AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #7", function() return ALL(DarkRooms(true), DealDamage) end)
-AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #8", function() return ALL(DarkRooms(true), DealDamage) end)
-AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #10", function() return ALL(DarkRooms(true), DealDamage) end)
+AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #1", function() return ALL(DarkRooms(true), CanKill("208_1_enemy")) end)
+AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #2", function() return ALL(DarkRooms(true), CanKill("208_2_enemy")) end)
+AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #5", function() return ALL(DarkRooms(true), CanKill("208_5_enemy")) end)
+AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #6", function() return ALL(DarkRooms(true), CanKill("208_6_enemy")) end)
+AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #7", function() return ALL(DarkRooms(true), CanKill("208_7_enemy")) end)
+AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #8", function() return ALL(DarkRooms(true), CanKill("208_8_enemy")) end)
+AT_dark_maze:connect_one_way("AT - Dark Maze Enemy #10", function() return ALL(DarkRooms(true), CanKill("208_10_enemy")) end)
 
 AT_dark_maze:connect_two_ways(AT_dark_chargers, function(keys, Current_Dungeon)
     return ALL(
@@ -82,31 +82,34 @@ AT_dark_maze:connect_two_ways(AT_dark_chargers, function(keys, Current_Dungeon)
     ), keys + 1
 end)
 
-AT_dark_chargers:connect_one_way("AT - Dark Chargers Enemy #9", function() return ALL(DarkRooms(true), DealDamage) end)
--- AT_dark_chargers:connect_one_way("AT - Dark Chargers Enemy #11", function() return ALL(DarkRooms(true), DealDamage) end)
+AT_dark_chargers:connect_one_way("AT - Dark Chargers Enemy #9", function() return ALL(DarkRooms(true), CanKill("208_9_enemy")) end)
+AT_dark_chargers:connect_one_way("AT - Dark Chargers Enemy #11", function() return ALL(DarkRooms(true), CanKill("208_10_enemy")) end)
 
 AT_dark_chargers:connect_two_ways(AT_dark_chargers_4N_door)
 AT_dark_chargers_4N_door:connect_two_ways_entrance("", AT_dual_statues_4N_door)
 
 AT_dual_statues_4N_door:connect_two_ways(AT_dual_statues)
 
-AT_dual_statues:connect_one_way("AT - Dual Statues Enemy #7", function() return ALL(DarkRooms(true), DealDamage) end)
--- AT_dual_statues:connect_one_way("AT - Dual Statues Enemy #8", function() return ALL(DarkRooms(true), DealDamage) end)
+AT_dual_statues:connect_one_way("AT - Dual Statues Enemy #7", function() return ALL(DarkRooms(true), CanKill("192_7_enemy")) end)
+AT_dual_statues:connect_one_way("AT - Dual Statues Enemy #8", function() return ALL(DarkRooms(true), CanKill("192_8_enemy")) end)
 
 AT_dual_statues:connect_two_ways_stuck(AT_dark_pits, function() return true end )
 
-AT_dark_pits:connect_one_way("AT - Dark Pits Enemy #3", function() return ALL(DarkRooms(true), DealDamage) end)
--- AT_dark_pits:connect_one_way("AT - Dark Pits Enemy #5", function() return ALL(DarkRooms(true), DealDamage) end)
--- AT_dark_pits:connect_one_way("AT - Dark Pits Enemy #6", function() return ALL(DarkRooms(true), DealDamage) end)
+AT_dark_pits:connect_one_way("AT - Dark Pits Enemy #3", function() return ALL(DarkRooms(true), CanKill("192_3_enemy")) end)
+AT_dark_pits:connect_one_way("AT - Dark Pits Enemy #5", function() return ALL(DarkRooms(true), CanKill("192_5_enemy")) end)
+AT_dark_pits:connect_one_way("AT - Dark Pits Enemy #6", function() return ALL(DarkRooms(true), CanKill("192_6_enemy")) end)
 AT_dark_pits:connect_one_way("AT - Dark Pits Pot #1")
 -- AT_catwalk:connect_one_way("AT - Dark Pits Pot #2")
 -- AT_catwalk:connect_one_way("AT - Dark Pits Pot #3")
 -- AT_catwalk:connect_one_way("AT - Dark Pits Pot #4")
 
-AT_dark_pits:connect_two_ways(AT_dark_archers, function() return DarkRooms(true) end)
+AT_dark_pits:connect_two_ways_stuck(AT_dark_archers, function() return DarkRooms(true) end, 
+function() return ALL(CanKill("192_1_enemy", "192_2_enemy", "192_4_enemy"))
+end)
 
-AT_dark_archers:connect_one_way("AT - Dark Archers Enemy #1", function() return DealDamage end)
-AT_dark_archers:connect_one_way("AT - Dark Archer Key Drop", function() return DealDamage end)
+AT_dark_archers:connect_one_way("AT - Dark Archers Enemy #1", function() return CanKill("192_1_enemy") end)
+AT_dark_archers:connect_one_way("AT - Dark Archers Enemy #2", function() return CanKill("192_2_enemy") end)
+AT_dark_archers:connect_one_way("AT - Dark Archer Key Drop", function() return CanKill("192_4_enemy") end)
 
 AT_dark_archers:connect_two_ways(AT_dark_archers_2N_door)
 AT_dark_archers_2N_door:connect_two_ways_entrance("", AT_red_spears_2N_door, function(keys, Current_Dungeon)
@@ -114,17 +117,18 @@ AT_dark_archers_2N_door:connect_two_ways_entrance("", AT_red_spears_2N_door, fun
 end)
 AT_red_spears_2N_door:connect_two_ways(AT_red_spears)
 
-AT_red_spears:connect_one_way("AT - Red Spears Enemy #2", function() return DealDamage end)
--- AT_red_spears:connect_one_way("AT - Red Spears Enemy #3", function() return DealDamage end)
--- AT_red_spears:connect_one_way("AT - Red Spears Enemy #4", function() return DealDamage end)
--- AT_red_spears:connect_one_way("AT - Red Spears Enemy #5", function() return DealDamage end)
+AT_red_spears:connect_one_way("AT - Red Spears Enemy #2", function() return CanKill("176_2_enemy") end)
+AT_red_spears:connect_one_way("AT - Red Spears Enemy #3", function() return CanKill("176_3_enemy") end)
+AT_red_spears:connect_one_way("AT - Red Spears Enemy #4", function() return CanKill("176_4_enemy") end)
+AT_red_spears:connect_one_way("AT - Red Spears Enemy #5", function() return CanKill("176_5_enemy") end)
 
-AT_red_spears:connect_two_ways(AT_red_guards)
+AT_red_spears:connect_two_ways_stuck(AT_red_guards, function() return ALL(CanKill("176_2_enemy", "176_3_enemy", "176_4_enemy", "176_5_enemy")) end, function() return ALL(CanKill("176_1_enemy", "176_6_enemy")) end)
 
-AT_red_guards:connect_one_way("AT - Red Guards Enemy #1", function() return DealDamage end)
--- AT_red_guards:connect_one_way("AT - Red Guards Enemy #6", function() return DealDamage end)
+AT_red_guards:connect_one_way("AT - Red Guards Enemy #1", function() return CanKill("176_1_enemy") end)
+AT_red_guards:connect_one_way("AT - Red Guards Enemy #6", function() return CanKill("176_6_enemy") end)
 
-AT_red_guards:connect_two_ways(AT_circle_of_pots)
+AT_red_guards:connect_two_ways_stuck(AT_circle_of_pots, function() return ALL(CanKill("176_1_enemy", "176_6_enemy")) end,
+function() return ALL(CanKill("176_8_enemy", "176_9_enemy", "176_10_enemy")) end)
 
 AT_circle_of_pots:connect_one_way("AT - Circle of Pots Key Drop")
 AT_circle_of_pots:connect_one_way("AT - Circle of Pots Pot #1")
@@ -141,15 +145,15 @@ AT_circle_of_pots:connect_one_way("AT - Circle of Pots Pot #1")
 -- AT_circle_of_pots:connect_one_way("AT - Circle of Pots Pot #12")
 -- AT_circle_of_pots:connect_one_way("AT - Circle of Pots Pot #13")
 -- AT_circle_of_pots:connect_one_way("AT - Circle of Pots Pot #14")
-AT_circle_of_pots:connect_one_way("AT - Circle of Pots Enemy #8", function() return DealDamage end)
--- AT_circle_of_pots:connect_one_way("AT - Circle of Pots Enemy #9", function() return DealDamage end)
--- AT_circle_of_pots:connect_one_way("AT - Circle of Pots Enemy #10", function() return DealDamage end)
+AT_circle_of_pots:connect_one_way("AT - Circle of Pots Enemy #8", function() return CanKill("176_8_enemy") end)
+AT_circle_of_pots:connect_one_way("AT - Circle of Pots Enemy #9", function() return CanKill("176_9_enemy") end)
+AT_circle_of_pots:connect_one_way("AT - Circle of Pots Enemy #10", function() return CanKill("176_10_enemy") end)
 
 AT_circle_of_pots:connect_two_ways(AT_pacifist_run)
 
-AT_pacifist_run:connect_one_way("AT - Pacifist Run Enemy #7", function() return DealDamage end)
--- AT_pacifist_run:connect_one_way("AT - Pacifist Run Enemy #12", function() return DealDamage end)
--- AT_pacifist_run:connect_one_way("AT - Pacifist Run Enemy #13", function() return DealDamage end)
+AT_pacifist_run:connect_one_way("AT - Pacifist Run Enemy #7", function() return CanKill("176_7_enemy") end)
+AT_pacifist_run:connect_one_way("AT - Pacifist Run Enemy #12", function() return CanKill("176_12_enemy") end)
+AT_pacifist_run:connect_one_way("AT - Pacifist Run Enemy #13", function() return CanKill("176_13_enemy") end)
 
 AT_pacifist_run:connect_two_ways(AT_pacifist_run_4N_door)
 AT_pacifist_run_4N_door:connect_two_ways_entrance("", AT_push_statue_down_4N_door, function(keys, Current_Dungeon)
@@ -159,15 +163,15 @@ AT_pacifist_run_4N_door:connect_two_ways_entrance("", AT_push_statue_down_4N_doo
 end)
 AT_push_statue_down_4N_door:connect_two_ways(AT_push_statue_down)
 
-AT_push_statue_down:connect_one_way("AT - Push Statue Enemy #3", function() return DealDamage end)
--- AT_push_statue_down:connect_one_way("AT - Push Statue Enemy #4", function() return DealDamage end)
--- AT_push_statue_down:connect_one_way("AT - Push Statue Enemy #5", function() return DealDamage end)
--- AT_push_statue_down:connect_one_way("AT - Push Statue Enemy #6", function() return DealDamage end)
+AT_push_statue_down:connect_one_way("AT - Push Statue Enemy #3", function() return CanKill("64_3_enemy") end)
+AT_push_statue_down:connect_one_way("AT - Push Statue Enemy #4", function() return CanKill("64_4_enemy") end)
+AT_push_statue_down:connect_one_way("AT - Push Statue Enemy #5", function() return CanKill("64_5_enemy") end)
+AT_push_statue_down:connect_one_way("AT - Push Statue Enemy #6", function() return CanKill("64_6_enemy") end)
 
 AT_push_statue_down:connect_two_ways(AT_catwalk)
 
-AT_catwalk:connect_one_way("AT - Catwalk Enemy #1", function() return DealDamage end)
--- AT_catwalk:connect_one_way("AT - Catwalk Enemy #2", function() return DealDamage end)
+AT_catwalk:connect_one_way("AT - Catwalk Enemy #1", function() return CanKill("64_1_enemy") end)
+AT_catwalk:connect_one_way("AT - Catwalk Enemy #2", function() return CanKill("64_2_enemy") end)
 
 AT_catwalk:connect_two_ways(AT_catwalk_1N_door)
 AT_catwalk_1N_door:connect_two_ways_entrance("", AT_antechamber_2S_door)

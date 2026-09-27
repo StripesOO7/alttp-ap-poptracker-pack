@@ -95,6 +95,7 @@
                             "^$CanReach|HC - Map Guard Key Drop"
                         ],
                         "item_count": 1, 
+                        "clear_as_group": false, 
                         "hosted_item": "114_1_enemy"
                     }
                 ],
@@ -132,6 +133,7 @@
                             "^$CanReach|HC - Booomerang Guard Key Drop"
                         ],
                         "item_count": 1, 
+                        "clear_as_group": false, 
                         "hosted_item": "113_2_enemy"
                     }
                 ],
@@ -199,6 +201,7 @@
                             "^$CanReach|HC - Big Key"
                         ],
                         "item_count": 1, 
+                        "clear_as_group": false, 
                         "hosted_item": "128_2_enemy"
                     }
                 ],
@@ -341,6 +344,7 @@
                             "^$CanReach|CE - Rat Key Drop"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "33_1_enemy"
 
                     }
@@ -2914,6 +2918,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "80_1_enemy"
                     }
                 ],
@@ -2945,6 +2950,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "80_2_enemy"
                     }
                 ],
@@ -2976,6 +2982,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "80_3_enemy"
                     }
                 ],
@@ -3007,6 +3014,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "81_1_enemy"
                     }
                 ],
@@ -3038,6 +3046,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "81_2_enemy"
                     }
                 ],
@@ -3069,6 +3078,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "81_3_enemy"
                     }
                 ],
@@ -3100,6 +3110,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "82_1_enemy"
                     }
                 ],
@@ -3131,6 +3142,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "82_2_enemy"
                     }
                 ],
@@ -3162,6 +3174,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "82_3_enemy"
                     }
                 ],
@@ -3175,72 +3188,75 @@
                     }
                 ]
             },
-            {
-                "name": "Secret Entrance Enemy #1",
-                "chest_unopened_img": "/images/items/closed_Chest.png",
-                "chest_opened_img": "/images/items/open_Chest.png",
-                "overlay_background": "#000000",
-                "access_rules": [
-                    " "
-                ],
-                "sections": [
-                    {
-                        "name": "Enemy #1",
-                        "access_rules": [
-                            "^$CanReach|CE 1"
-                        ],
-                        "visibility_rules": [
-                            "enemy_drop_shuffle_underworld"
-                        ],
-                        "item_count": 1,
-                        "hosted_item": "85_1_enemy"
-                    }
-                ]
-            },
-            {
-                "name": "Secret Entrance Enemy #2",
-                "chest_unopened_img": "/images/items/closed_Chest.png",
-                "chest_opened_img": "/images/items/open_Chest.png",
-                "overlay_background": "#000000",
-                "access_rules": [
-                    " "
-                ],
-                "sections": [
-                    {
-                        "name": "Enemy #2",
-                        "access_rules": [
-                            "^$CanReach|CE 2"
-                        ],
-                        "visibility_rules": [
-                            "enemy_drop_shuffle_underworld"
-                        ],
-                        "item_count": 1,
-                        "hosted_item": "85_2_enemy"
-                    }
-                ]
-            },
-            {
-                "name": "Secret Entrance Enemy #3",
-                "chest_unopened_img": "/images/items/closed_Chest.png",
-                "chest_opened_img": "/images/items/open_Chest.png",
-                "overlay_background": "#000000",
-                "access_rules": [
-                    " "
-                ],
-                "sections": [
-                    {
-                        "name": "Enemy #3",
-                        "access_rules": [
-                            "^$CanReach|CE 3"
-                        ],
-                        "visibility_rules": [
-                            "enemy_drop_shuffle_underworld"
-                        ],
-                        "item_count": 1,
-                        "hosted_item": "85_3_enemy"
-                    }
-                ]
-            },
+            // {
+            //     "name": "Secret Entrance Enemy #1",
+            //     "chest_unopened_img": "/images/items/closed_Chest.png",
+            //     "chest_opened_img": "/images/items/open_Chest.png",
+            //     "overlay_background": "#000000",
+            //     "access_rules": [
+            //         " "
+            //     ],
+            //     "sections": [
+            //         {
+            //             "name": "Enemy #1",
+            //             "access_rules": [
+            //                 "^$CanReach|CE 1"
+            //             ],
+            //             "visibility_rules": [
+            //                 "enemy_drop_shuffle_underworld"
+            //             ],
+            //             "item_count": 1,
+            //             "clear_as_group": false, 
+            //             "hosted_item": "85_1_enemy"
+            //         }
+            //     ]
+            // },
+            // {
+            //     "name": "Secret Entrance Enemy #2",
+            //     "chest_unopened_img": "/images/items/closed_Chest.png",
+            //     "chest_opened_img": "/images/items/open_Chest.png",
+            //     "overlay_background": "#000000",
+            //     "access_rules": [
+            //         " "
+            //     ],
+            //     "sections": [
+            //         {
+            //             "name": "Enemy #2",
+            //             "access_rules": [
+            //                 "^$CanReach|CE 2"
+            //             ],
+            //             "visibility_rules": [
+            //                 "enemy_drop_shuffle_underworld"
+            //             ],
+            //             "item_count": 1,
+            //             "clear_as_group": false, 
+            //             "hosted_item": "85_2_enemy"
+            //         }
+            //     ]
+            // },
+            // {
+            //     "name": "Secret Entrance Enemy #3",
+            //     "chest_unopened_img": "/images/items/closed_Chest.png",
+            //     "chest_opened_img": "/images/items/open_Chest.png",
+            //     "overlay_background": "#000000",
+            //     "access_rules": [
+            //         " "
+            //     ],
+            //     "sections": [
+            //         {
+            //             "name": "Enemy #3",
+            //             "access_rules": [
+            //                 "^$CanReach|CE 3"
+            //             ],
+            //             "visibility_rules": [
+            //                 "enemy_drop_shuffle_underworld"
+            //             ],
+            //             "item_count": 1,
+            //             "clear_as_group": false, 
+            //             "hosted_item": "85_3_enemy"
+            //         }
+            //     ]
+            // },
             {
                 "name": "West Lobby Enemy #1",
                 "chest_unopened_img": "/images/items/closed_Chest.png",
@@ -3259,6 +3275,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "96_1_enemy"
                     }
                 ],
@@ -3290,6 +3307,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "97_1_enemy"
                     }
                 ],
@@ -3321,6 +3339,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "97_2_enemy"
                     }
                 ],
@@ -3352,6 +3371,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "97_3_enemy"
                     }
                 ],
@@ -3383,6 +3403,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "98_1_enemy"
                     }
                 ],
@@ -3414,6 +3435,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "98_2_enemy"
                     }
                 ],
@@ -3445,6 +3467,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "98_3_enemy"
                     }
                 ],
@@ -3476,6 +3499,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "113_1_enemy"
                     }
                 ],
@@ -3507,6 +3531,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "114_3_enemy"
                     }
                 ],
@@ -3569,6 +3594,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "128_1_enemy"
                     }
                 ],
@@ -3600,6 +3626,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "129_1_enemy"
                     }
                 ],
@@ -3631,6 +3658,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "129_2_enemy"
                     }
                 ],
@@ -3662,6 +3690,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "130_1_enemy"
                     }
                 ],
@@ -3693,6 +3722,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "130_2_enemy"
                     }
                 ],
@@ -3724,6 +3754,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "130_3_enemy"
                     }
                 ],
@@ -3766,6 +3797,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "2_1_enemy"
                     }
                 ],
@@ -3797,6 +3829,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "2_2_enemy"
                     }
                 ],
@@ -3828,6 +3861,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "2_3_enemy"
                     }
                 ],
@@ -3859,6 +3893,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "2_4_enemy"
                     }
                 ],
@@ -3890,6 +3925,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "2_5_enemy"
                     }
                 ],
@@ -3921,6 +3957,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "2_6_enemy"
                     }
                 ],
@@ -3952,6 +3989,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "2_7_enemy"
                     }
                 ],
@@ -3983,6 +4021,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "17_1_enemy"
                     }
                 ],
@@ -4014,6 +4053,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "17_2_enemy"
                     }
                 ],
@@ -4045,6 +4085,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "17_3_enemy"
                     }
                 ],
@@ -4076,6 +4117,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "17_4_enemy"
                     }
                 ],
@@ -4107,6 +4149,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "17_5_enemy"
                     }
                 ],
@@ -4138,6 +4181,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "17_6_enemy"
                     }
                 ],
@@ -4169,6 +4213,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "17_7_enemy"
                     }
                 ],
@@ -4200,6 +4245,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "17_8_enemy"
                     }
                 ],
@@ -4231,6 +4277,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "33_2_enemy"
                     }
                 ],
@@ -4262,6 +4309,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "33_3_enemy"
                     }
                 ],
@@ -4293,6 +4341,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "33_4_enemy"
                     }
                 ],
@@ -4324,6 +4373,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "33_5_enemy"
                     }
                 ],
@@ -4355,6 +4405,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "33_6_enemy"
                     }
                 ],
@@ -4386,6 +4437,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "33_7_enemy"
                     }
                 ],
@@ -4417,6 +4469,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "33_8_enemy"
                     }
                 ],
@@ -4448,6 +4501,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "33_9_enemy"
                     }
                 ],
@@ -4479,6 +4533,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "33_10_enemy"
                     }
                 ],
@@ -4510,6 +4565,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "33_11_enemy"
                     }
                 ],
@@ -4541,6 +4597,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "34_1_enemy"
                     }
                 ],
@@ -4572,6 +4629,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "34_2_enemy"
                     }
                 ],
@@ -4603,6 +4661,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "34_3_enemy"
                     }
                 ],
@@ -4634,6 +4693,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "34_4_enemy"
                     }
                 ],
@@ -4665,6 +4725,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "34_5_enemy"
                     }
                 ],
@@ -4696,6 +4757,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "34_6_enemy"
                     }
                 ],
@@ -4727,6 +4789,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "34_7_enemy"
                     }
                 ],
@@ -4758,6 +4821,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "50_1_enemy"
                     }
                 ],
@@ -4789,6 +4853,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "50_2_enemy"
                     }
                 ],
@@ -4820,6 +4885,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "50_3_enemy"
                     }
                 ],
@@ -4851,6 +4917,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "50_4_enemy"
                     }
                 ],
@@ -4882,6 +4949,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "50_5_enemy"
                     }
                 ],
@@ -4913,6 +4981,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "65_1_enemy"
                     }
                 ],
@@ -4944,6 +5013,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "65_2_enemy"
                     }
                 ],
@@ -4975,6 +5045,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "65_3_enemy"
                     }
                 ],
@@ -5006,6 +5077,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "65_4_enemy"
                     }
                 ],
@@ -5037,6 +5109,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "66_1_enemy"
                     }
                 ],
@@ -5068,6 +5141,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "66_2_enemy"
                     }
                 ],
@@ -5099,6 +5173,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "66_3_enemy"
                     }
                 ],
@@ -5130,6 +5205,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "66_4_enemy"
                     }
                 ],
@@ -5161,6 +5237,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "66_5_enemy"
                     }
                 ],
@@ -5192,6 +5269,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
                         "hosted_item": "66_6_enemy"
                     }
                 ],

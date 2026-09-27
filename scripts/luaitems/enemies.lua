@@ -1,4 +1,6 @@
-function Enemies_scope(scope_enemy_index, scope_mendatory_items, scope_name, scope_health, scope_dmg_table, scope_counter)
+function Enemies_scope(scope_misc_table, scope_dmg_table, scope_counter)
+    local scope_ignore_killable, scope_enemy_index, scope_mendatory_items, scope_name, scope_health = table.unpack(scope_misc_table)
+
     local scope_name_code = string.gsub(scope_name, " ", "_")
     scope_name_code = string.gsub(scope_name_code, "%(", "")
     scope_name_code = string.gsub(scope_name_code, "%)", "")
@@ -88,6 +90,7 @@ function Enemies_scope(scope_enemy_index, scope_mendatory_items, scope_name, sco
             Code = self:Get("Code"),
             SpecialEffect = self:Get("SpecialEffect"),
             Invulnerable = self:Get("Invulnerable"),
+            IgnoreForKillable = self:Get("IgnoreForKillable"),
         }
         -- print("SaveFunc")
     end
@@ -107,6 +110,7 @@ function Enemies_scope(scope_enemy_index, scope_mendatory_items, scope_name, sco
             self:Set("Code", data.Code)
             self:Set("SpecialEffect", data.SpecialEffect)
             self:Set("Invulnerable", data.Invulnerable)
+            self:Set("IgnoreForKillable", data.IgnoreForKillable)
             if data.BadgeText ~= nil then
                 self.BadgeText = data.BadgeText
                 self.BadgeTextColor = "#abcdef"
@@ -160,7 +164,7 @@ function Enemies_scope(scope_enemy_index, scope_mendatory_items, scope_name, sco
     ---@param dmg_table integer[]
     ---@param index integer
     ---@return LuaItem
-    function CreateLuaEnemeyClass(name, mendatory_items, health, dmg_table, index, counter)
+    function CreateLuaEnemeyClass(name, mendatory_items, health, dmg_table, index, counter, ignoreForKillable)
         local self = ScriptHost:CreateLuaItem()
         -- self.Type = "custom"
         self.Name = name
@@ -176,7 +180,7 @@ function Enemies_scope(scope_enemy_index, scope_mendatory_items, scope_name, sco
             Code = "enemy_"..index,
             Invulnerable = nil,
             SpecialEffect = nil,
-            
+            IgnoreForKillable = ignoreForKillable
         } --[[@as table<string, any>]]
 
         self.PotentialCodes = {Code, Basename}
@@ -232,7 +236,7 @@ function Enemies_scope(scope_enemy_index, scope_mendatory_items, scope_name, sco
         return self
     end
 
-    return CreateLuaEnemeyClass(scope_name, scope_mendatory_items, scope_health, scope_dmg_table, scope_enemy_index, scope_counter)
+    return CreateLuaEnemeyClass(scope_name, scope_mendatory_items, scope_health, scope_dmg_table, scope_enemy_index, scope_counter, scope_ignore_killable)
 end
 
 DEFAULT_WEAPON_CLASSES = {
@@ -277,233 +281,234 @@ DEFAULT_WEAPON_CLASSES = {
 
 ---@type table<string, enemy_table>
 DEFAULT_ENEMY_DAMAGE_TABLE = { --{npc/enemy, index, name, health, dmgclass0-15}
-    {false, 0x00, {}, "Raven", 12, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 8, 253, 254, 32},  --# 0x00 Raven
-    {false, 0x01, {}, "Vulture", 6, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 8, 253, 254, 32},  --# 0x01 Vulture
-    -- {false, 0x02,{},  255, 1, 2, 4, 8, 16, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --0x02 
-    -- {true, 0x03,{},  "Empty", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x03 Empty
-    {true, 0x04, {}, "Pull Switch (good)", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x04 Pull Switch (good)
-    -- {false, 0x05,{},  3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --0x05 
-    {true, 0x06, {}, "Pull Switch (trap)", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x06 Pull Switch (trap)
-    -- {false, 0x07,{},  3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --0x07 
-    {false, 0x08, {}, "Octorok (one-way)", 2, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 253, 254, 253, 254, 250},  --# 0x08 Octorok (one-way)
-    {false, 0x0A, {}, "Octorok (four-way)", 4, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 253, 254, 253, 254, 250},  --# 0x0A Octorok (four-way)
-    {false, 0x0B, {}, "Cucco", 255, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 8, 8, 0, 0, 0},  --# 0x0B Cucco
-    -- {false, 0x0C,{},  0, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 8, 8, 16, 16, 32},  --0x0C 
-    {false, 0x0D, {}, "Buzzblob", 3, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 249, 253, 254, 253, 254, 255},  --# 0x0D Buzzblob
-    {false, 0x0E, {}, "Snapdragon", 12, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 253, 254, 253, 64, 250},  --# 0x0E Snapdragon
-    {false, 0x0F, {}, "Octoballoon", 2, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 8, 253, 16, 64},  --# 0x0F Octoballoon
-    {false, 0x11, {}, "Hinox", 20, 252, 2, 4, 8, 16, 64, 4, 0, 64, 100, 0, 8, 254, 253, 254, 250},  --# 0x11 Hinox
-    {false, 0x12, {}, "Moblin", 4, 255, 2, 4, 8, 16, 16, 4, 255, 64, 100, 250, 253, 254, 253, 254, 250},  --# 0x12 Moblin
-    {false, 0x13, {}, "Mini Helmasaur", 4, 0, 2, 4, 8, 16, 16, 4, 255, 64, 100, 250, 0, 0, 253, 64, 250},  --# 0x13 Mini Helmasaur
-    {true, 0x14, {}, "Gargoyle's Domain Gate", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x14 Gargoyle's Domain Gate
-    {false, 0x15, {}, "Anti-Fairy", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 249, 0, 0, 0, 0, 0},  --# 0x15 Anti-Fairy
-    {true, 0x16, {}, "Sahasrahla / Aginah", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x16 Sahasrahla / Aginah
-    {false, 0x17, {}, "Bush Hoarder", 2, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 64, 64, 64, 64, 250},  --# 0x17 Bush Hoarder
-    {false, 0x18, {}, "Mini Moldorm", 3, 0, 2, 4, 8, 16, 16, 4, 64, 4, 100, 250, 253, 8, 253, 16, 250},  --# 0x18 Mini Moldorm
-    {false, 0x19, {}, "Poe", 8, 1, 2, 4, 64, 16, 16, 4, 64, 4, 100, 0, 8, 8, 253, 64, 255},  --# 0x19 Poe
-    {true, 0x1A, {}, "Dwarves", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x1A Dwarves
-    {true, 0x1B, {}, "Arrow in Wall", 0, 32, 64, 64, 64, 64, 64, 64, 64, 64, 24, 0, 64, 64, 64, 16, 64},  --# 0x1B Arrow in Wall
-    {true, 0x1C, {}, "Statue", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x1C Statue
-    {true, 0x1D, {}, "Weathervane", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x1D Weathervane
-    {true, 0x1E, {}, "Crystal Switch", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x1E Crystal Switch
-    {true, 0x1F, {}, "Bug Catching Kid", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x1F Bug Catching Kid
-    {false, 0x20, {}, "Sluggula", 8, 255, 2, 4, 8, 16, 16, 4, 255, 0, 100, 250, 253, 254, 253, 254, 250},  --# 0x20 Sluggula
-    {true, 0x21, {}, "Push Switch", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x21 Push Switch
-    {false, 0x22, {}, "Ropa", 8, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 253, 254, 253, 64, 250},  --# 0x22 Ropa
-    {false, 0x23, {"firerof", "bombos"}, "Red Bari", 2, 0, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 64, 253, 64, 255},  --# 0x23 Red Bari
-    {false, 0x24, {}, "Blue Bari", 2, 0, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 64, 253, 64, 255},  --# 0x24 Blue Bari
-    {true, 0x25, {}, "Talking Tree", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x25 Talking Tree
-    {false, 0x26, {}, "Hardhat Beetle", 3, 0, 2, 4, 8, 16, 16, 0, 255, 255, 100, 0, 0, 0, 253, 254, 255},  --# 0x26 Hardhat Beetle
-    {false, 0x27, {}, "Deadrock", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 250, 0, 0, 0, 0, 250},  --# 0x27 Deadrock
-    {true, 0x28, {}, "Storytellers", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x28 Storytellers
-    {true, 0x29, {}, "Blind Hideout Attendant", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x29 Blind Hideout Attendant
-    {true, 0x2A, {}, "Sweeping Lady", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 249, 0, 0, 0, 0, 0},  --# 0x2A Sweeping Lady
-    {true, 0x2B, {}, "Multipurpose", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x2B Multipurpose
-    {true, 0x2C, {}, "Lumberjacks", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x2C Lumberjacks
-    {true, 0x2D, {}, "Telepathic Stones", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x2D Telepathic Stones
-    {true, 0x2E, {}, "Flute Boy's Notes", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x2E Flute Boy's Notes
-    {true, 0x2F, {}, "Race Game NPCs", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x2F Race Game NPCs
-    {true, 0x30, {}, "Person", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x30 Person
-    {true, 0x31, {}, "Fortune Teller", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x31 Fortune Teller
-    {true, 0x32, {}, "Angry Brothers", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x32 Angry Brothers
-    {true, 0x33, {}, "Pull for Rupees", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x33 Pull for Rupees
-    {true, 0x34, {}, "Scared Girl2", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x34 Scared Girl2
-    {true, 0x35, {}, "Innkeeper", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x35 Innkeeper
-    {true, 0x36, {}, "Witch", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x36 Witch
-    {true, 0x37, {}, "Waterfall", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x37 Waterfall
-    {true, 0x38, {}, "Arrow Target", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x38 Arrow Target
-    {true, 0x39, {}, "Average Middle Aged Man", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x39 Average Middle Aged Man
-    {true, 0x3A, {}, "Half Magic Bat", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x3A Half Magic Bat
-    {true, 0x3B, {}, "Dash Item", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x3B Dash Item
-    {true, 0x3C, {}, "Village Kid", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x3C Village Kid
-    -- {false, 0x3D,{},  "Misc People", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x3D Signs Chicken Lady Also Showed Up Scared Ladies    Houses,
-    {false, 0x3E, {}, "Rock Hoarder", 2, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 8, 64, 64, 64, 250},  --# 0x3E Rock Hoarder
-    {true, 0x3F, {}, "Tutorial Soldier", 255, 0, 0, 64, 8, 16, 16, 4, 255, 4, 100, 0, 8, 8, 16, 254, 32},  --# 0x3F Tutorial Soldier
-    {true, 0x40, {}, "Lightning Gate", 2, 0, 0, 4, 8, 16, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x40 Lightning Gate
-    {false, 0x41, {}, "Blue Sword Soldier", 6, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 253, 8, 253, 254, 250},  --# 0x41 Blue Sword Soldier
-    {false, 0x42, {}, "Green Sword Soldier", 4, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 253, 254, 253, 254, 250},  --# 0x42 Green Sword Soldier
-    {false, 0x43, {}, "Red Spear Soldier", 8, 255, 2, 3, 4, 16, 16, 4, 255, 4, 100, 0, 253, 0, 253, 254, 250},  --# 0x43 Red Spear Soldier
-    {false, 0x44, {}, "Assault Sword Soldier", 6, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 253, 0, 253, 254, 250},  --# 0x44 Assault Sword Soldier
-    {false, 0x45, {}, "Green Spear Soldier", 8, 255, 2, 3, 4, 16, 16, 4, 255, 4, 100, 0, 253, 0, 253, 254, 250},  --# 0x45 Green Spear Soldier
-    {false, 0x46, {}, "Blue Archer", 6, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 253, 254, 253, 254, 250},  --# 0x46 Blue Archer
-    {false, 0x47, {}, "Green Bush Archer", 4, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 253, 8, 253, 64, 250},  --# 0x47 Green Archer
-    {false, 0x48, {}, "Red Javelin Soldier", 8, 255, 2, 3, 4, 16, 16, 4, 255, 4, 100, 0, 253, 0, 253, 254, 250},  --# 0x48 Red Javelin Soldier
-    {false, 0x49, {}, "Red Bush Javelin Soldier", 8, 255, 2, 3, 4, 16, 16, 4, 255, 4, 100, 0, 253, 0, 253, 64, 250},  --# 0x49 Red Javelin Soldier2
-    {false, 0x4A, {}, "Red Bomb Soldier", 8, 255, 2, 3, 4, 16, 16, 4, 255, 4, 100, 0, 253, 254, 253, 254, 250},  --# 0x4A Red Bomb Soldier
-    {false, 0x4B, {}, "Green Soldier Recruit", 4, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 253, 254, 253, 254, 250},  --# 0x4B Green Soldier Recruit / HM Knight
-    {false, 0x4C, {}, "Geldman", 4, 1, 2, 4, 8, 16, 16, 64, 255, 4, 100, 0, 8, 8, 253, 16, 255},  --# 0x4C Geldman
-    {true, 0x4D, {}, "Rabbit", 2, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 253, 64, 253, 64, 255},  --# 0x4D Rabbit
-    {false, 0x4E, {}, "Popo", 2, 255, 2, 4, 8, 16, 16, 4, 64, 4, 100, 250, 253, 254, 253, 254, 250},  --# 0x4E Popo
-    {false, 0x4F, {}, "Popo2", 2, 255, 2, 4, 8, 16, 16, 4, 64, 4, 100, 250, 253, 254, 253, 254, 250},  --# 0x4F Popo2
-    {false, 0x50, {}, "Cannon Balls", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x50 Cannon Balls
-    {false, 0x51, {}, "Armos", 8, 255, 2, 4, 8, 16, 16, 64, 255, 4, 100, 0, 8, 254, 253, 16, 255},  --# 0x51 Armos
-    {true, 0x52, {}, "King Zora", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x52 King Zora
-    {false, 0x55, {}, "Fireball Zora", 8, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 253, 8, 253, 64, 32},  --# 0x55 Fireball Zora
-    {false, 0x56, {}, "Walking Zora", 8, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 253, 8, 253, 64, 32},  --# 0x56 Walking Zora
-    {true, 0x57, {}, "Desert Palace Barriers", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x57 Desert Palace Barriers
-    {false, 0x58, {}, "Crab", 2, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 8, 254, 253, 254, 250},  --# 0x58 Crab
-    {true, 0x59, {}, "Bird", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x59 Bird
-    {true, 0x5A, {}, "Squirrel", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x5A Squirrel
-    {false, 0x5B, {}, "Spark (clockwise)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 253, 0, 255},  --# 0x5B Spark (clockwise)
-    {false, 0x5F, {}, "Roller", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x5F Roller
-    {false, 0x61, {}, "Beamos", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x61 Beamos
-    {true, 0x62, {}, "Master Sword", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x62 Master Sword
-    {false, 0x63, {}, "Devalant (non-shooter)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x63 Devalant (non-shooter)
-    {false, 0x64, {}, "Devalant (shooter)", 4, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 8, 8, 253, 16, 255},  --# 0x64 Devalant (shooter)
-    {true, 0x65, {}, "Shooting Gallery Proprietor", 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x65 Shooting Gallery Proprietor
-    {false, 0x67, {}, "Moving Cannon Ball Shooter (left)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x67 Moving Cannon Ball Shooter (left)
-    {false, 0x6A, {}, "Ball and Chain Trooper", 16, 251, 2, 2, 8, 16, 16, 4, 255, 4, 100, 0, 253, 0, 253, 254, 250},  --# 0x6A Ball and Chain Trooper
-    {false, 0x6B, {}, "Cannon Soldier", 3, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 8, 8, 16, 254, 32},  --# 0x6B Cannon Soldier
-    {true, 0x6C, {}, "Mirror Portal", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x6C Mirror Portal
-    {false, 0x6D, {}, "Rat", 2, 255, 2, 4, 8, 16, 16, 4, 64, 4, 100, 250, 253, 254, 253, 254, 250},  --# 0x6D Rat
-    {false, 0x6E, {}, "Rope", 4, 255, 2, 4, 8, 16, 16, 4, 64, 4, 100, 250, 253, 254, 253, 254, 250},  --# 0x6E Rope
-    {false, 0x6F, {}, "Keese", 1, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 254, 253, 254, 255},  --# 0x6F Keese
-    -- {false, 0x70,{},  255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --0x70 
-    {false, 0x71, {}, "Leever", 4, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 253, 254, 253, 254, 255},  --# 0x71 Leever
-    {true, 0x72, {}, "Pond Item Trigger", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x72 Pond Item Trigger
-    {true, 0x73, {}, "Uncle / Priest", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x73 Uncle / Priest
-    {true, 0x74, {}, "Running Man", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x74 Running Man
-    {true, 0x75, {}, "Bottle Salesman", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x75 Bottle Salesman
-    {true, 0x76, {}, "Princess Zelda", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x76 Princess Zelda
-    -- {false, 0x77,{},  255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --0x77 
-    {true, 0x78, {}, "Village Elder", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x78 Village Elder
-    -- {false, 0x79,{},  0, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 249, 8, 8, 16, 16, 32},  --0x79 
-    {true, 0x7B, {}, "Agahnim Energy Ball", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x7B Agahnim Energy Ball
-    {false, 0x7C, {}, "Floating Stalfos Head", 24, 0, 2, 4, 8, 16, 16, 4, 0, 64, 100, 0, 253, 254, 253, 16, 255},  --# 0x7C Floating Stalfos Head
-    {true, 0x7D, {}, "Big Spike Trap", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x7D Big Spike Trap
-    {false, 0x7E, {}, "Fire Bar (clockwise)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x7E Fire Bar (clockwise)
-    {false, 0x80, {}, "Fire Snake", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x80 Fire Snake
-    {false, 0x81, {}, "Water Tektite", 4, 0, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 254, 64, 16, 64},  --# 0x81 Water Tektite
-    {false, 0x82, {}, "Anti-Fairy Circle", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x82 Anti-Fairy Circle
-    {false, 0x83, {}, "Green Eyegore", 16, 0, 2, 4, 64, 64, 16, 64, 0, 4, 24, 0, 0, 0, 0, 0, 0},  --# 0x83 Green Eyegore
-    {false, 0x84, {}, "Red Eyegore", 8, 0, 0, 0, 0, 0, 0, 4, 0, 0, 100, 0, 0, 0, 0, 0, 0},  --# 0x84 Red Eyegore
-    -- {false, 0x85,{},  8, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 8, 64, 253, 64, 255},  --0x85 
-    {false, 0x86, {}, "Kodongo", 0, 0, 2, 4, 8, 16, 16, 4, 0, 0, 100, 0, 8, 254, 253, 254, 250},  --# 0x86 Kodongo
-    -- {false, 0x87,{},  255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --0x87 
-    {true, 0x89, {}, "Mothula's Beam", 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x89 Mothula's Beam
-    {false, 0x8A, {}, "Spike Trap", 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x8A Spike Trap
-    {false, 0x8B, {}, "Gibdo", 32, 255, 2, 4, 8, 16, 16, 0, 0, 4, 100, 0, 253, 254, 253, 64, 255},  --# 0x8B Gibdo
-    {false, 0x8E, {"hammer"}, "Terrorpin", 8, 1, 2, 4, 8, 16, 16, 4, 255, 64, 100, 0, 8, 254, 64, 64, 255},  --# 0x8E Terrorpin
-    {false, 0x8F, {}, "Slime", 4, 255, 2, 4, 8, 16, 16, 4, 64, 64, 100, 0, 253, 254, 253, 254, 64},  --# 0x8F Slime
-    {false, 0x90, {}, "Wallmaster", 8, 1, 2, 4, 8, 16, 16, 4, 0, 4, 100, 0, 8, 8, 253, 16, 64},  --# 0x90 Wallmaster
-    {false, 0x91, {"bombs"}, "Stalfos Knight", 64, 1, 2, 4, 8, 16, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x91 Stalfos Knight
-    {false, 0x93, {}, "Bumper", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x93 Bumper
-    {false, 0x94, {}, "Pirogusu", 2, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 8, 253, 64, 255},  --# 0x94 Pirogusu
-    {false, 0x97, {}, "Laser Eye (down)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x97 Laser Eye (down)
-    {false, 0x99, {}, "Pengator", 16, 1, 2, 4, 8, 16, 16, 4, 64, 64, 100, 0, 8, 0, 253, 254, 64},  --# 0x99 Pengator
-    {false, 0x9A, {}, "Kyameron", 4, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 64, 254, 64, 254, 32},  --# 0x9A Kyameron
-    {false, 0x9B, {}, "Wizzrobe", 2, 0, 2, 4, 8, 16, 16, 4, 0, 0, 100, 0, 8, 8, 64, 16, 64},  --# 0x9B Wizzrobe
-    {false, 0x9C, {}, "Zoro", 4, 0, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 64, 253, 64, 64},  --# 0x9C Zoro
-    {false, 0x9D, {}, "Babasu", 4, 0, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 64, 253, 64, 64},  --# 0x9D Babasu
-    {true, 0x9E, {}, "Haunted Grove Ostrich", 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x9E Haunted Grove Ostrich
-    {true, 0x9F, {}, "Flute", 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x9F Flute
-    {true, 0xA0, {}, "Haunted Grove Birds", 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xA0 Haunted Grove Birds
-    {false, 0xA1, {"firerod", "bombos"}, "Freezor", 16, 0, 0, 0, 0, 16, 16, 0, 0, 0, 0, 0, 64, 0, 64, 0, 0},  --# 0xA1 Freezor
-    {true, 0xA4, {}, "Falling Ice", 8, 0, 2, 4, 8, 16, 16, 4, 0, 4, 100, 0, 253, 0, 16, 16, 32},  --# 0xA4 Falling Ice
-    {false, 0xA5, {}, "Blue Zazak", 4, 255, 2, 4, 8, 16, 16, 4, 255, 64, 100, 0, 253, 254, 253, 254, 255},  --# 0xA5 Blue Zazak
-    {false, 0xA6, {}, "Red Zazak", 8, 255, 2, 4, 8, 16, 16, 4, 255, 64, 100, 0, 253, 254, 253, 254, 255},  --# 0xA6 Red Zazak
-    {false, 0xA7, {}, "Stalfos", 4, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 8, 64, 253, 64, 250},  --# 0xA7 Stalfos
-    {false, 0xA8, {}, "Green Zirro", 4, 0, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 254, 253, 254, 32},  --# 0xA8 Green Zirro
-    {false, 0xA9, {}, "Blue Zirro", 8, 0, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 254, 253, 254, 32},  --# 0xA9 Blue Zirro
-    {false, 0xAA, {}, "Pikit", 12, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 253, 8, 253, 254, 255},  --# 0xAA Pikit
-    {true, 0xAB, {}, "Maiden", 16, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 8, 8, 0, 0, 0},  --# 0xAB Maiden
-    {true, 0xAC, {}, "Apple", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xAC Apple
-    {true, 0xAD, {}, "Lost Old Man", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xAD Lost Old Man
-    {true, 0xAE, {}, "Down Pipe", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xAE Down Pipe
-    {true, 0xAF, {}, "Up Pipe", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xAF Up Pipe
-    {true, 0xB0, {}, "Right Pipe", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xB0 Right Pipe
-    {true, 0xB1, {}, "Left Pipe", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xB1 Left Pipe
-    {false, 0xB2, {}, "Good Bee", 0, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 8, 8, 16, 16, 32},  --# 0xB2 Good Bee
-    {true, 0xB3, {}, "Hylian Inscription", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xB3 Hylian Inscription
-    {true, 0xB4, {}, "Thief's Chest", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xB4 Thief's Chest
-    {true, 0xB5, {}, "Bomb Salesman", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xB5 Bomb Salesman
-    {true, 0xB6, {}, "Kiki", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xB6 Kiki
-    {true, 0xB7, {}, "Blind's Maiden", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xB7 Blind's Maiden
-    {false, 0xB8, {"bow"}, "Mimic", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xB8 Mimic ??????
-    {true, 0xB9, {}, "Bully and Pink Ball", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xB9 Bully and Pink Ball
-    {true, 0xBA, {}, "Whirlpool", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xBA Whirlpool
-    {true, 0xBB, {}, "Shopkeeper / Chest Game NPC", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xBB Shopkeeper / Chest Game NPC
-    {true, 0xBC, {}, "Drunkard", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xBC Drunkard
-    {true, 0xBF, {}, "Vitreous Lightning", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xBF Vitreous Lightning
-    {true, 0xC0, {}, "Catfish", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xC0 Catfish
-    {true, 0xC1, {}, "Cutscene Agahnim", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xC1 Cutscene Agahnim
-    {true, 0xC2, {}, "Boulders", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xC2 Boulders
-    {false, 0xC3, {}, "Gibo", 8, 0, 2, 4, 8, 16, 16, 16, 0, 4, 100, 0, 0, 0, 0, 0, 0},  --# 0xC3 Gibo
-    {false, 0xC4, {}, "Thief", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xC4 Thief
-    {false, 0xC5, {}, "Medusa", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 16, 32},  --# 0xC5 Medusa
-    {false, 0xC6, {}, "Four-Way Fireball Spitter", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 16, 32},  --# 0xC6 Four-Way Fireball Spitter
-    {false, 0xC7, {}, "Hokku-Bokku", 32, 0, 2, 4, 8, 16, 16, 4, 0, 4, 24, 0, 253, 8, 253, 254, 255},  --# 0xC7 Hokku-Bokku
-    {true, 0xC8, {}, "Great Fairy", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xC8 Great Fairy
-    {false, 0xC9, {}, "Tektite", 8, 251, 2, 4, 8, 16, 16, 16, 0, 64, 100, 0, 253, 254, 16, 16, 32},  --# 0xC9 Tektite
-    {false, 0xCA, {}, "Chain Chomp", 5, 251, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xCA Chain Chomp
-    {false, 0xCF, {}, "Swamola", 16, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 8, 8, 16, 64, 32},  --# 0xCF Swamola
-    {false, 0xD0, {}, "Lynel", 24, 0, 0, 0, 8, 16, 16, 0, 0, 0, 24, 0, 0, 0, 0, 0, 0},  --# 0xD0 Lynel
-    {false, 0xD1, {}, "Bunny Beam", 64, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 249, 0, 0, 64, 64, 64},  --# 0xD1 Bunny Beam
-    {true, 0xD2, {}, "Flopping Fish", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 250, 0, 0, 0, 0, 250},  --# 0xD2 Flopping Fish
-    {false, 0xD3, {}, "Stal", 4, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 8, 8, 16, 64, 250},  --# 0xD3 Stal
-    {true, 0xD4, {}, "Landmine", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xD4 Landmine
-    {true, 0xD5, {}, "Digging Game Proprietor", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xD5 Digging Game Proprietor
-    {true, 0x10, {}, "Octoballoon Hatchlings", 0, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 8, 8, 16, 16, 32},  --# 0x10 Octoballoon Hatchlings
+    {false, false, 0x00, {}, "Raven", 12, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 8, 253, 254, 32},  --# 0x00 Raven
+    {false, false, 0x01, {}, "Vulture", 6, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 8, 253, 254, 32},  --# 0x01 Vulture
+    -- {false, true, 0x02,{},  255, 1, 2, 4, 8, 16, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --0x02 
+    -- {true, true, 0x03,{},  "Empty", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x03 Empty
+    {true, true, 0x04, {}, "Pull Switch (good)", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x04 Pull Switch (good)
+    -- {false, true, 0x05,{},  3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --0x05 
+    {true, true, 0x06, {}, "Pull Switch (trap)", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x06 Pull Switch (trap)
+    -- {false, false, 0x07,{},  3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --0x07 
+    {false, false, 0x08, {}, "Octorok (one-way)", 2, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 253, 254, 253, 254, 250},  --# 0x08 Octorok (one-way)
+    {false, false, 0x0A, {}, "Octorok (four-way)", 4, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 253, 254, 253, 254, 250},  --# 0x0A Octorok (four-way)
+    {false, true, 0x0B, {}, "Cucco", 255, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 8, 8, 0, 0, 0},  --# 0x0B Cucco
+    -- {false, true, 0x0C,{},  0, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 8, 8, 16, 16, 32},  --0x0C 
+    {false, false, 0x0D, {}, "Buzzblob", 3, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 249, 253, 254, 253, 254, 255},  --# 0x0D Buzzblob
+    {false, false, 0x0E, {}, "Snapdragon", 12, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 253, 254, 253, 64, 250},  --# 0x0E Snapdragon
+    {false, false, 0x0F, {}, "Octoballoon", 2, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 8, 253, 16, 64},  --# 0x0F Octoballoon
+    {false, false, 0x11, {}, "Hinox", 20, 252, 2, 4, 8, 16, 64, 4, 0, 64, 100, 0, 8, 254, 253, 254, 250},  --# 0x11 Hinox
+    {false, false, 0x12, {}, "Moblin", 4, 255, 2, 4, 8, 16, 16, 4, 255, 64, 100, 250, 253, 254, 253, 254, 250},  --# 0x12 Moblin
+    {false, false, 0x13, {}, "Mini Helmasaur", 4, 0, 2, 4, 8, 16, 16, 4, 255, 64, 100, 250, 0, 0, 253, 64, 250},  --# 0x13 Mini Helmasaur
+    {true, true, 0x14, {}, "Gargoyle's Domain Gate", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x14 Gargoyle's Domain Gate
+    {false, false, 0x15, {}, "Anti-Fairy", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 249, 0, 0, 0, 0, 0},  --# 0x15 Anti-Fairy
+    {true, true, 0x16, {}, "Sahasrahla / Aginah", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x16 Sahasrahla / Aginah
+    {false, false, 0x17, {}, "Bush Hoarder", 2, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 64, 64, 64, 64, 250},  --# 0x17 Bush Hoarder
+    {false, false, 0x18, {}, "Mini Moldorm", 3, 0, 2, 4, 8, 16, 16, 4, 64, 4, 100, 250, 253, 8, 253, 16, 250},  --# 0x18 Mini Moldorm
+    {false, false, 0x19, {}, "Poe", 8, 1, 2, 4, 64, 16, 16, 4, 64, 4, 100, 0, 8, 8, 253, 64, 255},  --# 0x19 Poe
+    {true, false, 0x1A, {}, "Dwarves", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x1A Dwarves
+    {true, true, 0x1B, {}, "Arrow in Wall", 0, 32, 64, 64, 64, 64, 64, 64, 64, 64, 24, 0, 64, 64, 64, 16, 64},  --# 0x1B Arrow in Wall
+    {true, true, 0x1C, {}, "Statue", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x1C Statue
+    {true, true, 0x1D, {}, "Weathervane", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x1D Weathervane
+    {true, true, 0x1E, {}, "Crystal Switch", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x1E Crystal Switch
+    {true, true, 0x1F, {}, "Bug Catching Kid", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x1F Bug Catching Kid
+    {false, false, 0x20, {}, "Sluggula", 8, 255, 2, 4, 8, 16, 16, 4, 255, 0, 100, 250, 253, 254, 253, 254, 250},  --# 0x20 Sluggula
+    {true, true, 0x21, {}, "Push Switch", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x21 Push Switch
+    {false, false, 0x22, {}, "Ropa", 8, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 253, 254, 253, 64, 250},  --# 0x22 Ropa
+    {false, false, 0x23, {"firerof", "bombos"}, "Red Bari", 2, 0, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 64, 253, 64, 255},  --# 0x23 Red Bari
+    {false, false, 0x24, {}, "Blue Bari", 2, 0, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 64, 253, 64, 255},  --# 0x24 Blue Bari
+    {true, true, 0x25, {}, "Talking Tree", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x25 Talking Tree
+    {false, false, 0x26, {}, "Hardhat Beetle", 3, 0, 2, 4, 8, 16, 16, 0, 255, 255, 100, 0, 0, 0, 253, 254, 255},  --# 0x26 Hardhat Beetle
+    {false, false, 0x27, {}, "Deadrock", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 250, 0, 0, 0, 0, 250},  --# 0x27 Deadrock
+    {true, true, 0x28, {}, "Storytellers", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x28 Storytellers
+    {true, true, 0x29, {}, "Blind Hideout Attendant", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x29 Blind Hideout Attendant
+    {true, true, 0x2A, {}, "Sweeping Lady", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 249, 0, 0, 0, 0, 0},  --# 0x2A Sweeping Lady
+    {true, true, 0x2B, {}, "Multipurpose", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x2B Multipurpose
+    {true, true, 0x2C, {}, "Lumberjacks", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x2C Lumberjacks
+    {true, true, 0x2D, {}, "Telepathic Stones", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x2D Telepathic Stones
+    {true, true, 0x2E, {}, "Flute Boy's Notes", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x2E Flute Boy's Notes
+    {true, true, 0x2F, {}, "Race Game NPCs", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x2F Race Game NPCs
+    {true, true, 0x30, {}, "Person", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x30 Person
+    {true, true, 0x31, {}, "Fortune Teller", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x31 Fortune Teller
+    {true, true, 0x32, {}, "Angry Brothers", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x32 Angry Brothers
+    {true, true, 0x33, {}, "Pull for Rupees", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x33 Pull for Rupees
+    {true, true, 0x34, {}, "Scared Girl2", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x34 Scared Girl2
+    {true, true, 0x35, {}, "Innkeeper", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x35 Innkeeper
+    {true, true, 0x36, {}, "Witch", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x36 Witch
+    {true, true, 0x37, {}, "Waterfall", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x37 Waterfall
+    {true, true, 0x38, {}, "Arrow Target", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x38 Arrow Target
+    {true, true, 0x39, {}, "Average Middle Aged Man", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x39 Average Middle Aged Man
+    {true, true, 0x3A, {}, "Half Magic Bat", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x3A Half Magic Bat
+    {true, true, 0x3B, {}, "Dash Item", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x3B Dash Item
+    {true, true, 0x3C, {}, "Village Kid", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x3C Village Kid
+    -- {false, true, false, 0x3D,{},  "Misc People", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x3D Signs Chicken Lady Also Showed Up Scared Ladies    Houses,
+    {false, false, 0x3E, {}, "Rock Hoarder", 2, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 8, 64, 64, 64, 250},  --# 0x3E Rock Hoarder
+    {true, false, 0x3F, {}, "Tutorial Soldier", 255, 0, 0, 64, 8, 16, 16, 4, 255, 4, 100, 0, 8, 8, 16, 254, 32},  --# 0x3F Tutorial Soldier
+    {true, true, 0x40, {}, "Lightning Gate", 2, 0, 0, 4, 8, 16, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x40 Lightning Gate
+    {false, false, 0x41, {}, "Blue Sword Soldier", 6, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 253, 8, 253, 254, 250},  --# 0x41 Blue Sword Soldier
+    {false, false, 0x42, {}, "Green Sword Soldier", 4, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 253, 254, 253, 254, 250},  --# 0x42 Green Sword Soldier
+    {false, false, 0x43, {}, "Red Spear Soldier", 8, 255, 2, 3, 4, 16, 16, 4, 255, 4, 100, 0, 253, 0, 253, 254, 250},  --# 0x43 Red Spear Soldier
+    {false, false, 0x44, {}, "Assault Sword Soldier", 6, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 253, 0, 253, 254, 250},  --# 0x44 Assault Sword Soldier
+    {false, false, 0x45, {}, "Green Spear Soldier", 8, 255, 2, 3, 4, 16, 16, 4, 255, 4, 100, 0, 253, 0, 253, 254, 250},  --# 0x45 Green Spear Soldier
+    {false, false, 0x46, {}, "Blue Archer", 6, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 253, 254, 253, 254, 250},  --# 0x46 Blue Archer
+    {false, false, 0x47, {}, "Green Bush Archer", 4, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 253, 8, 253, 64, 250},  --# 0x47 Green Archer
+    {false, false, 0x48, {}, "Red Javelin Soldier", 8, 255, 2, 3, 4, 16, 16, 4, 255, 4, 100, 0, 253, 0, 253, 254, 250},  --# 0x48 Red Javelin Soldier
+    {false, false, 0x49, {}, "Red Bush Javelin Soldier", 8, 255, 2, 3, 4, 16, 16, 4, 255, 4, 100, 0, 253, 0, 253, 64, 250},  --# 0x49 Red Javelin Soldier2
+    {false, false, 0x4A, {}, "Red Bomb Soldier", 8, 255, 2, 3, 4, 16, 16, 4, 255, 4, 100, 0, 253, 254, 253, 254, 250},  --# 0x4A Red Bomb Soldier
+    {false, false, 0x4B, {}, "Green Soldier Recruit", 4, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 253, 254, 253, 254, 250},  --# 0x4B Green Soldier Recruit / HM Knight
+    {false, false, 0x4C, {}, "Geldman", 4, 1, 2, 4, 8, 16, 16, 64, 255, 4, 100, 0, 8, 8, 253, 16, 255},  --# 0x4C Geldman
+    {true, true, 0x4D, {}, "Rabbit", 2, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 253, 64, 253, 64, 255},  --# 0x4D Rabbit
+    {false, false, 0x4E, {}, "Popo", 2, 255, 2, 4, 8, 16, 16, 4, 64, 4, 100, 250, 253, 254, 253, 254, 250},  --# 0x4E Popo
+    {false, false, 0x4F, {}, "Popo2", 2, 255, 2, 4, 8, 16, 16, 4, 64, 4, 100, 250, 253, 254, 253, 254, 250},  --# 0x4F Popo2
+    {false, true, 0x50, {}, "Cannon Balls", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x50 Cannon Balls
+    {false, false, 0x51, {}, "Armos", 8, 255, 2, 4, 8, 16, 16, 64, 255, 4, 100, 0, 8, 254, 253, 16, 255},  --# 0x51 Armos
+    {true, true, 0x52, {}, "King Zora", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x52 King Zora
+    {false, false, 0x55, {}, "Fireball Zora", 8, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 253, 8, 253, 64, 32},  --# 0x55 Fireball Zora
+    {false, false, 0x56, {}, "Walking Zora", 8, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 253, 8, 253, 64, 32},  --# 0x56 Walking Zora
+    {true, true, 0x57, {}, "Desert Palace Barriers", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x57 Desert Palace Barriers
+    {false, false, 0x58, {}, "Crab", 2, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 8, 254, 253, 254, 250},  --# 0x58 Crab
+    {true, true, 0x59, {}, "Bird", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x59 Bird
+    {true, true, 0x5A, {}, "Squirrel", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x5A Squirrel
+    {false, true, 0x5B, {}, "Spark (clockwise)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 253, 0, 255},  --# 0x5B Spark (clockwise)
+    {false, true, 0x5F, {}, "Roller", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x5F Roller
+    {false, true, 0x61, {}, "Beamos", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x61 Beamos
+    {true, true, 0x62, {}, "Master Sword", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x62 Master Sword
+    -- {false, false, 0x63, {}, "Devalant (non-shooter)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x63 Devalant (non-shooter)
+    {false, false, 0x63, {}, "Devalant (non-shooter)", 4, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 8, 8, 253, 16, 255},  --# 0x63 Devalant (non-shooter)
+    {false, false, 0x64, {}, "Devalant (shooter)", 4, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 8, 8, 253, 16, 255},  --# 0x64 Devalant (shooter)
+    {true, true, 0x65, {}, "Shooting Gallery Proprietor", 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x65 Shooting Gallery Proprietor
+    {false, true, 0x67, {}, "Moving Cannon Ball Shooter (left)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x67 Moving Cannon Ball Shooter (left)
+    {false, false, 0x6A, {}, "Ball and Chain Trooper", 16, 251, 2, 2, 8, 16, 16, 4, 255, 4, 100, 0, 253, 0, 253, 254, 250},  --# 0x6A Ball and Chain Trooper
+    {false, false, 0x6B, {}, "Cannon Soldier", 3, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 8, 8, 16, 254, 32},  --# 0x6B Cannon Soldier
+    {true, true, 0x6C, {}, "Mirror Portal", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x6C Mirror Portal
+    {false, true, 0x6D, {}, "Rat", 2, 255, 2, 4, 8, 16, 16, 4, 64, 4, 100, 250, 253, 254, 253, 254, 250},  --# 0x6D Rat
+    {false, false, 0x6E, {}, "Rope", 4, 255, 2, 4, 8, 16, 16, 4, 64, 4, 100, 250, 253, 254, 253, 254, 250},  --# 0x6E Rope
+    {false, true, 0x6F, {}, "Keese", 1, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 254, 253, 254, 255},  --# 0x6F Keese
+    -- {false, true, 0x70,{},  255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --0x70 
+    {false, false, 0x71, {}, "Leever", 4, 255, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 253, 254, 253, 254, 255},  --# 0x71 Leever
+    {true, true, 0x72, {}, "Pond Item Trigger", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x72 Pond Item Trigger
+    {true, true, 0x73, {}, "Uncle / Priest", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x73 Uncle / Priest
+    {true, true, 0x74, {}, "Running Man", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x74 Running Man
+    {true, true, 0x75, {}, "Bottle Salesman", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x75 Bottle Salesman
+    {true, true, 0x76, {}, "Princess Zelda", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x76 Princess Zelda
+    -- {false, true, 0x77,{},  255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --0x77 
+    {true, true, 0x78, {}, "Village Elder", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x78 Village Elder
+    -- {false, true, 0x79,{},  0, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 249, 8, 8, 16, 16, 32},  --0x79 
+    {true, true, 0x7B, {}, "Agahnim Energy Ball", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x7B Agahnim Energy Ball
+    {false, false, 0x7C, {}, "Floating Stalfos Head", 24, 0, 2, 4, 8, 16, 16, 4, 0, 64, 100, 0, 253, 254, 253, 16, 255},  --# 0x7C Floating Stalfos Head
+    {true, true, 0x7D, {}, "Big Spike Trap", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x7D Big Spike Trap
+    {false, true, 0x7E, {}, "Fire Bar (clockwise)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x7E Fire Bar (clockwise)
+    {false, true, 0x80, {}, "Fire Snake", 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x80 Fire Snake
+    {false, false, 0x81, {}, "Water Tektite", 4, 0, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 254, 64, 16, 64},  --# 0x81 Water Tektite
+    {false, true, 0x82, {}, "Anti-Fairy Circle", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x82 Anti-Fairy Circle
+    {false, false, 0x83, {}, "Green Eyegore", 16, 0, 2, 4, 64, 64, 16, 64, 0, 4, 24, 0, 0, 0, 0, 0, 0},  --# 0x83 Green Eyegore
+    {false, false, 0x84, {}, "Red Eyegore", 8, 0, 0, 0, 0, 0, 0, 4, 0, 0, 100, 0, 0, 0, 0, 0, 0},  --# 0x84 Red Eyegore
+    -- {false, true, 0x85,{},  8, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 8, 64, 253, 64, 255},  --0x85 
+    {false, false, 0x86, {}, "Kodongo", 0, 0, 2, 4, 8, 16, 16, 4, 0, 0, 100, 0, 8, 254, 253, 254, 250},  --# 0x86 Kodongo
+    -- {false, true, 0x87,{},  255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --0x87 
+    {true, true, 0x89, {}, "Mothula's Beam", 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x89 Mothula's Beam
+    {false, true, 0x8A, {}, "Spike Trap", 32, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x8A Spike Trap
+    {false, false, 0x8B, {}, "Gibdo", 32, 255, 2, 4, 8, 16, 16, 0, 0, 4, 100, 0, 253, 254, 253, 64, 255},  --# 0x8B Gibdo
+    {false, false, 0x8E, {"hammer"}, "Terrorpin", 8, 1, 2, 4, 8, 16, 16, 4, 255, 64, 100, 0, 8, 254, 64, 64, 255},  --# 0x8E Terrorpin
+    {false, false, 0x8F, {}, "Slime", 4, 255, 2, 4, 8, 16, 16, 4, 64, 64, 100, 0, 253, 254, 253, 254, 64},  --# 0x8F Slime
+    {false, true, 0x90, {}, "Wallmaster", 8, 1, 2, 4, 8, 16, 16, 4, 0, 4, 100, 0, 8, 8, 253, 16, 64},  --# 0x90 Wallmaster
+    {false, false, 0x91, {"bombs"}, "Stalfos Knight", 64, 1, 2, 4, 8, 16, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x91 Stalfos Knight
+    {false, true, 0x93, {}, "Bumper", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x93 Bumper
+    {false, false, 0x94, {}, "Pirogusu", 2, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 8, 253, 64, 255},  --# 0x94 Pirogusu
+    {false, true, 0x97, {}, "Laser Eye (down)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x97 Laser Eye (down)
+    {false, false, 0x99, {}, "Pengator", 16, 1, 2, 4, 8, 16, 16, 4, 64, 64, 100, 0, 8, 0, 253, 254, 64},  --# 0x99 Pengator
+    {false, false, 0x9A, {}, "Kyameron", 4, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 64, 254, 64, 254, 32},  --# 0x9A Kyameron
+    {false, false, 0x9B, {}, "Wizzrobe", 2, 0, 2, 4, 8, 16, 16, 4, 0, 0, 100, 0, 8, 8, 64, 16, 64},  --# 0x9B Wizzrobe
+    {false, false, 0x9C, {}, "Zoro", 4, 0, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 64, 253, 64, 64},  --# 0x9C Zoro
+    {false, false, 0x9D, {}, "Babasu", 4, 0, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 64, 253, 64, 64},  --# 0x9D Babasu
+    {true, true, 0x9E, {}, "Haunted Grove Ostrich", 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x9E Haunted Grove Ostrich
+    {true, true, 0x9F, {}, "Flute", 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x9F Flute
+    {true, true, 0xA0, {}, "Haunted Grove Birds", 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xA0 Haunted Grove Birds
+    {false, false, 0xA1, {"firerod", "bombos"}, "Freezor", 16, 0, 0, 0, 0, 16, 16, 0, 0, 0, 0, 0, 64, 0, 64, 0, 0},  --# 0xA1 Freezor
+    {true, true, 0xA4, {}, "Falling Ice", 8, 0, 2, 4, 8, 16, 16, 4, 0, 4, 100, 0, 253, 0, 16, 16, 32},  --# 0xA4 Falling Ice
+    {false, false, 0xA5, {}, "Blue Zazak", 4, 255, 2, 4, 8, 16, 16, 4, 255, 64, 100, 0, 253, 254, 253, 254, 255},  --# 0xA5 Blue Zazak
+    {false, false, 0xA6, {}, "Red Zazak", 8, 255, 2, 4, 8, 16, 16, 4, 255, 64, 100, 0, 253, 254, 253, 254, 255},  --# 0xA6 Red Zazak
+    {false, false, 0xA7, {}, "Stalfos", 4, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 8, 64, 253, 64, 250},  --# 0xA7 Stalfos
+    {false, false, 0xA8, {}, "Green Zirro", 4, 0, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 254, 253, 254, 32},  --# 0xA8 Green Zirro
+    {false, false, 0xA9, {}, "Blue Zirro", 8, 0, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 253, 254, 253, 254, 32},  --# 0xA9 Blue Zirro
+    {false, false, 0xAA, {}, "Pikit", 12, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 253, 8, 253, 254, 255},  --# 0xAA Pikit
+    {true, true, 0xAB, {}, "Maiden", 16, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 8, 8, 0, 0, 0},  --# 0xAB Maiden
+    {true, true, 0xAC, {}, "Apple", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xAC Apple
+    {true, true, 0xAD, {}, "Lost Old Man", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xAD Lost Old Man
+    {true, true, 0xAE, {}, "Down Pipe", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xAE Down Pipe
+    {true, true, 0xAF, {}, "Up Pipe", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xAF Up Pipe
+    {true, true, 0xB0, {}, "Right Pipe", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xB0 Right Pipe
+    {true, true, 0xB1, {}, "Left Pipe", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xB1 Left Pipe
+    {false, true, 0xB2, {}, "Good Bee", 0, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 8, 8, 16, 16, 32},  --# 0xB2 Good Bee
+    {true, true, 0xB3, {}, "Hylian Inscription", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xB3 Hylian Inscription
+    {true, true, 0xB4, {}, "Thief's Chest", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xB4 Thief's Chest
+    {true, true, 0xB5, {}, "Bomb Salesman", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xB5 Bomb Salesman
+    {true, true, 0xB6, {}, "Kiki", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xB6 Kiki
+    {true, true, 0xB7, {}, "Blind's Maiden", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xB7 Blind's Maiden
+    {false, false, 0xB8, {"bow"}, "Mimic", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xB8 Mimic ??????
+    {true, true, 0xB9, {}, "Bully and Pink Ball", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xB9 Bully and Pink Ball
+    {true, true, 0xBA, {}, "Whirlpool", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xBA Whirlpool
+    {true, true, 0xBB, {}, "Shopkeeper / Chest Game NPC", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xBB Shopkeeper / Chest Game NPC
+    {true, true, 0xBC, {}, "Drunkard", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xBC Drunkard
+    {true, true, 0xBF, {}, "Vitreous Lightning", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xBF Vitreous Lightning
+    {true, true, 0xC0, {}, "Catfish", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xC0 Catfish
+    {true, false, 0xC1, {}, "Cutscene Agahnim", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xC1 Cutscene Agahnim
+    {true, true, 0xC2, {}, "Boulders", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xC2 Boulders
+    {false, false, 0xC3, {}, "Gibo", 8, 0, 2, 4, 8, 16, 16, 16, 0, 4, 100, 0, 0, 0, 0, 0, 0},  --# 0xC3 Gibo
+    {false, false, 0xC4, {}, "Thief", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xC4 Thief
+    {false, false, 0xC5, {}, "Medusa", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 16, 32},  --# 0xC5 Medusa
+    {false, true, 0xC6, {}, "Four-Way Fireball Spitter", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 16, 16, 32},  --# 0xC6 Four-Way Fireball Spitter
+    {false, false, 0xC7, {}, "Hokku-Bokku", 32, 0, 2, 4, 8, 16, 16, 4, 0, 4, 24, 0, 253, 8, 253, 254, 255},  --# 0xC7 Hokku-Bokku
+    {true, true, 0xC8, {}, "Great Fairy", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xC8 Great Fairy
+    {false, false, 0xC9, {}, "Tektite", 8, 251, 2, 4, 8, 16, 16, 16, 0, 64, 100, 0, 253, 254, 16, 16, 32},  --# 0xC9 Tektite
+    {false, true, 0xCA, {}, "Chain Chomp", 5, 251, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xCA Chain Chomp
+    {false, false, 0xCF, {}, "Swamola", 16, 1, 2, 4, 8, 16, 16, 4, 64, 4, 100, 0, 8, 8, 16, 64, 32},  --# 0xCF Swamola
+    {false, false, 0xD0, {}, "Lynel", 24, 0, 0, 0, 8, 16, 16, 0, 0, 0, 24, 0, 0, 0, 0, 0, 0},  --# 0xD0 Lynel
+    {false, false, 0xD1, {}, "Bunny Beam", 64, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 249, 0, 0, 64, 64, 64},  --# 0xD1 Bunny Beam
+    {true, true, 0xD2, {}, "Flopping Fish", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 250, 0, 0, 0, 0, 250},  --# 0xD2 Flopping Fish
+    {false, false, 0xD3, {}, "Stal", 4, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 250, 8, 8, 16, 64, 250},  --# 0xD3 Stal
+    {true, true, 0xD4, {}, "Landmine", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xD4 Landmine
+    {true, true, 0xD5, {}, "Digging Game Proprietor", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xD5 Digging Game Proprietor
+    {true, true, 0x10, {}, "Octoballoon Hatchlings", 0, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 8, 8, 16, 16, 32},  --# 0x10 Octoballoon Hatchlings
     ---dupes
-    {false, 0x5C, {}, "Spark (counter-clockwise)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 253, 0, 255},  --# 0x5C Spark (counter-clockwise)
-    {false, 0x5D, {}, "Roller (vertical up)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x5D Roller (vertical up)
-    {false, 0x5E, {}, "Roller (vertical down)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x5E Roller (vertical down)
-    {false, 0x60, {}, "Roller (horizontal)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x60 Roller (horizontal)
-    {false, 0x66, {}, "Moving Cannon Ball Shooter (right)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x66 Moving Cannon Ball Shooter (right)
-    {false, 0x68, {}, "Moving Cannon Ball Shooter (down)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x68 Moving Cannon Ball Shooter (down)
-    {false, 0x69, {}, "Moving Cannon Ball Shooter (up)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x69 Moving Cannon Ball Shooter (up)
-    {false, 0x7F, {}, "Fire Bar (counter-clockwise)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x7F Fire Bar (counter-clockwise)
-    {false, 0x95, {}, "Laser Eye (right)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x95 Laser Eye (right)
-    {false, 0x96, {}, "Laser Eye (left)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x96 Laser Eye (left)
-    {false, 0x98, {}, "Laser Eye (up)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x98 Laser Eye (up)
+    {false, true, 0x5C, {}, "Spark (counter-clockwise)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 253, 0, 255},  --# 0x5C Spark (counter-clockwise)
+    {false, true, 0x5D, {}, "Roller (vertical up)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x5D Roller (vertical up)
+    {false, true, 0x5E, {}, "Roller (vertical down)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x5E Roller (vertical down)
+    {false, true, 0x60, {}, "Roller (horizontal)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x60 Roller (horizontal)
+    {false, true, 0x66, {}, "Moving Cannon Ball Shooter (right)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x66 Moving Cannon Ball Shooter (right)
+    {false, true, 0x68, {}, "Moving Cannon Ball Shooter (down)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x68 Moving Cannon Ball Shooter (down)
+    {false, true, 0x69, {}, "Moving Cannon Ball Shooter (up)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x69 Moving Cannon Ball Shooter (up)
+    {false, true, 0x7F, {}, "Fire Bar (counter-clockwise)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x7F Fire Bar (counter-clockwise)
+    {false, true, 0x95, {}, "Laser Eye (right)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x95 Laser Eye (right)
+    {false, true, 0x96, {}, "Laser Eye (left)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x96 Laser Eye (left)
+    {false, true, 0x98, {}, "Laser Eye (up)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x98 Laser Eye (up)
 
 
     ---lw bosses
-    {false, 0x53, {}, "Armos Knights", 48, 1, 4, 2, 4, 8, 8, 16, 0, 4, 100, 0, 8, 8, 0, 0, 0},  --# 0x53 Armos Knights
-    {false, 0x54, {}, "Lanmolas", 16, 0, 2, 2, 4, 8, 8, 4, 0, 4, 100, 0, 8, 8, 0, 0, 0},  --# 0x54 Lanmolas
-    {false, 0x09, {}, "Moldorm", 12, 0, 2, 2, 4, 8, 8, 4, 255, 4, 100, 0, 8, 8, 0, 0, 0},  --# 0x09 Moldorm
-    {false, 0x7A, {}, "Agahnim", 96, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x7A Agahnim
+    {false, false, 0x53, {}, "Armos Knights", 48, 1, 4, 2, 4, 8, 8, 16, 0, 4, 100, 0, 8, 8, 0, 0, 0},  --# 0x53 Armos Knights
+    {false, false, 0x54, {}, "Lanmolas", 16, 0, 2, 2, 4, 8, 8, 4, 0, 4, 100, 0, 8, 8, 0, 0, 0},  --# 0x54 Lanmolas
+    {false, false, 0x09, {}, "Moldorm", 12, 0, 2, 2, 4, 8, 8, 4, 255, 4, 100, 0, 8, 8, 0, 0, 0},  --# 0x09 Moldorm
+    {false, false, 0x7A, {}, "Agahnim", 96, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x7A Agahnim
 
 
     ---dw bosses
-    {false, 0x92, {}, "Helmasaur King", 48, 0, 0, 4, 8, 16, 16, 4, 0, 4, 100, 0, 0, 0, 0, 0, 0},  --# 0x92 Helmasaur King
-    {false, 0x8C, {}, "Arrghus", 32, 0, 0, 4, 8, 16, 16, 4, 0, 0, 100, 0, 8, 8, 0, 0, 0},  --# 0x8C Arrghus
-    {false, 0x8D, {}, "Arrgi", 8, 0, 0, 4, 8, 16, 16, 0, 0, 4, 100, 0, 8, 8, 0, 0, 0},  --# 0x8D Arrghus Spawn
-    {false, 0x88, {}, "Mothula", 32, 0, 2, 4, 8, 16, 16, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0},  --# 0x88 Mothula
-    {false, 0xCE, {}, "Blind the Thief", 90, 0, 2, 4, 8, 16, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xCE Blind the Thief
-    {false, 0xA2, {}, "Kholdstare", 64, 0, 0, 4, 8, 16, 16, 0, 0, 0, 0, 0, 16, 0, 0, 0, 0},  --# 0xA2 Kholdstare
-    {false, 0xA3, {}, "Kholdstare Shell", 64, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 64, 0, 0},  --# 0xA3 Kholdstare's Shell
-    {false, 0xBD, {}, "Vitreous", 128, 0, 0, 4, 8, 16, 16, 16, 0, 4, 100, 0, 0, 0, 0, 0, 0},  --# 0xBD Vitreous
-    {false, 0xBE, {}, "Vitreous Eyeball", 48, 0, 0, 4, 8, 16, 16, 16, 0, 4, 100, 0, 0, 0, 0, 0, 0},  --# 0xBE Vitreous Eyeball
-    {false, 0xCB, {}, "Trinexx Rock Head", 40, 0, 0, 4, 8, 16, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xCB Trinexx Rock Head
-    {false, 0xCC, {"icerod"}, "Trinexx Fire Head", 40, 0, 0, 4, 8, 16, 16, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0},  --# 0xCC Trinexx Fire Head
-    {false, 0xCD, {"firerod"}, "Trinexx Ice Head", 40, 0, 0, 4, 8, 16, 16, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0},  --# 0xCD Trinexx Ice Head
-    {false, 0xD6, {}, "Ganon", 255, 0, 0, 0, 4, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xD6 Ganon
-    {false, 0xD7, {}, "Invincible Ganon", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 0, 0, 0, 0, 0, 0},  --# 0xD7 Invincible Ganon
+    {false, false, 0x92, {}, "Helmasaur King", 48, 0, 0, 4, 8, 16, 16, 4, 0, 4, 100, 0, 0, 0, 0, 0, 0},  --# 0x92 Helmasaur King
+    {false, false, 0x8C, {}, "Arrghus", 32, 0, 0, 4, 8, 16, 16, 4, 0, 0, 100, 0, 8, 8, 0, 0, 0},  --# 0x8C Arrghus
+    {false, false, 0x8D, {}, "Arrgi", 8, 0, 0, 4, 8, 16, 16, 0, 0, 4, 100, 0, 8, 8, 0, 0, 0},  --# 0x8D Arrghus Spawn
+    {false, false, 0x88, {}, "Mothula", 32, 0, 2, 4, 8, 16, 16, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0},  --# 0x88 Mothula
+    {false, false, 0xCE, {}, "Blind the Thief", 90, 0, 2, 4, 8, 16, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xCE Blind the Thief
+    {false, false, 0xA2, {}, "Kholdstare", 64, 0, 0, 4, 8, 16, 16, 0, 0, 0, 0, 0, 16, 0, 0, 0, 0},  --# 0xA2 Kholdstare
+    {false, true, 0xA3, {}, "Kholdstare Shell", 64, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 64, 0, 0},  --# 0xA3 Kholdstare's Shell
+    {false, false, 0xBD, {}, "Vitreous", 128, 0, 0, 4, 8, 16, 16, 16, 0, 4, 100, 0, 0, 0, 0, 0, 0},  --# 0xBD Vitreous
+    {false, false, 0xBE, {}, "Vitreous Eyeball", 48, 0, 0, 4, 8, 16, 16, 16, 0, 4, 100, 0, 0, 0, 0, 0, 0},  --# 0xBE Vitreous Eyeball
+    {false, false, 0xCB, {}, "Trinexx Rock Head", 40, 0, 0, 4, 8, 16, 16, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xCB Trinexx Rock Head
+    {false, false, 0xCC, {"icerod"}, "Trinexx Fire Head", 40, 0, 0, 4, 8, 16, 16, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0},  --# 0xCC Trinexx Fire Head
+    {false, false, 0xCD, {"firerod"}, "Trinexx Ice Head", 40, 0, 0, 4, 8, 16, 16, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0},  --# 0xCD Trinexx Ice Head
+    {false, false, 0xD6, {}, "Ganon", 255, 0, 0, 0, 4, 8, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xD6 Ganon
+    {false, false, 0xD7, {}, "Invincible Ganon", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 24, 0, 0, 0, 0, 0, 0},  --# 0xD7 Invincible Ganon
 
     --misc enemies
-    {false, 0xE3, {}, "Fairy", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, --227 Fairy, 
-    {false, 0x109, {}, "Wallmaster Spawner", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, --265 Wallmaster, 
+    {false, true, 0xE3, {}, "Fairy", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, --227 Fairy, 
+    {false, true, 0x109, {}, "Wallmaster Spawner", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}, --265 Wallmaster, 
 }
 
 -- ---@type table<string, enemy_table>
@@ -530,7 +535,7 @@ for _, enemy in pairs(DEFAULT_ENEMY_DAMAGE_TABLE) do
     if not enemy[1] then
         counter = counter+1
         -- print(counter, enemy[2], enemy[3], enemy[4], table.unpack(enemy, 5))
-        Enemies_scope(enemy[2], enemy[3], enemy[4], enemy[5], {table.unpack(enemy, 6)}, counter)
+        Enemies_scope({table.unpack(enemy, 2, 6)}, {table.unpack(enemy, 7)}, counter)
     end
     -- for i=0,15 do
     --     -- CreateLuaDamageClass(counter, i, enemy[1], enemy[i+3])--, enemy[2], {table.unpack(enemy, 3)})

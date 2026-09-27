@@ -1745,16 +1745,20 @@ function CanKillUpdate()
         -- print(enemy_name, _)
         local enemy = (Tracker:FindObjectForCode(enemy_name.."_lua") --[[@as LuaItem]]).ItemState
         if enemy then
-            for i=1,16 do
-                if allowed_dmg_table_values[enemy.Damage_table[i]] and (
-                    ANY(table.unpack(DMG_class_items_lookup[i])) > 0
-                    or 
-                    (#enemy.Mendatory_items > 0 and ANY(table.unpack(enemy.Mendatory_items)) > 0)
-                ) then
-                    ENEMY_KILLABLE[enemy_name] = true
-                    break
-                else
-                    ENEMY_KILLABLE[enemy_name] = false
+            if enemy.IgnoreForKillable then
+                ENEMY_KILLABLE[enemy_name] = true
+            else 
+                for i=1,16 do
+                    if allowed_dmg_table_values[enemy.Damage_table[i]] and (
+                        ANY(table.unpack(DMG_class_items_lookup[i])) > 0
+                        or 
+                        (#enemy.Mendatory_items > 0 and ANY(table.unpack(enemy.Mendatory_items)) > 0)
+                    ) then
+                        ENEMY_KILLABLE[enemy_name] = true
+                        break
+                    else
+                        ENEMY_KILLABLE[enemy_name] = false
+                    end
                 end
             end
         
@@ -1773,7 +1777,7 @@ function CanKill(...)
             access = ACCESS_NORMAL
         else
             access = ACCESS_NONE
-            -- break
+            break
         end
         -- print(Dump_table(ENEMY_KILLABLE))
         -- print(enemy_name, ENEMY_KILLABLE[enemy_name])
