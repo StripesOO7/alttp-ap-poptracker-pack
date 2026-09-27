@@ -368,6 +368,7 @@ DEFAULT_ENEMY_DAMAGE_TABLE = { --{npc/enemy, index, name, health, dmgclass0-15}
     {false, 0x5F, {}, "Roller", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x5F Roller
     {false, 0x61, {}, "Beamos", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x61 Beamos
     {true, 0x62, {}, "Master Sword", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x62 Master Sword
+    {false, 0x63, {}, "Devalant (non-shooter)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x63 Devalant (non-shooter)
     {false, 0x64, {}, "Devalant (shooter)", 4, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 8, 8, 253, 16, 255},  --# 0x64 Devalant (shooter)
     {true, 0x65, {}, "Shooting Gallery Proprietor", 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x65 Shooting Gallery Proprietor
     {false, 0x67, {}, "Moving Cannon Ball Shooter (left)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x67 Moving Cannon Ball Shooter (left)
@@ -464,7 +465,6 @@ DEFAULT_ENEMY_DAMAGE_TABLE = { --{npc/enemy, index, name, health, dmgclass0-15}
     {true, 0xD5, {}, "Digging Game Proprietor", 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0xD5 Digging Game Proprietor
     {true, 0x10, {}, "Octoballoon Hatchlings", 0, 1, 2, 4, 8, 16, 16, 4, 255, 4, 100, 0, 8, 8, 16, 16, 32},  --# 0x10 Octoballoon Hatchlings
     ---dupes
-    {false, 0x63, {}, "Devalant (non-shooter)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x63 Devalant (non-shooter)
     {false, 0x5C, {}, "Spark (counter-clockwise)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 253, 0, 255},  --# 0x5C Spark (counter-clockwise)
     {false, 0x5D, {}, "Roller (vertical up)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x5D Roller (vertical up)
     {false, 0x5E, {}, "Roller (vertical down)", 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},  --# 0x5E Roller (vertical down)

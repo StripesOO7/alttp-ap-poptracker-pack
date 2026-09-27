@@ -93,7 +93,9 @@
                         "name": "Map Guard Key Drop",
                         "access_rules": [
                             "^$CanReach|HC - Map Guard Key Drop"
-                        ]
+                        ],
+                        "item_count": 1, 
+                        "hosted_item": "114_1_enemy"
                     }
                 ],
                 "map_locations": [
@@ -128,7 +130,9 @@
                         "name": "Boomerang Guard Key Drop",
                         "access_rules": [
                             "^$CanReach|HC - Booomerang Guard Key Drop"
-                        ]
+                        ],
+                        "item_count": 1, 
+                        "hosted_item": "113_2_enemy"
                     }
                 ],
                 "map_locations": [
@@ -193,7 +197,9 @@
                         "name": "Big Key Drop",
                         "access_rules": [
                             "^$CanReach|HC - Big Key"
-                        ]
+                        ],
+                        "item_count": 1, 
+                        "hosted_item": "128_2_enemy"
                     }
                 ],
                 "map_locations": [
@@ -333,7 +339,10 @@
                         "name": "Key Rat Key Drop",
                         "access_rules": [
                             "^$CanReach|CE - Rat Key Drop"
-                        ]
+                        ],
+                        "item_count": 1,
+                        "hosted_item": "33_1_enemy"
+
                     }
                 ],
                 "map_locations": [
@@ -3498,7 +3507,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
-                        "hosted_item": "114_2_enemy"
+                        "hosted_item": "114_3_enemy"
                     }
                 ],
                 "map_locations": [
@@ -3529,7 +3538,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
-                        "hosted_item": "128_1_enemy"
+                        "hosted_item": ""
                     }
                 ],
                 "map_locations": [
@@ -3560,7 +3569,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
-                        "hosted_item": "128_2_enemy"
+                        "hosted_item": "128_1_enemy"
                     }
                 ],
                 "map_locations": [
@@ -3912,7 +3921,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
-                        "hosted_item": "2_15_enemy"
+                        "hosted_item": "2_6_enemy"
                     }
                 ],
                 "map_locations": [
@@ -3943,7 +3952,7 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
-                        "hosted_item": "2_16_enemy"
+                        "hosted_item": "2_7_enemy"
                     }
                 ],
                 "map_locations": [

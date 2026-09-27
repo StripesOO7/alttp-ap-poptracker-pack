@@ -45,7 +45,9 @@
                         "name": "Dark Archer Key Drop",
                         "access_rules": [
                             "^$CanReach|AT - Dark Archer Key Drop"
-                        ]
+                        ],
+                        "item_count": 1, 
+                        "hosted_item": "192_4_enemy"
                     }
                 ],
                 "map_locations": [
@@ -103,7 +105,9 @@
                         "name": "Circle of Pots Key Drop",
                         "access_rules": [
                             "^$CanReach|AT - Circle of Pots Key Drop"
-                        ]
+                        ],
+                        "item_count": 1, 
+                        "hosted_item": "176_11_enemy"
                     }
                 ],
                 "map_locations": [
@@ -853,7 +857,7 @@
                     {
                         "name": "Enemy #2",
                         "access_rules": [
-                            "^$CanReach|AT - Catwalk Enemy #1"
+                            "^$CanReach|AT - Catwalk Enemy #2"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_underworld"
@@ -915,7 +919,7 @@
                     {
                         "name": "Enemy #4",
                         "access_rules": [
-                            "^$CanReach|AT - Push Statue Enemy #3"
+                            "^$CanReach|AT - Push Statue Enemy #4"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_underworld"
@@ -946,7 +950,7 @@
                     {
                         "name": "Enemy #5",
                         "access_rules": [
-                            "^$CanReach|AT - Push Statue Enemy #3"
+                            "^$CanReach|AT - Push Statue Enemy #5"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_underworld"
@@ -977,7 +981,7 @@
                     {
                         "name": "Enemy #6",
                         "access_rules": [
-                            "^$CanReach|AT - Push Statue Enemy #3"
+                            "^$CanReach|AT - Push Statue Enemy #6"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_underworld"
@@ -1019,7 +1023,7 @@
                     {
                         "name": "Enemy #1 Enemizer",
                         "access_rules": [
-                            "^$CanReach|AT - Red Guards Enemy #1"
+                            "^$CanReach|AT - Red Guards Enemy #Enemizer"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_off, enemizer"
@@ -1060,7 +1064,7 @@
                     {
                         "name": "Enemy #2 Enemizer",
                         "access_rules": [
-                            "^$CanReach|AT - Red Spears Enemy #2"
+                            "^$CanReach|AT - Red Spears Enemy #Enemizer"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_off, enemizer"
@@ -1090,7 +1094,7 @@
                     {
                         "name": "Enemy #3",
                         "access_rules": [
-                            "^$CanReach|AT - Red Spears Enemy #2"
+                            "^$CanReach|AT - Red Spears Enemy #3"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_underworld"
@@ -1101,7 +1105,7 @@
                     {
                         "name": "Enemy #3 Enemizer",
                         "access_rules": [
-                            "^$CanReach|AT - Red Spears Enemy #2"
+                            "^$CanReach|AT - Red Spears Enemy #Enemizer"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_off, enemizer"
@@ -1131,7 +1135,7 @@
                     {
                         "name": "Enemy #4",
                         "access_rules": [
-                            "^$CanReach|AT - Red Spears Enemy #2"
+                            "^$CanReach|AT - Red Spears Enemy #4"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_underworld"
@@ -1142,7 +1146,7 @@
                     {
                         "name": "Enemy #4 Enemizer",
                         "access_rules": [
-                            "^$CanReach|AT - Red Spears Enemy #2"
+                            "^$CanReach|AT - Red Spears Enemy #Enemizer"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_off, enemizer"
@@ -1172,7 +1176,7 @@
                     {
                         "name": "Enemy #5",
                         "access_rules": [
-                            "^$CanReach|AT - Red Spears Enemy #2"
+                            "^$CanReach|AT - Red Spears Enemy #5"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_underworld"
@@ -1183,7 +1187,7 @@
                     {
                         "name": "Enemy #5 Enemizer",
                         "access_rules": [
-                            "^$CanReach|AT - Red Spears Enemy #2"
+                            "^$CanReach|AT - Red Spears Enemy #Enemizer"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_off, enemizer"
@@ -1213,7 +1217,7 @@
                     {
                         "name": "Enemy #6",
                         "access_rules": [
-                            "^$CanReach|AT - Red Guards Enemy #1"
+                            "^$CanReach|AT - Red Guards Enemy #6"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_underworld"
@@ -1224,7 +1228,7 @@
                     {
                         "name": "Enemy #6 Enemizer",
                         "access_rules": [
-                            "^$CanReach|AT - Red Guards Enemy #1"
+                            "^$CanReach|AT - Red Guards Enemy #Enemizer"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_off, enemizer"
@@ -1296,7 +1300,7 @@
                     {
                         "name": "Enemy #8 Enemizer",
                         "access_rules": [
-                            "^$CanReach|AT - Circle of Pots Enemy #8"
+                            "^$CanReach|AT - Circle of Pots Enemy #Enemizer"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_off, enemizer"
@@ -1326,7 +1330,7 @@
                     {
                         "name": "Enemy #9",
                         "access_rules": [
-                            "^$CanReach|AT - Circle of Pots Enemy #8"
+                            "^$CanReach|AT - Circle of Pots Enemy #9"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_underworld"
@@ -1337,7 +1341,7 @@
                     {
                         "name": "Enemy #9 Enemizer",
                         "access_rules": [
-                            "^$CanReach|AT - Circle of Pots Enemy #8"
+                            "^$CanReach|AT - Circle of Pots Enemy #Enemizer"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_off, enemizer"
@@ -1367,7 +1371,7 @@
                     {
                         "name": "Enemy #10",
                         "access_rules": [
-                            "^$CanReach|AT - Circle of Pots Enemy #8"
+                            "^$CanReach|AT - Circle of Pots Enemy #10"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_underworld"
@@ -1378,7 +1382,7 @@
                     {
                         "name": "Enemy #10 Enemizer",
                         "access_rules": [
-                            "^$CanReach|AT - Circle of Pots Enemy #8"
+                            "^$CanReach|AT - Circle of Pots Enemy #Enemizer"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_off, enemizer"
@@ -1408,7 +1412,7 @@
                     {
                         "name": "Enemy #12",
                         "access_rules": [
-                            "^$CanReach|AT - Pacifist Run Enemy #7"
+                            "^$CanReach|AT - Pacifist Run Enemy #12"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_underworld"
@@ -1439,7 +1443,7 @@
                     {
                         "name": "Enemy #13",
                         "access_rules": [
-                            "^$CanReach|AT - Pacifist Run Enemy #7"
+                            "^$CanReach|AT - Pacifist Run Enemy #13"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_underworld"
@@ -1501,7 +1505,7 @@
                     {
                         "name": "Enemy #2",
                         "access_rules": [
-                            "^$CanReach|AT - Dark Archers Enemy #1"
+                            "^$CanReach|AT - Dark Archers Enemy #2"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_underworld"
@@ -1563,7 +1567,7 @@
                     {
                         "name": "Enemy #5",
                         "access_rules": [
-                            "^$CanReach|AT - Dark Pits Enemy #3"
+                            "^$CanReach|AT - Dark Pits Enemy #5"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_underworld"
@@ -1594,7 +1598,7 @@
                     {
                         "name": "Enemy #6",
                         "access_rules": [
-                            "^$CanReach|AT - Dark Pits Enemy #3"
+                            "^$CanReach|AT - Dark Pits Enemy #6"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_underworld"
@@ -1656,13 +1660,13 @@
                     {
                         "name": "Enemy #8",
                         "access_rules": [
-                            "^$CanReach|AT - Dual Statues Enemy #7"
+                            "^$CanReach|AT - Dual Statues Enemy #8"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
-                        "hosted_item": "_enemy"
+                        "hosted_item": "192_8_enemy"
                     }
                 ],
                 "map_locations": [
@@ -1718,7 +1722,7 @@
                     {
                         "name": "Enemy #2",
                         "access_rules": [
-                            "^$CanReach|AT - Dark Maze Enemy #1"
+                            "^$CanReach|AT - Dark Maze Enemy #2"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_underworld"
@@ -1780,7 +1784,7 @@
                     {
                         "name": "Enemy #4",
                         "access_rules": [
-                            "^$CanReach|AT - Lone Statue Enemy #3"
+                            "^$CanReach|AT - Lone Statue Enemy #4"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_underworld"
@@ -1811,7 +1815,7 @@
                     {
                         "name": "Enemy #5",
                         "access_rules": [
-                            "^$CanReach|AT - Dark Maze Enemy #1"
+                            "^$CanReach|AT - Dark Maze Enemy #5"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_underworld"
@@ -1842,7 +1846,7 @@
                     {
                         "name": "Enemy #6",
                         "access_rules": [
-                            "^$CanReach|AT - Dark Maze Enemy #1"
+                            "^$CanReach|AT - Dark Maze Enemy #6"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_underworld"
@@ -1873,7 +1877,7 @@
                     {
                         "name": "Enemy #7",
                         "access_rules": [
-                            "^$CanReach|AT - Dark Maze Enemy #1"
+                            "^$CanReach|AT - Dark Maze Enemy #7"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_underworld"
@@ -1904,7 +1908,7 @@
                     {
                         "name": "Enemy #8",
                         "access_rules": [
-                            "^$CanReach|AT - Dark Maze Enemy #1"
+                            "^$CanReach|AT - Dark Maze Enemy #8"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_underworld"
@@ -1966,7 +1970,7 @@
                     {
                         "name": "Enemy #10",
                         "access_rules": [
-                            "^$CanReach|AT - Dark Maze Enemy #1"
+                            "^$CanReach|AT - Dark Maze Enemy #10"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_underworld"
@@ -1997,7 +2001,7 @@
                     {
                         "name": "Enemy #11",
                         "access_rules": [
-                            "^$CanReach|AT - Dark Chargers Enemy #9"
+                            "^$CanReach|AT - Dark Chargers Enemy #11"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_underworld"
@@ -2039,7 +2043,7 @@
                     {
                         "name": "Enemy #1 Enemizer",
                         "access_rules": [
-                            "^$CanReach|AT - Gold Knights Enemy #1"
+                            "^$CanReach|AT - Gold Knights Enemy #Enemizer"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_off, enemizer"
@@ -2069,7 +2073,7 @@
                     {
                         "name": "Enemy #2",
                         "access_rules": [
-                            "^$CanReach|AT - Gold Knights Enemy #1"
+                            "^$CanReach|AT - Gold Knights Enemy #2"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_underworld"
@@ -2080,7 +2084,7 @@
                     {
                         "name": "Enemy #2 Enemizer",
                         "access_rules": [
-                            "^$CanReach|AT - Gold Knights Enemy #1"
+                            "^$CanReach|AT - Gold Knights Enemy #Enemizer"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_off, enemizer"
@@ -2141,7 +2145,7 @@
                     {
                         "name": "Enemy #4",
                         "access_rules": [
-                            "^$CanReach|AT - Room 03 Enemy #3"
+                            "^$CanReach|AT - Room 03 Enemy #4"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_underworld"
