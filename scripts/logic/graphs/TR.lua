@@ -105,13 +105,13 @@ TR_square_travel_room_4S_door:connect_two_ways(TR_square_travel_room, function()
 
 TR_square_travel_room:connect_one_way("TR - Hub Ledges Pot #1", function() return Has("somaria") end)
 -- TR_square_travel_room:connect_one_way("TR - Hub Ledges Pot #2", function() return Has("somaria") end)
-TR_square_travel_room:connect_one_way("TR - Hub Ledges Enemy #1", function() return DealDamage end)
--- TR_square_travel_room:connect_one_way("TR - Hub Ledges Enemy #2", function() return DealDamage end)
--- TR_square_travel_room:connect_one_way("TR - Hub Ledges Enemy #3", function() return DealDamage end)
--- TR_square_travel_room:connect_one_way("TR - Hub Ledges Enemy #4", function() return DealDamage end)
--- TR_square_travel_room:connect_one_way("TR - Hub Ledges Enemy #5", function() return DealDamage end)
--- TR_square_travel_room:connect_one_way("TR - Hub Ledges Enemy #6", function() return DealDamage end)
--- TR_square_travel_room:connect_one_way("TR - Hub Ledges Enemy #7", function() return DealDamage end)
+TR_square_travel_room:connect_one_way("TR - Hub Ledges Enemy #1", function() return CanKill("198_1_enemy") end)
+TR_square_travel_room:connect_one_way("TR - Hub Ledges Enemy #2", function() return CanKill("198_2_enemy") end)
+TR_square_travel_room:connect_one_way("TR - Hub Ledges Enemy #3", function() return CanKill("198_3_enemy") end)
+TR_square_travel_room:connect_one_way("TR - Hub Ledges Enemy #4", function() return CanKill("198_4_enemy") end)
+TR_square_travel_room:connect_one_way("TR - Hub Ledges Enemy #5", function() return CanKill("198_5_enemy") end)
+TR_square_travel_room:connect_one_way("TR - Hub Ledges Enemy #6", function() return CanKill("198_6_enemy") end)
+TR_square_travel_room:connect_one_way("TR - Hub Ledges Enemy #7", function() return CanKill("198_7_enemy") end)
 
 TR_square_travel_room:connect_two_ways(TR_square_travel_room_1N_door, function() return Has("somaria") end)
 TR_square_travel_room:connect_two_ways(TR_square_travel_room_2N_door, function() return Has("somaria") end)
@@ -130,14 +130,14 @@ TR_tile_room_4S_door:connect_two_ways(TR_tile_room)
 TR_tile_room:connect_two_ways(TR_refill_room)
 
 TR_refill_room:connect_one_way("TR - Refill Pot #1")
-TR_refill_room:connect_one_way("TR - Refill Enemy #5", function() return DealDamage end)
+TR_refill_room:connect_one_way("TR - Refill Enemy #5", function() return CanKill("182_3_enemy") end)
 
 TR_square_travel_room_2E_door:connect_two_ways_entrance("", TR_torch_puzzle_1W_door)
 TR_torch_puzzle_1W_door:connect_one_way(TR_torch_puzzle)
 
 TR_torch_puzzle:connect_one_way("TR - Torches Pot #1")
 -- TR_torch_puzzle:connect_one_way("TR - Torches Pot #2")
-TR_torch_puzzle:connect_one_way("TR - ", function() return DealDamage end)
+-- TR_torch_puzzle:connect_one_way("TR - ", function() return CanKill("") end)
 
 TR_torch_puzzle:connect_two_ways(TR_torch_puzzle_1N_door)
 TR_torch_puzzle_1N_door:connect_two_ways_entrance_door_stuck("", TR_map_room_3S_door, function() return ALL(CanInteract(TR_torch_puzzle), "somaria", "firerod") end)
@@ -146,8 +146,8 @@ TR_map_room_3S_door:connect_two_ways(TR_map_room)
 TR_map_room:connect_one_way("TR - Roller Room Left")
 TR_map_room:connect_one_way("TR - Roller Room Right")
 TR_map_room:connect_one_way("TR - Roller Room Pot #1")
-TR_map_room:connect_one_way("TR - Roller Room Enemy #1", function() return DealDamage end)
--- TR_map_room:connect_one_way("TR - Roller Room Enemy #2", function() return DealDamage end)
+TR_map_room:connect_one_way("TR - Roller Room Enemy #1", function() return CanKill("183_1_enemy") end)
+TR_map_room:connect_one_way("TR - Roller Room Enemy #2", function() return CanKill("183_2_enemy") end)
 
 TR_square_travel_room_4E_door:connect_two_ways_entrance("", TR_torch_puzzle_deadend_3W_door)
 TR_torch_puzzle_deadend_3W_door:connect_two_ways(TR_torch_puzzle_deadend)
@@ -158,15 +158,15 @@ TR_torch_puzzle_deadend:connect_one_way("TR - Torches Ledge Pot #3")
 TR_square_travel_room_1N_door:connect_two_ways_entrance("", TR_poke_1_room_3S_door, function(keys, Current_Dungeon) return Has("smallkey", keys + 1, 1, keys + 1, 1), keys + 1 end)
 TR_poke_1_room_3S_door:connect_two_ways(TR_poke_1_room)
 
-TR_poke_1_room:connect_one_way("TR - Poke 1 Key Drop", function() return ALL(DealDamage, CanInteract(TR_poke_1_room)) end)
-TR_poke_1_room:connect_one_way("TR - Pokey 1 Enemy #8", function() return DealDamage end)
--- TR_poke_1_room:connect_one_way("TR - Pokey 1 Enemy #9", function() return DealDamage end)
+TR_poke_1_room:connect_one_way("TR - Poke 1 Key Drop", function() return ALL(CanKill("182_4_enemy"), CanInteract(TR_poke_1_room)) end)
+TR_poke_1_room:connect_one_way("TR - Pokey 1 Enemy #8", function() return CanKill("182_5_enemy") end)
+TR_poke_1_room:connect_one_way("TR - Pokey 1 Enemy #9", function() return CanKill("182_6_enemy") end)
 
 TR_poke_1_room_3S_door:connect_two_ways(TR_chain_chomps_room, function(keys, Current_Dungeon) return Has("smallkey", keys, 1, keys + 1, 2), KDSreturn(keys, keys + 1) end)
 
 TR_chain_chomps_room:connect_one_way("TR - Chain Chomp Chest", function() return HitRanged() end)
-TR_chain_chomps_room:connect_one_way("TR - Chain Chomps Top Enemy #1", function() return DealDamage end)
--- TR_chain_chomps_room:connect_one_way("TR - Chain Chomps Top Enemy #2", function() return DealDamage end)
+TR_chain_chomps_room:connect_one_way("TR - Chain Chomps Top Enemy #1", function() return CanKill("182_1_enemy") end)
+TR_chain_chomps_room:connect_one_way("TR - Chain Chomps Top Enemy #2", function() return CanKill("182_2_enemy") end)
 
 TR_chain_chomps_room:connect_two_ways(TR_chain_chomps_room_1N_door)
 
@@ -186,12 +186,12 @@ TR_pipe_pit:connect_one_way("TR - Pipe Pit Pot #1")
 -- TR_pipe_pit:connect_one_way("TR - Pipe Pit Pot #6")
 -- TR_pipe_pit:connect_one_way("TR - Pipe Pit Pot #7")
 -- TR_pipe_pit:connect_one_way("TR - Pipe Pit Pot #8")
-TR_pipe_pit:connect_one_way("TR - Pipe Pit Enemy #5", function() return DealDamage end)
--- TR_pipe_pit:connect_one_way("TR - Pipe Pit Enemy #6", function() return DealDamage end)
--- TR_pipe_pit:connect_one_way("TR - Pipe Pit Enemy #7", function() return DealDamage end)
--- TR_pipe_pit:connect_one_way("TR - Pipe Pit Enemy #8", function() return DealDamage end)
--- TR_pipe_pit:connect_one_way("TR - Pipe Pit Enemy #9", function() return DealDamage end)
--- TR_pipe_pit:connect_one_way("TR - Pipe Pit Enemy #10", function() return DealDamage end)
+TR_pipe_pit:connect_one_way("TR - Pipe Pit Enemy #5", function() return CanKill("21_1_enemy") end)
+TR_pipe_pit:connect_one_way("TR - Pipe Pit Enemy #6", function() return CanKill("21_2_enemy") end)
+TR_pipe_pit:connect_one_way("TR - Pipe Pit Enemy #7", function() return CanKill("21_3_enemy") end)
+TR_pipe_pit:connect_one_way("TR - Pipe Pit Enemy #8", function() return CanKill("21_4_enemy") end)
+TR_pipe_pit:connect_one_way("TR - Pipe Pit Enemy #9", function() return CanKill("21_5_enemy") end)
+TR_pipe_pit:connect_one_way("TR - Pipe Pit Enemy #10", function() return CanKill("21_6_enemy") end)
 
 TR_pipe_pit:connect_two_ways(TR_pipe_pit_1W_door)
 TR_pipe_pit_1W_door:connect_two_ways_entrance("", TR_big_key_room_top_right_2E_door)
@@ -203,20 +203,20 @@ TR_big_key_room_top_right:connect_two_ways(TR_big_key_room_bottom_left_3S_door)
 
 TR_big_key_room_top_left_1W_door:connect_two_ways_entrance("", TR_poke_2_room_2E_door)
 
-TR_poke_2_room:connect_one_way("TR - Poke 2 Key Drop", function() return ALL(DealDamage, CanInteract(TR_poke_2_room)) end)
-TR_poke_2_room:connect_one_way("TR - Pokey 2 Top Enemy #2", function() return DealDamage end)
--- TR_poke_2_room:connect_one_way("TR - Pokey 2 Top Enemy #3", function() return DealDamage end)
--- TR_poke_2_room:connect_one_way("TR - Pokey 2 Top Enemy #4", function() return DealDamage end)
--- TR_poke_2_room:connect_one_way("TR - Pokey 2 Top Enemy #5", function() return DealDamage end)
-TR_poke_2_room:connect_one_way("TR - Pokey 2 Bottom Enemy #6", function() return DealDamage end)
--- TR_poke_2_room:connect_one_way("TR - Pokey 2 Bottom Enemy #9", function() return DealDamage end)
--- TR_poke_2_room:connect_one_way("TR - Pokey 2 Bottom Enemy #10", function() return DealDamage end)
+TR_poke_2_room:connect_one_way("TR - Poke 2 Key Drop", function() return ALL(CanKill("19_7_enemy"), CanInteract(TR_poke_2_room)) end)
+TR_poke_2_room:connect_one_way("TR - Pokey 2 Top Enemy #2", function() return CanKill("19_1_enemy") end)
+TR_poke_2_room:connect_one_way("TR - Pokey 2 Top Enemy #3", function() return CanKill("19_2_enemy") end)
+TR_poke_2_room:connect_one_way("TR - Pokey 2 Top Enemy #4", function() return CanKill("19_3_enemy") end)
+TR_poke_2_room:connect_one_way("TR - Pokey 2 Top Enemy #5", function() return CanKill("19_4_enemy") end)
+TR_poke_2_room:connect_one_way("TR - Pokey 2 Bottom Enemy #6", function() return CanKill("19_5_enemy") end)
+TR_poke_2_room:connect_one_way("TR - Pokey 2 Bottom Enemy #9", function() return CanKill("19_8_enemy") end)
+TR_poke_2_room:connect_one_way("TR - Pokey 2 Bottom Enemy #10", function() return CanKill("19_9_enemy") end)
 
 TR_poke_2_room_2E_door:connect_two_ways(TR_poke_2_room)
 TR_poke_2_room:connect_two_ways(TR_poke_2_room_4E_door)
 TR_poke_2_room_4E_door:connect_two_ways_entrance("", TR_big_key_room_bottom_left_3W_door, function(keys, Current_Dungeon)
     return ALL(
-        DealDamage,
+        CanKill(""),
         Has("smallkey", keys + CountDoneDeadends(0, "@Turtle Rock Back/Eye Bridge Top Right/Eye Bridge Top Right", "@Turtle Rock Back/Boss/Boss Item"), 4, keys + CountDoneDeadends(1, "@Turtle Rock Back/Eye Bridge Top Right/Eye Bridge Top Right", "@Turtle Rock Back/Boss/Boss Item"), 6), KDSreturn(keys, keys + 1)
     )
 end)
@@ -242,14 +242,14 @@ TR_double_poke_room:connect_one_way("TR - Twin Pokeys Pot #1")
 -- TR_double_poke_room:connect_one_way("TR - Twin Pokeys Pot #2")
 -- TR_double_poke_room:connect_one_way("TR - Twin Pokeys Pot #3")
 -- TR_double_poke_room:connect_one_way("TR - Twin Pokeys Pot #4")
-TR_double_poke_room:connect_one_way("TR - Dodgers Enemy #3", function() return DealDamage end)
-TR_double_poke_room:connect_one_way("TR - Twin Pokeys Enemy #4", function() return DealDamage end)
--- TR_double_poke_room:connect_one_way("TR - Twin Pokeys Enemy #5", function() return DealDamage end)
--- TR_double_poke_room:connect_one_way("TR - Twin Pokeys Enemy #6", function() return DealDamage end)
--- TR_double_poke_room:connect_one_way("TR - Twin Pokeys Enemy #7", function() return DealDamage end)
+TR_double_poke_room:connect_one_way("TR - Dodgers Enemy #3", function() return CanKill("") end)
+TR_double_poke_room:connect_one_way("TR - Twin Pokeys Enemy #4", function() return CanKill("36_4_enemy") end)
+TR_double_poke_room:connect_one_way("TR - Twin Pokeys Enemy #5", function() return CanKill("36_5_enemy") end)
+TR_double_poke_room:connect_one_way("TR - Twin Pokeys Enemy #6", function() return CanKill("36_6_enemy") end)
+TR_double_poke_room:connect_one_way("TR - Twin Pokeys Enemy #7", function() return CanKill("36_7_enemy") end)
 
-TR_double_poke_room:connect_two_ways_stuck(TR_big_key_door_room, function() return DealDamage end, nil)
-TR_double_poke_room:connect_two_ways_stuck(TR_small_t_hallway, function() return DealDamage end, nil)
+TR_double_poke_room:connect_two_ways_stuck(TR_big_key_door_room, function() return CanKill("") end, nil)
+TR_double_poke_room:connect_two_ways_stuck(TR_small_t_hallway, function() return CanKill("") end, nil)
 
 TR_small_t_hallway:connect_two_ways(TR_small_t_hallway_3W_door)
 TR_small_t_hallway:connect_two_ways(TR_big_chest_ledge)
@@ -309,25 +309,25 @@ TR_pokes_after_big_door:connect_one_way("TR - Dash Room Pot #1")
 -- TR_pokes_after_big_door:connect_one_way("TR - Dash Room Pot #2")
 -- TR_pokes_after_big_door:connect_one_way("TR - Dash Room Pot #3")
 -- TR_pokes_after_big_door:connect_one_way("TR - Dash Room Pot #4")
-TR_pokes_after_big_door:connect_one_way("TR - Dash Room Enemy #16", function() return DealDamage end)
+TR_pokes_after_big_door:connect_one_way("TR - Dash Room Enemy #16", function() return CanKill("4_8_enemy") end)
 
 TR_pokes_after_big_door:connect_two_ways(TR_snake_trap_room, function() return ANY("boots", "bombs") end)
 
 TR_snake_trap_room:connect_one_way("TR - Tongue Pull Pot #5")
 TR_snake_trap_room:connect_one_way("TR - Tongue Pull Pot #6")
-TR_snake_trap_room:connect_one_way("TR - Tongue Pull Enemy #10", function() return DealDamage end)
--- TR_snake_trap_room:connect_one_way("TR - Tongue Pull Enemy #14", function() return DealDamage end)
--- TR_snake_trap_room:connect_one_way("TR - Tongue Pull Enemy #15", function() return DealDamage end)
+TR_snake_trap_room:connect_one_way("TR - Tongue Pull Enemy #10", function() return CanKill("4_5_enemy") end)
+TR_snake_trap_room:connect_one_way("TR - Tongue Pull Enemy #14", function() return CanKill("4_6_enemy") end)
+TR_snake_trap_room:connect_one_way("TR - Tongue Pull Enemy #15", function() return CanKill("4_7_enemy") end)
 
 TR_snake_trap_room:connect_two_ways(TR_rupee_room)
 
-TR_rupee_room:connect_one_way("TR - Rupees Enemy #2", function() return DealDamage end)
--- TR_rupee_room:connect_one_way("TR - Rupees Enemy #3", function() return DealDamage end)
--- TR_rupee_room:connect_one_way("TR - Rupees Enemy #5", function() return DealDamage end)
+TR_rupee_room:connect_one_way("TR - Rupees Enemy #2", function() return CanKill("4_1_enemy") end)
+TR_rupee_room:connect_one_way("TR - Rupees Enemy #3", function() return CanKill("4_2_enemy") end)
+TR_rupee_room:connect_one_way("TR - Rupees Enemy #5", function() return CanKill("4_3_enemy") end)
 
 TR_pokes_after_big_door:connect_two_ways(TR_crystalroller_room, function() return ANY("boots", "bombs") end)
 
-TR_crystalroller_room:connect_one_way("TR - Crystalroller Middle Enemy #4", function() return DealDamage end)
+TR_crystalroller_room:connect_one_way("TR - Crystalroller Middle Enemy #4", function() return CanKill("4_4_enemy") end)
 
 TR_crystalroller_room:connect_two_ways(TR_crystalroller_room_1N_door)
 
@@ -347,15 +347,15 @@ TR_travel_maze:connect_one_way("TR - Dark Ride Ledges Pot #1", function() return
 -- TR_travel_maze:connect_one_way("TR - Dark Ride Ledges Pot #4", function() return ALL("somaria", DarkRooms) end)
 -- TR_travel_maze:connect_one_way("TR - Dark Ride Ledges Pot #5", function() return ALL("somaria", DarkRooms) end)
 -- TR_travel_maze:connect_one_way("TR - Dark Ride Ledges Pot #6", function() return ALL("somaria", DarkRooms) end)
-TR_travel_maze:connect_one_way("TR - Dark Ride Ledges Enemy #1", function() return ALL(DealDamage, DarkRooms, "somaria") end)
--- TR_travel_maze:connect_one_way("TR - Dark Ride Ledges Enemy #2", function() return DealDamage end)
--- TR_travel_maze:connect_one_way("TR - Dark Ride Ledges Enemy #3", function() return DealDamage end)
+TR_travel_maze:connect_one_way("TR - Dark Ride Ledges Enemy #1", function() return ALL(CanKill("181_1_enemy"), DarkRooms, "somaria") end)
+TR_travel_maze:connect_one_way("TR - Dark Ride Ledges Enemy #2", function() return ALL(CanKill("181_2_enemy"), DarkRooms, "somaria") end)
+TR_travel_maze:connect_one_way("TR - Dark Ride Ledges Enemy #3", function() return ALL(CanKill("181_3_enemy"), DarkRooms, "somaria") end)
 
 TR_travel_maze:connect_two_ways(TR_travel_maze_3S_door)
 TR_travel_maze_3S_door:connect_two_ways_entrance_door_stuck("", TR_side_eye_hallway_1N_door, function() return ALL(DarkRooms, "somaria") end)
 TR_side_eye_hallway_1N_door:connect_two_ways(TR_side_eye_hallway)
 
-TR_side_eye_hallway:connect_one_way("TR - Dash Bridge Enemy #7", function() return DealDamage end)
+TR_side_eye_hallway:connect_one_way("TR - Dash Bridge Enemy #7", function() return CanKill("197_7_enemy") end)
 
 TR_side_eye_hallway:connect_two_ways(TR_side_eye_hallway_3S_door)
 TR_side_eye_hallway:connect_two_ways(TR_side_eye_hallway_3W_door)
@@ -363,7 +363,7 @@ TR_side_eye_hallway:connect_two_ways(TR_side_eye_hallway_3W_door)
 TR_side_eye_hallway_3S_door:connect_two_ways_entrance("", TR_eye_bridge_1N_door)
 TR_eye_bridge_1N_door:connect_two_ways(TR_eye_bridge_room)
 
-TR_eye_bridge_room:connect_one_way("TR - Eye Bridge Enemy #5", function() return DealDamage end)
+TR_eye_bridge_room:connect_one_way("TR - Eye Bridge Enemy #5", function() return CanKill("213_5_enemy") end)
 TR_eye_bridge_room:connect_one_way("TR - Eyebridge Top Right", function()
     return ALL(
         CanInteract(TR_eye_bridge_room),
@@ -431,12 +431,12 @@ TR_crystal_maze:connect_one_way("TR - Crystal Maze Interior Pot #1")
 -- TR_crystal_maze:connect_one_way("TR - Crystal Maze Interior Pot #6")
 -- TR_crystal_maze:connect_one_way("TR - Crystal Maze Interior Pot #7")
 -- TR_crystal_maze:connect_one_way("TR - Crystal Maze Interior Pot #8")
-TR_crystal_maze:connect_one_way("TR - Crystal Maze Interior Enemy #5", function() return DealDamage end)
--- TR_crystal_maze:connect_one_way("TR - Crystal Maze Interior Enemy #6", function() return DealDamage end)
--- TR_crystal_maze:connect_one_way("TR - Crystal Maze Interior Enemy #7", function() return DealDamage end)
--- TR_crystal_maze:connect_one_way("TR - Crystal Maze Interior Enemy #8", function() return DealDamage end)
--- TR_crystal_maze:connect_one_way("TR - Crystal Maze Interior Enemy #9", function() return DealDamage end)
--- TR_crystal_maze:connect_one_way("TR - Crystal Maze Interior Enemy #10", function() return DealDamage end)
+TR_crystal_maze:connect_one_way("TR - Crystal Maze Interior Enemy #5", function() return CanKill("196_1_enemy") end)
+TR_crystal_maze:connect_one_way("TR - Crystal Maze Interior Enemy #6", function() return CanKill("196_2_enemy") end)
+TR_crystal_maze:connect_one_way("TR - Crystal Maze Interior Enemy #7", function() return CanKill("196_3_enemy") end)
+TR_crystal_maze:connect_one_way("TR - Crystal Maze Interior Enemy #8", function() return CanKill("196_4_enemy") end)
+TR_crystal_maze:connect_one_way("TR - Crystal Maze Interior Enemy #9", function() return CanKill("196_5_enemy") end)
+TR_crystal_maze:connect_one_way("TR - Crystal Maze Interior Enemy #10", function() return CanKill("196_6_enemy") end)
 
 TR_crystal_maze:connect_two_ways(TR_crystal_maze_N_door)
 TR_crystal_maze_N_door:connect_two_ways_entrance("", TR_pre_boss_pit_S_door)
@@ -482,7 +482,7 @@ TR_boss_room:connect_one_way("TR - Boss", function() return GetBossRef("tr_boss"
 
 -- TR_poke_1_room:connect_two_ways(TR_chain_chomps_room, function(keys, Current_Dungeon) return Has("smallkey", keys, 1, keys + 1, 2), KDSreturn(keys, keys + 1) end)
 -- -- TR_poke_1_room:connect_two_ways(TR_chain_chomps_room, function(keys, Current_Dungeon) return Has("smallkey", keys, 3, keys + 1, 5), KDSreturn(keys, keys + 1) end)
--- TR_poke_1_room:connect_one_way("TR - Poke 1 Key Drop", function() return ALL(DealDamage, CanInteract(TR_poke_1_room)) end)
+-- TR_poke_1_room:connect_one_way("TR - Poke 1 Key Drop", function() return ALL(CanKill(""), CanInteract(TR_poke_1_room)) end)
 
 -- TR_chain_chomps_room:connect_two_ways(TR_big_key_room_top_right, function(keys, Current_Dungeon)
 --     return ALL(
@@ -501,12 +501,12 @@ TR_boss_room:connect_one_way("TR - Boss", function() return GetBossRef("tr_boss"
 
 -- TR_poke_2_room:connect_two_ways(TR_big_key_room_bottom_left, function(keys, Current_Dungeon)
 --     return ALL(
---         DealDamage,
+--         CanKill(""),
 --         Has("smallkey", keys + CountDoneDeadends(0, "@Turtle Rock Back/Eye Bridge Top Right/Eye Bridge Top Right", "@Turtle Rock Back/Boss/Boss Item"), 4, keys + CountDoneDeadends(1, "@Turtle Rock Back/Eye Bridge Top Right/Eye Bridge Top Right", "@Turtle Rock Back/Boss/Boss Item"), 6), KDSreturn(keys, keys + 1)
 --     )
 -- end)
 -- -- TR_poke_2_room:connect_two_ways(TR_big_key_room_bottom_left, function(keys, Current_Dungeon) return Has("smallkey", keys, 3, keys + 1, 5), KDSreturn(keys, keys + 1) end)
--- TR_poke_2_room:connect_one_way("TR - Poke 2 Key Drop", function() return ALL(DealDamage, CanInteract(TR_poke_2_room)) end)
+-- TR_poke_2_room:connect_one_way("TR - Poke 2 Key Drop", function() return ALL(CanKill(""), CanInteract(TR_poke_2_room)) end)
 
 -- TR_big_key_room_bottom_left:connect_two_ways(TR_big_key_room_bottom_right)
 -- TR_big_key_room_bottom_left:connect_two_ways(TR_big_key_chest_island)
@@ -517,10 +517,10 @@ TR_boss_room:connect_one_way("TR - Boss", function() return GetBossRef("tr_boss"
 
 -- TR_big_key_chest_island:connect_one_way("TR - Big Key Chest", function() return CanInteract(TR_big_key_chest_island) end)
 
--- TR_shooter_after_big_key:connect_two_ways(TR_big_key_door_room, function() return DealDamage() end)
+-- TR_shooter_after_big_key:connect_two_ways(TR_big_key_door_room, function() return CanKill("")() end)
 -- TR_shooter_after_big_key:connect_one_way(TR_laser_entrance_room, function()
 --     return ALL(
---         DealDamage,
+--         CanKill(""),
 --         CanInteract(TR_shooter_after_big_key)
 --     )
 -- end)
