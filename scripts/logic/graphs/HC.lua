@@ -196,7 +196,7 @@ HC_map_chest_room:connect_two_ways(HC_north_abyss, function(keys, Current_Dungeo
     ), KDSreturn(keys, keys + 1)
 end)
 
-HC_north_abyss:connect_one_way("HC - North Abyss Enemy #2", function() return CanKill("114_3_enemy") end)
+HC_north_abyss:connect_one_way("HC - North Abyss Enemy #2", function() return CanKill("114_2_enemy") end)
 
 HC_north_abyss:connect_two_ways(HC_north_abyss_S_door)
 HC_north_abyss_S_door:connect_two_ways_entrance("", HC_abyss_catwalk_N_door)

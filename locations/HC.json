@@ -3188,75 +3188,6 @@
                     }
                 ]
             },
-            // {
-            //     "name": "Secret Entrance Enemy #1",
-            //     "chest_unopened_img": "/images/items/closed_Chest.png",
-            //     "chest_opened_img": "/images/items/open_Chest.png",
-            //     "overlay_background": "#000000",
-            //     "access_rules": [
-            //         " "
-            //     ],
-            //     "sections": [
-            //         {
-            //             "name": "Enemy #1",
-            //             "access_rules": [
-            //                 "^$CanReach|CE 1"
-            //             ],
-            //             "visibility_rules": [
-            //                 "enemy_drop_shuffle_underworld"
-            //             ],
-            //             "item_count": 1,
-            //             "clear_as_group": false, 
-            //             "hosted_item": "85_1_enemy"
-            //         }
-            //     ]
-            // },
-            // {
-            //     "name": "Secret Entrance Enemy #2",
-            //     "chest_unopened_img": "/images/items/closed_Chest.png",
-            //     "chest_opened_img": "/images/items/open_Chest.png",
-            //     "overlay_background": "#000000",
-            //     "access_rules": [
-            //         " "
-            //     ],
-            //     "sections": [
-            //         {
-            //             "name": "Enemy #2",
-            //             "access_rules": [
-            //                 "^$CanReach|CE 2"
-            //             ],
-            //             "visibility_rules": [
-            //                 "enemy_drop_shuffle_underworld"
-            //             ],
-            //             "item_count": 1,
-            //             "clear_as_group": false, 
-            //             "hosted_item": "85_2_enemy"
-            //         }
-            //     ]
-            // },
-            // {
-            //     "name": "Secret Entrance Enemy #3",
-            //     "chest_unopened_img": "/images/items/closed_Chest.png",
-            //     "chest_opened_img": "/images/items/open_Chest.png",
-            //     "overlay_background": "#000000",
-            //     "access_rules": [
-            //         " "
-            //     ],
-            //     "sections": [
-            //         {
-            //             "name": "Enemy #3",
-            //             "access_rules": [
-            //                 "^$CanReach|CE 3"
-            //             ],
-            //             "visibility_rules": [
-            //                 "enemy_drop_shuffle_underworld"
-            //             ],
-            //             "item_count": 1,
-            //             "clear_as_group": false, 
-            //             "hosted_item": "85_3_enemy"
-            //         }
-            //     ]
-            // },
             {
                 "name": "West Lobby Enemy #1",
                 "chest_unopened_img": "/images/items/closed_Chest.png",
@@ -3532,7 +3463,7 @@
                         ],
                         "item_count": 1,
                         "clear_as_group": false, 
-                        "hosted_item": "114_3_enemy"
+                        "hosted_item": "114_2_enemy"
                     }
                 ],
                 "map_locations": [

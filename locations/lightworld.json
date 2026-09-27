@@ -1751,6 +1751,14 @@
                         ],
                         "visibility_rules":["potsanity_lottery", "potsanity_caves"],
                         "item_count": 2
+                    },
+                    {
+                        "name": "Enemies",
+                        "access_rules": [
+                            "^$CanReach|Secret Passage - Enemy #1"
+                        ],
+                        "visibility_rules":["enemy_drop_shuffle_underworld"],
+                        "item_count": 3
                     }
                 ],
                 "map_locations": [

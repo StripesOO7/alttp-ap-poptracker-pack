@@ -1337,7 +1337,9 @@ Secret_passage:connect_one_way("Secret Passage", function() return CanInteract(S
 Secret_passage:connect_one_way("Link's Uncle")
 Secret_passage:connect_one_way("Secret Passage - Pot #1", function() return CanInteract(Secret_passage) end)
 -- Secret_passage:connect_one_way("Secret Passage - Pot #2", function() return CanInteract(Secret_passage) end)
-
+Secret_passage:connect_one_way("Secret Passage - Enemy #1", function() return CanKill("85_1_enemy") end)
+Secret_passage:connect_one_way("Secret Passage - Enemy #2", function() return CanKill("85_2_enemy") end)
+Secret_passage:connect_one_way("Secret Passage - Enemy #3", function() return CanKill("85_3_enemy") end)
 
 -- Witchhut
 Witchhut:connect_one_way(Eastern_palace_area, function() return CanInteract(Witchhut) end)
