@@ -1122,7 +1122,7 @@
                     {
                         "name": "Enemies",
                         "access_rules": [
-                            "^$CanReach|Mini Moldorm Cave - Enemy #1"
+                            "^$CanReach|Mini Moldorm Cave - Enemy #1, ^$CanReach|Mini Moldorm Cave - Enemy #2, ^$CanReach|Mini Moldorm Cave - Enemy #3, ^$CanReach|Mini Moldorm Cave - Enemy #4"
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_underworld"
@@ -1134,7 +1134,7 @@
                     {
                         "name": "Enemies Enemizer",
                         "access_rules": [
-                            "^$CanReach|Mini Moldorm Cave - Enemy #1"
+                            "^$CanReach|Mini Moldorm Cave - Enemy #1, ^$CanReach|Mini Moldorm Cave - Enemy #2, ^$CanReach|Mini Moldorm Cave - Enemy #3, ^$CanReach|Mini Moldorm Cave - Enemy #4"
                         ],
                         "visibility_rules": [
                             "enemizer"
