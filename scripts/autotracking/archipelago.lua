@@ -545,7 +545,7 @@ function OnItem(index, item_id, item_name, player_number)
         end
     end
 
-    CanFinish()
+    -- CanFinish()
     CalcHeartpieces()
 end
 
@@ -583,7 +583,7 @@ function OnLocation(location_id, location_name)
             end
         end
     end
-    CanFinish()
+    -- CanFinish()
     CalcHeartpieces()
     MANUAL_CHECKED = true
 end
