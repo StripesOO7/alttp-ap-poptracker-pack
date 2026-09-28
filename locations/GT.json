@@ -785,7 +785,8 @@
                 ],
                 "visibility_rules": [
                     "key_drop_shuffle",
-                    "enemy_drop_shuffle_keys"
+                    "enemy_drop_shuffle_keys",
+                    "enemy_drop_shuffle_underworld"
                 ],
                 "sections": [
                     {
@@ -6072,6 +6073,16 @@
                             "potsanity_dungeons"
                         ],
                         "item_count": 1
+                    },
+                    Enemizer {
+                        "name": "Pot #1",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 2 Pot #1"
+                        ],
+                        "visibility_rule"enemy_drop_shuffle_off, enemizer"
+                            "potsanity_lottery",
+                        ],
+                        "item_count": 1
                     }
                 ],
                 "map_locations": [
@@ -6101,6 +6112,16 @@
                         "visibility_rules": [
                             "potsanity_lottery",
                             "potsanity_dungeons"
+                        ],
+                        "item_count": 1
+                    },
+                    Enemizer {
+                        "name": "Pot #2",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 2 Pot #1"
+                        ],
+                        "visibility_rule"enemy_drop_shuffle_off, enemizer"
+                            "potsanity_lottery",
                         ],
                         "item_count": 1
                     }
@@ -6134,6 +6155,16 @@
                             "potsanity_dungeons"
                         ],
                         "item_count": 1
+                    },
+                    Enemizer {
+                        "name": "Pot #3",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 2 Pot #1"
+                        ],
+                        "visibility_rule"enemy_drop_shuffle_off, enemizer"
+                            "potsanity_lottery",
+                        ],
+                        "item_count": 1
                     }
                 ],
                 "map_locations": [
@@ -6163,6 +6194,16 @@
                         "visibility_rules": [
                             "potsanity_lottery",
                             "potsanity_dungeons"
+                        ],
+                        "item_count": 1
+                    },
+                    Enemizer {
+                        "name": "Pot #4",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 2 Pot #1"
+                        ],
+                        "visibility_rule"enemy_drop_shuffle_off, enemizer"
+                            "potsanity_lottery",
                         ],
                         "item_count": 1
                     }
@@ -6196,6 +6237,16 @@
                             "potsanity_dungeons"
                         ],
                         "item_count": 1
+                    },
+                    Enemizer {
+                        "name": "Pot #5",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 3 Pot #5"
+                        ],
+                        "visibility_rule"enemy_drop_shuffle_off, enemizer"
+                            "potsanity_lottery",
+                        ],
+                        "item_count": 1
                     }
                 ],
                 "map_locations": [
@@ -6225,6 +6276,16 @@
                         "visibility_rules": [
                             "potsanity_lottery",
                             "potsanity_dungeons"
+                        ],
+                        "item_count": 1
+                    },
+                    Enemizer {
+                        "name": "Pot #6",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 3 Pot #5"
+                        ],
+                        "visibility_rule"enemy_drop_shuffle_off, enemizer"
+                            "potsanity_lottery",
                         ],
                         "item_count": 1
                     }
@@ -6258,6 +6319,16 @@
                             "potsanity_dungeons"
                         ],
                         "item_count": 1
+                    },
+                    Enemizer {
+                        "name": "Pot #7",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 3 Pot #5"
+                        ],
+                        "visibility_rule"enemy_drop_shuffle_off, enemizer"
+                            "potsanity_lottery",
+                        ],
+                        "item_count": 1
                     }
                 ],
                 "map_locations": [
@@ -6287,6 +6358,16 @@
                         "visibility_rules": [
                             "potsanity_lottery",
                             "potsanity_dungeons"
+                        ],
+                        "item_count": 1
+                    },
+                    Enemizer {
+                        "name": "Pot #8",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 3 Pot #5"
+                        ],
+                        "visibility_rule"enemy_drop_shuffle_off, enemizer"
+                            "potsanity_lottery",
                         ],
                         "item_count": 1
                     }
@@ -6692,6 +6773,16 @@
                             "potsanity_dungeons"
                         ],
                         "item_count": 1
+                    },
+                    Enemizer {
+                        "name": "Pot #1",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 5 Pot #1"
+                        ],
+                        "visibility_rule"enemy_drop_shuffle_off, enemizer"
+                            "potsanity_lottery",
+                        ],
+                        "item_count": 1
                     }
                 ],
                 "map_locations": [
@@ -6721,6 +6812,16 @@
                         "visibility_rules": [
                             "potsanity_lottery",
                             "potsanity_dungeons"
+                        ],
+                        "item_count": 1
+                    },
+                    Enemizer {
+                        "name": "Pot #2",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 5 Pot #1"
+                        ],
+                        "visibility_rule"enemy_drop_shuffle_off, enemizer"
+                            "potsanity_lottery",
                         ],
                         "item_count": 1
                     }
@@ -6754,6 +6855,16 @@
                             "potsanity_dungeons"
                         ],
                         "item_count": 1
+                    },
+                    Enemizer {
+                        "name": "Pot #3",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 5 Pot #1"
+                        ],
+                        "visibility_rule"enemy_drop_shuffle_off, enemizer"
+                            "potsanity_lottery",
+                        ],
+                        "item_count": 1
                     }
                 ],
                 "map_locations": [
@@ -6783,6 +6894,16 @@
                         "visibility_rules": [
                             "potsanity_lottery",
                             "potsanity_dungeons"
+                        ],
+                        "item_count": 1
+                    },
+                    Enemizer {
+                        "name": "Pot #4",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 5 Pot #1"
+                        ],
+                        "visibility_rule"enemy_drop_shuffle_off, enemizer"
+                            "potsanity_lottery",
                         ],
                         "item_count": 1
                     }
@@ -9925,6 +10046,17 @@
                         "item_count": 1,
                         "clear_as_group": false, 
                         "hosted_item": "107__enemy"
+                    },
+                    {
+                        "name": "Enemy #6 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Mimics 1 Enemy #6"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
+                        "clear_as_group": false, 
+                        "hosted_item": "107__enemy"
                     }
                 ],
                 "map_locations": [
@@ -9955,6 +10087,17 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
+                        "hosted_item": "107_4_enemy"
+                    },
+                    {
+                        "name": "Enemy #7 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Mimics 1 Enemy #7"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
                         "clear_as_group": false, 
                         "hosted_item": "107_4_enemy"
                     }
@@ -9989,6 +10132,17 @@
                         "item_count": 1,
                         "clear_as_group": false, 
                         "hosted_item": "107_5_enemy"
+                    },
+                    {
+                        "name": "Enemy #8 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Mimics 1 Enemy #8"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
+                        "clear_as_group": false, 
+                        "hosted_item": "107_5_enemy"
                     }
                 ],
                 "map_locations": [
@@ -10021,6 +10175,17 @@
                         "item_count": 1,
                         "clear_as_group": false, 
                         "hosted_item": "107_6_enemy"
+                    },
+                    {
+                        "name": "Enemy #9 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Mimics 1 Enemy #9"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
+                        "clear_as_group": false, 
+                        "hosted_item": "107_6_enemy"
                     }
                 ],
                 "map_locations": [
@@ -10051,6 +10216,17 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
+                        "hosted_item": "107_7_enemy"
+                    },
+                    {
+                        "name": "Enemy #10 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Mimics 1 Enemy #10"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
                         "clear_as_group": false, 
                         "hosted_item": "107_7_enemy"
                     }
@@ -10565,6 +10741,17 @@
                         "item_count": 1,
                         "clear_as_group": false, 
                         "hosted_item": "93_4_enemy"
+                    },
+                    {
+                        "name": "Enemy #4 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 1 Enemy #4"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
+                        "clear_as_group": false, 
+                        "hosted_item": "93_4_enemy"
                     }
                 ],
                 "map_locations": [
@@ -10595,6 +10782,17 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
+                        "hosted_item": "93_5_enemy"
+                    },
+                    {
+                        "name": "Enemy #5 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 1 Enemy #5"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
                         "clear_as_group": false, 
                         "hosted_item": "93_5_enemy"
                     }
@@ -10629,6 +10827,17 @@
                         "item_count": 1,
                         "clear_as_group": false, 
                         "hosted_item": "93_6_enemy"
+                    },
+                    {
+                        "name": "Enemy #6 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 1 Enemy #6"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
+                        "clear_as_group": false, 
+                        "hosted_item": "93_6_enemy"
                     }
                 ],
                 "map_locations": [
@@ -10659,6 +10868,17 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
+                        "hosted_item": "93_7_enemy"
+                    },
+                    {
+                        "name": "Enemy #7 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 1 Enemy #7"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
                         "clear_as_group": false, 
                         "hosted_item": "93_7_enemy"
                     }
@@ -10693,6 +10913,17 @@
                         "item_count": 1,
                         "clear_as_group": false, 
                         "hosted_item": "93_1_enemy"
+                    },
+                    {
+                        "name": "Enemy #1 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 2 Enemy #1"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
+                        "clear_as_group": false, 
+                        "hosted_item": "93_1_enemy"
                     }
                 ],
                 "map_locations": [
@@ -10723,6 +10954,17 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
+                        "hosted_item": "93_2_enemy"
+                    },
+                    {
+                        "name": "Enemy #2 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 2 Enemy #2"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
                         "clear_as_group": false, 
                         "hosted_item": "93_2_enemy"
                     }
@@ -10757,6 +10999,17 @@
                         "item_count": 1,
                         "clear_as_group": false, 
                         "hosted_item": "93_3_enemy"
+                    },
+                    {
+                        "name": "Enemy #3 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 2 Enemy #3"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
+                        "clear_as_group": false, 
+                        "hosted_item": "93_3_enemy"
                     }
                 ],
                 "map_locations": [
@@ -10787,6 +11040,17 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
+                        "hosted_item": "93_8_enemy"
+                    },
+                    {
+                        "name": "Enemy #8 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 2 Enemy #8"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
                         "clear_as_group": false, 
                         "hosted_item": "93_8_enemy"
                     }
@@ -10821,6 +11085,17 @@
                         "item_count": 1,
                         "clear_as_group": false, 
                         "hosted_item": "93_9_enemy"
+                    },
+                    {
+                        "name": "Enemy #9 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 3 Enemy #9"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
+                        "clear_as_group": false, 
+                        "hosted_item": "93_9_enemy"
                     }
                 ],
                 "map_locations": [
@@ -10851,6 +11126,17 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
+                        "hosted_item": "93_10_enemy"
+                    },
+                    {
+                        "name": "Enemy #10 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 3 Enemy #10"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
                         "clear_as_group": false, 
                         "hosted_item": "93_10_enemy"
                     }
@@ -10885,6 +11171,17 @@
                         "item_count": 1,
                         "clear_as_group": false, 
                         "hosted_item": "93_11_enemy"
+                    },
+                    {
+                        "name": "Enemy #11 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 3 Enemy #11"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
+                        "clear_as_group": false, 
+                        "hosted_item": "93_11_enemy"
                     }
                 ],
                 "map_locations": [
@@ -10915,6 +11212,17 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
+                        "hosted_item": "93_12_enemy"
+                    },
+                    {
+                        "name": "Enemy #12 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 3 Enemy #12"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
                         "clear_as_group": false, 
                         "hosted_item": "93_12_enemy"
                     }
@@ -10949,6 +11257,17 @@
                         "item_count": 1,
                         "clear_as_group": false, 
                         "hosted_item": "93_13_enemy"
+                    },
+                    {
+                        "name": "Enemy #13 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 3 Enemy #13"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
+                        "clear_as_group": false, 
+                        "hosted_item": "93_13_enemy"
                     }
                 ],
                 "map_locations": [
@@ -10979,6 +11298,17 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
+                        "hosted_item": "109_1_enemy"
+                    },
+                    {
+                        "name": "Enemy #1 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 4 Enemy #1"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
                         "clear_as_group": false, 
                         "hosted_item": "109_1_enemy"
                     }
@@ -11013,6 +11343,17 @@
                         "item_count": 1,
                         "clear_as_group": false, 
                         "hosted_item": "109_2_enemy"
+                    },
+                    {
+                        "name": "Enemy #2 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 4 Enemy #2"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
+                        "clear_as_group": false, 
+                        "hosted_item": "109_2_enemy"
                     }
                 ],
                 "map_locations": [
@@ -11043,6 +11384,17 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
+                        "hosted_item": "109_3_enemy"
+                    },
+                    {
+                        "name": "Enemy #3 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 4 Enemy #3"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
                         "clear_as_group": false, 
                         "hosted_item": "109_3_enemy"
                     }
@@ -11077,6 +11429,17 @@
                         "item_count": 1,
                         "clear_as_group": false, 
                         "hosted_item": "109_4_enemy"
+                    },
+                    {
+                        "name": "Enemy #4 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 4 Enemy #4"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
+                        "clear_as_group": false, 
+                        "hosted_item": "109_4_enemy"
                     }
                 ],
                 "map_locations": [
@@ -11107,6 +11470,17 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
+                        "hosted_item": "109_5_enemy"
+                    },
+                    {
+                        "name": "Enemy #5 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 5 Enemy #5"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
                         "clear_as_group": false, 
                         "hosted_item": "109_5_enemy"
                     }
@@ -11141,6 +11515,17 @@
                         "item_count": 1,
                         "clear_as_group": false, 
                         "hosted_item": "109_6_enemy"
+                    },
+                    {
+                        "name": "Enemy #6 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 5 Enemy #6"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
+                        "clear_as_group": false, 
+                        "hosted_item": "109_6_enemy"
                     }
                 ],
                 "map_locations": [
@@ -11171,6 +11556,17 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
+                        "hosted_item": "109_7_enemy"
+                    },
+                    {
+                        "name": "Enemy #7 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 5 Enemy #7"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
                         "clear_as_group": false, 
                         "hosted_item": "109_7_enemy"
                     }
@@ -11205,6 +11601,17 @@
                         "item_count": 1,
                         "clear_as_group": false, 
                         "hosted_item": "109_8_enemy"
+                    },
+                    {
+                        "name": "Enemy #8 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 5 Enemy #8"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
+                        "clear_as_group": false, 
+                        "hosted_item": "109_8_enemy"
                     }
                 ],
                 "map_locations": [
@@ -11235,6 +11642,17 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
+                        "hosted_item": "109_9_enemy"
+                    },
+                    {
+                        "name": "Enemy #9 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Gauntlet 5 Enemy #9"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
                         "clear_as_group": false, 
                         "hosted_item": "109_9_enemy"
                     }
@@ -11429,6 +11847,17 @@
                         "item_count": 1,
                         "clear_as_group": false, 
                         "hosted_item": "165_3_enemy"
+                    },
+                    {
+                        "name": "Enemy #3 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Wizzrobes 1 Enemy #3"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
+                        "clear_as_group": false, 
+                        "hosted_item": "165_3_enemy"
                     }
                 ],
                 "map_locations": [
@@ -11459,6 +11888,17 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
+                        "hosted_item": "165_4_enemy"
+                    },
+                    {
+                        "name": "Enemy #4 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Wizzrobes 1 Enemy #4"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
                         "clear_as_group": false, 
                         "hosted_item": "165_4_enemy"
                     }
@@ -11493,6 +11933,17 @@
                         "item_count": 1,
                         "clear_as_group": false, 
                         "hosted_item": "165_8_enemy"
+                    },
+                    {
+                        "name": "Enemy #8 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Wizzrobes 1 Enemy #8"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
+                        "clear_as_group": false, 
+                        "hosted_item": "165_8_enemy"
                     }
                 ],
                 "map_locations": [
@@ -11523,6 +11974,17 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
+                        "hosted_item": "165_1_enemy"
+                    },
+                    {
+                        "name": "Enemy #1 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Wizzrobes 2 Enemy #1"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
                         "clear_as_group": false, 
                         "hosted_item": "165_1_enemy"
                     }
@@ -11557,6 +12019,17 @@
                         "item_count": 1,
                         "clear_as_group": false, 
                         "hosted_item": "165_2_enemy"
+                    },
+                    {
+                        "name": "Enemy #2 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Wizzrobes 2 Enemy #2"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
+                        "clear_as_group": false, 
+                        "hosted_item": "165_2_enemy"
                     }
                 ],
                 "map_locations": [
@@ -11587,6 +12060,17 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
+                        "hosted_item": "165_5_enemy"
+                    },
+                    {
+                        "name": "Enemy #5 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Wizzrobes 2 Enemy #5"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
                         "clear_as_group": false, 
                         "hosted_item": "165_5_enemy"
                     }
@@ -11621,6 +12105,17 @@
                         "item_count": 1,
                         "clear_as_group": false, 
                         "hosted_item": "165_6_enemy"
+                    },
+                    {
+                        "name": "Enemy #6 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Wizzrobes 2 Enemy #6"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
+                        "clear_as_group": false, 
+                        "hosted_item": "165_6_enemy"
                     }
                 ],
                 "map_locations": [
@@ -11651,6 +12146,17 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
+                        "hosted_item": "165_7_enemy"
+                    },
+                    {
+                        "name": "Enemy #7 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|GT - Wizzrobes 2 Enemy #7"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
                         "clear_as_group": false, 
                         "hosted_item": "165_7_enemy"
                     }

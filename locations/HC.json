@@ -3432,6 +3432,17 @@
                         "item_count": 1,
                         "clear_as_group": false, 
                         "hosted_item": "113_1_enemy"
+                    },
+                    {
+                        "name": "Enemy #1 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|HC - Armory Main Enemy #1"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
+                        "clear_as_group": false, 
+                        "hosted_item": "113_1_enemy"
                     }
                 ],
                 "map_locations": [

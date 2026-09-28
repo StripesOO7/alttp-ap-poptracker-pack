@@ -36,9 +36,6 @@
                     "^$CanReach|AT_dark_archers"
                 ],
                 "visibility_rules": [
-                    "key_drop_shuffle",
-                    "enemy_drop_shuffle_keys",
-                    "enemy_drop_shuffle_underworld"
                 ],
                 "sections": [
                     {
@@ -47,6 +44,12 @@
                             "^$CanReach|AT - Dark Archer Key Drop"
                         ],
                         "item_count": 1, 
+                        "visibility_rules": [
+                            "key_drop_shuffle",
+                            "enemy_drop_shuffle_keys",
+                            "enemy_drop_shuffle_underworld",
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
                         "clear_as_group": false, 
                         "hosted_item": "192_4_enemy"
                     }
@@ -1511,6 +1514,17 @@
                         "item_count": 1,
                         "clear_as_group": false, 
                         "hosted_item": "192_1_enemy"
+                    },
+                    {
+                        "name": "Enemy #1 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|AT - Dark Archers Enemy #1"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
+                        "clear_as_group": false, 
+                        "hosted_item": "192_1_enemy"
                     }
                 ],
                 "map_locations": [
@@ -1539,6 +1553,18 @@
                         ],
                         "visibility_rules": [
                             "enemy_drop_shuffle_underworld"
+                        ],
+                        "item_count": 1,
+                        "clear_as_group": false, 
+                        "hosted_item": "192_2_enemy"
+                    },
+                    {
+                        "name": "Enemy #2 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|AT - Dark Archers Enemy #2"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
                         ],
                         "item_count": 1,
                         "clear_as_group": false, 

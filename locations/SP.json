@@ -4610,6 +4610,17 @@
                         "item_count": 1,
                         "clear_as_group": false, 
                         "hosted_item": "40_1_enemy"
+                    },
+                    {
+                        "name": "Enemy #1 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|SP - Entrance Enemy #1"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
+                        "clear_as_group": false, 
+                        "hosted_item": "40_1_enemy"
                     }
                 ],
                 "map_locations": [
@@ -4640,6 +4651,17 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
+                        "hosted_item": "40_2_enemy"
+                    },
+                    {
+                        "name": "Enemy #2 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|SP - Entrance Enemy #2"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
                         "clear_as_group": false, 
                         "hosted_item": "40_2_enemy"
                     }
@@ -4674,6 +4696,17 @@
                         "item_count": 1,
                         "clear_as_group": false, 
                         "hosted_item": "40_3_enemy"
+                    },
+                    {
+                        "name": "Enemy #3 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|SP - Entrance Enemy #3"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
+                        "clear_as_group": false, 
+                        "hosted_item": "40_3_enemy"
                     }
                 ],
                 "map_locations": [
@@ -4706,6 +4739,17 @@
                         "item_count": 1,
                         "clear_as_group": false, 
                         "hosted_item": "40_4_enemy"
+                    },
+                    {
+                        "name": "Enemy #4 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|SP - Entrance Enemy #4"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
+                        "clear_as_group": false, 
+                        "hosted_item": "40_4_enemy"
                     }
                 ],
                 "map_locations": [
@@ -4736,6 +4780,17 @@
                             "enemy_drop_shuffle_underworld"
                         ],
                         "item_count": 1,
+                        "clear_as_group": false, 
+                        "hosted_item": "40_5_enemy"
+                    },
+                    {
+                        "name": "Enemy #5 Enemizer",
+                        "access_rules": [
+                            "^$CanReach|SP - Entrance Enemy #5"
+                        ],
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_off, enemizer"
+                        ],
                         "clear_as_group": false, 
                         "hosted_item": "40_5_enemy"
                     }
