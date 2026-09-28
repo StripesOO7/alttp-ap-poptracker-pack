@@ -1124,8 +1124,23 @@
                         "access_rules": [
                             "^$CanReach|Mini Moldorm Cave - Enemy #1"
                         ],
-                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
-                        "item_count": 4
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_underworld"
+                        ],
+                        "item_count": 4,
+                        "clear_as_group": false,
+                        "hosted_item": "291_1_enemy, 291_2_enemy, 291_3_enemy, 291_4_enemy"
+                    },
+                    {
+                        "name": "Enemies Enemizer",
+                        "access_rules": [
+                            "^$CanReach|Mini Moldorm Cave - Enemy #1"
+                        ],
+                        "visibility_rules": [
+                            "enemizer"
+                        ],
+                        "clear_as_group": false,
+                        "hosted_item": "291_1_enemy, 291_2_enemy, 291_3_enemy, 291_4_enemy"
                     }
                 ],
                 "map_locations": [
@@ -2508,10 +2523,25 @@
                     {
                         "name": "Enemies",
                         "access_rules": [
-                            "^$CanReach|Mimic Cave - Enemy #1"
+                            "^$CanReach|Mimic Cave - Enemy #1, ^$CanReach|Mimic Cave - Enemy #2, ^$CanReach|Mimic Cave - Enemy #3, ^$CanReach|Mimic Cave - Enemy #4"
                         ],
-                        "visibility_rules": ["enemy_drop_shuffle_underworld"],
-                        "item_count": 4
+                        "visibility_rules": [
+                            "enemy_drop_shuffle_underworld"
+                        ],
+                        "item_count": 4,
+                        "clear_as_group": false,
+                        "hosted_item": "268_5_enemy, 268_6_enemy, 268_7_enemy, 268_8_enemy"
+                    },
+                    {
+                        "name": "Enemies Enemizer",
+                        "access_rules": [
+                            "^$CanReach|Mimic Cave - Enemy #1, ^$CanReach|Mimic Cave - Enemy #2, ^$CanReach|Mimic Cave - Enemy #3, ^$CanReach|Mimic Cave - Enemy #4"
+                        ],
+                        "visibility_rules": [
+                            "enemizer"
+                        ],
+                        "clear_as_group": false,
+                        "hosted_item": "268_5_enemy, 268_6_enemy, 268_7_enemy, 268_8_enemy"
                     }
                 ],
                 "map_locations": [

@@ -679,7 +679,7 @@ Dam_inside:connect_one_way("Dam - Enemy #1", function() return DealDamage end)
 
 Mini_moldorm_cave_inside:connect_two_ways(Mini_moldorm_cave_back, function()
     return ALL(
-        DealDamage,
+        CanKill("291_1_enemy", "291_2_enemy", "291_3_enemy", "291_4_enemy"),
         CanInteract(Mini_moldorm_cave_inside, "sword")
     )
 end)
@@ -688,10 +688,11 @@ Mini_moldorm_cave_back:connect_one_way("Mini Moldorm Cave - Left")
 Mini_moldorm_cave_back:connect_one_way("Mini Moldorm Cave - Generous Guy")
 Mini_moldorm_cave_back:connect_one_way("Mini Moldorm Cave - Right")
 Mini_moldorm_cave_back:connect_one_way("Mini Moldorm Cave - Far Right")
-Mini_moldorm_cave_inside:connect_one_way("Mini Moldorm Cave - Enemy #1", function() return DealDamage end)
--- Mini_moldorm_cave_inside:connect_one_way("Mini Moldorm Cave - Enemy #2", function() return DealDamage end)
--- Mini_moldorm_cave_inside:connect_one_way("Mini Moldorm Cave - Enemy #3", function() return DealDamage end)
--- Mini_moldorm_cave_inside:connect_one_way("Mini Moldorm Cave - Enemy #4", function() return DealDamage end)
+
+Mini_moldorm_cave_inside:connect_one_way("Mini Moldorm Cave - Enemy #1", function() return CanKill("291_1_enemy") end)
+Mini_moldorm_cave_inside:connect_one_way("Mini Moldorm Cave - Enemy #2", function() return CanKill("291_2_enemy") end)
+Mini_moldorm_cave_inside:connect_one_way("Mini Moldorm Cave - Enemy #3", function() return CanKill("291_3_enemy") end)
+Mini_moldorm_cave_inside:connect_one_way("Mini Moldorm Cave - Enemy #4", function() return CanKill("291_4_enemy") end)
 
 
 Dam_area:connect_one_way("Sunken Treasure", function() return CanReach("Floodgate Chest") end)
@@ -1854,14 +1855,15 @@ Spiral_cave_bottom_inside:connect_one_way("Spiral Cave Bottom - Enemy #1", funct
 Mimic_cave_ledge:connect_two_ways(Mimic_cave_outside)
 Mimic_cave_outside:connect_two_ways_entrance("Mimic Cave Entrance", Mimic_cave_inside)
 
-Mimic_cave_inside:connect_one_way("Mimic Cave - Enemy #1", function() return DealDamage end)
--- Mimic_cave_inside:connect_one_way("Mimic Cave - Enemy #2", function() return DealDamage end)
--- Mimic_cave_inside:connect_one_way("Mimic Cave - Enemy #3", function() return DealDamage end)
--- Mimic_cave_inside:connect_one_way("Mimic Cave - Enemy #4", function() return DealDamage end)
+Mimic_cave_inside:connect_one_way("Mimic Cave - Enemy #1", function() return CanKill("268_5_enemy") end)
+Mimic_cave_inside:connect_one_way("Mimic Cave - Enemy #2", function() return CanKill("268_6_enemy") end)
+Mimic_cave_inside:connect_one_way("Mimic Cave - Enemy #3", function() return CanKill("268_7_enemy") end)
+Mimic_cave_inside:connect_one_way("Mimic Cave - Enemy #4", function() return CanKill("268_8_enemy") end)
 Mimic_cave_inside:connect_one_way("Mimic Cave Chest", function()
     return ALL(
         "hammer",
-        CanInteract(Mimic_cave_inside, "hammer")
+        CanInteract(Mimic_cave_inside, "hammer"),
+        CanKill("268_5_enemy", "268_6_enemy", "268_7_enemy", "268_8_enemy")
     )
 end)
 
