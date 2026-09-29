@@ -2474,7 +2474,7 @@ for location_ID, location_array in pairs(LOCATION_MAPPING) do
     for _, location in pairs(location_array) do
         if location then
             if type(location) == "table" then
-                    print("found item table in location mapping for Id: "..location_ID)
+                    -- print("found item table in location mapping for Id: "..location_ID)
             else
 
                 local location_obj = Tracker:FindObjectForCode(location) --[[@as LocationSection]]

@@ -866,7 +866,7 @@ function ResetFluteSpots()
     local counter = 1
     if FLUTE_SHUFFLE_STATE then
         for i=1, 8 do
-            print(i)
+            -- print(i)
             _UnsetFluteLocationOptions((Tracker:FindObjectForCode("Light_flute_spot_"..i)--[[@as LuaItem]]))
             _UnsetFluteLocationOptions((Tracker:FindObjectForCode("Dark_flute_spot_"..i)--[[@as LuaItem]]))
         end

@@ -904,7 +904,7 @@ end
 ---@return integer|boolean
 function TT_boss_check()
     if Tracker:FindObjectForCode("tt_boss").CurrentStage == 7 then
-        print("TT Boss Check", CanReach("TT - Attic"), CanReach("TT - Blind's Cell"), Has("bombs"), ALL(CanReach("TT - Attic"),CanReach("TT - Blind's Cell"),"bombs") )
+        -- print("TT Boss Check", CanReach("TT - Attic"), CanReach("TT - Blind's Cell"), Has("bombs"), ALL(CanReach("TT - Attic"),CanReach("TT - Blind's Cell"),"bombs") )
         return ALL(
             CanReach("TT - Attic"),
             CanReach("TT - Blind's Cell"),
@@ -954,7 +954,7 @@ function CheckPyramidState()
         return CachedValues["CheckPyramidState"]
     end
     local pyramid_stage = (Tracker:FindObjectForCode("pyramid_state") --[[@as JsonItem]]).CurrentStage
-    print("CanFinish()", CanFinish())
+    -- print("CanFinish()", CanFinish())
     local lookup_table = {
         [0] = Tracker:FindObjectForCode("aga2").Active,
         [1] = true,
@@ -1129,8 +1129,8 @@ function SetDungeonRewards()
         ["tr_ap_reward"] = 2,
     }
     local dungeon_prize_shuffle = Tracker:FindObjectForCode("boss_prize_shuffle_on").CurrentStage
-    print("boss_prize_shuffle_on: ", dungeon_prize_shuffle > 0)
-    print(Dump_table(dungeon_reward_defaults))
+    -- print("boss_prize_shuffle_on: ", dungeon_prize_shuffle > 0)
+    -- print(Dump_table(dungeon_reward_defaults))
     if dungeon_prize_shuffle > 0 then --active
         for dungeon_reward, stage in pairs(dungeon_reward_defaults) do
             Tracker:FindObjectForCode(dungeon_reward).CurrentStage = stage
@@ -1261,6 +1261,10 @@ ALTTPR = false
 ---comment
 function ChangePopupLayout()
     MANUAL_CHECKED = false
+    ScriptHost:RemoveWatchForCode("keydropshuffle handler")
+    ScriptHost:RemoveWatchForCode("potsanity key handler")
+    ScriptHost:RemoveWatchForCode("enemy drop key handler")
+    ScriptHost:RemoveWatchForCode("doors_enabled handler")
     local version = Tracker:FindObjectForCode("selected_game").CurrentStage
     local doors_tracking = Tracker:FindObjectForCode("doors_tracking")
     local doors_tracking_method = Tracker:FindObjectForCode("doors_tracking_method")
@@ -1707,6 +1711,12 @@ function ChangePopupLayout()
         ITEM_MAPPING[56] = nil
     end
     ChangeGameVersion(version)
+    
+    ScriptHost:AddWatchForCode("keydropshuffle handler", "key_drop_shuffle", KeyDropLayoutChange)
+    ScriptHost:AddWatchForCode("potsanity key handler", "potsanity_keys", KeyDropLayoutChange)
+    ScriptHost:AddWatchForCode("enemy drop key handler", "enemy_drop_shuffle_keys", KeyDropLayoutChange)
+    ScriptHost:AddWatchForCode("doors_enabled handler", "doors_enabled", KeyDropLayoutChange)
+    KeyDropLayoutChange()
     MANUAL_CHECKED =true
 end
 

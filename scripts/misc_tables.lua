@@ -1,5 +1,20 @@
 --- table of items to definitely store in the pseudo-cache LuaItems
 MISC_MANUAL_ITEMS = {
+    "selected_game",
+    "doors_tracking",
+    "doors_tracking_method",
+    "lobby_shuffle",
+    "doortype_shuffle",
+    "dmg_class_shuffle",
+    "preserve_melee_dmg_classes",
+    "manual_misc_items_storage",
+    "potsanity",
+    "enemy_drop_shuffle",
+    "key_drop_shuffle",
+    "shuffle_links_house",
+    "shuffle_tavern",
+    "triforce_pieces_needed",
+    "boss_prize_shuffle",
     "easternpalace",
     "desertpalace",
     "towerofhera",
@@ -90,7 +105,7 @@ MISC_MANUAL_ITEMS = {
     "default_shop_prizes_30",
     "default_shop_prizes_31",
     "default_shop_prizes_32",
-    "default_shop_prizes_33"
+    "default_shop_prizes_33",
 }
 
 Dungeon_key_mapping = {

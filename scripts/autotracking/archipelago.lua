@@ -220,7 +220,7 @@ function PreOnClear()
         for _, custom_item_code in pairs({"manual_location_storage",  "manual_er_storage", "manual_misc_items_storage", "manual_dmg_class_storage"}) do --
             local custom_storage_item = (Tracker:FindObjectForCode(custom_item_code) --[[@as LuaItem]]).ItemState
             if custom_storage_item then
-                print(custom_item_code, #custom_storage_item.MANUAL_LOCATIONS > 10)
+                -- print(custom_item_code, #custom_storage_item.MANUAL_LOCATIONS > 10)
                 if #custom_storage_item.MANUAL_LOCATIONS > 10 then
                     custom_storage_item.MANUAL_LOCATIONS[custom_storage_item.MANUAL_LOCATIONS_ORDER[1]] = nil
                     table.remove(custom_storage_item.MANUAL_LOCATIONS_ORDER, 1)
@@ -398,7 +398,7 @@ function OnClear(slot_data)
         for _, location in pairs(location_array) do
             if location then
                 if type(location) == "table" then
-                    print("found item table in location mapping for Id: "..location_ID)
+                    -- print("found item table in location mapping for Id: "..location_ID)
                     local item_code, item_type, consumable_multiplies = table.unpack(location)
                     ItemUpdate(item_code, item_type, consumable_multiplies, location_ID, true)
                 else
@@ -409,7 +409,7 @@ function OnClear(slot_data)
                             LocationUpdate(location_obj, custom_storage_item, location_ID, true)
                         end
                     else
-                        print("found item table in location mapping for Id: "..location_ID)
+                        -- print("found item table in location mapping for Id: "..location_ID)
                         ---@cast location JsonItem
                         ItemUpdate(location, nil, nil, location_ID, true)
                     end
@@ -1235,7 +1235,7 @@ end
 ---@param key string Name of the key that was used to send the message
 ---@param value table<integer, APhint_message>
 function OnNotifyLaunch(key, value)
-    print(key, Dump_table(value))
+    -- print(key, Dump_table(value))
     if key == HINTS_ID then
         Tracker.BulkUpdate = true
         for _, hint in ipairs(value) do

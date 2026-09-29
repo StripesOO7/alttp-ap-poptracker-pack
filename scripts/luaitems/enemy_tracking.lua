@@ -2341,7 +2341,7 @@ for room_id, enemy_table in pairs(DEFAULT_DUNGEON_ROOM_ENEMIES) do
     end
 end
 for index, _ in pairs(NAMED_INDICES) do
-    print(index, Tracker:FindObjectForCode("enemy_"..index).Name)
+    -- print(index, Tracker:FindObjectForCode("enemy_"..index).Name)
     
 end
 MANUAL_CHECKED = true
