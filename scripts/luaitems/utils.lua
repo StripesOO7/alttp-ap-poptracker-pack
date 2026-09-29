@@ -16,8 +16,9 @@ function Reset_ER_settings()
     for name, _ in pairs(NAMED_ER_ENTRANCES) do
         _UnsetLocationOptions(NAMED_ER_CONNECTIONS[name]--[[@as LuaItem]])
     end
-    ScriptHost:AddWatchForCode("StateChanged", "*", StateChanged)
     Tracker:FindObjectForCode("reset_er").Active = false
+    ScriptHost:AddWatchForCode("StateChanged", "*", StateChanged)
+    ForceUpdate()
 end
 
 ---function to reset all Doors connections back to their base state for the given ER setting
@@ -26,8 +27,9 @@ function Reset_Doors_settings()
     for name, _ in pairs(NAMED_DOORS_ENTRANCES) do
         _UnsetDoorsLocationOptions(NAMED_DOORS_CONNECTIONS[name]--[[@as LuaItem]])
     end
-    ScriptHost:AddWatchForCode("StateChanged", "*", StateChanged)
     Tracker:FindObjectForCode("reset_doors").Active = false
+    ScriptHost:AddWatchForCode("StateChanged", "*", StateChanged)
+    ForceUpdate()
 end
 
 ---function to reset all Damag Class Shuffle connections back to their base state for the given ER setting
