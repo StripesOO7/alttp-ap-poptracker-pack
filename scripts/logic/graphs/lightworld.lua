@@ -678,10 +678,11 @@ Dam_inside:connect_one_way("Dam - Enemy #1", function() return DealDamage end)
 -- Dam_inside:connect_one_way("Dam - Enemy #2", function() return DealDamage end)
 
 Mini_moldorm_cave_inside:connect_two_ways(Mini_moldorm_cave_back, function()
-    return ALL(
-        CanKill("291_1_enemy", "291_2_enemy", "291_3_enemy", "291_4_enemy"),
-        CanInteract(Mini_moldorm_cave_inside, "sword")
-    )
+    -- return ALL(
+    --     CanKill("291_1_enemy", "291_2_enemy", "291_3_enemy", "291_4_enemy"),
+    --     CanInteract(Mini_moldorm_cave_inside, "sword")
+    -- )
+    return CanKill("291_1_enemy", "291_2_enemy", "291_3_enemy", "291_4_enemy")
 end)
 Mini_moldorm_cave_back:connect_one_way("Mini Moldorm Cave - Far Left")
 Mini_moldorm_cave_back:connect_one_way("Mini Moldorm Cave - Left")
@@ -1340,7 +1341,7 @@ Secret_passage:connect_one_way("Secret Passage - Pot #1", function() return CanI
 -- Secret_passage:connect_one_way("Secret Passage - Pot #2", function() return CanInteract(Secret_passage) end)
 Secret_passage:connect_one_way("Secret Passage - Enemy #1", function() return CanKill("85_1_enemy") end)
 Secret_passage:connect_one_way("Secret Passage - Enemy #2", function() return CanKill("85_2_enemy") end)
-Secret_passage:connect_one_way("Secret Passage - Enemy #3", function() return CanKill("85_3_enemy") end)
+-- Secret_passage:connect_one_way("Secret Passage - Enemy #3", function() return CanKill("85_3_enemy") end)
 
 -- Witchhut
 Witchhut:connect_one_way(Eastern_palace_area, function() return CanInteract(Witchhut) end)

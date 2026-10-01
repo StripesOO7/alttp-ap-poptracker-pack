@@ -920,6 +920,30 @@ function EmptyERLocationTargets()
             print("item with code 'er_tracking' not found")
             return
         end
+        
+        print("check tavern")
+        if Tracker:FindObjectForCode("shuffle_tavern").Active then
+            PERMANENT_CONNECTIONS["from_Kakariko_backside_pub_inside"] = nil
+            PERMANENT_CONNECTIONS["to_Kakariko_backside_pub_inside"] = nil
+            PERMANENT_CONNECTIONS["from_Kakariko_backside_pub_outside"] = nil
+            PERMANENT_CONNECTIONS["to_Kakariko_backside_pub_outside"] = nil
+            
+            NAMED_ER_CONNECTIONS["from_Kakariko_backside_pub_inside"] = true
+            NAMED_ER_CONNECTIONS["to_Kakariko_backside_pub_inside"] = true
+            NAMED_ER_CONNECTIONS["from_Kakariko_backside_pub_outside"] = false
+            NAMED_ER_CONNECTIONS["to_Kakariko_backside_pub_outside"] = false
+        else
+            PERMANENT_CONNECTIONS["from_Kakariko_backside_pub_inside"] = true
+            PERMANENT_CONNECTIONS["to_Kakariko_backside_pub_inside"] = true
+            PERMANENT_CONNECTIONS["from_Kakariko_backside_pub_outside"] = false
+            PERMANENT_CONNECTIONS["to_Kakariko_backside_pub_outside"] = false
+            
+            NAMED_ER_CONNECTIONS["from_Kakariko_backside_pub_inside"] = nil
+            NAMED_ER_CONNECTIONS["to_Kakariko_backside_pub_inside"] = nil
+            NAMED_ER_CONNECTIONS["from_Kakariko_backside_pub_outside"] = nil
+            NAMED_ER_CONNECTIONS["to_Kakariko_backside_pub_outside"] = nil
+        end
+
         -- ER_STATE = er_tracking.CurrentStage > 0
         -- print(er_tracking.CurrentStage)
         if ER_STAGE == 0 then
@@ -966,17 +990,6 @@ function EmptyERLocationTargets()
             Tracker:UiHint("ActivateTab", "Entrances")
         -- else
         --     print("insanity ER is not supported you troll")
-        end
-        if Tracker:FindObjectForCode("shuffle_tavern").Active then
-            PERMANENT_CONNECTIONS["from_Kakariko_backside_pub_inside"] = nil
-            PERMANENT_CONNECTIONS["to_Kakariko_backside_pub_inside"] = nil
-            PERMANENT_CONNECTIONS["from_Kakariko_backside_pub_outside"] = nil
-            PERMANENT_CONNECTIONS["to_Kakariko_backside_pub_outside"] = nil
-        else
-            PERMANENT_CONNECTIONS["from_Kakariko_backside_pub_inside"] = true
-            PERMANENT_CONNECTIONS["to_Kakariko_backside_pub_inside"] = true
-            PERMANENT_CONNECTIONS["from_Kakariko_backside_pub_outside"] = false
-            PERMANENT_CONNECTIONS["to_Kakariko_backside_pub_outside"] = false
         end
         for name, inside in pairs(PERMANENT_CONNECTIONS) do
             local source = Tracker:FindObjectForCode(name) --[[@as LuaItem]]

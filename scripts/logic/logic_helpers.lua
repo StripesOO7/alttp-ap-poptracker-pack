@@ -1781,8 +1781,9 @@ end
 function CanKill(...)
     local enemy_list = { ... }
     local access = ACCESS_NORMAL
-    for _, enemy_name in pairs(enemy_list) do 
+    for _, enemy_name in pairs(enemy_list) do
         local enemy_ref = ENEMY_ROOM_MAPPING[enemy_name]
+        -- print(_, enemy_name, ENEMY_ROOM_MAPPING[enemy_name], ENEMY_KILLABLE[enemy_ref])
         if ENEMY_KILLABLE[enemy_ref] then
             access = ACCESS_NORMAL
         else

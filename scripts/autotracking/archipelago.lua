@@ -1256,12 +1256,13 @@ end
 ---@param locationID integer ID of the locations the hint is being given for
 ---@param status 0|10|20|30|40|100|101|102|103|104|105|106|107 status to determine the color of the hint glow
 function UpdateHints(locationID, status)
+    -- print("UpdateHints", locationID, status)
     if Highlight then
         -- print(locationID, status)
         local location_table = LOCATION_MAPPING[locationID]
         if location_table then
             for _, location in ipairs(location_table) do
-                if location and location:sub(1, 1) == "@" then
+                if location and type(location) == "string" and location:sub(1, 1) == "@" then
                     local obj = Tracker:FindObjectForCode(location)  --[[@as LocationSection]]
                     if obj == nil then
                         print(string.format("No object found for code: %s", location))
