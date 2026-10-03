@@ -74,6 +74,9 @@ function ChangeLocationColor(locationname)
             location_obj = (NAMED_ER_CONNECTIONS[locationname]--[[@as LuaItem]]).ItemState --[[@as table]]
         elseif NAMED_DOORS_CONNECTIONS[locationname] then
             location_obj = (NAMED_DOORS_CONNECTIONS[locationname]--[[@as LuaItem]]).ItemState --[[@as table]]
+        -- elseif PERMANENT_CONNECTIONS[locationname] then
+        --     location_obj = (PERMANENT_CONNECTIONS[locationname]--[[@as LuaItem]]).ItemState --[[@as table]]
+        --     print("Location: "..locationname.." is a PERMANENT connection.")
         else
             error("Location: "..locationname.." is neither an ER nor a DOORS connection.")
         end
@@ -85,6 +88,9 @@ function ChangeLocationColor(locationname)
                     target_obj = (NAMED_ER_CONNECTIONS[location_obj.Target]--[[@as LuaItem]]).ItemState
                 elseif NAMED_DOORS_CONNECTIONS[location_obj.Target] then
                     target_obj = (NAMED_DOORS_CONNECTIONS[location_obj.Target]--[[@as LuaItem]]).ItemState
+                -- elseif PERMANENT_CONNECTIONS[location_obj.Target] then
+                --     location_obj = (PERMANENT_CONNECTIONS[location_obj.Target]--[[@as LuaItem]]).ItemState --[[@as table]]
+                --     print("Location-Target: "..location_obj.Target.." is a PERMANENT connection.")
                 else
                     error("Location-Target: "..location_obj.Target.." is neither an ER nor a DOORS connection.")
                 end

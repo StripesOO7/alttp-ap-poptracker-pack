@@ -738,9 +738,9 @@ function AutoFill()
         ["none"] = 0,
         ["off"] = 0,
         ["keys"] = 1,
-        ["caves"] = 2,
-        ["keyscaves"] = 3,
-        ["dungeons"] = 4,
+        ["cave"] = 2,
+        ["cavekeys"] = 3,
+        ["dungeon"] = 4,
         ["lottery"] = 5,
     }
     local mapOWFluteShuffle = {

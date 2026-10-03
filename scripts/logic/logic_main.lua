@@ -923,27 +923,27 @@ function EmptyERLocationTargets()
         end
         
         print("check tavern")
-        if Tracker:FindObjectForCode("shuffle_tavern").Active then
-            PERMANENT_CONNECTIONS["from_Kakariko_backside_pub_inside"] = nil
-            PERMANENT_CONNECTIONS["to_Kakariko_backside_pub_inside"] = nil
-            PERMANENT_CONNECTIONS["from_Kakariko_backside_pub_outside"] = nil
-            PERMANENT_CONNECTIONS["to_Kakariko_backside_pub_outside"] = nil
+        -- if Tracker:FindObjectForCode("shuffle_tavern").Active then
+        --     PERMANENT_CONNECTIONS["from_Kakariko_backside_pub_inside"] = nil
+        --     PERMANENT_CONNECTIONS["to_Kakariko_backside_pub_inside"] = nil
+        --     PERMANENT_CONNECTIONS["from_Kakariko_backside_pub_outside"] = nil
+        --     PERMANENT_CONNECTIONS["to_Kakariko_backside_pub_outside"] = nil
             
-            NAMED_ER_CONNECTIONS["from_Kakariko_backside_pub_inside"] = true
-            NAMED_ER_CONNECTIONS["to_Kakariko_backside_pub_inside"] = true
-            NAMED_ER_CONNECTIONS["from_Kakariko_backside_pub_outside"] = false
-            NAMED_ER_CONNECTIONS["to_Kakariko_backside_pub_outside"] = false
-        else
-            PERMANENT_CONNECTIONS["from_Kakariko_backside_pub_inside"] = true
-            PERMANENT_CONNECTIONS["to_Kakariko_backside_pub_inside"] = true
-            PERMANENT_CONNECTIONS["from_Kakariko_backside_pub_outside"] = false
-            PERMANENT_CONNECTIONS["to_Kakariko_backside_pub_outside"] = false
+        --     NAMED_ER_CONNECTIONS["from_Kakariko_backside_pub_inside"] = true
+        --     NAMED_ER_CONNECTIONS["to_Kakariko_backside_pub_inside"] = true
+        --     NAMED_ER_CONNECTIONS["from_Kakariko_backside_pub_outside"] = false
+        --     NAMED_ER_CONNECTIONS["to_Kakariko_backside_pub_outside"] = false
+        -- else
+        --     PERMANENT_CONNECTIONS["from_Kakariko_backside_pub_inside"] = true
+        --     PERMANENT_CONNECTIONS["to_Kakariko_backside_pub_inside"] = true
+        --     PERMANENT_CONNECTIONS["from_Kakariko_backside_pub_outside"] = false
+        --     PERMANENT_CONNECTIONS["to_Kakariko_backside_pub_outside"] = false
             
-            NAMED_ER_CONNECTIONS["from_Kakariko_backside_pub_inside"] = nil
-            NAMED_ER_CONNECTIONS["to_Kakariko_backside_pub_inside"] = nil
-            NAMED_ER_CONNECTIONS["from_Kakariko_backside_pub_outside"] = nil
-            NAMED_ER_CONNECTIONS["to_Kakariko_backside_pub_outside"] = nil
-        end
+        --     NAMED_ER_CONNECTIONS["from_Kakariko_backside_pub_inside"] = nil
+        --     NAMED_ER_CONNECTIONS["to_Kakariko_backside_pub_inside"] = nil
+        --     NAMED_ER_CONNECTIONS["from_Kakariko_backside_pub_outside"] = nil
+        --     NAMED_ER_CONNECTIONS["to_Kakariko_backside_pub_outside"] = nil
+        -- end
 
         -- ER_STATE = er_tracking.CurrentStage > 0
         -- print(er_tracking.CurrentStage)
