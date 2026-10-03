@@ -568,14 +568,15 @@ function alttp_location:discover(accessibility, keys, worldstate)
                     key = keys
                 end
                 if access > oldAccess or (access == oldAccess and key < oldKey) then -- not sure about the <
-                    -- print(self.name, "to", location.name)
-                    -- print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access], "with worldstate:", worldstate, "and Current_Dungeon:", Current_Dungeon)
-                    -- print("lower:", self.worldstate, worldstate, location.worldstate, Current_Dungeon)
-                    -- if Current_Dungeon == nil then
-                    --     print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access], "no current dungeon")--, "with worldstate:", worldstate)
-                    -- else
-                    --     print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access], "in dungeon: ", Current_Dungeon)--, "with worldstate:", worldstate)
-                    -- end
+                    if Tracker:FindObjectForCode("extra_prints").Active then
+                        print(self.name, "to", location.name)
+                        print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access], "with worldstate:", worldstate, "and Current_Dungeon:", Current_Dungeon)
+                        -- print("lower:", self.worldstate, worldstate, location.worldstate, Current_Dungeon)
+                        -- if Current_Dungeon == nil then
+                        --     print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access], "no current dungeon")--, "with worldstate:", worldstate)
+                        -- else
+                        --     print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access], "in dungeon: ", Current_Dungeon)--, "with worldstate:", worldstate)
+                    end
                     location:discover(access, key, worldstate)
                 end
             end

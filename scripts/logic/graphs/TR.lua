@@ -216,7 +216,7 @@ TR_poke_2_room_2E_door:connect_two_ways(TR_poke_2_room)
 TR_poke_2_room:connect_two_ways(TR_poke_2_room_4E_door)
 TR_poke_2_room_4E_door:connect_two_ways_entrance("", TR_big_key_room_bottom_left_3W_door, function(keys, Current_Dungeon)
     return ALL(
-        CanKill(""),
+        DealDamage,
         Has("smallkey", keys + CountDoneDeadends(0, "@Turtle Rock Back/Eye Bridge Top Right/Eye Bridge Top Right", "@Turtle Rock Back/Boss/Boss Item"), 4, keys + CountDoneDeadends(1, "@Turtle Rock Back/Eye Bridge Top Right/Eye Bridge Top Right", "@Turtle Rock Back/Boss/Boss Item"), 6), KDSreturn(keys, keys + 1)
     )
 end)
@@ -242,14 +242,14 @@ TR_double_poke_room:connect_one_way("TR - Twin Pokeys Pot #1")
 -- TR_double_poke_room:connect_one_way("TR - Twin Pokeys Pot #2")
 -- TR_double_poke_room:connect_one_way("TR - Twin Pokeys Pot #3")
 -- TR_double_poke_room:connect_one_way("TR - Twin Pokeys Pot #4")
-TR_double_poke_room:connect_one_way("TR - Dodgers Enemy #3", function() return CanKill("") end)
+TR_double_poke_room:connect_one_way("TR - Dodgers Enemy #3", function() return CanKill("36_3_enemy") end)
 TR_double_poke_room:connect_one_way("TR - Twin Pokeys Enemy #4", function() return CanKill("36_4_enemy") end)
 TR_double_poke_room:connect_one_way("TR - Twin Pokeys Enemy #5", function() return CanKill("36_5_enemy") end)
 TR_double_poke_room:connect_one_way("TR - Twin Pokeys Enemy #6", function() return CanKill("36_6_enemy") end)
 TR_double_poke_room:connect_one_way("TR - Twin Pokeys Enemy #7", function() return CanKill("36_7_enemy") end)
 
-TR_double_poke_room:connect_two_ways_stuck(TR_big_key_door_room, function() return CanKill("") end, nil)
-TR_double_poke_room:connect_two_ways_stuck(TR_small_t_hallway, function() return CanKill("") end, nil)
+TR_double_poke_room:connect_two_ways_stuck(TR_big_key_door_room, function() return CanKill("36_4_enemy","36_5_enemy","36_6_enemy","36_7_enemy") end, nil)
+TR_double_poke_room:connect_two_ways_stuck(TR_small_t_hallway, function() return CanKill("36_4_enemy","36_5_enemy","36_6_enemy","36_7_enemy") end, nil)
 
 TR_small_t_hallway:connect_two_ways(TR_small_t_hallway_3W_door)
 TR_small_t_hallway:connect_two_ways(TR_big_chest_ledge)

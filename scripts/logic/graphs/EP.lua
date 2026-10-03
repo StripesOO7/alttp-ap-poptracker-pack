@@ -221,7 +221,7 @@ EP_main_room_bottom:connect_two_ways(EP_main_room_bottom_N_door)
 EP_main_room_bottom_N_door:connect_two_ways_entrance_door_stuck("", EP_dark_eyegore_room_S_door, function() return ALL("bigkey") end, function(keys, Current_Dungeon) return Has("smallkey", keys, 0, keys + 1, 1), KDSreturn(keys, keys + 1) end )
 EP_dark_eyegore_room_S_door:connect_two_ways(EP_dark_eyegore_room)
 
-EP_dark_eyegore_room:connect_one_way("EP - Dark Eyegore Key Drop", function() return ALL(DarkRooms, EnemizerCheck("bow"), CanKill("")) end) --enemy4
+EP_dark_eyegore_room:connect_one_way("EP - Dark Eyegore Key Drop", function() return ALL(DarkRooms, CanKill("153_4_enemy")) end) --enemy4
 EP_dark_eyegore_room:connect_one_way("EP - Darkness Pot #1", function() return DarkRooms end)
 -- EP_dark_eyegore_room:connect_one_way("EP - Darkness Pot #2", function() return DarkRooms end)
 EP_dark_eyegore_room:connect_one_way("EP - Darkness Enemy #3", function() return ALL(DarkRooms, CanKill("153_3_enemy")) end)
@@ -245,16 +245,16 @@ EP_attic_start:connect_one_way("EP - Attic Start Pot #1")
 -- EP_attic_start:connect_one_way("EP - Attic Start Pot #2")
 -- EP_attic_start:connect_one_way("EP - Attic Start Pot #3")
 -- EP_attic_start:connect_one_way("EP - Attic Start Pot #4")
-EP_attic_start:connect_one_way("EP - Attic Start Enemy #1", function() return CanKill("") end)
-EP_attic_start:connect_one_way("EP - Attic Start Enemy #2", function() return CanKill("") end)
+EP_attic_start:connect_one_way("EP - Attic Start Enemy #1", function() return CanKill("218_1_enemy") end)
+EP_attic_start:connect_one_way("EP - Attic Start Enemy #2", function() return CanKill("218_2_enemy") end)
 
 EP_attic_start:connect_two_ways(EP_attic_start_3W_door)
 EP_attic_start_3W_door:connect_two_ways_entrance_door_stuck("", EP_false_switches_4E_door, function() return CanInteract(EP_attic_start) end, function() return CanInteract(EP_false_switches) end)
 EP_false_switches_4E_door:connect_two_ways(EP_false_switches)
 
-EP_false_switches:connect_one_way("EP - False Switches Enemy #2", function() return CanKill("") end)
-EP_false_switches:connect_one_way("EP - False Switches Enemy #3", function() return CanKill("") end)
-EP_false_switches:connect_one_way("EP - False Switches Enemy #4", function() return CanKill("") end)
+EP_false_switches:connect_one_way("EP - False Switches Enemy #2", function() return CanKill("217_1_enemy") end)
+EP_false_switches:connect_one_way("EP - False Switches Enemy #3", function() return CanKill("217_2_enemy") end)
+EP_false_switches:connect_one_way("EP - False Switches Enemy #4", function() return CanKill("217_3_enemy") end)
 EP_false_switches:connect_one_way("EP - False Switches Pot #1")
 -- EP_false_switches:connect_one_way("EP - False Switches Pot #2")
 

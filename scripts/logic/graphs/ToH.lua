@@ -94,7 +94,7 @@ ToH_3_hard_head_beatles:connect_one_way("ToH - Beetles Enemy #8", function() ret
 ToH_3_hard_head_beatles:connect_one_way("ToH - Beetles Enemy #9", function() return CanKill("49_7_enemy") end)
 ToH_3_hard_head_beatles:connect_one_way("ToH - Beetles Enemy #11", function() return CanKill("49_9_enemy") end)
 
-ToH_3_hard_head_beatles:connect_two_ways_stuck(ToH_big_key_door_room, function() return ALL(CanInteract(ToH_3_hard_head_beatles), CanKill("")) end)
+ToH_3_hard_head_beatles:connect_two_ways_stuck(ToH_big_key_door_room, function() return ALL(CanInteract(ToH_3_hard_head_beatles), CanKill("49_6_enemy","49_7_enemy","49_9_enemy")) end)
 ToH_3_hard_head_beatles:connect_one_way(ToH_main_room)
 
 ToH_big_key_door_room:connect_one_way("ToH - Startile Corner Enemy #7", function() return CanKill("49_5_enemy") end)

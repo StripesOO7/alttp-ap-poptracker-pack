@@ -301,7 +301,7 @@ DP_back_tiles2_room:connect_two_ways(DP_back_torch_room, function(keys, Current_
     return Has("smallkey", keys + CountDoneDeadends(0, "@Desert Palace/Compass Chest/Compass Chest"), 1, keys + CountDoneDeadends(1, "@Desert Palace/Compass Chest/Compass Chest"), 4), KDSreturn(keys, keys + 1)
 end)
 
-DP_back_torch_room:connect_one_way("DP - Wall Slide Enemy #1", function() return CanKill("") end)
+DP_back_torch_room:connect_one_way("DP - Wall Slide Enemy #1", function() return CanKill("67_1_enemy") end)
 DP_back_torch_room:connect_one_way("DP - Wall Slide Pot #1")
 -- DP_back_torch_room:connect_one_way("DP - Wall Slide Pot #2")
 -- DP_back_torch_room:connect_one_way("DP - Wall Slide Pot #3")

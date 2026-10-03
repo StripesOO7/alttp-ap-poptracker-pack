@@ -161,7 +161,7 @@ SW_big_chest_section:connect_one_way("SW - Pull Switch Pot #1")
 -- SW_big_chest_section:connect_one_way("SW - Pull Switch Pot #2")
 -- SW_big_chest_section:connect_one_way("SW - Pull Switch Pot #3")
 -- SW_big_chest_section:connect_one_way("SW - Pull Switch Pot #4")
-SW_big_chest_section:connect_one_way("SW - ", function() return CanKill("") end)
+-- SW_big_chest_section:connect_one_way("SW - ", function() return CanKill("") end)
 
 SW_big_chest_section:connect_one_way("SW - Big Chest", function() return Has("bigkey") end)
 SW_big_chest_section:connect_one_way("SW - Big Chest Enemy #1", function() return CanKill("88_1_enemy") end)

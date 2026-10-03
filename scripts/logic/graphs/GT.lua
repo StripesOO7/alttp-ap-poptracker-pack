@@ -191,7 +191,7 @@ GT_bottom_bonk_pit_room_east:connect_two_ways(GT_bottom_bonk_pit_room_bottom, fu
     )
 end)
 
-GT_bottom_bonk_pit_room_bottom:connect_one_way("GT - Hookshot Mid Platform Enemy #5", function() return CanKill("") end)
+GT_bottom_bonk_pit_room_bottom:connect_one_way("GT - Hookshot Mid Platform Enemy #5", function() return CanKill("139_3_enemy") end)
 GT_bottom_bonk_pit_room_top:connect_one_way("GT - Hookshot Mid Platform Pot #5")
 
 GT_bottom_bonk_pit_room_top:connect_two_ways(GT_bottom_bonk_pit_room_1N_door)
@@ -212,12 +212,12 @@ GT_bottom_dm_room:connect_one_way("GT - DMs Room Enemy #11", function() return C
 
 GT_bottom_bonk_pit_room_bottom:connect_one_way("GT - Hookshot South Platform Pot #3")
 -- GT_bottom_bonk_pit_room_bottom:connect_one_way("GT - Hookshot South Platform Pot #4")
+
 -- GT_bottom_bonk_pit_room_bottom:connect_one_way("GT - Hookshot South Platform Enemy #2", function() return CanKill("") end)
 -- GT_bottom_bonk_pit_room_bottom:connect_one_way("GT - Hookshot South Platform Enemy #3", function() return CanKill("") end)
-GT_bottom_bonk_pit_room_bottom:connect_one_way("GT - Hookshot South Platform Enemy #5", function() return CanKill("139_3_enemy") end)
 GT_bottom_bonk_pit_room_bottom:connect_one_way("GT - Hookshot South Platform Enemy #6", function() return CanKill("139_4_enemy") end)
 
-GT_bottom_bonk_pit_room_bottom:connect_two_ways(GT_bottom_bonk_pit_room_3S_door, function() return ALL(CanKill(""), ANY("bombs", "redboomerang", "somaria")) end)
+GT_bottom_bonk_pit_room_bottom:connect_two_ways(GT_bottom_bonk_pit_room_3S_door, function() return ALL(HitRanged, ANY("bombs", "redboomerang", "somaria")) end)
 GT_bottom_bonk_pit_room_3S_door:connect_two_ways(GT_bottom_map_room, function(keys, Current_Dungeon)
     return ALL(
         Has("smallkey", keys + CountDoneDeadends(0, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 4, keys + CountDoneDeadends(1, "@Ganon's Tower Bottom Right/Compass Chest/Compass Chest", "@Ganon's Tower Bottom Right/Conveyor Star Pits Pot Key/Conveyor Star Pits Pot Key", "@Ganon's Tower Top/Pre-Moldorm Chest/Pre-Moldorm Chest", "@Ganon's Tower Top/Validation Chest/Validation Chest"), 8)

@@ -145,7 +145,7 @@ MM_wizrobe_room:connect_one_way("MM - 2 Enemy #10", function() return CanKill("2
 
 MM_wizrobe_room:connect_two_ways(MM_wizrobe_room_2N_door)
 
-MM_wizrobe_room_2N_door:connect_two_ways_entrance("", MM_main_room_4S_door, function() return CanKill("") end)
+MM_wizrobe_room_2N_door:connect_two_ways_entrance("", MM_main_room_4S_door, function() return CanKill("210_1_enemy", "210_2_enemy", "210_3_enemy", "210_4_enemy", "210_5_enemy", "210_6_enemy", "210_7_enemy", "210_8_enemy", "210_9_enemy", "210_10_enemy") end)
 MM_main_room_4S_door:connect_two_ways(MM_main_room)
 
 MM_main_room:connect_one_way("MM - Hub Switch Pot #1") --needs switch
@@ -533,7 +533,7 @@ MM_map_room_top_left:connect_one_way("MM - Map Chest")
 MM_bridge_right:connect_one_way("MM - Bridge Chest")
 
 
-MM_conveyor_crystal_room:connect_one_way("MM - Conveyor Crystal Key Drop", function() return CanKill("") end)
+MM_conveyor_crystal_room:connect_one_way("MM - Conveyor Crystal Key Drop", function() return CanKill("193_9_enemy") end)
 
 MM_compass_room:connect_one_way("MM - Comapss Chest")
 
