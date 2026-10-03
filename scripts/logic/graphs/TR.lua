@@ -202,6 +202,7 @@ TR_big_key_room_top_right:connect_two_ways(TR_big_key_room_top_left_1W_door)
 TR_big_key_room_top_right:connect_two_ways(TR_big_key_room_bottom_left_3S_door)
 
 TR_big_key_room_top_left_1W_door:connect_two_ways_entrance("", TR_poke_2_room_2E_door)
+TR_poke_2_room_2E_door:connect_two_ways(TR_poke_2_room)
 
 TR_poke_2_room:connect_one_way("TR - Poke 2 Key Drop", function() return ALL(CanKill("19_7_enemy"), CanInteract(TR_poke_2_room)) end)
 TR_poke_2_room:connect_one_way("TR - Pokey 2 Top Enemy #2", function() return CanKill("19_1_enemy") end)
@@ -212,13 +213,12 @@ TR_poke_2_room:connect_one_way("TR - Pokey 2 Bottom Enemy #6", function() return
 TR_poke_2_room:connect_one_way("TR - Pokey 2 Bottom Enemy #9", function() return CanKill("19_8_enemy") end)
 TR_poke_2_room:connect_one_way("TR - Pokey 2 Bottom Enemy #10", function() return CanKill("19_9_enemy") end)
 
-TR_poke_2_room_2E_door:connect_two_ways(TR_poke_2_room)
 TR_poke_2_room:connect_two_ways(TR_poke_2_room_4E_door)
-TR_poke_2_room_4E_door:connect_two_ways_entrance("", TR_big_key_room_bottom_left_3W_door, function(keys, Current_Dungeon)
+TR_poke_2_room_4E_door:connect_two_ways_entrance_door_stuck("", TR_big_key_room_bottom_left_3W_door, function(keys, Current_Dungeon)
     return ALL(
         DealDamage,
-        Has("smallkey", keys + CountDoneDeadends(0, "@Turtle Rock Back/Eye Bridge Top Right/Eye Bridge Top Right", "@Turtle Rock Back/Boss/Boss Item"), 4, keys + CountDoneDeadends(1, "@Turtle Rock Back/Eye Bridge Top Right/Eye Bridge Top Right", "@Turtle Rock Back/Boss/Boss Item"), 6), KDSreturn(keys, keys + 1)
-    )
+        Has("smallkey", keys + CountDoneDeadends(0, "@Turtle Rock Back/Eye Bridge Top Right/Eye Bridge Top Right", "@Turtle Rock Back/Boss/Boss Item"), 4, keys + CountDoneDeadends(1, "@Turtle Rock Back/Eye Bridge Top Right/Eye Bridge Top Right", "@Turtle Rock Back/Boss/Boss Item"), 6)
+    ), KDSreturn(keys, keys + 1)
 end)
 
 TR_big_key_room_bottom_left_3W_door:connect_two_ways(TR_big_key_room_bottom_left)

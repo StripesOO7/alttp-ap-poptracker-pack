@@ -569,7 +569,7 @@ function alttp_location:discover(accessibility, keys, worldstate)
                 end
                 if access > oldAccess or (access == oldAccess and key < oldKey) then -- not sure about the <
                     if Tracker:FindObjectForCode("extra_prints").Active then
-                        print(self.name, "to", location.name)
+                        -- print(self.name, "to", location.name)
                         print(accessLVL[self:accessibility()], "from", self.name, "to", location.name, ":", accessLVL[access], "with worldstate:", worldstate, "and Current_Dungeon:", Current_Dungeon)
                         -- print("lower:", self.worldstate, worldstate, location.worldstate, Current_Dungeon)
                         -- if Current_Dungeon == nil then
