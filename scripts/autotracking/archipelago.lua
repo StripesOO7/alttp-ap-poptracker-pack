@@ -244,10 +244,10 @@ end
 ---resets or updates a given item back to default or what's saved for the given seed in the pseudo-cache LuaItems
 ---@param item_code JsonItem|string Tracker:FindObjectForCode(item) return object
 ---@param item_type string|nil table of the ItemCode and extra parameters from the Item_Mapping.lau
----@param consumable_multiplier integer|nil table of the ItemCode and extra parameters from the Item_Mapping.lua
+---@param special_handler integer|nil table of the ItemCode and extra parameters from the Item_Mapping.lua
 ---@param item_id integer AP-ID of the item from ITEM_MAPPING
 ---@param reset boolean|nil flag to update or reset the item false=update, true=reset, nil=update
-function ItemUpdate(item_code, item_type, consumable_multiplier, item_id, reset)
+function ItemUpdate(item_code, item_type, special_handler, item_id, reset)
     -- print(item_code, item_type, consumable_multiplier, item_id, reset)
     local item_obj = nil
 
@@ -279,6 +279,7 @@ function ItemUpdate(item_code, item_type, consumable_multiplier, item_id, reset)
         item_obj.Active = not reset
     elseif ({["progressive"] = true, ["progressive_toggle"] = true})[item_type] then
         item_obj.CurrentStage = reset and 0 or (item_obj.CurrentStage + 1)
+        -- item_obj.CurrentStage = reset and 0 or (special_handler or (item_obj.CurrentStage + 1))
         -- item_obj.Active = not reset
     elseif item_type == "consumable" then
         if reset then
@@ -290,9 +291,9 @@ function ItemUpdate(item_code, item_type, consumable_multiplier, item_id, reset)
             end
         else
             if item_id == 83 or item_id == 84 then -- bow capacity increase
-                item_obj.AcquiredCount = item_obj.AcquiredCount + 5 * (consumable_multiplier or 1)
+                item_obj.AcquiredCount = item_obj.AcquiredCount + 5 * (special_handler or 1)
             else
-                item_obj.AcquiredCount = item_obj.AcquiredCount + item_obj.Increment * (consumable_multiplier or 1)
+                item_obj.AcquiredCount = item_obj.AcquiredCount + item_obj.Increment * (special_handler or 1)
             end
         end
     elseif ({["combined_consumable"] = true, ["keyring"] = true})[item_type] then
@@ -317,23 +318,27 @@ function ItemUpdate(item_code, item_type, consumable_multiplier, item_id, reset)
             end
         end
     elseif item_type == "split_toggle" then
+        local stage = item_obj.CurrentStage
         if reset then
-            item_obj.CurrentStage = reset and 0 or (item_obj.CurrentStage + 1)
+            item_obj.CurrentStage = reset and 0 or (stage + 1)
             item_obj.Active = not reset -- reset and false or true
         else
             -- print("split_toggle")
             item_obj.Active = true
-            if (FIRSTSTAGE[item_id] ~= nil and item_obj.CurrentStage < 1) then -- blue shield, fighter sword, powergloves, bow+arrows 
-                item_obj.CurrentStage = 1
-            elseif (SECONDSTAGE[item_id] ~= nil and item_obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
-                item_obj.CurrentStage = 2
-            elseif (THIRDSTAGE[item_id] ~= nil and item_obj.CurrentStage < 3 ) then -- tempered sword, red mail, mirror shield
-                item_obj.CurrentStage = 3
-            elseif (item_id == 3  and item_obj.CurrentStage < 4) then --golden sword
-                item_obj.CurrentStage = 4
-            elseif ((item_id == 88 or item_id == 59) and item_obj.CurrentStage < 2) then -- silver arrows or silvers+bow
-                item_obj.CurrentStage = 2
+            if stage < special_handler then
+                item_obj.CurrentStage = special_handler or stage
             end
+            -- if (FIRSTSTAGE[item_id] ~= nil and  1) then -- blue shield, fighter sword, powergloves, bow+arrows 
+            --     item_obj.CurrentStage = 1
+            -- elseif (SECONDSTAGE[item_id] ~= nil and item_obj.CurrentStage < 2) then -- red shield, blue mail, titans, master sword
+            --     item_obj.CurrentStage = 2
+            -- elseif (THIRDSTAGE[item_id] ~= nil and item_obj.CurrentStage < 3 ) then -- tempered sword, red mail, mirror shield
+            --     item_obj.CurrentStage = 3
+            -- elseif (item_id == 3  and item_obj.CurrentStage < 4) then --golden sword
+            --     item_obj.CurrentStage = 4
+            -- elseif ((item_id == 88 or item_id == 59) and item_obj.CurrentStage < 2) then -- silver arrows or silvers+bow
+            --     item_obj.CurrentStage = 2
+            -- end
         end
     end
 end
@@ -618,7 +623,8 @@ function AutoFill()
         ["localtriforcehunt"]=5,
         ["localganontriforcehunt"]=6,
         ["trinity"]=7,
-        ["completionist"]=8
+        ["completionist"]=8,
+        ["bosshunt"]=9
     } --slow, fast, AD, ped, ped+ganon, tfh, local_tfh, tfh+ganon, local tfh+ganon
     local mapAlttprGoal = {
         [0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=5, [7]=7, [8]=8,
@@ -726,7 +732,11 @@ function AutoFill()
         [5] = 2,
         [6] = 2,
         [7] = 2,
-        [8] = 3
+        [8] = 3,
+        ["vanilla"] = 0,
+        ["dungeonsimple"] = 1,
+        ["dungeonfull"] = 1,
+        ["crossed"] = 3
     }
     local mapEnemyDropShuffle = {
         ["none"] = 0,
@@ -749,30 +759,47 @@ function AutoFill()
         ["balanced"] = 1,
         ["random"] = 2,
     }
+    local mapOWRLogic = {
+        ["noglitches"] = 0,
+        ["owglitches"] = 2,
+        ["hybridglitches"] = 3,
+        ["nologic"] = 4,
+    }
 
-    local mapStages = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=6, [7]=7, [8]=8, [9]=9, [10]=10, ["open"]=1,["inverted"]=2,["standard"]=0}
-    local mapToggle = {[0]=false, [1]=true, [2]=true,[3]=true,[4]=true,[6]=true, ["true"]=true, ["false"]=false} -- false, true
+    local mapStages = {[0]=0, [1]=1, [2]=2, [3]=3, [4]=4, [5]=5, [6]=6, [7]=7, [8]=8, [9]=9, [10]=10, ["open"]=1, ["inverted"]=2, ["standard"]=0, ["false"]=0, ["true"]=1}
+    local mapToggle = {[0]=false, [1]=true, [2]=true, [3]=true, [4]=true, [5]=true, [6]=true, ["true"]=true, ["false"]=false} -- false, true
 
     local slotCodes = {
         --goal 
-        crystals_needed_for_gt = {codes={"gt_access"}, mappings={nil}, autofill="autofill_goal_reqs", default={7}},
-        dungeons_needed_for_ganon = {codes={"gt_access"}, mappings={nil}, autofill="autofill_goal_reqs", default={7}},
-        crystals_needed_for_ganon = {codes={"ganon_killable"}, mappings={nil}, autofill="autofill_goal_reqs", default={7}},
-        triforce_pieces_required = {codes={"triforce_pieces_needed"}, mappings={nil}, autofill="autofill_goal_reqs", default={0}},
-        open_pyramid = {codes={"pyramid_state"}, mappings={mapStages}, autofill="autofill_goal_reqs", default={0}},
+        crystals_needed_for_gt = {codes={"gt_access"}, mappings={nil}, autofill="autofill_goal_reqs", default={7}}, --core/beta
+        dungeons_needed_for_ganon = {codes={"gt_access"}, mappings={nil}, autofill="autofill_goal_reqs", default={7}}, --beta
+        crystals_needed_for_ganon = {codes={"ganon_killable"}, mappings={nil}, autofill="autofill_goal_reqs", default={7}}, --core/beta
+        triforce_pieces_required = {codes={"triforce_pieces_needed"}, mappings={nil}, autofill="autofill_goal_reqs", default={0}}, --core/beta
+        open_pyramid = {codes={"pyramid_state"}, mappings={mapStages}, autofill="autofill_goal_reqs", default={0}}, --core/beta
+
+        crystals_gt = {codes={"gt_access"}, mappings={nil}, autofill="autofill_goal_reqs", default={7}}, --owr
+        crystals_ganon = {codes={"ganon_killable"}, mappings={nil}, autofill="autofill_goal_reqs", default={7}}, --owr
+        triforce_goal = {codes={"triforce_pieces_needed"}, mappings={nil}, autofill="autofill_goal_reqs", default={0}}, --owr
+        openpyramid = {codes={"pyramid_state"}, mappings={mapStages}, autofill="autofill_goal_reqs", default={0}}, --owr
         -- triforce_pieces_mode = {codes={""}, mapping, autofill="",=default={0}},
         -- triforce_pieces_percentage = {codes={""}, mapping, autofill="",=default={0}},
         -- triforce_pieces_available = {codes={"triforce_pieces_needed", mapping, autofill="",=default={0}},
         -- triforce_pieces_extra = {codes={""}, mapping, autofill="", default={0}}
 
         --dungeon
-        big_key_shuffle = {codes={"big_keys", "bigkeys_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings", default={false, 0}},
-        small_key_shuffle = {codes={"small_keys", "smallkeys_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings", default={0, 0}},
-        compass_shuffle = {codes={"compass", "compass_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings", default={false, 0}},
-        map_shuffle = {codes={"map", "maps_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings", default={false, 0}},
-        boss_shuffle = {codes={"boss_shuffle"}, mappings={mapBosses}, autofill="autofill_dungeon_settings", default={0}},
-        boss_prize_shuffle = {codes={"boss_prize_shuffle"}, mappings={mapStages}, autofill="autofill_dungeon_settings", default={0}},
-        randomize_puzzles = {codes={"room_puzzle_shuffle"}, mappings={mapToggle}, autofill="autofill_dungeon_settings", default={false}},
+        big_key_shuffle = {codes={"big_keys", "bigkeys_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings", default={false, 0}}, --core/beta
+        small_key_shuffle = {codes={"small_keys", "smallkeys_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings", default={0, 0}}, --core/beta
+        compass_shuffle = {codes={"compass", "compass_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings", default={false, 0}}, --core/beta
+        map_shuffle = {codes={"map", "maps_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings", default={false, 0}}, --core/beta
+        boss_shuffle = {codes={"boss_shuffle"}, mappings={mapBosses}, autofill="autofill_dungeon_settings", default={0}}, --core/beta/owr
+        boss_prize_shuffle = {codes={"boss_prize_shuffle"}, mappings={mapStages}, autofill="autofill_dungeon_settings", default={0}}, --beta
+        randomize_puzzles = {codes={"room_puzzle_shuffle"}, mappings={mapToggle}, autofill="autofill_dungeon_settings", default={false}}, --core/beta
+
+        bigkeyshuffle = {codes={"big_keys", "bigkeys_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings", default={false, 0}}, --owr
+        keyshuffle = {codes={"small_keys", "smallkeys_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings", default={0, 0}}, --owr
+        compassshuffle = {codes={"compass", "compass_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings", default={false, 0}}, --owr
+        mapshuffle = {codes={"map", "maps_setting"}, mappings={mapDungeonItem, mapDungeonItemSetting}, autofill="autofill_dungeon_settings", default={false, 0}}, --owr
+        prizeshuffle = {codes={"boss_prize_shuffle"}, mappings={mapStages}, autofill="autofill_dungeon_settings", default={0}}, --owr
         
         -- progressive = {codes={"progressive_items"}, mappings={mapStages}, autofill="", default={0}},
 
@@ -785,15 +812,18 @@ function AutoFill()
         -- pot_shuffle = {codes={"pot_shuffle"}, mapping, autofill="",=default={0}},
         key_drop_shuffle = {codes={"key_drop_shuffle"}, mappings={mapToggle}, autofill="autofill_dungeon_settings", default={false}},
         -- key_rings_list = {codes={}, mappings={mapKeyRings}, autofill="autofill_dungeon_settings", default={0}},
-        pottery  = {codes={"potsanity"}, mappings={mapPotDropShuffle}, autofill="autofill_modes", default={0}},
-        potsanity  = {codes={"potsanity"}, mappings={mapPotDropShuffle}, autofill="autofill_modes", default={0}},
-        dropshuffle = {codes={"enemy_drop_shuffle"}, mappings={mapEnemyDropShuffle}, autofill="autofill_modes", default={0}},
-        enemy_drop_shuffle = {codes={"enemy_drop_shuffle"}, mappings={mapEnemyDropShuffle}, autofill="autofill_modes", default={0}},
+        -- potsanity  = {codes={"potsanity"}, mappings={mapPotDropShuffle}, autofill="autofill_modes", default={0}}, --core/beta
+
+        dropshuffle = {codes={"enemy_drop_shuffle"}, mappings={mapEnemyDropShuffle}, autofill="autofill_modes", default={0}}, --owr
+        enemy_drop_shuffle = {codes={"enemy_drop_shuffle"}, mappings={mapEnemyDropShuffle}, autofill="autofill_modes", default={0}}, --owr
+        pottery  = {codes={"potsanity"}, mappings={mapPotDropShuffle}, autofill="autofill_modes", default={0}}, --owr
 
         --item logic
-        bombless_start = {codes={"bombless"}, mappings={mapToggle}, autofill="autofill_modes", default={false}},
+        bombless_start = {codes={"bombless"}, mappings={mapToggle}, autofill="autofill_modes", default={false}}, --core/beta
         dark_room_logic = {codes={"dark_mode"}, mappings={mapDarkRoomLogic}, autofill="autofill_modes", default={0}},
         swordless = {codes={"swordless"}, mappings={mapToggle}, autofill="autofill_modes", default={false}},
+
+        bombbag = {codes={"bombless"}, mappings={mapToggle}, autofill="autofill_modes", default={false}}, --owr
 
         --shops
         shop_item_slots = {codes={"shop_sanity"}, mappings={nil}, autofill="autofill_sanities", default={false}},
@@ -806,92 +836,104 @@ function AutoFill()
         -- shuffle_prizes
 
         --ER/Doors
-        entrance_shuffle = {codes={"er_tracking"}, mappings={mapEntranceShuffle}, autofill="autofill_misc", default={0}},
-        shuffle_links_house = {codes={"shuffle_links_house"}, mappings={mapToggle}, autofill="autofill_misc", default={false}},
-        shuffle_tavern = {codes={"shuffle_tavern"}, mappings={mapToggle}, autofill="autofill_misc", default={false}},
-        doors_shuffle = {codes={"doors_tracking"}, mappings={}, autofill="autofill_misc", default={0}},
+        entrance_shuffle = {codes={"er_tracking"}, mappings={mapEntranceShuffle}, autofill="autofill_misc", default={0}}, --core/beta
+        shuffle = {codes={"er_tracking"}, mappings={mapEntranceShuffle}, autofill="autofill_misc", default={0}}, --owr
+        shufflelinks = {codes={"shuffle_links_house"}, mappings={mapToggle}, autofill="autofill_misc", default={false}}, --owr
+        shuffletavern = {codes={"shuffle_tavern"}, mappings={mapToggle}, autofill="autofill_misc", default={false}}, --owr
+        door_shuffle = {codes={"doors_tracking"}, mappings={}, autofill="autofill_misc", default={0}}, --owr
 
         --goal logic
-        goal = {codes={"goal"}, mappings={mapCoreGoal}, autofill="autofill_goal_reqs", default={0}},
-        mode = {codes={"start_option"}, mappings={mapStages}, autofill="autofill_modes", default={1}},
-        glitches_required = {codes={"glitches"}, mappings={mapStages}, autofill="autofill_modes", default={0}},
+        goal = {codes={"goal"}, mappings={mapCoreGoal}, autofill="autofill_goal_reqs", default={0}}, --core/beta/owr
+        mode = {codes={"start_option"}, mappings={mapStages}, autofill="autofill_modes", default={1}}, --core/beta/owr
+        glitches_required = {codes={"glitches"}, mappings={mapStages}, autofill="autofill_modes", default={0}}, --core/beta
+        
+        logic = {codes={"glitches"}, mappings={mapOWRLogic}, autofill="autofill_modes", default={0}}, --owr
 
         -- misc logic
-        ow_fluteshuffle = {codes={"flute_shuffle"}, mappings={mapOWFluteShuffle}, autofill="autofill_misc", default={0}},
-        enemy_shuffle = {codes={"enemizer"}, mappings={mapToggle}, autofill="autofill_misc", default={false}},
-        killable_thieves = {codes={"killable_thieves"}, mappings={mapToggle}, autofill="autofill_misc", default={false}},
-        randomize_damage_classes = {codes={"dmg_class_shuffle"}, mappings={mapStages}, autofill="autofill_misc", default={0}},
-        preserve_melee_damage_classes = {codes={"preserve_melee_dmg_classes"}, mappings={mapToggle}, autofill="autofill_misc", default={false}},
+        enemy_shuffle = {codes={"enemizer"}, mappings={mapToggle}, autofill="autofill_misc", default={false}}, --core/beta/owr
+        killable_thieves = {codes={"killable_thieves"}, mappings={mapToggle}, autofill="autofill_misc", default={false}}, --core/beta
+        randomize_damage_classes = {codes={"dmg_class_shuffle"}, mappings={mapStages}, autofill="autofill_misc", default={0}}, --beta
+        preserve_melee_damage_classes = {codes={"preserve_melee_dmg_classes"}, mappings={mapToggle}, autofill="autofill_misc", default={false}}, --beta
+
+        free_lamp_cone = {codes={"lamp"}, mappings={mapStages}, autofill="autofill_misc", default={0}}, --owr
+        ow_fluteshuffle = {codes={"flute_shuffle"}, mappings={mapOWFluteShuffle}, autofill="autofill_misc", default={0}}, --owr
+
+        -- crystal book
+        -- extra keys --> off, one, 20, 30, 40
+        -- pseudo flute
+        -- 
     }
 
     -- print(Dump_table(SLOT_DATA))
     -- print(Tracker:FindObjectForCode("autofill_settings").Active)
-    if SLOT_DATA["settings"] then 
+    if SLOT_DATA["settings"] then
     --alttpr slotdata
-        -- ["triforce_pool"] = 30,
-        -- ["triforce_goal"] = 20,
-        -- ["ow_fluteshuffle"] = vanilla,
-        -- ["swords"] = random,
-        -- ["compassshuffle"] = none,
-        -- ["skullwoods"] = original,
-        -- ["enemy_health"] = default,
-        -- ["beemizer"] = 0,
-        -- ["shufflepots"] = false,
-        -- ["logic"] = noglitches,
-        -- ["bigkeyshuffle"] = none,
-        -- ["flute_mode"] = normal,
-        -- ["crystals_gt"] = {
-        -- },
-        -- ["bonk_drops"] = false,
-        -- ["pottery"] = none,
-        -- ["prizeshuffle"] = none,
-        -- ["shopsanity"] = 0,
-        -- ["bombbag"] = false,
-        -- ["shuffletavern"] = 0,
-        -- ["shuffle_followers"] = false,
-        -- ["mode"] = open,
-        -- ["goal"] = crystals,
-        -- ["enemy_shuffle"] = none,
-        -- ["openpyramid"] = auto,
-        -- ["mapshuffle"] = none,
-        -- ["decoupledoors"] = false,
-        -- ["keyshuffle"] = none,
-        -- ["door_shuffle"] = vanilla,
-        -- ["crystals_ganon"] = {
-        -- },
-        -- ["door_type_mode"] = original,
+        -- ["linked_drops"] = unset,
         -- ["any_enemy_logic"] = none,
-        -- ["boss_shuffle"] = none,
+        -- ["shuffle_followers"] = false,
+        -- ["beemizer"] = 0,
+        -- ["swords"] = random,
         -- ["bow_mode"] = progressive,
-        -- ["dropshuffle"] = none,
-        -- ["shuffle"] = vanilla,
+        -- ["crystal_book"] = 0,
+        -- ["dropshuffle"] = underworld,
+        -- ["boss_shuffle"] = random,
+        -- ["mapshuffle"] = wild,
+        -- ["free_lamp_cone"] = 0,
+        -- ["crystals_ganon"] = 2,
+        -- ["ow_fluteshuffle"] = random,
+        -- ["decoupledoors"] = false,
+        -- ["ow_whirlpool"] = false,
+        -- ["shopsanity"] = 1,
+        -- ["prizeshuffle"] = wild,
+        -- ["shufflelinks"] = 1,
+        -- ["aga_randomness"] = true,
+        -- ["money_balance"] = 100,
+        -- ["enemy_shuffle"] = shuffled,
+        -- ["keyshuffle"] = wild,
+        -- ["trap_door_mode"] = vanilla,
+        -- ["skullwoods"] = original,
+        -- ["openpyramid"] = auto,
+        -- ["key_logic_algorithm"] = partial,
+        -- ["pottery"] = lottery,
+        -- ["accessibility"] = locations,
+        -- ["bombbag"] = 1,
+        -- ["dungeon_counters"] = on,
+        -- ["crystals_gt"] = 0,
+        -- ["shuffletavern"] = 1,
         -- ["take_any"] = none,
-
-        -- // ["difficulty"] = normal,
-        -- // ["trap_door_mode"] = vanilla,
-        -- // ["hints"] = false,
-        -- // ["ow_mixed"] = false,
-        -- // ["ow_layout"] = vanilla,
-        -- // ["ow_fog"] = false,
-        -- // ["pseudoboots"] = 0,
-        -- // ["ow_whirlpool"] = false,
-        -- // ["ow_keepsimilar"] = false,
-        -- // ["mirrorscroll"] = false,
-        -- // ["accessibility"] = locations,
-        -- // ["mixed_travel"] = prevent,
-        -- // ["enemy_damage"] = default,
-        -- // ["door_self_loops"] = false,
-        -- // ["money_balance"] = 100,
-        -- // ["standardize_palettes"] = standardize,
-        -- // ["ow_crossed"] = none,
-        -- // ["dungeon_counters"] = on,
-        -- // ["shufflelinks"] = 0,
-        -- // ["ow_terrain"] = false,
-        -- // ["ow_parallel"] = false,
-        -- // ["aga_randomness"] = true,
-        -- // ["overworld_map"] = default,
-        -- // ["collection_rate"] = false,
-        -- // ["key_logic_algorithm"] = partial,
+        -- ["difficulty"] = normal,
+        -- ["pseudoboots"] = 0,
+        -- ["door_self_loops"] = false,
+        -- ["mirrorscroll"] = true,
+        -- ["door_shuffle"] = crossed,
+        -- ["experimental"] = false,
+        -- ["ow_keepsimilar"] = false,
+        -- ["compassshuffle"] = wild,
+        -- ["ow_mixed"] = false,
+        -- ["ow_fog"] = false,
+        -- ["bonk_drops"] = false,
+        -- ["flute_mode"] = normal,
+        -- ["shuffle"] = crossed,
+        -- ["triforce_pool"] = 145,
+        -- ["hints"] = false,
+        -- ["triforce_goal"] = 112,
+        -- ["bigkeyshuffle"] = wild,
+        -- ["ow_parallel"] = false,
+        -- ["mode"] = open,
+        -- ["enemy_damage"] = default,
+        -- ["collection_rate"] = 0,
+        -- ["ow_layout"] = vanilla,
+        -- ["mixed_travel"] = prevent,
+        -- ["logic"] = noglitches,
+        -- ["enemy_health"] = default,
+        -- ["overworld_map"] = default,
+        -- ["door_type_mode"] = big,
+        -- ["intensity"] = 3,
+        -- ["ow_crossed"] = none,
+        -- ["shufflepots"] = false,
+        -- ["standardize_palettes"] = standardize,
+        -- ["goal"] = bosshunt,
+        -- ["ow_terrain"] = false,
         local slot_data_alttpr = SLOT_DATA["settings"]["1"]
         for settings_name , settings_value in pairs(slot_data_alttpr) do
             print(settings_name , settings_value)
@@ -973,6 +1015,7 @@ function AutoFill()
                 _UnsetFluteLocationOptions(Tracker:FindObjectForCode(dest_array[1]) --[[@as LuaItem]])
                 _UnsetFluteLocationOptions(Tracker:FindObjectForCode(dest_array[2]) --[[@as LuaItem]])
             end
+            -- print(Dump_table(SLOT_DATA["ow-flutespots"]["1"]))
             local slot_data_flute_spots = SLOT_DATA["ow-flutespots"]["1"]["force"]
             for spot_index, destination_index in pairs(slot_data_flute_spots) do
                 -- print(spot_index, destination_index)
@@ -989,6 +1032,7 @@ function AutoFill()
         end
         print("start enemy rando assignemnt")
         if SLOT_DATA["enemies"] then
+            -- print(Dump_table(SLOT_DATA["enemies"]["1"]["Underworld"]))
             for room_id, enemy_table in pairs(SLOT_DATA["enemies"]["1"]["Underworld"]) do
                 local counter = 0
                 for enemy_table_index=0,20 do
@@ -1033,7 +1077,7 @@ function AutoFill()
         
     else --core/beta slotdata
         for settings_name , settings_value in pairs(SLOT_DATA) do
-            print(settings_name , settings_value)
+            -- print(settings_name , settings_value)
             if type(settings_value) == "table" then
                 if settings_name == "bosses" then
                     if Tracker:FindObjectForCode("autofill_dungeon_settings").Active then
@@ -1135,7 +1179,7 @@ function AutoFill()
                     enemy_target_id = enemy_target_table["sprite_id"]
                 end
                 
-                print(enemy_target_table,enemy_target_id)
+                -- print(enemy_target_table,enemy_target_id)
                 if enemy_target_id and NAMED_INDICES[enemy_target_id] then
                     counter  = counter + 1
                     local adjusted_enemy_index = tonumber(enemy_table_index)
@@ -1195,7 +1239,7 @@ function GoalCheck()
             end
         else
             if SLOT_DATA["settings"] then
-                ganon.AcquiredCount=#SLOT_DATA["settings"]["1"]["crystals_ganon"]
+                ganon.AcquiredCount=SLOT_DATA["settings"]["1"]["crystals_ganon"]
             else
                 ganon.AcquiredCount=SLOT_DATA["crystals_needed_for_ganon"]
             end

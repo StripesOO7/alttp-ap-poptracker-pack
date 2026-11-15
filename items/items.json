@@ -51,7 +51,7 @@
             {
                 "left": false, "right": true,
                 "img": "/images/items/bowandsilverarrowdisabled.png",
-                "codes": "silver+_arrows"
+                "codes": "silvers+arrows"
             },
             {
                 "left": true, "right": true,
@@ -269,9 +269,18 @@
     },
     {
         "name": "Lamp",
-        "type": "toggle",
-        "img": "/images/items/Lamp.png",
-        "codes": "lamp, firesource"
+        "type": "progressive",
+        "loop": false,
+        "stages": [
+            {
+                "img": "/images/items/PseudoLamp.png",
+                "codes": "lamp, light"
+            },
+            {
+                "img": "/images/items/Lamp.png",
+                "codes": "firesource"
+            }
+        ]
     },
     {
         "name": "Hammer",

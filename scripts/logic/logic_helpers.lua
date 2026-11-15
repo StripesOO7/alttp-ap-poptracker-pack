@@ -28,6 +28,9 @@ function Dump_table(o, depth)
     if depth == nil then
         depth = 0
     end
+    -- if depth > 1 then
+    --     return "..."
+    -- end
     if type(o) == 'table' then
         local tabs = ('\t'):rep(depth)
         local tabs2 = ('\t'):rep(depth + 1)
@@ -536,26 +539,27 @@ end
 ---@param torches_available? boolean default false
 ---@return integer
 function DarkRooms(torches_available)
-    torches_available =torches_available or false
+    torches_available = torches_available or false
     local string_args = "DarkRooms"..tostring(torches_available)
     if CachedValues[string_args] then
         return CachedValues[string_args]
     end
     local dark_mode = Tracker:FindObjectForCode("dark_mode").CurrentStage
-    local has_lamp = Tracker:ProviderCountForCode("lamp")
+    local has_light = Tracker:FindObjectForCode("lamp").CurrentStage > 0
+    local has_firesource = Tracker:ProviderCountForCode("firesource") > 0
     if dark_mode == 2 then --none
         CachedValues[string_args] = ACCESS_NORMAL
         return ACCESS_NORMAL
-    elseif dark_mode == 0 and has_lamp > 0 then -- lamp
+    elseif dark_mode == 0 and has_light then -- lamp
         CachedValues[string_args] = ACCESS_NORMAL
         return ACCESS_NORMAL
     elseif dark_mode == 1 then
         if torches_available then
-            CachedValues[string_args] = A(has_lamp > 0 or has_lamp > 0)
-            return A(has_lamp > 0 or has_lamp > 0)
+            CachedValues[string_args] = A(has_light or has_firesource)
+            return A(has_light or has_firesource)
         end
-        CachedValues[string_args] = A(has_lamp > 0)
-        return A(has_lamp > 0) -- scornes/firerod
+        CachedValues[string_args] = A(has_light)
+        return A(has_light) -- scornes/firerod
     end
     CachedValues[string_args] = ACCESS_NONE
     return ACCESS_NONE

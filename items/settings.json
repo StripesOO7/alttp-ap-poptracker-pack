@@ -145,14 +145,17 @@
         "stages": [
             {
                 "img": "/images/settings/bosses_vanilla.png",
+                "inherit_codes": false,
                 "codes": "boss_shuffle, vanilla"
             },
             {
                 "img": "/images/settings/bosses_random.png",
+                "inherit_codes": false,
                 "codes": "boss_shuffle, random"
             },
             {
                 "img": "/images/settings/bosses_singularity.png",
+                "inherit_codes": false,
                 "codes": "boss_shuffle, singularity"
             }
         ]
@@ -166,14 +169,17 @@
         "stages": [
             {
                 "img": "/images/settings/lamp_required.png",
+                "inherit_codes": false,
                 "codes": "dark_mode, lamp_req"
             },
             {
                 "img": "/images/settings/firerod_required.png",
+                "inherit_codes": false,
                 "codes": "dark_mode, firerod_req"
             },
             {
                 "img": "/images/settings/dark_rooms.png",
+                "inherit_codes": false,
                 "codes": "dark_mode, dark_rooms"
             }
         ]
